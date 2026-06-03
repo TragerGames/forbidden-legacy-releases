@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Banlist de Grupos</title>
+<meta name="description" content="Entenda o sistema de banlist por grupos de efeito do Forbidden Legacy. Como funciona, quais grupos existem e como eles protegem o equilíbrio do jogo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/banlist.html">
+<meta property="og:title" content="Forbidden Legacy — Banlist de Grupos">
+<meta property="og:description" content="Sistema de banlist por grupos de efeito. Balanceamento baseado em impacto estratégico, não apenas em nome de carta.">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/screenshots/menu.png">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/banlist.html">
+<link rel="icon" type="image/png" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<style>
+:root {
+  --ouro:      #C89020;
+  --ouro-brt:  #E8B830;
+  --ouro-esc:  #8A6010;
+  --fundo:     #050301;
+  --painel:    #0D0804;
+  --painel2:   #130C05;
+  --texto:     #D4C49A;
+  --texto-dim: #7A6A48;
+  --verde:     #00A060;
+  --azul:      #3070C0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto); min-height:100vh; }
+
+/* ── NAV ── */
+.topbar {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  background:rgba(5,3,1,0.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid #1a1206;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; height:52px;
+}
+.topbar-logo { font-size:14px; font-weight:900; letter-spacing:3px; color:var(--ouro); text-decoration:none; }
+.topbar-nav { display:flex; gap:4px; align-items:center; }
+.topbar-nav a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--texto-dim); text-decoration:none; padding:6px 12px; border-radius:2px; transition:color .2s; }
+.topbar-nav a:hover { color:var(--ouro); }
+.topbar-nav a.active { color:var(--ouro-brt); }
+.topbar-nav .nav-cta { color:var(--ouro-brt); border:1px solid var(--ouro-esc); margin-left:8px; }
+.topbar-nav .nav-cta:hover { background:rgba(200,144,32,0.1); border-color:var(--ouro); }
+.topbar-right { display:flex; gap:8px; align-items:center; }
+.lang-btn { background:transparent; border:1px solid var(--ouro-esc); color:var(--texto-dim); padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px; transition:all .2s; }
+.lang-btn.active { border-color:var(--ouro); color:var(--ouro); }
+
+/* ── HERO ── */
+.page-hero {
+  padding: 120px 20px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--ouro-esc);
+  background:
+    linear-gradient(to bottom, rgba(5,3,1,0) 40%, #050301 100%),
+    radial-gradient(ellipse at 50% 30%, rgba(200,144,32,0.10) 0%, transparent 70%);
+}
+.page-hero-label { font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:16px; }
+.page-hero-title {
+  font-size: clamp(32px, 6vw, 60px); font-weight:900; letter-spacing:-1px;
+  background: linear-gradient(135deg, var(--ouro-esc) 0%, var(--ouro-brt) 50%, var(--ouro) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  margin-bottom:8px;
+}
+.page-hero-sub { font-size:13px; letter-spacing:3px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:24px; }
+.page-hero-desc { max-width:680px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--texto-dim); }
+
+/* ── LAYOUT ── */
+.page-content { max-width:1060px; margin:0 auto; padding:72px 20px 100px; }
+.section-label { text-align:center; font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:12px; }
+.section-title { text-align:center; font-size:28px; font-weight:700; color:var(--ouro-brt); margin-bottom:40px; }
+
+/* ── INTRO CARDS ── */
+.intro-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:72px; }
+@media(max-width:700px){ .intro-grid { grid-template-columns:1fr; } }
+.intro-card {
+  background:var(--painel2); border:1px solid #1a1206;
+  border-radius:4px; padding:28px 24px;
+}
+.intro-card-icon { font-size:28px; margin-bottom:14px; }
+.intro-card h3 { font-size:15px; font-weight:700; color:var(--ouro-brt); margin-bottom:10px; }
+.intro-card p { font-size:13px; color:var(--texto-dim); line-height:1.7; }
+
+/* ── GRUPOS TABLE ── */
+.groups-section { margin-bottom:72px; }
+.groups-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media(max-width:900px){ .groups-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px){ .groups-grid { grid-template-columns:1fr; } }
+
+.group-card {
+  background:var(--painel2); border:1px solid #1a1206;
+  border-radius:4px; padding:20px 18px;
+  position:relative; overflow:hidden;
+  transition:border-color .2s;
+}
+.group-card:hover { border-color:var(--ouro-esc); }
+.group-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:var(--ouro-esc);
+}
+.group-card.special::before { background:var(--ouro); }
+
+.group-tag {
+  display:inline-block; font-size:11px; font-weight:900;
+  letter-spacing:2px; color:var(--ouro);
+  background:rgba(200,144,32,0.08); border:1px solid var(--ouro-esc);
+  padding:3px 10px; border-radius:3px; margin-bottom:10px;
+}
+.group-tag.special { color:var(--ouro-brt); background:rgba(200,144,32,0.14); border-color:var(--ouro); }
+
+.group-name { font-size:14px; font-weight:700; color:var(--texto); margin-bottom:6px; }
+.group-desc { font-size:12px; color:var(--texto-dim); line-height:1.6; margin-bottom:14px; }
+
+.group-limit {
+  display:flex; align-items:center; gap:8px;
+}
+.limit-label { font-size:10px; letter-spacing:1.5px; color:var(--texto-dim); text-transform:uppercase; }
+.limit-value {
+  font-size:18px; font-weight:900; color:var(--ouro-brt);
+  line-height:1;
+}
+.limit-dots { display:flex; gap:4px; margin-left:4px; }
+.limit-dot {
+  width:8px; height:8px; border-radius:50%;
+  background:var(--ouro-esc); border:1px solid var(--ouro-esc);
+}
+.limit-dot.filled { background:var(--ouro); border-color:var(--ouro-brt); }
+
+/* ── COMO FUNCIONA ── */
+.how-section {
+  background:var(--painel); border:1px solid #1a1206; border-radius:4px;
+  padding:48px 40px; margin-bottom:72px;
+}
+@media(max-width:600px){ .how-section { padding:32px 20px; } }
+.how-section h2 { font-size:22px; font-weight:700; color:var(--ouro-brt); margin-bottom:24px; }
+.how-section p { font-size:14px; color:var(--texto-dim); line-height:1.8; margin-bottom:16px; }
+.how-section p:last-child { margin-bottom:0; }
+.example-box {
+  background:#080502; border:1px solid var(--ouro-esc); border-radius:4px;
+  padding:20px 24px; margin:24px 0;
+  font-size:13px; color:var(--texto); line-height:1.8;
+}
+.example-box strong { color:var(--ouro-brt); }
+
+/* ── FAQ ── */
+.faq-list { display:flex; flex-direction:column; gap:12px; margin-bottom:72px; }
+.faq-item {
+  background:var(--painel2); border:1px solid #1a1206; border-radius:4px;
+  overflow:hidden;
+}
+.faq-q {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 22px; cursor:pointer; gap:16px;
+  font-size:14px; font-weight:600; color:var(--texto);
+  transition:color .2s;
+}
+.faq-q:hover { color:var(--ouro-brt); }
+.faq-arrow { font-size:16px; color:var(--ouro-esc); transition:transform .2s; flex-shrink:0; }
+.faq-item.open .faq-arrow { transform:rotate(180deg); }
+.faq-a {
+  display:none; padding:0 22px 18px;
+  font-size:13px; color:var(--texto-dim); line-height:1.8;
+}
+.faq-item.open .faq-a { display:block; }
+
+/* ── AVISO SAVE ── */
+.save-warn {
+  background:rgba(200,144,32,0.06); border:1px solid var(--ouro-esc);
+  border-radius:4px; padding:28px 32px; margin-bottom:72px;
+  display:flex; gap:20px; align-items:flex-start;
+}
+.save-warn-icon { font-size:28px; flex-shrink:0; }
+.save-warn h3 { font-size:15px; font-weight:700; color:var(--ouro-brt); margin-bottom:8px; }
+.save-warn p { font-size:13px; color:var(--texto-dim); line-height:1.7; }
+
+/* ── FOOTER ── */
+.page-footer {
+  border-top:1px solid #1a1206; padding:32px 20px;
+  text-align:center; font-size:12px; color:var(--texto-dim);
+}
+.page-footer a { color:var(--ouro); text-decoration:none; }
+.page-footer a:hover { color:var(--ouro-brt); }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="topbar-logo" href="/">☥ FORBIDDEN LEGACY</a>
+  <div class="topbar-nav">
+    <a href="/" data-lang-pt="Início" data-lang-en="Home">Início</a>
+    <a href="/features.html" data-lang-pt="Mecânicas" data-lang-en="Features">Mecânicas</a>
+    <a href="/banlist.html" class="active" data-lang-pt="Banlist" data-lang-en="Banlist">Banlist</a>
+    <a href="/#download" class="nav-cta" data-lang-pt="Download" data-lang-en="Download">Download</a>
+  </div>
+  <div class="topbar-right">
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-label" data-lang-pt="Sistema de Balanceamento · Beta 1.2.1" data-lang-en="Balancing System · Beta 1.2.1">Sistema de Balanceamento · Beta 1.2.1</div>
+  <h1 class="page-hero-title" data-lang-pt="Banlist de Grupos" data-lang-en="Group Banlist">Banlist de Grupos</h1>
+  <div class="page-hero-sub" data-lang-pt="Equilíbrio por impacto estratégico" data-lang-en="Balance through strategic impact">Equilíbrio por impacto estratégico</div>
+  <p class="page-hero-desc" data-lang-pt="A banlist de Forbidden Legacy não olha só para o nome da carta. Ela olha para o que a carta faz. Cartas com efeitos de impacto parecido compartilham um limite de grupo — garantindo variedade, criatividade e duelos mais saudáveis." data-lang-en="Forbidden Legacy's banlist doesn't just look at card names. It looks at what the card does. Cards with similar high-impact effects share a group limit — ensuring variety, creativity, and healthier duels.">A banlist de Forbidden Legacy não olha só para o nome da carta. Ela olha para o que a carta faz. Cartas com efeitos de impacto parecido compartilham um limite de grupo — garantindo variedade, criatividade e duelos mais saudáveis.</p>
+</div>
+
+<!-- CONTENT -->
+<div class="page-content">
+
+  <!-- INTRO CARDS -->
+  <div class="intro-grid">
+    <div class="intro-card">
+      <div class="intro-card-icon">🎯</div>
+      <h3 data-lang-pt="Por impacto, não por nome" data-lang-en="By impact, not by name">Por impacto, não por nome</h3>
+      <p data-lang-pt="Duas cartas diferentes com o mesmo tipo de efeito contam para o mesmo grupo. O limite controla o impacto estratégico, não a identidade da carta." data-lang-en="Two different cards with the same type of effect count toward the same group. The limit controls strategic impact, not card identity.">Duas cartas diferentes com o mesmo tipo de efeito contam para o mesmo grupo. O limite controla o impacto estratégico, não a identidade da carta.</p>
+    </div>
+    <div class="intro-card">
+      <div class="intro-card-icon">🃏</div>
+      <h3 data-lang-pt="Visível no Editor de Deck" data-lang-en="Visible in Deck Editor">Visível no Editor de Deck</h3>
+      <p data-lang-pt="O Editor de Deck mostra ícone, contador e limite de grupo para cada carta. Ao clicar na carta, o painel exibe o grupo e o progresso atual do seu deck." data-lang-en="The Deck Editor shows group icons, counters, and limits for each card. Clicking a card shows the group and your deck's current progress.">O Editor de Deck mostra ícone, contador e limite de grupo para cada carta. Ao clicar na carta, o painel exibe o grupo e o progresso atual do seu deck.</p>
+    </div>
+    <div class="intro-card">
+      <div class="intro-card-icon">⚖️</div>
+      <h3 data-lang-pt="Sistema vivo" data-lang-en="Living system">Sistema vivo</h3>
+      <p data-lang-pt="Os limites podem ser ajustados com o crescimento do projeto. A banlist é uma ferramenta de balanceamento contínuo, não uma regra imutável." data-lang-en="Limits can be adjusted as the project grows. The banlist is a continuous balancing tool, not an immutable rule.">Os limites podem ser ajustados com o crescimento do projeto. A banlist é uma ferramenta de balanceamento contínuo, não uma regra imutável.</p>
+    </div>
+  </div>
+
+  <!-- GRUPOS -->
+  <div class="groups-section">
+    <div class="section-label" data-lang-pt="Grupos Ativos · Beta 1.2.1" data-lang-en="Active Groups · Beta 1.2.1">Grupos Ativos · Beta 1.2.1</div>
+    <h2 class="section-title" data-lang-pt="Os 18 grupos da banlist" data-lang-en="The 18 banlist groups">Os 18 grupos da banlist</h2>
+
+    <div class="groups-grid">
+
+      <div class="group-card special">
+        <div class="group-tag special">DIV</div>
+        <div class="group-name" data-lang-pt="Bestas Divinas" data-lang-en="Divine Beasts">Bestas Divinas</div>
+        <div class="group-desc" data-lang-pt="Os Deuses Egípcios. Grupo próprio para não misturar sua restrição com cartas comuns." data-lang-en="The Egyptian Gods. Their own group so their restriction doesn't mix with common cards.">Os Deuses Egípcios. Grupo próprio para não misturar sua restrição com cartas comuns.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">1</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">CLR</div>
+        <div class="group-name" data-lang-pt="Limpeza de campo" data-lang-en="Field Clear">Limpeza de campo</div>
+        <div class="group-desc" data-lang-pt="Cartas capazes de limpar monstros, campo ou causar destruição ampla." data-lang-en="Cards capable of clearing monsters, the field, or causing wide destruction.">Cartas capazes de limpar monstros, campo ou causar destruição ampla.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">2X</div>
+        <div class="group-name" data-lang-pt="Ataque múltiplo / direto" data-lang-en="Multi-attack / Direct">Ataque múltiplo / direto</div>
+        <div class="group-desc" data-lang-pt="Cartas que atacam mais de uma vez ou ignoram monstros para atacar diretamente os LP." data-lang-en="Cards that attack more than once or bypass monsters to attack LP directly.">Cartas que atacam mais de uma vez ou ignoram monstros para atacar diretamente os LP.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">IMM</div>
+        <div class="group-name" data-lang-pt="Imunidade forte" data-lang-en="Strong Immunity">Imunidade forte</div>
+        <div class="group-desc" data-lang-pt="Cartas com imunidades relevantes, bloqueio de magias/traps ou proteção muito forte." data-lang-en="Cards with relevant immunities, spell/trap negation, or very strong protection.">Cartas com imunidades relevantes, bloqueio de magias/traps ou proteção muito forte.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">EQ+</div>
+        <div class="group-name" data-lang-pt="Equip absurdo" data-lang-en="Extreme Equip">Equip absurdo</div>
+        <div class="group-desc" data-lang-pt="Equipamentos com impacto extremo, como cartas que dobram poder ou escalam de forma explosiva." data-lang-en="Equipment with extreme impact — doubles power or scales explosively.">Equipamentos com impacto extremo, como cartas que dobram poder ou escalam de forma explosiva.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">1</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">EQM</div>
+        <div class="group-name" data-lang-pt="Monstro full equip" data-lang-en="Equip Monster">Monstro full equip</div>
+        <div class="group-desc" data-lang-pt="Monstros que abusam muito bem de equipamentos ou aceitam uma gama ampla demais de equips." data-lang-en="Monsters that greatly abuse equipment or accept an excessively wide range of equips.">Monstros que abusam muito bem de equipamentos ou aceitam uma gama ampla demais de equips.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">ATK+</div>
+        <div class="group-name" data-lang-pt="Bônus de ATK" data-lang-en="ATK Bonus">Bônus de ATK</div>
+        <div class="group-desc" data-lang-pt="Cartas com ganho relevante de poder, buffs fortes ou crescimento ofensivo." data-lang-en="Cards with relevant power gain, strong buffs, or offensive scaling.">Cartas com ganho relevante de poder, buffs fortes ou crescimento ofensivo.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">4</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">BRN</div>
+        <div class="group-name" data-lang-pt="Burn alto" data-lang-en="High Burn">Burn alto</div>
+        <div class="group-desc" data-lang-pt="Cartas que causam dano direto alto ou dano de finalização." data-lang-en="Cards that deal high direct damage or finishing damage.">Cartas que causam dano direto alto ou dano de finalização.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">3</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">B+</div>
+        <div class="group-name" data-lang-pt="Burn escalável" data-lang-en="Scalable Burn">Burn escalável</div>
+        <div class="group-desc" data-lang-pt="Cartas cujo dano cresce com campo, mão, cemitério ou outras condições." data-lang-en="Cards whose damage grows based on the field, hand, graveyard, or other conditions.">Cartas cujo dano cresce com campo, mão, cemitério ou outras condições.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">LP+</div>
+        <div class="group-name" data-lang-pt="Recuperação de LP" data-lang-en="LP Recovery">Recuperação de LP</div>
+        <div class="group-desc" data-lang-pt="Cartas que recuperam pontos de vida de forma relevante." data-lang-en="Cards that recover life points in a relevant amount.">Cartas que recuperam pontos de vida de forma relevante.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">3</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">MILL</div>
+        <div class="group-name" data-lang-pt="Mill / Deck Out" data-lang-en="Mill / Deck Out">Mill / Deck Out</div>
+        <div class="group-desc" data-lang-pt="Cartas que atacam o deck do oponente, forçando descarte ou acelerando deck out." data-lang-en="Cards that attack the opponent's deck, forcing discard or accelerating deck out.">Cartas que atacam o deck do oponente, forçando descarte ou acelerando deck out.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">CTL</div>
+        <div class="group-name" data-lang-pt="Controle de poder" data-lang-en="Power Control">Controle de poder</div>
+        <div class="group-desc" data-lang-pt="Cartas que reduzem, dividem, travam ou manipulam o poder dos monstros." data-lang-en="Cards that reduce, halve, lock, or manipulate monster power.">Cartas que reduzem, dividem, travam ou manipulam o poder dos monstros.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">4</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">REM</div>
+        <div class="group-name" data-lang-pt="Remoção pontual forte" data-lang-en="Targeted Removal">Remoção pontual forte</div>
+        <div class="group-desc" data-lang-pt="Cartas que destroem ou removem alvos específicos com impacto alto." data-lang-en="Cards that destroy or remove specific targets with high impact.">Cartas que destroem ou removem alvos específicos com impacto alto.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">4</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">BKR</div>
+        <div class="group-name" data-lang-pt="Limpeza de backrow" data-lang-en="Backrow Clear">Limpeza de backrow</div>
+        <div class="group-desc" data-lang-pt="Cartas focadas em destruir magias, traps ou backrow." data-lang-en="Cards focused on destroying spells, traps, or backrow.">Cartas focadas em destruir magias, traps ou backrow.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">PRC</div>
+        <div class="group-name" data-lang-pt="Pressão / Perfurante" data-lang-en="Pressure / Piercing">Pressão / Perfurante</div>
+        <div class="group-desc" data-lang-pt="Cartas que causam dano perfurante, pressionam defesa ou vencem trocas com facilidade." data-lang-en="Cards that deal piercing damage, pressure defenses, or easily win battle exchanges.">Cartas que causam dano perfurante, pressionam defesa ou vencem trocas com facilidade.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">3</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">SUB</div>
+        <div class="group-name" data-lang-pt="Substituto de fusão" data-lang-en="Fusion Substitute">Substituto de fusão</div>
+        <div class="group-desc" data-lang-pt="Cartas que substituem materiais de fusão." data-lang-en="Cards that substitute fusion materials.">Cartas que substituem materiais de fusão.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card">
+        <div class="group-tag">ACC</div>
+        <div class="group-name" data-lang-pt="Acelerador / Evolução" data-lang-en="Accelerator / Evolution">Acelerador / Evolução</div>
+        <div class="group-desc" data-lang-pt="Cartas que aceleram acesso a monstros, evoluções ou bosses." data-lang-en="Cards that accelerate access to monsters, evolutions, or boss cards.">Cartas que aceleram acesso a monstros, evoluções ou bosses.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">2</span>
+          <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
+        </div>
+      </div>
+
+      <div class="group-card special">
+        <div class="group-tag special">EXO</div>
+        <div class="group-name" data-lang-pt="Partes do Exodia" data-lang-en="Exodia Parts">Partes do Exodia</div>
+        <div class="group-desc" data-lang-pt="Grupo visual das partes do Exodia. O limite individual das peças é controlado separadamente." data-lang-en="Visual group for Exodia parts. The individual limit of each piece is controlled separately.">Grupo visual das partes do Exodia. O limite individual das peças é controlado separadamente.</div>
+        <div class="group-limit">
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-value">5</span>
+          <div class="limit-dots">
+            <div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div>
+            <div class="limit-dot filled"></div><div class="limit-dot filled"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COMO FUNCIONA -->
+  <div class="how-section">
+    <div class="section-label" data-lang-pt="Mecânica" data-lang-en="Mechanics">Mecânica</div>
+    <h2 data-lang-pt="Como os grupos funcionam na prática" data-lang-en="How groups work in practice">Como os grupos funcionam na prática</h2>
+    <p data-lang-pt="Cada carta pertence a um ou mais grupos. Dentro do Editor de Deck, um contador de grupo é atualizado em tempo real conforme você monta o deck." data-lang-en="Each card belongs to one or more groups. Inside the Deck Editor, a group counter updates in real time as you build your deck.">Cada carta pertence a um ou mais grupos. Dentro do Editor de Deck, um contador de grupo é atualizado em tempo real conforme você monta o deck.</p>
+    <p data-lang-pt="Quando o limite de um grupo é atingido, o jogo impede a adição de novas cartas daquele grupo. Isso funciona independentemente de quantas cópias da mesma carta você tem — o que importa é o total de cartas do grupo no deck." data-lang-en="When a group limit is reached, the game prevents adding more cards from that group. This works regardless of how many copies of the same card you have — what matters is the total number of cards from that group in the deck.">Quando o limite de um grupo é atingido, o jogo impede a adição de novas cartas daquele grupo. Isso funciona independentemente de quantas cópias da mesma carta você tem — o que importa é o total de cartas do grupo no deck.</p>
+
+    <div class="example-box">
+      <strong data-lang-pt="Exemplo:" data-lang-en="Example:">Exemplo:</strong><br><br>
+      <span data-lang-pt="<strong>Black Luster Soldier</strong> e <strong>Blue-Eyes Twin Burst Dragon</strong> pertencem ao grupo <strong>2X — Ataque múltiplo</strong> (limite 2).<br><br>Se o seu deck já tem 1 cópia de cada, o grupo está cheio. Não importa que são cartas diferentes — juntas, elas ocupam as 2 vagas do grupo. Nenhuma outra carta do grupo pode ser adicionada." data-lang-en="<strong>Black Luster Soldier</strong> and <strong>Blue-Eyes Twin Burst Dragon</strong> both belong to the <strong>2X — Multi-attack</strong> group (limit 2).<br><br>If your deck already has 1 copy of each, the group is full. It doesn't matter that they are different cards — together they occupy both group slots. No other card from the group can be added."><strong>Black Luster Soldier</strong> e <strong>Blue-Eyes Twin Burst Dragon</strong> pertencem ao grupo <strong>2X — Ataque múltiplo</strong> (limite 2).<br><br>Se o seu deck já tem 1 cópia de cada, o grupo está cheio. Não importa que são cartas diferentes — juntas, elas ocupam as 2 vagas do grupo. Nenhuma outra carta do grupo pode ser adicionada.</span>
+    </div>
+
+    <p data-lang-pt="Uma carta pode pertencer a mais de um grupo. Nesse caso, ela conta separadamente para cada grupo em que está registrada." data-lang-en="A card can belong to more than one group. In that case, it counts separately toward each group it belongs to.">Uma carta pode pertencer a mais de um grupo. Nesse caso, ela conta separadamente para cada grupo em que está registrada.</p>
+  </div>
+
+  <!-- AVISO SAVE -->
+  <div class="save-warn">
+    <div class="save-warn-icon">⚠️</div>
+    <div>
+      <h3 data-lang-pt="O que acontece com decks antigos?" data-lang-en="What happens to old decks?">O que acontece com decks antigos?</h3>
+      <p data-lang-pt="Ao abrir a Beta 1.2.1 pela primeira vez, o jogo verifica automaticamente os decks salvos. Se um deck estiver fora das novas regras, as cartas excedentes podem ser removidas do deck — mas continuam disponíveis na sua coleção. O jogo exibirá um aviso recomendando que você abra o Editor de Deck e confira se o deck está completo antes de duelar." data-lang-en="When opening Beta 1.2.1 for the first time, the game automatically checks saved decks. If a deck violates the new rules, excess cards may be removed from the deck — but they remain available in your collection. The game will display a warning recommending you open the Deck Editor and verify your deck is complete before dueling.">Ao abrir a Beta 1.2.1 pela primeira vez, o jogo verifica automaticamente os decks salvos. Se um deck estiver fora das novas regras, as cartas excedentes podem ser removidas do deck — mas continuam disponíveis na sua coleção. O jogo exibirá um aviso recomendando que você abra o Editor de Deck e confira se o deck está completo antes de duelar.</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-label" data-lang-pt="Dúvidas Frequentes" data-lang-en="Frequently Asked Questions">Dúvidas Frequentes</div>
+  <h2 class="section-title" data-lang-pt="Perguntas sobre a banlist" data-lang-en="Banlist questions">Perguntas sobre a banlist</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-lang-pt="A banlist remove cartas da minha coleção?" data-lang-en="Does the banlist remove cards from my collection?">A banlist remove cartas da minha coleção?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a" data-lang-pt="Não. A banlist afeta a montagem do deck, não a coleção. A carta continua disponível no seu baú mesmo que saia do deck." data-lang-en="No. The banlist affects deck building, not your collection. The card remains available in your inventory even if it leaves the deck.">Não. A banlist afeta a montagem do deck, não a coleção. A carta continua disponível no seu baú mesmo que saia do deck.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-lang-pt="Por que cartas diferentes contam no mesmo grupo?" data-lang-en="Why do different cards count in the same group?">Por que cartas diferentes contam no mesmo grupo?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a" data-lang-pt="Porque a banlist olha para o tipo de impacto estratégico do efeito. Cartas diferentes podem causar o mesmo desequilíbrio quando usadas em excesso no mesmo deck." data-lang-en="Because the banlist looks at the type of strategic impact an effect has. Different cards can cause the same imbalance when used in excess in the same deck.">Porque a banlist olha para o tipo de impacto estratégico do efeito. Cartas diferentes podem causar o mesmo desequilíbrio quando usadas em excesso no mesmo deck.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-lang-pt="Por que os Deuses têm grupo próprio?" data-lang-en="Why do the Gods have their own group?">Por que os Deuses têm grupo próprio?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a" data-lang-pt="As Bestas Divinas possuem poder e raridade únicas. Elas ficam separadas para que sua restrição de 1 cópia não se misture com o limite dos outros grupos." data-lang-en="The Divine Beasts have unique power and rarity. They're kept separate so their 1-copy restriction doesn't blend with other group limits.">As Bestas Divinas possuem poder e raridade únicas. Elas ficam separadas para que sua restrição de 1 cópia não se misture com o limite dos outros grupos.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-lang-pt="Os limites vão mudar?" data-lang-en="Will the limits change?">Os limites vão mudar?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a" data-lang-pt="Possivelmente. Esta é a primeira versão funcional do sistema. Os limites podem ser ajustados com base nos testes da comunidade, relatos e comportamento real dos decks." data-lang-en="Possibly. This is the first functional version of the system. Limits may be adjusted based on community testing, reports, and real deck behavior.">Possivelmente. Esta é a primeira versão funcional do sistema. Os limites podem ser ajustados com base nos testes da comunidade, relatos e comportamento real dos decks.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span data-lang-pt="Posso conferir a banlist dentro do jogo?" data-lang-en="Can I check the banlist inside the game?">Posso conferir a banlist dentro do jogo?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a" data-lang-pt="Sim. O Editor de Deck tem um botão dedicado de BANLIST. Ao clicar em qualquer carta, o painel ampliado mostra o grupo, o contador atual e o limite daquele grupo no seu deck." data-lang-en="Yes. The Deck Editor has a dedicated BANLIST button. Clicking any card shows the group, current counter, and group limit in the expanded card panel.">Sim. O Editor de Deck tem um botão dedicado de BANLIST. Ao clicar em qualquer carta, o painel ampliado mostra o grupo, o contador atual e o limite daquele grupo no seu deck.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <p>
+    <a href="/">Forbidden Legacy</a> ·
+    <a href="/features.html" data-lang-pt="Mecânicas" data-lang-en="Features">Mecânicas</a> ·
+    <a href="/banlist.html" data-lang-pt="Banlist" data-lang-en="Banlist">Banlist</a>
+    <br><br>
+    <span data-lang-pt="Fan-made — não afiliado à Konami." data-lang-en="Fan-made — not affiliated with Konami.">Fan-made — não afiliado à Konami.</span>
+  </p>
+</footer>
+
+<script>
+// ── LANG ──
+function setLang(l) {
+  document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+  document.querySelectorAll('[data-lang-pt]').forEach(el => {
+    el.innerHTML = l === 'pt' ? el.dataset.langPt : el.dataset.langEn;
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase() === l));
+  localStorage.setItem('fl_lang', l);
+}
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  item.classList.toggle('open');
+}
+// ── INIT ──
+(function(){
+  const l = localStorage.getItem('fl_lang') || (navigator.language.startsWith('pt') ? 'pt' : 'en');
+  setLang(l);
+})();
+</script>
+</body>
+</html>
