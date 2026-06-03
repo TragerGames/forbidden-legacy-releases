@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pagar/
+
+Sitemap: https://forbiddenlegacy.com.br/sitemap.xml

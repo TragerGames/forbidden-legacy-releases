@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Mecânicas e Diferenciais</title>
+<meta name="description" content="Conheça as mecânicas, novidades e diferenciais do Forbidden Legacy — o remake fan-made de YGO Forbidden Memories em Godot 4.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/features.html">
+<meta property="og:title" content="Forbidden Legacy — Mecânicas e Diferenciais">
+<meta property="og:description" content="Fusões, campos mágicos, campanha, efeitos, rank e muito mais. Tudo que Forbidden Legacy preserva e expande do FM original.">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/screenshots/menu.png">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/features.html">
+<link rel="icon" type="image/png" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<style>
+:root {
+  --ouro:      #C89020;
+  --ouro-brt:  #E8B830;
+  --ouro-esc:  #8A6010;
+  --fundo:     #050301;
+  --painel:    #0D0804;
+  --painel2:   #130C05;
+  --texto:     #D4C49A;
+  --texto-dim: #7A6A48;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto); min-height:100vh; }
+
+/* ── NAV ── */
+.topbar {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  background:rgba(5,3,1,0.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid #1a1206;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; height:52px;
+}
+.topbar-logo { font-size:14px; font-weight:900; letter-spacing:3px; color:var(--ouro); text-decoration:none; }
+.topbar-nav { display:flex; gap:4px; align-items:center; }
+.topbar-nav a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--texto-dim); text-decoration:none; padding:6px 12px; border-radius:2px; transition:color .2s; }
+.topbar-nav a:hover { color:var(--ouro); }
+.topbar-nav a.active { color:var(--ouro-brt); }
+.topbar-nav .nav-cta { color:var(--ouro-brt); border:1px solid var(--ouro-esc); margin-left:8px; }
+.topbar-nav .nav-cta:hover { background:rgba(200,144,32,0.1); border-color:var(--ouro); }
+.topbar-right { display:flex; gap:8px; align-items:center; }
+.lang-btn { background:transparent; border:1px solid var(--ouro-esc); color:var(--texto-dim); padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px; transition:all .2s; }
+.lang-btn.active { border-color:var(--ouro); color:var(--ouro); }
+
+/* ── HERO DA PÁGINA ── */
+.page-hero {
+  padding: 120px 20px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--ouro-esc);
+  background:
+    linear-gradient(to bottom, rgba(5,3,1,0) 40%, #050301 100%),
+    radial-gradient(ellipse at 50% 30%, rgba(200,144,32,0.10) 0%, transparent 70%);
+}
+.page-hero-label { font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:16px; }
+.page-hero-title {
+  font-size: clamp(32px, 6vw, 60px); font-weight:900; letter-spacing:-1px;
+  background: linear-gradient(135deg, var(--ouro-esc) 0%, var(--ouro-brt) 50%, var(--ouro) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  margin-bottom:8px;
+}
+.page-hero-sub { font-size:13px; letter-spacing:3px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:24px; }
+.page-hero-desc { max-width:620px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--texto-dim); }
+
+/* ── CONTEÚDO ── */
+.page-content { max-width:1100px; margin:0 auto; padding:72px 20px 80px; }
+.section-label { text-align:center; font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:12px; }
+.section-title { text-align:center; font-size:28px; font-weight:700; color:var(--ouro-brt); margin-bottom:40px; }
+
+/* ── FEATURE CARDS ── */
+.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:20px; }
+.features-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.feature-card {
+  background:var(--painel2); border:1px solid #1a1206;
+  border-radius:4px; padding:26px 22px;
+  transition:border-color .25s; position:relative; overflow:hidden;
+}
+.feature-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--ouro-esc), transparent);
+}
+.feature-card:hover { border-color:var(--ouro-esc); }
+.feature-icon { font-size:24px; margin-bottom:12px; }
+.feature-title { font-size:14px; font-weight:700; color:var(--ouro-brt); margin-bottom:14px; letter-spacing:.5px; }
+.feature-list { list-style:none; }
+.feature-list li { font-size:13px; color:var(--texto-dim); line-height:1.7; padding:2px 0; }
+.feature-list li::before { content:'▸ '; color:var(--ouro-esc); }
+
+/* ── EM EVOLUÇÃO ── */
+.features-evolving {
+  background:rgba(200,144,32,0.05); border:1px solid var(--ouro-esc);
+  border-radius:4px; padding:22px 26px; margin-top:32px;
+  color:var(--texto-dim); font-size:14px; line-height:1.8;
+}
+.features-evolving strong { color:var(--ouro-brt); }
+.features-quote {
+  text-align:center; margin-top:48px; padding:24px;
+  border-top:1px solid var(--ouro-esc); border-bottom:1px solid var(--ouro-esc);
+  color:var(--ouro-brt); font-size:15px; font-style:italic; letter-spacing:.5px;
+}
+
+/* ── FOOTER ── */
+footer { border-top:1px solid #1a1206; padding:40px 20px; text-align:center; color:var(--texto-dim); font-size:13px; }
+footer a { color:var(--ouro-esc); text-decoration:none; }
+footer a:hover { color:var(--ouro); }
+.footer-logo { font-size:20px; font-weight:900; color:var(--ouro); letter-spacing:2px; margin-bottom:12px; }
+.footer-links { display:flex; gap:20px; justify-content:center; margin-bottom:14px; flex-wrap:wrap; }
+.footer-links a { font-size:12px; letter-spacing:1px; text-transform:uppercase; }
+footer p { opacity:.5; font-size:12px; margin-top:8px; }
+
+/* ── LANG ── */
+[data-lang="en"] { display:none !important; }
+span[data-lang="en"] { display:none !important; }
+body.en [data-lang="pt"] { display:none !important; }
+body.en span[data-lang="pt"] { display:none !important; }
+body.en [data-lang="en"] { display:block !important; }
+body.en span[data-lang="en"] { display:inline !important; }
+body.en li[data-lang="en"] { display:flex !important; }
+
+/* ── SCROLL REVEAL ── */
+[data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+[data-reveal].revealed { opacity:1; transform:translateY(0); }
+
+@media(max-width:700px) {
+  .topbar-nav { display:none; }
+  .features-grid { grid-template-columns:1fr; }
+  .features-grid-2 { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ TOPBAR ══════════════════ -->
+<header class="topbar">
+  <a href="/" class="topbar-logo">☥ FL</a>
+  <nav class="topbar-nav">
+    <a href="/#sobre" data-lang="pt">O Jogo</a>
+    <a href="/#sobre" data-lang="en">The Game</a>
+    <a href="/#galeria" data-lang="pt">Galeria</a>
+    <a href="/#galeria" data-lang="en">Gallery</a>
+    <a href="features.html" class="active" data-lang="pt">Mecânicas</a>
+    <a href="features.html" class="active" data-lang="en">Features</a>
+    <a href="/#download">Download</a>
+    <a href="/#novidades" data-lang="pt">Novidades</a>
+    <a href="/#novidades" data-lang="en">Updates</a>
+    <a href="/#comprar" class="nav-cta" data-lang="pt">☥ Founder</a>
+    <a href="/#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<div class="page-hero">
+  <div class="page-hero-label">☥ Beta 1.2</div>
+  <h1 class="page-hero-title" data-lang="pt">Mecânicas e Diferenciais</h1>
+  <h1 class="page-hero-title" data-lang="en">Mechanics &amp; Features</h1>
+  <div class="page-hero-sub" data-lang="pt">O que Forbidden Legacy preserva e expande</div>
+  <div class="page-hero-sub" data-lang="en">What Forbidden Legacy preserves and expands</div>
+  <p class="page-hero-desc" data-lang="pt">
+    Forbidden Legacy nasceu como homenagem direta ao YGO Forbidden Memories, mas não é apenas uma cópia. A ideia é preservar a sensação clássica dos duelos rápidos e das fusões enquanto o projeto evolui com novas cartas, novas cenas e sistemas modernos de progressão.
+  </p>
+  <p class="page-hero-desc" data-lang="en">
+    Forbidden Legacy was born as a direct tribute to YGO Forbidden Memories, but it is not just a copy. The goal is to preserve the classic feeling of fast duels and fusions while expanding with new cards, new scenes and modern progression systems.
+  </p>
+</div>
+
+<!-- ══════════════════ CONTEÚDO ══════════════════ -->
+<div class="page-content">
+
+  <!-- Grade principal: 3 colunas -->
+  <div class="features-grid" data-reveal>
+
+    <div class="feature-card">
+      <div class="feature-icon">🌟</div>
+      <div class="feature-title" data-lang="pt">O DNA do Forbidden Memories</div>
+      <div class="feature-title" data-lang="en">The Forbidden Memories DNA</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Duelos rápidos e diretos com foco em invocação, fusões e leitura rápida do tabuleiro</li>
+        <li>Sistema de fusões como coração do jogo — tentativa e erro como no original</li>
+        <li>Campos mágicos com impacto real: Mountain, Yami, Sogen, Forest, Wasteland e outros</li>
+        <li>Drops por duelista — cada NPC tem deck e pool de drops próprios</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Fast and direct duels focused on summoning, fusion and fast board reading</li>
+        <li>Fusion as the heart of the game — trial and error just like the original</li>
+        <li>Field spells with real impact: Mountain, Yami, Sogen, Forest, Wasteland and more</li>
+        <li>Duelist-based drops — each NPC has their own deck and drop pool</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">⚔️</div>
+      <div class="feature-title" data-lang="pt">O que Forbidden Legacy Expande</div>
+      <div class="feature-title" data-lang="en">What Forbidden Legacy Expands</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Campanha com cenas próprias, diálogos, backgrounds e músicas específicas</li>
+        <li>Novos NPCs: Akhenaden, Mountain Mage, High Mage Atenza e outros</li>
+        <li>Free Duel estruturado — NPCs com biografias, retratos e drops organizados</li>
+        <li>Cartas modernas e customizadas não presentes no FM original</li>
+        <li>Motor próprio de efeitos: dano, cura, imunidades, armadilhas, destruição e interações especiais</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Campaign with dedicated scenes, dialogue, backgrounds and specific music</li>
+        <li>New NPCs: Akhenaden, Mountain Mage, High Mage Atenza and others</li>
+        <li>Structured Free Duel — NPCs with biographies, portraits and organized drops</li>
+        <li>Modern custom cards not present in the original FM</li>
+        <li>Own effect engine: damage, healing, immunities, traps, destruction and special interactions</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🃏</div>
+      <div class="feature-title" data-lang="pt">Fusões, Cartas e Deckbuilding</div>
+      <div class="feature-title" data-lang="en">Fusions, Cards &amp; Deckbuilding</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Fusões específicas por nome e genéricas por tipo, atributo e faixa de ATK</li>
+        <li>Substitutos de fusão: Goddess with the Third Eye, Versago The Destroyer</li>
+        <li>Editor de deck com filtros, inspeção de cartas e painel ampliado</li>
+        <li>Banlist por grupos em evolução — indicação visual no editor</li>
+        <li>700+ cartas disponíveis para colecionar e montar deck</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Specific fusions by name and generic fusions by type, attribute and ATK range</li>
+        <li>Fusion substitutes: Goddess with the Third Eye, Versago The Destroyer</li>
+        <li>Deck editor with filters, card inspection and enlarged card panel</li>
+        <li>Group-based banlist in progress — visual indicators in the editor</li>
+        <li>700+ cards available to collect and build your deck</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🏆</div>
+      <div class="feature-title" data-lang="pt">Progressão, Rank e Economia</div>
+      <div class="feature-title" data-lang="en">Progression, Rank &amp; Economy</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Rank pós-duelo por desempenho: eficiência, LP restante, fusões e ritmo da partida</li>
+        <li>Stars como moeda — ranks melhores entregam mais Stars</li>
+        <li>Card Shop com preços por raridade e vitrine renovável</li>
+        <li>Drops protegidos — pools fixos e curados por NPC, sem cartas fortes acidentais</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Post-duel Rank by performance: efficiency, remaining LP, fusions and match pace</li>
+        <li>Stars as currency — better ranks award more Stars</li>
+        <li>Card Shop with rarity-based prices and refreshable showcase</li>
+        <li>Protected drops — fixed, curated pools per NPC, no accidental strong cards</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎮</div>
+      <div class="feature-title" data-lang="pt">Qualidade de Vida</div>
+      <div class="feature-title" data-lang="en">Quality of Life</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>HUD moderno com avatar, barra de LP animada e integração com o campo mágico ativo</li>
+        <li>Velocidade de duelo ajustável — grind e testes mais confortáveis</li>
+        <li>Suporte a controle, teclado, mouse e Android touch</li>
+        <li>Descrições de cartas acessíveis em painéis ampliados</li>
+        <li>Checkpoints de campanha — sem repetir trechos após duelos ou cenas</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Modern HUD with avatars, animated LP bar and active field color integration</li>
+        <li>Adjustable duel speed — more comfortable farming and testing</li>
+        <li>Controller, keyboard, mouse and Android touch support</li>
+        <li>Accessible card descriptions in enlarged panels</li>
+        <li>Campaign checkpoints — no need to repeat sections after duels or scenes</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎭</div>
+      <div class="feature-title" data-lang="pt">Campanha e Apresentação</div>
+      <div class="feature-title" data-lang="en">Campaign &amp; Presentation</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Cenários específicos: Templo da Isis, Mountain Shrine, santuários e novos locais</li>
+        <li>Retratos com corpo, foco, boca e piscada — cenas mais vivas</li>
+        <li>Músicas por momento — trilhas integradas a eventos e ao Free Duel</li>
+        <li>Campanha avança além da Isis com novos arcos e personagens</li>
+        <li>Diálogos com typewriter, transições suaves e checkpoints automáticos</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Dedicated backgrounds: Isis' Temple, Mountain Shrine, shrines and new locations</li>
+        <li>Character portraits with body, focus, mouth and blink — more alive scenes</li>
+        <li>Music per moment — tracks integrated with events and Free Duel</li>
+        <li>Campaign extends beyond Isis with new arcs and characters</li>
+        <li>Typewriter dialogue, smooth transitions and automatic checkpoints</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Grade secundária: 2 colunas -->
+  <div class="features-grid-2" data-reveal>
+
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <div class="feature-title" data-lang="pt">PC e Android</div>
+      <div class="feature-title" data-lang="en">PC &amp; Android</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Builds para Windows, Linux e Android com ajustes específicos por plataforma</li>
+        <li>Compatibilidade com aparelhos mais antigos via renderer GL Compatibility</li>
+        <li>Correções de carregamento de imagens, descrições e controles touch no Android</li>
+        <li>Preservação de progresso entre versões — saves protegidos em builds de atualização</li>
+        <li>Suporte a versão FREE e FOUNDER com ativação offline por arquivo de licença</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Builds for Windows, Linux and Android with platform-specific adjustments</li>
+        <li>Compatibility with older devices via GL Compatibility renderer</li>
+        <li>Fixes for image loading, card descriptions and touch controls on Android</li>
+        <li>Progress preservation across versions — saves protected in update builds</li>
+        <li>FREE and FOUNDER version support with offline activation via license file</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🧩</div>
+      <div class="feature-title" data-lang="pt">Diferenças Diretas do FM Original</div>
+      <div class="feature-title" data-lang="en">Direct Differences from the Original FM</div>
+      <ul class="feature-list" data-lang="pt">
+        <li><strong style="color:var(--ouro)">Mais cartas</strong> — além do acervo original do PS1, com reinterpretações modernas</li>
+        <li><strong style="color:var(--ouro)">Mais efeitos</strong> — monstros, magias e traps com mecânicas que o FM original não tinha</li>
+        <li><strong style="color:var(--ouro)">Mais narrativa</strong> — cenas, diálogos, personagens e ambientação própria</li>
+        <li><strong style="color:var(--ouro)">Mais balanceamento</strong> — drops protegidos, loja com restrições, raridades e rank</li>
+        <li><strong style="color:var(--ouro)">Mais identidade visual</strong> — HUD, backgrounds, avatares e painéis recriados</li>
+        <li><strong style="color:var(--ouro)">Mais qualidade de vida</strong> — velocidade, atalhos, editor completo, suporte mobile</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li><strong style="color:var(--ouro)">More cards</strong> — beyond the original PS1 pool with modern reinterpretations</li>
+        <li><strong style="color:var(--ouro)">More effects</strong> — monsters, spells and traps with mechanics the original never had</li>
+        <li><strong style="color:var(--ouro)">More story</strong> — dedicated scenes, dialogue, characters and atmosphere</li>
+        <li><strong style="color:var(--ouro)">More balance</strong> — protected drops, shop restrictions, rarities and rank</li>
+        <li><strong style="color:var(--ouro)">More visual identity</strong> — HUD, backgrounds, avatars and panels fully recreated</li>
+        <li><strong style="color:var(--ouro)">More quality of life</strong> — speed, shortcuts, full editor, mobile support</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Em Evolução -->
+  <div class="features-evolving" data-reveal>
+    <span data-lang="pt">🛠️ <strong>Em desenvolvimento ativo.</strong> Novas cartas, NPCs, cenas, ajustes de balanceamento, melhorias de controle, correções mobile e refinamentos de campanha continuam chegando. O objetivo não é apagar o Forbidden Memories original, mas construir uma continuação espiritual feita por fã: mais completa, mais viva e mais justa para jogar hoje.</span>
+    <span data-lang="en">🛠️ <strong>In active development.</strong> New cards, NPCs, scenes, balance adjustments, control improvements, mobile fixes and campaign refinements will continue to arrive. The goal is not to erase the original Forbidden Memories, but to build a fan-made spiritual successor: more complete, more alive and fairer to play today.</span>
+  </div>
+
+  <!-- Citação -->
+  <div class="features-quote" data-reveal>
+    <span data-lang="pt">Forbidden Legacy preserva a nostalgia, mas quer crescer como um jogo próprio.</span>
+    <span data-lang="en">Forbidden Legacy preserves the nostalgia, but aims to grow into its own game.</span>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center;margin-top:48px" data-reveal>
+    <a href="/#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-size:15px;letter-spacing:2px;background:rgba(200,144,32,0.1);border:2px solid var(--ouro);color:var(--ouro-brt);border-radius:2px;text-decoration:none;text-transform:uppercase;transition:all .25s;box-shadow:0 0 24px rgba(200,144,32,0.15)">
+      <span>⬇</span>
+      <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.2</span>
+      <span data-lang="en">DOWNLOAD FREE — Beta 1.2</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="footer-logo">FORBIDDEN LEGACY</div>
+  <div class="footer-links">
+    <a href="/" data-lang="pt">Início</a><a href="/" data-lang="en">Home</a>
+    <a href="/#sobre" data-lang="pt">O Jogo</a><a href="/#sobre" data-lang="en">The Game</a>
+    <a href="/#galeria" data-lang="pt">Galeria</a><a href="/#galeria" data-lang="en">Gallery</a>
+    <a href="/#download">Download</a>
+    <a href="/#novidades" data-lang="pt">Novidades</a><a href="/#novidades" data-lang="en">Updates</a>
+    <a href="/#comprar" data-lang="pt">Founder</a><a href="/#comprar" data-lang="en">Founder</a>
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+    <a href="https://www.youtube.com/@tragergames" target="_blank" style="color:#C00000">▶ YouTube</a>
+  </div>
+  <div>
+    <span data-lang="pt">Fan-made · Não afiliado à Konami · Desenvolvido por </span>
+    <span data-lang="en">Fan-made · Not affiliated with Konami · Developed by </span>
+    <a href="https://www.youtube.com/@tragergames" target="_blank">TragerGames</a>
+  </div>
+  <p data-lang="pt">Dúvidas? Entre em contato pelo <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
+  <p data-lang="en">Questions? Reach us on <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
+</footer>
+
+<!-- ══════════════════ BANNER LGPD / COOKIES ══════════════════ -->
+<div id="cookie-banner" style="
+  display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999;
+  background:rgba(10,4,0,0.97); border-top:1px solid #c8940a;
+  padding:14px 24px; align-items:center; justify-content:space-between;
+  gap:16px; flex-wrap:wrap; font-size:13px; color:#a08050;
+  backdrop-filter:blur(6px);">
+  <span data-lang="pt">🍪 Este site armazena preferências no seu navegador (idioma, formulário) e realiza chamadas externas para Discord e processamento de doações. Ao continuar, você concorda. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Saiba mais</a></span>
+  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Learn more</a></span>
+  <button onclick="cookieAceitar()" style="background:rgba(200,144,32,0.15);border:1px solid #c8940a;color:#f0d080;padding:7px 20px;border-radius:3px;cursor:pointer;font-size:13px;font-family:monospace;white-space:nowrap;flex-shrink:0">
+    <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span>
+  </button>
+</div>
+
+<div id="cookie-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.88);align-items:center;justify-content:center;padding:20px">
+  <div style="background:#0d0804;border:1px solid #c8940a;border-radius:6px;padding:32px;max-width:500px;width:100%;position:relative">
+    <button onclick="document.getElementById('cookie-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#a08050;font-size:18px;cursor:pointer">✕</button>
+    <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="pt">O que este site armazena</h3>
+    <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3>
+    <ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="pt">
+      <li><strong style="color:#f0d080">fl_lang</strong> — preferência de idioma (PT/EN)</li>
+      <li><strong style="color:#f0d080">fl_form_v1</strong> — campos do formulário de compra</li>
+      <li><strong style="color:#f0d080">fl_cookie_ok</strong> — registro de aceite deste aviso</li>
+      <li><strong style="color:#f0d080">APIs externas</strong> — Discord (contador) e api.country.is (país)</li>
+      <li><strong style="color:#f0d080">Pagamentos</strong> — Efí Bank (PIX) e Stripe processam dados em seus próprios servidores</li>
+    </ul>
+    <ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="en">
+      <li><strong style="color:#f0d080">fl_lang</strong> — language preference (PT/EN)</li>
+      <li><strong style="color:#f0d080">fl_form_v1</strong> — purchase form fields</li>
+      <li><strong style="color:#f0d080">fl_cookie_ok</strong> — acceptance record</li>
+      <li><strong style="color:#f0d080">External APIs</strong> — Discord (counter) and api.country.is (country)</li>
+      <li><strong style="color:#f0d080">Payments</strong> — Efí Bank (PIX) and Stripe process data on their own servers</li>
+    </ul>
+    <p style="color:#706040;font-size:12px;margin:0" data-lang="pt">Nenhum dado é vendido ou compartilhado com terceiros além dos processadores citados.</p>
+    <p style="color:#706040;font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p>
+  </div>
+</div>
+
+<script>
+// ── Idioma ────────────────────────────────────────────────────────────────────
+function setLang(lang, saveToStorage=true) {
+  document.body.classList.toggle('en', lang === 'en');
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]');
+  if (btn) btn.classList.add('active');
+  if (saveToStorage) localStorage.setItem('fl_lang', lang);
+}
+window.setLang = setLang;
+
+(function() {
+  const saved = localStorage.getItem('fl_lang');
+  if (saved) { setLang(saved, false); return; }
+  fetch('https://api.country.is/')
+    .then(r => r.json())
+    .then(d => { if (d.country && d.country !== 'BR') setLang('en', false); })
+    .catch(() => {});
+})();
+
+// ── Scroll reveal ─────────────────────────────────────────────────────────────
+(function() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+    el.setAttribute('data-reveal', '');
+    el.style.transitionDelay = (i * 0.1) + 's';
+    io.observe(el);
+  });
+})();
+
+// ── Cookie / LGPD ─────────────────────────────────────────────────────────────
+(function() {
+  if (!localStorage.getItem('fl_cookie_ok')) {
+    const b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'flex';
+  }
+})();
+function cookieAceitar() {
+  localStorage.setItem('fl_cookie_ok', '1');
+  const b = document.getElementById('cookie-banner');
+  if (b) b.style.display = 'none';
+}
+function cookiePolitica(e) {
+  e.preventDefault();
+  const m = document.getElementById('cookie-modal');
+  if (m) m.style.display = 'flex';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const m = document.getElementById('cookie-modal');
+    if (m) m.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>
