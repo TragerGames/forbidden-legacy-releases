@@ -134,30 +134,42 @@
   .discord-nav-badge:hover { background:rgba(88,101,242,0.18); color:#99aaf5; }
   .discord-nav-badge .dc-dot { width:6px; height:6px; }
 
-  /* ── HAMBURGER ── */
-  .hamburger { display:none; background:none; border:1px solid var(--ouro-esc); border-radius:3px; color:var(--ouro); font-size:18px; padding:4px 10px; cursor:pointer; line-height:1; }
-  .mobile-menu {
-    display:none; position:fixed; top:52px; left:0; right:0; z-index:199;
-    background:rgba(5,3,1,0.98); border-bottom:1px solid #1a1206;
-    backdrop-filter:blur(8px); flex-direction:column; padding:8px 0 12px;
+  /* ── MOBILE NAV BAR ── */
+  .mobile-nav-bar {
+    display: none;
+    position: fixed; top: 52px; left: 0; right: 0; z-index: 198;
+    background: rgba(5,3,1,0.97); border-bottom: 1px solid #1a1206;
+    backdrop-filter: blur(8px); flex-direction: column;
   }
-  .mobile-menu.open { display:flex; }
-  .mobile-menu a {
-    font-size:13px; letter-spacing:1.5px; text-transform:uppercase;
-    color:var(--texto-dim); text-decoration:none;
-    padding:12px 24px; transition:color .2s;
-    border-bottom:1px solid rgba(255,255,255,0.04);
+  .mobile-discord-bar {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 5px 16px; background: rgba(88,101,242,0.07);
+    border-bottom: 1px solid rgba(88,101,242,0.15);
+    font-size: 11px; color: #7289da; text-decoration: none;
+    letter-spacing: .3px;
   }
-  .mobile-menu a:hover { color:var(--ouro); }
-  .mobile-menu a.nav-cta { color:var(--ouro-brt); margin-top:4px; }
-  .mobile-discord {
-    display:flex; align-items:center; gap:8px; padding:10px 24px;
-    font-size:12px; color:#7289da; text-decoration:none;
-    border-bottom:1px solid rgba(255,255,255,0.04);
+  .mobile-discord-bar .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+  .mobile-discord-bar .dc-dot.online  { background:#3ba55c; }
+  .mobile-discord-bar .dc-dot.offline { background:#747f8d; }
+  .mobile-nav-links {
+    display: flex; overflow-x: auto; gap: 0;
+    scrollbar-width: none; -ms-overflow-style: none;
   }
+  .mobile-nav-links::-webkit-scrollbar { display: none; }
+  .mobile-nav-links a {
+    flex-shrink: 0; padding: 10px 16px;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--texto-dim); text-decoration: none;
+    border-right: 1px solid #1a1206; white-space: nowrap;
+    transition: color .2s, background .2s;
+  }
+  .mobile-nav-links a:hover, .mobile-nav-links a:active { color: var(--ouro); background: rgba(200,144,32,0.06); }
+  .mobile-nav-links a.nav-cta { color: var(--ouro-brt); background: rgba(200,144,32,0.05); }
+
   @media(max-width:700px){
-    .hamburger { display:block; }
-    .discord-nav-badge { display:none !important; }
+    .mobile-nav-bar { display: flex; }
+    .discord-nav-badge { display: none !important; }
+    .hero { padding-top: 96px; }
   }
 
   /* ── HERO ── */
@@ -840,27 +852,30 @@
     <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="discord-nav-badge" id="discord-nav-badge"><span class="dc-dot online"></span><span id="discord-online-nav">—</span> online <span style="opacity:.4;margin:0 3px">·</span><span class="dc-dot offline"></span><span id="discord-total-nav">—</span> members</a>
     <button class="lang-btn active" onclick="setLang('pt')">PT</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
-    <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
   </div>
 </header>
 
-<!-- ══════════════════ MOBILE MENU ══════════════════ -->
-<nav class="mobile-menu" id="mobile-menu">
-  <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="mobile-discord">
-    <span class="dc-dot online"></span><span id="discord-online-mob">—</span> online &nbsp;·&nbsp; <span class="dc-dot offline"></span><span id="discord-total-mob">—</span> members &nbsp;— Discord
+<!-- ══════════════════ MOBILE NAV BAR ══════════════════ -->
+<div class="mobile-nav-bar">
+  <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="mobile-discord-bar">
+    <span class="dc-dot online"></span><span id="discord-online-mob">—</span>&nbsp;online
+    <span style="opacity:.4;margin:0 4px">·</span>
+    <span class="dc-dot offline"></span><span id="discord-total-mob">—</span>&nbsp;members — Discord ↗
   </a>
-  <a href="#sobre" onclick="closeMobileMenu()" data-lang="pt">O Jogo</a>
-  <a href="#sobre" onclick="closeMobileMenu()" data-lang="en" style="display:none">The Game</a>
-  <a href="#galeria" onclick="closeMobileMenu()" data-lang="pt">Galeria</a>
-  <a href="#galeria" onclick="closeMobileMenu()" data-lang="en" style="display:none">Gallery</a>
-  <a href="features.html" data-lang="pt">Mecânicas</a>
-  <a href="features.html" data-lang="en" style="display:none">Features</a>
-  <a href="banlist.html">Banlist</a>
-  <a href="#download" onclick="closeMobileMenu()">Download</a>
-  <a href="#novidades" onclick="closeMobileMenu()" data-lang="pt">Novidades</a>
-  <a href="#novidades" onclick="closeMobileMenu()" data-lang="en" style="display:none">Updates</a>
-  <a href="#comprar" onclick="closeMobileMenu()" class="nav-cta">☥ Founder</a>
-</nav>
+  <div class="mobile-nav-links">
+    <a href="#sobre" data-lang="pt">O Jogo</a>
+    <a href="#sobre" data-lang="en" style="display:none">The Game</a>
+    <a href="#galeria" data-lang="pt">Galeria</a>
+    <a href="#galeria" data-lang="en" style="display:none">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a>
+    <a href="features.html" data-lang="en" style="display:none">Features</a>
+    <a href="banlist.html">Banlist</a>
+    <a href="#download">Download</a>
+    <a href="#novidades" data-lang="pt">Novidades</a>
+    <a href="#novidades" data-lang="en" style="display:none">Updates</a>
+    <a href="#comprar" class="nav-cta">☥ Founder</a>
+  </div>
+</div>
 
 <!-- ══════════════════ STRIPE SUCCESS BANNER ══════════════════ -->
 <div class="stripe-success-banner" id="stripe-success-banner">
@@ -1936,18 +1951,6 @@ function paypalConfirmar() {
     btn.textContent = '✓  I PAID — SEND MY LICENSE KEY';
     alert('Connection error. Please try again.');
   });
-}
-
-// ── MOBILE MENU ──
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobile-menu');
-  const btn  = document.getElementById('hamburger-btn');
-  const open = menu.classList.toggle('open');
-  btn.textContent = open ? '✕' : '☰';
-}
-function closeMobileMenu() {
-  document.getElementById('mobile-menu').classList.remove('open');
-  document.getElementById('hamburger-btn').textContent = '☰';
 }
 
 function setLang(lang, saveToStorage=true) {
