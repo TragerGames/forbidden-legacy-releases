@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Backend PHP com credenciais — nunca subir no repo público
+Tools/hostinger_backend/
+
+# Arquivos gerados / temporários do site
+Tools/itch_cover*.png
+Tools/gen_cover.py
+Tools/*.py
