@@ -941,78 +941,151 @@
     <p class="section-label">☥ <span data-lang="pt">Screenshots</span><span data-lang="en">Screenshots</span></p>
     <h2 class="section-title" data-lang="pt">O jogo em ação</h2>
     <h2 class="section-title" data-lang="en">The game in action</h2>
+    <!-- Grade principal -->
     <div class="gallery-grid">
 
-      <!-- Destaque: menu principal (2 linhas) -->
-      <div class="gallery-item featured" onclick="openLb('screenshots/menu.png')">
-        <img src="screenshots/menu.png" alt="Menu Principal" loading="lazy">
-        <div class="placeholder-txt"><span>🏛️</span><span data-lang="pt">Menu Principal</span><span data-lang="en">Main Menu</span></div>
-        <div class="gallery-caption" data-lang="pt">Menu Principal</div>
+      <!-- Destaque: menu inicial (2 linhas) -->
+      <div class="gallery-item featured" onclick="openLbLang(this)">
+        <img src="screenshots/pt/menu-inicial.png" data-src-pt="screenshots/pt/menu-inicial.png" data-src-en="screenshots/en/menu-inicial.png" alt="Menu Inicial" loading="lazy">
+        <div class="placeholder-txt"><span>🏛️</span><span data-lang="pt">Menu Inicial</span><span data-lang="en">Main Menu</span></div>
+        <div class="gallery-caption" data-lang="pt">Menu Inicial</div>
         <div class="gallery-caption" data-lang="en">Main Menu</div>
       </div>
 
       <!-- Editor de Deck -->
-      <div class="gallery-item" onclick="openLb('screenshots/deck-editor.png')">
-        <img src="screenshots/deck-editor.png" alt="Editor de Deck" loading="lazy">
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/editor-deck.png" data-src-pt="screenshots/pt/editor-deck.png" data-src-en="screenshots/en/editor-deck.png" alt="Editor de Deck" loading="lazy">
         <div class="placeholder-txt"><span>🃏</span><span data-lang="pt">Editor de Deck</span><span data-lang="en">Deck Editor</span></div>
         <div class="gallery-caption" data-lang="pt">Editor de Deck</div>
         <div class="gallery-caption" data-lang="en">Deck Editor</div>
       </div>
 
       <!-- Card Shop -->
-      <div class="gallery-item" onclick="openLb('screenshots/card-shop.png')">
-        <img src="screenshots/card-shop.png" alt="Card Shop" loading="lazy">
-        <div class="placeholder-txt"><span>🛒</span><span>Card Shop</span></div>
-        <div class="gallery-caption">Card Shop</div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/card-shop.png" data-src-pt="screenshots/pt/card-shop.png" data-src-en="screenshots/en/card-shop.png" alt="Card Shop" loading="lazy">
+        <div class="placeholder-txt"><span>🛒</span><span data-lang="pt">Loja de Cartas</span><span data-lang="en">Card Shop</span></div>
+        <div class="gallery-caption" data-lang="pt">Loja de Cartas</div>
+        <div class="gallery-caption" data-lang="en">Card Shop</div>
+      </div>
+
+      <!-- Gerenciar Decks -->
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/gerenciar-decks.png" data-src-pt="screenshots/pt/gerenciar-decks.png" data-src-en="screenshots/en/gerenciar-decks.png" alt="Gerenciar Decks" loading="lazy">
+        <div class="placeholder-txt"><span>📦</span><span data-lang="pt">Gerenciar Decks</span><span data-lang="en">Manage Decks</span></div>
+        <div class="gallery-caption" data-lang="pt">Gerenciar Decks</div>
+        <div class="gallery-caption" data-lang="en">Manage Decks</div>
       </div>
 
       <!-- Free Duel -->
-      <div class="gallery-item" onclick="openLb('screenshots/free-duel.png')">
-        <img src="screenshots/free-duel.png" alt="Free Duel" loading="lazy">
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/free-duel.png" data-src-pt="screenshots/pt/free-duel.png" data-src-en="screenshots/en/free-duel.png" alt="Free Duel" loading="lazy">
         <div class="placeholder-txt"><span>⚔️</span><span data-lang="pt">Duelo Livre</span><span data-lang="en">Free Duel</span></div>
         <div class="gallery-caption" data-lang="pt">Duelo Livre</div>
         <div class="gallery-caption" data-lang="en">Free Duel</div>
       </div>
 
-      <!-- Tela do Duelista -->
-      <div class="gallery-item" onclick="openLb('screenshots/duelist.png')">
-        <img src="screenshots/duelist.png" alt="Tela do Duelista" loading="lazy">
-        <div class="placeholder-txt"><span>👤</span><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span></div>
+    </div>
+
+    <!-- Grade: menus e configurações -->
+    <div class="gallery-sub-label">
+      <span data-lang="pt">🗂 Menus</span>
+      <span data-lang="en">🗂 Menus</span>
+    </div>
+    <div class="gallery-grid-duel">
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/tela-nome.png" data-src-pt="screenshots/pt/tela-nome.png" data-src-en="screenshots/en/tela-nome.png" alt="Inserir Nome" loading="lazy">
+        <div class="placeholder-txt"><span>✏️</span><span data-lang="pt">Inserir Nome</span><span data-lang="en">Enter Name</span></div>
+        <div class="gallery-caption" data-lang="pt">Inserir Nome</div>
+        <div class="gallery-caption" data-lang="en">Enter Name</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/selecao-deck.png" data-src-pt="screenshots/pt/selecao-deck.png" data-src-en="screenshots/en/selecao-deck.png" alt="Seleção de Deck" loading="lazy">
+        <div class="placeholder-txt"><span>🃏</span><span data-lang="pt">Seleção de Deck</span><span data-lang="en">Deck Selection</span></div>
+        <div class="gallery-caption" data-lang="pt">Seleção de Deck</div>
+        <div class="gallery-caption" data-lang="en">Deck Selection</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/tela-opcoes.png" data-src-pt="screenshots/pt/tela-opcoes.png" data-src-en="screenshots/en/tela-opcoes.png" alt="Opções" loading="lazy">
+        <div class="placeholder-txt"><span>⚙️</span><span data-lang="pt">Opções</span><span data-lang="en">Options</span></div>
+        <div class="gallery-caption" data-lang="pt">Opções</div>
+        <div class="gallery-caption" data-lang="en">Options</div>
+      </div>
+
+    </div>
+
+    <!-- Grade: campanha -->
+    <div class="gallery-sub-label">
+      <span data-lang="pt">🏺 Campanha</span>
+      <span data-lang="en">🏺 Campaign</span>
+    </div>
+    <div class="gallery-grid-duel">
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/tela-npc1.png" data-src-pt="screenshots/pt/tela-npc1.png" data-src-en="screenshots/en/tela-npc1.png" alt="Campanha" loading="lazy">
+        <div class="placeholder-txt"><span>🏺</span><span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span></div>
+        <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
+        <div class="gallery-caption" data-lang="en">Campaign Mode</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/tela-npc2.png" data-src-pt="screenshots/pt/tela-npc2.png" data-src-en="screenshots/en/tela-npc2.png" alt="Campanha" loading="lazy">
+        <div class="placeholder-txt"><span>🏺</span><span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span></div>
+        <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
+        <div class="gallery-caption" data-lang="en">Campaign Mode</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/tela-npc3.png" data-src-pt="screenshots/pt/tela-npc3.png" data-src-en="screenshots/en/tela-npc3.png" alt="Campanha" loading="lazy">
+        <div class="placeholder-txt"><span>🏺</span><span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span></div>
+        <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
+        <div class="gallery-caption" data-lang="en">Campaign Mode</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/tela-bio.png" data-src-pt="screenshots/pt/tela-bio.png" data-src-en="screenshots/en/tela-bio.png" alt="Perfil do Duelista" loading="lazy">
+        <div class="placeholder-txt"><span>👤</span><span data-lang="pt">Perfil do Duelista</span><span data-lang="en">Duelist Profile</span></div>
         <div class="gallery-caption" data-lang="pt">Perfil do Duelista</div>
         <div class="gallery-caption" data-lang="en">Duelist Profile</div>
       </div>
 
     </div>
 
-    <!-- Segunda grade: telas de duelo -->
+    <!-- Grade: duelo -->
     <div class="gallery-sub-label">
       <span data-lang="pt">⚔ Duelo</span>
       <span data-lang="en">⚔ Duel</span>
     </div>
     <div class="gallery-grid-duel">
 
-      <!-- Arena dourada -->
-      <div class="gallery-item" onclick="openLb('screenshots/duel-arena.png')">
-        <img src="screenshots/duel-arena.png" alt="Arena de Duelo" loading="lazy">
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/arena-duel1.png" data-src-pt="screenshots/pt/arena-duel1.png" data-src-en="screenshots/en/arena-duel1.png" alt="Arena de Duelo" loading="lazy">
         <div class="placeholder-txt"><span>⚔️</span><span data-lang="pt">Arena de Duelo</span><span data-lang="en">Duel Arena</span></div>
-        <div class="gallery-caption" data-lang="pt">Arena — Ra em mão</div>
-        <div class="gallery-caption" data-lang="en">Arena — Ra in hand</div>
+        <div class="gallery-caption" data-lang="pt">Arena de Duelo</div>
+        <div class="gallery-caption" data-lang="en">Duel Arena</div>
       </div>
 
-      <!-- Resultado do duelo -->
-      <div class="gallery-item" onclick="openLb('screenshots/duel-result.png')">
-        <img src="screenshots/duel-result.png" alt="Resultado do Duelo" loading="lazy">
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/arena-duelo2.png" data-src-pt="screenshots/pt/arena-duelo2.png" data-src-en="screenshots/en/arena-duelo2.png" alt="Arena de Duelo" loading="lazy">
+        <div class="placeholder-txt"><span>⚔️</span><span data-lang="pt">Arena de Duelo</span><span data-lang="en">Duel Arena</span></div>
+        <div class="gallery-caption" data-lang="pt">Arena de Duelo</div>
+        <div class="gallery-caption" data-lang="en">Duel Arena</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/opcoes-duelo.png" data-src-pt="screenshots/pt/opcoes-duelo.png" data-src-en="screenshots/en/opcoes-duelo.png" alt="Opções no Duelo" loading="lazy">
+        <div class="placeholder-txt"><span>⚙️</span><span data-lang="pt">Opções no Duelo</span><span data-lang="en">In-Duel Options</span></div>
+        <div class="gallery-caption" data-lang="pt">Opções no Duelo</div>
+        <div class="gallery-caption" data-lang="en">In-Duel Options</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/pt/tela-resultado.png" data-src-pt="screenshots/pt/tela-resultado.png" data-src-en="screenshots/en/tela-resultado.png" alt="Resultado do Duelo" loading="lazy">
         <div class="placeholder-txt"><span>🏆</span><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></div>
         <div class="gallery-caption" data-lang="pt">Resultado do Duelo</div>
         <div class="gallery-caption" data-lang="en">Duel Result</div>
-      </div>
-
-      <!-- Arena com Yami -->
-      <div class="gallery-item" onclick="openLb('screenshots/duel-yami.png')">
-        <img src="screenshots/duel-yami.png" alt="Campo Yami" loading="lazy">
-        <div class="placeholder-txt"><span>🌑</span><span data-lang="pt">Campo Yami</span><span data-lang="en">Yami Field</span></div>
-        <div class="gallery-caption" data-lang="pt">Campo Mágico — Yami</div>
-        <div class="gallery-caption" data-lang="en">Magic Field — Yami</div>
       </div>
 
     </div>
@@ -2017,8 +2090,18 @@ function setLang(lang, saveToStorage=true) {
   const inactive = lang === 'en' ? 'pt' : 'en';
   document.querySelectorAll('[data-lang="' + lang + '"]').forEach(el => el.removeAttribute('aria-hidden'));
   document.querySelectorAll('[data-lang="' + inactive + '"]').forEach(el => el.setAttribute('aria-hidden', 'true'));
+  // Troca screenshots bilíngues
+  document.querySelectorAll('img[data-src-pt][data-src-en]').forEach(img => {
+    img.src = lang === 'en' ? img.dataset.srcEn : img.dataset.srcPt;
+  });
 }
 window.setLang = setLang;
+
+function openLbLang(item) {
+  const img = item.querySelector('img');
+  openLb(img ? img.src : '');
+}
+window.openLbLang = openLbLang;
 
 // ── País detectado via IP (controla opções de pagamento, independente do idioma) ──
 window._flIsBR = true; // padrão Brasil até detecção completar
