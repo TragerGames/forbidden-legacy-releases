@@ -1710,7 +1710,7 @@ function ytPlay(card, videoId) {
     <div class="input-group">
       <label data-lang="pt">CÓDIGO DO JOGADOR (exibido em Opções → Ativação)</label>
       <label data-lang="en">PLAYER CODE (shown in Options → Activation)</label>
-      <input id="input-codigo" type="text" placeholder="FL-PLAYER-XXXXXXXX" autocomplete="off">
+      <input id="input-codigo" type="text" placeholder="FL-PLAYERPC-XXXX-XXXX-XXXX" autocomplete="off">
     </div>
     <div class="input-group">
       <label data-lang="pt">SEU EMAIL (para receber a licença)</label>
@@ -1974,10 +1974,10 @@ async function stripePagar(currency) {
     alert(isEN ? 'Please enter your Player Code.' : 'Informe seu Código do Jogador.');
     document.getElementById('input-codigo')?.focus(); return;
   }
-  if (!/^FL-PLAYER-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}$/i.test(codigo)) {
+  if (!/^FL-PLAYER(?:PC|AND|MAC|LNX)?(?:-[0-9A-F]{4}){3,4}$/i.test(codigo)) {
     alert(isEN
-      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation).\nFormat: FL-PLAYER-XXXX-XXXX-XXXX-XXXX'
-      : 'Código inválido. Copie diretamente do jogo (Opções → Ativação).\nFormato: FL-PLAYER-XXXX-XXXX-XXXX-XXXX');
+      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation).\nEx: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) or FL-PLAYERAND-XXXX-XXXX-XXXX (Android)'
+      : 'Código inválido. Copie diretamente do jogo (Opções → Ativação).\nEx: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) ou FL-PLAYERAND-XXXX-XXXX-XXXX (Android)');
     document.getElementById('input-codigo')?.focus(); return;
   }
   if (!email || !email.includes('@')) {
@@ -2120,10 +2120,10 @@ function abrirModalPagamento() {
     alert(isEN ? 'Please enter your Player Code.' : 'Informe seu Código do Jogador.');
     document.getElementById('input-codigo')?.focus(); return;
   }
-  if (!/^FL-PLAYER-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}$/i.test(codigo)) {
+  if (!/^FL-PLAYER(?:PC|AND|MAC|LNX)?(?:-[0-9A-F]{4}){3,4}$/i.test(codigo)) {
     alert(isEN
-      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation).\nFormat: FL-PLAYER-XXXX-XXXX-XXXX-XXXX'
-      : 'Código inválido. Copie diretamente do jogo (Opções → Ativação).\nFormato: FL-PLAYER-XXXX-XXXX-XXXX-XXXX');
+      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation).\nEx: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) or FL-PLAYERAND-XXXX-XXXX-XXXX (Android)'
+      : 'Código inválido. Copie diretamente do jogo (Opções → Ativação).\nEx: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) ou FL-PLAYERAND-XXXX-XXXX-XXXX (Android)');
     document.getElementById('input-codigo')?.focus(); return;
   }
   if (!email || !email.includes('@')) {
@@ -2283,10 +2283,10 @@ async function pixPagar() {
     document.getElementById('input-codigo').focus();
     return;
   }
-  if (!/^FL-PLAYER-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}$/i.test(codigo.trim())) {
+  if (!/^FL-PLAYER(?:PC|AND|MAC|LNX)?(?:-[0-9A-F]{4}){3,4}$/i.test(codigo.trim())) {
     alert(isEn
-      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation). Format: FL-PLAYER-XXXX-XXXX-XXXX-XXXX'
-      : 'Código do Jogador inválido. Copie-o diretamente do jogo (Opções → Ativação). Formato: FL-PLAYER-XXXX-XXXX-XXXX-XXXX');
+      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation). Ex: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) or FL-PLAYERAND-XXXX-XXXX-XXXX (Android)'
+      : 'Código do Jogador inválido. Copie-o diretamente do jogo (Opções → Ativação). Ex: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) ou FL-PLAYERAND-XXXX-XXXX-XXXX (Android)');
     document.getElementById('input-codigo').focus();
     return;
   }
