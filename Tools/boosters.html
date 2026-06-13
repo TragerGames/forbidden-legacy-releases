@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Booster Packs</title>
+<meta name="description" content="Entenda como funcionam os Booster Packs do Forbidden Legacy — 10 cartas por pack, pools temáticos, garantias de SR/UR e o ciclo de fragmentos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/boosters.html">
+<meta property="og:title" content="Forbidden Legacy — Booster Packs">
+<meta property="og:description" content="Abra boosters temáticos, acumule fragmentos e expanda sua coleção. Tudo sobre o sistema de Booster Packs do Forbidden Legacy.">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/boosters.html">
+<link rel="icon" type="image/png" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<style>
+:root {
+  --ouro:      #C89020;
+  --ouro-brt:  #E8B830;
+  --ouro-esc:  #8A6010;
+  --fundo:     #050301;
+  --painel:    #0D0804;
+  --painel2:   #130C05;
+  --texto:     #D4C49A;
+  --texto-dim: #7A6A48;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto); min-height:100vh; }
+
+/* ── NAV ── */
+.topbar {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  background:rgba(5,3,1,0.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid #1a1206;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; height:52px;
+}
+.topbar-logo { font-size:14px; font-weight:900; letter-spacing:3px; color:var(--ouro); text-decoration:none; }
+.topbar-nav { display:flex; gap:4px; align-items:center; }
+.topbar-nav a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--texto-dim); text-decoration:none; padding:6px 12px; border-radius:2px; transition:color .2s; }
+.topbar-nav a:hover { color:var(--ouro); }
+.topbar-nav a.active { color:var(--ouro-brt); }
+.topbar-nav .nav-cta { color:var(--ouro-brt); border:1px solid var(--ouro-esc); margin-left:8px; }
+.topbar-nav .nav-cta:hover { background:rgba(200,144,32,0.1); border-color:var(--ouro); }
+.topbar-right { display:flex; gap:8px; align-items:center; }
+.lang-btn { background:transparent; border:1px solid var(--ouro-esc); color:var(--texto-dim); padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px; transition:all .2s; }
+.lang-btn.active { border-color:var(--ouro); color:var(--ouro); }
+
+/* ── HERO DA PÁGINA ── */
+.page-hero {
+  padding: 120px 20px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--ouro-esc);
+  background:
+    linear-gradient(to bottom, rgba(5,3,1,0) 40%, #050301 100%),
+    radial-gradient(ellipse at 50% 30%, rgba(200,144,32,0.10) 0%, transparent 70%);
+}
+.page-hero-label { font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:16px; }
+.page-hero-title {
+  font-size: clamp(32px, 6vw, 60px); font-weight:900; letter-spacing:-1px;
+  background: linear-gradient(135deg, var(--ouro-esc) 0%, var(--ouro-brt) 50%, var(--ouro) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  margin-bottom:8px;
+}
+.page-hero-sub { font-size:13px; letter-spacing:3px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:24px; }
+.page-hero-desc { max-width:620px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--texto-dim); }
+
+/* ── CONTEÚDO ── */
+.page-content { max-width:1100px; margin:0 auto; padding:72px 20px 80px; }
+.section-label { text-align:center; font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:12px; }
+.section-title { text-align:center; font-size:28px; font-weight:700; color:var(--ouro-brt); margin-bottom:40px; }
+
+/* ── FEATURE CARDS ── */
+.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:20px; }
+.features-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.feature-card {
+  background:var(--painel2); border:1px solid #1a1206;
+  border-radius:4px; padding:26px 22px;
+  transition:border-color .25s; position:relative; overflow:hidden;
+}
+.feature-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--ouro-esc), transparent);
+}
+.feature-card:hover { border-color:var(--ouro-esc); }
+.feature-icon { font-size:24px; margin-bottom:12px; }
+.feature-title { font-size:14px; font-weight:700; color:var(--ouro-brt); margin-bottom:14px; letter-spacing:.5px; }
+.feature-list { list-style:none; }
+.feature-list li { font-size:13px; color:var(--texto-dim); line-height:1.7; padding:2px 0; }
+.feature-list li::before { content:'▸ '; color:var(--ouro-esc); }
+
+/* ── TABELA DE RARIDADE ── */
+.rarity-table { width:100%; border-collapse:collapse; margin-top:10px; }
+.rarity-table th {
+  font-size:11px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--ouro-esc); text-align:left; padding:6px 8px;
+  border-bottom:1px solid #2a1a06;
+}
+.rarity-table td { font-size:13px; color:var(--texto-dim); padding:7px 8px; border-bottom:1px solid #1a1206; }
+.rarity-table tr:last-child td { border-bottom:none; }
+.badge-n  { color:#999; font-weight:700; }
+.badge-r  { color:#5bb5ff; font-weight:700; }
+.badge-sr { color:#c8a0ff; font-weight:700; }
+.badge-ur { color:#ffcc30; font-weight:700; }
+
+/* ── CICLO DE FRAGMENTOS ── */
+.cycle-banner {
+  background:rgba(200,144,32,0.07); border:1px solid var(--ouro-esc);
+  border-radius:4px; padding:28px 32px; margin-top:20px; text-align:center;
+}
+.cycle-steps {
+  display:flex; align-items:center; justify-content:center;
+  gap:12px; flex-wrap:wrap; margin-top:16px;
+}
+.cycle-step {
+  background:var(--painel); border:1px solid #2a1a06; border-radius:4px;
+  padding:12px 20px; font-size:13px; color:var(--texto-dim);
+}
+.cycle-arrow { color:var(--ouro-esc); font-size:18px; }
+
+/* ── EM EVOLUÇÃO ── */
+.features-evolving {
+  background:rgba(200,144,32,0.05); border:1px solid var(--ouro-esc);
+  border-radius:4px; padding:22px 26px; margin-top:32px;
+  color:var(--texto-dim); font-size:14px; line-height:1.8;
+}
+.features-evolving strong { color:var(--ouro-brt); }
+
+/* ── NOTA DE AVISO ── */
+.notice-box {
+  background:rgba(255,60,0,0.05); border:1px solid #5a2010;
+  border-radius:4px; padding:14px 18px; margin-top:12px;
+  font-size:13px; color:#c08060; line-height:1.6;
+}
+
+/* ── FOOTER ── */
+footer { border-top:1px solid #1a1206; padding:40px 20px; text-align:center; color:var(--texto-dim); font-size:13px; }
+footer a { color:var(--ouro-esc); text-decoration:none; }
+footer a:hover { color:var(--ouro); }
+.footer-logo { font-size:20px; font-weight:900; color:var(--ouro); letter-spacing:2px; margin-bottom:12px; }
+.footer-links { display:flex; gap:20px; justify-content:center; margin-bottom:14px; flex-wrap:wrap; }
+.footer-links a { font-size:12px; letter-spacing:1px; text-transform:uppercase; }
+footer p { opacity:.5; font-size:12px; margin-top:8px; }
+
+/* ── LANG ── */
+[data-lang="en"] { display:none !important; }
+span[data-lang="en"] { display:none !important; }
+body.en [data-lang="pt"] { display:none !important; }
+body.en span[data-lang="pt"] { display:none !important; }
+body.en [data-lang="en"] { display:block !important; }
+body.en span[data-lang="en"] { display:inline !important; }
+body.en li[data-lang="en"] { display:flex !important; }
+body.en td[data-lang="en"] { display:table-cell !important; }
+body.en td[data-lang="pt"] { display:none !important; }
+body.en th[data-lang="en"] { display:table-cell !important; }
+body.en th[data-lang="pt"] { display:none !important; }
+body.en .cycle-step[data-lang="en"] { display:block !important; }
+body.en .cycle-step[data-lang="pt"] { display:none !important; }
+
+/* ── SCROLL REVEAL ── */
+[data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+[data-reveal].revealed { opacity:1; transform:translateY(0); }
+
+@media(max-width:700px) {
+  .topbar-nav { display:none; }
+  .features-grid { grid-template-columns:1fr; }
+  .features-grid-2 { grid-template-columns:1fr; }
+  .cycle-steps { flex-direction:column; gap:8px; }
+  .cycle-arrow { transform:rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ TOPBAR ══════════════════ -->
+<header class="topbar">
+  <a href="/" class="topbar-logo">☥ FL</a>
+  <nav class="topbar-nav">
+    <a href="/#sobre" data-lang="pt">O Jogo</a>
+    <a href="/#sobre" data-lang="en">The Game</a>
+    <a href="/#galeria" data-lang="pt">Galeria</a>
+    <a href="/#galeria" data-lang="en">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a>
+    <a href="features.html" data-lang="en">Features</a>
+    <a href="boosters.html" class="active" data-lang="pt">Boosters</a>
+    <a href="boosters.html" class="active" data-lang="en">Boosters</a>
+    <a href="/#download">Download</a>
+    <a href="/#novidades" data-lang="pt">Novidades</a>
+    <a href="/#novidades" data-lang="en">Updates</a>
+    <a href="/#comprar" class="nav-cta" data-lang="pt">☥ Founder</a>
+    <a href="/#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<div class="page-hero">
+  <div class="page-hero-label">☥ Beta 1.4</div>
+  <h1 class="page-hero-title" data-lang="pt">Booster Packs</h1>
+  <h1 class="page-hero-title" data-lang="en">Booster Packs</h1>
+  <div class="page-hero-sub" data-lang="pt">Expanda sua coleção com pools temáticos</div>
+  <div class="page-hero-sub" data-lang="en">Expand your collection with themed pools</div>
+  <p class="page-hero-desc" data-lang="pt">
+    Os Boosters são uma nova forma de expandir sua coleção em Forbidden Legacy. Cada pacote possui um tema próprio e pode entregar monstros marcantes, cartas raras e recursos importantes para fortalecer seus decks.
+  </p>
+  <p class="page-hero-desc" data-lang="en">
+    Boosters are a new way to expand your collection in Forbidden Legacy. Each pack has its own theme and may contain iconic monsters, rare cards, and valuable resources for strengthening your decks.
+  </p>
+</div>
+
+<!-- ══════════════════ CONTEÚDO ══════════════════ -->
+<div class="page-content">
+
+  <!-- Grade principal: 3 colunas -->
+  <div class="features-grid" data-reveal>
+
+    <!-- Como abrir -->
+    <div class="feature-card">
+      <div class="feature-icon">🔓</div>
+      <div class="feature-title" data-lang="pt">Como Abrir um Booster</div>
+      <div class="feature-title" data-lang="en">How to Open a Booster</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Cada Booster precisa de <strong style="color:var(--ouro)">100 Souls</strong> para ser aberto</li>
+        <li>Adicione Souls aos poucos e acompanhe a barra de progresso diretamente no Card Shop</li>
+        <li>O progresso é individual — Souls de um pack não afetam outro</li>
+        <li>Ao completar <strong style="color:var(--ouro)">100/100</strong>, o pack fica disponível para abertura</li>
+        <li>Bestas Divinas <strong>não</strong> podem ser obtidas em Boosters</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Each Booster requires <strong style="color:var(--ouro)">100 Souls</strong> to be opened</li>
+        <li>Add Souls gradually and track the progress bar directly in the Card Shop</li>
+        <li>Progress is stored per pack — Souls deposited into one pack stay there</li>
+        <li>Once the bar reaches <strong style="color:var(--ouro)">100/100</strong>, the pack is ready to open</li>
+        <li>Divine Beasts <strong>cannot</strong> be obtained from Boosters</li>
+      </ul>
+    </div>
+
+    <!-- Conteúdo do pack -->
+    <div class="feature-card">
+      <div class="feature-icon">🃏</div>
+      <div class="feature-title" data-lang="pt">10 Cartas por Abertura</div>
+      <div class="feature-title" data-lang="en">10 Cards per Opening</div>
+      <table class="rarity-table" data-lang="pt">
+        <thead>
+          <tr><th>Slots</th><th>Conteúdo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>5 cartas</td><td><span class="badge-n">N</span> ou <span class="badge-r">R</span> — pool temático</td></tr>
+          <tr><td>3 cartas</td><td><span class="badge-r">R</span>, <span class="badge-sr">SR</span> ou <span class="badge-ur">UR</span> — pool temático</td></tr>
+          <tr><td>2 cartas</td><td>Magia, Trap, Equip ou Campo — catálogo geral</td></tr>
+        </tbody>
+      </table>
+      <table class="rarity-table" data-lang="en">
+        <thead>
+          <tr><th>Slots</th><th>Contents</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>5 cards</td><td><span class="badge-n">N</span> or <span class="badge-r">R</span> — themed pool</td></tr>
+          <tr><td>3 cards</td><td><span class="badge-r">R</span>, <span class="badge-sr">SR</span> or <span class="badge-ur">UR</span> — themed pool</td></tr>
+          <tr><td>2 cards</td><td>Spell, Trap, Equip or Field — full catalog</td></tr>
+        </tbody>
+      </table>
+      <ul class="feature-list" style="margin-top:14px" data-lang="pt">
+        <li>Os 8 primeiros slots respeitam o tema do Booster escolhido</li>
+        <li>Os 2 slots de suporte usam o catálogo completo dessas categorias</li>
+      </ul>
+      <ul class="feature-list" style="margin-top:14px" data-lang="en">
+        <li>The first 8 slots follow the theme of the selected Booster</li>
+        <li>The 2 support slots use the full available catalog for those categories</li>
+      </ul>
+    </div>
+
+    <!-- Chances de raridade -->
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title" data-lang="pt">Chances de Raridade</div>
+      <div class="feature-title" data-lang="en">Rarity Rates</div>
+
+      <div style="font-size:12px;color:var(--ouro-esc);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="pt">Primeiros 5 slots</div>
+      <div style="font-size:12px;color:var(--ouro-esc);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="en">First 5 slots</div>
+      <table class="rarity-table">
+        <tbody>
+          <tr><td><span class="badge-n">N</span></td><td>60%</td></tr>
+          <tr><td><span class="badge-r">R</span></td><td>40%</td></tr>
+        </tbody>
+      </table>
+
+      <div style="font-size:12px;color:var(--ouro-esc);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="pt">Próximos 3 slots</div>
+      <div style="font-size:12px;color:var(--ouro-esc);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Next 3 slots</div>
+      <table class="rarity-table">
+        <tbody>
+          <tr><td><span class="badge-r">R</span></td><td>76%</td></tr>
+          <tr><td><span class="badge-sr">SR</span></td><td>20%</td></tr>
+          <tr><td><span class="badge-ur">UR</span></td><td>4%</td></tr>
+        </tbody>
+      </table>
+
+      <div style="font-size:12px;color:var(--ouro-esc);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="pt">Slots de suporte</div>
+      <div style="font-size:12px;color:var(--ouro-esc);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Support slots</div>
+      <table class="rarity-table">
+        <tbody>
+          <tr><td><span class="badge-n">N</span></td><td>56%</td></tr>
+          <tr><td><span class="badge-r">R</span></td><td>32%</td></tr>
+          <tr><td><span class="badge-sr">SR</span></td><td>11%</td></tr>
+          <tr><td><span class="badge-ur">UR</span></td><td>1%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Grade secundária: 2 colunas -->
+  <div class="features-grid-2" data-reveal>
+
+    <!-- Sistema de garantia -->
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title" data-lang="pt">Sistema de Garantia</div>
+      <div class="feature-title" data-lang="en">Guaranteed Rarity System</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Se <strong>2 aberturas consecutivas</strong> não entregarem SR ou UR, a <strong style="color:var(--ouro)">3ª abertura garante uma SR</strong></li>
+        <li>Se <strong>4 aberturas consecutivas</strong> não entregarem UR, a <strong style="color:var(--ouro)">5ª abertura garante uma UR</strong></li>
+        <li>Obter uma SR reinicia o contador de garantia de SR</li>
+        <li>Obter uma UR reinicia ambos os contadores</li>
+        <li>Se as duas garantias coincidirem na mesma abertura, a garantia de <span class="badge-ur">UR</span> tem prioridade</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>If <strong>2 consecutive openings</strong> contain no SR or UR, the <strong style="color:var(--ouro)">3rd opening guarantees an SR</strong></li>
+        <li>If <strong>4 consecutive openings</strong> contain no UR, the <strong style="color:var(--ouro)">5th opening guarantees a UR</strong></li>
+        <li>Obtaining an SR resets the SR guarantee counter</li>
+        <li>Obtaining a UR resets both counters</li>
+        <li>If both guarantees are active at once, the <span class="badge-ur">UR</span> guarantee takes priority</li>
+      </ul>
+    </div>
+
+    <!-- Cartas repetidas e fragmentos -->
+    <div class="feature-card">
+      <div class="feature-icon">♻️</div>
+      <div class="feature-title" data-lang="pt">Cartas Repetidas e Fragmentos</div>
+      <div class="feature-title" data-lang="en">Duplicate Cards &amp; Fragments</div>
+      <p style="font-size:13px;color:var(--texto-dim);margin-bottom:12px;line-height:1.6" data-lang="pt">
+        Cartas são adicionadas à coleção até o limite permitido (geralmente 3 cópias). Cópias excedentes são convertidas automaticamente:
+      </p>
+      <p style="font-size:13px;color:var(--texto-dim);margin-bottom:12px;line-height:1.6" data-lang="en">
+        Cards are added to your collection up to the allowed limit (usually 3 copies). Extra copies are automatically converted:
+      </p>
+      <table class="rarity-table" data-lang="pt">
+        <thead><tr><th>Raridade</th><th>Conversão</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge-n">N</span></td><td>1 Star</td></tr>
+          <tr><td><span class="badge-r">R</span></td><td>1 Fragmento R + 3 Stars</td></tr>
+          <tr><td><span class="badge-sr">SR</span></td><td>3 Fragmentos SR + 3 Stars</td></tr>
+          <tr><td><span class="badge-ur">UR</span></td><td>5 Fragmentos UR + 5 Stars</td></tr>
+        </tbody>
+      </table>
+      <table class="rarity-table" data-lang="en">
+        <thead><tr><th>Rarity</th><th>Conversion</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge-n">N</span></td><td>1 Star</td></tr>
+          <tr><td><span class="badge-r">R</span></td><td>1 R Fragment + 3 Stars</td></tr>
+          <tr><td><span class="badge-sr">SR</span></td><td>3 SR Fragments + 3 Stars</td></tr>
+          <tr><td><span class="badge-ur">UR</span></td><td>5 UR Fragments + 5 Stars</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:var(--texto-dim);margin-top:10px;line-height:1.5" data-lang="pt">
+        A tela de abertura identifica visualmente todas as cartas convertidas.
+      </p>
+      <p style="font-size:12px;color:var(--texto-dim);margin-top:10px;line-height:1.5" data-lang="en">
+        Converted cards are clearly identified on the Booster results screen.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Ciclo de fragmentos -->
+  <div class="cycle-banner" data-reveal>
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--ouro-esc);margin-bottom:8px" data-lang="pt">O Ciclo da Coleção</div>
+    <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--ouro-esc);margin-bottom:8px" data-lang="en">The Collection Cycle</div>
+
+    <div style="font-size:13px;color:var(--texto-dim);margin-bottom:4px" data-lang="pt">
+      Fragmentos podem ser trocados no Card Shop por <strong style="color:var(--ouro)">1 Soul cada</strong>, independente da raridade.
+    </div>
+    <div style="font-size:13px;color:var(--texto-dim);margin-bottom:4px" data-lang="en">
+      Fragments can be exchanged in the Card Shop for <strong style="color:var(--ouro)">1 Soul each</strong>, regardless of rarity.
+    </div>
+
+    <div class="cycle-steps">
+      <div class="cycle-step" data-lang="pt">🃏 Cartas repetidas</div>
+      <div class="cycle-step" data-lang="en">🃏 Duplicate cards</div>
+      <div class="cycle-arrow">→</div>
+      <div class="cycle-step" data-lang="pt">✨ Fragmentos R / SR / UR</div>
+      <div class="cycle-step" data-lang="en">✨ R / SR / UR Fragments</div>
+      <div class="cycle-arrow">→</div>
+      <div class="cycle-step" data-lang="pt">💛 Souls</div>
+      <div class="cycle-step" data-lang="en">💛 Souls</div>
+      <div class="cycle-arrow">→</div>
+      <div class="cycle-step" data-lang="pt">📦 Novos Boosters</div>
+      <div class="cycle-step" data-lang="en">📦 New Boosters</div>
+    </div>
+  </div>
+
+  <!-- Pools temáticos -->
+  <div class="features-grid-2" style="margin-top:20px" data-reveal>
+
+    <div class="feature-card">
+      <div class="feature-icon">🗺️</div>
+      <div class="feature-title" data-lang="pt">Pools Temáticos</div>
+      <div class="feature-title" data-lang="en">Themed Pools</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Cada Booster possui uma seleção própria de cartas ligadas ao seu tema</li>
+        <li>Escolher um pack específico aumenta as chances de obter cartas do estilo desejado</li>
+        <li>Os 2 slots de suporte mantêm cada abertura variada, usando o catálogo completo de Magias, Traps, Equips e Campos</li>
+        <li>Novos Boosters e novas cartas serão adicionados conforme o conteúdo de Forbidden Legacy crescer</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Each Booster has its own selection of cards connected to its theme</li>
+        <li>Choosing a specific pack improves your odds of finding cards from that style</li>
+        <li>The 2 support slots keep every opening varied using the full Spell, Trap, Equip and Field catalog</li>
+        <li>New Boosters and additional cards will be added as Forbidden Legacy continues to grow</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">⭐</div>
+      <div class="feature-title" data-lang="pt">Como Conseguir Souls</div>
+      <div class="feature-title" data-lang="en">How to Get Souls</div>
+      <ul class="feature-list" data-lang="pt">
+        <li>Vença duelos no Free Duel e na campanha para ganhar <strong style="color:var(--ouro)">Stars</strong></li>
+        <li>Troque Stars por Souls diretamente no Card Shop</li>
+        <li>Converta fragmentos acumulados de cartas repetidas em Souls (1 Fragmento = 1 Soul)</li>
+        <li>Founders receberam <strong style="color:var(--ouro)">100 Fragmentos R + 100 SR + 100 UR</strong> como brinde de lançamento da Beta 1.4</li>
+        <li>Rank S ao final do duelo entrega 10 Stars — caça o ranking mais alto!</li>
+      </ul>
+      <ul class="feature-list" data-lang="en">
+        <li>Win duels in Free Duel and the campaign to earn <strong style="color:var(--ouro)">Stars</strong></li>
+        <li>Exchange Stars for Souls directly in the Card Shop</li>
+        <li>Convert accumulated fragments from duplicate cards into Souls (1 Fragment = 1 Soul)</li>
+        <li>Founders received <strong style="color:var(--ouro)">100 R Fragments + 100 SR + 100 UR</strong> as the Beta 1.4 launch gift</li>
+        <li>Rank S at the end of a duel awards 10 Stars — aim for the highest rank!</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Nota de aviso -->
+  <div class="notice-box" data-reveal>
+    <span data-lang="pt">⚠️ <strong style="color:var(--ouro-brt)">Bestas Divinas não estão disponíveis em Boosters.</strong> Slifer, Obelisk e Ra podem ser encontrados apenas por outras vias dentro do jogo.</span>
+    <span data-lang="en">⚠️ <strong style="color:var(--ouro-brt)">Divine Beasts are not available in Boosters.</strong> Slifer, Obelisk and Ra can only be found through other means within the game.</span>
+  </div>
+
+  <!-- Em Evolução -->
+  <div class="features-evolving" data-reveal>
+    <span data-lang="pt">🛠️ <strong>Sistema em evolução.</strong> Novos Boosters com temas diferentes chegarão nas próximas versões. Os pools de cartas são revisados junto com cada atualização — mais NPCs desbloqueados, mais cartas disponíveis nos pacotes. O sistema foi desenhado para que jogadores que duelam bastante nunca fiquem sem opção de abastecer packs.</span>
+    <span data-lang="en">🛠️ <strong>System in active evolution.</strong> New Boosters with different themes will arrive in future updates. Card pools are reviewed alongside each release — more unlocked NPCs mean more cards available in packs. The system is designed so players who duel frequently always have a way to supply their packs.</span>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center;margin-top:48px" data-reveal>
+    <a href="/#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-size:15px;letter-spacing:2px;background:rgba(200,144,32,0.1);border:2px solid var(--ouro);color:var(--ouro-brt);border-radius:2px;text-decoration:none;text-transform:uppercase;transition:all .25s;box-shadow:0 0 24px rgba(200,144,32,0.15)">
+      <span>⬇</span>
+      <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.4</span>
+      <span data-lang="en">DOWNLOAD FREE — Beta 1.4</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="footer-logo">FORBIDDEN LEGACY</div>
+  <div class="footer-links">
+    <a href="/" data-lang="pt">Início</a><a href="/" data-lang="en">Home</a>
+    <a href="/#sobre" data-lang="pt">O Jogo</a><a href="/#sobre" data-lang="en">The Game</a>
+    <a href="/#galeria" data-lang="pt">Galeria</a><a href="/#galeria" data-lang="en">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="/#download">Download</a>
+    <a href="/#novidades" data-lang="pt">Novidades</a><a href="/#novidades" data-lang="en">Updates</a>
+    <a href="/#comprar" data-lang="pt">Founder</a><a href="/#comprar" data-lang="en">Founder</a>
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+    <a href="https://www.youtube.com/@tragergames" target="_blank" style="color:#C00000">▶ YouTube</a>
+  </div>
+  <div>
+    <span data-lang="pt">Fan-made · Não afiliado à Konami · Desenvolvido por </span>
+    <span data-lang="en">Fan-made · Not affiliated with Konami · Developed by </span>
+    <a href="https://www.youtube.com/@tragergames" target="_blank">TragerGames</a>
+  </div>
+  <p data-lang="pt">Dúvidas? Entre em contato pelo <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
+  <p data-lang="en">Questions? Reach us on <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
+</footer>
+
+<!-- ══════════════════ BANNER LGPD / COOKIES ══════════════════ -->
+<div id="cookie-banner" style="
+  display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999;
+  background:rgba(10,4,0,0.97); border-top:1px solid #c8940a;
+  padding:14px 24px; align-items:center; justify-content:space-between;
+  gap:16px; flex-wrap:wrap; font-size:13px; color:#a08050;
+  backdrop-filter:blur(6px);">
+  <span data-lang="pt">🍪 Este site armazena preferências no seu navegador (idioma, formulário) e realiza chamadas externas para Discord e processamento de doações. Ao continuar, você concorda. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Saiba mais</a></span>
+  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Learn more</a></span>
+  <button onclick="cookieAceitar()" style="background:rgba(200,144,32,0.15);border:1px solid #c8940a;color:#f0d080;padding:7px 20px;border-radius:3px;cursor:pointer;font-size:13px;font-family:monospace;white-space:nowrap;flex-shrink:0">
+    <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span>
+  </button>
+</div>
+
+<div id="cookie-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.88);align-items:center;justify-content:center;padding:20px">
+  <div style="background:#0d0804;border:1px solid #c8940a;border-radius:6px;padding:32px;max-width:500px;width:100%;position:relative">
+    <button onclick="document.getElementById('cookie-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#a08050;font-size:18px;cursor:pointer">✕</button>
+    <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="pt">O que este site armazena</h3>
+    <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3>
+    <ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="pt">
+      <li><strong style="color:#f0d080">fl_lang</strong> — preferência de idioma (PT/EN)</li>
+      <li><strong style="color:#f0d080">fl_form_v1</strong> — campos do formulário de compra</li>
+      <li><strong style="color:#f0d080">fl_cookie_ok</strong> — registro de aceite deste aviso</li>
+      <li><strong style="color:#f0d080">APIs externas</strong> — Discord (contador) e api.country.is (país)</li>
+    </ul>
+    <ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="en">
+      <li><strong style="color:#f0d080">fl_lang</strong> — language preference (PT/EN)</li>
+      <li><strong style="color:#f0d080">fl_form_v1</strong> — purchase form fields</li>
+      <li><strong style="color:#f0d080">fl_cookie_ok</strong> — acceptance record</li>
+      <li><strong style="color:#f0d080">External APIs</strong> — Discord (counter) and api.country.is (country)</li>
+    </ul>
+    <p style="color:#706040;font-size:12px;margin:0" data-lang="pt">Nenhum dado é vendido ou compartilhado com terceiros além dos processadores citados.</p>
+    <p style="color:#706040;font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p>
+  </div>
+</div>
+
+<script>
+// ── Idioma ────────────────────────────────────────────────────────────────────
+function setLang(lang, saveToStorage=true) {
+  document.body.classList.toggle('en', lang === 'en');
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]');
+  if (btn) btn.classList.add('active');
+  if (saveToStorage) localStorage.setItem('fl_lang', lang);
+}
+window.setLang = setLang;
+
+(function() {
+  const saved = localStorage.getItem('fl_lang');
+  if (saved) { setLang(saved, false); return; }
+  fetch('https://api.country.is/')
+    .then(r => r.json())
+    .then(d => { if (d.country && d.country !== 'BR') setLang('en', false); })
+    .catch(() => {});
+})();
+
+// ── Scroll reveal ─────────────────────────────────────────────────────────────
+(function() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+    el.setAttribute('data-reveal', '');
+    el.style.transitionDelay = (i * 0.1) + 's';
+    io.observe(el);
+  });
+})();
+
+// ── Cookie / LGPD ─────────────────────────────────────────────────────────────
+(function() {
+  if (!localStorage.getItem('fl_cookie_ok')) {
+    const b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'flex';
+  }
+})();
+function cookieAceitar() {
+  localStorage.setItem('fl_cookie_ok', '1');
+  const b = document.getElementById('cookie-banner');
+  if (b) b.style.display = 'none';
+}
+function cookiePolitica(e) {
+  e.preventDefault();
+  const m = document.getElementById('cookie-modal');
+  if (m) m.style.display = 'flex';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const m = document.getElementById('cookie-modal');
+    if (m) m.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>
