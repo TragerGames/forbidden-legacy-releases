@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'Tools/**'
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -23,26 +24,14 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          cat > /tmp/lftp_script.txt << 'EOF'
-set ftp:ssl-allow no
-set ftp:passive-mode yes
-set ftp:use-mlsd no
-set net:timeout 120
-set net:max-retries 8
-set net:reconnect-interval-base 10
-set net:reconnect-interval-multiplier 1.5
-EOF
-          echo "open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER" >> /tmp/lftp_script.txt
-          cat >> /tmp/lftp_script.txt << 'EOF'
-mirror --reverse --delete --verbose \
-  --exclude-glob .git* \
-  --exclude-glob *.py \
-  --exclude-glob *.xlsx \
-  --exclude-glob hostinger_backend/ \
-  --exclude-glob screenshots/ \
-  --exclude-glob itch_cover* \
-  --exclude-glob gen_cover* \
-  ./Tools/ /public_html/
-quit
-EOF
-          lftp -f /tmp/lftp_script.txt
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" << LFTP_SCRIPT
+          set ftp:ssl-allow no
+          set ftp:passive-mode yes
+          set ftp:use-mlsd no
+          set net:timeout 120
+          set net:max-retries 8
+          set net:reconnect-interval-base 10
+          set net:reconnect-interval-multiplier 1.5
+          mirror --reverse --delete --verbose --exclude-glob .git* --exclude-glob *.py --exclude-glob *.xlsx --exclude-glob hostinger_backend/ --exclude-glob screenshots/ --exclude-glob itch_cover* --exclude-glob gen_cover* ./Tools/ /public_html/
+          quit
+          LFTP_SCRIPT
