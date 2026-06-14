@@ -15,23 +15,45 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install lftp
-        run: sudo apt-get install -y lftp
+      - name: Test FTP connectivity
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        run: |
+          echo "Testing TCP connection to $FTP_SERVER:21..."
+          timeout 15 bash -c "echo > /dev/tcp/$FTP_SERVER/21" \
+            && echo "✅ Port 21 reachable" \
+            || (echo "❌ Port 21 BLOCKED — FTP unreachable from GitHub Actions" && exit 1)
 
-      - name: Deploy via FTP (lftp)
+      - name: Deploy via FTP (curl)
         env:
           FTP_SERVER:   ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" << LFTP_SCRIPT
-          set ftp:ssl-allow no
-          set ftp:passive-mode yes
-          set ftp:use-mlsd no
-          set net:timeout 120
-          set net:max-retries 8
-          set net:reconnect-interval-base 10
-          set net:reconnect-interval-multiplier 1.5
-          mirror --reverse --delete --verbose --exclude-glob .git* --exclude-glob *.py --exclude-glob *.xlsx --exclude-glob hostinger_backend/ --exclude-glob screenshots/ --exclude-glob itch_cover* --exclude-glob gen_cover* ./Tools/ /public_html/
-          quit
-          LFTP_SCRIPT
+          ERRORS=0
+          cd Tools
+          while IFS= read -r filepath; do
+            rel="${filepath#./}"
+            remote="ftp://${FTP_SERVER}/public_html/${rel}"
+            echo "↑ $rel"
+            curl --silent --show-error \
+              -T "$filepath" \
+              "$remote" \
+              --user "${FTP_USERNAME}:${FTP_PASSWORD}" \
+              --ftp-pasv \
+              --ftp-create-dirs \
+              --retry 3 \
+              --retry-delay 5 \
+              --max-time 60 \
+              || { echo "❌ FAILED: $rel"; ERRORS=$((ERRORS+1)); }
+          done < <(find . -type f \
+            ! -path './.git*' \
+            ! -name '*.py' \
+            ! -name '*.xlsx' \
+            ! -path './hostinger_backend/*' \
+            ! -path './screenshots/*' \
+            ! -name 'itch_cover*' \
+            ! -name 'gen_cover*' \
+            | sort)
+          echo "Done. Errors: $ERRORS"
+          [ "$ERRORS" -eq 0 ] || exit 1
