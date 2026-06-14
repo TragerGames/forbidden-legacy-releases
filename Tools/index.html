@@ -415,10 +415,34 @@
   /* ── YOUTUBE ── */
   .yt-bg { background: var(--painel); border-top: 1px solid #1a1206; border-bottom: 1px solid #1a1206; }
   .yt-inner { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+  /* Vídeo em destaque */
+  .yt-featured {
+    cursor: pointer;
+    background: var(--painel2); border: 1px solid var(--ouro-esc);
+    border-radius: 4px; overflow: hidden; transition: border-color .25s;
+    margin-bottom: 32px; box-shadow: 0 0 40px rgba(200,144,32,0.08);
+  }
+  .yt-featured:hover { border-color: var(--ouro); }
+  .yt-featured .yt-thumb { aspect-ratio: 16/7; }
+  .yt-featured:hover .yt-play-icon-lg { background: rgba(192,0,0,0.9); transform: translate(-50%,-50%) scale(1.08); }
+  .yt-play-icon-lg {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(0,0,0,0.6); border: 2px solid #E00000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; color: #fff;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    transition: background 0.2s, transform 0.2s; pointer-events: none;
+  }
+  .yt-new-badge {
+    position: absolute; top: 14px; left: 14px;
+    background: #C00000; color: #fff;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    padding: 4px 10px; border-radius: 2px; text-transform: uppercase;
+  }
   .yt-channel-banner {
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
     background: #0A0704; border: 1px solid #1a1206; border-radius: 4px;
-    padding: 24px 32px; margin-bottom: 40px;
+    padding: 24px 32px; margin-bottom: 32px;
   }
   .yt-channel-info { display: flex; align-items: center; gap: 16px; }
   .yt-avatar {
@@ -467,7 +491,13 @@
   .yt-card-info { padding: 16px; }
   .yt-card-title { font-size: 14px; font-weight: 600; color: var(--texto); line-height: 1.4; margin-bottom: 6px; }
   .yt-card-meta { font-size: 11px; color: var(--texto-dim); opacity: 0.7; }
-  /* Placeholder para adicionar thumbnail real: substitua .yt-thumb-placeholder por uma tag <img> */
+  .yt-gallery-link {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 40px;
+    color: var(--ouro-esc); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+    text-decoration: none; border-bottom: 1px solid var(--ouro-esc); padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .yt-gallery-link:hover { color: var(--ouro); border-color: var(--ouro); }
 
   /* ── COMO FUNCIONA ── */
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -749,6 +779,7 @@
     .pay-methods { grid-template-columns: 1fr; }
     .news-grid { grid-template-columns: 1fr; }
     .yt-grid { grid-template-columns: 1fr; }
+    .yt-featured .yt-thumb { aspect-ratio: 16/9; }
     .dl-platforms { gap: 8px; }
     .yt-channel-banner { flex-direction: column; align-items: flex-start; }
     .features-grid { grid-template-columns: 1fr; }
@@ -837,8 +868,8 @@
   <nav class="topbar-nav">
     <a href="#sobre" data-lang="pt">O Jogo</a>
     <a href="#sobre" data-lang="en">The Game</a>
-    <a href="#galeria" data-lang="pt">Galeria</a>
-    <a href="#galeria" data-lang="en">Gallery</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a>
+    <a href="gallery.html" data-lang="en">Gallery</a>
     <a href="features.html" data-lang="pt">Mecânicas</a>
     <a href="features.html" data-lang="en">Features</a>
     <a href="boosters.html" data-lang="pt">Boosters</a>
@@ -870,8 +901,8 @@
   <div class="mobile-nav-links">
     <a href="#sobre" data-lang="pt">O Jogo</a>
     <a href="#sobre" data-lang="en" style="display:none">The Game</a>
-    <a href="#galeria" data-lang="pt">Galeria</a>
-    <a href="#galeria" data-lang="en" style="display:none">Gallery</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a>
+    <a href="gallery.html" data-lang="en" style="display:none">Gallery</a>
     <a href="features.html" data-lang="pt">Mecânicas</a>
     <a href="features.html" data-lang="en" style="display:none">Features</a>
     <a href="boosters.html" data-lang="pt">Boosters</a>
@@ -942,177 +973,95 @@
   </div>
 </section>
 
-<!-- ══════════════════ GALERIA ══════════════════ -->
-<div class="gallery-bg" id="galeria">
-  <div class="gallery-inner">
-    <p class="section-label">☥ <span data-lang="pt">Screenshots</span><span data-lang="en">Screenshots</span></p>
-    <h2 class="section-title" data-lang="pt">O jogo em ação</h2>
-    <h2 class="section-title" data-lang="en">The game in action</h2>
-    <!-- Grade principal -->
-    <div class="gallery-grid">
+<!-- ══════════════════ CANAL / VÍDEOS ══════════════════ -->
+<div class="yt-bg" id="videos">
+  <div class="yt-inner">
+    <p class="section-label">▶ <span data-lang="pt">Canal</span><span data-lang="en">Channel</span></p>
+    <h2 class="section-title" data-lang="pt">Vídeos sobre o projeto</h2>
+    <h2 class="section-title" data-lang="en">Project videos</h2>
 
-      <!-- Destaque: menu inicial (2 linhas) -->
-      <div class="gallery-item featured" onclick="openLbLang(this)">
-        <img src="screenshots/pt/menu-inicial.png" data-src-pt="screenshots/pt/menu-inicial.png" data-src-en="screenshots/en/menu-inicial.png" alt="Menu Inicial" loading="lazy">
-        <div class="placeholder-txt"><span>🏛️</span><span data-lang="pt">Menu Inicial</span><span data-lang="en">Main Menu</span></div>
-        <div class="gallery-caption" data-lang="pt">Menu Inicial</div>
-        <div class="gallery-caption" data-lang="en">Main Menu</div>
+    <!-- Vídeo em destaque -->
+    <div class="yt-featured" onclick="ytPlay(this,'JwiZ6MKtvis')" data-reveal>
+      <div class="yt-thumb" id="yt-JwiZ6MKtvis">
+        <img src="https://i.ytimg.com/vi/JwiZ6MKtvis/maxresdefault.jpg" alt="Testando o novo Sistema de Boosters e Novos Personagens" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <div class="yt-play-icon-lg">▶</div>
+        <span class="yt-new-badge" data-lang="pt">MAIS RECENTE</span>
+        <span class="yt-new-badge" data-lang="en">LATEST</span>
+      </div>
+      <div class="yt-card-info" style="padding:20px 24px">
+        <div class="yt-card-title" style="font-size:17px;line-height:1.4">YU-GI-OH! FORBIDDEN LEGACY: Testando o novo Sistema de Boosters e Novos Personagens</div>
+        <div class="yt-card-meta">Trager Games · 2026</div>
+      </div>
+    </div>
+
+    <!-- Banner do canal -->
+    <div class="yt-channel-banner" data-reveal>
+      <div class="yt-channel-info">
+        <img class="yt-avatar" src="https://unavatar.io/youtube/tragergames" alt="Trager Games" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="yt-avatar" style="display:none">🎮</div>
+        <div>
+          <div class="yt-channel-name">Trager Games</div>
+          <div class="yt-channel-sub" data-lang="pt">Devlogs, gameplays e novidades do Forbidden Legacy</div>
+          <div class="yt-channel-sub" data-lang="en">Devlogs, gameplays and Forbidden Legacy updates</div>
+        </div>
+      </div>
+      <a href="https://www.youtube.com/@tragergames" target="_blank" class="yt-sub-btn">▶ Ver Canal</a>
+    </div>
+
+    <!-- Outros vídeos -->
+    <div class="yt-grid" data-reveal>
+
+      <div class="yt-card" onclick="ytPlay(this,'LiB9VAi9Ifk')">
+        <div class="yt-thumb" id="yt-LiB9VAi9Ifk">
+          <img src="https://i.ytimg.com/vi/LiB9VAi9Ifk/hqdefault.jpg" alt="Novo site e novos personagens thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
+          <div class="yt-play-icon">▶</div>
+        </div>
+        <div class="yt-card-info">
+          <div class="yt-card-title">NOVO SITE E NOVOS PERSONAGENS! — Forbidden Legacy</div>
+          <div class="yt-card-meta">Trager Games · 2026</div>
+        </div>
       </div>
 
-      <!-- Editor de Deck -->
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/editor-deck.png" data-src-pt="screenshots/pt/editor-deck.png" data-src-en="screenshots/en/editor-deck.png" alt="Editor de Deck" loading="lazy">
-        <div class="placeholder-txt"><span>🃏</span><span data-lang="pt">Editor de Deck</span><span data-lang="en">Deck Editor</span></div>
-        <div class="gallery-caption" data-lang="pt">Editor de Deck</div>
-        <div class="gallery-caption" data-lang="en">Deck Editor</div>
+      <div class="yt-card" onclick="ytPlay(this,'ectttaQ3DcI')">
+        <div class="yt-thumb" id="yt-ectttaQ3DcI">
+          <img src="https://i.ytimg.com/vi/ectttaQ3DcI/hqdefault.jpg" alt="Download video thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
+          <div class="yt-play-icon">▶</div>
+        </div>
+        <div class="yt-card-info">
+          <div class="yt-card-title">SAIU O DOWNLOAD! O Remake Definitivo do Forbidden Memories</div>
+          <div class="yt-card-meta">Trager Games · 2025</div>
+        </div>
       </div>
 
-      <!-- Card Shop -->
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/card-shop.png" data-src-pt="screenshots/pt/card-shop.png" data-src-en="screenshots/en/card-shop.png" alt="Card Shop" loading="lazy">
-        <div class="placeholder-txt"><span>🛒</span><span data-lang="pt">Loja de Cartas</span><span data-lang="en">Card Shop</span></div>
-        <div class="gallery-caption" data-lang="pt">Loja de Cartas</div>
-        <div class="gallery-caption" data-lang="en">Card Shop</div>
-      </div>
-
-      <!-- Booster Packs -->
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/tela-boosters.png" data-src-pt="screenshots/pt/tela-boosters.png" data-src-en="screenshots/en/tela-boosters.png" alt="Booster Packs" loading="lazy">
-        <div class="placeholder-txt"><span>📦</span><span data-lang="pt">Booster Packs</span><span data-lang="en">Booster Packs</span></div>
-        <div class="gallery-caption" data-lang="pt">Booster Packs</div>
-        <div class="gallery-caption" data-lang="en">Booster Packs</div>
-      </div>
-
-      <!-- Gerenciar Decks -->
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/gerenciar-decks.png" data-src-pt="screenshots/pt/gerenciar-decks.png" data-src-en="screenshots/en/gerenciar-decks.png" alt="Gerenciar Decks" loading="lazy">
-        <div class="placeholder-txt"><span>📦</span><span data-lang="pt">Gerenciar Decks</span><span data-lang="en">Manage Decks</span></div>
-        <div class="gallery-caption" data-lang="pt">Gerenciar Decks</div>
-        <div class="gallery-caption" data-lang="en">Manage Decks</div>
-      </div>
-
-      <!-- Free Duel -->
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/free-duel.png" data-src-pt="screenshots/pt/free-duel.png" data-src-en="screenshots/en/free-duel.png" alt="Free Duel" loading="lazy">
-        <div class="placeholder-txt"><span>⚔️</span><span data-lang="pt">Duelo Livre</span><span data-lang="en">Free Duel</span></div>
-        <div class="gallery-caption" data-lang="pt">Duelo Livre</div>
-        <div class="gallery-caption" data-lang="en">Free Duel</div>
+      <div class="yt-card" onclick="ytPlay(this,'9cJ3UWZVt0M')">
+        <div class="yt-thumb" id="yt-9cJ3UWZVt0M">
+          <img src="https://i.ytimg.com/vi/9cJ3UWZVt0M/hqdefault.jpg" alt="Modo Historia thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
+          <div class="yt-play-icon">▶</div>
+        </div>
+        <div class="yt-card-info">
+          <div class="yt-card-title">CONHEÇA O MODO HISTÓRIA! — Forbidden Legacy</div>
+          <div class="yt-card-meta">Trager Games · 2026</div>
+        </div>
       </div>
 
     </div>
 
-    <!-- Grade: menus e configurações -->
-    <div class="gallery-sub-label">
-      <span data-lang="pt">🗂 Menus</span>
-      <span data-lang="en">🗂 Menus</span>
-    </div>
-    <div class="gallery-grid-duel">
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/tela-nome.png" data-src-pt="screenshots/pt/tela-nome.png" data-src-en="screenshots/en/tela-nome.png" alt="Inserir Nome" loading="lazy">
-        <div class="placeholder-txt"><span>✏️</span><span data-lang="pt">Inserir Nome</span><span data-lang="en">Enter Name</span></div>
-        <div class="gallery-caption" data-lang="pt">Inserir Nome</div>
-        <div class="gallery-caption" data-lang="en">Enter Name</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/selecao-deck.png" data-src-pt="screenshots/pt/selecao-deck.png" data-src-en="screenshots/en/selecao-deck.png" alt="Seleção de Deck" loading="lazy">
-        <div class="placeholder-txt"><span>🃏</span><span data-lang="pt">Seleção de Deck</span><span data-lang="en">Deck Selection</span></div>
-        <div class="gallery-caption" data-lang="pt">Seleção de Deck</div>
-        <div class="gallery-caption" data-lang="en">Deck Selection</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/tela-opcoes.png" data-src-pt="screenshots/pt/tela-opcoes.png" data-src-en="screenshots/en/tela-opcoes.png" alt="Opções" loading="lazy">
-        <div class="placeholder-txt"><span>⚙️</span><span data-lang="pt">Opções</span><span data-lang="en">Options</span></div>
-        <div class="gallery-caption" data-lang="pt">Opções</div>
-        <div class="gallery-caption" data-lang="en">Options</div>
-      </div>
-
-    </div>
-
-    <!-- Grade: campanha -->
-    <div class="gallery-sub-label">
-      <span data-lang="pt">🏺 Campanha</span>
-      <span data-lang="en">🏺 Campaign</span>
-    </div>
-    <div class="gallery-grid-duel">
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/tela-npc1.png" data-src-pt="screenshots/pt/tela-npc1.png" data-src-en="screenshots/en/tela-npc1.png" alt="Campanha" loading="lazy">
-        <div class="placeholder-txt"><span>🏺</span><span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span></div>
-        <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
-        <div class="gallery-caption" data-lang="en">Campaign Mode</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/tela-npc2.png" data-src-pt="screenshots/pt/tela-npc2.png" data-src-en="screenshots/en/tela-npc2.png" alt="Campanha" loading="lazy">
-        <div class="placeholder-txt"><span>🏺</span><span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span></div>
-        <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
-        <div class="gallery-caption" data-lang="en">Campaign Mode</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/tela-npc3.png" data-src-pt="screenshots/pt/tela-npc3.png" data-src-en="screenshots/en/tela-npc3.png" alt="Campanha" loading="lazy">
-        <div class="placeholder-txt"><span>🏺</span><span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span></div>
-        <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
-        <div class="gallery-caption" data-lang="en">Campaign Mode</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/tela-bio.png" data-src-pt="screenshots/pt/tela-bio.png" data-src-en="screenshots/en/tela-bio.png" alt="Perfil do Duelista" loading="lazy">
-        <div class="placeholder-txt"><span>👤</span><span data-lang="pt">Perfil do Duelista</span><span data-lang="en">Duelist Profile</span></div>
-        <div class="gallery-caption" data-lang="pt">Perfil do Duelista</div>
-        <div class="gallery-caption" data-lang="en">Duelist Profile</div>
-      </div>
-
-    </div>
-
-    <!-- Grade: duelo -->
-    <div class="gallery-sub-label">
-      <span data-lang="pt">⚔ Duelo</span>
-      <span data-lang="en">⚔ Duel</span>
-    </div>
-    <div class="gallery-grid-duel">
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/arena-duel1.png" data-src-pt="screenshots/pt/arena-duel1.png" data-src-en="screenshots/en/arena-duel1.png" alt="Arena de Duelo" loading="lazy">
-        <div class="placeholder-txt"><span>⚔️</span><span data-lang="pt">Arena de Duelo</span><span data-lang="en">Duel Arena</span></div>
-        <div class="gallery-caption" data-lang="pt">Arena de Duelo</div>
-        <div class="gallery-caption" data-lang="en">Duel Arena</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/arena-duelo2.png" data-src-pt="screenshots/pt/arena-duelo2.png" data-src-en="screenshots/en/arena-duelo2.png" alt="Arena de Duelo" loading="lazy">
-        <div class="placeholder-txt"><span>⚔️</span><span data-lang="pt">Arena de Duelo</span><span data-lang="en">Duel Arena</span></div>
-        <div class="gallery-caption" data-lang="pt">Arena de Duelo</div>
-        <div class="gallery-caption" data-lang="en">Duel Arena</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/opcoes-duelo.png" data-src-pt="screenshots/pt/opcoes-duelo.png" data-src-en="screenshots/en/opcoes-duelo.png" alt="Opções no Duelo" loading="lazy">
-        <div class="placeholder-txt"><span>⚙️</span><span data-lang="pt">Opções no Duelo</span><span data-lang="en">In-Duel Options</span></div>
-        <div class="gallery-caption" data-lang="pt">Opções no Duelo</div>
-        <div class="gallery-caption" data-lang="en">In-Duel Options</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/pt/tela-resultado.png" data-src-pt="screenshots/pt/tela-resultado.png" data-src-en="screenshots/en/tela-resultado.png" alt="Resultado do Duelo" loading="lazy">
-        <div class="placeholder-txt"><span>🏆</span><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></div>
-        <div class="gallery-caption" data-lang="pt">Resultado do Duelo</div>
-        <div class="gallery-caption" data-lang="en">Duel Result</div>
-      </div>
-
+    <!-- Link para galeria -->
+    <div style="text-align:center;margin-top:40px" data-reveal>
+      <a href="gallery.html" class="yt-gallery-link" data-lang="pt">📷 Ver galeria de screenshots →</a>
+      <a href="gallery.html" class="yt-gallery-link" data-lang="en">📷 View screenshot gallery →</a>
     </div>
 
   </div>
 </div>
 
-<!-- Lightbox -->
-<div class="lb-overlay" id="lb" onclick="closeLb()">
-  <button class="lb-close" onclick="closeLb()">✕</button>
-  <img id="lb-img" src="" alt="">
-</div>
+<script>
+function ytPlay(card, videoId) {
+  const thumb = card.querySelector('.yt-thumb');
+  thumb.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;width:100%;height:100%"></iframe>';
+  card.onclick = null;
+}
+</script>
 
 <!-- ══════════════════ MECÂNICAS (página própria: features.html) ══════════════════ -->
 <div style="display:none" id="mecanicas">
@@ -1695,74 +1644,6 @@
   </div>
 </section>
 
-<!-- ══════════════════ YOUTUBE ══════════════════ -->
-<div class="yt-bg" id="videos">
-  <div class="yt-inner">
-    <p class="section-label">▶ <span data-lang="pt">Canal</span><span data-lang="en">Channel</span></p>
-    <h2 class="section-title" data-lang="pt">Vídeos sobre o projeto</h2>
-    <h2 class="section-title" data-lang="en">Project videos</h2>
-
-    <!-- Banner do canal -->
-    <div class="yt-channel-banner">
-      <div class="yt-channel-info">
-        <img class="yt-avatar" src="https://unavatar.io/youtube/tragergames" alt="Trager Games" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="yt-avatar" style="display:none">🎮</div>
-        <div>
-          <div class="yt-channel-name">Trager Games</div>
-          <div class="yt-channel-sub" data-lang="pt">Devlogs, gameplays e novidades do Forbidden Legacy</div>
-          <div class="yt-channel-sub" data-lang="en">Devlogs, gameplays and Forbidden Legacy updates</div>
-        </div>
-      </div>
-      <a href="https://www.youtube.com/@tragergames" target="_blank" class="yt-sub-btn">▶ Ver Canal</a>
-    </div>
-
-    <!-- Grade de vídeos — clique para assistir diretamente -->
-    <div class="yt-grid">
-
-      <div class="yt-card" onclick="ytPlay(this,'LiB9VAi9Ifk')">
-        <div class="yt-thumb" id="yt-LiB9VAi9Ifk">
-          <img src="https://i.ytimg.com/vi/LiB9VAi9Ifk/hqdefault.jpg" alt="Novo site e novos personagens thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
-          <div class="yt-play-icon">▶</div>
-        </div>
-        <div class="yt-card-info">
-          <div class="yt-card-title">NOVO SITE E NOVOS PERSONAGENS! — Forbidden Legacy</div>
-          <div class="yt-card-meta">Trager Games · 2026</div>
-        </div>
-      </div>
-
-      <div class="yt-card" onclick="ytPlay(this,'ectttaQ3DcI')">
-        <div class="yt-thumb" id="yt-ectttaQ3DcI">
-          <img src="https://i.ytimg.com/vi/ectttaQ3DcI/hqdefault.jpg" alt="Download video thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
-          <div class="yt-play-icon">▶</div>
-        </div>
-        <div class="yt-card-info">
-          <div class="yt-card-title">SAIU O DOWNLOAD! O Remake Definitivo do Forbidden Memories</div>
-          <div class="yt-card-meta">Trager Games · 2025</div>
-        </div>
-      </div>
-
-      <div class="yt-card" onclick="ytPlay(this,'9cJ3UWZVt0M')">
-        <div class="yt-thumb" id="yt-9cJ3UWZVt0M">
-          <img src="https://i.ytimg.com/vi/9cJ3UWZVt0M/hqdefault.jpg" alt="Modo Historia thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
-          <div class="yt-play-icon">▶</div>
-        </div>
-        <div class="yt-card-info">
-          <div class="yt-card-title">CONHEÇA O MODO HISTÓRIA! — Forbidden Legacy</div>
-          <div class="yt-card-meta">Trager Games · 2026</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<script>
-function ytPlay(card, videoId) {
-  const thumb = card.querySelector('.yt-thumb');
-  thumb.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius:8px 8px 0 0;display:block"></iframe>';
-  card.onclick = null;
-}
-</script>
 
 <!-- ══════════════════ COMO FUNCIONA ══════════════════ -->
 <section style="padding-top:80px">
@@ -1956,7 +1837,7 @@ function ytPlay(card, videoId) {
   </div>
   <div class="footer-links">
     <a href="#sobre" data-lang="pt">O Jogo</a><a href="#sobre" data-lang="en">The Game</a>
-    <a href="#galeria" data-lang="pt">Galeria</a><a href="#galeria" data-lang="en">Gallery</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
     <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
     <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
     <a href="#download">Download</a>

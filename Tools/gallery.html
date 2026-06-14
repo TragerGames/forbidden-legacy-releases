@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Galeria de Screenshots</title>
+<meta name="description" content="Veja Forbidden Legacy em ação — menus, duelos, campanha, Card Shop e muito mais. Galeria de screenshots em PT e EN.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/gallery.html">
+<meta property="og:title" content="Forbidden Legacy — Galeria">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/gallery.html">
+<link rel="icon" type="image/png" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<style>
+:root {
+  --ouro:      #C89020;
+  --ouro-brt:  #E8B830;
+  --ouro-esc:  #8A6010;
+  --fundo:     #050301;
+  --painel:    #0D0804;
+  --painel2:   #130C05;
+  --texto:     #D4C49A;
+  --texto-dim: #7A6A48;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto); min-height:100vh; }
+
+/* ── NAV ── */
+.topbar {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  background:rgba(5,3,1,0.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid #1a1206;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; height:52px;
+}
+.topbar-logo { font-size:14px; font-weight:900; letter-spacing:3px; color:var(--ouro); text-decoration:none; }
+.topbar-nav { display:flex; gap:4px; align-items:center; }
+.topbar-nav a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--texto-dim); text-decoration:none; padding:6px 12px; border-radius:2px; transition:color .2s; }
+.topbar-nav a:hover { color:var(--ouro); }
+.topbar-nav a.active { color:var(--ouro-brt); }
+.topbar-nav .nav-cta { color:var(--ouro-brt); border:1px solid var(--ouro-esc); margin-left:8px; }
+.topbar-nav .nav-cta:hover { background:rgba(200,144,32,0.1); border-color:var(--ouro); }
+.topbar-right { display:flex; gap:8px; align-items:center; }
+.lang-btn { background:transparent; border:1px solid var(--ouro-esc); color:var(--texto-dim); padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px; transition:all .2s; }
+.lang-btn.active { border-color:var(--ouro); color:var(--ouro); }
+
+/* ── HERO ── */
+.page-hero {
+  padding: 120px 20px 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--ouro-esc);
+  background:
+    linear-gradient(to bottom, rgba(5,3,1,0) 40%, #050301 100%),
+    radial-gradient(ellipse at 50% 30%, rgba(200,144,32,0.10) 0%, transparent 70%);
+}
+.page-hero-label { font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:16px; }
+.page-hero-title {
+  font-size: clamp(32px, 6vw, 60px); font-weight:900; letter-spacing:-1px;
+  background: linear-gradient(135deg, var(--ouro-esc) 0%, var(--ouro-brt) 50%, var(--ouro) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  margin-bottom:8px;
+}
+.page-hero-sub { font-size:13px; letter-spacing:3px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:24px; }
+.page-hero-desc { max-width:560px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--texto-dim); }
+
+/* ── GALERIA ── */
+.gallery-inner { max-width:1200px; margin:0 auto; padding:72px 20px 80px; }
+.section-label { text-align:center; font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:12px; }
+.section-title { text-align:center; font-size:28px; font-weight:700; color:var(--ouro-brt); margin-bottom:40px; }
+
+.gallery-grid {
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:10px;
+  height:460px;
+}
+.gallery-item {
+  overflow:hidden; border-radius:4px; position:relative;
+  background:var(--painel2); border:1px solid #1a1206;
+  cursor:pointer;
+}
+.gallery-item.featured { grid-row:span 2; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+.gallery-item:hover img { transform:scale(1.04); }
+.gallery-item:hover .gallery-caption { opacity:1; }
+.gallery-caption {
+  position:absolute; bottom:0; left:0; right:0;
+  padding:10px 14px;
+  background:linear-gradient(transparent, rgba(0,0,0,0.85));
+  font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--ouro-brt); opacity:0; transition:opacity .3s;
+}
+.placeholder-txt {
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:8px;
+  color:var(--texto-dim); font-size:11px; letter-spacing:2px;
+}
+.gallery-sub-label {
+  display:flex; align-items:center; gap:12px;
+  margin:24px 0 14px; font-size:10px; letter-spacing:3px;
+  color:var(--ouro-esc); text-transform:uppercase;
+}
+.gallery-sub-label::before, .gallery-sub-label::after {
+  content:''; flex:1; height:1px; background:#1a1206;
+}
+.gallery-grid-sub {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+.gallery-grid-sub .gallery-item { aspect-ratio:16/9; }
+
+/* Lightbox */
+.lb-overlay {
+  display:none; position:fixed; inset:0; z-index:1000;
+  background:rgba(0,0,0,0.92); align-items:center; justify-content:center;
+  cursor:zoom-out;
+}
+.lb-overlay.active { display:flex; }
+.lb-overlay img { max-width:92vw; max-height:88vh; border-radius:4px; border:1px solid var(--ouro-esc); }
+.lb-close {
+  position:absolute; top:20px; right:28px;
+  font-size:28px; color:var(--ouro); cursor:pointer; background:none; border:none;
+}
+
+/* ── SCROLL REVEAL ── */
+[data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+[data-reveal].revealed { opacity:1; transform:translateY(0); }
+
+/* ── LANG ── */
+[data-lang="en"] { display:none !important; }
+span[data-lang="en"] { display:none !important; }
+body.en [data-lang="pt"] { display:none !important; }
+body.en span[data-lang="pt"] { display:none !important; }
+body.en [data-lang="en"] { display:block !important; }
+body.en span[data-lang="en"] { display:inline !important; }
+
+/* ── FOOTER ── */
+footer { border-top:1px solid #1a1206; padding:40px 20px; text-align:center; color:var(--texto-dim); font-size:13px; }
+footer a { color:var(--ouro-esc); text-decoration:none; }
+footer a:hover { color:var(--ouro); }
+.footer-logo { font-size:20px; font-weight:900; color:var(--ouro); letter-spacing:2px; margin-bottom:12px; }
+.footer-links { display:flex; gap:20px; justify-content:center; margin-bottom:14px; flex-wrap:wrap; }
+.footer-links a { font-size:12px; letter-spacing:1px; text-transform:uppercase; }
+footer p { opacity:.5; font-size:12px; margin-top:8px; }
+
+@media(max-width:700px){
+  .topbar-nav { display:none; }
+  .gallery-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; height:auto; }
+  .gallery-item.featured { grid-row:span 1; aspect-ratio:16/9; }
+  .gallery-grid-sub { grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="topbar-logo">☥ FL</a>
+  <nav class="topbar-nav">
+    <a href="/#sobre" data-lang="pt">O Jogo</a>
+    <a href="/#sobre" data-lang="en">The Game</a>
+    <a href="gallery.html" class="active" data-lang="pt">Galeria</a>
+    <a href="gallery.html" class="active" data-lang="en">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a>
+    <a href="features.html" data-lang="en">Features</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a>
+    <a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="/#download">Download</a>
+    <a href="/#novidades" data-lang="pt">Novidades</a>
+    <a href="/#novidades" data-lang="en">Updates</a>
+    <a href="/#comprar" class="nav-cta" data-lang="pt">☥ Founder</a>
+    <a href="/#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-label">☥ Beta 1.4.1</div>
+  <h1 class="page-hero-title" data-lang="pt">Galeria</h1>
+  <h1 class="page-hero-title" data-lang="en">Gallery</h1>
+  <div class="page-hero-sub" data-lang="pt">O jogo em ação</div>
+  <div class="page-hero-sub" data-lang="en">The game in action</div>
+  <p class="page-hero-desc" data-lang="pt">Screenshots de Forbidden Legacy em português e inglês. Clique em qualquer imagem para ampliar.</p>
+  <p class="page-hero-desc" data-lang="en">Forbidden Legacy screenshots in Portuguese and English. Click any image to enlarge.</p>
+</div>
+
+<div class="gallery-inner">
+
+  <!-- Grade principal -->
+  <div class="gallery-grid" data-reveal>
+    <div class="gallery-item featured" onclick="openLbLang(this)">
+      <img src="screenshots/pt/menu-inicial.png" data-src-pt="screenshots/pt/menu-inicial.png" data-src-en="screenshots/en/menu-inicial.png" alt="Menu Inicial" loading="lazy">
+      <div class="placeholder-txt"><span>🏛️</span><span data-lang="pt">Menu Inicial</span><span data-lang="en">Main Menu</span></div>
+      <div class="gallery-caption" data-lang="pt">Menu Inicial</div>
+      <div class="gallery-caption" data-lang="en">Main Menu</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/editor-deck.png" data-src-pt="screenshots/pt/editor-deck.png" data-src-en="screenshots/en/editor-deck.png" alt="Editor de Deck" loading="lazy">
+      <div class="placeholder-txt"><span>🃏</span></div>
+      <div class="gallery-caption" data-lang="pt">Editor de Deck</div>
+      <div class="gallery-caption" data-lang="en">Deck Editor</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/card-shop.png" data-src-pt="screenshots/pt/card-shop.png" data-src-en="screenshots/en/card-shop.png" alt="Card Shop" loading="lazy">
+      <div class="placeholder-txt"><span>🛒</span></div>
+      <div class="gallery-caption" data-lang="pt">Loja de Cartas</div>
+      <div class="gallery-caption" data-lang="en">Card Shop</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-boosters.png" data-src-pt="screenshots/pt/tela-boosters.png" data-src-en="screenshots/en/tela-boosters.png" alt="Booster Packs" loading="lazy">
+      <div class="placeholder-txt"><span>📦</span></div>
+      <div class="gallery-caption" data-lang="pt">Booster Packs</div>
+      <div class="gallery-caption" data-lang="en">Booster Packs</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/gerenciar-decks.png" data-src-pt="screenshots/pt/gerenciar-decks.png" data-src-en="screenshots/en/gerenciar-decks.png" alt="Gerenciar Decks" loading="lazy">
+      <div class="placeholder-txt"><span>📦</span></div>
+      <div class="gallery-caption" data-lang="pt">Gerenciar Decks</div>
+      <div class="gallery-caption" data-lang="en">Manage Decks</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/free-duel.png" data-src-pt="screenshots/pt/free-duel.png" data-src-en="screenshots/en/free-duel.png" alt="Free Duel" loading="lazy">
+      <div class="placeholder-txt"><span>⚔️</span></div>
+      <div class="gallery-caption" data-lang="pt">Duelo Livre</div>
+      <div class="gallery-caption" data-lang="en">Free Duel</div>
+    </div>
+  </div>
+
+  <!-- Menus -->
+  <div class="gallery-sub-label" data-reveal>
+    <span data-lang="pt">🗂 Menus</span><span data-lang="en">🗂 Menus</span>
+  </div>
+  <div class="gallery-grid-sub" data-reveal>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-nome.png" data-src-pt="screenshots/pt/tela-nome.png" data-src-en="screenshots/en/tela-nome.png" alt="Inserir Nome" loading="lazy">
+      <div class="placeholder-txt"><span>✏️</span></div>
+      <div class="gallery-caption" data-lang="pt">Inserir Nome</div>
+      <div class="gallery-caption" data-lang="en">Enter Name</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/selecao-deck.png" data-src-pt="screenshots/pt/selecao-deck.png" data-src-en="screenshots/en/selecao-deck.png" alt="Seleção de Deck" loading="lazy">
+      <div class="placeholder-txt"><span>🃏</span></div>
+      <div class="gallery-caption" data-lang="pt">Seleção de Deck</div>
+      <div class="gallery-caption" data-lang="en">Deck Selection</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-opcoes.png" data-src-pt="screenshots/pt/tela-opcoes.png" data-src-en="screenshots/en/tela-opcoes.png" alt="Opções" loading="lazy">
+      <div class="placeholder-txt"><span>⚙️</span></div>
+      <div class="gallery-caption" data-lang="pt">Opções</div>
+      <div class="gallery-caption" data-lang="en">Options</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-bio.png" data-src-pt="screenshots/pt/tela-bio.png" data-src-en="screenshots/en/tela-bio.png" alt="Perfil do Duelista" loading="lazy">
+      <div class="placeholder-txt"><span>👤</span></div>
+      <div class="gallery-caption" data-lang="pt">Perfil do Duelista</div>
+      <div class="gallery-caption" data-lang="en">Duelist Profile</div>
+    </div>
+  </div>
+
+  <!-- Campanha -->
+  <div class="gallery-sub-label" data-reveal>
+    <span data-lang="pt">🏺 Campanha</span><span data-lang="en">🏺 Campaign</span>
+  </div>
+  <div class="gallery-grid-sub" data-reveal>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-npc1.png" data-src-pt="screenshots/pt/tela-npc1.png" data-src-en="screenshots/en/tela-npc1.png" alt="Campanha" loading="lazy">
+      <div class="placeholder-txt"><span>🏺</span></div>
+      <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
+      <div class="gallery-caption" data-lang="en">Campaign Mode</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-npc2.png" data-src-pt="screenshots/pt/tela-npc2.png" data-src-en="screenshots/en/tela-npc2.png" alt="Campanha" loading="lazy">
+      <div class="placeholder-txt"><span>🏺</span></div>
+      <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
+      <div class="gallery-caption" data-lang="en">Campaign Mode</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-npc3.png" data-src-pt="screenshots/pt/tela-npc3.png" data-src-en="screenshots/en/tela-npc3.png" alt="Campanha" loading="lazy">
+      <div class="placeholder-txt"><span>🏺</span></div>
+      <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
+      <div class="gallery-caption" data-lang="en">Campaign Mode</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/arena-duel1.png" data-src-pt="screenshots/pt/arena-duel1.png" data-src-en="screenshots/en/arena-duel1.png" alt="Arena de Duelo" loading="lazy">
+      <div class="placeholder-txt"><span>⚔️</span></div>
+      <div class="gallery-caption" data-lang="pt">Arena de Duelo</div>
+      <div class="gallery-caption" data-lang="en">Duel Arena</div>
+    </div>
+  </div>
+
+  <!-- Duelo -->
+  <div class="gallery-sub-label" data-reveal>
+    <span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span>
+  </div>
+  <div class="gallery-grid-sub" data-reveal>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/arena-duelo2.png" data-src-pt="screenshots/pt/arena-duelo2.png" data-src-en="screenshots/en/arena-duelo2.png" alt="Arena de Duelo" loading="lazy">
+      <div class="placeholder-txt"><span>⚔️</span></div>
+      <div class="gallery-caption" data-lang="pt">Arena de Duelo</div>
+      <div class="gallery-caption" data-lang="en">Duel Arena</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/opcoes-duelo.png" data-src-pt="screenshots/pt/opcoes-duelo.png" data-src-en="screenshots/en/opcoes-duelo.png" alt="Opções no Duelo" loading="lazy">
+      <div class="placeholder-txt"><span>⚙️</span></div>
+      <div class="gallery-caption" data-lang="pt">Opções no Duelo</div>
+      <div class="gallery-caption" data-lang="en">In-Duel Options</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-resultado.png" data-src-pt="screenshots/pt/tela-resultado.png" data-src-en="screenshots/en/tela-resultado.png" alt="Resultado do Duelo" loading="lazy">
+      <div class="placeholder-txt"><span>🏆</span></div>
+      <div class="gallery-caption" data-lang="pt">Resultado do Duelo</div>
+      <div class="gallery-caption" data-lang="en">Duel Result</div>
+    </div>
+    <div class="gallery-item" onclick="openLbLang(this)">
+      <img src="screenshots/pt/tela-boosters.png" data-src-pt="screenshots/pt/tela-boosters.png" data-src-en="screenshots/en/tela-boosters.png" alt="Booster Packs" loading="lazy">
+      <div class="placeholder-txt"><span>📦</span></div>
+      <div class="gallery-caption" data-lang="pt">Booster Packs</div>
+      <div class="gallery-caption" data-lang="en">Booster Packs</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center;margin-top:56px" data-reveal>
+    <a href="/#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-size:15px;letter-spacing:2px;background:rgba(200,144,32,0.1);border:2px solid var(--ouro);color:var(--ouro-brt);border-radius:2px;text-decoration:none;text-transform:uppercase;transition:all .25s;box-shadow:0 0 24px rgba(200,144,32,0.15)">
+      <span>⬇</span>
+      <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.4.1</span>
+      <span data-lang="en">DOWNLOAD FREE — Beta 1.4.1</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lb-overlay" id="lb" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<footer>
+  <div class="footer-logo">FORBIDDEN LEGACY</div>
+  <div class="footer-links">
+    <a href="/" data-lang="pt">Início</a><a href="/" data-lang="en">Home</a>
+    <a href="/#sobre" data-lang="pt">O Jogo</a><a href="/#sobre" data-lang="en">The Game</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="/#download">Download</a>
+    <a href="/#novidades" data-lang="pt">Novidades</a><a href="/#novidades" data-lang="en">Updates</a>
+    <a href="/#comprar" data-lang="pt">Founder</a><a href="/#comprar" data-lang="en">Founder</a>
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+    <a href="https://www.youtube.com/@tragergames" target="_blank" style="color:#C00000">▶ YouTube</a>
+  </div>
+  <div>
+    <span data-lang="pt">Fan-made · Não afiliado à Konami · Desenvolvido por </span>
+    <span data-lang="en">Fan-made · Not affiliated with Konami · Developed by </span>
+    <a href="https://www.youtube.com/@tragergames" target="_blank">TragerGames</a>
+  </div>
+  <p data-lang="pt">Dúvidas? Entre em contato pelo <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
+  <p data-lang="en">Questions? Reach us on <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
+</footer>
+
+<script>
+function setLang(lang, save=true) {
+  document.body.classList.toggle('en', lang==='en');
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  const btn=document.querySelector('.lang-btn[onclick="setLang(\''+lang+'\')"]');
+  if(btn)btn.classList.add('active');
+  document.querySelectorAll('img[data-src-pt][data-src-en]').forEach(img=>{
+    img.src=lang==='en'?img.dataset.srcEn:img.dataset.srcPt;
+  });
+  if(save)localStorage.setItem('fl_lang',lang);
+}
+window.setLang=setLang;
+(function(){
+  const s=localStorage.getItem('fl_lang');
+  if(s){setLang(s,false);return;}
+  fetch('https://api.country.is/').then(r=>r.json()).then(d=>{if(d.country&&d.country!=='BR')setLang('en',false);}).catch(()=>{});
+})();
+
+function openLb(src){
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lb').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeLb(){
+  document.getElementById('lb').classList.remove('active');
+  document.body.style.overflow='';
+}
+function openLbLang(item){
+  const img=item.querySelector('img');
+  openLb(img?img.src:'');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+(function(){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target);}});
+  },{threshold:0.08});
+  document.querySelectorAll('[data-reveal]').forEach((el,i)=>{
+    el.style.transitionDelay=(i*0.1)+'s';
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
