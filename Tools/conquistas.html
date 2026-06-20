@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Conquistas</title>
+<meta name="description" content="Sistema de conquistas do Forbidden Legacy. 14 conquistas divididas em Duelos, História, Coleção e Combate — cada nível recompensa com fragmentos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/conquistas.html">
+<meta property="og:title" content="Forbidden Legacy — Conquistas">
+<meta property="og:description" content="Progrida, colete e conquiste. 14 conquistas por nível com recompensas em fragmentos.">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/screenshots/menu.png">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/conquistas.html">
+<link rel="icon" type="image/png" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<style>
+:root {
+  --ouro:      #C89020;
+  --ouro-brt:  #E8B830;
+  --ouro-esc:  #8A6010;
+  --fundo:     #050301;
+  --painel:    #0D0804;
+  --painel2:   #130C05;
+  --texto:     #D4C49A;
+  --texto-dim: #7A6A48;
+  --verde:     #40C070;
+  --azul:      #6090D8;
+  --roxo:      #A060D0;
+  --cobre:     #D87030;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto); min-height:100vh; }
+
+/* ── NAV ── */
+.topbar {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  background:rgba(5,3,1,0.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid #1a1206;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 32px; height:52px;
+}
+.topbar-logo { font-size:14px; font-weight:900; letter-spacing:3px; color:var(--ouro); text-decoration:none; }
+.topbar-nav { display:flex; gap:4px; align-items:center; }
+.topbar-nav a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--texto-dim); text-decoration:none; padding:6px 12px; border-radius:2px; transition:color .2s; }
+.topbar-nav a:hover { color:var(--ouro); }
+.topbar-nav a.active { color:var(--ouro-brt); }
+.topbar-nav .nav-cta { color:var(--ouro-brt); border:1px solid var(--ouro-esc); margin-left:8px; }
+.topbar-nav .nav-cta:hover { background:rgba(200,144,32,0.1); border-color:var(--ouro); }
+.topbar-right { display:flex; gap:8px; align-items:center; }
+.lang-btn { background:transparent; border:1px solid var(--ouro-esc); color:var(--texto-dim); padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px; transition:all .2s; }
+.lang-btn.active { border-color:var(--ouro); color:var(--ouro); }
+
+/* ── HERO ── */
+.page-hero {
+  padding:120px 20px 60px; text-align:center;
+  border-bottom:1px solid var(--ouro-esc);
+  background:
+    linear-gradient(to bottom, rgba(5,3,1,0) 40%, #050301 100%),
+    radial-gradient(ellipse at 50% 30%, rgba(200,144,32,0.12) 0%, transparent 70%);
+}
+.page-hero-label { font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:16px; }
+.page-hero-title {
+  font-size:clamp(32px,6vw,60px); font-weight:900; letter-spacing:-1px;
+  background:linear-gradient(135deg, var(--ouro-esc) 0%, var(--ouro-brt) 50%, var(--ouro) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:8px;
+}
+.page-hero-sub { font-size:13px; letter-spacing:3px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:24px; }
+.page-hero-desc { max-width:700px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--texto-dim); }
+
+/* ── LAYOUT ── */
+.page-content { max-width:1060px; margin:0 auto; padding:72px 20px 100px; }
+.section-label { text-align:center; font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:12px; }
+.section-title { text-align:center; font-size:28px; font-weight:700; color:var(--ouro-brt); margin-bottom:40px; }
+
+/* ── STATS TOPO ── */
+.stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:64px; }
+@media(max-width:700px){ .stats-row { grid-template-columns:repeat(2,1fr); } }
+.stat-card {
+  background:var(--painel2); border:1px solid #1e1408;
+  border-radius:6px; padding:24px 16px; text-align:center;
+}
+.stat-icon { font-size:28px; margin-bottom:10px; }
+.stat-num { font-size:28px; font-weight:900; color:var(--ouro-brt); line-height:1; margin-bottom:6px; }
+.stat-label { font-size:11px; letter-spacing:2px; color:var(--texto-dim); text-transform:uppercase; }
+
+/* ── CATEGORIA ── */
+.cat-section { margin-bottom:56px; }
+.cat-header {
+  display:flex; align-items:center; gap:14px;
+  padding:14px 20px; border-radius:6px 6px 0 0;
+  border:1px solid #1e1408; border-bottom:none;
+  margin-bottom:0;
+}
+.cat-rune { font-size:24px; }
+.cat-name { font-size:13px; font-weight:800; letter-spacing:3px; text-transform:uppercase; }
+.cat-count { margin-left:auto; font-size:11px; color:var(--texto-dim); letter-spacing:1px; }
+
+/* Cores por categoria */
+.cat-duelos   .cat-header { background:rgba(216,112,48,0.10); border-color:rgba(216,112,48,0.30); }
+.cat-duelos   .cat-name   { color:var(--cobre); }
+.cat-historia .cat-header { background:rgba(160,96,208,0.10); border-color:rgba(160,96,208,0.30); }
+.cat-historia .cat-name   { color:var(--roxo); }
+.cat-colecao  .cat-header { background:rgba(96,144,216,0.10); border-color:rgba(96,144,216,0.30); }
+.cat-colecao  .cat-name   { color:var(--azul); }
+.cat-combate  .cat-header { background:rgba(232,184,48,0.10); border-color:rgba(232,184,48,0.30); }
+.cat-combate  .cat-name   { color:var(--ouro-brt); }
+
+/* ── GRID DE CONQUISTAS ── */
+.achiev-grid {
+  display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
+  background:#1e1408; border:1px solid #1e1408; border-radius:0 0 6px 6px; overflow:hidden;
+}
+@media(max-width:640px){ .achiev-grid { grid-template-columns:1fr; } }
+
+.achiev-card {
+  background:var(--painel); padding:20px 22px;
+  display:flex; gap:16px; align-items:flex-start;
+  transition:background .15s;
+}
+.achiev-card:hover { background:var(--painel2); }
+.achiev-emoji { font-size:26px; flex-shrink:0; margin-top:2px; }
+.achiev-body { flex:1; }
+.achiev-name { font-size:14px; font-weight:700; color:var(--texto); margin-bottom:3px; }
+.achiev-desc { font-size:12px; color:var(--texto-dim); line-height:1.5; margin-bottom:10px; }
+.achiev-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.achiev-req {
+  font-size:11px; letter-spacing:1px; text-transform:uppercase;
+  color:var(--ouro-esc); background:rgba(200,144,32,0.08);
+  border:1px solid rgba(200,144,32,0.18); border-radius:3px; padding:3px 8px;
+}
+.achiev-reward {
+  font-size:11px; letter-spacing:1px; font-weight:700;
+  color:#8FC870; background:rgba(64,192,112,0.08);
+  border:1px solid rgba(64,192,112,0.20); border-radius:3px; padding:3px 8px;
+}
+
+/* ── COMO FUNCIONA ── */
+.how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:64px; }
+@media(max-width:700px){ .how-grid { grid-template-columns:1fr; } }
+.how-card {
+  background:var(--painel2); border:1px solid #1e1408;
+  border-radius:6px; padding:28px 22px; text-align:center;
+}
+.how-icon { font-size:32px; margin-bottom:14px; }
+.how-title { font-size:14px; font-weight:700; color:var(--ouro-brt); margin-bottom:8px; letter-spacing:1px; }
+.how-desc { font-size:13px; color:var(--texto-dim); line-height:1.7; }
+
+/* ── FOOTER ── */
+.page-footer {
+  text-align:center; padding:40px 20px;
+  border-top:1px solid #1a1206; color:var(--texto-dim); font-size:12px;
+}
+.page-footer a { color:var(--ouro-esc); text-decoration:none; }
+.page-footer a:hover { color:var(--ouro); }
+
+[data-lang] { display:none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="topbar">
+  <a href="index.html" class="topbar-logo">☥ FL</a>
+  <nav class="topbar-nav">
+    <a href="index.html#sobre" data-lang="pt">O Jogo</a>
+    <a href="index.html#sobre" data-lang="en">The Game</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a>
+    <a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a>
+    <a href="features.html" data-lang="en">Features</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a>
+    <a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a>
+    <a href="banlist.html" data-lang="en">Banlist</a>
+    <a href="conquistas.html" class="active" data-lang="pt">Conquistas</a>
+    <a href="conquistas.html" class="active" data-lang="en">Achievements</a>
+    <a href="index.html#download">Download</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+  </nav>
+  <div class="topbar-right">
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <p class="page-hero-label">🏆 <span data-lang="pt">Sistema de Progressão</span><span data-lang="en">Progression System</span></p>
+  <h1 class="page-hero-title" data-lang="pt">Conquistas</h1>
+  <h1 class="page-hero-title" data-lang="en">Achievements</h1>
+  <p class="page-hero-sub" data-lang="pt">Forbidden Legacy — Beta 1.5</p>
+  <p class="page-hero-sub" data-lang="en">Forbidden Legacy — Beta 1.5</p>
+  <p class="page-hero-desc" data-lang="pt">Cada duelo conta. Cada carta coletada avança. O sistema de conquistas registra sua jornada e recompensa seu progresso com fragmentos — em todos os momentos, para todos os estilos de jogo.</p>
+  <p class="page-hero-desc" data-lang="en">Every duel counts. Every card collected matters. The achievement system tracks your journey and rewards your progress with fragments — at every step, for every playstyle.</p>
+</section>
+
+<main class="page-content">
+
+  <!-- COMO FUNCIONA -->
+  <p class="section-label">☥ <span data-lang="pt">Como Funciona</span><span data-lang="en">How It Works</span></p>
+  <h2 class="section-title" data-lang="pt">Progressão por Nível</h2>
+  <h2 class="section-title" data-lang="en">Level-Based Progression</h2>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-icon">⚔️</div>
+      <div class="how-title" data-lang="pt">Jogue Normalmente</div>
+      <div class="how-title" data-lang="en">Play Normally</div>
+      <div class="how-desc" data-lang="pt">As conquistas avançam automaticamente enquanto você duels, coleta cartas e progride na história. Não há missões para ativar.</div>
+      <div class="how-desc" data-lang="en">Achievements advance automatically as you duel, collect cards and progress through the story. No quests to activate.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-icon">📈</div>
+      <div class="how-title" data-lang="pt">Níveis Infinitos</div>
+      <div class="how-title" data-lang="en">Infinite Levels</div>
+      <div class="how-desc" data-lang="pt">Cada conquista avança em níveis conforme você acumula ações. Não tem teto — cada nível conquistado entrega recompensas.</div>
+      <div class="how-desc" data-lang="en">Each achievement levels up as you accumulate actions. No cap — every level reached delivers rewards.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-icon">💎</div>
+      <div class="how-title" data-lang="pt">Fragmentos como Recompensa</div>
+      <div class="how-title" data-lang="en">Fragments as Reward</div>
+      <div class="how-desc" data-lang="pt">Cada nível concedido deposita Fragmentos R no seu inventário. Use-os na Card Shop para trocar por cartas raras.</div>
+      <div class="how-desc" data-lang="en">Each level granted deposits R Fragments into your inventory. Use them in the Card Shop to exchange for rare cards.</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon">🏆</div>
+      <div class="stat-num">14</div>
+      <div class="stat-label" data-lang="pt">Conquistas</div>
+      <div class="stat-label" data-lang="en">Achievements</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📂</div>
+      <div class="stat-num">4</div>
+      <div class="stat-label" data-lang="pt">Categorias</div>
+      <div class="stat-label" data-lang="en">Categories</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">♾️</div>
+      <div class="stat-num">∞</div>
+      <div class="stat-label" data-lang="pt">Níveis por Conquista</div>
+      <div class="stat-label" data-lang="en">Levels per Achievement</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">💎</div>
+      <div class="stat-num">Frag R</div>
+      <div class="stat-label" data-lang="pt">Recompensa por Nível</div>
+      <div class="stat-label" data-lang="en">Reward per Level</div>
+    </div>
+  </div>
+
+  <!-- DUELOS -->
+  <p class="section-label">⚔️ <span data-lang="pt">Categoria</span><span data-lang="en">Category</span></p>
+  <div class="cat-section cat-duelos">
+    <div class="cat-header">
+      <span class="cat-rune">𓋹</span>
+      <span class="cat-name" data-lang="pt">Duelos</span>
+      <span class="cat-name" data-lang="en">Duels</span>
+      <span class="cat-count" data-lang="pt">4 conquistas</span>
+      <span class="cat-count" data-lang="en">4 achievements</span>
+    </div>
+    <div class="achiev-grid">
+      <div class="achiev-card">
+        <div class="achiev-emoji">⚔️</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Duelista Incansável</div>
+          <div class="achiev-name" data-lang="en">Relentless Duelist</div>
+          <div class="achiev-desc" data-lang="pt">Registra todos os duelos realizados, vitórias ou derrotas.</div>
+          <div class="achiev-desc" data-lang="en">Tracks all duels played, wins or losses.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 500 duelos</span>
+            <span class="achiev-req" data-lang="en">+1 level every 500 duels</span>
+            <span class="achiev-reward">+50 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">🏆</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Vencedor do Reino das Sombras</div>
+          <div class="achiev-name" data-lang="en">Shadow Realm Victor</div>
+          <div class="achiev-desc" data-lang="pt">Conta somente vitórias em duelo.</div>
+          <div class="achiev-desc" data-lang="en">Counts only duel victories.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 300 vitórias</span>
+            <span class="achiev-req" data-lang="en">+1 level every 300 victories</span>
+            <span class="achiev-reward">+75 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">🛡️</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Sobrevivente dos Duelos</div>
+          <div class="achiev-name" data-lang="en">Duel Survivor</div>
+          <div class="achiev-desc" data-lang="pt">Acumule derrotas — elas também rendem recompensas.</div>
+          <div class="achiev-desc" data-lang="en">Accumulate losses — they reward you too.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 300 derrotas</span>
+            <span class="achiev-req" data-lang="en">+1 level every 300 losses</span>
+            <span class="achiev-reward">+30 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">🔄</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Rival Persistente</div>
+          <div class="achiev-name" data-lang="en">Persistent Rival</div>
+          <div class="achiev-desc" data-lang="pt">Duele repetidamente contra o mesmo NPC — o contador rastreia o seu maior rival.</div>
+          <div class="achiev-desc" data-lang="en">Duel the same NPC repeatedly — tracks your greatest rival.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 500 duelos contra o mesmo NPC</span>
+            <span class="achiev-req" data-lang="en">+1 level every 500 duels vs same NPC</span>
+            <span class="achiev-reward">+100 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTÓRIA -->
+  <div class="cat-section cat-historia">
+    <div class="cat-header">
+      <span class="cat-rune">𓆄</span>
+      <span class="cat-name" data-lang="pt">História</span>
+      <span class="cat-name" data-lang="en">Story</span>
+      <span class="cat-count" data-lang="pt">1 conquista</span>
+      <span class="cat-count" data-lang="en">1 achievement</span>
+    </div>
+    <div class="achiev-grid">
+      <div class="achiev-card">
+        <div class="achiev-emoji">📖</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Desafiante da História</div>
+          <div class="achiev-name" data-lang="en">History Challenger</div>
+          <div class="achiev-desc" data-lang="pt">Avança a cada personagem vencido no modo campanha. Suba de nível derrotando Simon Muran, Isis, Heishin, Zorc e todos os demais da Season 1.</div>
+          <div class="achiev-desc" data-lang="en">Advances for each character defeated in campaign mode. Level up by defeating Simon Muran, Isis, Heishin, Zorc and all Season 1 characters.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível por personagem vencido</span>
+            <span class="achiev-req" data-lang="en">+1 level per character defeated</span>
+            <span class="achiev-reward">+20 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLEÇÃO -->
+  <div class="cat-section cat-colecao">
+    <div class="cat-header">
+      <span class="cat-rune">𓅓</span>
+      <span class="cat-name" data-lang="pt">Coleção</span>
+      <span class="cat-name" data-lang="en">Collection</span>
+      <span class="cat-count" data-lang="pt">5 conquistas</span>
+      <span class="cat-count" data-lang="en">5 achievements</span>
+    </div>
+    <div class="achiev-grid">
+      <div class="achiev-card">
+        <div class="achiev-emoji">📚</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Colecionador Supremo</div>
+          <div class="achiev-name" data-lang="en">Supreme Collector</div>
+          <div class="achiev-desc" data-lang="pt">Conta cartas únicas no seu catálogo — cada 100 novas cartas sobe um nível.</div>
+          <div class="achiev-desc" data-lang="en">Counts unique cards in your catalogue — every 100 new cards levels up.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 100 cartas únicas</span>
+            <span class="achiev-req" data-lang="en">+1 level every 100 unique cards</span>
+            <span class="achiev-reward">+60 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">🃏</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Caçador de Drops</div>
+          <div class="achiev-name" data-lang="en">Drop Hunter</div>
+          <div class="achiev-desc" data-lang="pt">Rastreia cartas obtidas por drop ao vencer duelos — cada derrota de NPC pode render raridades.</div>
+          <div class="achiev-desc" data-lang="en">Tracks cards obtained from drops when winning duels — each NPC defeat may yield rarities.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 500 drops obtidos</span>
+            <span class="achiev-req" data-lang="en">+1 level every 500 drops obtained</span>
+            <span class="achiev-reward">+50 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">📦</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Aventureiro de Boosters</div>
+          <div class="achiev-name" data-lang="en">Booster Adventurer</div>
+          <div class="achiev-desc" data-lang="pt">Conta boosters abertos na Card Shop. Cada pacote aberto acumula progresso.</div>
+          <div class="achiev-desc" data-lang="en">Counts boosters opened in the Card Shop. Each pack opened accumulates progress.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 5 boosters abertos</span>
+            <span class="achiev-req" data-lang="en">+1 level every 5 boosters opened</span>
+            <span class="achiev-reward">+10 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">🥈</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Caçador de SR</div>
+          <div class="achiev-name" data-lang="en">SR Hunter</div>
+          <div class="achiev-desc" data-lang="pt">Rastreia cartas SR acumuladas por qualquer meio — drops, boosters ou trocas.</div>
+          <div class="achiev-desc" data-lang="en">Tracks SR cards accumulated by any means — drops, boosters or trades.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 50 cartas SR</span>
+            <span class="achiev-req" data-lang="en">+1 level every 50 SR cards</span>
+            <span class="achiev-reward">+40 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">👑</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Caçador de UR</div>
+          <div class="achiev-name" data-lang="en">UR Hunter</div>
+          <div class="achiev-desc" data-lang="pt">As Ultra Rares são as mais difíceis de obter — cada 15 acumuladas sobe um nível.</div>
+          <div class="achiev-desc" data-lang="en">Ultra Rares are the hardest to get — every 15 accumulated levels up.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 15 cartas UR</span>
+            <span class="achiev-req" data-lang="en">+1 level every 15 UR cards</span>
+            <span class="achiev-reward">+60 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMBATE -->
+  <div class="cat-section cat-combate">
+    <div class="cat-header">
+      <span class="cat-rune">𓀀</span>
+      <span class="cat-name" data-lang="pt">Combate</span>
+      <span class="cat-name" data-lang="en">Combat</span>
+      <span class="cat-count" data-lang="pt">4 conquistas</span>
+      <span class="cat-count" data-lang="en">4 achievements</span>
+    </div>
+    <div class="achiev-grid">
+      <div class="achiev-card">
+        <div class="achiev-emoji">👹</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Invocador de Monstros</div>
+          <div class="achiev-name" data-lang="en">Monster Summoner</div>
+          <div class="achiev-desc" data-lang="pt">Conta cada monstro invocado ao campo durante os duelos.</div>
+          <div class="achiev-desc" data-lang="en">Counts every monster summoned to the field during duels.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 1000 monstros invocados</span>
+            <span class="achiev-req" data-lang="en">+1 level every 1000 monsters summoned</span>
+            <span class="achiev-reward">+80 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">🐉</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Domador de Dragões</div>
+          <div class="achiev-name" data-lang="en">Dragon Tamer</div>
+          <div class="achiev-desc" data-lang="pt">Rastreia especificamente monstros do tipo Dragão invocados.</div>
+          <div class="achiev-desc" data-lang="en">Specifically tracks Dragon-type monsters summoned.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 500 dragões invocados</span>
+            <span class="achiev-req" data-lang="en">+1 level every 500 dragons summoned</span>
+            <span class="achiev-reward">+50 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">✨</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Especialista em Magias</div>
+          <div class="achiev-name" data-lang="en">Spell Specialist</div>
+          <div class="achiev-desc" data-lang="pt">Conta magias normais, de campo, de equipe e contínuas ativadas.</div>
+          <div class="achiev-desc" data-lang="en">Counts normal, field, equip and continuous spells activated.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 500 magias usadas</span>
+            <span class="achiev-req" data-lang="en">+1 level every 500 spells used</span>
+            <span class="achiev-reward">+40 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">🪤</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Armeiro de Armadilhas</div>
+          <div class="achiev-name" data-lang="en">Trap Master</div>
+          <div class="achiev-desc" data-lang="pt">Conta armadilhas ativadas durante combates — interceptações, negações e contínuas.</div>
+          <div class="achiev-desc" data-lang="en">Counts traps activated during combat — intercepts, negations and continuous.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 500 armadilhas ativadas</span>
+            <span class="achiev-req" data-lang="en">+1 level every 500 traps activated</span>
+            <span class="achiev-reward">+40 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+      <div class="achiev-card">
+        <div class="achiev-emoji">⭐</div>
+        <div class="achiev-body">
+          <div class="achiev-name" data-lang="pt">Senhor das Estrelas</div>
+          <div class="achiev-name" data-lang="en">Lord of Stars</div>
+          <div class="achiev-desc" data-lang="pt">Acumula estrelas ganhas em duelos por rank — S vale mais, cada vitória contribui.</div>
+          <div class="achiev-desc" data-lang="en">Accumulates stars earned from ranked duels — S rank earns more, every victory counts.</div>
+          <div class="achiev-meta">
+            <span class="achiev-req" data-lang="pt">+1 nível a cada 50.000 estrelas ganhas</span>
+            <span class="achiev-req" data-lang="en">+1 level every 50,000 stars earned</span>
+            <span class="achiev-reward">+200 Frag R / nível</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <p data-lang="pt">Forbidden Legacy — Fan-made · <a href="index.html">forbiddenlegacy.com.br</a> · <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
+  <p data-lang="en">Forbidden Legacy — Fan-made · <a href="index.html">forbiddenlegacy.com.br</a> · <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
+</footer>
+
+<script>
+function setLang(l) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.dataset.lang === l ? '' : 'none';
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  localStorage.setItem('fl_lang', l);
+}
+const saved = localStorage.getItem('fl_lang') || 'pt';
+setLang(saved);
+</script>
+</body>
+</html>
