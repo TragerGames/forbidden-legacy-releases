@@ -15,15 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Test FTP connectivity
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-        run: |
-          echo "Testing TCP connection to $FTP_SERVER:21..."
-          timeout 15 bash -c "echo > /dev/tcp/$FTP_SERVER/21" \
-            && echo "✅ Port 21 reachable" \
-            || (echo "❌ Port 21 BLOCKED — FTP unreachable from GitHub Actions" && exit 1)
-
       - name: Deploy via FTP (curl)
         env:
           FTP_SERVER:   ${{ secrets.FTP_SERVER }}
@@ -42,9 +33,20 @@ jobs:
               --user "${FTP_USERNAME}:${FTP_PASSWORD}" \
               --ftp-pasv \
               --ftp-create-dirs \
+              --ftp-ssl-control \
+              --insecure \
               --retry 3 \
               --retry-delay 5 \
               --max-time 60 \
+              || curl --silent --show-error \
+                -T "$filepath" \
+                "$remote" \
+                --user "${FTP_USERNAME}:${FTP_PASSWORD}" \
+                --ftp-pasv \
+                --ftp-create-dirs \
+                --retry 3 \
+                --retry-delay 5 \
+                --max-time 60 \
               || { echo "❌ FAILED: $rel"; ERRORS=$((ERRORS+1)); }
           done < <(find . -type f \
             ! -path './.git*' \
