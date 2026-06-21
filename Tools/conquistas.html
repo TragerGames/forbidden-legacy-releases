@@ -40,7 +40,8 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   padding:0 32px; height:52px;
 }
 .topbar-logo { font-size:14px; font-weight:900; letter-spacing:3px; color:var(--ouro); text-decoration:none; }
-.topbar-nav { display:flex; gap:4px; align-items:center; }
+.topbar-nav { display:flex; gap:4px; align-items:center; overflow-x:auto; scrollbar-width:none; }
+.topbar-nav::-webkit-scrollbar { display:none; }
 .topbar-nav a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--texto-dim); text-decoration:none; padding:6px 12px; border-radius:2px; transition:color .2s; }
 .topbar-nav a:hover { color:var(--ouro); }
 .topbar-nav a.active { color:var(--ouro-brt); }
@@ -66,11 +67,60 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
 }
 .page-hero-sub { font-size:13px; letter-spacing:3px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:24px; }
 .page-hero-desc { max-width:700px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--texto-dim); }
+.hero-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:28px; }
+.hero-btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:40px; padding:0 18px; border:1px solid var(--ouro-esc);
+  color:var(--ouro-brt); text-decoration:none; font-size:12px;
+  letter-spacing:1.6px; text-transform:uppercase; background:rgba(200,144,32,0.08);
+}
+.hero-btn:hover { border-color:var(--ouro); background:rgba(200,144,32,0.14); }
+.hero-btn.secondary { color:var(--texto); border-color:#2a1a06; background:rgba(13,8,4,0.82); }
 
 /* ── LAYOUT ── */
 .page-content { max-width:1060px; margin:0 auto; padding:72px 20px 100px; }
 .section-label { text-align:center; font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:12px; }
 .section-title { text-align:center; font-size:28px; font-weight:700; color:var(--ouro-brt); margin-bottom:40px; }
+.quick-nav {
+  display:flex; justify-content:center; flex-wrap:wrap; gap:10px;
+  margin:-38px auto 52px; padding:0 8px;
+}
+.quick-nav a {
+  min-height:36px; display:inline-flex; align-items:center; justify-content:center;
+  padding:0 14px; border:1px solid #2a1a06; color:var(--texto-dim);
+  background:rgba(13,8,4,0.9); text-decoration:none; font-size:11px;
+  letter-spacing:1.3px; text-transform:uppercase;
+}
+.quick-nav a:hover { color:var(--ouro-brt); border-color:var(--ouro-esc); }
+.overview {
+  display:grid; grid-template-columns:1.1fr .9fr; gap:20px;
+  margin-bottom:64px; align-items:stretch;
+}
+.overview-panel {
+  background:linear-gradient(180deg, rgba(19,12,5,0.98), rgba(9,6,3,0.98));
+  border:1px solid rgba(200,144,32,0.32); border-radius:6px;
+  padding:30px 28px; position:relative; overflow:hidden;
+}
+.overview-panel::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--ouro-brt), transparent);
+}
+.overview-title { font-size:20px; color:var(--ouro-brt); margin-bottom:12px; }
+.overview-text { color:var(--texto-dim); font-size:14px; line-height:1.8; }
+.overview-list { list-style:none; display:grid; gap:10px; margin-top:18px; }
+.overview-list li {
+  color:var(--texto); font-size:13px; line-height:1.55;
+  border:1px solid #241706; background:rgba(5,3,1,0.42);
+  padding:10px 12px;
+}
+.overview-list li::before { content:'+'; color:var(--ouro-brt); margin-right:8px; font-weight:900; }
+.reward-panel {
+  background:rgba(64,192,112,0.06); border:1px solid rgba(64,192,112,0.24);
+  border-radius:6px; padding:30px 28px;
+}
+.reward-title { font-size:14px; color:#8FC870; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; }
+.reward-value { font-size:42px; line-height:1; color:var(--ouro-brt); font-weight:900; margin-bottom:10px; }
+.reward-text { color:var(--texto-dim); font-size:14px; line-height:1.75; }
 
 /* ── STATS TOPO ── */
 .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:64px; }
@@ -78,7 +128,9 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
 .stat-card {
   background:var(--painel2); border:1px solid #1e1408;
   border-radius:6px; padding:24px 16px; text-align:center;
+  position:relative; overflow:hidden;
 }
+.stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--ouro-esc), transparent); }
 .stat-icon { font-size:28px; margin-bottom:10px; }
 .stat-num { font-size:28px; font-weight:900; color:var(--ouro-brt); line-height:1; margin-bottom:6px; }
 .stat-label { font-size:11px; letter-spacing:2px; color:var(--texto-dim); text-transform:uppercase; }
@@ -152,31 +204,52 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
 }
 .page-footer a { color:var(--ouro-esc); text-decoration:none; }
 .page-footer a:hover { color:var(--ouro); }
+.footer-links { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-bottom:16px; }
+.footer-links a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; }
 
 [data-lang] { display:none; }
+@media(max-width:900px){
+  .topbar { padding:0 12px; gap:12px; }
+  .topbar-nav { flex:1; }
+  .topbar-nav a { padding:6px 10px; white-space:nowrap; }
+  .overview { grid-template-columns:1fr; }
+}
+@media(max-width:620px){
+  .topbar { height:auto; min-height:58px; align-items:flex-start; padding:10px 12px; flex-wrap:wrap; }
+  .topbar-logo { padding-top:7px; }
+  .topbar-nav { order:3; width:100%; flex-basis:100%; padding-bottom:2px; }
+  .topbar-right { padding-top:2px; }
+  .page-hero { padding-top:150px; }
+  .overview-panel,.reward-panel { padding:24px 20px; }
+  .reward-value { font-size:34px; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <header class="topbar">
-  <a href="index.html" class="topbar-logo">☥ FL</a>
+  <a href="/" class="topbar-logo">☥ FL</a>
   <nav class="topbar-nav">
-    <a href="index.html#sobre" data-lang="pt">O Jogo</a>
-    <a href="index.html#sobre" data-lang="en">The Game</a>
+    <a href="/" data-lang="pt">Home</a>
+    <a href="/" data-lang="en">Home</a>
+    <a href="/#sobre" data-lang="pt">O Jogo</a>
+    <a href="/#sobre" data-lang="en">The Game</a>
     <a href="gallery.html" data-lang="pt">Galeria</a>
     <a href="gallery.html" data-lang="en">Gallery</a>
     <a href="features.html" data-lang="pt">Mecânicas</a>
     <a href="features.html" data-lang="en">Features</a>
     <a href="boosters.html" data-lang="pt">Boosters</a>
     <a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="loja.html" data-lang="pt">Loja</a>
+    <a href="loja.html" data-lang="en">Store</a>
     <a href="banlist.html" data-lang="pt">Banlist</a>
     <a href="banlist.html" data-lang="en">Banlist</a>
     <a href="conquistas.html" class="active" data-lang="pt">Conquistas</a>
     <a href="conquistas.html" class="active" data-lang="en">Achievements</a>
-    <a href="index.html#download">Download</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="/#download">Download</a>
+    <a href="/#comprar" class="nav-cta" data-lang="pt">☥ Founder</a>
+    <a href="/#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
   </nav>
   <div class="topbar-right">
     <button class="lang-btn active" onclick="setLang('pt')">PT</button>
@@ -193,12 +266,58 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   <p class="page-hero-sub" data-lang="en">Forbidden Legacy — Beta 1.5</p>
   <p class="page-hero-desc" data-lang="pt">Cada duelo conta. Cada carta coletada avança. O sistema de conquistas registra sua jornada e recompensa seu progresso com fragmentos — em todos os momentos, para todos os estilos de jogo.</p>
   <p class="page-hero-desc" data-lang="en">Every duel counts. Every card collected matters. The achievement system tracks your journey and rewards your progress with fragments — at every step, for every playstyle.</p>
+  <div class="hero-actions">
+    <a class="hero-btn" href="/" data-lang="pt">Voltar ao site</a>
+    <a class="hero-btn" href="/" data-lang="en">Back to site</a>
+    <a class="hero-btn secondary" href="boosters.html">Boosters</a>
+    <a class="hero-btn secondary" href="loja.html" data-lang="pt">Loja</a>
+    <a class="hero-btn secondary" href="loja.html" data-lang="en">Store</a>
+  </div>
 </section>
 
 <main class="page-content">
 
+  <nav class="quick-nav" aria-label="Atalhos da pagina">
+    <a href="#como-funciona" data-lang="pt">Como funciona</a>
+    <a href="#como-funciona" data-lang="en">How it works</a>
+    <a href="#duelos" data-lang="pt">Duelos</a>
+    <a href="#duelos" data-lang="en">Duels</a>
+    <a href="#historia" data-lang="pt">Historia</a>
+    <a href="#historia" data-lang="en">Story</a>
+    <a href="#colecao" data-lang="pt">Colecao</a>
+    <a href="#colecao" data-lang="en">Collection</a>
+    <a href="#combate" data-lang="pt">Combate</a>
+    <a href="#combate" data-lang="en">Combat</a>
+  </nav>
+
+  <section class="overview">
+    <div class="overview-panel">
+      <h2 class="overview-title" data-lang="pt">O que esta pagina mostra</h2>
+      <h2 class="overview-title" data-lang="en">What this page shows</h2>
+      <p class="overview-text" data-lang="pt">As conquistas sao objetivos permanentes que acompanham sua conta local: duelos jogados, vitorias, campanha, colecao, boosters abertos, raridades obtidas e acoes de combate.</p>
+      <p class="overview-text" data-lang="en">Achievements are permanent objectives that follow your local profile: duels played, victories, campaign progress, collection growth, boosters opened, rarities obtained and combat actions.</p>
+      <ul class="overview-list" data-lang="pt">
+        <li>Progresso automatico enquanto voce joga, sem precisar ativar missao.</li>
+        <li>Cada conquista possui niveis repetiveis e recompensa por nivel.</li>
+        <li>Fragmentos R ajudam na evolucao da colecao dentro da Card Shop.</li>
+      </ul>
+      <ul class="overview-list" data-lang="en">
+        <li>Automatic progress while you play, with no quest activation required.</li>
+        <li>Each achievement has repeatable levels and rewards per level.</li>
+        <li>R Fragments help your collection grow inside the Card Shop.</li>
+      </ul>
+    </div>
+    <aside class="reward-panel">
+      <div class="reward-title" data-lang="pt">Recompensa central</div>
+      <div class="reward-title" data-lang="en">Core reward</div>
+      <div class="reward-value">Frag R</div>
+      <p class="reward-text" data-lang="pt">Cada nivel conquistado deposita Fragmentos R no inventario. A quantidade muda conforme a dificuldade e o tipo da conquista.</p>
+      <p class="reward-text" data-lang="en">Each level reached deposits R Fragments into your inventory. The amount changes based on the difficulty and type of achievement.</p>
+    </aside>
+  </section>
+
   <!-- COMO FUNCIONA -->
-  <p class="section-label">☥ <span data-lang="pt">Como Funciona</span><span data-lang="en">How It Works</span></p>
+  <p class="section-label" id="como-funciona">☥ <span data-lang="pt">Como Funciona</span><span data-lang="en">How It Works</span></p>
   <h2 class="section-title" data-lang="pt">Progressão por Nível</h2>
   <h2 class="section-title" data-lang="en">Level-Based Progression</h2>
   <div class="how-grid">
@@ -255,7 +374,7 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
 
   <!-- DUELOS -->
   <p class="section-label">⚔️ <span data-lang="pt">Categoria</span><span data-lang="en">Category</span></p>
-  <div class="cat-section cat-duelos">
+  <div class="cat-section cat-duelos" id="duelos">
     <div class="cat-header">
       <span class="cat-rune">𓋹</span>
       <span class="cat-name" data-lang="pt">Duelos</span>
@@ -324,7 +443,7 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   </div>
 
   <!-- HISTÓRIA -->
-  <div class="cat-section cat-historia">
+  <div class="cat-section cat-historia" id="historia">
     <div class="cat-header">
       <span class="cat-rune">𓆄</span>
       <span class="cat-name" data-lang="pt">História</span>
@@ -351,7 +470,7 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   </div>
 
   <!-- COLEÇÃO -->
-  <div class="cat-section cat-colecao">
+  <div class="cat-section cat-colecao" id="colecao">
     <div class="cat-header">
       <span class="cat-rune">𓅓</span>
       <span class="cat-name" data-lang="pt">Coleção</span>
@@ -434,7 +553,7 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   </div>
 
   <!-- COMBATE -->
-  <div class="cat-section cat-combate">
+  <div class="cat-section cat-combate" id="combate">
     <div class="cat-header">
       <span class="cat-rune">𓀀</span>
       <span class="cat-name" data-lang="pt">Combate</span>
@@ -519,6 +638,15 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
 </main>
 
 <footer class="page-footer">
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="features.html" data-lang="pt">Mecanicas</a>
+    <a href="features.html" data-lang="en">Features</a>
+    <a href="boosters.html">Boosters</a>
+    <a href="loja.html" data-lang="pt">Loja</a>
+    <a href="loja.html" data-lang="en">Store</a>
+    <a href="/#download">Download</a>
+  </div>
   <p data-lang="pt">Forbidden Legacy — Fan-made · <a href="index.html">forbiddenlegacy.com.br</a> · <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
   <p data-lang="en">Forbidden Legacy — Fan-made · <a href="index.html">forbiddenlegacy.com.br</a> · <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a></p>
 </footer>
