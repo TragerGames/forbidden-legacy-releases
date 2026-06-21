@@ -324,6 +324,7 @@ function t(pt,en){ return isEn() ? en : pt; }
 function setLang(lang, saveToStorage=true){
   document.body.classList.toggle('en', lang === 'en');
   document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+  window._flIsBR = lang !== 'en';
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   const btn = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
   if(btn) btn.classList.add('active');
@@ -494,11 +495,7 @@ document.getElementById('paybtn').disabled = !STORE_ENABLED;
     window._flIsBR = true;
     applyRegionMode();
   } else {
-    fetch('https://api.country.is/').then(r=>r.json()).then(d=>{
-      window._flIsBR = ((d.country || 'BR').toUpperCase() === 'BR');
-      if(!saved && !window._flIsBR) setLang('en', false);
-      else applyRegionMode();
-    }).catch(()=>{ window._flIsBR = true; applyRegionMode(); });
+    applyRegionMode();
   }
 
   if(params.get('stripe_ok') === '1'){
