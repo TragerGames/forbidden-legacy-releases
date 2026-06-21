@@ -29,8 +29,12 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
 .soon{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(240,196,90,.5);background:rgba(36,21,5,.86);color:#ffe7a0;padding:9px 12px;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:14px}
 .soon-lock{font-size:15px;line-height:1}
 .wrap{max-width:1160px;margin:0 auto;padding:18px 22px 64px}
-.packs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 28px}
-.pack{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid rgba(200,148,10,.26);padding:18px 16px;min-height:174px;cursor:pointer;position:relative;transition:.16s ease}
+.shop-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:2px 0 18px}
+.shop-title{margin:0;color:#ffe7a0;font-size:24px;line-height:1.1}
+.shop-kicker{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+.packs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:10px 0 28px}
+.pack{background:linear-gradient(180deg,rgba(34,20,8,.98),rgba(12,8,5,.98));border:1px solid rgba(200,148,10,.32);padding:18px 16px 16px;min-height:238px;cursor:pointer;position:relative;overflow:hidden;transition:.16s ease;box-shadow:inset 0 1px 0 rgba(255,231,160,.08),0 18px 42px rgba(0,0,0,.24)}
+.pack::after{content:"";position:absolute;left:14px;right:14px;top:12px;height:1px;background:linear-gradient(90deg,transparent,rgba(240,196,90,.65),transparent);opacity:.7}
 .pack:hover,.pack.active{border-color:var(--gold2);box-shadow:0 0 0 1px rgba(240,196,90,.22),0 14px 36px rgba(0,0,0,.35)}
 .pack.active::after{content:"Selecionado";position:absolute;top:10px;right:10px;font-size:10px;text-transform:uppercase;color:#0b0703;background:var(--gold2);padding:4px 7px;font-weight:800}
 .pack.locked{cursor:default;filter:saturate(.72);opacity:.82}
@@ -38,10 +42,17 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
 .pack.locked:hover{border-color:rgba(200,148,10,.26);box-shadow:none}
 .pack.locked::before{content:"Em breve";position:absolute;top:10px;right:10px;font-size:10px;text-transform:uppercase;color:#140b04;background:#d7b050;padding:4px 7px;font-weight:900}
 .pack.locked.active::after{display:none}
-.souls{font-size:26px;font-weight:900;color:#f6dd91;margin-bottom:8px}
-.boosters{font-size:13px;color:var(--blue);margin-bottom:18px}
-.price-br{font-size:22px;font-weight:800;color:#fff3c8}
-.price-usd{font-size:13px;color:var(--muted);margin-top:4px}
+.pack-tier{font-size:10px;color:#d4a943;letter-spacing:1.8px;text-transform:uppercase;font-weight:900;text-align:left;min-height:12px}
+.soul-emblem{width:78px;height:78px;margin:14px auto 13px;position:relative;display:grid;place-items:center;border:1px solid rgba(240,196,90,.58);background:radial-gradient(circle at 50% 38%,rgba(159,215,255,.55),rgba(32,84,120,.22) 42%,rgba(10,7,4,.92) 72%);box-shadow:0 0 24px rgba(159,215,255,.18),inset 0 0 18px rgba(240,196,90,.12);clip-path:polygon(50% 0,87% 19%,100% 56%,73% 100%,27% 100%,0 56%,13% 19%)}
+.soul-emblem::before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,231,160,.62);clip-path:polygon(50% 0,83% 21%,95% 58%,70% 100%,30% 100%,5% 58%,17% 21%)}
+.soul-emblem::after{content:"S";font-size:34px;line-height:1;font-weight:900;color:#fff2bd;text-shadow:0 0 12px rgba(159,215,255,.75),0 1px 0 #5f3908}
+.pack-amount{display:flex;align-items:baseline;justify-content:center;gap:6px;margin-bottom:7px}
+.souls{font-size:30px;font-weight:900;color:#f6dd91}
+.souls-label{font-size:11px;color:#c6ac6e;letter-spacing:1.4px;text-transform:uppercase;font-weight:800}
+.boosters{font-size:13px;color:var(--blue);text-align:center;margin-bottom:17px}
+.pack-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(200,148,10,.42),transparent);margin:0 0 13px}
+.price-br{font-size:24px;font-weight:900;color:#fff3c8;text-align:center}
+.price-usd{font-size:12px;color:var(--muted);margin-top:4px;text-align:center;text-transform:uppercase;letter-spacing:.8px}
 .best{position:absolute;left:14px;bottom:12px;font-size:11px;color:var(--green);letter-spacing:.7px;text-transform:uppercase}
 .checkout{display:grid;grid-template-columns:1fr 360px;gap:18px}
 .box{background:rgba(13,8,4,.84);border:1px solid rgba(200,148,10,.28);padding:20px}
@@ -76,8 +87,8 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
 .redeem{display:none;margin-top:14px;border:1px solid rgba(66,217,135,.4);background:rgba(20,70,40,.15);padding:14px;text-align:center}
 .redeem.visible{display:block}
 .redeem-code{font-size:20px;color:#caffdf;font-weight:900;letter-spacing:1px;word-break:break-all;margin:8px 0}
-@media(max-width:860px){.hero,.checkout{grid-template-columns:1fr}.packs{grid-template-columns:repeat(2,1fr)}h1{font-size:36px}.nav{gap:10px;font-size:11px}}
-@media(max-width:520px){.packs{grid-template-columns:1fr}.top-inner{height:auto;gap:10px;align-items:flex-start;flex-direction:column;padding:14px 18px}.nav{flex-wrap:wrap}.hero{padding-top:34px}}
+@media(max-width:860px){.hero,.checkout{grid-template-columns:1fr}.packs{grid-template-columns:repeat(2,1fr)}h1{font-size:36px}.nav{gap:10px;font-size:11px}.shop-intro{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.packs{grid-template-columns:1fr}.pack{min-height:216px}.top-inner{height:auto;gap:10px;align-items:flex-start;flex-direction:column;padding:14px 18px}.nav{flex-wrap:wrap}.hero{padding-top:34px}}
 </style>
 </head>
 <body>
@@ -108,6 +119,13 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
   </section>
 
   <section class="wrap">
+    <div class="shop-intro">
+      <div>
+        <h2 class="shop-title">Pacotes da Loja</h2>
+        <p class="shop-kicker">Cada pacote vira boosters dentro do jogo quando a Loja abrir.</p>
+      </div>
+      <div class="soon"><span class="soon-lock">&#128274;</span><span>Venda bloqueada</span></div>
+    </div>
     <div class="packs" id="packs"></div>
     <div class="checkout">
       <div class="box locked">
@@ -186,10 +204,10 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
 
 <script>
 const PACKS = [
-  { id:'souls_100', souls:100, boosters:1, br:'R$ 4,90', usd:'US$ 2.49' },
-  { id:'souls_300', souls:300, boosters:3, br:'R$ 12,90', usd:'US$ 5.99' },
-  { id:'souls_600', souls:600, boosters:6, br:'R$ 21,90', usd:'US$ 9.99' },
-  { id:'souls_1000', souls:1000, boosters:10, br:'R$ 29,90', usd:'US$ 14.99', best:true }
+  { id:'souls_100', tier:'Essencial', souls:100, boosters:1, br:'R$ 4,90', usd:'US$ 2.49' },
+  { id:'souls_300', tier:'Duelista', souls:300, boosters:3, br:'R$ 12,90', usd:'US$ 5.99' },
+  { id:'souls_600', tier:'Templo', souls:600, boosters:6, br:'R$ 21,90', usd:'US$ 9.99' },
+  { id:'souls_1000', tier:'Farao', souls:1000, boosters:10, br:'R$ 29,90', usd:'US$ 14.99', best:true }
 ];
 const STORE_ENABLED = false;
 let selected = PACKS[0];
@@ -224,7 +242,7 @@ function renderPacks(){
     const priceHtml = window._flIsBR
       ? `<div class="price-br">${p.br}</div>`
       : `<div class="price-br">${p.usd}</div><div class="price-usd">International</div>`;
-    el.innerHTML = `<div class="souls">${p.souls} Souls</div><div class="boosters">${p.boosters} booster${p.boosters>1?'s':''}</div>${priceHtml}${p.best?'<div class="best">Melhor valor</div>':''}`;
+    el.innerHTML = `<div class="pack-tier">${p.tier}</div><div class="soul-emblem" aria-hidden="true"></div><div class="pack-amount"><span class="souls">${p.souls}</span><span class="souls-label">Souls</span></div><div class="boosters">${p.boosters} booster${p.boosters>1?'s':''}</div><div class="pack-divider"></div>${priceHtml}${p.best?'<div class="best">Melhor valor</div>':''}`;
     el.onclick = () => { selected = p; updateSummary(); renderPacks(); };
     root.appendChild(el);
   });
