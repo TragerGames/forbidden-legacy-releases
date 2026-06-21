@@ -54,6 +54,12 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
 .field input:focus,.field select:focus{border-color:var(--gold)}
 .summary-row{display:flex;justify-content:space-between;border-bottom:1px solid rgba(200,148,10,.15);padding:10px 0;font-size:14px}
 .summary-row strong{color:#fff0b8}
+.payment-methods{display:grid;gap:10px;margin-top:14px}
+.payment-option{display:none;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(200,148,10,.25);background:rgba(7,6,4,.75);padding:12px}
+.payment-option.active{display:flex}
+.payment-title{font-size:13px;font-weight:900;color:#ffe7a0;text-transform:uppercase;letter-spacing:1px}
+.payment-sub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.35}
+.payment-tag{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#130b04;background:#d7b050;padding:4px 7px;font-weight:900;white-space:nowrap}
 .paybtn{width:100%;border:0;background:linear-gradient(180deg,#f0c45a,#b87b06);color:#120904;padding:14px 12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;cursor:pointer;margin-top:16px}
 .paybtn:hover{filter:brightness(1.08)}
 .paybtn:disabled{cursor:not-allowed;filter:grayscale(.3);opacity:.72}
@@ -136,11 +142,27 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
         <h2>Resumo</h2>
         <div class="summary-row"><span>Pacote</span><strong id="sum-pack">100 Souls</strong></div>
         <div class="summary-row"><span>Boosters</span><strong id="sum-boosters">1</strong></div>
-        <div class="summary-row"><span>Brasil</span><strong id="sum-br">R$ 4,90</strong></div>
-        <div class="summary-row"><span>Internacional</span><strong id="sum-usd">US$ 2.49</strong></div>
+        <div class="summary-row region-br"><span>Brasil</span><strong id="sum-br">R$ 4,90</strong></div>
+        <div class="summary-row region-intl"><span>Internacional</span><strong id="sum-usd">US$ 2.49</strong></div>
+        <div class="payment-methods">
+          <div class="payment-option" id="pay-opt-pix">
+            <div>
+              <div class="payment-title">PIX</div>
+              <div class="payment-sub">Pagamento nacional via Efi Bank.</div>
+            </div>
+            <span class="payment-tag">Brasil</span>
+          </div>
+          <div class="payment-option" id="pay-opt-stripe">
+            <div>
+              <div class="payment-title">Stripe</div>
+              <div class="payment-sub">International card payment in USD.</div>
+            </div>
+            <span class="payment-tag">Global</span>
+          </div>
+        </div>
         <button class="paybtn" id="paybtn">Em breve</button>
         <div class="soon-text">As compras de pacotes ainda nao estao ativas. Esta pagina ficara pronta para a proxima abertura da Loja.</div>
-        <p class="tiny">PIX para Brasil via Efi Bank. Cartao internacional via Stripe. O codigo de resgate tambem sera enviado por email quando a Loja estiver liberada.</p>
+        <p class="tiny" id="payment-note">PIX para Brasil via Efi Bank. O codigo de resgate tambem sera enviado por email quando a Loja estiver liberada.</p>
       </aside>
     </div>
   </section>
@@ -175,6 +197,23 @@ let pixTxid = '';
 let pollTimer = null;
 window._flIsBR = true;
 
+function applyRegionMode(){
+  const isBR = window._flIsBR;
+  document.querySelectorAll('.region-br').forEach(el => el.style.display = isBR ? 'flex' : 'none');
+  document.querySelectorAll('.region-intl').forEach(el => el.style.display = isBR ? 'none' : 'flex');
+  document.getElementById('pay-opt-pix')?.classList.toggle('active', isBR);
+  document.getElementById('pay-opt-stripe')?.classList.toggle('active', !isBR);
+  document.getElementById('payment-note').textContent = isBR
+    ? 'PIX para Brasil via Efi Bank. O codigo de resgate tambem sera enviado por email quando a Loja estiver liberada.'
+    : 'International card payment via Stripe. The redeem code will also be sent by email when the Store opens.';
+  if(STORE_ENABLED){
+    document.getElementById('paybtn').textContent = isBR ? 'Comprar com PIX' : 'Buy with Stripe';
+  }else{
+    document.getElementById('paybtn').textContent = isBR ? 'PIX em breve' : 'Stripe coming soon';
+  }
+  renderPacks();
+}
+
 function renderPacks(){
   const root = document.getElementById('packs');
   root.innerHTML = '';
@@ -182,7 +221,10 @@ function renderPacks(){
     const el = document.createElement('button');
     el.type = 'button';
     el.className = 'pack locked' + (p.id === selected.id ? ' active' : '');
-    el.innerHTML = `<div class="souls">${p.souls} Souls</div><div class="boosters">${p.boosters} booster${p.boosters>1?'s':''}</div><div class="price-br">${p.br}</div><div class="price-usd">${p.usd}</div>${p.best?'<div class="best">Melhor valor</div>':''}`;
+    const priceHtml = window._flIsBR
+      ? `<div class="price-br">${p.br}</div>`
+      : `<div class="price-br">${p.usd}</div><div class="price-usd">International</div>`;
+    el.innerHTML = `<div class="souls">${p.souls} Souls</div><div class="boosters">${p.boosters} booster${p.boosters>1?'s':''}</div>${priceHtml}${p.best?'<div class="best">Melhor valor</div>':''}`;
     el.onclick = () => { selected = p; updateSummary(); renderPacks(); };
     root.appendChild(el);
   });
@@ -277,9 +319,15 @@ function copyRedeem(){ navigator.clipboard?.writeText(document.getElementById('r
 
 document.getElementById('paybtn').onclick = pay;
 document.getElementById('paybtn').disabled = !STORE_ENABLED;
-renderPacks(); updateSummary();
+renderPacks(); updateSummary(); applyRegionMode();
 
-fetch('https://api.country.is/').then(r=>r.json()).then(d=>{ window._flIsBR = ((d.country || 'BR').toUpperCase() === 'BR'); }).catch(()=>{ window._flIsBR = true; });
+fetch('https://api.country.is/').then(r=>r.json()).then(d=>{
+  window._flIsBR = ((d.country || 'BR').toUpperCase() === 'BR');
+  applyRegionMode();
+}).catch(()=>{
+  window._flIsBR = true;
+  applyRegionMode();
+});
 
 (function(){
   const params = new URLSearchParams(location.search);
