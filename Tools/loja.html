@@ -26,11 +26,18 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
 .hero-art{border:1px solid rgba(200,148,10,.32);background:#080604;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.42)}
 .hero-art img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
 .note{border:1px solid rgba(200,148,10,.28);background:rgba(12,8,4,.76);padding:13px 15px;color:#bfa875;font-size:13px;line-height:1.55}
+.soon{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(240,196,90,.5);background:rgba(36,21,5,.86);color:#ffe7a0;padding:9px 12px;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:14px}
+.soon-lock{font-size:15px;line-height:1}
 .wrap{max-width:1160px;margin:0 auto;padding:18px 22px 64px}
 .packs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 28px}
 .pack{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid rgba(200,148,10,.26);padding:18px 16px;min-height:174px;cursor:pointer;position:relative;transition:.16s ease}
 .pack:hover,.pack.active{border-color:var(--gold2);box-shadow:0 0 0 1px rgba(240,196,90,.22),0 14px 36px rgba(0,0,0,.35)}
 .pack.active::after{content:"Selecionado";position:absolute;top:10px;right:10px;font-size:10px;text-transform:uppercase;color:#0b0703;background:var(--gold2);padding:4px 7px;font-weight:800}
+.pack.locked{cursor:default;filter:saturate(.72);opacity:.82}
+.pack.locked.active{border-color:rgba(200,148,10,.26);box-shadow:none}
+.pack.locked:hover{border-color:rgba(200,148,10,.26);box-shadow:none}
+.pack.locked::before{content:"Em breve";position:absolute;top:10px;right:10px;font-size:10px;text-transform:uppercase;color:#140b04;background:#d7b050;padding:4px 7px;font-weight:900}
+.pack.locked.active::after{display:none}
 .souls{font-size:26px;font-weight:900;color:#f6dd91;margin-bottom:8px}
 .boosters{font-size:13px;color:var(--blue);margin-bottom:18px}
 .price-br{font-size:22px;font-weight:800;color:#fff3c8}
@@ -38,6 +45,8 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
 .best{position:absolute;left:14px;bottom:12px;font-size:11px;color:var(--green);letter-spacing:.7px;text-transform:uppercase}
 .checkout{display:grid;grid-template-columns:1fr 360px;gap:18px}
 .box{background:rgba(13,8,4,.84);border:1px solid rgba(200,148,10,.28);padding:20px}
+.box.locked{position:relative}
+.box.locked::after{content:"Loja em breve";position:absolute;right:16px;top:16px;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#140b04;background:#d7b050;padding:4px 8px;font-weight:900}
 .box h2{margin:0 0 16px;font-size:18px;color:var(--gold2)}
 .field{margin-bottom:13px}
 .field label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px}
@@ -47,6 +56,8 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
 .summary-row strong{color:#fff0b8}
 .paybtn{width:100%;border:0;background:linear-gradient(180deg,#f0c45a,#b87b06);color:#120904;padding:14px 12px;font-weight:900;text-transform:uppercase;letter-spacing:1px;cursor:pointer;margin-top:16px}
 .paybtn:hover{filter:brightness(1.08)}
+.paybtn:disabled{cursor:not-allowed;filter:grayscale(.3);opacity:.72}
+.soon-text{border:1px solid rgba(239,108,77,.38);background:rgba(90,24,8,.16);color:#f2bf9a;padding:12px 13px;font-size:13px;line-height:1.5;margin-top:14px}
 .tiny{font-size:12px;color:var(--muted);line-height:1.55;margin-top:12px}
 .modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:18px}
 .modal.active{display:flex}
@@ -81,8 +92,9 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
     <div>
       <p class="eyebrow">Loja</p>
       <h1>Pacotes para Forbidden Legacy</h1>
-      <p class="lead">Escolha um pacote disponível, informe seu Codigo do Jogador e receba um codigo de resgate unico para usar dentro da Loja de Cartas.</p>
-      <div class="note">Cada codigo fica vinculado ao <strong>FL-PLAYER</strong> informado na compra. Confira antes de pagar: o resgate so funciona no mesmo codigo de jogador.</div>
+      <div class="soon"><span class="soon-lock">&#128274;</span><span>Em breve</span></div>
+      <p class="lead">A Loja de pacotes esta sendo preparada. Os valores ja estao definidos, mas as compras ficarao bloqueadas ate a abertura oficial.</p>
+      <div class="note">Quando estiver liberado, cada codigo ficara vinculado ao <strong>FL-PLAYER</strong> informado na compra. O resgate so funcionara no mesmo codigo de jogador.</div>
     </div>
     <div class="hero-art">
       <img src="screenshots/pt/tela-boosters.png" alt="Tela de Boosters do Forbidden Legacy">
@@ -92,7 +104,7 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
   <section class="wrap">
     <div class="packs" id="packs"></div>
     <div class="checkout">
-      <div class="box">
+      <div class="box locked">
         <h2>Dados para compra</h2>
         <div class="field">
           <label>Codigo do Jogador</label>
@@ -120,14 +132,15 @@ h1{font-size:48px;line-height:1.02;margin:0 0 16px;color:#ffe7a0}
           </select>
         </div>
       </div>
-      <aside class="box">
+      <aside class="box locked">
         <h2>Resumo</h2>
         <div class="summary-row"><span>Pacote</span><strong id="sum-pack">100 Souls</strong></div>
         <div class="summary-row"><span>Boosters</span><strong id="sum-boosters">1</strong></div>
         <div class="summary-row"><span>Brasil</span><strong id="sum-br">R$ 4,90</strong></div>
         <div class="summary-row"><span>Internacional</span><strong id="sum-usd">US$ 2.49</strong></div>
-        <button class="paybtn" id="paybtn">Comprar pacote</button>
-        <p class="tiny">PIX para Brasil via Efi Bank. Cartao internacional via Stripe. O codigo de resgate tambem sera enviado por email.</p>
+        <button class="paybtn" id="paybtn">Em breve</button>
+        <div class="soon-text">As compras de pacotes ainda nao estao ativas. Esta pagina ficara pronta para a proxima abertura da Loja.</div>
+        <p class="tiny">PIX para Brasil via Efi Bank. Cartao internacional via Stripe. O codigo de resgate tambem sera enviado por email quando a Loja estiver liberada.</p>
       </aside>
     </div>
   </section>
@@ -156,6 +169,7 @@ const PACKS = [
   { id:'souls_600', souls:600, boosters:6, br:'R$ 21,90', usd:'US$ 9.99' },
   { id:'souls_1000', souls:1000, boosters:10, br:'R$ 29,90', usd:'US$ 14.99', best:true }
 ];
+const STORE_ENABLED = false;
 let selected = PACKS[0];
 let pixTxid = '';
 let pollTimer = null;
@@ -167,7 +181,7 @@ function renderPacks(){
   PACKS.forEach(p => {
     const el = document.createElement('button');
     el.type = 'button';
-    el.className = 'pack' + (p.id === selected.id ? ' active' : '');
+    el.className = 'pack locked' + (p.id === selected.id ? ' active' : '');
     el.innerHTML = `<div class="souls">${p.souls} Souls</div><div class="boosters">${p.boosters} booster${p.boosters>1?'s':''}</div><div class="price-br">${p.br}</div><div class="price-usd">${p.usd}</div>${p.best?'<div class="best">Melhor valor</div>':''}`;
     el.onclick = () => { selected = p; updateSummary(); renderPacks(); };
     root.appendChild(el);
@@ -202,6 +216,10 @@ function validate(d){
 }
 
 async function pay(){
+  if(!STORE_ENABLED){
+    alert('A Loja de pacotes ainda esta em breve.');
+    return;
+  }
   const d = formData();
   if(!validate(d)) return;
   if(window._flIsBR) return pixPay(d);
@@ -258,6 +276,7 @@ function copyPix(){ navigator.clipboard?.writeText(document.getElementById('pix-
 function copyRedeem(){ navigator.clipboard?.writeText(document.getElementById('redeem-code').textContent); }
 
 document.getElementById('paybtn').onclick = pay;
+document.getElementById('paybtn').disabled = !STORE_ENABLED;
 renderPacks(); updateSummary();
 
 fetch('https://api.country.is/').then(r=>r.json()).then(d=>{ window._flIsBR = ((d.country || 'BR').toUpperCase() === 'BR'); }).catch(()=>{ window._flIsBR = true; });
