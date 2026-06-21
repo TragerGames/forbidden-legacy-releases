@@ -324,7 +324,6 @@ function t(pt,en){ return isEn() ? en : pt; }
 function setLang(lang, saveToStorage=true){
   document.body.classList.toggle('en', lang === 'en');
   document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
-  window._flIsBR = lang !== 'en';
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   const btn = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
   if(btn) btn.classList.add('active');
@@ -484,19 +483,14 @@ document.getElementById('paybtn').disabled = !STORE_ENABLED;
 (function(){
   const saved = localStorage.getItem('fl_lang');
   const params = new URLSearchParams(location.search);
-  const forcedRegion = (params.get('region') || '').toLowerCase();
   if(saved) setLang(saved, false);
   else setLang('pt', false);
 
-  if(forcedRegion === 'intl' || forcedRegion === 'us') {
-    window._flIsBR = false;
-    applyRegionMode();
-  } else if(forcedRegion === 'br') {
-    window._flIsBR = true;
-    applyRegionMode();
-  } else {
-    applyRegionMode();
-  }
+  fetch('https://api.country.is/').then(r=>r.json()).then(d=>{
+    window._flIsBR = ((d.country || 'BR').toUpperCase() === 'BR');
+    if(!saved && !window._flIsBR) setLang('en', false);
+    else applyRegionMode();
+  }).catch(()=>{ window._flIsBR = true; applyRegionMode(); });
 
   if(params.get('stripe_ok') === '1'){
     alert(t('Pagamento confirmado. Seu codigo de Souls sera enviado por email em instantes.','Payment confirmed. Your Soul code will be sent by email shortly.'));
