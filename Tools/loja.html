@@ -157,9 +157,9 @@ h1{margin:0 0 18px;font-size:clamp(38px,6vw,70px);line-height:.96;color:var(--go
       <p class="eyebrow" data-lang="en">Official store</p>
       <h1 data-lang="pt">Pacotes de Souls para a Card Shop</h1>
       <h1 data-lang="en">Soul packs for the Card Shop</h1>
-      <div class="locked-ribbon"><span>&#128274;</span><span data-lang="pt">Em breve</span><span data-lang="en">Coming soon</span></div>
-      <p class="lead" data-lang="pt">Escolha um pacote de Souls para usar dentro do jogo. As compras ainda estao bloqueadas, mas a vitrine ja mostra valores, forma de pagamento por regiao e como o resgate vai funcionar.</p>
-      <p class="lead" data-lang="en">Choose a Soul pack to use in-game. Purchases are still locked, but the store already shows prices, regional payment method and how redeeming will work.</p>
+      <div class="locked-ribbon"><span>&#10003;</span><span data-lang="pt">Compras liberadas</span><span data-lang="en">Purchases open</span></div>
+      <p class="lead" data-lang="pt">Escolha um pacote de Souls para usar dentro do jogo. O codigo de resgate e vinculado ao Codigo do Jogador informado na compra e so pode ser usado uma vez.</p>
+      <p class="lead" data-lang="en">Choose a Soul pack to use in-game. The redeem code is tied to the Player Code provided at purchase and can only be used once.</p>
       <div class="note" data-lang="pt">Importante: o pacote entrega <strong>Souls</strong>. Boosters nao sao adicionados separadamente; as Souls sao o saldo usado dentro da Card Shop para abrir boosters.</div>
       <div class="note" data-lang="en">Important: the pack grants <strong>Souls</strong>. Boosters are not added separately; Souls are the balance used inside the Card Shop to open boosters.</div>
       <div class="hero-actions">
@@ -214,9 +214,9 @@ h1{margin:0 0 18px;font-size:clamp(38px,6vw,70px);line-height:.96;color:var(--go
     </div>
 
     <div class="checkout">
-      <div class="box locked" id="form-box" data-lock="Loja em breve">
-        <h2 data-lang="pt">Dados para resgate futuro</h2>
-        <h2 data-lang="en">Future redeem details</h2>
+      <div class="box" id="form-box" data-lock="Loja em breve">
+        <h2 data-lang="pt">Dados para resgate</h2>
+        <h2 data-lang="en">Redeem details</h2>
         <div class="field">
           <label data-lang="pt">Codigo do Jogador</label>
           <label data-lang="en">Player Code</label>
@@ -306,7 +306,7 @@ h1{margin:0 0 18px;font-size:clamp(38px,6vw,70px);line-height:.96;color:var(--go
 </div>
 
 <script>
-const STORE_ENABLED = false;
+const STORE_ENABLED = true;
 const PACKS = [
   { id:'souls_100', tierPt:'Essencial', tierEn:'Essential', souls:100, uses:1, br:'R$ 4,90', usd:'US$ 2.49' },
   { id:'souls_300', tierPt:'Duelista', tierEn:'Duelist', souls:300, uses:3, br:'R$ 12,90', usd:'US$ 5.99' },
@@ -348,15 +348,17 @@ function applyRegionMode(){
   document.getElementById('pay-opt-pix')?.classList.toggle('active', br);
   document.getElementById('pay-opt-stripe')?.classList.toggle('active', !br);
   document.getElementById('region-chip').textContent = br ? t('Brasil - PIX','Brazil - PIX') : 'International - Stripe';
+  document.getElementById('form-box').classList.toggle('locked', !STORE_ENABLED);
+  document.getElementById('summary-box').classList.toggle('locked', !STORE_ENABLED);
   document.getElementById('form-box').dataset.lock = t('Loja em breve','Coming soon');
   document.getElementById('summary-box').dataset.lock = t('Venda bloqueada','Sales locked');
   document.getElementById('soon-text').textContent = t(
-    'As compras de pacotes ainda nao estao ativas. Esta pagina ficara pronta para a abertura oficial.',
-    'Pack purchases are not active yet. This page is being prepared for the official opening.'
+    STORE_ENABLED ? 'Apos a confirmacao do pagamento, voce recebera um codigo de resgate de Souls vinculado ao Codigo do Jogador informado.' : 'As compras de pacotes ainda nao estao ativas. Esta pagina ficara pronta para a abertura oficial.',
+    STORE_ENABLED ? 'After payment confirmation, you will receive a Soul redeem code tied to the Player Code provided.' : 'Pack purchases are not active yet. This page is being prepared for the official opening.'
   );
   document.getElementById('payment-note').textContent = br
-    ? t('PIX para Brasil via Efi Bank. O codigo de resgate tambem sera enviado por email quando a Loja estiver liberada.','PIX for Brazil via Efi Bank. The redeem code will also be sent by email when the Store opens.')
-    : t('Cartao internacional via Stripe em USD. O codigo de resgate tambem sera enviado por email quando a Loja estiver liberada.','International card payment via Stripe in USD. The redeem code will also be sent by email when the Store opens.');
+    ? t('PIX para Brasil via Efi Bank. O codigo de resgate sera exibido apos a confirmacao e tambem enviado por email.','PIX for Brazil via Efi Bank. The redeem code will be shown after confirmation and also sent by email.')
+    : t('Cartao internacional via Stripe em USD. O codigo de resgate sera enviado por email apos a confirmacao.','International card payment via Stripe in USD. The redeem code will be sent by email after confirmation.');
   document.getElementById('paybtn').textContent = STORE_ENABLED ? (br ? t('Comprar com PIX','Pay with PIX') : t('Comprar com Stripe','Pay with Stripe')) : (br ? t('PIX em breve','PIX coming soon') : t('Stripe em breve','Stripe coming soon'));
   renderPacks();
   updateSummary();
@@ -368,10 +370,10 @@ function renderPacks(){
   PACKS.forEach(p => {
     const el = document.createElement('button');
     el.type = 'button';
-    el.className = 'pack locked' + (p.id === selected.id ? ' active' : '');
+    el.className = 'pack' + (STORE_ENABLED ? '' : ' locked') + (p.id === selected.id ? ' active' : '');
     const tier = isEn() ? p.tierEn : p.tierPt;
     const price = window._flIsBR ? p.br : p.usd;
-    const status = t('Em breve','Coming soon');
+    const status = STORE_ENABLED ? t('Disponivel','Available') : t('Em breve','Coming soon');
     const priceNote = window._flIsBR ? t('Pagamento PIX','PIX payment') : 'Stripe USD';
     el.innerHTML = `
       <div class="pack-status">${status}</div>
