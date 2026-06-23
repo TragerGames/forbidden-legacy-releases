@@ -342,9 +342,10 @@ function packUseText(p){
 }
 
 function applyRegionMode(){
-  const br = window._flIsBR;
-  document.querySelectorAll('.region-br').forEach(el => el.style.display = br ? 'flex' : 'none');
-  document.querySelectorAll('.region-intl').forEach(el => el.style.display = br ? 'none' : 'flex');
+  const br = window._flIsBR;        // pais (geo) -> metodo de pagamento (PIX so no Brasil)
+  const showUsd = isEn();           // idioma -> moeda exibida (EN = USD, PT = R$)
+  document.querySelectorAll('.region-br').forEach(el => el.style.display = showUsd ? 'none' : 'flex');
+  document.querySelectorAll('.region-intl').forEach(el => el.style.display = showUsd ? 'flex' : 'none');
   document.getElementById('pay-opt-pix')?.classList.toggle('active', br);
   document.getElementById('pay-opt-stripe')?.classList.toggle('active', !br);
   document.getElementById('region-chip').textContent = br ? t('Brasil - PIX','Brazil - PIX') : 'International - Stripe';
@@ -372,9 +373,9 @@ function renderPacks(){
     el.type = 'button';
     el.className = 'pack' + (STORE_ENABLED ? '' : ' locked') + (p.id === selected.id ? ' active' : '');
     const tier = isEn() ? p.tierEn : p.tierPt;
-    const price = window._flIsBR ? p.br : p.usd;
+    const price = isEn() ? p.usd : p.br;
     const status = STORE_ENABLED ? t('Disponivel','Available') : t('Em breve','Coming soon');
-    const priceNote = window._flIsBR ? t('Pagamento PIX','PIX payment') : 'Stripe USD';
+    const priceNote = isEn() ? 'International · USD' : 'Nacional · R$';
     el.innerHTML = `
       <div class="pack-status">${status}</div>
       <div class="pack-tier">${tier}</div>
