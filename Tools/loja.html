@@ -237,11 +237,10 @@ h1{margin:0 0 18px;font-size:clamp(38px,6vw,70px);line-height:.96;color:var(--go
           <input id="discord" placeholder="@usuario" autocomplete="off">
         </div>
         <div class="field">
-          <label data-lang="pt">Dispositivo opcional</label>
-          <label data-lang="en">Optional device</label>
-          <select id="dispositivo">
-            <option value="" data-lang="pt">Selecione</option>
-            <option value="" data-lang="en">Select</option>
+          <label data-lang="pt">Dispositivo <span style="color:#e04040;font-size:11px">*</span></label>
+          <label data-lang="en">Device <span style="color:#e04040;font-size:11px">*</span></label>
+          <select id="dispositivo" required>
+            <option value="">—</option>
             <option>Windows</option>
             <option>Android</option>
             <option>Linux</option>
@@ -414,6 +413,7 @@ function validate(d){
   if(!/^FL-PLAYER(?:PC|AND|MAC|LNX)?(?:-[0-9A-F]{4}){3,4}$/i.test(d.codigo_jogo)){ alert(t('Confira o Codigo do Jogador.','Check the Player Code.')); return false; }
   if(!d.email || !d.email.includes('@')){ alert(t('Informe um email valido.','Enter a valid email.')); return false; }
   if(!d.nome){ alert(t('Informe seu nome.','Enter your name.')); return false; }
+  if(!d.dispositivo){ alert(t('Selecione o seu dispositivo (Windows, Android ou Linux).','Please select your device (Windows, Android or Linux).')); return false; }
   return confirm(t(
     `Confirmar compra de ${selected.souls} Souls para o codigo:\n${d.codigo_jogo}\n\nO resgate so funcionara nesse Codigo do Jogador.`,
     `Confirm purchase of ${selected.souls} Souls for this code:\n${d.codigo_jogo}\n\nRedeeming will only work with this Player Code.`
