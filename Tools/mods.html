@@ -51,19 +51,15 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
 .note{border:1px solid rgba(200,144,32,.28);background:rgba(13,8,4,.78);padding:14px 16px;color:#bfa875;font-size:13px;line-height:1.6;max-width:760px}
 .note strong{color:var(--gold2)}
 
-/* ── TOOLBAR (busca + filtros) ── */
+/* ── TOOLBAR ── */
 .wrap{max-width:1180px;margin:0 auto;padding:24px 22px 74px}
 .toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-.search-box{position:relative;flex:1;min-width:200px;max-width:360px}
+.search-box{position:relative;flex:1;min-width:200px;max-width:400px}
 .search-box input{width:100%;background:#0d0804;border:1px solid var(--line);color:var(--text);padding:9px 12px 9px 34px;font-size:13px;outline:none;font-family:inherit}
 .search-box input::placeholder{color:var(--muted)}
 .search-box input:focus{border-color:rgba(200,144,32,.5)}
 .search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none}
-.filter-wrap{display:flex;gap:6px;flex-wrap:wrap}
-.filter-btn{background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;cursor:pointer;font-family:inherit;white-space:nowrap}
-.filter-btn:hover{border-color:rgba(200,144,32,.4);color:var(--text)}
-.filter-btn.active{border-color:var(--gold);color:var(--gold2);background:rgba(200,144,32,.08)}
-.mod-count{font-size:12px;color:var(--muted);margin-left:auto;white-space:nowrap;align-self:center}
+.mod-count{font-size:12px;color:var(--muted);white-space:nowrap;align-self:center}
 
 /* ── LISTA ACCORDION ── */
 .mod-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line)}
@@ -75,26 +71,23 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
 .mod-arrow{font-size:10px;color:var(--muted);flex-shrink:0;transition:transform .18s;width:14px;text-align:center}
 .mod-row-hdr.open .mod-arrow{transform:rotate(90deg)}
 .mod-name{font-weight:700;font-size:14px;color:var(--gold3);flex:1;min-width:0}
-.mod-author-sm{font-size:11px;color:var(--muted);white-space:nowrap}
-.mod-badges{display:flex;gap:5px;flex-shrink:0;flex-wrap:wrap}
-.badge{display:inline-block;padding:2px 7px;font-size:9.5px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;border:1px solid}
-.badge-ptbr{background:rgba(100,200,100,.08);color:#78e870;border-color:rgba(100,200,100,.25)}
-.badge-en{background:rgba(100,160,255,.08);color:#7cc7ff;border-color:rgba(100,160,255,.25)}
-.badge-hard{background:rgba(220,80,80,.08);color:#e07070;border-color:rgba(220,80,80,.25)}
-.badge-novo{background:rgba(200,144,32,.1);color:var(--gold2);border-color:rgba(200,144,32,.3)}
-.badge-br{background:rgba(100,200,100,.08);color:#78e870;border-color:rgba(100,200,100,.25)}
-.badge-custom{background:rgba(160,128,224,.08);color:#b898ee;border-color:rgba(160,128,224,.25)}
 
 /* ── PAINEL EXPANDIDO ── */
 .mod-panel{display:none;border-top:1px solid var(--line);padding:16px 16px 18px 42px;background:rgba(8,5,3,.7)}
 .mod-panel.open{display:block}
 .mod-desc-full{font-size:13px;color:#c0ad80;line-height:1.6;margin:0 0 16px;max-width:700px}
 .ver-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);margin:0 0 8px}
-.ver-grid{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.ver-grid{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .ver-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(200,144,32,.4);background:rgba(200,144,32,.06);color:var(--gold2);padding:8px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;transition:background .12s,border-color .12s;cursor:pointer}
 .ver-btn:hover{background:rgba(200,144,32,.15);border-color:var(--gold)}
 .ver-btn .ver-rate{font-size:15px;font-weight:900;color:var(--gold3)}
 .ver-btn .ver-label{font-size:10px;color:var(--muted);display:block;font-weight:400;letter-spacing:0;text-transform:none;margin-top:1px}
+
+/* ── ARQUIVOS DE AJUDA ── */
+.docs-grid{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.doc-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(124,199,255,.25);background:rgba(124,199,255,.04);color:#7cc7ff;padding:7px 12px;font-size:12px;transition:background .12s,border-color .12s}
+.doc-btn:hover{background:rgba(124,199,255,.1);border-color:rgba(124,199,255,.5)}
+
 .mod-video-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 12px;margin-top:4px}
 .mod-video-link:hover{color:var(--text);border-color:rgba(200,144,32,.3)}
 
@@ -119,7 +112,6 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
   h1{font-size:36px}
   .funnel{flex-direction:column;text-align:center}
   .mod-panel{padding-left:20px}
-  .toolbar{gap:8px}
 }
 </style>
 </head>
@@ -160,9 +152,8 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
     <div class="toolbar">
       <div class="search-box">
         <span class="search-icon">🔍</span>
-        <input type="text" id="search-input" placeholder="Buscar mod ou autor..." oninput="renderMods()">
+        <input type="text" id="search-input" placeholder="Buscar mod..." oninput="renderMods()">
       </div>
-      <div class="filter-wrap" id="filter-wrap"></div>
       <div class="mod-count" id="mod-count"></div>
     </div>
 
@@ -191,345 +182,310 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
 // ============================================================
 //  LISTA DE MODS
 //
-//  Campos:
-//    name    : nome do mod
-//    author  : autor/criador
-//    descPt  : descrição em PT
-//    descEn  : descrição em EN
-//    tags    : array de tags — usadas nos filtros e badges
-//              valores reconhecidos: 'PT-BR', 'EN', 'HARD', 'NOVO', 'BR', 'CUSTOM'
-//              (qualquer outro valor vira badge genérico dourado)
-//    video   : URL do YouTube/canal ('' para ocultar)
+//  Campos por mod:
+//    name     : nome exibido na lista
+//    slug     : identificador da release no GitHub
+//               URL dos arquivos: releases/download/{slug}/x1.ppf
+//    descPt   : descrição em PT
+//    descEn   : descrição em EN
+//    video    : URL do YouTube ('' para ocultar)
 //
-//    versions: array de versões disponíveis para download
-//      Cada versão tem:
-//        rate  : texto do multiplicador — '×1', '×3', '×5', '×15', 'PT-BR', etc.
-//        label : subtexto explicativo  — 'Drop padrão', 'Drop aumentado', etc.
-//        url   : link direto para o arquivo no GitHub Release:
-//                https://github.com/TragerGames/forbidden-legacy-releases/releases/download/mods/<arquivo>
+//    versions : versões de drop disponíveis para download
+//      rate   : '×1', '×3', '×5', '×15'
+//      label  : subtexto ('Drop padrão', etc.)
+//      url    : link direto (gerado pela função drops())
 //
-//  CONVENÇÃO DE NOMES DE ARQUIVO NO GITHUB:
-//    mod-<slug>-x1.ppf
-//    mod-<slug>-x3.ppf
-//    mod-<slug>-x5.ppf
-//    mod-<slug>-x15.ppf
-//  Todos na release com tag "mods":
-//  https://github.com/TragerGames/forbidden-legacy-releases/releases/tag/mods
+//    docs     : (opcional) arquivos de ajuda extras
+//      name   : texto do botão  ex: 'Guia PT-BR', 'Leiame', 'Changelog'
+//      url    : link direto para o arquivo na mesma release do GitHub
+//
+//  CONVENÇÃO DE PASTAS NO GITHUB RELEASES:
+//    1 release por mod, tag = slug do mod.
+//    Arquivos da release: x1.ppf, x3.ppf, x5.ppf, x15.ppf + qualquer ajuda.
+//    Ex: releases/download/fmii-vn-2025/x1.ppf
+//        releases/download/fmii-vn-2025/guia.pdf
 // ============================================================
 
-const BASE = 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/mods/';
+const GH = 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/';
 
-// Versões padrão reutilizáveis
 function drops(slug, rates) {
   const labels = { '×1':'Drop padrão', '×3':'Drop aumentado', '×5':'Drop alto', '×15':'Drop máximo' };
-  return rates.map(r => ({ rate: r, label: labels[r] || '', url: BASE + slug + '-' + r.replace('×','x') + '.ppf' }));
+  return rates.map(r => ({ rate: r, label: labels[r] || '', url: GH + slug + '/' + r.replace('×','x') + '.ppf' }));
 }
 
 const MODS = [
 
-  // ── FM II (Yu-Gi-Oh! Forbidden Memories II) ─────────────────
+  // ── FM II (Yu-Gi-Oh! Forbidden Memories II) ──────────────────
 
   {
     name: 'FM II — Digimon Season 1',
-    author: 'Comunidade FM',
-    tags: ['FM II', 'CROSSOVER'],
+    slug: 'fmii-digimon-season1',
     descPt: 'Substitui as cartas de FM II por monstros e personagens da 1ª temporada de Digimon. Duele com seus Digimon favoritos no universo de Forbidden Memories.',
     descEn: 'Replaces FM II cards with monsters and characters from Digimon Season 1. Duel with your favorite Digimon in the Forbidden Memories universe.',
     video: '',
-    versions: drops('fmii-digimon-season1', ['×1','×3','×5','×15'])
+    versions: drops('fmii-digimon-season1', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM II — Ghost',
-    author: 'Comunidade FM',
-    tags: ['FM II'],
+    slug: 'fmii-ghost',
     descPt: 'Mod de FM II com tema sombrio e visual repaginado. Cartas e personagens redesenhados com estética fantasmagórica.',
     descEn: 'FM II mod with a dark, ghost-themed visual style. Cards and characters redesigned with an eerie, phantasmal aesthetic.',
     video: '',
-    versions: drops('fmii-ghost', ['×1','×3','×5'])
+    versions: drops('fmii-ghost', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM II — Ultimate',
-    author: 'Comunidade FM',
-    tags: ['FM II'],
+    slug: 'fmii-ultimate',
     descPt: 'Versão completa de FM II com dezenas de cartas novas, gráficos melhorados e drops revisados para uma experiência mais rica.',
     descEn: 'Full FM II version with dozens of new cards, improved graphics and revised drops for a richer experience.',
     video: '',
-    versions: drops('fmii-ultimate', ['×1','×3','×5'])
+    versions: drops('fmii-ultimate', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM II — VN 2024',
-    author: 'Comunidade FM',
-    tags: ['FM II', 'VN', 'DESTAQUE'],
+    slug: 'fmii-vn-2024',
     descPt: 'Mod visual novel de FM II lançado em 2024, com nova história, diálogos expandidos e drops ajustados por NPC.',
     descEn: 'FM II visual novel mod released in 2024, with a new story, expanded dialogues and NPC-adjusted drops.',
     video: '',
-    versions: drops('fmii-vn-2024', ['×1','×3','×5','×15'])
+    versions: drops('fmii-vn-2024', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM II — VN 2025',
-    author: 'Comunidade FM',
-    tags: ['FM II', 'VN', 'DESTAQUE'],
+    slug: 'fmii-vn-2025',
     descPt: 'A versão mais recente do mod VN para FM II — história atualizada, novas cartas e a experiência visual novel mais completa até agora.',
     descEn: 'The latest VN mod for FM II — updated story, new cards and the most complete visual novel experience yet.',
     video: '',
-    versions: drops('fmii-vn-2025', ['×1','×3','×5','×15'])
+    versions: drops('fmii-vn-2025', ['×1','×3','×5','×15']),
+    docs: []
   },
 
-  // ── FM (Yu-Gi-Oh! Forbidden Memories) ──────────────────────
+  // ── FM (Yu-Gi-Oh! Forbidden Memories) ────────────────────────
 
   {
     name: 'FM — Mod 13',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-13',
     descPt: 'Mod com deck e drops personalizados inspirados no duelista de número 13. Desafio único com cartas selecionadas a dedo.',
     descEn: 'Mod with custom deck and drops inspired by duelist number 13. A unique challenge with hand-picked cards.',
     video: '',
-    versions: drops('fm-13', ['×1','×3','×5'])
+    versions: drops('fm-13', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Mod 2019',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-2019',
     descPt: 'Remake de Forbidden Memories com cartas e balanceamento no estilo da era 2019 do TCG. Mais opções e drops modernizados.',
     descEn: 'Forbidden Memories remake featuring cards and balancing from the 2019 TCG era. More options and modernized drops.',
     video: '',
-    versions: drops('fm-2019', ['×1','×3','×5'])
+    versions: drops('fm-2019', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — 2023 Hard and Effects',
-    author: 'Comunidade FM',
-    tags: ['HARD'],
+    slug: 'fm-2023-hard',
     descPt: 'Modo difícil com efeitos de cartas ativados — muito mais próximo do TCG. NPCs mais agressivos e drops raros mais escassos.',
     descEn: 'Hard mode with active card effects — much closer to the TCG. More aggressive NPCs and rarer card drops.',
     video: '',
-    versions: drops('fm-2023-hard', ['×1','×3','×5'])
+    versions: drops('fm-2023-hard', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Battle Of The Duelist King',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-battle-duelist-king',
     descPt: 'Recria o torneio do Rei dos Duelistas no universo de Forbidden Memories. Enfrente os melhores duelistas com decks temáticos do anime.',
     descEn: 'Recreates the Duelist King tournament in the Forbidden Memories universe. Face the best duelists with anime-themed decks.',
     video: '',
-    versions: drops('fm-battle-duelist-king', ['×1','×3','×5','×15'])
+    versions: drops('fm-battle-duelist-king', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — CLT Memories',
-    author: 'Comunidade FM',
-    tags: ['DESTAQUE'],
+    slug: 'fm-clt-memories',
     descPt: 'Mod da comunidade CLT com cartas exclusivas, drops revisados e personagens repaginados. Um dos mais completos da cena.',
     descEn: 'CLT community mod with exclusive cards, revised drops and revamped characters. One of the most complete in the scene.',
     video: '',
-    versions: drops('fm-clt-memories', ['×1','×3','×5','×15'])
+    versions: drops('fm-clt-memories', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — Crazy',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-crazy',
     descPt: 'Mod experimental com combinações caóticas e drops imprevisíveis. Cada duelo é uma surpresa — perfeito para quem quer diversão sem padrão.',
     descEn: 'Experimental mod with chaotic combinations and unpredictable drops. Every duel is a surprise — perfect for those who want unpredictable fun.',
     video: '',
-    versions: drops('fm-crazy', ['×1','×3','×5'])
+    versions: drops('fm-crazy', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Dragon Ball AF',
-    author: 'Comunidade FM',
-    tags: ['CROSSOVER'],
+    slug: 'fm-dragon-ball-af',
     descPt: 'Substitui o universo de YGO por personagens e transformações de Dragon Ball AF. Convoque Goku, Vegeta e vilões lendários no campo.',
     descEn: 'Replaces the YGO universe with Dragon Ball AF characters and transformations. Summon Goku, Vegeta and legendary villains to the field.',
     video: '',
-    versions: drops('fm-dragon-ball-af', ['×1','×3','×5','×15'])
+    versions: drops('fm-dragon-ball-af', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — End Game',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-end-game',
     descPt: 'Versão focada no late-game com NPCs extremamente fortes e cartas de alto nível. Indicado para jogadores que já dominam o FM clássico.',
     descEn: 'Late-game focused version with extremely powerful NPCs and high-level cards. Recommended for players who have mastered classic FM.',
     video: '',
-    versions: drops('fm-end-game', ['×1','×3','×5'])
+    versions: drops('fm-end-game', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Enhanced Final',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-enhanced-final',
     descPt: 'Versão aprimorada e polida do FM original, com gráficos refinados, drops melhorados e pequenas correções de balanceamento.',
     descEn: 'Enhanced and polished version of the original FM, with refined graphics, improved drops and minor balance fixes.',
     video: '',
-    versions: drops('fm-enhanced-final', ['×1','×3','×5'])
+    versions: drops('fm-enhanced-final', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Final Mix PT-BR',
-    author: 'Comunidade FM',
-    tags: ['PT-BR'],
+    slug: 'fm-final-mix-ptbr',
     descPt: 'Final Mix traduzido e localizado para o português brasileiro, com textos revisados e termos adaptados para o público lusófono.',
     descEn: 'Final Mix translated and localized to Brazilian Portuguese, with revised texts and adapted terms for the Portuguese-speaking audience.',
     video: '',
-    versions: drops('fm-final-mix-ptbr', ['×1','×3','×5'])
+    versions: drops('fm-final-mix-ptbr', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Galaxy Of Gods 2025',
-    author: 'Comunidade FM',
-    tags: ['DESTAQUE'],
+    slug: 'fm-galaxy-of-gods-2025',
     descPt: 'Mod épico com deuses galácticos, novas fusões e arte premium. Um dos mais visualmente impactantes da coleção.',
     descEn: 'Epic mod featuring galactic gods, new fusions and premium artwork. One of the most visually striking mods in the collection.',
     video: '',
-    versions: drops('fm-galaxy-of-gods-2025', ['×1','×3','×5','×15'])
+    versions: drops('fm-galaxy-of-gods-2025', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — Infinity Memories',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-infinity-memories',
     descPt: 'Expansão do FM com monstros extras, novas fusões e um pool de drops expandido. A coleção de cartas mais vasta da série.',
     descEn: 'FM expansion with extra monsters, new fusions and an expanded drop pool. The most extensive card collection in the series.',
     video: '',
-    versions: drops('fm-infinity-memories', ['×1','×3','×5','×15'])
+    versions: drops('fm-infinity-memories', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — Last Memories',
-    author: 'Comunidade FM',
-    tags: ['DESTAQUE'],
+    slug: 'fm-last-memories',
     descPt: 'A conclusão da saga de Forbidden Memories, com cartas e história do arco final. Um mod cinematográfico e emocionante.',
     descEn: 'The conclusion of the Forbidden Memories saga, featuring cards and story from the final arc. A cinematic and emotional mod.',
     video: '',
-    versions: drops('fm-last-memories', ['×1','×3','×5','×15'])
+    versions: drops('fm-last-memories', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — Maze Of Memories',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-maze-of-memories',
     descPt: 'Labirinto de duelos com estruturas de deck únicas em cada nível. Um desafio de progressão diferente a cada confronto.',
     descEn: 'Duel maze with unique deck structures at each level. A different progression challenge at every confrontation.',
     video: '',
-    versions: drops('fm-maze-of-memories', ['×1','×3','×5'])
+    versions: drops('fm-maze-of-memories', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Out of Darkness',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-out-of-darkness',
     descPt: 'Mod sombrio centrado em cartas DARK e criaturas das trevas aprimoradas. Atmosfera pesada com NPCs redesenhados.',
     descEn: 'Dark-themed mod centered on DARK cards and enhanced creatures of darkness. Heavy atmosphere with redesigned NPCs.',
     video: '',
-    versions: drops('fm-out-of-darkness', ['×1','×3','×5'])
+    versions: drops('fm-out-of-darkness', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Perfect',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-perfect',
     descPt: 'Versão equilibrada e polida do FM, visando o melhor estado possível do jogo base. Ideal para quem quer a experiência clássica aprimorada.',
     descEn: 'Balanced and polished FM version aiming for the best possible state of the base game. Ideal for those who want the enhanced classic experience.',
     video: '',
-    versions: drops('fm-perfect', ['×1','×3','×5'])
+    versions: drops('fm-perfect', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Pokémon',
-    author: 'Comunidade FM',
-    tags: ['CROSSOVER'],
+    slug: 'fm-pokemon',
     descPt: 'Substitui todas as cartas por Pokémon — convoque Charizard, Mewtwo e sua equipe favorita no campo de duelo de Forbidden Memories.',
     descEn: 'Replaces all cards with Pokémon — summon Charizard, Mewtwo and your favorite team on the Forbidden Memories duel field.',
     video: '',
-    versions: drops('fm-pokemon', ['×1','×3','×5','×15'])
+    versions: drops('fm-pokemon', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — Remaster',
-    author: 'Comunidade FM',
-    tags: ['DESTAQUE'],
+    slug: 'fm-remaster',
     descPt: 'Remaster visual e sonoro do FM clássico com assets de alta resolução, trilha revisada e sprites atualizados mantendo a alma do original.',
     descEn: 'Visual and audio remaster of classic FM with high-resolution assets, revised soundtrack and updated sprites while keeping the soul of the original.',
     video: '',
-    versions: drops('fm-remaster', ['×1','×3','×5','×15'])
+    versions: drops('fm-remaster', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — Rising Of The Wicked Gods',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-rising-wicked-gods',
     descPt: 'Os deuses do mal dominam o campo — mod centrado nos vilões da série com cartas e estratégias sombrias poderosas.',
     descEn: 'The gods of evil dominate the field — a mod centered on the series\' villains featuring powerful dark cards and strategies.',
     video: '',
-    versions: drops('fm-rising-wicked-gods', ['×1','×3','×5'])
+    versions: drops('fm-rising-wicked-gods', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Shadow Of Death',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-shadow-of-death',
     descPt: 'Mod com tema de morte e sombras — cartas letais, NPCs implacáveis e drops temáticos que testam cada estratégia.',
     descEn: 'Death and shadows themed mod — lethal cards, relentless NPCs and thematic drops that test every strategy.',
     video: '',
-    versions: drops('fm-shadow-of-death', ['×1','×3','×5'])
+    versions: drops('fm-shadow-of-death', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — VN 2021',
-    author: 'Comunidade FM',
-    tags: ['VN'],
+    slug: 'fm-vn-2021',
     descPt: 'Versão visual novel de 2021 com história expandida, novos diálogos por NPC e uma narrativa mais imersiva que o original.',
     descEn: '2021 visual novel version with an expanded story, new per-NPC dialogues and a more immersive narrative than the original.',
     video: '',
-    versions: drops('fm-vn-2021', ['×1','×3','×5'])
+    versions: drops('fm-vn-2021', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — VN 2026',
-    author: 'Comunidade FM',
-    tags: ['VN', 'DESTAQUE'],
+    slug: 'fm-vn-2026',
     descPt: 'A versão visual novel mais recente e completa — história atualizada em 2026 com o conteúdo narrativo mais extenso da série.',
     descEn: 'The most recent and complete visual novel version — updated story in 2026 with the most extensive narrative content in the series.',
     video: '',
-    versions: drops('fm-vn-2026', ['×1','×3','×5','×15'])
+    versions: drops('fm-vn-2026', ['×1','×3','×5','×15']),
+    docs: []
   },
   {
     name: 'FM — Wake Of Gods',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-wake-of-gods',
     descPt: 'Os deuses despertem — mod focado em Slifer, Obelisk e Ra rebalanceados com mecânicas especiais e drops temáticos.',
     descEn: 'The gods awaken — mod focused on rebalanced Slifer, Obelisk and Ra with special mechanics and thematic drops.',
     video: '',
-    versions: drops('fm-wake-of-gods', ['×1','×3','×5'])
+    versions: drops('fm-wake-of-gods', ['×1','×3','×5']),
+    docs: []
   },
   {
     name: 'FM — Yami Duel Monsters Final',
-    author: 'Comunidade FM',
-    tags: [],
+    slug: 'fm-yami-duel-monsters-final',
     descPt: 'Versão final do mod centrado em Yami Yugi e seus duelos mais icônicos. Decks e drops inspirados nos momentos clássicos do anime.',
     descEn: 'Final version of the mod centered on Yami Yugi and his most iconic duels. Decks and drops inspired by classic anime moments.',
     video: '',
-    versions: drops('fm-yami-duel-monsters-final', ['×1','×3','×5'])
+    versions: drops('fm-yami-duel-monsters-final', ['×1','×3','×5']),
+    docs: []
   },
 
 ];
 
-// ── Filtro ativo ──────────────────────────────────────────────
-let activeFilter = 'TODOS';
+// ── Render ─────────────────────────────────────────────────────
 let openRow = null;
-
-// ── Badges ───────────────────────────────────────────────────
-const BADGE_CLASS = {
-  'PT-BR': 'badge-ptbr', 'BR': 'badge-br',
-  'EN': 'badge-en', 'HARD': 'badge-hard',
-  'NOVO': 'badge-novo', 'CUSTOM': 'badge-custom',
-};
-
-function badgeHtml(tag){
-  const cls = BADGE_CLASS[tag] || 'badge-novo';
-  return `<span class="badge ${cls}">${tag}</span>`;
-}
-
-// ── Filtros dinâmicos ─────────────────────────────────────────
-function buildFilters(){
-  const all = new Set();
-  MODS.forEach(m => (m.tags||[]).forEach(t => all.add(t)));
-  const wrap = document.getElementById('filter-wrap');
-  wrap.innerHTML = '';
-  const mkBtn = (label) => {
-    const b = document.createElement('button');
-    b.className = 'filter-btn' + (label === activeFilter ? ' active' : '');
-    b.textContent = label === 'TODOS' ? (isEn() ? 'All' : 'Todos') : label;
-    b.onclick = () => { activeFilter = label; buildFilters(); renderMods(); };
-    wrap.appendChild(b);
-  };
-  mkBtn('TODOS');
-  [...all].sort().forEach(mkBtn);
-}
-
-// ── Render ────────────────────────────────────────────────────
 function isEn(){ return document.body.classList.contains('en'); }
 
 function renderMods(){
@@ -537,20 +493,17 @@ function renderMods(){
   const list = document.getElementById('mod-list');
   list.innerHTML = '';
 
-  const filtered = MODS.filter(m => {
-    const matchTag = activeFilter === 'TODOS' || (m.tags||[]).includes(activeFilter);
-    const matchQ   = !q ||
-      m.name.toLowerCase().includes(q) ||
-      m.author.toLowerCase().includes(q) ||
-      (m.descPt||'').toLowerCase().includes(q) ||
-      (m.descEn||'').toLowerCase().includes(q);
-    return matchTag && matchQ;
-  });
+  const filtered = MODS.filter(m =>
+    !q ||
+    m.name.toLowerCase().includes(q) ||
+    (m.descPt||'').toLowerCase().includes(q) ||
+    (m.descEn||'').toLowerCase().includes(q)
+  );
 
   const countEl = document.getElementById('mod-count');
   const total = MODS.length;
   countEl.textContent = filtered.length === total
-    ? (isEn() ? `${total} mods` : `${total} mods`)
+    ? `${total} mods`
     : (isEn() ? `${filtered.length} of ${total}` : `${filtered.length} de ${total}`);
 
   if(!filtered.length){
@@ -558,12 +511,10 @@ function renderMods(){
     return;
   }
 
-  filtered.forEach((m, fi) => {
+  filtered.forEach(m => {
     const globalIdx = MODS.indexOf(m);
     const panelId   = 'panel-' + globalIdx;
     const hdrId     = 'hdr-' + globalIdx;
-
-    const badges = (m.tags||[]).map(badgeHtml).join('');
 
     const verRows = (m.versions||[]).map(v =>
       `<a class="ver-btn" href="${v.url}" target="_blank">
@@ -574,6 +525,13 @@ function renderMods(){
         <span style="font-size:11px">⬇</span>
       </a>`
     ).join('');
+
+    const docsHtml = (m.docs||[]).length
+      ? `<div class="ver-section-title" style="margin-top:12px">${isEn()?'Help files:':'Arquivos de ajuda:'}</div>
+         <div class="docs-grid">${(m.docs||[]).map(d =>
+           `<a class="doc-btn" href="${d.url}" target="_blank">📄 ${d.name}</a>`
+         ).join('')}</div>`
+      : '';
 
     const videoHtml = m.video
       ? `<a class="mod-video-link" href="${m.video}" target="_blank">▶ ${isEn()?'Watch video':'Ver vídeo'}</a>`
@@ -588,17 +546,15 @@ function renderMods(){
       <div class="mod-row-hdr" id="${hdrId}" onclick="toggleRow(${globalIdx})" role="button" tabindex="0">
         <span class="mod-arrow">▶</span>
         <span class="mod-name">${m.name}</span>
-        <span class="mod-author-sm">${m.author}</span>
-        <span class="mod-badges">${badges}</span>
       </div>
       <div class="mod-panel" id="${panelId}">
         <p class="mod-desc-full">${desc}</p>
         <div class="ver-section-title">${verTitle}</div>
         <div class="ver-grid">${verRows}</div>
+        ${docsHtml}
         ${videoHtml}
       </div>`;
 
-    // Restaura estado aberto se era o openRow
     if(openRow === globalIdx){
       row.querySelector('.mod-row-hdr').classList.add('open');
       row.querySelector('.mod-panel').classList.add('open');
@@ -613,7 +569,6 @@ function toggleRow(idx){
   const panel = document.getElementById('panel-' + idx);
   if(!hdr || !panel) return;
   const isOpen = hdr.classList.contains('open');
-  // Fecha todos
   document.querySelectorAll('.mod-row-hdr.open').forEach(h => h.classList.remove('open'));
   document.querySelectorAll('.mod-panel.open').forEach(p => p.classList.remove('open'));
   openRow = null;
@@ -624,7 +579,7 @@ function toggleRow(idx){
   }
 }
 
-// ── Língua ────────────────────────────────────────────────────
+// ── Língua ─────────────────────────────────────────────────────
 function setLang(lang, save=true){
   document.body.classList.toggle('en', lang === 'en');
   document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
@@ -632,11 +587,9 @@ function setLang(lang, save=true){
   const btn = document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`);
   if(btn) btn.classList.add('active');
   if(save) localStorage.setItem('fl_lang', lang);
-  buildFilters();
   renderMods();
 }
 
-// ── Inicialização ─────────────────────────────────────────────
 (function(){
   const saved = localStorage.getItem('fl_lang');
   setLang(saved === 'en' ? 'en' : 'pt', false);
