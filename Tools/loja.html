@@ -582,6 +582,20 @@ document.getElementById('paybtn').disabled = !STORE_ENABLED;
   if(saved) setLang(saved, false);
   else setLang('pt', false);
 
+  // Restaura campos do formulário salvos anteriormente
+  const FL_FORM_FIELDS = ['player-code','email','nome','discord','dispositivo'];
+  FL_FORM_FIELDS.forEach(id => {
+    const el = document.getElementById(id);
+    const val = localStorage.getItem('fl_form_' + id);
+    if(el && val) el.value = val;
+  });
+  FL_FORM_FIELDS.forEach(id => {
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.addEventListener('input',  () => localStorage.setItem('fl_form_' + id, el.value));
+    el.addEventListener('change', () => localStorage.setItem('fl_form_' + id, el.value));
+  });
+
   fetch('https://api.country.is/').then(r=>r.json()).then(d=>{
     window._flIsBR = ((d.country || 'BR').toUpperCase() === 'BR');
     if(!saved && !window._flIsBR) setLang('en', false);
