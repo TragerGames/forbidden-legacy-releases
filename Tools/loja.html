@@ -518,7 +518,7 @@ async function asaasPay(d){
       body:JSON.stringify({...d, cpf, produto:'souls', pacote_id:selected.id})
     });
     const data = await res.json();
-    if(data.url) location.href = data.url;
+    if(data.url) window.open(data.url, '_blank');
     else alert(data.error || t('Erro ao iniciar pagamento.','Error starting payment.'));
   }catch(e){ alert(t('Erro de conexão.','Connection error.')); }
   btn.disabled = !STORE_ENABLED; applyRegionMode();
@@ -530,7 +530,7 @@ async function stripePay(d){
   try{
     const res = await fetch('/pagar/stripe_checkout.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,currency:'usd'})});
     const data = await res.json();
-    if(data.url) location.href = data.url;
+    if(data.url) window.open(data.url, '_blank');
     else alert(data.error || t('Erro ao iniciar pagamento.','Error starting payment.'));
   }catch(e){ alert(t('Erro de conexao.','Connection error.')); }
   btn.disabled = !STORE_ENABLED; applyRegionMode();
