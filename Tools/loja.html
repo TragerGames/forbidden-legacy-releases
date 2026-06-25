@@ -231,6 +231,11 @@ h1{margin:0 0 18px;font-size:clamp(38px,6vw,70px);line-height:.96;color:var(--go
           <label data-lang="en">Name</label>
           <input id="nome" placeholder="Seu nome" autocomplete="name">
         </div>
+        <div class="field" id="cpf-field" style="display:none">
+          <label data-lang="pt">CPF <span style="color:#e04040;font-size:11px">*</span> <span style="color:#888;font-size:11px">(exigido para cartão)</span></label>
+          <label data-lang="en">CPF <span style="color:#e04040;font-size:11px">*</span> <span style="color:#888;font-size:11px">(required for card)</span></label>
+          <input id="cpf" placeholder="000.000.000-00" autocomplete="off" maxlength="14" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
+        </div>
         <div class="field">
           <label data-lang="pt">Discord opcional</label>
           <label data-lang="en">Optional Discord</label>
@@ -269,6 +274,14 @@ h1{margin:0 0 18px;font-size:clamp(38px,6vw,70px);line-height:.96;color:var(--go
             </div>
             <span class="payment-tag">Brasil</span>
           </div>
+          <div class="payment-option" id="pay-opt-card-br" style="display:none">
+            <div>
+              <div class="payment-title">💳 Cartão BR</div>
+              <div class="payment-sub" data-lang="pt">Visa · Master · Elo · Hipercard</div>
+              <div class="payment-sub" data-lang="en">Brazilian credit card via Asaas.</div>
+            </div>
+            <span class="payment-tag">Brasil</span>
+          </div>
           <div class="payment-option" id="pay-opt-stripe">
             <div>
               <div class="payment-title">Stripe</div>
@@ -301,6 +314,38 @@ h1{margin:0 0 18px;font-size:clamp(38px,6vw,70px);line-height:.96;color:var(--go
       <button class="paybtn" onclick="copyRedeem()" data-lang="pt">Copiar codigo</button>
       <button class="paybtn" onclick="copyRedeem()" data-lang="en">Copy code</button>
     </div>
+  </div>
+</div>
+
+<!-- Modal de escolha de pagamento para usuários BR -->
+<div id="pay-choice-overlay" style="display:none;position:fixed;inset:0;z-index:1001;background:rgba(0,0,0,0.88);align-items:center;justify-content:center;padding:20px">
+  <div style="background:#0D0804;border:1px solid #6b4e1a;border-radius:6px;padding:32px 28px;max-width:400px;width:100%;position:relative">
+    <button onclick="document.getElementById('pay-choice-overlay').style.display='none'" style="position:absolute;top:14px;right:18px;background:none;border:none;color:#888;font-size:20px;cursor:pointer">✕</button>
+    <h3 style="color:#f0c45a;font-size:16px;margin:0 0 6px" data-lang="pt">☥ Escolha como pagar</h3>
+    <h3 style="color:#f0c45a;font-size:16px;margin:0 0 6px" data-lang="en">☥ Choose payment method</h3>
+    <p style="color:#888;font-size:12px;margin:0 0 20px" id="pay-choice-desc"></p>
+    <button onclick="payChoicePix()" style="display:flex;align-items:center;gap:16px;width:100%;background:#111;border:1px solid #3a2a10;border-radius:4px;padding:16px;cursor:pointer;margin-bottom:10px;color:#fff;text-align:left">
+      <div style="font-size:22px">⬡</div>
+      <div style="flex:1">
+        <div style="font-weight:700;font-size:14px">PIX</div>
+        <div style="color:#888;font-size:12px" data-lang="pt">Instantâneo · via Efí Bank</div>
+        <div style="color:#888;font-size:12px" data-lang="en">Instant · via Efí Bank</div>
+      </div>
+      <div style="color:#f0c45a;font-weight:900;font-size:15px" id="pay-choice-pix-price"></div>
+    </button>
+    <button onclick="payChoiceCard()" style="display:flex;align-items:center;gap:16px;width:100%;background:#111;border:1px solid #3a2a10;border-radius:4px;padding:16px;cursor:pointer;color:#fff;text-align:left">
+      <div style="font-size:22px">💳</div>
+      <div style="flex:1">
+        <div style="font-weight:700;font-size:14px" data-lang="pt">Cartão de Crédito</div>
+        <div style="font-weight:700;font-size:14px" data-lang="en">Credit Card</div>
+        <div style="color:#888;font-size:12px">Visa · Master · Elo · Hipercard</div>
+        <div style="color:rgba(255,200,80,.6);font-size:10px" data-lang="pt">Mesmo valor · processado via Asaas</div>
+        <div style="color:rgba(255,200,80,.6);font-size:10px" data-lang="en">Same price · processed via Asaas</div>
+      </div>
+      <div style="color:#50c87a;font-weight:900;font-size:15px" id="pay-choice-card-price"></div>
+    </button>
+    <p style="font-size:11px;color:#555;text-align:center;margin-top:12px;margin-bottom:0" data-lang="pt">🔒 Processado com segurança · Código enviado por email</p>
+    <p style="font-size:11px;color:#555;text-align:center;margin-top:12px;margin-bottom:0" data-lang="en">🔒 Processed securely · Code sent by email</p>
   </div>
 </div>
 
@@ -346,8 +391,10 @@ function applyRegionMode(){
   document.querySelectorAll('.region-br').forEach(el => el.style.display = showUsd ? 'none' : 'flex');
   document.querySelectorAll('.region-intl').forEach(el => el.style.display = showUsd ? 'flex' : 'none');
   document.getElementById('pay-opt-pix')?.classList.toggle('active', br);
+  document.getElementById('pay-opt-card-br').style.display = br ? 'flex' : 'none';
   document.getElementById('pay-opt-stripe')?.classList.toggle('active', !br);
-  document.getElementById('region-chip').textContent = br ? t('Brasil - PIX','Brazil - PIX') : 'International - Stripe';
+  document.getElementById('cpf-field').style.display = br ? '' : 'none';
+  document.getElementById('region-chip').textContent = br ? t('Brasil - PIX / Cartão','Brazil - PIX / Card') : 'International - Stripe';
   document.getElementById('form-box').classList.toggle('locked', !STORE_ENABLED);
   document.getElementById('summary-box').classList.toggle('locked', !STORE_ENABLED);
   document.getElementById('form-box').dataset.lock = t('Loja em breve','Coming soon');
@@ -359,7 +406,9 @@ function applyRegionMode(){
   document.getElementById('payment-note').textContent = br
     ? t('PIX para Brasil via Efi Bank. O codigo de resgate sera exibido apos a confirmacao e tambem enviado por email.','PIX for Brazil via Efi Bank. The redeem code will be shown after confirmation and also sent by email.')
     : t('Cartao internacional via Stripe em USD. O codigo de resgate sera enviado por email apos a confirmacao.','International card payment via Stripe in USD. The redeem code will be sent by email after confirmation.');
-  document.getElementById('paybtn').textContent = STORE_ENABLED ? (br ? t('Comprar com PIX','Pay with PIX') : t('Comprar com Stripe','Pay with Stripe')) : (br ? t('PIX em breve','PIX coming soon') : t('Stripe em breve','Stripe coming soon'));
+  document.getElementById('paybtn').textContent = STORE_ENABLED
+    ? (br ? t('Comprar Souls','Buy Souls') : t('Comprar com Stripe','Pay with Stripe'))
+    : (br ? t('Em breve','Coming soon') : t('Stripe em breve','Stripe coming soon'));
   renderPacks();
   updateSummary();
 }
@@ -420,6 +469,8 @@ function validate(d){
   ));
 }
 
+let _pendingPayData = null;
+
 async function pay(){
   if(!STORE_ENABLED){
     alert(t('A Loja de pacotes ainda esta em breve.','Pack purchases are still coming soon.'));
@@ -427,8 +478,50 @@ async function pay(){
   }
   const d = formData();
   if(!validate(d)) return;
-  if(window._flIsBR) return pixPay(d);
+  if(window._flIsBR){
+    _pendingPayData = d;
+    document.getElementById('pay-choice-desc').textContent = t(
+      `${selected.souls} Souls · ${selected.br}`,
+      `${selected.souls} Souls · ${selected.br}`
+    );
+    document.getElementById('pay-choice-pix-price').textContent = selected.br;
+    document.getElementById('pay-choice-card-price').textContent = selected.br;
+    document.getElementById('pay-choice-overlay').style.display = 'flex';
+    return;
+  }
   return stripePay(d);
+}
+
+function payChoicePix(){
+  document.getElementById('pay-choice-overlay').style.display = 'none';
+  if(_pendingPayData) pixPay(_pendingPayData);
+}
+
+function payChoiceCard(){
+  document.getElementById('pay-choice-overlay').style.display = 'none';
+  if(_pendingPayData) asaasPay(_pendingPayData);
+}
+
+async function asaasPay(d){
+  const cpf = (document.getElementById('cpf')?.value ?? '').trim();
+  const cpfDigits = cpf.replace(/\D/g,'');
+  if(cpfDigits.length !== 11){
+    alert(t('CPF é obrigatório para pagamento com cartão.\nInforme os 11 dígitos.','CPF is required for card payment.\nEnter your 11 digits.'));
+    document.getElementById('cpf')?.focus(); return;
+  }
+  const btn = document.getElementById('paybtn');
+  btn.disabled = true; btn.textContent = t('Processando...','Processing...');
+  try{
+    const res = await fetch('/pagar/asaas_checkout.php',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({...d, cpf, produto:'souls', pacote_id:selected.id})
+    });
+    const data = await res.json();
+    if(data.url) location.href = data.url;
+    else alert(data.error || t('Erro ao iniciar pagamento.','Error starting payment.'));
+  }catch(e){ alert(t('Erro de conexão.','Connection error.')); }
+  btn.disabled = !STORE_ENABLED; applyRegionMode();
 }
 
 async function stripePay(d){
@@ -495,7 +588,7 @@ document.getElementById('paybtn').disabled = !STORE_ENABLED;
     else applyRegionMode();
   }).catch(()=>{ window._flIsBR = true; applyRegionMode(); });
 
-  if(params.get('stripe_ok') === '1'){
+  if(params.get('stripe_ok') === '1' || params.get('asaas_ok') === '1'){
     alert(t('Pagamento confirmado. Seu codigo de Souls sera enviado por email em instantes.','Payment confirmed. Your Soul code will be sent by email shortly.'));
     history.replaceState(null,'',location.pathname);
   }
