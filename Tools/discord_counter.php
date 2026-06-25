@@ -22,20 +22,21 @@ if (file_exists($CACHE_FILE)) {
     }
 }
 
-// Busca na API do Discord
+// Busca na API pública do Discord via cURL (mais confiável em hospedagem compartilhada)
 $url = "https://discord.com/api/v9/invites/{$INVITE_CODE}?with_counts=true";
-$ctx = stream_context_create([
-    'http' => [
-        'method'  => 'GET',
-        'header'  => "User-Agent: ForbiddenLegacy/1.0\r\n",
-        'timeout' => 5,
-    ]
+$ch  = curl_init($url);
+curl_setopt_array($ch, [
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_TIMEOUT        => 6,
+    CURLOPT_HTTPHEADER     => ['User-Agent: ForbiddenLegacy/1.0'],
+    CURLOPT_SSL_VERIFYPEER => true,
 ]);
+$body = curl_exec($ch);
+$err  = curl_error($ch);
+curl_close($ch);
 
-$body = @file_get_contents($url, false, $ctx);
-
-if ($body === false) {
-    // Fallback: retorna cache antigo se existir, senão zeros
+if (!$body || $err) {
+    // Fallback: cache antigo ou zeros
     if (file_exists($CACHE_FILE)) {
         $old = json_decode(file_get_contents($CACHE_FILE), true);
         echo json_encode(['online' => $old['online'] ?? 0, 'total' => $old['total'] ?? 0]);
@@ -50,6 +51,6 @@ $online = $data['approximate_presence_count'] ?? 0;
 $total  = $data['approximate_member_count']   ?? 0;
 
 // Salva cache
-file_put_contents($CACHE_FILE, json_encode(['online' => $online, 'total' => $total, 'ts' => time()]));
+@file_put_contents($CACHE_FILE, json_encode(['online' => $online, 'total' => $total, 'ts' => time()]));
 
 echo json_encode(['online' => $online, 'total' => $total]);
