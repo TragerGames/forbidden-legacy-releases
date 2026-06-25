@@ -206,281 +206,105 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
 //        releases/download/fmii-vn-2025/guia.pdf
 // ============================================================
 
-const GH = 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/';
-
-function drops(slug, rates) {
-  const labels = { '×1':'Drop padrão', '×3':'Drop aumentado', '×5':'Drop alto', '×15':'Drop máximo' };
-  return rates.map(r => ({ rate: r, label: labels[r] || '', url: GH + slug + '/' + r.replace('×','x') + '.ppf' }));
-}
-
 const MODS = [
 
   // ── FM II (Yu-Gi-Oh! Forbidden Memories II) ──────────────────
 
   {
     name: 'FM II — Digimon Season 1',
-    slug: 'fmii-digimon-season1',
     descPt: 'Substitui as cartas de FM II por monstros e personagens da 1ª temporada de Digimon. Duele com seus Digimon favoritos no universo de Forbidden Memories.',
     descEn: 'Replaces FM II cards with monsters and characters from Digimon Season 1. Duel with your favorite Digimon in the Forbidden Memories universe.',
     video: '',
-    versions: drops('fmii-digimon-season1', ['×1','×3','×5','×15']),
+    versions: [
+      { rate: '×5', label: 'Drop alto', url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-Digimon-Season1/Yu-Gi-Oh.FM.II.Mod.Digimon.Season.1.x5.-.Ver.1.3.bin' },
+    ],
     docs: []
   },
   {
     name: 'FM II — Ghost',
-    slug: 'fmii-ghost',
+    hidden: true,
     descPt: 'Mod de FM II com tema sombrio e visual repaginado. Cartas e personagens redesenhados com estética fantasmagórica.',
     descEn: 'FM II mod with a dark, ghost-themed visual style. Cards and characters redesigned with an eerie, phantasmal aesthetic.',
     video: '',
-    versions: drops('fmii-ghost', ['×1','×3','×5']),
+    versions: [],
     docs: []
   },
   {
-    name: 'FM II — Ultimate',
-    slug: 'fmii-ultimate',
-    descPt: 'Versão completa de FM II com dezenas de cartas novas, gráficos melhorados e drops revisados para uma experiência mais rica.',
-    descEn: 'Full FM II version with dozens of new cards, improved graphics and revised drops for a richer experience.',
+    name: 'FM II — Ultimate Final',
+    descPt: 'Versão definitiva de FM II com dezenas de cartas novas, gráficos melhorados e drops revisados para uma experiência mais rica.',
+    descEn: 'Definitive FM II version with dozens of new cards, improved graphics and revised drops for a richer experience.',
     video: '',
-    versions: drops('fmii-ultimate', ['×1','×3','×5']),
-    docs: []
+    versions: [
+      { rate: '×15', label: 'Drop máximo', url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-Ultimate-Final/Yu-Gi-Oh.-.FM.II.Mod.Ultimate.Final.x15.iso' },
+    ],
+    docs: [
+      { name: 'Guia de Fusões Básicas', url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-Ultimate-Final/Basic.Fusions.txt' },
+    ]
   },
   {
     name: 'FM II — VN 2024',
-    slug: 'fmii-vn-2024',
     descPt: 'Mod visual novel de FM II lançado em 2024, com nova história, diálogos expandidos e drops ajustados por NPC.',
     descEn: 'FM II visual novel mod released in 2024, with a new story, expanded dialogues and NPC-adjusted drops.',
     video: '',
-    versions: drops('fmii-vn-2024', ['×1','×3','×5','×15']),
-    docs: []
+    versions: [
+      { rate: '×15', label: 'Drop máximo', url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-VN-2024/Yu-Gi-Oh.-.FM.II.Mod.VN.2024.2.0.x15.iso' },
+    ],
+    docs: [
+      { name: 'Droplist', url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-VN-2024/Droplist.-.Yu-Gi-Oh.FM.II.Mod.VN.2024.txt' },
+    ]
   },
   {
     name: 'FM II — VN 2025',
-    slug: 'fmii-vn-2025',
     descPt: 'A versão mais recente do mod VN para FM II — história atualizada, novas cartas e a experiência visual novel mais completa até agora.',
     descEn: 'The latest VN mod for FM II — updated story, new cards and the most complete visual novel experience yet.',
     video: '',
-    versions: drops('fmii-vn-2025', ['×1','×3','×5','×15']),
-    docs: []
+    versions: [
+      { rate: '×5',  label: 'Drop alto',   url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-VN-2025/Yu-Gi-Oh.-.FM.II.Mod.VN.2025.Final.Version.x05.iso' },
+      { rate: '×15', label: 'Drop máximo', url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-VN-2025/Yu-Gi-Oh.-.FM.II.Mod.VN.2025.Final.Version.x15.iso' },
+    ],
+    docs: [
+      { name: 'Droplist / Recompensas / Rituais / Decks', url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-VN-2025/Droplist.-.Recompensas.-.Rituais.-.Decks.-.Yu-Gi-Oh.-.FM.II.Mod.VN.2025.Final.Version.xlsx' },
+    ]
   },
 
   // ── FM (Yu-Gi-Oh! Forbidden Memories) ────────────────────────
 
   {
     name: 'FM — Mod 13',
-    slug: 'fm-13',
-    descPt: 'Mod com deck e drops personalizados inspirados no duelista de número 13. Desafio único com cartas selecionadas a dedo.',
-    descEn: 'Mod with custom deck and drops inspired by duelist number 13. A unique challenge with hand-picked cards.',
+    descPt: 'Mod com deck e drops personalizados. Disponível em duas variantes: com efeitos de cartas ativados (×10) ou sem efeitos para a experiência clássica (×15).',
+    descEn: 'Mod with custom deck and drops. Available in two variants: with active card effects (×10) or without effects for the classic experience (×15).',
     video: '',
-    versions: drops('fm-13', ['×1','×3','×5']),
-    docs: []
+    versions: [
+      { rate: '×10', label: 'Com efeitos',  url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-13/Yu-Gi-Oh.-.FM.Mod.13.Effects.II.4.1.x10.iso' },
+      { rate: '×15', label: 'Sem efeitos',  url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-13/Yu-Gi-Oh.-.FM.Mod.13.No.Effects.x15.iso' },
+    ],
+    docs: [
+      { name: 'Guia Inicial', url: 'https://github.com/TragerGames/forbidden-legacy-releases/releases/download/Mod-13/Read-me.txt' },
+    ]
   },
-  {
-    name: 'FM — Mod 2019',
-    slug: 'fm-2019',
-    descPt: 'Remake de Forbidden Memories com cartas e balanceamento no estilo da era 2019 do TCG. Mais opções e drops modernizados.',
-    descEn: 'Forbidden Memories remake featuring cards and balancing from the 2019 TCG era. More options and modernized drops.',
-    video: '',
-    versions: drops('fm-2019', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — 2023 Hard and Effects',
-    slug: 'fm-2023-hard',
-    descPt: 'Modo difícil com efeitos de cartas ativados — muito mais próximo do TCG. NPCs mais agressivos e drops raros mais escassos.',
-    descEn: 'Hard mode with active card effects — much closer to the TCG. More aggressive NPCs and rarer card drops.',
-    video: '',
-    versions: drops('fm-2023-hard', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Battle Of The Duelist King',
-    slug: 'fm-battle-duelist-king',
-    descPt: 'Recria o torneio do Rei dos Duelistas no universo de Forbidden Memories. Enfrente os melhores duelistas com decks temáticos do anime.',
-    descEn: 'Recreates the Duelist King tournament in the Forbidden Memories universe. Face the best duelists with anime-themed decks.',
-    video: '',
-    versions: drops('fm-battle-duelist-king', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — CLT Memories',
-    slug: 'fm-clt-memories',
-    descPt: 'Mod da comunidade CLT com cartas exclusivas, drops revisados e personagens repaginados. Um dos mais completos da cena.',
-    descEn: 'CLT community mod with exclusive cards, revised drops and revamped characters. One of the most complete in the scene.',
-    video: '',
-    versions: drops('fm-clt-memories', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — Crazy',
-    slug: 'fm-crazy',
-    descPt: 'Mod experimental com combinações caóticas e drops imprevisíveis. Cada duelo é uma surpresa — perfeito para quem quer diversão sem padrão.',
-    descEn: 'Experimental mod with chaotic combinations and unpredictable drops. Every duel is a surprise — perfect for those who want unpredictable fun.',
-    video: '',
-    versions: drops('fm-crazy', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Dragon Ball AF',
-    slug: 'fm-dragon-ball-af',
-    descPt: 'Substitui o universo de YGO por personagens e transformações de Dragon Ball AF. Convoque Goku, Vegeta e vilões lendários no campo.',
-    descEn: 'Replaces the YGO universe with Dragon Ball AF characters and transformations. Summon Goku, Vegeta and legendary villains to the field.',
-    video: '',
-    versions: drops('fm-dragon-ball-af', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — End Game',
-    slug: 'fm-end-game',
-    descPt: 'Versão focada no late-game com NPCs extremamente fortes e cartas de alto nível. Indicado para jogadores que já dominam o FM clássico.',
-    descEn: 'Late-game focused version with extremely powerful NPCs and high-level cards. Recommended for players who have mastered classic FM.',
-    video: '',
-    versions: drops('fm-end-game', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Enhanced Final',
-    slug: 'fm-enhanced-final',
-    descPt: 'Versão aprimorada e polida do FM original, com gráficos refinados, drops melhorados e pequenas correções de balanceamento.',
-    descEn: 'Enhanced and polished version of the original FM, with refined graphics, improved drops and minor balance fixes.',
-    video: '',
-    versions: drops('fm-enhanced-final', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Final Mix PT-BR',
-    slug: 'fm-final-mix-ptbr',
-    descPt: 'Final Mix traduzido e localizado para o português brasileiro, com textos revisados e termos adaptados para o público lusófono.',
-    descEn: 'Final Mix translated and localized to Brazilian Portuguese, with revised texts and adapted terms for the Portuguese-speaking audience.',
-    video: '',
-    versions: drops('fm-final-mix-ptbr', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Galaxy Of Gods 2025',
-    slug: 'fm-galaxy-of-gods-2025',
-    descPt: 'Mod épico com deuses galácticos, novas fusões e arte premium. Um dos mais visualmente impactantes da coleção.',
-    descEn: 'Epic mod featuring galactic gods, new fusions and premium artwork. One of the most visually striking mods in the collection.',
-    video: '',
-    versions: drops('fm-galaxy-of-gods-2025', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — Infinity Memories',
-    slug: 'fm-infinity-memories',
-    descPt: 'Expansão do FM com monstros extras, novas fusões e um pool de drops expandido. A coleção de cartas mais vasta da série.',
-    descEn: 'FM expansion with extra monsters, new fusions and an expanded drop pool. The most extensive card collection in the series.',
-    video: '',
-    versions: drops('fm-infinity-memories', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — Last Memories',
-    slug: 'fm-last-memories',
-    descPt: 'A conclusão da saga de Forbidden Memories, com cartas e história do arco final. Um mod cinematográfico e emocionante.',
-    descEn: 'The conclusion of the Forbidden Memories saga, featuring cards and story from the final arc. A cinematic and emotional mod.',
-    video: '',
-    versions: drops('fm-last-memories', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — Maze Of Memories',
-    slug: 'fm-maze-of-memories',
-    descPt: 'Labirinto de duelos com estruturas de deck únicas em cada nível. Um desafio de progressão diferente a cada confronto.',
-    descEn: 'Duel maze with unique deck structures at each level. A different progression challenge at every confrontation.',
-    video: '',
-    versions: drops('fm-maze-of-memories', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Out of Darkness',
-    slug: 'fm-out-of-darkness',
-    descPt: 'Mod sombrio centrado em cartas DARK e criaturas das trevas aprimoradas. Atmosfera pesada com NPCs redesenhados.',
-    descEn: 'Dark-themed mod centered on DARK cards and enhanced creatures of darkness. Heavy atmosphere with redesigned NPCs.',
-    video: '',
-    versions: drops('fm-out-of-darkness', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Perfect',
-    slug: 'fm-perfect',
-    descPt: 'Versão equilibrada e polida do FM, visando o melhor estado possível do jogo base. Ideal para quem quer a experiência clássica aprimorada.',
-    descEn: 'Balanced and polished FM version aiming for the best possible state of the base game. Ideal for those who want the enhanced classic experience.',
-    video: '',
-    versions: drops('fm-perfect', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Pokémon',
-    slug: 'fm-pokemon',
-    descPt: 'Substitui todas as cartas por Pokémon — convoque Charizard, Mewtwo e sua equipe favorita no campo de duelo de Forbidden Memories.',
-    descEn: 'Replaces all cards with Pokémon — summon Charizard, Mewtwo and your favorite team on the Forbidden Memories duel field.',
-    video: '',
-    versions: drops('fm-pokemon', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — Remaster',
-    slug: 'fm-remaster',
-    descPt: 'Remaster visual e sonoro do FM clássico com assets de alta resolução, trilha revisada e sprites atualizados mantendo a alma do original.',
-    descEn: 'Visual and audio remaster of classic FM with high-resolution assets, revised soundtrack and updated sprites while keeping the soul of the original.',
-    video: '',
-    versions: drops('fm-remaster', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — Rising Of The Wicked Gods',
-    slug: 'fm-rising-wicked-gods',
-    descPt: 'Os deuses do mal dominam o campo — mod centrado nos vilões da série com cartas e estratégias sombrias poderosas.',
-    descEn: 'The gods of evil dominate the field — a mod centered on the series\' villains featuring powerful dark cards and strategies.',
-    video: '',
-    versions: drops('fm-rising-wicked-gods', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Shadow Of Death',
-    slug: 'fm-shadow-of-death',
-    descPt: 'Mod com tema de morte e sombras — cartas letais, NPCs implacáveis e drops temáticos que testam cada estratégia.',
-    descEn: 'Death and shadows themed mod — lethal cards, relentless NPCs and thematic drops that test every strategy.',
-    video: '',
-    versions: drops('fm-shadow-of-death', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — VN 2021',
-    slug: 'fm-vn-2021',
-    descPt: 'Versão visual novel de 2021 com história expandida, novos diálogos por NPC e uma narrativa mais imersiva que o original.',
-    descEn: '2021 visual novel version with an expanded story, new per-NPC dialogues and a more immersive narrative than the original.',
-    video: '',
-    versions: drops('fm-vn-2021', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — VN 2026',
-    slug: 'fm-vn-2026',
-    descPt: 'A versão visual novel mais recente e completa — história atualizada em 2026 com o conteúdo narrativo mais extenso da série.',
-    descEn: 'The most recent and complete visual novel version — updated story in 2026 with the most extensive narrative content in the series.',
-    video: '',
-    versions: drops('fm-vn-2026', ['×1','×3','×5','×15']),
-    docs: []
-  },
-  {
-    name: 'FM — Wake Of Gods',
-    slug: 'fm-wake-of-gods',
-    descPt: 'Os deuses despertem — mod focado em Slifer, Obelisk e Ra rebalanceados com mecânicas especiais e drops temáticos.',
-    descEn: 'The gods awaken — mod focused on rebalanced Slifer, Obelisk and Ra with special mechanics and thematic drops.',
-    video: '',
-    versions: drops('fm-wake-of-gods', ['×1','×3','×5']),
-    docs: []
-  },
-  {
-    name: 'FM — Yami Duel Monsters Final',
-    slug: 'fm-yami-duel-monsters-final',
-    descPt: 'Versão final do mod centrado em Yami Yugi e seus duelos mais icônicos. Decks e drops inspirados nos momentos clássicos do anime.',
-    descEn: 'Final version of the mod centered on Yami Yugi and his most iconic duels. Decks and drops inspired by classic anime moments.',
-    video: '',
-    versions: drops('fm-yami-duel-monsters-final', ['×1','×3','×5']),
-    docs: []
-  },
+  { name: 'FM — Mod 2019',              hidden: true, descPt: 'Remake de Forbidden Memories com cartas e balanceamento no estilo da era 2019 do TCG.', descEn: 'Forbidden Memories remake featuring cards and balancing from the 2019 TCG era.', video: '', versions: [], docs: [] },
+  { name: 'FM — 2023 Hard and Effects', hidden: true, descPt: 'Modo difícil com efeitos de cartas ativados — muito mais próximo do TCG.', descEn: 'Hard mode with active card effects — much closer to the TCG.', video: '', versions: [], docs: [] },
+  { name: 'FM — Battle Of The Duelist King', hidden: true, descPt: 'Recria o torneio do Rei dos Duelistas no universo de Forbidden Memories.', descEn: 'Recreates the Duelist King tournament in the Forbidden Memories universe.', video: '', versions: [], docs: [] },
+  { name: 'FM — CLT Memories',          hidden: true, descPt: 'Mod da comunidade CLT com cartas exclusivas e drops revisados.', descEn: 'CLT community mod with exclusive cards and revised drops.', video: '', versions: [], docs: [] },
+  { name: 'FM — Crazy',                 hidden: true, descPt: 'Mod experimental com combinações caóticas e drops imprevisíveis.', descEn: 'Experimental mod with chaotic combinations and unpredictable drops.', video: '', versions: [], docs: [] },
+  { name: 'FM — Dragon Ball AF',        hidden: true, descPt: 'Substitui o universo de YGO por personagens de Dragon Ball AF.', descEn: 'Replaces the YGO universe with Dragon Ball AF characters.', video: '', versions: [], docs: [] },
+  { name: 'FM — End Game',              hidden: true, descPt: 'Versão focada no late-game com NPCs extremamente fortes.', descEn: 'Late-game focused version with extremely powerful NPCs.', video: '', versions: [], docs: [] },
+  { name: 'FM — Enhanced Final',        hidden: true, descPt: 'Versão aprimorada e polida do FM original.', descEn: 'Enhanced and polished version of the original FM.', video: '', versions: [], docs: [] },
+  { name: 'FM — Final Mix PT-BR',       hidden: true, descPt: 'Final Mix traduzido para o português brasileiro.', descEn: 'Final Mix translated to Brazilian Portuguese.', video: '', versions: [], docs: [] },
+  { name: 'FM — Galaxy Of Gods 2025',   hidden: true, descPt: 'Mod épico com deuses galácticos e novas fusões.', descEn: 'Epic mod featuring galactic gods and new fusions.', video: '', versions: [], docs: [] },
+  { name: 'FM — Infinity Memories',     hidden: true, descPt: 'Expansão do FM com monstros extras e pool de drops expandido.', descEn: 'FM expansion with extra monsters and an expanded drop pool.', video: '', versions: [], docs: [] },
+  { name: 'FM — Last Memories',         hidden: true, descPt: 'A conclusão da saga de Forbidden Memories com cartas do arco final.', descEn: 'The conclusion of the Forbidden Memories saga with final arc cards.', video: '', versions: [], docs: [] },
+  { name: 'FM — Maze Of Memories',      hidden: true, descPt: 'Labirinto de duelos com estruturas de deck únicas em cada nível.', descEn: 'Duel maze with unique deck structures at each level.', video: '', versions: [], docs: [] },
+  { name: 'FM — Out of Darkness',       hidden: true, descPt: 'Mod sombrio centrado em cartas DARK e criaturas das trevas.', descEn: 'Dark-themed mod centered on DARK cards and creatures of darkness.', video: '', versions: [], docs: [] },
+  { name: 'FM — Perfect',               hidden: true, descPt: 'Versão equilibrada e polida do FM, ideal para a experiência clássica aprimorada.', descEn: 'Balanced and polished FM version for the enhanced classic experience.', video: '', versions: [], docs: [] },
+  { name: 'FM — Pokémon',               hidden: true, descPt: 'Substitui todas as cartas por Pokémon.', descEn: 'Replaces all cards with Pokémon.', video: '', versions: [], docs: [] },
+  { name: 'FM — Remaster',              hidden: true, descPt: 'Remaster visual e sonoro do FM clássico com assets de alta resolução.', descEn: 'Visual and audio remaster of classic FM with high-resolution assets.', video: '', versions: [], docs: [] },
+  { name: 'FM — Rising Of The Wicked Gods', hidden: true, descPt: 'Mod centrado nos vilões da série com cartas e estratégias sombrias.', descEn: 'Mod centered on the series villains with dark cards and strategies.', video: '', versions: [], docs: [] },
+  { name: 'FM — Shadow Of Death',       hidden: true, descPt: 'Mod com tema de morte e sombras — cartas letais e NPCs implacáveis.', descEn: 'Death and shadows themed mod with lethal cards and relentless NPCs.', video: '', versions: [], docs: [] },
+  { name: 'FM — VN 2021',               hidden: true, descPt: 'Versão visual novel de 2021 com história expandida e novos diálogos.', descEn: '2021 visual novel version with an expanded story and new dialogues.', video: '', versions: [], docs: [] },
+  { name: 'FM — VN 2026',               hidden: true, descPt: 'A versão visual novel mais recente e completa.', descEn: 'The most recent and complete visual novel version.', video: '', versions: [], docs: [] },
+  { name: 'FM — Wake Of Gods',          hidden: true, descPt: 'Mod focado em Slifer, Obelisk e Ra rebalanceados.', descEn: 'Mod focused on rebalanced Slifer, Obelisk and Ra.', video: '', versions: [], docs: [] },
+  { name: 'FM — Yami Duel Monsters Final', hidden: true, descPt: 'Versão final do mod centrado em Yami Yugi e seus duelos icônicos.', descEn: 'Final version of the mod centered on Yami Yugi and his iconic duels.', video: '', versions: [], docs: [] },
 
 ];
 
@@ -494,10 +318,12 @@ function renderMods(){
   list.innerHTML = '';
 
   const filtered = MODS.filter(m =>
-    !q ||
-    m.name.toLowerCase().includes(q) ||
-    (m.descPt||'').toLowerCase().includes(q) ||
-    (m.descEn||'').toLowerCase().includes(q)
+    !m.hidden && (
+      !q ||
+      m.name.toLowerCase().includes(q) ||
+      (m.descPt||'').toLowerCase().includes(q) ||
+      (m.descEn||'').toLowerCase().includes(q)
+    )
   );
 
   const countEl = document.getElementById('mod-count');
