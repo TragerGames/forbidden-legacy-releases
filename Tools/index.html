@@ -1851,6 +1851,11 @@ function ytPlay(card, videoId) {
       <label data-lang="en">DISCORD (optional)</label>
       <input id="input-discord" type="text" placeholder="@usuario" autocomplete="off">
     </div>
+    <div class="input-group" id="cpf-group" style="display:none">
+      <label data-lang="pt">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--texto-dim);font-weight:400;font-size:10px">(exigido para cartão de crédito)</span></label>
+      <label data-lang="en">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--texto-dim);font-weight:400;font-size:10px">(required for credit card)</span></label>
+      <input id="input-cpf" type="text" placeholder="000.000.000-00" autocomplete="off" maxlength="14" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
+    </div>
     <div class="input-group">
       <label data-lang="pt">DISPOSITIVO <span style="color:#e04040;font-size:10px">*</span></label>
       <label data-lang="en">DEVICE <span style="color:#e04040;font-size:10px">*</span></label>
@@ -1870,7 +1875,7 @@ function ytPlay(card, videoId) {
       <span data-lang="pt">ATIVAR FOUNDER</span>
       <span data-lang="en">GET FOUNDER</span>
     </button>
-    <p class="buy-note" data-lang="pt">🔒 PIX · Licença enviada automaticamente por email</p>
+    <p class="buy-note" data-lang="pt">🔒 PIX R$30 · Cartão de Crédito R$35 · Licença enviada por email</p>
     <p class="buy-note" data-lang="en">🔒 International Card (USD) · License sent automatically by email</p>
   </div>
 </section>
@@ -1893,6 +1898,19 @@ function ytPlay(card, videoId) {
         <div class="pay-method-desc" data-lang="en">Instant · Brazil only · via Efí Bank</div>
       </div>
       <div class="pay-method-price">R$ 30</div>
+    </button>
+
+    <!-- Cartão BR (Asaas) — apenas Brasil -->
+    <button id="pay-opt-card-br" class="pay-method-btn pay-method-usd" onclick="fecharModalPagamento();asaasPagar()" style="display:none;border-color:rgba(80,180,120,.35)">
+      <div class="pay-method-icon">💳</div>
+      <div class="pay-method-info">
+        <div class="pay-method-name" data-lang="pt">Cartão de Crédito</div>
+        <div class="pay-method-name" data-lang="en">Credit Card</div>
+        <div class="pay-method-desc">Visa · Mastercard · Elo · Hipercard · BR</div>
+        <div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="pt">R$ 35 · inclui taxa de processamento</div>
+        <div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="en">R$ 35 · processing fee included</div>
+      </div>
+      <div class="pay-method-price" style="color:#50c87a">R$ 35</div>
     </button>
 
     <!-- Cartão USD — apenas fora do Brasil -->
@@ -2164,7 +2182,7 @@ async function stripePagar(currency) {
     });
   }
   const params = new URLSearchParams(window.location.search);
-  if (params.get('stripe_ok') === '1') {
+  if (params.get('stripe_ok') === '1' || params.get('asaas_ok') === '1') {
     if (banner) banner.style.display = 'flex';
     const clean = window.location.pathname + (window.location.hash || '');
     history.replaceState(null, '', clean);
@@ -2270,12 +2288,14 @@ function abrirModalPagamento() {
     document.getElementById('input-nome')?.focus(); return;
   }
 
-  // PIX apenas para Brasil; Cartão USD apenas fora do Brasil
+  // PIX e cartão BR apenas para Brasil; cartão USD apenas fora do Brasil
   const showBR = window._flIsBR;
-  const pix = document.getElementById('pay-opt-pix');
-  const usd = document.getElementById('pay-opt-usd');
-  if (pix) pix.style.display = showBR ? 'flex' : 'none';
-  if (usd) usd.style.display = showBR ? 'none' : 'flex';
+  const pix    = document.getElementById('pay-opt-pix');
+  const cardBr = document.getElementById('pay-opt-card-br');
+  const usd    = document.getElementById('pay-opt-usd');
+  if (pix)    pix.style.display    = showBR ? 'flex' : 'none';
+  if (cardBr) cardBr.style.display = showBR ? 'flex' : 'none';
+  if (usd)    usd.style.display    = showBR ? 'none' : 'flex';
 
   document.getElementById('pay-method-overlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -2302,6 +2322,9 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(d => {
       const country = (d.country || 'BR').toUpperCase();
       window._flIsBR = (country === 'BR');
+      // Mostra campo CPF apenas para usuários brasileiros (precisam para cartão)
+      const cpfGrp = document.getElementById('cpf-group');
+      if (cpfGrp) cpfGrp.style.display = window._flIsBR ? '' : 'none';
       // Idioma: só altera se não houver preferência salva
       if (!saved && !window._flIsBR) setLang('en', false);
     })
@@ -2405,6 +2428,44 @@ let _pixPollTimer = null;
 let _pixLicKey    = null;
 
 // Abre o modal (chamado pelo botão PAGAR COM PIX)
+// ── Cartão de Crédito BR via Asaas ───────────────────────────────────────────
+async function asaasPagar() {
+  const codigo      = (document.getElementById('input-codigo')?.value    ?? '').trim();
+  const email       = (document.getElementById('input-email')?.value     ?? '').trim();
+  const nome        = (document.getElementById('input-nome')?.value      ?? '').trim();
+  const discord     = (document.getElementById('input-discord')?.value   ?? '').trim();
+  const dispositivo = (document.getElementById('input-dispositivo')?.value ?? '').trim();
+  const cpf         = (document.getElementById('input-cpf')?.value       ?? '').trim();
+  const isEn        = document.body.classList.contains('en');
+
+  if (!codigo) { alert(isEn ? 'Please enter your Player Code.' : 'Informe seu Código do Jogador.'); return; }
+  if (!email || !email.includes('@')) { alert(isEn ? 'Please enter a valid email.' : 'Informe um email válido.'); return; }
+  if (!nome)  { alert(isEn ? 'Please enter your name.' : 'Informe seu nome.'); return; }
+  const cpfDigits = cpf.replace(/\D/g, '');
+  if (cpfDigits.length !== 11) {
+    alert(isEn ? 'CPF is required for credit card payment.\nEnter your 11-digit CPF.' : 'CPF é obrigatório para pagamento com cartão.\nInforme os 11 dígitos do seu CPF.');
+    document.getElementById('input-cpf')?.focus(); return;
+  }
+
+  const btn = document.getElementById('buy-btn');
+  if (btn) { btn.disabled = true; btn.textContent = isEn ? 'PROCESSING…' : 'PROCESSANDO…'; }
+
+  try {
+    const resp = await fetch('/pagar/asaas_checkout.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ player_code: codigo, email, nome, cpf, discord, dispositivo, produto: 'founder' }),
+    });
+    const data = await resp.json();
+    if (!resp.ok || data.error) throw new Error(data.error || 'Erro ao iniciar pagamento.');
+    // Redireciona para a página de pagamento seguro do Asaas
+    window.location.href = data.url;
+  } catch (err) {
+    alert((isEn ? 'Payment error: ' : 'Erro no pagamento: ') + err.message);
+    if (btn) { btn.disabled = false; btn.textContent = isEn ? 'ACTIVATE FOUNDER' : 'ATIVAR FOUNDER'; }
+  }
+}
+
 async function pixPagar() {
   const codigo      = document.getElementById('input-codigo').value.trim();
   const email       = document.getElementById('input-email').value.trim();
