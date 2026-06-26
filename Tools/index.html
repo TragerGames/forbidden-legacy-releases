@@ -64,26 +64,35 @@
 <link rel="icon" type="image/png" sizes="32x32"   href="/img/favicon-192.png">
 <link rel="shortcut icon" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ouro:      #C89020;
-    --ouro-brt:  #E8B830;
-    --ouro-esc:  #8A6010;
-    --fundo:     #050301;
-    --painel:    #0D0804;
-    --painel2:   #130C05;
-    --texto:     #D4C49A;
-    --texto-dim: #7A6A48;
-    --free:      #3A6090;
-    --founder:   #C89020;
+    --gold:       #c8973a;
+    --gold-light: #e8b840;
+    --gold-dim:   #7a5a18;
+    --dark:       #09080a;
+    --dark2:      #0d0b0e;
+    --dark3:      #120e12;
+    --border:     rgba(200,151,58,.13);
+    --text-muted: #6a5830;
+    --text-body:  #9a8050;
+    /* compat aliases */
+    --ouro:      #c8973a;
+    --ouro-brt:  #e8b840;
+    --ouro-esc:  #7a5a18;
+    --fundo:     #09080a;
+    --painel:    #0d0b0e;
+    --painel2:   #120e12;
+    --texto:     #c8b888;
+    --texto-dim: #7a6a48;
     --verde:     #00A060;
-    --azul:      #3070C0;
     --yt-red:    #C00000;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #050301;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: var(--dark);
     color: var(--texto);
     min-height: 100vh;
   }
@@ -98,8 +107,10 @@
     padding: 0 32px; height: 52px;
   }
   .topbar-logo {
-    font-size: 14px; font-weight: 900; letter-spacing: 3px;
-    color: var(--ouro); text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px; letter-spacing: 4px;
+    color: var(--gold); text-decoration: none;
+    text-shadow: 0 0 16px rgba(200,151,58,.35);
   }
   .topbar-nav {
     display: flex; gap: 4px; align-items: center;
@@ -192,9 +203,10 @@
   }
   .hero-badge { font-size: 11px; letter-spacing: 3px; color: var(--ouro-esc); text-transform: uppercase; margin-bottom: 24px; }
   .hero-title {
-    font-size: clamp(42px, 8vw, 88px);
-    font-weight: 900; letter-spacing: -1px; line-height: 1;
-    background: linear-gradient(135deg, var(--ouro-esc) 0%, var(--ouro-brt) 50%, var(--ouro) 100%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 10vw, 112px);
+    font-weight: 400; letter-spacing: 4px; line-height: 0.95;
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold-light) 50%, var(--gold) 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     margin-bottom: 8px;
   }
@@ -218,6 +230,17 @@
   .btn-secondary:hover { border-color: var(--texto); color: var(--texto); }
   .hero-scroll { position: absolute; bottom: 30px; left: 0; right: 0; text-align: center; font-size: 11px; letter-spacing: 2px; color: var(--texto-dim); animation: pulse 2s infinite; pointer-events: none; }
   @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+  /* ── Hero stats pills ── */
+  .hero-stats {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    margin-bottom: 40px; opacity: 0; animation: fadeInUp .7s ease forwards .9s;
+  }
+  .hero-stat {
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-dim); border: 1px solid rgba(200,151,58,.2);
+    background: rgba(200,151,58,.05); padding: 5px 14px; border-radius: 20px;
+  }
+  .hero-stat strong { color: var(--gold); font-weight: 600; }
 
   /* ── DIVISOR ── */
   .divider { display: flex; align-items: center; gap: 16px; margin: 0 auto 56px; max-width: 200px; }
@@ -226,8 +249,13 @@
 
   /* ── SECTION ── */
   section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
-  .section-label { text-align: center; font-size: 11px; letter-spacing: 4px; color: var(--ouro-esc); text-transform: uppercase; margin-bottom: 16px; }
-  .section-title { text-align: center; font-size: 32px; font-weight: 700; color: var(--ouro-brt); margin-bottom: 48px; }
+  .section-label { text-align: center; font-size: 10px; letter-spacing: 4px; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 12px; }
+  .section-title {
+    text-align: center; font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px; font-weight: 400; letter-spacing: 2px;
+    color: var(--gold); margin-bottom: 48px;
+  }
+  .section-title::after { content:''; display:block; width:48px; height:2px; background:var(--gold); margin:8px auto 0; }
 
   /* ── ABOUT ── */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
@@ -238,7 +266,7 @@
   }
   .about-screen img { width:100%; height:100%; object-fit:cover; border-radius:4px; display:block; }
   .about-screen::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(200,144,32,0.05) 0%, transparent 60%); pointer-events:none; }
-  .about-text h3 { font-size: 24px; color: var(--ouro-brt); margin-bottom: 16px; }
+  .about-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 30px; font-weight: 400; letter-spacing: 2px; color: var(--gold-light); margin-bottom: 16px; }
   .about-text p { color: var(--texto-dim); line-height: 1.8; margin-bottom: 12px; font-size: 15px; }
   .tag { display: inline-block; padding: 3px 10px; border-radius: 2px; font-size: 11px; letter-spacing: 1px; margin: 4px 4px 4px 0; border: 1px solid var(--ouro-esc); color: var(--ouro); }
 
@@ -314,26 +342,27 @@
   .plans-inner { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
   .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 700px; margin: 0 auto; }
   .plan-card { border-radius: 4px; padding: 36px 32px; position: relative; }
-  .plan-free { background: #090B10; border: 1px solid var(--free); }
-  .plan-founder { background: #100C04; border: 2px solid var(--ouro); box-shadow: 0 0 40px rgba(200,144,32,0.1); }
+  .plan-free { background: #0a090c; border: 1px solid rgba(200,151,58,.18); }
+  .plan-founder { background: #100C04; border: 2px solid var(--gold); box-shadow: 0 0 40px rgba(200,151,58,0.1); }
   .plan-badge { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
-  .plan-name { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
-  .plan-free .plan-name { color: #6898C8; }
-  .plan-founder .plan-name { color: var(--ouro-brt); }
+  .plan-name { font-family: 'Bebas Neue', sans-serif; font-size: 32px; font-weight: 400; letter-spacing: 2px; margin-bottom: 4px; }
+  .plan-free .plan-name { color: var(--texto); }
+  .plan-founder .plan-name { color: var(--gold-light); }
   .plan-price { font-size: 36px; font-weight: 900; margin: 20px 0; }
-  .plan-founder .plan-price { color: var(--ouro-brt); }
-  .plan-free .plan-price { color: #6898C8; }
+  .plan-founder .plan-price { color: var(--gold-light); }
+  .plan-free .plan-price { color: var(--texto-dim); }
   .plan-price span { font-size: 16px; font-weight: 400; color: var(--texto-dim); }
   .plan-price-sub { font-size: 12px; color: var(--texto-dim); margin-top: -12px; margin-bottom: 16px; opacity: 0.8; }
   .plan-features { list-style: none; margin-bottom: 28px; }
   .plan-features li { padding: 8px 0; font-size: 14px; color: var(--texto-dim); border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 10px; align-items: center; }
-  .plan-features li::before { content: '✓'; color: var(--ouro); font-weight: 700; }
-  .plan-free .plan-features li::before { color: #6898C8; }
-  .plan-cta { width: 100%; padding: 14px; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all .25s; }
-  .plan-free .plan-cta { background: transparent; border: 1px solid #3A6090; color: #6898C8; }
-  .plan-founder .plan-cta { background: rgba(200,144,32,0.12); border: 2px solid var(--ouro); color: var(--ouro-brt); box-shadow: 0 0 20px rgba(200,144,32,0.2); }
-  .plan-founder .plan-cta:hover { background: rgba(200,144,32,0.22); box-shadow: 0 0 40px rgba(200,144,32,0.35); }
-  .plan-recommended { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--ouro); color: #050301; font-size: 10px; letter-spacing: 2px; font-weight: 700; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; white-space: nowrap; }
+  .plan-features li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+  .plan-free .plan-features li::before { color: var(--gold-dim); }
+  .plan-cta { width: 100%; padding: 14px; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all .25s; }
+  .plan-free .plan-cta { background: transparent; border: 1px solid rgba(200,151,58,.25); color: var(--texto-dim); }
+  .plan-free .plan-cta:hover { border-color: var(--gold-dim); color: var(--texto); }
+  .plan-founder .plan-cta { background: rgba(200,151,58,0.12); border: 2px solid var(--gold); color: var(--gold-light); box-shadow: 0 0 20px rgba(200,151,58,0.2); }
+  .plan-founder .plan-cta:hover { background: rgba(200,151,58,0.22); box-shadow: 0 0 40px rgba(200,151,58,0.35); }
+  .plan-recommended { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #09080a; font-size: 10px; letter-spacing: 2px; font-weight: 700; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; white-space: nowrap; }
 
   /* ── DOWNLOAD ── */
   .download-bg { background: var(--painel2); border-top: 1px solid #1a1206; border-bottom: 1px solid #1a1206; }
@@ -350,7 +379,7 @@
     font-size: 11px; letter-spacing: 3px; padding: 4px 14px;
     border-radius: 20px; text-transform: uppercase; margin-bottom: 20px;
   }
-  .dl-title { font-size: 26px; font-weight: 700; color: var(--ouro-brt); margin-bottom: 12px; }
+  .dl-title { font-family: 'Bebas Neue', sans-serif; font-size: 30px; font-weight: 400; letter-spacing: 2px; color: var(--gold-light); margin-bottom: 12px; }
   .dl-desc { color: var(--texto-dim); font-size: 14px; line-height: 1.7; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
   .dl-platforms { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
   .dl-plat {
@@ -711,10 +740,10 @@
   .stripe-success-banner a { color: #80e0b0; font-weight: 700; }
 
   /* ── FOOTER ── */
-  footer { border-top: 1px solid #1a1206; padding: 48px 20px; text-align: center; color: var(--texto-dim); font-size: 13px; }
-  footer a { color: var(--ouro-esc); text-decoration: none; }
-  footer a:hover { color: var(--ouro); }
-  .footer-logo { font-size: 22px; font-weight: 900; color: var(--ouro); letter-spacing: 2px; margin-bottom: 12px; }
+  footer { border-top: 1px solid var(--border); padding: 56px 20px 40px; text-align: center; color: var(--texto-dim); font-size: 13px; }
+  footer a { color: var(--gold-dim); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; font-weight: 400; letter-spacing: 5px; color: var(--gold); margin-bottom: 16px; text-shadow: 0 0 20px rgba(200,151,58,.25); }
   .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
   .footer-links a { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
   .footer-yt { color: #C00000 !important; }
@@ -818,11 +847,11 @@
   .hero-title {
     background: linear-gradient(
       110deg,
-      var(--ouro-esc) 15%,
-      var(--ouro-brt) 38%,
+      var(--gold-dim) 15%,
+      var(--gold-light) 38%,
       #fff8dc 50%,
-      var(--ouro-brt) 62%,
-      var(--ouro-esc) 85%
+      var(--gold-light) 62%,
+      var(--gold-dim) 85%
     );
     background-size: 250% auto;
     background-clip: text;
@@ -942,6 +971,13 @@
   </div>
   <p class="hero-desc" data-lang="pt">Um remake fan-made do clássico do PS1, com duelos modernos, modo campanha, sistema de fusão fiel ao original e interface premium totalmente reformulada.</p>
   <p class="hero-desc" data-lang="en">A fan-made spiritual successor to YGO Forbidden Memories — faster duels, campaign mode, 700+ cards, the fusion system you love, and everything the original never had. Free to play.</p>
+  <div class="hero-stats">
+    <span class="hero-stat"><strong>900+</strong> Cartas</span>
+    <span class="hero-stat"><strong>29</strong> NPCs</span>
+    <span class="hero-stat"><strong>Beta 1.5.3</strong></span>
+    <span class="hero-stat">PC &amp; Android</span>
+    <span class="hero-stat">Free to Play</span>
+  </div>
   <div class="hero-btns">
     <a href="#download" class="btn-primary">
       <span data-lang="pt">⬇ BAIXAR GRÁTIS</span>
@@ -1294,7 +1330,7 @@ function ytPlay(card, videoId) {
 
       <!-- FREE -->
       <div class="plan-card plan-free">
-        <div class="plan-badge" style="color:#6898C8">FREE</div>
+        <div class="plan-badge" style="color:var(--gold-dim)">FREE</div>
         <div class="plan-name">FREE</div>
         <div class="plan-price"><span data-lang="pt">R$ 0 / grátis</span><span data-lang="en">Free</span></div>
         <ul class="plan-features">
@@ -2161,7 +2197,7 @@ async function stripePagar(currency) {
     });
     const data = await res.json();
     if (data.url) {
-      window.location.href = data.url;
+      window.open(data.url, '_blank');
     } else {
       alert((isEN ? 'Error: ' : 'Erro: ') + (data.error ?? (isEN ? 'Please try again.' : 'Tente novamente.')));
       resetBtn();
@@ -2458,8 +2494,7 @@ async function asaasPagar() {
     });
     const data = await resp.json();
     if (!resp.ok || data.error) throw new Error(data.error || 'Erro ao iniciar pagamento.');
-    // Redireciona para a página de pagamento seguro do Asaas
-    window.location.href = data.url;
+    window.open(data.url, '_blank');
   } catch (err) {
     alert((isEn ? 'Payment error: ' : 'Erro no pagamento: ') + err.message);
     if (btn) { btn.disabled = false; btn.textContent = isEn ? 'ACTIVATE FOUNDER' : 'ATIVAR FOUNDER'; }
