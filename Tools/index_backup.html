@@ -1,0 +1,2775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Fan-Made YGO Forbidden Memories</title>
+<meta name="description" content="Fan-made remake of YGO Forbidden Memories (PS1) built in Godot 4. Fast duels, fusion system, campaign mode, 700+ cards — free to play on PC, Android and Linux.">
+<!-- Open Graph / Facebook / Discord / WhatsApp -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://forbiddenlegacy.com.br/">
+<meta property="og:title"       content="Forbidden Legacy — Fan-Made YGO Forbidden Memories">
+<meta property="og:description" content="Fan-made remake of YGO Forbidden Memories — free to play. Fast duels, fusion system, full campaign, 700+ cards. PC, Android and Linux.">
+<meta property="og:image"       content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<meta property="og:image:width"  content="432">
+<meta property="og:image:height" content="432">
+<meta property="og:locale"      content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Forbidden Legacy — Fan-Made YGO">
+<meta name="twitter:description" content="Remake fan-made de YGO Forbidden Memories (PS1). Grátis para PC, Android e Linux.">
+<meta name="twitter:image"       content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<!-- Canonical -->
+<link rel="canonical" href="https://forbiddenlegacy.com.br/">
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<!-- Schema.org — VideoGame -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Forbidden Legacy",
+  "alternateName": "Forbidden Legacy — Fan-Made Remake",
+  "description": "Fan-made spiritual successor to YGO Forbidden Memories (PS1). Fast duels, fusion system, 700+ cards, full campaign. Free to play on PC, Android and Linux.",
+  "url": "https://forbiddenlegacy.com.br",
+  "image": "https://forbiddenlegacy.com.br/img/favicon-432.png",
+  "genre": ["Card Game", "Strategy"],
+  "gamePlatform": ["PC", "Android", "Linux"],
+  "operatingSystem": ["Windows", "Linux", "Android"],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Felipe França",
+    "url": "https://www.youtube.com/@tragergames"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Trager Games"
+  },
+  "downloadUrl": "https://forbiddenlegacy.com.br/#download",
+  "softwareVersion": "Beta 1.5.3",
+  "releaseNotes": "https://forbiddenlegacy.com.br/features.html",
+  "inLanguage": ["pt-BR", "en"]
+}
+</script>
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="icon" type="image/png" sizes="32x32"   href="/img/favicon-192.png">
+<link rel="shortcut icon" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:       #c8973a;
+    --gold-light: #e8b840;
+    --gold-dim:   #7a5a18;
+    --dark:       #09080a;
+    --dark2:      #0d0b0e;
+    --dark3:      #120e12;
+    --border:     rgba(200,151,58,.13);
+    --text-muted: #6a5830;
+    --text-body:  #9a8050;
+    /* compat aliases */
+    --ouro:      #c8973a;
+    --ouro-brt:  #e8b840;
+    --ouro-esc:  #7a5a18;
+    --fundo:     #09080a;
+    --painel:    #0d0b0e;
+    --painel2:   #120e12;
+    --texto:     #c8b888;
+    --texto-dim: #7a6a48;
+    --verde:     #00A060;
+    --yt-red:    #C00000;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: var(--dark);
+    color: var(--texto);
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(5,3,1,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #1a1206;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px; height: 52px;
+  }
+  .topbar-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px; letter-spacing: 4px;
+    color: var(--gold); text-decoration: none;
+    text-shadow: 0 0 16px rgba(200,151,58,.35);
+  }
+  .topbar-nav {
+    display: flex; gap: 4px; align-items: center;
+  }
+  .topbar-nav a {
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--texto-dim); text-decoration: none;
+    padding: 6px 12px; border-radius: 2px;
+    transition: color .2s;
+  }
+  .topbar-nav a:hover { color: var(--ouro); }
+  .topbar-nav .nav-cta {
+    color: var(--ouro-brt);
+    border: 1px solid var(--ouro-esc);
+    margin-left: 8px;
+  }
+  .topbar-nav .nav-cta:hover {
+    background: rgba(200,144,32,0.1);
+    border-color: var(--ouro);
+  }
+  .topbar-right { display: flex; gap: 8px; align-items: center; }
+  .lang-btn {
+    background: transparent;
+    border: 1px solid var(--ouro-esc);
+    color: var(--texto-dim);
+    padding: 4px 10px; border-radius: 3px;
+    cursor: pointer; font-size: 11px; letter-spacing: 1px;
+    transition: all .2s;
+  }
+  .lang-btn.active { border-color: var(--ouro); color: var(--ouro); }
+  .discord-nav-badge { display:none; align-items:center; gap:5px; font-size:11px; color:#7289da; text-decoration:none; border:1px solid rgba(88,101,242,0.3); border-radius:3px; padding:4px 9px; background:rgba(88,101,242,0.08); transition:background .2s; margin-right:4px; }
+  .discord-nav-badge:hover { background:rgba(88,101,242,0.18); color:#99aaf5; }
+  .discord-nav-badge .dc-dot { width:6px; height:6px; }
+
+  /* ── MOBILE NAV BAR ── */
+  .mobile-nav-bar {
+    display: none;
+    position: fixed; top: 52px; left: 0; right: 0; z-index: 198;
+    background: rgba(5,3,1,0.97); border-bottom: 1px solid #1a1206;
+    backdrop-filter: blur(8px); flex-direction: column;
+  }
+  .mobile-discord-bar {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 5px 16px; background: rgba(88,101,242,0.07);
+    border-bottom: 1px solid rgba(88,101,242,0.15);
+    font-size: 11px; color: #7289da; text-decoration: none;
+    letter-spacing: .3px;
+  }
+  .mobile-discord-bar .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+  .mobile-discord-bar .dc-dot.online  { background:#3ba55c; }
+  .mobile-discord-bar .dc-dot.offline { background:#747f8d; }
+  .mobile-nav-links {
+    display: flex; overflow-x: auto; gap: 0;
+    scrollbar-width: none; -ms-overflow-style: none;
+  }
+  .mobile-nav-links::-webkit-scrollbar { display: none; }
+  .mobile-nav-links a {
+    flex-shrink: 0; padding: 10px 16px;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--texto-dim); text-decoration: none;
+    border-right: 1px solid #1a1206; white-space: nowrap;
+    transition: color .2s, background .2s;
+  }
+  .mobile-nav-links a:hover, .mobile-nav-links a:active { color: var(--ouro); background: rgba(200,144,32,0.06); }
+  .mobile-nav-links a.nav-cta { color: var(--ouro-brt); background: rgba(200,144,32,0.05); }
+
+  @media(max-width:700px){
+    .mobile-nav-bar { display: flex; }
+    .discord-nav-badge { display: none !important; }
+    .hero { padding-top: 96px; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(to bottom, rgba(5,3,1,0) 40%, #050301 100%),
+      radial-gradient(ellipse at 50% 30%, rgba(200,144,32,0.12) 0%, transparent 70%),
+      linear-gradient(135deg, #080402 0%, #0D0804 50%, #080402 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 120px 20px 80px;
+    border-bottom: 1px solid var(--ouro-esc);
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C89020' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge { font-size: 11px; letter-spacing: 3px; color: var(--ouro-esc); text-transform: uppercase; margin-bottom: 24px; }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(56px, 10vw, 112px);
+    font-weight: 400; letter-spacing: 4px; line-height: 0.95;
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .hero-subtitle { font-size: 13px; letter-spacing: 4px; color: var(--ouro-esc); text-transform: uppercase; margin-bottom: 32px; }
+  .hero-desc { max-width: 560px; font-size: 16px; line-height: 1.7; color: var(--texto-dim); margin-bottom: 48px; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    padding: 16px 40px; font-size: 16px; letter-spacing: 2px;
+    background: transparent; border: 2px solid var(--ouro); color: var(--ouro-brt);
+    cursor: pointer; border-radius: 2px; text-decoration: none;
+    transition: all .25s; text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(200,144,32,0.2), inset 0 0 20px rgba(200,144,32,0.05);
+  }
+  .btn-primary:hover { background: rgba(200,144,32,0.12); box-shadow: 0 0 40px rgba(200,144,32,0.4), inset 0 0 20px rgba(200,144,32,0.1); }
+  .btn-secondary {
+    padding: 16px 32px; font-size: 14px; letter-spacing: 2px;
+    background: transparent; border: 1px solid var(--texto-dim);
+    color: var(--texto-dim); cursor: pointer; border-radius: 2px;
+    text-decoration: none; transition: all .25s; text-transform: uppercase;
+  }
+  .btn-secondary:hover { border-color: var(--texto); color: var(--texto); }
+  .hero-scroll { position: absolute; bottom: 30px; left: 0; right: 0; text-align: center; font-size: 11px; letter-spacing: 2px; color: var(--texto-dim); animation: pulse 2s infinite; pointer-events: none; }
+  @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+  /* ── Hero stats pills ── */
+  .hero-stats {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    margin-bottom: 40px; opacity: 0; animation: fadeInUp .7s ease forwards .9s;
+  }
+  .hero-stat {
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-dim); border: 1px solid rgba(200,151,58,.2);
+    background: rgba(200,151,58,.05); padding: 5px 14px; border-radius: 20px;
+  }
+  .hero-stat strong { color: var(--gold); font-weight: 600; }
+
+  /* ── DIVISOR ── */
+  .divider { display: flex; align-items: center; gap: 16px; margin: 0 auto 56px; max-width: 200px; }
+  .divider::before,.divider::after { content:''; flex:1; height:1px; background: var(--ouro-esc); }
+  .divider span { color: var(--ouro); font-size: 18px; }
+
+  /* ── SECTION ── */
+  section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+  .section-label { text-align: center; font-size: 10px; letter-spacing: 4px; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 12px; }
+  .section-title {
+    text-align: center; font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px; font-weight: 400; letter-spacing: 2px;
+    color: var(--gold); margin-bottom: 48px;
+  }
+  .section-title::after { content:''; display:block; width:48px; height:2px; background:var(--gold); margin:8px auto 0; }
+
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .about-screen {
+    background: var(--painel2); border: 1px solid var(--ouro-esc); border-radius: 4px;
+    aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
+    color: var(--texto-dim); font-size: 13px; letter-spacing: 2px; position: relative; overflow: hidden;
+  }
+  .about-screen img { width:100%; height:100%; object-fit:cover; border-radius:4px; display:block; }
+  .about-screen::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(200,144,32,0.05) 0%, transparent 60%); pointer-events:none; }
+  .about-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 30px; font-weight: 400; letter-spacing: 2px; color: var(--gold-light); margin-bottom: 16px; }
+  .about-text p { color: var(--texto-dim); line-height: 1.8; margin-bottom: 12px; font-size: 15px; }
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 2px; font-size: 11px; letter-spacing: 1px; margin: 4px 4px 4px 0; border: 1px solid var(--ouro-esc); color: var(--ouro); }
+
+  /* ── GALERIA ── */
+  .gallery-bg { background: var(--painel); border-top: 1px solid #1a1206; border-bottom: 1px solid #1a1206; }
+  .gallery-inner { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    height: 460px;
+  }
+  .gallery-item {
+    overflow: hidden; border-radius: 4px; position: relative;
+    background: var(--painel2); border: 1px solid #1a1206;
+    cursor: pointer;
+  }
+  .gallery-item.featured { grid-row: span 2; }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block; transition: transform .4s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-item:hover .gallery-caption { opacity: 1; }
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 10px 14px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--ouro-brt); opacity: 0; transition: opacity .3s;
+  }
+  /* Placeholder quando a imagem não foi adicionada ainda */
+  .gallery-item .placeholder-txt {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 8px;
+    color: var(--texto-dim); font-size: 11px; letter-spacing: 2px;
+  }
+  .gallery-item img[src=""] ~ .placeholder-txt,
+  .gallery-item img:not([src]) ~ .placeholder-txt { display: flex; }
+  /* Sub-grade duelo */
+  .gallery-sub-label {
+    display: flex; align-items: center; gap: 12px;
+    margin: 20px 0 14px; font-size: 10px; letter-spacing: 3px;
+    color: var(--ouro-esc); text-transform: uppercase;
+  }
+  .gallery-sub-label::before, .gallery-sub-label::after {
+    content: ''; flex: 1; height: 1px; background: #1a1206;
+  }
+  .gallery-grid-duel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .gallery-grid-duel .gallery-item {
+    aspect-ratio: 1;
+  }
+  /* Lightbox simples */
+  .lb-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+    cursor: zoom-out;
+  }
+  .lb-overlay.active { display: flex; }
+  .lb-overlay img { max-width: 92vw; max-height: 88vh; border-radius: 4px; border: 1px solid var(--ouro-esc); }
+  .lb-close {
+    position: absolute; top: 20px; right: 28px;
+    font-size: 28px; color: var(--ouro); cursor: pointer; background: none; border: none;
+  }
+
+  /* ── PLANOS ── */
+  .plans { background: var(--painel); border-top: 1px solid #1a1206; border-bottom: 1px solid #1a1206; }
+  .plans-inner { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+  .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 700px; margin: 0 auto; }
+  .plan-card { border-radius: 4px; padding: 36px 32px; position: relative; }
+  .plan-free { background: #0a090c; border: 1px solid rgba(200,151,58,.18); }
+  .plan-founder { background: #100C04; border: 2px solid var(--gold); box-shadow: 0 0 40px rgba(200,151,58,0.1); }
+  .plan-badge { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+  .plan-name { font-family: 'Bebas Neue', sans-serif; font-size: 32px; font-weight: 400; letter-spacing: 2px; margin-bottom: 4px; }
+  .plan-free .plan-name { color: var(--texto); }
+  .plan-founder .plan-name { color: var(--gold-light); }
+  .plan-price { font-size: 36px; font-weight: 900; margin: 20px 0; }
+  .plan-founder .plan-price { color: var(--gold-light); }
+  .plan-free .plan-price { color: var(--texto-dim); }
+  .plan-price span { font-size: 16px; font-weight: 400; color: var(--texto-dim); }
+  .plan-price-sub { font-size: 12px; color: var(--texto-dim); margin-top: -12px; margin-bottom: 16px; opacity: 0.8; }
+  .plan-features { list-style: none; margin-bottom: 28px; }
+  .plan-features li { padding: 8px 0; font-size: 14px; color: var(--texto-dim); border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 10px; align-items: center; }
+  .plan-features li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+  .plan-free .plan-features li::before { color: var(--gold-dim); }
+  .plan-cta { width: 100%; padding: 14px; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all .25s; }
+  .plan-free .plan-cta { background: transparent; border: 1px solid rgba(200,151,58,.25); color: var(--texto-dim); }
+  .plan-free .plan-cta:hover { border-color: var(--gold-dim); color: var(--texto); }
+  .plan-founder .plan-cta { background: rgba(200,151,58,0.12); border: 2px solid var(--gold); color: var(--gold-light); box-shadow: 0 0 20px rgba(200,151,58,0.2); }
+  .plan-founder .plan-cta:hover { background: rgba(200,151,58,0.22); box-shadow: 0 0 40px rgba(200,151,58,0.35); }
+  .plan-recommended { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #09080a; font-size: 10px; letter-spacing: 2px; font-weight: 700; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; white-space: nowrap; }
+
+  /* ── DOWNLOAD ── */
+  .download-bg { background: var(--painel2); border-top: 1px solid #1a1206; border-bottom: 1px solid #1a1206; }
+  .download-inner { max-width: 1100px; margin: 0 auto; padding: 80px 20px; text-align: center; }
+  .dl-box {
+    max-width: 680px; margin: 0 auto;
+    background: #0A0704; border: 1px solid var(--ouro-esc);
+    border-radius: 4px; padding: 48px 40px;
+    box-shadow: 0 0 60px rgba(200,144,32,0.06);
+  }
+  .dl-version {
+    display: inline-block; background: rgba(200,144,32,0.1);
+    border: 1px solid var(--ouro-esc); color: var(--ouro);
+    font-size: 11px; letter-spacing: 3px; padding: 4px 14px;
+    border-radius: 20px; text-transform: uppercase; margin-bottom: 20px;
+  }
+  .dl-title { font-family: 'Bebas Neue', sans-serif; font-size: 30px; font-weight: 400; letter-spacing: 2px; color: var(--gold-light); margin-bottom: 12px; }
+  .dl-desc { color: var(--texto-dim); font-size: 14px; line-height: 1.7; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .dl-platforms { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
+  .dl-plat {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    background: var(--painel); border: 1px solid #1a1206;
+    border-radius: 4px; padding: 16px 24px; min-width: 100px;
+  }
+  .dl-plat-icon { font-size: 22px; }
+  .dl-plat-name { font-size: 12px; letter-spacing: 1px; color: var(--texto-dim); text-transform: uppercase; }
+  .dl-plat-link { text-decoration: none; transition: border-color .25s, box-shadow .25s; cursor: pointer; }
+  .dl-plat-link:hover { border-color: var(--ouro-esc); box-shadow: 0 0 18px rgba(200,144,32,0.18); }
+  .dl-plat-link:hover .dl-plat-name { color: var(--ouro-brt); }
+  .dl-plat-ext { font-size: 10px; letter-spacing: 1px; color: var(--ouro-esc); text-transform: uppercase; margin-top: 3px; }
+  .dl-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 40px; font-size: 15px; letter-spacing: 2px;
+    background: rgba(200,144,32,0.1); border: 2px solid var(--ouro);
+    color: var(--ouro-brt); cursor: pointer; border-radius: 2px;
+    text-decoration: none; transition: all .25s; text-transform: uppercase;
+    box-shadow: 0 0 24px rgba(200,144,32,0.15);
+  }
+  .dl-btn:hover { background: rgba(200,144,32,0.2); box-shadow: 0 0 40px rgba(200,144,32,0.3); }
+  .dl-note { font-size: 12px; color: var(--texto-dim); margin-top: 16px; opacity: 0.6; }
+
+  /* ── NOVIDADES ── */
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .news-card {
+    background: var(--painel2); border: 1px solid #1a1206;
+    border-radius: 4px; padding: 28px 24px;
+    transition: border-color .25s;
+    position: relative; overflow: hidden;
+  }
+  .news-card:hover { border-color: var(--ouro-esc); }
+  .news-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ouro-esc), transparent);
+  }
+  .news-card.featured::before { background: linear-gradient(90deg, transparent, var(--ouro-brt), transparent); }
+  .news-card.featured { border-color: var(--ouro-esc); grid-column: span 1; }
+  .news-tag {
+    display: inline-block; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 2px;
+    margin-bottom: 12px;
+  }
+  .news-tag.update { background: rgba(200,144,32,0.12); color: var(--ouro); border: 1px solid var(--ouro-esc); }
+  .news-tag.fix { background: rgba(0,120,80,0.12); color: #40C880; border: 1px solid #006040; }
+  .news-tag.feature { background: rgba(60,80,160,0.15); color: #8090E0; border: 1px solid #303870; }
+  .news-date { font-size: 11px; color: var(--texto-dim); opacity: 0.6; margin-bottom: 10px; letter-spacing: 1px; }
+  .news-title { font-size: 16px; font-weight: 700; color: var(--ouro-brt); margin-bottom: 10px; line-height: 1.3; }
+  .news-card.featured .news-title { font-size: 18px; }
+  .news-body { font-size: 13px; color: var(--texto-dim); line-height: 1.7; }
+  .news-body ul { list-style: none; margin-top: 8px; }
+  .news-body ul li { padding: 3px 0; }
+  .news-body ul li::before { content: '▸ '; color: var(--ouro-esc); }
+  .news-more {
+    display: inline-block; margin-top: 14px;
+    font-size: 11px; letter-spacing: 1px; color: var(--ouro-esc);
+    text-decoration: none; text-transform: uppercase; transition: color .2s;
+  }
+  .news-more:hover { color: var(--ouro); }
+
+  /* ── YOUTUBE ── */
+  .yt-bg { background: var(--painel); border-top: 1px solid #1a1206; border-bottom: 1px solid #1a1206; }
+  .yt-inner { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+  /* Vídeo em destaque */
+  .yt-featured {
+    cursor: pointer;
+    background: var(--painel2); border: 1px solid var(--ouro-esc);
+    border-radius: 4px; overflow: hidden; transition: border-color .25s;
+    margin-bottom: 32px; box-shadow: 0 0 40px rgba(200,144,32,0.08);
+  }
+  .yt-featured:hover { border-color: var(--ouro); }
+  .yt-featured .yt-thumb { aspect-ratio: 16/7; }
+  .yt-featured:hover .yt-play-icon-lg { background: rgba(192,0,0,0.9); transform: translate(-50%,-50%) scale(1.08); }
+  .yt-play-icon-lg {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(0,0,0,0.6); border: 2px solid #E00000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; color: #fff;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    transition: background 0.2s, transform 0.2s; pointer-events: none;
+  }
+  .yt-new-badge {
+    position: absolute; top: 14px; left: 14px;
+    background: #C00000; color: #fff;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    padding: 4px 10px; border-radius: 2px; text-transform: uppercase;
+  }
+  .yt-channel-banner {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    background: #0A0704; border: 1px solid #1a1206; border-radius: 4px;
+    padding: 24px 32px; margin-bottom: 32px;
+  }
+  .yt-channel-info { display: flex; align-items: center; gap: 16px; }
+  .yt-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: #1a0a0a; border: 2px solid #C00000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0; object-fit: cover;
+  }
+  .yt-channel-name { font-size: 18px; font-weight: 700; color: var(--texto); }
+  .yt-channel-sub { font-size: 12px; color: var(--texto-dim); margin-top: 2px; }
+  .yt-sub-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 24px; background: #C00000; border: none;
+    color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 1px;
+    border-radius: 2px; cursor: pointer; text-decoration: none;
+    transition: background .2s; text-transform: uppercase;
+  }
+  .yt-sub-btn:hover { background: #E00000; }
+  .yt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .yt-card {
+    cursor: pointer;
+    background: var(--painel2); border: 1px solid #1a1206;
+    border-radius: 4px; overflow: hidden; transition: border-color .25s;
+    text-decoration: none; display: block;
+  }
+  .yt-card:hover { border-color: #C00000; }
+  .yt-thumb {
+    aspect-ratio: 16/9; background: #0A0704;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .yt-thumb-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--texto-dim); font-size: 12px; letter-spacing: 1px; text-align: center;
+  }
+  .yt-play-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: rgba(0,0,0,0.65); border: 2px solid #E00000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; color: #fff;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    transition: background 0.2s, transform 0.2s;
+    pointer-events: none;
+  }
+  .yt-card:hover .yt-play-icon { background: rgba(192,0,0,0.85); transform: translate(-50%,-50%) scale(1.1); }
+  .yt-card-info { padding: 16px; }
+  .yt-card-title { font-size: 14px; font-weight: 600; color: var(--texto); line-height: 1.4; margin-bottom: 6px; }
+  .yt-card-meta { font-size: 11px; color: var(--texto-dim); opacity: 0.7; }
+  .yt-gallery-link {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 40px;
+    color: var(--ouro-esc); font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+    text-decoration: none; border-bottom: 1px solid var(--ouro-esc); padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+  }
+  .yt-gallery-link:hover { color: var(--ouro); border-color: var(--ouro); }
+
+  /* ── COMO FUNCIONA ── */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .step { text-align: center; padding: 28px 16px; background: var(--painel2); border: 1px solid #1a1206; border-radius: 4px; }
+  .step-num { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--ouro-esc); color: var(--ouro); font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .step h4 { color: var(--ouro-brt); font-size: 14px; margin-bottom: 8px; }
+  .step p { color: var(--texto-dim); font-size: 13px; line-height: 1.6; }
+
+  /* ── COMPRAR ── */
+  .buy-box { max-width: 560px; margin: 0 auto; background: var(--painel2); border: 1px solid var(--ouro-esc); border-radius: 4px; padding: 40px 36px; box-shadow: 0 0 60px rgba(200,144,32,0.08); }
+  .buy-box h3 { color: var(--ouro-brt); font-size: 22px; margin-bottom: 8px; text-align: center; }
+  .buy-box p { color: var(--texto-dim); font-size: 14px; text-align: center; margin-bottom: 28px; }
+  .input-group { margin-bottom: 16px; }
+  .input-group label { display: block; font-size: 12px; letter-spacing: 1px; color: var(--ouro-esc); margin-bottom: 6px; }
+  .input-group input,
+  .input-group select { width: 100%; padding: 12px 16px; background: #080502; border: 1px solid var(--ouro-esc); color: var(--texto); font-size: 14px; border-radius: 2px; outline: none; transition: border-color .2s; }
+  .input-group input:focus,
+  .input-group select:focus { border-color: var(--ouro); }
+  .input-group input::placeholder { color: var(--texto-dim); opacity: 0.5; }
+  .pay-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+  .pay-btn { padding: 14px 16px; border-radius: 2px; cursor: pointer; font-size: 13px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; transition: all .25s; border: none; }
+  .pay-mp { background: rgba(0,180,100,0.12); border: 1px solid #00A060; color: #00C870; }
+  .pay-mp:hover { background: rgba(0,180,100,0.22); box-shadow: 0 0 20px rgba(0,180,100,0.2); }
+  .pay-pp { background: rgba(0,80,160,0.12); border: 1px solid #0050A0; color: #4090E0; }
+  .pay-pp:hover { background: rgba(0,80,160,0.22); box-shadow: 0 0 20px rgba(0,80,160,0.2); }
+  .pay-label { font-size: 10px; opacity: 0.7; display: block; font-weight: 400; margin-top: 2px; }
+  .pay-price { font-size: 16px; font-weight: 900; display: block; margin-bottom: 2px; }
+  .buy-note { text-align: center; font-size: 12px; color: var(--texto-dim); margin-top: 20px; opacity: 0.7; }
+
+  /* ── PAYPAL ── */
+  .paypal-block { text-align: center; margin-top: 24px; }
+  .paypal-amount { font-size: 32px; font-weight: 900; color: #4AABF0; margin-bottom: 4px; }
+  .paypal-amount span { font-size: 14px; font-weight: 400; color: var(--texto-dim); }
+  .paypal-qr-wrap { background: #fff; border-radius: 8px; padding: 14px; display: inline-block; margin: 12px 0; }
+  .paypal-qr-wrap img { width: 200px; height: 200px; display: block; }
+  .paypal-hint { font-size: 13px; color: var(--texto-dim); margin-bottom: 20px; }
+  .paypal-confirm-btn {
+    width: 100%; padding: 16px; background: rgba(0,112,186,0.12);
+    border: 1px solid #0070BA; color: #4AABF0;
+    font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px; transition: all .25s;
+  }
+  .paypal-confirm-btn:hover:not(:disabled) { background: rgba(0,112,186,0.25); box-shadow: 0 0 20px rgba(0,112,186,0.2); }
+  .paypal-confirm-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .paypal-success {
+    display: none; margin-top: 16px; padding: 18px;
+    background: rgba(0,200,100,0.08); border: 1px solid #00A060;
+    border-radius: 4px; color: #20C870; font-size: 14px; line-height: 1.6;
+  }
+  .paypal-success.visible { display: block; }
+
+  /* ── PIX MODAL ── */
+  .pix-overlay {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.88); align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .pix-overlay.active { display: flex; }
+  .pix-modal {
+    background: #0D0804; border: 1px solid var(--ouro-esc);
+    border-radius: 6px; padding: 36px 32px; max-width: 420px; width: 100%;
+    text-align: center; box-shadow: 0 0 60px rgba(200,144,32,0.15);
+    position: relative;
+  }
+  .pix-close {
+    position: absolute; top: 14px; right: 18px;
+    font-size: 20px; color: var(--texto-dim); cursor: pointer;
+    background: none; border: none; transition: color .2s;
+  }
+  .pix-close:hover { color: var(--ouro); }
+  .pix-modal-title { font-size: 18px; font-weight: 700; color: var(--ouro-brt); margin-bottom: 4px; }
+  .pix-modal-sub { font-size: 13px; color: var(--texto-dim); margin-bottom: 20px; }
+  .pix-amount { font-size: 28px; font-weight: 900; color: var(--ouro-brt); margin-bottom: 20px; }
+  .pix-amount span { font-size: 15px; font-weight: 400; color: var(--texto-dim); }
+  .pix-qr-wrap {
+    background: #fff; border-radius: 6px; padding: 12px;
+    display: inline-block; margin-bottom: 20px;
+  }
+  .pix-qr-img { width: 200px; height: 200px; display: block; }
+  .pix-qr-placeholder {
+    width: 200px; height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    color: #888; font-size: 13px; flex-direction: column; gap: 8px;
+  }
+  .pix-copy-label { font-size: 11px; letter-spacing: 1px; color: var(--ouro-esc); text-transform: uppercase; margin-bottom: 6px; }
+  .pix-copy-row { display: flex; gap: 8px; margin-bottom: 20px; }
+  .pix-copy-input {
+    flex: 1; padding: 10px 12px; background: #080502;
+    border: 1px solid var(--ouro-esc); color: var(--texto);
+    font-size: 11px; border-radius: 2px; outline: none;
+    word-break: break-all;
+  }
+  .pix-copy-btn {
+    padding: 10px 16px; background: rgba(200,144,32,0.12);
+    border: 1px solid var(--ouro-esc); color: var(--ouro);
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+    cursor: pointer; border-radius: 2px; white-space: nowrap;
+    transition: all .2s;
+  }
+  .pix-copy-btn:hover { background: rgba(200,144,32,0.25); }
+  .pix-status {
+    font-size: 13px; color: var(--texto-dim);
+    margin-bottom: 12px; min-height: 20px;
+  }
+  .pix-status.aguardando { color: #C8A020; }
+  .pix-status.pago { color: #20C870; font-weight: 700; font-size: 15px; }
+  .pix-status.erro { color: #E04040; }
+  .pix-spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid rgba(200,144,32,0.3); border-top-color: var(--ouro);
+    border-radius: 50%; animation: spin .8s linear infinite;
+    margin-right: 6px; vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .pix-license-box {
+    display: none; background: #080502;
+    border: 1px solid var(--verde); border-radius: 4px;
+    padding: 20px; margin-top: 16px; text-align: left;
+  }
+  .pix-license-box.visible { display: block; }
+  .pix-license-title { font-size: 13px; font-weight: 700; color: #20C870; margin-bottom: 10px; text-align: center; }
+  .pix-license-key {
+    font-family: 'Courier New', monospace; font-size: 12px;
+    color: var(--ouro-brt); word-break: break-all; line-height: 1.6;
+    background: #050301; padding: 10px 12px; border-radius: 2px;
+    border: 1px solid var(--ouro-esc); margin-bottom: 10px;
+  }
+  .pix-license-note { font-size: 11px; color: var(--texto-dim); line-height: 1.5; text-align: center; }
+  .pix-license-copy {
+    width: 100%; margin-top: 10px; padding: 10px;
+    background: rgba(200,144,32,0.12); border: 1px solid var(--ouro-esc);
+    color: var(--ouro); font-size: 12px; letter-spacing: 1px;
+    cursor: pointer; border-radius: 2px; transition: all .2s;
+  }
+  .pix-license-copy:hover { background: rgba(200,144,32,0.25); }
+  .pix-license-download {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; margin: 10px 0 8px; padding: 14px 16px;
+    background: rgba(0,160,90,0.16); border: 2px solid #00A060;
+    color: #40E090; font-size: 14px; font-weight: 800; letter-spacing: 1.5px;
+    text-transform: uppercase; text-decoration: none; cursor: pointer; border-radius: 2px;
+    box-shadow: 0 0 22px rgba(0,160,90,0.18); transition: all .2s;
+  }
+  .pix-license-download:hover { background: rgba(0,160,90,0.26); box-shadow: 0 0 34px rgba(0,160,90,0.28); }
+  .pix-license-file { display: block; color: #C8A060; font-size: 11px; text-align: center; word-break: break-all; }
+  .pix-note-security { font-size: 11px; color: var(--texto-dim); opacity: 0.6; margin-top: 14px; }
+  /* ── Botão PIX único ── */
+  .pay-pix-btn {
+    width: 100%; margin-top: 24px; padding: 18px 16px;
+    background: rgba(0,160,90,0.1); border: 2px solid #009955;
+    color: #00D070; font-size: 16px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; cursor: pointer; border-radius: 2px;
+    transition: all .25s; display: flex; align-items: center; justify-content: center; gap: 10px;
+    box-shadow: 0 0 24px rgba(0,180,100,0.12);
+  }
+  .pay-pix-btn:hover { background: rgba(0,160,90,0.2); box-shadow: 0 0 40px rgba(0,180,100,0.25); }
+  .pay-pix-price { font-size: 20px; font-weight: 900; }
+  /* ── Botão principal de ativação ── */
+  .pay-main-btn {
+    width: 100%; margin-top: 24px; padding: 18px 16px;
+    background: rgba(200,144,32,0.12); border: 2px solid var(--ouro);
+    color: var(--ouro-brt); font-size: 16px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; cursor: pointer; border-radius: 2px;
+    transition: all .25s; display: flex; align-items: center; justify-content: center; gap: 10px;
+    box-shadow: 0 0 24px rgba(200,144,32,0.2);
+    animation: founderPulse 3s ease-in-out infinite;
+  }
+  .pay-main-btn:hover { background: rgba(200,144,32,0.22); box-shadow: 0 0 44px rgba(200,144,32,0.35); }
+  /* ── Opções no modal de pagamento ── */
+  .pay-method-btn {
+    width: 100%; display: flex; align-items: center; gap: 14px;
+    background: #080502; border: 1px solid #2a1800; border-radius: 4px;
+    padding: 14px 16px; margin-bottom: 10px; cursor: pointer;
+    transition: border-color .2s, background .2s; text-align: left;
+  }
+  .pay-method-btn:hover { border-color: var(--ouro-esc); background: #0f0800; }
+  .pay-method-icon { font-size: 22px; flex-shrink: 0; }
+  .pay-method-info { flex: 1; }
+  .pay-method-name { font-size: 14px; font-weight: 700; color: var(--texto); margin-bottom: 2px; }
+  .pay-method-desc { font-size: 12px; color: var(--texto-dim); }
+  .pay-method-price { font-size: 18px; font-weight: 900; flex-shrink: 0; }
+  .pay-method-pix:hover { border-color: #009955; }
+  .pay-method-pix .pay-method-price { color: #00D070; }
+.pay-method-usd:hover { border-color: #4a8fd0; }
+  .pay-method-usd .pay-method-price { color: #6aafff; }
+
+  /* ── STRIPE ── */
+  .pay-stripe-btn {
+    width: 100%; margin-top: 24px; padding: 18px 16px;
+    background: rgba(99,91,255,0.10); border: 2px solid #635bff;
+    color: #a29bff; font-size: 16px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; cursor: pointer; border-radius: 2px;
+    transition: all .25s; display: flex; align-items: center; justify-content: center; gap: 10px;
+    box-shadow: 0 0 24px rgba(99,91,255,0.12);
+  }
+  .pay-stripe-btn:hover:not(:disabled) { background: rgba(99,91,255,0.22); box-shadow: 0 0 44px rgba(99,91,255,0.28); }
+  .pay-stripe-btn:disabled { opacity: .55; cursor: not-allowed; }
+  .pay-stripe-price { font-size: 20px; font-weight: 900; }
+  .stripe-spinner { width:18px; height:18px; border:2px solid rgba(162,155,255,.3); border-top-color:#a29bff; border-radius:50%; animation: spin .7s linear infinite; }
+
+  /* ── Banner de sucesso Stripe ── */
+  .stripe-success-banner {
+    display: none;
+    position: fixed; top: 52px; left: 0; right: 0; z-index: 999;
+    background: linear-gradient(90deg, #0d1a0d, #0a2010, #0d1a0d);
+    border-bottom: 1px solid #00a060;
+    padding: 14px 20px; text-align: center;
+    color: #40d080; font-size: 14px; letter-spacing: 1px;
+    align-items: center; justify-content: center; gap: 8px;
+  }
+  .stripe-success-banner a { color: #80e0b0; font-weight: 700; }
+
+  /* ── FOOTER ── */
+  footer { border-top: 1px solid var(--border); padding: 56px 20px 40px; text-align: center; color: var(--texto-dim); font-size: 13px; }
+  footer a { color: var(--gold-dim); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; font-weight: 400; letter-spacing: 5px; color: var(--gold); margin-bottom: 16px; text-shadow: 0 0 20px rgba(200,151,58,.25); }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+  .footer-links a { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+  .footer-yt { color: #C00000 !important; }
+  .footer-yt:hover { color: #E00000 !important; }
+  footer p { opacity: 0.5; font-size: 12px; margin-top: 8px; }
+  .discord-counter { display:none; align-items:center; justify-content:center; gap:14px; margin:14px 0 4px;
+    background:rgba(88,101,242,0.12); border:1px solid rgba(88,101,242,0.3); border-radius:8px;
+    padding:8px 20px; font-size:13px; color:#b0b8e8; letter-spacing:.5px; }
+  .discord-counter a { color:#7289da; text-decoration:none; font-weight:700; }
+  .discord-counter a:hover { color:#99aaf5; }
+  .dc-dot { width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:5px; }
+  .dc-dot.online  { background:#3ba55c; box-shadow:0 0 6px #3ba55c; }
+  .dc-dot.offline { background:#747f8d; }
+
+  /* ── LANG ── */
+  [data-lang="en"] { display: none !important; }
+  span[data-lang="en"] { display: none !important; }
+  body.en [data-lang="pt"] { display: none !important; }
+  body.en span[data-lang="pt"] { display: none !important; }
+  body.en [data-lang="en"] { display: block !important; }
+  body.en span[data-lang="en"] { display: inline !important; }
+  body.en li[data-lang="en"] { display: flex !important; }
+
+  /* ── MECÂNICAS ── */
+  .features-bg { background: var(--painel); border-top: 1px solid #1a1206; border-bottom: 1px solid #1a1206; }
+  .features-inner { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+  .features-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .feature-card {
+    background: var(--painel2); border: 1px solid #1a1206;
+    border-radius: 4px; padding: 24px 22px;
+    transition: border-color .25s;
+    position: relative; overflow: hidden;
+  }
+  .feature-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ouro-esc), transparent);
+  }
+  .feature-card:hover { border-color: var(--ouro-esc); }
+  .feature-icon { font-size: 22px; margin-bottom: 10px; }
+  .feature-title { font-size: 14px; font-weight: 700; color: var(--ouro-brt); margin-bottom: 12px; letter-spacing: .5px; }
+  .feature-list { list-style: none; margin: 0; padding: 0; }
+  .feature-list li { font-size: 13px; color: var(--texto-dim); line-height: 1.65; padding: 2px 0; }
+  .feature-list li::before { content: '▸ '; color: var(--ouro-esc); }
+  .features-quote {
+    text-align: center; margin-top: 48px; padding: 24px;
+    border-top: 1px solid var(--ouro-esc); border-bottom: 1px solid var(--ouro-esc);
+    color: var(--ouro-brt); font-size: 15px; font-style: italic; letter-spacing: .5px;
+  }
+  .features-evolving {
+    background: rgba(200,144,32,0.05); border: 1px solid var(--ouro-esc);
+    border-radius: 4px; padding: 20px 24px; margin-top: 32px;
+    color: var(--texto-dim); font-size: 14px; line-height: 1.7;
+  }
+  .features-evolving strong { color: var(--ouro-brt); }
+
+  @media(max-width:700px) {
+    .topbar-nav { display: none; } /* substituído pelo mobile-menu */
+    .about-grid { grid-template-columns: 1fr; }
+    .plans-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .pay-methods { grid-template-columns: 1fr; }
+    .news-grid { grid-template-columns: 1fr; }
+    .yt-grid { grid-template-columns: 1fr; }
+    .yt-featured .yt-thumb { aspect-ratio: 16/9; }
+    .dl-platforms { gap: 8px; }
+    .yt-channel-banner { flex-direction: column; align-items: flex-start; }
+    .features-grid { grid-template-columns: 1fr; }
+    .features-grid-2 { grid-template-columns: 1fr; }
+  }
+
+  /* ══════════════════════════════════════════════════════════════════ */
+  /* ── ANIMAÇÕES ─────────────────────────────────────────────────── */
+  /* ══════════════════════════════════════════════════════════════════ */
+
+  @keyframes fadeInDown {
+    from { opacity:0; transform:translateY(-22px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity:0; transform:translateY(28px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes shimmerSweep {
+    0%   { background-position: -200% center; }
+    100% { background-position: 300% center; }
+  }
+  @keyframes founderPulse {
+    0%,100% { box-shadow: 0 0 20px rgba(200,144,32,0.2), 0 0 0px rgba(200,144,32,0); }
+    50%     { box-shadow: 0 0 60px rgba(232,184,48,0.6), 0 0 120px rgba(200,144,32,0.2); }
+  }
+
+  /* ── Hero — entrada sequencial ──────────────────────────── */
+  .hero-badge    { opacity:0; animation: fadeInDown .7s ease forwards .15s; }
+  .hero-subtitle { opacity:0; animation: fadeInUp   .7s ease forwards .6s; }
+  .hero-desc     { opacity:0; animation: fadeInUp   .7s ease forwards .8s; }
+  .hero-btns     { opacity:0; animation: fadeInUp   .7s ease forwards 1s; }
+  .hero-scroll   { animation: fadeInUp .5s ease both 1.4s, pulse 2s 1.9s infinite; }
+
+  /* ── Título — shimmer dourado ────────────────────────────── */
+  .hero-title {
+    background: linear-gradient(
+      110deg,
+      var(--gold-dim) 15%,
+      var(--gold-light) 38%,
+      #fff8dc 50%,
+      var(--gold-light) 62%,
+      var(--gold-dim) 85%
+    );
+    background-size: 250% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation:
+      fadeInUp     .9s ease forwards .35s,
+      shimmerSweep 6s ease-in-out  1.5s infinite;
+  }
+
+  /* ── FOUNDER — pulso de brilho contínuo ─────────────────── */
+  .plan-founder .plan-cta {
+    animation: founderPulse 3s ease-in-out infinite;
+  }
+
+  /* ── Scroll reveal ───────────────────────────────────────── */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .6s ease, transform .6s ease;
+    will-change: opacity, transform;
+  }
+  [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Canvas de partículas — fica atrás do hero ───────────── */
+  #hero-canvas {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+  }
+  .hero > *:not(#hero-canvas):not(.hero-scroll) { position: relative; z-index: 1; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ TOPBAR ══════════════════ -->
+<header class="topbar">
+  <a href="#" class="topbar-logo">☥ FL</a>
+  <nav class="topbar-nav">
+    <a href="#sobre" data-lang="pt">O Jogo</a>
+    <a href="#sobre" data-lang="en">The Game</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a>
+    <a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a>
+    <a href="features.html" data-lang="en">Features</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a>
+    <a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="loja.html" data-lang="pt">Loja</a>
+    <a href="loja.html" data-lang="en">Store</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a>
+    <a href="banlist.html" data-lang="en">Banlist</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a>
+    <a href="conquistas.html" data-lang="en">Achievements</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a>
+    <a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="#download">Download</a>
+    <a href="#novidades" data-lang="pt">Novidades</a>
+    <a href="#novidades" data-lang="en">Updates</a>
+    <a href="#videos" data-lang="pt">Vídeos</a>
+    <a href="#videos" data-lang="en">Videos</a>
+    <a href="#comprar" class="nav-cta" data-lang="pt">☥ Founder</a>
+    <a href="#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+  </nav>
+  <div class="topbar-right">
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="discord-nav-badge" id="discord-nav-badge"><span class="dc-dot online"></span><span id="discord-online-nav">—</span> online <span style="opacity:.4;margin:0 3px">·</span><span class="dc-dot offline"></span><span id="discord-total-nav">—</span> members</a>
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<!-- ══════════════════ MOBILE NAV BAR ══════════════════ -->
+<div class="mobile-nav-bar">
+  <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="mobile-discord-bar">
+    <span class="dc-dot online"></span><span id="discord-online-mob">—</span>&nbsp;online
+    <span style="opacity:.4;margin:0 4px">·</span>
+    <span class="dc-dot offline"></span><span id="discord-total-mob">—</span>&nbsp;members — Discord ↗
+  </a>
+  <div class="mobile-nav-links">
+    <a href="#sobre" data-lang="pt">O Jogo</a>
+    <a href="#sobre" data-lang="en" style="display:none">The Game</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a>
+    <a href="gallery.html" data-lang="en" style="display:none">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a>
+    <a href="features.html" data-lang="en" style="display:none">Features</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a>
+    <a href="boosters.html" data-lang="en" style="display:none">Boosters</a>
+    <a href="loja.html">Loja</a>
+    <a href="banlist.html">Banlist</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a>
+    <a href="conquistas.html" data-lang="en" style="display:none">Achievements</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a>
+    <a href="mods.html" data-lang="en" style="display:none">FM Mods</a>
+    <a href="#download">Download</a>
+    <a href="#novidades" data-lang="pt">Novidades</a>
+    <a href="#novidades" data-lang="en" style="display:none">Updates</a>
+    <a href="#comprar" class="nav-cta">☥ Founder</a>
+  </div>
+</div>
+
+<!-- ══════════════════ STRIPE SUCCESS BANNER ══════════════════ -->
+<div class="stripe-success-banner" id="stripe-success-banner">
+  <span>✅ &nbsp;Donation confirmed! Your license will be sent to your email shortly. Check your spam folder too. &nbsp;·&nbsp; <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Need help? Discord →</a></span>
+  <button id="stripe-banner-close" style="margin-left:16px;background:none;border:1px solid rgba(64,208,128,.4);border-radius:3px;color:#80e0b0;font-size:16px;cursor:pointer;padding:2px 10px;flex-shrink:0;" title="Close">✕</button>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<div class="hero">
+  <div class="hero-badge">☥ Fan-Made · Godot 4</div>
+  <h1 class="hero-title">FORBIDDEN<br>LEGACY</h1>
+  <div class="hero-subtitle">
+    <span data-lang="pt">Recriação de YGO Forbidden Memories</span>
+    <span data-lang="en">The PS1 classic, rebuilt from the ground up.</span>
+  </div>
+  <p class="hero-desc" data-lang="pt">Um remake fan-made do clássico do PS1, com duelos modernos, modo campanha, sistema de fusão fiel ao original e interface premium totalmente reformulada.</p>
+  <p class="hero-desc" data-lang="en">A fan-made spiritual successor to YGO Forbidden Memories — faster duels, campaign mode, 700+ cards, the fusion system you love, and everything the original never had. Free to play.</p>
+  <div class="hero-stats">
+    <span class="hero-stat"><strong>900+</strong> Cartas</span>
+    <span class="hero-stat"><strong>29</strong> NPCs</span>
+    <span class="hero-stat"><strong>Beta 1.5.3</strong></span>
+    <span class="hero-stat">PC &amp; Android</span>
+    <span class="hero-stat">Free to Play</span>
+  </div>
+  <div class="hero-btns">
+    <a href="#download" class="btn-primary">
+      <span data-lang="pt">⬇ BAIXAR GRÁTIS</span>
+      <span data-lang="en">⬇ DOWNLOAD FREE</span>
+    </a>
+    <a href="#comprar" class="btn-secondary">
+      <span data-lang="pt">☥ VERSÃO FOUNDER</span>
+      <span data-lang="en">☥ FOUNDER VERSION</span>
+    </a>
+  </div>
+  <div class="hero-scroll">▼ scroll</div>
+</div>
+
+<!-- ══════════════════ SOBRE ══════════════════ -->
+<section id="sobre">
+  <p class="section-label">☥ <span data-lang="pt">O Jogo</span><span data-lang="en">The Game</span></p>
+  <h2 class="section-title" data-lang="pt">O que é Forbidden Legacy?</h2>
+  <h2 class="section-title" data-lang="en">The remake FM fans have been waiting for.</h2>
+  <div class="about-grid">
+    <div class="about-screen">
+      <img src="screenshots/pt/menu-inicial.png" alt="Forbidden Legacy - Menu Principal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="placeholder-txt" style="display:none">[ SALVE screenshots/menu.png ]</div>
+    </div>
+    <div class="about-text">
+      <div data-lang="pt">
+        <h3>Fiel ao original. Melhorado em tudo.</h3>
+        <p>Forbidden Legacy recria a experiência de YGO Forbidden Memories com mecânicas fiéis ao PS1 e uma camada premium de animações, efeitos e interface que o original nunca teve.</p>
+        <p>Duele contra NPCs com IA aprimorada, avance pela campanha desbloqueando a história e monte seu deck dos sonhos com mais de 700 cartas disponíveis.</p>
+      </div>
+      <div data-lang="en">
+        <h3>Someone finally built it.</h3>
+        <p>Forbidden Legacy keeps everything you loved about the PS1 original — the fast duels, the trial-and-error fusion system, the field spells that actually changed the game — and rebuilds it with modern animations, improved AI and an interface worthy of the cards.</p>
+        <p>Play through a full campaign, duel 14+ NPCs each with their own deck and drop pool, and collect 700+ cards including monsters, spells and traps the original never had. Free to download. No subscription.</p>
+      </div>
+      <div style="margin-top:16px">
+        <span class="tag">Windows</span><span class="tag">Android</span><span class="tag">Linux</span>
+        <span class="tag">Gamepad</span><span class="tag">PT / EN</span><span class="tag">Godot 4</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CANAL / VÍDEOS ══════════════════ -->
+<div class="yt-bg" id="videos">
+  <div class="yt-inner">
+    <p class="section-label">▶ <span data-lang="pt">Canal</span><span data-lang="en">Channel</span></p>
+    <h2 class="section-title" data-lang="pt">Vídeos sobre o projeto</h2>
+    <h2 class="section-title" data-lang="en">Project videos</h2>
+
+    <!-- Vídeo em destaque -->
+    <div class="yt-featured" onclick="ytPlay(this,'9KJ5o2A3I1g')" data-reveal>
+      <div class="yt-thumb" id="yt-9KJ5o2A3I1g">
+        <img src="https://i.ytimg.com/vi/9KJ5o2A3I1g/maxresdefault.jpg" alt="Libere a Campanha Completa do Remake Definitivo do Forbidden Memories" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <div class="yt-play-icon-lg">▶</div>
+        <span class="yt-new-badge" data-lang="pt">MAIS RECENTE</span>
+        <span class="yt-new-badge" data-lang="en">LATEST</span>
+      </div>
+      <div class="yt-card-info" style="padding:20px 24px">
+        <div class="yt-card-title" style="font-size:17px;line-height:1.4">YU-GI-OH! FORBIDDEN LEGACY: Libere a Campanha Completa do Remake Definitivo do Forbidden Memories</div>
+        <div class="yt-card-meta">Trager Games · 2026</div>
+      </div>
+    </div>
+
+    <!-- Banner do canal -->
+    <div class="yt-channel-banner" data-reveal>
+      <div class="yt-channel-info">
+        <img class="yt-avatar" src="https://unavatar.io/youtube/tragergames" alt="Trager Games" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="yt-avatar" style="display:none">🎮</div>
+        <div>
+          <div class="yt-channel-name">Trager Games</div>
+          <div class="yt-channel-sub" data-lang="pt">Devlogs, gameplays e novidades do Forbidden Legacy</div>
+          <div class="yt-channel-sub" data-lang="en">Devlogs, gameplays and Forbidden Legacy updates</div>
+        </div>
+      </div>
+      <a href="https://www.youtube.com/@tragergames" target="_blank" class="yt-sub-btn">▶ Ver Canal</a>
+    </div>
+
+    <!-- Outros vídeos -->
+    <div class="yt-grid" data-reveal>
+
+      <div class="yt-card" onclick="ytPlay(this,'JwiZ6MKtvis')">
+        <div class="yt-thumb" id="yt-JwiZ6MKtvis">
+          <img src="https://i.ytimg.com/vi/JwiZ6MKtvis/hqdefault.jpg" alt="Testando o novo Sistema de Boosters thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
+          <div class="yt-play-icon">▶</div>
+        </div>
+        <div class="yt-card-info">
+          <div class="yt-card-title">Testando o novo Sistema de Boosters e Novos Personagens — Forbidden Legacy</div>
+          <div class="yt-card-meta">Trager Games · 2026</div>
+        </div>
+      </div>
+
+      <div class="yt-card" onclick="ytPlay(this,'LiB9VAi9Ifk')">
+        <div class="yt-thumb" id="yt-LiB9VAi9Ifk">
+          <img src="https://i.ytimg.com/vi/LiB9VAi9Ifk/hqdefault.jpg" alt="Novo site e novos personagens thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
+          <div class="yt-play-icon">▶</div>
+        </div>
+        <div class="yt-card-info">
+          <div class="yt-card-title">NOVO SITE E NOVOS PERSONAGENS! — Forbidden Legacy</div>
+          <div class="yt-card-meta">Trager Games · 2026</div>
+        </div>
+      </div>
+
+      <div class="yt-card" onclick="ytPlay(this,'ectttaQ3DcI')">
+        <div class="yt-thumb" id="yt-ectttaQ3DcI">
+          <img src="https://i.ytimg.com/vi/ectttaQ3DcI/hqdefault.jpg" alt="Download video thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
+          <div class="yt-play-icon">▶</div>
+        </div>
+        <div class="yt-card-info">
+          <div class="yt-card-title">SAIU O DOWNLOAD! O Remake Definitivo do Forbidden Memories</div>
+          <div class="yt-card-meta">Trager Games · 2025</div>
+        </div>
+      </div>
+
+      <div class="yt-card" onclick="ytPlay(this,'9cJ3UWZVt0M')">
+        <div class="yt-thumb" id="yt-9cJ3UWZVt0M">
+          <img src="https://i.ytimg.com/vi/9cJ3UWZVt0M/hqdefault.jpg" alt="Modo Historia thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
+          <div class="yt-play-icon">▶</div>
+        </div>
+        <div class="yt-card-info">
+          <div class="yt-card-title">CONHEÇA O MODO HISTÓRIA! — Forbidden Legacy</div>
+          <div class="yt-card-meta">Trager Games · 2026</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Link para galeria -->
+    <div style="text-align:center;margin-top:40px" data-reveal>
+      <a href="gallery.html" class="yt-gallery-link" data-lang="pt">📷 Ver galeria de screenshots →</a>
+      <a href="gallery.html" class="yt-gallery-link" data-lang="en">📷 View screenshot gallery →</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function ytPlay(card, videoId) {
+  const thumb = card.querySelector('.yt-thumb');
+  thumb.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:block;width:100%;height:100%"></iframe>';
+  card.onclick = null;
+}
+</script>
+
+<!-- ══════════════════ MECÂNICAS (página própria: features.html) ══════════════════ -->
+<div style="display:none" id="mecanicas">
+  <div class="features-inner">
+    <p class="section-label">☥ <span data-lang="pt">O Projeto</span><span data-lang="en">The Project</span></p>
+    <h2 class="section-title" data-lang="pt">Mecânicas, Novidades e Diferenciais</h2>
+    <h2 class="section-title" data-lang="en">What's in the game</h2>
+
+    <p style="text-align:center;max-width:680px;margin:0 auto 48px;color:var(--texto-dim);font-size:15px;line-height:1.8" data-lang="pt">
+      Forbidden Legacy nasceu como homenagem direta ao YGO Forbidden Memories, mas não é apenas uma cópia. A ideia é preservar a sensação clássica dos duelos rápidos e das fusões enquanto o projeto evolui com novas cartas, novas cenas e sistemas modernos de progressão.
+    </p>
+    <p style="text-align:center;max-width:680px;margin:0 auto 48px;color:var(--texto-dim);font-size:15px;line-height:1.8" data-lang="en">
+      If you ever spent hours trying random fusions hoping something would work, this game is for you. Forbidden Legacy keeps that feeling — and adds everything the original was missing.
+    </p>
+
+    <!-- Grade principal: 3 colunas -->
+    <div class="features-grid" data-reveal>
+
+      <!-- DNA do FM -->
+      <div class="feature-card">
+        <div class="feature-icon">🌟</div>
+        <div class="feature-title" data-lang="pt">O DNA do Forbidden Memories</div>
+        <div class="feature-title" data-lang="en">The Forbidden Memories DNA</div>
+        <ul class="feature-list" data-lang="pt">
+          <li>Duelos rápidos e diretos, foco em invocação, fusões e leitura rápida do tabuleiro</li>
+          <li>Sistema de fusões como coração do jogo — tentativa e erro como no original</li>
+          <li>Campos mágicos com impacto real: Mountain, Yami, Sogen, Forest, Wasteland e outros</li>
+          <li>Drops por duelista — cada NPC tem deck e pool de cartas próprios</li>
+        </ul>
+        <ul class="feature-list" data-lang="en">
+          <li>Fast and direct duels focused on summoning, fusion and board reading</li>
+          <li>Fusion as the heart of the game — trial and error just like the original</li>
+          <li>Field spells with real impact: Mountain, Yami, Sogen, Forest, Wasteland and more</li>
+          <li>Duelist-based drops — each NPC has their own deck and card pool</li>
+        </ul>
+      </div>
+
+      <!-- O que expande -->
+      <div class="feature-card">
+        <div class="feature-icon">⚔️</div>
+        <div class="feature-title" data-lang="pt">O que Forbidden Legacy Expande</div>
+        <div class="feature-title" data-lang="en">What Forbidden Legacy Expands</div>
+        <ul class="feature-list" data-lang="pt">
+          <li>Campanha com cenas próprias, diálogos, backgrounds e músicas específicas</li>
+          <li>Novos NPCs: Akhenaden, Mountain Mage, High Mage Atenza e outros</li>
+          <li>Free Duel estruturado — NPCs com biografias, retratos e drops organizados</li>
+          <li>Cartas modernas e customizadas não presentes no FM original</li>
+          <li>Motor próprio de efeitos: dano, cura, imunidades, armadilhas, destruição</li>
+        </ul>
+        <ul class="feature-list" data-lang="en">
+          <li>Campaign with dedicated scenes, dialogue, backgrounds and specific music</li>
+          <li>New NPCs: Akhenaden, Mountain Mage, High Mage Atenza and others</li>
+          <li>Structured Free Duel — NPCs with biographies, portraits and organized drops</li>
+          <li>Modern custom cards not present in the original FM</li>
+          <li>Own effect engine: damage, healing, immunities, traps, destruction</li>
+        </ul>
+      </div>
+
+      <!-- Fusões e Deck -->
+      <div class="feature-card">
+        <div class="feature-icon">🃏</div>
+        <div class="feature-title" data-lang="pt">Fusões, Cartas e Deckbuilding</div>
+        <div class="feature-title" data-lang="en">Fusions, Cards &amp; Deckbuilding</div>
+        <ul class="feature-list" data-lang="pt">
+          <li>Fusões específicas por nome e fusões genéricas por tipo, atributo e faixa de ATK</li>
+          <li>Substitutos de fusão: Goddess with the Third Eye, Versago The Destroyer</li>
+          <li>Editor de deck reformulado com filtros, inspeção e painel de carta ampliada</li>
+          <li>Banlist por grupos em evolução com indicação visual no editor</li>
+          <li>700+ cartas disponíveis para colecionar e montar deck</li>
+        </ul>
+        <ul class="feature-list" data-lang="en">
+          <li>Named-card specific fusions and generic fusions by type, attribute and ATK range</li>
+          <li>Fusion substitutes: Goddess with the Third Eye, Versago The Destroyer</li>
+          <li>Reworked deck editor with filters, card inspection and enlarged card panel</li>
+          <li>Group-based banlist in progress with visual indicators in the editor</li>
+          <li>700+ cards available to collect and build your deck</li>
+        </ul>
+      </div>
+
+      <!-- Progressão e Rank -->
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-title" data-lang="pt">Progressão, Rank e Economia</div>
+        <div class="feature-title" data-lang="en">Progression, Rank &amp; Economy</div>
+        <ul class="feature-list" data-lang="pt">
+          <li>Rank pós-duelo por desempenho: eficiência, LP, fusões e ritmo da partida</li>
+          <li>Stars como moeda de progressão — ranks melhores entregam mais Stars</li>
+          <li>Card Shop com preços por raridade e vitrine renovável</li>
+          <li>Drops protegidos — pools fixos e curados por NPC para evitar cartas fortes acidentais</li>
+        </ul>
+        <ul class="feature-list" data-lang="en">
+          <li>Post-duel performance Rank: efficiency, remaining LP, fusions and match pace</li>
+          <li>Stars as progression currency — better ranks award more Stars</li>
+          <li>Card Shop with rarity-based prices and refreshable showcase</li>
+          <li>Protected drops — fixed, curated pools per NPC to prevent accidental strong cards</li>
+        </ul>
+      </div>
+
+      <!-- Qualidade de Vida -->
+      <div class="feature-card">
+        <div class="feature-icon">🎮</div>
+        <div class="feature-title" data-lang="pt">Qualidade de Vida</div>
+        <div class="feature-title" data-lang="en">Quality of Life</div>
+        <ul class="feature-list" data-lang="pt">
+          <li>HUD moderno com avatar, barra de LP animada e integração com campo mágico ativo</li>
+          <li>Velocidade de duelo ajustável — grind e testes mais confortáveis</li>
+          <li>Suporte a controle, teclado, mouse e Android touch</li>
+          <li>Descrições de cartas acessíveis em painéis ampliados</li>
+          <li>Checkpoints de campanha — sem repetir trechos após duelos ou cenas</li>
+        </ul>
+        <ul class="feature-list" data-lang="en">
+          <li>Modern HUD with avatars, animated LP bar and active field integration</li>
+          <li>Adjustable duel speed — more comfortable farming and testing</li>
+          <li>Controller, keyboard, mouse and Android touch support</li>
+          <li>Accessible card descriptions in enlarged panels</li>
+          <li>Campaign checkpoints — no need to repeat sections after duels or scenes</li>
+        </ul>
+      </div>
+
+      <!-- Campanha -->
+      <div class="feature-card">
+        <div class="feature-icon">🎭</div>
+        <div class="feature-title" data-lang="pt">Campanha e Apresentação</div>
+        <div class="feature-title" data-lang="en">Campaign &amp; Presentation</div>
+        <ul class="feature-list" data-lang="pt">
+          <li>Cenários específicos: Templo da Isis, Mountain Shrine, santuários e novos locais</li>
+          <li>Retratos com corpo, foco, boca e piscada — cenas mais vivas</li>
+          <li>Músicas por momento — trilhas integradas a eventos de campanha e Free Duel</li>
+          <li>Campanha avança além da Isis com novos arcos e personagens</li>
+        </ul>
+        <ul class="feature-list" data-lang="en">
+          <li>Dedicated backgrounds: Isis' Temple, Mountain Shrine, shrines and new locations</li>
+          <li>Character portraits with body, focus, mouth and blink — more alive scenes</li>
+          <li>Music per moment — tracks integrated with campaign events and Free Duel</li>
+          <li>Campaign extends beyond Isis with new arcs and characters</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Grade secundária: 2 colunas -->
+    <div class="features-grid-2" data-reveal>
+
+      <!-- PC e Android -->
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title" data-lang="pt">PC e Android</div>
+        <div class="feature-title" data-lang="en">PC &amp; Android</div>
+        <ul class="feature-list" data-lang="pt">
+          <li>Builds para Windows, Linux e Android com ajustes específicos por plataforma</li>
+          <li>Compatibilidade com aparelhos mais antigos via renderer GL Compatibility</li>
+          <li>Correções de carregamento de imagens, descrições e controles touch no Android</li>
+          <li>Preservação de progresso entre versões — saves protegidos em builds de atualização</li>
+        </ul>
+        <ul class="feature-list" data-lang="en">
+          <li>Builds for Windows, Linux and Android with platform-specific adjustments</li>
+          <li>Compatibility with older devices via GL Compatibility renderer</li>
+          <li>Fixes for image loading, card descriptions and touch controls on Android</li>
+          <li>Progress preservation across versions — saves protected in update builds</li>
+        </ul>
+      </div>
+
+      <!-- vs FM Original -->
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <div class="feature-title" data-lang="pt">Diferenças Diretas do FM Original</div>
+        <div class="feature-title" data-lang="en">Direct Differences from the Original FM</div>
+        <ul class="feature-list" data-lang="pt">
+          <li><strong style="color:var(--ouro)">Mais cartas</strong> — além do acervo original do PS1, com cartas novas e reinterpretações modernas</li>
+          <li><strong style="color:var(--ouro)">Mais efeitos</strong> — monstros, magias e traps com mecânicas que o FM original não tinha</li>
+          <li><strong style="color:var(--ouro)">Mais narrativa</strong> — cenas, diálogos, personagens e ambientação própria</li>
+          <li><strong style="color:var(--ouro)">Mais balanceamento</strong> — drops protegidos, loja com restrições, raridades e rank</li>
+          <li><strong style="color:var(--ouro)">Mais identidade visual</strong> — HUD, backgrounds, avatares e painéis recriados</li>
+        </ul>
+        <ul class="feature-list" data-lang="en">
+          <li><strong style="color:var(--ouro)">More cards</strong> — beyond the original PS1 pool, with new cards and modern reinterpretations</li>
+          <li><strong style="color:var(--ouro)">More effects</strong> — monsters, spells and traps with mechanics the original FM never had</li>
+          <li><strong style="color:var(--ouro)">More story</strong> — dedicated scenes, dialogue, characters and atmosphere</li>
+          <li><strong style="color:var(--ouro)">More balance</strong> — protected drops, shop restrictions, rarities and rank rewards</li>
+          <li><strong style="color:var(--ouro)">More visual identity</strong> — HUD, backgrounds, avatars and panels fully recreated</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Em Evolução -->
+    <div class="features-evolving" data-reveal>
+      <span data-lang="pt">🛠️ <strong>Em desenvolvimento ativo.</strong> Novas cartas, NPCs, cenas, ajustes de balanceamento, melhorias de controle, correções mobile e refinamentos de campanha continuam chegando. O objetivo não é apagar o Forbidden Memories original, mas construir uma continuação espiritual feita por fã: mais completa, mais viva e mais justa para jogar hoje.</span>
+      <span data-lang="en">🛠️ <strong>Actively developed.</strong> New cards, NPCs, campaign scenes and balance updates ship regularly. This isn't a dead project — it's a living game with a dev who plays it and cares about it. Updates are free forever for Founders.</span>
+    </div>
+
+    <!-- Citação final -->
+    <div class="features-quote" data-reveal>
+      <span data-lang="pt">Forbidden Legacy preserva a nostalgia, mas quer crescer como um jogo próprio.</span>
+      <span data-lang="en">"The Forbidden Memories experience you remember — now with everything you wished it had."</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════ PLANOS ══════════════════ -->
+<div class="plans" id="planos">
+  <div class="plans-inner">
+    <p class="section-label">☥ <span data-lang="pt">Versões</span><span data-lang="en">Versions</span></p>
+    <h2 class="section-title" data-lang="pt">Escolha como jogar</h2>
+    <h2 class="section-title" data-lang="en">Choose how to play</h2>
+    <div class="plans-grid">
+
+      <!-- FREE -->
+      <div class="plan-card plan-free">
+        <div class="plan-badge" style="color:var(--gold-dim)">FREE</div>
+        <div class="plan-name">FREE</div>
+        <div class="plan-price"><span data-lang="pt">R$ 0 / grátis</span><span data-lang="en">Free</span></div>
+        <ul class="plan-features">
+          <li data-lang="pt">Início da campanha</li><li data-lang="en">Campaign beginning</li>
+          <li>Free Duel</li><li>Card Shop</li>
+          <li data-lang="pt">700+ cartas para colecionar</li><li data-lang="en">700+ cards to collect</li>
+          <li data-lang="pt">Suporte a controle</li><li data-lang="en">Gamepad support</li>
+        </ul>
+        <button class="plan-cta" onclick="document.getElementById('download').scrollIntoView({behavior:'smooth'})">
+          <span data-lang="pt">BAIXAR GRÁTIS</span><span data-lang="en">DOWNLOAD FREE</span>
+        </button>
+      </div>
+
+      <!-- FOUNDER -->
+      <div class="plan-card plan-founder">
+        <div class="plan-recommended" data-lang="pt">☥ RECOMENDADO</div>
+        <div class="plan-recommended" data-lang="en">☥ RECOMMENDED</div>
+        <div class="plan-badge" style="color:var(--ouro)">☥ FOUNDER</div>
+        <div class="plan-name">FOUNDER</div>
+        <div class="plan-price" data-lang="pt">R$ 30</div>
+        <div class="plan-price" data-lang="en">$ 15</div>
+        <div class="plan-price-sub" data-lang="pt">doação via PIX · único</div>
+        <div class="plan-price-sub" data-lang="en">one-time donation</div>
+        <ul class="plan-features">
+          <li data-lang="pt">Tudo do FREE</li><li data-lang="en">Everything in FREE</li>
+          <li data-lang="pt">Campanha completa</li><li data-lang="en">Full campaign</li>
+          <li data-lang="pt">Acesso a todas as atualizações</li><li data-lang="en">Access to all future updates</li>
+          <li data-lang="pt">Marca d'água ☥ FOUNDER</li><li data-lang="en">☥ FOUNDER watermark</li>
+          <li data-lang="pt">Ativação única — sem assinatura</li><li data-lang="en">One-time activation — no subscription</li>
+        </ul>
+        <button class="plan-cta" onclick="document.getElementById('comprar').scrollIntoView({behavior:'smooth'})">
+          <span data-lang="pt">☥ ATIVAR FOUNDER</span><span data-lang="en">☥ GET FOUNDER</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ DOWNLOAD ══════════════════ -->
+<div class="download-bg" id="download">
+  <div class="download-inner">
+    <p class="section-label">☥ <span data-lang="pt">Jogue Agora</span><span data-lang="en">Play Now</span></p>
+    <h2 class="section-title" data-lang="pt">Download Gratuito</h2>
+    <h2 class="section-title" data-lang="en">Free Download</h2>
+    <div class="dl-box">
+      <div class="dl-version">Beta 1.5.3</div>
+      <div class="dl-title" data-lang="pt">Forbidden Legacy — Season 1 Completa</div>
+      <div class="dl-title" data-lang="en">Forbidden Legacy — Season 1 Complete</div>
+      <p class="dl-desc" data-lang="pt">Download direto por plataforma — sem instalação. A versão FREE é totalmente gratuita para sempre.</p>
+      <p class="dl-desc" data-lang="en">Direct download per platform — no installation needed. The FREE version is completely free forever.</p>
+      <div class="dl-platforms">
+        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.5.3/Forbidden.Legacy.-.PC.-.Beta.1.5.3.exe" target="_blank">
+          <div class="dl-plat-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="28" height="28">
+              <path fill="#f25022" d="M0 0h11v11H0z"/>
+              <path fill="#00a4ef" d="M12 0h11v11H12z"/>
+              <path fill="#7fba00" d="M0 12h11v11H0z"/>
+              <path fill="#ffb900" d="M12 12h11v11H12z"/>
+            </svg>
+          </div>
+          <div class="dl-plat-name">Windows</div>
+          <div class="dl-plat-ext">.exe</div>
+        </a>
+        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.5.3/Forbidden.Legacy.-.Android.-.Beta.1.5.3.apk" target="_blank">
+          <div class="dl-plat-icon">&#129302;</div>
+          <div class="dl-plat-name">Android</div>
+          <div class="dl-plat-ext">.apk</div>
+        </a>
+        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.5.3/Forbidden.Legacy.-.Linux.-.Beta.1.5.3.x86_64" target="_blank">
+          <div class="dl-plat-icon">&#128039;</div>
+          <div class="dl-plat-name">Linux</div>
+          <div class="dl-plat-ext">.x86_64</div>
+        </a>
+      </div>
+      <p class="dl-note" data-lang="pt">Download direto · Sem instalação · Atualizado em Jun/2026</p>
+      <p class="dl-note" data-lang="en">Direct download · No installation · Updated Jun/2026</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ NOVIDADES ══════════════════ -->
+<section id="novidades">
+  <p class="section-label">☥ <span data-lang="pt">Blog</span><span data-lang="en">Blog</span></p>
+  <h2 class="section-title" data-lang="pt">Novidades do Projeto</h2>
+  <h2 class="section-title" data-lang="en">Project Updates</h2>
+  <div class="news-grid">
+
+    <!-- BETA 1.5.3 -->
+    <div class="news-card featured" data-reveal>
+      <div class="news-tag update">🛡️ Patch</div>
+      <div class="news-date">25 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.5.3 &mdash; Estabilidade e Proteção de Saves</div>
+      <div class="news-title" data-lang="en">Beta 1.5.3 &mdash; Stability &amp; Save Protection</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li><strong>Proteção anti-zeragem:</strong> o jogo não sobrescreve mais um save com cartas por uma coleção vazia — e cria um backup automático ao sair</li>
+          <li><strong>Recuperação aprimorada:</strong> salves zerados após a atualização de múltiplos slots são restaurados automaticamente a partir do backup da mesma jornada</li>
+          <li>Crash do <strong>Zorc — dado 1</strong> corrigido de vez: o jogo agora aguarda o cubo 3D sumir antes de encerrar o duelo</li>
+          <li>Crash ao <strong>desistir do duelo</strong> corrigido: o encerramento aguarda a animação em curso antes de desmontar o campo</li>
+          <li>Soft-lock da <strong>janela de escolha de fusão</strong> corrigido: o painel sempre responde, sem travar com fundo escurecido</li>
+          <li><strong>16 cartas</strong> com efeito indevido na invocação corrigidas: Time Wizard, Blast Juggler, Cannon Soldier, Bladefly e outras</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li><strong>Save wipe protection:</strong> the game no longer overwrites a save that has cards with an empty collection — and auto-creates a backup on exit</li>
+          <li><strong>Improved recovery:</strong> saves that were wiped after the multi-slot update are automatically restored from the same journey's backup</li>
+          <li><strong>Zorc — dice roll 1</strong> crash fixed for good: the game now waits for the 3D cube to disappear before ending the duel</li>
+          <li><strong>Surrender crash</strong> fixed: the game waits for the current animation to finish before tearing down the field</li>
+          <li><strong>Fusion choice window</strong> soft-lock fixed: the panel always responds, no more frozen dark overlay</li>
+          <li><strong>16 cards</strong> with incorrect on-summon effects fixed: Time Wizard, Blast Juggler, Cannon Soldier, Bladefly and others</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.5.2 -->
+    <div class="news-card" data-reveal>
+      <div class="news-tag update">🛡️ Patch</div>
+      <div class="news-date">24 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.5.2 &mdash; Três Saves e Correções</div>
+      <div class="news-title" data-lang="en">Beta 1.5.2 &mdash; Triple Save &amp; Fixes</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Agora o jogo conta com <strong>3 slots de save</strong> por dispositivo — jornadas separadas, cada uma com sua campanha, decks, conquistas, Stars e Souls</li>
+          <li>Novo sistema de <strong>Códigos Promocionais</strong> na loja — resgate souls gratuitas com código de promoção direto na janela de Resgatar Código</li>
+          <li>Novo botão <strong>Comprar Souls</strong> na Card Shop com confirmação antes de abrir o navegador</li>
+          <li>Ra corrigido: LP restaurado imediatamente após o ataque, sem penalizar o rank; pagamento de LP ocorre só ao atacar</li>
+          <li>Slifer: Segunda Boca não afeta mais Ra nem Obelisk — Deuses são imunes ao efeito de outros Deuses</li>
+          <li>Diversas correções de cartas: Magic Jammer (campo), Divine Wrath, Castle of Dark Illusions, Mystical Sand e IA Wall Shadow</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>The game now has <strong>3 save slots</strong> per device — separate journeys each with their own campaign, decks, achievements, Stars and Souls</li>
+          <li>New <strong>Promo Code</strong> system in the shop — redeem free Souls with a promotional code right inside the Redeem Code window</li>
+          <li>New <strong>Buy Souls</strong> button in the Card Shop with a confirmation before opening the browser</li>
+          <li>Ra fixed: LP restored immediately after attack without rank penalty; LP payment only triggers when attacking</li>
+          <li>Slifer: Second Mouth no longer affects Ra or Obelisk — Gods are immune to other Gods' effects</li>
+          <li>Several card fixes: Magic Jammer (field), Divine Wrath, Castle of Dark Illusions, Mystical Sand and AI Wall Shadow</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.5.1 -->
+    <div class="news-card" data-reveal>
+      <div class="news-tag update">🛡️ Patch</div>
+      <div class="news-date">23 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.5.1 &mdash; Loja de Souls e Polimento</div>
+      <div class="news-title" data-lang="en">Beta 1.5.1 &mdash; Soul Store &amp; Polish</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Loja de Souls liberada — compre pacotes no site e resgate dentro do jogo pelo Código do Jogador</li>
+          <li>Android: nova opção "Tamanho da Interface" que aumenta texto e controles no celular</li>
+          <li>Editor de Deck ampliado de 5 para 10 slots</li>
+          <li>Conquistas e botões de duelo com visual repaginado</li>
+          <li>Conforto Visual: modos explicados, animações mais rápidas e auras de jogo seguras em todos os modos</li>
+          <li>Várias correções de efeitos: Magic Jammer, Swords of Revealing Light, Wasteland, Dark Magician of Chaos e crash do Zorc no dado</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>Soul Store is live — buy packs on the site and redeem them in-game with your Player Code</li>
+          <li>Android: new "Interface Size" option that enlarges text and controls on mobile</li>
+          <li>Deck Editor expanded from 5 to 10 slots</li>
+          <li>Achievements screen and duel buttons visually refreshed</li>
+          <li>Visual Comfort: clearer modes, faster animations and safe gameplay auras in every mode</li>
+          <li>Several effect fixes: Magic Jammer, Swords of Revealing Light, Wasteland, Dark Magician of Chaos and the Zorc dice-roll crash</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.5 -->
+    <div class="news-card" data-reveal>
+      <div class="news-tag update">⚔️ Season 1</div>
+      <div class="news-date">20 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.5 &mdash; Fim da Season 1</div>
+      <div class="news-title" data-lang="en">Beta 1.5 &mdash; End of Season 1</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Season 1 concluída — enfrente Heishin, Seto aliado e Zorc Necrophades no confronto final</li>
+          <li>Cena de epílogo com todos os personagens da jornada e destino do faraó</li>
+          <li>Saves de Founders parados na versão anterior retomam automaticamente</li>
+          <li>Nova banlist individual por carta — Deuses, Exodia e Megamorph controlados por dados</li>
+          <li>Layout da mão remodelado, botões de ação redesenhados e Menu Opções reformulado</li>
+          <li>Evento Copa: +300 Souls de brinde para todos os saves</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>Season 1 complete — face Heishin, allied Seto and Zorc Necrophades in the final clash</li>
+          <li>Epilogue cutscene featuring all campaign characters and the pharaoh's fate</li>
+          <li>Founder saves stuck on previous version resume automatically</li>
+          <li>New per-card banlist — Egyptian Gods, Exodia pieces and Megamorph controlled via data</li>
+          <li>Hand layout redesigned, action buttons overhauled, Options menu restructured</li>
+          <li>World Cup event: +300 Souls bonus for all saves</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.4.1 -->
+    <div class="news-card" data-reveal>
+      <div class="news-tag update">☥ Update</div>
+      <div class="news-date">13 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.4.1 &mdash; Correções e Boosters Refinados</div>
+      <div class="news-title" data-lang="en">Beta 1.4.1 &mdash; Fixes &amp; Refined Boosters</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Loja de Boosters: troca rápida de até 10 fragmentos, pacotes organizados por atributo e painel de detalhes com raridades e garantias</li>
+          <li>Slifer, Gearfried, White Stone of Legend, Archfiend Empress, Gate Guardian of Wind and Water e outros corrigidos</li>
+          <li>Travamento ao invocar monstros, Level Up! e drops por rank corrigidos</li>
+          <li>Gamepads: reconhecimento aprimorado e configuração manual de botões e analógicos</li>
+          <li>Interface: mensagem de conversão de cartas no resultado e indicador de limite na vitrine restaurados</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>Booster Shop: quick exchange of up to 10 fragments, packs organized by attribute, and detail panel with rarities and guarantees</li>
+          <li>Slifer, Gearfried, White Stone of Legend, Archfiend Empress, Gate Guardian of Wind and Water and others fixed</li>
+          <li>Monster summon freeze, Level Up! and rank drop fixes</li>
+          <li>Gamepads: improved recognition and manual button/analog configuration</li>
+          <li>UI: card conversion message on result screen and copy-limit indicator in shop restored</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.4 -->
+    <div class="news-card" data-reveal>
+      <div class="news-tag update">☥ Update</div>
+      <div class="news-date">13 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.4 &mdash; A Jornada dos Santuários</div>
+      <div class="news-title" data-lang="en">Beta 1.4 &mdash; The Journey of the Shrines</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>7 novos duelistas: Thief Bakura, Desert Mage, High Mage Martis, Meadow Mage, High Mage Kepura, Ocean Mage e High Mage Secmeton</li>
+          <li>Mais de 60 novas cartas com drops temáticos por NPC</li>
+          <li>IA corrigida — NPCs poderosos agora atacam de verdade; Thief Bakura mais agressivo</li>
+          <li>Skull Dice reescrito, Backfire como trap contínua, Umi MACHINE, Ancient Gear Golem e Torrential Tribute corrigidos</li>
+          <li>Animação de dado 3D, tela de resultado remodelada e Booster Packs renovados com 10 cartas</li>
+          <li>Recompensas de campanha restauradas · Brinde: 100 Fragmentos R + 100 SR + 100 UR</li>
+          <li>Modo Free liberado até Isis · Campanha de saves da 1.3.1 retoma no ponto correto</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>7 new duelists: Thief Bakura, Desert Mage, High Mage Martis, Meadow Mage, High Mage Kepura, Ocean Mage and High Mage Secmeton</li>
+          <li>60+ new cards with NPC-themed drop pools</li>
+          <li>AI fixed — powerful NPCs now actually attack; Thief Bakura significantly more aggressive</li>
+          <li>Skull Dice rewritten, Backfire as continuous trap, Umi MACHINE, Ancient Gear Golem and Torrential Tribute fixed</li>
+          <li>3D dice animation, redesigned result screen and Booster Packs overhauled with 10 cards</li>
+          <li>Campaign rewards restored · Launch gift: 100 R Fragments + 100 SR + 100 UR</li>
+          <li>Free mode up to Isis · Beta 1.3.1 saves resume at the correct point</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.3.1 -->
+    <div class="news-card" data-reveal>
+      <div class="news-tag update">☥ Update</div>
+      <div class="news-date">07 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.3.1 &mdash; Correções e Visuais dos Deuses</div>
+      <div class="news-title" data-lang="en">Beta 1.3.1 &mdash; Fixes &amp; Egyptian God Visuals</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Aura de seleção redesenhada com brilho suave nas bordas — cor creme padrão, cores exclusivas para Slifer, Obelisk e Rá</li>
+          <li>Vantagem elemental visível ao selecionar monstro para atacar: aura verde ou vermelha com badge ▲/▼ +500</li>
+          <li>Partículas e raios elétricos ao selecionar os Deuses Egípcios — cada um com cor própria que nasce, escurece para preto e some</li>
+          <li>Animação de revelação de trap: pop de escala no slot ao ativar interceptação</li>
+          <li>Correções: Great Moth, Equipamentos múltiplos, Dark Master Zorc, proteção DIVINE-BEAST e cemitério visual</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>Redesigned selection aura with smooth edge glow — warm cream default, exclusive colors for Slifer, Obelisk and Ra</li>
+          <li>Elemental advantage visible when selecting a monster to attack: green/red aura with ▲/▼ +500 badge</li>
+          <li>Particles and electric lightning bolts when selecting the Egyptian Gods — each with their own color that fades to black</li>
+          <li>Trap reveal animation: scale pop on the slot when a trap is activated</li>
+          <li>Fixes: Great Moth, multiple Equips, Dark Master Zorc, DIVINE-BEAST protection and graveyard visual</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.3 -->
+    <div class="news-card" data-reveal>
+      <div class="news-tag update">☥ Update</div>
+      <div class="news-date">06 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.3 &mdash; Campanha, Controle e Grandes Correções</div>
+      <div class="news-title" data-lang="en">Beta 1.3 &mdash; Campaign, Controller Support &amp; Major Fixes</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Campanha expandida: Forest Mage, Anubisius, Labyrinth Mage, Sebek e Neku</li>
+          <li>Suporte completo a teclado e controle no duelo — navegação, seleção e ataque sem mouse</li>
+          <li>Tela expandida no Android (sem bordas) com opção de alternar para bordas pretas</li>
+          <li>IA dos High Mages e Labyrinth Mage mais agressiva</li>
+          <li>Drops rebalanceados: Blue-eyes White Dragon, Labyrinth Mage e Sebek corrigidos</li>
+          <li>Banlist atualizada: Rosaria classificada corretamente</li>
+          <li>Correções: Dark Sage, Dark Magician Girl the Dragon Knight e ranking de duelo</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>Expanded campaign: Forest Mage, Anubisius, Labyrinth Mage, Sebek and Neku</li>
+          <li>Full keyboard and controller support in duel — navigate, select and attack without mouse</li>
+          <li>Android expanded screen (no borders) with option to toggle black bars</li>
+          <li>High Mages and Labyrinth Mage AI is now more aggressive</li>
+          <li>Rebalanced drops: Blue-eyes White Dragon, Labyrinth Mage and Sebek fixed</li>
+          <li>Banlist updated: Rosaria correctly classified</li>
+          <li>Fixes: Dark Sage, Dark Magician Girl the Dragon Knight and duel ranking</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.2.2 -->
+    <div class="news-card" data-reveal>
+      <div class="news-tag update">☥ Update</div>
+      <div class="news-date">04 Jun 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.2.2 &mdash; Acessibilidade, Editor de Deck e Banlist</div>
+      <div class="news-title" data-lang="en">Beta 1.2.2 &mdash; Accessibility, Deck Editor &amp; Banlist</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Novo bot&atilde;o de acessibilidade no duelo: brilho, clar&otilde;es, volume e troca de m&uacute;sica</li>
+          <li>Editor de Deck com novo filtro por tipo e acesso r&aacute;pido aos slots do deck</li>
+          <li>Ajustes de balanceamento na banlist: BRN, EQ+, EQM, SUB e corre&ccedil;&atilde;o do grupo REM</li>
+        </ul>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>New accessibility button in duel: brightness, flash, volume and music track</li>
+          <li>Deck Editor with new type filter and quick-access deck slots</li>
+          <li>Banlist balance adjustments: BRN, EQ+, EQM, SUB and REM group fix</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BETA 1.2 — destaque -->
+    <div class="news-card featured">
+      <div class="news-tag update">☥ Update</div>
+      <div class="news-date">31 Mai 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.2 &mdash; Grande Atualiza&ccedil;&atilde;o de Campanha</div>
+      <div class="news-title" data-lang="en">Beta 1.2 &mdash; Major Campaign Update</div>
+      <div class="news-body" data-lang="pt">
+        <p>Tr&ecirc;s novos NPCs na campanha, novo painel de LP com avatar e grande polimento de cutscenes e duelo.</p>
+        <ul>
+          <li>Akhenaden, Mountain Mage e High Mage Atenza adicionados &agrave; campanha</li>
+          <li>Novo painel de LP com avatar e barra animada para jogador e NPC</li>
+          <li>HUD acompanha a cor do campo m&aacute;gico ativo</li>
+          <li>Cutscenes mais cont&iacute;nuas — transi&ccedil;&otilde;es sem cortes desnecessários</li>
+          <li>Janelas de Cemit&eacute;rio e Fus&otilde;es reposicionadas</li>
+          <li>Confirma&ccedil;&otilde;es no controle prendem o foco nos bot&otilde;es da janela</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <p>Three new campaign NPCs, new LP panel with avatar and major cutscene and duel polish.</p>
+        <ul>
+          <li>Akhenaden, Mountain Mage and High Mage Atenza added to the campaign</li>
+          <li>New LP panel with character avatar and animated bar for player and NPC</li>
+          <li>HUD follows the active magic field color</li>
+          <li>More continuous cutscenes — transitions without unnecessary cuts</li>
+          <li>Cemetery and Fusion windows repositioned</li>
+          <li>Gamepad confirmation windows now lock focus to dialog buttons</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.1.5 -->
+    <div class="news-card">
+      <div class="news-tag fix">&#128295; Fix</div>
+      <div class="news-date">29 Mai 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.1.5 &mdash; Regras de Turno e Polimento</div>
+      <div class="news-title" data-lang="en">Beta 1.1.5 &mdash; Turn Rules &amp; Polish</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Regras de turno corrigidas — 1 magia/equip por turno; m&atilde;o trava ap&oacute;s atacar</li>
+          <li>Crush Card Virus n&atilde;o encerra mais a fase de batalha indevidamente</li>
+          <li>Painel de LP muda de cor com o campo m&aacute;gico ativo</li>
+          <li>Pool de m&uacute;sicas do Free Duel expandido</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>Turn rules fixed — 1 magic/equip per turn; hand locks after attacking</li>
+          <li>Crush Card Virus no longer ends the battle phase incorrectly</li>
+          <li>LP panel changes color with the active magic field</li>
+          <li>Free Duel music pool expanded</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See changelog &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.1.4 -->
+    <div class="news-card">
+      <div class="news-tag fix">&#128295; Fix</div>
+      <div class="news-date">27 Mai 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.1.4 &mdash; Corre&ccedil;&otilde;es de Cartas e Prote&ccedil;&otilde;es</div>
+      <div class="news-title" data-lang="en">Beta 1.1.4 &mdash; Card Fixes &amp; Protections</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li>Acesso FREE corrigido — saves FOUNDER importados n&atilde;o liberam conte&uacute;do pago</li>
+          <li>Equip Cards respeitam a regra de turno: 1 magia/equip + 1 monstro</li>
+          <li>Slifer volta a exibir ???? na m&atilde;o e stats corretos em campo</li>
+          <li>Drops do Seto ajustados — Blue-Eyes mais vi&aacute;vel de obter</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li>FREE access fixed — imported FOUNDER saves no longer unlock paid content</li>
+          <li>Equip Cards respect turn rules: 1 magic/equip + 1 monster</li>
+          <li>Slifer correctly shows ???? in hand and proper stats on field</li>
+          <li>Seto's drops adjusted — Blue-Eyes more obtainable</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See changelog &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.1 — destaque -->
+    <div class="news-card featured">
+      <div class="news-tag update">☥ Update</div>
+      <div class="news-date">24 Mai 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.1 — Reformulação Visual Premium</div>
+      <div class="news-title" data-lang="en">Beta 1.1 — Premium Visual Overhaul</div>
+      <div class="news-body" data-lang="pt">
+        <p>A maior atualização visual do projeto até agora. Botões, painéis e toda a interface foram repaginados com acabamento premium.</p>
+        <ul>
+          <li>Progressão da campanha com checkpoints</li>
+          <li>Nova função RT/R2 para inspecionar oponente</li>
+          <li>IA significativamente melhorada</li>
+          <li>Novas animações de duelo cinemáticas</li>
+          <li>Build reduzida em ~60%</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo →</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <p>The biggest visual update to the project so far. Buttons, panels and the entire interface were redesigned with premium polish.</p>
+        <ul>
+          <li>Campaign progression with auto-checkpoints</li>
+          <li>New RT/R2 function to inspect opponent cards</li>
+          <li>Significantly improved AI</li>
+          <li>New cinematic duel animations</li>
+          <li>Build size reduced by ~60%</li>
+        </ul>
+        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog →</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.0 — lançamento -->
+    <div class="news-card">
+      <div class="news-tag update">☥ Update</div>
+      <div class="news-date">17 Mai 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.0 &mdash; Lan&ccedil;amento Oficial</div>
+      <div class="news-title" data-lang="en">Beta 1.0 &mdash; Official Launch</div>
+      <div class="news-body" data-lang="pt">
+        <p>O jogo saiu do Alpha. A BETA 1 marca o in&iacute;cio da distribui&ccedil;&atilde;o p&uacute;blica com save isolado, exporta&ccedil;&atilde;o Linux e campanha do Duel Ground.</p>
+        <ul>
+          <li>Campanha: Simon &rarr; Duel Ground &rarr; Jono</li>
+          <li>Vers&atilde;o FOUNDER renomeada</li>
+          <li>Suporte a Linux adicionado</li>
+        </ul>
+      </div>
+      <div class="news-body" data-lang="en">
+        <p>The game left Alpha. BETA 1 marks the start of public distribution with isolated save, Linux export and Duel Ground campaign.</p>
+        <ul>
+          <li>Campaign: Simon &rarr; Duel Ground &rarr; Jono</li>
+          <li>FOUNDER version renamed</li>
+          <li>Linux support added</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════ COMO FUNCIONA ══════════════════ -->
+<section style="padding-top:80px">
+  <p class="section-label">☥ <span data-lang="pt">Ativação</span><span data-lang="en">Activation</span></p>
+  <h2 class="section-title" data-lang="pt">Como funciona a versão FOUNDER?</h2>
+  <h2 class="section-title" data-lang="en">How does FOUNDER activation work?</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4 data-lang="pt">Abra o jogo</h4><h4 data-lang="en">Open the game</h4>
+      <p data-lang="pt">Vá em <strong>Opções → Ativação</strong> e copie seu <strong>Código do Jogador</strong></p>
+      <p data-lang="en">Go to <strong>Options → Activation</strong> and copy your <strong>Player Code</strong></p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4 data-lang="pt">Compre aqui</h4><h4 data-lang="en">Buy here</h4>
+      <p data-lang="pt">Cole seu código abaixo, informe seu email e escolha como apoiar</p>
+      <p data-lang="en">Paste your code below, enter your email and choose how to support</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4 data-lang="pt">Receba por email</h4><h4 data-lang="en">Receive by email</h4>
+      <p data-lang="pt">Após a confirmação, você recebe automaticamente o arquivo de licença</p>
+      <p data-lang="en">After confirmation, you automatically receive the license file</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4 data-lang="pt">Importe no jogo</h4><h4 data-lang="en">Import in game</h4>
+      <p data-lang="pt">Vá em <strong>Opções → Ativar → Importar Arquivo</strong> e selecione o .json recebido</p>
+      <p data-lang="en">Go to <strong>Options → Activate → Import File</strong> and select the received .json</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COMPRAR ══════════════════ -->
+<section id="comprar" style="padding-top:0">
+  <div class="divider"><span>☥</span></div>
+  <p class="section-label" style="margin-bottom:32px">
+    <span data-lang="pt">ATIVAR VERSÃO FOUNDER</span>
+    <span data-lang="en">ACTIVATE FOUNDER VERSION</span>
+  </p>
+  <div class="buy-box">
+    <h3>☥ FOUNDER</h3>
+    <p data-lang="pt">Doação única · Acesso vitalício · Todas as atualizações inclusas</p>
+    <p data-lang="en">One-time donation · Lifetime access · All updates included</p>
+    <div class="input-group">
+      <label data-lang="pt">CÓDIGO DO JOGADOR (exibido em Opções → Ativação)</label>
+      <label data-lang="en">PLAYER CODE (shown in Options → Activation)</label>
+      <input id="input-codigo" type="text" placeholder="FL-PLAYERPC-XXXX-XXXX-XXXX" autocomplete="off">
+    </div>
+    <div class="input-group">
+      <label data-lang="pt">SEU EMAIL (para receber a licença)</label>
+      <label data-lang="en">YOUR EMAIL (to receive the license)</label>
+      <input id="input-email" type="email" placeholder="email@exemplo.com" autocomplete="email">
+    </div>
+    <div class="input-group">
+      <label data-lang="pt">SEU NOME</label>
+      <label data-lang="en">YOUR NAME</label>
+      <input id="input-nome" type="text" placeholder="Seu nome" autocomplete="name">
+    </div>
+    <div class="input-group">
+      <label data-lang="pt">DISCORD (opcional)</label>
+      <label data-lang="en">DISCORD (optional)</label>
+      <input id="input-discord" type="text" placeholder="@usuario" autocomplete="off">
+    </div>
+    <div class="input-group" id="cpf-group" style="display:none">
+      <label data-lang="pt">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--texto-dim);font-weight:400;font-size:10px">(exigido para cartão de crédito)</span></label>
+      <label data-lang="en">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--texto-dim);font-weight:400;font-size:10px">(required for credit card)</span></label>
+      <input id="input-cpf" type="text" placeholder="000.000.000-00" autocomplete="off" maxlength="14" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
+    </div>
+    <div class="input-group">
+      <label data-lang="pt">DISPOSITIVO <span style="color:#e04040;font-size:10px">*</span></label>
+      <label data-lang="en">DEVICE <span style="color:#e04040;font-size:10px">*</span></label>
+      <select id="input-dispositivo" required>
+        <option value="">— selecione —</option>
+        <option value="Windows">Windows</option>
+        <option value="Android">Android</option>
+        <option value="Linux">Linux</option>
+      </select>
+    </div>
+    <div id="form-restored-hint" style="display:none;font-size:11px;color:#c8a060;text-align:center;margin-bottom:6px;letter-spacing:1px;opacity:0.8">
+      <span data-lang="pt">✦ Dados restaurados do seu último acesso</span>
+      <span data-lang="en">✦ Data restored from your last visit</span>
+    </div>
+    <button class="pay-main-btn" onclick="abrirModalPagamento()">
+      <span>☥</span>
+      <span data-lang="pt">ATIVAR FOUNDER</span>
+      <span data-lang="en">GET FOUNDER</span>
+    </button>
+    <p class="buy-note" data-lang="pt">🔒 PIX R$30 · Cartão de Crédito R$35 · Licença enviada por email</p>
+    <p class="buy-note" data-lang="en">🔒 International Card (USD) · License sent automatically by email</p>
+  </div>
+</section>
+
+<!-- ══════════════════ MODAL SELEÇÃO DE PAGAMENTO ══════════════════ -->
+<div id="pay-method-overlay" style="display:none;position:fixed;inset:0;z-index:1001;background:rgba(0,0,0,0.88);align-items:center;justify-content:center;padding:20px">
+  <div style="background:#0D0804;border:1px solid var(--ouro-esc);border-radius:6px;padding:32px 28px;max-width:440px;width:100%;position:relative">
+    <button onclick="fecharModalPagamento()" style="position:absolute;top:14px;right:18px;background:none;border:none;color:var(--texto-dim);font-size:20px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='var(--ouro)'" onmouseout="this.style.color='var(--texto-dim)'">✕</button>
+    <h3 style="color:var(--ouro-brt);font-size:16px;margin:0 0 6px" data-lang="pt">☥ Escolha como apoiar</h3>
+    <h3 style="color:var(--ouro-brt);font-size:16px;margin:0 0 6px" data-lang="en">☥ Choose how to support</h3>
+    <p style="color:var(--texto-dim);font-size:12px;margin:0 0 20px" data-lang="pt">Licença vitalícia · Todas as atualizações inclusas</p>
+    <p style="color:var(--texto-dim);font-size:12px;margin:0 0 20px" data-lang="en">Lifetime license · All future updates included</p>
+
+    <!-- PIX — Brasil (controlado por IP, não por idioma) -->
+    <button id="pay-opt-pix" class="pay-method-btn pay-method-pix" onclick="fecharModalPagamento();pixPagar()" style="display:none">
+      <div class="pay-method-icon">⬡</div>
+      <div class="pay-method-info">
+        <div class="pay-method-name">PIX</div>
+        <div class="pay-method-desc" data-lang="pt">Instantâneo · Apenas Brasil · via Efí Bank</div>
+        <div class="pay-method-desc" data-lang="en">Instant · Brazil only · via Efí Bank</div>
+      </div>
+      <div class="pay-method-price">R$ 30</div>
+    </button>
+
+    <!-- Cartão BR (Asaas) — apenas Brasil -->
+    <button id="pay-opt-card-br" class="pay-method-btn pay-method-usd" onclick="fecharModalPagamento();asaasPagar()" style="display:none;border-color:rgba(80,180,120,.35)">
+      <div class="pay-method-icon">💳</div>
+      <div class="pay-method-info">
+        <div class="pay-method-name" data-lang="pt">Cartão de Crédito</div>
+        <div class="pay-method-name" data-lang="en">Credit Card</div>
+        <div class="pay-method-desc">Visa · Mastercard · Elo · Hipercard · BR</div>
+        <div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="pt">R$ 35 · inclui taxa de processamento</div>
+        <div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="en">R$ 35 · processing fee included</div>
+      </div>
+      <div class="pay-method-price" style="color:#50c87a">R$ 35</div>
+    </button>
+
+    <!-- Cartão USD — apenas fora do Brasil -->
+    <button id="pay-opt-usd" class="pay-method-btn pay-method-usd" onclick="fecharModalPagamento();stripePagar('usd')" style="display:none">
+      <div class="pay-method-icon">🌎</div>
+      <div class="pay-method-info">
+        <div class="pay-method-name" data-lang="pt">Cartão Internacional</div>
+        <div class="pay-method-name" data-lang="en">International Card</div>
+        <div class="pay-method-desc">Visa · Mastercard · Apple Pay · Google Pay · USD</div>
+      </div>
+      <div class="pay-method-price" style="color:#6aafff">$15</div>
+    </button>
+
+    <p style="font-size:11px;color:var(--texto-dim);opacity:.6;text-align:center;margin-top:4px" data-lang="pt">🔒 Processado com segurança · Licença enviada por email após confirmação</p>
+    <p style="font-size:11px;color:var(--texto-dim);opacity:.6;text-align:center;margin-top:4px" data-lang="en">🔒 Processed securely · License sent by email after confirmation</p>
+  </div>
+</div>
+
+<!-- ══════════════════ MODAL PIX ══════════════════ -->
+<div class="pix-overlay" id="pix-overlay">
+  <div class="pix-modal" id="pix-modal">
+    <button class="pix-close" onclick="pixFechar()" title="Fechar">✕</button>
+    <div class="pix-modal-title">☥ FOUNDER — PIX</div>
+    <div class="pix-modal-sub" data-lang="pt">Escaneie o QR Code ou copie o código</div>
+    <div class="pix-modal-sub" data-lang="en">Scan the QR Code or copy the code</div>
+    <div class="pix-amount">R$ 30</div>
+
+    <!-- QR Code -->
+    <div class="pix-qr-wrap" id="pix-qr-wrap">
+      <div class="pix-qr-placeholder" id="pix-qr-placeholder">
+        <div class="pix-spinner"></div>
+        <span data-lang="pt">Gerando QR Code…</span>
+        <span data-lang="en">Generating QR Code…</span>
+      </div>
+      <img class="pix-qr-img" id="pix-qr-img" src="" alt="QR Code PIX" style="display:none">
+    </div>
+
+    <!-- Copia e cola -->
+    <div class="pix-copy-label" data-lang="pt">CÓDIGO PIX (COPIA E COLA)</div>
+    <div class="pix-copy-label" data-lang="en">PIX CODE (COPY & PASTE)</div>
+    <div class="pix-copy-row">
+      <input class="pix-copy-input" id="pix-copy-input" type="text" readonly placeholder="Aguardando…">
+      <button class="pix-copy-btn" onclick="pixCopiar()" data-lang="pt">COPIAR</button>
+      <button class="pix-copy-btn" onclick="pixCopiar()" data-lang="en">COPY</button>
+    </div>
+
+    <!-- Status -->
+    <div class="pix-status aguardando" id="pix-status">
+      <span class="pix-spinner"></span>
+      <span data-lang="pt">Aguardando confirmação…</span>
+      <span data-lang="en">Waiting for confirmation…</span>
+    </div>
+
+    <!-- Licença (aparece após pagamento) -->
+    <div class="pix-license-box" id="pix-license-box">
+      <div class="pix-license-title">
+        <span data-lang="pt">✓ PAGAMENTO CONFIRMADO — Sua licença:</span>
+        <span data-lang="en">✓ PAYMENT CONFIRMED — Your license:</span>
+      </div>
+      <div class="pix-license-key" id="pix-license-key"></div>
+      <button class="pix-license-copy" onclick="pixCopiarLicenca()" data-lang="pt">📋 COPIAR CHAVE DE ATIVAÇÃO</button>
+      <button class="pix-license-copy" onclick="pixCopiarLicenca()" data-lang="en">📋 COPY ACTIVATION KEY</button>
+      <div class="pix-license-note" data-lang="pt">A licença também foi enviada para seu email.<br>Em <strong>Opções → Ativação</strong> do jogo, cole esta chave.</div>
+      <div class="pix-license-note" data-lang="en">The license was also sent to your email.<br>In the game's <strong>Options → Activation</strong>, paste this key.</div>
+    </div>
+
+    <p class="pix-note-security" data-lang="pt">🔒 Processado com segurança via Efí Bank</p>
+    <p class="pix-note-security" data-lang="en">🔒 Securely processed via Efí Bank</p>
+  </div>
+</div>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="footer-logo">FORBIDDEN LEGACY</div>
+  <!-- Discord live counter -->
+  <div class="discord-counter" id="discord-counter">
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">
+      <span class="dc-dot online"></span><span id="discord-online">—</span> online
+    </a>
+    <span style="opacity:.4">·</span>
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">
+      <span class="dc-dot offline"></span><span id="discord-total">—</span> members
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="#sobre" data-lang="pt">O Jogo</a><a href="#sobre" data-lang="en">The Game</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="loja.html">Loja</a>
+    <a href="#download">Download</a>
+    <a href="#novidades" data-lang="pt">Novidades</a><a href="#novidades" data-lang="en">Updates</a>
+    <a href="#videos" data-lang="pt">Vídeos</a><a href="#videos" data-lang="en">Videos</a>
+    <a href="#comprar" data-lang="pt">Founder</a><a href="#comprar" data-lang="en">Founder</a>
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+    <a href="https://www.youtube.com/@tragergames" target="_blank" class="footer-yt">▶ YouTube</a>
+  </div>
+  <div>
+    <span data-lang="pt">Fan-made · Não afiliado à Konami · Desenvolvido por </span>
+    <span data-lang="en">Fan-made · Not affiliated with Konami · Developed by </span>
+    <a href="https://www.youtube.com/@tragergames" target="_blank">TragerGames</a>
+  </div>
+  <p data-lang="pt">Dúvidas? Entre em contato pelo <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a> ou <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a></p>
+  <p data-lang="en">Questions? Reach us on <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a> or <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a></p>
+</footer>
+
+<script>
+// ── localStorage: salva/restaura campos do formulário ────────────────────
+(function() {
+  const FIELDS = ['input-codigo','input-email','input-nome','input-discord'];
+  const KEY = 'fl_form_v1';
+  function save() {
+    const data = {};
+    FIELDS.forEach(id => { const el = document.getElementById(id); if (el) data[id] = el.value; });
+    localStorage.setItem(KEY, JSON.stringify(data));
+  }
+  function load() {
+    try {
+      const data = JSON.parse(localStorage.getItem(KEY) || '{}');
+      let restored = false;
+      FIELDS.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && data[id]) { el.value = data[id]; restored = true; }
+      });
+      if (restored) {
+        const hint = document.getElementById('form-restored-hint');
+        if (hint) hint.style.display = 'block';
+      }
+    } catch(e) {}
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    load();
+    FIELDS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', save);
+    });
+  });
+})();
+
+// ── Discord member counter (via proxy PHP — evita CORS no iOS/Safari) ───────
+(function() {
+  fetch('/discord_counter.php')
+    .then(r => r.json())
+    .then(d => {
+      const online = d.online ?? 0;
+      const total  = d.total  ?? 0;
+      if (!total) return;
+      const fmt = n => Number(n).toLocaleString();
+      const onlineEl = document.getElementById('discord-online');
+      const totalEl  = document.getElementById('discord-total');
+      if (onlineEl) onlineEl.textContent = fmt(online);
+      if (totalEl)  totalEl.textContent  = fmt(total);
+      const wrap = document.getElementById('discord-counter');
+      if (wrap) wrap.style.display = 'flex';
+      const navOnline = document.getElementById('discord-online-nav');
+      const navTotal  = document.getElementById('discord-total-nav');
+      if (navOnline) navOnline.textContent = fmt(online);
+      if (navTotal)  navTotal.textContent  = fmt(total);
+      const navBadge = document.getElementById('discord-nav-badge');
+      if (navBadge) navBadge.style.display = 'flex';
+      // mobile menu
+      const mobOnline = document.getElementById('discord-online-mob');
+      const mobTotal  = document.getElementById('discord-total-mob');
+      if (mobOnline) mobOnline.textContent = fmt(online);
+      if (mobTotal)  mobTotal.textContent  = fmt(total);
+    })
+    .catch(() => {});
+})();
+
+// ── Galeria placeholders ──────────────────────────────────────────────────
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  const ph = img.nextElementSibling;
+  if (!ph) return;
+  img.onload  = () => ph.style.display = 'none';
+  img.onerror = () => { img.style.display = 'none'; ph.style.display = 'flex'; };
+  if (img.complete && img.naturalWidth > 0) ph.style.display = 'none';
+});
+
+// ── Lightbox ──────────────────────────────────────────────────────────────
+function openLb(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb() {
+  document.getElementById('lb').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeLb(); pixFechar(); fecharModalPagamento(); }
+});
+
+// ── Idioma ────────────────────────────────────────────────────────────────
+// ── STRIPE FLOW ──────────────────────────────────────────────────────────────
+async function stripePagar(currency) {
+  currency = currency || 'usd';
+  const isBRL  = (currency === 'brl');
+  const isEN   = document.body.classList.contains('en');
+  const codigo     = (document.getElementById('input-codigo')?.value     ?? '').trim();
+  const email      = (document.getElementById('input-email')?.value      ?? '').trim();
+  const nome       = (document.getElementById('input-nome')?.value       ?? '').trim();
+  const discord    = (document.getElementById('input-discord')?.value    ?? '').trim();
+  const dispositivo = (document.getElementById('input-dispositivo')?.value ?? '').trim();
+
+  if (!codigo) {
+    alert(isEN ? 'Please enter your Player Code.' : 'Informe seu Código do Jogador.');
+    document.getElementById('input-codigo')?.focus(); return;
+  }
+  if (!/^FL-PLAYER(?:PC|AND|MAC|LNX)?(?:-[0-9A-F]{4}){3,4}$/i.test(codigo)) {
+    alert(isEN
+      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation).\nEx: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) or FL-PLAYERAND-XXXX-XXXX-XXXX (Android)'
+      : 'Código inválido. Copie diretamente do jogo (Opções → Ativação).\nEx: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) ou FL-PLAYERAND-XXXX-XXXX-XXXX (Android)');
+    document.getElementById('input-codigo')?.focus(); return;
+  }
+  if (!email || !email.includes('@')) {
+    alert(isEN ? 'Please enter a valid email.' : 'Informe um email válido.');
+    document.getElementById('input-email')?.focus(); return;
+  }
+  if (!nome) {
+    alert(isEN ? 'Please enter your name.' : 'Informe seu nome.');
+    document.getElementById('input-nome')?.focus(); return;
+  }
+  if (!dispositivo) {
+    alert(isEN ? 'Please select your device (Windows, Android or Linux).' : 'Selecione o seu dispositivo (Windows, Android ou Linux).');
+    document.getElementById('input-dispositivo')?.focus(); return;
+  }
+
+  const btnId = isBRL ? 'stripe-btn-br' : 'stripe-btn';
+  const btn   = document.getElementById(btnId);
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<span class="stripe-spinner"></span><span>' + (isEN ? 'CONNECTING…' : 'CONECTANDO…') + '</span>';
+  }
+
+  const resetBtn = () => {
+    if (!btn) return;
+    btn.disabled = false;
+    btn.innerHTML = isBRL
+      ? '<span>💳</span><span>PAGAR COM CARTÃO</span><span class="pay-stripe-price">R$ 30</span>'
+      : '<span>💳</span><span>PAY WITH CARD</span><span class="pay-stripe-price">$15 USD</span>';
+  };
+
+  try {
+    const res = await fetch('/pagar/stripe_checkout.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ player_code: codigo, email, nome, discord, dispositivo, currency })
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.open(data.url, '_blank');
+    } else {
+      alert((isEN ? 'Error: ' : 'Erro: ') + (data.error ?? (isEN ? 'Please try again.' : 'Tente novamente.')));
+      resetBtn();
+    }
+  } catch (err) {
+    alert(isEN ? 'Connection error. Please try again.' : 'Erro de conexão. Tente novamente.');
+    resetBtn();
+  }
+}
+
+// Mostra banner de sucesso APENAS quando URL contém ?stripe_ok=1
+(function () {
+  const banner = document.getElementById('stripe-success-banner');
+  const closeBtn = document.getElementById('stripe-banner-close');
+  if (closeBtn && banner) {
+    closeBtn.addEventListener('click', function() {
+      banner.style.display = 'none';
+    });
+  }
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('stripe_ok') === '1' || params.get('asaas_ok') === '1') {
+    if (banner) banner.style.display = 'flex';
+    const clean = window.location.pathname + (window.location.hash || '');
+    history.replaceState(null, '', clean);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+})();
+
+// ── PAYPAL FLOW ──────────────────────────────────────────────────────────────
+function paypalConfirmar() {
+  const email  = (document.getElementById('input-email')?.value  ?? '').trim();
+  const codigo = (document.getElementById('input-codigo')?.value ?? '').trim();
+  const nome = (document.getElementById('input-nome')?.value ?? '').trim();
+  const discord = (document.getElementById('input-discord')?.value ?? '').trim();
+  const dispositivo = (document.getElementById('input-dispositivo')?.value ?? '').trim();
+  if (!email || !codigo) {
+    alert('Please fill in your Player Code and Email first.');
+    return;
+  }
+  if (!nome) {
+    alert('Please fill in your name first.');
+    return;
+  }
+  if (!dispositivo) {
+    alert('Please select your device (Windows, Android or Linux).');
+    return;
+  }
+  const btn = document.getElementById('paypal-confirm-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  const body = new URLSearchParams({ email, codigo, nome, discord, dispositivo });
+  fetch('/pagar/paypal_notify.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString()
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.ok) {
+      document.getElementById('paypal-success').classList.add('visible');
+      btn.style.display = 'none';
+    } else {
+      btn.disabled = false;
+      btn.textContent = '✓  I PAID — SEND MY LICENSE KEY';
+      alert('Error: ' + (d.msg ?? 'Please try again.'));
+    }
+  })
+  .catch(() => {
+    btn.disabled = false;
+    btn.textContent = '✓  I PAID — SEND MY LICENSE KEY';
+    alert('Connection error. Please try again.');
+  });
+}
+
+function setLang(lang, saveToStorage=true) {
+  document.body.classList.toggle('en', lang === 'en');
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]');
+  if (btn) btn.classList.add('active');
+  if (saveToStorage) localStorage.setItem('fl_lang', lang);
+  // Acessibilidade: oculta spans da língua inativa para leitores de tela
+  const inactive = lang === 'en' ? 'pt' : 'en';
+  document.querySelectorAll('[data-lang="' + lang + '"]').forEach(el => el.removeAttribute('aria-hidden'));
+  document.querySelectorAll('[data-lang="' + inactive + '"]').forEach(el => el.setAttribute('aria-hidden', 'true'));
+  // Troca screenshots bilíngues
+  document.querySelectorAll('img[data-src-pt][data-src-en]').forEach(img => {
+    img.src = lang === 'en' ? img.dataset.srcEn : img.dataset.srcPt;
+  });
+}
+window.setLang = setLang;
+
+function openLbLang(item) {
+  const img = item.querySelector('img');
+  openLb(img ? img.src : '');
+}
+window.openLbLang = openLbLang;
+
+// ── País detectado via IP (controla opções de pagamento, independente do idioma) ──
+window._flIsBR = true; // padrão Brasil até detecção completar
+
+// ── Modal de seleção de pagamento ────────────────────────────────────────────
+function abrirModalPagamento() {
+  const isEN   = document.body.classList.contains('en');
+  const codigo = (document.getElementById('input-codigo')?.value ?? '').trim();
+  const email  = (document.getElementById('input-email')?.value  ?? '').trim();
+  const nome   = (document.getElementById('input-nome')?.value   ?? '').trim();
+
+  if (!codigo) {
+    alert(isEN ? 'Please enter your Player Code.' : 'Informe seu Código do Jogador.');
+    document.getElementById('input-codigo')?.focus(); return;
+  }
+  if (!/^FL-PLAYER(?:PC|AND|MAC|LNX)?(?:-[0-9A-F]{4}){3,4}$/i.test(codigo)) {
+    alert(isEN
+      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation).\nEx: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) or FL-PLAYERAND-XXXX-XXXX-XXXX (Android)'
+      : 'Código inválido. Copie diretamente do jogo (Opções → Ativação).\nEx: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) ou FL-PLAYERAND-XXXX-XXXX-XXXX (Android)');
+    document.getElementById('input-codigo')?.focus(); return;
+  }
+  if (!email || !email.includes('@')) {
+    alert(isEN ? 'Please enter a valid email.' : 'Informe um email válido.');
+    document.getElementById('input-email')?.focus(); return;
+  }
+  if (!nome) {
+    alert(isEN ? 'Please enter your name.' : 'Informe seu nome.');
+    document.getElementById('input-nome')?.focus(); return;
+  }
+
+  // PIX e cartão BR apenas para Brasil; cartão USD apenas fora do Brasil
+  const showBR = window._flIsBR;
+  const pix    = document.getElementById('pay-opt-pix');
+  const cardBr = document.getElementById('pay-opt-card-br');
+  const usd    = document.getElementById('pay-opt-usd');
+  if (pix)    pix.style.display    = showBR ? 'flex' : 'none';
+  if (cardBr) cardBr.style.display = showBR ? 'flex' : 'none';
+  if (usd)    usd.style.display    = showBR ? 'none' : 'flex';
+
+  document.getElementById('pay-method-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharModalPagamento() {
+  document.getElementById('pay-method-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('pay-method-overlay');
+  if (overlay) overlay.addEventListener('click', e => {
+    if (e.target === overlay) fecharModalPagamento();
+  });
+});
+
+// ── Auto-detect idioma e país por IP ─────────────────────────────────────────
+(function() {
+  const saved = localStorage.getItem('fl_lang');
+  if (saved) setLang(saved, false);
+  fetch('https://api.country.is/')
+    .then(r => r.json())
+    .then(d => {
+      const country = (d.country || 'BR').toUpperCase();
+      window._flIsBR = (country === 'BR');
+      // Mostra campo CPF apenas para usuários brasileiros (precisam para cartão)
+      const cpfGrp = document.getElementById('cpf-group');
+      if (cpfGrp) cpfGrp.style.display = window._flIsBR ? '' : 'none';
+      // Idioma: só altera se não houver preferência salva
+      if (!saved && !window._flIsBR) setLang('en', false);
+    })
+    .catch(() => { window._flIsBR = true; }); // fallback: assume Brasil
+})();
+
+// ── Scroll suave ──────────────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// ── Scroll reveal (IntersectionObserver) ──────────────────────────────────
+(function () {
+  const selectors = [
+    '.news-card', '.gallery-item', '.plan-card',
+    '.about-screen', '.yt-card', '.step',
+    '.section-label', '.section-title', '.dl-box', '.divider'
+  ];
+  // Aplica data-reveal e stagger por grupo
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.setAttribute('data-reveal', '');
+      el.style.transitionDelay = (i * 0.09) + 's';
+    });
+  });
+  // Observer
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+})();
+
+// ── Partículas douradas no hero ────────────────────────────────────────────
+(function () {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.id = 'hero-canvas';
+  hero.prepend(canvas);
+  const ctx = canvas.getContext('2d');
+  let W = 0, H = 0;
+
+  function resize() {
+    W = canvas.width  = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function mkP() {
+    const maxLife = 150 + Math.random() * 200;
+    return {
+      x:       Math.random() * W,
+      y:       H * 0.4 + Math.random() * H * 0.55,
+      r:       0.5 + Math.random() * 1.5,
+      speed:   0.2 + Math.random() * 0.5,
+      drift:   (Math.random() - 0.5) * 0.4,
+      life:    Math.random() * maxLife,
+      maxLife: maxLife,
+    };
+  }
+
+  const pts = Array.from({ length: 60 }, mkP);
+
+  (function frame() {
+    ctx.clearRect(0, 0, W, H);
+    pts.forEach(p => {
+      p.life++;
+      p.y -= p.speed;
+      p.x += p.drift;
+      const t = p.life / p.maxLife;
+      const a = (t < 0.15 ? t / 0.15 : t > 0.75 ? (1 - t) / 0.25 : 1) * 0.5;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(210,165,40,${a})`;
+      ctx.fill();
+      if (p.life >= p.maxLife) {
+        Object.assign(p, mkP(), { life: 0, x: Math.random() * W, y: H * 0.9 + Math.random() * H * 0.1 });
+      }
+    });
+    requestAnimationFrame(frame);
+  })();
+})();
+
+// ═══════════════════════════════════════════════════════════════════════════
+// ── PIX PAYMENT FLOW ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════
+const PIX_API_BASE = '/pagar';
+let _pixTxid      = null;
+let _pixPollTimer = null;
+let _pixLicKey    = null;
+
+// Abre o modal (chamado pelo botão PAGAR COM PIX)
+// ── Cartão de Crédito BR via Asaas ───────────────────────────────────────────
+async function asaasPagar() {
+  const codigo      = (document.getElementById('input-codigo')?.value    ?? '').trim();
+  const email       = (document.getElementById('input-email')?.value     ?? '').trim();
+  const nome        = (document.getElementById('input-nome')?.value      ?? '').trim();
+  const discord     = (document.getElementById('input-discord')?.value   ?? '').trim();
+  const dispositivo = (document.getElementById('input-dispositivo')?.value ?? '').trim();
+  const cpf         = (document.getElementById('input-cpf')?.value       ?? '').trim();
+  const isEn        = document.body.classList.contains('en');
+
+  if (!codigo) { alert(isEn ? 'Please enter your Player Code.' : 'Informe seu Código do Jogador.'); return; }
+  if (!email || !email.includes('@')) { alert(isEn ? 'Please enter a valid email.' : 'Informe um email válido.'); return; }
+  if (!nome)  { alert(isEn ? 'Please enter your name.' : 'Informe seu nome.'); return; }
+  const cpfDigits = cpf.replace(/\D/g, '');
+  if (cpfDigits.length !== 11) {
+    alert(isEn ? 'CPF is required for credit card payment.\nEnter your 11-digit CPF.' : 'CPF é obrigatório para pagamento com cartão.\nInforme os 11 dígitos do seu CPF.');
+    document.getElementById('input-cpf')?.focus(); return;
+  }
+
+  const btn = document.getElementById('buy-btn');
+  if (btn) { btn.disabled = true; btn.textContent = isEn ? 'PROCESSING…' : 'PROCESSANDO…'; }
+
+  try {
+    const resp = await fetch('/pagar/asaas_checkout.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ player_code: codigo, email, nome, cpf, discord, dispositivo, produto: 'founder' }),
+    });
+    const data = await resp.json();
+    if (!resp.ok || data.error) throw new Error(data.error || 'Erro ao iniciar pagamento.');
+    window.open(data.url, '_blank');
+  } catch (err) {
+    alert((isEn ? 'Payment error: ' : 'Erro no pagamento: ') + err.message);
+    if (btn) { btn.disabled = false; btn.textContent = isEn ? 'ACTIVATE FOUNDER' : 'ATIVAR FOUNDER'; }
+  }
+}
+
+async function pixPagar() {
+  const codigo      = document.getElementById('input-codigo').value.trim();
+  const email       = document.getElementById('input-email').value.trim();
+  const nome        = (document.getElementById('input-nome')?.value ?? '').trim();
+  const discord     = (document.getElementById('input-discord')?.value ?? '').trim();
+  const dispositivo = (document.getElementById('input-dispositivo')?.value ?? '').trim();
+  const isEn        = document.body.classList.contains('en');
+
+  if (!codigo) {
+    alert(isEn ? 'Please enter your Player Code.' : 'Informe seu Código do Jogador.');
+    document.getElementById('input-codigo').focus();
+    return;
+  }
+  if (!/^FL-PLAYER(?:PC|AND|MAC|LNX)?(?:-[0-9A-F]{4}){3,4}$/i.test(codigo.trim())) {
+    alert(isEn
+      ? 'Invalid Player Code. Copy it exactly from the game (Options → Activation). Ex: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) or FL-PLAYERAND-XXXX-XXXX-XXXX (Android)'
+      : 'Código do Jogador inválido. Copie-o diretamente do jogo (Opções → Ativação). Ex: FL-PLAYERPC-XXXX-XXXX-XXXX (PC) ou FL-PLAYERAND-XXXX-XXXX-XXXX (Android)');
+    document.getElementById('input-codigo').focus();
+    return;
+  }
+  if (!email || !email.includes('@')) {
+    alert(isEn ? 'Please enter a valid email.' : 'Informe um email válido.');
+    document.getElementById('input-email').focus();
+    return;
+  }
+  if (!nome) {
+    alert(isEn ? 'Please enter your name.' : 'Informe seu nome.');
+    document.getElementById('input-nome')?.focus();
+    return;
+  }
+  if (!dispositivo) {
+    alert(isEn ? 'Please select your device (Windows, Android or Linux).' : 'Selecione o seu dispositivo (Windows, Android ou Linux).');
+    document.getElementById('input-dispositivo')?.focus();
+    return;
+  }
+
+  // Abre modal com estado inicial
+  _pixTxid = null;
+  _pixLicKey = null;
+  pixSetStatus('loading');
+  document.getElementById('pix-qr-img').style.display  = 'none';
+  document.getElementById('pix-qr-placeholder').style.display = 'flex';
+  document.getElementById('pix-copy-input').value = '';
+  document.getElementById('pix-license-box').classList.remove('visible');
+  document.getElementById('pix-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  // Chama o backend para criar a cobrança PIX
+  try {
+    const res = await fetch(`${PIX_API_BASE}/criar_pix.php`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ codigo_jogo: codigo, email: email, nome: nome, discord: discord, dispositivo: dispositivo })
+    });
+    const data = await res.json();
+
+    if (!res.ok || data.erro) {
+      pixSetStatus('erro', data.erro || data.mensagem || (isEn ? 'Error creating PIX charge.' : 'Erro ao criar cobrança PIX.'));
+      return;
+    }
+
+    _pixTxid = data.txid;
+
+    // Exibe QR code gerado via qrserver.com a partir do pixCopiaECola
+    const pixStr = data.pixCopiaECola || data.qr_code || '';
+    if (pixStr) {
+      const img = document.getElementById('pix-qr-img');
+      img.onload = () => {
+        document.getElementById('pix-qr-placeholder').style.display = 'none';
+        img.style.display = 'block';
+      };
+      img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(pixStr);
+    }
+
+    // Preenche campo copia-e-cola
+    if (data.pixCopiaECola || data.qr_code) {
+      document.getElementById('pix-copy-input').value = data.pixCopiaECola || data.qr_code;
+    }
+
+    pixSetStatus('aguardando');
+    pixIniciarPolling();
+
+  } catch (err) {
+    pixSetStatus('erro', isEn ? 'Connection error. Try again.' : 'Erro de conexão. Tente novamente.');
+    console.error('[PIX]', err);
+  }
+}
+
+// Inicia polling de status (a cada 5 s)
+function pixIniciarPolling() {
+  if (_pixPollTimer) clearInterval(_pixPollTimer);
+  _pixPollTimer = setInterval(pixVerificarStatus, 5000);
+}
+
+// Verifica status no backend
+async function pixVerificarStatus() {
+  if (!_pixTxid) return;
+  try {
+    const res  = await fetch(`${PIX_API_BASE}/status_pix.php?txid=${encodeURIComponent(_pixTxid)}`);
+    const data = await res.json();
+
+    if (data.status === 'pago' || data.status === 'CONCLUIDA') {
+      clearInterval(_pixPollTimer);
+      _pixPollTimer = null;
+      _pixLicKey = data.licenca_json || data.licenca || '';
+      pixSetStatus('pago');
+      pixMostrarLicenca(data.licenca_json || data.licenca || '', data.filename || null);
+    } else if (data.status === 'cancelada' || data.status === 'expirada' || data.status === 'expirado') {
+      clearInterval(_pixPollTimer);
+      _pixPollTimer = null;
+      const isEn = document.body.classList.contains('en');
+      pixSetStatus('erro', isEn ? 'PIX expired or cancelled.' : 'PIX expirado ou cancelado.');
+    }
+    // qualquer outro status: continua polling
+  } catch (err) {
+    console.warn('[PIX poll]', err);
+  }
+}
+
+// Mostra a caixa com a chave de licença
+function pixMostrarLicenca(licenca, filename) {
+  const box = document.getElementById('pix-license-box');
+  const keyEl = document.getElementById('pix-license-key');
+  const isEn = document.body.classList.contains('en');
+  const copyButtons = box.querySelectorAll('.pix-license-copy');
+
+  if (licenca && filename) {
+    const blob = new Blob([licenca], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    keyEl.innerHTML =
+      `<a class="pix-license-download" href="${url}" download="${filename}">` +
+        `<span>⬇</span><span>${isEn ? 'Download License File' : 'Baixar arquivo de licença'}</span>` +
+      `</a>` +
+      `<span class="pix-license-file">${filename}</span>`;
+    copyButtons.forEach(btn => btn.style.display = 'none');
+  } else if (licenca) {
+    keyEl.textContent = licenca;
+    copyButtons.forEach(btn => btn.style.display = '');
+  } else {
+    keyEl.textContent = isEn ? '(license sent by email)' : '(licença enviada por email)';
+    copyButtons.forEach(btn => btn.style.display = 'none');
+  }
+
+  box.classList.add('visible');
+}
+
+// Atualiza o texto de status no modal
+function pixSetStatus(estado, msg) {
+  const el = document.getElementById('pix-status');
+  el.className = 'pix-status';
+  const isEn = document.body.classList.contains('en');
+  if (estado === 'loading') {
+    el.innerHTML = `<span class="pix-spinner"></span>${isEn ? 'Creating charge…' : 'Criando cobrança…'}`;
+    el.classList.add('aguardando');
+  } else if (estado === 'aguardando') {
+    el.innerHTML = `<span class="pix-spinner"></span>${isEn ? 'Waiting for payment…' : 'Aguardando pagamento…'}`;
+    el.classList.add('aguardando');
+  } else if (estado === 'pago') {
+    el.innerHTML = `✓ ${isEn ? 'Donation confirmed!' : 'Doação confirmada!'}`;
+    el.classList.add('pago');
+  } else if (estado === 'erro') {
+    el.innerHTML = `✕ ${msg || (isEn ? 'Error.' : 'Erro.')}`;
+    el.classList.add('erro');
+  }
+}
+
+// Fecha o modal
+function pixFechar() {
+  if (_pixPollTimer) { clearInterval(_pixPollTimer); _pixPollTimer = null; }
+  document.getElementById('pix-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Copia o código PIX
+function pixCopiar() {
+  const val = document.getElementById('pix-copy-input').value;
+  if (!val) return;
+  navigator.clipboard.writeText(val).then(() => {
+    const btns = document.querySelectorAll('.pix-copy-btn');
+    btns.forEach(b => { const old = b.textContent; b.textContent = '✓'; setTimeout(() => b.textContent = old, 1500); });
+  }).catch(() => {
+    document.getElementById('pix-copy-input').select();
+    document.execCommand('copy');
+  });
+}
+
+// Copia a chave de licença
+function pixCopiarLicenca() {
+  const chave = document.getElementById('pix-license-key').textContent;
+  navigator.clipboard.writeText(chave).then(() => {
+    const btn = document.querySelector('.pix-license-copy');
+    const isEn = document.body.classList.contains('en');
+    const oldText = btn.textContent;
+    btn.textContent = isEn ? '✓ COPIED!' : '✓ COPIADO!';
+    setTimeout(() => btn.textContent = oldText, 2000);
+  });
+}
+
+// Fecha modal ao clicar fora
+document.getElementById('pix-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('pix-overlay')) pixFechar();
+});
+</script>
+
+<!-- ══════════════════ BANNER LGPD / COOKIES ══════════════════ -->
+<div id="cookie-banner" style="
+  display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999;
+  background:rgba(10,4,0,0.97); border-top:1px solid #c8940a;
+  padding:14px 24px; align-items:center; justify-content:space-between;
+  gap:16px; flex-wrap:wrap; font-size:13px; color:#a08050;
+  backdrop-filter:blur(6px);">
+  <span data-lang="pt">🍪 Este site armazena preferências no seu navegador (idioma, formulário) e realiza chamadas externas para Discord e processamento de doações. Ao continuar, você concorda com o uso desses dados. <a href="#" onclick="cookiePolitica(event)" style="color:var(--ouro,#c89020)">Saiba mais</a></span>
+  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree to this use. <a href="#" onclick="cookiePolitica(event)" style="color:var(--ouro,#c89020)">Learn more</a></span>
+  <div style="display:flex;gap:8px;flex-shrink:0">
+    <button onclick="cookieAceitar()" style="background:rgba(200,144,32,0.15);border:1px solid #c8940a;color:#f0d080;padding:7px 20px;border-radius:3px;cursor:pointer;font-size:13px;font-family:monospace;white-space:nowrap">
+      <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span>
+    </button>
+  </div>
+</div>
+
+<!-- Modal política simples -->
+<div id="cookie-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.88);align-items:center;justify-content:center;padding:20px">
+  <div style="background:#0d0804;border:1px solid #c8940a;border-radius:6px;padding:32px;max-width:500px;width:100%;position:relative">
+    <button onclick="document.getElementById('cookie-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#a08050;font-size:18px;cursor:pointer">✕</button>
+    <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="pt">O que este site armazena</h3>
+    <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3>
+    <ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="pt">
+      <li><strong style="color:#f0d080">fl_lang</strong> — preferência de idioma (PT/EN)</li>
+      <li><strong style="color:#f0d080">fl_form_v1</strong> — campos do formulário de compra (Código, Email, Nome, Discord)</li>
+      <li><strong style="color:#f0d080">fl_cookie_ok</strong> — registro de que você aceitou este aviso</li>
+      <li><strong style="color:#f0d080">APIs externas</strong> — Discord (contador de membros), api.country.is (detecção de país)</li>
+      <li><strong style="color:#f0d080">Doações</strong> — PIX via Efí Bank e cartão via Stripe processam dados de forma segura em seus próprios servidores</li>
+    </ul>
+    <ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="en">
+      <li><strong style="color:#f0d080">fl_lang</strong> — language preference (PT/EN)</li>
+      <li><strong style="color:#f0d080">fl_form_v1</strong> — purchase form fields (Code, Email, Name, Discord)</li>
+      <li><strong style="color:#f0d080">fl_cookie_ok</strong> — record that you accepted this notice</li>
+      <li><strong style="color:#f0d080">External APIs</strong> — Discord (member counter), api.country.is (country detection)</li>
+      <li><strong style="color:#f0d080">Donations</strong> — PIX via Efí Bank and card via Stripe process data securely on their own servers</li>
+    </ul>
+    <p style="color:#706040;font-size:12px;margin:0" data-lang="pt">Nenhum dado é vendido ou compartilhado com terceiros além dos processadores citados.</p>
+    <p style="color:#706040;font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p>
+  </div>
+</div>
+
+<script>
+// ── Cookie / LGPD ─────────────────────────────────────────────────────────────
+(function() {
+  if (!localStorage.getItem('fl_cookie_ok')) {
+    const b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'flex';
+  }
+})();
+function cookieAceitar() {
+  localStorage.setItem('fl_cookie_ok', '1');
+  const b = document.getElementById('cookie-banner');
+  if (b) b.style.display = 'none';
+}
+function cookiePolitica(e) {
+  e.preventDefault();
+  const m = document.getElementById('cookie-modal');
+  if (m) m.style.display = 'flex';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const m = document.getElementById('cookie-modal');
+    if (m) m.style.display = 'none';
+  }
+});
+</script>
+</body>
+</html>

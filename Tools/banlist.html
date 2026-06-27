@@ -13,75 +13,129 @@
 <link rel="canonical" href="https://forbiddenlegacy.com.br/banlist.html">
 <link rel="icon" type="image/png" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 :root {
-  --ouro:      #C89020;
-  --ouro-brt:  #E8B830;
-  --ouro-esc:  #8A6010;
-  --fundo:     #050301;
-  --painel:    #0D0804;
-  --painel2:   #130C05;
-  --texto:     #D4C49A;
-  --texto-dim: #7A6A48;
-  --verde:     #00A060;
-  --azul:      #3070C0;
+  --gold:       #c8973a;
+  --gold-light: #e8b840;
+  --gold-dim:   #7a5a18;
+  --crimson:    #6a1008;
+  --red:        #c83010;
+  --dark:       #09080a;
+  --dark2:      #0d0b0e;
+  --dark3:      #120e12;
+  --border:     rgba(200,151,58,.13);
+  --text-muted: #6a5830;
+  --text-body:  #9a8050;
+  /* compat aliases */
+  --ouro:      #c8973a;
+  --ouro-brt:  #e8b840;
+  --ouro-esc:  #7a5a18;
+  --texto:     #c8b888;
+  --texto-dim: #7a6a48;
+  --painel:    #0d0b0e;
+  --painel2:   #120e12;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto); min-height:100vh; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', 'Segoe UI', sans-serif; background: var(--dark); color: var(--text-body); min-height:100vh; overflow-x:hidden; }
+a { text-decoration: none; color: inherit; }
 
 /* ── NAV ── */
-.topbar {
-  position:fixed; top:0; left:0; right:0; z-index:200;
-  background:rgba(5,3,1,0.92); backdrop-filter:blur(8px);
-  border-bottom:1px solid #1a1206;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:0 32px; height:52px;
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 40px;
+  background: rgba(9,8,10,0);
+  border-bottom: 1px solid transparent;
+  transition: background .35s, border-color .35s;
 }
-.topbar-logo { font-size:14px; font-weight:900; letter-spacing:3px; color:var(--ouro); text-decoration:none; }
-.topbar-nav { display:flex; gap:4px; align-items:center; }
-.topbar-nav a { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--texto-dim); text-decoration:none; padding:6px 12px; border-radius:2px; transition:color .2s; }
-.topbar-nav a:hover { color:var(--ouro); }
-.topbar-nav a.active { color:var(--ouro-brt); }
-.topbar-nav .nav-cta { color:var(--ouro-brt); border:1px solid var(--ouro-esc); margin-left:8px; }
-.topbar-nav .nav-cta:hover { background:rgba(200,144,32,0.1); border-color:var(--ouro); }
-.topbar-right { display:flex; gap:8px; align-items:center; }
-.lang-btn { background:transparent; border:1px solid var(--ouro-esc); color:var(--texto-dim); padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px; transition:all .2s; }
-.lang-btn.active { border-color:var(--ouro); color:var(--ouro); }
+nav.scrolled {
+  background: rgba(9,8,10,.97);
+  border-bottom-color: var(--border);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo img { height: 36px; width: auto; }
+.nav-logo-fallback {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: 3px; color: var(--gold);
+  text-shadow: 0 0 16px rgba(200,151,58,.4);
+}
+.nav-links { display: flex; gap: 22px; align-items: center; }
+.nav-links a {
+  font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted);
+  text-transform: uppercase; transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold-light); }
+.nav-cta {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px; letter-spacing: 2px;
+  color: var(--dark); background: var(--gold);
+  padding: 7px 20px; border-radius: 2px;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--gold-light); }
 
 /* ── HERO ── */
 .page-hero {
   padding: 120px 20px 60px;
   text-align: center;
-  border-bottom: 1px solid var(--ouro-esc);
+  border-bottom: 1px solid var(--border);
   background:
-    linear-gradient(to bottom, rgba(5,3,1,0) 40%, #050301 100%),
-    radial-gradient(ellipse at 50% 30%, rgba(200,144,32,0.10) 0%, transparent 70%);
+    linear-gradient(to bottom, rgba(9,8,10,0) 40%, var(--dark) 100%),
+    radial-gradient(ellipse at 50% 30%, rgba(200,151,58,.10) 0%, transparent 70%);
+  position: relative;
 }
-.page-hero-label { font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:16px; }
+.page-hero::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(200,151,58,.25), transparent);
+}
+.page-hero-label { font-size: 10px; letter-spacing: 4px; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 16px; }
 .page-hero-title {
-  font-size: clamp(32px, 6vw, 60px); font-weight:900; letter-spacing:-1px;
-  background: linear-gradient(135deg, var(--ouro-esc) 0%, var(--ouro-brt) 50%, var(--ouro) 100%);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-  margin-bottom:8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 6vw, 72px);
+  color: var(--gold); letter-spacing: 2px;
+  text-shadow: 0 0 40px rgba(200,151,58,.3);
+  margin-bottom: 8px;
 }
-.page-hero-sub { font-size:13px; letter-spacing:3px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:24px; }
-.page-hero-desc { max-width:680px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--texto-dim); }
+.page-hero-sub { font-size: 10px; letter-spacing: 4px; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 24px; }
+.page-hero-desc { max-width: 680px; margin: 0 auto; font-size: 15px; line-height: 1.8; color: var(--text-muted); }
 
 /* ── LAYOUT ── */
-.page-content { max-width:1060px; margin:0 auto; padding:72px 20px 100px; }
-.section-label { text-align:center; font-size:11px; letter-spacing:4px; color:var(--ouro-esc); text-transform:uppercase; margin-bottom:12px; }
-.section-title { text-align:center; font-size:28px; font-weight:700; color:var(--ouro-brt); margin-bottom:40px; }
+.page-content { max-width: 1060px; margin: 0 auto; padding: 72px 20px 100px; }
+.section-label { text-align: center; font-size: 10px; letter-spacing: 4px; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 12px; }
+.section-title {
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; color: var(--gold); letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+.section-title::after { content:''; display:block; width:48px; height:2px; background:var(--gold); margin: 8px auto 0; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
 
 /* ── INTRO CARDS ── */
 .intro-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:72px; }
 @media(max-width:700px){ .intro-grid { grid-template-columns:1fr; } }
 .intro-card {
-  background:var(--painel2); border:1px solid #1a1206;
-  border-radius:4px; padding:28px 24px;
+  background: var(--dark2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 28px 24px;
+  position: relative; overflow: hidden;
+  transition: border-color .2s;
 }
+.intro-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(200,151,58,.25), transparent);
+}
+.intro-card:hover { border-color: rgba(200,151,58,.28); }
 .intro-card-icon { font-size:28px; margin-bottom:14px; }
-.intro-card h3 { font-size:15px; font-weight:700; color:var(--ouro-brt); margin-bottom:10px; }
-.intro-card p { font-size:13px; color:var(--texto-dim); line-height:1.7; }
+.intro-card h3 { font-size:14px; font-weight:600; color:var(--gold-light); margin-bottom:10px; letter-spacing:.3px; }
+.intro-card p { font-size:13px; color:var(--text-muted); line-height:1.7; }
 
 /* ── GRUPOS TABLE ── */
 .groups-section { margin-bottom:72px; }
@@ -90,119 +144,262 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
 @media(max-width:560px){ .groups-grid { grid-template-columns:1fr; } }
 
 .group-card {
-  background:var(--painel2); border:1px solid #1a1206;
-  border-radius:4px; padding:20px 18px;
-  position:relative; overflow:hidden;
-  transition:border-color .2s;
+  background: var(--dark2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 20px 18px;
+  position: relative; overflow: hidden;
+  transition: border-color .2s;
 }
-.group-card:hover { border-color:var(--ouro-esc); }
+.group-card:hover { border-color: rgba(200,151,58,.3); }
 .group-card::before {
   content:''; position:absolute; top:0; left:0; right:0; height:2px;
-  background:var(--ouro-esc);
+  background: var(--gold-dim);
 }
-.group-card.special::before { background:var(--ouro); }
+.group-card.special::before { background: var(--gold); }
 
 .group-tag {
-  display:inline-block; font-size:11px; font-weight:900;
-  letter-spacing:2px; color:var(--ouro);
-  background:rgba(200,144,32,0.08); border:1px solid var(--ouro-esc);
+  display:inline-block; font-family:'Bebas Neue',sans-serif;
+  font-size:12px; letter-spacing:2px; color:var(--gold);
+  background:rgba(200,151,58,.08); border:1px solid var(--border);
   padding:3px 10px; border-radius:3px; margin-bottom:10px;
 }
-.group-tag.special { color:var(--ouro-brt); background:rgba(200,144,32,0.14); border-color:var(--ouro); }
+.group-tag.special { color:var(--gold-light); background:rgba(200,151,58,.14); border-color:rgba(200,151,58,.35); }
 
-.group-name { font-size:14px; font-weight:700; color:var(--texto); margin-bottom:6px; }
-.group-desc { font-size:12px; color:var(--texto-dim); line-height:1.6; margin-bottom:14px; }
+.group-name { font-size:14px; font-weight:600; color:var(--texto); margin-bottom:6px; }
+.group-desc { font-size:12px; color:var(--text-muted); line-height:1.6; margin-bottom:14px; }
 
-.group-limit {
-  display:flex; align-items:center; gap:8px;
-}
-.limit-label { font-size:10px; letter-spacing:1.5px; color:var(--texto-dim); text-transform:uppercase; }
-.limit-value {
-  font-size:18px; font-weight:900; color:var(--ouro-brt);
-  line-height:1;
-}
+.group-limit { display:flex; align-items:center; gap:8px; }
+.limit-label { font-size:10px; letter-spacing:1.5px; color:var(--text-muted); text-transform:uppercase; }
+.limit-value { font-size:18px; font-weight:700; color:var(--gold-light); line-height:1; }
 .limit-dots { display:flex; gap:4px; margin-left:4px; }
 .limit-dot {
   width:8px; height:8px; border-radius:50%;
-  background:var(--ouro-esc); border:1px solid var(--ouro-esc);
+  background: var(--gold-dim); border:1px solid var(--gold-dim);
 }
-.limit-dot.filled { background:var(--ouro); border-color:var(--ouro-brt); }
+.limit-dot.filled { background:var(--gold); border-color:var(--gold-light); }
 
 /* ── COMO FUNCIONA ── */
 .how-section {
-  background:var(--painel); border:1px solid #1a1206; border-radius:4px;
-  padding:48px 40px; margin-bottom:72px;
+  background: var(--dark2); border: 1px solid var(--border);
+  border-radius: 4px; padding: 48px 40px; margin-bottom:72px;
+  position: relative; overflow: hidden;
+}
+.how-section::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(200,151,58,.3), transparent);
 }
 @media(max-width:600px){ .how-section { padding:32px 20px; } }
-.how-section h2 { font-size:22px; font-weight:700; color:var(--ouro-brt); margin-bottom:24px; }
-.how-section p { font-size:14px; color:var(--texto-dim); line-height:1.8; margin-bottom:16px; }
+.how-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size:24px; color:var(--gold-light); letter-spacing:1px; margin-bottom:24px;
+}
+.how-section p { font-size:14px; color:var(--text-muted); line-height:1.8; margin-bottom:16px; }
 .how-section p:last-child { margin-bottom:0; }
 .example-box {
-  background:#080502; border:1px solid var(--ouro-esc); border-radius:4px;
-  padding:20px 24px; margin:24px 0;
-  font-size:13px; color:var(--texto); line-height:1.8;
+  background: rgba(200,151,58,.04); border:1px solid var(--border);
+  border-radius:4px; padding:20px 24px; margin:24px 0;
+  font-size:13px; color:var(--text-body); line-height:1.8;
 }
-.example-box strong { color:var(--ouro-brt); }
+.example-box strong { color:var(--gold-light); }
 
 /* ── FAQ ── */
 .faq-list { display:flex; flex-direction:column; gap:12px; margin-bottom:72px; }
 .faq-item {
-  background:var(--painel2); border:1px solid #1a1206; border-radius:4px;
-  overflow:hidden;
+  background: var(--dark2); border:1px solid var(--border);
+  border-radius:4px; overflow:hidden;
+  transition: border-color .2s;
 }
+.faq-item:hover { border-color: rgba(200,151,58,.28); }
 .faq-q {
   display:flex; align-items:center; justify-content:space-between;
   padding:18px 22px; cursor:pointer; gap:16px;
-  font-size:14px; font-weight:600; color:var(--texto);
+  font-size:14px; font-weight:500; color:var(--text-body);
   transition:color .2s;
 }
-.faq-q:hover { color:var(--ouro-brt); }
-.faq-arrow { font-size:16px; color:var(--ouro-esc); transition:transform .2s; flex-shrink:0; }
+.faq-q:hover { color:var(--gold-light); }
+.faq-arrow { font-size:14px; color:var(--gold-dim); transition:transform .2s; flex-shrink:0; }
 .faq-item.open .faq-arrow { transform:rotate(180deg); }
 .faq-a {
   display:none; padding:0 22px 18px;
-  font-size:13px; color:var(--texto-dim); line-height:1.8;
+  font-size:13px; color:var(--text-muted); line-height:1.8;
 }
 .faq-item.open .faq-a { display:block; }
 
 /* ── AVISO SAVE ── */
 .save-warn {
-  background:rgba(200,144,32,0.06); border:1px solid var(--ouro-esc);
+  background: rgba(200,151,58,.05); border:1px solid var(--border);
   border-radius:4px; padding:28px 32px; margin-bottom:72px;
   display:flex; gap:20px; align-items:flex-start;
 }
 .save-warn-icon { font-size:28px; flex-shrink:0; }
-.save-warn h3 { font-size:15px; font-weight:700; color:var(--ouro-brt); margin-bottom:8px; }
-.save-warn p { font-size:13px; color:var(--texto-dim); line-height:1.7; }
+.save-warn h3 { font-size:15px; font-weight:600; color:var(--gold-light); margin-bottom:8px; }
+.save-warn p { font-size:13px; color:var(--text-muted); line-height:1.7; }
+
+/* ── LANG BUTTONS ── */
+.topbar-right { display:flex; gap:8px; align-items:center; }
+.lang-btn {
+  background:transparent; border:1px solid var(--gold-dim); color:var(--text-muted);
+  padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px;
+  transition:all .2s; font-family:'Inter',sans-serif;
+}
+.lang-btn.active { border-color:var(--gold); color:var(--gold); }
 
 /* ── FOOTER ── */
-.page-footer {
-  border-top:1px solid #1a1206; padding:32px 20px;
-  text-align:center; font-size:12px; color:var(--texto-dim);
+footer {
+  background: #04050d; border-top: 1px solid var(--border);
+  padding: 40px 40px;
 }
-.page-footer a { color:var(--ouro); text-decoration:none; }
-.page-footer a:hover { color:var(--ouro-brt); }
+.footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; margin-bottom:32px; }
+.footer-brand .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--gold); margin-bottom:6px; letter-spacing:2px; }
+.footer-brand p { font-size:11px; color:var(--text-muted); max-width:240px; line-height:1.6; }
+.footer-col h4 { font-size:10px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:12px; }
+.footer-col a { display:block; font-size:12px; color:var(--text-muted); margin-bottom:6px; transition:color .2s; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(200,151,58,.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.footer-bottom span { font-size:11px; color:#2a2018; }
+
+@media(max-width:700px){
+  nav { padding:12px 20px; }
+  .nav-links { display:none; }
+  footer { padding:32px 20px; }
+}
+
+/* ── STARS ── */
+.stars {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+}
+.stars::before, .stars::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(212,168,67,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 55%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 48% 30%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 12%, rgba(212,168,67,.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 50%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 78%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58% 72%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 36% 88%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 28%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 52% 6%, rgba(212,168,67,.75) 0%, transparent 100%),
+    radial-gradient(1px 1px at 76% 85%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 40%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 94% 65%, rgba(212,168,67,.3) 0%, transparent 100%);
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+.stars::after {
+  background-image:
+    radial-gradient(1px 1px at 7% 32%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 32% 15%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 40%, rgba(212,168,67,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 20%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 62%, rgba(212,168,67,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 48%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 10%, rgba(212,168,67,.5) 0%, transparent 100%);
+  animation: twinkle 3.5s ease-in-out infinite alternate-reverse;
+}
+@keyframes twinkle { 0%{opacity:.45} 100%{opacity:1} }
+
+/* ── DISCORD NAV BADGE ── */
+.discord-nav-badge { display:none; align-items:center; gap:5px; font-size:10px; color:#7289da; text-decoration:none; border:1px solid rgba(88,101,242,0.3); border-radius:3px; padding:4px 9px; background:rgba(88,101,242,0.08); transition:background .2s; }
+.discord-nav-badge:hover { background:rgba(88,101,242,0.18); color:#99aaf5; }
+.discord-nav-badge .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+.discord-nav-badge .dc-dot.online  { background:#3ba55c; }
+.discord-nav-badge .dc-dot.offline { background:#747f8d; }
+
+/* ── MOBILE NAV BAR ── */
+.mobile-nav-bar {
+  display: none;
+  position: fixed; top: 52px; left: 0; right: 0; z-index: 198;
+  background: rgba(5,3,1,0.97); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px); flex-direction: column;
+}
+.mobile-discord-bar {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 5px 16px; background: rgba(88,101,242,0.07);
+  border-bottom: 1px solid rgba(88,101,242,0.15);
+  font-size: 11px; color: #7289da; text-decoration: none;
+  letter-spacing: .3px;
+}
+.mobile-discord-bar .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+.mobile-discord-bar .dc-dot.online  { background:#3ba55c; }
+.mobile-discord-bar .dc-dot.offline { background:#747f8d; }
+.mobile-nav-links {
+  display: flex; overflow-x: auto; gap: 0;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.mobile-nav-links::-webkit-scrollbar { display: none; }
+.mobile-nav-links a {
+  flex-shrink: 0; padding: 10px 16px;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-muted); text-decoration: none;
+  border-right: 1px solid var(--border); white-space: nowrap;
+  transition: color .2s, background .2s;
+}
+.mobile-nav-links a:hover, .mobile-nav-links a:active { color: var(--gold); background: rgba(200,144,32,0.06); }
+.mobile-nav-links a.nav-cta { color: var(--gold-light); background: rgba(200,144,32,0.05); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px) {
+  nav#nav { padding: 12px 20px; }
+  .nav-links, nav#nav .nav-cta { display: none !important; }
+  .mobile-nav-bar { display: flex; }
+  .page-hero, .hero { padding-top: 96px; }
+}
+@media(max-width:480px) {
+  nav#nav { justify-content: center; }
+  .nav-logo { margin: 0 auto; }
+  .topbar-right { display: none; }
+}
+
+
+/* ── BILINGUAL SHOW/HIDE RULES ── */
+[data-lang="en"] { display: none !important; }
+span[data-lang="en"] { display: none !important; }
+body.en [data-lang="pt"] { display: none !important; }
+body.en span[data-lang="pt"] { display: none !important; }
+body.en [data-lang="en"] { display: inline-block !important; }
+body.en span[data-lang="en"] { display: inline !important; }
+body.en li[data-lang="en"] { display: flex !important; }
+
 </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 
-<nav class="topbar">
-  <a class="topbar-logo" href="/">☥ FORBIDDEN LEGACY</a>
-  <div class="topbar-nav">
-    <a href="/" data-lang-pt="Início" data-lang-en="Home">Início</a>
-    <a href="/features.html" data-lang-pt="Mecânicas" data-lang-en="Features">Mecânicas</a>
-    <a href="/banlist.html" class="active" data-lang-pt="Banlist" data-lang-en="Banlist">Banlist</a>
-    <a href="/#download" class="nav-cta" data-lang-pt="Download" data-lang-en="Download">Download</a>
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
-  <div class="topbar-right">
+  <div class="nav-links">
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="banlist.html" class="active" data-lang="pt">Banlist</a><a href="banlist.html" class="active" data-lang="en">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+  </div>
+  <div style="display:flex; align-items:center; gap:12px;">
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
+      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> online
+      <span style="opacity:.4;margin:0 3px">·</span>
+      <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> members
+    </a>
     <button class="lang-btn active" onclick="setLang('pt')">PT</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <a href="index.html#comprar" class="nav-cta">☥ Founder</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="page-hero">
-  <div class="page-hero-label" data-lang-pt="Sistema de Balanceamento · Beta 1.3" data-lang-en="Balancing System · Beta 1.3">Sistema de Balanceamento · Beta 1.3</div>
+  <div class="stars"></div>
+  <div class="page-hero-label" data-lang-pt="Sistema de Balanceamento · Beta 1.5.4" data-lang-en="Balancing System · Beta 1.5.4">Sistema de Balanceamento · Beta 1.5.4</div>
   <h1 class="page-hero-title" data-lang-pt="Banlist de Grupos" data-lang-en="Group Banlist">Banlist de Grupos</h1>
   <div class="page-hero-sub" data-lang-pt="Equilíbrio por impacto estratégico" data-lang-en="Balance through strategic impact">Equilíbrio por impacto estratégico</div>
   <p class="page-hero-desc" data-lang-pt="A banlist de Forbidden Legacy não olha só para o nome da carta. Ela olha para o que a carta faz. Cartas com efeitos de impacto parecido compartilham um limite de grupo — garantindo variedade, criatividade e duelos mais saudáveis." data-lang-en="Forbidden Legacy's banlist doesn't just look at card names. It looks at what the card does. Cards with similar high-impact effects share a group limit — ensuring variety, creativity, and healthier duels.">A banlist de Forbidden Legacy não olha só para o nome da carta. Ela olha para o que a carta faz. Cartas com efeitos de impacto parecido compartilham um limite de grupo — garantindo variedade, criatividade e duelos mais saudáveis.</p>
@@ -212,7 +409,7 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
 <div class="page-content">
 
   <!-- INTRO CARDS -->
-  <div class="intro-grid">
+  <div class="intro-grid reveal">
     <div class="intro-card">
       <div class="intro-card-icon">🎯</div>
       <h3 data-lang-pt="Por impacto, não por nome" data-lang-en="By impact, not by name">Por impacto, não por nome</h3>
@@ -231,8 +428,8 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   </div>
 
   <!-- GRUPOS -->
-  <div class="groups-section">
-    <div class="section-label" data-lang-pt="Grupos Ativos · Beta 1.3" data-lang-en="Active Groups · Beta 1.3">Grupos Ativos · Beta 1.3</div>
+  <div class="groups-section reveal">
+    <div class="section-label" data-lang-pt="Grupos Ativos · Beta 1.5.4" data-lang-en="Active Groups · Beta 1.5.4">Grupos Ativos · Beta 1.5.4</div>
     <h2 class="section-title" data-lang-pt="Os 18 grupos da banlist" data-lang-en="The 18 banlist groups">Os 18 grupos da banlist</h2>
 
     <div class="groups-grid">
@@ -442,7 +639,7 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   </div>
 
   <!-- COMO FUNCIONA -->
-  <div class="how-section">
+  <div class="how-section reveal">
     <div class="section-label" data-lang-pt="Mecânica" data-lang-en="Mechanics">Mecânica</div>
     <h2 data-lang-pt="Como os grupos funcionam na prática" data-lang-en="How groups work in practice">Como os grupos funcionam na prática</h2>
     <p data-lang-pt="Cada carta pertence a um ou mais grupos. Dentro do Editor de Deck, um contador de grupo é atualizado em tempo real conforme você monta o deck." data-lang-en="Each card belongs to one or more groups. Inside the Deck Editor, a group counter updates in real time as you build your deck.">Cada carta pertence a um ou mais grupos. Dentro do Editor de Deck, um contador de grupo é atualizado em tempo real conforme você monta o deck.</p>
@@ -457,7 +654,7 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   </div>
 
   <!-- AVISO SAVE -->
-  <div class="save-warn">
+  <div class="save-warn reveal">
     <div class="save-warn-icon">⚠️</div>
     <div>
       <h3 data-lang-pt="O que acontece com decks antigos?" data-lang-en="What happens to old decks?">O que acontece com decks antigos?</h3>
@@ -466,10 +663,10 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
   </div>
 
   <!-- FAQ -->
-  <div class="section-label" data-lang-pt="Dúvidas Frequentes" data-lang-en="Frequently Asked Questions">Dúvidas Frequentes</div>
-  <h2 class="section-title" data-lang-pt="Perguntas sobre a banlist" data-lang-en="Banlist questions">Perguntas sobre a banlist</h2>
+  <div class="section-label reveal" data-lang-pt="Dúvidas Frequentes" data-lang-en="Frequently Asked Questions">Dúvidas Frequentes</div>
+  <h2 class="section-title reveal" data-lang-pt="Perguntas sobre a banlist" data-lang-en="Banlist questions">Perguntas sobre a banlist</h2>
 
-  <div class="faq-list">
+  <div class="faq-list reveal">
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
         <span data-lang-pt="A banlist remove cartas da minha coleção?" data-lang-en="Does the banlist remove cards from my collection?">A banlist remove cartas da minha coleção?</span>
@@ -510,19 +707,55 @@ body { font-family:'Segoe UI',sans-serif; background:#050301; color:var(--texto)
 </div>
 
 <!-- FOOTER -->
-<footer class="page-footer">
-  <p>
-    <a href="/">Forbidden Legacy</a> ·
-    <a href="/features.html" data-lang-pt="Mecânicas" data-lang-en="Features">Mecânicas</a> ·
-    <a href="/banlist.html" data-lang-pt="Banlist" data-lang-en="Banlist">Banlist</a>
-    <br><br>
-    <span data-lang-pt="Fan-made — não afiliado à Konami." data-lang-en="Fan-made — not affiliated with Konami.">Fan-made — não afiliado à Konami.</span>
-  </p>
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">☥ Forbidden Legacy</div>
+      <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <a href="banlist.html">Banlist</a>
+      <a href="boosters.html">Boosters</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.5.4</span>
+    <span>Fan-made project · Not affiliated with Konami</span>
+  </div>
 </footer>
 
 <script>
-// ── LANG ──
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+// Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Lang
 function setLang(l) {
+  // Toggle body.en so that data-lang="pt/en" nav links work correctly
+  if (l === 'en') document.body.classList.add('en');
+  else document.body.classList.remove('en');
   document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
   document.querySelectorAll('[data-lang-pt]').forEach(el => {
     el.innerHTML = l === 'pt' ? el.dataset.langPt : el.dataset.langEn;
@@ -530,12 +763,12 @@ function setLang(l) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase() === l));
   localStorage.setItem('fl_lang', l);
 }
-// ── FAQ ──
+// FAQ
 function toggleFaq(btn) {
   const item = btn.parentElement;
   item.classList.toggle('open');
 }
-// ── INIT ──
+// Init
 (function(){
   const l = localStorage.getItem('fl_lang') || (navigator.language.startsWith('pt') ? 'pt' : 'en');
   setLang(l);

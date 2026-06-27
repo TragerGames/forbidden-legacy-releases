@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Preview Redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --gold:       #c8973a;
+  --gold-light: #e8b840;
+  --gold-dim:   #7a5a18;
+  --crimson:    #6a1008;
+  --red:        #c83010;
+  --red-light:  #e86020;
+  --dark:       #09080a;
+  --dark2:      #0d0b0e;
+  --dark3:      #120e12;
+  --border:     rgba(200,151,58,.13);
+  --text-muted: #6a5830;
+  --text-body:  #9a8050;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--dark); color: var(--text-body); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* ── STARS ── */
+.stars {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+}
+.stars::before, .stars::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(212,168,67,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 55%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 48% 30%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 12%, rgba(212,168,67,.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 50%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 78%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58% 72%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 36% 88%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 28%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 52% 6%, rgba(212,168,67,.75) 0%, transparent 100%),
+    radial-gradient(1px 1px at 76% 85%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 40%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 94% 65%, rgba(212,168,67,.3) 0%, transparent 100%);
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+.stars::after {
+  background-image:
+    radial-gradient(1px 1px at 7% 32%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 32% 15%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 40%, rgba(212,168,67,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 20%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 62%, rgba(212,168,67,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 48%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 10%, rgba(212,168,67,.5) 0%, transparent 100%);
+  animation: twinkle 3.5s ease-in-out infinite alternate-reverse;
+}
+@keyframes twinkle { 0%{opacity:.45} 100%{opacity:1} }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 40px;
+  background: rgba(7,8,15,0);
+  border-bottom: 1px solid transparent;
+  transition: background .35s, border-color .35s;
+}
+nav.scrolled {
+  background: rgba(7,8,15,.97);
+  border-bottom-color: var(--border);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo img {
+  height: 36px; width: auto;
+}
+.nav-logo-fallback {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: 3px; color: var(--gold);
+  text-shadow: 0 0 16px rgba(212,168,67,.4);
+}
+.nav-links {
+  display: flex; gap: 22px; align-items: center;
+}
+.nav-links a {
+  font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted);
+  text-transform: uppercase; transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links .sep { color: rgba(212,168,67,.15); }
+.nav-cta {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px; letter-spacing: 2px;
+  color: var(--dark); background: var(--gold);
+  padding: 7px 20px; border-radius: 2px;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+/* ── HERO ── */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 120px 40px 80px;
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, #1a0808 0%, var(--dark) 70%);
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(180deg, transparent, var(--dark));
+  pointer-events: none;
+}
+.hero-logo-img {
+  height: clamp(100px, 18vw, 200px); width: auto; margin-bottom: 24px;
+  filter: drop-shadow(0 0 30px rgba(212,168,67,.3)) drop-shadow(0 4px 8px rgba(0,0,0,.8));
+}
+.hero-logo-fallback {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 9vw, 88px);
+  color: var(--gold);
+  text-shadow:
+    0 0 40px rgba(212,168,67,.5),
+    0 0 80px rgba(196,58,16,.2),
+    -2px -2px 0 #3a1a00, 2px -2px 0 #3a1a00, -2px 2px 0 #3a1a00, 2px 2px 0 #3a1a00;
+  line-height: 1; margin-bottom: 24px;
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+@keyframes logoGlow {
+  0%  { text-shadow: 0 0 30px rgba(212,168,67,.4), 0 0 60px rgba(196,58,16,.15), -2px -2px 0 #3a1a00, 2px -2px 0 #3a1a00, -2px 2px 0 #3a1a00, 2px 2px 0 #3a1a00; }
+  100%{ text-shadow: 0 0 55px rgba(212,168,67,.65), 0 0 110px rgba(196,58,16,.3), -2px -2px 0 #3a1a00, 2px -2px 0 #3a1a00, -2px 2px 0 #3a1a00, 2px 2px 0 #3a1a00; }
+}
+.hero-ornament { font-size: 12px; color: rgba(212,168,67,.2); letter-spacing: 14px; margin: 8px 0 20px; }
+.hero-sub {
+  font-size: 16px; font-weight: 300; color: #7a6a48;
+  max-width: 520px; line-height: 1.8; margin-bottom: 36px;
+}
+.hero-pills {
+  display: flex; gap: 0; margin-bottom: 36px;
+  border: 1px solid var(--border); border-radius: 3px; overflow: hidden;
+}
+.hero-pill {
+  padding: 10px 22px; font-size: 12px;
+  border-right: 1px solid var(--border);
+}
+.hero-pill:last-child { border-right: none; }
+.hero-pill strong { color: var(--gold); font-weight: 600; display: block; font-size: 16px; }
+.hero-pill span { color: var(--text-muted); font-size: 10px; letter-spacing: 1px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+/* ── BUTTONS ── */
+.btn-gold {
+  position: relative; overflow: hidden;
+  font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 2px;
+  color: var(--dark); background: var(--gold);
+  padding: 14px 36px; border-radius: 2px;
+  transition: background .2s; cursor: pointer; border: none; display: inline-block;
+}
+.btn-gold::after {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer { 0%{left:-100%} 55%,100%{left:150%} }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-outline {
+  font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 2px;
+  color: var(--gold); background: transparent;
+  padding: 14px 36px; border-radius: 2px;
+  border: 1px solid rgba(212,168,67,.35);
+  transition: border-color .2s, background .2s; cursor: pointer; display: inline-block;
+}
+.btn-outline:hover { border-color: var(--gold); background: rgba(212,168,67,.06); }
+.hero-scroll { position: absolute; bottom: 28px; font-size: 10px; letter-spacing: 3px; color: #3a3020; animation: scrollBounce 2s ease-in-out infinite; }
+@keyframes scrollBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+/* FLOATING CARDS */
+.float-card {
+  position: absolute; border-radius: 6px;
+  background: linear-gradient(160deg, #1a0c08, #0e0a08);
+  border: 1px solid rgba(212,168,67,.18);
+  box-shadow: 0 8px 32px rgba(0,0,0,.7), inset 0 1px 0 rgba(212,168,67,.08);
+  overflow: hidden;
+}
+.fc-l1 { width:88px; height:122px; left:5%; top:28%; transform:rotate(-14deg); animation:floatA 5.5s ease-in-out infinite; }
+.fc-l2 { width:68px; height:94px;  left:13%; top:52%; transform:rotate(6deg);  animation:floatB 7s ease-in-out infinite .5s; opacity:.55; }
+.fc-r1 { width:88px; height:122px; right:5%; top:26%; transform:rotate(12deg);  animation:floatB 6s ease-in-out infinite; }
+.fc-r2 { width:68px; height:94px;  right:13%; top:50%; transform:rotate(-8deg); animation:floatA 7.5s ease-in-out infinite 1s; opacity:.55; }
+@keyframes floatA { 0%,100%{transform:rotate(-14deg) translateY(0)} 50%{transform:rotate(-11deg) translateY(-10px)} }
+@keyframes floatB { 0%,100%{transform:rotate(12deg) translateY(0)}  50%{transform:rotate(9deg)  translateY(-8px)}  }
+.fc-l2 { animation-name: floatC; }
+.fc-r2 { animation-name: floatD; }
+@keyframes floatC { 0%,100%{transform:rotate(6deg) translateY(0)}   50%{transform:rotate(4deg)  translateY(-7px)} }
+@keyframes floatD { 0%,100%{transform:rotate(-8deg) translateY(0)}  50%{transform:rotate(-5deg) translateY(-6px)} }
+.fc-art {
+  width:100%; height:68%;
+  background: linear-gradient(135deg, #1e0a08, #120808);
+  display:flex; align-items:center; justify-content:center;
+  font-size:26px; color:rgba(212,168,67,.18);
+}
+.fc-info { padding:4px 6px; }
+.fc-name { font-size:7.5px; color:var(--gold-dim); font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.fc-atk  { font-size:7px; color:#3a3020; margin-top:2px; }
+
+/* ── STATEMENT ── */
+.statement {
+  padding: 80px 40px; text-align: center;
+  background: linear-gradient(180deg, var(--dark) 0%, #120808 50%, var(--dark) 100%);
+  position: relative;
+}
+.statement::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 60px;
+  background: linear-gradient(180deg, transparent, rgba(212,168,67,.25), transparent);
+}
+.label { font-size: 10px; letter-spacing: 4px; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 12px; }
+.statement-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 3.5vw, 42px);
+  color: var(--gold); line-height: 1.25; max-width: 780px; margin: 0 auto 16px;
+  text-shadow: 0 0 30px rgba(212,168,67,.2);
+}
+.statement-sub { font-size: 15px; color: var(--text-muted); max-width: 500px; margin: 0 auto; line-height: 1.75; }
+
+/* ── SCREENSHOTS GRID ── */
+.ss-section { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
+.section-head { margin-bottom: 48px; }
+.sec-label { font-size: 10px; letter-spacing: 4px; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 10px; }
+.sec-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 3vw, 36px); color: var(--gold);
+}
+.sec-title::after { content:''; display:block; width:48px; height:2px; background:var(--gold); margin-top:10px; }
+.sec-title.center::after { margin: 10px auto 0; }
+.ss-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px; height: 400px;
+}
+.ss { position: relative; border-radius: 8px; overflow: hidden; }
+.ss-main { grid-row: span 2; }
+.ss-ph {
+  width:100%; height:100%;
+  background: linear-gradient(135deg, #150a08 0%, #0e0808 100%);
+  border: 1px solid rgba(212,168,67,.1);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px; cursor:pointer; transition: border-color .3s;
+}
+.ss-ph:hover { border-color: rgba(212,168,67,.28); }
+.ss-ph i { font-size:40px; color:rgba(212,168,67,.1); }
+.ss-ph span { font-size:10px; letter-spacing:1px; color:#2d2820; }
+.ss-ph img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+.ss-tag {
+  position:absolute; bottom:10px; left:12px;
+  background:rgba(0,0,0,.75); border:1px solid var(--border);
+  color:var(--text-muted); font-size:10px; padding:3px 9px;
+  border-radius:2px; letter-spacing:1px;
+}
+
+/* ── FEATURES ALT ── */
+.feat-section { padding: 0 40px 80px; max-width: 1060px; margin: 0 auto; }
+.feat-row {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  border-top: 1px solid rgba(212,168,67,.06); min-height: 280px;
+}
+.feat-row:last-child { border-bottom: 1px solid rgba(212,168,67,.06); }
+.feat-visual {
+  height: 250px; margin: 20px 36px 20px 0;
+  background: linear-gradient(135deg, #150a08, #0e0808);
+  border: 1px solid rgba(212,168,67,.09); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 50px; color: rgba(212,168,67,.1);
+  transition: border-color .3s;
+}
+.feat-visual:hover { border-color: rgba(212,168,67,.22); }
+.feat-row.rev .feat-visual { margin: 20px 0 20px 36px; }
+.feat-row.rev .feat-content { order: -1; }
+.feat-content { padding: 40px 32px; }
+.feat-row.rev .feat-content { padding: 40px 32px; }
+.feat-num { font-family:'Bebas Neue',sans-serif; font-size:52px; color:rgba(212,168,67,.07); line-height:1; margin-bottom:-14px; }
+.feat-title { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--gold); margin-bottom:12px; }
+.feat-desc { font-size:14px; color:var(--text-muted); line-height:1.8; margin-bottom:16px; }
+.feat-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.feat-tag { font-size:10px; letter-spacing:1px; text-transform:uppercase; border:1px solid rgba(212,168,67,.14); color:var(--gold-dim); padding:3px 10px; border-radius:2px; }
+
+/* ── CAMPAIGN ── */
+.campaign-section {
+  background: linear-gradient(180deg, var(--dark) 0%, #120808 50%, var(--dark) 100%);
+  padding: 80px 40px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.campaign-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(22px,3vw,36px); color:var(--gold); margin-bottom:10px; text-shadow:0 0 24px rgba(212,168,67,.2); }
+.campaign-sub { color:var(--text-muted); font-size:14px; max-width:480px; margin:0 auto 48px; line-height:1.7; }
+.npc-row { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:36px; }
+.npc-card {
+  width:78px; background:rgba(212,168,67,.03);
+  border:1px solid rgba(212,168,67,.1); border-radius:6px;
+  padding:12px 6px 10px; text-align:center;
+  transition:border-color .2s, background .2s; cursor:default;
+}
+.npc-card:hover { border-color:rgba(212,168,67,.28); background:rgba(212,168,67,.06); }
+.npc-av {
+  width:44px; height:44px; border-radius:50%;
+  background:linear-gradient(135deg,#1a0a08,#0e0808);
+  border:1px solid rgba(212,168,67,.15);
+  margin:0 auto 8px; display:flex; align-items:center; justify-content:center;
+  font-size:18px;
+}
+.npc-name { font-size:9px; letter-spacing:.5px; color:var(--text-muted); }
+.npc-locked { opacity:.3; }
+.campaign-note { font-size:13px; color:var(--text-muted); }
+.campaign-note strong { color:var(--gold); }
+
+/* ── DISCORD SECTION ── */
+.discord-section {
+  padding: 80px 40px; max-width: 860px; margin: 0 auto;
+}
+.discord-card {
+  border: 1px solid rgba(212,168,67,.15); border-radius: 12px;
+  padding: 56px 48px; text-align: center; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, rgba(212,168,67,.03) 0%, rgba(10,12,32,.9) 100%);
+}
+.discord-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(212,168,67,.35), transparent);
+}
+.discord-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: rgba(212,168,67,.08); border: 1px solid rgba(212,168,67,.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px; font-size: 32px;
+}
+.discord-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(20px,3vw,34px); color:var(--gold); margin-bottom:8px; }
+.discord-sub { font-size:14px; color:var(--text-muted); max-width:440px; margin:0 auto 32px; line-height:1.7; }
+.discord-stats {
+  display:flex; justify-content:center; gap:0; margin-bottom:36px;
+  border:1px solid var(--border); border-radius:3px; overflow:hidden; display:inline-flex;
+}
+.dc-stat { padding:12px 28px; border-right:1px solid var(--border); }
+.dc-stat:last-child { border-right:none; }
+.dc-stat strong { display:block; font-size:22px; color:var(--gold); font-weight:700; }
+.dc-stat span { font-size:10px; letter-spacing:1.5px; color:var(--text-muted); text-transform:uppercase; }
+.dc-online-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:#3ba55c; margin-right:5px; vertical-align:middle; }
+.dc-invite-btn {
+  font-family:'Bebas Neue',sans-serif; font-size:14px; letter-spacing:2px;
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(212,168,67,.08); border:1px solid rgba(212,168,67,.25);
+  color:var(--gold); padding:13px 32px; border-radius:3px;
+  transition:background .2s, border-color .2s;
+}
+.dc-invite-btn:hover { background:rgba(212,168,67,.14); border-color:rgba(212,168,67,.4); }
+.discord-channels {
+  display:flex; justify-content:center; gap:12px; margin-top:28px; flex-wrap:wrap;
+}
+.dc-channel {
+  font-size:11px; color:var(--text-muted);
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06);
+  padding:5px 12px; border-radius:3px; letter-spacing:.5px;
+}
+.dc-channel::before { content:'#'; opacity:.4; margin-right:2px; }
+
+/* ── FOUNDER CTA ── */
+.founder-section { padding: 80px 40px; max-width: 900px; margin: 0 auto; }
+.founder-card {
+  border:1px solid rgba(212,168,67,.22); border-radius:12px;
+  padding:56px 48px; text-align:center; position:relative; overflow:hidden;
+  background:linear-gradient(135deg, rgba(196,58,16,.05) 0%, rgba(10,8,20,.95) 60%, rgba(212,168,67,.04) 100%);
+}
+.founder-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(212,168,67,.5), rgba(196,58,16,.4), transparent);
+}
+.founder-badge {
+  display:inline-block; font-family:'Bebas Neue',sans-serif;
+  font-size:10px; letter-spacing:3px; text-transform:uppercase;
+  background:rgba(212,168,67,.1); border:1px solid rgba(212,168,67,.25);
+  color:var(--gold); padding:5px 18px; border-radius:20px; margin-bottom:20px;
+}
+.founder-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(24px,4vw,44px); color:var(--gold); margin-bottom:12px; text-shadow:0 0 30px rgba(212,168,67,.25); }
+.founder-sub { font-size:14px; color:var(--text-muted); margin-bottom:32px; }
+.founder-perks { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-bottom:36px; }
+.perk { display:flex; align-items:center; gap:8px; font-size:13px; color:#8a7450; }
+.perk-star { color:var(--gold); font-size:10px; }
+.price-row { display:flex; justify-content:center; gap:40px; margin-bottom:36px; flex-wrap:wrap; align-items:stretch; }
+.price-block { text-align:center; }
+.price-method { font-size:11px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:4px; }
+.price-amount { font-family:'Bebas Neue',sans-serif; font-size:42px; color:var(--gold); line-height:1; text-shadow:0 0 20px rgba(212,168,67,.3); }
+.price-note { font-size:11px; color:var(--text-muted); margin-top:4px; }
+.price-sep { width:1px; background:var(--border); }
+.founder-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
+.founder-fine { font-size:11px; color:#3a3020; }
+
+/* ── DIVIDERS ── */
+.ornament-div { text-align:center; color:rgba(212,168,67,.12); letter-spacing:14px; font-size:12px; padding:16px 0; }
+
+/* ── PAGES NAV (links para outras páginas) ── */
+.pages-section { padding: 60px 40px; max-width: 900px; margin: 0 auto; }
+.pages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.page-card {
+  background: rgba(212,168,67,.03); border: 1px solid rgba(212,168,67,.09);
+  border-radius: 8px; padding: 20px 16px; text-align: center;
+  transition: border-color .2s, background .2s; cursor: pointer;
+}
+.page-card:hover { border-color: rgba(212,168,67,.25); background: rgba(212,168,67,.06); }
+.page-card i { font-size: 24px; color: rgba(212,168,67,.35); margin-bottom: 10px; display: block; }
+.page-card-title { font-size: 12px; font-weight: 600; color: var(--gold-dim); letter-spacing: .5px; margin-bottom: 4px; }
+.page-card-desc { font-size: 11px; color: #3a3020; line-height: 1.4; }
+
+/* ── FOOTER ── */
+footer {
+  background: #04050d; border-top: 1px solid var(--border);
+  padding: 40px 40px;
+}
+.footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; margin-bottom:32px; }
+.footer-brand .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--gold); margin-bottom:6px; }
+.footer-brand p { font-size:11px; color:#3a3020; max-width:240px; line-height:1.6; }
+.footer-col h4 { font-size:10px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:12px; }
+.footer-col a { display:block; font-size:12px; color:#3a3020; margin-bottom:6px; transition:color .2s; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(212,168,67,.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.footer-bottom span { font-size:11px; color:#2a2018; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="../img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <div class="nav-logo-fallback">Forbidden Legacy</div>
+  </div>
+  <div class="nav-links">
+    <a href="#sobre">O Jogo</a>
+    <a href="#mecanicas">Mecânicas</a>
+    <a href="#campanha">Campanha</a>
+    <a href="gallery.html">Galeria</a>
+    <a href="banlist.html">Banlist</a>
+    <a href="boosters.html">Boosters</a>
+    <a href="conquistas.html">Conquistas</a>
+    <a href="features.html">Features</a>
+    <span class="sep">|</span>
+    <a href="#discord">Discord</a>
+  </div>
+  <a href="#comprar" class="nav-cta">☥ Founder</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="stars"></div>
+
+  <div class="float-card fc-l1"><div class="fc-art">⚔</div><div class="fc-info"><div class="fc-name">Dark Magician</div><div class="fc-atk">ATK 2500 / DEF 2100</div></div></div>
+  <div class="float-card fc-l2"><div class="fc-art">🌙</div><div class="fc-info"><div class="fc-name">Black Luster</div><div class="fc-atk">ATK 3000 / DEF 2500</div></div></div>
+  <div class="float-card fc-r1"><div class="fc-art">👁</div><div class="fc-info"><div class="fc-name">Obelisk</div><div class="fc-atk">ATK 4000 / DEF 4000</div></div></div>
+  <div class="float-card fc-r2"><div class="fc-art">🐉</div><div class="fc-info"><div class="fc-name">Blue-Eyes</div><div class="fc-atk">ATK 3000 / DEF 2500</div></div></div>
+
+  <!-- Logo: usa imagem se existir, senão texto -->
+  <img src="../img/logo_forbidden_legacy.png" alt="YGO Forbidden Legacy" class="hero-logo-img"
+       onerror="this.style.display='none'; document.getElementById('logo-fb').style.display='block'">
+  <div id="logo-fb" class="hero-logo-fallback" style="display:none">FORBIDDEN<br>LEGACY</div>
+
+  <div class="hero-ornament">— ✦ ✦ ✦ —</div>
+  <p class="hero-sub">O clássico do PS1 que você amava — reconstruído do zero com tudo que ele deveria ter tido.</p>
+
+  <div class="hero-pills">
+    <div class="hero-pill"><strong id="h-cards">900+</strong><span>cartas</span></div>
+    <div class="hero-pill"><strong>29</strong><span>NPCs</span></div>
+    <div class="hero-pill"><strong>Season 1</strong><span>campanha</span></div>
+    <div class="hero-pill"><strong>Beta 1.5.3</strong><span>versão atual</span></div>
+  </div>
+
+  <div class="hero-btns">
+    <a href="#download" class="btn-gold">⬇ Baixar Grátis</a>
+    <a href="#comprar" class="btn-outline">☥ Versão Founder</a>
+  </div>
+
+  <div class="hero-scroll">▼ &nbsp; scroll</div>
+</section>
+
+<!-- STATEMENT -->
+<div class="statement reveal" id="sobre">
+  <div class="label">☥ O projeto</div>
+  <div class="statement-text">"O duelo que você lembrava.<br>Com tudo que o original nunca teve."</div>
+  <p class="statement-sub">Sistema de fusão fiel ao FM, campanha com drama real, IA de oponentes, banlist por grupos, loja e interface reformulada para PC e Android.</p>
+</div>
+
+<!-- SCREENSHOTS -->
+<div class="ss-section reveal" id="mecanicas">
+  <div class="section-head">
+    <div class="sec-label">☥ Gameplay</div>
+    <div class="sec-title">Veja o jogo em ação</div>
+  </div>
+  <div class="ss-grid">
+    <div class="ss ss-main">
+      <div class="ss-ph"><i class="ti ti-device-gamepad-2"></i><span>Tela de Duelo</span></div>
+      <div class="ss-tag">Duelo</div>
+    </div>
+    <div class="ss">
+      <div class="ss-ph"><i class="ti ti-cards"></i><span>Deck Building</span></div>
+      <div class="ss-tag">Construção de Deck</div>
+    </div>
+    <div class="ss">
+      <div class="ss-ph"><i class="ti ti-map"></i><span>Campanha</span></div>
+      <div class="ss-tag">Modo Campanha</div>
+    </div>
+  </div>
+</div>
+
+<div class="ornament-div">— ☥ ☥ ☥ —</div>
+
+<!-- FEATURES ALTERNADAS -->
+<div class="feat-section reveal">
+  <div class="feat-row">
+    <div class="feat-visual"><i class="ti ti-flame" style="font-size:56px;color:rgba(212,168,67,.15)"></i></div>
+    <div class="feat-content">
+      <div class="feat-num">01</div>
+      <div class="feat-title">Sistema de Fusão Fiel</div>
+      <p class="feat-desc">As mesmas receitas do Forbidden Memories original — mais fusões especiais exclusivas, substitutos genéricos e cadeias de evolução como Level Up! e Time Wizard.</p>
+      <div class="feat-tags"><span class="feat-tag">Fusão de campo</span><span class="feat-tag">Fusão de mão</span><span class="feat-tag">Substitutos</span><span class="feat-tag">Level Up!</span></div>
+    </div>
+  </div>
+  <div class="feat-row rev">
+    <div class="feat-visual"><i class="ti ti-map-2" style="font-size:56px;color:rgba(212,168,67,.15)"></i></div>
+    <div class="feat-content">
+      <div class="feat-num">02</div>
+      <div class="feat-title">Campanha Season 1</div>
+      <p class="feat-desc">De Simon Muran até Zorc — 29 NPCs com IA e deck próprios, diálogos, cutscenes e momentos dramáticos. Cada duelo tem um desafio diferente.</p>
+      <div class="feat-tags"><span class="feat-tag">29 NPCs</span><span class="feat-tag">Cutscenes</span><span class="feat-tag">IA por NPC</span><span class="feat-tag">Free até Isis</span></div>
+    </div>
+  </div>
+  <div class="feat-row">
+    <div class="feat-visual"><i class="ti ti-list-check" style="font-size:56px;color:rgba(212,168,67,.15)"></i></div>
+    <div class="feat-content">
+      <div class="feat-num">03</div>
+      <div class="feat-title">Banlist &amp; Deck Building</div>
+      <p class="feat-desc">Sistema de banlist por grupos de efeito — não por ATK bruto. Editor completo com filtros por raridade, tipo, efeito e visualização de banlist em tempo real.</p>
+      <div class="feat-tags"><span class="feat-tag">Grupos por efeito</span><span class="feat-tag">N / R / SR / UR</span><span class="feat-tag">Editor visual</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="ornament-div">— ☥ ☥ ☥ —</div>
+
+<!-- CAMPAIGN NPCs -->
+<div class="campaign-section reveal" id="campanha">
+  <div class="label">☥ Campanha</div>
+  <div class="campaign-title">Enfrente os Guardiões do Egito</div>
+  <p class="campaign-sub">29 NPCs finalizados. Season 1 completa para Founders. Versão gratuita inclui até Isis.</p>
+
+  <div class="npc-row">
+    <div class="npc-card"><div class="npc-av">⚔</div><div class="npc-name">Simon Muran</div></div>
+    <div class="npc-card"><div class="npc-av">🌿</div><div class="npc-name">Teana</div></div>
+    <div class="npc-card"><div class="npc-av">🐛</div><div class="npc-name">Jusell</div></div>
+    <div class="npc-card"><div class="npc-av">🌊</div><div class="npc-name">Tarik</div></div>
+    <div class="npc-card"><div class="npc-av">☀</div><div class="npc-name">Amasis</div></div>
+    <div class="npc-card"><div class="npc-av">🃏</div><div class="npc-name">Jono</div></div>
+    <div class="npc-card"><div class="npc-av">🛡</div><div class="npc-name">Mage Soldier</div></div>
+    <div class="npc-card"><div class="npc-av">🐉</div><div class="npc-name">Seto</div></div>
+    <div class="npc-card"><div class="npc-av">🔮</div><div class="npc-name">Mana</div></div>
+    <div class="npc-card"><div class="npc-av">🌑</div><div class="npc-name">Mahad</div></div>
+    <div class="npc-card"><div class="npc-av">👁</div><div class="npc-name">Isis</div></div>
+    <div class="npc-card npc-locked"><div class="npc-av">🔒</div><div class="npc-name">Akhenaden</div></div>
+    <div class="npc-card npc-locked"><div class="npc-av">🔒</div><div class="npc-name">Heishin</div></div>
+    <div class="npc-card npc-locked"><div class="npc-av">🔒</div><div class="npc-name">Zorc</div></div>
+  </div>
+
+  <p class="campaign-note">Versão Founder desbloqueia <strong>Heishin, os Guardiões e Zorc</strong>.</p>
+</div>
+
+<div class="ornament-div">— ☥ ☥ ☥ —</div>
+
+<!-- OUTRAS PÁGINAS -->
+<div class="pages-section reveal">
+  <div class="section-head" style="text-align:center;margin-bottom:36px">
+    <div class="sec-label" style="text-align:center">☥ Explorar</div>
+    <div class="sec-title center">Mais do projeto</div>
+  </div>
+  <div class="pages-grid">
+    <a href="gallery.html" class="page-card">
+      <i class="ti ti-photo"></i>
+      <div class="page-card-title">Galeria</div>
+      <div class="page-card-desc">Screenshots e artes do jogo</div>
+    </a>
+    <a href="banlist.html" class="page-card">
+      <i class="ti ti-list-check"></i>
+      <div class="page-card-title">Banlist</div>
+      <div class="page-card-desc">Grupos e limites de cartas</div>
+    </a>
+    <a href="boosters.html" class="page-card">
+      <i class="ti ti-cards"></i>
+      <div class="page-card-title">Boosters</div>
+      <div class="page-card-desc">Pacotes e cartas disponíveis</div>
+    </a>
+    <a href="conquistas.html" class="page-card">
+      <i class="ti ti-trophy"></i>
+      <div class="page-card-title">Conquistas</div>
+      <div class="page-card-desc">Objetivos e recompensas</div>
+    </a>
+  </div>
+</div>
+
+<div class="ornament-div">— ☥ ☥ ☥ —</div>
+
+<!-- DISCORD -->
+<div class="discord-section reveal" id="discord">
+  <div class="discord-card">
+    <div class="discord-icon">
+      <i class="ti ti-brand-discord" style="font-size:34px;color:var(--gold-dim)"></i>
+    </div>
+    <div class="label">☥ Comunidade</div>
+    <div class="discord-title">Entre no servidor do Discord</div>
+    <p class="discord-sub">Notícias, changelogs, sorteios, suporte, feedback e a comunidade de duelistas do Forbidden Legacy.</p>
+    <div class="discord-stats">
+      <div class="dc-stat">
+        <strong><span class="dc-online-dot"></span><span id="dc-online">—</span></strong>
+        <span>Online agora</span>
+      </div>
+      <div class="dc-stat">
+        <strong id="dc-total">—</strong>
+        <span>Members</span>
+      </div>
+    </div>
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="dc-invite-btn">
+      <i class="ti ti-brand-discord"></i> Entrar no Discord
+    </a>
+    <div class="discord-channels">
+      <span class="dc-channel">anuncios</span>
+      <span class="dc-channel">changelog</span>
+      <span class="dc-channel">bugs</span>
+      <span class="dc-channel">sugestoes</span>
+      <span class="dc-channel">geral</span>
+      <span class="dc-channel">decks</span>
+    </div>
+  </div>
+</div>
+
+<div class="ornament-div">— ☥ ☥ ☥ —</div>
+
+<!-- FOUNDER -->
+<section class="founder-section reveal" id="comprar">
+  <div class="founder-card">
+    <div class="founder-badge">☥ Versão Founder</div>
+    <div class="founder-title">Apoie o projeto.<br>Jogue o jogo completo.</div>
+    <p class="founder-sub">Pagamento único · Licença vitalícia · Enviada por e-mail após o pagamento</p>
+    <div class="founder-perks">
+      <div class="perk"><span class="perk-star">✦</span> Season 1 completa</div>
+      <div class="perk"><span class="perk-star">✦</span> Acesso antecipado Season 2</div>
+      <div class="perk"><span class="perk-star">✦</span> Souls exclusivos</div>
+      <div class="perk"><span class="perk-star">✦</span> Apoia o dev independente</div>
+    </div>
+    <div class="price-row">
+      <div class="price-block">
+        <div class="price-method">PIX</div>
+        <div class="price-amount">R$&thinsp;30</div>
+        <div class="price-note">Instantâneo · sem taxa</div>
+      </div>
+      <div class="price-sep"></div>
+      <div class="price-block">
+        <div class="price-method">Cartão de Crédito</div>
+        <div class="price-amount">R$&thinsp;35</div>
+        <div class="price-note">Parcelável · via Asaas</div>
+      </div>
+    </div>
+    <div class="founder-btns">
+      <a href="#" class="btn-gold">☥ Pagar com PIX — R$ 30</a>
+      <a href="#" class="btn-outline">💳 Cartão — R$ 35</a>
+    </div>
+    <p class="founder-fine">Precisa do seu código de jogador — disponível em Opções → Ativação dentro do jogo.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">☥ Forbidden Legacy</div>
+      <p>Fan-made espiritual successor to YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
+    </div>
+    <div class="footer-col">
+      <h4>O Jogo</h4>
+      <a href="#sobre">Sobre</a>
+      <a href="#mecanicas">Mecânicas</a>
+      <a href="#campanha">Campanha</a>
+      <a href="features.html">Features</a>
+    </div>
+    <div class="footer-col">
+      <h4>Conteúdo</h4>
+      <a href="gallery.html">Galeria</a>
+      <a href="banlist.html">Banlist</a>
+      <a href="boosters.html">Boosters</a>
+      <a href="conquistas.html">Conquistas</a>
+    </div>
+    <div class="footer-col">
+      <h4>Comunidade</h4>
+      <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+      <a href="#discord">Servidor</a>
+      <a href="#comprar">Versão Founder</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.5.3</span>
+    <span>Fan-made project · Not affiliated with Konami</span>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+// Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Discord counter
+fetch('/discord_counter.php')
+  .then(r => r.json())
+  .then(d => {
+    const fmt = n => Number(n).toLocaleString('pt-BR');
+    if (d.total) {
+      document.getElementById('dc-online').textContent = fmt(d.online);
+      document.getElementById('dc-total').textContent  = fmt(d.total);
+    }
+  }).catch(() => {});
+</script>
+</body>
+</html>
