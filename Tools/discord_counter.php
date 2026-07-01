@@ -7,7 +7,7 @@
 
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
-header('Cache-Control: public, max-age=300');
+header('Cache-Control: no-store, no-cache, must-revalidate');
 
 $INVITE_CODE = 'MkJXZ9tNQ6';
 $CACHE_FILE  = sys_get_temp_dir() . '/fl_discord_counter.json';

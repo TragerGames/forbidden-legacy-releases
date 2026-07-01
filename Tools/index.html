@@ -54,7 +54,7 @@
       "name": "Trager Games"
     },
     "downloadUrl": "https://forbiddenlegacy.com.br/#download",
-    "softwareVersion": "Beta 1.5.4",
+    "softwareVersion": "Beta 1.6",
     "releaseNotes": "https://forbiddenlegacy.com.br/features.html",
     "inLanguage": ["pt-BR", "en"]
   }
@@ -182,7 +182,7 @@ nav.scrolled {
   pointer-events: none;
 }
 .hero-logo-img {
-  height: clamp(100px, 18vw, 200px); width: auto; margin-bottom: 24px;
+  height: clamp(140px, 24vw, 280px); width: auto; margin-bottom: 24px;
   filter: drop-shadow(0 0 30px rgba(212,168,67,.3)) drop-shadow(0 4px 8px rgba(0,0,0,.8));
 }
 .hero-logo-fallback {
@@ -945,7 +945,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 /* ── RESPONSIVE STYLES ── */
 @media(max-width:700px) {
   nav#nav { padding: 12px 20px; }
-  .nav-links, nav#nav .nav-cta { display: none !important; }
+  .nav-links, nav#nav .nav-cta, .discord-nav-badge { display: none !important; }
   .mobile-nav-bar { display: flex; }
   .hero { padding-top: 96px; }
   .fc-l2, .fc-r2 { display: none; }
@@ -1078,7 +1078,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="hero-pill"><strong id="h-cards">900+</strong><span data-lang="pt">cartas</span><span data-lang="en">cards</span></div>
     <div class="hero-pill"><strong>29</strong><span data-lang="pt">NPCs</span><span data-lang="en">NPCs</span></div>
     <div class="hero-pill"><strong>Season 1</strong><span data-lang="pt">campanha</span><span data-lang="en">campaign</span></div>
-    <div class="hero-pill"><strong>Beta 1.5.4</strong><span data-lang="pt">versão atual</span><span data-lang="en">current version</span></div>
+    <div class="hero-pill"><strong>Beta 1.6</strong><span data-lang="pt">versão atual</span><span data-lang="en">current version</span></div>
   </div>
 
   <div class="hero-btns">
@@ -1506,7 +1506,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <h2 class="section-title" data-lang="pt">Download Gratuito</h2>
     <h2 class="section-title" data-lang="en">Free Download</h2>
     <div class="dl-box">
-      <div class="dl-version">Beta 1.5.4</div>
+      <div class="dl-version">Beta 1.6</div>
       <div class="dl-title" data-lang="pt">Forbidden Legacy — Season 1 Completa</div>
       <div class="dl-title" data-lang="en">Forbidden Legacy — Season 1 Complete</div>
       <p class="dl-desc" data-lang="pt">Download direto por plataforma — sem instalação. A versão FREE é totalmente gratuita para sempre.</p>
@@ -1517,7 +1517,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
         <span data-lang="en"><strong>Before updating:</strong> always export your save in-game. Keep the file in a safe place to prevent possible progress loss.</span>
       </div>
       <div class="dl-platforms">
-        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.5.4/Forbidden.Legacy.-.PC.-.Beta.1.5.4.exe" target="_blank">
+        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.6/Forbidden.Legacy.-.PC.-.Beta.1.6.exe" target="_blank">
           <div class="dl-plat-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="28" height="28">
               <path fill="#f25022" d="M0 0h11v11H0z"/>
@@ -1529,19 +1529,19 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <div class="dl-plat-name">Windows</div>
           <div class="dl-plat-ext">.exe</div>
         </a>
-        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.5.4/Forbidden.Legacy.-.Android.-.Beta.1.5.4.apk" target="_blank">
+        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.6/Forbidden.Legacy.-.Android.-.Beta.1.6.apk" target="_blank">
           <div class="dl-plat-icon">&#129302;</div>
           <div class="dl-plat-name">Android</div>
           <div class="dl-plat-ext">.apk</div>
         </a>
-        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.5.4/Forbidden.Legacy.-.Linux.-.Beta.1.5.4.x86_64" target="_blank">
+        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/v1.6/Forbidden.Legacy.-.Linux.-.Beta.1.6.x86_64" target="_blank">
           <div class="dl-plat-icon">&#128039;</div>
           <div class="dl-plat-name">Linux</div>
           <div class="dl-plat-ext">.x86_64</div>
         </a>
       </div>
-      <p class="dl-note" data-lang="pt">Download direto · Sem instalação · Atualizado em Jun/2026</p>
-      <p class="dl-note" data-lang="en">Direct download · No install · Updated Jun/2026</p>
+      <p class="dl-note" data-lang="pt">Download direto · Sem instalação · Atualizado em Jul/2026</p>
+      <p class="dl-note" data-lang="en">Direct download · No install · Updated Jul/2026</p>
     </div>
   </div>
 </div>
@@ -1553,39 +1553,31 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   <h2 class="section-title" data-lang="en">Project Updates</h2>
   <div class="news-grid">
 
-    <!-- BETA 1.5.4 -->
+    <!-- BETA 1.6 -->
     <div class="news-card featured">
-      <div class="news-tag update">🛡️ Patch</div>
-      <div class="news-date">27 Jun 2026</div>
-      <div class="news-title" data-lang="pt">Beta 1.5.4 &mdash; Cartas, Controles e Estabilidade</div>
-      <div class="news-title" data-lang="en">Beta 1.5.4 &mdash; Cards, Controls &amp; Stability</div>
+      <div class="news-tag update">⚡ Update</div>
+      <div class="news-date">01 Jul 2026</div>
+      <div class="news-title" data-lang="pt">Beta 1.6 &mdash; Auto Duel e Grandes Correções</div>
+      <div class="news-title" data-lang="en">Beta 1.6 &mdash; Auto Duel &amp; Major Fixes</div>
       <div class="news-body" data-lang="pt">
+        <p><strong>Novo modo Auto Duel</strong> — exclusivo para Founders (Tier II+): a IA joga por você contra o NPC escolhido, com Dashboard de histórico, stamina diária por progressão e sessões de 25 a 100 duelos.</p>
         <ul>
-          <li><strong>Mystical Sand:</strong> o bônus em monstros FEMALE agora reconhece Angelwitch e cartas semelhantes corretamente</li>
-          <li><strong>Silent Swordsman LV7:</strong> a negação de Magias foi corrigida para jogador e NPC</li>
-          <li><strong>Dark Lucius LV4:</strong> ajustada uma combinação que podia recriar a carta indevidamente durante uma sequência de fusão</li>
-          <li><strong>Campanha:</strong> novos feedbacks sonoros nos botões antes dos duelos e revisão de pequenos textos em português</li>
-          <li><strong>Slots de save:</strong> Souls, boosters, baú, deck atual e cofres agora permanecem isolados no save ativo</li>
-          <li><strong>Controle:</strong> navegação aprimorada em Conquistas, Card Shop e Editor de Deck, com retorno mais suave ao Free Duel</li>
-          <li><strong>Duelo:</strong> visor de cartas, cemitério e janela de fusão estão mais responsivos; também foi corrigida uma carta visual que podia permanecer após desistir</li>
-          <li><strong>Efeitos corrigidos:</strong> Infernal Flame Emperor, Despair From The Dark, Swords of Revealing Light e Pumpking the King of Ghosts</li>
-          <li><strong>Novas cartas:</strong> Mask of Restrict, Talaya, Marina, Aromaseraphy Rosemary, Rigorous Reaver, Infernal Incinerator e Phoenix Gearfried</li>
-          <li><strong>Efeitos atualizados:</strong> Jirai Gumo, Flame Swordsman e Solar Flare Dragon</li>
+          <li>Diversas correções em duelos contra NPCs: monstros que sumiam ao trocar/fundir, campos temáticos, efeitos de invocação e estabilidade dos turnos da IA</li>
+          <li>Android: correção do tamanho da interface em menus, textos e controles</li>
+          <li>Navegação por controle aprimorada na Loja, Editor de Deck e seleção de saves</li>
+          <li>Correção na recuperação automática de saves — evita rollback e mistura de dados entre perfis</li>
+          <li>Efeitos corrigidos: Silent Swordsman LV7, Zorc Necrophades, Backfire e Reverse Trap</li>
         </ul>
         <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
       </div>
       <div class="news-body" data-lang="en">
+        <p><strong>New Auto Duel mode</strong> — Founder-exclusive (Tier II+): the AI plays for you against the chosen NPC, with a history Dashboard, progression-based daily stamina and sessions from 25 to 100 duels.</p>
         <ul>
-          <li><strong>Mystical Sand:</strong> its FEMALE monster bonus now correctly recognizes Angelwitch and similar cards</li>
-          <li><strong>Silent Swordsman LV7:</strong> Spell negation was fixed for both player and NPC</li>
-          <li><strong>Dark Lucius LV4:</strong> fixed a combination that could recreate the card incorrectly during a fusion chain</li>
-          <li><strong>Campaign:</strong> added sound feedback to pre-duel buttons and revised small Portuguese text issues</li>
-          <li><strong>Save slots:</strong> Souls, boosters, collection, active deck and deck vaults now remain isolated in the active save</li>
-          <li><strong>Controller:</strong> improved navigation in Achievements, Card Shop and Deck Editor, with a smoother return to Free Duel</li>
-          <li><strong>Duel:</strong> card preview, graveyard and fusion window are more responsive; a lingering card visual after surrender was also fixed</li>
-          <li><strong>Fixed effects:</strong> Infernal Flame Emperor, Despair From The Dark, Swords of Revealing Light and Pumpking the King of Ghosts</li>
-          <li><strong>New cards:</strong> Mask of Restrict, Talaya, Marina, Aromaseraphy Rosemary, Rigorous Reaver, Infernal Incinerator and Phoenix Gearfried</li>
-          <li><strong>Updated effects:</strong> Jirai Gumo, Flame Swordsman and Solar Flare Dragon</li>
+          <li>Several NPC duel fixes: monsters vanishing on swap/fusion, themed fields, summon-effect triggers and AI turn stability</li>
+          <li>Android: fixed interface size scaling in menus, text and controls</li>
+          <li>Improved controller navigation in the Shop, Deck Editor and save selection</li>
+          <li>Fixed automatic save recovery — prevents progress rollback and data mixing between profiles</li>
+          <li>Fixed effects: Silent Swordsman LV7, Zorc Necrophades, Backfire and Reverse Trap</li>
         </ul>
         <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
@@ -1874,7 +1866,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.5.4</span>
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.6</span>
     <span>Fan-made project · Not affiliated with Konami</span>
   </div>
 </footer>
@@ -2082,7 +2074,7 @@ function ytPlay(card, videoId) {
 
 // ── Discord member counter (via proxy PHP — evita CORS no iOS/Safari) ───────
 (function() {
-  fetch('/discord_counter.php')
+  fetch('/discord_counter.php', { cache: 'no-store' })
     .then(r => r.json())
     .then(d => {
       const online = d.online ?? 0;
