@@ -165,7 +165,7 @@
         {
           "nome": "Gilti-Gearfried The Magical Steel Knight",
           "raridade": "SR",
-          "slug": "gilti-gearfried_the_magical_steel_knight",
+          "slug": "gilti_gearfried_the_magical_steel_knight",
           "atk": "2700",
           "def": "1600"
         },
@@ -186,7 +186,7 @@
         {
           "nome": "Little-Winguard",
           "raridade": "SR",
-          "slug": "little-winguard",
+          "slug": "little_winguard",
           "atk": "1400",
           "def": "1800"
         },
@@ -515,14 +515,14 @@
         {
           "nome": "M-warrior #1",
           "raridade": "N",
-          "slug": "m-warrior_1",
+          "slug": "m_warrior_1",
           "atk": "1000",
           "def": "500"
         },
         {
           "nome": "M-warrior #2",
           "raridade": "N",
-          "slug": "m-warrior_2",
+          "slug": "m_warrior_2",
           "atk": "500",
           "def": "1000"
         },
@@ -860,14 +860,14 @@
         {
           "nome": "Núcleo Diabound",
           "raridade": "SR",
-          "slug": "núcleo_diabound",
+          "slug": "nucleo_diabound",
           "atk": "1800",
           "def": "1200"
         },
         {
           "nome": "Psycho-Puppet",
           "raridade": "SR",
-          "slug": "psycho-puppet",
+          "slug": "psycho_puppet",
           "atk": "2000",
           "def": "2350"
         },
@@ -1014,7 +1014,7 @@
         {
           "nome": "Ryu-kishin Powered",
           "raridade": "R",
-          "slug": "ryu-kishin_powered",
+          "slug": "ryu_kishin_powered",
           "atk": "1600",
           "def": "1200"
         },
@@ -1161,7 +1161,7 @@
         {
           "nome": "Job-Change Mirror",
           "raridade": "N",
-          "slug": "job-change_mirror",
+          "slug": "job_change_mirror",
           "atk": "800",
           "def": "1300"
         },
@@ -1259,7 +1259,7 @@
         {
           "nome": "Ryu-kishin",
           "raridade": "N",
-          "slug": "ryu-kishin",
+          "slug": "ryu_kishin",
           "atk": "1000",
           "def": "500"
         },
@@ -1660,7 +1660,7 @@
         {
           "nome": "Mask of Shine & Dark",
           "raridade": "R",
-          "slug": "mask_of_shine_&_dark",
+          "slug": "mask_of_shine_dark",
           "atk": "2000",
           "def": "1800"
         },
@@ -1963,35 +1963,35 @@
         {
           "nome": "Blue-Eyes Chaos MAX Dragon",
           "raridade": "UR",
-          "slug": "blue-eyes_chaos_max_dragon",
+          "slug": "blue_eyes_chaos_max_dragon",
           "atk": "4000",
           "def": "0"
         },
         {
           "nome": "Blue-Eyes Shining Dragon",
           "raridade": "UR",
-          "slug": "blue-eyes_shining_dragon",
+          "slug": "blue_eyes_shining_dragon",
           "atk": "3000",
           "def": "2500"
         },
         {
           "nome": "Blue-Eyes Twin Burst Dragon",
           "raridade": "UR",
-          "slug": "blue-eyes_twin_burst_dragon",
+          "slug": "blue_eyes_twin_burst_dragon",
           "atk": "3000",
           "def": "2500"
         },
         {
           "nome": "Blue-Eyes Ultimate Dragon",
           "raridade": "UR",
-          "slug": "blue-eyes_ultimate_dragon",
+          "slug": "blue_eyes_ultimate_dragon",
           "atk": "4500",
           "def": "3800"
         },
         {
           "nome": "Blue-eyes White Dragon",
           "raridade": "UR",
-          "slug": "blue-eyes_white_dragon",
+          "slug": "blue_eyes_white_dragon",
           "atk": "3000",
           "def": "2500"
         },
@@ -2082,7 +2082,7 @@
         {
           "nome": "Tri-horned Dragon",
           "raridade": "UR",
-          "slug": "tri-horned_dragon",
+          "slug": "tri_horned_dragon",
           "atk": "2850",
           "def": "2350"
         },
@@ -2173,7 +2173,7 @@
         {
           "nome": "Red-eyes B. Dragon",
           "raridade": "SR",
-          "slug": "red-eyes_b_dragon",
+          "slug": "red_eyes_b_dragon",
           "atk": "2400",
           "def": "2000"
         },
@@ -2320,7 +2320,7 @@
         {
           "nome": "One-eyed Shield Dragon",
           "raridade": "N",
-          "slug": "one-eyed_shield_dragon",
+          "slug": "one_eyed_shield_dragon",
           "atk": "700",
           "def": "1300"
         },
@@ -2448,7 +2448,7 @@
         {
           "nome": "30,000-Year White Turtle",
           "raridade": "R",
-          "slug": "30000-year_white_turtle",
+          "slug": "30000_year_white_turtle",
           "atk": "1250",
           "def": "2100"
         },
@@ -2777,7 +2777,7 @@
         {
           "nome": "Turu-Purun",
           "raridade": "N",
-          "slug": "turu-purun",
+          "slug": "turu_purun",
           "atk": "450",
           "def": "500"
         },
@@ -2898,7 +2898,7 @@
         {
           "nome": "Cyber-Tech Alligator",
           "raridade": "UR",
-          "slug": "cyber-tech_alligator",
+          "slug": "cyber_tech_alligator",
           "atk": "2500",
           "def": "1600"
         },
@@ -3059,7 +3059,7 @@
         {
           "nome": "Giga-tech Wolf",
           "raridade": "R",
-          "slug": "giga-tech_wolf",
+          "slug": "giga_tech_wolf",
           "atk": "1200",
           "def": "1400"
         },
@@ -3143,7 +3143,7 @@
         {
           "nome": "Proto-cyber Dragon",
           "raridade": "R",
-          "slug": "proto-cyber_dragon",
+          "slug": "proto_cyber_dragon",
           "atk": "1100",
           "def": "600"
         },
@@ -3213,7 +3213,7 @@
         {
           "nome": "Cyber-Stein",
           "raridade": "N",
-          "slug": "cyber-stein",
+          "slug": "cyber_stein",
           "atk": "700",
           "def": "500"
         },
@@ -3234,7 +3234,7 @@
         {
           "nome": "Giant Mech-soldier",
           "raridade": "N",
-          "slug": "giant_mech-soldier",
+          "slug": "giant_mech_soldier",
           "atk": "1750",
           "def": "1900"
         },
@@ -3376,7 +3376,7 @@
         {
           "nome": "Super War-Lion",
           "raridade": "UR",
-          "slug": "super_war-lion",
+          "slug": "super_war_lion",
           "atk": "2300",
           "def": "2100"
         },
@@ -3565,7 +3565,7 @@
         {
           "nome": "Hane-Hane",
           "raridade": "N",
-          "slug": "hane-hane",
+          "slug": "hane_hane",
           "atk": "450",
           "def": "500"
         },
@@ -3579,7 +3579,7 @@
         {
           "nome": "Master & Expert",
           "raridade": "N",
-          "slug": "master_&_expert",
+          "slug": "master_expert",
           "atk": "1200",
           "def": "1000"
         },
@@ -3763,7 +3763,7 @@
         {
           "nome": "Man-Eater Bug",
           "raridade": "SR",
-          "slug": "man-eater_bug",
+          "slug": "man_eater_bug",
           "atk": "450",
           "def": "600"
         },
@@ -3924,7 +3924,7 @@
         {
           "nome": "Kuwagata α",
           "raridade": "N",
-          "slug": "kuwagata_α",
+          "slug": "kuwagata",
           "atk": "1250",
           "def": "1000"
         },
@@ -4073,7 +4073,7 @@
         {
           "nome": "Blue-eyed Silver Zombie",
           "raridade": "N",
-          "slug": "blue-eyed_silver_zombie",
+          "slug": "blue_eyed_silver_zombie",
           "atk": "900",
           "def": "700"
         },
@@ -4213,7 +4213,7 @@
         {
           "nome": "Three-legged Zombies",
           "raridade": "N",
-          "slug": "three-legged_zombies",
+          "slug": "three_legged_zombies",
           "atk": "1100",
           "def": "800"
         },
@@ -4446,7 +4446,7 @@
         {
           "nome": "Man-eating Plant",
           "raridade": "N",
-          "slug": "man-eating_plant",
+          "slug": "man_eating_plant",
           "atk": "800",
           "def": "600"
         },
@@ -4870,7 +4870,7 @@
         {
           "nome": "Muse-A",
           "raridade": "N",
-          "slug": "muse-a",
+          "slug": "muse_a",
           "atk": "850",
           "def": "900"
         },
@@ -4891,7 +4891,7 @@
         {
           "nome": "Ray & Temperature",
           "raridade": "N",
-          "slug": "ray_&_temperature",
+          "slug": "ray_temperature",
           "atk": "1000",
           "def": "1000"
         },
@@ -5054,7 +5054,7 @@
         {
           "nome": "Ocean Dragon Lord - Neo-Daedalus",
           "raridade": "UR",
-          "slug": "ocean_dragon_lord_-_neo-daedalus",
+          "slug": "ocean_dragon_lord_neo_daedalus",
           "atk": "2900",
           "def": "1600"
         },
@@ -5103,14 +5103,14 @@
         {
           "nome": "Twin-Headed Thunder Dragon",
           "raridade": "UR",
-          "slug": "twin-headed_thunder_dragon",
+          "slug": "twin_headed_thunder_dragon",
           "atk": "2800",
           "def": "2100"
         },
         {
           "nome": "Bracchio-raidus",
           "raridade": "SR",
-          "slug": "bracchio-raidus",
+          "slug": "bracchio_raidus",
           "atk": "2200",
           "def": "2000"
         },
@@ -5152,7 +5152,7 @@
         {
           "nome": "Kairyu-Shin",
           "raridade": "SR",
-          "slug": "kairyu-shin",
+          "slug": "kairyu_shin",
           "atk": "1800",
           "def": "1500"
         },
@@ -5222,7 +5222,7 @@
         {
           "nome": "Twin-Headed Fire Dragon",
           "raridade": "SR",
-          "slug": "twin-headed_fire_dragon",
+          "slug": "twin_headed_fire_dragon",
           "atk": "2200",
           "def": "1700"
         },
@@ -5285,7 +5285,7 @@
         {
           "nome": "Blue-winged Crown",
           "raridade": "R",
-          "slug": "blue-winged_crown",
+          "slug": "blue_winged_crown",
           "atk": "1600",
           "def": "1200"
         },
@@ -5565,7 +5565,7 @@
         {
           "nome": "Two-headed King Rex",
           "raridade": "R",
-          "slug": "two-headed_king_rex",
+          "slug": "two_headed_king_rex",
           "atk": "1600",
           "def": "1200"
         },
@@ -5705,7 +5705,7 @@
         {
           "nome": "Hitotsu-me Giant",
           "raridade": "N",
-          "slug": "hitotsu-me_giant",
+          "slug": "hitotsu_me_giant",
           "atk": "1200",
           "def": "1000"
         },
@@ -5733,7 +5733,7 @@
         {
           "nome": "LALA Li-oon",
           "raridade": "N",
-          "slug": "lala_li-oon",
+          "slug": "lala_li_oon",
           "atk": "600",
           "def": "600"
         },
@@ -5754,7 +5754,7 @@
         {
           "nome": "Man-eating Black Shark",
           "raridade": "N",
-          "slug": "man-eating_black_shark",
+          "slug": "man_eating_black_shark",
           "atk": "2100",
           "def": "1300"
         },
@@ -5887,7 +5887,7 @@
         {
           "nome": "Two-mouth Darkruler",
           "raridade": "N",
-          "slug": "two-mouth_darkruler",
+          "slug": "two_mouth_darkruler",
           "atk": "900",
           "def": "700"
         },
@@ -5987,96 +5987,96 @@
         {
           "nome": "Meteor Dragon Red-Eyes Impact",
           "raridade": "UR",
-          "slug": "meteor_dragon_red-eyes_impact",
+          "slug": "meteor_dragon_red_eyes_impact",
           "atk": "1800",
           "def": "2000"
         },
         {
           "nome": "Red-Eyes Archfiend of Lightning",
           "raridade": "UR",
-          "slug": "red-eyes_archfiend_of_lightning",
+          "slug": "red_eyes_archfiend_of_lightning",
           "atk": "2500",
           "def": "1200"
         },
         {
           "nome": "Red-Eyes B. Metal Dragon",
           "raridade": "UR",
-          "slug": "red-eyes_b_metal_dragon",
+          "slug": "red_eyes_b_metal_dragon",
           "atk": "2800",
           "def": "2400"
         },
         {
           "nome": "Red-Eyes Black Dragon Sword",
           "raridade": "UR",
-          "slug": "red-eyes_black_dragon_sword",
+          "slug": "red_eyes_black_dragon_sword",
           "atk": "2400",
           "def": "2000"
         },
         {
           "nome": "Red-Eyes Black Fullmetal Dragon",
           "raridade": "UR",
-          "slug": "red-eyes_black_fullmetal_dragon",
+          "slug": "red_eyes_black_fullmetal_dragon",
           "atk": "3400",
           "def": "2400"
         },
         {
           "nome": "Red-Eyes Dark Dragoon",
           "raridade": "UR",
-          "slug": "red-eyes_dark_dragoon",
+          "slug": "red_eyes_dark_dragoon",
           "atk": "3000",
           "def": "2500"
         },
         {
           "nome": "Red-Eyes Darkness Dragon",
           "raridade": "UR",
-          "slug": "red-eyes_darkness_dragon",
+          "slug": "red_eyes_darkness_dragon",
           "atk": "2400",
           "def": "2000"
         },
         {
           "nome": "Red-Eyes Darkness Metal Dragon",
           "raridade": "UR",
-          "slug": "red-eyes_darkness_metal_dragon",
+          "slug": "red_eyes_darkness_metal_dragon",
           "atk": "2800",
           "def": "2400"
         },
         {
           "nome": "Red-Eyes Fang with Chain",
           "raridade": "UR",
-          "slug": "red-eyes_fang_with_chain"
+          "slug": "red_eyes_fang_with_chain"
         },
         {
           "nome": "Red-Eyes Flare Metal Dragon",
           "raridade": "UR",
-          "slug": "red-eyes_flare_metal_dragon",
+          "slug": "red_eyes_flare_metal_dragon",
           "atk": "2800",
           "def": "2400"
         },
         {
           "nome": "Red-Eyes Slash Dragon",
           "raridade": "UR",
-          "slug": "red-eyes_slash_dragon",
+          "slug": "red_eyes_slash_dragon",
           "atk": "2800",
           "def": "2400"
         },
         {
           "nome": "Red-Eyes Zombie Dragon Lord",
           "raridade": "UR",
-          "slug": "red-eyes_zombie_dragon_lord",
+          "slug": "red_eyes_zombie_dragon_lord",
           "atk": "2800",
           "def": "2400"
         },
         {
           "nome": "Red-Eyes Zombie Necro Dragon",
           "raridade": "UR",
-          "slug": "red-eyes_zombie_necro_dragon",
+          "slug": "red_eyes_zombie_necro_dragon",
           "atk": "2400",
           "def": "2000"
         },
         {
           "nome": "Gearfried the Red-Eyes Iron Knight",
           "raridade": "SR",
-          "slug": "gearfried_the_red-eyes_iron_knight",
+          "slug": "gearfried_the_red_eyes_iron_knight",
           "atk": "1800",
           "def": "1600"
         },
@@ -6088,28 +6088,28 @@
         {
           "nome": "Red-Eyes Black Flare Dragon",
           "raridade": "SR",
-          "slug": "red-eyes_black_flare_dragon",
+          "slug": "red_eyes_black_flare_dragon",
           "atk": "2400",
           "def": "2000"
         },
         {
           "nome": "Red-Eyes Toon Dragon",
           "raridade": "SR",
-          "slug": "red-eyes_toon_dragon",
+          "slug": "red_eyes_toon_dragon",
           "atk": "2400",
           "def": "2000"
         },
         {
           "nome": "Red-Eyes Wyvern",
           "raridade": "SR",
-          "slug": "red-eyes_wyvern",
+          "slug": "red_eyes_wyvern",
           "atk": "1800",
           "def": "1600"
         },
         {
           "nome": "Red-Eyes Zombie Dragon",
           "raridade": "SR",
-          "slug": "red-eyes_zombie_dragon",
+          "slug": "red_eyes_zombie_dragon",
           "atk": "2400",
           "def": "2000"
         },
@@ -6137,14 +6137,14 @@
         {
           "nome": "Red-Eyes Baby Dragon",
           "raridade": "R",
-          "slug": "red-eyes_baby_dragon",
+          "slug": "red_eyes_baby_dragon",
           "atk": "1200",
           "def": "700"
         },
         {
           "nome": "Red-Eyes Retro Dragon",
           "raridade": "R",
-          "slug": "red-eyes_retro_dragon",
+          "slug": "red_eyes_retro_dragon",
           "atk": "1700",
           "def": "1600"
         }
