@@ -2413,8 +2413,10 @@ function abrirModalPagamento() {
     document.getElementById('input-nome')?.focus(); return;
   }
 
-  // PIX e cartão BR apenas para Brasil; cartão USD apenas fora do Brasil
-  const showBR = window._flIsBR && !isEN;
+  // PIX e cartão BR apenas para Brasil; cartão USD apenas fora do Brasil.
+  // Depende só do país detectado por IP — idioma da interface é escolha
+  // livre do usuário e não deve mudar qual gateway de pagamento aparece.
+  const showBR = window._flIsBR;
   const pix    = document.getElementById('pay-opt-pix');
   const cardBr = document.getElementById('pay-opt-card-br');
   const usd    = document.getElementById('pay-opt-usd');

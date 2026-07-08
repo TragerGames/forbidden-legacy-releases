@@ -1075,7 +1075,9 @@ function packUseText(p){
 
 function applyRegionMode(){
   const br = window._flIsBR, en = isEn();
-  const showBrPay = br && !en;
+  // Metodo de pagamento depende so do pais detectado por IP, nunca do idioma
+  // da interface (idioma e escolha livre do usuario).
+  const showBrPay = br;
   document.querySelectorAll('.region-br').forEach(el=>el.style.display=en?'none':'flex');
   document.querySelectorAll('.region-intl').forEach(el=>el.style.display=en?'flex':'none');
   const p=document.getElementById('pay-opt-pix'), c=document.getElementById('pay-opt-card-br'), s=document.getElementById('pay-opt-stripe');
@@ -1377,7 +1379,7 @@ let _pending=null;
 async function pay(){
   if(!STORE_ENABLED){alert(t('Em breve.','Coming soon.'));return;}
   const d=formData();if(!validate(d))return;
-  if(window._flIsBR&&!isEn()){
+  if(window._flIsBR){
     _pending=d;
     document.getElementById('pay-choice-desc').textContent=`${selected.souls} Souls · ${selected.br}`;
     document.getElementById('pay-choice-pix-price').textContent=selected.br;
