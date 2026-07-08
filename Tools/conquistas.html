@@ -396,7 +396,7 @@ body.en li[data-lang="en"] { display: flex !important; }
       <div class="hero-stat"><strong>15</strong><span data-lang="pt">Conquistas listadas</span><span data-lang="en">Listed achievements</span></div>
       <div class="hero-stat"><strong>4</strong><span data-lang="pt">Categorias</span><span data-lang="en">Categories</span></div>
       <div class="hero-stat"><strong>Frag R</strong><span data-lang="pt">Recompensa principal</span><span data-lang="en">Main reward</span></div>
-      <div class="hero-stat"><strong>100</strong><span data-lang="pt">Niveis coletados = ticket</span><span data-lang="en">Collected levels = ticket</span></div>
+      <div class="hero-stat"><strong>25</strong><span data-lang="pt">Niveis coletados = ticket</span><span data-lang="en">Collected levels = ticket</span></div>
     </aside>
   </section>
 
@@ -499,12 +499,12 @@ body.en li[data-lang="en"] { display: flex !important; }
 
     <section class="tickets">
       <div>
-        <div class="ticket-number">100</div>
+        <div class="ticket-number">25</div>
         <div class="ticket-label" data-lang="pt">niveis coletados</div>
         <div class="ticket-label" data-lang="en">collected levels</div>
       </div>
-      <p data-lang="pt">A cada marco de 100 niveis totais coletados nas conquistas, o jogador recebe ticket dourado. Esse marco considera niveis ja coletados, nao apenas progresso pendente.</p>
-      <p data-lang="en">Every 100 total collected achievement levels grants the player a golden ticket. This milestone counts collected levels, not only pending progress.</p>
+      <p data-lang="pt">A cada marco de 25 niveis totais coletados nas conquistas, o jogador recebe ticket dourado. Esse marco considera niveis ja coletados, nao apenas progresso pendente.</p>
+      <p data-lang="en">Every 25 total collected achievement levels grants the player a golden ticket. This milestone counts collected levels, not only pending progress.</p>
     </section>
   </section>
 </main>
@@ -555,24 +555,24 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 const ACHIEVEMENTS = [
-  {cat:'duels', icon:'⚔', pt:'Duelista Incansavel', en:'Relentless Duelist', ptDesc:'Conta todos os duelos realizados, vencendo ou perdendo.', enDesc:'Counts every duel played, whether won or lost.', ptReq:'A cada 500 duelos realizados', enReq:'Every 500 duels played', reward:'+50 Frag R por nivel'},
-  {cat:'duels', icon:'T', pt:'Vencedor do Reino das Sombras', en:'Shadow Realm Victor', ptDesc:'Conta apenas vitorias em duelo.', enDesc:'Counts duel victories only.', ptReq:'A cada 300 vitorias em duelo', enReq:'Every 300 duel victories', reward:'+75 Frag R por nivel'},
-  {cat:'duels', icon:'D', pt:'Sobrevivente dos Duelos', en:'Duel Survivor', ptDesc:'Conta derrotas acumuladas. Mesmo perder ainda gera progresso.', enDesc:'Counts accumulated losses. Even losing still creates progress.', ptReq:'A cada 300 derrotas acumuladas', enReq:'Every 300 losses accumulated', reward:'+30 Frag R por nivel'},
-  {cat:'duels', icon:'R', pt:'Rival Persistente', en:'Persistent Rival', ptDesc:'Conta duelos repetidos contra o mesmo NPC, valorizando farm e rivalidade.', enDesc:'Counts repeated duels against the same NPC, rewarding farming and rivalry.', ptReq:'A cada 500 duelos contra o mesmo NPC', enReq:'Every 500 duels against the same NPC', reward:'+100 Frag R por nivel'},
+  {cat:'duels', icon:'⚔', pt:'Duelista Incansavel', en:'Relentless Duelist', ptDesc:'Conta todos os duelos realizados, vencendo ou perdendo.', enDesc:'Counts every duel played, whether won or lost.', ptReq:'A cada 500 duelos realizados', enReq:'Every 500 duels played', reward:'+20 Frag R por nivel'},
+  {cat:'duels', icon:'T', pt:'Vencedor do Reino das Sombras', en:'Shadow Realm Victor', ptDesc:'Conta apenas vitorias em duelo.', enDesc:'Counts duel victories only.', ptReq:'A cada 300 vitorias em duelo', enReq:'Every 300 duel victories', reward:'+30 Frag R por nivel'},
+  {cat:'duels', icon:'D', pt:'Sobrevivente dos Duelos', en:'Duel Survivor', ptDesc:'Conta derrotas acumuladas. Mesmo perder ainda gera progresso.', enDesc:'Counts accumulated losses. Even losing still creates progress.', ptReq:'A cada 300 derrotas acumuladas', enReq:'Every 300 losses accumulated', reward:'+10 Frag R por nivel'},
+  {cat:'duels', icon:'R', pt:'Rival Persistente', en:'Persistent Rival', ptDesc:'Conta duelos repetidos contra o mesmo NPC, valorizando farm e rivalidade.', enDesc:'Counts repeated duels against the same NPC, rewarding farming and rivalry.', ptReq:'A cada 500 duelos contra o mesmo NPC', enReq:'Every 500 duels against the same NPC', reward:'+40 Frag R por nivel'},
 
-  {cat:'story', icon:'H', pt:'Desafiante da Historia', en:'History Challenger', ptDesc:'Avanca quando personagens do modo historia sao derrotados.', enDesc:'Progresses when story mode characters are defeated.', ptReq:'A cada personagem vencido no modo historia', enReq:'For each character defeated in story mode', reward:'+20 Frag R por nivel'},
+  {cat:'story', icon:'H', pt:'Desafiante da Historia', en:'History Challenger', ptDesc:'Avanca quando personagens do modo historia sao derrotados.', enDesc:'Progresses when story mode characters are defeated.', ptReq:'A cada personagem vencido no modo historia', enReq:'For each character defeated in story mode', reward:'+5 Frag R por nivel'},
 
-  {cat:'collection', icon:'C', pt:'Colecionador Supremo', en:'Supreme Collector', ptDesc:'Conta cartas unicas registradas na colecao.', enDesc:'Counts unique cards registered in the collection.', ptReq:'A cada 100 cartas unicas na colecao', enReq:'Every 100 unique cards in collection', reward:'+60 Frag R por nivel'},
-  {cat:'collection', icon:'D', pt:'Cacador de Drops', en:'Drop Hunter', ptDesc:'Conta cartas obtidas por drop apos duelos.', enDesc:'Counts cards obtained from duel drops.', ptReq:'A cada 500 cartas obtidas por drop', enReq:'Every 500 cards obtained from drops', reward:'+50 Frag R por nivel'},
-  {cat:'collection', icon:'SR', pt:'Cacador de SR', en:'SR Hunter', ptDesc:'Conta cartas de raridade SR recebidas por qualquer fonte.', enDesc:'Counts SR rarity cards received from any source.', ptReq:'A cada 50 cartas SR obtidas', enReq:'Every 50 SR cards obtained', reward:'+40 Frag R por nivel'},
-  {cat:'collection', icon:'UR', pt:'Cacador de UR', en:'UR Hunter', ptDesc:'Conta cartas de raridade UR recebidas por qualquer fonte.', enDesc:'Counts UR rarity cards received from any source.', ptReq:'A cada 15 cartas UR obtidas', enReq:'Every 15 UR cards obtained', reward:'+60 Frag R por nivel'},
-  {cat:'collection', icon:'B', pt:'Aventureiro de Boosters', en:'Booster Adventurer', ptDesc:'Conta boosters abertos dentro da Card Shop.', enDesc:'Counts boosters opened inside the Card Shop.', ptReq:'A cada 5 boosters abertos', enReq:'Every 5 boosters opened', reward:'+10 Frag R por nivel'},
+  {cat:'collection', icon:'C', pt:'Colecionador Supremo', en:'Supreme Collector', ptDesc:'Conta cartas unicas registradas na colecao.', enDesc:'Counts unique cards registered in the collection.', ptReq:'A cada 100 cartas unicas na colecao', enReq:'Every 100 unique cards in collection', reward:'+20 Frag R por nivel'},
+  {cat:'collection', icon:'D', pt:'Cacador de Drops', en:'Drop Hunter', ptDesc:'Conta cartas obtidas por drop apos duelos.', enDesc:'Counts cards obtained from duel drops.', ptReq:'A cada 500 cartas obtidas por drop', enReq:'Every 500 cards obtained from drops', reward:'+20 Frag R por nivel'},
+  {cat:'collection', icon:'SR', pt:'Cacador de SR', en:'SR Hunter', ptDesc:'Conta cartas de raridade SR recebidas por qualquer fonte.', enDesc:'Counts SR rarity cards received from any source.', ptReq:'A cada 50 cartas SR obtidas', enReq:'Every 50 SR cards obtained', reward:'+15 Frag R por nivel'},
+  {cat:'collection', icon:'UR', pt:'Cacador de UR', en:'UR Hunter', ptDesc:'Conta cartas de raridade UR recebidas por qualquer fonte.', enDesc:'Counts UR rarity cards received from any source.', ptReq:'A cada 15 cartas UR obtidas', enReq:'Every 15 UR cards obtained', reward:'+20 Frag R por nivel'},
+  {cat:'collection', icon:'B', pt:'Aventureiro de Boosters', en:'Booster Adventurer', ptDesc:'Conta boosters abertos dentro da Card Shop.', enDesc:'Counts boosters opened inside the Card Shop.', ptReq:'A cada 5 boosters abertos', enReq:'Every 5 boosters opened', reward:'+5 Frag R por nivel'},
 
-  {cat:'combat', icon:'M', pt:'Invocador de Monstros', en:'Monster Summoner', ptDesc:'Conta monstros invocados ao campo durante duelos.', enDesc:'Counts monsters summoned to the field during duels.', ptReq:'A cada 1000 monstros invocados', enReq:'Every 1000 monsters summoned', reward:'+80 Frag R por nivel'},
-  {cat:'combat', icon:'DR', pt:'Domador de Dragoes', en:'Dragon Tamer', ptDesc:'Conta especificamente monstros do tipo Dragao invocados.', enDesc:'Specifically counts Dragon-type monsters summoned.', ptReq:'A cada 500 dragoes invocados', enReq:'Every 500 dragons summoned', reward:'+50 Frag R por nivel'},
-  {cat:'combat', icon:'S', pt:'Especialista em Magias', en:'Spell Specialist', ptDesc:'Conta cartas magicas usadas em duelo.', enDesc:'Counts spell cards used in duels.', ptReq:'A cada 500 cartas magicas usadas', enReq:'Every 500 spell cards used', reward:'+40 Frag R por nivel'},
-  {cat:'combat', icon:'TR', pt:'Armeiro de Armadilhas', en:'Trap Master', ptDesc:'Conta armadilhas ativadas durante o combate.', enDesc:'Counts traps activated during combat.', ptReq:'A cada 500 armadilhas ativadas', enReq:'Every 500 traps activated', reward:'+40 Frag R por nivel'},
-  {cat:'combat', icon:'★', pt:'Senhor das Estrelas', en:'Lord of Stars', ptDesc:'Conta estrelas ganhas como recompensa de duelos.', enDesc:'Counts stars earned as duel rewards.', ptReq:'A cada 50.000 estrelas ganhas em duelos', enReq:'Every 50,000 stars earned from duels', reward:'+200 Frag R por nivel'}
+  {cat:'combat', icon:'M', pt:'Invocador de Monstros', en:'Monster Summoner', ptDesc:'Conta monstros invocados ao campo durante duelos.', enDesc:'Counts monsters summoned to the field during duels.', ptReq:'A cada 1000 monstros invocados', enReq:'Every 1000 monsters summoned', reward:'+30 Frag R por nivel'},
+  {cat:'combat', icon:'DR', pt:'Domador de Dragoes', en:'Dragon Tamer', ptDesc:'Conta especificamente monstros do tipo Dragao invocados.', enDesc:'Specifically counts Dragon-type monsters summoned.', ptReq:'A cada 500 dragoes invocados', enReq:'Every 500 dragons summoned', reward:'+20 Frag R por nivel'},
+  {cat:'combat', icon:'S', pt:'Especialista em Magias', en:'Spell Specialist', ptDesc:'Conta cartas magicas usadas em duelo.', enDesc:'Counts spell cards used in duels.', ptReq:'A cada 500 cartas magicas usadas', enReq:'Every 500 spell cards used', reward:'+15 Frag R por nivel'},
+  {cat:'combat', icon:'TR', pt:'Armeiro de Armadilhas', en:'Trap Master', ptDesc:'Conta armadilhas ativadas durante o combate.', enDesc:'Counts traps activated during combat.', ptReq:'A cada 500 armadilhas ativadas', enReq:'Every 500 traps activated', reward:'+15 Frag R por nivel'},
+  {cat:'combat', icon:'★', pt:'Senhor das Estrelas', en:'Lord of Stars', ptDesc:'Conta estrelas ganhas como recompensa de duelos.', enDesc:'Counts stars earned as duel rewards.', ptReq:'A cada 50.000 estrelas ganhas em duelos', enReq:'Every 50,000 stars earned from duels', reward:'+50 Frag R por nivel'}
 ];
 
 const GRID_BY_CAT = {
