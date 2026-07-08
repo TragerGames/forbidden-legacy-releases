@@ -1,0 +1,6154 @@
+{
+  "gerado_de": "Data/boosters_tematicos.json",
+  "boosters": [
+    {
+      "id": "tipo_warrior",
+      "tipo_label": "WARRIOR",
+      "nome_pt": "Legião de Guerreiros",
+      "nome_en": "Legion of Warriors",
+      "desc_pt": "Guerreiros, espadachins e campeões forjados na batalha.",
+      "desc_en": "Warriors, swordsmen and champions forged in battle.",
+      "cor": "#c0463c",
+      "custo_souls": 130,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-warrior.webp",
+      "total_tema": 98,
+      "cartas_tema": [
+        {
+          "nome": "Black Luster Soldier",
+          "raridade": "UR",
+          "slug": "black_luster_soldier",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Buster Blader",
+          "raridade": "UR",
+          "slug": "buster_blader",
+          "atk": "2600",
+          "def": "2300"
+        },
+        {
+          "nome": "Dark Flare Knight",
+          "raridade": "UR",
+          "slug": "dark_flare_knight",
+          "atk": "2200",
+          "def": "800"
+        },
+        {
+          "nome": "Dark Guardian",
+          "raridade": "UR",
+          "slug": "dark_guardian",
+          "atk": "3800",
+          "def": "3800"
+        },
+        {
+          "nome": "Garma Sword",
+          "raridade": "UR",
+          "slug": "garma_sword",
+          "atk": "2550",
+          "def": "2150"
+        },
+        {
+          "nome": "Gate Guardian",
+          "raridade": "UR",
+          "slug": "gate_guardian",
+          "atk": "3750",
+          "def": "3400"
+        },
+        {
+          "nome": "Gearfried the Swordmaster",
+          "raridade": "UR",
+          "slug": "gearfried_the_swordmaster",
+          "atk": "2600",
+          "def": "2200"
+        },
+        {
+          "nome": "Phoenix Gearfried",
+          "raridade": "UR",
+          "slug": "phoenix_gearfried",
+          "atk": "2800",
+          "def": "2200"
+        },
+        {
+          "nome": "Silent Swordsman LV7",
+          "raridade": "UR",
+          "slug": "silent_swordsman_lv7",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Skull Guardian",
+          "raridade": "UR",
+          "slug": "skull_guardian",
+          "atk": "2050",
+          "def": "2500"
+        },
+        {
+          "nome": "The Dragon Destroyer",
+          "raridade": "UR",
+          "slug": "the_dragon_destroyer",
+          "atk": "2800",
+          "def": "2500"
+        },
+        {
+          "nome": "The Fiend Megacyber",
+          "raridade": "UR",
+          "slug": "the_fiend_megacyber",
+          "atk": "2200",
+          "def": "1200"
+        },
+        {
+          "nome": "Ultimate Flame Swordsman",
+          "raridade": "UR",
+          "slug": "ultimate_flame_swordsman",
+          "atk": "2800",
+          "def": "1600"
+        },
+        {
+          "nome": "Wall Shadow",
+          "raridade": "UR",
+          "slug": "wall_shadow",
+          "atk": "1600",
+          "def": "3000"
+        },
+        {
+          "nome": "Beautiful Beast Trainer",
+          "raridade": "SR",
+          "slug": "beautiful_beast_trainer",
+          "atk": "1750",
+          "def": "1500"
+        },
+        {
+          "nome": "Blade Knight",
+          "raridade": "SR",
+          "slug": "blade_knight",
+          "atk": "1600",
+          "def": "1000"
+        },
+        {
+          "nome": "Command Knight",
+          "raridade": "SR",
+          "slug": "command_knight",
+          "atk": "1200",
+          "def": "1900"
+        },
+        {
+          "nome": "Evocator Chevalier",
+          "raridade": "SR",
+          "slug": "evocator_chevalier",
+          "atk": "1900",
+          "def": "900"
+        },
+        {
+          "nome": "Flame Swordsman",
+          "raridade": "SR",
+          "slug": "flame_swordsman",
+          "atk": "1800",
+          "def": "1600"
+        },
+        {
+          "nome": "Gaia the Fierce Knight",
+          "raridade": "SR",
+          "slug": "gaia_the_fierce_knight",
+          "atk": "2300",
+          "def": "2100"
+        },
+        {
+          "nome": "Gearfried The Iron Knight",
+          "raridade": "SR",
+          "slug": "gearfried_the_iron_knight",
+          "atk": "1800",
+          "def": "1600"
+        },
+        {
+          "nome": "Gilti-Gearfried The Magical Steel Knight",
+          "raridade": "SR",
+          "slug": "gilti-gearfried_the_magical_steel_knight",
+          "atk": "2700",
+          "def": "1600"
+        },
+        {
+          "nome": "Hungry Burger",
+          "raridade": "SR",
+          "slug": "hungry_burger",
+          "atk": "2000",
+          "def": "1850"
+        },
+        {
+          "nome": "Kaibaman",
+          "raridade": "SR",
+          "slug": "kaibaman",
+          "atk": "200",
+          "def": "700"
+        },
+        {
+          "nome": "Little-Winguard",
+          "raridade": "SR",
+          "slug": "little-winguard",
+          "atk": "1400",
+          "def": "1800"
+        },
+        {
+          "nome": "Mystic Swordsman LV4",
+          "raridade": "SR",
+          "slug": "mystic_swordsman_lv4",
+          "atk": "1900",
+          "def": "1600"
+        },
+        {
+          "nome": "Mystic Swordsman LV6",
+          "raridade": "SR",
+          "slug": "mystic_swordsman_lv6",
+          "atk": "2300",
+          "def": "1700"
+        },
+        {
+          "nome": "Rocket Warrior",
+          "raridade": "SR",
+          "slug": "rocket_warrior",
+          "atk": "1500",
+          "def": "1300"
+        },
+        {
+          "nome": "Silent Swordsman LV5",
+          "raridade": "SR",
+          "slug": "silent_swordsman_lv5",
+          "atk": "2300",
+          "def": "1000"
+        },
+        {
+          "nome": "Ansatsu",
+          "raridade": "R",
+          "slug": "ansatsu",
+          "atk": "1700",
+          "def": "1200"
+        },
+        {
+          "nome": "Axe Raider",
+          "raridade": "R",
+          "slug": "axe_raider",
+          "atk": "1700",
+          "def": "1150"
+        },
+        {
+          "nome": "Beautiful Headhuntress",
+          "raridade": "R",
+          "slug": "beautiful_headhuntress",
+          "atk": "1600",
+          "def": "800"
+        },
+        {
+          "nome": "Celtic Guardian",
+          "raridade": "R",
+          "slug": "celtic_guardian",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Dark Blade",
+          "raridade": "R",
+          "slug": "dark_blade",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Empress Judge",
+          "raridade": "R",
+          "slug": "empress_judge",
+          "atk": "2100",
+          "def": "1700"
+        },
+        {
+          "nome": "Giltia the D. Knight",
+          "raridade": "R",
+          "slug": "giltia_the_d_knight",
+          "atk": "1850",
+          "def": "1500"
+        },
+        {
+          "nome": "Hibikime",
+          "raridade": "R",
+          "slug": "hibikime",
+          "atk": "1450",
+          "def": "1000"
+        },
+        {
+          "nome": "Invader of the Throne",
+          "raridade": "R",
+          "slug": "invader_of_the_throne",
+          "atk": "1350",
+          "def": "1700"
+        },
+        {
+          "nome": "Judge Man",
+          "raridade": "R",
+          "slug": "judge_man",
+          "atk": "2200",
+          "def": "1500"
+        },
+        {
+          "nome": "Kanan the Swordmistress",
+          "raridade": "R",
+          "slug": "kanan_the_swordmistress",
+          "atk": "1400",
+          "def": "1400"
+        },
+        {
+          "nome": "Karbonala Warrior",
+          "raridade": "R",
+          "slug": "karbonala_warrior",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Kojikocy",
+          "raridade": "R",
+          "slug": "kojikocy",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Lava Battleguard",
+          "raridade": "R",
+          "slug": "lava_battleguard",
+          "atk": "1550",
+          "def": "1800"
+        },
+        {
+          "nome": "Millennium Shield",
+          "raridade": "R",
+          "slug": "millennium_shield",
+          "atk": "0",
+          "def": "3000"
+        },
+        {
+          "nome": "Minomushi Warrior",
+          "raridade": "R",
+          "slug": "minomushi_warrior",
+          "atk": "1300",
+          "def": "1200"
+        },
+        {
+          "nome": "Monster Tamer",
+          "raridade": "R",
+          "slug": "monster_tamer",
+          "atk": "1800",
+          "def": "1600"
+        },
+        {
+          "nome": "Performance of Sword",
+          "raridade": "R",
+          "slug": "performance_of_sword",
+          "atk": "1950",
+          "def": "1850"
+        },
+        {
+          "nome": "Silent Swordsman LV3",
+          "raridade": "R",
+          "slug": "silent_swordsman_lv3",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Succubus Knight",
+          "raridade": "R",
+          "slug": "succubus_knight",
+          "atk": "1650",
+          "def": "1300"
+        },
+        {
+          "nome": "Swamp Battleguard",
+          "raridade": "R",
+          "slug": "swamp_battleguard",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Swordstalker",
+          "raridade": "R",
+          "slug": "swordstalker",
+          "atk": "2000",
+          "def": "1600"
+        },
+        {
+          "nome": "Warrior of Tradition",
+          "raridade": "R",
+          "slug": "warrior_of_tradition",
+          "atk": "1900",
+          "def": "1700"
+        },
+        {
+          "nome": "Zanki",
+          "raridade": "R",
+          "slug": "zanki",
+          "atk": "1500",
+          "def": "1700"
+        },
+        {
+          "nome": "Armaill",
+          "raridade": "N",
+          "slug": "armaill",
+          "atk": "700",
+          "def": "1300"
+        },
+        {
+          "nome": "Armed Ninja",
+          "raridade": "N",
+          "slug": "armed_ninja",
+          "atk": "300",
+          "def": "300"
+        },
+        {
+          "nome": "Battle Warrior",
+          "raridade": "N",
+          "slug": "battle_warrior",
+          "atk": "700",
+          "def": "1000"
+        },
+        {
+          "nome": "D. Human",
+          "raridade": "N",
+          "slug": "d_human",
+          "atk": "1300",
+          "def": "1100"
+        },
+        {
+          "nome": "Dimensional Warrior",
+          "raridade": "N",
+          "slug": "dimensional_warrior",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Doron",
+          "raridade": "N",
+          "slug": "doron",
+          "atk": "900",
+          "def": "500"
+        },
+        {
+          "nome": "Dragon Statue",
+          "raridade": "N",
+          "slug": "dragon_statue",
+          "atk": "1100",
+          "def": "900"
+        },
+        {
+          "nome": "Dragoness the Wicked Knight",
+          "raridade": "N",
+          "slug": "dragoness_the_wicked_knight",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "Dream Clown",
+          "raridade": "N",
+          "slug": "dream_clown",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "Eyearmor",
+          "raridade": "N",
+          "slug": "eyearmor",
+          "atk": "600",
+          "def": "500"
+        },
+        {
+          "nome": "Fiend Sword",
+          "raridade": "N",
+          "slug": "fiend_sword",
+          "atk": "1400",
+          "def": "800"
+        },
+        {
+          "nome": "Greenkappa",
+          "raridade": "N",
+          "slug": "greenkappa",
+          "atk": "650",
+          "def": "900"
+        },
+        {
+          "nome": "Guardian of the Labyrinth",
+          "raridade": "N",
+          "slug": "guardian_of_the_labyrinth",
+          "atk": "1000",
+          "def": "1200"
+        },
+        {
+          "nome": "Hard Armor",
+          "raridade": "N",
+          "slug": "hard_armor",
+          "atk": "300",
+          "def": "1200"
+        },
+        {
+          "nome": "Hero of the East",
+          "raridade": "N",
+          "slug": "hero_of_the_east",
+          "atk": "1100",
+          "def": "1000"
+        },
+        {
+          "nome": "Hyo",
+          "raridade": "N",
+          "slug": "hyo",
+          "atk": "800",
+          "def": "1200"
+        },
+        {
+          "nome": "Kagemusha of the Blue Flame",
+          "raridade": "N",
+          "slug": "kagemusha_of_the_blue_flame",
+          "atk": "800",
+          "def": "400"
+        },
+        {
+          "nome": "Kageningen",
+          "raridade": "N",
+          "slug": "kageningen",
+          "atk": "800",
+          "def": "600"
+        },
+        {
+          "nome": "M-warrior #1",
+          "raridade": "N",
+          "slug": "m-warrior_1",
+          "atk": "1000",
+          "def": "500"
+        },
+        {
+          "nome": "M-warrior #2",
+          "raridade": "N",
+          "slug": "m-warrior_2",
+          "atk": "500",
+          "def": "1000"
+        },
+        {
+          "nome": "Masaki the Legendary Swordsman",
+          "raridade": "N",
+          "slug": "masaki_the_legendary_swordsman",
+          "atk": "1100",
+          "def": "1100"
+        },
+        {
+          "nome": "Masked Clown",
+          "raridade": "N",
+          "slug": "masked_clown",
+          "atk": "500",
+          "def": "700"
+        },
+        {
+          "nome": "Monster Egg",
+          "raridade": "N",
+          "slug": "monster_egg",
+          "atk": "600",
+          "def": "900"
+        },
+        {
+          "nome": "Moon Envoy",
+          "raridade": "N",
+          "slug": "moon_envoy",
+          "atk": "1100",
+          "def": "1000"
+        },
+        {
+          "nome": "Mushroom Man #2",
+          "raridade": "N",
+          "slug": "mushroom_man_2",
+          "atk": "1250",
+          "def": "800"
+        },
+        {
+          "nome": "Mysterious Puppeteer",
+          "raridade": "N",
+          "slug": "mysterious_puppeteer",
+          "atk": "1000",
+          "def": "1500"
+        },
+        {
+          "nome": "Mystic Swordsman LV2",
+          "raridade": "N",
+          "slug": "mystic_swordsman_lv2",
+          "atk": "900",
+          "def": "0"
+        },
+        {
+          "nome": "Oscillo Hero",
+          "raridade": "N",
+          "slug": "oscillo_hero",
+          "atk": "1250",
+          "def": "700"
+        },
+        {
+          "nome": "Princess of Tsurugi",
+          "raridade": "N",
+          "slug": "princess_of_tsurugi",
+          "atk": "900",
+          "def": "700"
+        },
+        {
+          "nome": "Protector of the Throne",
+          "raridade": "N",
+          "slug": "protector_of_the_throne",
+          "atk": "800",
+          "def": "1500"
+        },
+        {
+          "nome": "Queen's Double",
+          "raridade": "N",
+          "slug": "queens_double",
+          "atk": "350",
+          "def": "300"
+        },
+        {
+          "nome": "Rhaimundos of the Red Sword",
+          "raridade": "N",
+          "slug": "rhaimundos_of_the_red_sword",
+          "atk": "1200",
+          "def": "1300"
+        },
+        {
+          "nome": "Skull Stalker",
+          "raridade": "N",
+          "slug": "skull_stalker",
+          "atk": "900",
+          "def": "800"
+        },
+        {
+          "nome": "Sonic Maid",
+          "raridade": "N",
+          "slug": "sonic_maid",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "Stuffed Animal",
+          "raridade": "N",
+          "slug": "stuffed_animal",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "Supporter in the Shadows",
+          "raridade": "N",
+          "slug": "supporter_in_the_shadows",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Swordsman from a Foreign Land",
+          "raridade": "N",
+          "slug": "swordsman_from_a_foreign_land",
+          "atk": "250",
+          "def": "250"
+        },
+        {
+          "nome": "Swordsman of Landstar",
+          "raridade": "N",
+          "slug": "swordsman_of_landstar",
+          "atk": "500",
+          "def": "1200"
+        },
+        {
+          "nome": "The Judgement Hand",
+          "raridade": "N",
+          "slug": "the_judgement_hand",
+          "atk": "1400",
+          "def": "700"
+        },
+        {
+          "nome": "The Little Swordsman of Aile",
+          "raridade": "N",
+          "slug": "the_little_swordsman_of_aile",
+          "atk": "800",
+          "def": "1300"
+        },
+        {
+          "nome": "Trap Master",
+          "raridade": "N",
+          "slug": "trap_master",
+          "atk": "500",
+          "def": "1100"
+        },
+        {
+          "nome": "Unknown Warrior of Fiend",
+          "raridade": "N",
+          "slug": "unknown_warrior_of_fiend",
+          "atk": "1000",
+          "def": "500"
+        },
+        {
+          "nome": "Vishwar Randi",
+          "raridade": "N",
+          "slug": "vishwar_randi",
+          "atk": "900",
+          "def": "700"
+        },
+        {
+          "nome": "Wodan the Resident of the Forest",
+          "raridade": "N",
+          "slug": "wodan_the_resident_of_the_forest",
+          "atk": "900",
+          "def": "1200"
+        },
+        {
+          "nome": "Wood Clown",
+          "raridade": "N",
+          "slug": "wood_clown",
+          "atk": "800",
+          "def": "1200"
+        }
+      ]
+    },
+    {
+      "id": "tipo_fiend",
+      "tipo_label": "FIEND",
+      "nome_pt": "Pacto Sombrio",
+      "nome_en": "Dark Pact",
+      "desc_pt": "Demônios, espíritos malignos e criaturas do abismo.",
+      "desc_en": "Fiends, malevolent spirits and creatures of the abyss.",
+      "cor": "#7a4aa8",
+      "custo_souls": 120,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-fiend.webp",
+      "total_tema": 86,
+      "cartas_tema": [
+        {
+          "nome": "Archfiend Emperor",
+          "raridade": "UR",
+          "slug": "archfiend_emperor",
+          "atk": "3000",
+          "def": "2000"
+        },
+        {
+          "nome": "Archfiend Empress",
+          "raridade": "UR",
+          "slug": "archfiend_empress",
+          "atk": "2900",
+          "def": "2100"
+        },
+        {
+          "nome": "Bickuribox",
+          "raridade": "UR",
+          "slug": "bickuribox",
+          "atk": "2300",
+          "def": "2000"
+        },
+        {
+          "nome": "Chakra",
+          "raridade": "UR",
+          "slug": "chakra",
+          "atk": "2450",
+          "def": "2000"
+        },
+        {
+          "nome": "Dark Lucius LV8",
+          "raridade": "UR",
+          "slug": "dark_lucius_lv8",
+          "atk": "2800",
+          "def": "900"
+        },
+        {
+          "nome": "Dark Master Zorc",
+          "raridade": "UR",
+          "slug": "dark_master_zorc",
+          "atk": "2700",
+          "def": "1500"
+        },
+        {
+          "nome": "Infernal Incinerator",
+          "raridade": "UR",
+          "slug": "infernal_incinerator",
+          "atk": "2800",
+          "def": "1800"
+        },
+        {
+          "nome": "Lava Golem",
+          "raridade": "UR",
+          "slug": "lava_golem",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Summoned Skull",
+          "raridade": "UR",
+          "slug": "summoned_skull",
+          "atk": "2500",
+          "def": "1200"
+        },
+        {
+          "nome": "The Masked Beast",
+          "raridade": "UR",
+          "slug": "the_masked_beast",
+          "atk": "3200",
+          "def": "1800"
+        },
+        {
+          "nome": "Zera The Mant",
+          "raridade": "UR",
+          "slug": "zera_the_mant",
+          "atk": "2800",
+          "def": "2300"
+        },
+        {
+          "nome": "Zorc Necrophades",
+          "raridade": "UR",
+          "slug": "zorc_necrophades",
+          "atk": "4000",
+          "def": "5000"
+        },
+        {
+          "nome": "Archfiend Soldier",
+          "raridade": "SR",
+          "slug": "archfiend_soldier",
+          "atk": "1900",
+          "def": "1500"
+        },
+        {
+          "nome": "Archfiend's Manifestation",
+          "raridade": "SR",
+          "slug": "archfiends_manifestation",
+          "atk": "2500",
+          "def": "1200"
+        },
+        {
+          "nome": "Beast of Talwar",
+          "raridade": "SR",
+          "slug": "beast_of_talwar",
+          "atk": "2400",
+          "def": "2150"
+        },
+        {
+          "nome": "Castle of Dark Illusions",
+          "raridade": "SR",
+          "slug": "castle_of_dark_illusions",
+          "atk": "920",
+          "def": "1930"
+        },
+        {
+          "nome": "Cyber Archfiend",
+          "raridade": "SR",
+          "slug": "cyber_archfiend",
+          "atk": "1000",
+          "def": "2000"
+        },
+        {
+          "nome": "Dark Lucius LV4",
+          "raridade": "SR",
+          "slug": "dark_lucius_lv4",
+          "atk": "1000",
+          "def": "300"
+        },
+        {
+          "nome": "Dark Lucius LV6",
+          "raridade": "SR",
+          "slug": "dark_lucius_lv6",
+          "atk": "1700",
+          "def": "600"
+        },
+        {
+          "nome": "Dragon Seeker",
+          "raridade": "SR",
+          "slug": "dragon_seeker",
+          "atk": "2100",
+          "def": "2000"
+        },
+        {
+          "nome": "Núcleo Diabound",
+          "raridade": "SR",
+          "slug": "núcleo_diabound",
+          "atk": "1800",
+          "def": "1200"
+        },
+        {
+          "nome": "Psycho-Puppet",
+          "raridade": "SR",
+          "slug": "psycho-puppet",
+          "atk": "2000",
+          "def": "2350"
+        },
+        {
+          "nome": "Reaper of the Cards",
+          "raridade": "SR",
+          "slug": "reaper_of_the_cards",
+          "atk": "1380",
+          "def": "1930"
+        },
+        {
+          "nome": "Soul Hunter",
+          "raridade": "SR",
+          "slug": "soul_hunter",
+          "atk": "2200",
+          "def": "1800"
+        },
+        {
+          "nome": "Ushi Oni",
+          "raridade": "SR",
+          "slug": "ushi_oni",
+          "atk": "2150",
+          "def": "1950"
+        },
+        {
+          "nome": "Versago The Destroyer",
+          "raridade": "SR",
+          "slug": "versago_the_destroyer",
+          "atk": "1100",
+          "def": "900"
+        },
+        {
+          "nome": "Wall of Illusion",
+          "raridade": "SR",
+          "slug": "wall_of_illusion",
+          "atk": "1000",
+          "def": "1850"
+        },
+        {
+          "nome": "Zoa",
+          "raridade": "SR",
+          "slug": "zoa",
+          "atk": "2600",
+          "def": "1900"
+        },
+        {
+          "nome": "Air Eater",
+          "raridade": "R",
+          "slug": "air_eater",
+          "atk": "2100",
+          "def": "1600"
+        },
+        {
+          "nome": "Barox",
+          "raridade": "R",
+          "slug": "barox",
+          "atk": "1380",
+          "def": "1530"
+        },
+        {
+          "nome": "Berfomet",
+          "raridade": "R",
+          "slug": "berfomet",
+          "atk": "1400",
+          "def": "1800"
+        },
+        {
+          "nome": "Crass Clown",
+          "raridade": "R",
+          "slug": "crass_clown",
+          "atk": "1350",
+          "def": "1400"
+        },
+        {
+          "nome": "Dark Chimera",
+          "raridade": "R",
+          "slug": "dark_chimera",
+          "atk": "1610",
+          "def": "1460"
+        },
+        {
+          "nome": "Feral Imp",
+          "raridade": "R",
+          "slug": "feral_imp",
+          "atk": "1300",
+          "def": "1400"
+        },
+        {
+          "nome": "Fiend's Mirror",
+          "raridade": "R",
+          "slug": "fiends_mirror",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "King of Yamimakai",
+          "raridade": "R",
+          "slug": "king_of_yamimakai",
+          "atk": "2000",
+          "def": "1530"
+        },
+        {
+          "nome": "La Jinn the Mystical Genie",
+          "raridade": "R",
+          "slug": "la_jinn_the_mystical_genie",
+          "atk": "1800",
+          "def": "1000"
+        },
+        {
+          "nome": "Lord of the Lamp",
+          "raridade": "R",
+          "slug": "lord_of_the_lamp",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Mabarrel",
+          "raridade": "R",
+          "slug": "mabarrel",
+          "atk": "1700",
+          "def": "1400"
+        },
+        {
+          "nome": "Metal Guardian",
+          "raridade": "R",
+          "slug": "metal_guardian",
+          "atk": "1150",
+          "def": "2150"
+        },
+        {
+          "nome": "Morinphen",
+          "raridade": "R",
+          "slug": "morinphen",
+          "atk": "1550",
+          "def": "1300"
+        },
+        {
+          "nome": "Neck Hunter",
+          "raridade": "R",
+          "slug": "neck_hunter",
+          "atk": "1750",
+          "def": "1900"
+        },
+        {
+          "nome": "Ryu-kishin Powered",
+          "raridade": "R",
+          "slug": "ryu-kishin_powered",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "The Bistro Butcher",
+          "raridade": "R",
+          "slug": "the_bistro_butcher",
+          "atk": "1800",
+          "def": "1000"
+        },
+        {
+          "nome": "Whiptail Crow",
+          "raridade": "R",
+          "slug": "whiptail_crow",
+          "atk": "1650",
+          "def": "1600"
+        },
+        {
+          "nome": "Witty Phantom",
+          "raridade": "R",
+          "slug": "witty_phantom",
+          "atk": "1400",
+          "def": "1300"
+        },
+        {
+          "nome": "Ancient Brain",
+          "raridade": "N",
+          "slug": "ancient_brain",
+          "atk": "1000",
+          "def": "700"
+        },
+        {
+          "nome": "Archfiend Mirror",
+          "raridade": "N",
+          "slug": "archfiend_mirror",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Big Eye",
+          "raridade": "N",
+          "slug": "big_eye",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Bio Plant",
+          "raridade": "N",
+          "slug": "bio_plant",
+          "atk": "600",
+          "def": "1300"
+        },
+        {
+          "nome": "Candle of Fate",
+          "raridade": "N",
+          "slug": "candle_of_fate",
+          "atk": "600",
+          "def": "600"
+        },
+        {
+          "nome": "Claw Reacher",
+          "raridade": "N",
+          "slug": "claw_reacher",
+          "atk": "1000",
+          "def": "800"
+        },
+        {
+          "nome": "Dark Artist",
+          "raridade": "N",
+          "slug": "dark_artist",
+          "atk": "600",
+          "def": "1400"
+        },
+        {
+          "nome": "Dark King of the Abyss",
+          "raridade": "N",
+          "slug": "dark_king_of_the_abyss",
+          "atk": "1200",
+          "def": "800"
+        },
+        {
+          "nome": "Dark Prisoner",
+          "raridade": "N",
+          "slug": "dark_prisoner",
+          "atk": "600",
+          "def": "1000"
+        },
+        {
+          "nome": "Dark Shade",
+          "raridade": "N",
+          "slug": "dark_shade",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Dark Titan of Terror",
+          "raridade": "N",
+          "slug": "dark_titan_of_terror",
+          "atk": "1300",
+          "def": "1100"
+        },
+        {
+          "nome": "Embryonic Beast",
+          "raridade": "N",
+          "slug": "embryonic_beast",
+          "atk": "500",
+          "def": "750"
+        },
+        {
+          "nome": "Fungi of the Musk",
+          "raridade": "N",
+          "slug": "fungi_of_the_musk",
+          "atk": "400",
+          "def": "300"
+        },
+        {
+          "nome": "Gorgon Egg",
+          "raridade": "N",
+          "slug": "gorgon_egg",
+          "atk": "300",
+          "def": "1300"
+        },
+        {
+          "nome": "Hiro's Shadow Scout",
+          "raridade": "N",
+          "slug": "hiros_shadow_scout",
+          "atk": "650",
+          "def": "500"
+        },
+        {
+          "nome": "Horn Imp",
+          "raridade": "N",
+          "slug": "horn_imp",
+          "atk": "1300",
+          "def": "1000"
+        },
+        {
+          "nome": "Invader from Another Dimension",
+          "raridade": "N",
+          "slug": "invader_from_another_dimension",
+          "atk": "950",
+          "def": "1400"
+        },
+        {
+          "nome": "Job-Change Mirror",
+          "raridade": "N",
+          "slug": "job-change_mirror",
+          "atk": "800",
+          "def": "1300"
+        },
+        {
+          "nome": "Key Mace #2",
+          "raridade": "N",
+          "slug": "key_mace_2",
+          "atk": "1050",
+          "def": "1200"
+        },
+        {
+          "nome": "King Fog",
+          "raridade": "N",
+          "slug": "king_fog",
+          "atk": "1000",
+          "def": "900"
+        },
+        {
+          "nome": "Kuriboh",
+          "raridade": "N",
+          "slug": "kuriboh",
+          "atk": "300",
+          "def": "200"
+        },
+        {
+          "nome": "Lord of Zemia",
+          "raridade": "N",
+          "slug": "lord_of_zemia",
+          "atk": "1300",
+          "def": "1000"
+        },
+        {
+          "nome": "Madjinn Gunn",
+          "raridade": "N",
+          "slug": "madjinn_gunn",
+          "atk": "600",
+          "def": "800"
+        },
+        {
+          "nome": "Mask of Darkness",
+          "raridade": "N",
+          "slug": "mask_of_darkness",
+          "atk": "900",
+          "def": "400"
+        },
+        {
+          "nome": "Meda Bat",
+          "raridade": "N",
+          "slug": "meda_bat",
+          "atk": "800",
+          "def": "400"
+        },
+        {
+          "nome": "Megirus Light",
+          "raridade": "N",
+          "slug": "megirus_light",
+          "atk": "900",
+          "def": "600"
+        },
+        {
+          "nome": "Midnight Fiend",
+          "raridade": "N",
+          "slug": "midnight_fiend",
+          "atk": "800",
+          "def": "600"
+        },
+        {
+          "nome": "Monster Eye",
+          "raridade": "N",
+          "slug": "monster_eye",
+          "atk": "250",
+          "def": "300"
+        },
+        {
+          "nome": "Mystery Hand",
+          "raridade": "N",
+          "slug": "mystery_hand",
+          "atk": "500",
+          "def": "500"
+        },
+        {
+          "nome": "Mystic Clown",
+          "raridade": "N",
+          "slug": "mystic_clown",
+          "atk": "1500",
+          "def": "1000"
+        },
+        {
+          "nome": "Needle Ball",
+          "raridade": "N",
+          "slug": "needle_ball",
+          "atk": "750",
+          "def": "700"
+        },
+        {
+          "nome": "Ryu-kishin",
+          "raridade": "N",
+          "slug": "ryu-kishin",
+          "atk": "1000",
+          "def": "500"
+        },
+        {
+          "nome": "Sangan",
+          "raridade": "N",
+          "slug": "sangan",
+          "atk": "1000",
+          "def": "600"
+        },
+        {
+          "nome": "Tainted Wisdom",
+          "raridade": "N",
+          "slug": "tainted_wisdom",
+          "atk": "1250",
+          "def": "800"
+        },
+        {
+          "nome": "Terra the Terrible",
+          "raridade": "N",
+          "slug": "terra_the_terrible",
+          "atk": "1200",
+          "def": "1300"
+        },
+        {
+          "nome": "That Which Feeds on Life",
+          "raridade": "N",
+          "slug": "that_which_feeds_on_life",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "The Drdek",
+          "raridade": "N",
+          "slug": "the_drdek",
+          "atk": "700",
+          "def": "800"
+        },
+        {
+          "nome": "The Shadow Who Controls the Dark",
+          "raridade": "N",
+          "slug": "the_shadow_who_controls_the_dark",
+          "atk": "800",
+          "def": "700"
+        },
+        {
+          "nome": "Trial of Nightmares",
+          "raridade": "N",
+          "slug": "trial_of_nightmares",
+          "atk": "1300",
+          "def": "900"
+        },
+        {
+          "nome": "Wretched Ghost of the Attic",
+          "raridade": "N",
+          "slug": "wretched_ghost_of_the_attic",
+          "atk": "550",
+          "def": "400"
+        }
+      ]
+    },
+    {
+      "id": "tipo_spellcaster",
+      "tipo_label": "SPELLCASTER",
+      "nome_pt": "Arcanos Ancestrais",
+      "nome_en": "Ancient Arcana",
+      "desc_pt": "Magos, feiticeiras e mestres da magia arcana.",
+      "desc_en": "Mages, sorceresses and masters of arcane magic.",
+      "cor": "#4a6fd6",
+      "custo_souls": 150,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-spellcaster.webp",
+      "total_tema": 83,
+      "cartas_tema": [
+        {
+          "nome": "Chaos Command Magician",
+          "raridade": "UR",
+          "slug": "chaos_command_magician",
+          "atk": "2400",
+          "def": "1900"
+        },
+        {
+          "nome": "Chaos Sorcerer",
+          "raridade": "UR",
+          "slug": "chaos_sorcerer",
+          "atk": "2300",
+          "def": "2000"
+        },
+        {
+          "nome": "Cosmo Queen",
+          "raridade": "UR",
+          "slug": "cosmo_queen",
+          "atk": "2900",
+          "def": "2450"
+        },
+        {
+          "nome": "Cybernetic Magician",
+          "raridade": "UR",
+          "slug": "cybernetic_magician",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Dark Cavalry",
+          "raridade": "UR",
+          "slug": "dark_cavalry",
+          "atk": "2800",
+          "def": "2300"
+        },
+        {
+          "nome": "Dark Magician Girl",
+          "raridade": "UR",
+          "slug": "dark_magician_girl",
+          "atk": "2000",
+          "def": "1700"
+        },
+        {
+          "nome": "Dark Magician of Chaos",
+          "raridade": "UR",
+          "slug": "dark_magician_of_chaos",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Dark Paladin",
+          "raridade": "UR",
+          "slug": "dark_paladin",
+          "atk": "2900",
+          "def": "2400"
+        },
+        {
+          "nome": "Dark Sage",
+          "raridade": "UR",
+          "slug": "dark_sage",
+          "atk": "2800",
+          "def": "3200"
+        },
+        {
+          "nome": "Exodia the Forbidden",
+          "raridade": "UR",
+          "slug": "exodia_the_forbidden",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Gate Guardian of Wind and Water",
+          "raridade": "UR",
+          "slug": "gate_guardian_of_wind_and_water",
+          "atk": "2450",
+          "def": "2300"
+        },
+        {
+          "nome": "Left Arm of the Forbidden One",
+          "raridade": "UR",
+          "slug": "left_arm_of_the_forbidden_one",
+          "atk": "200",
+          "def": "300"
+        },
+        {
+          "nome": "Left Leg of the Forbidden One",
+          "raridade": "UR",
+          "slug": "left_leg_of_the_forbidden_one",
+          "atk": "200",
+          "def": "300"
+        },
+        {
+          "nome": "Legendary Flame Lord",
+          "raridade": "UR",
+          "slug": "legendary_flame_lord",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Magi Magi Magician",
+          "raridade": "UR",
+          "slug": "magi_magi_magician",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Magician of Black Chaos",
+          "raridade": "UR",
+          "slug": "magician_of_black_chaos",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Magician of chaos",
+          "raridade": "UR",
+          "slug": "magician_of_chaos",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Master of Chaos",
+          "raridade": "UR",
+          "slug": "master_of_chaos",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Palladium Oracle Mahad",
+          "raridade": "UR",
+          "slug": "palladium_oracle_mahad",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Right Arm of the Forbidden One",
+          "raridade": "UR",
+          "slug": "right_arm_of_the_forbidden_one",
+          "atk": "200",
+          "def": "300"
+        },
+        {
+          "nome": "Right Leg of the Forbidden One",
+          "raridade": "UR",
+          "slug": "right_leg_of_the_forbidden_one",
+          "atk": "200",
+          "def": "300"
+        },
+        {
+          "nome": "Skull Knight",
+          "raridade": "UR",
+          "slug": "skull_knight",
+          "atk": "2650",
+          "def": "2250"
+        },
+        {
+          "nome": "Sorcerer of Dark Magic",
+          "raridade": "UR",
+          "slug": "sorcerer_of_dark_magic",
+          "atk": "3200",
+          "def": "2800"
+        },
+        {
+          "nome": "The Dark Magicians",
+          "raridade": "UR",
+          "slug": "the_dark_magicians",
+          "atk": "2800",
+          "def": "2300"
+        },
+        {
+          "nome": "Whispark Fairy Girl",
+          "raridade": "UR",
+          "slug": "whispark_fairy_girl",
+          "atk": "2200",
+          "def": "1600"
+        },
+        {
+          "nome": "Breaker the Magical Warrior",
+          "raridade": "SR",
+          "slug": "breaker_the_magical_warrior",
+          "atk": "1600",
+          "def": "1000"
+        },
+        {
+          "nome": "Copycat",
+          "raridade": "SR",
+          "slug": "copycat",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Dark Magician",
+          "raridade": "SR",
+          "slug": "dark_magician",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Fire Sorcerer",
+          "raridade": "SR",
+          "slug": "fire_sorcerer",
+          "atk": "1000",
+          "def": "1500"
+        },
+        {
+          "nome": "Kazejin",
+          "raridade": "SR",
+          "slug": "kazejin",
+          "atk": "2400",
+          "def": "2200"
+        },
+        {
+          "nome": "Lord of D.",
+          "raridade": "SR",
+          "slug": "lord_of_d",
+          "atk": "1200",
+          "def": "1100"
+        },
+        {
+          "nome": "Maha Vailo",
+          "raridade": "SR",
+          "slug": "maha_vailo",
+          "atk": "1550",
+          "def": "1400"
+        },
+        {
+          "nome": "Sanwitch",
+          "raridade": "SR",
+          "slug": "sanwitch",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "Sparkhearts Girl",
+          "raridade": "SR",
+          "slug": "sparkhearts_girl",
+          "atk": "800",
+          "def": "1200"
+        },
+        {
+          "nome": "Ancient Elf",
+          "raridade": "R",
+          "slug": "ancient_elf",
+          "atk": "1450",
+          "def": "1200"
+        },
+        {
+          "nome": "Aqua Madoor",
+          "raridade": "R",
+          "slug": "aqua_madoor",
+          "atk": "1200",
+          "def": "2000"
+        },
+        {
+          "nome": "Dark Elf",
+          "raridade": "R",
+          "slug": "dark_elf",
+          "atk": "2000",
+          "def": "800"
+        },
+        {
+          "nome": "Dryad",
+          "raridade": "R",
+          "slug": "dryad",
+          "atk": "1200",
+          "def": "1400"
+        },
+        {
+          "nome": "Gemini Elf",
+          "raridade": "R",
+          "slug": "gemini_elf",
+          "atk": "1900",
+          "def": "900"
+        },
+        {
+          "nome": "Genin",
+          "raridade": "R",
+          "slug": "genin",
+          "atk": "600",
+          "def": "900"
+        },
+        {
+          "nome": "Ill Witch",
+          "raridade": "R",
+          "slug": "ill_witch",
+          "atk": "1600",
+          "def": "1500"
+        },
+        {
+          "nome": "Illusionist Faceless Mage",
+          "raridade": "R",
+          "slug": "illusionist_faceless_mage",
+          "atk": "1200",
+          "def": "2200"
+        },
+        {
+          "nome": "LaMoon",
+          "raridade": "R",
+          "slug": "lamoon",
+          "atk": "1200",
+          "def": "1700"
+        },
+        {
+          "nome": "Leo Wizard",
+          "raridade": "R",
+          "slug": "leo_wizard",
+          "atk": "1350",
+          "def": "1200"
+        },
+        {
+          "nome": "Magician of Faith",
+          "raridade": "R",
+          "slug": "magician_of_faith",
+          "atk": "300",
+          "def": "400"
+        },
+        {
+          "nome": "Maiden of the Moonlight",
+          "raridade": "R",
+          "slug": "maiden_of_the_moonlight",
+          "atk": "1500",
+          "def": "1300"
+        },
+        {
+          "nome": "Mask of Shine & Dark",
+          "raridade": "R",
+          "slug": "mask_of_shine_&_dark",
+          "atk": "2000",
+          "def": "1800"
+        },
+        {
+          "nome": "Musician King",
+          "raridade": "R",
+          "slug": "musician_king",
+          "atk": "1750",
+          "def": "1500"
+        },
+        {
+          "nome": "Neo the Magic Swordsman",
+          "raridade": "R",
+          "slug": "neo_the_magic_swordsman",
+          "atk": "1700",
+          "def": "1000"
+        },
+        {
+          "nome": "Rock Spirit",
+          "raridade": "R",
+          "slug": "rock_spirit",
+          "atk": "1650",
+          "def": "1900"
+        },
+        {
+          "nome": "Rogue Doll",
+          "raridade": "R",
+          "slug": "rogue_doll",
+          "atk": "1600",
+          "def": "1000"
+        },
+        {
+          "nome": "Sealmaster Meisei",
+          "raridade": "R",
+          "slug": "sealmaster_meisei",
+          "atk": "1100",
+          "def": "900"
+        },
+        {
+          "nome": "Spirit of the Mountain",
+          "raridade": "R",
+          "slug": "spirit_of_the_mountain",
+          "atk": "1300",
+          "def": "1800"
+        },
+        {
+          "nome": "Spirit of the Winds",
+          "raridade": "R",
+          "slug": "spirit_of_the_winds",
+          "atk": "1700",
+          "def": "1400"
+        },
+        {
+          "nome": "Time Wizard",
+          "raridade": "R",
+          "slug": "time_wizard",
+          "atk": "500",
+          "def": "400"
+        },
+        {
+          "nome": "Water Magician",
+          "raridade": "R",
+          "slug": "water_magician",
+          "atk": "1400",
+          "def": "1000"
+        },
+        {
+          "nome": "Whispering Fairy",
+          "raridade": "R",
+          "slug": "whispering_fairy",
+          "atk": "800",
+          "def": "1200"
+        },
+        {
+          "nome": "Akakieisu",
+          "raridade": "N",
+          "slug": "akakieisu",
+          "atk": "1000",
+          "def": "800"
+        },
+        {
+          "nome": "Ancient Sorcerer",
+          "raridade": "N",
+          "slug": "ancient_sorcerer",
+          "atk": "1000",
+          "def": "1300"
+        },
+        {
+          "nome": "Angelwitch",
+          "raridade": "N",
+          "slug": "angelwitch",
+          "atk": "800",
+          "def": "1000"
+        },
+        {
+          "nome": "Boo Koo",
+          "raridade": "N",
+          "slug": "boo_koo",
+          "atk": "650",
+          "def": "500"
+        },
+        {
+          "nome": "Curtain of the Dark Ones",
+          "raridade": "N",
+          "slug": "curtain_of_the_dark_ones",
+          "atk": "600",
+          "def": "500"
+        },
+        {
+          "nome": "Djinn the Watcher of the Wind",
+          "raridade": "N",
+          "slug": "djinn_the_watcher_of_the_wind",
+          "atk": "700",
+          "def": "900"
+        },
+        {
+          "nome": "Eldeen",
+          "raridade": "N",
+          "slug": "eldeen",
+          "atk": "950",
+          "def": "1000"
+        },
+        {
+          "nome": "Fairy's Gift",
+          "raridade": "N",
+          "slug": "fairys_gift",
+          "atk": "1400",
+          "def": "1000"
+        },
+        {
+          "nome": "Flame Manipulator",
+          "raridade": "N",
+          "slug": "flame_manipulator",
+          "atk": "900",
+          "def": "1000"
+        },
+        {
+          "nome": "Hurricail",
+          "raridade": "N",
+          "slug": "hurricail",
+          "atk": "900",
+          "def": "200"
+        },
+        {
+          "nome": "Kamion Wizard",
+          "raridade": "N",
+          "slug": "kamion_wizard",
+          "atk": "1300",
+          "def": "1100"
+        },
+        {
+          "nome": "Lady of Faith",
+          "raridade": "N",
+          "slug": "lady_of_faith",
+          "atk": "1100",
+          "def": "800"
+        },
+        {
+          "nome": "Lucky Trinket",
+          "raridade": "N",
+          "slug": "lucky_trinket",
+          "atk": "600",
+          "def": "800"
+        },
+        {
+          "nome": "Masked Sorcerer",
+          "raridade": "N",
+          "slug": "masked_sorcerer",
+          "atk": "900",
+          "def": "1400"
+        },
+        {
+          "nome": "Mystic Lamp",
+          "raridade": "N",
+          "slug": "mystic_lamp",
+          "atk": "400",
+          "def": "300"
+        },
+        {
+          "nome": "Mystical Elf",
+          "raridade": "N",
+          "slug": "mystical_elf",
+          "atk": "800",
+          "def": "2000"
+        },
+        {
+          "nome": "Necrolancer the Timelord",
+          "raridade": "N",
+          "slug": "necrolancer_the_timelord",
+          "atk": "800",
+          "def": "900"
+        },
+        {
+          "nome": "Nemuriko",
+          "raridade": "N",
+          "slug": "nemuriko",
+          "atk": "800",
+          "def": "700"
+        },
+        {
+          "nome": "Phantom Dewan",
+          "raridade": "N",
+          "slug": "phantom_dewan",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Saggi the Dark Clown",
+          "raridade": "N",
+          "slug": "saggi_the_dark_clown",
+          "atk": "600",
+          "def": "1500"
+        },
+        {
+          "nome": "Sectarian of Secrets",
+          "raridade": "N",
+          "slug": "sectarian_of_secrets",
+          "atk": "700",
+          "def": "500"
+        },
+        {
+          "nome": "Tao the Chanter",
+          "raridade": "N",
+          "slug": "tao_the_chanter",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "The Bewitching Phantom Thief",
+          "raridade": "N",
+          "slug": "the_bewitching_phantom_thief",
+          "atk": "700",
+          "def": "700"
+        },
+        {
+          "nome": "White Magical Hat",
+          "raridade": "N",
+          "slug": "white_magical_hat",
+          "atk": "1000",
+          "def": "700"
+        },
+        {
+          "nome": "Witch of the Black Forest",
+          "raridade": "N",
+          "slug": "witch_of_the_black_forest",
+          "atk": "1100",
+          "def": "1200"
+        },
+        {
+          "nome": "Witch's Apprentice",
+          "raridade": "N",
+          "slug": "witchs_apprentice",
+          "atk": "550",
+          "def": "500"
+        }
+      ]
+    },
+    {
+      "id": "tipo_dragon",
+      "tipo_label": "DRAGON",
+      "nome_pt": "Fúria Dracônica",
+      "nome_en": "Draconic Fury",
+      "desc_pt": "Dragões lendários que dominam céu e terra.",
+      "desc_en": "Legendary dragons ruling sky and land.",
+      "cor": "#d69b2f",
+      "custo_souls": 140,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-dragon.webp",
+      "total_tema": 60,
+      "cartas_tema": [
+        {
+          "nome": "Armed Dragon LV10",
+          "raridade": "UR",
+          "slug": "armed_dragon_lv10",
+          "atk": "3000",
+          "def": "2000"
+        },
+        {
+          "nome": "Armed Dragon LV5",
+          "raridade": "UR",
+          "slug": "armed_dragon_lv5",
+          "atk": "2400",
+          "def": "1700"
+        },
+        {
+          "nome": "Armed Dragon LV7",
+          "raridade": "UR",
+          "slug": "armed_dragon_lv7",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Black Rose Dragon",
+          "raridade": "UR",
+          "slug": "black_rose_dragon",
+          "atk": "2400",
+          "def": "1800"
+        },
+        {
+          "nome": "Blue-Eyes Chaos MAX Dragon",
+          "raridade": "UR",
+          "slug": "blue-eyes_chaos_max_dragon",
+          "atk": "4000",
+          "def": "0"
+        },
+        {
+          "nome": "Blue-Eyes Shining Dragon",
+          "raridade": "UR",
+          "slug": "blue-eyes_shining_dragon",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Blue-Eyes Twin Burst Dragon",
+          "raridade": "UR",
+          "slug": "blue-eyes_twin_burst_dragon",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Blue-Eyes Ultimate Dragon",
+          "raridade": "UR",
+          "slug": "blue-eyes_ultimate_dragon",
+          "atk": "4500",
+          "def": "3800"
+        },
+        {
+          "nome": "Blue-eyes White Dragon",
+          "raridade": "UR",
+          "slug": "blue-eyes_white_dragon",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Chaos Emperor Dragon",
+          "raridade": "UR",
+          "slug": "chaos_emperor_dragon",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Curse of Dragon",
+          "raridade": "UR",
+          "slug": "curse_of_dragon",
+          "atk": "2000",
+          "def": "1500"
+        },
+        {
+          "nome": "Dark Magician Girl the Dragon Knight",
+          "raridade": "UR",
+          "slug": "dark_magician_girl_the_dragon_knight",
+          "atk": "2600",
+          "def": "1700"
+        },
+        {
+          "nome": "Dark Magician the Dragon Knight",
+          "raridade": "UR",
+          "slug": "dark_magician_the_dragon_knight",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Dragon Master Knight",
+          "raridade": "UR",
+          "slug": "dragon_master_knight",
+          "atk": "5000",
+          "def": "5000"
+        },
+        {
+          "nome": "Gaia the Dragon Champion",
+          "raridade": "UR",
+          "slug": "gaia_the_dragon_champion",
+          "atk": "2600",
+          "def": "2100"
+        },
+        {
+          "nome": "Horus the Black Flame Dragon LV6",
+          "raridade": "UR",
+          "slug": "horus_the_black_flame_dragon_lv6",
+          "atk": "2300",
+          "def": "1600"
+        },
+        {
+          "nome": "Horus the Black Flame Dragon LV8",
+          "raridade": "UR",
+          "slug": "horus_the_black_flame_dragon_lv8",
+          "atk": "3000",
+          "def": "1800"
+        },
+        {
+          "nome": "Kaiser Glider",
+          "raridade": "UR",
+          "slug": "kaiser_glider",
+          "atk": "2400",
+          "def": "2200"
+        },
+        {
+          "nome": "King Dragun",
+          "raridade": "UR",
+          "slug": "king_dragun",
+          "atk": "2400",
+          "def": "1100"
+        },
+        {
+          "nome": "Ruddy Rose Dragon",
+          "raridade": "UR",
+          "slug": "ruddy_rose_dragon",
+          "atk": "3200",
+          "def": "2400"
+        },
+        {
+          "nome": "Timaeus the United Dragon",
+          "raridade": "UR",
+          "slug": "timaeus_the_united_dragon",
+          "atk": "2800",
+          "def": "1800"
+        },
+        {
+          "nome": "Tri-horned Dragon",
+          "raridade": "UR",
+          "slug": "tri-horned_dragon",
+          "atk": "2850",
+          "def": "2350"
+        },
+        {
+          "nome": "Alligator's Sword Dragon",
+          "raridade": "SR",
+          "slug": "alligators_sword_dragon",
+          "atk": "1700",
+          "def": "1500"
+        },
+        {
+          "nome": "Buster Dragon",
+          "raridade": "SR",
+          "slug": "buster_dragon",
+          "atk": "1200",
+          "def": "2800"
+        },
+        {
+          "nome": "Darkfire Dragon",
+          "raridade": "SR",
+          "slug": "darkfire_dragon",
+          "atk": "1500",
+          "def": "1250"
+        },
+        {
+          "nome": "Different Dimension Dragon",
+          "raridade": "SR",
+          "slug": "different_dimension_dragon",
+          "atk": "1200",
+          "def": "1500"
+        },
+        {
+          "nome": "Dragon Spirit of White",
+          "raridade": "SR",
+          "slug": "dragon_spirit_of_white",
+          "atk": "2500",
+          "def": "2000"
+        },
+        {
+          "nome": "Dwarf Star Dragon Planeter",
+          "raridade": "SR",
+          "slug": "dwarf_star_dragon_planeter",
+          "atk": "1700",
+          "def": "1200"
+        },
+        {
+          "nome": "Fiend Skull Dragon",
+          "raridade": "SR",
+          "slug": "fiend_skull_dragon",
+          "atk": "2000",
+          "def": "1200"
+        },
+        {
+          "nome": "Harpie's Pet Dragon",
+          "raridade": "SR",
+          "slug": "harpies_pet_dragon",
+          "atk": "2000",
+          "def": "2500"
+        },
+        {
+          "nome": "Horus the Black Flame Dragon LV4",
+          "raridade": "SR",
+          "slug": "horus_the_black_flame_dragon_lv4",
+          "atk": "1600",
+          "def": "1000"
+        },
+        {
+          "nome": "Kaiser Dragon",
+          "raridade": "SR",
+          "slug": "kaiser_dragon",
+          "atk": "2300",
+          "def": "2000"
+        },
+        {
+          "nome": "Mikazukinoyaiba",
+          "raridade": "SR",
+          "slug": "mikazukinoyaiba",
+          "atk": "2200",
+          "def": "2350"
+        },
+        {
+          "nome": "Paladin of White Dragon",
+          "raridade": "SR",
+          "slug": "paladin_of_white_dragon",
+          "atk": "1900",
+          "def": "1200"
+        },
+        {
+          "nome": "Red-eyes B. Dragon",
+          "raridade": "SR",
+          "slug": "red-eyes_b_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Seiyaryu",
+          "raridade": "SR",
+          "slug": "seiyaryu",
+          "atk": "2500",
+          "def": "2300"
+        },
+        {
+          "nome": "Spear Dragon",
+          "raridade": "SR",
+          "slug": "spear_dragon",
+          "atk": "1900",
+          "def": "0"
+        },
+        {
+          "nome": "The White Stone of Legend",
+          "raridade": "SR",
+          "slug": "the_white_stone_of_legend",
+          "atk": "300",
+          "def": "250"
+        },
+        {
+          "nome": "Thousand Dragon",
+          "raridade": "SR",
+          "slug": "thousand_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Yamadron",
+          "raridade": "SR",
+          "slug": "yamadron",
+          "atk": "1600",
+          "def": "1800"
+        },
+        {
+          "nome": "Armed Dragon LV3",
+          "raridade": "R",
+          "slug": "armed_dragon_lv3",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "B. Dragon Jungle King",
+          "raridade": "R",
+          "slug": "b_dragon_jungle_king",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "Crawling Dragon",
+          "raridade": "R",
+          "slug": "crawling_dragon",
+          "atk": "1600",
+          "def": "1400"
+        },
+        {
+          "nome": "Divine Dragon Ragnarok",
+          "raridade": "R",
+          "slug": "divine_dragon_ragnarok",
+          "atk": "1500",
+          "def": "1000"
+        },
+        {
+          "nome": "Koumori Dragon",
+          "raridade": "R",
+          "slug": "koumori_dragon",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Meteor Dragon",
+          "raridade": "R",
+          "slug": "meteor_dragon",
+          "atk": "1800",
+          "def": "2000"
+        },
+        {
+          "nome": "Parrot Dragon",
+          "raridade": "R",
+          "slug": "parrot_dragon",
+          "atk": "2000",
+          "def": "1300"
+        },
+        {
+          "nome": "Sky Dragon",
+          "raridade": "R",
+          "slug": "sky_dragon",
+          "atk": "1900",
+          "def": "1800"
+        },
+        {
+          "nome": "Tyhone #2",
+          "raridade": "R",
+          "slug": "tyhone_2",
+          "atk": "1700",
+          "def": "1900"
+        },
+        {
+          "nome": "Winged Dragon #1",
+          "raridade": "R",
+          "slug": "winged_dragon_1",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Baby Dragon",
+          "raridade": "N",
+          "slug": "baby_dragon",
+          "atk": "1200",
+          "def": "700"
+        },
+        {
+          "nome": "Blackland Fire Dragon",
+          "raridade": "N",
+          "slug": "blackland_fire_dragon",
+          "atk": "1500",
+          "def": "800"
+        },
+        {
+          "nome": "Fairy Dragon",
+          "raridade": "N",
+          "slug": "fairy_dragon",
+          "atk": "1100",
+          "def": "1200"
+        },
+        {
+          "nome": "Galaxy Serpent",
+          "raridade": "N",
+          "slug": "galaxy_serpent",
+          "atk": "1000",
+          "def": "0"
+        },
+        {
+          "nome": "Lesser Dragon",
+          "raridade": "N",
+          "slug": "lesser_dragon",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "One-eyed Shield Dragon",
+          "raridade": "N",
+          "slug": "one-eyed_shield_dragon",
+          "atk": "700",
+          "def": "1300"
+        },
+        {
+          "nome": "Petit Dragon",
+          "raridade": "N",
+          "slug": "petit_dragon",
+          "atk": "600",
+          "def": "700"
+        },
+        {
+          "nome": "Serpent Night Dragon",
+          "raridade": "N",
+          "slug": "serpent_night_dragon",
+          "atk": "2350",
+          "def": "2400"
+        },
+        {
+          "nome": "Wicked Dragon with the Ersatz Head",
+          "raridade": "N",
+          "slug": "wicked_dragon_with_the_ersatz_head",
+          "atk": "900",
+          "def": "900"
+        },
+        {
+          "nome": "Yamatano Dragon Scroll",
+          "raridade": "N",
+          "slug": "yamatano_dragon_scroll",
+          "atk": "900",
+          "def": "300"
+        }
+      ]
+    },
+    {
+      "id": "tipo_aqua",
+      "tipo_label": "AQUA",
+      "nome_pt": "Correntes Abissais",
+      "nome_en": "Abyssal Currents",
+      "desc_pt": "Criaturas que dominam mares, rios e oceanos.",
+      "desc_en": "Creatures ruling seas, rivers and oceans.",
+      "cor": "#3fa0c9",
+      "custo_souls": 110,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-aqua.webp",
+      "total_tema": 70,
+      "cartas_tema": [
+        {
+          "nome": "D.3.S. Frog",
+          "raridade": "UR",
+          "slug": "d3s_frog",
+          "atk": "2500",
+          "def": "2000"
+        },
+        {
+          "nome": "Gate Guardian of Water and Thunder",
+          "raridade": "UR",
+          "slug": "gate_guardian_of_water_and_thunder",
+          "atk": "2550",
+          "def": "2300"
+        },
+        {
+          "nome": "Roaring Ocean Snake",
+          "raridade": "UR",
+          "slug": "roaring_ocean_snake",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "Catapult Turtle",
+          "raridade": "SR",
+          "slug": "catapult_turtle",
+          "atk": "1000",
+          "def": "2000"
+        },
+        {
+          "nome": "Crab Turtle",
+          "raridade": "SR",
+          "slug": "crab_turtle",
+          "atk": "2550",
+          "def": "2500"
+        },
+        {
+          "nome": "Des Frog",
+          "raridade": "SR",
+          "slug": "des_frog",
+          "atk": "1900",
+          "def": "0"
+        },
+        {
+          "nome": "Humanoid Worm Drake",
+          "raridade": "SR",
+          "slug": "humanoid_worm_drake",
+          "atk": "2200",
+          "def": "2000"
+        },
+        {
+          "nome": "Revival Jam",
+          "raridade": "SR",
+          "slug": "revival_jam",
+          "atk": "1500",
+          "def": "500"
+        },
+        {
+          "nome": "Submarine Frog",
+          "raridade": "SR",
+          "slug": "submarine_frog",
+          "atk": "1200",
+          "def": "600"
+        },
+        {
+          "nome": "Suijin",
+          "raridade": "SR",
+          "slug": "suijin",
+          "atk": "2500",
+          "def": "2400"
+        },
+        {
+          "nome": "Treeborn Frog",
+          "raridade": "SR",
+          "slug": "treeborn_frog",
+          "atk": "100",
+          "def": "100"
+        },
+        {
+          "nome": "30,000-Year White Turtle",
+          "raridade": "R",
+          "slug": "30000-year_white_turtle",
+          "atk": "1250",
+          "def": "2100"
+        },
+        {
+          "nome": "Akihiron",
+          "raridade": "R",
+          "slug": "akihiron",
+          "atk": "1700",
+          "def": "1400"
+        },
+        {
+          "nome": "Amphibious Bugroth",
+          "raridade": "R",
+          "slug": "amphibious_bugroth",
+          "atk": "1850",
+          "def": "1300"
+        },
+        {
+          "nome": "Boulder Tortoise",
+          "raridade": "R",
+          "slug": "boulder_tortoise",
+          "atk": "1450",
+          "def": "2200"
+        },
+        {
+          "nome": "Fairy of the Fountain",
+          "raridade": "R",
+          "slug": "fairy_of_the_fountain",
+          "atk": "1600",
+          "def": "1100"
+        },
+        {
+          "nome": "Fiend Kraken",
+          "raridade": "R",
+          "slug": "fiend_kraken",
+          "atk": "1200",
+          "def": "1400"
+        },
+        {
+          "nome": "Fire Kraken",
+          "raridade": "R",
+          "slug": "fire_kraken",
+          "atk": "1600",
+          "def": "1500"
+        },
+        {
+          "nome": "Giant Turtle Who Feeds on Flames",
+          "raridade": "R",
+          "slug": "giant_turtle_who_feeds_on_flames",
+          "atk": "1400",
+          "def": "1800"
+        },
+        {
+          "nome": "High Tide Gyojin",
+          "raridade": "R",
+          "slug": "high_tide_gyojin",
+          "atk": "1650",
+          "def": "1300"
+        },
+        {
+          "nome": "Humanoid Slime",
+          "raridade": "R",
+          "slug": "humanoid_slime",
+          "atk": "800",
+          "def": "2000"
+        },
+        {
+          "nome": "Hyosube",
+          "raridade": "R",
+          "slug": "hyosube",
+          "atk": "1500",
+          "def": "900"
+        },
+        {
+          "nome": "Jellyfish",
+          "raridade": "R",
+          "slug": "jellyfish",
+          "atk": "1200",
+          "def": "1500"
+        },
+        {
+          "nome": "Mad Lobster",
+          "raridade": "R",
+          "slug": "mad_lobster",
+          "atk": "1700",
+          "def": "1000"
+        },
+        {
+          "nome": "Octoberser",
+          "raridade": "R",
+          "slug": "octoberser",
+          "atk": "1600",
+          "def": "1400"
+        },
+        {
+          "nome": "Turtle Bird",
+          "raridade": "R",
+          "slug": "turtle_bird",
+          "atk": "1900",
+          "def": "1700"
+        },
+        {
+          "nome": "Violent Rain",
+          "raridade": "R",
+          "slug": "violent_rain",
+          "atk": "1550",
+          "def": "800"
+        },
+        {
+          "nome": "Ameba",
+          "raridade": "N",
+          "slug": "ameba",
+          "atk": "300",
+          "def": "350"
+        },
+        {
+          "nome": "Aqua Snake",
+          "raridade": "N",
+          "slug": "aqua_snake",
+          "atk": "1050",
+          "def": "900"
+        },
+        {
+          "nome": "Arma Knight",
+          "raridade": "N",
+          "slug": "arma_knight",
+          "atk": "1000",
+          "def": "1200"
+        },
+        {
+          "nome": "Armored Starfish",
+          "raridade": "N",
+          "slug": "armored_starfish",
+          "atk": "850",
+          "def": "1400"
+        },
+        {
+          "nome": "Beastking of the Swamps",
+          "raridade": "N",
+          "slug": "beastking_of_the_swamps",
+          "atk": "1000",
+          "def": "1100"
+        },
+        {
+          "nome": "Behegon",
+          "raridade": "N",
+          "slug": "behegon",
+          "atk": "1350",
+          "def": "1000"
+        },
+        {
+          "nome": "Change Slime",
+          "raridade": "N",
+          "slug": "change_slime",
+          "atk": "400",
+          "def": "300"
+        },
+        {
+          "nome": "Dorover",
+          "raridade": "N",
+          "slug": "dorover",
+          "atk": "900",
+          "def": "800"
+        },
+        {
+          "nome": "Flying Penguin",
+          "raridade": "N",
+          "slug": "flying_penguin",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Frog the Jam",
+          "raridade": "N",
+          "slug": "frog_the_jam",
+          "atk": "700",
+          "def": "500"
+        },
+        {
+          "nome": "Giant Red Seasnake",
+          "raridade": "N",
+          "slug": "giant_red_seasnake",
+          "atk": "1800",
+          "def": "800"
+        },
+        {
+          "nome": "Gruesome Goo",
+          "raridade": "N",
+          "slug": "gruesome_goo",
+          "atk": "1300",
+          "def": "700"
+        },
+        {
+          "nome": "Guardian of the Sea",
+          "raridade": "N",
+          "slug": "guardian_of_the_sea",
+          "atk": "1300",
+          "def": "1000"
+        },
+        {
+          "nome": "Hitodenchak",
+          "raridade": "N",
+          "slug": "hitodenchak",
+          "atk": "600",
+          "def": "700"
+        },
+        {
+          "nome": "Ice Water",
+          "raridade": "N",
+          "slug": "ice_water",
+          "atk": "1150",
+          "def": "900"
+        },
+        {
+          "nome": "Kanikabuto",
+          "raridade": "N",
+          "slug": "kanikabuto",
+          "atk": "650",
+          "def": "900"
+        },
+        {
+          "nome": "Kappa Avenger",
+          "raridade": "N",
+          "slug": "kappa_avenger",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "Liquid Beast",
+          "raridade": "N",
+          "slug": "liquid_beast",
+          "atk": "950",
+          "def": "800"
+        },
+        {
+          "nome": "Monsturtle",
+          "raridade": "N",
+          "slug": "monsturtle",
+          "atk": "800",
+          "def": "1000"
+        },
+        {
+          "nome": "Night Lizard",
+          "raridade": "N",
+          "slug": "night_lizard",
+          "atk": "1150",
+          "def": "1300"
+        },
+        {
+          "nome": "Ooguchi",
+          "raridade": "N",
+          "slug": "ooguchi",
+          "atk": "300",
+          "def": "250"
+        },
+        {
+          "nome": "Penguin Knight",
+          "raridade": "N",
+          "slug": "penguin_knight",
+          "atk": "900",
+          "def": "800"
+        },
+        {
+          "nome": "Penguin Soldier",
+          "raridade": "N",
+          "slug": "penguin_soldier",
+          "atk": "750",
+          "def": "500"
+        },
+        {
+          "nome": "Psychic Kappa",
+          "raridade": "N",
+          "slug": "psychic_kappa",
+          "atk": "400",
+          "def": "1000"
+        },
+        {
+          "nome": "Sea Kamen",
+          "raridade": "N",
+          "slug": "sea_kamen",
+          "atk": "1100",
+          "def": "1300"
+        },
+        {
+          "nome": "Star Boy",
+          "raridade": "N",
+          "slug": "star_boy",
+          "atk": "550",
+          "def": "500"
+        },
+        {
+          "nome": "The Furious Sea King",
+          "raridade": "N",
+          "slug": "the_furious_sea_king",
+          "atk": "800",
+          "def": "700"
+        },
+        {
+          "nome": "The Melting Red Shadow",
+          "raridade": "N",
+          "slug": "the_melting_red_shadow",
+          "atk": "500",
+          "def": "700"
+        },
+        {
+          "nome": "Toad Master",
+          "raridade": "N",
+          "slug": "toad_master",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Turtle Raccoon",
+          "raridade": "N",
+          "slug": "turtle_raccoon",
+          "atk": "700",
+          "def": "900"
+        },
+        {
+          "nome": "Turtle Tiger",
+          "raridade": "N",
+          "slug": "turtle_tiger",
+          "atk": "1000",
+          "def": "1500"
+        },
+        {
+          "nome": "Turu-Purun",
+          "raridade": "N",
+          "slug": "turu-purun",
+          "atk": "450",
+          "def": "500"
+        },
+        {
+          "nome": "Twin Long Rods #1",
+          "raridade": "N",
+          "slug": "twin_long_rods_1",
+          "atk": "900",
+          "def": "700"
+        },
+        {
+          "nome": "Twin Long Rods 2",
+          "raridade": "N",
+          "slug": "twin_long_rods_2",
+          "atk": "850",
+          "def": "700"
+        },
+        {
+          "nome": "Water Element",
+          "raridade": "N",
+          "slug": "water_element",
+          "atk": "900",
+          "def": "700"
+        },
+        {
+          "nome": "Water Girl",
+          "raridade": "N",
+          "slug": "water_girl",
+          "atk": "1250",
+          "def": "1000"
+        },
+        {
+          "nome": "Water Omotics",
+          "raridade": "N",
+          "slug": "water_omotics",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Waterdragon Fairy",
+          "raridade": "N",
+          "slug": "waterdragon_fairy",
+          "atk": "1100",
+          "def": "700"
+        },
+        {
+          "nome": "Weather Report",
+          "raridade": "N",
+          "slug": "weather_report",
+          "atk": "950",
+          "def": "1500"
+        },
+        {
+          "nome": "Wetha",
+          "raridade": "N",
+          "slug": "wetha",
+          "atk": "1000",
+          "def": "900"
+        },
+        {
+          "nome": "Yado Karu",
+          "raridade": "N",
+          "slug": "yado_karu",
+          "atk": "900",
+          "def": "1700"
+        },
+        {
+          "nome": "Zarigun",
+          "raridade": "N",
+          "slug": "zarigun",
+          "atk": "600",
+          "def": "700"
+        },
+        {
+          "nome": "Zone Eater",
+          "raridade": "N",
+          "slug": "zone_eater",
+          "atk": "250",
+          "def": "200"
+        }
+      ]
+    },
+    {
+      "id": "tipo_machine",
+      "tipo_label": "MACHINE",
+      "nome_pt": "Engrenagens de Guerra",
+      "nome_en": "Gears of War",
+      "desc_pt": "Máquinas de combate e autômatos mecânicos.",
+      "desc_en": "Combat machines and mechanical automatons.",
+      "cor": "#7d8896",
+      "custo_souls": 120,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-machine.webp",
+      "total_tema": 62,
+      "cartas_tema": [
+        {
+          "nome": "Ancient Gear Golem",
+          "raridade": "UR",
+          "slug": "ancient_gear_golem",
+          "atk": "3000",
+          "def": "3000"
+        },
+        {
+          "nome": "Cyber End Dragon",
+          "raridade": "UR",
+          "slug": "cyber_end_dragon",
+          "atk": "4000",
+          "def": "2800"
+        },
+        {
+          "nome": "Cyber Twin Dragon",
+          "raridade": "UR",
+          "slug": "cyber_twin_dragon",
+          "atk": "2800",
+          "def": "2100"
+        },
+        {
+          "nome": "Cyber-Tech Alligator",
+          "raridade": "UR",
+          "slug": "cyber-tech_alligator",
+          "atk": "2500",
+          "def": "1600"
+        },
+        {
+          "nome": "Fusilier Dragon",
+          "raridade": "UR",
+          "slug": "fusilier_dragon",
+          "atk": "2800",
+          "def": "2000"
+        },
+        {
+          "nome": "Jinzo",
+          "raridade": "UR",
+          "slug": "jinzo",
+          "atk": "2400",
+          "def": "1500"
+        },
+        {
+          "nome": "Launcher Spider",
+          "raridade": "UR",
+          "slug": "launcher_spider",
+          "atk": "2200",
+          "def": "2500"
+        },
+        {
+          "nome": "Mach Mega Falcon",
+          "raridade": "UR",
+          "slug": "mach_mega_falcon",
+          "atk": "2500",
+          "def": "1500"
+        },
+        {
+          "nome": "Machine King",
+          "raridade": "UR",
+          "slug": "machine_king",
+          "atk": "2200",
+          "def": "2000"
+        },
+        {
+          "nome": "Metalzoa",
+          "raridade": "UR",
+          "slug": "metalzoa",
+          "atk": "3000",
+          "def": "2300"
+        },
+        {
+          "nome": "Ultimate Ancient Gear Golem",
+          "raridade": "UR",
+          "slug": "ultimate_ancient_gear_golem",
+          "atk": "4400",
+          "def": "3400"
+        },
+        {
+          "nome": "Ancient Gear Engineer",
+          "raridade": "SR",
+          "slug": "ancient_gear_engineer",
+          "atk": "1500",
+          "def": "1500"
+        },
+        {
+          "nome": "Cyber Dinosaur",
+          "raridade": "SR",
+          "slug": "cyber_dinosaur",
+          "atk": "2500",
+          "def": "1900"
+        },
+        {
+          "nome": "Cyber Dragon",
+          "raridade": "SR",
+          "slug": "cyber_dragon",
+          "atk": "2100",
+          "def": "1600"
+        },
+        {
+          "nome": "Labyrinth Tank",
+          "raridade": "SR",
+          "slug": "labyrinth_tank",
+          "atk": "2400",
+          "def": "2400"
+        },
+        {
+          "nome": "Robotic Knight",
+          "raridade": "SR",
+          "slug": "robotic_knight",
+          "atk": "1600",
+          "def": "1800"
+        },
+        {
+          "nome": "Royal Guard",
+          "raridade": "SR",
+          "slug": "royal_guard",
+          "atk": "1900",
+          "def": "2200"
+        },
+        {
+          "nome": "Ancient Gear",
+          "raridade": "R",
+          "slug": "ancient_gear",
+          "atk": "100",
+          "def": "800"
+        },
+        {
+          "nome": "Ancient Gear Cannon",
+          "raridade": "R",
+          "slug": "ancient_gear_cannon",
+          "atk": "500",
+          "def": "500"
+        },
+        {
+          "nome": "Ancient Tool",
+          "raridade": "R",
+          "slug": "ancient_tool",
+          "atk": "1700",
+          "def": "1400"
+        },
+        {
+          "nome": "Battle Footballer",
+          "raridade": "R",
+          "slug": "battle_footballer",
+          "atk": "1000",
+          "def": "2100"
+        },
+        {
+          "nome": "Cannon Soldier",
+          "raridade": "R",
+          "slug": "cannon_soldier",
+          "atk": "1400",
+          "def": "1300"
+        },
+        {
+          "nome": "Cyber Falcon",
+          "raridade": "R",
+          "slug": "cyber_falcon",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Cyber Soldier of Darkworld",
+          "raridade": "R",
+          "slug": "cyber_soldier_of_darkworld",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Dice Armadillo",
+          "raridade": "R",
+          "slug": "dice_armadillo",
+          "atk": "1650",
+          "def": "1800"
+        },
+        {
+          "nome": "Gatekeeper",
+          "raridade": "R",
+          "slug": "gatekeeper",
+          "atk": "1500",
+          "def": "1800"
+        },
+        {
+          "nome": "Giga-tech Wolf",
+          "raridade": "R",
+          "slug": "giga-tech_wolf",
+          "atk": "1200",
+          "def": "1400"
+        },
+        {
+          "nome": "Giganto",
+          "raridade": "R",
+          "slug": "giganto",
+          "atk": "1700",
+          "def": "1800"
+        },
+        {
+          "nome": "Ground Attacker Bugroth",
+          "raridade": "R",
+          "slug": "ground_attacker_bugroth",
+          "atk": "1500",
+          "def": "1000"
+        },
+        {
+          "nome": "Guardian of the Throne Room",
+          "raridade": "R",
+          "slug": "guardian_of_the_throne_room",
+          "atk": "1650",
+          "def": "1600"
+        },
+        {
+          "nome": "Machine Attacker",
+          "raridade": "R",
+          "slug": "machine_attacker",
+          "atk": "1600",
+          "def": "1300"
+        },
+        {
+          "nome": "Mech Bass",
+          "raridade": "R",
+          "slug": "mech_bass",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Mechanicalchacer",
+          "raridade": "R",
+          "slug": "mechanicalchacer",
+          "atk": "1850",
+          "def": "800"
+        },
+        {
+          "nome": "Megasonic Eye",
+          "raridade": "R",
+          "slug": "megasonic_eye",
+          "atk": "1500",
+          "def": "1800"
+        },
+        {
+          "nome": "Metal Dragon",
+          "raridade": "R",
+          "slug": "metal_dragon",
+          "atk": "1850",
+          "def": "1700"
+        },
+        {
+          "nome": "Metal Fish",
+          "raridade": "R",
+          "slug": "metal_fish",
+          "atk": "1600",
+          "def": "1900"
+        },
+        {
+          "nome": "Overdrive",
+          "raridade": "R",
+          "slug": "overdrive",
+          "atk": "1600",
+          "def": "1500"
+        },
+        {
+          "nome": "Pendulum Machine",
+          "raridade": "R",
+          "slug": "pendulum_machine",
+          "atk": "1750",
+          "def": "2000"
+        },
+        {
+          "nome": "Proto-cyber Dragon",
+          "raridade": "R",
+          "slug": "proto-cyber_dragon",
+          "atk": "1100",
+          "def": "600"
+        },
+        {
+          "nome": "Saber Slasher",
+          "raridade": "R",
+          "slug": "saber_slasher",
+          "atk": "1450",
+          "def": "1500"
+        },
+        {
+          "nome": "Steel Ogre Grotto #1",
+          "raridade": "R",
+          "slug": "steel_ogre_grotto_1",
+          "atk": "1400",
+          "def": "1800"
+        },
+        {
+          "nome": "Bat",
+          "raridade": "N",
+          "slug": "bat",
+          "atk": "300",
+          "def": "350"
+        },
+        {
+          "nome": "Blast Juggler",
+          "raridade": "N",
+          "slug": "blast_juggler",
+          "atk": "800",
+          "def": "900"
+        },
+        {
+          "nome": "Blocker",
+          "raridade": "N",
+          "slug": "blocker",
+          "atk": "850",
+          "def": "1800"
+        },
+        {
+          "nome": "Brave Scizzar",
+          "raridade": "N",
+          "slug": "brave_scizzar",
+          "atk": "1300",
+          "def": "1000"
+        },
+        {
+          "nome": "Cyber Commander",
+          "raridade": "N",
+          "slug": "cyber_commander",
+          "atk": "750",
+          "def": "700"
+        },
+        {
+          "nome": "Cyber Saurus",
+          "raridade": "N",
+          "slug": "cyber_saurus",
+          "atk": "1800",
+          "def": "1400"
+        },
+        {
+          "nome": "Cyber Soldier",
+          "raridade": "N",
+          "slug": "cyber_soldier",
+          "atk": "1500",
+          "def": "1700"
+        },
+        {
+          "nome": "Cyber-Stein",
+          "raridade": "N",
+          "slug": "cyber-stein",
+          "atk": "700",
+          "def": "500"
+        },
+        {
+          "nome": "Dharma Cannon",
+          "raridade": "N",
+          "slug": "dharma_cannon",
+          "atk": "900",
+          "def": "500"
+        },
+        {
+          "nome": "Disk Magician",
+          "raridade": "N",
+          "slug": "disk_magician",
+          "atk": "1350",
+          "def": "1000"
+        },
+        {
+          "nome": "Giant Mech-soldier",
+          "raridade": "N",
+          "slug": "giant_mech-soldier",
+          "atk": "1750",
+          "def": "1900"
+        },
+        {
+          "nome": "Golgoil",
+          "raridade": "N",
+          "slug": "golgoil",
+          "atk": "900",
+          "def": "1600"
+        },
+        {
+          "nome": "Holograh",
+          "raridade": "N",
+          "slug": "holograh",
+          "atk": "1100",
+          "def": "700"
+        },
+        {
+          "nome": "Jinzo #7",
+          "raridade": "N",
+          "slug": "jinzo_7",
+          "atk": "500",
+          "def": "400"
+        },
+        {
+          "nome": "Mechanical Snail",
+          "raridade": "N",
+          "slug": "mechanical_snail",
+          "atk": "800",
+          "def": "1000"
+        },
+        {
+          "nome": "Mechanical Spider",
+          "raridade": "N",
+          "slug": "mechanical_spider",
+          "atk": "400",
+          "def": "500"
+        },
+        {
+          "nome": "Patrol Robo",
+          "raridade": "N",
+          "slug": "patrol_robo",
+          "atk": "1100",
+          "def": "1900"
+        },
+        {
+          "nome": "Shovel Crusher",
+          "raridade": "N",
+          "slug": "shovel_crusher",
+          "atk": "900",
+          "def": "1200"
+        },
+        {
+          "nome": "Steel Ogre Grotto #2",
+          "raridade": "N",
+          "slug": "steel_ogre_grotto_2",
+          "atk": "1900",
+          "def": "2200"
+        },
+        {
+          "nome": "Steel Scorpion",
+          "raridade": "N",
+          "slug": "steel_scorpion",
+          "atk": "250",
+          "def": "300"
+        },
+        {
+          "nome": "Yaiba Robo",
+          "raridade": "N",
+          "slug": "yaiba_robo",
+          "atk": "1000",
+          "def": "1300"
+        }
+      ]
+    },
+    {
+      "id": "tipo_beast",
+      "tipo_label": "BEAST",
+      "nome_pt": "Instinto Selvagem",
+      "nome_en": "Wild Instinct",
+      "desc_pt": "Feras selvagens guiadas pelo instinto de sobrevivência.",
+      "desc_en": "Wild beasts driven by pure survival instinct.",
+      "cor": "#a86a3d",
+      "custo_souls": 120,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-beast.webp",
+      "total_tema": 52,
+      "cartas_tema": [
+        {
+          "nome": "Big Koala",
+          "raridade": "UR",
+          "slug": "big_koala",
+          "atk": "2700",
+          "def": "2000"
+        },
+        {
+          "nome": "Chimera the Flying Mythical Beast",
+          "raridade": "UR",
+          "slug": "chimera_the_flying_mythical_beast",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "Chimera the King of Phantom Beasts",
+          "raridade": "UR",
+          "slug": "chimera_the_king_of_phantom_beasts",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "Lightning Tricorn",
+          "raridade": "UR",
+          "slug": "lightning_tricorn",
+          "atk": "2800",
+          "def": "2000"
+        },
+        {
+          "nome": "Master of Oz",
+          "raridade": "UR",
+          "slug": "master_of_oz",
+          "atk": "4200",
+          "def": "3700"
+        },
+        {
+          "nome": "Naturia Beast",
+          "raridade": "UR",
+          "slug": "naturia_beast",
+          "atk": "2200",
+          "def": "1700"
+        },
+        {
+          "nome": "Naturia Exterio",
+          "raridade": "UR",
+          "slug": "naturia_exterio",
+          "atk": "2800",
+          "def": "2400"
+        },
+        {
+          "nome": "Super War-Lion",
+          "raridade": "UR",
+          "slug": "super_war-lion",
+          "atk": "2300",
+          "def": "2100"
+        },
+        {
+          "nome": "Thunder Unicorn",
+          "raridade": "UR",
+          "slug": "thunder_unicorn",
+          "atk": "2200",
+          "def": "1800"
+        },
+        {
+          "nome": "Firewing Pegasus",
+          "raridade": "SR",
+          "slug": "firewing_pegasus",
+          "atk": "2250",
+          "def": "1800"
+        },
+        {
+          "nome": "Mad Dog of Darkness",
+          "raridade": "SR",
+          "slug": "mad_dog_of_darkness",
+          "atk": "1900",
+          "def": "1400"
+        },
+        {
+          "nome": "Alligator's Sword",
+          "raridade": "R",
+          "slug": "alligators_sword",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Ancient One of the Deep Forest",
+          "raridade": "R",
+          "slug": "ancient_one_of_the_deep_forest",
+          "atk": "1800",
+          "def": "1900"
+        },
+        {
+          "nome": "Flower Wolf",
+          "raridade": "R",
+          "slug": "flower_wolf",
+          "atk": "1800",
+          "def": "1400"
+        },
+        {
+          "nome": "Garvas",
+          "raridade": "R",
+          "slug": "garvas",
+          "atk": "2000",
+          "def": "1700"
+        },
+        {
+          "nome": "Gazelle the King of Mythical Beasts",
+          "raridade": "R",
+          "slug": "gazelle_the_king_of_mythical_beasts",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Great Bill",
+          "raridade": "R",
+          "slug": "great_bill",
+          "atk": "1250",
+          "def": "1300"
+        },
+        {
+          "nome": "Griffore",
+          "raridade": "R",
+          "slug": "griffore",
+          "atk": "1200",
+          "def": "1500"
+        },
+        {
+          "nome": "Leogun",
+          "raridade": "R",
+          "slug": "leogun",
+          "atk": "1750",
+          "def": "1550"
+        },
+        {
+          "nome": "Lisark",
+          "raridade": "R",
+          "slug": "lisark",
+          "atk": "1300",
+          "def": "1300"
+        },
+        {
+          "nome": "Little Chimera",
+          "raridade": "R",
+          "slug": "little_chimera",
+          "atk": "600",
+          "def": "550"
+        },
+        {
+          "nome": "Mon Larvas",
+          "raridade": "R",
+          "slug": "mon_larvas",
+          "atk": "1300",
+          "def": "1400"
+        },
+        {
+          "nome": "Pale Beast",
+          "raridade": "R",
+          "slug": "pale_beast",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Tatsunootoshigo",
+          "raridade": "R",
+          "slug": "tatsunootoshigo",
+          "atk": "1350",
+          "def": "1600"
+        },
+        {
+          "nome": "Togex",
+          "raridade": "R",
+          "slug": "togex",
+          "atk": "1600",
+          "def": "1800"
+        },
+        {
+          "nome": "Air Marmot of Nefariousness",
+          "raridade": "N",
+          "slug": "air_marmot_of_nefariousness",
+          "atk": "400",
+          "def": "600"
+        },
+        {
+          "nome": "Armored Rat",
+          "raridade": "N",
+          "slug": "armored_rat",
+          "atk": "950",
+          "def": "1100"
+        },
+        {
+          "nome": "Burglar",
+          "raridade": "N",
+          "slug": "burglar",
+          "atk": "850",
+          "def": "800"
+        },
+        {
+          "nome": "Dark Gray",
+          "raridade": "N",
+          "slug": "dark_gray",
+          "atk": "800",
+          "def": "900"
+        },
+        {
+          "nome": "Dark Rabbit",
+          "raridade": "N",
+          "slug": "dark_rabbit",
+          "atk": "1100",
+          "def": "1500"
+        },
+        {
+          "nome": "Dig Beak",
+          "raridade": "N",
+          "slug": "dig_beak",
+          "atk": "500",
+          "def": "800"
+        },
+        {
+          "nome": "Frenzied Panda",
+          "raridade": "N",
+          "slug": "frenzied_panda",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Fusionist",
+          "raridade": "N",
+          "slug": "fusionist",
+          "atk": "900",
+          "def": "700"
+        },
+        {
+          "nome": "Gate Deeg",
+          "raridade": "N",
+          "slug": "gate_deeg",
+          "atk": "700",
+          "def": "800"
+        },
+        {
+          "nome": "Hane-Hane",
+          "raridade": "N",
+          "slug": "hane-hane",
+          "atk": "450",
+          "def": "500"
+        },
+        {
+          "nome": "Larvas",
+          "raridade": "N",
+          "slug": "larvas",
+          "atk": "800",
+          "def": "1000"
+        },
+        {
+          "nome": "Master & Expert",
+          "raridade": "N",
+          "slug": "master_&_expert",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Meotoko",
+          "raridade": "N",
+          "slug": "meotoko",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Milus Radiant",
+          "raridade": "N",
+          "slug": "milus_radiant",
+          "atk": "300",
+          "def": "250"
+        },
+        {
+          "nome": "Mystic Horseman",
+          "raridade": "N",
+          "slug": "mystic_horseman",
+          "atk": "1300",
+          "def": "1550"
+        },
+        {
+          "nome": "Mystical Sheep #1",
+          "raridade": "N",
+          "slug": "mystical_sheep_1",
+          "atk": "1150",
+          "def": "900"
+        },
+        {
+          "nome": "Mystical Sheep #2",
+          "raridade": "N",
+          "slug": "mystical_sheep_2",
+          "atk": "800",
+          "def": "1000"
+        },
+        {
+          "nome": "Nekogal #1",
+          "raridade": "N",
+          "slug": "nekogal_1",
+          "atk": "1100",
+          "def": "900"
+        },
+        {
+          "nome": "Obese Marmot of Nefariousness",
+          "raridade": "N",
+          "slug": "obese_marmot_of_nefariousness",
+          "atk": "750",
+          "def": "800"
+        },
+        {
+          "nome": "Prevent Rat",
+          "raridade": "N",
+          "slug": "prevent_rat",
+          "atk": "500",
+          "def": "2000"
+        },
+        {
+          "nome": "Silver Fang",
+          "raridade": "N",
+          "slug": "silver_fang",
+          "atk": "1200",
+          "def": "800"
+        },
+        {
+          "nome": "Sleeping Lion",
+          "raridade": "N",
+          "slug": "sleeping_lion",
+          "atk": "700",
+          "def": "1700"
+        },
+        {
+          "nome": "Synchar",
+          "raridade": "N",
+          "slug": "synchar",
+          "atk": "800",
+          "def": "900"
+        },
+        {
+          "nome": "The Wicked Worm Beast",
+          "raridade": "N",
+          "slug": "the_wicked_worm_beast",
+          "atk": "1400",
+          "def": "700"
+        },
+        {
+          "nome": "Torike",
+          "raridade": "N",
+          "slug": "torike",
+          "atk": "1200",
+          "def": "600"
+        },
+        {
+          "nome": "Wilmee",
+          "raridade": "N",
+          "slug": "wilmee",
+          "atk": "1000",
+          "def": "1200"
+        },
+        {
+          "nome": "Wolf",
+          "raridade": "N",
+          "slug": "wolf",
+          "atk": "1200",
+          "def": "800"
+        }
+      ]
+    },
+    {
+      "id": "tipo_insect",
+      "tipo_label": "INSECT",
+      "nome_pt": "Enxame Mortal",
+      "nome_en": "Deadly Swarm",
+      "desc_pt": "Insetos e criaturas do enxame, letais em grupo.",
+      "desc_en": "Insects and swarm creatures, deadly in numbers.",
+      "cor": "#6b9143",
+      "custo_souls": 110,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-insect.webp",
+      "total_tema": 40,
+      "cartas_tema": [
+        {
+          "nome": "Great Moth",
+          "raridade": "UR",
+          "slug": "great_moth",
+          "atk": "2600",
+          "def": "2500"
+        },
+        {
+          "nome": "Javelin Beetle",
+          "raridade": "UR",
+          "slug": "javelin_beetle",
+          "atk": "2450",
+          "def": "2550"
+        },
+        {
+          "nome": "Metal Armored Bug",
+          "raridade": "UR",
+          "slug": "metal_armored_bug",
+          "atk": "2800",
+          "def": "1500"
+        },
+        {
+          "nome": "Perfectly Ultimate Great Moth",
+          "raridade": "UR",
+          "slug": "perfectly_ultimate_great_moth",
+          "atk": "3500",
+          "def": "3000"
+        },
+        {
+          "nome": "Ultimate Insect LV5",
+          "raridade": "UR",
+          "slug": "ultimate_insect_lv5",
+          "atk": "2300",
+          "def": "900"
+        },
+        {
+          "nome": "Ultimate Insect LV7",
+          "raridade": "UR",
+          "slug": "ultimate_insect_lv7",
+          "atk": "2600",
+          "def": "1500"
+        },
+        {
+          "nome": "Dungeon Worm",
+          "raridade": "SR",
+          "slug": "dungeon_worm",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Jirai Gumo",
+          "raridade": "SR",
+          "slug": "jirai_gumo",
+          "atk": "2200",
+          "def": "100"
+        },
+        {
+          "nome": "Man-Eater Bug",
+          "raridade": "SR",
+          "slug": "man-eater_bug",
+          "atk": "450",
+          "def": "600"
+        },
+        {
+          "nome": "Ultimate Insect LV3",
+          "raridade": "SR",
+          "slug": "ultimate_insect_lv3",
+          "atk": "1400",
+          "def": "900"
+        },
+        {
+          "nome": "Big Insect",
+          "raridade": "R",
+          "slug": "big_insect",
+          "atk": "1200",
+          "def": "1500"
+        },
+        {
+          "nome": "Hercules Beetle",
+          "raridade": "R",
+          "slug": "hercules_beetle",
+          "atk": "1500",
+          "def": "2000"
+        },
+        {
+          "nome": "Hunter Spider",
+          "raridade": "R",
+          "slug": "hunter_spider",
+          "atk": "1600",
+          "def": "1400"
+        },
+        {
+          "nome": "Kwagar Hercules",
+          "raridade": "R",
+          "slug": "kwagar_hercules",
+          "atk": "1900",
+          "def": "1700"
+        },
+        {
+          "nome": "Acid Crawler",
+          "raridade": "N",
+          "slug": "acid_crawler",
+          "atk": "900",
+          "def": "700"
+        },
+        {
+          "nome": "Alinsection",
+          "raridade": "N",
+          "slug": "alinsection",
+          "atk": "950",
+          "def": "700"
+        },
+        {
+          "nome": "Basic Insect",
+          "raridade": "N",
+          "slug": "basic_insect",
+          "atk": "500",
+          "def": "700"
+        },
+        {
+          "nome": "Bladefly",
+          "raridade": "N",
+          "slug": "bladefly",
+          "atk": "600",
+          "def": "700"
+        },
+        {
+          "nome": "Cockroach Knight",
+          "raridade": "N",
+          "slug": "cockroach_knight",
+          "atk": "800",
+          "def": "900"
+        },
+        {
+          "nome": "Cocoon of Evolution",
+          "raridade": "N",
+          "slug": "cocoon_of_evolution",
+          "atk": "0",
+          "def": "2000"
+        },
+        {
+          "nome": "Gale Dogra",
+          "raridade": "N",
+          "slug": "gale_dogra",
+          "atk": "650",
+          "def": "600"
+        },
+        {
+          "nome": "Ganigumo",
+          "raridade": "N",
+          "slug": "ganigumo",
+          "atk": "600",
+          "def": "800"
+        },
+        {
+          "nome": "Giant Flea",
+          "raridade": "N",
+          "slug": "giant_flea",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Giant Scorpion of the Tundra",
+          "raridade": "N",
+          "slug": "giant_scorpion_of_the_tundra",
+          "atk": "1100",
+          "def": "1000"
+        },
+        {
+          "nome": "Gokibore",
+          "raridade": "N",
+          "slug": "gokibore",
+          "atk": "1200",
+          "def": "1400"
+        },
+        {
+          "nome": "Insect Soldiers of the Sky",
+          "raridade": "N",
+          "slug": "insect_soldiers_of_the_sky",
+          "atk": "1000",
+          "def": "800"
+        },
+        {
+          "nome": "Kamakiriman",
+          "raridade": "N",
+          "slug": "kamakiriman",
+          "atk": "1150",
+          "def": "1400"
+        },
+        {
+          "nome": "Kattapillar",
+          "raridade": "N",
+          "slug": "kattapillar",
+          "atk": "250",
+          "def": "300"
+        },
+        {
+          "nome": "Killer Needle",
+          "raridade": "N",
+          "slug": "killer_needle",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Korogashi",
+          "raridade": "N",
+          "slug": "korogashi",
+          "atk": "550",
+          "def": "400"
+        },
+        {
+          "nome": "Kumootoko",
+          "raridade": "N",
+          "slug": "kumootoko",
+          "atk": "700",
+          "def": "1400"
+        },
+        {
+          "nome": "Kuwagata α",
+          "raridade": "N",
+          "slug": "kuwagata_α",
+          "atk": "1250",
+          "def": "1000"
+        },
+        {
+          "nome": "Larvae Moth",
+          "raridade": "N",
+          "slug": "larvae_moth",
+          "atk": "500",
+          "def": "400"
+        },
+        {
+          "nome": "Leghul",
+          "raridade": "N",
+          "slug": "leghul",
+          "atk": "300",
+          "def": "350"
+        },
+        {
+          "nome": "Minar",
+          "raridade": "N",
+          "slug": "minar",
+          "atk": "800",
+          "def": "750"
+        },
+        {
+          "nome": "Needle Worm",
+          "raridade": "N",
+          "slug": "needle_worm",
+          "atk": "750",
+          "def": "600"
+        },
+        {
+          "nome": "Nightmare Scorpion",
+          "raridade": "N",
+          "slug": "nightmare_scorpion",
+          "atk": "900",
+          "def": "800"
+        },
+        {
+          "nome": "Petit Moth",
+          "raridade": "N",
+          "slug": "petit_moth",
+          "atk": "300",
+          "def": "200"
+        },
+        {
+          "nome": "Spiked Snail",
+          "raridade": "N",
+          "slug": "spiked_snail",
+          "atk": "700",
+          "def": "1300"
+        },
+        {
+          "nome": "Winged Cleaver",
+          "raridade": "N",
+          "slug": "winged_cleaver",
+          "atk": "700",
+          "def": "700"
+        }
+      ]
+    },
+    {
+      "id": "tipo_zombie",
+      "tipo_label": "ZOMBIE",
+      "nome_pt": "Terra dos Mortos-Vivos",
+      "nome_en": "Land of the Undead",
+      "desc_pt": "Mortos-vivos que se recusam a descansar em paz.",
+      "desc_en": "Undead creatures that refuse to rest in peace.",
+      "cor": "#5c7a5e",
+      "custo_souls": 100,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-zombie.webp",
+      "total_tema": 34,
+      "cartas_tema": [
+        {
+          "nome": "Dokurorider",
+          "raridade": "UR",
+          "slug": "dokurorider",
+          "atk": "1900",
+          "def": "1850"
+        },
+        {
+          "nome": "King of The Skull Servants",
+          "raridade": "UR",
+          "slug": "king_of_the_skull_servants",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Despair From The Dark",
+          "raridade": "SR",
+          "slug": "despair_from_the_dark",
+          "atk": "2800",
+          "def": "3000"
+        },
+        {
+          "nome": "Fear From The Dark",
+          "raridade": "SR",
+          "slug": "fear_from_the_dark",
+          "atk": "1700",
+          "def": "1500"
+        },
+        {
+          "nome": "Great Mammoth of Goldfine",
+          "raridade": "SR",
+          "slug": "great_mammoth_of_goldfine",
+          "atk": "2200",
+          "def": "1800"
+        },
+        {
+          "nome": "Pumpking the King of Ghosts",
+          "raridade": "SR",
+          "slug": "pumpking_the_king_of_ghosts",
+          "atk": "1800",
+          "def": "2000"
+        },
+        {
+          "nome": "Skelgon",
+          "raridade": "SR",
+          "slug": "skelgon",
+          "atk": "1700",
+          "def": "1900"
+        },
+        {
+          "nome": "The Snake Hair",
+          "raridade": "SR",
+          "slug": "the_snake_hair",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Magical Ghost",
+          "raridade": "R",
+          "slug": "magical_ghost",
+          "atk": "1300",
+          "def": "1400"
+        },
+        {
+          "nome": "Armored Zombie",
+          "raridade": "N",
+          "slug": "armored_zombie",
+          "atk": "1500",
+          "def": "0"
+        },
+        {
+          "nome": "Blue-eyed Silver Zombie",
+          "raridade": "N",
+          "slug": "blue-eyed_silver_zombie",
+          "atk": "900",
+          "def": "700"
+        },
+        {
+          "nome": "Bone Mouse",
+          "raridade": "N",
+          "slug": "bone_mouse",
+          "atk": "400",
+          "def": "300"
+        },
+        {
+          "nome": "Clown Zombie",
+          "raridade": "N",
+          "slug": "clown_zombie",
+          "atk": "1350",
+          "def": "0"
+        },
+        {
+          "nome": "Corroding Shark",
+          "raridade": "N",
+          "slug": "corroding_shark",
+          "atk": "1100",
+          "def": "700"
+        },
+        {
+          "nome": "Dark Assailant",
+          "raridade": "N",
+          "slug": "dark_assailant",
+          "atk": "1200",
+          "def": "1200"
+        },
+        {
+          "nome": "Dokuroizo the Grim Reaper",
+          "raridade": "N",
+          "slug": "dokuroizo_the_grim_reaper",
+          "atk": "900",
+          "def": "1200"
+        },
+        {
+          "nome": "Dragon Zombie",
+          "raridade": "N",
+          "slug": "dragon_zombie",
+          "atk": "1600",
+          "def": "0"
+        },
+        {
+          "nome": "Fiend's Hand",
+          "raridade": "N",
+          "slug": "fiends_hand",
+          "atk": "600",
+          "def": "600"
+        },
+        {
+          "nome": "Fire Reaper",
+          "raridade": "N",
+          "slug": "fire_reaper",
+          "atk": "700",
+          "def": "500"
+        },
+        {
+          "nome": "Flame Ghost",
+          "raridade": "N",
+          "slug": "flame_ghost",
+          "atk": "1000",
+          "def": "800"
+        },
+        {
+          "nome": "Ghoul with an Appetite",
+          "raridade": "N",
+          "slug": "ghoul_with_an_appetite",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "Graveyard and the Hand of Invitation",
+          "raridade": "N",
+          "slug": "graveyard_and_the_hand_of_invitation",
+          "atk": "700",
+          "def": "900"
+        },
+        {
+          "nome": "Mech Mole Zombie",
+          "raridade": "N",
+          "slug": "mech_mole_zombie",
+          "atk": "500",
+          "def": "400"
+        },
+        {
+          "nome": "Phantom Ghost",
+          "raridade": "N",
+          "slug": "phantom_ghost",
+          "atk": "600",
+          "def": "800"
+        },
+        {
+          "nome": "Shadow Ghoul",
+          "raridade": "N",
+          "slug": "shadow_ghoul",
+          "atk": "1600",
+          "def": "1300"
+        },
+        {
+          "nome": "Shadow Specter",
+          "raridade": "N",
+          "slug": "shadow_specter",
+          "atk": "500",
+          "def": "200"
+        },
+        {
+          "nome": "Skull Servant",
+          "raridade": "N",
+          "slug": "skull_servant",
+          "atk": "300",
+          "def": "200"
+        },
+        {
+          "nome": "Temple of Skulls",
+          "raridade": "N",
+          "slug": "temple_of_skulls",
+          "atk": "900",
+          "def": "1300"
+        },
+        {
+          "nome": "The 13th Grave",
+          "raridade": "N",
+          "slug": "the_13th_grave",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "The Wandering Doomed",
+          "raridade": "N",
+          "slug": "the_wandering_doomed",
+          "atk": "800",
+          "def": "600"
+        },
+        {
+          "nome": "Three-legged Zombies",
+          "raridade": "N",
+          "slug": "three-legged_zombies",
+          "atk": "1100",
+          "def": "800"
+        },
+        {
+          "nome": "Wood Remains",
+          "raridade": "N",
+          "slug": "wood_remains",
+          "atk": "1000",
+          "def": "900"
+        },
+        {
+          "nome": "Yaranzo",
+          "raridade": "N",
+          "slug": "yaranzo",
+          "atk": "1300",
+          "def": "1500"
+        },
+        {
+          "nome": "Zombie Warrior",
+          "raridade": "N",
+          "slug": "zombie_warrior",
+          "atk": "1200",
+          "def": "900"
+        }
+      ]
+    },
+    {
+      "id": "tipo_plant",
+      "tipo_label": "PLANT",
+      "nome_pt": "Floresta Devoradora",
+      "nome_en": "Devouring Forest",
+      "desc_pt": "Plantas carnívoras e guardiãs da floresta.",
+      "desc_en": "Carnivorous plants and guardians of the forest.",
+      "cor": "#4f9b4a",
+      "custo_souls": 120,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-plant.webp",
+      "total_tema": 33,
+      "cartas_tema": [
+        {
+          "nome": "Fallen Angel of Roses",
+          "raridade": "UR",
+          "slug": "fallen_angel_of_roses",
+          "atk": "2400",
+          "def": "1300"
+        },
+        {
+          "nome": "Gigaplant",
+          "raridade": "UR",
+          "slug": "gigaplant",
+          "atk": "2400",
+          "def": "1200"
+        },
+        {
+          "nome": "Marina, Princess of Sunflowers",
+          "raridade": "UR",
+          "slug": "marina_princess_of_sunflowers",
+          "atk": "2800",
+          "def": "1600"
+        },
+        {
+          "nome": "Predaplant Chimerafflesia",
+          "raridade": "UR",
+          "slug": "predaplant_chimerafflesia",
+          "atk": "2500",
+          "def": "2000"
+        },
+        {
+          "nome": "Rosaria, the Stately Fallen Angel",
+          "raridade": "UR",
+          "slug": "rosaria_the_stately_fallen_angel",
+          "atk": "2900",
+          "def": "2400"
+        },
+        {
+          "nome": "Rose Spectre of Dunn",
+          "raridade": "UR",
+          "slug": "rose_spectre_of_dunn",
+          "atk": "2000",
+          "def": "1800"
+        },
+        {
+          "nome": "Talaya, Princess of Cherry Blossoms",
+          "raridade": "UR",
+          "slug": "talaya_princess_of_cherry_blossoms",
+          "atk": "2800",
+          "def": "1200"
+        },
+        {
+          "nome": "Tytannial, Princess of Camellias",
+          "raridade": "UR",
+          "slug": "tytannial_princess_of_camellias",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Aromaseraphy Rosemary",
+          "raridade": "SR",
+          "slug": "aromaseraphy_rosemary",
+          "atk": "2000",
+          "def": "900"
+        },
+        {
+          "nome": "Gigantic Cephalotus",
+          "raridade": "SR",
+          "slug": "gigantic_cephalotus",
+          "atk": "1850",
+          "def": "700"
+        },
+        {
+          "nome": "Mystic Tomato",
+          "raridade": "SR",
+          "slug": "mystic_tomato",
+          "atk": "1400",
+          "def": "1000"
+        },
+        {
+          "nome": "Queen of Autumn Leaves",
+          "raridade": "SR",
+          "slug": "queen_of_autumn_leaves",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Rigorous Reaver",
+          "raridade": "SR",
+          "slug": "rigorous_reaver",
+          "atk": "1600",
+          "def": "100"
+        },
+        {
+          "nome": "Bean Soldier",
+          "raridade": "R",
+          "slug": "bean_soldier",
+          "atk": "1400",
+          "def": "1300"
+        },
+        {
+          "nome": "Trent",
+          "raridade": "R",
+          "slug": "trent",
+          "atk": "1500",
+          "def": "1800"
+        },
+        {
+          "nome": "Abyss Flower",
+          "raridade": "N",
+          "slug": "abyss_flower",
+          "atk": "750",
+          "def": "400"
+        },
+        {
+          "nome": "Ancient Tree of Enlightenment",
+          "raridade": "N",
+          "slug": "ancient_tree_of_enlightenment",
+          "atk": "600",
+          "def": "1500"
+        },
+        {
+          "nome": "Arlownay",
+          "raridade": "N",
+          "slug": "arlownay",
+          "atk": "800",
+          "def": "1000"
+        },
+        {
+          "nome": "Barrel Lily",
+          "raridade": "N",
+          "slug": "barrel_lily",
+          "atk": "1100",
+          "def": "600"
+        },
+        {
+          "nome": "Dark Plant",
+          "raridade": "N",
+          "slug": "dark_plant",
+          "atk": "300",
+          "def": "400"
+        },
+        {
+          "nome": "Darkworld Thorns",
+          "raridade": "N",
+          "slug": "darkworld_thorns",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "Firegrass",
+          "raridade": "N",
+          "slug": "firegrass",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Green Phantom King",
+          "raridade": "N",
+          "slug": "green_phantom_king",
+          "atk": "500",
+          "def": "1600"
+        },
+        {
+          "nome": "Griggle",
+          "raridade": "N",
+          "slug": "griggle",
+          "atk": "350",
+          "def": "300"
+        },
+        {
+          "nome": "Laughing Flower",
+          "raridade": "N",
+          "slug": "laughing_flower",
+          "atk": "900",
+          "def": "500"
+        },
+        {
+          "nome": "Living Vase",
+          "raridade": "N",
+          "slug": "living_vase",
+          "atk": "900",
+          "def": "1100"
+        },
+        {
+          "nome": "Man Eater",
+          "raridade": "N",
+          "slug": "man_eater",
+          "atk": "800",
+          "def": "600"
+        },
+        {
+          "nome": "Man-eating Plant",
+          "raridade": "N",
+          "slug": "man-eating_plant",
+          "atk": "800",
+          "def": "600"
+        },
+        {
+          "nome": "Mushroom Man",
+          "raridade": "N",
+          "slug": "mushroom_man",
+          "atk": "800",
+          "def": "600"
+        },
+        {
+          "nome": "Rainbow Flower",
+          "raridade": "N",
+          "slug": "rainbow_flower",
+          "atk": "400",
+          "def": "500"
+        },
+        {
+          "nome": "Snakeyashi",
+          "raridade": "N",
+          "slug": "snakeyashi",
+          "atk": "1000",
+          "def": "1200"
+        },
+        {
+          "nome": "Tentacle Plant",
+          "raridade": "N",
+          "slug": "tentacle_plant",
+          "atk": "500",
+          "def": "600"
+        },
+        {
+          "nome": "Yashinoki",
+          "raridade": "N",
+          "slug": "yashinoki",
+          "atk": "800",
+          "def": "600"
+        }
+      ]
+    },
+    {
+      "id": "tipo_rock",
+      "tipo_label": "ROCK",
+      "nome_pt": "Guardiões de Pedra",
+      "nome_en": "Stone Guardians",
+      "desc_pt": "Colossos e guardiões esculpidos em pedra.",
+      "desc_en": "Colossi and guardians carved from stone.",
+      "cor": "#8a7860",
+      "custo_souls": 110,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-rock.webp",
+      "total_tema": 31,
+      "cartas_tema": [
+        {
+          "nome": "Fossil Dragon Skullgios",
+          "raridade": "UR",
+          "slug": "fossil_dragon_skullgios",
+          "atk": "3500",
+          "def": "0"
+        },
+        {
+          "nome": "Megarock Dragon",
+          "raridade": "UR",
+          "slug": "megarock_dragon",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Millennium Golem",
+          "raridade": "UR",
+          "slug": "millennium_golem",
+          "atk": "2000",
+          "def": "2200"
+        },
+        {
+          "nome": "Mystical Sand",
+          "raridade": "UR",
+          "slug": "mystical_sand",
+          "atk": "2100",
+          "def": "1700"
+        },
+        {
+          "nome": "Enraged Muka Muka",
+          "raridade": "SR",
+          "slug": "enraged_muka_muka",
+          "atk": "1200",
+          "def": "600"
+        },
+        {
+          "nome": "Fossil Dragon Skullgar",
+          "raridade": "SR",
+          "slug": "fossil_dragon_skullgar",
+          "atk": "2500",
+          "def": "0"
+        },
+        {
+          "nome": "Guardian Sphinx",
+          "raridade": "SR",
+          "slug": "guardian_sphinx",
+          "atk": "1700",
+          "def": "2400"
+        },
+        {
+          "nome": "Mine Golem",
+          "raridade": "SR",
+          "slug": "mine_golem",
+          "atk": "1000",
+          "def": "1900"
+        },
+        {
+          "nome": "Stone D.",
+          "raridade": "SR",
+          "slug": "stone_d",
+          "atk": "2000",
+          "def": "2300"
+        },
+        {
+          "nome": "Destroyer Golem",
+          "raridade": "R",
+          "slug": "destroyer_golem",
+          "atk": "1500",
+          "def": "1000"
+        },
+        {
+          "nome": "Fossil Dyna Pachycephalo",
+          "raridade": "R",
+          "slug": "fossil_dyna_pachycephalo",
+          "atk": "1200",
+          "def": "1300"
+        },
+        {
+          "nome": "Giant Soldier of Stone",
+          "raridade": "R",
+          "slug": "giant_soldier_of_stone",
+          "atk": "1300",
+          "def": "2000"
+        },
+        {
+          "nome": "Labyrinth Wall",
+          "raridade": "R",
+          "slug": "labyrinth_wall",
+          "atk": "0",
+          "def": "3000"
+        },
+        {
+          "nome": "Muka Muka",
+          "raridade": "R",
+          "slug": "muka_muka",
+          "atk": "600",
+          "def": "300"
+        },
+        {
+          "nome": "Sand Stone",
+          "raridade": "R",
+          "slug": "sand_stone",
+          "atk": "1300",
+          "def": "1600"
+        },
+        {
+          "nome": "Stone Ogre Grotto",
+          "raridade": "R",
+          "slug": "stone_ogre_grotto",
+          "atk": "1600",
+          "def": "1500"
+        },
+        {
+          "nome": "Stone Statue of the Aztecs",
+          "raridade": "R",
+          "slug": "stone_statue_of_the_aztecs",
+          "atk": "300",
+          "def": "2000"
+        },
+        {
+          "nome": "Ancient Jar",
+          "raridade": "N",
+          "slug": "ancient_jar",
+          "atk": "400",
+          "def": "200"
+        },
+        {
+          "nome": "Barrel Rock",
+          "raridade": "N",
+          "slug": "barrel_rock",
+          "atk": "1000",
+          "def": "1300"
+        },
+        {
+          "nome": "Dissolverock",
+          "raridade": "N",
+          "slug": "dissolverock",
+          "atk": "900",
+          "def": "1000"
+        },
+        {
+          "nome": "Haniwa",
+          "raridade": "N",
+          "slug": "haniwa",
+          "atk": "500",
+          "def": "500"
+        },
+        {
+          "nome": "Morphing Jar",
+          "raridade": "N",
+          "slug": "morphing_jar",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Pot the Trick",
+          "raridade": "N",
+          "slug": "pot_the_trick",
+          "atk": "400",
+          "def": "400"
+        },
+        {
+          "nome": "Prisman",
+          "raridade": "N",
+          "slug": "prisman",
+          "atk": "800",
+          "def": "1000"
+        },
+        {
+          "nome": "Rock Ogre Grotto #1",
+          "raridade": "N",
+          "slug": "rock_ogre_grotto_1",
+          "atk": "800",
+          "def": "1200"
+        },
+        {
+          "nome": "Rock Ogre Grotto #2",
+          "raridade": "N",
+          "slug": "rock_ogre_grotto_2",
+          "atk": "700",
+          "def": "1400"
+        },
+        {
+          "nome": "Spherous Lady",
+          "raridade": "N",
+          "slug": "spherous_lady",
+          "atk": "400",
+          "def": "1400"
+        },
+        {
+          "nome": "Stone Armadiller",
+          "raridade": "N",
+          "slug": "stone_armadiller",
+          "atk": "800",
+          "def": "1200"
+        },
+        {
+          "nome": "Stone Ghost",
+          "raridade": "N",
+          "slug": "stone_ghost",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "The Statue of Easter Island",
+          "raridade": "N",
+          "slug": "the_statue_of_easter_island",
+          "atk": "1100",
+          "def": "1400"
+        },
+        {
+          "nome": "The Thing That Hides In the Mud",
+          "raridade": "N",
+          "slug": "the_thing_that_hides_in_the_mud",
+          "atk": "1200",
+          "def": "1300"
+        }
+      ]
+    },
+    {
+      "id": "tipo_fairy",
+      "tipo_label": "FAIRY",
+      "nome_pt": "Luz Celestial",
+      "nome_en": "Celestial Light",
+      "desc_pt": "Guardiões celestiais e forças radiantes.",
+      "desc_en": "Celestial guardians and radiant forces.",
+      "cor": "#e8d67a",
+      "custo_souls": 100,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-fairy.webp",
+      "total_tema": 29,
+      "cartas_tema": [
+        {
+          "nome": "Shinato, King of a Higher Plane",
+          "raridade": "UR",
+          "slug": "shinato_king_of_a_higher_plane",
+          "atk": "3300",
+          "def": "3000"
+        },
+        {
+          "nome": "Vennu, Bright Bird of Divinity",
+          "raridade": "UR",
+          "slug": "vennu_bright_bird_of_divinity",
+          "atk": "2800",
+          "def": "2000"
+        },
+        {
+          "nome": "Goddess with the Third Eye",
+          "raridade": "SR",
+          "slug": "goddess_with_the_third_eye",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Shining Angel",
+          "raridade": "SR",
+          "slug": "shining_angel",
+          "atk": "1400",
+          "def": "800"
+        },
+        {
+          "nome": "Dark Witch",
+          "raridade": "R",
+          "slug": "dark_witch",
+          "atk": "1800",
+          "def": "1700"
+        },
+        {
+          "nome": "Doma The Angel of Silence",
+          "raridade": "R",
+          "slug": "doma_the_angel_of_silence",
+          "atk": "1600",
+          "def": "1400"
+        },
+        {
+          "nome": "Gyakutenno Megami",
+          "raridade": "R",
+          "slug": "gyakutenno_megami",
+          "atk": "1800",
+          "def": "2000"
+        },
+        {
+          "nome": "Ocubeam",
+          "raridade": "R",
+          "slug": "ocubeam",
+          "atk": "1550",
+          "def": "1650"
+        },
+        {
+          "nome": "Orion the Battle King",
+          "raridade": "R",
+          "slug": "orion_the_battle_king",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Winged Egg of New Life",
+          "raridade": "R",
+          "slug": "winged_egg_of_new_life",
+          "atk": "1400",
+          "def": "1700"
+        },
+        {
+          "nome": "Binding Chain",
+          "raridade": "N",
+          "slug": "binding_chain",
+          "atk": "1000",
+          "def": "1100"
+        },
+        {
+          "nome": "Dancing Elf",
+          "raridade": "N",
+          "slug": "dancing_elf",
+          "atk": "300",
+          "def": "200"
+        },
+        {
+          "nome": "Goddess of Whim",
+          "raridade": "N",
+          "slug": "goddess_of_whim",
+          "atk": "950",
+          "def": "700"
+        },
+        {
+          "nome": "Happy Lover",
+          "raridade": "N",
+          "slug": "happy_lover",
+          "atk": "800",
+          "def": "500"
+        },
+        {
+          "nome": "Hoshiningen",
+          "raridade": "N",
+          "slug": "hoshiningen",
+          "atk": "500",
+          "def": "700"
+        },
+        {
+          "nome": "Hourglass of Courage",
+          "raridade": "N",
+          "slug": "hourglass_of_courage",
+          "atk": "1100",
+          "def": "1200"
+        },
+        {
+          "nome": "Hourglass of Life",
+          "raridade": "N",
+          "slug": "hourglass_of_life",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Key Mace",
+          "raridade": "N",
+          "slug": "key_mace",
+          "atk": "400",
+          "def": "300"
+        },
+        {
+          "nome": "Lunar Queen Elzaim",
+          "raridade": "N",
+          "slug": "lunar_queen_elzaim",
+          "atk": "750",
+          "def": "1100"
+        },
+        {
+          "nome": "Muse-A",
+          "raridade": "N",
+          "slug": "muse-a",
+          "atk": "850",
+          "def": "900"
+        },
+        {
+          "nome": "Mystical Capture Chain",
+          "raridade": "N",
+          "slug": "mystical_capture_chain",
+          "atk": "700",
+          "def": "700"
+        },
+        {
+          "nome": "Petit Angel",
+          "raridade": "N",
+          "slug": "petit_angel",
+          "atk": "600",
+          "def": "900"
+        },
+        {
+          "nome": "Ray & Temperature",
+          "raridade": "N",
+          "slug": "ray_&_temperature",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Shining Friendship",
+          "raridade": "N",
+          "slug": "shining_friendship",
+          "atk": "1300",
+          "def": "1100"
+        },
+        {
+          "nome": "Skelengel",
+          "raridade": "N",
+          "slug": "skelengel",
+          "atk": "900",
+          "def": "400"
+        },
+        {
+          "nome": "Spirit of the Harp",
+          "raridade": "N",
+          "slug": "spirit_of_the_harp",
+          "atk": "800",
+          "def": "2000"
+        },
+        {
+          "nome": "Tenderness",
+          "raridade": "N",
+          "slug": "tenderness",
+          "atk": "700",
+          "def": "1400"
+        },
+        {
+          "nome": "Weather Control",
+          "raridade": "N",
+          "slug": "weather_control",
+          "atk": "600",
+          "def": "400"
+        },
+        {
+          "nome": "Wing Egg Elf",
+          "raridade": "N",
+          "slug": "wing_egg_elf",
+          "atk": "500",
+          "def": "1300"
+        }
+      ]
+    },
+    {
+      "id": "tipo_criaturas_raras",
+      "tipo_label": "CRIATURAS RARAS",
+      "nome_pt": "Bestiário Perdido",
+      "nome_en": "Lost Bestiary",
+      "desc_pt": "Feras aladas, répteis, criaturas de trovão e outras espécies raras reunidas em um só bestiário.",
+      "desc_en": "Winged beasts, reptiles, thunder creatures and other rare species gathered in one bestiary.",
+      "cor": "#9a8cc4",
+      "custo_souls": 140,
+      "evento": false,
+      "duracao_dias": null,
+      "imagem": "img/boosters/booster-rare_creatures.webp",
+      "total_tema": 140,
+      "cartas_tema": [
+        {
+          "nome": "Amphibian Beast",
+          "raridade": "UR",
+          "slug": "amphibian_beast",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Aqua Dragon",
+          "raridade": "UR",
+          "slug": "aqua_dragon",
+          "atk": "2250",
+          "def": "1900"
+        },
+        {
+          "nome": "Beast King Barbaros",
+          "raridade": "UR",
+          "slug": "beast_king_barbaros",
+          "atk": "3000",
+          "def": "1200"
+        },
+        {
+          "nome": "Beast Machine King Barbaros",
+          "raridade": "UR",
+          "slug": "beast_machine_king_barbaros",
+          "atk": "3800",
+          "def": "1200"
+        },
+        {
+          "nome": "Cerulean Sacred Phoenix of Nephthys",
+          "raridade": "UR",
+          "slug": "cerulean_sacred_phoenix_of_nephthys",
+          "atk": "3000",
+          "def": "1000"
+        },
+        {
+          "nome": "Crimson Sunbird",
+          "raridade": "UR",
+          "slug": "crimson_sunbird",
+          "atk": "2300",
+          "def": "1800"
+        },
+        {
+          "nome": "Danger! Thunderbird!",
+          "raridade": "UR",
+          "slug": "danger_thunderbird",
+          "atk": "2800",
+          "def": "2400"
+        },
+        {
+          "nome": "Fire King High Avatar Garunix",
+          "raridade": "UR",
+          "slug": "fire_king_high_avatar_garunix",
+          "atk": "2700",
+          "def": "1700"
+        },
+        {
+          "nome": "Flame Cerebrus",
+          "raridade": "UR",
+          "slug": "flame_cerebrus",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "Gate Guardian of Thunder and Wind",
+          "raridade": "UR",
+          "slug": "gate_guardian_of_thunder_and_wind",
+          "atk": "2500",
+          "def": "2200"
+        },
+        {
+          "nome": "Giga Gagagigo",
+          "raridade": "UR",
+          "slug": "giga_gagagigo",
+          "atk": "2450",
+          "def": "1500"
+        },
+        {
+          "nome": "Gogiga Gagagigo",
+          "raridade": "UR",
+          "slug": "gogiga_gagagigo",
+          "atk": "2950",
+          "def": "2800"
+        },
+        {
+          "nome": "Harpie Lady Sisters",
+          "raridade": "UR",
+          "slug": "harpie_lady_sisters",
+          "atk": "1950",
+          "def": "2100"
+        },
+        {
+          "nome": "King of the Feral Imps",
+          "raridade": "UR",
+          "slug": "king_of_the_feral_imps",
+          "atk": "2300",
+          "def": "2000"
+        },
+        {
+          "nome": "Ocean Dragon Lord - Neo-Daedalus",
+          "raridade": "UR",
+          "slug": "ocean_dragon_lord_-_neo-daedalus",
+          "atk": "2900",
+          "def": "1600"
+        },
+        {
+          "nome": "Rabid Horseman",
+          "raridade": "UR",
+          "slug": "rabid_horseman",
+          "atk": "2000",
+          "def": "1700"
+        },
+        {
+          "nome": "Sacred Phoenix of Nephthys",
+          "raridade": "UR",
+          "slug": "sacred_phoenix_of_nephthys",
+          "atk": "2400",
+          "def": "1600"
+        },
+        {
+          "nome": "Sengenjin",
+          "raridade": "UR",
+          "slug": "sengenjin",
+          "atk": "2750",
+          "def": "2500"
+        },
+        {
+          "nome": "Simorgh, Bird of Divinity",
+          "raridade": "UR",
+          "slug": "simorgh_bird_of_divinity",
+          "atk": "2700",
+          "def": "1000"
+        },
+        {
+          "nome": "Super Conductor Tyranno",
+          "raridade": "UR",
+          "slug": "super_conductor_tyranno",
+          "atk": "3300",
+          "def": "1400"
+        },
+        {
+          "nome": "Thunder Dragon Titan",
+          "raridade": "UR",
+          "slug": "thunder_dragon_titan",
+          "atk": "3200",
+          "def": "3200"
+        },
+        {
+          "nome": "Twin-Headed Thunder Dragon",
+          "raridade": "UR",
+          "slug": "twin-headed_thunder_dragon",
+          "atk": "2800",
+          "def": "2100"
+        },
+        {
+          "nome": "Bracchio-raidus",
+          "raridade": "SR",
+          "slug": "bracchio-raidus",
+          "atk": "2200",
+          "def": "2000"
+        },
+        {
+          "nome": "Des Feral Imp",
+          "raridade": "SR",
+          "slug": "des_feral_imp",
+          "atk": "1600",
+          "def": "1800"
+        },
+        {
+          "nome": "Exarion Universe",
+          "raridade": "SR",
+          "slug": "exarion_universe",
+          "atk": "1800",
+          "def": "1900"
+        },
+        {
+          "nome": "Gagagigo",
+          "raridade": "SR",
+          "slug": "gagagigo",
+          "atk": "1850",
+          "def": "1000"
+        },
+        {
+          "nome": "Infernal Flame Emperor",
+          "raridade": "SR",
+          "slug": "infernal_flame_emperor",
+          "atk": "2700",
+          "def": "1600"
+        },
+        {
+          "nome": "Inferno",
+          "raridade": "SR",
+          "slug": "inferno",
+          "atk": "1100",
+          "def": "1900"
+        },
+        {
+          "nome": "Kairyu-Shin",
+          "raridade": "SR",
+          "slug": "kairyu-shin",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Kaiser Sea Horse",
+          "raridade": "SR",
+          "slug": "kaiser_sea_horse",
+          "atk": "1700",
+          "def": "1650"
+        },
+        {
+          "nome": "King Pyron",
+          "raridade": "SR",
+          "slug": "king_pyron",
+          "atk": "1500",
+          "def": "500"
+        },
+        {
+          "nome": "Lion Alligator",
+          "raridade": "SR",
+          "slug": "lion_alligator",
+          "atk": "1900",
+          "def": "200"
+        },
+        {
+          "nome": "Manticore of Darkness",
+          "raridade": "SR",
+          "slug": "manticore_of_darkness",
+          "atk": "2300",
+          "def": "1000"
+        },
+        {
+          "nome": "Mr. Volcano",
+          "raridade": "SR",
+          "slug": "mr_volcano",
+          "atk": "2100",
+          "def": "1300"
+        },
+        {
+          "nome": "Panther Warrior",
+          "raridade": "SR",
+          "slug": "panther_warrior",
+          "atk": "2000",
+          "def": "1600"
+        },
+        {
+          "nome": "Sanga of the Thunder",
+          "raridade": "SR",
+          "slug": "sanga_of_the_thunder",
+          "atk": "2600",
+          "def": "2200"
+        },
+        {
+          "nome": "Solar Flare Dragon",
+          "raridade": "SR",
+          "slug": "solar_flare_dragon",
+          "atk": "1500",
+          "def": "1000"
+        },
+        {
+          "nome": "Spirit of Flames",
+          "raridade": "SR",
+          "slug": "spirit_of_flames",
+          "atk": "1700",
+          "def": "1000"
+        },
+        {
+          "nome": "Twin-Headed Fire Dragon",
+          "raridade": "SR",
+          "slug": "twin-headed_fire_dragon",
+          "atk": "2200",
+          "def": "1700"
+        },
+        {
+          "nome": "Vorse Raider",
+          "raridade": "SR",
+          "slug": "vorse_raider",
+          "atk": "1900",
+          "def": "1200"
+        },
+        {
+          "nome": "7 Colored Fish",
+          "raridade": "R",
+          "slug": "7_colored_fish",
+          "atk": "1800",
+          "def": "800"
+        },
+        {
+          "nome": "Amazon of the Seas",
+          "raridade": "R",
+          "slug": "amazon_of_the_seas",
+          "atk": "1300",
+          "def": "1400"
+        },
+        {
+          "nome": "Ancient Lizard Warrior",
+          "raridade": "R",
+          "slug": "ancient_lizard_warrior",
+          "atk": "1400",
+          "def": "1100"
+        },
+        {
+          "nome": "Armored Lizard",
+          "raridade": "R",
+          "slug": "armored_lizard",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Battle Ox",
+          "raridade": "R",
+          "slug": "battle_ox",
+          "atk": "1700",
+          "def": "1000"
+        },
+        {
+          "nome": "Battle Steer",
+          "raridade": "R",
+          "slug": "battle_steer",
+          "atk": "1800",
+          "def": "1300"
+        },
+        {
+          "nome": "Beaver Warrior",
+          "raridade": "R",
+          "slug": "beaver_warrior",
+          "atk": "1200",
+          "def": "1500"
+        },
+        {
+          "nome": "Blue-winged Crown",
+          "raridade": "R",
+          "slug": "blue-winged_crown",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "Bolt Escargot",
+          "raridade": "R",
+          "slug": "bolt_escargot",
+          "atk": "1400",
+          "def": "1500"
+        },
+        {
+          "nome": "Bottom Dweller",
+          "raridade": "R",
+          "slug": "bottom_dweller",
+          "atk": "1650",
+          "def": "1700"
+        },
+        {
+          "nome": "Crawling Dragon #2",
+          "raridade": "R",
+          "slug": "crawling_dragon_2",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "Crazy Fish",
+          "raridade": "R",
+          "slug": "crazy_fish",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "Crow Goblin",
+          "raridade": "R",
+          "slug": "crow_goblin",
+          "atk": "1850",
+          "def": "1600"
+        },
+        {
+          "nome": "Darkfire Soldier #1",
+          "raridade": "R",
+          "slug": "darkfire_soldier_1",
+          "atk": "1700",
+          "def": "1150"
+        },
+        {
+          "nome": "Darkfire Soldier #2",
+          "raridade": "R",
+          "slug": "darkfire_soldier_2",
+          "atk": "1700",
+          "def": "1100"
+        },
+        {
+          "nome": "Deepsea Shark",
+          "raridade": "R",
+          "slug": "deepsea_shark",
+          "atk": "1900",
+          "def": "1600"
+        },
+        {
+          "nome": "Emperor of the Land and Sea",
+          "raridade": "R",
+          "slug": "emperor_of_the_land_and_sea",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Faith Bird",
+          "raridade": "R",
+          "slug": "faith_bird",
+          "atk": "1500",
+          "def": "1100"
+        },
+        {
+          "nome": "Fiend Refrection #1",
+          "raridade": "R",
+          "slug": "fiend_refrection_1",
+          "atk": "1300",
+          "def": "1400"
+        },
+        {
+          "nome": "Garoozis",
+          "raridade": "R",
+          "slug": "garoozis",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Grappler",
+          "raridade": "R",
+          "slug": "grappler",
+          "atk": "1300",
+          "def": "1200"
+        },
+        {
+          "nome": "Great White",
+          "raridade": "R",
+          "slug": "great_white",
+          "atk": "1600",
+          "def": "800"
+        },
+        {
+          "nome": "Harpie Lady",
+          "raridade": "R",
+          "slug": "harpie_lady",
+          "atk": "1300",
+          "def": "1400"
+        },
+        {
+          "nome": "Kaminari Attack",
+          "raridade": "R",
+          "slug": "kaminari_attack",
+          "atk": "1900",
+          "def": "1400"
+        },
+        {
+          "nome": "Marine Beast",
+          "raridade": "R",
+          "slug": "marine_beast",
+          "atk": "1700",
+          "def": "1600"
+        },
+        {
+          "nome": "Megazowler",
+          "raridade": "R",
+          "slug": "megazowler",
+          "atk": "1800",
+          "def": "2000"
+        },
+        {
+          "nome": "Misairuzame",
+          "raridade": "R",
+          "slug": "misairuzame",
+          "atk": "1400",
+          "def": "1600"
+        },
+        {
+          "nome": "Monstrous Bird",
+          "raridade": "R",
+          "slug": "monstrous_bird",
+          "atk": "2000",
+          "def": "1900"
+        },
+        {
+          "nome": "Nekogal #2",
+          "raridade": "R",
+          "slug": "nekogal_2",
+          "atk": "1900",
+          "def": "2000"
+        },
+        {
+          "nome": "Ogre of the Black Shadow",
+          "raridade": "R",
+          "slug": "ogre_of_the_black_shadow",
+          "atk": "1200",
+          "def": "1400"
+        },
+        {
+          "nome": "Peacock",
+          "raridade": "R",
+          "slug": "peacock",
+          "atk": "1700",
+          "def": "1500"
+        },
+        {
+          "nome": "Punished Eagle",
+          "raridade": "R",
+          "slug": "punished_eagle",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "Queen Bird",
+          "raridade": "R",
+          "slug": "queen_bird",
+          "atk": "1200",
+          "def": "2000"
+        },
+        {
+          "nome": "Raging Flame Sprite",
+          "raridade": "R",
+          "slug": "raging_flame_sprite",
+          "atk": "100",
+          "def": "200"
+        },
+        {
+          "nome": "Rainbow Marine Mermaid",
+          "raridade": "R",
+          "slug": "rainbow_marine_mermaid",
+          "atk": "1550",
+          "def": "1700"
+        },
+        {
+          "nome": "Rare Fish",
+          "raridade": "R",
+          "slug": "rare_fish",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Rude Kaiser",
+          "raridade": "R",
+          "slug": "rude_kaiser",
+          "atk": "1800",
+          "def": "1600"
+        },
+        {
+          "nome": "Sea King Dragon",
+          "raridade": "R",
+          "slug": "sea_king_dragon",
+          "atk": "2000",
+          "def": "1700"
+        },
+        {
+          "nome": "Skull Red Bird",
+          "raridade": "R",
+          "slug": "skull_red_bird",
+          "atk": "1550",
+          "def": "1200"
+        },
+        {
+          "nome": "Skullbird",
+          "raridade": "R",
+          "slug": "skullbird",
+          "atk": "1900",
+          "def": "1700"
+        },
+        {
+          "nome": "Spike Seadra",
+          "raridade": "R",
+          "slug": "spike_seadra",
+          "atk": "1600",
+          "def": "1300"
+        },
+        {
+          "nome": "Spirit of the Books",
+          "raridade": "R",
+          "slug": "spirit_of_the_books",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Sword Arm of Dragon",
+          "raridade": "R",
+          "slug": "sword_arm_of_dragon",
+          "atk": "1750",
+          "def": "2030"
+        },
+        {
+          "nome": "Takriminos",
+          "raridade": "R",
+          "slug": "takriminos",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Takuhee",
+          "raridade": "R",
+          "slug": "takuhee",
+          "atk": "1450",
+          "def": "1000"
+        },
+        {
+          "nome": "The Immortal of Thunder",
+          "raridade": "R",
+          "slug": "the_immortal_of_thunder",
+          "atk": "1500",
+          "def": "1300"
+        },
+        {
+          "nome": "Thunder Dragon",
+          "raridade": "R",
+          "slug": "thunder_dragon",
+          "atk": "1600",
+          "def": "1500"
+        },
+        {
+          "nome": "Two-headed King Rex",
+          "raridade": "R",
+          "slug": "two-headed_king_rex",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "Tyhone",
+          "raridade": "R",
+          "slug": "tyhone",
+          "atk": "1200",
+          "def": "1400"
+        },
+        {
+          "nome": "Vermillion Sparrow",
+          "raridade": "R",
+          "slug": "vermillion_sparrow",
+          "atk": "1900",
+          "def": "1500"
+        },
+        {
+          "nome": "Wing Eagle",
+          "raridade": "R",
+          "slug": "wing_eagle",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Anthrosaurus",
+          "raridade": "N",
+          "slug": "anthrosaurus",
+          "atk": "1000",
+          "def": "850"
+        },
+        {
+          "nome": "Beaked Snake",
+          "raridade": "N",
+          "slug": "beaked_snake",
+          "atk": "800",
+          "def": "900"
+        },
+        {
+          "nome": "Bolt Penguin",
+          "raridade": "N",
+          "slug": "bolt_penguin",
+          "atk": "1100",
+          "def": "800"
+        },
+        {
+          "nome": "Charubin the Fire Knight",
+          "raridade": "N",
+          "slug": "charubin_the_fire_knight",
+          "atk": "1100",
+          "def": "800"
+        },
+        {
+          "nome": "Dragon Piper",
+          "raridade": "N",
+          "slug": "dragon_piper",
+          "atk": "200",
+          "def": "1800"
+        },
+        {
+          "nome": "Droll Bird",
+          "raridade": "N",
+          "slug": "droll_bird",
+          "atk": "600",
+          "def": "500"
+        },
+        {
+          "nome": "Drooling Lizard",
+          "raridade": "N",
+          "slug": "drooling_lizard",
+          "atk": "900",
+          "def": "800"
+        },
+        {
+          "nome": "Electric Lizard",
+          "raridade": "N",
+          "slug": "electric_lizard",
+          "atk": "850",
+          "def": "800"
+        },
+        {
+          "nome": "Electric Snake",
+          "raridade": "N",
+          "slug": "electric_snake",
+          "atk": "800",
+          "def": "900"
+        },
+        {
+          "nome": "Enchanting Mermaid",
+          "raridade": "N",
+          "slug": "enchanting_mermaid",
+          "atk": "1200",
+          "def": "900"
+        },
+        {
+          "nome": "Fiend Refrection #2",
+          "raridade": "N",
+          "slug": "fiend_refrection_2",
+          "atk": "1100",
+          "def": "1400"
+        },
+        {
+          "nome": "Fire Eye",
+          "raridade": "N",
+          "slug": "fire_eye",
+          "atk": "800",
+          "def": "600"
+        },
+        {
+          "nome": "Fireyarou",
+          "raridade": "N",
+          "slug": "fireyarou",
+          "atk": "1300",
+          "def": "1000"
+        },
+        {
+          "nome": "Flame Viper",
+          "raridade": "N",
+          "slug": "flame_viper",
+          "atk": "400",
+          "def": "450"
+        },
+        {
+          "nome": "Fortress Whale",
+          "raridade": "N",
+          "slug": "fortress_whale",
+          "atk": "2350",
+          "def": "2150"
+        },
+        {
+          "nome": "Hinotama Soul",
+          "raridade": "N",
+          "slug": "hinotama_soul",
+          "atk": "600",
+          "def": "500"
+        },
+        {
+          "nome": "Hitotsu-me Giant",
+          "raridade": "N",
+          "slug": "hitotsu-me_giant",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Kaminarikozou",
+          "raridade": "N",
+          "slug": "kaminarikozou",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Krokodilus",
+          "raridade": "N",
+          "slug": "krokodilus",
+          "atk": "1100",
+          "def": "1200"
+        },
+        {
+          "nome": "Kurama",
+          "raridade": "N",
+          "slug": "kurama",
+          "atk": "800",
+          "def": "800"
+        },
+        {
+          "nome": "LALA Li-oon",
+          "raridade": "N",
+          "slug": "lala_li-oon",
+          "atk": "600",
+          "def": "600"
+        },
+        {
+          "nome": "Little D",
+          "raridade": "N",
+          "slug": "little_d",
+          "atk": "1100",
+          "def": "700"
+        },
+        {
+          "nome": "Mammoth Graveyard",
+          "raridade": "N",
+          "slug": "mammoth_graveyard",
+          "atk": "1200",
+          "def": "800"
+        },
+        {
+          "nome": "Man-eating Black Shark",
+          "raridade": "N",
+          "slug": "man-eating_black_shark",
+          "atk": "2100",
+          "def": "1300"
+        },
+        {
+          "nome": "Mavelus",
+          "raridade": "N",
+          "slug": "mavelus",
+          "atk": "1300",
+          "def": "900"
+        },
+        {
+          "nome": "Mechaleon",
+          "raridade": "N",
+          "slug": "mechaleon",
+          "atk": "800",
+          "def": "600"
+        },
+        {
+          "nome": "Mega Thunderball",
+          "raridade": "N",
+          "slug": "mega_thunderball",
+          "atk": "750",
+          "def": "600"
+        },
+        {
+          "nome": "Mountain Warrior",
+          "raridade": "N",
+          "slug": "mountain_warrior",
+          "atk": "600",
+          "def": "1000"
+        },
+        {
+          "nome": "Niwatori",
+          "raridade": "N",
+          "slug": "niwatori",
+          "atk": "900",
+          "def": "800"
+        },
+        {
+          "nome": "One Who Hunts Souls",
+          "raridade": "N",
+          "slug": "one_who_hunts_souls",
+          "atk": "1100",
+          "def": "1000"
+        },
+        {
+          "nome": "Oscillo Hero #2",
+          "raridade": "N",
+          "slug": "oscillo_hero_2",
+          "atk": "1000",
+          "def": "500"
+        },
+        {
+          "nome": "Pragtical",
+          "raridade": "N",
+          "slug": "pragtical",
+          "atk": "1900",
+          "def": "1500"
+        },
+        {
+          "nome": "Root Water",
+          "raridade": "N",
+          "slug": "root_water",
+          "atk": "900",
+          "def": "800"
+        },
+        {
+          "nome": "Serpent Marauder",
+          "raridade": "N",
+          "slug": "serpent_marauder",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Sinister Serpent",
+          "raridade": "N",
+          "slug": "sinister_serpent",
+          "atk": "300",
+          "def": "250"
+        },
+        {
+          "nome": "Solitude",
+          "raridade": "N",
+          "slug": "solitude",
+          "atk": "1050",
+          "def": "1000"
+        },
+        {
+          "nome": "Tiger Axe",
+          "raridade": "N",
+          "slug": "tiger_axe",
+          "atk": "1300",
+          "def": "1100"
+        },
+        {
+          "nome": "Tomozaurus",
+          "raridade": "N",
+          "slug": "tomozaurus",
+          "atk": "500",
+          "def": "400"
+        },
+        {
+          "nome": "Tongyo",
+          "raridade": "N",
+          "slug": "tongyo",
+          "atk": "1350",
+          "def": "800"
+        },
+        {
+          "nome": "Toon Alligator",
+          "raridade": "N",
+          "slug": "toon_alligator",
+          "atk": "800",
+          "def": "1600"
+        },
+        {
+          "nome": "Trakadon",
+          "raridade": "N",
+          "slug": "trakadon",
+          "atk": "1300",
+          "def": "800"
+        },
+        {
+          "nome": "Tripwire Beast",
+          "raridade": "N",
+          "slug": "tripwire_beast",
+          "atk": "1200",
+          "def": "1300"
+        },
+        {
+          "nome": "Two-mouth Darkruler",
+          "raridade": "N",
+          "slug": "two-mouth_darkruler",
+          "atk": "900",
+          "def": "700"
+        },
+        {
+          "nome": "Uraby",
+          "raridade": "N",
+          "slug": "uraby",
+          "atk": "1500",
+          "def": "800"
+        },
+        {
+          "nome": "White Dolphin",
+          "raridade": "N",
+          "slug": "white_dolphin",
+          "atk": "500",
+          "def": "400"
+        },
+        {
+          "nome": "Winged Dragon #2",
+          "raridade": "N",
+          "slug": "winged_dragon_2",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Wings of Wicked Flame",
+          "raridade": "N",
+          "slug": "wings_of_wicked_flame",
+          "atk": "700",
+          "def": "600"
+        },
+        {
+          "nome": "Wow Warrior",
+          "raridade": "N",
+          "slug": "wow_warrior",
+          "atk": "1250",
+          "def": "900"
+        },
+        {
+          "nome": "Yormungarde",
+          "raridade": "N",
+          "slug": "yormungarde",
+          "atk": "1200",
+          "def": "900"
+        }
+      ]
+    },
+    {
+      "id": "especial_red_eyes",
+      "tipo_label": "RED-EYES",
+      "nome_pt": "Fúria do Dragão de Olhos Vermelhos",
+      "nome_en": "Fury of the Red-Eyes Dragon",
+      "desc_pt": "Edição especial e temporária dedicada ao arquétipo Red-Eyes — mesma dinâmica dos outros boosters (4 cartas do tema, 3 de outros tipos, 3 de suporte). Disponível por tempo limitado: depois que a janela do evento fechar, essas cartas saem de circulação.",
+      "desc_en": "Special, time-limited edition dedicated to the Red-Eyes archetype — same structure as the other boosters (4 theme cards, 3 of other types, 3 support cards). Available for a limited time: once the event window closes, these cards leave circulation.",
+      "cor": "#8b1e1e",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 7,
+      "imagem": "img/boosters/booster-red-eyes.webp",
+      "total_tema": 29,
+      "cartas_tema": [
+        {
+          "nome": "Archfiend Black Skull Dragon",
+          "raridade": "UR",
+          "slug": "archfiend_black_skull_dragon",
+          "atk": "3200",
+          "def": "2500"
+        },
+        {
+          "nome": "B. Skull Dragon",
+          "raridade": "UR",
+          "slug": "b_skull_dragon",
+          "atk": "3200",
+          "def": "2500"
+        },
+        {
+          "nome": "Lord of the Red",
+          "raridade": "UR",
+          "slug": "lord_of_the_red",
+          "atk": "2400",
+          "def": "2100"
+        },
+        {
+          "nome": "Meteor B. Dragon",
+          "raridade": "UR",
+          "slug": "meteor_b_dragon",
+          "atk": "3500",
+          "def": "2000"
+        },
+        {
+          "nome": "Meteor Black Comet Dragon",
+          "raridade": "UR",
+          "slug": "meteor_black_comet_dragon",
+          "atk": "3500",
+          "def": "2000"
+        },
+        {
+          "nome": "Meteor Dragon Red-Eyes Impact",
+          "raridade": "UR",
+          "slug": "meteor_dragon_red-eyes_impact",
+          "atk": "1800",
+          "def": "2000"
+        },
+        {
+          "nome": "Red-Eyes Archfiend of Lightning",
+          "raridade": "UR",
+          "slug": "red-eyes_archfiend_of_lightning",
+          "atk": "2500",
+          "def": "1200"
+        },
+        {
+          "nome": "Red-Eyes B. Metal Dragon",
+          "raridade": "UR",
+          "slug": "red-eyes_b_metal_dragon",
+          "atk": "2800",
+          "def": "2400"
+        },
+        {
+          "nome": "Red-Eyes Black Dragon Sword",
+          "raridade": "UR",
+          "slug": "red-eyes_black_dragon_sword",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Red-Eyes Black Fullmetal Dragon",
+          "raridade": "UR",
+          "slug": "red-eyes_black_fullmetal_dragon",
+          "atk": "3400",
+          "def": "2400"
+        },
+        {
+          "nome": "Red-Eyes Dark Dragoon",
+          "raridade": "UR",
+          "slug": "red-eyes_dark_dragoon",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Red-Eyes Darkness Dragon",
+          "raridade": "UR",
+          "slug": "red-eyes_darkness_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Red-Eyes Darkness Metal Dragon",
+          "raridade": "UR",
+          "slug": "red-eyes_darkness_metal_dragon",
+          "atk": "2800",
+          "def": "2400"
+        },
+        {
+          "nome": "Red-Eyes Fang with Chain",
+          "raridade": "UR",
+          "slug": "red-eyes_fang_with_chain"
+        },
+        {
+          "nome": "Red-Eyes Flare Metal Dragon",
+          "raridade": "UR",
+          "slug": "red-eyes_flare_metal_dragon",
+          "atk": "2800",
+          "def": "2400"
+        },
+        {
+          "nome": "Red-Eyes Slash Dragon",
+          "raridade": "UR",
+          "slug": "red-eyes_slash_dragon",
+          "atk": "2800",
+          "def": "2400"
+        },
+        {
+          "nome": "Red-Eyes Zombie Dragon Lord",
+          "raridade": "UR",
+          "slug": "red-eyes_zombie_dragon_lord",
+          "atk": "2800",
+          "def": "2400"
+        },
+        {
+          "nome": "Red-Eyes Zombie Necro Dragon",
+          "raridade": "UR",
+          "slug": "red-eyes_zombie_necro_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Gearfried the Red-Eyes Iron Knight",
+          "raridade": "SR",
+          "slug": "gearfried_the_red-eyes_iron_knight",
+          "atk": "1800",
+          "def": "1600"
+        },
+        {
+          "nome": "Inferno Fire Blast",
+          "raridade": "SR",
+          "slug": "inferno_fire_blast"
+        },
+        {
+          "nome": "Red-Eyes Black Flare Dragon",
+          "raridade": "SR",
+          "slug": "red-eyes_black_flare_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Red-Eyes Toon Dragon",
+          "raridade": "SR",
+          "slug": "red-eyes_toon_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Red-Eyes Wyvern",
+          "raridade": "SR",
+          "slug": "red-eyes_wyvern",
+          "atk": "1800",
+          "def": "1600"
+        },
+        {
+          "nome": "Red-Eyes Zombie Dragon",
+          "raridade": "SR",
+          "slug": "red-eyes_zombie_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Black Dragon's Chick",
+          "raridade": "R",
+          "slug": "black_dragons_chick",
+          "atk": "800",
+          "def": "500"
+        },
+        {
+          "nome": "Black Metal Dragon",
+          "raridade": "R",
+          "slug": "black_metal_dragon",
+          "atk": "600",
+          "def": "600"
+        },
+        {
+          "nome": "Paladin of Dark Dragon",
+          "raridade": "R",
+          "slug": "paladin_of_dark_dragon",
+          "atk": "1900",
+          "def": "1200"
+        },
+        {
+          "nome": "Red-Eyes Baby Dragon",
+          "raridade": "R",
+          "slug": "red-eyes_baby_dragon",
+          "atk": "1200",
+          "def": "700"
+        },
+        {
+          "nome": "Red-Eyes Retro Dragon",
+          "raridade": "R",
+          "slug": "red-eyes_retro_dragon",
+          "atk": "1700",
+          "def": "1600"
+        }
+      ]
+    }
+  ]
+}

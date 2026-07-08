@@ -338,6 +338,15 @@ nav#nav.scrolled{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
   border:1px solid rgba(66,217,135,.2);
 }
 .pack-badge.soon{background:rgba(200,151,58,.1);color:var(--gold-dim);border-color:rgba(200,151,58,.2)}
+.pack-bonus-tag{
+  display:inline-block;margin-top:8px;font-size:9px;letter-spacing:.5px;font-weight:700;
+  padding:4px 10px;border-radius:2px;
+  background:rgba(232,184,64,.14);color:var(--gold2);
+  border:1px solid rgba(232,184,64,.35);
+}
+.pack-bonus-tag-summary{
+  font-size:11px;color:var(--gold2);font-weight:700;margin-top:4px;
+}
 
 /* ═══════ ORBE SVG — CONTAINER ═══════ */
 .soul-container{
@@ -919,6 +928,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
         <div class="sum-tier" id="sum-tier">Essencial</div>
         <div class="sum-souls" id="sum-pack">100 Souls</div>
         <div class="sum-use" id="sum-use"></div>
+        <div class="pack-bonus-tag-summary" id="sum-bonus" style="display:none"></div>
       </div>
 
       <div class="sum-rows">
@@ -1037,7 +1047,7 @@ const PACKS = [
   { id:'souls_100',  tierPt:'Essencial', tierEn:'Essential', souls:100,  uses:1,  br:'R$ 5,00',  usd:'US$ 2.49',  tier:1 },
   { id:'souls_300',  tierPt:'Duelista',  tierEn:'Duelist',   souls:300,  uses:3,  br:'R$ 12,90', usd:'US$ 5.99',  tier:2 },
   { id:'souls_600',  tierPt:'Templo',    tierEn:'Temple',    souls:600,  uses:6,  br:'R$ 21,90', usd:'US$ 9.99',  tier:3 },
-  { id:'souls_1000', tierPt:'Faraó',     tierEn:'Pharaoh',   souls:1000, uses:10, br:'R$ 29,90', usd:'US$ 14.99', tier:4 }
+  { id:'souls_1000', tierPt:'Faraó',     tierEn:'Pharaoh',   souls:1000, uses:10, br:'R$ 29,90', usd:'US$ 14.99', tier:4, bonusTicket:1 }
 ];
 let selected = PACKS[0];
 let pixTxid = '', pollTimer = null;
@@ -1298,6 +1308,7 @@ function renderPacks(){
     const status=STORE_ENABLED?t('Disponível','Available'):t('Em breve','Soon');
     const statusClass=STORE_ENABLED?'':'soon';
     const priceNote=isEn()?'International · USD':'Nacional · R$';
+    const bonusHTML=p.bonusTicket?`<div class="pack-bonus-tag">🎁 ${t('+'+p.bonusTicket+' Ticket Gold de brinde','+'+p.bonusTicket+' bonus Gold Ticket')}</div>`:'';
     el.innerHTML=`
       <div class="pack-header">
         <span class="pack-tier-label">${tier}</span>
@@ -1307,6 +1318,7 @@ function renderPacks(){
       <div class="pack-souls-count">${p.souls}</div>
       <span class="pack-souls-label">Souls</span>
       <div class="pack-use">${packUseText(p)}</div>
+      ${bonusHTML}
       <div class="pack-rule"></div>
       <div class="pack-price">${price}</div>
       <div class="pack-price-note">${priceNote}</div>
@@ -1323,6 +1335,15 @@ function updateSummary(){
   document.getElementById('sum-use').textContent=packUseText(selected);
   document.getElementById('sum-br').textContent=selected.br;
   document.getElementById('sum-usd').textContent=selected.usd;
+  const sumBonus=document.getElementById('sum-bonus');
+  if(sumBonus){
+    if(selected.bonusTicket){
+      sumBonus.style.display='block';
+      sumBonus.textContent='🎁 '+t('+'+selected.bonusTicket+' Ticket Gold de brinde','+'+selected.bonusTicket+' bonus Gold Ticket');
+    } else {
+      sumBonus.style.display='none';
+    }
+  }
   const tierLabel=document.getElementById('sum-tier');
   if(tierLabel){
     tierLabel.textContent=isEn()?selected.tierEn:selected.tierPt;
@@ -1498,7 +1519,7 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.6.2</span>
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.7</span>
     <span>Fan-made project · Not affiliated with Konami</span>
   </div>
 </footer>

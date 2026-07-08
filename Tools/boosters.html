@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forbidden Legacy — Booster Packs</title>
-<meta name="description" content="Entenda como funcionam os Booster Packs do Forbidden Legacy — 10 cartas por pack, pools temáticos, garantias de SR/UR e o ciclo de fragmentos.">
+<meta name="description" content="Entenda como funcionam os Booster Packs do Forbidden Legacy — 10 cartas por pack, pools por tipo de monstro, garantia de SR e o ciclo de fragmentos.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://forbiddenlegacy.com.br/boosters.html">
 <meta property="og:title" content="Forbidden Legacy — Booster Packs">
@@ -155,6 +155,68 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   color:var(--text-muted); font-size:14px; line-height:1.8;
 }
 .features-evolving strong { color:var(--gold-light); }
+
+/* ── BOOSTER BROWSER (droplist) ── */
+.booster-tiles-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:16px;
+  margin-bottom:8px;
+}
+.booster-tile {
+  cursor:pointer; border:1px solid var(--border); border-radius:6px; overflow:hidden;
+  background:var(--dark2); transition:border-color .2s, transform .2s; text-align:center;
+  position:relative;
+}
+.booster-tile:hover { transform:translateY(-3px); }
+.booster-tile.active { border-color:var(--gold); box-shadow:0 0 0 1px var(--gold), 0 0 18px rgba(200,151,58,.25); }
+.booster-tile-img {
+  width:100%; aspect-ratio:2/3; object-fit:cover; display:block; background:#050408;
+}
+.booster-tile-placeholder {
+  width:100%; aspect-ratio:2/3; display:flex; align-items:center; justify-content:center;
+  font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1px; text-align:center; padding:8px;
+  color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.6);
+}
+.booster-tile-event-tag {
+  position:absolute; top:6px; left:6px; background:rgba(200,40,40,.85); color:#fff;
+  font-size:9px; letter-spacing:1px; text-transform:uppercase; padding:2px 6px; border-radius:2px;
+}
+.booster-tile-name { font-size:11px; color:var(--text-body); padding:8px 6px 2px; line-height:1.3; }
+.booster-tile-price { font-size:11px; color:var(--gold-light); font-weight:600; padding:0 6px 10px; }
+
+.booster-detail-panel {
+  margin-top:24px; background:var(--dark2); border:1px solid var(--border); border-radius:6px;
+  padding:24px 26px; scroll-margin-top:110px;
+}
+.booster-detail-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:6px; }
+.booster-detail-title { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:1px; }
+.booster-detail-sub { font-size:12px; color:var(--text-muted); margin-bottom:18px; line-height:1.7; }
+.booster-detail-event-note {
+  background:rgba(200,48,16,.08); border:1px solid rgba(200,60,20,.3); border-radius:4px;
+  padding:10px 14px; margin-bottom:16px; font-size:12px; color:#d59070; line-height:1.6;
+}
+.card-thumb-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(76px,1fr)); gap:10px;
+  max-height:520px; overflow-y:auto; padding-right:6px; margin-bottom:16px;
+}
+.card-thumb { text-align:center; }
+.card-thumb img {
+  width:100%; aspect-ratio:110/160; object-fit:cover; border-radius:3px; display:block;
+  border:2px solid rgba(255,255,255,.08); background:#050408;
+}
+.card-thumb.r-N img  { border-color:rgba(153,153,153,.5); }
+.card-thumb.r-R img  { border-color:rgba(136,170,221,.6); }
+.card-thumb.r-SR img { border-color:rgba(187,136,238,.65); }
+.card-thumb.r-UR img { border-color:rgba(232,184,64,.8); }
+.card-thumb-name { font-size:9px; color:var(--text-muted); margin-top:3px; line-height:1.25; }
+.card-thumb-stats { font-size:8px; color:var(--gold-dim); margin-top:1px; font-weight:600; }
+.card-thumb-rarity { font-size:8px; font-weight:700; letter-spacing:.5px; }
+.card-thumb.r-N  .card-thumb-rarity { color:#999; }
+.card-thumb.r-R  .card-thumb-rarity { color:#88aadd; }
+.card-thumb.r-SR .card-thumb-rarity { color:#bb88ee; }
+.card-thumb.r-UR .card-thumb-rarity { color:#e8b840; }
+.booster-detail-outros {
+  font-size:12px; color:var(--text-muted); line-height:1.7; border-top:1px solid var(--border); padding-top:14px;
+}
 
 /* ── NOTA DE AVISO ── */
 .notice-box {
@@ -344,7 +406,7 @@ body.en li[data-lang="en"] { display: flex !important; }
 <!-- HERO -->
 <div class="page-hero">
   <div class="stars"></div>
-  <div class="page-hero-label">☥ Beta 1.6.2</div>
+  <div class="page-hero-label">☥ Beta 1.7</div>
   <h1 class="page-hero-title" data-lang="pt">Booster Packs</h1>
   <h1 class="page-hero-title" data-lang="en">Booster Packs</h1>
   <div class="page-hero-sub" data-lang="pt">Expanda sua coleção com pools temáticos</div>
@@ -367,17 +429,17 @@ body.en li[data-lang="en"] { display: flex !important; }
       <div class="feature-title" data-lang="pt">Como Abrir um Booster</div>
       <div class="feature-title" data-lang="en">How to Open a Booster</div>
       <ul class="feature-list" data-lang="pt">
-        <li>Cada Booster precisa de <strong style="color:var(--gold)">100 Souls</strong> para ser aberto</li>
+        <li>Cada Booster tem seu <strong style="color:var(--gold)">próprio preço em Souls</strong> (100 a 250, veja abaixo), calculado pela quantidade de cartas UR disponíveis naquele pacote</li>
         <li>Adicione Souls aos poucos e acompanhe a barra de progresso diretamente no Card Shop</li>
         <li>O progresso é individual — Souls de um pack não afetam outro</li>
-        <li>Ao completar <strong style="color:var(--gold)">100/100</strong>, o pack fica disponível para abertura</li>
+        <li>Ao completar a barra, o pack fica disponível para abertura</li>
         <li>Bestas Divinas <strong>não</strong> podem ser obtidas em Boosters</li>
       </ul>
       <ul class="feature-list" data-lang="en">
-        <li>Each Booster requires <strong style="color:var(--gold)">100 Souls</strong> to be opened</li>
+        <li>Each Booster has its <strong style="color:var(--gold)">own Souls price</strong> (100 to 250, see below), calculated from how many UR cards are available in that pack</li>
         <li>Add Souls gradually and track the progress bar directly in the Card Shop</li>
         <li>Progress is stored per pack — Souls deposited into one pack stay there</li>
-        <li>Once the bar reaches <strong style="color:var(--gold)">100/100</strong>, the pack is ready to open</li>
+        <li>Once the bar is full, the pack is ready to open</li>
         <li>Divine Beasts <strong>cannot</strong> be obtained from Boosters</li>
       </ul>
     </div>
@@ -389,26 +451,26 @@ body.en li[data-lang="en"] { display: flex !important; }
       <table class="rarity-table" data-lang="pt">
         <thead><tr><th>Slots</th><th>Conteúdo</th></tr></thead>
         <tbody>
-          <tr><td>5 cartas</td><td><span class="badge-n">N</span> ou <span class="badge-r">R</span> — pool temático</td></tr>
-          <tr><td>3 cartas</td><td><span class="badge-r">R</span>, <span class="badge-sr">SR</span> ou <span class="badge-ur">UR</span> — pool temático</td></tr>
-          <tr><td>2 cartas</td><td>Magia, Trap, Equip ou Campo — catálogo geral</td></tr>
+          <tr><td>4 cartas</td><td>Monstros do <strong>tipo-tema</strong> do Booster (ex.: Warrior)</td></tr>
+          <tr><td>3 cartas</td><td>Monstros de <strong>outros tipos</strong> — qualquer tipo do jogo</td></tr>
+          <tr><td>3 cartas</td><td>Magia, Trap, Equip ou Campo — catálogo geral</td></tr>
         </tbody>
       </table>
       <table class="rarity-table" data-lang="en">
         <thead><tr><th>Slots</th><th>Contents</th></tr></thead>
         <tbody>
-          <tr><td>5 cards</td><td><span class="badge-n">N</span> or <span class="badge-r">R</span> — themed pool</td></tr>
-          <tr><td>3 cards</td><td><span class="badge-r">R</span>, <span class="badge-sr">SR</span> or <span class="badge-ur">UR</span> — themed pool</td></tr>
-          <tr><td>2 cards</td><td>Spell, Trap, Equip or Field — full catalog</td></tr>
+          <tr><td>4 cards</td><td>Monsters of the Booster's <strong>theme type</strong> (e.g. Warrior)</td></tr>
+          <tr><td>3 cards</td><td>Monsters of <strong>other types</strong> — any type in the game</td></tr>
+          <tr><td>3 cards</td><td>Spell, Trap, Equip or Field — full catalog</td></tr>
         </tbody>
       </table>
       <ul class="feature-list" style="margin-top:14px" data-lang="pt">
-        <li>Os 8 primeiros slots respeitam o tema do Booster escolhido</li>
-        <li>Os 2 slots de suporte usam o catálogo completo dessas categorias</li>
+        <li>As 4 cartas do tema e as 3 de outros tipos usam as mesmas chances de raridade — o que muda é só o pool de onde saem</li>
+        <li>Os 3 slots de suporte usam o catálogo completo de Magias, Armadilhas, Equipamentos e Campos</li>
       </ul>
       <ul class="feature-list" style="margin-top:14px" data-lang="en">
-        <li>The first 8 slots follow the theme of the selected Booster</li>
-        <li>The 2 support slots use the full available catalog for those categories</li>
+        <li>The 4 theme cards and the 3 other-type cards use the same rarity odds — only the source pool changes</li>
+        <li>The 3 support slots use the full catalog of Spells, Traps, Equips and Fields</li>
       </ul>
     </div>
 
@@ -416,27 +478,28 @@ body.en li[data-lang="en"] { display: flex !important; }
       <div class="feature-icon">📊</div>
       <div class="feature-title" data-lang="pt">Chances de Raridade</div>
       <div class="feature-title" data-lang="en">Rarity Rates</div>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="pt">Primeiros 5 slots</div>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="en">First 5 slots</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="pt">Slots comuns (4 no total: 2 do tema + 2 de outros tipos)</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="en">Common slots (4 total: 2 theme + 2 other types)</div>
       <table class="rarity-table"><tbody>
-        <tr><td><span class="badge-n">N</span></td><td>60%</td></tr>
-        <tr><td><span class="badge-r">R</span></td><td>40%</td></tr>
+        <tr><td><span class="badge-n">N</span></td><td>70%</td></tr>
+        <tr><td><span class="badge-r">R</span></td><td>30%</td></tr>
       </tbody></table>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="pt">Próximos 3 slots</div>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Next 3 slots</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="pt">Slots especiais (3 no total: 2 do tema + 1 de outros tipos)</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Special slots (3 total: 2 theme + 1 other type)</div>
       <table class="rarity-table"><tbody>
-        <tr><td><span class="badge-r">R</span></td><td>76%</td></tr>
-        <tr><td><span class="badge-sr">SR</span></td><td>20%</td></tr>
-        <tr><td><span class="badge-ur">UR</span></td><td>4%</td></tr>
+        <tr><td><span class="badge-r">R</span></td><td>82%</td></tr>
+        <tr><td><span class="badge-sr">SR</span></td><td>15%</td></tr>
+        <tr><td><span class="badge-ur">UR</span></td><td>3%</td></tr>
       </tbody></table>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="pt">Slots de suporte</div>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Support slots</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="pt">Slots de suporte (3 no total)</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Support slots (3 total)</div>
       <table class="rarity-table"><tbody>
-        <tr><td><span class="badge-n">N</span></td><td>56%</td></tr>
-        <tr><td><span class="badge-r">R</span></td><td>32%</td></tr>
-        <tr><td><span class="badge-sr">SR</span></td><td>11%</td></tr>
-        <tr><td><span class="badge-ur">UR</span></td><td>1%</td></tr>
+        <tr><td><span class="badge-r">R</span></td><td>46%</td></tr>
+        <tr><td><span class="badge-sr">SR</span></td><td>32%</td></tr>
+        <tr><td><span class="badge-ur">UR</span></td><td>22%</td></tr>
       </tbody></table>
+      <p style="font-size:11px;color:var(--text-muted);margin-top:10px;line-height:1.6" data-lang="pt">Não existe carta de suporte com raridade N no jogo — por isso as Magias/Traps/Equips/Campos só saem R, SR ou UR.</p>
+      <p style="font-size:11px;color:var(--text-muted);margin-top:10px;line-height:1.6" data-lang="en">There are no Normal-rarity support cards in the game — that's why Spells/Traps/Equips/Fields only come as R, SR or UR.</p>
     </div>
 
   </div>
@@ -448,18 +511,14 @@ body.en li[data-lang="en"] { display: flex !important; }
       <div class="feature-title" data-lang="pt">Sistema de Garantia</div>
       <div class="feature-title" data-lang="en">Guaranteed Rarity System</div>
       <ul class="feature-list" data-lang="pt">
-        <li>Se <strong>2 aberturas consecutivas</strong> não entregarem SR ou UR, a <strong style="color:var(--gold)">3ª abertura garante uma SR</strong></li>
-        <li>Se <strong>4 aberturas consecutivas</strong> não entregarem UR, a <strong style="color:var(--gold)">5ª abertura garante uma UR</strong></li>
-        <li>Obter uma SR reinicia o contador de garantia de SR</li>
-        <li>Obter uma UR reinicia ambos os contadores</li>
-        <li>Se as duas garantias coincidirem na mesma abertura, a garantia de <span class="badge-ur">UR</span> tem prioridade</li>
+        <li>Se <strong>3 aberturas consecutivas</strong> não entregarem SR nem UR, a <strong style="color:var(--gold)">4ª abertura garante uma SR</strong></li>
+        <li>Obter uma SR ou UR reinicia o contador da garantia</li>
+        <li><strong style="color:var(--gold)">Não há garantia de UR.</strong> Acima da pity de SR, UR é puramente uma questão de sorte pelos slots especiais (3% por slot) — assim UR continua sendo verdadeiramente raro</li>
       </ul>
       <ul class="feature-list" data-lang="en">
-        <li>If <strong>2 consecutive openings</strong> contain no SR or UR, the <strong style="color:var(--gold)">3rd opening guarantees an SR</strong></li>
-        <li>If <strong>4 consecutive openings</strong> contain no UR, the <strong style="color:var(--gold)">5th opening guarantees a UR</strong></li>
-        <li>Obtaining an SR resets the SR guarantee counter</li>
-        <li>Obtaining a UR resets both counters</li>
-        <li>If both guarantees are active at once, the <span class="badge-ur">UR</span> guarantee takes priority</li>
+        <li>If <strong>3 consecutive openings</strong> contain no SR or UR, the <strong style="color:var(--gold)">4th opening guarantees an SR</strong></li>
+        <li>Obtaining an SR or UR resets the guarantee counter</li>
+        <li><strong style="color:var(--gold)">There is no UR guarantee.</strong> Beyond the SR pity, UR is purely down to luck on the special slots (3% per slot) — keeping UR truly rare</li>
       </ul>
     </div>
 
@@ -525,18 +584,18 @@ body.en li[data-lang="en"] { display: flex !important; }
 
     <div class="feature-card">
       <div class="feature-icon">🗺️</div>
-      <div class="feature-title" data-lang="pt">Pools Temáticos</div>
-      <div class="feature-title" data-lang="en">Themed Pools</div>
+      <div class="feature-title" data-lang="pt">Pools por Tipo</div>
+      <div class="feature-title" data-lang="en">Type Pools</div>
       <ul class="feature-list" data-lang="pt">
-        <li>Cada Booster possui uma seleção própria de cartas ligadas ao seu tema</li>
-        <li>Escolher um pack específico aumenta as chances de obter cartas do estilo desejado</li>
-        <li>Os 2 slots de suporte mantêm cada abertura variada, usando o catálogo completo de Magias, Traps, Equips e Campos</li>
+        <li>13 Boosters permanentes, um por tipo de monstro (Warrior, Dragon, Spellcaster, Zombie e outros), além de pacotes especiais temporários</li>
+        <li>Escolher um pack específico garante 4 das 10 cartas do tipo desejado — as outras 6 vêm de qualquer lugar do catálogo</li>
+        <li>Os 3 slots de suporte mantêm cada abertura variada, usando o catálogo completo de Magias, Traps, Equips e Campos</li>
         <li>Novos Boosters e novas cartas serão adicionados conforme o conteúdo de Forbidden Legacy crescer</li>
       </ul>
       <ul class="feature-list" data-lang="en">
-        <li>Each Booster has its own selection of cards connected to its theme</li>
-        <li>Choosing a specific pack improves your odds of finding cards from that style</li>
-        <li>The 2 support slots keep every opening varied using the full Spell, Trap, Equip and Field catalog</li>
+        <li>13 permanent Boosters, one per monster type (Warrior, Dragon, Spellcaster, Zombie and more), plus temporary special packs</li>
+        <li>Choosing a specific pack guarantees 4 of the 10 cards from the type you want — the other 6 come from anywhere in the catalog</li>
+        <li>The 3 support slots keep every opening varied using the full Spell, Trap, Equip and Field catalog</li>
         <li>New Boosters and additional cards will be added as Forbidden Legacy continues to grow</li>
       </ul>
     </div>
@@ -563,6 +622,25 @@ body.en li[data-lang="en"] { display: flex !important; }
 
   </div>
 
+  <div class="section-label" style="margin-top:56px" data-lang="pt">Explore o Conteúdo</div>
+  <div class="section-label" style="margin-top:56px" data-lang="en">Explore the Contents</div>
+  <div class="section-title" data-lang="pt">O Que Vem em Cada Booster</div>
+  <div class="section-title" data-lang="en">What's Inside Each Booster</div>
+  <p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="pt">
+    Clique em um pacote para ver as cartas do tipo-tema que podem sair nele. As demais cartas de cada abertura são sorteadas aleatoriamente entre <strong style="color:var(--gold-light)">todo o catálogo</strong> de Forbidden Legacy — outros tipos de monstro, magias, armadilhas, equipamentos e campos.
+  </p>
+  <p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="en">
+    Click a pack to see the theme-type cards that can drop from it. The rest of each opening is drawn randomly from <strong style="color:var(--gold-light)">the entire Forbidden Legacy catalog</strong> — other monster types, spells, traps, equips and fields.
+  </p>
+
+  <div id="booster-browser" class="reveal" data-reveal>
+    <div id="booster-tiles" class="booster-tiles-grid">
+      <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="pt">Carregando boosters…</div>
+      <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="en">Loading boosters…</div>
+    </div>
+    <div id="booster-detail" class="booster-detail-panel" style="display:none"></div>
+  </div>
+
   <div class="notice-box" data-reveal>
     <span data-lang="pt">⚠️ <strong style="color:var(--gold-light)">Bestas Divinas não estão disponíveis em Boosters.</strong> Slifer, Obelisk e Ra podem ser encontrados apenas por outras vias dentro do jogo.</span>
     <span data-lang="en">⚠️ <strong style="color:var(--gold-light)">Divine Beasts are not available in Boosters.</strong> Slifer, Obelisk and Ra can only be found through other means within the game.</span>
@@ -576,8 +654,8 @@ body.en li[data-lang="en"] { display: flex !important; }
   <div style="text-align:center;margin-top:48px" data-reveal>
     <a href="index.html#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;background:rgba(200,151,58,.08);border:1px solid rgba(200,151,58,.35);color:var(--gold);border-radius:2px;text-decoration:none;transition:all .25s">
       <span>⬇</span>
-      <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.6.2</span>
-      <span data-lang="en">DOWNLOAD FREE — Beta 1.6.2</span>
+      <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.7</span>
+      <span data-lang="en">DOWNLOAD FREE — Beta 1.7</span>
     </a>
   </div>
 
@@ -648,12 +726,116 @@ body.en li[data-lang="en"] { display: flex !important; }
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.6.2</span>
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.7</span>
     <span>Fan-made project · Not affiliated with Konami</span>
   </div>
 </footer>
 
 <script>
+// ── BOOSTER BROWSER (droplist) ──
+(function() {
+  const tilesEl = document.getElementById('booster-tiles');
+  const detailEl = document.getElementById('booster-detail');
+  if (!tilesEl || !detailEl) return;
+
+  let boostersData = [];
+  let activeId = null;
+
+  function isEn() { return document.body.classList.contains('en'); }
+
+  function tileHtml(b) {
+    const nome = isEn() ? b.nome_en : b.nome_pt;
+    const packImg = b.imagem || ('img/boosters/' + b.id + '.png');
+    const eventTag = b.evento
+      ? '<span class="booster-tile-event-tag">' + (isEn() ? 'LIMITED' : 'TEMPORÁRIO') + '</span>'
+      : '';
+    return (
+      '<div class="booster-tile" data-id="' + b.id + '" style="border-color:' + hexA(b.cor, .35) + '">' +
+        eventTag +
+        '<img class="booster-tile-img" src="' + packImg + '" alt="' + nome + '" loading="lazy" ' +
+          'onerror="this.outerHTML=\'<div class=&quot;booster-tile-placeholder&quot; style=&quot;background:linear-gradient(160deg,' + b.cor + 'cc,#0d0b0e)&quot;>' + b.tipo_label + '</div>\'">' +
+        '<div class="booster-tile-name">' + nome + '</div>' +
+        '<div class="booster-tile-price">' + b.custo_souls + ' Souls</div>' +
+      '</div>'
+    );
+  }
+
+  function hexA(hex, alpha) {
+    const h = hex.replace('#', '');
+    const r = parseInt(h.substring(0,2), 16), g = parseInt(h.substring(2,4), 16), b = parseInt(h.substring(4,6), 16);
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+  }
+
+  function renderTiles() {
+    tilesEl.innerHTML = boostersData.map(tileHtml).join('');
+    tilesEl.querySelectorAll('.booster-tile').forEach(el => {
+      el.addEventListener('click', () => selectBooster(el.getAttribute('data-id')));
+    });
+  }
+
+  function cardThumbHtml(c) {
+    const stats = (c.atk !== undefined || c.def !== undefined)
+      ? '<div class="card-thumb-stats">' + (c.atk || '0') + ' / ' + (c.def || '0') + '</div>'
+      : '';
+    return (
+      '<div class="card-thumb r-' + c.raridade + '">' +
+        '<img src="img/cartas/' + c.slug + '.webp" alt="' + c.nome + '" loading="lazy" ' +
+          'onerror="this.style.opacity=0.15">' +
+        '<div class="card-thumb-name">' + c.nome + '</div>' +
+        stats +
+        '<div class="card-thumb-rarity">' + c.raridade + '</div>' +
+      '</div>'
+    );
+  }
+
+  function selectBooster(id) {
+    const b = boostersData.find(x => x.id === id);
+    if (!b) return;
+    activeId = id;
+    tilesEl.querySelectorAll('.booster-tile').forEach(el => {
+      el.classList.toggle('active', el.getAttribute('data-id') === id);
+    });
+
+    const nome = isEn() ? b.nome_en : b.nome_pt;
+    const desc = isEn() ? b.desc_en : b.desc_pt;
+    const tipoLabelTxt = isEn()
+      ? (b.total_tema + ' ' + b.tipo_label + ' cards possible in this pack')
+      : (b.total_tema + ' cartas de ' + b.tipo_label + ' possíveis neste pacote');
+    const outrosTxt = isEn()
+      ? 'Every opening also includes 3 cards of <strong style="color:var(--gold-light)">other monster types</strong> and 3 <strong style="color:var(--gold-light)">support cards</strong> (Spells, Traps, Equips, Fields), drawn randomly from the full Forbidden Legacy catalog — not limited to the cards shown above.'
+      : 'Toda abertura também inclui 3 cartas de <strong style="color:var(--gold-light)">outros tipos de monstro</strong> e 3 <strong style="color:var(--gold-light)">cartas de suporte</strong> (Magias, Armadilhas, Equipamentos, Campos), sorteadas aleatoriamente entre todo o catálogo de Forbidden Legacy — não se limitam às cartas mostradas acima.';
+    const eventoTxt = b.evento
+      ? '<div class="booster-detail-event-note">' + (isEn()
+          ? '⏳ <strong>Limited-time pack</strong> — available for ' + (b.duracao_dias || 7) + ' days only. Once the event ends, these cards leave circulation until a future re-release.'
+          : '⏳ <strong>Pacote temporário</strong> — disponível por apenas ' + (b.duracao_dias || 7) + ' dias. Depois disso, estas cartas saem de circulação até uma futura reedição.'
+        ) + '</div>'
+      : '';
+
+    detailEl.innerHTML = (
+      '<div class="booster-detail-head">' +
+        '<div class="booster-detail-title" style="color:' + b.cor + '">' + nome + '</div>' +
+        '<div style="font-size:12px;color:var(--gold-light);font-weight:600">' + b.custo_souls + ' Souls</div>' +
+      '</div>' +
+      '<div class="booster-detail-sub">' + desc + '<br>' + tipoLabelTxt + '</div>' +
+      eventoTxt +
+      '<div class="card-thumb-grid">' + b.cartas_tema.map(cardThumbHtml).join('') + '</div>' +
+      '<div class="booster-detail-outros">' + outrosTxt + '</div>'
+    );
+    detailEl.style.display = 'block';
+    detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  fetch('data/boosters.json')
+    .then(r => r.json())
+    .then(data => {
+      boostersData = data.boosters || [];
+      renderTiles();
+    })
+    .catch(() => {
+      tilesEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)">Não foi possível carregar os boosters agora.</div>';
+    });
+})();
+
 // Nav scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
