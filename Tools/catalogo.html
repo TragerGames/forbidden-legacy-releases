@@ -89,7 +89,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   position: sticky; top: 62px; z-index: 90;
   background: rgba(9,8,10,.96); backdrop-filter: blur(6px);
   border: 1px solid var(--border); border-radius: 6px;
-  padding: 16px 18px; margin-bottom: 22px;
+  padding: 16px 18px; margin-bottom: 40px;
 }
 .cat-search {
   display: flex; align-items: center; gap: 10px;
@@ -619,7 +619,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   window.openCardModal = function(slug) {
     const c = cartas.find(x => x.slug === slug);
     if (!c) return;
-    modalImg.src = 'img/cartas/' + c.slug + '.webp';
+    modalImg.src = 'img/cartas_grande/' + c.slug + '.webp';
     modalImg.alt = c.nome;
     const badgeArquivo = c.raridade_arquivo || c.raridade;
     if (badgeArquivo) {
