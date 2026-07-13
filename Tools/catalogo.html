@@ -129,6 +129,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   cursor: pointer; text-align: center; transition: transform .15s;
 }
 .cat-card:hover { transform: translateY(-3px); }
+.cat-card-img-wrap { position: relative; }
 .cat-card img {
   width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 4px; display: block;
   border: 2px solid rgba(255,255,255,.08); background: #050408;
@@ -137,13 +138,15 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-card.r-R img  { border-color: rgba(136,170,221,.6); }
 .cat-card.r-SR img { border-color: rgba(187,136,238,.65); }
 .cat-card.r-UR img { border-color: rgba(232,184,64,.8); }
+/* Etiqueta de raridade — mesmo canto (topo-direita) usado no jogo (card_shop.gd) */
+.cat-card-rarity-badge {
+  position: absolute; top: 3%; right: 4%; width: 26%; aspect-ratio: 2/1;
+  object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6));
+}
 .cat-card-name { font-size: 10px; color: var(--text-muted); margin-top: 4px; line-height: 1.3; }
 .cat-card-stats { font-size: 9px; color: var(--gold-dim); margin-top: 1px; font-weight: 600; }
-.cat-card-rarity { font-size: 8px; font-weight: 700; letter-spacing: .5px; margin-top: 1px; }
-.cat-card.r-N  .cat-card-rarity { color: #999; }
-.cat-card.r-R  .cat-card-rarity { color: #88aadd; }
-.cat-card.r-SR .cat-card-rarity { color: #bb88ee; }
-.cat-card.r-UR .cat-card-rarity { color: #e8b840; }
+.cat-card-icons { display: flex; align-items: center; justify-content: center; gap: 4px; margin-top: 2px; }
+.cat-card-icons img { width: 14px; height: 14px; object-fit: contain; }
 .cat-empty { grid-column: 1/-1; text-align: center; padding: 40px 0; font-size: 13px; color: var(--text-muted); }
 .cat-load-more {
   display: block; margin: 22px auto 0; padding: 10px 26px;
@@ -170,9 +173,14 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   color: var(--text-muted); font-size: 20px; cursor: pointer; line-height: 1;
 }
 .cat-modal-close:hover { color: var(--gold); }
+.cat-modal-img-wrap { position: relative; }
 .cat-modal-img {
   width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 6px;
-  border: 2px solid var(--gold-dim); background: #050408;
+  border: 2px solid var(--gold-dim); background: #050408; display: block;
+}
+.cat-modal-rarity-badge {
+  position: absolute; top: 3%; right: 5%; width: 30%; aspect-ratio: 2/1;
+  object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0,0,0,.7));
 }
 .cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
 .cat-modal-rarity { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; }
@@ -182,11 +190,12 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-modal-rarity.r-UR { color: #e8b840; background: rgba(232,184,64,.14); }
 .cat-modal-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-bottom: 14px; }
 .cat-modal-fact-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-dim); }
-.cat-modal-fact-value { font-size: 13px; color: var(--text-body); }
+.cat-modal-fact-value { font-size: 13px; color: var(--text-body); display: flex; align-items: center; gap: 6px; }
+.cat-modal-fact-value img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .cat-modal-desc { font-size: 12px; line-height: 1.7; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 12px; white-space: pre-line; }
 @media(max-width:520px) {
   .cat-modal { grid-template-columns: 1fr; }
-  .cat-modal-img { max-width: 160px; margin: 0 auto; }
+  .cat-modal-img-wrap { max-width: 160px; margin: 0 auto; }
 }
 
 /* ── LANG ── */
@@ -374,7 +383,10 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <div class="cat-modal-overlay" id="cat-modal-overlay" onclick="if(event.target===this) closeCardModal()">
   <div class="cat-modal">
     <button class="cat-modal-close" onclick="closeCardModal()">✕</button>
-    <img class="cat-modal-img" id="cat-modal-img" src="" alt="">
+    <div class="cat-modal-img-wrap">
+      <img class="cat-modal-img" id="cat-modal-img" src="" alt="">
+      <img class="cat-modal-rarity-badge" id="cat-modal-rarity-badge" src="" alt="" style="display:none">
+    </div>
     <div>
       <div class="cat-modal-name" id="cat-modal-name"></div>
       <div class="cat-modal-rarity" id="cat-modal-rarity"></div>
@@ -439,12 +451,23 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     const stats = (c.atk !== undefined)
       ? '<div class="cat-card-stats">' + (c.atk || '0') + ' / ' + (c.def || '0') + '</div>'
       : '';
+    const badgeArquivo = c.raridade_arquivo || c.raridade;
+    const badge = badgeArquivo
+      ? '<img class="cat-card-rarity-badge" src="img/raridade/rarity_' + badgeArquivo + '.webp" alt="' + c.raridade + '" loading="lazy" onerror="this.style.display=\'none\'">'
+      : '';
+    const icones = [];
+    if (c.icone_atributo) icones.push('<img src="img/atributos/' + c.icone_atributo + '.webp" alt="' + c.atributo + '" loading="lazy">');
+    if (c.icone_tipo) icones.push('<img src="img/tipos/' + c.icone_tipo + '.webp" alt="' + c.tipo + '" loading="lazy">');
+    const linhaIcones = icones.length ? '<div class="cat-card-icons">' + icones.join('') + '</div>' : '';
     return (
       '<div class="cat-card r-' + c.raridade + '" data-slug="' + c.slug + '">' +
-        '<img src="img/cartas/' + c.slug + '.webp" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
+        '<div class="cat-card-img-wrap">' +
+          '<img src="img/cartas/' + c.slug + '.webp" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
+          badge +
+        '</div>' +
         '<div class="cat-card-name">' + nome + '</div>' +
         stats +
-        '<div class="cat-card-rarity">' + c.raridade + '</div>' +
+        linhaIcones +
       '</div>'
     );
   }
@@ -542,16 +565,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   // ── MODAL ──
   const overlay = document.getElementById('cat-modal-overlay');
   const modalImg = document.getElementById('cat-modal-img');
+  const modalRarityBadge = document.getElementById('cat-modal-rarity-badge');
   const modalName = document.getElementById('cat-modal-name');
   const modalRarity = document.getElementById('cat-modal-rarity');
   const modalFacts = document.getElementById('cat-modal-facts');
   const modalDesc = document.getElementById('cat-modal-desc');
 
-  function factHtml(labelPt, labelEn, value) {
+  function factHtml(labelPt, labelEn, value, iconSrc, iconAlt) {
     if (!value) return '';
+    const icone = iconSrc ? '<img src="' + iconSrc + '" alt="' + (iconAlt || '') + '">' : '';
     return (
       '<div><div class="cat-modal-fact-label">' + (isEn() ? labelEn : labelPt) + '</div>' +
-      '<div class="cat-modal-fact-value">' + value + '</div></div>'
+      '<div class="cat-modal-fact-value">' + icone + '<span>' + value + '</span></div></div>'
     );
   }
 
@@ -560,14 +585,25 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     if (!c) return;
     modalImg.src = 'img/cartas/' + c.slug + '.webp';
     modalImg.alt = c.nome;
+    const badgeArquivo = c.raridade_arquivo || c.raridade;
+    if (badgeArquivo) {
+      modalRarityBadge.src = 'img/raridade/rarity_' + badgeArquivo + '.webp';
+      modalRarityBadge.alt = c.raridade;
+      modalRarityBadge.style.display = '';
+    } else {
+      modalRarityBadge.style.display = 'none';
+    }
     modalName.textContent = isEn() ? c.nome : c.nome_pt;
     modalRarity.className = 'cat-modal-rarity r-' + c.raridade;
     modalRarity.textContent = c.raridade;
     const facts = [];
-    facts.push(factHtml('Tipo', 'Card Type', c.card_type === 'Monster' ? (isEn() ? 'Monster' : 'Monstro') : c.card_type));
-    if (c.card_type === 'Monster') {
-      facts.push(factHtml('Raça', 'Race', c.tipo));
-      facts.push(factHtml('Atributo', 'Attribute', c.atributo));
+    const iconeAttrSrc = c.icone_atributo ? 'img/atributos/' + c.icone_atributo + '.webp' : '';
+    const iconeTipoSrc = c.icone_tipo ? 'img/tipos/' + c.icone_tipo + '.webp' : '';
+    const ehMonstro = c.card_type === 'Monster';
+    facts.push(factHtml('Tipo', 'Card Type', ehMonstro ? (isEn() ? 'Monster' : 'Monstro') : c.card_type, ehMonstro ? '' : iconeAttrSrc, c.atributo));
+    if (ehMonstro) {
+      facts.push(factHtml('Raça', 'Race', c.tipo, iconeTipoSrc, c.tipo));
+      facts.push(factHtml('Atributo', 'Attribute', c.atributo, iconeAttrSrc, c.atributo));
       facts.push(factHtml('Nível', 'Level', c.nivel));
       facts.push(factHtml('ATK / DEF', 'ATK / DEF', (c.atk || '0') + ' / ' + (c.def || '0')));
     }
