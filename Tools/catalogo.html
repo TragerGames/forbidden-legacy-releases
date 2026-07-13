@@ -137,9 +137,11 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-card.r-R img  { border-color: rgba(136,170,221,.6); }
 .cat-card.r-SR img { border-color: rgba(187,136,238,.65); }
 .cat-card.r-UR img { border-color: rgba(232,184,64,.8); }
-/* Etiqueta de raridade — mesmo canto (topo-direita) usado no jogo (card_shop.gd) */
-.cat-card-rarity-badge {
-  position: absolute; top: 3%; right: 4%; width: 26%; aspect-ratio: 2/1;
+/* Etiqueta de raridade — mesmo canto (topo-direita) usado no jogo (card_shop.gd).
+   Seletor com 2 classes de proposito, pra especificidade vencer ".cat-card img"
+   (senao aquela regra generica de width:100% prevalece e o selo cobre a carta inteira). */
+.cat-card-img-wrap .cat-card-rarity-badge {
+  position: absolute; top: 4%; right: 4%; width: 24%; aspect-ratio: 30/16;
   object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6));
 }
 .cat-card-name { font-size: 10px; color: var(--text-muted); margin-top: 4px; line-height: 1.3; }
@@ -178,7 +180,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   border: 2px solid var(--gold-dim); background: #050408; display: block;
 }
 .cat-modal-rarity-badge {
-  position: absolute; top: 3%; right: 5%; width: 30%; aspect-ratio: 2/1;
+  position: absolute; top: 3%; right: 5%; width: 26%; aspect-ratio: 30/16;
   object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0,0,0,.7));
 }
 .cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
