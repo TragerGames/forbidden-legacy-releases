@@ -118,11 +118,15 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-chip-icon { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px 5px 8px; }
 .cat-chip-icon img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .cat-chip-icon.cat-chip-rarity img { width: 28px; height: 14px; object-fit: contain; }
+/* So icone, sem nome do lado — usada no filtro de Raça pra caber mais botoes
+   na tela (title="" cobre a identificacao via tooltip no hover/toque longo). */
+.cat-chip-icon-only { padding: 6px 10px; }
+.cat-chip-icon-only img { width: 22px; height: 22px; }
 .cat-count { font-size: 11px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
 
 /* ── GRID ── */
 .cat-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 12px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 34px 16px;
 }
 .cat-card {
   cursor: pointer; text-align: center; transition: transform .15s;
@@ -137,11 +141,13 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-card.r-R img  { border-color: rgba(136,170,221,.6); }
 .cat-card.r-SR img { border-color: rgba(187,136,238,.65); }
 .cat-card.r-UR img { border-color: rgba(232,184,64,.8); }
-/* Etiqueta de raridade — mesmo canto (topo-direita) usado no jogo (card_shop.gd).
+/* Etiqueta de raridade — FORA da carta, encostada por cima da borda superior
+   (igual carta_deck_builder.gd: offset_top negativo, bottom no 0 — o selo fica
+   inteiro acima do card, com a base tocando a borda de cima).
    Seletor com 2 classes de proposito, pra especificidade vencer ".cat-card img"
    (senao aquela regra generica de width:100% prevalece e o selo cobre a carta inteira). */
 .cat-card-img-wrap .cat-card-rarity-badge {
-  position: absolute; top: 4%; right: 4%; width: 24%; aspect-ratio: 30/16;
+  position: absolute; bottom: 100%; right: 4%; margin-bottom: 3px; width: 22%; aspect-ratio: 30/16;
   object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6));
 }
 .cat-card-name { font-size: 10px; color: var(--text-muted); margin-top: 4px; line-height: 1.3; }
@@ -180,7 +186,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   border: 2px solid var(--gold-dim); background: #050408; display: block;
 }
 .cat-modal-rarity-badge {
-  position: absolute; top: 3%; right: 5%; width: 26%; aspect-ratio: 30/16;
+  position: absolute; bottom: 100%; right: 4%; margin-bottom: 4px; width: 22%; aspect-ratio: 30/16;
   object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0,0,0,.7));
 }
 .cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
@@ -536,9 +542,10 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     const row = document.getElementById('cat-race-row');
     racas.forEach(r => {
       const btn = document.createElement('button');
-      btn.className = 'cat-chip cat-chip-icon';
+      btn.className = 'cat-chip cat-chip-icon cat-chip-icon-only';
       btn.setAttribute('data-filter-race', r);
-      btn.innerHTML = '<img src="img/tipos/' + racaIcone[r] + '.webp" alt="' + r + '"><span>' + r + '</span>';
+      btn.title = r;
+      btn.innerHTML = '<img src="img/tipos/' + racaIcone[r] + '.webp" alt="' + r + '">';
       row.appendChild(btn);
     });
     ligarFiltroRaca();
