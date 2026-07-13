@@ -277,6 +277,16 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   .cat-toolbar { top: 0; }
   .cat-grid { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 8px; }
   footer { padding: 32px 20px; }
+
+  /* Filtro em faixa horizontal rolavel — sem isso, RAÇA (22 botoes) sozinha
+     ja empurra a grade de cartas pra fora da tela no celular. */
+  .cat-filter-row {
+    flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; padding-bottom: 2px; margin-bottom: 8px;
+  }
+  .cat-filter-row::-webkit-scrollbar { display: none; }
+  .cat-filter-label { position: sticky; left: 0; background: var(--dark); padding-right: 6px; z-index: 1; }
+  .cat-count { margin-left: 10px; }
 }
 @media(max-width:480px) {
   nav#nav { justify-content: center; }
