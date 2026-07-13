@@ -742,6 +742,7 @@ body.en li[data-lang="en"] { display: flex !important; }
 
   let boostersData = [];
   let activeId = null;
+  let versaoCache = '';
 
   function isEn() { return document.body.classList.contains('en'); }
 
@@ -781,7 +782,7 @@ body.en li[data-lang="en"] { display: flex !important; }
       : '';
     return (
       '<div class="card-thumb r-' + c.raridade + '">' +
-        '<img src="img/cartas/' + c.slug + '.webp" alt="' + c.nome + '" loading="lazy" ' +
+        '<img src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="' + c.nome + '" loading="lazy" ' +
           'onerror="this.style.opacity=0.15">' +
         '<div class="card-thumb-name">' + c.nome + '</div>' +
         stats +
@@ -831,6 +832,7 @@ body.en li[data-lang="en"] { display: flex !important; }
     .then(r => r.json())
     .then(data => {
       boostersData = data.boosters || [];
+      versaoCache = data.versao || '';
       renderTiles();
     })
     .catch(() => {

@@ -463,6 +463,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   const countEl = document.getElementById('cat-count');
   const searchInput = document.getElementById('cat-search-input');
   let cartas = [];
+  let versaoCache = '';
   let filtroTipo = 'ALL';
   let filtroRaridade = 'ALL';
   let filtroRaca = 'ALL';
@@ -486,7 +487,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     return (
       '<div class="cat-card r-' + c.raridade + '" data-slug="' + c.slug + '">' +
         '<div class="cat-card-img-wrap">' +
-          '<img src="img/cartas/' + c.slug + '.webp" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
+          '<img src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
           badge +
         '</div>' +
         '<div class="cat-card-name">' + nome + '</div>' +
@@ -596,6 +597,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     .then(r => r.json())
     .then(data => {
       cartas = data.cartas || [];
+      versaoCache = data.versao || '';
       popularRacas();
       render();
     })
@@ -624,7 +626,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   window.openCardModal = function(slug) {
     const c = cartas.find(x => x.slug === slug);
     if (!c) return;
-    modalImg.src = 'img/cartas_grande/' + c.slug + '.webp';
+    modalImg.src = 'img/cartas_grande/' + c.slug + '.webp?v=' + versaoCache;
     modalImg.alt = c.nome;
     const badgeArquivo = c.raridade_arquivo || c.raridade;
     if (badgeArquivo) {
