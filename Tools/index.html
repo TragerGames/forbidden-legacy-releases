@@ -2418,14 +2418,16 @@ function paypalConfirmar() {
 }
 
 // Aviso exibido ao clicar em qualquer link de download direto (PC/Android/Linux).
-// Instalar uma versão mais antiga por cima de uma mais nova (ou desinstalar/
-// reinstalar por qualquer motivo) corrompe o save — o jogador precisa saber
-// disso ANTES de baixar, não só depois de perder o progresso.
+// Isto NAO e uma dica de seguranca de save — e um desincentivo anti-exploit:
+// o alvo e quem esta na versao atual e pensa em voltar pra uma versao antiga
+// pra se aproveitar de um bug ja corrigido, com intencao de atualizar de volta
+// depois. Por isso a mensagem nao deve sugerir "exporte seu save antes", pois
+// isso validaria esse uso. O save simplesmente corrompe nesse ciclo.
 function confirmDownloadWarning() {
   const isEN = document.body.classList.contains('en');
   const msg = isEN
-    ? 'Warning: after installing this version, uninstalling the game or installing an older version for any reason will corrupt your save file.\n\nAlways export your save in-game before making these changes.\n\nContinue with the download?'
-    : 'Aviso: depois de instalar esta versão, desinstalar o jogo ou instalar uma versão mais antiga, seja qual for o motivo, vai corromper o seu save.\n\nSempre exporte seu save dentro do jogo antes de fazer isso.\n\nContinuar com o download?';
+    ? "Warning: installing an older version of the game over your current one to take advantage of an already-fixed bug, and then updating back to a newer version, will corrupt your save file.\n\nOnly download an older version if you know exactly what you're doing.\n\nContinue with the download?"
+    : 'Aviso: instalar uma versão mais antiga do jogo por cima da versão atual pra se aproveitar de algum bug já corrigido, e depois atualizar de volta pra uma versão mais nova, corrompe o seu save.\n\nSó baixe uma versão mais antiga se você sabe exatamente o que está fazendo.\n\nContinuar com o download?';
   return confirm(msg);
 }
 
