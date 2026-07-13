@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Catálogo de Cartas</title>
+<meta name="description" content="Catálogo completo de cartas do Forbidden Legacy — busque por nome, filtre por tipo, raça e raridade, e veja todas as cartas do jogo com imagem e estatísticas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/catalogo.html">
+<meta property="og:title" content="Forbidden Legacy — Catálogo de Cartas">
+<meta property="og:description" content="Todas as cartas de Forbidden Legacy em um só lugar — busca, filtros por tipo/raça/raridade e visualização ampliada de cada carta.">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/catalogo.html">
+<link rel="icon" type="image/png" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --gold:       #c8973a;
+  --gold-light: #e8b840;
+  --gold-dim:   #7a5a18;
+  --dark:       #09080a;
+  --dark2:      #0d0b0e;
+  --dark3:      #120e12;
+  --border:     rgba(200,151,58,.13);
+  --text-muted: #6a5830;
+  --text-body:  #9a8050;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', 'Segoe UI', sans-serif; background: var(--dark); color: var(--text-body); min-height:100vh; overflow-x:hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 40px;
+  background: rgba(9,8,10,0);
+  border-bottom: 1px solid transparent;
+  transition: background .35s, border-color .35s;
+}
+nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo img { height: 36px; width: auto; }
+.nav-logo-fallback {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: 3px; color: var(--gold);
+  text-shadow: 0 0 16px rgba(200,151,58,.4);
+}
+.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-links a { font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted); text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold-light); }
+.nav-cta {
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 2px;
+  color: var(--dark); background: var(--gold); padding: 7px 20px; border-radius: 2px; transition: background .2s;
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+/* ── HERO ── */
+.page-hero {
+  padding: 120px 20px 48px; text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(to bottom, rgba(9,8,10,0) 40%, var(--dark) 100%),
+              radial-gradient(ellipse at 50% 30%, rgba(200,151,58,.10) 0%, transparent 70%);
+  position: relative;
+}
+.page-hero::before {
+  content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:1px; height:80px;
+  background:linear-gradient(180deg,transparent,rgba(200,151,58,.25),transparent);
+}
+.page-hero-label { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:16px; }
+.page-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px,6vw,72px); color: var(--gold); letter-spacing:2px;
+  text-shadow: 0 0 40px rgba(200,151,58,.3); margin-bottom:8px;
+}
+.page-hero-sub { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:24px; }
+.page-hero-desc { max-width:620px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--text-muted); }
+
+/* ── CONTEÚDO ── */
+.page-content { max-width:1280px; margin:0 auto; padding:36px 20px 80px; }
+
+/* ── TOOLBAR ── */
+.cat-toolbar {
+  position: sticky; top: 62px; z-index: 90;
+  background: rgba(9,8,10,.96); backdrop-filter: blur(6px);
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 16px 18px; margin-bottom: 22px;
+}
+.cat-search {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--dark2); border: 1px solid var(--border); border-radius: 4px;
+  padding: 10px 14px; margin-bottom: 14px;
+}
+.cat-search input {
+  flex: 1; background: transparent; border: none; outline: none;
+  color: var(--text-body); font-size: 14px; font-family: 'Inter', sans-serif;
+}
+.cat-search input::placeholder { color: var(--text-muted); }
+.cat-search-icon { color: var(--gold-dim); font-size: 15px; }
+.cat-filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+.cat-filter-row:last-child { margin-bottom: 0; }
+.cat-filter-label {
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-dim);
+  margin-right: 4px; flex-shrink: 0;
+}
+.cat-chip {
+  border: 1px solid var(--border); background: var(--dark2); color: var(--text-muted);
+  font-size: 11px; letter-spacing: .5px; padding: 6px 13px; border-radius: 20px; cursor: pointer;
+  transition: all .15s; font-family: 'Inter', sans-serif; white-space: nowrap;
+}
+.cat-chip:hover { border-color: rgba(200,151,58,.35); color: var(--text-body); }
+.cat-chip.active { background: rgba(200,151,58,.14); border-color: var(--gold); color: var(--gold-light); }
+.cat-race-select {
+  background: var(--dark2); border: 1px solid var(--border); color: var(--text-body);
+  font-size: 12px; padding: 7px 10px; border-radius: 4px; font-family: 'Inter', sans-serif; cursor: pointer;
+}
+.cat-count { font-size: 11px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
+
+/* ── GRID ── */
+.cat-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 12px;
+}
+.cat-card {
+  cursor: pointer; text-align: center; transition: transform .15s;
+}
+.cat-card:hover { transform: translateY(-3px); }
+.cat-card img {
+  width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 4px; display: block;
+  border: 2px solid rgba(255,255,255,.08); background: #050408;
+}
+.cat-card.r-N img  { border-color: rgba(153,153,153,.5); }
+.cat-card.r-R img  { border-color: rgba(136,170,221,.6); }
+.cat-card.r-SR img { border-color: rgba(187,136,238,.65); }
+.cat-card.r-UR img { border-color: rgba(232,184,64,.8); }
+.cat-card-name { font-size: 10px; color: var(--text-muted); margin-top: 4px; line-height: 1.3; }
+.cat-card-stats { font-size: 9px; color: var(--gold-dim); margin-top: 1px; font-weight: 600; }
+.cat-card-rarity { font-size: 8px; font-weight: 700; letter-spacing: .5px; margin-top: 1px; }
+.cat-card.r-N  .cat-card-rarity { color: #999; }
+.cat-card.r-R  .cat-card-rarity { color: #88aadd; }
+.cat-card.r-SR .cat-card-rarity { color: #bb88ee; }
+.cat-card.r-UR .cat-card-rarity { color: #e8b840; }
+.cat-empty { grid-column: 1/-1; text-align: center; padding: 40px 0; font-size: 13px; color: var(--text-muted); }
+.cat-load-more {
+  display: block; margin: 22px auto 0; padding: 10px 26px;
+  background: rgba(200,151,58,.08); border: 1px solid var(--gold-dim); color: var(--gold-light);
+  font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; cursor: pointer;
+  font-family: 'Inter', sans-serif; transition: background .2s, border-color .2s;
+}
+.cat-load-more:hover { background: rgba(200,151,58,.16); border-color: var(--gold); }
+
+/* ── MODAL DE CARTA ── */
+.cat-modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.88);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.cat-modal-overlay.open { display: flex; }
+.cat-modal {
+  background: var(--dark2); border: 1px solid var(--gold-dim); border-radius: 8px;
+  max-width: 560px; width: 100%; max-height: 88vh; overflow-y: auto;
+  padding: 26px; position: relative;
+  display: grid; grid-template-columns: 180px 1fr; gap: 22px;
+}
+.cat-modal-close {
+  position: absolute; top: 10px; right: 14px; background: none; border: none;
+  color: var(--text-muted); font-size: 20px; cursor: pointer; line-height: 1;
+}
+.cat-modal-close:hover { color: var(--gold); }
+.cat-modal-img {
+  width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 6px;
+  border: 2px solid var(--gold-dim); background: #050408;
+}
+.cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
+.cat-modal-rarity { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; }
+.cat-modal-rarity.r-N  { color: #999;    background: rgba(153,153,153,.12); }
+.cat-modal-rarity.r-R  { color: #88aadd; background: rgba(136,170,221,.12); }
+.cat-modal-rarity.r-SR { color: #bb88ee; background: rgba(187,136,238,.12); }
+.cat-modal-rarity.r-UR { color: #e8b840; background: rgba(232,184,64,.14); }
+.cat-modal-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-bottom: 14px; }
+.cat-modal-fact-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-dim); }
+.cat-modal-fact-value { font-size: 13px; color: var(--text-body); }
+.cat-modal-desc { font-size: 12px; line-height: 1.7; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 12px; white-space: pre-line; }
+@media(max-width:520px) {
+  .cat-modal { grid-template-columns: 1fr; }
+  .cat-modal-img { max-width: 160px; margin: 0 auto; }
+}
+
+/* ── LANG ── */
+[data-lang="en"] { display:none !important; }
+span[data-lang="en"] { display:none !important; }
+body.en [data-lang="pt"] { display:none !important; }
+body.en span[data-lang="pt"] { display:none !important; }
+body.en [data-lang="en"] { display:block !important; }
+body.en span[data-lang="en"] { display:inline !important; }
+body.en li[data-lang="en"] { display:flex !important; }
+
+/* ── LANG BUTTONS ── */
+.topbar-right { display:flex; gap:8px; align-items:center; }
+.lang-btn {
+  background:transparent; border:1px solid var(--gold-dim); color:var(--text-muted);
+  padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px;
+  transition:all .2s; font-family:'Inter',sans-serif;
+}
+.lang-btn.active { border-color:var(--gold); color:var(--gold); }
+
+/* ── FOOTER ── */
+footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
+.footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; margin-bottom:32px; }
+.footer-brand .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--gold); margin-bottom:6px; letter-spacing:2px; }
+.footer-brand p { font-size:11px; color:var(--text-muted); max-width:240px; line-height:1.6; }
+.footer-col h4 { font-size:10px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:12px; }
+.footer-col a { display:block; font-size:12px; color:var(--text-muted); margin-bottom:6px; transition:color .2s; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom { border-top:1px solid rgba(200,151,58,.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.footer-bottom span { font-size:11px; color:#2a2018; }
+
+/* ── STARS ── */
+.stars { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.stars::before, .stars::after {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(212,168,67,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 55%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 48% 30%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 12%, rgba(212,168,67,.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 50%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 78%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58% 72%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 36% 88%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 28%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 52% 6%, rgba(212,168,67,.75) 0%, transparent 100%),
+    radial-gradient(1px 1px at 76% 85%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 40%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 94% 65%, rgba(212,168,67,.3) 0%, transparent 100%);
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+.stars::after {
+  background-image:
+    radial-gradient(1px 1px at 7% 32%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 32% 15%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 40%, rgba(212,168,67,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 20%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 62%, rgba(212,168,67,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 48%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 10%, rgba(212,168,67,.5) 0%, transparent 100%);
+  animation: twinkle 3.5s ease-in-out infinite alternate-reverse;
+}
+@keyframes twinkle { 0%{opacity:.45} 100%{opacity:1} }
+
+/* ── DISCORD NAV BADGE ── */
+.discord-nav-badge { display:none; align-items:center; gap:5px; font-size:10px; color:#7289da; text-decoration:none; border:1px solid rgba(88,101,242,0.3); border-radius:3px; padding:4px 9px; background:rgba(88,101,242,0.08); transition:background .2s; }
+.discord-nav-badge:hover { background:rgba(88,101,242,0.18); color:#99aaf5; }
+.discord-nav-badge .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+.discord-nav-badge .dc-dot.online  { background:#3ba55c; }
+.discord-nav-badge .dc-dot.offline { background:#747f8d; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px) {
+  nav#nav { padding: 12px 20px; }
+  .nav-links, nav#nav .nav-cta { display: none !important; }
+  .page-hero { padding-top: 96px; }
+  .cat-toolbar { top: 0; }
+  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 8px; }
+  footer { padding: 32px 20px; }
+}
+@media(max-width:480px) {
+  nav#nav { justify-content: center; }
+  .nav-logo { margin: 0 auto; }
+  .topbar-right { display: none; }
+}
+</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <div class="nav-logo-fallback">Forbidden Legacy</div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="catalogo.html" class="active" data-lang="pt">Catálogo</a><a href="catalogo.html" class="active" data-lang="en">Catalog</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+  </div>
+  <div style="display:flex; align-items:center; gap:12px;">
+    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
+      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> online
+      <span style="opacity:.4;margin:0 3px">·</span>
+      <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> members
+    </a>
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <a href="index.html#comprar" class="nav-cta">☥ Founder</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="stars"></div>
+  <div class="page-hero-label">☥ Beta 1.7.3</div>
+  <h1 class="page-hero-title" data-lang="pt">Catálogo de Cartas</h1>
+  <h1 class="page-hero-title" data-lang="en">Card Catalog</h1>
+  <div class="page-hero-sub" data-lang="pt">Todas as cartas do jogo em um só lugar</div>
+  <div class="page-hero-sub" data-lang="en">Every card in the game, in one place</div>
+  <p class="page-hero-desc" data-lang="pt">
+    Busque por nome, filtre por tipo, raça e raridade, e clique em qualquer carta para ver a arte ampliada e todas as informações — exatamente como no seletor de deck dentro do jogo.
+  </p>
+  <p class="page-hero-desc" data-lang="en">
+    Search by name, filter by type, race and rarity, and click any card to see the full artwork and all its information — just like the deck builder inside the game.
+  </p>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="page-content">
+
+  <div class="cat-toolbar">
+    <div class="cat-search">
+      <span class="cat-search-icon">🔍</span>
+      <input type="text" id="cat-search-input" data-lang-pt-placeholder="Buscar carta pelo nome…" data-lang-en-placeholder="Search card by name…" placeholder="Buscar carta pelo nome…">
+    </div>
+    <div class="cat-filter-row">
+      <span class="cat-filter-label" data-lang="pt">Tipo</span>
+      <span class="cat-filter-label" data-lang="en">Type</span>
+      <button class="cat-chip active" data-filter-type="ALL" data-lang="pt">Todos</button>
+      <button class="cat-chip active" data-filter-type="ALL" data-lang="en">All</button>
+      <button class="cat-chip" data-filter-type="Monster" data-lang="pt">Monstro</button>
+      <button class="cat-chip" data-filter-type="Monster" data-lang="en">Monster</button>
+      <button class="cat-chip" data-filter-type="Spell" data-lang="pt">Magia</button>
+      <button class="cat-chip" data-filter-type="Spell" data-lang="en">Spell</button>
+      <button class="cat-chip" data-filter-type="Trap" data-lang="pt">Armadilha</button>
+      <button class="cat-chip" data-filter-type="Trap" data-lang="en">Trap</button>
+      <button class="cat-chip" data-filter-type="Equip">Equip</button>
+      <button class="cat-chip" data-filter-type="Field" data-lang="pt">Campo</button>
+      <button class="cat-chip" data-filter-type="Field" data-lang="en">Field</button>
+      <select class="cat-race-select" id="cat-race-select">
+        <option value="ALL" data-lang-pt="Todas as raças" data-lang-en="All races">Todas as raças</option>
+      </select>
+    </div>
+    <div class="cat-filter-row">
+      <span class="cat-filter-label" data-lang="pt">Raridade</span>
+      <span class="cat-filter-label" data-lang="en">Rarity</span>
+      <button class="cat-chip active" data-filter-rarity="ALL" data-lang="pt">Todas</button>
+      <button class="cat-chip active" data-filter-rarity="ALL" data-lang="en">All</button>
+      <button class="cat-chip" data-filter-rarity="N">N</button>
+      <button class="cat-chip" data-filter-rarity="R">R</button>
+      <button class="cat-chip" data-filter-rarity="SR">SR</button>
+      <button class="cat-chip" data-filter-rarity="UR">UR</button>
+      <span class="cat-count" id="cat-count">—</span>
+    </div>
+  </div>
+
+  <div class="cat-grid" id="cat-grid">
+    <div class="cat-empty" data-lang="pt">Carregando catálogo…</div>
+    <div class="cat-empty" data-lang="en">Loading catalog…</div>
+  </div>
+
+</div>
+
+<!-- MODAL DE CARTA -->
+<div class="cat-modal-overlay" id="cat-modal-overlay" onclick="if(event.target===this) closeCardModal()">
+  <div class="cat-modal">
+    <button class="cat-modal-close" onclick="closeCardModal()">✕</button>
+    <img class="cat-modal-img" id="cat-modal-img" src="" alt="">
+    <div>
+      <div class="cat-modal-name" id="cat-modal-name"></div>
+      <div class="cat-modal-rarity" id="cat-modal-rarity"></div>
+      <div class="cat-modal-facts" id="cat-modal-facts"></div>
+      <div class="cat-modal-desc" id="cat-modal-desc"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">☥ Forbidden Legacy</div>
+      <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <a href="banlist.html">Banlist</a>
+      <a href="boosters.html">Boosters</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.7.3</span>
+    <span>Fan-made project · Not affiliated with Konami</span>
+  </div>
+</footer>
+
+<script>
+// ── CATÁLOGO ──
+(function() {
+  const grid = document.getElementById('cat-grid');
+  const countEl = document.getElementById('cat-count');
+  const searchInput = document.getElementById('cat-search-input');
+  const raceSelect = document.getElementById('cat-race-select');
+  let cartas = [];
+  let filtroTipo = 'ALL';
+  let filtroRaridade = 'ALL';
+  let filtroRaca = 'ALL';
+  let termoBusca = '';
+
+  function isEn() { return document.body.classList.contains('en'); }
+
+  function cardHtml(c) {
+    const nome = isEn() ? c.nome : c.nome_pt;
+    const stats = (c.atk !== undefined)
+      ? '<div class="cat-card-stats">' + (c.atk || '0') + ' / ' + (c.def || '0') + '</div>'
+      : '';
+    return (
+      '<div class="cat-card r-' + c.raridade + '" data-slug="' + c.slug + '">' +
+        '<img src="img/cartas/' + c.slug + '.webp" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
+        '<div class="cat-card-name">' + nome + '</div>' +
+        stats +
+        '<div class="cat-card-rarity">' + c.raridade + '</div>' +
+      '</div>'
+    );
+  }
+
+  function passaFiltro(c) {
+    if (filtroTipo !== 'ALL' && c.card_type !== filtroTipo) return false;
+    if (filtroRaridade !== 'ALL' && c.raridade !== filtroRaridade) return false;
+    if (filtroRaca !== 'ALL' && c.tipo !== filtroRaca) return false;
+    if (termoBusca) {
+      const alvo = (c.nome + ' ' + c.nome_pt).toLowerCase();
+      if (!alvo.includes(termoBusca)) return false;
+    }
+    return true;
+  }
+
+  const PAGINA = 90;
+  let renderLimit = PAGINA;
+
+  // Renderiza so um lote por vez (nao as 960 de uma vez) — evita centenas de
+  // imagens carregando/decodificando simultaneamente e deixa scroll/mobile leve.
+  function render(manterLimite) {
+    if (!manterLimite) renderLimit = PAGINA;
+    const oldBtn = document.querySelector('.cat-load-more');
+    if (oldBtn) oldBtn.remove();
+
+    const filtradas = cartas.filter(passaFiltro);
+    countEl.textContent = filtradas.length + (isEn() ? ' cards' : ' cartas');
+    if (filtradas.length === 0) {
+      grid.innerHTML = '<div class="cat-empty">' + (isEn() ? 'No cards match these filters.' : 'Nenhuma carta encontrada com esses filtros.') + '</div>';
+      return;
+    }
+    const visiveis = filtradas.slice(0, renderLimit);
+    grid.innerHTML = visiveis.map(cardHtml).join('');
+    grid.querySelectorAll('.cat-card').forEach(el => {
+      el.addEventListener('click', () => openCardModal(el.getAttribute('data-slug')));
+    });
+    if (filtradas.length > renderLimit) {
+      const restante = filtradas.length - renderLimit;
+      const btn = document.createElement('button');
+      btn.className = 'cat-load-more';
+      btn.textContent = (isEn() ? 'Load more (' : 'Carregar mais (') + restante + (isEn() ? ' remaining)' : ' restantes)');
+      btn.addEventListener('click', () => { renderLimit += PAGINA; render(true); });
+      grid.after(btn);
+    }
+  }
+
+  function popularRacas() {
+    const racas = Array.from(new Set(cartas.filter(c => c.card_type === 'Monster').map(c => c.tipo))).sort();
+    racas.forEach(r => {
+      const opt = document.createElement('option');
+      opt.value = r;
+      opt.textContent = r;
+      raceSelect.appendChild(opt);
+    });
+  }
+
+  document.querySelectorAll('[data-filter-type]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtroTipo = btn.getAttribute('data-filter-type');
+      document.querySelectorAll('[data-filter-type]').forEach(b => b.classList.toggle('active', b.getAttribute('data-filter-type') === filtroTipo));
+      render();
+    });
+  });
+  document.querySelectorAll('[data-filter-rarity]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtroRaridade = btn.getAttribute('data-filter-rarity');
+      document.querySelectorAll('[data-filter-rarity]').forEach(b => b.classList.toggle('active', b.getAttribute('data-filter-rarity') === filtroRaridade));
+      render();
+    });
+  });
+  raceSelect.addEventListener('change', () => { filtroRaca = raceSelect.value; render(); });
+
+  let buscaTimeout = null;
+  searchInput.addEventListener('input', () => {
+    clearTimeout(buscaTimeout);
+    buscaTimeout = setTimeout(() => {
+      termoBusca = searchInput.value.trim().toLowerCase();
+      render();
+    }, 180);
+  });
+
+  window.__catalogoRender = render;
+
+  fetch('data/catalogo.json')
+    .then(r => r.json())
+    .then(data => {
+      cartas = data.cartas || [];
+      popularRacas();
+      render();
+    })
+    .catch(() => {
+      grid.innerHTML = '<div class="cat-empty">' + (isEn() ? 'Could not load the catalog right now.' : 'Não foi possível carregar o catálogo agora.') + '</div>';
+    });
+
+  // ── MODAL ──
+  const overlay = document.getElementById('cat-modal-overlay');
+  const modalImg = document.getElementById('cat-modal-img');
+  const modalName = document.getElementById('cat-modal-name');
+  const modalRarity = document.getElementById('cat-modal-rarity');
+  const modalFacts = document.getElementById('cat-modal-facts');
+  const modalDesc = document.getElementById('cat-modal-desc');
+
+  function factHtml(labelPt, labelEn, value) {
+    if (!value) return '';
+    return (
+      '<div><div class="cat-modal-fact-label">' + (isEn() ? labelEn : labelPt) + '</div>' +
+      '<div class="cat-modal-fact-value">' + value + '</div></div>'
+    );
+  }
+
+  window.openCardModal = function(slug) {
+    const c = cartas.find(x => x.slug === slug);
+    if (!c) return;
+    modalImg.src = 'img/cartas/' + c.slug + '.webp';
+    modalImg.alt = c.nome;
+    modalName.textContent = isEn() ? c.nome : c.nome_pt;
+    modalRarity.className = 'cat-modal-rarity r-' + c.raridade;
+    modalRarity.textContent = c.raridade;
+    const facts = [];
+    facts.push(factHtml('Tipo', 'Card Type', c.card_type === 'Monster' ? (isEn() ? 'Monster' : 'Monstro') : c.card_type));
+    if (c.card_type === 'Monster') {
+      facts.push(factHtml('Raça', 'Race', c.tipo));
+      facts.push(factHtml('Atributo', 'Attribute', c.atributo));
+      facts.push(factHtml('Nível', 'Level', c.nivel));
+      facts.push(factHtml('ATK / DEF', 'ATK / DEF', (c.atk || '0') + ' / ' + (c.def || '0')));
+    }
+    modalFacts.innerHTML = facts.join('');
+    const desc = isEn() ? (c.desc_en || c.desc_pt) : (c.desc_pt || c.desc_en);
+    modalDesc.textContent = desc || (isEn() ? 'No effect text for this card.' : 'Sem texto de efeito para esta carta.');
+    overlay.classList.add('open');
+  };
+
+  window.closeCardModal = function() {
+    overlay.classList.remove('open');
+  };
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeCardModal();
+  });
+})();
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+// Idioma
+function setLang(lang, saveToStorage=true) {
+  document.body.classList.toggle('en', lang === 'en');
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]');
+  if (btn) btn.classList.add('active');
+  if (saveToStorage) localStorage.setItem('fl_lang', lang);
+  const input = document.getElementById('cat-search-input');
+  if (input) input.placeholder = lang === 'en' ? input.getAttribute('data-lang-en-placeholder') : input.getAttribute('data-lang-pt-placeholder');
+  if (window.__catalogoRender) window.__catalogoRender();
+}
+window.setLang = setLang;
+
+(function() {
+  const saved = localStorage.getItem('fl_lang');
+  if (saved) { setLang(saved, false); return; }
+  fetch('https://api.country.is/')
+    .then(r => r.json())
+    .then(d => { if (d.country && d.country !== 'BR') setLang('en', false); })
+    .catch(() => {});
+})();
+</script>
+</body>
+</html>
