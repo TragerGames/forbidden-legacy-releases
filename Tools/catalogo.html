@@ -145,10 +145,15 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
    (igual carta_deck_builder.gd: offset_top negativo, bottom no 0 — o selo fica
    inteiro acima do card, com a base tocando a borda de cima).
    Seletor com 2 classes de proposito, pra especificidade vencer ".cat-card img"
-   (senao aquela regra generica de width:100% prevalece e o selo cobre a carta inteira). */
+   (senao aquela regra generica de width:100% prevalece e o selo cobre a carta inteira).
+   IMPORTANTE: ".cat-card img" tambem seta background/border/border-radius (pensados
+   pra arte da carta) — como especificidade e por PROPRIEDADE, nao por regra inteira,
+   preciso zerar essas 3 propriedades aqui, senao a etiqueta ganha uma "caixa" escura
+   com borda em volta (era exatamente isso que estava acontecendo). */
 .cat-card-img-wrap .cat-card-rarity-badge {
   position: absolute; bottom: 100%; right: 4%; margin-bottom: 3px; width: 22%; aspect-ratio: 30/16;
   object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6));
+  background: transparent; border: none; border-radius: 0;
 }
 .cat-card-name { font-size: 10px; color: var(--text-muted); margin-top: 4px; line-height: 1.3; }
 .cat-card-stats { font-size: 9px; color: var(--gold-dim); margin-top: 1px; font-weight: 600; }
