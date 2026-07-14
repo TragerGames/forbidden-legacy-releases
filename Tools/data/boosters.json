@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1784033003",
+  "versao": "1784070341",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -13,7 +13,7 @@
       "custo_souls": 130,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-warrior.webp",
       "total_tema": 98,
       "cartas_tema": [
@@ -716,7 +716,7 @@
       "custo_souls": 120,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-fiend.webp",
       "total_tema": 86,
       "cartas_tema": [
@@ -1335,7 +1335,7 @@
       "custo_souls": 150,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-spellcaster.webp",
       "total_tema": 83,
       "cartas_tema": [
@@ -1933,7 +1933,7 @@
       "custo_souls": 140,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-dragon.webp",
       "total_tema": 60,
       "cartas_tema": [
@@ -2368,7 +2368,7 @@
       "custo_souls": 110,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-aqua.webp",
       "total_tema": 70,
       "cartas_tema": [
@@ -2875,7 +2875,7 @@
       "custo_souls": 120,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-machine.webp",
       "total_tema": 62,
       "cartas_tema": [
@@ -3326,7 +3326,7 @@
       "custo_souls": 120,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-beast.webp",
       "total_tema": 52,
       "cartas_tema": [
@@ -3707,7 +3707,7 @@
       "custo_souls": 110,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-insect.webp",
       "total_tema": 40,
       "cartas_tema": [
@@ -4004,7 +4004,7 @@
       "custo_souls": 100,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-zombie.webp",
       "total_tema": 34,
       "cartas_tema": [
@@ -4259,7 +4259,7 @@
       "custo_souls": 120,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-plant.webp",
       "total_tema": 33,
       "cartas_tema": [
@@ -4507,7 +4507,7 @@
       "custo_souls": 110,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-rock.webp",
       "total_tema": 31,
       "cartas_tema": [
@@ -4741,7 +4741,7 @@
       "custo_souls": 100,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-fairy.webp",
       "total_tema": 29,
       "cartas_tema": [
@@ -4961,7 +4961,7 @@
       "custo_souls": 140,
       "evento": false,
       "duracao_dias": null,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-rare_creatures.webp",
       "total_tema": 140,
       "cartas_tema": [
@@ -6183,7 +6183,7 @@
       "custo_souls": 250,
       "evento": true,
       "duracao_dias": 7,
-      "garantia_ur_aberturas": null,
+      "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-red-eyes.webp",
       "total_tema": 29,
       "cartas_tema": [
