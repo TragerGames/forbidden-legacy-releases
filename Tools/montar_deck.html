@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forbidden Legacy — Catálogo de Cartas</title>
-<meta name="description" content="Catálogo completo de cartas do Forbidden Legacy — busque por nome, filtre por tipo, raça e raridade, e veja todas as cartas do jogo com imagem e estatísticas.">
+<title>Forbidden Legacy — Montar Deck</title>
+<meta name="description" content="Monte seu deck de Forbidden Legacy direto no site, com as mesmas regras de limite de cópias e banlist do jogo, e baixe uma imagem pra compartilhar no Discord.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://forbiddenlegacy.com.br/catalogo.html">
-<meta property="og:title" content="Forbidden Legacy — Catálogo de Cartas">
-<meta property="og:description" content="Todas as cartas de Forbidden Legacy em um só lugar — busca, filtros por tipo/raça/raridade e visualização ampliada de cada carta.">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/montar_deck.html">
+<meta property="og:title" content="Forbidden Legacy — Montar Deck">
+<meta property="og:description" content="Monte seu deck com as cartas de Forbidden Legacy e exporte uma imagem pra compartilhar no Discord.">
 <meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
-<link rel="canonical" href="https://forbiddenlegacy.com.br/catalogo.html">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/montar_deck.html">
 <link rel="icon" type="image/png" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Inter', 'Segoe UI', sans-serif; background: var(--dark); color: var(--text-body); min-height:100vh; overflow-x:hidden; }
 a { text-decoration: none; color: inherit; }
 
-/* ── NAV ── */
+/* ── NAV (identico ao catalogo) ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 300;
   display: flex; align-items: center; justify-content: space-between;
@@ -49,7 +49,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   font-size: 18px; letter-spacing: 3px; color: var(--gold);
   text-shadow: 0 0 16px rgba(200,151,58,.4);
 }
-.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-links { display: flex; gap: 18px; align-items: center; }
 .nav-links a { font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted); text-transform: uppercase; transition: color .2s; }
 .nav-links a:hover { color: var(--gold); }
 .nav-links a.active { color: var(--gold-light); }
@@ -61,7 +61,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 
 /* ── HERO ── */
 .page-hero {
-  padding: 120px 20px 48px; text-align: center;
+  padding: 120px 20px 40px; text-align: center;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(to bottom, rgba(9,8,10,0) 40%, var(--dark) 100%),
               radial-gradient(ellipse at 50% 30%, rgba(200,151,58,.10) 0%, transparent 70%);
@@ -75,21 +75,30 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .page-hero-label { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:16px; }
 .page-hero-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(36px,6vw,72px); color: var(--gold); letter-spacing:2px;
+  font-size: clamp(32px,6vw,64px); color: var(--gold); letter-spacing:2px;
   text-shadow: 0 0 40px rgba(200,151,58,.3); margin-bottom:8px;
 }
-.page-hero-sub { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:24px; }
-.page-hero-desc { max-width:620px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--text-muted); }
+.page-hero-sub { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:18px; }
+.page-hero-desc { max-width:640px; margin:0 auto; font-size:14px; line-height:1.7; color:var(--text-muted); }
 
-/* ── CONTEÚDO ── */
-.page-content { max-width:1280px; margin:0 auto; padding:36px 20px 80px; }
+/* ── LAYOUT PRINCIPAL: grade + painel do deck ── */
+.deck-layout {
+  max-width: 1400px; margin: 0 auto; padding: 28px 20px 80px;
+  display: grid; grid-template-columns: 1fr 320px; gap: 22px; align-items: start;
+}
+.deck-main { min-width: 0; }
+.deck-side {
+  position: sticky; top: 78px;
+  background: rgba(9,8,10,.96); border: 1px solid var(--border); border-radius: 6px;
+  padding: 16px; max-height: calc(100vh - 100px); overflow-y: auto;
+}
 
-/* ── TOOLBAR ── */
+/* ── TOOLBAR (identico ao catalogo) ── */
 .cat-toolbar {
   position: sticky; top: 62px; z-index: 90;
   background: rgba(9,8,10,.96); backdrop-filter: blur(6px);
   border: 1px solid var(--border); border-radius: 6px;
-  padding: 16px 18px; margin-bottom: 40px;
+  padding: 16px 18px; margin-bottom: 28px;
 }
 .cat-search {
   display: flex; align-items: center; gap: 10px;
@@ -118,18 +127,16 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-chip-icon { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px 5px 8px; }
 .cat-chip-icon img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .cat-chip-icon.cat-chip-rarity img { width: 28px; height: 14px; object-fit: contain; }
-/* So icone, sem nome do lado — usada no filtro de Raça pra caber mais botoes
-   na tela (title="" cobre a identificacao via tooltip no hover/toque longo). */
 .cat-chip-icon-only { padding: 6px 10px; }
 .cat-chip-icon-only img { width: 22px; height: 22px; }
 .cat-count { font-size: 11px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
 
 /* ── GRID ── */
 .cat-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 34px 16px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 30px 14px;
 }
 .cat-card {
-  cursor: pointer; text-align: center; transition: transform .15s;
+  cursor: pointer; text-align: center; transition: transform .15s; position: relative;
 }
 .cat-card:hover { transform: translateY(-3px); }
 .cat-card-img-wrap { position: relative; }
@@ -141,15 +148,6 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-card.r-R img  { border-color: rgba(136,170,221,.6); }
 .cat-card.r-SR img { border-color: rgba(187,136,238,.65); }
 .cat-card.r-UR img { border-color: rgba(232,184,64,.8); }
-/* Etiqueta de raridade — FORA da carta, encostada por cima da borda superior
-   (igual carta_deck_builder.gd: offset_top negativo, bottom no 0 — o selo fica
-   inteiro acima do card, com a base tocando a borda de cima).
-   Seletor com 2 classes de proposito, pra especificidade vencer ".cat-card img"
-   (senao aquela regra generica de width:100% prevalece e o selo cobre a carta inteira).
-   IMPORTANTE: ".cat-card img" tambem seta background/border/border-radius (pensados
-   pra arte da carta) — como especificidade e por PROPRIEDADE, nao por regra inteira,
-   preciso zerar essas 3 propriedades aqui, senao a etiqueta ganha uma "caixa" escura
-   com borda em volta (era exatamente isso que estava acontecendo). */
 .cat-card-img-wrap .cat-card-rarity-badge {
   position: absolute; bottom: 100%; right: 4%; margin-bottom: 3px; width: 22%; aspect-ratio: 30/16;
   object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6));
@@ -157,8 +155,6 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 }
 .cat-card-name { font-size: 10px; color: var(--text-muted); margin-top: 4px; line-height: 1.3; }
 .cat-card-stats { font-size: 9px; color: var(--gold-dim); margin-top: 1px; font-weight: 600; }
-.cat-card-icons { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
-.cat-card-icons img { width: 26px; height: 26px; object-fit: contain; }
 .cat-empty { grid-column: 1/-1; text-align: center; padding: 40px 0; font-size: 13px; color: var(--text-muted); }
 .cat-load-more {
   display: block; margin: 22px auto 0; padding: 10px 26px;
@@ -168,7 +164,87 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 }
 .cat-load-more:hover { background: rgba(200,151,58,.16); border-color: var(--gold); }
 
-/* ── MODAL DE CARTA ── */
+/* Badge de quantidade no card (quanto ja tem no deck) */
+.deck-qty-badge {
+  position: absolute; top: 4px; left: 4px; z-index: 2;
+  background: rgba(200,151,58,.92); color: var(--dark);
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700;
+  min-width: 20px; height: 20px; border-radius: 10px;
+  display: none; align-items: center; justify-content: center; padding: 0 5px;
+}
+.deck-qty-badge.show { display: flex; }
+/* Botao "i" de info, nao adiciona ao deck */
+.cat-card-info-btn {
+  position: absolute; bottom: 4px; right: 4px; z-index: 2;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(9,8,10,.75); border: 1px solid rgba(200,151,58,.4); color: var(--gold-light);
+  font-size: 11px; font-style: italic; font-family: Georgia, serif; line-height: 1;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.cat-card-info-btn:hover { background: rgba(9,8,10,.95); border-color: var(--gold); }
+
+/* ── PAINEL DO DECK ── */
+.deck-side h2 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--gold-light);
+  letter-spacing: 1px; margin-bottom: 12px;
+}
+.deck-name-row { display: flex; gap: 6px; margin-bottom: 10px; }
+.deck-name-row input {
+  flex: 1; background: var(--dark2); border: 1px solid var(--border); border-radius: 4px;
+  padding: 8px 10px; color: var(--text-body); font-size: 13px; font-family: 'Inter', sans-serif;
+}
+.deck-select-row { display: flex; gap: 6px; margin-bottom: 10px; }
+.deck-select-row select {
+  flex: 1; background: var(--dark2); border: 1px solid var(--border); border-radius: 4px;
+  padding: 8px 8px; color: var(--text-body); font-size: 12px; font-family: 'Inter', sans-serif;
+}
+.deck-btn-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.deck-btn {
+  flex: 1; min-width: 70px; background: rgba(200,151,58,.08); border: 1px solid var(--gold-dim);
+  color: var(--gold-light); font-size: 11px; letter-spacing: .5px; text-transform: uppercase;
+  padding: 7px 8px; border-radius: 4px; cursor: pointer; font-family: 'Inter', sans-serif;
+  transition: background .2s, border-color .2s;
+}
+.deck-btn:hover { background: rgba(200,151,58,.16); border-color: var(--gold); }
+.deck-btn.danger { border-color: rgba(200,60,20,.4); color: #d59070; }
+.deck-btn.danger:hover { background: rgba(200,48,16,.1); border-color: #c83010; }
+.deck-btn.primary { background: var(--gold); color: var(--dark); border-color: var(--gold); font-weight: 700; }
+.deck-btn.primary:hover { background: var(--gold-light); }
+
+.deck-counter {
+  text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--gold-light);
+  border: 1px solid var(--border); border-radius: 6px; padding: 8px 0; margin-bottom: 14px;
+}
+.deck-counter span { font-size: 14px; color: var(--text-muted); font-family: 'Inter', sans-serif; }
+.deck-counter.full { color: #92e28f; }
+
+.deck-list { max-height: 260px; overflow-y: auto; margin-bottom: 14px; border-top: 1px solid var(--border); }
+.deck-list-empty { font-size: 12px; color: var(--text-muted); padding: 14px 0; text-align: center; }
+.deck-list-item {
+  display: flex; align-items: center; gap: 8px; padding: 6px 2px;
+  border-bottom: 1px solid rgba(200,151,58,.06); font-size: 12px; cursor: pointer;
+}
+.deck-list-item:hover { background: rgba(200,151,58,.05); }
+.deck-list-item img { width: 24px; height: 35px; object-fit: cover; border-radius: 2px; flex-shrink: 0; }
+.deck-list-item-name { flex: 1; color: var(--text-body); line-height: 1.25; }
+.deck-list-item-qty { color: var(--gold-light); font-weight: 700; font-family: 'Bebas Neue', sans-serif; font-size: 14px; }
+.deck-list-item-remove { color: var(--text-muted); font-size: 14px; padding: 0 4px; }
+.deck-list-item:hover .deck-list-item-remove { color: #d59070; }
+
+.deck-groups { margin-bottom: 16px; }
+.deck-group-chip {
+  display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted);
+  padding: 4px 8px; border-left: 3px solid var(--gold-dim); margin-bottom: 4px; background: rgba(255,255,255,.02);
+}
+.deck-group-chip.cheio { color: #e8b840; border-left-color: var(--gold); }
+
+.deck-toast {
+  font-size: 12px; color: #d59070; background: rgba(200,48,16,.08); border: 1px solid rgba(160,60,20,.3);
+  border-radius: 4px; padding: 8px 10px; margin-bottom: 12px; line-height: 1.5; display: none;
+}
+.deck-toast.show { display: block; }
+
+/* ── MODAL DE CARTA (identico ao catalogo, so info) ── */
 .cat-modal-overlay {
   display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.88);
   align-items: center; justify-content: center; padding: 20px;
@@ -205,6 +281,12 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-modal-fact-value { font-size: 13px; color: var(--text-body); display: flex; align-items: center; gap: 6px; }
 .cat-modal-fact-value img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .cat-modal-desc { font-size: 12px; line-height: 1.7; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 12px; white-space: pre-line; }
+.cat-modal-add-btn {
+  margin-top: 14px; width: 100%; background: var(--gold); color: var(--dark); border: none;
+  font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 1px; padding: 10px 0;
+  border-radius: 4px; cursor: pointer;
+}
+.cat-modal-add-btn:hover { background: var(--gold-light); }
 @media(max-width:520px) {
   .cat-modal { grid-template-columns: 1fr; }
   .cat-modal-img-wrap { max-width: 160px; margin: 0 auto; }
@@ -219,7 +301,6 @@ body.en [data-lang="en"] { display:block !important; }
 body.en span[data-lang="en"] { display:inline !important; }
 body.en li[data-lang="en"] { display:flex !important; }
 
-/* ── LANG BUTTONS ── */
 .topbar-right { display:flex; gap:8px; align-items:center; }
 .lang-btn {
   background:transparent; border:1px solid var(--gold-dim); color:var(--text-muted);
@@ -280,17 +361,32 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .discord-nav-badge .dc-dot.online  { background:#3ba55c; }
 .discord-nav-badge .dc-dot.offline { background:#747f8d; }
 
+/* ── PAINEL MOBILE (drawer) ── */
+.deck-mobile-toggle {
+  display: none; position: fixed; bottom: 18px; right: 18px; z-index: 250;
+  background: var(--gold); color: var(--dark); border: none; border-radius: 30px;
+  padding: 12px 20px; font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 1px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.5); cursor: pointer;
+}
+
 /* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .deck-layout { grid-template-columns: 1fr; }
+  .deck-side {
+    display: none; position: fixed; inset: auto 0 0 0; top: 10%; z-index: 240;
+    max-height: 90%; border-radius: 12px 12px 0 0; box-shadow: 0 -8px 30px rgba(0,0,0,.6);
+  }
+  .deck-side.open { display: block; }
+  .deck-mobile-toggle { display: block; }
+}
 @media(max-width:700px) {
   nav#nav { padding: 12px 20px; }
   .nav-links, nav#nav .nav-cta { display: none !important; }
   .page-hero { padding-top: 96px; }
   .cat-toolbar { top: 0; }
-  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 8px; }
+  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
   footer { padding: 32px 20px; }
 
-  /* Filtro em faixa horizontal rolavel — sem isso, RAÇA (22 botoes) sozinha
-     ja empurra a grade de cartas pra fora da tela no celular. */
   .cat-filter-row {
     flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
     scrollbar-width: none; padding-bottom: 2px; margin-bottom: 8px;
@@ -320,8 +416,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
     <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
     <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" class="active" data-lang="pt">Catálogo</a><a href="catalogo.html" class="active" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
+    <a href="montar_deck.html" class="active" data-lang="pt">Montar Deck</a><a href="montar_deck.html" class="active" data-lang="en">Deck Builder</a>
     <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
     <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
     <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
@@ -344,65 +440,104 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <div class="page-hero">
   <div class="stars"></div>
   <div class="page-hero-label">☥ Beta 1.7.3</div>
-  <h1 class="page-hero-title" data-lang="pt">Catálogo de Cartas</h1>
-  <h1 class="page-hero-title" data-lang="en">Card Catalog</h1>
-  <div class="page-hero-sub" data-lang="pt">Todas as cartas do jogo em um só lugar</div>
-  <div class="page-hero-sub" data-lang="en">Every card in the game, in one place</div>
+  <h1 class="page-hero-title" data-lang="pt">Montar Deck</h1>
+  <h1 class="page-hero-title" data-lang="en">Deck Builder</h1>
+  <div class="page-hero-sub" data-lang="pt">Com as mesmas regras do jogo</div>
+  <div class="page-hero-sub" data-lang="en">Same rules as the game</div>
   <p class="page-hero-desc" data-lang="pt">
-    Busque por nome, filtre por tipo, raça e raridade, e clique em qualquer carta para ver a arte ampliada e todas as informações — exatamente como no seletor de deck dentro do jogo.
+    Clique numa carta pra adicionar ao deck. Limite de cópias e grupos de banlist são aplicados igual ao jogo. Quando terminar, baixe uma imagem do deck pra postar no Discord. O deck fica salvo só neste navegador.
   </p>
   <p class="page-hero-desc" data-lang="en">
-    Search by name, filter by type, race and rarity, and click any card to see the full artwork and all its information — just like the deck builder inside the game.
+    Click a card to add it to your deck. Copy limits and banlist groups are enforced just like in the game. When you're done, download an image of your deck to post on Discord. Your deck is saved only in this browser.
   </p>
 </div>
 
-<!-- CONTEÚDO -->
-<div class="page-content">
+<button class="deck-mobile-toggle" id="deck-mobile-toggle" onclick="toggleDeckPainel()">
+  <span data-lang="pt">Deck</span><span data-lang="en">Deck</span> (<span id="deck-mobile-count">0/40</span>)
+</button>
 
-  <div class="cat-toolbar">
-    <div class="cat-search">
-      <span class="cat-search-icon">🔍</span>
-      <input type="text" id="cat-search-input" data-lang-pt-placeholder="Buscar carta pelo nome…" data-lang-en-placeholder="Search card by name…" placeholder="Buscar carta pelo nome…">
+<div class="deck-layout">
+  <div class="deck-main">
+    <div class="cat-toolbar">
+      <div class="cat-search">
+        <span class="cat-search-icon">🔍</span>
+        <input type="text" id="cat-search-input" data-lang-pt-placeholder="Buscar carta pelo nome…" data-lang-en-placeholder="Search card by name…" placeholder="Buscar carta pelo nome…">
+      </div>
+      <div class="cat-filter-row">
+        <span class="cat-filter-label" data-lang="pt">Tipo</span>
+        <span class="cat-filter-label" data-lang="en">Type</span>
+        <button class="cat-chip active" data-filter-type="ALL" data-lang="pt">Todos</button>
+        <button class="cat-chip active" data-filter-type="ALL" data-lang="en">All</button>
+        <button class="cat-chip" data-filter-type="Monster" data-lang="pt">Monstro</button>
+        <button class="cat-chip" data-filter-type="Monster" data-lang="en">Monster</button>
+        <button class="cat-chip" data-filter-type="Spell" data-lang="pt">Magia</button>
+        <button class="cat-chip" data-filter-type="Spell" data-lang="en">Spell</button>
+        <button class="cat-chip" data-filter-type="Trap" data-lang="pt">Armadilha</button>
+        <button class="cat-chip" data-filter-type="Trap" data-lang="en">Trap</button>
+        <button class="cat-chip" data-filter-type="Equip">Equip</button>
+        <button class="cat-chip" data-filter-type="Field" data-lang="pt">Campo</button>
+        <button class="cat-chip" data-filter-type="Field" data-lang="en">Field</button>
+      </div>
+      <div class="cat-filter-row" id="cat-race-row">
+        <span class="cat-filter-label" data-lang="pt">Raça</span>
+        <span class="cat-filter-label" data-lang="en">Race</span>
+        <button class="cat-chip active" data-filter-race="ALL" data-lang="pt">Todas</button>
+        <button class="cat-chip active" data-filter-race="ALL" data-lang="en">All</button>
+      </div>
+      <div class="cat-filter-row">
+        <span class="cat-filter-label" data-lang="pt">Raridade</span>
+        <span class="cat-filter-label" data-lang="en">Rarity</span>
+        <button class="cat-chip active" data-filter-rarity="ALL" data-lang="pt">Todas</button>
+        <button class="cat-chip active" data-filter-rarity="ALL" data-lang="en">All</button>
+        <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="N"><img src="img/raridade/rarity_C.webp" alt="N"><span>N</span></button>
+        <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp" alt="R"><span>R</span></button>
+        <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp" alt="SR"><span>SR</span></button>
+        <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR"><span>UR</span></button>
+        <span class="cat-count" id="cat-count">—</span>
+      </div>
     </div>
-    <div class="cat-filter-row">
-      <span class="cat-filter-label" data-lang="pt">Tipo</span>
-      <span class="cat-filter-label" data-lang="en">Type</span>
-      <button class="cat-chip active" data-filter-type="ALL" data-lang="pt">Todos</button>
-      <button class="cat-chip active" data-filter-type="ALL" data-lang="en">All</button>
-      <button class="cat-chip" data-filter-type="Monster" data-lang="pt">Monstro</button>
-      <button class="cat-chip" data-filter-type="Monster" data-lang="en">Monster</button>
-      <button class="cat-chip" data-filter-type="Spell" data-lang="pt">Magia</button>
-      <button class="cat-chip" data-filter-type="Spell" data-lang="en">Spell</button>
-      <button class="cat-chip" data-filter-type="Trap" data-lang="pt">Armadilha</button>
-      <button class="cat-chip" data-filter-type="Trap" data-lang="en">Trap</button>
-      <button class="cat-chip" data-filter-type="Equip">Equip</button>
-      <button class="cat-chip" data-filter-type="Field" data-lang="pt">Campo</button>
-      <button class="cat-chip" data-filter-type="Field" data-lang="en">Field</button>
-    </div>
-    <div class="cat-filter-row" id="cat-race-row">
-      <span class="cat-filter-label" data-lang="pt">Raça</span>
-      <span class="cat-filter-label" data-lang="en">Race</span>
-      <button class="cat-chip active" data-filter-race="ALL" data-lang="pt">Todas</button>
-      <button class="cat-chip active" data-filter-race="ALL" data-lang="en">All</button>
-    </div>
-    <div class="cat-filter-row">
-      <span class="cat-filter-label" data-lang="pt">Raridade</span>
-      <span class="cat-filter-label" data-lang="en">Rarity</span>
-      <button class="cat-chip active" data-filter-rarity="ALL" data-lang="pt">Todas</button>
-      <button class="cat-chip active" data-filter-rarity="ALL" data-lang="en">All</button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="N"><img src="img/raridade/rarity_C.webp" alt="N"><span>N</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp" alt="R"><span>R</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp" alt="SR"><span>SR</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR"><span>UR</span></button>
-      <span class="cat-count" id="cat-count">—</span>
+
+    <div class="cat-grid" id="cat-grid">
+      <div class="cat-empty" data-lang="pt">Carregando cartas…</div>
+      <div class="cat-empty" data-lang="en">Loading cards…</div>
     </div>
   </div>
 
-  <div class="cat-grid" id="cat-grid">
-    <div class="cat-empty" data-lang="pt">Carregando catálogo…</div>
-    <div class="cat-empty" data-lang="en">Loading catalog…</div>
-  </div>
+  <!-- PAINEL DO DECK -->
+  <aside class="deck-side" id="deck-side">
+    <h2 data-lang="pt">Seu Deck</h2>
+    <h2 data-lang="en">Your Deck</h2>
 
+    <div class="deck-name-row">
+      <input type="text" id="deck-nome-input" data-lang-pt-placeholder="Nome do deck…" data-lang-en-placeholder="Deck name…" placeholder="Nome do deck…" value="Meu Deck">
+    </div>
+    <div class="deck-select-row">
+      <select id="deck-select"></select>
+    </div>
+    <div class="deck-btn-row">
+      <button class="deck-btn" onclick="novoDeck()" data-lang="pt">Novo</button>
+      <button class="deck-btn" onclick="novoDeck()" data-lang="en">New</button>
+      <button class="deck-btn" onclick="salvarDeckAtual()" data-lang="pt">Salvar</button>
+      <button class="deck-btn" onclick="salvarDeckAtual()" data-lang="en">Save</button>
+      <button class="deck-btn danger" onclick="excluirDeckSalvo()" data-lang="pt">Excluir</button>
+      <button class="deck-btn danger" onclick="excluirDeckSalvo()" data-lang="en">Delete</button>
+    </div>
+
+    <div class="deck-toast" id="deck-toast"></div>
+
+    <div class="deck-counter" id="deck-counter">0 <span>/ 40</span></div>
+
+    <div class="deck-list" id="deck-list">
+      <div class="deck-list-empty" data-lang="pt">Nenhuma carta ainda. Clique numa carta pra adicionar.</div>
+      <div class="deck-list-empty" data-lang="en">No cards yet. Click a card to add it.</div>
+    </div>
+
+    <div class="deck-groups" id="deck-groups"></div>
+
+    <button class="deck-btn primary" style="width:100%" onclick="baixarImagemDeck()">
+      <span data-lang="pt">⬇ Baixar imagem do deck</span><span data-lang="en">⬇ Download deck image</span>
+    </button>
+  </aside>
 </div>
 
 <!-- MODAL DE CARTA -->
@@ -418,6 +553,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <div class="cat-modal-rarity" id="cat-modal-rarity"></div>
       <div class="cat-modal-facts" id="cat-modal-facts"></div>
       <div class="cat-modal-desc" id="cat-modal-desc"></div>
+      <button class="cat-modal-add-btn" id="cat-modal-add-btn" onclick="adicionarDoModal()">
+        <span data-lang="pt">+ Adicionar ao deck</span><span data-lang="en">+ Add to deck</span>
+      </button>
     </div>
   </div>
 </div>
@@ -459,19 +597,27 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 </footer>
 
 <script>
-// ── CATÁLOGO ──
+const DECK_MAX = 40;
+const STORAGE_KEY = 'fl_decks';
+let cartas = [];
+let cartaPorNome = {};
+let versaoCache = '';
+let deckRules = { grupos: {}, cartas: {}, limite_padrao: 3 };
+let deckAtual = [];
+let deckNomeAtual = 'Meu Deck';
+let modalCartaAtual = null;
+
+function isEn() { return document.body.classList.contains('en'); }
+
+// ══════════════════ CATÁLOGO / GRADE (mesma logica do catalogo.html) ══════════════════
 (function() {
   const grid = document.getElementById('cat-grid');
   const countEl = document.getElementById('cat-count');
   const searchInput = document.getElementById('cat-search-input');
-  let cartas = [];
-  let versaoCache = '';
   let filtroTipo = 'ALL';
   let filtroRaridade = 'ALL';
   let filtroRaca = 'ALL';
   let termoBusca = '';
-
-  function isEn() { return document.body.classList.contains('en'); }
 
   function cardHtml(c) {
     const nome = isEn() ? c.nome : c.nome_pt;
@@ -482,19 +628,16 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     const badge = badgeArquivo
       ? '<img class="cat-card-rarity-badge" src="img/raridade/rarity_' + badgeArquivo + '.webp" alt="' + c.raridade + '" loading="lazy" onerror="this.style.display=\'none\'">'
       : '';
-    const icones = [];
-    if (c.icone_atributo) icones.push('<img src="img/atributos/' + c.icone_atributo + '.webp" alt="' + c.atributo + '" title="' + c.atributo + '" loading="lazy">');
-    if (c.icone_tipo) icones.push('<img src="img/tipos/' + c.icone_tipo + '.webp" alt="' + c.tipo + '" title="' + c.tipo + '" loading="lazy">');
-    const linhaIcones = icones.length ? '<div class="cat-card-icons">' + icones.join('') + '</div>' : '';
     return (
-      '<div class="cat-card r-' + c.raridade + '" data-slug="' + c.slug + '">' +
+      '<div class="cat-card r-' + c.raridade + '" data-slug="' + c.slug + '" data-nome="' + c.nome.replace(/"/g,'&quot;') + '">' +
+        '<div class="deck-qty-badge" data-qty-slug="' + c.slug + '"></div>' +
         '<div class="cat-card-img-wrap">' +
           '<img src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
           badge +
         '</div>' +
+        '<button class="cat-card-info-btn" data-info-slug="' + c.slug + '">i</button>' +
         '<div class="cat-card-name">' + nome + '</div>' +
         stats +
-        linhaIcones +
       '</div>'
     );
   }
@@ -513,8 +656,6 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   const PAGINA = 90;
   let renderLimit = PAGINA;
 
-  // Renderiza so um lote por vez (nao as 960 de uma vez) — evita centenas de
-  // imagens carregando/decodificando simultaneamente e deixa scroll/mobile leve.
   function render(manterLimite) {
     if (!manterLimite) renderLimit = PAGINA;
     const oldBtn = document.querySelector('.cat-load-more');
@@ -529,7 +670,16 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     const visiveis = filtradas.slice(0, renderLimit);
     grid.innerHTML = visiveis.map(cardHtml).join('');
     grid.querySelectorAll('.cat-card').forEach(el => {
-      el.addEventListener('click', () => openCardModal(el.getAttribute('data-slug')));
+      el.addEventListener('click', (e) => {
+        if (e.target.closest('.cat-card-info-btn')) return;
+        tentarAdicionarCarta(el.getAttribute('data-nome'));
+      });
+    });
+    grid.querySelectorAll('.cat-card-info-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openCardModal(btn.getAttribute('data-info-slug'));
+      });
     });
     if (filtradas.length > renderLimit) {
       const restante = filtradas.length - renderLimit;
@@ -539,6 +689,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       btn.addEventListener('click', () => { renderLimit += PAGINA; render(true); });
       grid.after(btn);
     }
+    atualizarBadgesGrade();
   }
 
   function popularRacas() {
@@ -556,10 +707,6 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       btn.innerHTML = '<img src="img/tipos/' + racaIcone[r] + '.webp" alt="' + r + '">';
       row.appendChild(btn);
     });
-    ligarFiltroRaca();
-  }
-
-  function ligarFiltroRaca() {
     document.querySelectorAll('[data-filter-race]').forEach(btn => {
       btn.addEventListener('click', () => {
         filtroRaca = btn.getAttribute('data-filter-race');
@@ -593,21 +740,282 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     }, 180);
   });
 
-  window.__catalogoRender = render;
+  window.__deckRender = render;
+  window.__deckPopularRacas = popularRacas;
+})();
 
-  fetch('data/catalogo.json?t=' + Date.now())
-    .then(r => r.json())
-    .then(data => {
-      cartas = data.cartas || [];
-      versaoCache = data.versao || '';
-      popularRacas();
-      render();
-    })
-    .catch(() => {
-      grid.innerHTML = '<div class="cat-empty">' + (isEn() ? 'Could not load the catalog right now.' : 'Não foi possível carregar o catálogo agora.') + '</div>';
+function atualizarBadgesGrade() {
+  const contagem = {};
+  deckAtual.forEach(nome => { contagem[nome] = (contagem[nome] || 0) + 1; });
+  document.querySelectorAll('.deck-qty-badge').forEach(el => {
+    const slug = el.getAttribute('data-qty-slug');
+    const carta = cartas.find(c => c.slug === slug);
+    const qtd = carta ? (contagem[carta.nome] || 0) : 0;
+    if (qtd > 0) { el.textContent = '×' + qtd; el.classList.add('show'); }
+    else { el.classList.remove('show'); el.textContent = ''; }
+  });
+}
+
+// ══════════════════ REGRAS DE DECK (porta de DeckBanlistRules.validar_adicao) ══════════════════
+function categoriaCarta(carta) {
+  return (carta && carta.card_type === 'Monster') ? 'monster' : 'support';
+}
+
+function chaveContagemGrupo(grupo, gid, carta) {
+  const scope = (grupo.scope || 'effect').toLowerCase();
+  if (scope === 'monster') return gid + '|monster';
+  if (['spell', 'magic', 'trap', 'equip', 'support', 'backrow'].includes(scope)) return gid + '|support';
+  return gid + '|' + categoriaCarta(carta);
+}
+
+function gruposDaCartaNome(nome) {
+  const entry = deckRules.cartas[nome];
+  if (!entry || !entry.grupos) return [];
+  return entry.grupos.map(gid => Object.assign({ id: gid }, deckRules.grupos[gid] || {}));
+}
+
+function limiteIndividual(nome) {
+  const entry = deckRules.cartas[nome];
+  return (entry && entry.limite) || deckRules.limite_padrao || 3;
+}
+
+// Espelha DeckBanlistRules.validar_adicao(deck_atual, nome_carta, limite_individual)
+function validarAdicao(nomeCarta) {
+  if (deckAtual.length >= DECK_MAX) {
+    return { ok: false, motivo: isEn() ? `Deck full (${DECK_MAX} cards).` : `Deck cheio (${DECK_MAX} cartas).` };
+  }
+  const limite = limiteIndividual(nomeCarta);
+  let contagemCarta = 0;
+  const contagemGrupos = {};
+  deckAtual.forEach(item => {
+    if (item === nomeCarta) contagemCarta++;
+    gruposDaCartaNome(item).forEach(grupo => {
+      const chave = chaveContagemGrupo(grupo, grupo.id, cartaPorNome[item]);
+      contagemGrupos[chave] = (contagemGrupos[chave] || 0) + 1;
     });
+  });
+  if (contagemCarta >= limite) {
+    return {
+      ok: false,
+      motivo: isEn()
+        ? `Limit of ${limite} ${limite === 1 ? 'copy' : 'copies'} reached for ${nomeCarta}.`
+        : `Limite de ${limite} cópia${limite === 1 ? '' : 's'} atingido para ${nomeCarta}.`,
+    };
+  }
+  const cartaNova = cartaPorNome[nomeCarta];
+  for (const grupo of gruposDaCartaNome(nomeCarta)) {
+    const limiteGrupo = grupo.max_in_deck || 3;
+    const chave = chaveContagemGrupo(grupo, grupo.id, cartaNova);
+    const qtd = contagemGrupos[chave] || 0;
+    if (qtd >= limiteGrupo) {
+      return {
+        ok: false,
+        motivo: isEn()
+          ? `Group "${grupo.label}" allows at most ${limiteGrupo} card${limiteGrupo === 1 ? '' : 's'} of this category.`
+          : `Grupo "${grupo.label}" permite no máximo ${limiteGrupo} carta${limiteGrupo === 1 ? '' : 's'} desta categoria.`,
+      };
+    }
+  }
+  return { ok: true };
+}
 
-  // ── MODAL ──
+function mostrarToast(msg) {
+  const el = document.getElementById('deck-toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(window.__toastTimeout);
+  window.__toastTimeout = setTimeout(() => el.classList.remove('show'), 3500);
+}
+
+function tentarAdicionarCarta(nomeCarta) {
+  if (!nomeCarta || !cartaPorNome[nomeCarta]) return false;
+  const validacao = validarAdicao(nomeCarta);
+  if (!validacao.ok) {
+    mostrarToast(validacao.motivo);
+    return false;
+  }
+  deckAtual.push(nomeCarta);
+  atualizarPainelDeck();
+  return true;
+}
+
+function removerCarta(nomeCarta) {
+  const idx = deckAtual.lastIndexOf(nomeCarta);
+  if (idx === -1) return;
+  deckAtual.splice(idx, 1);
+  atualizarPainelDeck();
+}
+
+// ══════════════════ PAINEL DO DECK ══════════════════
+function resumoGruposDeck() {
+  const contagem = {};
+  deckAtual.forEach(item => {
+    gruposDaCartaNome(item).forEach(grupo => {
+      const chave = chaveContagemGrupo(grupo, grupo.id, cartaPorNome[item]);
+      if (!contagem[chave]) contagem[chave] = { grupo, count: 0 };
+      contagem[chave].count++;
+    });
+  });
+  return Object.values(contagem).sort((a, b) => b.count - a.count);
+}
+
+function atualizarPainelDeck() {
+  const counterEl = document.getElementById('deck-counter');
+  counterEl.innerHTML = deckAtual.length + ' <span>/ ' + DECK_MAX + '</span>';
+  counterEl.classList.toggle('full', deckAtual.length >= DECK_MAX);
+  document.getElementById('deck-mobile-count').textContent = deckAtual.length + '/' + DECK_MAX;
+
+  const contagemPorNome = {};
+  deckAtual.forEach(n => { contagemPorNome[n] = (contagemPorNome[n] || 0) + 1; });
+  const nomesUnicos = Object.keys(contagemPorNome).sort();
+
+  const listEl = document.getElementById('deck-list');
+  if (nomesUnicos.length === 0) {
+    listEl.innerHTML = '<div class="deck-list-empty">' + (isEn() ? 'No cards yet. Click a card to add it.' : 'Nenhuma carta ainda. Clique numa carta pra adicionar.') + '</div>';
+  } else {
+    listEl.innerHTML = nomesUnicos.map(nome => {
+      const c = cartaPorNome[nome];
+      const nomeExibido = isEn() ? c.nome : c.nome_pt;
+      return (
+        '<div class="deck-list-item" data-remove-nome="' + nome.replace(/"/g, '&quot;') + '">' +
+          '<img src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="">' +
+          '<div class="deck-list-item-name">' + nomeExibido + '</div>' +
+          '<div class="deck-list-item-qty">×' + contagemPorNome[nome] + '</div>' +
+          '<div class="deck-list-item-remove">✕</div>' +
+        '</div>'
+      );
+    }).join('');
+    listEl.querySelectorAll('.deck-list-item').forEach(el => {
+      el.addEventListener('click', () => removerCarta(el.getAttribute('data-remove-nome')));
+    });
+  }
+
+  const gruposEl = document.getElementById('deck-groups');
+  const resumo = resumoGruposDeck();
+  gruposEl.innerHTML = resumo.map(({ grupo, count }) => {
+    const limite = grupo.max_in_deck || 3;
+    const cheio = count >= limite;
+    return (
+      '<div class="deck-group-chip' + (cheio ? ' cheio' : '') + '">' +
+        '<span>' + (grupo.label || grupo.id) + '</span><span>' + count + '/' + limite + '</span>' +
+      '</div>'
+    );
+  }).join('');
+
+  atualizarBadgesGrade();
+}
+
+// ══════════════════ DECKS SALVOS (localStorage) ══════════════════
+function carregarDecksSalvos() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch (e) { return {}; }
+}
+function gravarDecksSalvos(obj) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+}
+function popularSeletorDecks() {
+  const decks = carregarDecksSalvos();
+  const sel = document.getElementById('deck-select');
+  const nomes = Object.keys(decks).sort();
+  sel.innerHTML = '<option value="">' + (isEn() ? '— Saved decks —' : '— Decks salvos —') + '</option>' +
+    nomes.map(n => '<option value="' + n.replace(/"/g, '&quot;') + '">' + n + ' (' + decks[n].length + ')</option>').join('');
+}
+function novoDeck() {
+  deckAtual = [];
+  deckNomeAtual = isEn() ? 'My Deck' : 'Meu Deck';
+  document.getElementById('deck-nome-input').value = deckNomeAtual;
+  document.getElementById('deck-select').value = '';
+  atualizarPainelDeck();
+}
+function salvarDeckAtual() {
+  const nome = document.getElementById('deck-nome-input').value.trim();
+  if (!nome) { mostrarToast(isEn() ? 'Give your deck a name first.' : 'Dê um nome ao deck primeiro.'); return; }
+  const decks = carregarDecksSalvos();
+  decks[nome] = deckAtual.slice();
+  gravarDecksSalvos(decks);
+  deckNomeAtual = nome;
+  popularSeletorDecks();
+  document.getElementById('deck-select').value = nome;
+  mostrarToast(isEn() ? `Deck "${nome}" saved.` : `Deck "${nome}" salvo.`);
+}
+function excluirDeckSalvo() {
+  const sel = document.getElementById('deck-select');
+  const nome = sel.value;
+  if (!nome) return;
+  const decks = carregarDecksSalvos();
+  delete decks[nome];
+  gravarDecksSalvos(decks);
+  popularSeletorDecks();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('deck-select').addEventListener('change', (e) => {
+    const nome = e.target.value;
+    if (!nome) return;
+    const decks = carregarDecksSalvos();
+    deckAtual = (decks[nome] || []).filter(n => cartaPorNome[n]);
+    deckNomeAtual = nome;
+    document.getElementById('deck-nome-input').value = nome;
+    atualizarPainelDeck();
+  });
+});
+
+// ══════════════════ DRAWER MOBILE ══════════════════
+function toggleDeckPainel() {
+  document.getElementById('deck-side').classList.toggle('open');
+}
+
+// ══════════════════ EXPORTAR IMAGEM (canvas) ══════════════════
+function baixarImagemDeck() {
+  if (deckAtual.length === 0) {
+    mostrarToast(isEn() ? 'Add cards to your deck first.' : 'Adicione cartas ao deck primeiro.');
+    return;
+  }
+  const cols = 8;
+  const cardW = 110, cardH = 160, gap = 8, pad = 24, headerH = 64;
+  const rows = Math.ceil(deckAtual.length / cols);
+  const canvas = document.createElement('canvas');
+  canvas.width = pad * 2 + cols * cardW + (cols - 1) * gap;
+  canvas.height = pad * 2 + headerH + rows * cardH + Math.max(0, rows - 1) * gap;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#09080a';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#e8b840';
+  ctx.font = 'bold 26px Georgia, serif';
+  ctx.fillText((deckNomeAtual || (isEn() ? 'My Deck' : 'Meu Deck')) + ' — Forbidden Legacy', pad, pad + 26);
+  ctx.fillStyle = '#9a8050';
+  ctx.font = '14px Georgia, serif';
+  ctx.fillText(deckAtual.length + (isEn() ? ' cards' : ' cartas'), pad, pad + 46);
+
+  const carregamentos = deckAtual.map((nome, i) => new Promise(resolve => {
+    const c = cartaPorNome[nome];
+    const img = new Image();
+    img.onload = () => {
+      const col = i % cols, row = Math.floor(i / cols);
+      const x = pad + col * (cardW + gap);
+      const y = pad + headerH + row * (cardH + gap);
+      ctx.drawImage(img, x, y, cardW, cardH);
+      resolve();
+    };
+    img.onerror = resolve;
+    img.src = 'img/cartas/' + (c ? c.slug : '') + '.webp?v=' + versaoCache;
+  }));
+
+  Promise.all(carregamentos).then(() => {
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (deckNomeAtual || 'deck').replace(/[^a-z0-9_-]+/gi, '_') + '.png';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    }, 'image/png');
+  });
+}
+
+// ══════════════════ MODAL DE CARTA (info, com botao adicionar) ══════════════════
+(function() {
   const overlay = document.getElementById('cat-modal-overlay');
   const modalImg = document.getElementById('cat-modal-img');
   const modalRarityBadge = document.getElementById('cat-modal-rarity-badge');
@@ -628,6 +1036,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   window.openCardModal = function(slug) {
     const c = cartas.find(x => x.slug === slug);
     if (!c) return;
+    modalCartaAtual = c;
     modalImg.src = 'img/cartas_grande/' + c.slug + '.webp?v=' + versaoCache;
     modalImg.alt = c.nome;
     const badgeArquivo = c.raridade_arquivo || c.raridade;
@@ -662,10 +1071,33 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     overlay.classList.remove('open');
   };
 
+  window.adicionarDoModal = function() {
+    if (!modalCartaAtual) return;
+    if (tentarAdicionarCarta(modalCartaAtual.nome)) closeCardModal();
+  };
+
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeCardModal();
   });
 })();
+
+// ══════════════════ CARREGAMENTO DE DADOS ══════════════════
+Promise.all([
+  fetch('data/catalogo.json?t=' + Date.now()).then(r => r.json()),
+  fetch('data/deckbuilder.json?t=' + Date.now()).then(r => r.json()),
+]).then(([catalogo, regras]) => {
+  cartas = catalogo.cartas || [];
+  versaoCache = catalogo.versao || '';
+  cartas.forEach(c => { cartaPorNome[c.nome] = c; });
+  deckRules = regras || deckRules;
+  window.__deckPopularRacas();
+  window.__deckRender();
+  popularSeletorDecks();
+  document.getElementById('deck-nome-input').value = deckNomeAtual;
+  atualizarPainelDeck();
+}).catch(() => {
+  document.getElementById('cat-grid').innerHTML = '<div class="cat-empty">' + (isEn() ? 'Could not load cards right now.' : 'Não foi possível carregar as cartas agora.') + '</div>';
+});
 
 // Nav scroll
 const nav = document.getElementById('nav');
@@ -680,7 +1112,8 @@ function setLang(lang, saveToStorage=true) {
   if (saveToStorage) localStorage.setItem('fl_lang', lang);
   const input = document.getElementById('cat-search-input');
   if (input) input.placeholder = lang === 'en' ? input.getAttribute('data-lang-en-placeholder') : input.getAttribute('data-lang-pt-placeholder');
-  if (window.__catalogoRender) window.__catalogoRender();
+  if (window.__deckRender) window.__deckRender();
+  if (window.__deckAtualizado !== false) atualizarPainelDeck();
 }
 window.setLang = setLang;
 

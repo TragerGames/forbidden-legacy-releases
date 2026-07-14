@@ -386,6 +386,7 @@ body.en li[data-lang="en"] { display: flex !important; }
     <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
     <a href="boosters.html" class="active" data-lang="pt">Boosters</a><a href="boosters.html" class="active" data-lang="en">Boosters</a>
     <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
     <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
     <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
     <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
@@ -514,12 +515,12 @@ body.en li[data-lang="en"] { display: flex !important; }
       <ul class="feature-list" data-lang="pt">
         <li>Se <strong>3 aberturas consecutivas</strong> não entregarem SR nem UR, a <strong style="color:var(--gold)">4ª abertura garante uma SR</strong></li>
         <li>Obter uma SR ou UR reinicia o contador da garantia</li>
-        <li><strong style="color:var(--gold)">Não há garantia de UR.</strong> Acima da pity de SR, UR é puramente uma questão de sorte pelos slots especiais (3% por slot) — assim UR continua sendo verdadeiramente raro</li>
+        <li><strong style="color:var(--gold)">Boosters comuns não possuem garantia de UR.</strong> Eventos temporários podem ter garantia própria, sempre indicada no detalhe do pacote</li>
       </ul>
       <ul class="feature-list" data-lang="en">
         <li>If <strong>3 consecutive openings</strong> contain no SR or UR, the <strong style="color:var(--gold)">4th opening guarantees an SR</strong></li>
         <li>Obtaining an SR or UR resets the guarantee counter</li>
-        <li><strong style="color:var(--gold)">There is no UR guarantee.</strong> Beyond the SR pity, UR is purely down to luck on the special slots (3% per slot) — keeping UR truly rare</li>
+        <li><strong style="color:var(--gold)">Regular boosters have no UR guarantee.</strong> Limited-time events may have their own guarantee, always shown in the pack details</li>
       </ul>
     </div>
 
@@ -718,6 +719,7 @@ body.en li[data-lang="en"] { display: flex !important; }
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
       <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
       <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
     </div>
     <div class="footer-col">
@@ -813,6 +815,12 @@ body.en li[data-lang="en"] { display: flex !important; }
           : '⏳ <strong>Pacote temporário</strong> — disponível por apenas ' + (b.duracao_dias || 7) + ' dias. Depois disso, estas cartas saem de circulação até uma futura reedição.'
         ) + '</div>'
       : '';
+    const garantiaUrTxt = b.garantia_ur_aberturas
+      ? '<div class="booster-detail-event-note">' + (isEn()
+          ? '💎 <strong>UR guarantee</strong> — in each ' + b.garantia_ur_aberturas + '-opening cycle without a UR, the final opening guarantees 1 theme UR.'
+          : '💎 <strong>Garantia de UR</strong> — a cada ciclo de ' + b.garantia_ur_aberturas + ' aberturas sem UR, a última abertura garante 1 UR do tema.'
+        ) + '</div>'
+      : '';
 
     detailEl.innerHTML = (
       '<div class="booster-detail-head">' +
@@ -821,6 +829,7 @@ body.en li[data-lang="en"] { display: flex !important; }
       '</div>' +
       '<div class="booster-detail-sub">' + desc + '<br>' + tipoLabelTxt + '</div>' +
       eventoTxt +
+      garantiaUrTxt +
       '<div class="card-thumb-grid">' + b.cartas_tema.map(cardThumbHtml).join('') + '</div>' +
       '<div class="booster-detail-outros">' + outrosTxt + '</div>'
     );
@@ -828,7 +837,7 @@ body.en li[data-lang="en"] { display: flex !important; }
     detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  fetch('data/boosters.json')
+  fetch('data/boosters.json?t=' + Date.now())
     .then(r => r.json())
     .then(data => {
       boostersData = data.boosters || [];
