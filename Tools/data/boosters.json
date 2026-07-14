@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1783962373",
+  "versao": "1784033003",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -13,6 +13,7 @@
       "custo_souls": 130,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-warrior.webp",
       "total_tema": 98,
       "cartas_tema": [
@@ -715,6 +716,7 @@
       "custo_souls": 120,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-fiend.webp",
       "total_tema": 86,
       "cartas_tema": [
@@ -1333,6 +1335,7 @@
       "custo_souls": 150,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-spellcaster.webp",
       "total_tema": 83,
       "cartas_tema": [
@@ -1930,6 +1933,7 @@
       "custo_souls": 140,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-dragon.webp",
       "total_tema": 60,
       "cartas_tema": [
@@ -2364,6 +2368,7 @@
       "custo_souls": 110,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-aqua.webp",
       "total_tema": 70,
       "cartas_tema": [
@@ -2870,6 +2875,7 @@
       "custo_souls": 120,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-machine.webp",
       "total_tema": 62,
       "cartas_tema": [
@@ -3320,6 +3326,7 @@
       "custo_souls": 120,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-beast.webp",
       "total_tema": 52,
       "cartas_tema": [
@@ -3700,6 +3707,7 @@
       "custo_souls": 110,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-insect.webp",
       "total_tema": 40,
       "cartas_tema": [
@@ -3996,6 +4004,7 @@
       "custo_souls": 100,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-zombie.webp",
       "total_tema": 34,
       "cartas_tema": [
@@ -4250,6 +4259,7 @@
       "custo_souls": 120,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-plant.webp",
       "total_tema": 33,
       "cartas_tema": [
@@ -4497,6 +4507,7 @@
       "custo_souls": 110,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-rock.webp",
       "total_tema": 31,
       "cartas_tema": [
@@ -4730,6 +4741,7 @@
       "custo_souls": 100,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-fairy.webp",
       "total_tema": 29,
       "cartas_tema": [
@@ -4949,6 +4961,7 @@
       "custo_souls": 140,
       "evento": false,
       "duracao_dias": null,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-rare_creatures.webp",
       "total_tema": 140,
       "cartas_tema": [
@@ -5935,6 +5948,231 @@
       ]
     },
     {
+      "id": "especial_black_luster_soldier",
+      "tipo_label": "BLACK LUSTER SOLDIER",
+      "nome_pt": "Lusto Negro",
+      "nome_en": "Black Luster Soldier",
+      "desc_pt": "Edição especial e temporária dedicada ao tema Black Luster Soldier, reunindo guerreiros do caos, suportes Gaia, magos Chaos e cartas comuns compatíveis. Depois que o evento terminar, essas cartas saem de circulação.",
+      "desc_en": "A special, time-limited Black Luster Soldier edition with Chaos warriors, Gaia support, Chaos spellcasters and compatible common cards. When the event ends, these cards leave circulation.",
+      "cor": "#d6b35a",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 15,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-bls.webp",
+      "total_tema": 30,
+      "cartas_tema": [
+        {
+          "nome": "Black Luster Soldier",
+          "raridade": "UR",
+          "slug": "black_luster_soldier",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Black Luster Soldier - Envoy of the Beginning",
+          "raridade": "UR",
+          "slug": "black_luster_soldier_-_envoy_of_the_beginning",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Black Luster Soldier - Envoy of the Evening Twilight",
+          "raridade": "UR",
+          "slug": "black_luster_soldier_-_envoy_of_the_evening_twilight",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Black Luster Soldier - Legendary Swordsman",
+          "raridade": "UR",
+          "slug": "black_luster_soldier_-_legendary_swordsman",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Black Luster Soldier - Sacred Soldier",
+          "raridade": "UR",
+          "slug": "black_luster_soldier_-_sacred_soldier",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Black Luster Soldier - Soldier of Light and Darkness",
+          "raridade": "UR",
+          "slug": "black_luster_soldier_-_soldier_of_light_and_darkness",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Black Luster Soldier - Super Soldier",
+          "raridade": "UR",
+          "slug": "black_luster_soldier_-_super_soldier",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Chaos Command Magician",
+          "raridade": "UR",
+          "slug": "chaos_command_magician",
+          "atk": "2400",
+          "def": "1900"
+        },
+        {
+          "nome": "Chaos Emperor Dragon",
+          "raridade": "UR",
+          "slug": "chaos_emperor_dragon",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Chaos Sorcerer",
+          "raridade": "UR",
+          "slug": "chaos_sorcerer",
+          "atk": "2300",
+          "def": "2000"
+        },
+        {
+          "nome": "Dark Magician of Chaos",
+          "raridade": "UR",
+          "slug": "dark_magician_of_chaos",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Gaia the Dragon Champion",
+          "raridade": "UR",
+          "slug": "gaia_the_dragon_champion",
+          "atk": "2600",
+          "def": "2100"
+        },
+        {
+          "nome": "Gaia the Magical Knight of Dragons",
+          "raridade": "UR",
+          "slug": "gaia_the_magical_knight_of_dragons",
+          "atk": "2600",
+          "def": "2100"
+        },
+        {
+          "nome": "Lord Gaia the Fierce Knight",
+          "raridade": "UR",
+          "slug": "lord_gaia_the_fierce_knight",
+          "atk": "2300",
+          "def": "2100"
+        },
+        {
+          "nome": "Magician of Black Chaos",
+          "raridade": "UR",
+          "slug": "magician_of_black_chaos",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Master of Chaos",
+          "raridade": "UR",
+          "slug": "master_of_chaos",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Sky Galloping Gaia the Dragon Champion",
+          "raridade": "UR",
+          "slug": "sky_galloping_gaia_the_dragon_champion",
+          "atk": "2600",
+          "def": "2100"
+        },
+        {
+          "nome": "Toon Black Luster Soldier",
+          "raridade": "UR",
+          "slug": "toon_black_luster_soldier",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Arisen Gaia the Fierce Knight",
+          "raridade": "SR",
+          "slug": "arisen_gaia_the_fierce_knight",
+          "atk": "2300",
+          "def": "2100"
+        },
+        {
+          "nome": "Curse of Dragon, the Cursed Dragon",
+          "raridade": "SR",
+          "slug": "curse_of_dragon_the_cursed_dragon",
+          "atk": "2000",
+          "def": "1500"
+        },
+        {
+          "nome": "Envoy of Chaos",
+          "raridade": "SR",
+          "slug": "envoy_of_chaos",
+          "atk": "1500",
+          "def": "0"
+        },
+        {
+          "nome": "Gaia the Magical Knight",
+          "raridade": "SR",
+          "slug": "gaia_the_magical_knight",
+          "atk": "2300",
+          "def": "2100"
+        },
+        {
+          "nome": "Soldier Gaia the Fierce Knight",
+          "raridade": "SR",
+          "slug": "soldier_gaia_the_fierce_knight",
+          "atk": "2600",
+          "def": "2100"
+        },
+        {
+          "nome": "Super Soldier Shield",
+          "raridade": "SR",
+          "slug": "super_soldier_shield"
+        },
+        {
+          "nome": "Beginning Knight",
+          "raridade": "R",
+          "slug": "beginning_knight",
+          "atk": "500",
+          "def": "2000"
+        },
+        {
+          "nome": "Evening Twilight Knight",
+          "raridade": "R",
+          "slug": "evening_twilight_knight",
+          "atk": "500",
+          "def": "2000"
+        },
+        {
+          "nome": "Gaia the Fierce Knight Origin",
+          "raridade": "R",
+          "slug": "gaia_the_fierce_knight_origin",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "Gaia, the Mid-Knight Sun",
+          "raridade": "R",
+          "slug": "gaia_the_mid-knight_sun",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "Gaia, the Polar Knight",
+          "raridade": "R",
+          "slug": "gaia_the_polar_knight",
+          "atk": "1600",
+          "def": "1200"
+        },
+        {
+          "nome": "Super Soldier Soul",
+          "raridade": "R",
+          "slug": "super_soldier_soul",
+          "atk": "0",
+          "def": "0"
+        }
+      ]
+    },
+    {
       "id": "especial_red_eyes",
       "tipo_label": "RED-EYES",
       "nome_pt": "Fúria do Dragão de Olhos Vermelhos",
@@ -5945,6 +6183,7 @@
       "custo_souls": 250,
       "evento": true,
       "duracao_dias": 7,
+      "garantia_ur_aberturas": null,
       "imagem": "img/boosters/booster-red-eyes.webp",
       "total_tema": 29,
       "cartas_tema": [
