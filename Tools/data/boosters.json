@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1784070341",
+  "versao": "1784072565",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -5959,7 +5959,7 @@
       "evento": true,
       "duracao_dias": 15,
       "garantia_ur_aberturas": 10,
-      "imagem": "img/boosters/booster-bls.webp",
+      "imagem": "img/boosters/booster-bls-site.webp",
       "total_tema": 30,
       "cartas_tema": [
         {
