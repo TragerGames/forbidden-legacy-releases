@@ -43,5 +43,14 @@ jobs:
             "set net:max-retries 3" \
             "open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER}" \
             "mirror --reverse --verbose --ignore-time --exclude-glob .git --exclude-glob *.py --exclude-glob *.xlsx --exclude-glob hostinger_backend/ --exclude-glob screenshots/ --exclude-glob itch_cover* --exclude-glob gen_cover* ./Tools/ /public_html/" \
-            "quit" > /tmp/lftp.txt
+            > /tmp/lftp.txt
+          # HTML pages podem ter o mesmo tamanho em bytes de uma edicao pra outra
+          # (ex.: troca de versao "1.7.3" -> "1.7.4", mesmo numero de caracteres).
+          # O mirror acima usa --ignore-time (compara so por tamanho) e SILENCIOSAMENTE
+          # pula esses arquivos achando que estao iguais. Forcar put de todo *.html de
+          # topo garante que a pagina sempre vai pro ar, mesmo sem mudanca de tamanho.
+          for f in Tools/*.html; do
+            printf 'put -O /public_html "%s"\n' "$f" >> /tmp/lftp.txt
+          done
+          printf '%s\n' "quit" >> /tmp/lftp.txt
           lftp -f /tmp/lftp.txt
