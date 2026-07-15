@@ -81,10 +81,10 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .page-hero-sub { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:18px; }
 .page-hero-desc { max-width:640px; margin:0 auto; font-size:14px; line-height:1.7; color:var(--text-muted); }
 
-/* ── LAYOUT PRINCIPAL: grade + painel do deck ── */
+/* ── LAYOUT PRINCIPAL: lista do catalogo (esquerda) + grade do deck (direita) ── */
 .deck-layout {
   max-width: 1400px; margin: 0 auto; padding: 28px 20px 80px;
-  display: grid; grid-template-columns: 1fr 320px; gap: 22px; align-items: start;
+  display: grid; grid-template-columns: 400px 1fr; gap: 22px; align-items: start;
 }
 .deck-main { min-width: 0; }
 .deck-side {
@@ -131,31 +131,28 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-chip-icon-only img { width: 22px; height: 22px; }
 .cat-count { font-size: 11px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
 
-/* ── GRID ── */
-.cat-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 30px 14px;
+/* ── LISTA DO CATALOGO (esquerda) — linhas de texto compactas, igual o
+   editor de deck do jogo (catalogo em lista, sem arte grande por carta) ── */
+.cat-empty { text-align: center; padding: 40px 0; font-size: 13px; color: var(--text-muted); }
+.deck-cat-list { display: flex; flex-direction: column; }
+.deck-cat-row {
+  display: flex; align-items: center; gap: 10px; padding: 8px 6px;
+  border-bottom: 1px solid rgba(200,151,58,.08); cursor: pointer; transition: background .15s;
 }
-.cat-card {
-  cursor: pointer; text-align: center; transition: transform .15s; position: relative;
+.deck-cat-row:hover { background: rgba(200,151,58,.06); }
+.deck-cat-row-name { flex: 1; min-width: 0; font-size: 13px; color: var(--text-body); line-height: 1.3; }
+.deck-cat-row-name .qty { color: var(--gold-light); font-weight: 700; margin-left: 6px; font-family: 'Bebas Neue', sans-serif; }
+.deck-cat-row-icons { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+.deck-cat-row-icons img { width: 18px; height: 18px; object-fit: contain; }
+.deck-cat-row-icons img.rarity { width: 26px; height: 13px; }
+.deck-cat-row-stats { font-size: 11px; color: var(--gold-dim); font-weight: 600; width: 68px; text-align: right; flex-shrink: 0; }
+.deck-cat-row-info {
+  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(9,8,10,.6); border: 1px solid rgba(200,151,58,.35); color: var(--gold-light);
+  font-size: 11px; font-style: italic; font-family: Georgia, serif; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
 }
-.cat-card:hover { transform: translateY(-3px); }
-.cat-card-img-wrap { position: relative; }
-.cat-card img {
-  width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 4px; display: block;
-  border: 2px solid rgba(255,255,255,.08); background: #050408;
-}
-.cat-card.r-N img  { border-color: rgba(153,153,153,.5); }
-.cat-card.r-R img  { border-color: rgba(136,170,221,.6); }
-.cat-card.r-SR img { border-color: rgba(187,136,238,.65); }
-.cat-card.r-UR img { border-color: rgba(232,184,64,.8); }
-.cat-card-img-wrap .cat-card-rarity-badge {
-  position: absolute; bottom: 100%; right: 4%; margin-bottom: 3px; width: 22%; aspect-ratio: 30/16;
-  object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6));
-  background: transparent; border: none; border-radius: 0;
-}
-.cat-card-name { font-size: 10px; color: var(--text-muted); margin-top: 4px; line-height: 1.3; }
-.cat-card-stats { font-size: 9px; color: var(--gold-dim); margin-top: 1px; font-weight: 600; }
-.cat-empty { grid-column: 1/-1; text-align: center; padding: 40px 0; font-size: 13px; color: var(--text-muted); }
+.deck-cat-row-info:hover { border-color: var(--gold); }
 .cat-load-more {
   display: block; margin: 22px auto 0; padding: 10px 26px;
   background: rgba(200,151,58,.08); border: 1px solid var(--gold-dim); color: var(--gold-light);
@@ -164,24 +161,23 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 }
 .cat-load-more:hover { background: rgba(200,151,58,.16); border-color: var(--gold); }
 
-/* Badge de quantidade no card (quanto ja tem no deck) */
-.deck-qty-badge {
-  position: absolute; top: 4px; left: 4px; z-index: 2;
-  background: rgba(200,151,58,.92); color: var(--dark);
-  font-family: 'Bebas Neue', sans-serif; font-size: 13px; font-weight: 700;
-  min-width: 20px; height: 20px; border-radius: 10px;
-  display: none; align-items: center; justify-content: center; padding: 0 5px;
+/* ── GRADE DO DECK (direita) — imagens das cartas adicionadas, uma por copia ── */
+.deck-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.deck-grid-item { position: relative; cursor: pointer; }
+.deck-grid-item img.card-img {
+  width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 4px; display: block;
+  border: 2px solid rgba(255,255,255,.08); background: #050408;
 }
-.deck-qty-badge.show { display: flex; }
-/* Botao "i" de info, nao adiciona ao deck */
-.cat-card-info-btn {
-  position: absolute; bottom: 4px; right: 4px; z-index: 2;
-  width: 20px; height: 20px; border-radius: 50%;
-  background: rgba(9,8,10,.75); border: 1px solid rgba(200,151,58,.4); color: var(--gold-light);
-  font-size: 11px; font-style: italic; font-family: Georgia, serif; line-height: 1;
-  display: flex; align-items: center; justify-content: center; cursor: pointer;
+.deck-grid-item.r-N img.card-img  { border-color: rgba(153,153,153,.5); }
+.deck-grid-item.r-R img.card-img  { border-color: rgba(136,170,221,.6); }
+.deck-grid-item.r-SR img.card-img { border-color: rgba(187,136,238,.65); }
+.deck-grid-item.r-UR img.card-img { border-color: rgba(232,184,64,.8); }
+.deck-grid-item-remove {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(160,30,20,0); color: #fff; font-size: 22px; opacity: 0; transition: all .15s; border-radius: 4px;
 }
-.cat-card-info-btn:hover { background: rgba(9,8,10,.95); border-color: var(--gold); }
+.deck-grid-item:hover .deck-grid-item-remove { background: rgba(160,30,20,.75); opacity: 1; }
+.deck-grid-empty { font-size: 12px; color: var(--text-muted); text-align: center; padding: 20px 0; }
 
 /* ── PAINEL DO DECK ── */
 .deck-side h2 {
@@ -217,19 +213,6 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 }
 .deck-counter span { font-size: 14px; color: var(--text-muted); font-family: 'Inter', sans-serif; }
 .deck-counter.full { color: #92e28f; }
-
-.deck-list { max-height: 260px; overflow-y: auto; margin-bottom: 14px; border-top: 1px solid var(--border); }
-.deck-list-empty { font-size: 12px; color: var(--text-muted); padding: 14px 0; text-align: center; }
-.deck-list-item {
-  display: flex; align-items: center; gap: 8px; padding: 6px 2px;
-  border-bottom: 1px solid rgba(200,151,58,.06); font-size: 12px; cursor: pointer;
-}
-.deck-list-item:hover { background: rgba(200,151,58,.05); }
-.deck-list-item img { width: 24px; height: 35px; object-fit: cover; border-radius: 2px; flex-shrink: 0; }
-.deck-list-item-name { flex: 1; color: var(--text-body); line-height: 1.25; }
-.deck-list-item-qty { color: var(--gold-light); font-weight: 700; font-family: 'Bebas Neue', sans-serif; font-size: 14px; }
-.deck-list-item-remove { color: var(--text-muted); font-size: 14px; padding: 0 4px; }
-.deck-list-item:hover .deck-list-item-remove { color: #d59070; }
 
 .deck-groups { margin-bottom: 16px; }
 .deck-group-chip {
@@ -384,7 +367,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   .nav-links, nav#nav .nav-cta { display: none !important; }
   .page-hero { padding-top: 96px; }
   .cat-toolbar { top: 0; }
-  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+  .deck-grid { grid-template-columns: repeat(auto-fill, minmax(74px, 1fr)); gap: 8px; }
   footer { padding: 32px 20px; }
 
   .cat-filter-row {
@@ -497,7 +480,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       </div>
     </div>
 
-    <div class="cat-grid" id="cat-grid">
+    <div class="deck-cat-list" id="cat-grid">
       <div class="cat-empty" data-lang="pt">Carregando cartas…</div>
       <div class="cat-empty" data-lang="en">Loading cards…</div>
     </div>
@@ -527,9 +510,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 
     <div class="deck-counter" id="deck-counter">0 <span>/ 40</span></div>
 
-    <div class="deck-list" id="deck-list">
-      <div class="deck-list-empty" data-lang="pt">Nenhuma carta ainda. Clique numa carta pra adicionar.</div>
-      <div class="deck-list-empty" data-lang="en">No cards yet. Click a card to add it.</div>
+    <div class="deck-grid" id="deck-list">
+      <div class="deck-grid-empty" data-lang="pt">Nenhuma carta ainda. Clique numa carta na lista pra adicionar.</div>
+      <div class="deck-grid-empty" data-lang="en">No cards yet. Click a card in the list to add it.</div>
     </div>
 
     <div class="deck-groups" id="deck-groups"></div>
@@ -621,23 +604,19 @@ function isEn() { return document.body.classList.contains('en'); }
 
   function cardHtml(c) {
     const nome = isEn() ? c.nome : c.nome_pt;
-    const stats = (c.atk !== undefined)
-      ? '<div class="cat-card-stats">' + (c.atk || '0') + ' / ' + (c.def || '0') + '</div>'
-      : '';
     const badgeArquivo = c.raridade_arquivo || c.raridade;
-    const badge = badgeArquivo
-      ? '<img class="cat-card-rarity-badge" src="img/raridade/rarity_' + badgeArquivo + '.webp" alt="' + c.raridade + '" loading="lazy" onerror="this.style.display=\'none\'">'
+    const rarityImg = badgeArquivo
+      ? '<img class="rarity" src="img/raridade/rarity_' + badgeArquivo + '.webp" alt="' + c.raridade + '" title="' + c.raridade + '">'
       : '';
+    const attrImg = c.icone_atributo ? '<img src="img/atributos/' + c.icone_atributo + '.webp" alt="' + c.atributo + '" title="' + c.atributo + '">' : '';
+    const tipoImg = c.icone_tipo ? '<img src="img/tipos/' + c.icone_tipo + '.webp" alt="' + c.tipo + '" title="' + c.tipo + '">' : '';
+    const stats = (c.atk !== undefined) ? ((c.atk || '0') + ' / ' + (c.def || '0')) : '';
     return (
-      '<div class="cat-card r-' + c.raridade + '" data-slug="' + c.slug + '" data-nome="' + c.nome.replace(/"/g,'&quot;') + '">' +
-        '<div class="deck-qty-badge" data-qty-slug="' + c.slug + '"></div>' +
-        '<div class="cat-card-img-wrap">' +
-          '<img src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
-          badge +
-        '</div>' +
-        '<button class="cat-card-info-btn" data-info-slug="' + c.slug + '">i</button>' +
-        '<div class="cat-card-name">' + nome + '</div>' +
-        stats +
+      '<div class="deck-cat-row" data-slug="' + c.slug + '" data-nome="' + c.nome.replace(/"/g,'&quot;') + '">' +
+        '<div class="deck-cat-row-name">' + nome + '<span class="qty" data-qty-slug="' + c.slug + '"></span></div>' +
+        '<div class="deck-cat-row-icons">' + attrImg + tipoImg + rarityImg + '</div>' +
+        '<div class="deck-cat-row-stats">' + stats + '</div>' +
+        '<button class="deck-cat-row-info" data-info-slug="' + c.slug + '">i</button>' +
       '</div>'
     );
   }
@@ -669,13 +648,13 @@ function isEn() { return document.body.classList.contains('en'); }
     }
     const visiveis = filtradas.slice(0, renderLimit);
     grid.innerHTML = visiveis.map(cardHtml).join('');
-    grid.querySelectorAll('.cat-card').forEach(el => {
+    grid.querySelectorAll('.deck-cat-row').forEach(el => {
       el.addEventListener('click', (e) => {
-        if (e.target.closest('.cat-card-info-btn')) return;
+        if (e.target.closest('.deck-cat-row-info')) return;
         tentarAdicionarCarta(el.getAttribute('data-nome'));
       });
     });
-    grid.querySelectorAll('.cat-card-info-btn').forEach(btn => {
+    grid.querySelectorAll('.deck-cat-row-info').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         openCardModal(btn.getAttribute('data-info-slug'));
@@ -747,12 +726,11 @@ function isEn() { return document.body.classList.contains('en'); }
 function atualizarBadgesGrade() {
   const contagem = {};
   deckAtual.forEach(nome => { contagem[nome] = (contagem[nome] || 0) + 1; });
-  document.querySelectorAll('.deck-qty-badge').forEach(el => {
+  document.querySelectorAll('.deck-cat-row-name .qty').forEach(el => {
     const slug = el.getAttribute('data-qty-slug');
     const carta = cartas.find(c => c.slug === slug);
     const qtd = carta ? (contagem[carta.nome] || 0) : 0;
-    if (qtd > 0) { el.textContent = '×' + qtd; el.classList.add('show'); }
-    else { el.classList.remove('show'); el.textContent = ''; }
+    el.textContent = qtd > 0 ? ('×' + qtd) : '';
   });
 }
 
@@ -839,9 +817,8 @@ function tentarAdicionarCarta(nomeCarta) {
   return true;
 }
 
-function removerCarta(nomeCarta) {
-  const idx = deckAtual.lastIndexOf(nomeCarta);
-  if (idx === -1) return;
+function removerCartaPorIndice(idx) {
+  if (idx < 0 || idx >= deckAtual.length) return;
   deckAtual.splice(idx, 1);
   atualizarPainelDeck();
 }
@@ -865,28 +842,23 @@ function atualizarPainelDeck() {
   counterEl.classList.toggle('full', deckAtual.length >= DECK_MAX);
   document.getElementById('deck-mobile-count').textContent = deckAtual.length + '/' + DECK_MAX;
 
-  const contagemPorNome = {};
-  deckAtual.forEach(n => { contagemPorNome[n] = (contagemPorNome[n] || 0) + 1; });
-  const nomesUnicos = Object.keys(contagemPorNome).sort();
-
   const listEl = document.getElementById('deck-list');
-  if (nomesUnicos.length === 0) {
-    listEl.innerHTML = '<div class="deck-list-empty">' + (isEn() ? 'No cards yet. Click a card to add it.' : 'Nenhuma carta ainda. Clique numa carta pra adicionar.') + '</div>';
+  if (deckAtual.length === 0) {
+    listEl.innerHTML = '<div class="deck-grid-empty">' + (isEn() ? 'No cards yet. Click a card in the list to add it.' : 'Nenhuma carta ainda. Clique numa carta na lista pra adicionar.') + '</div>';
   } else {
-    listEl.innerHTML = nomesUnicos.map(nome => {
+    listEl.innerHTML = deckAtual.map((nome, idx) => {
       const c = cartaPorNome[nome];
+      if (!c) return '';
       const nomeExibido = isEn() ? c.nome : c.nome_pt;
       return (
-        '<div class="deck-list-item" data-remove-nome="' + nome.replace(/"/g, '&quot;') + '">' +
-          '<img src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="">' +
-          '<div class="deck-list-item-name">' + nomeExibido + '</div>' +
-          '<div class="deck-list-item-qty">×' + contagemPorNome[nome] + '</div>' +
-          '<div class="deck-list-item-remove">✕</div>' +
+        '<div class="deck-grid-item r-' + c.raridade + '" data-idx="' + idx + '" title="' + nomeExibido.replace(/"/g, '&quot;') + '">' +
+          '<img class="card-img" src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="' + nomeExibido + '">' +
+          '<div class="deck-grid-item-remove">✕</div>' +
         '</div>'
       );
     }).join('');
-    listEl.querySelectorAll('.deck-list-item').forEach(el => {
-      el.addEventListener('click', () => removerCarta(el.getAttribute('data-remove-nome')));
+    listEl.querySelectorAll('.deck-grid-item').forEach(el => {
+      el.addEventListener('click', () => removerCartaPorIndice(parseInt(el.getAttribute('data-idx'), 10)));
     });
   }
 
