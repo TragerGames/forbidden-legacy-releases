@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1784072565",
+  "versao": "1784074983",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -5960,7 +5960,7 @@
       "duracao_dias": 15,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-bls-site.webp",
-      "total_tema": 30,
+      "total_tema": 42,
       "cartas_tema": [
         {
           "nome": "Black Luster Soldier",
@@ -6129,11 +6129,32 @@
           "slug": "super_soldier_shield"
         },
         {
+          "nome": "Ansatsu",
+          "raridade": "R",
+          "slug": "ansatsu",
+          "atk": "1700",
+          "def": "1200"
+        },
+        {
           "nome": "Beginning Knight",
           "raridade": "R",
           "slug": "beginning_knight",
           "atk": "500",
           "def": "2000"
+        },
+        {
+          "nome": "Celtic Guardian",
+          "raridade": "R",
+          "slug": "celtic_guardian",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Dark Blade",
+          "raridade": "R",
+          "slug": "dark_blade",
+          "atk": "1800",
+          "def": "1500"
         },
         {
           "nome": "Evening Twilight Knight",
@@ -6169,6 +6190,69 @@
           "slug": "super_soldier_soul",
           "atk": "0",
           "def": "0"
+        },
+        {
+          "nome": "Battle Warrior",
+          "raridade": "N",
+          "slug": "battle_warrior",
+          "atk": "700",
+          "def": "1000"
+        },
+        {
+          "nome": "Charubin the Fire Knight",
+          "raridade": "N",
+          "slug": "charubin_the_fire_knight",
+          "atk": "1100",
+          "def": "800"
+        },
+        {
+          "nome": "Clown Zombie",
+          "raridade": "N",
+          "slug": "clown_zombie",
+          "atk": "1350",
+          "def": "0"
+        },
+        {
+          "nome": "Dragon Zombie",
+          "raridade": "N",
+          "slug": "dragon_zombie",
+          "atk": "1600",
+          "def": "0"
+        },
+        {
+          "nome": "Mystic Horseman",
+          "raridade": "N",
+          "slug": "mystic_horseman",
+          "atk": "1300",
+          "def": "1550"
+        },
+        {
+          "nome": "Ryu-kishin",
+          "raridade": "N",
+          "slug": "ryu-kishin",
+          "atk": "1000",
+          "def": "500"
+        },
+        {
+          "nome": "Sangan",
+          "raridade": "N",
+          "slug": "sangan",
+          "atk": "1000",
+          "def": "600"
+        },
+        {
+          "nome": "Skull Servant",
+          "raridade": "N",
+          "slug": "skull_servant",
+          "atk": "300",
+          "def": "200"
+        },
+        {
+          "nome": "Supporter in the Shadows",
+          "raridade": "N",
+          "slug": "supporter_in_the_shadows",
+          "atk": "1000",
+          "def": "1000"
         }
       ]
     },
@@ -6185,7 +6269,7 @@
       "duracao_dias": 7,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-red-eyes.webp",
-      "total_tema": 29,
+      "total_tema": 43,
       "cartas_tema": [
         {
           "nome": "Archfiend Black Skull Dragon",
@@ -6385,6 +6469,104 @@
           "slug": "red-eyes_retro_dragon",
           "atk": "1700",
           "def": "1600"
+        },
+        {
+          "nome": "Baby Dragon",
+          "raridade": "N",
+          "slug": "baby_dragon",
+          "atk": "1200",
+          "def": "700"
+        },
+        {
+          "nome": "Battle Warrior",
+          "raridade": "N",
+          "slug": "battle_warrior",
+          "atk": "700",
+          "def": "1000"
+        },
+        {
+          "nome": "Blackland Fire Dragon",
+          "raridade": "N",
+          "slug": "blackland_fire_dragon",
+          "atk": "1500",
+          "def": "800"
+        },
+        {
+          "nome": "Dragon Zombie",
+          "raridade": "N",
+          "slug": "dragon_zombie",
+          "atk": "1600",
+          "def": "0"
+        },
+        {
+          "nome": "Fairy Dragon",
+          "raridade": "N",
+          "slug": "fairy_dragon",
+          "atk": "1100",
+          "def": "1200"
+        },
+        {
+          "nome": "Galaxy Serpent",
+          "raridade": "N",
+          "slug": "galaxy_serpent",
+          "atk": "1000",
+          "def": "0"
+        },
+        {
+          "nome": "Lesser Dragon",
+          "raridade": "N",
+          "slug": "lesser_dragon",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "One-eyed Shield Dragon",
+          "raridade": "N",
+          "slug": "one-eyed_shield_dragon",
+          "atk": "700",
+          "def": "1300"
+        },
+        {
+          "nome": "Petit Dragon",
+          "raridade": "N",
+          "slug": "petit_dragon",
+          "atk": "600",
+          "def": "700"
+        },
+        {
+          "nome": "Sangan",
+          "raridade": "N",
+          "slug": "sangan",
+          "atk": "1000",
+          "def": "600"
+        },
+        {
+          "nome": "Serpent Night Dragon",
+          "raridade": "N",
+          "slug": "serpent_night_dragon",
+          "atk": "2350",
+          "def": "2400"
+        },
+        {
+          "nome": "Skull Servant",
+          "raridade": "N",
+          "slug": "skull_servant",
+          "atk": "300",
+          "def": "200"
+        },
+        {
+          "nome": "Wicked Dragon with the Ersatz Head",
+          "raridade": "N",
+          "slug": "wicked_dragon_with_the_ersatz_head",
+          "atk": "900",
+          "def": "900"
+        },
+        {
+          "nome": "Yamatano Dragon Scroll",
+          "raridade": "N",
+          "slug": "yamatano_dragon_scroll",
+          "atk": "900",
+          "def": "300"
         }
       ]
     }
