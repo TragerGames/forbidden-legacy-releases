@@ -268,6 +268,12 @@ nav.scrolled {
   background: linear-gradient(135deg, #1e0a08, #120808);
   display:flex; align-items:center; justify-content:center;
   font-size:26px; color:rgba(212,168,67,.18);
+  overflow:hidden;
+}
+.fc-art img {
+  width:100%; height:100%; object-fit:cover; object-position:top center;
+  opacity:.4; filter:grayscale(.3) brightness(.75) saturate(.8);
+  mix-blend-mode:luminosity;
 }
 .fc-info { padding:4px 6px; }
 .fc-name { font-size:7.5px; color:var(--gold-dim); font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -1068,10 +1074,10 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 <section class="hero" id="home">
   <div class="stars"></div>
 
-  <div class="float-card fc-l1"><div class="fc-art">⚔</div><div class="fc-info"><div class="fc-name">Dark Magician</div><div class="fc-atk">ATK 2500 / DEF 2100</div></div></div>
-  <div class="float-card fc-l2"><div class="fc-art">🌙</div><div class="fc-info"><div class="fc-name">Black Luster</div><div class="fc-atk">ATK 3000 / DEF 2500</div></div></div>
-  <div class="float-card fc-r1"><div class="fc-art">👁</div><div class="fc-info"><div class="fc-name">Obelisk</div><div class="fc-atk">ATK 4000 / DEF 4000</div></div></div>
-  <div class="float-card fc-r2"><div class="fc-art">🐉</div><div class="fc-info"><div class="fc-name">Blue-Eyes</div><div class="fc-atk">ATK 3000 / DEF 2500</div></div></div>
+  <div class="float-card fc-l1"><div class="fc-art"><img src="img/cartas/dark_magician.webp" alt="Dark Magician" loading="lazy"></div><div class="fc-info"><div class="fc-name">Dark Magician</div><div class="fc-atk">ATK 2500 / DEF 2100</div></div></div>
+  <div class="float-card fc-l2"><div class="fc-art"><img src="img/cartas/black_luster_soldier.webp" alt="Black Luster Soldier" loading="lazy"></div><div class="fc-info"><div class="fc-name">Black Luster</div><div class="fc-atk">ATK 3000 / DEF 2500</div></div></div>
+  <div class="float-card fc-r1"><div class="fc-art"><img src="img/cartas/obelisk_the_tormentor.webp" alt="Obelisk the Tormentor" loading="lazy"></div><div class="fc-info"><div class="fc-name">Obelisk</div><div class="fc-atk">ATK 4000 / DEF 4000</div></div></div>
+  <div class="float-card fc-r2"><div class="fc-art"><img src="img/cartas/blue-eyes_white_dragon.webp" alt="Blue-Eyes White Dragon" loading="lazy"></div><div class="fc-info"><div class="fc-name">Blue-Eyes</div><div class="fc-atk">ATK 3000 / DEF 2500</div></div></div>
 
   <!-- Logo: usa imagem se existir, senão texto -->
   <img src="../img/logo_forbidden_legacy.png" alt="YGO Forbidden Legacy" class="hero-logo-img"
