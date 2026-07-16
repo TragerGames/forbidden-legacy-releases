@@ -481,6 +481,21 @@ nav.scrolled {
 .price-sep { width:1px; background:var(--border); }
 .founder-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
 .founder-fine { font-size:11px; color:#3a3020; }
+.region-chip-wrap { display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center; margin: -14px 0 30px; width:100%; }
+.region-chip {
+  display:inline-flex; align-items:center; gap:6px;
+  border:1px solid rgba(124,199,255,.2); color:#8dc8e0;
+  background:rgba(20,60,90,.1); padding:7px 14px;
+  font-size:10px; text-transform:uppercase; letter-spacing:1.5px;
+}
+.region-switch-btn {
+  display:inline-flex; align-items:center; gap:5px;
+  border:1px solid rgba(212,168,67,.25); color:var(--text-muted);
+  background:transparent; padding:6px 12px; cursor:pointer;
+  font-size:10px; text-transform:uppercase; letter-spacing:1.2px;
+  font-family:inherit; transition:border-color .2s, color .2s;
+}
+.region-switch-btn:hover { border-color:rgba(212,168,67,.5); color:var(--gold); }
 
 /* ── DIVIDERS ── */
 .ornament-div { text-align:center; color:rgba(212,168,67,.12); letter-spacing:14px; font-size:12px; padding:16px 0; }
@@ -1955,6 +1970,17 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
       </div>
     </div>
 
+    <!-- REGIÃO DE PAGAMENTO — deteccao por IP pode falhar/ser bloqueada por
+         ad-blocker; o botao deixa o proprio cliente corrigir (mesmo padrao
+         e mesma chave de localStorage usados em loja.html). -->
+    <div class="region-chip-wrap">
+      <div class="region-chip" id="region-chip">🌐 Brasil — PIX / Cartão</div>
+      <button type="button" class="region-switch-btn" id="region-switch-btn" onclick="toggleRegionOverride()">
+        <span data-lang="pt">Não está no Brasil? Trocar região</span>
+        <span data-lang="en">Not in Brazil? Switch region</span>
+      </button>
+    </div>
+
     <!-- FORMULÁRIO DE COMPRA INTEGRADO -->
     <div style="max-width: 560px; margin: 0 auto; text-align: left;" class="buy-box">
       <div class="input-group">
@@ -2473,6 +2499,43 @@ window.openLbLang = openLbLang;
 // ── País detectado via IP (controla opções de pagamento, independente do idioma) ──
 window._flIsBR = true; // padrão Brasil até detecção completar
 
+// ── Override manual de região (mesma chave usada em loja.html — corrige
+// deteccao por IP errada/bloqueada por ad-blocker; sincroniza com a loja) ──
+let _regionOverride = localStorage.getItem('fl_region_override'); // 'BR' | 'INTL' | null (auto)
+
+function regionIsBR() {
+  return _regionOverride ? (_regionOverride === 'BR') : window._flIsBR;
+}
+
+function setRegionOverride(mode) {
+  _regionOverride = mode;
+  if (mode) localStorage.setItem('fl_region_override', mode);
+  else localStorage.removeItem('fl_region_override');
+  atualizarChipRegiao();
+}
+
+function toggleRegionOverride() {
+  setRegionOverride(regionIsBR() ? 'INTL' : 'BR');
+}
+
+function atualizarChipRegiao() {
+  const br = regionIsBR();
+  const cpfGrp = document.getElementById('cpf-group');
+  if (cpfGrp) cpfGrp.style.display = br ? '' : 'none';
+  const chip = document.getElementById('region-chip');
+  if (chip) chip.innerHTML = br
+    ? '🌐 Brasil — PIX / ' + (document.body.classList.contains('en') ? 'Card' : 'Cartão')
+    : '🌐 ' + (document.body.classList.contains('en') ? 'International' : 'Internacional') + ' — Stripe';
+  const switchBtn = document.getElementById('region-switch-btn');
+  if (switchBtn) {
+    const ptSpan = switchBtn.querySelector('span[data-lang="pt"]');
+    const enSpan = switchBtn.querySelector('span[data-lang="en"]');
+    if (ptSpan) ptSpan.textContent = br ? 'Não está no Brasil? Trocar região' : 'Está no Brasil? Trocar região';
+    if (enSpan) enSpan.textContent = br ? 'Not in Brazil? Switch region' : 'In Brazil? Switch region';
+  }
+}
+window.toggleRegionOverride = toggleRegionOverride;
+
 // ── Modal de seleção de pagamento ────────────────────────────────────────────
 function abrirModalPagamento() {
   const isEN   = document.body.classList.contains('en');
@@ -2500,9 +2563,9 @@ function abrirModalPagamento() {
   }
 
   // PIX e cartão BR apenas para Brasil; cartão USD apenas fora do Brasil.
-  // Depende só do país detectado por IP — idioma da interface é escolha
-  // livre do usuário e não deve mudar qual gateway de pagamento aparece.
-  const showBR = window._flIsBR;
+  // Depende do país detectado por IP OU do override manual do cliente —
+  // idioma da interface é escolha livre e não deve mudar o gateway.
+  const showBR = regionIsBR();
   const pix    = document.getElementById('pay-opt-pix');
   const cardBr = document.getElementById('pay-opt-card-br');
   const usd    = document.getElementById('pay-opt-usd');
@@ -2530,18 +2593,17 @@ document.addEventListener('DOMContentLoaded', () => {
 (function() {
   const saved = localStorage.getItem('fl_lang');
   if (saved) setLang(saved, false);
+  atualizarChipRegiao(); // aplica override salvo, se houver, antes da deteccao por IP
   fetch('https://api.country.is/')
     .then(r => r.json())
     .then(d => {
       const country = (d.country || 'BR').toUpperCase();
       window._flIsBR = (country === 'BR');
-      // Mostra campo CPF apenas para usuários brasileiros (precisam para cartão)
-      const cpfGrp = document.getElementById('cpf-group');
-      if (cpfGrp) cpfGrp.style.display = window._flIsBR ? '' : 'none';
+      atualizarChipRegiao();
       // Idioma: só altera se não houver preferência salva
       if (!saved && !window._flIsBR) setLang('en', false);
     })
-    .catch(() => { window._flIsBR = true; }); // fallback: assume Brasil
+    .catch(() => { window._flIsBR = true; atualizarChipRegiao(); }); // fallback: assume Brasil
 })();
 
 // ── Scroll suave ──────────────────────────────────────────────────────────
