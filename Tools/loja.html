@@ -1391,10 +1391,11 @@ function renderPacks(){
     el.type='button';
     el.className=`pack-card t-${p.tier}`+(p.id===selected.id?' active':'');
     const tier=isEn()?p.tierEn:p.tierPt;
-    const price=isEn()?p.usd:p.br;
+    const brRegion=regionIsBR();
+    const price=brRegion?p.br:p.usd;
     const status=STORE_ENABLED?t('Disponível','Available'):t('Em breve','Soon');
     const statusClass=STORE_ENABLED?'':'soon';
-    const priceNote=isEn()?'International · USD':'Nacional · R$';
+    const priceNote=brRegion?t('Nacional · R$','National · BRL'):t('Internacional · USD','International · USD');
     const bonusHTML=p.bonusTicket?`<div class="pack-bonus-tag">🎁 ${t('+'+p.bonusTicket+' Ticket Gold de brinde','+'+p.bonusTicket+' bonus Gold Ticket')}</div>`:'';
     el.innerHTML=`
       <div class="pack-header">
