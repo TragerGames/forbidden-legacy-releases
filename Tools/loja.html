@@ -638,6 +638,22 @@ body.en .pack-select-hint[data-lang="en"]{display:flex!important}
 }
 .sum-use{font-size:12px;color:var(--muted);line-height:1.55}
 
+/* QUANTIDADE */
+.qty-row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:14px;padding-top:14px;border-top:1px solid rgba(200,151,58,.1);
+}
+.qty-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.qty-stepper{display:flex;align-items:center;gap:0;border:1px solid rgba(200,151,58,.25)}
+.qty-btn{
+  width:30px;height:30px;background:rgba(200,151,58,.08);border:none;
+  color:var(--gold3);font-size:16px;cursor:pointer;font-family:inherit;
+  display:flex;align-items:center;justify-content:center;transition:background .15s;
+}
+.qty-btn:hover{background:rgba(200,151,58,.18)}
+.qty-btn:disabled{opacity:.35;cursor:default;background:transparent}
+.qty-value{width:38px;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:16px;color:#ffe49a}
+
 .sum-rows{margin-bottom:20px}
 .sum-row{
   display:flex;justify-content:space-between;align-items:center;
@@ -941,10 +957,19 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
       <h2 class="checkout-h" data-lang="en">Summary</h2>
 
       <div class="sum-selected">
-        <div class="sum-tier" id="sum-tier">Essencial</div>
-        <div class="sum-souls" id="sum-pack">100 Souls</div>
+        <div class="sum-tier" id="sum-tier">Duelista</div>
+        <div class="sum-souls" id="sum-pack">300 Souls</div>
         <div class="sum-use" id="sum-use"></div>
         <div class="pack-bonus-tag-summary" id="sum-bonus" style="display:none"></div>
+        <div class="qty-row">
+          <span class="qty-label" data-lang="pt">Quantidade de pacotes</span>
+          <span class="qty-label" data-lang="en">Number of packs</span>
+          <div class="qty-stepper">
+            <button type="button" class="qty-btn" id="qty-minus" onclick="alterarQuantidade(-1)">−</button>
+            <span class="qty-value" id="qty-value">1</span>
+            <button type="button" class="qty-btn" id="qty-plus" onclick="alterarQuantidade(1)">+</button>
+          </div>
+        </div>
       </div>
 
       <div class="sum-rows">
@@ -1060,12 +1085,14 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 /* ── CONFIG ── */
 const STORE_ENABLED = true;
 const PACKS = [
-  { id:'souls_100',  tierPt:'Essencial', tierEn:'Essential', souls:100,  uses:1,  br:'R$ 5,00',  usd:'US$ 2.49',  tier:1 },
-  { id:'souls_300',  tierPt:'Duelista',  tierEn:'Duelist',   souls:300,  uses:3,  br:'R$ 12,90', usd:'US$ 5.99',  tier:2 },
-  { id:'souls_600',  tierPt:'Templo',    tierEn:'Temple',    souls:600,  uses:6,  br:'R$ 21,90', usd:'US$ 9.99',  tier:3 },
-  { id:'souls_1000', tierPt:'Faraó',     tierEn:'Pharaoh',   souls:1000, uses:10, br:'R$ 29,90', usd:'US$ 14.99', tier:4, bonusTicket:1 }
+  { id:'souls_300',  tierPt:'Duelista',  tierEn:'Duelist',   souls:300,  uses:3,  br:'R$ 12,90', usd:'US$ 5.99',  brlNum:12.90, usdNum:5.99,  tier:2 },
+  { id:'souls_600',  tierPt:'Templo',    tierEn:'Temple',    souls:600,  uses:6,  br:'R$ 21,90', usd:'US$ 9.99',  brlNum:21.90, usdNum:9.99,  tier:3 },
+  { id:'souls_1000', tierPt:'Faraó',     tierEn:'Pharaoh',   souls:1000, uses:10, br:'R$ 29,90', usd:'US$ 14.99', brlNum:29.90, usdNum:14.99, tier:4, bonusTicket:1 },
+  { id:'souls_2000', tierPt:'Divino',    tierEn:'Divine',    souls:2000, uses:20, br:'R$ 54,90', usd:'US$ 27.99', brlNum:54.90, usdNum:27.99, tier:4, bonusTicket:5 }
 ];
 let selected = PACKS[0];
+let quantidade = 1;
+const QTD_MAX = 10;
 let pixTxid = '', pollTimer = null;
 window._flIsBR = true;
 
@@ -1369,22 +1396,35 @@ function renderPacks(){
       <div class="pack-price-note">${priceNote}</div>
       <div class="pack-select-hint" data-lang="pt">Selecionar</div>
       <div class="pack-select-hint" data-lang="en">Select</div>`;
-    if(STORE_ENABLED) el.onclick=()=>{selected=p;renderPacks();updateSummary()};
+    if(STORE_ENABLED) el.onclick=()=>{selected=p;quantidade=1;renderPacks();updateSummary()};
     else el.style.cursor='default';
     root.appendChild(el);
   });
 }
 
+function formatBRL(v){ return 'R$ '+v.toFixed(2).replace('.',','); }
+function formatUSD(v){ return 'US$ '+v.toFixed(2); }
+
+function alterarQuantidade(delta){
+  quantidade=Math.min(QTD_MAX,Math.max(1,quantidade+delta));
+  updateSummary();
+}
+
 function updateSummary(){
-  document.getElementById('sum-pack').textContent=selected.souls+' Souls';
-  document.getElementById('sum-use').textContent=packUseText(selected);
-  document.getElementById('sum-br').textContent=selected.br;
-  document.getElementById('sum-usd').textContent=selected.usd;
+  document.getElementById('sum-pack').textContent=(selected.souls*quantidade)+' Souls';
+  const usesTotal=selected.uses*quantidade;
+  document.getElementById('sum-use').textContent=t(
+    `Saldo para ${usesTotal} booster${usesTotal>1?'s':''} na Card Shop.`,
+    `Balance for ${usesTotal} booster${usesTotal>1?'s':''} in the Card Shop.`
+  );
+  document.getElementById('sum-br').textContent=formatBRL(selected.brlNum*quantidade);
+  document.getElementById('sum-usd').textContent=formatUSD(selected.usdNum*quantidade);
   const sumBonus=document.getElementById('sum-bonus');
   if(sumBonus){
-    if(selected.bonusTicket){
+    const bonusTotal=(selected.bonusTicket||0)*quantidade;
+    if(bonusTotal>0){
       sumBonus.style.display='block';
-      sumBonus.textContent='🎁 '+t('+'+selected.bonusTicket+' Ticket Gold de brinde','+'+selected.bonusTicket+' bonus Gold Ticket');
+      sumBonus.textContent='🎁 '+t('+'+bonusTotal+' Ticket Gold de brinde','+'+bonusTotal+' bonus Gold Ticket');
     } else {
       sumBonus.style.display='none';
     }
@@ -1395,11 +1435,16 @@ function updateSummary(){
     const tierColors=['','#b87332','#8ab4cc','#e8b840','#a06cc0'];
     document.getElementById('summary-box').style.setProperty('--sel-color',tierColors[selected.tier]);
   }
+  const qtyValue=document.getElementById('qty-value');
+  if(qtyValue) qtyValue.textContent=quantidade;
+  const qtyMinus=document.getElementById('qty-minus'), qtyPlus=document.getElementById('qty-plus');
+  if(qtyMinus) qtyMinus.disabled=(quantidade<=1);
+  if(qtyPlus) qtyPlus.disabled=(quantidade>=QTD_MAX);
 }
 
 function formData(){
   return{
-    produto:'souls',pacote_id:selected.id,
+    produto:'souls',pacote_id:selected.id,quantidade:quantidade,
     codigo_jogo:document.getElementById('player-code').value.trim(),
     player_code:document.getElementById('player-code').value.trim(),
     email:document.getElementById('email').value.trim(),
@@ -1413,9 +1458,11 @@ function validate(d){
   if(!d.email||!d.email.includes('@')){alert(t('Informe um email válido.','Enter a valid email.'));return false;}
   if(!d.nome){alert(t('Informe seu nome.','Enter your name.'));return false;}
   if(!d.dispositivo){alert(t('Selecione o dispositivo.','Select your device.'));return false;}
+  const soulsTotal=selected.souls*quantidade;
+  const qtyTxt=quantidade>1?` (${quantidade}x ${selected.souls})`:'';
   return confirm(t(
-    `Confirmar ${selected.souls} Souls para:\n${d.codigo_jogo}\n\nSó funciona nesse código.`,
-    `Confirm ${selected.souls} Souls for:\n${d.codigo_jogo}\n\nOnly works with this Player Code.`
+    `Confirmar ${soulsTotal} Souls${qtyTxt} para:\n${d.codigo_jogo}\n\nSó funciona nesse código.`,
+    `Confirm ${soulsTotal} Souls${qtyTxt} for:\n${d.codigo_jogo}\n\nOnly works with this Player Code.`
   ));
 }
 let _pending=null;
@@ -1424,9 +1471,10 @@ async function pay(){
   const d=formData();if(!validate(d))return;
   if(regionIsBR()){
     _pending=d;
-    document.getElementById('pay-choice-desc').textContent=`${selected.souls} Souls · ${selected.br}`;
-    document.getElementById('pay-choice-pix-price').textContent=selected.br;
-    document.getElementById('pay-choice-card-price').textContent=selected.br;
+    const precoTotal=formatBRL(selected.brlNum*quantidade);
+    document.getElementById('pay-choice-desc').textContent=`${selected.souls*quantidade} Souls · ${precoTotal}`;
+    document.getElementById('pay-choice-pix-price').textContent=precoTotal;
+    document.getElementById('pay-choice-card-price').textContent=precoTotal;
     document.getElementById('pay-choice-overlay').style.display='flex';
     return;
   }
