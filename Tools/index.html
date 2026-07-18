@@ -246,38 +246,26 @@ nav.scrolled {
 @keyframes scrollBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
 /* FLOATING CARDS */
+/* position:absolute precisa de !important pra vencer ".hero > :not(#hero-canvas):not(.hero-scroll)"
+   (regra generica de layout do hero, especificidade maior por causa do :not(#id)) — sem isso os
+   cards viram filhos relative empilhados no fluxo do flex e a posicao em % fica toda errada. */
 .float-card {
-  position: absolute; border-radius: 6px;
-  background: linear-gradient(160deg, #1a0c08, #0e0a08);
-  border: 1px solid rgba(212,168,67,.18);
-  box-shadow: 0 8px 32px rgba(0,0,0,.7), inset 0 1px 0 rgba(212,168,67,.08);
+  position: absolute !important; border-radius: 6px;
+  border: 1px solid rgba(212,168,67,.22);
+  box-shadow: 0 8px 32px rgba(0,0,0,.7);
   overflow: hidden;
 }
-.fc-l1 { width:88px; height:122px; left:5%; top:28%; transform:rotate(-14deg); animation:floatA 5.5s ease-in-out infinite; }
-.fc-l2 { width:68px; height:94px;  left:13%; top:52%; transform:rotate(6deg);  animation:floatB 7s ease-in-out infinite .5s; opacity:.55; }
-.fc-r1 { width:88px; height:122px; right:5%; top:26%; transform:rotate(12deg);  animation:floatB 6s ease-in-out infinite; }
-.fc-r2 { width:68px; height:94px;  right:13%; top:50%; transform:rotate(-8deg); animation:floatA 7.5s ease-in-out infinite 1s; opacity:.55; }
+.float-card img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.fc-l1 { width:88px; height:122px; left:5%;  top:28%; transform:rotate(-14deg); animation:floatA 5.5s ease-in-out infinite; }
+.fc-l2 { width:68px; height:94px;  left:13%; top:52%; transform:rotate(6deg);   animation:floatC 7s ease-in-out infinite .5s; opacity:.85; }
+.fc-l3 { width:60px; height:83px;  left:21%; top:13%; transform:rotate(-6deg); animation:floatB 6.5s ease-in-out infinite .3s; opacity:.8; }
+.fc-r1 { width:88px; height:122px; right:5%;  top:26%; transform:rotate(12deg);  animation:floatB 6s ease-in-out infinite; }
+.fc-r2 { width:68px; height:94px;  right:13%; top:50%; transform:rotate(-8deg); animation:floatD 7.5s ease-in-out infinite 1s; opacity:.85; }
+.fc-r3 { width:60px; height:83px;  right:21%; top:12%; transform:rotate(9deg);  animation:floatA 6.8s ease-in-out infinite .8s; opacity:.8; }
 @keyframes floatA { 0%,100%{transform:rotate(-14deg) translateY(0)} 50%{transform:rotate(-11deg) translateY(-10px)} }
 @keyframes floatB { 0%,100%{transform:rotate(12deg) translateY(0)}  50%{transform:rotate(9deg)  translateY(-8px)}  }
-.fc-l2 { animation-name: floatC; }
-.fc-r2 { animation-name: floatD; }
 @keyframes floatC { 0%,100%{transform:rotate(6deg) translateY(0)}   50%{transform:rotate(4deg)  translateY(-7px)} }
 @keyframes floatD { 0%,100%{transform:rotate(-8deg) translateY(0)}  50%{transform:rotate(-5deg) translateY(-6px)} }
-.fc-art {
-  width:100%; height:68%;
-  background: linear-gradient(135deg, #1e0a08, #120808);
-  display:flex; align-items:center; justify-content:center;
-  font-size:26px; color:rgba(212,168,67,.18);
-  overflow:hidden;
-}
-.fc-art img {
-  width:100%; height:100%; object-fit:cover; object-position:top center;
-  opacity:.4; filter:grayscale(.3) brightness(.75) saturate(.8);
-  mix-blend-mode:luminosity;
-}
-.fc-info { padding:4px 6px; }
-.fc-name { font-size:7.5px; color:var(--gold-dim); font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.fc-atk  { font-size:7px; color:#3a3020; margin-top:2px; }
 
 /* ── STATEMENT ── */
 .statement {
@@ -969,7 +957,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   .nav-links, nav#nav .nav-cta, .discord-nav-badge { display: none !important; }
   .mobile-nav-bar { display: flex; }
   .hero { padding-top: 96px; }
-  .fc-l2, .fc-r2 { display: none; }
+  .fc-l2, .fc-r2, .fc-l3, .fc-r3 { display: none; }
   .fc-l1 { left: 2%; top: 15%; width: 70px; height: 98px; }
   .fc-r1 { right: 2%; top: 15%; width: 70px; height: 98px; }
   .ss-grid { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
@@ -1089,10 +1077,12 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 <section class="hero" id="home">
   <div class="stars"></div>
 
-  <div class="float-card fc-l1"><div class="fc-art"><img src="img/cartas/dark_magician.webp" alt="Dark Magician" loading="lazy"></div><div class="fc-info"><div class="fc-name">Dark Magician</div><div class="fc-atk">ATK 2500 / DEF 2100</div></div></div>
-  <div class="float-card fc-l2"><div class="fc-art"><img src="img/cartas/black_luster_soldier.webp" alt="Black Luster Soldier" loading="lazy"></div><div class="fc-info"><div class="fc-name">Black Luster</div><div class="fc-atk">ATK 3000 / DEF 2500</div></div></div>
-  <div class="float-card fc-r1"><div class="fc-art"><img src="img/cartas/obelisk_the_tormentor.webp" alt="Obelisk the Tormentor" loading="lazy"></div><div class="fc-info"><div class="fc-name">Obelisk</div><div class="fc-atk">ATK 4000 / DEF 4000</div></div></div>
-  <div class="float-card fc-r2"><div class="fc-art"><img src="img/cartas/blue-eyes_white_dragon.webp" alt="Blue-Eyes White Dragon" loading="lazy"></div><div class="fc-info"><div class="fc-name">Blue-Eyes</div><div class="fc-atk">ATK 3000 / DEF 2500</div></div></div>
+  <div class="float-card fc-l1"><img src="img/cartas/dark_magician.webp" alt="Dark Magician" loading="lazy"></div>
+  <div class="float-card fc-l2"><img src="img/cartas/black_luster_soldier.webp" alt="Black Luster Soldier" loading="lazy"></div>
+  <div class="float-card fc-l3"><img src="img/cartas/red-eyes_b_dragon.webp" alt="Red-Eyes B. Dragon" loading="lazy"></div>
+  <div class="float-card fc-r1"><img src="img/cartas/obelisk_the_tormentor.webp" alt="Obelisk the Tormentor" loading="lazy"></div>
+  <div class="float-card fc-r2"><img src="img/cartas/blue-eyes_white_dragon.webp" alt="Blue-Eyes White Dragon" loading="lazy"></div>
+  <div class="float-card fc-r3"><img src="img/cartas/summoned_skull.webp" alt="Summoned Skull" loading="lazy"></div>
 
   <!-- Logo: usa imagem se existir, senão texto -->
   <img src="../img/logo_forbidden_legacy.png" alt="YGO Forbidden Legacy" class="hero-logo-img"
