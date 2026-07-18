@@ -275,6 +275,18 @@ nav#nav.scrolled{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
   font-family:inherit;transition:border-color .2s,color .2s;
 }
 .region-switch-btn:hover{border-color:rgba(200,151,58,.5);color:var(--gold,#c8973a)}
+/* Destaque do seletor de regiao dentro do formulario de compra — precisa
+   chamar atencao pq define se PIX/Cartao BR ou Stripe internacional aparece,
+   e se o CPF vai ser exigido. */
+.region-highlight{
+  background:rgba(200,151,58,.06);border:1px solid rgba(200,151,58,.3);
+  border-radius:6px;padding:12px 14px;margin-bottom:18px;
+}
+.region-highlight .region-chip-wrap{
+  display:flex;width:100%;justify-content:space-between;align-items:center;
+  gap:10px;margin-top:0;
+}
+@media(max-width:520px){.region-highlight .region-chip-wrap{flex-direction:column;align-items:stretch}}
 
 /* ═══════ PACK CARDS — nova identidade ═══════ */
 .packs-grid{
@@ -862,13 +874,6 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <h2 class="section-title" data-lang="en">Soul Packs</h2>
     <p class="section-sub" data-lang="pt">Cada alma contida no pacote equivale a saldo na Card Shop. Quanto mais Souls, mais boosters você abre.</p>
     <p class="section-sub" data-lang="en">Each Soul in the pack equals balance in the Card Shop. More Souls, more boosters you can open.</p>
-    <div class="region-chip-wrap">
-      <div class="region-chip" id="region-chip">🌐 Brasil — PIX</div>
-      <button type="button" class="region-switch-btn" id="region-switch-btn" onclick="toggleRegionOverride()">
-        <span data-lang="pt">Não está no Brasil? Trocar região</span>
-        <span data-lang="en">Not in Brazil? Switch region</span>
-      </button>
-    </div>
   </div>
 
   <!-- PACKS GRID (rendered by JS) -->
@@ -905,6 +910,16 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <div class="checkout-form" id="form-box">
       <h2 class="checkout-h" data-lang="pt">☥ Dados para resgate</h2>
       <h2 class="checkout-h" data-lang="en">☥ Redeem details</h2>
+
+      <div class="region-highlight">
+        <div class="region-chip-wrap">
+          <div class="region-chip" id="region-chip">🌐 Brasil — PIX</div>
+          <button type="button" class="region-switch-btn" id="region-switch-btn" onclick="toggleRegionOverride()">
+            <span data-lang="pt">Não está no Brasil? Trocar região</span>
+            <span data-lang="en">Not in Brazil? Switch region</span>
+          </button>
+        </div>
+      </div>
 
       <div class="fields-row">
         <div class="field">
@@ -1138,12 +1153,12 @@ function toggleRegionOverride(){
 }
 
 function applyRegionMode(){
-  const br = regionIsBR(), en = isEn();
-  // Metodo de pagamento depende so do pais (deteccao por IP ou override
-  // manual do cliente), nunca do idioma da interface.
+  const br = regionIsBR();
+  // Metodo de pagamento e preco exibido dependem so do pais (deteccao por IP ou
+  // override manual do cliente), nunca do idioma da interface.
   const showBrPay = br;
-  document.querySelectorAll('.region-br').forEach(el=>el.style.display=en?'none':'flex');
-  document.querySelectorAll('.region-intl').forEach(el=>el.style.display=en?'flex':'none');
+  document.querySelectorAll('.region-br').forEach(el=>el.style.display=showBrPay?'flex':'none');
+  document.querySelectorAll('.region-intl').forEach(el=>el.style.display=showBrPay?'none':'flex');
   const p=document.getElementById('pay-opt-pix'), c=document.getElementById('pay-opt-card-br'), s=document.getElementById('pay-opt-stripe');
   if(p) {
     p.style.display = showBrPay?'flex':'none';
@@ -1614,7 +1629,7 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.7.5</span>
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.7.6</span>
     <span>Fan-made project · Not affiliated with Konami</span>
   </div>
 </footer>
