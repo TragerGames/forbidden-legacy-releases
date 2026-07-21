@@ -42,7 +42,7 @@ jobs:
             "set net:timeout 30" \
             "set net:max-retries 3" \
             "open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER}" \
-            "mirror --reverse --verbose --ignore-time --exclude-glob .git --exclude-glob *.py --exclude-glob *.xlsx --exclude-glob hostinger_backend/ --exclude-glob screenshots/ --exclude-glob itch_cover* --exclude-glob gen_cover* ./Tools/ /public_html/" \
+            "mirror --reverse --verbose --ignore-time --exclude-glob .git --exclude-glob *.py --exclude-glob *.xlsx --exclude-glob hostinger_backend/ --exclude-glob itch_cover* --exclude-glob gen_cover* ./Tools/ /public_html/" \
             > /tmp/lftp.txt
           # HTML pages podem ter o mesmo tamanho em bytes de uma edicao pra outra
           # (ex.: troca de versao "1.7.3" -> "1.7.4", mesmo numero de caracteres).
