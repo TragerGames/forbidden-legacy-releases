@@ -9,3 +9,7 @@ Tools/hostinger_backend/
 Tools/itch_cover*.png
 Tools/gen_cover.py
 Tools/*.py
+
+# Screenshots originais em alta resolucao (fonte bruta) — versionamos so os
+# .webp otimizados gerados a partir daqui, ficam guardados so localmente.
+Tools/screenshots/Screens do jogo/

@@ -149,6 +149,21 @@ body.en span[data-lang="en"] { display:inline !important; }
 }
 .gallery-grid-sub .gallery-item { aspect-ratio:16/9; }
 
+/* ── FILTRO POR CATEGORIA ── */
+.gal-filters {
+  display:flex; flex-wrap:wrap; gap:8px; justify-content:center;
+  margin-bottom:44px;
+}
+.gal-chip {
+  border:1px solid var(--border); background:var(--dark2); color:var(--text-muted);
+  font-size:11px; letter-spacing:.5px; padding:8px 16px; border-radius:20px; cursor:pointer;
+  transition:all .15s; font-family:'Inter',sans-serif; white-space:nowrap;
+}
+.gal-chip:hover { border-color:rgba(200,151,58,.35); color:var(--text-body); }
+.gal-chip.active { background:rgba(200,151,58,.14); border-color:var(--gold); color:var(--gold-light); }
+.gal-section { margin-bottom:8px; }
+.gal-section.hidden { display:none; }
+
 /* Lightbox */
 .lb-overlay {
   display:none; position:fixed; inset:0; z-index:1000;
@@ -336,136 +351,180 @@ body.en li[data-lang="en"] { display: flex !important; }
 
 <div class="gallery-inner">
 
-  <!-- Grade principal -->
-  <div class="gallery-grid" data-reveal>
-    <div class="gallery-item featured" onclick="openLbLang(this)">
-      <img src="screenshots/pt/menu-inicial.png" data-src-pt="screenshots/pt/menu-inicial.png" data-src-en="screenshots/en/menu-inicial.png" alt="Menu Inicial" loading="lazy">
-      <div class="placeholder-txt"><span>🏛️</span><span data-lang="pt">Menu Inicial</span><span data-lang="en">Main Menu</span></div>
-      <div class="gallery-caption" data-lang="pt">Menu Inicial</div>
-      <div class="gallery-caption" data-lang="en">Main Menu</div>
+  <!-- Filtro por categoria -->
+  <div class="gal-filters" data-reveal>
+    <button class="gal-chip active" data-cat="todos" onclick="setGalFilter(this)"><span data-lang="pt">Todos</span><span data-lang="en">All</span></button>
+    <button class="gal-chip" data-cat="menus" onclick="setGalFilter(this)"><span data-lang="pt">🗂 Menus e Sistema</span><span data-lang="en">🗂 Menus &amp; System</span></button>
+    <button class="gal-chip" data-cat="personalizacao" onclick="setGalFilter(this)"><span data-lang="pt">🧑 Personalização</span><span data-lang="en">🧑 Customization</span></button>
+    <button class="gal-chip" data-cat="deck" onclick="setGalFilter(this)"><span data-lang="pt">🃏 Cartas e Deck</span><span data-lang="en">🃏 Cards &amp; Deck</span></button>
+    <button class="gal-chip" data-cat="duelo" onclick="setGalFilter(this)"><span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span></button>
+    <button class="gal-chip" data-cat="loja" onclick="setGalFilter(this)"><span data-lang="pt">🎁 Loja e Economia</span><span data-lang="en">🎁 Shop &amp; Economy</span></button>
+    <button class="gal-chip" data-cat="conquistas" onclick="setGalFilter(this)"><span data-lang="pt">🏆 Conquistas</span><span data-lang="en">🏆 Achievements</span></button>
+  </div>
+
+  <!-- Menus e Sistema -->
+  <div class="gal-section" data-cat="menus">
+    <div class="gallery-sub-label" data-reveal>
+      <span data-lang="pt">🗂 Menus e Sistema</span><span data-lang="en">🗂 Menus &amp; System</span>
     </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/editor-deck.png" data-src-pt="screenshots/pt/editor-deck.png" data-src-en="screenshots/en/editor-deck.png" alt="Editor de Deck" loading="lazy">
-      <div class="placeholder-txt"><span>🃏</span></div>
-      <div class="gallery-caption" data-lang="pt">Editor de Deck</div>
-      <div class="gallery-caption" data-lang="en">Deck Editor</div>
-    </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/card-shop.png" data-src-pt="screenshots/pt/card-shop.png" data-src-en="screenshots/en/card-shop.png" alt="Card Shop" loading="lazy">
-      <div class="placeholder-txt"><span>🛒</span></div>
-      <div class="gallery-caption" data-lang="pt">Loja de Cartas</div>
-      <div class="gallery-caption" data-lang="en">Card Shop</div>
-    </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-boosters.png" data-src-pt="screenshots/pt/tela-boosters.png" data-src-en="screenshots/en/tela-boosters.png" alt="Booster Packs" loading="lazy">
-      <div class="placeholder-txt"><span>📦</span></div>
-      <div class="gallery-caption" data-lang="pt">Booster Packs</div>
-      <div class="gallery-caption" data-lang="en">Booster Packs</div>
-    </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/gerenciar-decks.png" data-src-pt="screenshots/pt/gerenciar-decks.png" data-src-en="screenshots/en/gerenciar-decks.png" alt="Gerenciar Decks" loading="lazy">
-      <div class="placeholder-txt"><span>📦</span></div>
-      <div class="gallery-caption" data-lang="pt">Gerenciar Decks</div>
-      <div class="gallery-caption" data-lang="en">Manage Decks</div>
-    </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/free-duel.png" data-src-pt="screenshots/pt/free-duel.png" data-src-en="screenshots/en/free-duel.png" alt="Free Duel" loading="lazy">
-      <div class="placeholder-txt"><span>⚔️</span></div>
-      <div class="gallery-caption" data-lang="pt">Duelo Livre</div>
-      <div class="gallery-caption" data-lang="en">Free Duel</div>
+    <div class="gallery-grid-sub" data-reveal>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/menu-preload.webp" alt="Tela de Carregamento" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Tela de Carregamento</div>
+        <div class="gallery-caption" data-lang="en">Loading Screen</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/menu-principal.webp" alt="Menu Principal" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Menu Principal</div>
+        <div class="gallery-caption" data-lang="en">Main Menu</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/seletor-idioma.webp" alt="Seleção de Idioma" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Seleção de Idioma</div>
+        <div class="gallery-caption" data-lang="en">Language Selection</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/escolha-nome.webp" alt="Escolha do Nome" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Escolha do Nome</div>
+        <div class="gallery-caption" data-lang="en">Name Selection</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/seletor-save.webp" alt="Seletor de Save" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Seletor de Save</div>
+        <div class="gallery-caption" data-lang="en">Save Selector</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/config-joystick.webp" alt="Configuração do Controle" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Configuração do Controle</div>
+        <div class="gallery-caption" data-lang="en">Controller Setup</div>
+      </div>
     </div>
   </div>
 
-  <!-- Menus -->
-  <div class="gallery-sub-label" data-reveal>
-    <span data-lang="pt">🗂 Menus</span><span data-lang="en">🗂 Menus</span>
-  </div>
-  <div class="gallery-grid-sub" data-reveal>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-nome.png" data-src-pt="screenshots/pt/tela-nome.png" data-src-en="screenshots/en/tela-nome.png" alt="Inserir Nome" loading="lazy">
-      <div class="placeholder-txt"><span>✏️</span></div>
-      <div class="gallery-caption" data-lang="pt">Inserir Nome</div>
-      <div class="gallery-caption" data-lang="en">Enter Name</div>
+  <!-- Personalização -->
+  <div class="gal-section" data-cat="personalizacao">
+    <div class="gallery-sub-label" data-reveal>
+      <span data-lang="pt">🧑 Personalização</span><span data-lang="en">🧑 Customization</span>
     </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/selecao-deck.png" data-src-pt="screenshots/pt/selecao-deck.png" data-src-en="screenshots/en/selecao-deck.png" alt="Seleção de Deck" loading="lazy">
-      <div class="placeholder-txt"><span>🃏</span></div>
-      <div class="gallery-caption" data-lang="pt">Seleção de Deck</div>
-      <div class="gallery-caption" data-lang="en">Deck Selection</div>
-    </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-opcoes.png" data-src-pt="screenshots/pt/tela-opcoes.png" data-src-en="screenshots/en/tela-opcoes.png" alt="Opções" loading="lazy">
-      <div class="placeholder-txt"><span>⚙️</span></div>
-      <div class="gallery-caption" data-lang="pt">Opções</div>
-      <div class="gallery-caption" data-lang="en">Options</div>
-    </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-bio.png" data-src-pt="screenshots/pt/tela-bio.png" data-src-en="screenshots/en/tela-bio.png" alt="Perfil do Duelista" loading="lazy">
-      <div class="placeholder-txt"><span>👤</span></div>
-      <div class="gallery-caption" data-lang="pt">Perfil do Duelista</div>
-      <div class="gallery-caption" data-lang="en">Duelist Profile</div>
+    <div class="gallery-grid-sub" data-reveal>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/avatar-1.webp" alt="Seleção de Avatar" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
+        <div class="gallery-caption" data-lang="en">Avatar Selection</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/avatar-2.webp" alt="Seleção de Avatar" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
+        <div class="gallery-caption" data-lang="en">Avatar Selection</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/avatar-3.webp" alt="Seleção de Avatar" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
+        <div class="gallery-caption" data-lang="en">Avatar Selection</div>
+      </div>
     </div>
   </div>
 
-  <!-- Campanha -->
-  <div class="gallery-sub-label" data-reveal>
-    <span data-lang="pt">🏺 Campanha</span><span data-lang="en">🏺 Campaign</span>
-  </div>
-  <div class="gallery-grid-sub" data-reveal>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-npc1.png" data-src-pt="screenshots/pt/tela-npc1.png" data-src-en="screenshots/en/tela-npc1.png" alt="Campanha" loading="lazy">
-      <div class="placeholder-txt"><span>🏺</span></div>
-      <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
-      <div class="gallery-caption" data-lang="en">Campaign Mode</div>
+  <!-- Cartas e Deck -->
+  <div class="gal-section" data-cat="deck">
+    <div class="gallery-sub-label" data-reveal>
+      <span data-lang="pt">🃏 Cartas e Deck</span><span data-lang="en">🃏 Cards &amp; Deck</span>
     </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-npc2.png" data-src-pt="screenshots/pt/tela-npc2.png" data-src-en="screenshots/en/tela-npc2.png" alt="Campanha" loading="lazy">
-      <div class="placeholder-txt"><span>🏺</span></div>
-      <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
-      <div class="gallery-caption" data-lang="en">Campaign Mode</div>
-    </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-npc3.png" data-src-pt="screenshots/pt/tela-npc3.png" data-src-en="screenshots/en/tela-npc3.png" alt="Campanha" loading="lazy">
-      <div class="placeholder-txt"><span>🏺</span></div>
-      <div class="gallery-caption" data-lang="pt">Modo Campanha</div>
-      <div class="gallery-caption" data-lang="en">Campaign Mode</div>
-    </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/arena-duel1.png" data-src-pt="screenshots/pt/arena-duel1.png" data-src-en="screenshots/en/arena-duel1.png" alt="Arena de Duelo" loading="lazy">
-      <div class="placeholder-txt"><span>⚔️</span></div>
-      <div class="gallery-caption" data-lang="pt">Arena de Duelo</div>
-      <div class="gallery-caption" data-lang="en">Duel Arena</div>
+    <div class="gallery-grid-sub" data-reveal>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/editor-deck.webp" alt="Editor de Deck" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Editor de Deck</div>
+        <div class="gallery-caption" data-lang="en">Deck Editor</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/gerenciador-deck.webp" alt="Gerenciador de Decks" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Gerenciador de Decks</div>
+        <div class="gallery-caption" data-lang="en">Deck Manager</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/deck-inicial.webp" alt="Seleção de Deck Inicial" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Seleção de Deck Inicial</div>
+        <div class="gallery-caption" data-lang="en">Starting Deck Selection</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/vitrine-cartas.webp" alt="Vitrine de Cartas" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Vitrine de Cartas</div>
+        <div class="gallery-caption" data-lang="en">Card Showcase</div>
+      </div>
     </div>
   </div>
 
   <!-- Duelo -->
-  <div class="gallery-sub-label" data-reveal>
-    <span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span>
+  <div class="gal-section" data-cat="duelo">
+    <div class="gallery-sub-label" data-reveal>
+      <span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span>
+    </div>
+    <div class="gallery-grid-sub" data-reveal>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/free-duel-1.webp" alt="Free Duel" loading="lazy">
+        <div class="gallery-caption">Free Duel</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/free-duel-2.webp" alt="Free Duel" loading="lazy">
+        <div class="gallery-caption">Free Duel</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/auto-duel.webp" alt="Auto Duel" loading="lazy">
+        <div class="gallery-caption">Auto Duel</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/tela-npc.webp" alt="Perfil do NPC" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Perfil do NPC</div>
+        <div class="gallery-caption" data-lang="en">NPC Profile</div>
+      </div>
+    </div>
   </div>
-  <div class="gallery-grid-sub" data-reveal>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/arena-duelo2.png" data-src-pt="screenshots/pt/arena-duelo2.png" data-src-en="screenshots/en/arena-duelo2.png" alt="Arena de Duelo" loading="lazy">
-      <div class="placeholder-txt"><span>⚔️</span></div>
-      <div class="gallery-caption" data-lang="pt">Arena de Duelo</div>
-      <div class="gallery-caption" data-lang="en">Duel Arena</div>
+
+  <!-- Loja e Economia -->
+  <div class="gal-section" data-cat="loja">
+    <div class="gallery-sub-label" data-reveal>
+      <span data-lang="pt">🎁 Loja e Economia</span><span data-lang="en">🎁 Shop &amp; Economy</span>
     </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/opcoes-duelo.png" data-src-pt="screenshots/pt/opcoes-duelo.png" data-src-en="screenshots/en/opcoes-duelo.png" alt="Opções no Duelo" loading="lazy">
-      <div class="placeholder-txt"><span>⚙️</span></div>
-      <div class="gallery-caption" data-lang="pt">Opções no Duelo</div>
-      <div class="gallery-caption" data-lang="en">In-Duel Options</div>
+    <div class="gallery-grid-sub" data-reveal>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/loja-boosters.webp" alt="Loja de Boosters" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Loja de Boosters</div>
+        <div class="gallery-caption" data-lang="en">Booster Shop</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/loja-tickets-roleta.webp" alt="Tickets da Roleta" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Tickets da Roleta</div>
+        <div class="gallery-caption" data-lang="en">Roulette Tickets</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/loja-tickets-torneio.webp" alt="Tickets de Torneio" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Tickets de Torneio</div>
+        <div class="gallery-caption" data-lang="en">Tournament Tickets</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/roleta.webp" alt="Roleta" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Roleta</div>
+        <div class="gallery-caption" data-lang="en">Roulette</div>
+      </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/torneio-em-breve.webp" alt="Torneio (Em Breve)" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Torneio (Em Breve)</div>
+        <div class="gallery-caption" data-lang="en">Tournament (Coming Soon)</div>
+      </div>
     </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-resultado.png" data-src-pt="screenshots/pt/tela-resultado.png" data-src-en="screenshots/en/tela-resultado.png" alt="Resultado do Duelo" loading="lazy">
-      <div class="placeholder-txt"><span>🏆</span></div>
-      <div class="gallery-caption" data-lang="pt">Resultado do Duelo</div>
-      <div class="gallery-caption" data-lang="en">Duel Result</div>
+  </div>
+
+  <!-- Conquistas -->
+  <div class="gal-section" data-cat="conquistas">
+    <div class="gallery-sub-label" data-reveal>
+      <span data-lang="pt">🏆 Conquistas</span><span data-lang="en">🏆 Achievements</span>
     </div>
-    <div class="gallery-item" onclick="openLbLang(this)">
-      <img src="screenshots/pt/tela-boosters.png" data-src-pt="screenshots/pt/tela-boosters.png" data-src-en="screenshots/en/tela-boosters.png" alt="Booster Packs" loading="lazy">
-      <div class="placeholder-txt"><span>📦</span></div>
-      <div class="gallery-caption" data-lang="pt">Booster Packs</div>
-      <div class="gallery-caption" data-lang="en">Booster Packs</div>
+    <div class="gallery-grid-sub" data-reveal>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/conquistas.webp" alt="Conquistas" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Conquistas</div>
+        <div class="gallery-caption" data-lang="en">Achievements</div>
+      </div>
     </div>
   </div>
 
@@ -566,6 +625,17 @@ function openLbLang(item){
   openLb(img?img.src:'');
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+// Filtro de categoria da galeria
+function setGalFilter(btn){
+  document.querySelectorAll('.gal-chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.getAttribute('data-cat');
+  document.querySelectorAll('.gal-section').forEach(sec=>{
+    sec.classList.toggle('hidden', cat!=='todos' && sec.getAttribute('data-cat')!==cat);
+  });
+}
+window.setGalFilter=setGalFilter;
 
 // Scroll reveal (data-reveal)
 (function(){
