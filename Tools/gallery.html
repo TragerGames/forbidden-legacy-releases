@@ -355,10 +355,10 @@ body.en li[data-lang="en"] { display: flex !important; }
   <div class="gal-filters" data-reveal>
     <button class="gal-chip active" data-cat="todos" onclick="setGalFilter(this)"><span data-lang="pt">Todos</span><span data-lang="en">All</span></button>
     <button class="gal-chip" data-cat="menus" onclick="setGalFilter(this)"><span data-lang="pt">🗂 Menus e Sistema</span><span data-lang="en">🗂 Menus &amp; System</span></button>
-    <button class="gal-chip" data-cat="personalizacao" onclick="setGalFilter(this)"><span data-lang="pt">🧑 Personalização</span><span data-lang="en">🧑 Customization</span></button>
     <button class="gal-chip" data-cat="deck" onclick="setGalFilter(this)"><span data-lang="pt">🃏 Cartas e Deck</span><span data-lang="en">🃏 Cards &amp; Deck</span></button>
     <button class="gal-chip" data-cat="duelo" onclick="setGalFilter(this)"><span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span></button>
     <button class="gal-chip" data-cat="loja" onclick="setGalFilter(this)"><span data-lang="pt">🎁 Loja e Economia</span><span data-lang="en">🎁 Shop &amp; Economy</span></button>
+    <button class="gal-chip" data-cat="eventos" onclick="setGalFilter(this)"><span data-lang="pt">🎡 Eventos</span><span data-lang="en">🎡 Events</span></button>
     <button class="gal-chip" data-cat="conquistas" onclick="setGalFilter(this)"><span data-lang="pt">🏆 Conquistas</span><span data-lang="en">🏆 Achievements</span></button>
   </div>
 
@@ -398,15 +398,11 @@ body.en li[data-lang="en"] { display: flex !important; }
         <div class="gallery-caption" data-lang="pt">Configuração do Controle</div>
         <div class="gallery-caption" data-lang="en">Controller Setup</div>
       </div>
-    </div>
-  </div>
-
-  <!-- Personalização -->
-  <div class="gal-section" data-cat="personalizacao">
-    <div class="gallery-sub-label" data-reveal>
-      <span data-lang="pt">🧑 Personalização</span><span data-lang="en">🧑 Customization</span>
-    </div>
-    <div class="gallery-grid-sub" data-reveal>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/deck-inicial.webp" alt="Seleção de Deck Inicial" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Seleção de Deck Inicial</div>
+        <div class="gallery-caption" data-lang="en">Starting Deck Selection</div>
+      </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/avatar-1.webp" alt="Seleção de Avatar" loading="lazy">
         <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
@@ -440,16 +436,6 @@ body.en li[data-lang="en"] { display: flex !important; }
         <img src="screenshots/gerenciador-deck.webp" alt="Gerenciador de Decks" loading="lazy">
         <div class="gallery-caption" data-lang="pt">Gerenciador de Decks</div>
         <div class="gallery-caption" data-lang="en">Deck Manager</div>
-      </div>
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/deck-inicial.webp" alt="Seleção de Deck Inicial" loading="lazy">
-        <div class="gallery-caption" data-lang="pt">Seleção de Deck Inicial</div>
-        <div class="gallery-caption" data-lang="en">Starting Deck Selection</div>
-      </div>
-      <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/vitrine-cartas.webp" alt="Vitrine de Cartas" loading="lazy">
-        <div class="gallery-caption" data-lang="pt">Vitrine de Cartas</div>
-        <div class="gallery-caption" data-lang="en">Card Showcase</div>
       </div>
     </div>
   </div>
@@ -546,6 +532,20 @@ body.en li[data-lang="en"] { display: flex !important; }
         <div class="gallery-caption" data-lang="pt">Loja de Boosters</div>
         <div class="gallery-caption" data-lang="en">Booster Shop</div>
       </div>
+      <div class="gallery-item" onclick="openLbLang(this)">
+        <img src="screenshots/vitrine-cartas.webp" alt="Vitrine de Cartas" loading="lazy">
+        <div class="gallery-caption" data-lang="pt">Vitrine de Cartas</div>
+        <div class="gallery-caption" data-lang="en">Card Showcase</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Eventos -->
+  <div class="gal-section" data-cat="eventos">
+    <div class="gallery-sub-label" data-reveal>
+      <span data-lang="pt">🎡 Eventos</span><span data-lang="en">🎡 Events</span>
+    </div>
+    <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/loja-tickets-roleta.webp" alt="Tickets da Roleta" loading="lazy">
         <div class="gallery-caption" data-lang="pt">Tickets da Roleta</div>
