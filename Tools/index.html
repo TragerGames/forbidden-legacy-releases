@@ -150,11 +150,12 @@ nav.scrolled {
   text-shadow: 0 0 16px rgba(212,168,67,.4);
 }
 .nav-links {
-  display: flex; gap: 22px; align-items: center;
+  display: flex; gap: 16px; align-items: center;
 }
 .nav-links a {
-  font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted);
+  font-size: 10px; letter-spacing: 1.2px; color: var(--text-muted);
   text-transform: uppercase; transition: color .2s;
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--gold); }
 .nav-links .sep { color: rgba(212,168,67,.15); }
@@ -465,6 +466,7 @@ nav.scrolled {
 .price-block { text-align:center; }
 .price-method { font-size:11px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:4px; }
 .price-amount { font-family:'Bebas Neue',sans-serif; font-size:42px; color:var(--gold); line-height:1; text-shadow:0 0 20px rgba(212,168,67,.3); }
+.price-souls-badge { display:inline-block; font-size:10px; letter-spacing:.5px; color:#9b6bff; background:rgba(155,107,255,.1); border:1px solid rgba(155,107,255,.3); border-radius:20px; padding:2px 10px; margin-top:6px; }
 .price-note { font-size:11px; color:var(--text-muted); margin-top:4px; }
 .price-sep { width:1px; background:var(--border); }
 .founder-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
@@ -557,7 +559,8 @@ body:not(.en) .news-title[data-lang="en"] { display: none !important; }
   transition: all .2s;
 }
 .lang-btn.active { border-color: var(--gold); color: var(--gold); }
-.discord-nav-badge { display:none; align-items:center; gap:5px; font-size:10px; color:#7289da; text-decoration:none; border:1px solid rgba(88,101,242,0.3); border-radius:3px; padding:4px 9px; background:rgba(88,101,242,0.08); transition:background .2s; }
+.discord-nav-badge { display:none; align-items:center; gap:5px; font-size:10px; color:#7289da; text-decoration:none; border:1px solid rgba(88,101,242,0.3); border-radius:3px; padding:4px 9px; background:rgba(88,101,242,0.08); transition:background .2s; white-space:nowrap; }
+.discord-nav-badge .ti-brand-discord { font-size:13px; }
 .discord-nav-badge:hover { background:rgba(88,101,242,0.18); color:#99aaf5; }
 .discord-nav-badge .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
 .discord-nav-badge .dc-dot.online { background:#3ba55c; }
@@ -1053,12 +1056,11 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <a href="loja.html" data-lang="en">Store</a>
     <a href="mods.html" data-lang="pt">Mods FM</a>
     <a href="mods.html" data-lang="en">FM Mods</a>
-    <span class="sep">|</span>
-    <a href="#discord">Discord</a>
   </div>
   <div style="display:flex; align-items:center; gap:12px;">
     <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
-      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> online 
+      <i class="ti ti-brand-discord" aria-hidden="true"></i>
+      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> online
       <span style="opacity:.4;margin:0 3px">·</span>
       <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> members
     </a>
@@ -2133,7 +2135,6 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="founder-perks">
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 1 completa</span><span data-lang="en">Full Season 1</span></div>
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Acesso antecipado Season 2</span><span data-lang="en">Season 2 early access</span></div>
-      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">+500 Souls de bônus</span><span data-lang="en">+500 bonus Souls</span></div>
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Apoia o dev independente</span><span data-lang="en">Supports the indie dev</span></div>
     </div>
     <div class="price-row">
@@ -2143,6 +2144,8 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
       <div class="price-block" id="price-pix-block">
         <div class="price-method">PIX</div>
         <div class="price-amount">R$&thinsp;39,90</div>
+        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
         <div class="price-note" data-lang="pt">Instantâneo · sem taxa</div>
         <div class="price-note" data-lang="en">Instant · no fee</div>
       </div>
@@ -2151,6 +2154,8 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
         <div class="price-method" data-lang="pt">Cartão de Crédito</div>
         <div class="price-method" data-lang="en">Credit Card</div>
         <div class="price-amount">R$&thinsp;39,90</div>
+        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
         <div class="price-note" data-lang="pt">Parcelável · via Asaas</div>
         <div class="price-note" data-lang="en">Installments available · via Asaas</div>
       </div>
@@ -2158,6 +2163,8 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
         <div class="price-method" data-lang="pt">Cartão de Crédito</div>
         <div class="price-method" data-lang="en">Credit Card</div>
         <div class="price-amount">$20&thinsp;USD</div>
+        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
         <div class="price-note" data-lang="pt">Stripe · Cartão internacional</div>
         <div class="price-note" data-lang="en">Stripe · International card</div>
       </div>
