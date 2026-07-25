@@ -280,10 +280,43 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .discord-nav-badge .dc-dot.online  { background:#3ba55c; }
 .discord-nav-badge .dc-dot.offline { background:#747f8d; }
 
+/* ── MOBILE NAV BAR ── */
+.mobile-nav-bar {
+  display: none;
+  position: fixed; top: 52px; left: 0; right: 0; z-index: 198;
+  background: rgba(5,3,1,0.97); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px); flex-direction: column;
+}
+.mobile-discord-bar {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 5px 16px; background: rgba(88,101,242,0.07);
+  border-bottom: 1px solid rgba(88,101,242,0.15);
+  font-size: 11px; color: #7289da; text-decoration: none;
+  letter-spacing: .3px;
+}
+.mobile-discord-bar .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+.mobile-discord-bar .dc-dot.online  { background:#3ba55c; }
+.mobile-discord-bar .dc-dot.offline { background:#747f8d; }
+.mobile-nav-links {
+  display: flex; overflow-x: auto; gap: 0;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.mobile-nav-links::-webkit-scrollbar { display: none; }
+.mobile-nav-links a {
+  flex-shrink: 0; padding: 10px 16px;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-muted); text-decoration: none;
+  border-right: 1px solid var(--border); white-space: nowrap;
+  transition: color .2s, background .2s;
+}
+.mobile-nav-links a:hover, .mobile-nav-links a:active { color: var(--gold); background: rgba(200,144,32,0.06); }
+.mobile-nav-links a.nav-cta { color: var(--gold-light); background: rgba(200,144,32,0.05); }
+
 /* ── RESPONSIVE ── */
 @media(max-width:700px) {
   nav#nav { padding: 12px 20px; }
   .nav-links, nav#nav .nav-cta { display: none !important; }
+  .mobile-nav-bar { display: flex; }
   .page-hero { padding-top: 96px; }
   .cat-toolbar { top: 0; }
   .cat-grid { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 8px; }
@@ -323,6 +356,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <a href="catalogo.html" class="active" data-lang="pt">Catálogo</a><a href="catalogo.html" class="active" data-lang="en">Catalog</a>
     <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
     <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
     <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
     <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
@@ -340,10 +374,29 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   </div>
 </nav>
 
+<!-- MOBILE NAV BAR -->
+<div class="mobile-nav-bar" id="mobile-nav-bar">
+  <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="mobile-discord-bar">💬 Discord</a>
+  <div class="mobile-nav-links">
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="catalogo.html" class="active" data-lang="pt">Catálogo</a><a href="catalogo.html" class="active" data-lang="en">Catalog</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+  </div>
+</div>
+
 <!-- HERO -->
 <div class="page-hero">
   <div class="stars"></div>
-  <div class="page-hero-label">☥ Beta 1.7.9</div>
+  <div class="page-hero-label">☥ Beta 1.8</div>
   <h1 class="page-hero-title" data-lang="pt">Catálogo de Cartas</h1>
   <h1 class="page-hero-title" data-lang="en">Card Catalog</h1>
   <div class="page-hero-sub" data-lang="pt">Todas as cartas do jogo em um só lugar</div>
@@ -453,7 +506,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.7.9</span>
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.8</span>
     <span>Fan-made project · Not affiliated with Konami</span>
   </div>
 </footer>
