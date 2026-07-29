@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1784109449",
+  "versao": "1785279039",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -718,7 +718,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-fiend.webp",
-      "total_tema": 86,
+      "total_tema": 85,
       "cartas_tema": [
         {
           "nome": "Archfiend Emperor",
@@ -796,13 +796,6 @@
           "slug": "zera_the_mant",
           "atk": "2800",
           "def": "2300"
-        },
-        {
-          "nome": "Zorc Necrophades",
-          "raridade": "UR",
-          "slug": "zorc_necrophades",
-          "atk": "4000",
-          "def": "5000"
         },
         {
           "nome": "Archfiend Soldier",
@@ -1935,7 +1928,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-dragon.webp",
-      "total_tema": 60,
+      "total_tema": 59,
       "cartas_tema": [
         {
           "nome": "Armed Dragon LV10",
@@ -2174,11 +2167,6 @@
           "slug": "paladin_of_white_dragon",
           "atk": "1900",
           "def": "1200"
-        },
-        {
-          "nome": "Red-eyes B. Dragon",
-          "raridade": "SR",
-          "slug": "red-eyes_b_dragon"
         },
         {
           "nome": "Seiyaryu",
@@ -5766,9 +5754,7 @@
         {
           "nome": "Man-eating Black Shark",
           "raridade": "N",
-          "slug": "man-eating_black_shark",
-          "atk": "2100",
-          "def": "1300"
+          "slug": "man-eating_black_shark"
         },
         {
           "nome": "Mavelus",
@@ -6169,6 +6155,243 @@
           "slug": "super_soldier_soul",
           "atk": "0",
           "def": "0"
+        }
+      ]
+    },
+    {
+      "id": "especial_elemental_hero",
+      "tipo_label": "ELEMENTAL HERO",
+      "nome_pt": "Elemental HERO",
+      "nome_en": "Elemental HERO",
+      "desc_pt": "Edicao especial e temporaria dedicada ao arquetipo Elemental HERO, reunindo herois classicos, fusoes, suportes, equips, traps e o campo Skyscraper. Depois que o evento terminar, essas cartas deixam a circulacao temporaria e passam a poder aparecer no torneio.",
+      "desc_en": "A special, time-limited Elemental HERO edition with classic heroes, fusions, support cards, equips, traps and the Skyscraper field. When the event ends, these cards leave temporary circulation and become eligible for tournament rewards.",
+      "cor": "#2aa7d6",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 7,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-elemental-hero.webp",
+      "total_tema": 34,
+      "cartas_tema": [
+        {
+          "nome": "Elemental HERO Bladedge",
+          "raridade": "UR",
+          "slug": "elemental_hero_bladedge",
+          "atk": "2600",
+          "def": "1800"
+        },
+        {
+          "nome": "Elemental HERO Electrum",
+          "raridade": "UR",
+          "slug": "elemental_hero_electrum",
+          "atk": "2900",
+          "def": "2600"
+        },
+        {
+          "nome": "Elemental HERO Grandmerge",
+          "raridade": "UR",
+          "slug": "elemental_hero_grandmerge",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Elemental HERO Plasma Vice",
+          "raridade": "UR",
+          "slug": "elemental_hero_plasma_vice",
+          "atk": "2600",
+          "def": "2300"
+        },
+        {
+          "nome": "Elemental HERO Shining Flare Wingman",
+          "raridade": "UR",
+          "slug": "elemental_hero_shining_flare_wingman",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Elemental HERO Shining Phoenix Enforcer",
+          "raridade": "UR",
+          "slug": "elemental_hero_shining_phoenix_enforcer",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Elemental HERO Tempest",
+          "raridade": "UR",
+          "slug": "elemental_hero_tempest",
+          "atk": "2800",
+          "def": "2800"
+        },
+        {
+          "nome": "Elemental HERO Wildedge",
+          "raridade": "UR",
+          "slug": "elemental_hero_wildedge",
+          "atk": "2600",
+          "def": "2300"
+        },
+        {
+          "nome": "E - Emergency Call",
+          "raridade": "SR",
+          "slug": "e_-_emergency_call"
+        },
+        {
+          "nome": "Elemental HERO Darkbright",
+          "raridade": "SR",
+          "slug": "elemental_hero_darkbright",
+          "atk": "2000",
+          "def": "1000"
+        },
+        {
+          "nome": "Elemental HERO Flame Wingman",
+          "raridade": "SR",
+          "slug": "elemental_hero_flame_wingman",
+          "atk": "2100",
+          "def": "1200"
+        },
+        {
+          "nome": "Elemental HERO Mudballman",
+          "raridade": "SR",
+          "slug": "elemental_hero_mudballman",
+          "atk": "1900",
+          "def": "3000"
+        },
+        {
+          "nome": "Elemental HERO Phoenix Enforcer",
+          "raridade": "SR",
+          "slug": "elemental_hero_phoenix_enforcer",
+          "atk": "2100",
+          "def": "1200"
+        },
+        {
+          "nome": "Elemental HERO Prisma",
+          "raridade": "SR",
+          "slug": "elemental_hero_prisma",
+          "atk": "1700",
+          "def": "1100"
+        },
+        {
+          "nome": "Hero Signal",
+          "raridade": "SR",
+          "slug": "hero_signal"
+        },
+        {
+          "nome": "Elemental HERO Bubbleman",
+          "raridade": "R",
+          "slug": "elemental_hero_bubbleman",
+          "atk": "800",
+          "def": "1200"
+        },
+        {
+          "nome": "Elemental HERO Mariner",
+          "raridade": "R",
+          "slug": "elemental_hero_mariner",
+          "atk": "1400",
+          "def": "1000"
+        },
+        {
+          "nome": "Elemental HERO Necroshade",
+          "raridade": "R",
+          "slug": "elemental_hero_necroshade",
+          "atk": "1600",
+          "def": "1800"
+        },
+        {
+          "nome": "Elemental HERO Rampart Blaster",
+          "raridade": "R",
+          "slug": "elemental_hero_rampart_blaster",
+          "atk": "2000",
+          "def": "2500"
+        },
+        {
+          "nome": "Elemental HERO Steam Healer",
+          "raridade": "R",
+          "slug": "elemental_hero_steam_healer",
+          "atk": "1800",
+          "def": "1000"
+        },
+        {
+          "nome": "Elemental HERO Thunder Giant",
+          "raridade": "R",
+          "slug": "elemental_hero_thunder_giant",
+          "atk": "2400",
+          "def": "1500"
+        },
+        {
+          "nome": "Elemental HERO Wild Wingman",
+          "raridade": "R",
+          "slug": "elemental_hero_wild_wingman",
+          "atk": "1900",
+          "def": "2300"
+        },
+        {
+          "nome": "Elemental HERO Wildheart",
+          "raridade": "R",
+          "slug": "elemental_hero_wildheart",
+          "atk": "1500",
+          "def": "1600"
+        },
+        {
+          "nome": "H - Heated Heart",
+          "raridade": "R",
+          "slug": "h_-_heated_heart"
+        },
+        {
+          "nome": "Hero Barrier",
+          "raridade": "R",
+          "slug": "hero_barrier"
+        },
+        {
+          "nome": "O - Oversou",
+          "raridade": "R",
+          "slug": "o_-_oversou"
+        },
+        {
+          "nome": "Skyscraper",
+          "raridade": "R",
+          "slug": "skyscraper"
+        },
+        {
+          "nome": "Elemental HERO Avian",
+          "raridade": "N",
+          "slug": "elemental_hero_avian",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Elemental HERO Burstinatrix",
+          "raridade": "N",
+          "slug": "elemental_hero_burstinatrix",
+          "atk": "1200",
+          "def": "800"
+        },
+        {
+          "nome": "Elemental HERO Clayman",
+          "raridade": "N",
+          "slug": "elemental_hero_clayman",
+          "atk": "800",
+          "def": "2000"
+        },
+        {
+          "nome": "Elemental HERO Sparkman",
+          "raridade": "N",
+          "slug": "elemental_hero_sparkman",
+          "atk": "1600",
+          "def": "1400"
+        },
+        {
+          "nome": "Hero Heart",
+          "raridade": "N",
+          "slug": "hero_heart"
+        },
+        {
+          "nome": "Hero Medal",
+          "raridade": "N",
+          "slug": "hero_medal"
+        },
+        {
+          "nome": "R - Righteous Justice",
+          "raridade": "N",
+          "slug": "r_-_righteous_justice"
         }
       ]
     },

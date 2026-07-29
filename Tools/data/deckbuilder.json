@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1784056308",
+  "versao": "1785279163",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -1255,6 +1255,72 @@
         "attack_boost"
       ]
     },
+    "E - Emergency Call": {
+      "grupos": [
+        "evolution_accelerator"
+      ]
+    },
+    "Elemental HERO Bladedge": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Elemental HERO Bubbleman": {
+      "grupos": [
+        "mill_pressure"
+      ]
+    },
+    "Elemental HERO Darkbright": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Elemental HERO Flame Wingman": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Elemental HERO Grandmerge": {
+      "grupos": [
+        "fusion_substitute"
+      ]
+    },
+    "Elemental HERO Mariner": {
+      "grupos": [
+        "direct_attack"
+      ]
+    },
+    "Elemental HERO Plasma Vice": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Elemental HERO Prisma": {
+      "grupos": [
+        "fusion_substitute"
+      ]
+    },
+    "Elemental HERO Shining Flare Wingman": {
+      "grupos": [
+        "attack_boost",
+        "burn_on_kill"
+      ]
+    },
+    "Elemental HERO Shining Phoenix Enforcer": {
+      "grupos": [
+        "attack_boost"
+      ]
+    },
+    "Elemental HERO Wild Wingman": {
+      "grupos": [
+        "backrow_wipe"
+      ]
+    },
+    "Elemental HERO Wildheart": {
+      "grupos": [
+        "strong_immunity"
+      ]
+    },
     "Elf's Light": {
       "grupos": [
         "attack_boost"
@@ -1395,6 +1461,21 @@
     "Great Moth": {
       "grupos": [
         "power_lock"
+      ]
+    },
+    "H - Heated Heart": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Hero Heart": {
+      "grupos": [
+        "multi_attack"
+      ]
+    },
+    "Hero Signal": {
+      "grupos": [
+        "evolution_accelerator"
       ]
     },
     "Horn of Light": {
@@ -1598,11 +1679,6 @@
     "Paladin of Dark Dragon": {
       "grupos": [
         "piercing_pressure"
-      ]
-    },
-    "Palladium Oracle Mahad": {
-      "grupos": [
-        "power_lock"
       ]
     },
     "Perfectly Ultimate Great Moth": {
@@ -1814,12 +1890,6 @@
         "power_lock"
       ]
     },
-    "Spellbinding Circle": {
-      "grupos": [
-        "attack_boost",
-        "power_lock"
-      ]
-    },
     "Spirit Illusion": {
       "grupos": [
         "attack_boost"
@@ -1949,7 +2019,6 @@
     },
     "Ultimate Flame Swordsman": {
       "grupos": [
-        "attack_boost",
         "burn_recurring"
       ]
     },
