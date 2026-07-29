@@ -524,12 +524,6 @@ nav#nav.scrolled{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
   color:rgba(200,151,58,.4);margin-bottom:20px;
 }
 
-.pack-use{
-  font-size:12px;color:var(--muted);line-height:1.6;
-  margin-bottom:16px;min-height:36px;
-  text-align:center;
-}
-
 .pack-rule{
   height:1px;
   background:linear-gradient(90deg,transparent,rgba(200,151,58,.1),transparent);
@@ -648,8 +642,6 @@ body.en .pack-select-hint[data-lang="en"]{display:flex!important}
   font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;
   color:var(--gold3);line-height:1;margin-bottom:4px;
 }
-.sum-use{font-size:12px;color:var(--muted);line-height:1.55}
-
 /* QUANTIDADE */
 .qty-row{
   display:flex;align-items:center;justify-content:space-between;gap:12px;
@@ -861,11 +853,11 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 
     <div class="hero-note" data-lang="pt">
       O pacote entrega <strong>Souls</strong> — o saldo usado na Card Shop para abrir boosters.<br>
-      <strong>100 Souls = 1 Booster</strong>. Não é um pacote de boosters direto.
+      O custo em Souls varia por booster. Não é um pacote de boosters direto.
     </div>
     <div class="hero-note" data-lang="en">
       The pack grants <strong>Souls</strong> — the balance used in the Card Shop to open boosters.<br>
-      <strong>100 Souls = 1 Booster</strong>. This is not a direct booster bundle.
+      The Souls cost varies per booster. This is not a direct booster bundle.
     </div>
 
     <div class="hero-actions">
@@ -994,7 +986,6 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
       <div class="sum-selected">
         <div class="sum-tier" id="sum-tier">Duelista</div>
         <div class="sum-souls" id="sum-pack">300 Souls</div>
-        <div class="sum-use" id="sum-use"></div>
         <div class="pack-bonus-tag-summary" id="sum-bonus" style="display:none"></div>
         <div class="qty-row">
           <span class="qty-label" data-lang="pt">Quantidade de pacotes</span>
@@ -1120,14 +1111,17 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 /* ── CONFIG ── */
 const STORE_ENABLED = true;
 const PACKS = [
-  { id:'souls_300',  tierPt:'Duelista',  tierEn:'Duelist',   souls:300,  uses:3,  br:'R$ 12,90', usd:'US$ 5.99',  brlNum:12.90, usdNum:5.99,  tier:2 },
-  { id:'souls_600',  tierPt:'Templo',    tierEn:'Temple',    souls:600,  uses:6,  br:'R$ 21,90', usd:'US$ 9.99',  brlNum:21.90, usdNum:9.99,  tier:3 },
-  { id:'souls_1000', tierPt:'Faraó',     tierEn:'Pharaoh',   souls:1000, uses:10, br:'R$ 29,90', usd:'US$ 14.99', brlNum:29.90, usdNum:14.99, tier:4, bonusTicket:1 },
-  { id:'souls_2000', tierPt:'Divino',    tierEn:'Divine',    souls:2000, uses:20, br:'R$ 54,90', usd:'US$ 27.99', brlNum:54.90, usdNum:27.99, tier:4, bonusTicket:5 }
+  { id:'souls_300',  tierPt:'Duelista',  tierEn:'Duelist',   souls:300,  br:'R$ 12,90', usd:'US$ 5.99',  brlNum:12.90, usdNum:5.99,  tier:2 },
+  { id:'souls_600',  tierPt:'Templo',    tierEn:'Temple',    souls:600,  br:'R$ 21,90', usd:'US$ 9.99',  brlNum:21.90, usdNum:9.99,  tier:3 },
+  { id:'souls_1000', tierPt:'Faraó',     tierEn:'Pharaoh',   souls:1000, br:'R$ 29,90', usd:'US$ 14.99', brlNum:29.90, usdNum:14.99, tier:4, bonusStars:15000 },
+  { id:'souls_2000', tierPt:'Divino',    tierEn:'Divine',    souls:2000, br:'R$ 54,90', usd:'US$ 27.99', brlNum:54.90, usdNum:27.99, tier:4, bonusStars:30000 }
 ];
 let selected = PACKS[0];
 let quantidade = 1;
 const QTD_MAX = 10;
+// +50% de Souls de bônus em TODOS os pacotes (mesma regra do backend em souls_config.php).
+const SOULS_BONUS_PCT = 0.5;
+function totalSoulsFor(p){ return Math.round(p.souls*(1+SOULS_BONUS_PCT)); }
 let pixTxid = '', pollTimer = null;
 window._flIsBR = true;
 
@@ -1142,13 +1136,6 @@ function setLang(lang, save=true){
   if(btn) btn.classList.add('active');
   if(save) localStorage.setItem('fl_lang', lang);
   applyRegionMode();
-}
-
-function packUseText(p){
-  return t(
-    `Saldo para ${p.uses} booster${p.uses>1?'s':''} na Card Shop.`,
-    `Balance for ${p.uses} booster${p.uses>1?'s':''} in the Card Shop.`
-  );
 }
 
 // Deteccao automatica por IP (window._flIsBR) pode falhar/ser bloqueada por
@@ -1416,7 +1403,15 @@ function renderPacks(){
     const status=STORE_ENABLED?t('Disponível','Available'):t('Em breve','Soon');
     const statusClass=STORE_ENABLED?'':'soon';
     const priceNote=brRegion?t('Nacional · R$','National · BRL'):t('Internacional · USD','International · USD');
-    const bonusHTML=p.bonusTicket?`<div class="pack-bonus-tag">🎁 ${t('+'+p.bonusTicket+' Ticket Gold de brinde','+'+p.bonusTicket+' bonus Gold Ticket')}</div>`:'';
+    const totalSouls=totalSoulsFor(p);
+    const soulsBonusHTML=`<div class="pack-bonus-tag">🎉 ${t(
+      `+50% de bônus: ${p.souls} + ${totalSouls-p.souls} = ${totalSouls} Souls`,
+      `+50% bonus: ${p.souls} + ${totalSouls-p.souls} = ${totalSouls} Souls`
+    )}</div>`;
+    const starsBonusHTML=p.bonusStars?`<div class="pack-bonus-tag">⭐ ${t(
+      `+${p.bonusStars.toLocaleString('pt-BR')} Stars de brinde`,
+      `+${p.bonusStars.toLocaleString('en-US')} bonus Stars`
+    )}</div>`:'';
     el.innerHTML=`
       <div class="pack-header">
         <span class="pack-tier-label">${tier}</span>
@@ -1425,8 +1420,8 @@ function renderPacks(){
       ${soulHTML(p.tier)}
       <div class="pack-souls-count">${p.souls}</div>
       <span class="pack-souls-label">Souls</span>
-      <div class="pack-use">${packUseText(p)}</div>
-      ${bonusHTML}
+      ${soulsBonusHTML}
+      ${starsBonusHTML}
       <div class="pack-rule"></div>
       <div class="pack-price">${price}</div>
       <div class="pack-price-note">${priceNote}</div>
@@ -1447,23 +1442,20 @@ function alterarQuantidade(delta){
 }
 
 function updateSummary(){
-  document.getElementById('sum-pack').textContent=(selected.souls*quantidade)+' Souls';
-  const usesTotal=selected.uses*quantidade;
-  document.getElementById('sum-use').textContent=t(
-    `Saldo para ${usesTotal} booster${usesTotal>1?'s':''} na Card Shop.`,
-    `Balance for ${usesTotal} booster${usesTotal>1?'s':''} in the Card Shop.`
-  );
+  const totalSouls=totalSoulsFor(selected);
+  document.getElementById('sum-pack').textContent=(totalSouls*quantidade)+' Souls';
   document.getElementById('sum-br').textContent=formatBRL(selected.brlNum*quantidade);
   document.getElementById('sum-usd').textContent=formatUSD(selected.usdNum*quantidade);
   const sumBonus=document.getElementById('sum-bonus');
   if(sumBonus){
-    const bonusTotal=(selected.bonusTicket||0)*quantidade;
-    if(bonusTotal>0){
-      sumBonus.style.display='block';
-      sumBonus.textContent='🎁 '+t('+'+bonusTotal+' Ticket Gold de brinde','+'+bonusTotal+' bonus Gold Ticket');
-    } else {
-      sumBonus.style.display='none';
+    const soulsBonusTotal=(totalSouls-selected.souls)*quantidade;
+    const starsTotal=(selected.bonusStars||0)*quantidade;
+    const linhas=['🎉 '+t('+'+soulsBonusTotal+' Souls de bônus (+50%)','+'+soulsBonusTotal+' bonus Souls (+50%)')];
+    if(starsTotal>0){
+      linhas.push('⭐ '+t('+'+starsTotal.toLocaleString('pt-BR')+' Stars de brinde','+'+starsTotal.toLocaleString('en-US')+' bonus Stars'));
     }
+    sumBonus.style.display='block';
+    sumBonus.innerHTML=linhas.join('<br>');
   }
   const tierLabel=document.getElementById('sum-tier');
   if(tierLabel){
