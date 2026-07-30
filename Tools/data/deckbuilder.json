@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1785279163",
+  "versao": "1785452980",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
