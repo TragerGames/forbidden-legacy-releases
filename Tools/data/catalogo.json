@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1785452879",
+  "versao": "1786309695",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -436,6 +436,23 @@
       "nivel": "3",
       "atk": "600",
       "def": "1500"
+    },
+    {
+      "nome": "Andro Sphinx",
+      "nome_pt": "Andro Sphinx",
+      "slug": "andro_sphinx",
+      "card_type": "Monster",
+      "tipo": "Beast",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "beast",
+      "nivel": "10",
+      "atk": "3000",
+      "def": "2500",
+      "desc_pt": "EFEITO: Se esta carta destruir um monstro em Posição de Defesa como resultado de uma batalha, cause dano aos Pontos de Vida do seu oponente igual à metade da ATK do monstro destruído.",
+      "desc_en": "EFFECT: If this card destroys a monster in Defense Position as a result of battle, inflict damage to your opponent's Life Points equal to half the destroyed monster's ATK."
     },
     {
       "nome": "Angelwitch",
@@ -1715,6 +1732,57 @@
       "desc_en": "EFFECT: When this card is summoned, Change battle position of all monster on opponent's field, inflict double piercing battle damage to your opponent."
     },
     {
+      "nome": "Blue-Eyes Corrupted Chaos MAX Dragon",
+      "nome_pt": "Blue-Eyes Corrupted Chaos MAX Dragon",
+      "slug": "blue-eyes_corrupted_chaos_max_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "9",
+      "atk": "4200",
+      "def": "1000",
+      "desc_pt": "EFEITO: Se este card atacar um monstro em Posição de Defesa, cause dano de batalha perfurante em dobro e, depois, ganhe PV igual à metade do dano causado. Enquanto este card estiver em Posição de Defesa, você sofre dano de batalha perfurante causado pelos ataques do seu oponente.",
+      "desc_en": "EFFECT: If this card attacks a Defense Position monster, inflict double piercing battle damage, then gain LP equal to half the damage inflicted. While this card is in Defense Position, you take piercing battle damage caused by your opponent's attacks."
+    },
+    {
+      "nome": "Blue-Eyes Corrupted Dragon",
+      "nome_pt": "Blue-Eyes Corrupted Dragon",
+      "slug": "blue-eyes_corrupted_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "8",
+      "atk": "3200",
+      "def": "2800",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver no campo, reduza pela metade o ATK de todos os monstros do seu oponente, exceto monstros DRAGON. Esta carta sempre sofre dano de batalha perfurante causado pelo seu oponente.",
+      "desc_en": "EFFECT: While this card is on the field, halve the ATK of all monsters your opponent controls, except DRAGON monsters. This card always takes piercing battle damage caused by your opponent."
+    },
+    {
+      "nome": "Blue-Eyes Darkness Corrupted Dragon",
+      "nome_pt": "Blue-Eyes Darkness Corrupted Dragon",
+      "slug": "blue-eyes_darkness_corrupted_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "9",
+      "atk": "3300",
+      "def": "2700",
+      "desc_pt": "EFEITO: Quando este card for Invocado, ele ganha 650 ATK e DEF para cada \"Blue-Eyes Corrupted Dragon\" na sua HAND e no seu DECK. Este card não é afetado por TRAP Cards. Enquanto este card estiver em Posição de Defesa, você sofre dano de batalha perfurante causado pelos ataques do seu oponente.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 650 ATK and DEF for each \"Blue-Eyes Corrupted Dragon\" in your HAND and DECK. This card is unaffected by TRAP Cards. While this card is in Defense Position, you take piercing battle damage caused by your opponent's attacks."
+    },
+    {
       "nome": "Blue-Eyes Shining Dragon",
       "nome_pt": "Blue-Eyes Shining Dragon",
       "slug": "blue-eyes_shining_dragon",
@@ -1747,6 +1815,40 @@
       "def": "2500",
       "desc_pt": "EFEITO: Esta carta pode atacar 2 vezes por turno.",
       "desc_en": "EFFECT: This card can attack 2 times per turn."
+    },
+    {
+      "nome": "Blue-Eyes Twin Corrupted Burst-Dragon",
+      "nome_pt": "Blue-Eyes Twin Corrupted Burst-Dragon",
+      "slug": "blue-eyes_twin_corrupted_burst-dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "10",
+      "atk": "3200",
+      "def": "2800",
+      "desc_pt": "EFEITO: Este card pode atacar 2 vezes por turno. Quando este card destruir um monstro do oponente em batalha, cause dano ao seu oponente igual à metade da DEF original desse monstro. Enquanto este card estiver em Posição de Defesa, ele sofre dano de batalha perfurante causado por ataques do seu oponente.",
+      "desc_en": "EFFECT: This card can attack twice per turn. When this card destroys an opponent's monster by battle, inflict damage to your opponent equal to half of that monster's original DEF. While this card is in Defense Position, it takes piercing battle damage caused by your opponent's attacks."
+    },
+    {
+      "nome": "Blue-Eyes Ultimate Corrupted Dragon",
+      "nome_pt": "Blue-Eyes Ultimate Corrupted Dragon",
+      "slug": "blue-eyes_ultimate_corrupted_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "12",
+      "atk": "4700",
+      "def": "3700",
+      "desc_pt": "EFEITO: Se este card for destruído e enviado para o GRAVEYARD, descarte 1 \"Blue-Eyes Corrupted Dragon\" ou 1 \"Blue-Eyes White Dragon\" da sua HAND para impedir esse envio. Se fizer isso, este card permanece no campo e ganha 500 ATK e DEF. Se este card em Posição de Defesa for atacado por um monstro com ATK maior que a DEF deste card, você sofre o dano de batalha que normalmente não sofreria.",
+      "desc_en": "EFFECT: If this card is destroyed and would be sent to the GRAVEYARD, discard 1 \"Blue-Eyes Corrupted Dragon\" or 1 \"Blue-Eyes White Dragon\" from your HAND to prevent it. If you do, this card remains on the field and gains 500 ATK and DEF. If this card in Defense Position is attacked by a monster with ATK higher than this card's DEF, you take the battle damage you normally would not take."
     },
     {
       "nome": "Blue-Eyes Ultimate Dragon",
@@ -2343,6 +2445,23 @@
       "def": "2000"
     },
     {
+      "nome": "Codarus",
+      "nome_pt": "Codarus",
+      "slug": "codarus",
+      "card_type": "Monster",
+      "tipo": "Sea Serpent",
+      "atributo": "WATER",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "WATER",
+      "icone_tipo": "seaserpent",
+      "nivel": "4",
+      "atk": "1400",
+      "def": "1200",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, se o campo \"Umi\" estiver ativo, destrua uma carta aleatória no campo, exceto esta carta.",
+      "desc_en": "EFFECT: When this card is Summoned, if the field \"Umi\" is active, destroy 1 random card on the field, except this card."
+    },
+    {
       "nome": "Command Knight",
       "nome_pt": "Command Knight",
       "slug": "command_knight",
@@ -2501,6 +2620,23 @@
       "def": "1800",
       "desc_pt": "EFEITO: Quando esta carta for invocada, cause 400 de dano ao LP do seu oponente para cada monstro WINGEDBEAST na sua mão.",
       "desc_en": "EFFECT: When this card is summoned, inflict 400 damage to your opponent's LP for each WINGEDBEAST monster in your hand."
+    },
+    {
+      "nome": "Criosphinx",
+      "nome_pt": "Criosphinx",
+      "slug": "criosphinx",
+      "card_type": "Monster",
+      "tipo": "Rock",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "rock",
+      "nivel": "6",
+      "atk": "1200",
+      "def": "2400",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, seu oponente descarta 5 cartas aleatórias do Deck para o Cemitério.",
+      "desc_en": "EFFECT: When this card is Summoned, your opponent discards 5 random cards from their Deck to the Graveyard."
     },
     {
       "nome": "Crow Goblin",
@@ -3626,6 +3762,20 @@
       "def": "800"
     },
     {
+      "nome": "Dimension Sphinx",
+      "nome_pt": "Dimension Sphinx",
+      "slug": "dimension_sphinx",
+      "card_type": "Trap",
+      "tipo": "Trap",
+      "atributo": "trap",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "TRAP",
+      "icone_tipo": "trap",
+      "desc_pt": "EFEITO: Uma vez por turno, durante a Etapa de Batalha, se um monstro \"Sphinx\" que você controla sofrer dano de batalha, cause ao seu oponente dano igual à metade do dano que você sofreu nesta batalha.",
+      "desc_en": "EFFECT: Once per turn, during the Battle Phase, if a \"Sphinx\" monster you control takes battle damage, inflict damage to your opponent equal to half the damage you took in this battle."
+    },
+    {
       "nome": "Dimensional Warrior",
       "nome_pt": "Dimensional Warrior",
       "slug": "dimensional_warrior",
@@ -3669,6 +3819,23 @@
       "nivel": "3",
       "atk": "900",
       "def": "1000"
+    },
+    {
+      "nome": "Divine Dragon Aquabizarre",
+      "nome_pt": "Divine Dragon Aquabizarre",
+      "slug": "divine_dragon_aquabizarre",
+      "card_type": "Monster",
+      "tipo": "Sea Serpent",
+      "atributo": "WATER",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "WATER",
+      "icone_tipo": "seaserpent",
+      "nivel": "5",
+      "atk": "2100",
+      "def": "1500",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, ative o campo \"Umi\". Enquanto esta carta estiver com a face para cima, o campo \"Umi\" não pode ser destruído.",
+      "desc_en": "EFFECT: When this card is Summoned, activate the field \"Umi\". While this card is face-up, the field \"Umi\" cannot be destroyed."
     },
     {
       "nome": "Divine Dragon Ragnarok",
@@ -4067,6 +4234,23 @@
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Monstros com ATK igual ou inferior a 1000 são eliminados do campo de jogo.",
       "desc_en": "EFFECT: Monsters with ATK of 1000 or lower are eliminated from the play field."
+    },
+    {
+      "nome": "Efreet, Spirit of the Ancestral Flame",
+      "nome_pt": "Efreet, Spirit of the Ancestral Flame",
+      "slug": "efreet_spirit_of_the_ancestral_flame",
+      "card_type": "Monster",
+      "tipo": "Pyro",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "pyro",
+      "nivel": "11",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Quando esta carta é invocada, seu ATK e DEF se tornam iguais à quantidade de monstros \"Spirit\" de atributo FIRE em seu Cemitério x500. Sempre que você causar dano de efeito aos Pontos de Vida do oponente, esta carta ganha ATK igual ao dano causado. Esta carta é imune a qualquer redução de ATK/DEF.",
+      "desc_en": "EFFECT: When this card is Summoned, its ATK and DEF become equal to the number of FIRE-Attribute \"Spirit\" monsters in your Graveyard x500. Whenever you inflict effect damage to your opponent's Life Points, this card gains ATK equal to the damage inflicted. This card is immune to any ATK/DEF reduction."
     },
     {
       "nome": "Eldeen",
@@ -4767,6 +4951,20 @@
       "desc_en": "EFFECT: When this card is destroyed by battle, bring 1 random \"Black Luster Soldier\" monster from your Deck to the field. This card is treated as a \"Black Luster Soldier\" card."
     },
     {
+      "nome": "Evil Swords of Dark Light",
+      "nome_pt": "Evil Swords of Dark Light",
+      "slug": "evil_swords_of_dark_light",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Por 3 turnos, sempre que seu oponente declarar um ataque, ele deve pagar PV igual ao ATK original do monstro atacante. Este efeito se aplica até mesmo a monstros não afetados por SPELL Cards.",
+      "desc_en": "EFFECT: For 3 turns, whenever your opponent declares an attack, they must pay LP equal to the attacking monster's original ATK. This effect applies even to monsters unaffected by SPELL Cards."
+    },
+    {
       "nome": "Evocator Chevalier",
       "nome_pt": "Evocator Chevalier",
       "slug": "evocator_chevalier",
@@ -4814,6 +5012,23 @@
       "nivel": "3",
       "atk": "1000",
       "def": "1000"
+    },
+    {
+      "nome": "Exxod, Master of The Guard",
+      "nome_pt": "Exxod, Master of The Guard",
+      "slug": "exxod_master_of_the_guard",
+      "card_type": "Monster",
+      "tipo": "Rock",
+      "atributo": "EARTH",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "rock",
+      "nivel": "8",
+      "atk": "0",
+      "def": "4000",
+      "desc_pt": "EFEITO: Enquanto esta carta permanecer virada para cima no campo, cause 1000 de dano ao seu oponente toda vez que um monstro EARTH no seu campo for destruído. Este monstro também é considerado \"Sphinx\".",
+      "desc_en": "EFFECT: While this card remains face-up on the field, inflict 1000 damage to your opponent every time an EARTH monster on your field is destroyed. This monster is also considered \"Sphinx\"."
     },
     {
       "nome": "Eyearmor",
@@ -4937,6 +5152,19 @@
       "def": "1500",
       "desc_pt": "Uma criatura experiente que não conhece a paz do descanso eterno. Envolto em sombras que devoram a luz.",
       "desc_en": "An experienced creature that knows not the peace of eternal rest. Enveloped in shadows that devour the light."
+    },
+    {
+      "nome": "Fengsheng Mirror",
+      "nome_pt": "Fengsheng Mirror",
+      "slug": "fengsheng_mirror",
+      "card_type": "Spell",
+      "tipo": "spell continuous",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "desc_pt": "EFEITO: No turno em que esta carta for ativada, os monstros do seu oponente não podem ser destruídos em batalha, porém toda vez que ocorrer uma batalha neste turno, cause 500 pontos de dano aos Pontos de Vida do oponente.",
+      "desc_en": "EFFECT: During the turn this card is activated, your opponent's monsters cannot be destroyed by battle, but each time a battle occurs this turn, inflict 500 damage to your opponent's Life Points."
     },
     {
       "nome": "Feral Imp",
@@ -5449,6 +5677,23 @@
       "nivel": "1",
       "atk": "400",
       "def": "300"
+    },
+    {
+      "nome": "Fushi No Tori",
+      "nome_pt": "Fushi No Tori",
+      "slug": "fushi_no_tori",
+      "card_type": "Monster",
+      "tipo": "Winged Beast",
+      "atributo": "FIRE",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "winged_beast",
+      "nivel": "4",
+      "atk": "1200",
+      "def": "0",
+      "desc_pt": "EFEITO: Esta carta retorna à mão do seu dono durante a Fase Final do turno em que foi invocada, a menos que isso deixe seu lado do campo sem nenhum monstro. Quando esta carta infligir Dano de Batalha aos Pontos de Vida do oponente, aumente seus Pontos de Vida em uma quantidade igual a esse Dano de Batalha. Esta carta pode atacar diretamente o oponente. Esta é uma carta \"Spirit\".",
+      "desc_en": "EFFECT: This card returns to its owner's hand during the End Phase of the turn it was Summoned, unless doing so would leave your side of the field with no monsters. When this card inflicts Battle Damage to your opponent's Life Points, increase your Life Points by an amount equal to that Battle Damage. This card can attack your opponent directly. This is a \"Spirit\" card."
     },
     {
       "nome": "Fusilier Dragon",
@@ -6746,6 +6991,23 @@
       "def": "1000"
     },
     {
+      "nome": "Hieracosphinx",
+      "nome_pt": "Hieracosphinx",
+      "slug": "hieracosphinx",
+      "card_type": "Monster",
+      "tipo": "Rock",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "rock",
+      "nivel": "6",
+      "atk": "2400",
+      "def": "1200",
+      "desc_pt": "EFEITO: Seu oponente não pode escolher um monstro em Posição de Defesa como alvo de ataque, exceto esta carta.",
+      "desc_en": "EFFECT: Your opponent cannot target a monster in Defense Position for an attack, except this card."
+    },
+    {
       "nome": "High Tide Gyojin",
       "nome_pt": "High Tide Gyojin",
       "slug": "high_tide_gyojin",
@@ -6759,6 +7021,23 @@
       "nivel": "5",
       "atk": "1650",
       "def": "1300"
+    },
+    {
+      "nome": "Hino-Kagu-Tsuchi",
+      "nome_pt": "Hino-Kagu-Tsuchi",
+      "slug": "hino-kagu-tsuchi",
+      "card_type": "Monster",
+      "tipo": "Pyro",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "pyro",
+      "nivel": "8",
+      "atk": "2800",
+      "def": "2900",
+      "desc_pt": "EFEITO: Esta carta retorna à mão do seu dono durante a Fase Final do turno em que foi invocada, a menos que isso deixe seu lado do campo sem nenhum monstro. Se esta carta infligir Dano de Batalha ao oponente, ele descarta todas as cartas da mão; para cada monstro descartado dessa forma, ele sofre 300 pontos de dano. Esta é uma carta \"Spirit\".",
+      "desc_en": "EFFECT: This card returns to its owner's hand during the End Phase of the turn it was Summoned, unless doing so would leave your side of the field with no monsters. If this card inflicts Battle Damage to your opponent, they discard their entire hand; for each monster discarded this way, they take 300 damage. This is a \"Spirit\" card."
     },
     {
       "nome": "Hinotama",
@@ -7749,6 +8028,19 @@
       "def": "1200"
     },
     {
+      "nome": "Kickfire",
+      "nome_pt": "Kickfire",
+      "slug": "kickfire",
+      "card_type": "Spell",
+      "tipo": "spell continuous",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "desc_pt": "EFEITO: Causa 500 pontos de dano aos Pontos de Vida do oponente toda vez que um monstro FIRE for invocado no seu lado do campo.",
+      "desc_en": "EFFECT: Inflict 500 damage to your opponent's Life Points every time a FIRE monster is Summoned to your side of the field."
+    },
+    {
       "nome": "Killer Needle",
       "nome_pt": "Killer Needle",
       "slug": "killer_needle",
@@ -8348,6 +8640,23 @@
       "desc_en": "EFFECT: Evolve an LV monster. If it is in the final stage it is used as an equip card that grants +500 power."
     },
     {
+      "nome": "Levia-Dragon - Daedalus",
+      "nome_pt": "Levia-Dragon - Daedalus",
+      "slug": "levia-dragon_-_daedalus",
+      "card_type": "Monster",
+      "tipo": "Sea Serpent",
+      "atributo": "WATER",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "WATER",
+      "icone_tipo": "seaserpent",
+      "nivel": "7",
+      "atk": "2600",
+      "def": "1500",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, se o campo \"Umi\" estiver ativo, destrua todas as cartas no campo, exceto esta carta.",
+      "desc_en": "EFFECT: When this card is Summoned, if the field \"Umi\" is active, destroy all cards on the field, except this card."
+    },
+    {
       "nome": "Lightning Blade",
       "nome_pt": "Lightning Blade",
       "slug": "lightning_blade",
@@ -8524,6 +8833,23 @@
       "desc_en": "EFFECT: When this card is summoned, decreases the power of all DRAGON monsters your opponent control by 0."
     },
     {
+      "nome": "Lord of Souls",
+      "nome_pt": "Lord of Souls",
+      "slug": "lord_of_souls",
+      "card_type": "Monster",
+      "tipo": "Fiend",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "fiend",
+      "nivel": "12",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, ela ganha 350 ATK e DEF para cada carta em ambos os GRAVEYARDS. Quando esta carta for destruída e enviada para o GRAVEYARD, envie as 3 cartas do topo do seu DECK para o GRAVEYARD; depois, Invoque esta carta do GRAVEYARD em Posição de Ataque.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 350 ATK and DEF for each card in both GRAVEYARDS. When this card is destroyed and sent to the GRAVEYARD, send the top 3 cards of your DECK to the GRAVEYARD; then, Summon this card from the GRAVEYARD in Attack Position."
+    },
+    {
       "nome": "Lord of Zemia",
       "nome_pt": "Lord of Zemia",
       "slug": "lord_of_zemia",
@@ -8697,12 +9023,12 @@
       "slug": "machine_king",
       "card_type": "Monster",
       "tipo": "Machine",
-      "atributo": "LIGHT",
-      "raridade": "UR",
-      "raridade_arquivo": "UR",
-      "icone_atributo": "LIGHT",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
       "icone_tipo": "machine",
-      "nivel": "1",
+      "nivel": "6",
       "atk": "2200",
       "def": "2000",
       "desc_pt": "EFEITO: Esta carta ganha 100 ATK para cada monstro MACHINE em campo.",
@@ -9722,6 +10048,20 @@
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro do oponente declarar um ataque, destrua todos os monstros em Posição de Ataque no campo dele.",
       "desc_en": "EFFECT: When an opponent's monster declares an attack, destroy every monster in Attack Position on their field."
+    },
+    {
+      "nome": "Mirror of Yata",
+      "nome_pt": "Mirror of Yata",
+      "slug": "mirror_of_yata",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "spell",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Equipe apenas a um monstro \"Spirit\". O monstro equipado ganha 300 de ATK e DEF para cada monstro \"Spirit\" na sua mão. O monstro equipado não precisa ter seu efeito de retorno para a mão ativado.",
+      "desc_en": "EFFECT: Equip only to a \"Spirit\" monster. The equipped monster gains 300 ATK and DEF for each \"Spirit\" monster in your hand. The equipped monster does not have to activate its return-to-hand effect."
     },
     {
       "nome": "Misairuzame",
@@ -10820,6 +11160,19 @@
       "def": "1300"
     },
     {
+      "nome": "Path to Atlantis",
+      "nome_pt": "Path to Atlantis",
+      "slug": "path_to_atlantis",
+      "card_type": "Spell",
+      "tipo": "spell continuous",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "desc_pt": "EFEITO: Todos os monstros AQUA, SEA SERPENT e FISH ganham 500 de DEF enquanto estiverem em Posição de Defesa. Se \"Poseidon, King of the Oceans\" estiver em campo, sempre que um monstro AQUA, SEA SERPENT ou FISH seu for atacado em Posição de Defesa, ele não pode ser destruído em batalha.",
+      "desc_en": "EFFECT: All AQUA, SEA SERPENT and FISH monsters gain 500 DEF while in Defense Position. If \"Poseidon, King of the Oceans\" is on the field, whenever an AQUA, SEA SERPENT or FISH monster you control is attacked in Defense Position, it cannot be destroyed by battle."
+    },
+    {
       "nome": "Patrol Robo",
       "nome_pt": "Patrol Robo",
       "slug": "patrol_robo",
@@ -11004,6 +11357,23 @@
       "def": "800"
     },
     {
+      "nome": "Pharaonic Guardian Sphinx",
+      "nome_pt": "Pharaonic Guardian Sphinx",
+      "slug": "pharaonic_guardian_sphinx",
+      "card_type": "Monster",
+      "tipo": "Rock",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "rock",
+      "nivel": "8",
+      "atk": "2300",
+      "def": "3000",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, embaralhe no Deck todos os monstros que seu oponente controla.",
+      "desc_en": "EFFECT: When this card is Summoned, shuffle all monsters your opponent controls into the Deck."
+    },
+    {
       "nome": "Phoenix Gearfried",
       "nome_pt": "Phoenix Gearfried",
       "slug": "phoenix_gearfried",
@@ -11019,6 +11389,23 @@
       "def": "2200",
       "desc_pt": "EFEITO: FULL EQUIP. Esta carta pode ser equipada com qualquer EQUIP, mantendo o bônus original dele. Também pode ser equipada com qualquer SPELL ou TRAP; cada uma concede 300 de poder.",
       "desc_en": "EFFECT: FULL EQUIP. This card can be equipped with any EQUIP Card, retaining its original bonus. It can also be equipped with any SPELL or TRAP; each grants 300 power."
+    },
+    {
+      "nome": "Poseidon, King of the Oceans",
+      "nome_pt": "Poseidon, King of the Oceans",
+      "slug": "poseidon_king_of_the_oceans",
+      "card_type": "Monster",
+      "tipo": "Divine-Beast",
+      "atributo": "DIVINE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DIVINE",
+      "icone_tipo": "divine-beast",
+      "nivel": "10",
+      "atk": "2700",
+      "def": "5000",
+      "desc_pt": "EFEITO: Quando esta carta for atacada por um monstro com ATK maior que o de Poseidon, troque os valores de ATK e DEF desta carta até o final do turno. Esta carta ganha 700 de DEF permanentemente sempre que este efeito for ativado. Todo o dano que o oponente sofrer como resultado deste ataque, você recupera como Pontos de Vida.",
+      "desc_en": "EFFECT: When this card is attacked by a monster with ATK higher than Poseidon's, swap this card's ATK and DEF values until the end of the turn. This card permanently gains 700 DEF every time this effect is activated. Any damage your opponent takes as a result of this attack, you gain as Life Points."
     },
     {
       "nome": "Pot the Trick",
@@ -11221,6 +11608,20 @@
       "def": "1800",
       "desc_pt": "\"Blue-Winged Crown\" + \"Niwatori\"",
       "desc_en": "\"Blue-Winged Crown\" + \"Niwatori\""
+    },
+    {
+      "nome": "Pyramid of Light",
+      "nome_pt": "Pyramid of Light",
+      "slug": "pyramid_of_light",
+      "card_type": "Trap",
+      "tipo": "Trap",
+      "atributo": "trap",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "TRAP",
+      "icone_tipo": "trap",
+      "desc_pt": "EFEITO: Quando um monstro \"Sphinx\" for atacado por um monstro DIVINE-BEAST, negue esse ataque e destrua o monstro atacante. Esta carta permanece no campo com efeito contínuo.",
+      "desc_en": "EFFECT: When a \"Sphinx\" monster is attacked by a DIVINE-BEAST monster, negate that attack and destroy the attacking monster. This card remains on the field as a continuous effect."
     },
     {
       "nome": "Queen Bird",
@@ -11437,6 +11838,23 @@
       "icone_tipo": "spell",
       "desc_pt": "EFEITO: Aumente seus Pontos de Vida em 3000!",
       "desc_en": "EFFECT: Increase your Life Points by 3000!"
+    },
+    {
+      "nome": "Red-Eyes Absolut Darkness Dragon",
+      "nome_pt": "Red-Eyes Absolut Darkness Dragon",
+      "slug": "red-eyes_absolut_darkness_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "12",
+      "atk": "3600",
+      "def": "4000",
+      "desc_pt": "EFEITO: Sempre que seu oponente ativar uma carta SPELL, EQUIP ou TRAP, negue o efeito dela e coloque 1 Marcador nesta carta. Para cada Marcador, esta carta ganha 350 ATK e DEF. Com 3 Marcadores, esta carta pode atacar 2 vezes por turno. Com 6 Marcadores, pode atacar 3 vezes por turno. Com 9 ou mais Marcadores, esta carta não pode ser destruída em batalha.",
+      "desc_en": "EFFECT: Whenever your opponent activates a SPELL, EQUIP, or TRAP Card, negate its effect and place 1 Counter on this card. This card gains 350 ATK and DEF for each Counter on it. With 3 Counters, this card can attack twice per turn. With 6 Counters, it can attack 3 times per turn. With 9 or more Counters, this card cannot be destroyed by battle."
     },
     {
       "nome": "Red-Eyes Archfiend of Lightning",
@@ -12312,6 +12730,23 @@
       "def": "1700"
     },
     {
+      "nome": "Sea Serpent of the Oceanic Void",
+      "nome_pt": "Sea Serpent of the Oceanic Void",
+      "slug": "sea_serpent_of_the_oceanic_void",
+      "card_type": "Monster",
+      "tipo": "Sea Serpent",
+      "atributo": "WATER",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "WATER",
+      "icone_tipo": "seaserpent",
+      "nivel": "6",
+      "atk": "1500",
+      "def": "3000",
+      "desc_pt": "EFEITO: Esta carta não pode ser destruída em batalha enquanto estiver em Posição de Defesa. No final de cada turno, cause dano aos Pontos de Vida do oponente igual à metade da DEF atual desta carta. Esta carta perde 500 de ATK sempre que for atacada por um monstro. Se o ATK desta carta chegar a 0, destrua esta carta.",
+      "desc_en": "EFFECT: This card cannot be destroyed by battle while in Defense Position. At the end of each turn, inflict damage to your opponent's Life Points equal to half this card's current DEF. This card loses 500 ATK every time it is attacked by a monster. If this card's ATK reaches 0, destroy this card."
+    },
+    {
       "nome": "Sealmaster Meisei",
       "nome_pt": "Sealmaster Meisei",
       "slug": "sealmaster_meisei",
@@ -13108,6 +13543,40 @@
       "desc_en": "Many have been deceived by the beauty of this vampire."
     },
     {
+      "nome": "Sphinx Teleia",
+      "nome_pt": "Sphinx Teleia",
+      "slug": "sphinx_teleia",
+      "card_type": "Monster",
+      "tipo": "Beast",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "beast",
+      "nivel": "10",
+      "atk": "2500",
+      "def": "3000",
+      "desc_pt": "EFEITO: Se esta carta destruir um monstro em Posição de Defesa como resultado de uma batalha, cause dano aos Pontos de Vida do seu oponente igual à metade da DEF do monstro destruído.",
+      "desc_en": "EFFECT: If this card destroys a monster in Defense Position as a result of battle, inflict damage to your opponent's Life Points equal to half the destroyed monster's DEF."
+    },
+    {
+      "nome": "Sphinx of the Cycle",
+      "nome_pt": "Sphinx of the Cycle",
+      "slug": "sphinx_of_the_cycle",
+      "card_type": "Monster",
+      "tipo": "Rock",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "rock",
+      "nivel": "8",
+      "atk": "2500",
+      "def": "3000",
+      "desc_pt": "EFEITO: Quando esta carta atacar um monstro do oponente, mude a posição de batalha de todos os outros monstros que estão no campo do oponente.",
+      "desc_en": "EFFECT: When this card attacks an opponent's monster, change the battle position of all other monsters on the opponent's field."
+    },
+    {
       "nome": "Spike Seadra",
       "nome_pt": "Spike Seadra",
       "slug": "spike_seadra",
@@ -13227,6 +13696,33 @@
       "nivel": "5",
       "atk": "1700",
       "def": "1400"
+    },
+    {
+      "nome": "Spirit's Invitation",
+      "nome_pt": "Spirit's Invitation",
+      "slug": "spirits_invitation",
+      "card_type": "Trap",
+      "tipo": "Trap",
+      "atributo": "trap",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "TRAP",
+      "icone_tipo": "trap",
+      "desc_pt": "EFEITO: Toda vez que um monstro \"Spirit\" seu retornar para a sua mão, retorne para a mão de seu dono um monstro aleatório no campo do seu oponente.",
+      "desc_en": "EFFECT: Each time a \"Spirit\" monster you control returns to your hand, return 1 random monster on your opponent's field to its owner's hand."
+    },
+    {
+      "nome": "Spiritual Energy Settle Machine",
+      "nome_pt": "Spiritual Energy Settle Machine",
+      "slug": "spiritual_energy_settle_machine",
+      "card_type": "Spell",
+      "tipo": "spell continuous",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "desc_pt": "EFEITO: Enquanto esta carta permanecer virada para cima no campo, todos os monstros \"Spirit\" ganham 400 de ATK e DEF e não retornam para as mãos de seus donos durante a Fase Final.",
+      "desc_en": "EFFECT: While this card remains face-up on the field, all \"Spirit\" monsters gain 400 ATK and DEF and do not return to their owners' hands during the End Phase."
     },
     {
       "nome": "Stain Storm",
@@ -13625,6 +14121,20 @@
       "icone_tipo": "equip",
       "desc_pt": "EFEITO: Equipe apenas a um monstro DARK. Ele ganha 200 de ATK para cada monstro DARK na sua mão.",
       "desc_en": "EFFECT: Equip only to a DARK monster. It gains 200 ATK for each DARK monster in your hand."
+    },
+    {
+      "nome": "Sword of Kusanagi",
+      "nome_pt": "Sword of Kusanagi",
+      "slug": "sword_of_kusanagi",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Equipe apenas a um monstro SPIRIT. Enquanto estiver equipado, se o monstro equipado atacar um monstro em Posição de Defesa, cause dano de batalha perfurante. Se o monstro equipado retornar para a mão de seu dono na Fase Final do turno, cause 1000 pontos de dano aos Pontos de Vida do oponente.",
+      "desc_en": "EFFECT: Equip only to a SPIRIT monster. While equipped, if the equipped monster attacks a monster in Defense Position, inflict piercing battle damage. If the equipped monster returns to its owner's hand during the End Phase, inflict 1000 damage to your opponent's Life Points."
     },
     {
       "nome": "Swords of Revealing Light",
@@ -14167,6 +14677,57 @@
       "desc_en": "EFFECT: When you summon this monster, bring a Blue-Eyes White Dragon from your Deck to the field."
     },
     {
+      "nome": "The Wicked Avatar",
+      "nome_pt": "The Wicked Avatar",
+      "slug": "the_wicked_avatar",
+      "card_type": "Monster",
+      "tipo": "Fiend",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "fiend",
+      "nivel": "10",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: O ATK e DEF desta carta são 100 pontos maiores que o ATK do monstro com o maior ATK com a face para cima no campo do oponente. No final de cada turno, enquanto esta carta estiver com a face para cima no campo, destrua todas as SPELLS e TRAPS viradas para baixo no lado do oponente.",
+      "desc_en": "EFFECT: This card's ATK and DEF are 100 points higher than the ATK of the face-up monster with the highest ATK on your opponent's field. At the end of each turn, while this card is face-up on the field, destroy all face-down SPELLS and TRAPS on your opponent's side of the field."
+    },
+    {
+      "nome": "The Wicked Dreadroot",
+      "nome_pt": "The Wicked Dreadroot",
+      "slug": "the_wicked_dreadroot",
+      "card_type": "Monster",
+      "tipo": "Fiend",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "fiend",
+      "nivel": "10",
+      "atk": "4000",
+      "def": "4000",
+      "desc_pt": "EFEITO: Ao ser invocada, reduza pela metade o ATK e DEF de todos os monstros do oponente, incluindo monstros DIVINE-BEAST. Enquanto esta carta permanecer em campo, os monstros do oponente perdem 500 ATK e DEF no final de cada turno. Esta carta não é afetada por SPELL ou TRAP do oponente.",
+      "desc_en": "EFFECT: When this card is Summoned, halve the ATK and DEF of all monsters on your opponent's field, including DIVINE-BEAST monsters. While this card remains on the field, monsters on your opponent's field lose 500 ATK and DEF at the end of each turn. This card is not affected by your opponent's SPELL or TRAP cards."
+    },
+    {
+      "nome": "The Wicked Eraser",
+      "nome_pt": "The Wicked Eraser",
+      "slug": "the_wicked_eraser",
+      "card_type": "Monster",
+      "tipo": "Fiend",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "fiend",
+      "nivel": "10",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: O ATK e DEF desta carta são iguais ao número de cards que você e seu oponente controlam x 800, incluindo SPELLS, TRAPS, EQUIPS e FIELD ativo. Quando esta carta for destruída e enviada para o GRAVEYARD, destrua todos os cards no campo, incluindo DIVINE-BEASTS, exceto monstros FIEND.",
+      "desc_en": "EFFECT: This card's ATK and DEF are equal to the number of cards you and your opponent control x 800, including SPELLS, TRAPS, EQUIPS, and the active FIELD. When this card is destroyed and sent to the GRAVEYARD, destroy all cards on the field, including DIVINE-BEASTS, except FIEND monsters."
+    },
+    {
       "nome": "The Wicked Worm Beast",
       "nome_pt": "The Wicked Worm Beast",
       "slug": "the_wicked_worm_beast",
@@ -14197,6 +14758,23 @@
       "def": "5000",
       "desc_pt": "EFEITO: No seu turno, pague LP até que você tenha apenas 1 LP restante e Ra ganha ATK/DEF igual a essa quantidade de LPs. Se você encerrar seu turno, devolva todos esses LPs.",
       "desc_en": "EFFECT: At your turn, pay LP so that you only have 1 left and Ra gains ATK/DEF equal to that amount of LPs. If you end your turn, return all of that LPs."
+    },
+    {
+      "nome": "Theinen the Great Sphinx",
+      "nome_pt": "Theinen the Great Sphinx",
+      "slug": "theinen_the_great_sphinx",
+      "card_type": "Monster",
+      "tipo": "Beast",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "beast",
+      "nivel": "10",
+      "atk": "3500",
+      "def": "3000",
+      "desc_pt": "EFEITO: Quando esta carta batalhar, ela ganha 2500 de ATK apenas durante o cálculo de dano.",
+      "desc_en": "EFFECT: When this card battles, it gains 2500 ATK only during damage calculation."
     },
     {
       "nome": "Thousand Dragon",
@@ -14789,6 +15367,23 @@
       "desc_en": "EFFECT: This monster inflicts piercing damage on opponents who are in defense mode."
     },
     {
+      "nome": "Ultimate Baseball Kid",
+      "nome_pt": "Ultimate Baseball Kid",
+      "slug": "ultimate_baseball_kid",
+      "card_type": "Monster",
+      "tipo": "Warrior",
+      "atributo": "FIRE",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "warrior",
+      "nivel": "3",
+      "atk": "500",
+      "def": "1000",
+      "desc_pt": "EFEITO: Quando invocada, esta carta ganha 750 de ATK para cada monstro FIRE em seu campo. Sempre que um monstro FIRE em seu campo participar de uma batalha, cause 500 de dano ao oponente.",
+      "desc_en": "EFFECT: When Summoned, this card gains 750 ATK for each FIRE monster on your field. Whenever a FIRE monster on your field battles, inflict 500 damage to your opponent."
+    },
+    {
       "nome": "Ultimate Flame Swordsman",
       "nome_pt": "Ultimate Flame Swordsman",
       "slug": "ultimate_flame_swordsman",
@@ -14855,6 +15450,23 @@
       "def": "1500",
       "desc_pt": "EFEITO: Quando esta carta é Invocada, diminui em 700 o poder de todos os monstros do oponente.",
       "desc_en": "EFFECT: When this card is Summoned, decrease the power of all opponent's monsters by 700."
+    },
+    {
+      "nome": "Ultimate Obedient Fiend",
+      "nome_pt": "Ultimate Obedient Fiend",
+      "slug": "ultimate_obedient_fiend",
+      "card_type": "Monster",
+      "tipo": "Fiend",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "fiend",
+      "nivel": "10",
+      "atk": "3500",
+      "def": "3000",
+      "desc_pt": "EFEITO: Esta carta não sofre dano de batalha. Os efeitos de monstros destruídos por esta carta em batalha são negados permanentemente pelo restante do duelo — incluindo todas as outras cópias desses monstros no Deck, Mão, Campo ou Cemitério de qualquer jogador.",
+      "desc_en": "EFFECT: This card takes no battle damage. The effects of monsters destroyed by this card in battle are negated permanently for the rest of the Duel — including all other copies of those monsters in either player's Deck, Hand, Field, or Graveyard."
     },
     {
       "nome": "Umi",
@@ -15675,6 +16287,23 @@
       "def": "1800",
       "desc_pt": "EFEITO: Ganha +200 ATK se o Field ativo for Mountain.",
       "desc_en": "EFFECT: Gains +200 ATK if the active Field is Mountain."
+    },
+    {
+      "nome": "Yamata Dragon",
+      "nome_pt": "Yamata Dragon",
+      "slug": "yamata_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "2600",
+      "def": "3100",
+      "desc_pt": "EFEITO: Esta carta retorna à mão do seu dono durante a Fase Final do turno em que foi invocada, a menos que isso deixe seu lado do campo sem nenhum monstro. Quando invocada, você pode atacar até 9 vezes por turno com esta carta, porém ela não pode atacar diretamente os Pontos de Vida do oponente. Se esta carta atacar um monstro em Posição de Defesa, cause dano de batalha perfurante. Esta é uma carta \"Spirit\".",
+      "desc_en": "EFFECT: This card returns to its owner's hand during the End Phase of the turn it was Summoned, unless doing so would leave your side of the field with no monsters. When Summoned, you can attack up to 9 times per turn with this card, but it cannot attack your opponent's Life Points directly. If this card attacks a monster in Defense Position, inflict piercing battle damage. This is a \"Spirit\" card."
     },
     {
       "nome": "Yamatano Dragon Scroll",
