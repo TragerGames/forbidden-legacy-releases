@@ -3,6 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1730849377953646');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1730849377953646&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <title>Forbidden Legacy - Loja</title>
 <meta name="description" content="Loja oficial do Forbidden Legacy com pacotes opcionais para o jogo.">
 <meta property="og:type" content="website">
@@ -1497,6 +1514,10 @@ let _pending=null;
 async function pay(){
   if(!STORE_ENABLED){alert(t('Em breve.','Coming soon.'));return;}
   const d=formData();if(!validate(d))return;
+  // Snapshot pro evento de Purchase do Pixel: selected/quantidade resetam pros
+  // valores padrao quando a pagina recarrega ao voltar do Stripe/Asaas (redirect
+  // completo, estado JS perdido), entao precisa sobreviver via localStorage.
+  localStorage.setItem('fl_pending_purchase',JSON.stringify({packId:selected.id,brlNum:selected.brlNum,usdNum:selected.usdNum,quantidade}));
   if(regionIsBR()){
     _pending=d;
     const precoTotal=formatBRL(selected.brlNum*quantidade);
@@ -1549,6 +1570,7 @@ async function checkPix(){
       document.getElementById('pix-status').textContent=t('Pagamento confirmado.','Payment confirmed.');
       document.getElementById('redeem-code').textContent=data.codigo_resgate||t('Enviado por email','Sent by email');
       document.getElementById('redeem-box').classList.add('visible');
+      if(typeof fbq==='function') fbq('track','Purchase',{value:selected.brlNum*quantidade,currency:'BRL',content_name:selected.id,num_items:quantidade});
     }
   }catch(e){}
 }
@@ -1606,6 +1628,14 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
   const p=new URLSearchParams(location.search);
   if(p.get('stripe_ok')==='1'||p.get('asaas_ok')==='1'){
     alert(t('Pagamento confirmado. Código de Souls enviado por email.','Payment confirmed. Soul code sent by email.'));
+    if(typeof fbq==='function'){
+      const isBR=(typeof regionIsBR==='function')?regionIsBR():true;
+      let pending=null;
+      try{pending=JSON.parse(localStorage.getItem('fl_pending_purchase')||'null');}catch(e){}
+      const pack=pending||{packId:selected.id,brlNum:selected.brlNum,usdNum:selected.usdNum,quantidade};
+      fbq('track','Purchase',{value:isBR?pack.brlNum*pack.quantidade:pack.usdNum*pack.quantidade,currency:isBR?'BRL':'USD',content_name:pack.packId,num_items:pack.quantidade});
+    }
+    localStorage.removeItem('fl_pending_purchase');
     history.replaceState(null,'',location.pathname);
   }
 })();

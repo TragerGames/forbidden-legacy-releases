@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="KAO5qaBiF5yGuoG4A7tP6mT_7efpe4cVr190BVjEAjQ" />
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1730849377953646');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1730849377953646&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <title>Forbidden Legacy — Remake Fã-Feito de YGO Forbidden Memories</title>
   <meta name="description" content="Remake fã-feito de YGO Forbidden Memories (PS1) construído em Godot 4. Duelos rápidos, sistema de fusão, modo campanha, mais de 1000 cartas — grátis para jogar em PC, Android e Linux.">
   <!-- Open Graph / Facebook / Discord / WhatsApp -->
@@ -2611,6 +2628,10 @@ async function stripePagar(currency) {
     const clean = window.location.pathname + (window.location.hash || '');
     history.replaceState(null, '', clean);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof fbq === 'function') {
+      const isBR = (typeof regionIsBR === 'function') ? regionIsBR() : true;
+      fbq('track', 'Purchase', { value: isBR ? 39.90 : 20.00, currency: isBR ? 'BRL' : 'USD', content_name: 'Founder License' });
+    }
   }
 })();
 
@@ -3060,6 +3081,7 @@ async function pixVerificarStatus() {
       _pixLicKey = data.licenca_json || data.licenca || '';
       pixSetStatus('pago');
       pixMostrarLicenca(data.licenca_json || data.licenca || '', data.filename || null);
+      if (typeof fbq === 'function') fbq('track', 'Purchase', { value: 39.90, currency: 'BRL', content_name: 'Founder License' });
     } else if (data.status === 'cancelada' || data.status === 'expirada' || data.status === 'expirado') {
       clearInterval(_pixPollTimer);
       _pixPollTimer = null;
