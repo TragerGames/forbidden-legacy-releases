@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1785279039",
+  "versao": "1786541769",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -15,8 +15,13 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-warrior.webp",
-      "total_tema": 98,
+      "total_tema": 108,
       "cartas_tema": [
+        {
+          "nome": "Acid Trap Hole",
+          "raridade": "UR",
+          "slug": "acid_trap_hole"
+        },
         {
           "nome": "Black Luster Soldier",
           "raridade": "UR",
@@ -67,6 +72,11 @@
           "def": "2200"
         },
         {
+          "nome": "Mirror Force",
+          "raridade": "UR",
+          "slug": "mirror_force"
+        },
+        {
           "nome": "Phoenix Gearfried",
           "raridade": "UR",
           "slug": "phoenix_gearfried",
@@ -114,6 +124,11 @@
           "slug": "wall_shadow",
           "atk": "1600",
           "def": "3000"
+        },
+        {
+          "nome": "Widespread Ruin",
+          "raridade": "UR",
+          "slug": "widespread_ruin"
         },
         {
           "nome": "Beautiful Beast Trainer",
@@ -172,6 +187,11 @@
           "def": "1600"
         },
         {
+          "nome": "Horn of the Unicorn",
+          "raridade": "SR",
+          "slug": "horn_of_the_unicorn"
+        },
+        {
           "nome": "Hungry Burger",
           "raridade": "SR",
           "slug": "hungry_burger",
@@ -207,6 +227,11 @@
           "def": "1700"
         },
         {
+          "nome": "Ring of Destruction",
+          "raridade": "SR",
+          "slug": "ring_of_destruction"
+        },
+        {
           "nome": "Rocket Warrior",
           "raridade": "SR",
           "slug": "rocket_warrior",
@@ -219,6 +244,11 @@
           "slug": "silent_swordsman_lv5",
           "atk": "2300",
           "def": "1000"
+        },
+        {
+          "nome": "Sogen",
+          "raridade": "SR",
+          "slug": "sogen"
         },
         {
           "nome": "Ansatsu",
@@ -249,6 +279,11 @@
           "def": "1200"
         },
         {
+          "nome": "Cursebreaker",
+          "raridade": "R",
+          "slug": "cursebreaker"
+        },
+        {
           "nome": "Dark Blade",
           "raridade": "R",
           "slug": "dark_blade",
@@ -261,6 +296,11 @@
           "slug": "empress_judge",
           "atk": "2100",
           "def": "1700"
+        },
+        {
+          "nome": "Follow Wind",
+          "raridade": "R",
+          "slug": "follow_wind"
         },
         {
           "nome": "Giltia the D. Knight",
@@ -319,6 +359,11 @@
           "def": "1800"
         },
         {
+          "nome": "Mask of Restrict",
+          "raridade": "R",
+          "slug": "mask_of_restrict"
+        },
+        {
           "nome": "Millennium Shield",
           "raridade": "R",
           "slug": "millennium_shield",
@@ -352,6 +397,11 @@
           "slug": "silent_swordsman_lv3",
           "atk": "1000",
           "def": "1000"
+        },
+        {
+          "nome": "Steel Shell",
+          "raridade": "R",
+          "slug": "steel_shell"
         },
         {
           "nome": "Succubus Knight",
@@ -718,7 +768,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-fiend.webp",
-      "total_tema": 85,
+      "total_tema": 95,
       "cartas_tema": [
         {
           "nome": "Archfiend Emperor",
@@ -733,6 +783,11 @@
           "slug": "archfiend_empress",
           "atk": "2900",
           "def": "2100"
+        },
+        {
+          "nome": "Axe of Despair",
+          "raridade": "UR",
+          "slug": "axe_of_despair"
         },
         {
           "nome": "Bickuribox",
@@ -777,6 +832,11 @@
           "def": "2500"
         },
         {
+          "nome": "Nightmare Wheel",
+          "raridade": "UR",
+          "slug": "nightmare_wheel"
+        },
+        {
           "nome": "Summoned Skull",
           "raridade": "UR",
           "slug": "summoned_skull",
@@ -796,6 +856,11 @@
           "slug": "zera_the_mant",
           "atk": "2800",
           "def": "2300"
+        },
+        {
+          "nome": "Aqua Jet",
+          "raridade": "SR",
+          "slug": "aqua_jet"
         },
         {
           "nome": "Archfiend Soldier",
@@ -854,6 +919,11 @@
           "def": "2000"
         },
         {
+          "nome": "Invigoration",
+          "raridade": "SR",
+          "slug": "invigoration"
+        },
+        {
           "nome": "Núcleo Diabound",
           "raridade": "SR",
           "slug": "nucleo_diabound",
@@ -873,6 +943,11 @@
           "slug": "reaper_of_the_cards",
           "atk": "1380",
           "def": "1930"
+        },
+        {
+          "nome": "Rock Bombardment",
+          "raridade": "SR",
+          "slug": "rock_bombardment"
         },
         {
           "nome": "Soul Hunter",
@@ -901,6 +976,11 @@
           "slug": "wall_of_illusion",
           "atk": "1000",
           "def": "1850"
+        },
+        {
+          "nome": "Yami",
+          "raridade": "SR",
+          "slug": "yami"
         },
         {
           "nome": "Zoa",
@@ -938,6 +1018,11 @@
           "def": "1400"
         },
         {
+          "nome": "Cyber Shield",
+          "raridade": "R",
+          "slug": "cyber_shield"
+        },
+        {
           "nome": "Dark Chimera",
           "raridade": "R",
           "slug": "dark_chimera",
@@ -957,6 +1042,11 @@
           "slug": "fiends_mirror",
           "atk": "2100",
           "def": "1800"
+        },
+        {
+          "nome": "Goblin Fan",
+          "raridade": "R",
+          "slug": "goblin_fan"
         },
         {
           "nome": "King of Yamimakai",
@@ -994,6 +1084,11 @@
           "def": "2150"
         },
         {
+          "nome": "Mirror of Yata",
+          "raridade": "R",
+          "slug": "mirror_of_yata"
+        },
+        {
           "nome": "Morinphen",
           "raridade": "R",
           "slug": "morinphen",
@@ -1013,6 +1108,11 @@
           "slug": "ryu-kishin_powered",
           "atk": "1600",
           "def": "1200"
+        },
+        {
+          "nome": "Stop Defense",
+          "raridade": "R",
+          "slug": "stop_defense"
         },
         {
           "nome": "The Bistro Butcher",
@@ -1330,21 +1430,12 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-spellcaster.webp",
-      "total_tema": 83,
+      "total_tema": 87,
       "cartas_tema": [
         {
-          "nome": "Chaos Command Magician",
+          "nome": "Bright Castle",
           "raridade": "UR",
-          "slug": "chaos_command_magician",
-          "atk": "2400",
-          "def": "1900"
-        },
-        {
-          "nome": "Chaos Sorcerer",
-          "raridade": "UR",
-          "slug": "chaos_sorcerer",
-          "atk": "2300",
-          "def": "2000"
+          "slug": "bright_castle"
         },
         {
           "nome": "Cosmo Queen",
@@ -1373,13 +1464,6 @@
           "slug": "dark_magician_girl",
           "atk": "2000",
           "def": "1700"
-        },
-        {
-          "nome": "Dark Magician of Chaos",
-          "raridade": "UR",
-          "slug": "dark_magician_of_chaos",
-          "atk": "2800",
-          "def": "2600"
         },
         {
           "nome": "Dark Paladin",
@@ -1438,13 +1522,6 @@
           "def": "2000"
         },
         {
-          "nome": "Magician of Black Chaos",
-          "raridade": "UR",
-          "slug": "magician_of_black_chaos",
-          "atk": "2800",
-          "def": "2600"
-        },
-        {
           "nome": "Magician of chaos",
           "raridade": "UR",
           "slug": "magician_of_chaos",
@@ -1452,11 +1529,9 @@
           "def": "2100"
         },
         {
-          "nome": "Master of Chaos",
+          "nome": "Ookazi",
           "raridade": "UR",
-          "slug": "master_of_chaos",
-          "atk": "3000",
-          "def": "2500"
+          "slug": "ookazi"
         },
         {
           "nome": "Palladium Oracle Mahad",
@@ -1508,6 +1583,11 @@
           "def": "1600"
         },
         {
+          "nome": "Backfire",
+          "raridade": "SR",
+          "slug": "backfire"
+        },
+        {
           "nome": "Breaker the Magical Warrior",
           "raridade": "SR",
           "slug": "breaker_the_magical_warrior",
@@ -1534,6 +1614,11 @@
           "slug": "fire_sorcerer",
           "atk": "1000",
           "def": "1500"
+        },
+        {
+          "nome": "Jam Defender",
+          "raridade": "SR",
+          "slug": "jam_defender"
         },
         {
           "nome": "Kazejin",
@@ -1564,6 +1649,11 @@
           "def": "1800"
         },
         {
+          "nome": "Skull Dice",
+          "raridade": "SR",
+          "slug": "skull_dice"
+        },
+        {
           "nome": "Sparkhearts Girl",
           "raridade": "SR",
           "slug": "sparkhearts_girl",
@@ -1592,6 +1682,11 @@
           "def": "800"
         },
         {
+          "nome": "Dark-Piercing Light",
+          "raridade": "R",
+          "slug": "dark-piercing_light"
+        },
+        {
           "nome": "Dryad",
           "raridade": "R",
           "slug": "dryad",
@@ -1611,6 +1706,11 @@
           "slug": "genin",
           "atk": "600",
           "def": "900"
+        },
+        {
+          "nome": "Goblin's Secret Remedy",
+          "raridade": "R",
+          "slug": "goblins_secret_remedy"
         },
         {
           "nome": "Ill Witch",
@@ -1662,6 +1762,11 @@
           "def": "1800"
         },
         {
+          "nome": "Mooyan Curry",
+          "raridade": "R",
+          "slug": "mooyan_curry"
+        },
+        {
           "nome": "Musician King",
           "raridade": "R",
           "slug": "musician_king",
@@ -1709,6 +1814,11 @@
           "slug": "spirit_of_the_winds",
           "atk": "1700",
           "def": "1400"
+        },
+        {
+          "nome": "Sword of Dark Destruction",
+          "raridade": "R",
+          "slug": "sword_of_dark_destruction"
         },
         {
           "nome": "Time Wizard",
@@ -1928,7 +2038,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-dragon.webp",
-      "total_tema": 59,
+      "total_tema": 67,
       "cartas_tema": [
         {
           "nome": "Armed Dragon LV10",
@@ -1994,11 +2104,9 @@
           "def": "2500"
         },
         {
-          "nome": "Chaos Emperor Dragon",
+          "nome": "Crush Card",
           "raridade": "UR",
-          "slug": "chaos_emperor_dragon",
-          "atk": "3000",
-          "def": "2500"
+          "slug": "crush_card"
         },
         {
           "nome": "Curse of Dragon",
@@ -2029,13 +2137,6 @@
           "def": "5000"
         },
         {
-          "nome": "Gaia the Dragon Champion",
-          "raridade": "UR",
-          "slug": "gaia_the_dragon_champion",
-          "atk": "2600",
-          "def": "2100"
-        },
-        {
           "nome": "Horus the Black Flame Dragon LV6",
           "raridade": "UR",
           "slug": "horus_the_black_flame_dragon_lv6",
@@ -2064,6 +2165,11 @@
           "def": "1100"
         },
         {
+          "nome": "Raigeki",
+          "raridade": "UR",
+          "slug": "raigeki"
+        },
+        {
           "nome": "Ruddy Rose Dragon",
           "raridade": "UR",
           "slug": "ruddy_rose_dragon",
@@ -2090,6 +2196,11 @@
           "slug": "alligators_sword_dragon",
           "atk": "1700",
           "def": "1500"
+        },
+        {
+          "nome": "Beast Fangs",
+          "raridade": "SR",
+          "slug": "beast_fangs"
         },
         {
           "nome": "Buster Dragon",
@@ -2155,11 +2266,21 @@
           "def": "2000"
         },
         {
+          "nome": "Kunai with Chain",
+          "raridade": "SR",
+          "slug": "kunai_with_chain"
+        },
+        {
           "nome": "Mikazukinoyaiba",
           "raridade": "SR",
           "slug": "mikazukinoyaiba",
           "atk": "2200",
           "def": "2350"
+        },
+        {
+          "nome": "Mountain",
+          "raridade": "SR",
+          "slug": "mountain"
         },
         {
           "nome": "Paladin of White Dragon",
@@ -2181,6 +2302,11 @@
           "slug": "spear_dragon",
           "atk": "1900",
           "def": "0"
+        },
+        {
+          "nome": "Spellbinding Circle",
+          "raridade": "SR",
+          "slug": "spellbinding_circle"
         },
         {
           "nome": "The White Stone of Legend",
@@ -2232,6 +2358,16 @@
           "def": "1000"
         },
         {
+          "nome": "Dragon Treasure",
+          "raridade": "R",
+          "slug": "dragon_treasure"
+        },
+        {
+          "nome": "Hinotama",
+          "raridade": "R",
+          "slug": "hinotama"
+        },
+        {
           "nome": "Koumori Dragon",
           "raridade": "R",
           "slug": "koumori_dragon",
@@ -2253,6 +2389,11 @@
           "def": "1300"
         },
         {
+          "nome": "Power of Kaishin",
+          "raridade": "R",
+          "slug": "power_of_kaishin"
+        },
+        {
           "nome": "Sky Dragon",
           "raridade": "R",
           "slug": "sky_dragon",
@@ -2265,6 +2406,11 @@
           "slug": "tyhone_2",
           "atk": "1700",
           "def": "1900"
+        },
+        {
+          "nome": "Vile Germs",
+          "raridade": "R",
+          "slug": "vile_germs"
         },
         {
           "nome": "Winged Dragon #1",
@@ -2358,8 +2504,13 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-aqua.webp",
-      "total_tema": 70,
+      "total_tema": 80,
       "cartas_tema": [
+        {
+          "nome": "Crush Card Virus",
+          "raridade": "UR",
+          "slug": "crush_card_virus"
+        },
         {
           "nome": "D.3.S. Frog",
           "raridade": "UR",
@@ -2380,6 +2531,16 @@
           "slug": "roaring_ocean_snake",
           "atk": "2100",
           "def": "1800"
+        },
+        {
+          "nome": "Sakuretsu Armor",
+          "raridade": "UR",
+          "slug": "sakuretsu_armor"
+        },
+        {
+          "nome": "Black Pendant",
+          "raridade": "SR",
+          "slug": "black_pendant"
         },
         {
           "nome": "Catapult Turtle",
@@ -2410,11 +2571,21 @@
           "def": "2000"
         },
         {
+          "nome": "Level Up!",
+          "raridade": "SR",
+          "slug": "level_up"
+        },
+        {
           "nome": "Revival Jam",
           "raridade": "SR",
           "slug": "revival_jam",
           "atk": "1500",
           "def": "500"
+        },
+        {
+          "nome": "Spirit Illusion",
+          "raridade": "SR",
+          "slug": "spirit_illusion"
         },
         {
           "nome": "Submarine Frog",
@@ -2436,6 +2607,11 @@
           "slug": "treeborn_frog",
           "atk": "100",
           "def": "100"
+        },
+        {
+          "nome": "Umi",
+          "raridade": "SR",
+          "slug": "umi"
         },
         {
           "nome": "30,000-Year White Turtle",
@@ -2464,6 +2640,11 @@
           "slug": "boulder_tortoise",
           "atk": "1450",
           "def": "2200"
+        },
+        {
+          "nome": "Eatgaboon",
+          "raridade": "R",
+          "slug": "eatgaboon"
         },
         {
           "nome": "Fairy of the Fountain",
@@ -2501,6 +2682,11 @@
           "def": "1300"
         },
         {
+          "nome": "House of Adhesive Tape",
+          "raridade": "R",
+          "slug": "house_of_adhesive_tape"
+        },
+        {
           "nome": "Humanoid Slime",
           "raridade": "R",
           "slug": "humanoid_slime",
@@ -2536,6 +2722,11 @@
           "def": "1400"
         },
         {
+          "nome": "Raise Body Heat",
+          "raridade": "R",
+          "slug": "raise_body_heat"
+        },
+        {
           "nome": "Turtle Bird",
           "raridade": "R",
           "slug": "turtle_bird",
@@ -2548,6 +2739,11 @@
           "slug": "violent_rain",
           "atk": "1550",
           "def": "800"
+        },
+        {
+          "nome": "Violet Crystal",
+          "raridade": "R",
+          "slug": "violet_crystal"
         },
         {
           "nome": "Ameba",
@@ -2865,7 +3061,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-machine.webp",
-      "total_tema": 62,
+      "total_tema": 71,
       "cartas_tema": [
         {
           "nome": "Ancient Gear Golem",
@@ -2894,6 +3090,11 @@
           "slug": "cyber-tech_alligator",
           "atk": "2500",
           "def": "1600"
+        },
+        {
+          "nome": "Dark Hole",
+          "raridade": "UR",
+          "slug": "dark_hole"
         },
         {
           "nome": "Fusilier Dragon",
@@ -2938,6 +3139,11 @@
           "def": "2300"
         },
         {
+          "nome": "Salamandra",
+          "raridade": "UR",
+          "slug": "salamandra"
+        },
+        {
           "nome": "Ultimate Ancient Gear Golem",
           "raridade": "UR",
           "slug": "ultimate_ancient_gear_golem",
@@ -2966,11 +3172,21 @@
           "def": "1600"
         },
         {
+          "nome": "Dark Energy",
+          "raridade": "SR",
+          "slug": "dark_energy"
+        },
+        {
           "nome": "Labyrinth Tank",
           "raridade": "SR",
           "slug": "labyrinth_tank",
           "atk": "2400",
           "def": "2400"
+        },
+        {
+          "nome": "Lightning Blade",
+          "raridade": "SR",
+          "slug": "lightning_blade"
         },
         {
           "nome": "Robotic Knight",
@@ -2985,6 +3201,11 @@
           "slug": "royal_guard",
           "atk": "1900",
           "def": "2200"
+        },
+        {
+          "nome": "Spirit's Invitation",
+          "raridade": "SR",
+          "slug": "spirits_invitation"
         },
         {
           "nome": "Ancient Gear",
@@ -3043,6 +3264,11 @@
           "def": "1800"
         },
         {
+          "nome": "Electro-Whip",
+          "raridade": "R",
+          "slug": "electro-whip"
+        },
+        {
           "nome": "Gatekeeper",
           "raridade": "R",
           "slug": "gatekeeper",
@@ -3076,6 +3302,11 @@
           "slug": "guardian_of_the_throne_room",
           "atk": "1650",
           "def": "1600"
+        },
+        {
+          "nome": "Insect Armor with Laser Cannon",
+          "raridade": "R",
+          "slug": "insect_armor_with_laser_cannon"
         },
         {
           "nome": "Machine Attacker",
@@ -3141,6 +3372,11 @@
           "def": "600"
         },
         {
+          "nome": "Red Medicine",
+          "raridade": "R",
+          "slug": "red_medicine"
+        },
+        {
           "nome": "Saber Slasher",
           "raridade": "R",
           "slug": "saber_slasher",
@@ -3153,6 +3389,11 @@
           "slug": "steel_ogre_grotto_1",
           "atk": "1400",
           "def": "1800"
+        },
+        {
+          "nome": "Warrior Elimination",
+          "raridade": "R",
+          "slug": "warrior_elimination"
         },
         {
           "nome": "Bat",
@@ -3316,7 +3557,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-beast.webp",
-      "total_tema": 52,
+      "total_tema": 62,
       "cartas_tema": [
         {
           "nome": "Big Koala",
@@ -3338,6 +3579,11 @@
           "slug": "chimera_the_king_of_phantom_beasts",
           "atk": "2100",
           "def": "1800"
+        },
+        {
+          "nome": "Dian Keto the Cure Master",
+          "raridade": "UR",
+          "slug": "dian_keto_the_cure_master"
         },
         {
           "nome": "Lightning Tricorn",
@@ -3368,6 +3614,11 @@
           "def": "2400"
         },
         {
+          "nome": "Shadow Spell",
+          "raridade": "UR",
+          "slug": "shadow_spell"
+        },
+        {
           "nome": "Super War-Lion",
           "raridade": "UR",
           "slug": "super_war-lion",
@@ -3382,6 +3633,11 @@
           "def": "1800"
         },
         {
+          "nome": "Dark Mirror Force",
+          "raridade": "SR",
+          "slug": "dark_mirror_force"
+        },
+        {
           "nome": "Firewing Pegasus",
           "raridade": "SR",
           "slug": "firewing_pegasus",
@@ -3389,11 +3645,26 @@
           "def": "1800"
         },
         {
+          "nome": "Forest",
+          "raridade": "SR",
+          "slug": "forest"
+        },
+        {
           "nome": "Mad Dog of Darkness",
           "raridade": "SR",
           "slug": "mad_dog_of_darkness",
           "atk": "1900",
           "def": "1400"
+        },
+        {
+          "nome": "Max Metalmorph",
+          "raridade": "SR",
+          "slug": "max_metalmorph"
+        },
+        {
+          "nome": "Sword of Dark Rites",
+          "raridade": "SR",
+          "slug": "sword_of_dark_rites"
         },
         {
           "nome": "Alligator's Sword",
@@ -3408,6 +3679,11 @@
           "slug": "ancient_one_of_the_deep_forest",
           "atk": "1800",
           "def": "1900"
+        },
+        {
+          "nome": "Elegant Egotist",
+          "raridade": "R",
+          "slug": "elegant_egotist"
         },
         {
           "nome": "Flower Wolf",
@@ -3445,6 +3721,11 @@
           "def": "1500"
         },
         {
+          "nome": "Invisible Wire",
+          "raridade": "R",
+          "slug": "invisible_wire"
+        },
+        {
           "nome": "Leogun",
           "raridade": "R",
           "slug": "leogun",
@@ -3480,6 +3761,11 @@
           "def": "1200"
         },
         {
+          "nome": "Release Restraint",
+          "raridade": "R",
+          "slug": "release_restraint"
+        },
+        {
           "nome": "Tatsunootoshigo",
           "raridade": "R",
           "slug": "tatsunootoshigo",
@@ -3492,6 +3778,11 @@
           "slug": "togex",
           "atk": "1600",
           "def": "1800"
+        },
+        {
+          "nome": "Windstorm of Etaqua",
+          "raridade": "R",
+          "slug": "windstorm_of_etaqua"
         },
         {
           "nome": "Air Marmot of Nefariousness",
@@ -3697,8 +3988,13 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-insect.webp",
-      "total_tema": 40,
+      "total_tema": 49,
       "cartas_tema": [
+        {
+          "nome": "Dragon Capture Jar",
+          "raridade": "UR",
+          "slug": "dragon_capture_jar"
+        },
         {
           "nome": "Great Moth",
           "raridade": "UR",
@@ -3728,6 +4024,11 @@
           "def": "3000"
         },
         {
+          "nome": "Shrink",
+          "raridade": "UR",
+          "slug": "shrink"
+        },
+        {
           "nome": "Ultimate Insect LV5",
           "raridade": "UR",
           "slug": "ultimate_insect_lv5",
@@ -3740,6 +4041,11 @@
           "slug": "ultimate_insect_lv7",
           "atk": "2600",
           "def": "1500"
+        },
+        {
+          "nome": "Destruction Ring",
+          "raridade": "SR",
+          "slug": "destruction_ring"
         },
         {
           "nome": "Dungeon Worm",
@@ -3763,6 +4069,11 @@
           "def": "600"
         },
         {
+          "nome": "Metalmorph",
+          "raridade": "SR",
+          "slug": "metalmorph"
+        },
+        {
           "nome": "Ultimate Insect LV3",
           "raridade": "SR",
           "slug": "ultimate_insect_lv3",
@@ -3770,11 +4081,21 @@
           "def": "900"
         },
         {
+          "nome": "Attack The Moon!",
+          "raridade": "R",
+          "slug": "attack_the_moon"
+        },
+        {
           "nome": "Big Insect",
           "raridade": "R",
           "slug": "big_insect",
           "atk": "1200",
           "def": "1500"
+        },
+        {
+          "nome": "Enchanted Javelin",
+          "raridade": "R",
+          "slug": "enchanted_javelin"
         },
         {
           "nome": "Hercules Beetle",
@@ -3791,11 +4112,26 @@
           "def": "1400"
         },
         {
+          "nome": "Jurassic Power",
+          "raridade": "R",
+          "slug": "jurassic_power"
+        },
+        {
           "nome": "Kwagar Hercules",
           "raridade": "R",
           "slug": "kwagar_hercules",
           "atk": "1900",
           "def": "1700"
+        },
+        {
+          "nome": "Shield & Sword",
+          "raridade": "R",
+          "slug": "shield_sword"
+        },
+        {
+          "nome": "Winged Trumpeter",
+          "raridade": "R",
+          "slug": "winged_trumpeter"
         },
         {
           "nome": "Acid Crawler",
@@ -3994,7 +4330,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-zombie.webp",
-      "total_tema": 34,
+      "total_tema": 43,
       "cartas_tema": [
         {
           "nome": "Dokurorider",
@@ -4004,6 +4340,11 @@
           "def": "1850"
         },
         {
+          "nome": "Evil Swords of Dark Light",
+          "raridade": "UR",
+          "slug": "evil_swords_of_dark_light"
+        },
+        {
           "nome": "King of The Skull Servants",
           "raridade": "UR",
           "slug": "king_of_the_skull_servants",
@@ -4011,11 +4352,21 @@
           "def": "????"
         },
         {
+          "nome": "Spiritual Energy Settle Machine",
+          "raridade": "UR",
+          "slug": "spiritual_energy_settle_machine"
+        },
+        {
           "nome": "Despair From The Dark",
           "raridade": "SR",
           "slug": "despair_from_the_dark",
           "atk": "2800",
           "def": "3000"
+        },
+        {
+          "nome": "Divine Wrath",
+          "raridade": "SR",
+          "slug": "divine_wrath"
         },
         {
           "nome": "Fear From The Dark",
@@ -4030,6 +4381,11 @@
           "slug": "great_mammoth_of_goldfine",
           "atk": "2200",
           "def": "1800"
+        },
+        {
+          "nome": "Mystical Moon",
+          "raridade": "SR",
+          "slug": "mystical_moon"
         },
         {
           "nome": "Pumpking the King of Ghosts",
@@ -4053,11 +4409,36 @@
           "def": "1200"
         },
         {
+          "nome": "Wasteland",
+          "raridade": "SR",
+          "slug": "wasteland"
+        },
+        {
+          "nome": "Bad Reaction to Simochi",
+          "raridade": "R",
+          "slug": "bad_reaction_to_simochi"
+        },
+        {
+          "nome": "Eradicating Aerosol",
+          "raridade": "R",
+          "slug": "eradicating_aerosol"
+        },
+        {
+          "nome": "Laser Cannon Armor",
+          "raridade": "R",
+          "slug": "laser_cannon_armor"
+        },
+        {
           "nome": "Magical Ghost",
           "raridade": "R",
           "slug": "magical_ghost",
           "atk": "1300",
           "def": "1400"
+        },
+        {
+          "nome": "Silver Bow and Arrow",
+          "raridade": "R",
+          "slug": "silver_bow_and_arrow"
         },
         {
           "nome": "Armored Zombie",
@@ -4249,7 +4630,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-plant.webp",
-      "total_tema": 33,
+      "total_tema": 41,
       "cartas_tema": [
         {
           "nome": "Fallen Angel of Roses",
@@ -4264,6 +4645,11 @@
           "slug": "gigaplant",
           "atk": "2400",
           "def": "1200"
+        },
+        {
+          "nome": "Harpie's Feather Duster",
+          "raridade": "UR",
+          "slug": "harpies_feather_duster"
         },
         {
           "nome": "Marina, Princess of Sunflowers",
@@ -4294,6 +4680,11 @@
           "def": "1800"
         },
         {
+          "nome": "Sword of Kusanagi",
+          "raridade": "UR",
+          "slug": "sword_of_kusanagi"
+        },
+        {
           "nome": "Talaya, Princess of Cherry Blossoms",
           "raridade": "UR",
           "slug": "talaya_princess_of_cherry_blossoms",
@@ -4315,6 +4706,11 @@
           "def": "900"
         },
         {
+          "nome": "Draining Shield",
+          "raridade": "SR",
+          "slug": "draining_shield"
+        },
+        {
           "nome": "Gigantic Cephalotus",
           "raridade": "SR",
           "slug": "gigantic_cephalotus",
@@ -4327,6 +4723,11 @@
           "slug": "mystic_tomato",
           "atk": "1400",
           "def": "1000"
+        },
+        {
+          "nome": "Negate Attack",
+          "raridade": "SR",
+          "slug": "negate_attack"
         },
         {
           "nome": "Queen of Autumn Leaves",
@@ -4348,6 +4749,26 @@
           "slug": "bean_soldier",
           "atk": "1400",
           "def": "1300"
+        },
+        {
+          "nome": "Bear Trap",
+          "raridade": "R",
+          "slug": "bear_trap"
+        },
+        {
+          "nome": "Eternal Draught",
+          "raridade": "R",
+          "slug": "eternal_draught"
+        },
+        {
+          "nome": "Legendary Sword",
+          "raridade": "R",
+          "slug": "legendary_sword"
+        },
+        {
+          "nome": "Soul of Fire",
+          "raridade": "R",
+          "slug": "soul_of_fire"
         },
         {
           "nome": "Trent",
@@ -4497,14 +4918,26 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-rock.webp",
-      "total_tema": 31,
+      "total_tema": 46,
       "cartas_tema": [
+        {
+          "nome": "Exxod, Master of The Guard",
+          "raridade": "UR",
+          "slug": "exxod_master_of_the_guard",
+          "atk": "0",
+          "def": "4000"
+        },
         {
           "nome": "Fossil Dragon Skullgios",
           "raridade": "UR",
           "slug": "fossil_dragon_skullgios",
           "atk": "3500",
           "def": "0"
+        },
+        {
+          "nome": "Kickfire",
+          "raridade": "UR",
+          "slug": "kickfire"
         },
         {
           "nome": "Megarock Dragon",
@@ -4528,6 +4961,33 @@
           "def": "1700"
         },
         {
+          "nome": "Pyramid of Light",
+          "raridade": "UR",
+          "slug": "pyramid_of_light"
+        },
+        {
+          "nome": "Swords of Revealing Light",
+          "raridade": "UR",
+          "slug": "swords_of_revealing_light"
+        },
+        {
+          "nome": "Criosphinx",
+          "raridade": "SR",
+          "slug": "criosphinx",
+          "atk": "1200",
+          "def": "2400"
+        },
+        {
+          "nome": "Dimension Sphinx",
+          "raridade": "SR",
+          "slug": "dimension_sphinx"
+        },
+        {
+          "nome": "Elf's Light",
+          "raridade": "SR",
+          "slug": "elfs_light"
+        },
+        {
           "nome": "Enraged Muka Muka",
           "raridade": "SR",
           "slug": "enraged_muka_muka",
@@ -4549,11 +5009,37 @@
           "def": "2400"
         },
         {
+          "nome": "Hieracosphinx",
+          "raridade": "SR",
+          "slug": "hieracosphinx",
+          "atk": "2400",
+          "def": "1200"
+        },
+        {
           "nome": "Mine Golem",
           "raridade": "SR",
           "slug": "mine_golem",
           "atk": "1000",
           "def": "1900"
+        },
+        {
+          "nome": "Path to Atlantis",
+          "raridade": "SR",
+          "slug": "path_to_atlantis"
+        },
+        {
+          "nome": "Pharaonic Guardian Sphinx",
+          "raridade": "SR",
+          "slug": "pharaonic_guardian_sphinx",
+          "atk": "2300",
+          "def": "3000"
+        },
+        {
+          "nome": "Sphinx of the Cycle",
+          "raridade": "SR",
+          "slug": "sphinx_of_the_cycle",
+          "atk": "2500",
+          "def": "3000"
         },
         {
           "nome": "Stone D.",
@@ -4563,11 +5049,21 @@
           "def": "2300"
         },
         {
+          "nome": "Book of Secret Arts",
+          "raridade": "R",
+          "slug": "book_of_secret_arts"
+        },
+        {
           "nome": "Destroyer Golem",
           "raridade": "R",
           "slug": "destroyer_golem",
           "atk": "1500",
           "def": "1000"
+        },
+        {
+          "nome": "Eternal Rest",
+          "raridade": "R",
+          "slug": "eternal_rest"
         },
         {
           "nome": "Fossil Dyna Pachycephalo",
@@ -4591,6 +5087,11 @@
           "def": "3000"
         },
         {
+          "nome": "Machine Conversion Factory",
+          "raridade": "R",
+          "slug": "machine_conversion_factory"
+        },
+        {
           "nome": "Muka Muka",
           "raridade": "R",
           "slug": "muka_muka",
@@ -4603,6 +5104,11 @@
           "slug": "sand_stone",
           "atk": "1300",
           "def": "1600"
+        },
+        {
+          "nome": "Soul of the Pure",
+          "raridade": "R",
+          "slug": "soul_of_the_pure"
         },
         {
           "nome": "Stone Ogre Grotto",
@@ -4731,14 +5237,24 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-fairy.webp",
-      "total_tema": 29,
+      "total_tema": 37,
       "cartas_tema": [
+        {
+          "nome": "Malevolent Nuzzler",
+          "raridade": "UR",
+          "slug": "malevolent_nuzzler"
+        },
         {
           "nome": "Shinato, King of a Higher Plane",
           "raridade": "UR",
           "slug": "shinato_king_of_a_higher_plane",
           "atk": "3300",
           "def": "3000"
+        },
+        {
+          "nome": "Torrential Tribute",
+          "raridade": "UR",
+          "slug": "torrential_tribute"
         },
         {
           "nome": "Vennu, Bright Bird of Divinity",
@@ -4748,6 +5264,11 @@
           "def": "2000"
         },
         {
+          "nome": "Fengsheng Mirror",
+          "raridade": "SR",
+          "slug": "fengsheng_mirror"
+        },
+        {
           "nome": "Goddess with the Third Eye",
           "raridade": "SR",
           "slug": "goddess_with_the_third_eye",
@@ -4755,11 +5276,21 @@
           "def": "1000"
         },
         {
+          "nome": "Reinforcements",
+          "raridade": "SR",
+          "slug": "reinforcements"
+        },
+        {
           "nome": "Shining Angel",
           "raridade": "SR",
           "slug": "shining_angel",
           "atk": "1400",
           "def": "800"
+        },
+        {
+          "nome": "Breath of Light",
+          "raridade": "R",
+          "slug": "breath_of_light"
         },
         {
           "nome": "Dark Witch",
@@ -4776,11 +5307,21 @@
           "def": "1400"
         },
         {
+          "nome": "Fake Trap",
+          "raridade": "R",
+          "slug": "fake_trap"
+        },
+        {
           "nome": "Gyakutenno Megami",
           "raridade": "R",
           "slug": "gyakutenno_megami",
           "atk": "1800",
           "def": "2000"
+        },
+        {
+          "nome": "Magic Formula",
+          "raridade": "R",
+          "slug": "magic_formula"
         },
         {
           "nome": "Ocubeam",
@@ -4795,6 +5336,11 @@
           "slug": "orion_the_battle_king",
           "atk": "1800",
           "def": "1500"
+        },
+        {
+          "nome": "Sparks",
+          "raridade": "R",
+          "slug": "sparks"
         },
         {
           "nome": "Winged Egg of New Life",
@@ -4951,7 +5497,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-rare_creatures.webp",
-      "total_tema": 140,
+      "total_tema": 151,
       "cartas_tema": [
         {
           "nome": "Amphibian Beast",
@@ -5052,6 +5598,11 @@
           "def": "2000"
         },
         {
+          "nome": "Megamorph",
+          "raridade": "UR",
+          "slug": "megamorph"
+        },
+        {
           "nome": "Ocean Dragon Lord - Neo-Daedalus",
           "raridade": "UR",
           "slug": "ocean_dragon_lord_-_neo-daedalus",
@@ -5101,6 +5652,11 @@
           "def": "3200"
         },
         {
+          "nome": "Tremendous Fire",
+          "raridade": "UR",
+          "slug": "tremendous_fire"
+        },
+        {
           "nome": "Twin-Headed Thunder Dragon",
           "raridade": "UR",
           "slug": "twin-headed_thunder_dragon",
@@ -5122,6 +5678,13 @@
           "def": "1800"
         },
         {
+          "nome": "Divine Dragon Aquabizarre",
+          "raridade": "SR",
+          "slug": "divine_dragon_aquabizarre",
+          "atk": "2100",
+          "def": "1500"
+        },
+        {
           "nome": "Exarion Universe",
           "raridade": "SR",
           "slug": "exarion_universe",
@@ -5134,6 +5697,11 @@
           "slug": "gagagigo",
           "atk": "1850",
           "def": "1000"
+        },
+        {
+          "nome": "Horn of Light",
+          "raridade": "SR",
+          "slug": "horn_of_light"
         },
         {
           "nome": "Infernal Flame Emperor",
@@ -5171,6 +5739,13 @@
           "def": "500"
         },
         {
+          "nome": "Levia-Dragon - Daedalus",
+          "raridade": "SR",
+          "slug": "levia-dragon_-_daedalus",
+          "atk": "2600",
+          "def": "1500"
+        },
+        {
           "nome": "Lion Alligator",
           "raridade": "SR",
           "slug": "lion_alligator",
@@ -5197,6 +5772,11 @@
           "slug": "panther_warrior",
           "atk": "2000",
           "def": "1600"
+        },
+        {
+          "nome": "Reverse Trap",
+          "raridade": "SR",
+          "slug": "reverse_trap"
         },
         {
           "nome": "Sanga of the Thunder",
@@ -5304,6 +5884,18 @@
           "def": "1700"
         },
         {
+          "nome": "Burning Spear",
+          "raridade": "R",
+          "slug": "burning_spear"
+        },
+        {
+          "nome": "Codarus",
+          "raridade": "R",
+          "slug": "codarus",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
           "nome": "Crawling Dragon #2",
           "raridade": "R",
           "slug": "crawling_dragon_2",
@@ -5367,6 +5959,11 @@
           "def": "1400"
         },
         {
+          "nome": "Final Flame",
+          "raridade": "R",
+          "slug": "final_flame"
+        },
+        {
           "nome": "Garoozis",
           "raridade": "R",
           "slug": "garoozis",
@@ -5400,6 +5997,11 @@
           "slug": "kaminari_attack",
           "atk": "1900",
           "def": "1400"
+        },
+        {
+          "nome": "Magic Jammer",
+          "raridade": "R",
+          "slug": "magic_jammer"
         },
         {
           "nome": "Marine Beast",
@@ -5526,6 +6128,11 @@
           "slug": "spirit_of_the_books",
           "atk": "1400",
           "def": "1200"
+        },
+        {
+          "nome": "Stain Storm",
+          "raridade": "R",
+          "slug": "stain_storm"
         },
         {
           "nome": "Sword Arm of Dragon",
@@ -5943,7 +6550,7 @@
       "cor": "#d6b35a",
       "custo_souls": 250,
       "evento": true,
-      "duracao_dias": 15,
+      "duracao_dias": 14,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-bls-site.webp",
       "total_tema": 30,
@@ -6168,7 +6775,7 @@
       "cor": "#2aa7d6",
       "custo_souls": 250,
       "evento": true,
-      "duracao_dias": 7,
+      "duracao_dias": 15,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-elemental-hero.webp",
       "total_tema": 34,
@@ -6608,6 +7215,200 @@
           "slug": "red-eyes_retro_dragon",
           "atk": "1700",
           "def": "1600"
+        }
+      ]
+    },
+    {
+      "id": "especial_darklord",
+      "tipo_label": "DARKLORD",
+      "nome_pt": "Darklord",
+      "nome_en": "Darklord",
+      "desc_pt": "Edicao especial e temporaria dedicada ao arquetipo Darklord, reunindo anjos caidos, fusoes, magias e armadilhas de suporte. Como o arquetipo e mais forte que a media (a maioria das cartas e SR/UR), a chance de UR/SR nos slots especiais do tema e menor que o normal. Depois que o evento terminar, essas cartas deixam a circulacao temporaria e passam a poder aparecer no torneio.",
+      "desc_en": "A special, time-limited Darklord edition with fallen angels, fusions, support spells and traps. Since the archetype is stronger than average (most cards are SR/UR), the UR/SR odds on the theme special slots are lower than usual. When the event ends, these cards leave temporary circulation and become eligible for tournament rewards.",
+      "cor": "#6a3fb5",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 15,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-darklord.webp",
+      "total_tema": 27,
+      "cartas_tema": [
+        {
+          "nome": "Condemned Darklord",
+          "raridade": "UR",
+          "slug": "condemned_darklord",
+          "atk": "1600",
+          "def": "2000"
+        },
+        {
+          "nome": "Darklord Asmodeus",
+          "raridade": "UR",
+          "slug": "darklord_asmodeus",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Darklord Desire",
+          "raridade": "UR",
+          "slug": "darklord_desire",
+          "atk": "3000",
+          "def": "2800"
+        },
+        {
+          "nome": "Darklord Enchantment",
+          "raridade": "UR",
+          "slug": "darklord_enchantment"
+        },
+        {
+          "nome": "Darklord Eveningstar",
+          "raridade": "UR",
+          "slug": "darklord_eveningstar",
+          "atk": "3000",
+          "def": "3000"
+        },
+        {
+          "nome": "Darklord Ixchel",
+          "raridade": "UR",
+          "slug": "darklord_ixchel",
+          "atk": "2500",
+          "def": "2900"
+        },
+        {
+          "nome": "Darklord Morningstar",
+          "raridade": "UR",
+          "slug": "darklord_morningstar",
+          "atk": "3000",
+          "def": "3000"
+        },
+        {
+          "nome": "Darklord Nergal",
+          "raridade": "UR",
+          "slug": "darklord_nergal",
+          "atk": "2700",
+          "def": "2500"
+        },
+        {
+          "nome": "Darklord Superbia",
+          "raridade": "UR",
+          "slug": "darklord_superbia",
+          "atk": "2900",
+          "def": "2400"
+        },
+        {
+          "nome": "Darklord Tezcatlipoca",
+          "raridade": "UR",
+          "slug": "darklord_tezcatlipoca",
+          "atk": "2800",
+          "def": "2100"
+        },
+        {
+          "nome": "Darklord Zerato",
+          "raridade": "UR",
+          "slug": "darklord_zerato",
+          "atk": "2800",
+          "def": "2300"
+        },
+        {
+          "nome": "Forbidden Droplet",
+          "raridade": "UR",
+          "slug": "forbidden_droplet"
+        },
+        {
+          "nome": "Indulged Darklord",
+          "raridade": "UR",
+          "slug": "indulged_darklord",
+          "atk": "1600",
+          "def": "0"
+        },
+        {
+          "nome": "The First Darklord",
+          "raridade": "UR",
+          "slug": "the_first_darklord",
+          "atk": "4000",
+          "def": "4000"
+        },
+        {
+          "nome": "The Sanctified Darklord",
+          "raridade": "UR",
+          "slug": "the_sanctified_darklord"
+        },
+        {
+          "nome": "Capricious Darklord",
+          "raridade": "SR",
+          "slug": "capricious_darklord",
+          "atk": "0",
+          "def": "1600"
+        },
+        {
+          "nome": "Darklord Amdusc",
+          "raridade": "SR",
+          "slug": "darklord_amdusc",
+          "atk": "1800",
+          "def": "2800"
+        },
+        {
+          "nome": "Darklord Dance",
+          "raridade": "SR",
+          "slug": "darklord_dance"
+        },
+        {
+          "nome": "Darklord Edeh Arae",
+          "raridade": "SR",
+          "slug": "darklord_edeh_arae",
+          "atk": "2300",
+          "def": "2000"
+        },
+        {
+          "nome": "Darklord Gulgalta",
+          "raridade": "SR",
+          "slug": "darklord_gulgalta",
+          "atk": "2400",
+          "def": "800"
+        },
+        {
+          "nome": "Darklord Nasten",
+          "raridade": "SR",
+          "slug": "darklord_nasten",
+          "atk": "2600",
+          "def": "2600"
+        },
+        {
+          "nome": "Darklord Rebellion",
+          "raridade": "SR",
+          "slug": "darklord_rebellion"
+        },
+        {
+          "nome": "Darklord Uprising",
+          "raridade": "SR",
+          "slug": "darklord_uprising"
+        },
+        {
+          "nome": "Darklord Djehuty",
+          "raridade": "R",
+          "slug": "darklord_djehuty",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Darklord Marie",
+          "raridade": "R",
+          "slug": "darklord_marie",
+          "atk": "1700",
+          "def": "1200"
+        },
+        {
+          "nome": "Darklord Nurse Reficule",
+          "raridade": "R",
+          "slug": "darklord_nurse_reficule",
+          "atk": "1400",
+          "def": "600"
+        },
+        {
+          "nome": "Darklord Ukoback",
+          "raridade": "R",
+          "slug": "darklord_ukoback",
+          "atk": "700",
+          "def": "1000"
         }
       ]
     }
