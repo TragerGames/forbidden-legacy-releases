@@ -786,6 +786,9 @@ body.en li[data-lang="en"] { display: flex !important; }
     'especial_black_luster_soldier': {
       texto_pt: 'ESGOTADO', texto_en: 'SOLD OUT', classe: 'expirado', bloqueado: true,
     },
+    'especial_elemental_hero': {
+      texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado', bloqueado: true,
+    },
   };
 
   function isEn() { return document.body.classList.contains('en'); }
@@ -888,7 +891,9 @@ body.en li[data-lang="en"] { display: flex !important; }
   fetch('data/boosters.json?t=' + Date.now())
     .then(r => r.json())
     .then(data => {
-      boostersData = data.boosters || [];
+      // Boosters temporarios (evento) primeiro na lista, preservando a ordem
+      // relativa original dentro de cada grupo (sort estavel).
+      boostersData = (data.boosters || []).slice().sort((a, b) => (b.evento ? 1 : 0) - (a.evento ? 1 : 0));
       versaoCache = data.versao || '';
       renderTiles();
     })

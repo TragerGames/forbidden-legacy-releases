@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1786541752",
+  "versao": "1786544790",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -575,7 +575,8 @@
       "atk": "3200",
       "def": "2500",
       "desc_pt": "EFEITO: Quando um monstro do oponente ativar seu efeito durante uma batalha envolvendo esta carta, negue esse efeito, cause dano aos Pontos de Vida do oponente igual ao ATK atual daquele monstro e destrua-o.",
-      "desc_en": "EFFECT: When an opponent's monster activates its effect during a battle involving this card, negate that effect, inflict damage to your opponent's Life Points equal to that monster's current ATK, and destroy it."
+      "desc_en": "EFFECT: When an opponent's monster activates its effect during a battle involving this card, negate that effect, inflict damage to your opponent's Life Points equal to that monster's current ATK, and destroy it.",
+      "full_art": true
     },
     {
       "nome": "Archfiend Emperor",
@@ -592,7 +593,8 @@
       "atk": "3000",
       "def": "2000",
       "desc_pt": "EFEITO: Esta carta ganha 500 de poder para cada monstro ARCHFIEND no campo e no cemitério.",
-      "desc_en": "EFFECT: Gains 500 power for each ARCHFIEND monster on the field and in the Graveyard."
+      "desc_en": "EFFECT: Gains 500 power for each ARCHFIEND monster on the field and in the Graveyard.",
+      "full_art": true
     },
     {
       "nome": "Archfiend Empress",
@@ -739,7 +741,8 @@
       "atk": "3000",
       "def": "2000",
       "desc_pt": "EFEITO: Quando invocado, destrua um monstro aleatório no campo do oponente. Ganha 200 de poder para cada monstro MACHINE na sua mão.",
-      "desc_en": "EFFECT: When Summoned, destroy a random monster on your opponent's field. Gains 200 ATK for each MACHINE monster in your hand."
+      "desc_en": "EFFECT: When Summoned, destroy a random monster on your opponent's field. Gains 200 ATK for each MACHINE monster in your hand.",
+      "full_art": true
     },
     {
       "nome": "Armed Dragon LV3",
@@ -925,7 +928,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "equip",
       "desc_pt": "EFEITO: Aumenta o poder de todos os Monstros em 1000 pontos.",
-      "desc_en": "EFFECT: Increases the power of all Monsters by 1000 points."
+      "desc_en": "EFFECT: Increases the power of all Monsters by 1000 points.",
+      "full_art": true
     },
     {
       "nome": "B. Dragon Jungle King",
@@ -957,7 +961,8 @@
       "atk": "3200",
       "def": "2500",
       "desc_pt": "EFEITO: Ao ser Invocado, cause 800 de dano aos Pontos de Vida do seu oponente. Esta carta é considerada RED-EYES.",
-      "desc_en": "EFFECT: When Summoned, inflict 800 damage to your opponent's LP. This card is treated as RED-EYES."
+      "desc_en": "EFFECT: When Summoned, inflict 800 damage to your opponent's LP. This card is treated as RED-EYES.",
+      "full_art": true
     },
     {
       "nome": "Baby Dragon",
@@ -1212,7 +1217,8 @@
       "atk": "3000",
       "def": "1200",
       "desc_pt": "EFEITO: Quando esta carta for invocada, mude a posição de batalha de todos os monstros no campo do seu oponente.",
-      "desc_en": "EFFECT: When this card is summoned, change the battle position of all monsters on your opponent's field."
+      "desc_en": "EFFECT: When this card is summoned, change the battle position of all monsters on your opponent's field.",
+      "full_art": true
     },
     {
       "nome": "Beast Machine King Barbaros",
@@ -1229,7 +1235,8 @@
       "atk": "3800",
       "def": "1200",
       "desc_pt": "EFEITO: Quando esta carta for invocada, todos os monstros BEAST-WARRIOR e MACHINE no campo ganham 500 pontos de ATK.",
-      "desc_en": "EFFECT: When this card is summoned, all BEAST-WARRIOR and MACHINE monsters on the field gain 500 ATK."
+      "desc_en": "EFFECT: When this card is summoned, all BEAST-WARRIOR and MACHINE monsters on the field gain 500 ATK.",
+      "full_art": true
     },
     {
       "nome": "Beast of Talwar",
@@ -1374,7 +1381,8 @@
       "atk": "2300",
       "def": "2000",
       "desc_pt": "EFEITO: Aumenta o poder dos monstros FIEND que você controla em 500 pontos quando é invocado.",
-      "desc_en": "EFFECT: Increase the power of FIEND monsters you controls by 500 points when Summoned."
+      "desc_en": "EFFECT: Increase the power of FIEND monsters you controls by 500 points when Summoned.",
+      "full_art": true
     },
     {
       "nome": "Big Eye",
@@ -1485,7 +1493,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Esta carta pode atacar 2 vezes por turno.",
-      "desc_en": "EFFECT: This card can attack 2x per turn."
+      "desc_en": "EFFECT: This card can attack 2x per turn.",
+      "full_art": true
     },
     {
       "nome": "Black Luster Soldier - Envoy of the Beginning",
@@ -1650,7 +1659,8 @@
       "icone_tipo": "dragon",
       "nivel": "4",
       "atk": "1500",
-      "def": "800"
+      "def": "800",
+      "full_art": true
     },
     {
       "nome": "Blade Knight",
@@ -1729,7 +1739,8 @@
       "atk": "4000",
       "def": "0",
       "desc_pt": "EFEITO: Quando esta carta for invocada, altere a posição de batalha de todos os monstros no campo do oponente e cause dano de batalha perfurante dobrado ao seu oponente.",
-      "desc_en": "EFFECT: When this card is summoned, Change battle position of all monster on opponent's field, inflict double piercing battle damage to your opponent."
+      "desc_en": "EFFECT: When this card is summoned, Change battle position of all monster on opponent's field, inflict double piercing battle damage to your opponent.",
+      "full_art": true
     },
     {
       "nome": "Blue-Eyes Corrupted Chaos MAX Dragon",
@@ -2089,7 +2100,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "equip",
       "desc_pt": "EFEITO: Uma luz ofuscante que aumenta o poder de todos os monstros em 800 pontos.",
-      "desc_en": "EFFECT: A glaring light that increases the power of all monsters by 800 points."
+      "desc_en": "EFFECT: A glaring light that increases the power of all monsters by 800 points.",
+      "full_art": true
     },
     {
       "nome": "Burglar",
@@ -2248,7 +2260,8 @@
       "icone_tipo": "warrior",
       "nivel": "4",
       "atk": "1400",
-      "def": "1200"
+      "def": "1200",
+      "full_art": true
     },
     {
       "nome": "Cerulean Sacred Phoenix of Nephthys",
@@ -2265,7 +2278,8 @@
       "atk": "3000",
       "def": "1000",
       "desc_pt": "EFEITO: Quando esta carta for invocada, aumenta o poder de todos os monstros WINGEDBEAST que você controla em 1000 pontos.",
-      "desc_en": "EFFECT: When this card is summoned, increases the power of all WINGEDBEASTS monsters you control by 1000 points."
+      "desc_en": "EFFECT: When this card is summoned, increases the power of all WINGEDBEASTS monsters you control by 1000 points.",
+      "full_art": true
     },
     {
       "nome": "Chakra",
@@ -2331,7 +2345,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Quando for Invocado, cause 300 de dano ao seu oponente para cada monstro LIGHT e DARK na sua MÃO, CAMPO e CEMITERIO.",
-      "desc_en": "EFFECT: When Summoned, inflict 300 damage to your opponent for each LIGHT and DARK monster in your HAND, FIELD, and GRAVEYARD."
+      "desc_en": "EFFECT: When Summoned, inflict 300 damage to your opponent for each LIGHT and DARK monster in your HAND, FIELD, and GRAVEYARD.",
+      "full_art": true
     },
     {
       "nome": "Chaos Sorcerer",
@@ -2527,7 +2542,8 @@
       "atk": "????",
       "def": "????",
       "desc_pt": "EFEITO: Quando for Invocada, o ATK e a DEF desta carta se tornam iguais ao ATK e à DEF do monstro mais forte no campo do oponente.",
-      "desc_en": "EFFECT: When Summoned, this card's ATK and DEF become equal to the ATK and DEF of the strongest monster on your opponent's field."
+      "desc_en": "EFFECT: When Summoned, this card's ATK and DEF become equal to the ATK and DEF of the strongest monster on your opponent's field.",
+      "full_art": true
     },
     {
       "nome": "Corroding Shark",
@@ -2653,7 +2669,8 @@
       "atk": "2300",
       "def": "1800",
       "desc_pt": "EFEITO: Quando esta carta for invocada, cause 400 de dano ao LP do seu oponente para cada monstro WINGEDBEAST na sua mão.",
-      "desc_en": "EFFECT: When this card is summoned, inflict 400 damage to your opponent's LP for each WINGEDBEAST monster in your hand."
+      "desc_en": "EFFECT: When this card is summoned, inflict 400 damage to your opponent's LP for each WINGEDBEAST monster in your hand.",
+      "full_art": true
     },
     {
       "nome": "Criosphinx",
@@ -2713,7 +2730,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro do seu oponente declarar um ataque: Destrua todos os monstros com 1500 ou mais de ATK no campo do oponente e na mão do oponente.",
-      "desc_en": "EFFECT: When your opponent's monster declares an attack: Destroy all monsters with 1500 or more ATK on opponent's field and in opponent's hand."
+      "desc_en": "EFFECT: When your opponent's monster declares an attack: Destroy all monsters with 1500 or more ATK on opponent's field and in opponent's hand.",
+      "full_art": true
     },
     {
       "nome": "Curse of Dragon",
@@ -2730,7 +2748,8 @@
       "atk": "2000",
       "def": "1500",
       "desc_pt": "EFEITO: Quando esta carta for invocada, destrua a FIELD SPELL ativa. Se uma FIELD SPELL for destruída por este efeito, cause 2000 de dano ao seu oponente.",
-      "desc_en": "EFFECT: When this card is summoned, destroy the active FIELD SPELL. If a FIELD SPELL is destroyed by this effect, inflict 2000 damage to your opponent."
+      "desc_en": "EFFECT: When this card is summoned, destroy the active FIELD SPELL. If a FIELD SPELL is destroyed by this effect, inflict 2000 damage to your opponent.",
+      "full_art": true
     },
     {
       "nome": "Curse of Dragon, the Cursed Dragon",
@@ -2859,7 +2878,8 @@
       "atk": "4000",
       "def": "2800",
       "desc_pt": "EFEITO: Esta carta não é afetada por TRAPS do oponente. Se esta carta atacar um monstro em Posição de Defesa, cause dano de batalha perfurante.",
-      "desc_en": "EFFECT: This card is unaffected by your opponent's TRAP cards. If this card attacks a Defense Position monster, inflict piercing battle damage."
+      "desc_en": "EFFECT: This card is unaffected by your opponent's TRAP cards. If this card attacks a Defense Position monster, inflict piercing battle damage.",
+      "full_art": true
     },
     {
       "nome": "Cyber Falcon",
@@ -3035,7 +3055,8 @@
       "atk": "2500",
       "def": "2000",
       "desc_pt": "EFEITO: Esta carta ganha 300 de poder para cada \"Des Frog\", \"Treeborn Frog\" e \"Frog the Jam\" na mão, campo e cemitério.",
-      "desc_en": "EFFECT: This card gains 300 ATK/DEF for each \"Des Frog\", \"Treeborn Frog\", and \"Frog the Jam\" in your hand, field, and Graveyard."
+      "desc_en": "EFFECT: This card gains 300 ATK/DEF for each \"Des Frog\", \"Treeborn Frog\", and \"Frog the Jam\" in your hand, field, and Graveyard.",
+      "full_art": true
     },
     {
       "nome": "Dancing Elf",
@@ -3131,7 +3152,8 @@
       "atk": "2800",
       "def": "2300",
       "desc_pt": "EFEITO: Esse monstro aplica dano perfurante no inimigo.",
-      "desc_en": "EFFECT: This monster inflicts piercing damage on the enemy."
+      "desc_en": "EFFECT: This monster inflicts piercing damage on the enemy.",
+      "full_art": true
     },
     {
       "nome": "Dark Chimera",
@@ -3224,7 +3246,8 @@
       "atk": "3800",
       "def": "3800",
       "desc_pt": "EFEITO: Esta carta não é afetada por efeitos de monstro do oponente.",
-      "desc_en": "EFFECT: This card is unaffected by your opponent's monster effects."
+      "desc_en": "EFFECT: This card is unaffected by your opponent's monster effects.",
+      "full_art": true
     },
     {
       "nome": "Dark Hole",
@@ -3238,7 +3261,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "spell",
       "desc_pt": "EFEITO: Remova do jogo todas as cartas MONSTRO do campo, incluindo monstros imunes a ele.",
-      "desc_en": "EFFECT: Banish all cards MONSTERS on the field, including monsters immune to it."
+      "desc_en": "EFFECT: Banish all cards MONSTERS on the field, including monsters immune to it.",
+      "full_art": true
     },
     {
       "nome": "Dark King of the Abyss",
@@ -3319,7 +3343,8 @@
       "icone_tipo": "spellcaster",
       "nivel": "7",
       "atk": "2500",
-      "def": "2100"
+      "def": "2100",
+      "full_art": true
     },
     {
       "nome": "Dark Magician Girl",
@@ -3336,7 +3361,8 @@
       "atk": "2000",
       "def": "1700",
       "desc_pt": "EFEITO: Ganha 600 de poder para cada \"Dark Magician\" em sua mão ou Deck ao ser Invocado.",
-      "desc_en": "EFFECT: Gains 600 power for each \"Dark Magician\" in your hand or Deck when Summoned."
+      "desc_en": "EFFECT: Gains 600 power for each \"Dark Magician\" in your hand or Deck when Summoned.",
+      "full_art": true
     },
     {
       "nome": "Dark Magician Girl the Dragon Knight",
@@ -3387,7 +3413,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Imune a todas as TRAPS e cartas MAGIC do oponente",
-      "desc_en": "EFFECT: Immune to all opponent's TRAP and MAGIC cards."
+      "desc_en": "EFFECT: Immune to all opponent's TRAP and MAGIC cards.",
+      "full_art": true
     },
     {
       "nome": "Dark Master Zorc",
@@ -3404,7 +3431,8 @@
       "atk": "2700",
       "def": "1500",
       "desc_pt": "EFEITO: Jogue um dado, se resultado for :1, 2 ou 3 destrua todas as cartas do oponente. 4: Não acontece nada. 5 ou 6: destrua todas cartas no seu campo.",
-      "desc_en": "EFFECT: Roll a given; if the result is 1, 2, or 3, destroy all of your opponent's cards. 4: Nothing happens. 5 or 6: Destroy all cards on your side of the field."
+      "desc_en": "EFFECT: Roll a given; if the result is 1, 2, or 3, destroy all of your opponent's cards. 4: Nothing happens. 5 or 6: Destroy all cards on your side of the field.",
+      "full_art": true
     },
     {
       "nome": "Dark Mirror Force",
@@ -3737,7 +3765,8 @@
       "atk": "3000",
       "def": "3000",
       "desc_pt": "EFEITO: Sempre que seu oponente ativar um efeito de \"Dado\", negue o resultado desse Dado. Se isso acontecer, esta carta ganha ATK e DEF permanentemente, igual ao número sorteado x100.",
-      "desc_en": "EFFECT: Whenever your opponent activates a \"Dice\" effect, negate the result of that Dice roll. If this happens, this card permanently gains ATK and DEF equal to the rolled number x100."
+      "desc_en": "EFFECT: Whenever your opponent activates a \"Dice\" effect, negate the result of that Dice roll. If this happens, this card permanently gains ATK and DEF equal to the rolled number x100.",
+      "full_art": true
     },
     {
       "nome": "Darklord Gulgalta",
@@ -3805,7 +3834,8 @@
       "atk": "3000",
       "def": "3000",
       "desc_pt": "EFEITO: Quando esta carta for invocada, ganhe 500 pontos de LP para cada carta no CAMPO do seu oponente. Esta carta é imune a efeitos de MONSTRO do oponente.",
-      "desc_en": "EFFECT: When this card is Summoned, gain 500 LP for each card on your opponent's FIELD. This card is immune to your opponent's MONSTER effects."
+      "desc_en": "EFFECT: When this card is Summoned, gain 500 LP for each card on your opponent's FIELD. This card is immune to your opponent's MONSTER effects.",
+      "full_art": true
     },
     {
       "nome": "Darklord Nasten",
@@ -4091,7 +4121,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "spell",
       "desc_pt": "EFEITO: Um poder místico que aumenta os Pontos de Vida em 5000!",
-      "desc_en": "EFFECT: A mystical power that increases LP by 5000!"
+      "desc_en": "EFFECT: A mystical power that increases LP by 5000!",
+      "full_art": true
     },
     {
       "nome": "Dice Armadillo",
@@ -4459,7 +4490,8 @@
       "icone_tipo": "zombie",
       "nivel": "3",
       "atk": "1600",
-      "def": "0"
+      "def": "0",
+      "full_art": true
     },
     {
       "nome": "Dragoness the Wicked Knight",
@@ -4584,7 +4616,8 @@
       "atk": "1700",
       "def": "1200",
       "desc_pt": "EFEITO: Ganha 200 de poder para cada monstro DARK e LIGHT no campo.",
-      "desc_en": "EFFECT: Gains 200 power for each DARK and LIGHT monster on the field."
+      "desc_en": "EFFECT: Gains 200 power for each DARK and LIGHT monster on the field.",
+      "full_art": true
     },
     {
       "nome": "E - Emergency Call",
@@ -4629,7 +4662,8 @@
       "atk": "????",
       "def": "????",
       "desc_pt": "EFEITO: Quando esta carta é invocada, seu ATK e DEF se tornam iguais à quantidade de monstros \"Spirit\" de atributo FIRE em seu Cemitério x500. Sempre que você causar dano de efeito aos Pontos de Vida do oponente, esta carta ganha ATK igual ao dano causado. Esta carta é imune a qualquer redução de ATK/DEF.",
-      "desc_en": "EFFECT: When this card is Summoned, its ATK and DEF become equal to the number of FIRE-Attribute \"Spirit\" monsters in your Graveyard x500. Whenever you inflict effect damage to your opponent's Life Points, this card gains ATK equal to the damage inflicted. This card is immune to any ATK/DEF reduction."
+      "desc_en": "EFFECT: When this card is Summoned, its ATK and DEF become equal to the number of FIRE-Attribute \"Spirit\" monsters in your Graveyard x500. Whenever you inflict effect damage to your opponent's Life Points, this card gains ATK equal to the damage inflicted. This card is immune to any ATK/DEF reduction.",
+      "full_art": true
     },
     {
       "nome": "Eldeen",
@@ -4821,7 +4855,8 @@
       "atk": "2900",
       "def": "2600",
       "desc_pt": "EFEITO: Enquanto UMI, WASTELAND, FOREST ou SOGEN estiver ativo, esta carta ganha 1000 de ATK e DEF. Quando esta carta for Invocada, se \"H - Heated Heart\", \"E - Emergency Call\", \"R - Righteous Justice\" e \"O - Oversoul\" estiverem na sua mão e/ou no seu Cemitério, destrua todas as cartas no campo do seu oponente.",
-      "desc_en": "EFFECT: While UMI, WASTELAND, FOREST, or SOGEN is active, this card gains 1000 ATK and DEF. When this card is Summoned, if \"H - Heated Heart\", \"E - Emergency Call\", \"R - Righteous Justice\", and \"O - Oversoul\" are in your hand and/or Graveyard, destroy all cards on your opponent's field."
+      "desc_en": "EFFECT: While UMI, WASTELAND, FOREST, or SOGEN is active, this card gains 1000 ATK and DEF. When this card is Summoned, if \"H - Heated Heart\", \"E - Emergency Call\", \"R - Righteous Justice\", and \"O - Oversoul\" are in your hand and/or Graveyard, destroy all cards on your opponent's field.",
+      "full_art": true
     },
     {
       "nome": "Elemental HERO Flame Wingman",
@@ -5251,7 +5286,8 @@
       "atk": "1200",
       "def": "600",
       "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 500 de ATK e DEF para cada monstro ROCK na sua mão, no seu campo e no seu CEMITÉRIO.",
-      "desc_en": "EFFECT: When this card is summoned, it gains 500 ATK and DEF for each ROCK monster in your hand, on your field, and in your GRAVEYARD."
+      "desc_en": "EFFECT: When this card is summoned, it gains 500 ATK and DEF for each ROCK monster in your hand, on your field, and in your GRAVEYARD.",
+      "full_art": true
     },
     {
       "nome": "Envoy of Chaos",
@@ -5268,7 +5304,8 @@
       "atk": "1500",
       "def": "0",
       "desc_pt": "EFEITO: Quando este monstro for invocado, aumente 1500 de ATK de 1 monstro \"Black Luster Soldier\" aleatório no seu campo. Este monstro é considerado um \"Black Luster Soldier\".",
-      "desc_en": "EFFECT: When this monster is summoned, increase the ATK of 1 random \"Black Luster Soldier\" monster on your field by 1500. This monster is treated as a \"Black Luster Soldier\" monster."
+      "desc_en": "EFFECT: When this monster is summoned, increase the ATK of 1 random \"Black Luster Soldier\" monster on your field by 1500. This monster is treated as a \"Black Luster Soldier\" monster.",
+      "full_art": true
     },
     {
       "nome": "Eradicating Aerosol",
@@ -5407,7 +5444,8 @@
       "atk": "0",
       "def": "4000",
       "desc_pt": "EFEITO: Enquanto esta carta permanecer virada para cima no campo, cause 1000 de dano ao seu oponente toda vez que um monstro EARTH no seu campo for destruído. Este monstro também é considerado \"Sphinx\".",
-      "desc_en": "EFFECT: While this card remains face-up on the field, inflict 1000 damage to your opponent every time an EARTH monster on your field is destroyed. This monster is also considered \"Sphinx\"."
+      "desc_en": "EFFECT: While this card remains face-up on the field, inflict 1000 damage to your opponent every time an EARTH monster on your field is destroyed. This monster is also considered \"Sphinx\".",
+      "full_art": true
     },
     {
       "nome": "Eyearmor",
@@ -5513,7 +5551,8 @@
       "atk": "2400",
       "def": "1300",
       "desc_pt": "EFEITO: Quando invocado aumenta 500 de poder de PLANT e FAIRY no seu campo.",
-      "desc_en": "EFFECT: When summoned, it increases the power of PLANT and FAIRY in your field by 500."
+      "desc_en": "EFFECT: When summoned, it increases the power of PLANT and FAIRY in your field by 500.",
+      "full_art": true
     },
     {
       "nome": "Fear From The Dark",
@@ -5822,7 +5861,8 @@
       "atk": "2100",
       "def": "1800",
       "desc_pt": "EFEITO: Este monstro pode atacar 3 vezes por turno.",
-      "desc_en": "EFFECT: This monster can attack 3 times per turn."
+      "desc_en": "EFFECT: This monster can attack 3 times per turn.",
+      "full_art": true
     },
     {
       "nome": "Flame Ghost",
@@ -5869,7 +5909,8 @@
       "atk": "1800",
       "def": "1600",
       "desc_pt": "EFEITO: Enquanto WASTELAND estiver ativo no campo, esta carta ganha 300 de poder. Enquanto esta carta estiver no campo, seus monstros FIRE ganham 300 de poder.",
-      "desc_en": "EFFECT: Gains 300 power while WASTELAND is the active Field. While this card is on the field, your FIRE monsters gain 300 power."
+      "desc_en": "EFFECT: Gains 300 power while WASTELAND is the active Field. While this card is on the field, your FIRE monsters gain 300 power.",
+      "full_art": true
     },
     {
       "nome": "Flame Viper",
@@ -6007,7 +6048,8 @@
       "atk": "3500",
       "def": "0",
       "desc_pt": "EFEITO: Se esta carta atacar um monstro em Posição de Defesa, cause dano perfurante. Quando esta carta destruir um monstro em batalha, ela ganha 300 pontos de ATK.",
-      "desc_en": "EFFECT: If this card attacks a monster in Defense Position, inflict piercing battle damage. When this card destroys a monster in battle, it gains 300 ATK."
+      "desc_en": "EFFECT: If this card attacks a monster in Defense Position, inflict piercing battle damage. When this card destroys a monster in battle, it gains 300 ATK.",
+      "full_art": true
     },
     {
       "nome": "Fossil Dyna Pachycephalo",
@@ -6167,7 +6209,8 @@
       "icone_tipo": "warrior",
       "nivel": "7",
       "atk": "2300",
-      "def": "2100"
+      "def": "2100",
+      "full_art": true
     },
     {
       "nome": "Gaia the Fierce Knight Origin",
@@ -6316,7 +6359,8 @@
       "atk": "2550",
       "def": "2150",
       "desc_pt": "EFEITO: Esta carta causa dano perfurante e pode atacar 2 vezes por turno.",
-      "desc_en": "EFFECT: This card inflicts piercing damage and can attack 2x per turn."
+      "desc_en": "EFFECT: This card inflicts piercing damage and can attack 2x per turn.",
+      "full_art": true
     },
     {
       "nome": "Garoozis",
@@ -6378,7 +6422,8 @@
       "atk": "3750",
       "def": "3400",
       "desc_pt": "EFEITO: Esse monstro pode ser equipado por qualquer equip do jogo",
-      "desc_en": "EFFECT: This monster can be equipped by any equipment in the game."
+      "desc_en": "EFFECT: This monster can be equipped by any equipment in the game.",
+      "full_art": true
     },
     {
       "nome": "Gate Guardian of Thunder and Wind",
@@ -6512,7 +6557,8 @@
       "atk": "2600",
       "def": "2200",
       "desc_pt": "EFEITO: Enquanto esta carta estiver em campo com SOGEN ativo, ela ganha 700 pontos de ATK. Quando um monstro do oponente batalhar com esta carta, ele perde 500 pontos de ATK.",
-      "desc_en": "EFFECT: While this card is on the field and SOGEN is active, it gains 700 ATK. When an opponent's monster battles this card, it loses 500 ATK."
+      "desc_en": "EFFECT: While this card is on the field and SOGEN is active, it gains 700 ATK. When an opponent's monster battles this card, it loses 500 ATK.",
+      "full_art": true
     },
     {
       "nome": "Gemini Elf",
@@ -6822,7 +6868,8 @@
       "atk": "1200",
       "def": "1000",
       "desc_pt": "EFEITO: Substitui 1 monstro de fusão, a outra carta precisa ser o monstro especifico.",
-      "desc_en": "EFFECT: Replaces 1 Fusion Monster, the other card must be the specified monster."
+      "desc_en": "EFFECT: Replaces 1 Fusion Monster, the other card must be the specified monster.",
+      "full_art": true
     },
     {
       "nome": "Gogiga Gagagigo",
@@ -6963,7 +7010,8 @@
       "atk": "2600",
       "def": "2500",
       "desc_pt": "EFEITO: Quando esta carta for invocada, diminui em 1000 o poder dos monstros PLANT do oponente.",
-      "desc_en": "EFFECT: When this card is summoned, decreases the power of your opponent's PLANT monsters by 1000."
+      "desc_en": "EFFECT: When this card is summoned, decreases the power of your opponent's PLANT monsters by 1000.",
+      "full_art": true
     },
     {
       "nome": "Great White",
@@ -7085,7 +7133,8 @@
       "atk": "1700",
       "def": "2400",
       "desc_pt": "EFEITO: Esta carta não pode ser destruída em batalha.",
-      "desc_en": "EFFECT: This card cannot be destroyed by battle."
+      "desc_en": "EFFECT: This card cannot be destroyed by battle.",
+      "full_art": true
     },
     {
       "nome": "Guardian of the Labyrinth",
@@ -7265,7 +7314,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "spell",
       "desc_pt": "EFEITO: Destrua todas as cartas posicionadas nos Slots de Magia do seu oponente.",
-      "desc_en": "EFFECT: Destroy all cards placed in your opponent's Spell Slots."
+      "desc_en": "EFFECT: Destroy all cards placed in your opponent's Spell Slots.",
+      "full_art": true
     },
     {
       "nome": "Harpie's Pet Dragon",
@@ -8060,7 +8110,8 @@
       "atk": "2400",
       "def": "1500",
       "desc_pt": "EFEITO: A TRAP do seu oponente não pode ser ativada.",
-      "desc_en": "EFFECT:  Your opponent's TRAP cannot be activated."
+      "desc_en": "EFFECT:  Your opponent's TRAP cannot be activated.",
+      "full_art": true
     },
     {
       "nome": "Jinzo #7",
@@ -8183,7 +8234,8 @@
       "atk": "200",
       "def": "700",
       "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 1000 de ATK para cada \"Blue-Eyes White Dragon\" na sua mão e no seu DECK.",
-      "desc_en": "EFFECT: When this card is summoned, it gains 1000 ATK for each \"Blue-Eyes White Dragon\" in your hand and DECK."
+      "desc_en": "EFFECT: When this card is summoned, it gains 1000 ATK for each \"Blue-Eyes White Dragon\" in your hand and DECK.",
+      "full_art": true
     },
     {
       "nome": "Kairyu-Shin",
@@ -8234,7 +8286,8 @@
       "atk": "2400",
       "def": "2200",
       "desc_pt": "EFEITO: Ganha 1000 de poder ao batalhar contra outro monstro.",
-      "desc_en": "EFFECT: Gains 1000 power when battling another monster."
+      "desc_en": "EFFECT: Gains 1000 power when battling another monster.",
+      "full_art": true
     },
     {
       "nome": "Kaiser Sea Horse",
@@ -8529,7 +8582,8 @@
       "atk": "????",
       "def": "????",
       "desc_pt": "EFEITO: Esta carta ganha 700 de poder para cada \"King of the Skull Servants\" e \"Skull Servant\" no campo e no cemitério.",
-      "desc_en": "EFFECT: This card gains 700 power for each \"King of the Skull Servants\" and \"Skull Servant\" on the field and in the Graveyard."
+      "desc_en": "EFFECT: This card gains 700 power for each \"King of the Skull Servants\" and \"Skull Servant\" on the field and in the Graveyard.",
+      "full_art": true
     },
     {
       "nome": "King of Yamimakai",
@@ -8561,7 +8615,8 @@
       "atk": "2300",
       "def": "2000",
       "desc_pt": "EFEITO: Quando invocado aumenta 500 de poder de BEAST e REPTILE no seu campo.",
-      "desc_en": "EFFECT: When summoned, it increases the power of BEAST and REPTILE in your field by 500."
+      "desc_en": "EFFECT: When summoned, it increases the power of BEAST and REPTILE in your field by 500.",
+      "full_art": true
     },
     {
       "nome": "Kojikocy",
@@ -8912,7 +8967,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Quando esta carta for invocada, destrua todas as cartas no campo, incluindo esta carta. Cause 1000 de dano ao seu oponente para cada carta destruída por este efeito.",
-      "desc_en": "EFFECT: When this card is summoned, destroy all cards on the field, including this card. Inflict 1000 damage to your opponent for each card destroyed by this effect."
+      "desc_en": "EFFECT: When this card is summoned, destroy all cards on the field, including this card. Inflict 1000 damage to your opponent for each card destroyed by this effect.",
+      "full_art": true
     },
     {
       "nome": "Left Arm of the Forbidden One",
@@ -9508,7 +9564,8 @@
       "atk": "2400",
       "def": "2000",
       "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 400 de ATK e DEF para cada \"Dark Magician Girl\" na sua mão e no seu Deck.",
-      "desc_en": "EFFECT: When this card is summoned, it gains 400 ATK and DEF for each \"Dark Magician Girl\" in your hand and Deck."
+      "desc_en": "EFFECT: When this card is summoned, it gains 400 ATK and DEF for each \"Dark Magician Girl\" in your hand and Deck.",
+      "full_art": true
     },
     {
       "nome": "Magic Formula",
@@ -9568,7 +9625,8 @@
       "atk": "2800",
       "def": "2600",
       "desc_pt": "EFEITO: Esta carta ganha 300 de poder para cada carta de atributo DARK em sua mão.",
-      "desc_en": "EFFECT: This card gains 300 power for each DARK attribute cards in your hand."
+      "desc_en": "EFFECT: This card gains 300 power for each DARK attribute cards in your hand.",
+      "full_art": true
     },
     {
       "nome": "Magician of Faith",
@@ -9899,7 +9957,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Quando esta carta for invocada, aumenta o poder de todos os monstros de atributo DARK que você controla em 1000 pontos.",
-      "desc_en": "EFFECT: When this card is summoned, increases the power of all DARK attribute monsters you control by 1000 points."
+      "desc_en": "EFFECT: When this card is summoned, increases the power of all DARK attribute monsters you control by 1000 points.",
+      "full_art": true
     },
     {
       "nome": "Master of Oz",
@@ -9916,7 +9975,8 @@
       "atk": "4200",
       "def": "3700",
       "desc_pt": "\"Big Koala\" + \"Des Kangaroo\"",
-      "desc_en": "\"Big Koala\" + \"Des Kangaroo\""
+      "desc_en": "\"Big Koala\" + \"Des Kangaroo\"",
+      "full_art": true
     },
     {
       "nome": "Mavelus",
@@ -9947,7 +10007,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro que você controla for atacado, ele ganha ATK igual à metade do ATK original do monstro atacante. O ataque continua normalmente.",
-      "desc_en": "EFFECT: When a monster you control is attacked, it gains ATK equal to half the attacking monster's original ATK. The attack continues normally."
+      "desc_en": "EFFECT: When a monster you control is attacked, it gains ATK equal to half the attacking monster's original ATK. The attack continues normally.",
+      "full_art": true
     },
     {
       "nome": "Mech Bass",
@@ -10081,7 +10142,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "equip",
       "desc_pt": "EFEITO: Dobra o poder atual do monstro equipado com esta carta.",
-      "desc_en": "EFFECT: Double the current power of the monster equipped with this card."
+      "desc_en": "EFFECT: Double the current power of the monster equipped with this card.",
+      "full_art": true
     },
     {
       "nome": "Megarock Dragon",
@@ -10270,7 +10332,8 @@
       "atk": "3500",
       "def": "2000",
       "desc_pt": "EFEITO: Quando esta carta for invocada, cause 2000 de dano aos Pontos de Vida do seu oponente. Esta carta é considerada RED-EYES.",
-      "desc_en": "EFFECT: When this card is summoned, inflict 2000 damage to your opponent's LP. This card is treated as RED-EYES."
+      "desc_en": "EFFECT: When this card is summoned, inflict 2000 damage to your opponent's LP. This card is treated as RED-EYES.",
+      "full_art": true
     },
     {
       "nome": "Meteor Black Comet Dragon",
@@ -11271,7 +11334,8 @@
       "atk": "4000",
       "def": "4000",
       "desc_pt": "EFEITO: Quando este DEUS é invocado, elimina todos os monstros no campo do oponente, exceto monstros DIVINE-BEAST. Quando destrói um monstro em batalha, absorve o ATK original desse monstro.",
-      "desc_en": "EFFECT: When this GOD is Summoned, destroy all monsters on your opponent's field, except DIVINE-BEAST monsters. When it destroys a monster by battle, it absorbs that monster's original ATK."
+      "desc_en": "EFFECT: When this GOD is Summoned, destroy all monsters on your opponent's field, except DIVINE-BEAST monsters. When it destroys a monster by battle, it absorbs that monster's original ATK.",
+      "full_art": true
     },
     {
       "nome": "Obese Marmot of Nefariousness",
@@ -11535,7 +11599,8 @@
       "atk": "2500",
       "def": "2100",
       "desc_pt": "EFEITO: Se esta carta batalhar contra um monstro DARK, seu ATK será dobrado apenas durante a Etapa de Dano.",
-      "desc_en": "EFFECT: If this card battles a DARK monster, its ATK is doubled only during the Damage Step."
+      "desc_en": "EFFECT: If this card battles a DARK monster, its ATK is doubled only during the Damage Step.",
+      "full_art": true
     },
     {
       "nome": "Panther Warrior",
@@ -11672,7 +11737,8 @@
       "atk": "3500",
       "def": "3000",
       "desc_pt": "EFEITO: Quando esta carta for invocada, aumenta o poder de todos os monstros INSECT que você controla em 500 pontos.",
-      "desc_en": "EFFECT: When this card is summoned, increases the power of all INSECT monsters you control by 500 points."
+      "desc_en": "EFFECT: When this card is summoned, increases the power of all INSECT monsters you control by 500 points.",
+      "full_art": true
     },
     {
       "nome": "Performance of Sword",
@@ -11798,7 +11864,8 @@
       "atk": "2800",
       "def": "2200",
       "desc_pt": "EFEITO: FULL EQUIP. Esta carta pode ser equipada com qualquer EQUIP, mantendo o bônus original dele. Também pode ser equipada com qualquer SPELL ou TRAP; cada uma concede 300 de poder.",
-      "desc_en": "EFFECT: FULL EQUIP. This card can be equipped with any EQUIP Card, retaining its original bonus. It can also be equipped with any SPELL or TRAP; each grants 300 power."
+      "desc_en": "EFFECT: FULL EQUIP. This card can be equipped with any EQUIP Card, retaining its original bonus. It can also be equipped with any SPELL or TRAP; each grants 300 power.",
+      "full_art": true
     },
     {
       "nome": "Poseidon, King of the Oceans",
@@ -12000,7 +12067,8 @@
       "atk": "1800",
       "def": "2000",
       "desc_pt": "EFEITO: Enquanto esta carta estiver no campo, todos os monstros PLANT e ZOMBIE no seu campo ganham 500 de poder.",
-      "desc_en": "EFFECT: While this card is on the field, all PLANT and ZOMBIE monsters on your field gain 500 power."
+      "desc_en": "EFFECT: While this card is on the field, all PLANT and ZOMBIE monsters on your field gain 500 power.",
+      "full_art": true
     },
     {
       "nome": "Punished Eagle",
@@ -12063,7 +12131,8 @@
       "atk": "1800",
       "def": "1500",
       "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 250 de ATK e DEF para cada monstro EARTH na sua mão.",
-      "desc_en": "EFFECT: When this card is summoned, it gains 250 ATK and DEF for each EARTH monster in your hand."
+      "desc_en": "EFFECT: When this card is summoned, it gains 250 ATK and DEF for each EARTH monster in your hand.",
+      "full_art": true
     },
     {
       "nome": "Queen's Double",
@@ -12140,7 +12209,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "spell",
       "desc_pt": "EFEITO: Destrói todos os monstros oponentes com um raio!",
-      "desc_en": "EFFECT: Destroys every opposing monster with a stroke of lightning!"
+      "desc_en": "EFFECT: Destroys every opposing monster with a stroke of lightning!",
+      "full_art": true
     },
     {
       "nome": "Rainbow Flower",
@@ -12264,7 +12334,8 @@
       "atk": "3600",
       "def": "4000",
       "desc_pt": "EFEITO: Sempre que seu oponente ativar uma carta SPELL, EQUIP ou TRAP, negue o efeito dela e coloque 1 Marcador nesta carta. Para cada Marcador, esta carta ganha 350 ATK e DEF. Com 3 Marcadores, esta carta pode atacar 2 vezes por turno. Com 6 Marcadores, pode atacar 3 vezes por turno. Com 9 ou mais Marcadores, esta carta não pode ser destruída em batalha.",
-      "desc_en": "EFFECT: Whenever your opponent activates a SPELL, EQUIP, or TRAP Card, negate its effect and place 1 Counter on this card. This card gains 350 ATK and DEF for each Counter on it. With 3 Counters, this card can attack twice per turn. With 6 Counters, it can attack 3 times per turn. With 9 or more Counters, this card cannot be destroyed by battle."
+      "desc_en": "EFFECT: Whenever your opponent activates a SPELL, EQUIP, or TRAP Card, negate its effect and place 1 Counter on this card. This card gains 350 ATK and DEF for each Counter on it. With 3 Counters, this card can attack twice per turn. With 6 Counters, it can attack 3 times per turn. With 9 or more Counters, this card cannot be destroyed by battle.",
+      "full_art": true
     },
     {
       "nome": "Red-Eyes Archfiend of Lightning",
@@ -12298,7 +12369,8 @@
       "atk": "2400",
       "def": "2000",
       "desc_pt": "Um dragão feroz com um ataque letal.",
-      "desc_en": "A ferocious dragon with a deadly attack."
+      "desc_en": "A ferocious dragon with a deadly attack.",
+      "full_art": true
     },
     {
       "nome": "Red-Eyes B. Metal Dragon",
@@ -12383,7 +12455,8 @@
       "atk": "3400",
       "def": "2400",
       "desc_pt": "EFEITO: Uma vez por turno, quando o oponente ativar uma carta ou efeito, negue essa ativação e cause 800 de dano aos Pontos de Vida dele.",
-      "desc_en": "EFFECT: Once per turn, when your opponent activates a card or effect, negate that activation and inflict 800 damage to their Life Points."
+      "desc_en": "EFFECT: Once per turn, when your opponent activates a card or effect, negate that activation and inflict 800 damage to their Life Points.",
+      "full_art": true
     },
     {
       "nome": "Red-Eyes Dark Dragoon",
@@ -12516,7 +12589,8 @@
       "atk": "2400",
       "def": "2000",
       "desc_pt": "EFEITO: Esta carta pode atacar diretamente os Pontos de Vida do oponente.",
-      "desc_en": "EFFECT: This card can attack your opponent's Life Points directly."
+      "desc_en": "EFFECT: This card can attack your opponent's Life Points directly.",
+      "full_art": true
     },
     {
       "nome": "Red-Eyes Wyvern",
@@ -12876,7 +12950,8 @@
       "atk": "2900",
       "def": "2400",
       "desc_pt": "EFEITO: Quando invocado aumenta 500 de poder dos monstros no seu campo. Quando esta carta destrói um monstro em batalha, ganhe metade vida igual a metade do ATK original daquele monstro.",
-      "desc_en": "EFFECT: When summoned, increase the power of monsters on your field by 500. When this card destroys a monster in battle, gain half its life points equal to half of that monster's original ATK."
+      "desc_en": "EFFECT: When summoned, increase the power of monsters on your field by 500. When this card destroys a monster in battle, gain half its life points equal to half of that monster's original ATK.",
+      "full_art": true
     },
     {
       "nome": "Rose Spectre of Dunn",
@@ -12925,7 +13000,8 @@
       "atk": "3200",
       "def": "2400",
       "desc_pt": "EFEITO: Quando invocado, destrua todas as cartas SPELL e TRAPS no campo do seu oponente. Cartas EQUIP não são consideradas. Cause 1500 de dano ao LP do seu oponente.",
-      "desc_en": "EFFECT: When Summoned, destroy all SPELL and TRAP Cards on your opponent's field. EQUIP Cards are not included. Inflict 1500 damage to your opponent's LP."
+      "desc_en": "EFFECT: When Summoned, destroy all SPELL and TRAP Cards on your opponent's field. EQUIP Cards are not included. Inflict 1500 damage to your opponent's LP.",
+      "full_art": true
     },
     {
       "nome": "Rude Kaiser",
@@ -13031,7 +13107,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro do oponente declarar um ataque, destrua o monstro atacante e o monstro defensor ganha 1000 de poder.",
-      "desc_en": "EFFECT: When an opponent's monster declares an attack, destroy the attacking monster and the defending monster gains 1000 power."
+      "desc_en": "EFFECT: When an opponent's monster declares an attack, destroy the attacking monster and the defending monster gains 1000 power.",
+      "full_art": true
     },
     {
       "nome": "Salamandra",
@@ -13045,7 +13122,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "equip",
       "desc_pt": "EFEITO: Aumenta o poder dos monstros do atributo FIRE em 700 pontos e reduz os PV do seu oponente em 300 vezes o Nível do monstro equipado com esta carta.",
-      "desc_en": "EFFECT: Increase the power of FIRE attribute monsters by 700 points and decreases your opponent's LP by 300 x Level of the monster equipped with this card."
+      "desc_en": "EFFECT: Increase the power of FIRE attribute monsters by 700 points and decreases your opponent's LP by 300 x Level of the monster equipped with this card.",
+      "full_art": true
     },
     {
       "nome": "Sand Stone",
@@ -13292,7 +13370,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro do oponente declarar um ataque, reduza em 2000 o ATK e o DEF de todos os monstros no campo dele e aumente em 2000 o ATK e o DEF dos seus monstros.",
-      "desc_en": "EFFECT: When an opponent's monster declares an attack, decrease the ATK and DEF of every monster on their field by 2000 and increase the ATK and DEF of your monsters by 2000."
+      "desc_en": "EFFECT: When an opponent's monster declares an attack, decrease the ATK and DEF of every monster on their field by 2000 and increase the ATK and DEF of your monsters by 2000.",
+      "full_art": true
     },
     {
       "nome": "Shield & Sword",
@@ -13323,7 +13402,8 @@
       "atk": "3300",
       "def": "3000",
       "desc_pt": "EFEITO: Quando esta carta destrói um monstro em batalha, cause dano aos Pontos de Vida do seu oponente igual ao ATK original do monstro destruído.",
-      "desc_en": "EFFECT: When this card destroys a monster by battle, inflict damage to your opponent's LP equal to that monster's original ATK."
+      "desc_en": "EFFECT: When this card destroys a monster by battle, inflict damage to your opponent's LP equal to that monster's original ATK.",
+      "full_art": true
     },
     {
       "nome": "Shining Angel",
@@ -13435,7 +13515,8 @@
       "atk": "2800",
       "def": "1000",
       "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, os efeitos de todas as SPELL no campo são negados. Quando esta carta for invocada, ela ganha 300 pontos de ATK para cada SPELL e EQUIP na sua mão.",
-      "desc_en": "EFFECT: While this card is on the field, negate the effects of all SPELL cards on the field. When this card is summoned, it gains 300 ATK for each SPELL and EQUIP card in your hand."
+      "desc_en": "EFFECT: While this card is on the field, negate the effects of all SPELL cards on the field. When this card is summoned, it gains 300 ATK for each SPELL and EQUIP card in your hand.",
+      "full_art": true
     },
     {
       "nome": "Silver Bow and Arrow",
@@ -13576,7 +13657,8 @@
       "atk": "2650",
       "def": "2250",
       "desc_pt": "EFEITO: Aumente o poder dos monstros SPELLCASTER que você controla em 500 pontos ao ser Invocado.",
-      "desc_en": "EFFECT: Increase the power of SPELLCASTER monsters you controls by 500 points when Summoned."
+      "desc_en": "EFFECT: Increase the power of SPELLCASTER monsters you controls by 500 points when Summoned.",
+      "full_art": true
     },
     {
       "nome": "Skull Red Bird",
@@ -13716,7 +13798,8 @@
       "atk": "????",
       "def": "????",
       "desc_pt": "EFEITO: Essa carta ganha 1000 pontos de ATK e DEF para cada Monstro em sua mão incluindo ela propria. Se este Deus estiver no seu campo, o monstro invocado pelo oponente perde 2000 de poder; destrua-o se o poder dele chegar a 0. Esta carta causa dano perfurante e pode atacar 2 vezes por turno.",
-      "desc_en": "EFFECT: This card gains 1000 ATK and DEF points for each monster in your hand, including itself. If this God is on your field, the monster summoned by opponent loses 2000 power, destroy it if its power becomes 0. This card inflicts piercing damage and can attack 2x per turn."
+      "desc_en": "EFFECT: This card gains 1000 ATK and DEF points for each monster in your hand, including itself. If this God is on your field, the monster summoned by opponent loses 2000 power, destroy it if its power becomes 0. This card inflicts piercing damage and can attack 2x per turn.",
+      "full_art": true
     },
     {
       "nome": "Snakeyashi",
@@ -13826,7 +13909,8 @@
       "atk": "3200",
       "def": "2800",
       "desc_pt": "EFEITO: Quando esta carta for invocada, reduza pela metade o poder de todos os monstros no campo do seu oponente. E destrua todas as cartas TRAP no campo do seu oponente.",
-      "desc_en": "EFFECT: When this card is summoned, halve the power of all monsters on your opponent field.And destroy all TRAP cards on your opponent's field."
+      "desc_en": "EFFECT: When this card is summoned, halve the power of all monsters on your opponent field.And destroy all TRAP cards on your opponent's field.",
+      "full_art": true
     },
     {
       "nome": "Soul Hunter",
@@ -14392,7 +14476,8 @@
       "atk": "2500",
       "def": "1200",
       "desc_pt": "EFEITO: Quando esta carta for invocada, destrói todos os monstros AQUA, FISH e SEA SERPENT no campo. Esta carta é considerada ARCHFIEND.",
-      "desc_en": "EFFECT: When this card is Summoned, destroy all AQUA, FISH, and SEA SERPENT monsters on the field. This card is treated as ARCHFIEND."
+      "desc_en": "EFFECT: When this card is Summoned, destroy all AQUA, FISH, and SEA SERPENT monsters on the field. This card is treated as ARCHFIEND.",
+      "full_art": true
     },
     {
       "nome": "Super Conductor Tyranno",
@@ -14409,7 +14494,8 @@
       "atk": "3300",
       "def": "1400",
       "desc_pt": "EFEITO: Quando esta carta for invocada, todos os monstros AQUA, SEA-SERPENT e FISH no campo do oponente perdem 700 pontos de ATK e seu oponente sofre 700 pontos de dano.",
-      "desc_en": "EFFECT: When this card is summoned, all AQUA, SEA-SERPENT, and FISH monsters on your opponent's field lose 700 ATK, and your opponent takes 700 damage."
+      "desc_en": "EFFECT: When this card is summoned, all AQUA, SEA-SERPENT, and FISH monsters on your opponent's field lose 700 ATK, and your opponent takes 700 damage.",
+      "full_art": true
     },
     {
       "nome": "Super Soldier Shield",
@@ -14558,7 +14644,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "spell",
       "desc_pt": "EFEITO: Revele todos os monstros do seu oponente; além disso, eles não poderão atacar por 3 turnos.",
-      "desc_en": "EFFECT: Reveal all your opponent's monsters, also they cannot attack for 3 turns."
+      "desc_en": "EFFECT: Reveal all your opponent's monsters, also they cannot attack for 3 turns.",
+      "full_art": true
     },
     {
       "nome": "Swordsman from a Foreign Land",
@@ -14915,7 +15002,8 @@
       "atk": "4000",
       "def": "4000",
       "desc_pt": "EFEITO: Quando esta carta for invocada, destrua todas as cartas DARK do seu oponente e ganhe 1000 pontos de LP para cada carta destruída. Se isso acontecer, traga 1 monstro \"Darklord\" aleatório do seu DECK para o CAMPO. Enquanto o campo \"Yami\" estiver ativo, esta carta ganha 700 de ATK e DEF e não é afetada por TRAPS.",
-      "desc_en": "EFFECT: When this card is Summoned, destroy all DARK-Attribute cards your opponent controls and gain 1000 LP for each card destroyed. If this happens, Special Summon 1 random \"Darklord\" monster from your DECK. While the \"Yami\" FIELD is active, this card gains 700 ATK and DEF and is not affected by TRAPS."
+      "desc_en": "EFFECT: When this card is Summoned, destroy all DARK-Attribute cards your opponent controls and gain 1000 LP for each card destroyed. If this happens, Special Summon 1 random \"Darklord\" monster from your DECK. While the \"Yami\" FIELD is active, this card gains 700 ATK and DEF and is not affected by TRAPS.",
+      "full_art": true
     },
     {
       "nome": "The Furious Sea King",
@@ -14992,7 +15080,8 @@
       "atk": "3200",
       "def": "1800",
       "desc_pt": "EFEITO: Quando invocado, reduz o ATK/DEF dos monstros LIGHT no campo do oponente a ZERO.",
-      "desc_en": "EFFECT: When Summoned, reduce the ATK/DEF of LIGHT monsters on your opponent's field to ZERO."
+      "desc_en": "EFFECT: When Summoned, reduce the ATK/DEF of LIGHT monsters on your opponent's field to ZERO.",
+      "full_art": true
     },
     {
       "nome": "The Melting Red Shadow",
@@ -15053,7 +15142,8 @@
       "atk": "1500",
       "def": "1200",
       "desc_pt": "EFEITO: Se esta carta batalhar contra um monstro, destrua ambas as cartas antes do calculo de dano. Exceto DIVINE-BEAST.",
-      "desc_en": "EFFECT: If this card battles a monster, destroy both cards before damage is calculated. Except for DIVINE-BEAST."
+      "desc_en": "EFFECT: If this card battles a monster, destroy both cards before damage is calculated. Except for DIVINE-BEAST.",
+      "full_art": true
     },
     {
       "nome": "The Statue of Easter Island",
@@ -15198,7 +15288,8 @@
       "atk": "5000",
       "def": "5000",
       "desc_pt": "EFEITO: No seu turno, pague LP até que você tenha apenas 1 LP restante e Ra ganha ATK/DEF igual a essa quantidade de LPs. Se você encerrar seu turno, devolva todos esses LPs.",
-      "desc_en": "EFFECT: At your turn, pay LP so that you only have 1 left and Ra gains ATK/DEF equal to that amount of LPs. If you end your turn, return all of that LPs."
+      "desc_en": "EFFECT: At your turn, pay LP so that you only have 1 left and Ra gains ATK/DEF equal to that amount of LPs. If you end your turn, return all of that LPs.",
+      "full_art": true
     },
     {
       "nome": "Theinen the Great Sphinx",
@@ -15279,7 +15370,8 @@
       "atk": "3200",
       "def": "3200",
       "desc_pt": "EFEITO: Este monstro pode atacar 3 vezes por turno.",
-      "desc_en": "EFFECT: This monster can attack 3 times per turn."
+      "desc_en": "EFFECT: This monster can attack 3 times per turn.",
+      "full_art": true
     },
     {
       "nome": "Thunder Unicorn",
@@ -15343,7 +15435,8 @@
       "icone_tipo": "spellcaster",
       "nivel": "2",
       "atk": "500",
-      "def": "400"
+      "def": "400",
+      "full_art": true
     },
     {
       "nome": "Toad Master",
@@ -15435,7 +15528,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Esta carta pode atacar diretamente os Pontos de Vida do oponente.",
-      "desc_en": "EFFECT: This card can attack your opponent's Life Points directly."
+      "desc_en": "EFFECT: This card can attack your opponent's Life Points directly.",
+      "full_art": true
     },
     {
       "nome": "Torike",
@@ -15711,7 +15805,8 @@
       "atk": "2800",
       "def": "2100",
       "desc_pt": "EFEITO: Esta carta pode atacar 2 vezes por turno.",
-      "desc_en": "EFFECT: This card can attack 2 times per turn."
+      "desc_en": "EFFECT: This card can attack 2 times per turn.",
+      "full_art": true
     },
     {
       "nome": "Two-headed King Rex",
@@ -15788,7 +15883,8 @@
       "atk": "2800",
       "def": "2600",
       "desc_pt": "EFEITO: Esta carta não é afetada por efeitos de MONSTROS.",
-      "desc_en": "EFFECT: This card is unaffected by MONSTER effects."
+      "desc_en": "EFFECT: This card is unaffected by MONSTER effects.",
+      "full_art": true
     },
     {
       "nome": "Ultimate Ancient Gear Golem",
@@ -15805,7 +15901,8 @@
       "atk": "4400",
       "def": "3400",
       "desc_pt": "EFEITO: Esse monstro aplica dano perfurante em oponentes que estejam em modo de defesa.",
-      "desc_en": "EFFECT: This monster inflicts piercing damage on opponents who are in defense mode."
+      "desc_en": "EFFECT: This monster inflicts piercing damage on opponents who are in defense mode.",
+      "full_art": true
     },
     {
       "nome": "Ultimate Baseball Kid",
@@ -15839,7 +15936,8 @@
       "atk": "2800",
       "def": "1600",
       "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, todos os monstros PLANT e INSECT no campo perdem 1000 pontos de ATK. Quando esta carta for invocada, inflija 1000 pontos de dano ao seu oponente para cada monstro no campo dele.",
-      "desc_en": "EFFECT: While this card is on the field, all PLANT and INSECT monsters on the field lose 1000 ATK. When this card is summoned, inflict 1000 damage to your opponent for each monster on their field."
+      "desc_en": "EFFECT: While this card is on the field, all PLANT and INSECT monsters on the field lose 1000 ATK. When this card is summoned, inflict 1000 damage to your opponent for each monster on their field.",
+      "full_art": true
     },
     {
       "nome": "Ultimate Insect LV3",
@@ -15983,7 +16081,8 @@
       "atk": "2800",
       "def": "2000",
       "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 200 de ATK e DEF para cada monstro FAIRY ou WINGEDBEAST na sua mão.",
-      "desc_en": "EFFECT: When this card is summoned, it gains 200 ATK and DEF for each FAIRY or WINGEDBEAST monster in your hand."
+      "desc_en": "EFFECT: When this card is summoned, it gains 200 ATK and DEF for each FAIRY or WINGEDBEAST monster in your hand.",
+      "full_art": true
     },
     {
       "nome": "Vermillion Sparrow",
@@ -16017,7 +16116,8 @@
       "atk": "1100",
       "def": "900",
       "desc_pt": "EFEITO: Substitui 1 monstro de fusão, a outra carta precisa ser o monstro especifico.",
-      "desc_en": "EFFECT: Replaces 1 Fusion Monster, the other card must be the specified monster."
+      "desc_en": "EFFECT: Replaces 1 Fusion Monster, the other card must be the specified monster.",
+      "full_art": true
     },
     {
       "nome": "Vile Germs",
@@ -16397,7 +16497,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro do oponente atacar: Destrua-o.",
-      "desc_en": "EFFECT: When an opponent's monster attacks: Destroy it."
+      "desc_en": "EFFECT: When an opponent's monster attacks: Destroy it.",
+      "full_art": true
     },
     {
       "nome": "Wilmee",
@@ -16930,7 +17031,8 @@
       "atk": "4000",
       "def": "5000",
       "desc_pt": "EFEITO: Esta carta não é afetada por efeitos de Monstros, SPELLS e TRAPS. Quando esta carta for invocada, role um dado de seis faces. Se o resultado for: 1: Você vence o Duelo. 2 ou 3: Seu oponente perde metade dos Pontos de Vida. 4 ou 5: Destrua todas as cartas do oponente. 6: Destrua esta carta e, se isso acontecer, você perde metade dos seus Pontos de Vida.",
-      "desc_en": "EFFECT: This card is unaffected by monster, Spell, and Trap effects. When this card is summoned, roll a six-sided die. Apply the result: 1: You win the Duel. 2 or 3: Your opponent loses half their Life Points. 4 or 5: Destroy all cards your opponent controls. 6: Destroy this card, and if you do, you lose half your Life Points."
+      "desc_en": "EFFECT: This card is unaffected by monster, Spell, and Trap effects. When this card is summoned, roll a six-sided die. Apply the result: 1: You win the Duel. 2 or 3: Your opponent loses half their Life Points. 4 or 5: Destroy all cards your opponent controls. 6: Destroy this card, and if you do, you lose half your Life Points.",
+      "full_art": true
     }
   ]
 }

@@ -447,6 +447,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp" alt="R"><span>R</span></button>
       <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp" alt="SR"><span>SR</span></button>
       <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR"><span>UR</span></button>
+      <button class="cat-chip" data-filter-fullart="1" data-lang="pt">✨ Full Art</button>
+      <button class="cat-chip" data-filter-fullart="1" data-lang="en">✨ Full Art</button>
       <span class="cat-count" id="cat-count">—</span>
     </div>
   </div>
@@ -522,6 +524,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   let filtroTipo = 'ALL';
   let filtroRaridade = 'ALL';
   let filtroRaca = 'ALL';
+  let filtroFullArt = false;
   let termoBusca = '';
 
   function isEn() { return document.body.classList.contains('en'); }
@@ -539,10 +542,11 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     if (c.icone_atributo) icones.push('<img src="img/atributos/' + c.icone_atributo + '.webp" alt="' + c.atributo + '" title="' + c.atributo + '" loading="lazy">');
     if (c.icone_tipo) icones.push('<img src="img/tipos/' + c.icone_tipo + '.webp" alt="' + c.tipo + '" title="' + c.tipo + '" loading="lazy">');
     const linhaIcones = icones.length ? '<div class="cat-card-icons">' + icones.join('') + '</div>' : '';
+    const pastaImg = (filtroFullArt && c.full_art) ? 'img/cartas_full/' : 'img/cartas/';
     return (
       '<div class="cat-card r-' + c.raridade + '" data-slug="' + c.slug + '">' +
         '<div class="cat-card-img-wrap">' +
-          '<img src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
+          '<img src="' + pastaImg + c.slug + '.webp?v=' + versaoCache + '" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
           badge +
         '</div>' +
         '<div class="cat-card-name">' + nome + '</div>' +
@@ -553,6 +557,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   }
 
   function passaFiltro(c) {
+    if (filtroFullArt && !c.full_art) return false;
     if (filtroTipo !== 'ALL' && c.card_type !== filtroTipo) return false;
     if (filtroRaridade !== 'ALL' && c.raridade !== filtroRaridade) return false;
     if (filtroRaca !== 'ALL' && c.tipo !== filtroRaca) return false;
@@ -636,6 +641,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       render();
     });
   });
+  document.querySelectorAll('[data-filter-fullart]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtroFullArt = !filtroFullArt;
+      document.querySelectorAll('[data-filter-fullart]').forEach(b => b.classList.toggle('active', filtroFullArt));
+      render();
+    });
+  });
 
   let buscaTimeout = null;
   searchInput.addEventListener('input', () => {
@@ -681,7 +693,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   window.openCardModal = function(slug) {
     const c = cartas.find(x => x.slug === slug);
     if (!c) return;
-    modalImg.src = 'img/cartas_grande/' + c.slug + '.webp?v=' + versaoCache;
+    modalImg.src = (c.full_art ? 'img/cartas_full_grande/' : 'img/cartas_grande/') + c.slug + '.webp?v=' + versaoCache;
     modalImg.alt = c.nome;
     const badgeArquivo = c.raridade_arquivo || c.raridade;
     if (badgeArquivo) {
