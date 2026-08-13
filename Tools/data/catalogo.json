@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1786544790",
+  "versao": "1786658188",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -1596,7 +1596,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Quando esta carta destruir um monstro em batalha, cause dano aos Pontos de Vida do oponente igual ao ATK original do monstro destruído. Quando esta carta for destruída, invoque aleatoriamente 1 monstro \"Black Luster Soldier\" do seu Deck no campo.",
-      "desc_en": "EFFECT: When this card destroys a monster by battle, inflict damage to your opponent's Life Points equal to the destroyed monster's original ATK. When this card is destroyed, randomly summon 1 \"Black Luster Soldier\" monster from your Deck to the field."
+      "desc_en": "EFFECT: When this card destroys a monster by battle, inflict damage to your opponent's Life Points equal to the destroyed monster's original ATK. When this card is destroyed, randomly summon 1 \"Black Luster Soldier\" monster from your Deck to the field.",
+      "full_art": true
     },
     {
       "nome": "Black Metal Dragon",
@@ -6227,7 +6228,7 @@
       "atk": "1600",
       "def": "1200",
       "desc_pt": "EFEITO: Quando esta carta for destruída em batalha, traga para o campo o monstro WARRIOR de maior ATK no seu Cemitério, exceto esta carta.",
-      "desc_en": "EFEITO: Quando esta carta for destruída em batalha, traga para o campo o monstro WARRIOR de maior ATK no seu Cemitério, exceto esta carta."
+      "desc_en": "EFFECT: When this card is destroyed in battle, bring the WARRIOR monster with the highest ATK in your Graveyard to the field, except this card."
     },
     {
       "nome": "Gaia the Magical Knight",
@@ -11882,7 +11883,8 @@
       "atk": "2700",
       "def": "5000",
       "desc_pt": "EFEITO: Quando esta carta for atacada por um monstro com ATK maior que o de Poseidon, troque os valores de ATK e DEF desta carta até o final do turno. Esta carta ganha 700 de DEF permanentemente sempre que este efeito for ativado. Todo o dano que o oponente sofrer como resultado deste ataque, você recupera como Pontos de Vida.",
-      "desc_en": "EFFECT: When this card is attacked by a monster with ATK higher than Poseidon's, swap this card's ATK and DEF values until the end of the turn. This card permanently gains 700 DEF every time this effect is activated. Any damage your opponent takes as a result of this attack, you gain as Life Points."
+      "desc_en": "EFFECT: When this card is attacked by a monster with ATK higher than Poseidon's, swap this card's ATK and DEF values until the end of the turn. This card permanently gains 700 DEF every time this effect is activated. Any damage your opponent takes as a result of this attack, you gain as Life Points.",
+      "full_art": true
     },
     {
       "nome": "Pot the Trick",
@@ -15109,8 +15111,8 @@
       "raridade_arquivo": "UR",
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
-      "desc_pt": "EFEITO: 1x por turno, enquanto esta carta estiver virada para cima em seu CAMPO: se um monstro \"Darklord\" que você controla for atacado por um monstro com EFEITO, negue o ATK desse monstro e ganhe LP igual ao ATK original dele.",
-      "desc_en": "EFFECT: Once per turn, while this card is face-up on your FIELD: if a \"Darklord\" monster you control is attacked by a monster with an EFFECT, negate that monster's ATK and gain LP equal to its original ATK."
+      "desc_pt": "EFEITO: Se um monstro \"Darklord\" que você controla for atacado por um monstro de EFEITO, negue o ATK desse monstro e ganhe LP igual ao ATK original dele. Esse efeito será aplicado uma vez por turno enquanto essa carta estiver com a face virada pra cima.",
+      "desc_en": "EFFECT: If a \"Darklord\" monster you control is attacked by a monster with an EFFECT, negate that monster's ATK and gain LP equal to its original ATK. This effect can be applied once per turn while this card is face-up on your FIELD."
     },
     {
       "nome": "The Shadow Who Controls the Dark",
