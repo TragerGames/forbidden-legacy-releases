@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1786658188",
+  "versao": "1786834284",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -1907,7 +1907,8 @@
       "icone_tipo": "dragon",
       "nivel": "8",
       "atk": "3000",
-      "def": "2500"
+      "def": "2500",
+      "full_art": true
     },
     {
       "nome": "Blue-winged Crown",
@@ -2211,8 +2212,8 @@
       "nivel": "4",
       "atk": "0",
       "def": "1600",
-      "desc_pt": "EFEITO: Se esta carta for destruída em batalha e enviada ao Cemitério, reduza 500 ATK e DEF de todos os monstros do seu oponente para cada carta FAIRY que você controla.",
-      "desc_en": "EFFECT: If this card is destroyed by battle and sent to the Graveyard, reduce all of your opponent's monsters' ATK and DEF by 500 for each FAIRY card you control."
+      "desc_pt": "EFEITO: Se esta carta for destruída em batalha e enviada ao Cemitério, reduza 500 ATK e DEF de todos os monstros do seu oponente para cada carta FAIRY que você controla. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: If this card is destroyed by battle and sent to the Graveyard, reduce all of your opponent's monsters' ATK and DEF by 500 for each FAIRY card you control. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Castle of Dark Illusions",
@@ -2525,8 +2526,8 @@
       "nivel": "7",
       "atk": "1600",
       "def": "2000",
-      "desc_pt": "EFEITO: Esta carta ganha 2000 de ATK ao batalhar contra outro monstro. Se o monstro adversário for destruído, esta carta ganha metade do ATK original desse monstro permanentemente.",
-      "desc_en": "EFFECT: This card gains 2000 ATK while battling another monster. If that monster is destroyed, this card permanently gains half of that monster's original ATK."
+      "desc_pt": "EFEITO: Esta carta ganha 2000 de ATK ao batalhar contra outro monstro. Se o monstro adversário for destruído, esta carta ganha metade do ATK original desse monstro permanentemente. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: This card gains 2000 ATK while battling another monster. If that monster is destroyed, this card permanently gains half of that monster's original ATK. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Copycat",
@@ -2608,7 +2609,8 @@
       "icone_tipo": "fiend",
       "nivel": "4",
       "atk": "1350",
-      "def": "1400"
+      "def": "1400",
+      "full_art": true
     },
     {
       "nome": "Crawling Dragon",
@@ -3652,8 +3654,8 @@
       "nivel": "6",
       "atk": "1800",
       "def": "2800",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua 1 TRAP ou SPELL aleatória do oponente. Se isso acontecer, embaralhe todos os monstros do oponente de volta no DECK e pague 1000 de LP.",
-      "desc_en": "EFFECT: When this card is Summoned, destroy 1 random TRAP or SPELL your opponent controls. If this happens, shuffle all of your opponent's monsters back into the DECK and pay 1000 LP."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua 1 TRAP ou SPELL aleatória do oponente. Se isso acontecer, embaralhe todos os monstros do oponente de volta no DECK e pague 1000 de LP. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, destroy 1 random TRAP or SPELL your opponent controls. If this happens, shuffle all of your opponent's monsters back into the DECK and pay 1000 LP. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Asmodeus",
@@ -3669,8 +3671,8 @@
       "nivel": "8",
       "atk": "3000",
       "def": "2500",
-      "desc_pt": "EFEITO: Quando esta carta for destruída em batalha e enviada ao Cemitério, invoque 1 monstro FAIRY aleatório do seu Deck para o Campo. O monstro invocado dessa forma se torna indestrutível em batalha.",
-      "desc_en": "EFFECT: When this card is destroyed by battle and sent to the Graveyard, Special Summon 1 random FAIRY monster from your Deck to the field. The monster Summoned this way becomes indestructible by battle."
+      "desc_pt": "EFEITO: Quando esta carta for destruída em batalha e enviada ao Cemitério, invoque 1 monstro FAIRY aleatório do seu Deck para o Campo. O monstro invocado dessa forma se torna indestrutível em batalha. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is destroyed by battle and sent to the Graveyard, Special Summon 1 random FAIRY monster from your Deck to the field. The monster Summoned this way becomes indestructible by battle. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Dance",
@@ -3700,8 +3702,8 @@
       "nivel": "10",
       "atk": "3000",
       "def": "2800",
-      "desc_pt": "EFEITO: Quando este monstro for invocado, reduza 1000 de ATK de 1 monstro aleatório em campo do oponente.",
-      "desc_en": "EFFECT: When this monster is Summoned, reduce the ATK of 1 random monster on your opponent's field by 1000."
+      "desc_pt": "EFEITO: Quando este monstro for invocado, reduza 1000 de ATK de 1 monstro aleatório em campo do oponente. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this monster is Summoned, reduce the ATK of 1 random monster on your opponent's field by 1000. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Djehuty",
@@ -3717,8 +3719,8 @@
       "nivel": "4",
       "atk": "0",
       "def": "0",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, traga 1 monstro \"Darklord\" aleatório do seu DECK para o CAMPO. Se esta carta for destruída em batalha e for para o CEMITÉRIO, traga 1 monstro FAIRY aleatório do seu DECK para o CAMPO. Esse monstro não causa perda de LP em batalhas enquanto estiver em campo.",
-      "desc_en": "EFFECT: When this card is Summoned, Special Summon 1 random \"Darklord\" monster from your DECK. If this card is destroyed by battle and sent to the GRAVEYARD, Special Summon 1 random FAIRY monster from your DECK. That monster does not cause LP loss from battle while it remains on the field."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, traga 1 monstro \"Darklord\" aleatório do seu DECK para o CAMPO. Se esta carta for destruída em batalha e for para o CEMITÉRIO, traga 1 monstro FAIRY aleatório do seu DECK para o CAMPO. Esse monstro não causa perda de LP em batalhas enquanto estiver em campo. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, Special Summon 1 random \"Darklord\" monster from your DECK. If this card is destroyed by battle and sent to the GRAVEYARD, Special Summon 1 random FAIRY monster from your DECK. That monster does not cause LP loss from battle while it remains on the field. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Edeh Arae",
@@ -3734,8 +3736,8 @@
       "nivel": "5",
       "atk": "2300",
       "def": "2000",
-      "desc_pt": "EFEITO: Se esta carta atacar um monstro em Posição de Defesa, cause dano de batalha perfurante. Quando isso acontecer, você recupera LP igual ao dano perfurante causado.",
-      "desc_en": "EFFECT: If this card attacks a monster in Defense Position, it inflicts piercing battle damage. When it does, you gain LP equal to the piercing damage inflicted."
+      "desc_pt": "EFEITO: Se esta carta atacar um monstro em Posição de Defesa, cause dano de batalha perfurante. Quando isso acontecer, você recupera LP igual ao dano perfurante causado. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: If this card attacks a monster in Defense Position, it inflicts piercing battle damage. When it does, you gain LP equal to the piercing damage inflicted. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Enchantment",
@@ -3765,8 +3767,8 @@
       "nivel": "12",
       "atk": "3000",
       "def": "3000",
-      "desc_pt": "EFEITO: Sempre que seu oponente ativar um efeito de \"Dado\", negue o resultado desse Dado. Se isso acontecer, esta carta ganha ATK e DEF permanentemente, igual ao número sorteado x100.",
-      "desc_en": "EFFECT: Whenever your opponent activates a \"Dice\" effect, negate the result of that Dice roll. If this happens, this card permanently gains ATK and DEF equal to the rolled number x100.",
+      "desc_pt": "EFEITO: Sempre que seu oponente ativar um efeito de \"Dado\", negue o resultado desse Dado. Se isso acontecer, esta carta ganha ATK e DEF permanentemente, igual ao número sorteado x100. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: Whenever your opponent activates a \"Dice\" effect, negate the result of that Dice roll. If this happens, this card permanently gains ATK and DEF equal to the rolled number x100. This card does not suffer penalty in \"Yami\".",
       "full_art": true
     },
     {
@@ -3783,8 +3785,8 @@
       "nivel": "6",
       "atk": "2400",
       "def": "800",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, todo monstro \"Darklord\" no seu CAMPO, incluindo ela própria, ganha 800 de ATK e DEF.",
-      "desc_en": "EFFECT: When this card is Summoned, every \"Darklord\" monster on your FIELD, including itself, gains 800 ATK and DEF."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, todo monstro \"Darklord\" no seu CAMPO, incluindo ela própria, ganha 800 de ATK e DEF. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, every \"Darklord\" monster on your FIELD, including itself, gains 800 ATK and DEF. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Ixchel",
@@ -3800,8 +3802,8 @@
       "nivel": "10",
       "atk": "2500",
       "def": "2900",
-      "desc_pt": "EFEITO: Quando esta carta for destruída em batalha, traga 1 TRAP aleatória do seu CEMITÉRIO para o CAMPO, virada para baixo. Se isso acontecer, esta carta volta para a sua mão em vez de ir para o CEMITÉRIO.",
-      "desc_en": "EFFECT: When this card is destroyed by battle, bring 1 random TRAP from your GRAVEYARD to the FIELD, face-down. If this happens, this card returns to your hand instead of going to the GRAVEYARD."
+      "desc_pt": "EFEITO: Quando esta carta for destruída em batalha, traga 1 TRAP aleatória do seu CEMITÉRIO para o CAMPO, virada para baixo. Se isso acontecer, esta carta volta para a sua mão em vez de ir para o CEMITÉRIO. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is destroyed by battle, bring 1 random TRAP from your GRAVEYARD to the FIELD, face-down. If this happens, this card returns to your hand instead of going to the GRAVEYARD. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Marie",
@@ -3834,8 +3836,8 @@
       "nivel": "11",
       "atk": "3000",
       "def": "3000",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, ganhe 500 pontos de LP para cada carta no CAMPO do seu oponente. Esta carta é imune a efeitos de MONSTRO do oponente.",
-      "desc_en": "EFFECT: When this card is Summoned, gain 500 LP for each card on your opponent's FIELD. This card is immune to your opponent's MONSTER effects.",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, ganhe 500 pontos de LP para cada carta no CAMPO do seu oponente. Esta carta é imune a efeitos de MONSTRO do oponente. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, gain 500 LP for each card on your opponent's FIELD. This card is immune to your opponent's MONSTER effects. This card does not suffer penalty in \"Yami\".",
       "full_art": true
     },
     {
@@ -3852,8 +3854,8 @@
       "nivel": "7",
       "atk": "2600",
       "def": "2600",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua 1 TRAP ou SPELL aleatória no CAMPO do oponente.",
-      "desc_en": "EFFECT: When this card is Summoned, destroy 1 random TRAP or SPELL on your opponent's FIELD."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua 1 TRAP ou SPELL aleatória no CAMPO do oponente. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, destroy 1 random TRAP or SPELL on your opponent's FIELD. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Nergal",
@@ -3869,8 +3871,8 @@
       "nivel": "8",
       "atk": "2700",
       "def": "2500",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, embaralhe todos os monstros que seu oponente controla de volta no DECK dele. Esta carta causa dano de batalha perfurante.",
-      "desc_en": "EFFECT: When this card is Summoned, shuffle all monsters your opponent controls back into their DECK. This card inflicts piercing battle damage."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, embaralhe todos os monstros que seu oponente controla de volta no DECK dele. Esta carta causa dano de batalha perfurante. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, shuffle all monsters your opponent controls back into their DECK. This card inflicts piercing battle damage. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Nurse Reficule",
@@ -3886,8 +3888,8 @@
       "nivel": "4",
       "atk": "1400",
       "def": "600",
-      "desc_pt": "EFEITO: Enquanto esta carta estiver no campo, qualquer efeito que faria seu oponente ganhar LP é anulado, e em vez disso seu oponente perde a mesma quantidade de LP.",
-      "desc_en": "EFFECT: While this card is on the field, any effect that would make your opponent gain LP is negated, and your opponent loses that same amount of LP instead."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver no campo, qualquer efeito que faria seu oponente ganhar LP é anulado, e em vez disso seu oponente perde a mesma quantidade de LP. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: While this card is on the field, any effect that would make your opponent gain LP is negated, and your opponent loses that same amount of LP instead. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Rebellion",
@@ -3917,8 +3919,8 @@
       "nivel": "8",
       "atk": "2900",
       "def": "2400",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, invoque de qualquer um dos dois Cemitérios (o seu ou o do oponente) o monstro FAIRY com o maior ATK.",
-      "desc_en": "EFFECT: When this card is Summoned, Special Summon the FAIRY monster with the highest ATK from either Graveyard (yours or your opponent's)."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, invoque de qualquer um dos dois Cemitérios (o seu ou o do oponente) o monstro FAIRY com o maior ATK. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, Special Summon the FAIRY monster with the highest ATK from either Graveyard (yours or your opponent's). This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Tezcatlipoca",
@@ -3934,8 +3936,8 @@
       "nivel": "9",
       "atk": "2800",
       "def": "2100",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, coloque virada para baixo 1 TRAP aleatória do seu DECK no CAMPO. Se isso acontecer, você paga 1000 de LP.",
-      "desc_en": "EFFECT: When this card is Summoned, Set 1 random TRAP from your DECK on the FIELD. When you do, you pay 1000 LP."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, coloque virada para baixo 1 TRAP aleatória do seu DECK no CAMPO. Se isso acontecer, você paga 1000 de LP. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, Set 1 random TRAP from your DECK on the FIELD. When you do, you pay 1000 LP. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Ukoback",
@@ -3951,8 +3953,8 @@
       "nivel": "3",
       "atk": "700",
       "def": "1000",
-      "desc_pt": "EFEITO: Se esta carta batalhar com um monstro, destrua AMBAS as cartas antes do início da fase de dano, exceto DIVINE-BEAST.",
-      "desc_en": "EFFECT: If this card battles a monster, destroy both cards before damage calculation, except DIVINE-BEAST."
+      "desc_pt": "EFEITO: Se esta carta batalhar com um monstro, destrua AMBAS as cartas antes do início da fase de dano, exceto DIVINE-BEAST. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: If this card battles a monster, destroy both cards before damage calculation, except DIVINE-BEAST. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darklord Uprising",
@@ -3982,8 +3984,8 @@
       "nivel": "8",
       "atk": "2800",
       "def": "2300",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua todos os monstros DARK que seu oponente controla. Quando isso acontecer, descarte 1 monstro DARK aleatório do seu Deck para o Cemitério.",
-      "desc_en": "EFFECT: When this card is Summoned, destroy all DARK monsters your opponent controls. When you do, discard 1 random DARK monster from your Deck to the Graveyard."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua todos os monstros DARK que seu oponente controla. Quando isso acontecer, descarte 1 monstro DARK aleatório do seu Deck para o Cemitério. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, destroy all DARK monsters your opponent controls. When you do, discard 1 random DARK monster from your Deck to the Graveyard. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Darkworld Thorns",
@@ -5977,12 +5979,11 @@
       "nome_pt": "Forbidden Droplet",
       "slug": "forbidden_droplet",
       "card_type": "Spell",
-      "tipo": "Spell",
+      "tipo": "spell continuous",
       "atributo": "SPELL",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "SPELL",
-      "icone_tipo": "spell",
       "desc_pt": "EFEITO: Se ativada sem monstros \"Darklord\" no seu CAMPO (efeito único): aumente o ATK e DEF em 800 de todos os monstros \"Dark\" no seu CAMPO. Se você tiver um monstro \"Darklord\" no CAMPO (efeito contínuo): todos os monstros do seu oponente perdem metade do ATK e DEF quando invocados. Uma vez por turno, negue o efeito de uma carta mágica do seu oponente ao descartar as 2 cartas do topo do seu DECK.",
       "desc_en": "EFFECT: If activated with no \"Darklord\" monsters on your FIELD (one-time effect): increase the ATK and DEF of all \"Dark\" monsters on your FIELD by 800. If you control a \"Darklord\" monster on your FIELD (continuous effect): all of your opponent's monsters lose half their ATK and DEF when Summoned. Once per turn, negate the effect of an opponent's Spell Card by discarding the top 2 cards of your DECK."
     },
@@ -7895,8 +7896,8 @@
       "nivel": "4",
       "atk": "1600",
       "def": "0",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, traga 1 monstro \"DARKLORD\" aleatório do seu DECK para o CAMPO. Se isso acontecer, todos os efeitos de monstro (dos dois lados, exceto cartas FAIRY) ficam banidos enquanto Indulged Darklord permanecer no CAMPO.",
-      "desc_en": "EFFECT: When this card is Summoned, Special Summon 1 random \"DARKLORD\" monster from your DECK to the FIELD. When you do, all monster effects (on both sides, except FAIRY cards) are negated while Indulged Darklord remains on the FIELD."
+      "desc_pt": "EFEITO: Quando esta carta for invocada, traga 1 monstro \"DARKLORD\" aleatório do seu DECK para o CAMPO. Se isso acontecer, todos os efeitos de monstro (dos dois lados, exceto cartas FAIRY) ficam banidos enquanto Indulged Darklord permanecer no CAMPO. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, Special Summon 1 random \"DARKLORD\" monster from your DECK to the FIELD. When you do, all monster effects (on both sides, except FAIRY cards) are negated while Indulged Darklord remains on the FIELD. This card does not suffer penalty in \"Yami\"."
     },
     {
       "nome": "Infernal Flame Emperor",
@@ -9344,7 +9345,8 @@
       "icone_tipo": "fiend",
       "nivel": "4",
       "atk": "1400",
-      "def": "1200"
+      "def": "1200",
+      "full_art": true
     },
     {
       "nome": "Lord of the Red",
@@ -9594,7 +9596,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando seu oponente ativar uma carta de Magia, negue o efeito dela e destrua-a.",
-      "desc_en": "EFFECT: When your opponent activates a Spell Card, negate its effect and destroy it."
+      "desc_en": "EFFECT: When your opponent activates a Spell Card, negate its effect and destroy it.",
+      "full_art": true
     },
     {
       "nome": "Magical Ghost",
@@ -11166,7 +11169,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro do oponente declarar um ataque, negue o ataque e encerre a Fase de Batalha.",
-      "desc_en": "EFFECT: When an opponent's monster declares an attack, negate that attack and end the Battle Phase."
+      "desc_en": "EFFECT: When an opponent's monster declares an attack, negate that attack and end the Battle Phase.",
+      "full_art": true
     },
     {
       "nome": "Nekogal #1",
@@ -11272,7 +11276,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Cada vez que um monstro do oponente declarar um ataque, negue esse ataque. Enquanto esta carta permanecer virada para cima no campo, esse monstro não pode atacar nem mudar sua posição de batalha.",
-      "desc_en": "EFFECT: Each time an opponent's monster declares an attack, negate that attack. While this card remains face-up on the field, that monster cannot attack or change its battle position."
+      "desc_en": "EFFECT: Each time an opponent's monster declares an attack, negate that attack. While this card remains face-up on the field, that monster cannot attack or change its battle position.",
+      "full_art": true
     },
     {
       "nome": "Niwatori",
@@ -11882,8 +11887,8 @@
       "nivel": "10",
       "atk": "2700",
       "def": "5000",
-      "desc_pt": "EFEITO: Quando esta carta for atacada por um monstro com ATK maior que o de Poseidon, troque os valores de ATK e DEF desta carta até o final do turno. Esta carta ganha 700 de DEF permanentemente sempre que este efeito for ativado. Todo o dano que o oponente sofrer como resultado deste ataque, você recupera como Pontos de Vida.",
-      "desc_en": "EFFECT: When this card is attacked by a monster with ATK higher than Poseidon's, swap this card's ATK and DEF values until the end of the turn. This card permanently gains 700 DEF every time this effect is activated. Any damage your opponent takes as a result of this attack, you gain as Life Points.",
+      "desc_pt": "EFEITO: Não é afetado por outros efeitos de cards, exceto Cards de Equipamento. Se este card batalhar: ele ganha ATK igual à metade da sua DEF apenas durante essa batalha e se isso acontecer, ele ganha 700 de ATK permanentemente. Se este card causar dano de batalha ao seu oponente: você ganha PV igual ao dano causado.",
+      "desc_en": "EFFECT: Not affected by other card effects, except Equip Cards. If this card battles: it gains ATK equal to half its DEF during that battle only, and if that happens, it permanently gains 700 ATK. If this card inflicts battle damage to your opponent: you gain LP equal to the damage dealt.",
       "full_art": true
     },
     {
@@ -12335,8 +12340,8 @@
       "nivel": "12",
       "atk": "3600",
       "def": "4000",
-      "desc_pt": "EFEITO: Sempre que seu oponente ativar uma carta SPELL, EQUIP ou TRAP, negue o efeito dela e coloque 1 Marcador nesta carta. Para cada Marcador, esta carta ganha 350 ATK e DEF. Com 3 Marcadores, esta carta pode atacar 2 vezes por turno. Com 6 Marcadores, pode atacar 3 vezes por turno. Com 9 ou mais Marcadores, esta carta não pode ser destruída em batalha.",
-      "desc_en": "EFFECT: Whenever your opponent activates a SPELL, EQUIP, or TRAP Card, negate its effect and place 1 Counter on this card. This card gains 350 ATK and DEF for each Counter on it. With 3 Counters, this card can attack twice per turn. With 6 Counters, it can attack 3 times per turn. With 9 or more Counters, this card cannot be destroyed by battle.",
+      "desc_pt": "EFEITO: Ganha 1 Marcador ao ser invocada. Sempre que seu oponente ativar uma carta SPELL, EQUIP ou TRAP, negue-a e coloque 1 Marcador nesta carta. Para cada Marcador, esta carta ganha 350 ATK e DEF. Com 2 Marcadores, esta carta pode atacar 2 vezes por turno. Com 4 Marcadores, pode atacar 3 vezes por turno. Com 6 ou mais Marcadores, esta carta não pode ser destruída em batalha.",
+      "desc_en": "EFFECT: Gains 1 Counter when Summoned. Whenever your opponent activates a SPELL, EQUIP, or TRAP Card, negate it and place 1 Counter on this card. This card gains 350 ATK and DEF for each Counter on it. With 2 Counters, this card can attack twice per turn. With 4 Counters, it can attack 3 times per turn. With 6 or more Counters, this card cannot be destroyed by battle.",
       "full_art": true
     },
     {
@@ -15003,8 +15008,8 @@
       "nivel": "12",
       "atk": "4000",
       "def": "4000",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua todas as cartas DARK do seu oponente e ganhe 1000 pontos de LP para cada carta destruída. Se isso acontecer, traga 1 monstro \"Darklord\" aleatório do seu DECK para o CAMPO. Enquanto o campo \"Yami\" estiver ativo, esta carta ganha 700 de ATK e DEF e não é afetada por TRAPS.",
-      "desc_en": "EFFECT: When this card is Summoned, destroy all DARK-Attribute cards your opponent controls and gain 1000 LP for each card destroyed. If this happens, Special Summon 1 random \"Darklord\" monster from your DECK. While the \"Yami\" FIELD is active, this card gains 700 ATK and DEF and is not affected by TRAPS.",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua todas as cartas DARK do seu oponente e ganhe 1000 pontos de LP para cada carta destruída. Se isso acontecer, traga 1 monstro \"Darklord\" aleatório do seu DECK para o CAMPO. Enquanto o campo \"Yami\" estiver ativo, esta carta ganha 700 de ATK e DEF e não é afetada por TRAPS. Esta carta não sofre penalidade em \"Yami\".",
+      "desc_en": "EFFECT: When this card is Summoned, destroy all DARK-Attribute cards your opponent controls and gain 1000 LP for each card destroyed. If this happens, Special Summon 1 random \"Darklord\" monster from your DECK. While the \"Yami\" FIELD is active, this card gains 700 ATK and DEF and is not affected by TRAPS. This card does not suffer penalty in \"Yami\".",
       "full_art": true
     },
     {
@@ -15355,7 +15360,8 @@
       "icone_tipo": "thunder",
       "nivel": "5",
       "atk": "1600",
-      "def": "1500"
+      "def": "1500",
+      "full_art": true
     },
     {
       "nome": "Thunder Dragon Titan",
@@ -17023,17 +17029,17 @@
       "nome_pt": "Zorc Necrophades",
       "slug": "zorc_necrophades",
       "card_type": "Monster",
-      "tipo": "Fiend",
-      "atributo": "DARK",
+      "tipo": "Divine-Beast",
+      "atributo": "DIVINE",
       "raridade": "UR",
       "raridade_arquivo": "UR",
-      "icone_atributo": "DARK",
-      "icone_tipo": "fiend",
+      "icone_atributo": "DIVINE",
+      "icone_tipo": "divine-beast",
       "nivel": "12",
       "atk": "4000",
       "def": "5000",
-      "desc_pt": "EFEITO: Esta carta não é afetada por efeitos de Monstros, SPELLS e TRAPS. Quando esta carta for invocada, role um dado de seis faces. Se o resultado for: 1: Você vence o Duelo. 2 ou 3: Seu oponente perde metade dos Pontos de Vida. 4 ou 5: Destrua todas as cartas do oponente. 6: Destrua esta carta e, se isso acontecer, você perde metade dos seus Pontos de Vida.",
-      "desc_en": "EFFECT: This card is unaffected by monster, Spell, and Trap effects. When this card is summoned, roll a six-sided die. Apply the result: 1: You win the Duel. 2 or 3: Your opponent loses half their Life Points. 4 or 5: Destroy all cards your opponent controls. 6: Destroy this card, and if you do, you lose half your Life Points.",
+      "desc_pt": "EFEITO: O efeito desta carta não pode ser negado. Quando esta carta for invocada, role um dado de seis faces e aplique o resultado: 1: Enquanto esta carta estiver em campo, seu oponente não pode ativar efeitos de Monstro. 2: Enquanto esta carta estiver em campo, seu oponente não pode ativar Magias, Equips ou Campos. 3: Enquanto esta carta estiver em campo, seu oponente não pode ativar Armadilhas. 4: Destrua 1 carta aleatória no campo do oponente. 5: Devolva até 2 cards no campo do oponente para o Deck do respectivo dono. 6: O ATK e o DEF desta carta se tornam 0.",
+      "desc_en": "EFFECT: This card's effect cannot be negated. When this card is summoned, roll a six-sided die and apply the result: 1: While this card is on the field, your opponent cannot activate Monster effects. 2: While this card is on the field, your opponent cannot activate Spell, Equip or Field cards. 3: While this card is on the field, your opponent cannot activate Trap cards. 4: Destroy 1 random card on your opponent's field. 5: Return up to 2 cards on your opponent's field to their owner's Deck. 6: This card's ATK and DEF become 0.",
       "full_art": true
     }
   ]
