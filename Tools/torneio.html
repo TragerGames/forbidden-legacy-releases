@@ -414,8 +414,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <div class="feature-title" data-lang="pt">Restrição por rodada</div>
         <div class="feature-title" data-lang="en">Per-round restriction</div>
         <ul class="feature-list">
-          <li data-lang="pt">Cada duelo sorteia uma restrição (sem efeito de monstro, sem magia, sem trap, sem fusão ou sem equipamento).</li>
-          <li data-lang="en">Each duel rolls a restriction (no monster effects, no spells, no traps, no fusions, or no equips).</li>
+          <li data-lang="pt">Cada duelo sorteia 1 de 7 restrições: sem efeito de monstro, sem magia, sem trap, sem equipamento, Dreno Vital, Enfraquecimento dos Monstros ou Espada x Escudo.</li>
+          <li data-lang="en">Each duel rolls 1 of 7 restrictions: no monster effects, no spells, no traps, no equips, Vital Drain, Monster Weakening, or Sword x Shield.</li>
           <li data-lang="pt">Ela vale <strong style="color:#e0a070">só para você</strong> — o oponente joga sempre com acesso total ao próprio deck.</li>
           <li data-lang="en">It applies <strong style="color:#e0a070">only to you</strong> — the opponent always plays with full access to their deck.</li>
         </ul>
@@ -463,7 +463,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <div class="step-title" data-lang="en">Checkpoints</div>
         <p class="step-text" data-lang="pt">Disponíveis após a 3ª e a 6ª vitória. Salvam seu progresso para não recomeçar do zero em caso de derrota.</p>
         <p class="step-text" data-lang="en">Available after the 3rd and 6th win. They save your progress so a loss doesn't send you back to zero.</p>
-        <div class="step-price">500 <span data-lang="pt">Stars (luta 3)</span><span data-lang="en">Stars (fight 3)</span> · 800 <span data-lang="pt">Stars (luta 6)</span><span data-lang="en">Stars (fight 6)</span></div>
+        <div class="step-price">250 <span data-lang="pt">Stars (luta 3)</span><span data-lang="en">Stars (fight 3)</span> · 500 <span data-lang="pt">Stars (luta 6)</span><span data-lang="en">Stars (fight 6)</span></div>
       </div>
       <div class="step-box">
         <div class="step-num">03</div>
@@ -483,19 +483,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     </div>
 
     <div class="penalty-banner">
-      <div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="pt">Penalidade por derrota</div>
-      <div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="en">Loss penalty</div>
+      <div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="pt">Penalidade por derrota ou desistência</div>
+      <div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="en">Loss or forfeit penalty</div>
       <div class="penalty-steps">
-        <div class="penalty-step">1ª: <strong>500</strong></div>
-        <div class="penalty-arrow">→</div>
-        <div class="penalty-step">2ª: <strong>1.000</strong></div>
-        <div class="penalty-arrow">→</div>
-        <div class="penalty-step">3ª: <strong>1.500</strong></div>
-        <div class="penalty-arrow">→</div>
-        <div class="penalty-step">... <span class="penalty-cap">20.000 max</span></div>
+        <div class="penalty-step"><span class="penalty-cap">500 Stars</span> <span data-lang="pt">fixas, toda vez</span><span data-lang="en">flat, every time</span></div>
       </div>
-      <p class="penalty-note" data-lang="pt">A penalidade zera ao vencer o Boss ou automaticamente à meia-noite (o que vier primeiro).</p>
-      <p class="penalty-note" data-lang="en">The penalty resets when you beat the Boss or automatically at midnight — whichever comes first.</p>
+      <p class="penalty-note" data-lang="pt">Sem escalonar por tentativa — é sempre o mesmo valor, cobrado assim que você perde ou desiste (se não tiver Stars suficientes, a diferença fica como dívida).</p>
+      <p class="penalty-note" data-lang="en">It doesn't scale with attempts — it's always the same amount, charged the moment you lose or forfeit (if you don't have enough Stars, the difference becomes a debt).</p>
     </div>
   </div>
 
@@ -505,18 +499,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="section-label" data-lang="en">Upon beating the Boss</div>
     <h2 class="section-title" data-lang="pt">Recompensas</h2>
     <h2 class="section-title" data-lang="en">Rewards</h2>
-    <p class="section-sub" data-lang="pt">Ao iniciar, o jogo sorteia em segredo se o seu Championship é Normal ou Lendário — o narrador só revela qual é na luta 7.</p>
-    <p class="section-sub" data-lang="en">On start, the game secretly rolls whether your run is Normal or Legendary — the narrator only reveals which one on fight 7.</p>
+    <p class="section-sub" data-lang="pt">Ao iniciar, o jogo sorteia em segredo se o seu Championship é Normal ou Lendário — o narrador só revela qual é na luta 7. A chance de Lendário começa em 15% e sobe 1% a cada tentativa sem sair, até um teto de 20%, voltando a 15% assim que sair.</p>
+    <p class="section-sub" data-lang="en">On start, the game secretly rolls whether your run is Normal or Legendary — the narrator only reveals which one on fight 7. The Legendary chance starts at 15% and climbs 1% per attempt it doesn't hit, up to a 20% cap, resetting to 15% the moment it does.</p>
 
     <div class="rewards-grid">
       <div class="reward-card normal">
         <div class="reward-tier-label" data-lang="pt">Championship Normal</div>
         <div class="reward-tier-label" data-lang="en">Normal Championship</div>
-        <div class="reward-chance" data-lang="pt">85% de chance de sorteio</div>
-        <div class="reward-chance" data-lang="en">85% roll chance</div>
+        <div class="reward-chance" data-lang="pt">~80-85% de chance de sorteio</div>
+        <div class="reward-chance" data-lang="en">~80-85% roll chance</div>
         <div class="reward-title">Recompensa Base</div>
         <ul class="reward-list">
-          <li><strong>2.000</strong> Stars</li>
+          <li><strong>3.000</strong> Stars</li>
           <li><strong>100</strong> Souls</li>
           <li><strong>1</strong> <span data-lang="pt">Ticket Gold</span><span data-lang="en">Gold Ticket</span></li>
           <li><strong>10</strong> <span data-lang="pt">cartas, com 1 UR garantida</span><span data-lang="en">cards, with 1 guaranteed UR</span></li>
@@ -527,14 +521,16 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <div class="reward-card legendary">
         <div class="reward-tier-label" data-lang="pt">Championship Lendário</div>
         <div class="reward-tier-label" data-lang="en">Legendary Championship</div>
-        <div class="reward-chance" data-lang="pt">15% de chance de sorteio</div>
-        <div class="reward-chance" data-lang="en">15% roll chance</div>
+        <div class="reward-chance" data-lang="pt">15-20% de chance de sorteio</div>
+        <div class="reward-chance" data-lang="en">15-20% roll chance</div>
         <div class="reward-title">Tudo do Normal, +</div>
         <ul class="reward-list">
-          <li class="plus" data-lang="pt"><strong>5%</strong> de chance de a UR garantida vir em <strong>Full Art</strong></li>
-          <li class="plus" data-lang="en"><strong>5%</strong> chance the guaranteed UR comes as <strong>Full Art</strong></li>
-          <li class="plus" data-lang="pt">As 3 <strong>Divine Beasts</strong> entram no pool dessa UR garantida</li>
-          <li class="plus" data-lang="en">All 3 <strong>Divine Beasts</strong> join the pool for that guaranteed UR</li>
+          <li class="plus" data-lang="pt">Pequena chance extra de a UR garantida ser uma das 3 <strong>Divine Beasts</strong></li>
+          <li class="plus" data-lang="en">Small extra chance the guaranteed UR is one of the 3 <strong>Divine Beasts</strong></li>
+          <li class="plus" data-lang="pt">Cartas <strong>SR/UR repetidas</strong> no prêmio já desbloqueiam a versão <strong>Full Art</strong> (se você já tiver 1 cópia normal)</li>
+          <li class="plus" data-lang="en"><strong>Duplicate SR/UR</strong> cards in the prize unlock the <strong>Full Art</strong> version right away (if you already own 1 normal copy)</li>
+          <li class="plus" data-lang="pt">Abre a chance de o <strong>Portal do Torneio Sombrio</strong> aparecer ao coletar o prêmio</li>
+          <li class="plus" data-lang="en">Unlocks the chance for the <strong>Shadow Tournament Portal</strong> to appear when you collect the prize</li>
         </ul>
       </div>
     </div>
@@ -567,6 +563,52 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="divine-note">
       <span data-lang="pt"><strong>Como funciona a versão Full Art:</strong> ela substitui visualmente a carta normal em todas as telas do jogo, mas exige que você já possua ao menos 1 cópia normal daquela carta específica antes de poder receber a versão especial — assim ninguém pula direto pra Full Art sem nunca ter tido a carta base.</span>
       <span data-lang="en"><strong>How the Full Art version works:</strong> it visually replaces the normal card everywhere in the game, but requires you to already own at least 1 normal copy of that specific card before you can receive the special version — so no one skips straight to Full Art without ever owning the base card.</span>
+    </div>
+  </div>
+
+  <!-- TORNEIO SOMBRIO -->
+  <div class="reveal" style="margin-top:64px">
+    <div class="section-label" data-lang="pt">Evento secreto pós-Lendário</div>
+    <div class="section-label" data-lang="en">Post-Legendary secret event</div>
+    <h2 class="section-title" data-lang="pt">Torneio Sombrio</h2>
+    <h2 class="section-title" data-lang="en">Shadow Tournament</h2>
+    <p class="section-sub" data-lang="pt">Um portal secreto que pode aparecer ao coletar o prêmio de um Championship Lendário. A chance começa em 30% e sobe 5% a cada vitória Lendária em que ele não aparecer, até um teto de 50%, voltando a 30% assim que aparecer.</p>
+    <p class="section-sub" data-lang="en">A secret portal that can appear when you collect a Legendary Championship's prize. The chance starts at 30% and climbs 5% per Legendary win it doesn't appear, up to a 50% cap, resetting to 30% the moment it does.</p>
+
+    <div class="warn-banner">
+      <div class="warn-icon">💀</div>
+      <div class="warn-text">
+        <span data-lang="pt"><strong>Sem volta atrás.</strong> Ao atravessar o portal você entra na hora — não há checkpoints nem retorno entre duelos, e perder qualquer um deles encerra o evento na mesma hora.</span>
+        <span data-lang="en"><strong>No turning back.</strong> Crossing the portal starts the run immediately — there are no checkpoints or returns between duels, and losing any of them ends the event on the spot.</span>
+      </div>
+    </div>
+
+    <div class="features-grid-2" style="margin-top:20px">
+      <div class="feature-card">
+        <div class="feature-icon">⚔</div>
+        <div class="feature-title" data-lang="pt">4 duelos, sem parar</div>
+        <div class="feature-title" data-lang="en">4 duels, no stopping</div>
+        <ul class="feature-list">
+          <li data-lang="pt">Great Shadow Magus e Black Luster Valkyrie, sempre nessa ordem</li>
+          <li data-lang="en">Great Shadow Magus and Black Luster Valkyrie, always in that order</li>
+          <li data-lang="pt">Poseidon, King of the Oceans, na sequência</li>
+          <li data-lang="en">Poseidon, King of the Oceans, next</li>
+          <li data-lang="pt">Um chefe final sorteado entre Kiram Overlord, Seto Corrupted e Azzazel, Arquiduque Infernal</li>
+          <li data-lang="en">A final boss drawn from Kiram Overlord, Seto Corrupted, and Azzazel, Archduke of Hell</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎁</div>
+        <div class="feature-title" data-lang="pt">Booster Sombrio</div>
+        <div class="feature-title" data-lang="en">Shadow Booster</div>
+        <ul class="feature-list">
+          <li><strong>666</strong> Stars <span data-lang="pt">+</span><span data-lang="en">+</span> <strong>66</strong> Souls</li>
+          <li data-lang="pt">Escolha entre <strong>1 UR garantida</strong> ou <strong>1 carta em Full Art</strong> — as duas são reveladas e você fica só com a que escolher</li>
+          <li data-lang="en">Choose between <strong>1 guaranteed UR</strong> or <strong>1 Full Art card</strong> — both are revealed and you keep only the one you pick</li>
+          <li data-lang="pt"><strong>5%</strong> de chance de uma carta <strong>Custom</strong> bônus, garantida independente da escolha</li>
+          <li data-lang="en"><strong>5%</strong> chance of a bonus <strong>Custom</strong> card, guaranteed regardless of your choice</li>
+        </ul>
+      </div>
     </div>
   </div>
 
