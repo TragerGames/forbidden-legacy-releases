@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1786834284",
+  "versao": "1786888627",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -15943,8 +15943,8 @@
       "nivel": "8",
       "atk": "2800",
       "def": "1600",
-      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, todos os monstros PLANT e INSECT no campo perdem 1000 pontos de ATK. Quando esta carta for invocada, inflija 1000 pontos de dano ao seu oponente para cada monstro no campo dele.",
-      "desc_en": "EFFECT: While this card is on the field, all PLANT and INSECT monsters on the field lose 1000 ATK. When this card is summoned, inflict 1000 damage to your opponent for each monster on their field.",
+      "desc_pt": "EFEITO: Ganha 700 ATK durante a fase de batalha. Enquanto esta carta estiver no campo, todos os monstros PLANT e INSECT no campo perdem 1000 ATK. Quando esta carta for invocada, cause 1000 de dano ao oponente para cada monstro no campo dele. No final de cada turno, cause 750 de dano ao oponente.",
+      "desc_en": "EFFECT: Gains 700 ATK during the Battle Phase. While this card is on the field, all PLANT and INSECT monsters on the field lose 1000 ATK. When this card is Summoned, inflict 1000 damage to your opponent for each monster on their field. At the end of each turn, inflict 750 damage to your opponent.",
       "full_art": true
     },
     {
