@@ -198,12 +198,13 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .booster-tile-ribbon.em-breve { background: rgba(70,120,210,.95); }
 .booster-tile-ribbon.expirado { background: rgba(180,35,35,.95); }
 
+.booster-tile-media { position: relative; }
 .booster-tile-countdown {
-  position: absolute; top: 6px; right: 6px; z-index: 6;
-  background: rgba(200,151,58,.95); color: #1a0d05;
-  font-size: 8.5px; font-weight: 700; letter-spacing: .4px;
-  padding: 3px 6px; border-radius: 3px; line-height: 1.3;
-  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 6;
+  background: linear-gradient(0deg, rgba(0,0,0,.85), rgba(0,0,0,0));
+  color: var(--gold-light);
+  font-size: 9.5px; font-weight: 700; letter-spacing: .4px; text-align: center;
+  padding: 12px 4px 5px;
 }
 .booster-detail-countdown {
   background: rgba(200,151,58,.08); border: 1px solid rgba(200,151,58,.3);
@@ -837,11 +838,13 @@ body.en li[data-lang="en"] { display: flex !important; }
       : '';
     return (
       '<div class="booster-tile' + (ribbon && ribbon.bloqueado ? ' locked' : '') + '" data-id="' + b.id + '" style="border-color:' + hexA(b.cor, .35) + '">' +
-        eventTag +
-        ribbonHtml +
-        countdownHtml +
-        '<img class="booster-tile-img" src="' + packImg + '" alt="' + nome + '" loading="lazy" ' +
-          'onerror="this.outerHTML=\'<div class=&quot;booster-tile-placeholder&quot; style=&quot;background:linear-gradient(160deg,' + b.cor + 'cc,#0d0b0e)&quot;>' + b.tipo_label + '</div>\'">' +
+        '<div class="booster-tile-media">' +
+          eventTag +
+          ribbonHtml +
+          '<img class="booster-tile-img" src="' + packImg + '" alt="' + nome + '" loading="lazy" ' +
+            'onerror="this.outerHTML=\'<div class=&quot;booster-tile-placeholder&quot; style=&quot;background:linear-gradient(160deg,' + b.cor + 'cc,#0d0b0e)&quot;>' + b.tipo_label + '</div>\'">' +
+          countdownHtml +
+        '</div>' +
         '<div class="booster-tile-name">' + nome + '</div>' +
         '<div class="booster-tile-price">' + b.custo_souls + ' Souls</div>' +
       '</div>'
@@ -937,9 +940,12 @@ body.en li[data-lang="en"] { display: flex !important; }
   fetch('data/boosters.json?t=' + Date.now())
     .then(r => r.json())
     .then(data => {
-      // Boosters temporarios (evento) primeiro na lista, preservando a ordem
-      // relativa original dentro de cada grupo (sort estavel).
-      boostersData = (data.boosters || []).slice().sort((a, b) => (b.evento ? 1 : 0) - (a.evento ? 1 : 0));
+      // Ordem de exibicao: primeiro os boosters com contagem regressiva ativa
+      // (Darklord + Red-Eyes, evento atual), depois os demais temporarios,
+      // depois o resto — preservando ordem relativa original dentro de cada
+      // grupo (sort estavel).
+      const prioridade = (x) => EVENT_DEADLINE_IDS.includes(x.id) ? 0 : (x.evento ? 1 : 2);
+      boostersData = (data.boosters || []).slice().sort((a, b) => prioridade(a) - prioridade(b));
       versaoCache = data.versao || '';
       renderTiles();
     })
