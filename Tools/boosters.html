@@ -200,11 +200,14 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 
 .booster-tile-media { position: relative; }
 .booster-tile-countdown {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 6;
-  background: linear-gradient(0deg, rgba(0,0,0,.85), rgba(0,0,0,0));
-  color: var(--gold-light);
-  font-size: 9.5px; font-weight: 700; letter-spacing: .4px; text-align: center;
-  padding: 12px 4px 5px;
+  position: absolute; left: 0; right: 0; bottom: 6px; z-index: 6;
+  display: flex; justify-content: center;
+}
+.booster-tile-countdown span {
+  background: rgba(200,151,58,.95); color: #1a0d05;
+  font-size: 9px; font-weight: 700; letter-spacing: .4px;
+  padding: 3px 8px; border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.5);
 }
 .booster-detail-countdown {
   background: rgba(200,151,58,.08); border: 1px solid rgba(200,151,58,.3);
@@ -834,7 +837,7 @@ body.en li[data-lang="en"] { display: flex !important; }
       ? '<div class="booster-tile-ribbon ' + ribbon.classe + '">' + (isEn() ? ribbon.texto_en : ribbon.texto_pt) + '</div>'
       : '';
     const countdownHtml = (!ribbon && EVENT_DEADLINE_IDS.includes(b.id))
-      ? '<div class="booster-tile-countdown" data-countdown-id="' + b.id + '">' + (formatCountdown(EVENT_DEADLINE_UTC - Date.now()) || '') + '</div>'
+      ? '<div class="booster-tile-countdown"><span data-countdown-id="' + b.id + '">' + (formatCountdown(EVENT_DEADLINE_UTC - Date.now()) || '') + '</span></div>'
       : '';
     return (
       '<div class="booster-tile' + (ribbon && ribbon.bloqueado ? ' locked' : '') + '" data-id="' + b.id + '" style="border-color:' + hexA(b.cor, .35) + '">' +
