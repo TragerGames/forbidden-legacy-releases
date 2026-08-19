@@ -198,6 +198,19 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .booster-tile-ribbon.em-breve { background: rgba(70,120,210,.95); }
 .booster-tile-ribbon.expirado { background: rgba(180,35,35,.95); }
 
+.booster-tile-countdown {
+  position: absolute; top: 6px; right: 6px; z-index: 6;
+  background: rgba(200,151,58,.95); color: #1a0d05;
+  font-size: 8.5px; font-weight: 700; letter-spacing: .4px;
+  padding: 3px 6px; border-radius: 3px; line-height: 1.3;
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+.booster-detail-countdown {
+  background: rgba(200,151,58,.08); border: 1px solid rgba(200,151,58,.3);
+  border-radius: 4px; padding: 10px 14px; margin: 10px 0; font-size: 12.5px;
+  color: var(--gold-light); line-height: 1.6;
+}
+
 .booster-detail-panel {
   margin-top:24px; background:var(--dark2); border:1px solid var(--border); border-radius:6px;
   padding:24px 26px; scroll-margin-top:110px;
@@ -443,7 +456,7 @@ body.en li[data-lang="en"] { display: flex !important; }
 <!-- HERO -->
 <div class="page-hero">
   <div class="stars"></div>
-  <div class="page-hero-label">☥ Beta 1.8.1</div>
+  <div class="page-hero-label">☥ Beta 1.8.2</div>
   <h1 class="page-hero-title" data-lang="pt">Booster Packs</h1>
   <h1 class="page-hero-title" data-lang="en">Booster Packs</h1>
   <div class="page-hero-sub" data-lang="pt">Expanda sua coleção com pools temáticos</div>
@@ -686,8 +699,8 @@ body.en li[data-lang="en"] { display: flex !important; }
   <div style="text-align:center;margin-top:48px" data-reveal>
     <a href="index.html#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;background:rgba(200,151,58,.08);border:1px solid rgba(200,151,58,.35);color:var(--gold);border-radius:2px;text-decoration:none;transition:all .25s">
       <span>⬇</span>
-      <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.8.1</span>
-      <span data-lang="en">DOWNLOAD FREE — Beta 1.8.1</span>
+      <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.8.2</span>
+      <span data-lang="en">DOWNLOAD FREE — Beta 1.8.2</span>
     </a>
   </div>
 
@@ -760,7 +773,7 @@ body.en li[data-lang="en"] { display: flex !important; }
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.8.1</span>
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.8.2</span>
     <span>Fan-made project · Not affiliated with Konami</span>
   </div>
 </footer>
@@ -780,9 +793,6 @@ body.en li[data-lang="en"] { display: flex !important; }
   // jogo, e um controle so do site pra coordenar o lancamento com o anuncio.
   // Pra travar/destravar um booster, so editar esta tabela.
   const RIBBON_OVERRIDES = {
-    'especial_red_eyes': {
-      texto_pt: 'ESGOTADO', texto_en: 'SOLD OUT', classe: 'expirado', bloqueado: true,
-    },
     'especial_black_luster_soldier': {
       texto_pt: 'ESGOTADO', texto_en: 'SOLD OUT', classe: 'expirado', bloqueado: true,
     },
@@ -791,7 +801,26 @@ body.en li[data-lang="en"] { display: flex !important; }
     },
   };
 
+  // Relançado em 2026-08-19 junto com o Darklord (Patch 61): os dois boosters
+  // saem de circulação no mesmo instante — 2026-08-26 11:30 no horário de
+  // Brasília (UTC-3), ver EVENTO_DARKLORD_FIM_ISO no card_shop_rules.gd do jogo.
+  // Contador em tempo real na tile e no painel de detalhe; nunca duplicar o
+  // timestamp — troca aqui reflete nos dois boosters automaticamente.
+  const EVENT_DEADLINE_UTC = Date.UTC(2026, 7, 26, 14, 30, 0);
+  const EVENT_DEADLINE_IDS = ['especial_darklord', 'especial_red_eyes'];
+
   function isEn() { return document.body.classList.contains('en'); }
+
+  function formatCountdown(ms) {
+    if (ms <= 0) return null;
+    const totalMin = Math.floor(ms / 60000);
+    const days = Math.floor(totalMin / 1440);
+    const hours = Math.floor((totalMin % 1440) / 60);
+    const mins = totalMin % 60;
+    if (days > 0) return (isEn() ? 'Ends in ' : 'Termina em ') + days + (isEn() ? 'd ' : 'd ') + hours + 'h';
+    if (hours > 0) return (isEn() ? 'Ends in ' : 'Termina em ') + hours + 'h ' + mins + 'm';
+    return (isEn() ? 'Ends in ' : 'Termina em ') + mins + 'm';
+  }
 
   function tileHtml(b) {
     const nome = isEn() ? b.nome_en : b.nome_pt;
@@ -803,10 +832,14 @@ body.en li[data-lang="en"] { display: flex !important; }
     const ribbonHtml = ribbon
       ? '<div class="booster-tile-ribbon ' + ribbon.classe + '">' + (isEn() ? ribbon.texto_en : ribbon.texto_pt) + '</div>'
       : '';
+    const countdownHtml = (!ribbon && EVENT_DEADLINE_IDS.includes(b.id))
+      ? '<div class="booster-tile-countdown" data-countdown-id="' + b.id + '">' + (formatCountdown(EVENT_DEADLINE_UTC - Date.now()) || '') + '</div>'
+      : '';
     return (
       '<div class="booster-tile' + (ribbon && ribbon.bloqueado ? ' locked' : '') + '" data-id="' + b.id + '" style="border-color:' + hexA(b.cor, .35) + '">' +
         eventTag +
         ribbonHtml +
+        countdownHtml +
         '<img class="booster-tile-img" src="' + packImg + '" alt="' + nome + '" loading="lazy" ' +
           'onerror="this.outerHTML=\'<div class=&quot;booster-tile-placeholder&quot; style=&quot;background:linear-gradient(160deg,' + b.cor + 'cc,#0d0b0e)&quot;>' + b.tipo_label + '</div>\'">' +
         '<div class="booster-tile-name">' + nome + '</div>' +
@@ -860,11 +893,23 @@ body.en li[data-lang="en"] { display: flex !important; }
     const outrosTxt = isEn()
       ? 'Every opening also includes 3 cards of <strong style="color:var(--gold-light)">other monster types</strong> and 3 <strong style="color:var(--gold-light)">support cards</strong> (Spells, Traps, Equips, Fields), drawn randomly from the full Forbidden Legacy catalog — not limited to the cards shown above.'
       : 'Toda abertura também inclui 3 cartas de <strong style="color:var(--gold-light)">outros tipos de monstro</strong> e 3 <strong style="color:var(--gold-light)">cartas de suporte</strong> (Magias, Armadilhas, Equipamentos, Campos), sorteadas aleatoriamente entre todo o catálogo de Forbidden Legacy — não se limitam às cartas mostradas acima.';
-    const eventoTxt = b.evento
+    const eventoTxt = (b.evento && !EVENT_DEADLINE_IDS.includes(b.id))
       ? '<div class="booster-detail-event-note">' + (isEn()
           ? '⏳ <strong>Limited-time pack</strong> — available for ' + (b.duracao_dias || 7) + ' days only. Once the event ends, these cards leave circulation until a future re-release.'
           : '⏳ <strong>Pacote temporário</strong> — disponível por apenas ' + (b.duracao_dias || 7) + ' dias. Depois disso, estas cartas saem de circulação até uma futura reedição.'
         ) + '</div>'
+      : (b.evento
+          ? '<div class="booster-detail-event-note">' + (isEn()
+              ? '⏳ <strong>Limited-time pack</strong> — once the event ends, these cards leave circulation until a future re-release.'
+              : '⏳ <strong>Pacote temporário</strong> — depois que o evento terminar, estas cartas saem de circulação até uma futura reedição.'
+            ) + '</div>'
+          : '');
+    const countdownDetailTxt = EVENT_DEADLINE_IDS.includes(b.id)
+      ? '<div class="booster-detail-countdown" data-countdown-detail-id="' + b.id + '">⏰ ' + (formatCountdown(EVENT_DEADLINE_UTC - Date.now()) || '') +
+          (isEn()
+            ? ' — leaves the shop on <strong>Aug 26</strong> at <strong>11:30 (Brasília time)</strong>.'
+            : ' — sai da loja em <strong>26/08</strong> às <strong>11:30 (horário de Brasília)</strong>.')
+        + '</div>'
       : '';
     const garantiaUrTxt = b.garantia_ur_aberturas
       ? '<div class="booster-detail-event-note">' + (isEn()
@@ -880,6 +925,7 @@ body.en li[data-lang="en"] { display: flex !important; }
       '</div>' +
       '<div class="booster-detail-sub">' + desc + '<br>' + tipoLabelTxt + '</div>' +
       eventoTxt +
+      countdownDetailTxt +
       garantiaUrTxt +
       '<div class="card-thumb-grid">' + b.cartas_tema.map(cardThumbHtml).join('') + '</div>' +
       '<div class="booster-detail-outros">' + outrosTxt + '</div>'
@@ -900,6 +946,22 @@ body.en li[data-lang="en"] { display: flex !important; }
     .catch(() => {
       tilesEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)">Não foi possível carregar os boosters agora.</div>';
     });
+
+  // Atualiza o texto da contagem regressiva ao vivo, sem re-renderizar as
+  // tiles inteiras (evitaria perder o estado "active" selecionado).
+  setInterval(() => {
+    const restante = EVENT_DEADLINE_UTC - Date.now();
+    const txt = formatCountdown(restante);
+    document.querySelectorAll('[data-countdown-id]').forEach(el => {
+      if (txt) { el.textContent = txt; } else { el.remove(); }
+    });
+    document.querySelectorAll('[data-countdown-detail-id]').forEach(el => {
+      if (!txt) { el.remove(); return; }
+      el.innerHTML = '⏰ ' + txt + (isEn()
+        ? ' — leaves the shop on <strong>Aug 26</strong> at <strong>11:30 (Brasília time)</strong>.'
+        : ' — sai da loja em <strong>26/08</strong> às <strong>11:30 (horário de Brasília)</strong>.');
+    });
+  }, 60000);
 })();
 
 // Nav scroll
