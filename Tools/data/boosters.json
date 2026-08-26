@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1787521712",
+  "versao": "1787752468",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -1403,9 +1403,9 @@
           "def": "3200"
         },
         {
-          "nome": "Exodia the Forbidden",
+          "nome": "Exodia the Forbidden One",
           "raridade": "UR",
-          "slug": "exodia_the_forbidden",
+          "slug": "exodia_the_forbidden_one",
           "atk": "1000",
           "def": "1000"
         },
@@ -6869,7 +6869,7 @@
       "duracao_dias": 15,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-cyber-dragon.webp",
-      "total_tema": 40,
+      "total_tema": 41,
       "cartas_tema": [
         {
           "nome": "Call of the Haunted",
@@ -7121,11 +7121,16 @@
           "def": "800"
         },
         {
+          "nome": "Heavy Mech Support Platform",
+          "raridade": "R",
+          "slug": "heavy_mech_support_platform",
+          "atk": "500",
+          "def": "500"
+        },
+        {
           "nome": "Proto-cyber Dragon",
           "raridade": "R",
-          "slug": "proto-cyber_dragon",
-          "atk": "1100",
-          "def": "600"
+          "slug": "proto-cyber_dragon"
         }
       ]
     }

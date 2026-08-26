@@ -795,35 +795,67 @@ body.en li[data-lang="en"] { display: flex !important; }
 
   // Faixa manual de "indisponivel no momento" — nao vem do JSON exportado do
   // jogo, e um controle so do site pra coordenar o lancamento com o anuncio.
-  // Pra travar/destravar um booster, so editar esta tabela.
+  // Pra travar/destravar um booster, so editar esta tabela. Boosters com
+  // transicao automatica por horario (ver LAUNCH_UTC abaixo) NAO precisam de
+  // entrada aqui — o estado deles e calculado sozinho.
   const RIBBON_OVERRIDES = {
     'especial_black_luster_soldier': {
-      texto_pt: 'ESGOTADO', texto_en: 'SOLD OUT', classe: 'expirado', bloqueado: true,
+      texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado', bloqueado: true,
     },
     'especial_elemental_hero': {
       texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado', bloqueado: true,
     },
   };
 
-  // Relançado em 2026-08-19 junto com o Darklord (Patch 61): os dois boosters
-  // saem de circulação no mesmo instante — 2026-08-26 11:30 no horário de
-  // Brasília (UTC-3), ver EVENTO_DARKLORD_FIM_ISO no card_shop_rules.gd do jogo.
-  // Contador em tempo real na tile e no painel de detalhe; nunca duplicar o
-  // timestamp — troca aqui reflete nos dois boosters automaticamente.
-  const EVENT_DEADLINE_UTC = Date.UTC(2026, 7, 26, 14, 30, 0);
-  const EVENT_DEADLINE_IDS = ['especial_darklord', 'especial_red_eyes'];
+  // Virada do Patch 63 (2026-08-26 11:30 Brasília / 14:30 UTC, mesmo instante
+  // configurado em EVENTO_CYBER_DRAGON_INICIO_ISO no card_shop_rules.gd do
+  // jogo): Darklord + Red-Eyes saem de circulacao E o Cyber Dragon entra,
+  // no mesmo timestamp. Um so relogio pros tres — nunca duplicar o instante.
+  const LAUNCH_UTC = Date.UTC(2026, 7, 26, 14, 30, 0);
+  const ENDING_IDS = ['especial_darklord', 'especial_red_eyes'];
+  const STARTING_IDS = ['especial_cyber_dragon'];
 
   function isEn() { return document.body.classList.contains('en'); }
 
-  function formatCountdown(ms) {
+  function formatCountdown(ms, modo) {
     if (ms <= 0) return null;
+    const prefixo = modo === 'starts'
+      ? (isEn() ? 'Opens in ' : 'Abre em ')
+      : (isEn() ? 'Ends in ' : 'Termina em ');
     const totalMin = Math.floor(ms / 60000);
     const days = Math.floor(totalMin / 1440);
     const hours = Math.floor((totalMin % 1440) / 60);
     const mins = totalMin % 60;
-    if (days > 0) return (isEn() ? 'Ends in ' : 'Termina em ') + days + (isEn() ? 'd ' : 'd ') + hours + 'h';
-    if (hours > 0) return (isEn() ? 'Ends in ' : 'Termina em ') + hours + 'h ' + mins + 'm';
-    return (isEn() ? 'Ends in ' : 'Termina em ') + mins + 'm';
+    if (days > 0) return prefixo + days + (isEn() ? 'd ' : 'd ') + hours + 'h';
+    if (hours > 0) return prefixo + hours + 'h ' + mins + 'm';
+    return prefixo + mins + 'm';
+  }
+
+  // Estado dinamico (ribbon/travamento/contagem) dos boosters presos ao
+  // LAUNCH_UTC. Retorna null pros demais (usam so RIBBON_OVERRIDES estatico).
+  function dynamicState(b) {
+    const restante = LAUNCH_UTC - Date.now();
+    if (ENDING_IDS.includes(b.id)) {
+      if (restante <= 0) {
+        return { ribbon: { texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado' }, locked: true, countdownModo: null };
+      }
+      return { ribbon: null, locked: false, countdownModo: 'ends' };
+    }
+    if (STARTING_IDS.includes(b.id)) {
+      if (restante > 0) {
+        return { ribbon: { texto_pt: 'EM BREVE', texto_en: 'COMING SOON', classe: 'em-breve' }, locked: true, countdownModo: 'starts' };
+      }
+      return { ribbon: null, locked: false, countdownModo: null };
+    }
+    return null;
+  }
+
+  function countdownTextFor(id) {
+    const b = boostersData.find(x => x.id === id);
+    if (!b) return null;
+    const dyn = dynamicState(b);
+    if (!dyn || !dyn.countdownModo) return null;
+    return formatCountdown(LAUNCH_UTC - Date.now(), dyn.countdownModo);
   }
 
   function tileHtml(b) {
@@ -832,15 +864,18 @@ body.en li[data-lang="en"] { display: flex !important; }
     const eventTag = b.evento
       ? '<span class="booster-tile-event-tag">' + (isEn() ? 'LIMITED' : 'TEMPORÁRIO') + '</span>'
       : '';
-    const ribbon = RIBBON_OVERRIDES[b.id];
+    const dyn = dynamicState(b);
+    const ribbon = dyn ? dyn.ribbon : RIBBON_OVERRIDES[b.id];
+    const locked = dyn ? dyn.locked : !!(ribbon && ribbon.bloqueado);
     const ribbonHtml = ribbon
       ? '<div class="booster-tile-ribbon ' + ribbon.classe + '">' + (isEn() ? ribbon.texto_en : ribbon.texto_pt) + '</div>'
       : '';
-    const countdownHtml = (!ribbon && EVENT_DEADLINE_IDS.includes(b.id))
-      ? '<div class="booster-tile-countdown"><span data-countdown-id="' + b.id + '">' + (formatCountdown(EVENT_DEADLINE_UTC - Date.now()) || '') + '</span></div>'
+    const countdownTxt = countdownTextFor(b.id);
+    const countdownHtml = countdownTxt
+      ? '<div class="booster-tile-countdown"><span data-countdown-id="' + b.id + '">' + countdownTxt + '</span></div>'
       : '';
     return (
-      '<div class="booster-tile' + (ribbon && ribbon.bloqueado ? ' locked' : '') + '" data-id="' + b.id + '" style="border-color:' + hexA(b.cor, .35) + '">' +
+      '<div class="booster-tile' + (locked ? ' locked' : '') + '" data-id="' + b.id + '" style="border-color:' + hexA(b.cor, .35) + '">' +
         '<div class="booster-tile-media">' +
           eventTag +
           ribbonHtml +
@@ -899,7 +934,7 @@ body.en li[data-lang="en"] { display: flex !important; }
     const outrosTxt = isEn()
       ? 'Every opening also includes 3 cards of <strong style="color:var(--gold-light)">other monster types</strong> and 3 <strong style="color:var(--gold-light)">support cards</strong> (Spells, Traps, Equips, Fields), drawn randomly from the full Forbidden Legacy catalog — not limited to the cards shown above.'
       : 'Toda abertura também inclui 3 cartas de <strong style="color:var(--gold-light)">outros tipos de monstro</strong> e 3 <strong style="color:var(--gold-light)">cartas de suporte</strong> (Magias, Armadilhas, Equipamentos, Campos), sorteadas aleatoriamente entre todo o catálogo de Forbidden Legacy — não se limitam às cartas mostradas acima.';
-    const eventoTxt = (b.evento && !EVENT_DEADLINE_IDS.includes(b.id))
+    const eventoTxt = (b.evento && !ENDING_IDS.includes(b.id))
       ? '<div class="booster-detail-event-note">' + (isEn()
           ? '⏳ <strong>Limited-time pack</strong> — available for ' + (b.duracao_dias || 7) + ' days only. Once the event ends, these cards leave circulation until a future re-release.'
           : '⏳ <strong>Pacote temporário</strong> — disponível por apenas ' + (b.duracao_dias || 7) + ' dias. Depois disso, estas cartas saem de circulação até uma futura reedição.'
@@ -910,8 +945,8 @@ body.en li[data-lang="en"] { display: flex !important; }
               : '⏳ <strong>Pacote temporário</strong> — depois que o evento terminar, estas cartas saem de circulação até uma futura reedição.'
             ) + '</div>'
           : '');
-    const countdownDetailTxt = EVENT_DEADLINE_IDS.includes(b.id)
-      ? '<div class="booster-detail-countdown" data-countdown-detail-id="' + b.id + '">⏰ ' + (formatCountdown(EVENT_DEADLINE_UTC - Date.now()) || '') +
+    const countdownDetailTxt = ENDING_IDS.includes(b.id)
+      ? '<div class="booster-detail-countdown" data-countdown-detail-id="' + b.id + '">⏰ ' + (formatCountdown(LAUNCH_UTC - Date.now(), 'ends') || '') +
           (isEn()
             ? ' — leaves the shop on <strong>Aug 26</strong> at <strong>11:30 (Brasília time)</strong>.'
             : ' — sai da loja em <strong>26/08</strong> às <strong>11:30 (horário de Brasília)</strong>.')
@@ -943,34 +978,44 @@ body.en li[data-lang="en"] { display: flex !important; }
   fetch('data/boosters.json?t=' + Date.now())
     .then(r => r.json())
     .then(data => {
-      // Ordem de exibicao: primeiro os boosters com contagem regressiva ativa
-      // (Darklord + Red-Eyes, evento atual), depois os demais temporarios,
-      // depois o resto — preservando ordem relativa original dentro de cada
-      // grupo (sort estavel).
-      const prioridade = (x) => EVENT_DEADLINE_IDS.includes(x.id) ? 0 : (x.evento ? 1 : 2);
+      // Ordem de exibicao: primeiro os boosters presos ao LAUNCH_UTC (saindo
+      // ou entrando agora), depois os demais temporarios, depois o resto —
+      // preservando ordem relativa original dentro de cada grupo (sort estavel).
+      const prioridade = (x) => STARTING_IDS.includes(x.id) ? 0 : (ENDING_IDS.includes(x.id) ? 1 : (x.evento ? 2 : 3));
       boostersData = (data.boosters || []).slice().sort((a, b) => prioridade(a) - prioridade(b));
       versaoCache = data.versao || '';
+      pastLaunch = Date.now() >= LAUNCH_UTC;
       renderTiles();
     })
     .catch(() => {
       tilesEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)">Não foi possível carregar os boosters agora.</div>';
     });
 
-  // Atualiza o texto da contagem regressiva ao vivo, sem re-renderizar as
-  // tiles inteiras (evitaria perder o estado "active" selecionado).
+  // Enquanto o relogio nao cruza LAUNCH_UTC, so atualiza o texto da contagem
+  // regressiva ao vivo (sem re-renderizar as tiles inteiras, pra nao perder o
+  // estado "active" selecionado). No minuto em que cruza, os 3 boosters presos
+  // a esse horario mudam de estado (ribbon/travamento) de verdade — nesse caso
+  // sim precisa re-renderizar tudo pra trocar EM BREVE/ENCERRADO e destravar.
+  let pastLaunch = Date.now() >= LAUNCH_UTC;
   setInterval(() => {
-    const restante = EVENT_DEADLINE_UTC - Date.now();
-    const txt = formatCountdown(restante);
+    const agoraPassou = Date.now() >= LAUNCH_UTC;
+    if (agoraPassou !== pastLaunch) {
+      pastLaunch = agoraPassou;
+      renderTiles();
+      return;
+    }
     document.querySelectorAll('[data-countdown-id]').forEach(el => {
+      const txt = countdownTextFor(el.getAttribute('data-countdown-id'));
       if (txt) { el.textContent = txt; } else { el.remove(); }
     });
     document.querySelectorAll('[data-countdown-detail-id]').forEach(el => {
+      const txt = countdownTextFor(el.getAttribute('data-countdown-detail-id'));
       if (!txt) { el.remove(); return; }
       el.innerHTML = '⏰ ' + txt + (isEn()
         ? ' — leaves the shop on <strong>Aug 26</strong> at <strong>11:30 (Brasília time)</strong>.'
         : ' — sai da loja em <strong>26/08</strong> às <strong>11:30 (horário de Brasília)</strong>.');
     });
-  }, 60000);
+  }, 30000);
 })();
 
 // Nav scroll
