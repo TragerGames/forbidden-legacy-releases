@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1786888627",
+  "versao": "1787752250",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -74,7 +74,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando o ATK de um monstro oponente for igual ou inferior a 4000, ele será eliminado do campo de jogo.",
-      "desc_en": "EFFECT: When an opposing monsters ATK is 4000 or lower, it is eliminated from the play field."
+      "desc_en": "EFFECT: When an opposing monsters ATK is 4000 or lower, it is eliminated from the play field.",
+      "full_art": true
     },
     {
       "nome": "Air Eater",
@@ -811,6 +812,23 @@
       "def": "300"
     },
     {
+      "nome": "Armored Cybern",
+      "nome_pt": "Armored Cybern",
+      "slug": "armored_cybern",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "WIND",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "WIND",
+      "icone_tipo": "machine",
+      "nivel": "4",
+      "atk": "????",
+      "def": "2000",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, cause 750 de dano aos Pontos de Vida do oponente. Esta carta ganha o maior ATK entre as cartas \"Cyber Dragon\" no CAMPO.",
+      "desc_en": "EFFECT: When this card is Summoned, inflict 750 damage to your opponent's Life Points. This card gains the highest ATK among \"Cyber Dragon\" cards on the FIELD."
+    },
+    {
       "nome": "Armored Lizard",
       "nome_pt": "Armored Lizard",
       "slug": "armored_lizard",
@@ -984,12 +1002,11 @@
       "nome_pt": "Backfire",
       "slug": "backfire",
       "card_type": "Trap",
-      "tipo": "Trap",
+      "tipo": "trap continuous",
       "atributo": "trap",
       "raridade": "SR",
       "raridade_arquivo": "SR",
       "icone_atributo": "TRAP",
-      "icone_tipo": "trap",
       "desc_pt": "EFEITO: Enquanto esta carta estiver virada para cima no campo, toda vez que um monstro FIRE no seu campo for destruído, cause 300 de dano ao oponente.",
       "desc_en": "EFFECT: While this card is face-up on the field, each time a FIRE monster on your field is destroyed, inflict 300 damage to your opponent."
     },
@@ -1315,7 +1332,8 @@
       "icone_tipo": "beastwarrior",
       "nivel": "4",
       "atk": "1200",
-      "def": "1500"
+      "def": "1500",
+      "full_art": true
     },
     {
       "nome": "Beginning Knight",
@@ -1365,6 +1383,20 @@
       "def": "1800",
       "desc_pt": "Uma entidade demoníaca com asas e dois grandes chifres usa energia escura para atacar.",
       "desc_en": "A demonic entity with wings and two big horns, uses dark energy to attack."
+    },
+    {
+      "nome": "Beta Evolution Pill - Ultranscedance",
+      "nome_pt": "Beta Evolution Pill - Ultranscedance",
+      "slug": "beta_evolution_pill_-_ultranscedance",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Esta carta só pode ser ativada se você controlar 1 monstro DINOSSAURO no campo. Mande 1 monstro DINOSSAURO do seu Campo para o Cemitério; Invoque 1 monstro DINOSSAURO, DRAGON ou SEA SERPENT aleatório de Nível 5 ou superior do seu Deck. O monstro Invocado com este card ganha 300 de ATK/DEF e pode causar dano perfurante. Este card pode ser usado como substituto de material para Fusão de monstros DINOSSAURO.",
+      "desc_en": "EFFECT: This card can only be activated if you control 1 DINOSAUR-Type monster on the field. Send 1 DINOSAUR-Type monster from your field to the Graveyard; Special Summon 1 random Level 5 or higher DINOSAUR, DRAGON, or SEA SERPENT-Type monster from your Deck. The monster Summoned with this card gains 300 ATK/DEF and can inflict piercing damage. This card can be used as a Fusion Material substitute for DINOSAUR-Type monster Fusion Summons."
     },
     {
       "nome": "Bickuribox",
@@ -1579,7 +1611,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Esta carta não pode ser destruída em batalha. Quando esta carta destruir um monstro em batalha, ela ganha 500 de ATK.",
-      "desc_en": "EFFECT: This card cannot be destroyed by battle. When this card destroys a monster by battle, it gains 500 ATK."
+      "desc_en": "EFFECT: This card cannot be destroyed by battle. When this card destroys a monster by battle, it gains 500 ATK.",
+      "full_art": true
     },
     {
       "nome": "Black Luster Soldier - Super Soldier",
@@ -1826,7 +1859,8 @@
       "atk": "3000",
       "def": "2500",
       "desc_pt": "EFEITO: Esta carta pode atacar 2 vezes por turno.",
-      "desc_en": "EFFECT: This card can attack 2 times per turn."
+      "desc_en": "EFFECT: This card can attack 2 times per turn.",
+      "full_art": true
     },
     {
       "nome": "Blue-Eyes Twin Corrupted Burst-Dragon",
@@ -2169,6 +2203,19 @@
       "desc_en": "A dragon that dwells in the depths of darkness."
     },
     {
+      "nome": "Call of the Haunted",
+      "nome_pt": "Call of the Haunted",
+      "slug": "call_of_the_haunted",
+      "card_type": "Trap",
+      "tipo": "trap continuous",
+      "atributo": "trap",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "TRAP",
+      "desc_pt": "EFEITO: Quando o oponente atacar seus LP diretamente, negue esse ataque e traga um monstro aleatório do seu CEMITÉRIO para o CAMPO. Este efeito funciona enquanto esta carta estiver com a face para cima.",
+      "desc_en": "EFFECT: When your opponent attacks your LP directly, negate that attack and bring a random monster from your GRAVEYARD to the FIELD. This effect works while this card is face-up."
+    },
+    {
       "nome": "Candle of Fate",
       "nome_pt": "Candle of Fate",
       "slug": "candle_of_fate",
@@ -2365,7 +2412,8 @@
       "atk": "2300",
       "def": "2000",
       "desc_pt": "EFEITO: Quando invocado diminui 500 de poder de monstros DARK e LIGHT no campo do seu oponente.",
-      "desc_en": "EFFECT: When summoned, it reduces the power of DARK and LIGHT monsters on your opponent's field by 500."
+      "desc_en": "EFFECT: When summoned, it reduces the power of DARK and LIGHT monsters on your opponent's field by 500.",
+      "full_art": true
     },
     {
       "nome": "Charubin the Fire Knight",
@@ -2417,6 +2465,74 @@
       "def": "1800",
       "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 300 de ATK e DEF para cada \"Berfomet\" na sua mão e no seu Deck.",
       "desc_en": "EFFECT: When this card is summoned, it gains 300 ATK and DEF for each \"Berfomet\" in your hand and Deck."
+    },
+    {
+      "nome": "Chimeratech Fortress Dragon",
+      "nome_pt": "Chimeratech Fortress Dragon",
+      "slug": "chimeratech_fortress_dragon",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "machine",
+      "nivel": "8",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, o ATK dela se torna igual à quantidade de cartas \"Cyber Dragon\" na sua MÃO e no DECK, multiplicado por 350. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: When this card is Summoned, its ATK becomes equal to the number of \"Cyber Dragon\" cards in your HAND and DECK, multiplied by 350. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
+      "nome": "Chimeratech Megafleet Dragon",
+      "nome_pt": "Chimeratech Megafleet Dragon",
+      "slug": "chimeratech_megafleet_dragon",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "machine",
+      "nivel": "10",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, o ATK dela se torna igual à quantidade de cartas \"Cyber Dragon\" na sua MÃO, multiplicado por 1000.",
+      "desc_en": "EFFECT: When this card is Summoned, its ATK becomes equal to the number of \"Cyber Dragon\" cards in your HAND, multiplied by 1000."
+    },
+    {
+      "nome": "Chimeratech Overdragon",
+      "nome_pt": "Chimeratech Overdragon",
+      "slug": "chimeratech_overdragon",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "machine",
+      "nivel": "9",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha ATK igual à soma de todos os MONSTROS em ambos os campos, multiplicado por 800. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: When this card is Summoned, it gains ATK equal to the total number of MONSTERS on both fields, multiplied by 800. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
+      "nome": "Chimeratech Rampage Dragon",
+      "nome_pt": "Chimeratech Rampage Dragon",
+      "slug": "chimeratech_rampage_dragon",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "DARK",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "machine",
+      "nivel": "5",
+      "atk": "2100",
+      "def": "1600",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, destrua uma carta SPELL ou TRAP aleatória no campo do oponente. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: When this card is Summoned, destroy 1 random SPELL or TRAP card on your opponent's field. This card is treated as a \"Cyber Dragon\" card."
     },
     {
       "nome": "Claw Reacher",
@@ -2530,6 +2646,20 @@
       "desc_en": "EFFECT: This card gains 2000 ATK while battling another monster. If that monster is destroyed, this card permanently gains half of that monster's original ATK. This card does not suffer penalty in \"Yami\"."
     },
     {
+      "nome": "Contract with Exodia",
+      "nome_pt": "Contract with Exodia",
+      "slug": "contract_with_exodia",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Só pode ser equipada em monstros \"Exodia\". O monstro equipado ganha 100 de ATK e DEF para cada Nível que possuir.",
+      "desc_en": "EFFECT: Can only be equipped to \"Exodia\" monsters. The equipped monster gains 100 ATK and DEF for each Level it has."
+    },
+    {
       "nome": "Copycat",
       "nome_pt": "Copycat",
       "slug": "copycat",
@@ -2576,8 +2706,8 @@
       "nivel": "8",
       "atk": "2900",
       "def": "2450",
-      "desc_pt": "EFEITO: Ao ser Invocado, ganha 100 de poder para cada carta no seu Cemitério.",
-      "desc_en": "EFFECT: Gains 100 power for each card in your Graveyard when Summoned."
+      "desc_pt": "EFEITO: Quando invocada, aumenta em 500 o ATK e DEF de todos os monstros \"Female\" no seu campo.",
+      "desc_en": "EFFECT: When Summoned, increases the ATK and DEF of all \"Female\" monsters on your field by 500."
     },
     {
       "nome": "Crab Turtle",
@@ -2625,7 +2755,8 @@
       "icone_tipo": "dragon",
       "nivel": "5",
       "atk": "1600",
-      "def": "1400"
+      "def": "1400",
+      "full_art": true
     },
     {
       "nome": "Crawling Dragon #2",
@@ -2818,6 +2949,23 @@
       "desc_en": "EFFECT: When this card is Summoned, increase the power of ARCHFIEND monsters you control by 500 points."
     },
     {
+      "nome": "Cyber Barrier Dragon",
+      "nome_pt": "Cyber Barrier Dragon",
+      "slug": "cyber_barrier_dragon",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "6",
+      "atk": "800",
+      "def": "2800",
+      "desc_pt": "EFEITO: Uma vez por turno, enquanto esta carta estiver em Posição de ATK, o próximo ataque do seu oponente é negado. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: Once per turn, while this card is in ATK Position, your opponent's next attack is negated. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
       "nome": "Cyber Commander",
       "nome_pt": "Cyber Commander",
       "slug": "cyber_commander",
@@ -2867,6 +3015,142 @@
       "desc_en": "EFFECT: Gains 300 power while MOUNTAIN is the active Field. When Summoned, DARK monsters on your opponent's field lose 500 power."
     },
     {
+      "nome": "Cyber Dragon Core",
+      "nome_pt": "Cyber Dragon Core",
+      "slug": "cyber_dragon_core",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "2",
+      "atk": "400",
+      "def": "1500",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, coloque virada para baixo 1 TRAP aleatória do seu DECK no CAMPO. Se isso acontecer, pague 1000 de LP.",
+      "desc_en": "EFFECT: When this card is Summoned, set 1 random TRAP from your DECK face-down on the FIELD. If this happens, pay 1000 LP."
+    },
+    {
+      "nome": "Cyber Dragon Drei",
+      "nome_pt": "Cyber Dragon Drei",
+      "slug": "cyber_dragon_drei",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "4",
+      "atk": "1800",
+      "def": "800",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, aumente 500 de ATK e DEF de todos os monstros LIGHT que você controla e reduza em 500 o ATK e DEF de todos os monstros DARK que o seu oponente controla.",
+      "desc_en": "EFFECT: When this card is Summoned, increase the ATK and DEF of all LIGHT monsters you control by 500, and decrease the ATK and DEF of all DARK monsters your opponent controls by 500."
+    },
+    {
+      "nome": "Cyber Dragon Infinity",
+      "nome_pt": "Cyber Dragon Infinity",
+      "slug": "cyber_dragon_infinity",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "6",
+      "atk": "2100",
+      "def": "1600",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 150 de ATK para cada carta \"Cyber Dragon\" na sua MÃO e no DECK.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 150 ATK for each \"Cyber Dragon\" card in your HAND and DECK."
+    },
+    {
+      "nome": "Cyber Dragon Nachster",
+      "nome_pt": "Cyber Dragon Nachster",
+      "slug": "cyber_dragon_nachster",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "1",
+      "atk": "200",
+      "def": "200",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, traga aleatoriamente 1 monstro \"Cyber Dragon\" de Nível 8 ou maior do seu DECK para o CAMPO.",
+      "desc_en": "EFFECT: When this card is Summoned, randomly bring 1 \"Cyber Dragon\" monster with Level 8 or higher from your DECK to the FIELD."
+    },
+    {
+      "nome": "Cyber Dragon Nova",
+      "nome_pt": "Cyber Dragon Nova",
+      "slug": "cyber_dragon_nova",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "5",
+      "atk": "2100",
+      "def": "1600",
+      "desc_pt": "EFEITO: Quando esta carta batalhar, ganha 2100 de ATK, apenas durante o cálculo de dano. Se este card for destruído e enviado ao Cemitério, invoque 1 monstro do Tipo Máquina aleatório do seu Deck.",
+      "desc_en": "EFFECT: When this card battles, it gains 2100 ATK, only during damage calculation. If this card is destroyed and sent to the Graveyard, Special Summon 1 random Machine-Type monster from your Deck."
+    },
+    {
+      "nome": "Cyber Dragon Vier",
+      "nome_pt": "Cyber Dragon Vier",
+      "slug": "cyber_dragon_vier",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "4",
+      "atk": "1100",
+      "def": "1600",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, aumente 500 de ATK e DEF de todos os monstros \"Cyber Dragon\" no seu campo.",
+      "desc_en": "EFFECT: When this card is Summoned, increase the ATK and DEF of all \"Cyber Dragon\" monsters on your field by 500."
+    },
+    {
+      "nome": "Cyber Dragon Zwei",
+      "nome_pt": "Cyber Dragon Zwei",
+      "slug": "cyber_dragon_zwei",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "4",
+      "atk": "1500",
+      "def": "1000",
+      "desc_pt": "EFEITO: Durante o confronto de batalha, esta carta ganha 300 de ATK. Se esta carta destruir o monstro do oponente em batalha, ganhe 300 de ATK permanentemente.",
+      "desc_en": "EFFECT: During the battle, this card gains 300 ATK. If this card destroys an opponent's monster in battle, it gains 300 ATK permanently."
+    },
+    {
+      "nome": "Cyber Eltanin",
+      "nome_pt": "Cyber Eltanin",
+      "slug": "cyber_eltanin",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "10",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, o ATK dela se torna igual à quantidade de cartas \"Cyber Dragon\" na sua MÃO e no DECK, multiplicado por 350. Envie ao CEMITÉRIO todos os monstros em Posição de Ataque no CAMPO do oponente.",
+      "desc_en": "EFFECT: When this card is Summoned, its ATK becomes equal to the number of \"Cyber Dragon\" cards in your HAND and DECK, multiplied by 350. Send all monsters in Attack Position on your opponent's FIELD to the GRAVEYARD."
+    },
+    {
       "nome": "Cyber End Dragon",
       "nome_pt": "Cyber End Dragon",
       "slug": "cyber_end_dragon",
@@ -2885,6 +3169,23 @@
       "full_art": true
     },
     {
+      "nome": "Cyber Eternity Dragon",
+      "nome_pt": "Cyber Eternity Dragon",
+      "slug": "cyber_eternity_dragon",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "10",
+      "atk": "2800",
+      "def": "4000",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, os efeitos dos monstros do oponente são negados. Quando esta carta for destruída em batalha e enviada ao CEMITÉRIO, traga um monstro \"Cyber Dragon\" aleatório da sua MÃO ou DECK para o CAMPO.",
+      "desc_en": "EFFECT: While this card is on the field, your opponent's monster effects are negated. When this card is destroyed by battle and sent to the GRAVEYARD, bring a random \"Cyber Dragon\" monster from your HAND or DECK to the FIELD."
+    },
+    {
       "nome": "Cyber Falcon",
       "nome_pt": "Cyber Falcon",
       "slug": "cyber_falcon",
@@ -2900,6 +3201,119 @@
       "def": "1200",
       "desc_pt": "Um falcão a jacto que viaja à velocidade do som.",
       "desc_en": "A jet-powered hawk that travels at the speed of sound."
+    },
+    {
+      "nome": "Cyber Jar",
+      "nome_pt": "Cyber Jar",
+      "slug": "cyber_jar",
+      "card_type": "Monster",
+      "tipo": "Rock",
+      "atributo": "DARK",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "rock",
+      "nivel": "3",
+      "atk": "900",
+      "def": "900",
+      "desc_pt": "EFEITO: Quando esta carta é destruída, destrua todos os monstros no campo; então ambos os jogadores descartam as 2 cartas do topo do seu Deck para o Cemitério.",
+      "desc_en": "EFFECT: When this card is destroyed, destroy all monsters on the field; then both players send the top 2 cards of their Deck to the Graveyard."
+    },
+    {
+      "nome": "Cyber Kirin",
+      "nome_pt": "Cyber Kirin",
+      "slug": "cyber_kirin",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "3",
+      "atk": "300",
+      "def": "800",
+      "desc_pt": "EFEITO: Se esta carta for destruída em batalha e enviada ao CEMITÉRIO, o turno do seu oponente é encerrado. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: If this card is destroyed by battle and sent to the GRAVEYARD, your opponent's turn ends. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
+      "nome": "Cyber Larva",
+      "nome_pt": "Cyber Larva",
+      "slug": "cyber_larva",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "1",
+      "atk": "400",
+      "def": "600",
+      "desc_pt": "EFEITO: Se esta carta for escolhida como alvo de um ataque, você não sofre dano de batalha pelo restante do turno. Quando esta carta for destruída em batalha e enviada ao CEMITÉRIO, você pode Invocar 1 \"Cyber Larva\" do seu DECK para o CAMPO. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: If this card is chosen as an attack target, you take no battle damage for the rest of the turn. When this card is destroyed by battle and sent to the GRAVEYARD, you can Summon 1 \"Cyber Larva\" from your DECK to the FIELD. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
+      "nome": "Cyber Laser Dragon",
+      "nome_pt": "Cyber Laser Dragon",
+      "slug": "cyber_laser_dragon",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "7",
+      "atk": "2400",
+      "def": "1800",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, no início do seu turno, destrua o monstro do oponente com ATK e DEF iguais ou maiores que o ATK desta carta (o de maior ATK, se houver mais de um) e envie-o ao CEMITÉRIO.",
+      "desc_en": "EFFECT: While this card is on the field, at the start of your turn, destroy your opponent's monster with ATK and DEF equal to or higher than this card's ATK (the one with the highest ATK, if more than one qualifies) and send it to the GRAVEYARD."
+    },
+    {
+      "nome": "Cyber Phoenix",
+      "nome_pt": "Cyber Phoenix",
+      "slug": "cyber_phoenix",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "FIRE",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "machine",
+      "nivel": "4",
+      "atk": "1200",
+      "def": "1600",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, negue qualquer efeito de SPELL ou TRAP do oponente que tenha como alvo um monstro MACHINE que você controla. Quando esta carta for destruída em batalha e enviada ao CEMITÉRIO, traga uma carta \"Cyber Dragon\" aleatória do seu DECK para o CAMPO.",
+      "desc_en": "EFFECT: While this card is on the field, negate any SPELL or TRAP effect from your opponent that targets a MACHINE monster you control. When this card is destroyed by battle and sent to the GRAVEYARD, bring a random \"Cyber Dragon\" card from your DECK to the FIELD."
+    },
+    {
+      "nome": "Cyber Repair Plant",
+      "nome_pt": "Cyber Repair Plant",
+      "slug": "cyber_repair_plant",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Esta carta só pode ser ativada se você possuir um monstro \"Cyber Dragon\" no CEMITÉRIO. Traga um monstro \"Cyber Dragon\" aleatório do CEMITÉRIO para o CAMPO. Depois disso, embaralhe todas as cartas que o seu oponente controla de volta para o DECK.",
+      "desc_en": "EFFECT: This card can only be activated if you have a \"Cyber Dragon\" monster in your GRAVEYARD. Bring a random \"Cyber Dragon\" monster from the GRAVEYARD to the FIELD. After that, shuffle all cards your opponent controls back into the DECK."
+    },
+    {
+      "nome": "Cyber Revsystem",
+      "nome_pt": "Cyber Revsystem",
+      "slug": "cyber_revsystem",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Só pode ser equipada a um monstro \"Cyber Dragon\". O monstro equipado não pode ser afetado por efeitos de monstros do oponente.",
+      "desc_en": "EFFECT: Can only be equipped to a \"Cyber Dragon\" monster. The equipped monster cannot be affected by your opponent's monster effects."
     },
     {
       "nome": "Cyber Saurus",
@@ -2980,6 +3394,23 @@
       "desc_en": "EFFECT: This card can attack 2 times per turn."
     },
     {
+      "nome": "Cyber Valley",
+      "nome_pt": "Cyber Valley",
+      "slug": "cyber_valley",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "machine",
+      "nivel": "1",
+      "atk": "0",
+      "def": "0",
+      "desc_pt": "EFEITO: Se esta carta batalhar contra um monstro, destrua ambas as cartas antes do cálculo de dano. Quando esta carta for enviada ao CEMITÉRIO, traga uma carta aleatória do seu CEMITÉRIO para o CAMPO. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: If this card battles a monster, destroy both cards before damage calculation. When this card is sent to the GRAVEYARD, bring a random card from your GRAVEYARD to the FIELD. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
       "nome": "Cyber-Stein",
       "nome_pt": "Cyber-Stein",
       "slug": "cyber-stein",
@@ -3012,6 +3443,71 @@
       "desc_en": "EFFECT: Gains +500 ATK if the active Field is MOUNTAIN or WASTELAND."
     },
     {
+      "nome": "Cyberdark Dragon",
+      "nome_pt": "Cyberdark Dragon",
+      "slug": "cyberdark_dragon",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "machine",
+      "nivel": "8",
+      "atk": "1000",
+      "def": "1000",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha o ATK do monstro DRAGON com o maior ATK em seu CEMITÉRIO. Esta carta ganha 100 de ATK para cada carta no seu CEMITÉRIO. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: When this card is Summoned, it gains ATK equal to the ATK of the DRAGON monster with the highest ATK in your GRAVEYARD. This card gains 100 ATK for each card in your GRAVEYARD. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
+      "nome": "Cyberdark Edge",
+      "nome_pt": "Cyberdark Edge",
+      "slug": "cyberdark_edge",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "DARK",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "DARK",
+      "icone_tipo": "machine",
+      "nivel": "4",
+      "atk": "800",
+      "def": "800",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha o ATK do monstro DRAGON de Nível 5 ou menor com o maior ATK em seu CEMITÉRIO. Esta carta ataca diretamente os Pontos de Vida (LP) do oponente. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: When this card is Summoned, it gains ATK equal to the ATK of the DRAGON monster with Level 5 or lower with the highest ATK in your GRAVEYARD. This card can attack directly. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
+      "nome": "Cyberdark Horn",
+      "nome_pt": "Cyberdark Horn",
+      "slug": "cyberdark_horn",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "DARK",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "DARK",
+      "icone_tipo": "machine",
+      "nivel": "4",
+      "atk": "800",
+      "def": "800",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha o ATK do monstro DRAGON de Nível 5 ou menor com o maior ATK em seu CEMITÉRIO. Esta carta causa dano de batalha perfurante. Esta carta é considerada uma carta \"Cyber Dragon\".",
+      "desc_en": "EFFECT: When this card is Summoned, it gains ATK equal to the ATK of the DRAGON monster with Level 5 or lower with the highest ATK in your GRAVEYARD. This card inflicts piercing battle damage. This card is treated as a \"Cyber Dragon\" card."
+    },
+    {
+      "nome": "Cybernetic Hidden Technology",
+      "nome_pt": "Cybernetic Hidden Technology",
+      "slug": "cybernetic_hidden_technology",
+      "card_type": "Trap",
+      "tipo": "Trap",
+      "atributo": "trap",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "TRAP",
+      "icone_tipo": "trap",
+      "desc_pt": "EFEITO: Sempre que um monstro \"Cyber Dragon\" que você controla for atacado, negue esse ataque e destrua o monstro atacante. Sempre que isso acontecer, uma carta aleatória do seu DECK é enviada ao CEMITÉRIO. Esse efeito só pode ser aplicado uma vez por turno.",
+      "desc_en": "EFFECT: Whenever a \"Cyber Dragon\" monster you control is attacked, negate that attack and destroy the attacking monster. Whenever this happens, 1 random card from your DECK is sent to the GRAVEYARD. This effect can only be applied once per turn."
+    },
+    {
       "nome": "Cybernetic Magician",
       "nome_pt": "Cybernetic Magician",
       "slug": "cybernetic_magician",
@@ -3027,6 +3523,20 @@
       "def": "1000",
       "desc_pt": "EFEITO: Quando invocado aumenta 300 de poder dos monstros no seu campo.",
       "desc_en": "EFFECT: When summoned, increase the power of monsters on your field by 300."
+    },
+    {
+      "nome": "Cybernetic Overflow",
+      "nome_pt": "Cybernetic Overflow",
+      "slug": "cybernetic_overflow",
+      "card_type": "Trap",
+      "tipo": "Trap",
+      "atributo": "trap",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "TRAP",
+      "icone_tipo": "trap",
+      "desc_pt": "EFEITO: Quando um monstro \"Cyber Dragon\" que você controla for atacado, negue esse ataque e cause dano aos Pontos de Vida do oponente igual ao Level da carta atacada x150. Quando esta carta for para o CEMITÉRIO, traga uma TRAP aleatória do seu DECK para o CAMPO.",
+      "desc_en": "EFFECT: When a \"Cyber Dragon\" monster you control is attacked, negate that attack and inflict damage to your opponent's Life Points equal to the attacked card's Level x150. When this card is sent to the GRAVEYARD, bring a random TRAP from your DECK to the FIELD."
     },
     {
       "nome": "D. Human",
@@ -3060,6 +3570,20 @@
       "desc_pt": "EFEITO: Esta carta ganha 300 de poder para cada \"Des Frog\", \"Treeborn Frog\" e \"Frog the Jam\" na mão, campo e cemitério.",
       "desc_en": "EFFECT: This card gains 300 ATK/DEF for each \"Des Frog\", \"Treeborn Frog\", and \"Frog the Jam\" in your hand, field, and Graveyard.",
       "full_art": true
+    },
+    {
+      "nome": "Damage Polarizer",
+      "nome_pt": "Damage Polarizer",
+      "slug": "damage_polarizer",
+      "card_type": "Trap",
+      "tipo": "Trap",
+      "atributo": "trap",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "TRAP",
+      "icone_tipo": "trap",
+      "desc_pt": "EFEITO: Quando o oponente ativar uma carta ou efeito, negue essa ativação e mande uma carta aleatória do seu DECK para o CEMITÉRIO.",
+      "desc_en": "EFFECT: When your opponent activates a card or effect, negate that activation and send 1 random card from your DECK to the GRAVEYARD."
     },
     {
       "nome": "Dancing Elf",
@@ -3179,14 +3703,16 @@
       "slug": "dark_elf",
       "card_type": "Monster",
       "tipo": "Spellcaster",
-      "atributo": "Dark",
-      "raridade": "R",
-      "raridade_arquivo": "R",
+      "atributo": "DARK",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
       "icone_atributo": "DARK",
       "icone_tipo": "spellcaster",
       "nivel": "4",
       "atk": "2000",
-      "def": "800"
+      "def": "800",
+      "desc_pt": "EFEITO: Esta carta ganha 50 de ATK e DEF para cada monstro dos grupos \"Female\" e \"Elf\" na sua mão e no seu Deck.",
+      "desc_en": "EFFECT: This card gains 50 ATK and DEF for each \"Female\" and \"Elf\" monster in your hand and Deck."
     },
     {
       "nome": "Dark Energy",
@@ -3466,7 +3992,8 @@
       "atk": "2900",
       "def": "2400",
       "desc_pt": "EFEITO: Quando esta carta for invocada, reduz o poder de todos os monstros DRAGON que seu oponente controla em 0.",
-      "desc_en": "EFFECT: When this card is summoned, decreases the power of all DRAGON monsters your opponent control by 0."
+      "desc_en": "EFFECT: When this card is summoned, decreases the power of all DRAGON monsters your opponent control by 0.",
+      "full_art": true
     },
     {
       "nome": "Dark Plant",
@@ -3561,6 +4088,23 @@
       "def": "1100"
     },
     {
+      "nome": "Dark Tyranno",
+      "nome_pt": "Dark Tyranno",
+      "slug": "dark_tyranno",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dinosaur",
+      "nivel": "7",
+      "atk": "2600",
+      "def": "1800",
+      "desc_pt": "EFEITO: Pode atacar diretamente se todos os monstros que seu oponente controla estiverem em Posição de Defesa. Se este card for enviado para o Cemitério: Invoque 1 monstro DINOSSAURO aleatório de Nível 8 ou superior do seu Deck.",
+      "desc_en": "EFFECT: Can attack directly if all monsters your opponent controls are in Defense Position. If this card is sent to the Graveyard: Special Summon 1 random Level 8 or higher DINOSAUR-Type monster from your Deck."
+    },
+    {
       "nome": "Dark Witch",
       "nome_pt": "Dark Witch",
       "slug": "dark_witch",
@@ -3573,7 +4117,8 @@
       "icone_tipo": "fairy",
       "nivel": "5",
       "atk": "1800",
-      "def": "1700"
+      "def": "1700",
+      "full_art": true
     },
     {
       "nome": "Dark-Piercing Light",
@@ -3586,8 +4131,8 @@
       "raridade_arquivo": "R",
       "icone_atributo": "SPELL",
       "icone_tipo": "spell",
-      "desc_pt": "EFEITO: Uma luz deslumbrante revela todos os monstros no campo de jogo.",
-      "desc_en": "EFFECT: A dazzling light reveals all monsters on the playing field."
+      "desc_pt": "EFEITO: Todos os monstros com a face para baixo perdem 500 de ATK/DEF e são revelados com a face para cima.",
+      "desc_en": "EFFECT: All face-down monsters lose 500 ATK/DEF and are flipped face-up."
     },
     {
       "nome": "Darkfire Dragon",
@@ -3988,6 +4533,23 @@
       "desc_en": "EFFECT: When this card is Summoned, destroy all DARK monsters your opponent controls. When you do, discard 1 random DARK monster from your Deck to the Graveyard. This card does not suffer penalty in \"Yami\"."
     },
     {
+      "nome": "Darksaurus",
+      "nome_pt": "Darksaurus",
+      "slug": "darksaurus",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dinosaur",
+      "nivel": "4",
+      "atk": "2500",
+      "def": "1800",
+      "desc_pt": "EFEITO: Uma vez por turno, no início do seu turno: destrua todos os Cards de SPELL e TRAP que seu oponente controla. Seu oponente não pode ativar Cards de SPELL e TRAP em resposta à ativação deste efeito. Se este card for destruído em batalha ou por um efeito de Card do oponente: Invoque 1 monstro DINOSSAURO aleatório do seu Deck.",
+      "desc_en": "EFFECT: Once per turn, at the start of your turn: destroy all SPELL and TRAP Cards your opponent controls. Your opponent cannot activate SPELL and TRAP Cards in response to the activation of this effect. If this card is destroyed by battle or by an opponent's Card effect: Special Summon 1 random DINOSAUR-Type monster from your Deck."
+    },
+    {
       "nome": "Darkworld Thorns",
       "nome_pt": "Darkworld Thorns",
       "slug": "darkworld_thorns",
@@ -4279,7 +4841,8 @@
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro do oponente ativar seu efeito, negue esse efeito e destrua esse monstro; se ele for DIVINE-BEAST, apenas negue o efeito, sem destruí-lo. Depois, envie 1 carta do seu Deck ao Cemitério.",
-      "desc_en": "EFFECT: When an opponent's monster activates its effect, negate that effect and destroy that monster; if it is a DIVINE-BEAST, only negate the effect without destroying it. Then send 1 card from your Deck to the Graveyard."
+      "desc_en": "EFFECT: When an opponent's monster activates its effect, negate that effect and destroy that monster; if it is a DIVINE-BEAST, only negate the effect without destroying it. Then send 1 card from your Deck to the Graveyard.",
+      "full_art": true
     },
     {
       "nome": "Djinn the Watcher of the Wind",
@@ -4372,6 +4935,20 @@
       "nivel": "3",
       "atk": "900",
       "def": "800"
+    },
+    {
+      "nome": "Double Evolution Pill",
+      "nome_pt": "Double Evolution Pill",
+      "slug": "double_evolution_pill",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Esta carta só pode ser ativada se você controlar 1 monstro DINOSSAURO no campo. Mande 1 monstro DINOSSAURO do seu Campo para o Cemitério; Invoque 1 monstro DINOSSAURO aleatório de Nível 7 ou superior da sua mão ou do Deck. O monstro Invocado com este card ganha 300 de ATK/DEF. Este card pode ser usado como substituto de material para Fusão de monstros DINOSSAURO.",
+      "desc_en": "EFFECT: This card can only be activated if you control 1 DINOSAUR-Type monster on the field. Send 1 DINOSAUR-Type monster from your field to the Graveyard; Special Summon 1 random Level 7 or higher DINOSAUR-Type monster from your hand or Deck. The monster Summoned with this card gains 300 ATK/DEF. This card can be used as a Fusion Material substitute for DINOSAUR-Type monster Fusion Summons."
     },
     {
       "nome": "Dragon Capture Jar",
@@ -4647,8 +5224,8 @@
       "raridade_arquivo": "R",
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
-      "desc_pt": "EFEITO: Monstros com ATK igual ou inferior a 1000 são eliminados do campo de jogo.",
-      "desc_en": "EFFECT: Monsters with ATK of 1000 or lower are eliminated from the play field."
+      "desc_pt": "EFEITO: Se um monstro com fator de DEF 1500 ou menos atacar, destrua o monstro.",
+      "desc_en": "EFFECT: If a monster with a DEF factor of 1500 or less attacks, destroy that monster."
     },
     {
       "nome": "Efreet, Spirit of the Ancestral Flame",
@@ -5401,6 +5978,20 @@
       "desc_en": "EFFECT: When this card is summoned, it gains 200 ATK for each Trap card in your hand and on the field."
     },
     {
+      "nome": "Evolution Burst",
+      "nome_pt": "Evolution Burst",
+      "slug": "evolution_burst",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Esta carta só pode ser ativada se você controlar um monstro \"Cyber Dragon\" no CAMPO. Destrua um monstro aleatório que o seu oponente controla.",
+      "desc_en": "EFFECT: This card can only be activated if you control a \"Cyber Dragon\" monster on the FIELD. Destroy 1 random monster your opponent controls."
+    },
+    {
       "nome": "Exarion Universe",
       "nome_pt": "Exarion Universe",
       "slug": "exarion_universe",
@@ -5418,19 +6009,72 @@
       "desc_en": "EFFECT: This monster inflicts piercing damage on opponents who are in defense mode."
     },
     {
-      "nome": "Exodia the Forbidden",
-      "nome_pt": "Exodia the Forbidden",
-      "slug": "exodia_the_forbidden",
+      "nome": "Exodia Necross",
+      "nome_pt": "Exodia Necross",
+      "slug": "exodia_necross",
       "card_type": "Monster",
       "tipo": "Spellcaster",
-      "atributo": "Dark",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "spellcaster",
+      "nivel": "4",
+      "atk": "1800",
+      "def": "0",
+      "desc_pt": "EFEITO: Quando invocada, ganha 500 de ATK para cada carta de monstro \"Exodia\" ou \"The Forbidden\" na sua mão e/ou Cemitério.",
+      "desc_en": "EFFECT: When Summoned, gains 500 ATK for each \"Exodia\" or \"The Forbidden\" monster card in your hand and/or Graveyard."
+    },
+    {
+      "nome": "Exodia the Forbidden One",
+      "nome_pt": "Exodia the Forbidden One",
+      "slug": "exodia_the_forbidden_one",
+      "card_type": "Monster",
+      "tipo": "Spellcaster",
+      "atributo": "DARK",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "DARK",
       "icone_tipo": "spellcaster",
       "nivel": "3",
       "atk": "1000",
-      "def": "1000"
+      "def": "1000",
+      "desc_pt": "Uma das cinco partes amaldiçoadas do lendário Exodia, the Forbidden One. Se você tiver as cinco partes em sua mão ao mesmo tempo, vence o duelo automaticamente.",
+      "desc_en": "One of the five cursed pieces of the legendary Exodia, the Forbidden One. If you have all five pieces in your hand at the same time, you win the Duel automatically."
+    },
+    {
+      "nome": "Exodia, the Legendary Defender",
+      "nome_pt": "Exodia, the Legendary Defender",
+      "slug": "exodia_the_legendary_defender",
+      "card_type": "Monster",
+      "tipo": "Spellcaster",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "spellcaster",
+      "nivel": "10",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Quando invocada, destrua todas as cartas no campo, exceto esta carta. Quando invocada, ganha 500 de ATK e DEF para cada carta \"The Forbidden\" na sua mão e/ou no seu Deck. Full Equip.",
+      "desc_en": "EFFECT: When Summoned, destroy all cards on the field except this card. When Summoned, gains 500 ATK and DEF for each \"The Forbidden\" card in your hand and/or Deck. Full Equip."
+    },
+    {
+      "nome": "Exodius the Ultimate Forbidden Lord",
+      "nome_pt": "Exodius the Ultimate Forbidden Lord",
+      "slug": "exodius_the_ultimate_forbidden_lord",
+      "card_type": "Monster",
+      "tipo": "Spellcaster",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "spellcaster",
+      "nivel": "10",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Esta carta em campo ganha 1000 de ATK para cada Monstro Normal no seu Cemitério. Se houver 5 cards \"The Forbidden\" diferentes no seu Cemitério no fim do seu turno e esta carta estiver no seu campo, você vence o Duelo.",
+      "desc_en": "EFFECT: This card on the field gains 1000 ATK for each Normal Monster in your Graveyard. If there are 5 different \"The Forbidden\" cards in your Graveyard at the end of your turn and this card is on your field, you win the Duel."
     },
     {
       "nome": "Exxod, Master of The Guard",
@@ -6101,6 +6745,23 @@
       "def": "500"
     },
     {
+      "nome": "Frostosaurus",
+      "nome_pt": "Frostosaurus",
+      "slug": "frostosaurus",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "WATER",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "WATER",
+      "icone_tipo": "dinosaur",
+      "nivel": "6",
+      "atk": "2600",
+      "def": "1700",
+      "desc_pt": "EFEITO: Quando este card for Invocado, destrua todos os Cards de Magia e Armadilha no campo do oponente. Este card ganha 500 de ATK/DEF enquanto \"Umi\" estiver ativado.",
+      "desc_en": "EFFECT: When this card is Summoned, destroy all Spell and Trap Cards on your opponent's field. This card gains 500 ATK/DEF while \"Umi\" is on the field."
+    },
+    {
       "nome": "Fungi of the Musk",
       "nome_pt": "Fungi of the Musk",
       "slug": "fungi_of_the_musk",
@@ -6508,7 +7169,8 @@
       "atk": "1500",
       "def": "1200",
       "desc_pt": "Esse monstro se move tão rápido que parece uma ilusão para olhos mortais.",
-      "desc_en": "This monster moves so fast that it looks like an illusion to mortal eyes."
+      "desc_en": "This monster moves so fast that it looks like an illusion to mortal eyes.",
+      "full_art": true
     },
     {
       "nome": "Gearfried The Iron Knight",
@@ -7335,6 +7997,23 @@
       "def": "2500"
     },
     {
+      "nome": "Heavy Mech Support Platform",
+      "nome_pt": "Heavy Mech Support Platform",
+      "slug": "heavy_mech_support_platform",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "DARK",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "DARK",
+      "icone_tipo": "machine",
+      "nivel": "3",
+      "atk": "500",
+      "def": "500",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, aumente 500 de ATK e DEF de todos os monstros MACHINE que você controla.",
+      "desc_en": "EFFECT: While this card is on the field, increase the ATK and DEF of all MACHINE monsters you control by 500."
+    },
+    {
       "nome": "Hercules Beetle",
       "nome_pt": "Hercules Beetle",
       "slug": "hercules_beetle",
@@ -7382,12 +8061,11 @@
       "nome_pt": "Hero Medal",
       "slug": "hero_medal",
       "card_type": "Trap",
-      "tipo": "Trap",
+      "tipo": "trap continuous",
       "atributo": "trap",
       "raridade": "N",
       "raridade_arquivo": "C",
       "icone_atributo": "TRAP",
-      "icone_tipo": "trap",
       "desc_pt": "EFEITO: Ative quando um monstro do oponente declarar um ataque. Enquanto esta carta estiver com a face para cima no campo, todos os monstros do seu oponente perdem 100 de ATK e DEF para cada monstro \"Elemental HERO\" que você controla.",
       "desc_en": "EFFECT: Activate when an opponent's monster declares an attack. While this card is face-up on the field, all monsters your opponent controls lose 100 ATK and DEF for each \"Elemental HERO\" monster you control."
     },
@@ -7396,12 +8074,11 @@
       "nome_pt": "Hero Signal",
       "slug": "hero_signal",
       "card_type": "Trap",
-      "tipo": "Trap",
+      "tipo": "trap continuous",
       "atributo": "trap",
       "raridade": "SR",
       "raridade_arquivo": "SR",
       "icone_atributo": "TRAP",
-      "icone_tipo": "trap",
       "desc_pt": "EFEITO: Enquanto esta carta estiver com a face para cima no campo, sempre que um monstro que você controla for destruído em batalha e enviado ao Cemitério, Invoque aleatoriamente do seu Deck 1 monstro \"Elemental HERO\" de Nível 4 ou menos para o seu campo.",
       "desc_en": "EFFECT: While this card is face-up on the field, each time a monster you control is destroyed by battle and sent to the Graveyard, randomly Summon 1 Level 4 or lower \"Elemental HERO\" monster from your Deck to your field."
     },
@@ -7723,8 +8400,8 @@
       "raridade_arquivo": "R",
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
-      "desc_pt": "EFEITO: Monstros com ATK igual ou inferior a 500 são eliminados do campo de jogo.",
-      "desc_en": "EFFECT: Monsters with ATK of 500 or lower are eliminated from the play field."
+      "desc_pt": "EFEITO: Se um monstro com fator de DEF 500 ou menos atacar, destrua todos os monstros no campo do seu oponente.",
+      "desc_en": "EFFECT: If a monster with a DEF factor of 500 or less attacks, destroy all monsters on your opponent's field."
     },
     {
       "nome": "Humanoid Slime",
@@ -7791,6 +8468,20 @@
       "nivel": "5",
       "atk": "1600",
       "def": "1400"
+    },
+    {
+      "nome": "Hunting Instinct",
+      "nome_pt": "Hunting Instinct",
+      "slug": "hunting_instinct",
+      "card_type": "Trap",
+      "tipo": "Trap",
+      "atributo": "trap",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "TRAP",
+      "icone_tipo": "trap",
+      "desc_pt": "EFEITO: Quando 1 ou mais monstros forem Invocados no campo do seu oponente, Invoque 1 monstro DINOSSAURO aleatório do seu Deck e, depois, cause 1000 de dano ao seu oponente.",
+      "desc_en": "EFFECT: When 1 or more monsters are Summoned to your opponent's side of the field, Special Summon 1 random DINOSAUR-Type monster from your Deck, then inflict 1000 damage to your opponent."
     },
     {
       "nome": "Hurricail",
@@ -8056,12 +8747,11 @@
       "nome_pt": "Jam Defender",
       "slug": "jam_defender",
       "card_type": "Trap",
-      "tipo": "Trap",
+      "tipo": "trap continuous",
       "atributo": "trap",
       "raridade": "SR",
       "raridade_arquivo": "SR",
       "icone_atributo": "TRAP",
-      "icone_tipo": "trap",
       "desc_pt": "EFEITO: Enquanto esta carta estiver virada para cima no campo, se \"Revival Jam\" ou \"Humanoid Worm Drake\" no seu campo for atacado, ganhe Pontos de Vida igual ao ATK original desse monstro.",
       "desc_en": "EFFECT: While this card is face-up on the field, if \"Revival Jam\" or \"Humanoid Worm Drake\" on your field is attacked, gain LP equal to that monster's original ATK."
     },
@@ -8338,7 +9028,8 @@
       "atk": "1900",
       "def": "1400",
       "desc_pt": "\"Ocubeam\" + \"Mega Thunderball\"",
-      "desc_en": "\"Ocubeam\" + \"Mega Thunderball\""
+      "desc_en": "\"Ocubeam\" + \"Mega Thunderball\"",
+      "full_art": true
     },
     {
       "nome": "Kaminarikozou",
@@ -8978,14 +9669,16 @@
       "slug": "left_arm_of_the_forbidden_one",
       "card_type": "Monster",
       "tipo": "Spellcaster",
-      "atributo": "Dark",
+      "atributo": "DARK",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "DARK",
       "icone_tipo": "spellcaster",
       "nivel": "1",
       "atk": "200",
-      "def": "300"
+      "def": "300",
+      "desc_pt": "Uma das cinco partes amaldiçoadas do lendário Exodia, the Forbidden One. Se você tiver as cinco partes em sua mão ao mesmo tempo, vence o duelo automaticamente.",
+      "desc_en": "One of the five cursed pieces of the legendary Exodia, the Forbidden One. If you have all five pieces in your hand at the same time, you win the Duel automatically."
     },
     {
       "nome": "Left Leg of the Forbidden One",
@@ -8993,14 +9686,67 @@
       "slug": "left_leg_of_the_forbidden_one",
       "card_type": "Monster",
       "tipo": "Spellcaster",
-      "atributo": "Dark",
+      "atributo": "DARK",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "DARK",
       "icone_tipo": "spellcaster",
       "nivel": "1",
       "atk": "200",
-      "def": "300"
+      "def": "300",
+      "desc_pt": "Uma das cinco partes amaldiçoadas do lendário Exodia, the Forbidden One. Se você tiver as cinco partes em sua mão ao mesmo tempo, vence o duelo automaticamente.",
+      "desc_en": "One of the five cursed pieces of the legendary Exodia, the Forbidden One. If you have all five pieces in your hand at the same time, you win the Duel automatically."
+    },
+    {
+      "nome": "Legendary - Necro Rex",
+      "nome_pt": "Legendary - Necro Rex",
+      "slug": "legendary_-_necro_rex",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dinosaur",
+      "nivel": "8",
+      "atk": "2700",
+      "def": "1000",
+      "desc_pt": "EFEITO: Qualquer monstro do oponente que batalhar com este card tem seus efeitos negados e, depois, é destruído normalmente. Enquanto este card estiver em campo, monstros que não sejam DINOSSAURO não podem declarar ataque.",
+      "desc_en": "EFFECT: Any opponent's monster that battles with this card has its effects negated. While this card is on the field, monsters that are not DINOSAUR-Type cannot declare an attack."
+    },
+    {
+      "nome": "Legendary DinoBEAST - T. Rex",
+      "nome_pt": "Legendary DinoBEAST - T. Rex",
+      "slug": "legendary_dinobeast_-_t_rex",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dinosaur",
+      "nivel": "4",
+      "atk": "1700",
+      "def": "1350",
+      "desc_pt": "EFEITO: Este card não pode ser escolhido como alvo de ataque enquanto você controlar outro monstro DINOSSAURO. Ganha 700 de ATK/DEF para cada outro monstro DINOSSAURO em campo. Você não sofre dano de batalhas envolvendo este card.",
+      "desc_en": "EFFECT: This card cannot be selected as an attack target while you control another DINOSAUR-Type monster. Gains 700 ATK/DEF for each other DINOSAUR-Type monster on the field. You take no battle damage from battles involving this card."
+    },
+    {
+      "nome": "Legendary DinoBEAST - Threeranno",
+      "nome_pt": "Legendary DinoBEAST - Threeranno",
+      "slug": "legendary_dinobeast_-_threeranno",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "EARTH",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dinosaur",
+      "nivel": "12",
+      "atk": "4500",
+      "def": "4050",
+      "desc_pt": "EFEITO: Quando este card for Invocado, todos os monstros que seu oponente controla perdem 2000 de ATK. Este card pode atacar até 3 vezes por turno, mas não pode atacar diretamente. Toda vez que este card destruir 1 monstro em batalha, cause 1000 de dano ao seu oponente. Este card não é afetado por efeitos de outros monstros, exceto Monstros DINOSSAURO.",
+      "desc_en": "EFFECT: When this card is Summoned, all monsters your opponent controls lose 2000 ATK. This card can attack up to 3 times per turn, but cannot attack directly. Each time this card destroys a monster by battle, inflict 1000 damage to your opponent. This card is not affected by other monsters' effects, except DINOSAUR-Type monsters."
     },
     {
       "nome": "Legendary Flame Lord",
@@ -9154,6 +9900,20 @@
       "def": "2000",
       "desc_pt": "EFEITO: Quando esta carta é Invocada, diminui em 700 o poder de todos os monstros do oponente.",
       "desc_en": "EFFECT: When this card is Summoned, decrease the power of all opponent's monsters by 700."
+    },
+    {
+      "nome": "Limiter Removal",
+      "nome_pt": "Limiter Removal",
+      "slug": "limiter_removal",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "SPELL",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Esta carta só pode ser equipada em monstros MACHINE. Aumente em 50% o ATK atual do monstro equipado.",
+      "desc_en": "EFFECT: This card can only be equipped to MACHINE monsters. Increase the equipped monster's current ATK by 50%."
     },
     {
       "nome": "Lion Alligator",
@@ -9315,7 +10075,8 @@
       "atk": "????",
       "def": "????",
       "desc_pt": "EFEITO: Quando esta carta for Invocada, ela ganha 350 ATK e DEF para cada carta em ambos os GRAVEYARDS. Quando esta carta for destruída e enviada para o GRAVEYARD, envie as 3 cartas do topo do seu DECK para o GRAVEYARD; depois, Invoque esta carta do GRAVEYARD em Posição de Ataque.",
-      "desc_en": "EFFECT: When this card is Summoned, it gains 350 ATK and DEF for each card in both GRAVEYARDS. When this card is destroyed and sent to the GRAVEYARD, send the top 3 cards of your DECK to the GRAVEYARD; then, Summon this card from the GRAVEYARD in Attack Position."
+      "desc_en": "EFFECT: When this card is Summoned, it gains 350 ATK and DEF for each card in both GRAVEYARDS. When this card is destroyed and sent to the GRAVEYARD, send the top 3 cards of your DECK to the GRAVEYARD; then, Summon this card from the GRAVEYARD in Attack Position.",
+      "full_art": true
     },
     {
       "nome": "Lord of Zemia",
@@ -9363,7 +10124,21 @@
       "atk": "2400",
       "def": "2100",
       "desc_pt": "EFEITO: Quando Invocada, esta carta ganha 600 de ATK e DEF para cada \"Red-eyes B. Dragon\" na sua MÃO e no seu DECK. Esta carta pode receber cartas EQUIP destinadas a monstros WARRIOR.",
-      "desc_en": "EFFECT: When Summoned, this card gains 600 ATK and DEF for each \"Red-eyes B. Dragon\" in your HAND and DECK. This card can receive EQUIP Cards intended for WARRIOR monsters."
+      "desc_en": "EFFECT: When Summoned, this card gains 600 ATK and DEF for each \"Red-eyes B. Dragon\" in your HAND and DECK. This card can receive EQUIP Cards intended for WARRIOR monsters.",
+      "full_art": true
+    },
+    {
+      "nome": "Lost World",
+      "nome_pt": "Lost World",
+      "slug": "lost_world",
+      "card_type": "Spell",
+      "tipo": "spell continuous",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "desc_pt": "EFEITO: Todos os monstros no campo perdem 500 de ATK/DEF, exceto monstros DINOSSAURO. Cada vez que 1 monstro DINOSSAURO for Invocado no seu campo: coloque 1 Marcador neste card. Enquanto \"Jurassic Power\" estiver ativada, cada vez que um monstro DINOSSAURO no seu campo seria destruído em batalha ou por efeito de card, remova 1 Marcador deste card para evitar a destruição desse monstro.",
+      "desc_en": "EFFECT: All monsters on the field lose 500 ATK/DEF, except DINOSAUR-Type monsters. Each time 1 DINOSAUR-Type monster is Summoned to your side of the field: place 1 Counter on this card. While \"Jurassic Power\" is active, each time a DINOSAUR-Type monster on your side of the field would be destroyed by battle or by a card effect, remove 1 Counter from this card to prevent that monster's destruction."
     },
     {
       "nome": "Lucky Trinket",
@@ -9664,7 +10439,8 @@
       "atk": "2500",
       "def": "2100",
       "desc_pt": "EFEITO: Se esta carta batalhar com um monstro, destrua ambas as cartas após o fim da fase de batalha, exceto DIVINE-BEAST. Descarte 5 cartas aleatórias do deck do seu oponente quando esta carta for invocada.",
-      "desc_en": "EFFECT: If this card battles a monster, destroy both cards after the battle phase ends except DIVINE-BEAST. Discard 5 random cards from their deck of your opponent's when this card is summoned."
+      "desc_en": "EFFECT: If this card battles a monster, destroy both cards after the battle phase ends except DIVINE-BEAST. Discard 5 random cards from their deck of your opponent's when this card is summoned.",
+      "full_art": true
     },
     {
       "nome": "Maha Vailo",
@@ -9710,7 +10486,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "equip",
       "desc_pt": "EFEITO: O monstro equipado ganha 700 de ATK e DEF.",
-      "desc_en": "EFECT: The equipped monster gains 700 ATK and DEF."
+      "desc_en": "EFECT: The equipped monster gains 700 ATK and DEF.",
+      "full_art": true
     },
     {
       "nome": "Mammoth Graveyard",
@@ -9945,6 +10722,23 @@
       "nivel": "4",
       "atk": "1200",
       "def": "1000"
+    },
+    {
+      "nome": "Master Monk",
+      "nome_pt": "Master Monk",
+      "slug": "master_monk",
+      "card_type": "Monster",
+      "tipo": "Rock",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "rock",
+      "nivel": "5",
+      "atk": "1900",
+      "def": "1000",
+      "desc_pt": "EFEITO: Esta carta ganha 400 de ATK/DEF enquanto o campo \"Sogen\" estiver ativo. Esta carta pode atacar duas vezes durante a mesma Battle Phase.",
+      "desc_en": "EFFECT: This card gains 400 ATK/DEF while the \"Sogen\" Field Spell is active. This card can attack twice during the same Battle Phase."
     },
     {
       "nome": "Master of Chaos",
@@ -10571,6 +11365,23 @@
       "def": "1400"
     },
     {
+      "nome": "Monk Fighter",
+      "nome_pt": "Monk Fighter",
+      "slug": "monk_fighter",
+      "card_type": "Monster",
+      "tipo": "Rock",
+      "atributo": "EARTH",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "rock",
+      "nivel": "3",
+      "atk": "1300",
+      "def": "1000",
+      "desc_pt": "EFEITO: Esta carta não causa dano de batalha ao seu controlador.",
+      "desc_en": "EFFECT: This card does not inflict battle damage to its controller."
+    },
+    {
       "nome": "Monster Egg",
       "nome_pt": "Monster Egg",
       "slug": "monster_egg",
@@ -10599,6 +11410,20 @@
       "nivel": "1",
       "atk": "250",
       "def": "300"
+    },
+    {
+      "nome": "Monster Reborn",
+      "nome_pt": "Monster Reborn",
+      "slug": "monster_reborn",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "SPELL",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Escolha 1 dos 3 monstros com maior ATK entre os dois CEMITÉRIOS e traga-o para o CAMPO.",
+      "desc_en": "EFFECT: Choose 1 of the 3 highest-ATK monsters between both GRAVEYARDS and bring it to the FIELD."
     },
     {
       "nome": "Monster Tamer",
@@ -11031,7 +11856,8 @@
       "atk": "2100",
       "def": "1700",
       "desc_pt": "EFEITO: Ganha 300 de poder enquanto YAMI estiver ativo no campo. Esta carta pode ser equipada com equipamentos de SPELLCASTER. Enquanto esta carta estiver no campo, monstros FEMALE no seu campo ganham 300 de poder.",
-      "desc_en": "EFFECT: Gains 300 power while YAMI is the active Field. This card can be equipped with SPELLCASTER Equip cards. While this card is on the field, FEMALE monsters on your field gain 300 power."
+      "desc_en": "EFFECT: Gains 300 power while YAMI is the active Field. This card can be equipped with SPELLCASTER Equip cards. While this card is on the field, FEMALE monsters on your field gain 300 power.",
+      "full_art": true
     },
     {
       "nome": "Mystical Sheep #1",
@@ -11062,6 +11888,20 @@
       "nivel": "3",
       "atk": "800",
       "def": "1000"
+    },
+    {
+      "nome": "Mystical Space Typhoon",
+      "nome_pt": "Mystical Space Typhoon",
+      "slug": "mystical_space_typhoon",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "SPELL",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Destrua uma carta SPELL ou TRAP aleatória no campo do oponente.",
+      "desc_en": "EFFECT: Destroy 1 random SPELL or TRAP card on your opponent's field."
     },
     {
       "nome": "Naturia Beast",
@@ -11269,12 +12109,11 @@
       "nome_pt": "Nightmare Wheel",
       "slug": "nightmare_wheel",
       "card_type": "Trap",
-      "tipo": "Trap",
+      "tipo": "trap continuous",
       "atributo": "trap",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "TRAP",
-      "icone_tipo": "trap",
       "desc_pt": "EFEITO: Cada vez que um monstro do oponente declarar um ataque, negue esse ataque. Enquanto esta carta permanecer virada para cima no campo, esse monstro não pode atacar nem mudar sua posição de batalha.",
       "desc_en": "EFFECT: Each time an opponent's monster declares an attack, negate that attack. While this card remains face-up on the field, that monster cannot attack or change its battle position.",
       "full_art": true
@@ -11312,9 +12151,9 @@
       "desc_en": "EFFECT: When this card attacks, the opponent's monster loses ATK equal to this card's current ATK before damage calculation."
     },
     {
-      "nome": "O - Oversou",
-      "nome_pt": "O - Oversou",
-      "slug": "o_-_oversou",
+      "nome": "O - Oversoul",
+      "nome_pt": "O - Oversoul",
+      "slug": "o_-_oversoul",
       "card_type": "Spell",
       "tipo": "Spell",
       "atributo": "spell",
@@ -11373,7 +12212,8 @@
       "atk": "2900",
       "def": "1600",
       "desc_pt": "EFEITO: Quando invocado, destrua todas as cartas SPELL e TRAPS no campo do oponente. Cartas EQUIP não são consideradas. Esta carta pode atacar 2 vezes por turno.",
-      "desc_en": "EFFECT: When summoned, destroy all SPELL and TRAP Cards on your opponent's field. EQUIP Cards are not included. This card can attack twice per turn."
+      "desc_en": "EFFECT: When summoned, destroy all SPELL and TRAP Cards on your opponent's field. EQUIP Cards are not included. This card can attack twice per turn.",
+      "full_art": true
     },
     {
       "nome": "Octoberser",
@@ -11434,6 +12274,20 @@
       "nivel": "4",
       "atk": "1100",
       "def": "1000"
+    },
+    {
+      "nome": "One for One",
+      "nome_pt": "One for One",
+      "slug": "one_for_one",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Envie 1 monstro aleatório da sua mão para o Cemitério; então invoque 1 monstro de Nível 1 aleatório do seu Deck para o seu campo.",
+      "desc_en": "EFFECT: Send 1 random monster from your hand to the Graveyard; then Special Summon 1 random Level 1 monster from your Deck to your field."
     },
     {
       "nome": "One-eyed Shield Dragon",
@@ -11729,6 +12583,23 @@
       "def": "500"
     },
     {
+      "nome": "Perfect Machine King",
+      "nome_pt": "Perfect Machine King",
+      "slug": "perfect_machine_king",
+      "card_type": "Monster",
+      "tipo": "Machine",
+      "atributo": "EARTH",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "machine",
+      "nivel": "8",
+      "atk": "2700",
+      "def": "1500",
+      "desc_pt": "EFEITO: Quando esta carta for invocada, ganha 100 de ATK para cada monstro Machine no campo e no seu cemitério. Enquanto esta carta estiver em campo, ganha 400 de ATK para cada monstro Earth/Machine no campo.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 100 ATK for each Machine monster on the field and in your Graveyard. While this card is on the field, it gains 400 ATK for each Earth/Machine monster on the field."
+    },
+    {
       "nome": "Perfectly Ultimate Great Moth",
       "nome_pt": "Perfectly Ultimate Great Moth",
       "slug": "perfectly_ultimate_great_moth",
@@ -11853,7 +12724,8 @@
       "atk": "2300",
       "def": "3000",
       "desc_pt": "EFEITO: Quando esta carta for invocada, embaralhe no Deck todos os monstros que seu oponente controla.",
-      "desc_en": "EFFECT: When this card is Summoned, shuffle all monsters your opponent controls into the Deck."
+      "desc_en": "EFFECT: When this card is Summoned, shuffle all monsters your opponent controls into the Deck.",
+      "full_art": true
     },
     {
       "nome": "Phoenix Gearfried",
@@ -11905,6 +12777,20 @@
       "nivel": "2",
       "atk": "400",
       "def": "400"
+    },
+    {
+      "nome": "Power Bond",
+      "nome_pt": "Power Bond",
+      "slug": "power_bond",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "SPELL",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Esta carta só pode ser equipada em monstros MACHINE. O monstro equipado ganha 750 de ATK e DEF. Cause 750 de dano aos Pontos de Vida do oponente.",
+      "desc_en": "EFFECT: This card can only be equipped to MACHINE monsters. The equipped monster gains 750 ATK and DEF. Inflict 750 damage to your opponent's Life Points."
     },
     {
       "nome": "Power of Kaishin",
@@ -12013,8 +12899,8 @@
       "def": "1500"
     },
     {
-      "nome": "Proto-cyber Dragon",
-      "nome_pt": "Proto-cyber Dragon",
+      "nome": "Proto-Cyber Dragon",
+      "nome_pt": "Proto-Cyber Dragon",
       "slug": "proto-cyber_dragon",
       "card_type": "Monster",
       "tipo": "Machine",
@@ -12026,8 +12912,8 @@
       "nivel": "3",
       "atk": "1100",
       "def": "600",
-      "desc_pt": "O nome deste card se torna \"Dragão Cibernético\" enquanto ele estiver no campo.",
-      "desc_en": "This card's name becomes \"Cyber Dragon\" while on the field."
+      "desc_pt": "EFEITO: Este card pode ser usado como um substituto para qualquer 1 material de Fusão listado especificamente em um Monstro de Fusão que exija \"Cyber Dragon\" como material. Os outros materiais de Fusão devem ser os corretos.",
+      "desc_en": "EFFECT: This card can be treated as a substitute for any 1 Fusion Material specifically listed by name on a Fusion Monster that requires \"Cyber Dragon\" as a Fusion Material. The other Fusion Materials must be the correct ones."
     },
     {
       "nome": "Psychic Kappa",
@@ -12099,12 +12985,11 @@
       "nome_pt": "Pyramid of Light",
       "slug": "pyramid_of_light",
       "card_type": "Trap",
-      "tipo": "Trap",
+      "tipo": "trap continuous",
       "atributo": "trap",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "TRAP",
-      "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando um monstro \"Sphinx\" for atacado por um monstro DIVINE-BEAST, negue esse ataque e destrua o monstro atacante. Esta carta permanece no campo com efeito contínuo.",
       "desc_en": "EFFECT: When a \"Sphinx\" monster is attacked by a DIVINE-BEAST monster, negate that attack and destroy the attacking monster. This card remains on the field as a continuous effect."
     },
@@ -12261,7 +13146,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "equip",
       "desc_pt": "EFEITO: Aumenta o poder dos monstros DINOSAUR pela metade do seu ATK original.",
-      "desc_en": "EFFECT: Increase the power of DINOSAUR monsters by half their original ATK."
+      "desc_en": "EFFECT: Increase the power of DINOSAUR monsters by half their original ATK.",
+      "full_art": true
     },
     {
       "nome": "Rare Fish",
@@ -12497,7 +13383,8 @@
       "atk": "2400",
       "def": "2000",
       "desc_pt": "EFEITO: Quando Invocada, esta carta ganha 100 de ATK para cada carta RED-EYES na sua MÃO e no seu DECK.",
-      "desc_en": "EFFECT: When Summoned, this card gains 100 ATK for each RED-EYES card in your HAND and DECK."
+      "desc_en": "EFFECT: When Summoned, this card gains 100 ATK for each RED-EYES card in your HAND and DECK.",
+      "full_art": true
     },
     {
       "nome": "Red-Eyes Darkness Metal Dragon",
@@ -12614,7 +13501,8 @@
       "atk": "1800",
       "def": "1600",
       "desc_pt": "EFEITO: Quando esta carta for destruída em batalha e enviada ao CEMITÉRIO, Invoque aleatoriamente 1 monstro do arquétipo RED-EYES do seu DECK no seu campo.",
-      "desc_en": "EFFECT: When this card is destroyed by battle and sent to the GRAVEYARD, randomly Summon 1 RED-EYES monster from your DECK to your field."
+      "desc_en": "EFFECT: When this card is destroyed by battle and sent to the GRAVEYARD, randomly Summon 1 RED-EYES monster from your DECK to your field.",
+      "full_art": true
     },
     {
       "nome": "Red-Eyes Zombie Dragon",
@@ -12747,14 +13635,16 @@
       "slug": "right_arm_of_the_forbidden_one",
       "card_type": "Monster",
       "tipo": "Spellcaster",
-      "atributo": "Dark",
+      "atributo": "DARK",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "DARK",
       "icone_tipo": "spellcaster",
       "nivel": "1",
       "atk": "200",
-      "def": "300"
+      "def": "300",
+      "desc_pt": "Uma das cinco partes amaldiçoadas do lendário Exodia, the Forbidden One. Se você tiver as cinco partes em sua mão ao mesmo tempo, vence o duelo automaticamente.",
+      "desc_en": "One of the five cursed pieces of the legendary Exodia, the Forbidden One. If you have all five pieces in your hand at the same time, you win the Duel automatically."
     },
     {
       "nome": "Right Leg of the Forbidden One",
@@ -12762,14 +13652,16 @@
       "slug": "right_leg_of_the_forbidden_one",
       "card_type": "Monster",
       "tipo": "Spellcaster",
-      "atributo": "Dark",
+      "atributo": "DARK",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "DARK",
       "icone_tipo": "spellcaster",
       "nivel": "1",
       "atk": "200",
-      "def": "300"
+      "def": "300",
+      "desc_pt": "Uma das cinco partes amaldiçoadas do lendário Exodia, the Forbidden One. Se você tiver as cinco partes em sua mão ao mesmo tempo, vence o duelo automaticamente.",
+      "desc_en": "One of the five cursed pieces of the legendary Exodia, the Forbidden One. If you have all five pieces in your hand at the same time, you win the Duel automatically."
     },
     {
       "nome": "Rigorous Reaver",
@@ -13195,6 +14087,23 @@
       "desc_en": "\"Sangan\" + \"Witch of the Black Forest\""
     },
     {
+      "nome": "Sauropod Brachion",
+      "nome_pt": "Sauropod Brachion",
+      "slug": "sauropod_brachion",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dinosaur",
+      "nivel": "8",
+      "atk": "1500",
+      "def": "3000",
+      "desc_pt": "EFEITO: Uma vez por turno: este card não pode ser destruído por efeitos de card. Quando este card for Invocado: mude todos os monstros no campo do seu oponente para a Posição de Defesa.",
+      "desc_en": "EFFECT: Once per turn: this card cannot be destroyed by card effects. When this card is Summoned: change all monsters your opponent controls to Defense Position."
+    },
+    {
       "nome": "Sea Kamen",
       "nome_pt": "Sea Kamen",
       "slug": "sea_kamen",
@@ -13239,7 +14148,8 @@
       "atk": "1500",
       "def": "3000",
       "desc_pt": "EFEITO: Esta carta não pode ser destruída em batalha enquanto estiver em Posição de Defesa. No final de cada turno, cause dano aos Pontos de Vida do oponente igual à metade da DEF atual desta carta. Esta carta perde 500 de ATK sempre que for atacada por um monstro. Se o ATK desta carta chegar a 0, destrua esta carta.",
-      "desc_en": "EFFECT: This card cannot be destroyed by battle while in Defense Position. At the end of each turn, inflict damage to your opponent's Life Points equal to half this card's current DEF. This card loses 500 ATK every time it is attacked by a monster. If this card's ATK reaches 0, destroy this card."
+      "desc_en": "EFFECT: This card cannot be destroyed by battle while in Defense Position. At the end of each turn, inflict damage to your opponent's Life Points equal to half this card's current DEF. This card loses 500 ATK every time it is attacked by a monster. If this card's ATK reaches 0, destroy this card.",
+      "full_art": true
     },
     {
       "nome": "Sealmaster Meisei",
@@ -13303,7 +14213,8 @@
       "atk": "2750",
       "def": "2500",
       "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 250 de ATK e DEF para cada monstro EARTH na sua mão.",
-      "desc_en": "EFFECT: When this card is summoned, it gains 250 ATK and DEF for each EARTH monster in your hand."
+      "desc_en": "EFFECT: When this card is summoned, it gains 250 ATK and DEF for each EARTH monster in your hand.",
+      "full_art": true
     },
     {
       "nome": "Serpent Marauder",
@@ -14536,6 +15447,20 @@
       "desc_en": "EFFECT: When this card is summoned, it gains ATK equal to the highest ATK among \"Black Luster Soldier\" monsters in your Graveyard."
     },
     {
+      "nome": "Super Strident Blaze",
+      "nome_pt": "Super Strident Blaze",
+      "slug": "super_strident_blaze",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Só pode ser equipada a um monstro \"Cyber Dragon\". O monstro equipado pode realizar 2 ataques por turno.",
+      "desc_en": "EFFECT: Can only be equipped to a \"Cyber Dragon\" monster. The equipped monster can attack twice per turn."
+    },
+    {
       "nome": "Super War-Lion",
       "nome_pt": "Super War-lion",
       "slug": "super_war-lion",
@@ -14553,6 +15478,23 @@
       "desc_en": "EFFECT: When this card destroys a monster by battle, it gains 200 power."
     },
     {
+      "nome": "Super-Ancient Dinobeast",
+      "nome_pt": "Super-Ancient Dinobeast",
+      "slug": "super-ancient_dinobeast",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dinosaur",
+      "nivel": "8",
+      "atk": "2700",
+      "def": "1400",
+      "desc_pt": "EFEITO: Enquanto este card estiver em campo, quando 1 ou mais monstros do tipo DINOSSAURO forem Invocados no seu lado do campo, destrua 1 card aleatório no campo do oponente.",
+      "desc_en": "EFFECT: While this card is on the field, when 1 or more DINOSAUR-Type monsters are Summoned to your side of the field, destroy 1 random card on your opponent's side of the field."
+    },
+    {
       "nome": "Supporter in the Shadows",
       "nome_pt": "Supporter in the Shadows",
       "slug": "supporter_in_the_shadows",
@@ -14566,6 +15508,20 @@
       "nivel": "3",
       "atk": "1000",
       "def": "1000"
+    },
+    {
+      "nome": "Survival of the Fittest",
+      "nome_pt": "Survival of the Fittest",
+      "slug": "survival_of_the_fittest",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Só pode ser equipada em um monstro DINOSSAURO. O monstro equipado ganha 1000 de ATK. Quando o monstro equipado destruir um monstro do oponente em batalha, ele pode realizar um segundo ataque consecutivo contra um monstro do oponente.",
+      "desc_en": "EFFECT: Can only be equipped to a DINOSAUR-Type monster. The equipped monster gains 1000 ATK. When the equipped monster destroys an opponent's monster by battle, it can make a second consecutive attack against an opponent's monster."
     },
     {
       "nome": "Swamp Battleguard",
@@ -14715,6 +15671,20 @@
       "nivel": "3",
       "atk": "800",
       "def": "900"
+    },
+    {
+      "nome": "Tail Swipe",
+      "nome_pt": "Tail Swipe",
+      "slug": "tail_swipe",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Ative apenas se você controlar 1 ou mais monstros DINOSSAURO de Nível 5 ou superior. Devolva até 2 monstros que seu oponente controla para a mão dele e, depois, se você controlava apenas 1 monstro, ganhe 1000 PV.",
+      "desc_en": "EFFECT: Activate only if you control 1 or more Level 5 or higher DINOSAUR-Type monsters. Return up to 2 monsters your opponent controls to their hand, then, if you controlled only 1 monster, gain 1000 LP."
     },
     {
       "nome": "Tainted Wisdom",
@@ -14943,7 +15913,8 @@
       "atk": "2800",
       "def": "2300",
       "desc_pt": "EFEITO: Aumente o poder dos monstros SPELLCASTERS que você controla em 500 pontos quando é invocado.",
-      "desc_en": "EFFECT: Increase the power of SPELLCASTER monsters you controls by 500 points when Summoned."
+      "desc_en": "EFFECT: Increase the power of SPELLCASTER monsters you controls by 500 points when Summoned.",
+      "full_art": true
     },
     {
       "nome": "The Dragon Destroyer",
@@ -15058,6 +16029,23 @@
       "def": "700"
     },
     {
+      "nome": "The Legendary Exodia Incarnate",
+      "nome_pt": "The Legendary Exodia Incarnate",
+      "slug": "the_legendary_exodia_incarnate",
+      "card_type": "Monster",
+      "tipo": "Spellcaster",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "spellcaster",
+      "nivel": "10",
+      "atk": "????",
+      "def": "0",
+      "desc_pt": "EFEITO: Este card em campo ganha 1000 de ATK para cada monstro \"The Forbidden\" no seu CEMITÉRIO. Imune a efeitos de redução de ATK e DEF.",
+      "desc_en": "EFFECT: This card on the field gains 1000 ATK for each \"The Forbidden\" monster in your GRAVEYARD. Immune to ATK and DEF reduction effects."
+    },
+    {
       "nome": "The Little Swordsman of Aile",
       "nome_pt": "The Little Swordsman of Aile",
       "slug": "the_little_swordsman_of_aile",
@@ -15110,12 +16098,11 @@
       "nome_pt": "The Sanctified Darklord",
       "slug": "the_sanctified_darklord",
       "card_type": "Trap",
-      "tipo": "Trap",
+      "tipo": "trap continuous",
       "atributo": "trap",
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "TRAP",
-      "icone_tipo": "trap",
       "desc_pt": "EFEITO: Se um monstro \"Darklord\" que você controla for atacado por um monstro de EFEITO, negue o ATK desse monstro e ganhe LP igual ao ATK original dele. Esse efeito será aplicado uma vez por turno enquanto essa carta estiver com a face virada pra cima.",
       "desc_en": "EFFECT: If a \"Darklord\" monster you control is attacked by a monster with an EFFECT, negate that monster's ATK and gain LP equal to its original ATK. This effect can be applied once per turn while this card is face-up on your FIELD."
     },
@@ -15183,6 +16170,23 @@
       "def": "1300"
     },
     {
+      "nome": "The Unstoppable Exodia Incarnate",
+      "nome_pt": "The Unstoppable Exodia Incarnate",
+      "slug": "the_unstoppable_exodia_incarnate",
+      "card_type": "Monster",
+      "tipo": "Spellcaster",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "spellcaster",
+      "nivel": "10",
+      "atk": "0",
+      "def": "????",
+      "desc_pt": "EFEITO: Esta carta não pode ser destruída por batalha e/ou por efeitos de monstros. Esta carta em campo ganha 500 de DEF para cada carta de monstro \"Exodia\" ou \"The Forbidden\" no seu Cemitério.",
+      "desc_en": "EFFECT: This card cannot be destroyed by battle and/or by monster effects. This card on the field gains 500 DEF for each \"Exodia\" or \"The Forbidden\" monster card in your Graveyard."
+    },
+    {
       "nome": "The Wandering Doomed",
       "nome_pt": "The Wandering Doomed",
       "slug": "the_wandering_doomed",
@@ -15229,7 +16233,8 @@
       "atk": "????",
       "def": "????",
       "desc_pt": "EFEITO: O ATK e DEF desta carta são 100 pontos maiores que o ATK do monstro com o maior ATK com a face para cima no campo do oponente. No final de cada turno, enquanto esta carta estiver com a face para cima no campo, destrua todas as SPELLS e TRAPS viradas para baixo no lado do oponente.",
-      "desc_en": "EFFECT: This card's ATK and DEF are 100 points higher than the ATK of the face-up monster with the highest ATK on your opponent's field. At the end of each turn, while this card is face-up on the field, destroy all face-down SPELLS and TRAPS on your opponent's side of the field."
+      "desc_en": "EFFECT: This card's ATK and DEF are 100 points higher than the ATK of the face-up monster with the highest ATK on your opponent's field. At the end of each turn, while this card is face-up on the field, destroy all face-down SPELLS and TRAPS on your opponent's side of the field.",
+      "full_art": true
     },
     {
       "nome": "The Wicked Dreadroot",
@@ -15246,7 +16251,8 @@
       "atk": "4000",
       "def": "4000",
       "desc_pt": "EFEITO: Ao ser invocada, reduza pela metade o ATK e DEF de todos os monstros do oponente, incluindo monstros DIVINE-BEAST. Enquanto esta carta permanecer em campo, os monstros do oponente perdem 500 ATK e DEF no final de cada turno. Esta carta não é afetada por SPELL ou TRAP do oponente.",
-      "desc_en": "EFFECT: When this card is Summoned, halve the ATK and DEF of all monsters on your opponent's field, including DIVINE-BEAST monsters. While this card remains on the field, monsters on your opponent's field lose 500 ATK and DEF at the end of each turn. This card is not affected by your opponent's SPELL or TRAP cards."
+      "desc_en": "EFFECT: When this card is Summoned, halve the ATK and DEF of all monsters on your opponent's field, including DIVINE-BEAST monsters. While this card remains on the field, monsters on your opponent's field lose 500 ATK and DEF at the end of each turn. This card is not affected by your opponent's SPELL or TRAP cards.",
+      "full_art": true
     },
     {
       "nome": "The Wicked Eraser",
@@ -15263,7 +16269,8 @@
       "atk": "????",
       "def": "????",
       "desc_pt": "EFEITO: O ATK e DEF desta carta são iguais ao número de cards que você e seu oponente controlam x 800, incluindo SPELLS, TRAPS, EQUIPS e FIELD ativo. Quando esta carta for destruída e enviada para o GRAVEYARD, destrua todos os cards no campo, incluindo DIVINE-BEASTS, exceto monstros FIEND.",
-      "desc_en": "EFFECT: This card's ATK and DEF are equal to the number of cards you and your opponent control x 800, including SPELLS, TRAPS, EQUIPS, and the active FIELD. When this card is destroyed and sent to the GRAVEYARD, destroy all cards on the field, including DIVINE-BEASTS, except FIEND monsters."
+      "desc_en": "EFFECT: This card's ATK and DEF are equal to the number of cards you and your opponent control x 800, including SPELLS, TRAPS, EQUIPS, and the active FIELD. When this card is destroyed and sent to the GRAVEYARD, destroy all cards on the field, including DIVINE-BEASTS, except FIEND monsters.",
+      "full_art": true
     },
     {
       "nome": "The Wicked Worm Beast",
@@ -15313,7 +16320,8 @@
       "atk": "3500",
       "def": "3000",
       "desc_pt": "EFEITO: Quando esta carta batalhar, ela ganha 2500 de ATK apenas durante o cálculo de dano.",
-      "desc_en": "EFFECT: When this card battles, it gains 2500 ATK only during damage calculation."
+      "desc_en": "EFFECT: When this card battles, it gains 2500 ATK only during damage calculation.",
+      "full_art": true
     },
     {
       "nome": "Thousand Dragon",
@@ -15584,6 +16592,23 @@
       "def": "800"
     },
     {
+      "nome": "Transcendosaurus Glaciasaurus",
+      "nome_pt": "Transcendosaurus Glaciasaurus",
+      "slug": "transcendosaurus_glaciasaurus",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "WATER",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "WATER",
+      "icone_tipo": "dinosaur",
+      "nivel": "12",
+      "atk": "3600",
+      "def": "2700",
+      "desc_pt": "EFEITO: Este card não pode ser destruído em batalha. Monstros DINOSSAURO que você controla e que foram Invocados do Cemitério não podem ser destruídos por efeitos de cards do seu oponente. Se este card for destruído: embaralhe 1 monstro DINOSSAURO do seu Cemitério no Deck e, depois, Invoque este card.",
+      "desc_en": "EFFECT: This card cannot be destroyed by battle. DINOSAUR-Type monsters you control that were Special Summoned from the Graveyard cannot be destroyed by your opponent's card effects. If this card is destroyed: shuffle 1 DINOSAUR-Type monster from your Graveyard into the Deck, then Special Summon this card."
+    },
+    {
       "nome": "Trap Master",
       "nome_pt": "Trap Master",
       "slug": "trap_master",
@@ -15597,6 +16622,23 @@
       "nivel": "3",
       "atk": "500",
       "def": "1100"
+    },
+    {
+      "nome": "Treasure Panda",
+      "nome_pt": "Treasure Panda",
+      "slug": "treasure_panda",
+      "card_type": "Monster",
+      "tipo": "Beast",
+      "atributo": "EARTH",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "beast",
+      "nivel": "4",
+      "atk": "1100",
+      "def": "2000",
+      "desc_pt": "EFEITO: Quando invocado, descarte 1 carta SPELL ou TRAP aleatória do seu DECK para o CEMITÉRIO; então invoque 1 monstro NORMAL de Nível 1 aleatório do seu DECK para o seu campo em posição de Defesa com a face para cima.",
+      "desc_en": "EFFECT: When Summoned, discard 1 random SPELL or TRAP from your DECK to the GRAVEYARD; then Special Summon 1 random Level 1 NORMAL Monster from your DECK to your field in face-up Defense Position."
     },
     {
       "nome": "Treeborn Frog",
@@ -15877,6 +16919,23 @@
       "def": "1900"
     },
     {
+      "nome": "Tyranno Infinity",
+      "nome_pt": "Tyranno Infinity",
+      "slug": "tyranno_infinity",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dinosaur",
+      "nivel": "4",
+      "atk": "????",
+      "def": "0",
+      "desc_pt": "EFEITO: O ATK original deste card torna-se igual ao número dos seus monstros DINOSSAURO no Cemitério x 500.",
+      "desc_en": "EFFECT: This card's original ATK becomes equal to the number of DINOSAUR-Type monsters in your Graveyard x 500."
+    },
+    {
       "nome": "Tytannial, Princess of Camellias",
       "nome_pt": "Tytannial, Princess of Camellias",
       "slug": "tytannial_princess_of_camellias",
@@ -15979,7 +17038,8 @@
       "atk": "2300",
       "def": "900",
       "desc_pt": "EFEITO: Quando esta carta é Invocada, diminui em 500 o poder de todos os monstros do oponente.",
-      "desc_en": "EFFECT: When this card is Summoned, decrease the power of all opponent's monsters by 500."
+      "desc_en": "EFFECT: When this card is Summoned, decrease the power of all opponent's monsters by 500.",
+      "full_art": true
     },
     {
       "nome": "Ultimate Insect LV7",
@@ -15996,7 +17056,8 @@
       "atk": "2600",
       "def": "1500",
       "desc_pt": "EFEITO: Quando esta carta é Invocada, diminui em 700 o poder de todos os monstros do oponente.",
-      "desc_en": "EFFECT: When this card is Summoned, decrease the power of all opponent's monsters by 700."
+      "desc_en": "EFFECT: When this card is Summoned, decrease the power of all opponent's monsters by 700.",
+      "full_art": true
     },
     {
       "nome": "Ultimate Obedient Fiend",
@@ -16013,7 +17074,25 @@
       "atk": "3500",
       "def": "3000",
       "desc_pt": "EFEITO: Esta carta não sofre dano de batalha. Os efeitos de monstros destruídos por esta carta em batalha são negados permanentemente pelo restante do duelo — incluindo todas as outras cópias desses monstros no Deck, Mão, Campo ou Cemitério de qualquer jogador.",
-      "desc_en": "EFFECT: This card takes no battle damage. The effects of monsters destroyed by this card in battle are negated permanently for the rest of the Duel — including all other copies of those monsters in either player's Deck, Hand, Field, or Graveyard."
+      "desc_en": "EFFECT: This card takes no battle damage. The effects of monsters destroyed by this card in battle are negated permanently for the rest of the Duel — including all other copies of those monsters in either player's Deck, Hand, Field, or Graveyard.",
+      "full_art": true
+    },
+    {
+      "nome": "Ultimate Tyranno",
+      "nome_pt": "Ultimate Tyranno",
+      "slug": "ultimate_tyranno",
+      "card_type": "Monster",
+      "tipo": "Dinosaur",
+      "atributo": "EARTH",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dinosaur",
+      "nivel": "8",
+      "atk": "3000",
+      "def": "2200",
+      "desc_pt": "EFEITO: Este card pode atacar todos os monstros que seu oponente controla, uma vez cada. Ganha 200 de ATK/DEF para cada monstro DINOSSAURO na sua mão.",
+      "desc_en": "EFFECT: This card can attack all monsters your opponent controls, once each. Gains 200 ATK/DEF for each DINOSAUR-Type monster in your hand."
     },
     {
       "nome": "Umi",
@@ -16028,6 +17107,20 @@
       "icone_tipo": "field",
       "desc_pt": "EFEITO: Aumenta 700 de poder para FISH / AQUA / SEA SERPENT e 500 para REPTILE / THUNDER e 300 para PLANT - Diminui 800 pontos para MACHINE / PYRO",
       "desc_en": "EFFECT: Increase 700 points for FISH / AQUA / SEA SERPENT and  500 for REPTILE / THUNDER and 300 for PLANT - Decrease 800 points for MACHINE / PYRO"
+    },
+    {
+      "nome": "Unexpected Dai",
+      "nome_pt": "Unexpected Dai",
+      "slug": "unexpected_dai",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Se você não controlar nenhum monstro, invoque 1 Monstro Normal de Nível 4 ou inferior aleatório do seu Deck para o seu campo.",
+      "desc_en": "EFFECT: If you control no monsters, Special Summon 1 random Normal Monster with Level 4 or lower from your Deck to your field."
     },
     {
       "nome": "Unknown Warrior of Fiend",

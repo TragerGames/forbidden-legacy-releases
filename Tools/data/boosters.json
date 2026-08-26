@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1786995073",
+  "versao": "1787521712",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -15,7 +15,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-warrior.webp",
-      "total_tema": 98,
+      "total_tema": 99,
       "cartas_tema": [
         {
           "nome": "Black Luster Soldier",
@@ -373,6 +373,13 @@
           "slug": "swordstalker",
           "atk": "2000",
           "def": "1600"
+        },
+        {
+          "nome": "Ultimate Baseball Kid",
+          "raridade": "R",
+          "slug": "ultimate_baseball_kid",
+          "atk": "500",
+          "def": "1000"
         },
         {
           "nome": "Warrior of Tradition",
@@ -854,6 +861,13 @@
           "def": "2000"
         },
         {
+          "nome": "Fiend's Mirror",
+          "raridade": "SR",
+          "slug": "fiends_mirror",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
           "nome": "Núcleo Diabound",
           "raridade": "SR",
           "slug": "nucleo_diabound",
@@ -950,13 +964,6 @@
           "slug": "feral_imp",
           "atk": "1300",
           "def": "1400"
-        },
-        {
-          "nome": "Fiend's Mirror",
-          "raridade": "R",
-          "slug": "fiends_mirror",
-          "atk": "2100",
-          "def": "1800"
         },
         {
           "nome": "King of Yamimakai",
@@ -1330,8 +1337,22 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-spellcaster.webp",
-      "total_tema": 78,
+      "total_tema": 82,
       "cartas_tema": [
+        {
+          "nome": "Chaos Command Magician",
+          "raridade": "UR",
+          "slug": "chaos_command_magician",
+          "atk": "2400",
+          "def": "1900"
+        },
+        {
+          "nome": "Chaos Sorcerer",
+          "raridade": "UR",
+          "slug": "chaos_sorcerer",
+          "atk": "2300",
+          "def": "2000"
+        },
         {
           "nome": "Cosmo Queen",
           "raridade": "UR",
@@ -1359,6 +1380,13 @@
           "slug": "dark_magician_girl",
           "atk": "2000",
           "def": "1700"
+        },
+        {
+          "nome": "Dark Magician of Chaos",
+          "raridade": "UR",
+          "slug": "dark_magician_of_chaos",
+          "atk": "2800",
+          "def": "2600"
         },
         {
           "nome": "Dark Paladin",
@@ -1422,6 +1450,13 @@
           "slug": "magician_of_chaos",
           "atk": "2500",
           "def": "2100"
+        },
+        {
+          "nome": "Master of Chaos",
+          "raridade": "UR",
+          "slug": "master_of_chaos",
+          "atk": "3000",
+          "def": "2500"
         },
         {
           "nome": "Palladium Oracle Mahad",
@@ -1893,7 +1928,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-dragon.webp",
-      "total_tema": 57,
+      "total_tema": 59,
       "cartas_tema": [
         {
           "nome": "Armed Dragon LV10",
@@ -1955,6 +1990,13 @@
           "nome": "Blue-eyes White Dragon",
           "raridade": "UR",
           "slug": "blue-eyes_white_dragon",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Chaos Emperor Dragon",
+          "raridade": "UR",
+          "slug": "chaos_emperor_dragon",
           "atk": "3000",
           "def": "2500"
         },
@@ -2118,6 +2160,13 @@
           "slug": "paladin_of_white_dragon",
           "atk": "1900",
           "def": "1200"
+        },
+        {
+          "nome": "Red-Eyes B. Dragon",
+          "raridade": "SR",
+          "slug": "red-eyes_b_dragon",
+          "atk": "2400",
+          "def": "2000"
         },
         {
           "nome": "Seiyaryu",
@@ -2816,7 +2865,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-machine.webp",
-      "total_tema": 62,
+      "total_tema": 58,
       "cartas_tema": [
         {
           "nome": "Ancient Gear Golem",
@@ -2824,20 +2873,6 @@
           "slug": "ancient_gear_golem",
           "atk": "3000",
           "def": "3000"
-        },
-        {
-          "nome": "Cyber End Dragon",
-          "raridade": "UR",
-          "slug": "cyber_end_dragon",
-          "atk": "4000",
-          "def": "2800"
-        },
-        {
-          "nome": "Cyber Twin Dragon",
-          "raridade": "UR",
-          "slug": "cyber_twin_dragon",
-          "atk": "2800",
-          "def": "2100"
         },
         {
           "nome": "Cyber-Tech Alligator",
@@ -2875,13 +2910,6 @@
           "def": "1500"
         },
         {
-          "nome": "Machine King",
-          "raridade": "UR",
-          "slug": "machine_king",
-          "atk": "2200",
-          "def": "2000"
-        },
-        {
           "nome": "Metalzoa",
           "raridade": "UR",
           "slug": "metalzoa",
@@ -2910,18 +2938,18 @@
           "def": "1900"
         },
         {
-          "nome": "Cyber Dragon",
-          "raridade": "SR",
-          "slug": "cyber_dragon",
-          "atk": "2100",
-          "def": "1600"
-        },
-        {
           "nome": "Labyrinth Tank",
           "raridade": "SR",
           "slug": "labyrinth_tank",
           "atk": "2400",
           "def": "2400"
+        },
+        {
+          "nome": "Machine King",
+          "raridade": "SR",
+          "slug": "machine_king",
+          "atk": "2200",
+          "def": "2000"
         },
         {
           "nome": "Robotic Knight",
@@ -2978,6 +3006,13 @@
           "slug": "cyber_falcon",
           "atk": "1400",
           "def": "1200"
+        },
+        {
+          "nome": "Cyber Saurus",
+          "raridade": "R",
+          "slug": "cyber_saurus",
+          "atk": "1800",
+          "def": "1400"
         },
         {
           "nome": "Cyber Soldier of Darkworld",
@@ -3085,13 +3120,6 @@
           "def": "2000"
         },
         {
-          "nome": "Proto-cyber Dragon",
-          "raridade": "R",
-          "slug": "proto-cyber_dragon",
-          "atk": "1100",
-          "def": "600"
-        },
-        {
           "nome": "Saber Slasher",
           "raridade": "R",
           "slug": "saber_slasher",
@@ -3139,13 +3167,6 @@
           "slug": "cyber_commander",
           "atk": "750",
           "def": "700"
-        },
-        {
-          "nome": "Cyber Saurus",
-          "raridade": "N",
-          "slug": "cyber_saurus",
-          "atk": "1800",
-          "def": "1400"
         },
         {
           "nome": "Cyber Soldier",
@@ -4937,7 +4958,7 @@
       "duracao_dias": null,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-rare_creatures.webp",
-      "total_tema": 142,
+      "total_tema": 144,
       "cartas_tema": [
         {
           "nome": "Amphibian Beast",
@@ -5122,6 +5143,13 @@
           "def": "1900"
         },
         {
+          "nome": "Fortress Whale",
+          "raridade": "SR",
+          "slug": "fortress_whale",
+          "atk": "2350",
+          "def": "2150"
+        },
+        {
           "nome": "Gagagigo",
           "raridade": "SR",
           "slug": "gagagigo",
@@ -5176,6 +5204,13 @@
           "slug": "lion_alligator",
           "atk": "1900",
           "def": "200"
+        },
+        {
+          "nome": "Man-Eating Black Shark",
+          "raridade": "SR",
+          "slug": "man-eating_black_shark",
+          "atk": "2100",
+          "def": "1300"
         },
         {
           "nome": "Manticore of Darkness",
@@ -5372,6 +5407,13 @@
           "slug": "fiend_refrection_1",
           "atk": "1300",
           "def": "1400"
+        },
+        {
+          "nome": "Fushi No Tori",
+          "raridade": "R",
+          "slug": "fushi_no_tori",
+          "atk": "1200",
+          "def": "0"
         },
         {
           "nome": "Garoozis",
@@ -5694,13 +5736,6 @@
           "slug": "flame_viper",
           "atk": "400",
           "def": "450"
-        },
-        {
-          "nome": "Fortress Whale",
-          "raridade": "N",
-          "slug": "fortress_whale",
-          "atk": "2350",
-          "def": "2150"
         },
         {
           "nome": "Hinotama Soul",
@@ -6173,7 +6208,7 @@
       "duracao_dias": 15,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-elemental-hero.webp",
-      "total_tema": 34,
+      "total_tema": 35,
       "cartas_tema": [
         {
           "nome": "Elemental HERO Bladedge",
@@ -6343,9 +6378,9 @@
           "slug": "hero_barrier"
         },
         {
-          "nome": "O - Oversou",
+          "nome": "O - Oversoul",
           "raridade": "R",
-          "slug": "o_-_oversou"
+          "slug": "o_-_oversoul"
         },
         {
           "nome": "Skyscraper",
@@ -6372,6 +6407,13 @@
           "slug": "elemental_hero_clayman",
           "atk": "800",
           "def": "2000"
+        },
+        {
+          "nome": "Elemental HERO Necroid Shaman",
+          "raridade": "N",
+          "slug": "elemental_hero_necroid_shaman",
+          "atk": "1900",
+          "def": "1800"
         },
         {
           "nome": "Elemental HERO Sparkman",
@@ -6407,10 +6449,10 @@
       "cor": "#8b1e1e",
       "custo_souls": 250,
       "evento": true,
-      "duracao_dias": 7,
+      "duracao_dias": 8,
       "garantia_ur_aberturas": 10,
       "imagem": "img/boosters/booster-red-eyes.webp",
-      "total_tema": 29,
+      "total_tema": 30,
       "cartas_tema": [
         {
           "nome": "Archfiend Black Skull Dragon",
@@ -6547,6 +6589,13 @@
           "nome": "Inferno Fire Blast",
           "raridade": "SR",
           "slug": "inferno_fire_blast"
+        },
+        {
+          "nome": "Red-Eyes B. Dragon",
+          "raridade": "SR",
+          "slug": "red-eyes_b_dragon",
+          "atk": "2400",
+          "def": "2000"
         },
         {
           "nome": "Red-Eyes Black Flare Dragon",
@@ -6804,6 +6853,279 @@
           "slug": "darklord_ukoback",
           "atk": "700",
           "def": "1000"
+        }
+      ]
+    },
+    {
+      "id": "especial_cyber_dragon",
+      "tipo_label": "CYBER DRAGON",
+      "nome_pt": "Cyber Dragon",
+      "nome_en": "Cyber Dragon",
+      "desc_pt": "Edicao especial e temporaria dedicada ao arquetipo Cyber Dragon, reunindo dragoes mecanicos, fusoes, equipamentos e magias/armadilhas de suporte. Como o arquetipo e mais forte que a media (a maioria das cartas e SR/UR), a chance de UR/SR nos slots especiais do tema e menor que o normal. Depois que o evento terminar, essas cartas deixam a circulacao temporaria e passam a poder aparecer no torneio.",
+      "desc_en": "A special, time-limited Cyber Dragon edition with mechanical dragons, fusions, equips and support spells/traps. Since the archetype is stronger than average (most cards are SR/UR), the UR/SR odds on the theme special slots are lower than usual. When the event ends, these cards leave temporary circulation and become eligible for tournament rewards.",
+      "cor": "#39c5d1",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 15,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-cyber-dragon.webp",
+      "total_tema": 40,
+      "cartas_tema": [
+        {
+          "nome": "Call of the Haunted",
+          "raridade": "UR",
+          "slug": "call_of_the_haunted"
+        },
+        {
+          "nome": "Chimeratech Fortress Dragon",
+          "raridade": "UR",
+          "slug": "chimeratech_fortress_dragon",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Chimeratech Megafleet Dragon",
+          "raridade": "UR",
+          "slug": "chimeratech_megafleet_dragon",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Chimeratech Overdragon",
+          "raridade": "UR",
+          "slug": "chimeratech_overdragon",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Cyber Dragon Nova",
+          "raridade": "UR",
+          "slug": "cyber_dragon_nova",
+          "atk": "2100",
+          "def": "1600"
+        },
+        {
+          "nome": "Cyber Eltanin",
+          "raridade": "UR",
+          "slug": "cyber_eltanin",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Cyber End Dragon",
+          "raridade": "UR",
+          "slug": "cyber_end_dragon",
+          "atk": "4000",
+          "def": "2800"
+        },
+        {
+          "nome": "Cyber Eternity Dragon",
+          "raridade": "UR",
+          "slug": "cyber_eternity_dragon",
+          "atk": "2800",
+          "def": "4000"
+        },
+        {
+          "nome": "Cyber Laser Dragon",
+          "raridade": "UR",
+          "slug": "cyber_laser_dragon",
+          "atk": "2400",
+          "def": "1800"
+        },
+        {
+          "nome": "Cyber Repair Plant",
+          "raridade": "UR",
+          "slug": "cyber_repair_plant"
+        },
+        {
+          "nome": "Cyber Revsystem",
+          "raridade": "UR",
+          "slug": "cyber_revsystem"
+        },
+        {
+          "nome": "Cyber Twin Dragon",
+          "raridade": "UR",
+          "slug": "cyber_twin_dragon",
+          "atk": "2800",
+          "def": "2100"
+        },
+        {
+          "nome": "Cyberdark Dragon",
+          "raridade": "UR",
+          "slug": "cyberdark_dragon",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Cybernetic Hidden Technology",
+          "raridade": "UR",
+          "slug": "cybernetic_hidden_technology"
+        },
+        {
+          "nome": "Cybernetic Overflow",
+          "raridade": "UR",
+          "slug": "cybernetic_overflow"
+        },
+        {
+          "nome": "Damage Polarizer",
+          "raridade": "UR",
+          "slug": "damage_polarizer"
+        },
+        {
+          "nome": "Limiter Removal",
+          "raridade": "UR",
+          "slug": "limiter_removal"
+        },
+        {
+          "nome": "Monster Reborn",
+          "raridade": "UR",
+          "slug": "monster_reborn"
+        },
+        {
+          "nome": "Perfect Machine King",
+          "raridade": "UR",
+          "slug": "perfect_machine_king",
+          "atk": "2700",
+          "def": "1500"
+        },
+        {
+          "nome": "Armored Cybern",
+          "raridade": "SR",
+          "slug": "armored_cybern",
+          "atk": "????",
+          "def": "2000"
+        },
+        {
+          "nome": "Chimeratech Rampage Dragon",
+          "raridade": "SR",
+          "slug": "chimeratech_rampage_dragon",
+          "atk": "2100",
+          "def": "1600"
+        },
+        {
+          "nome": "Cyber Barrier Dragon",
+          "raridade": "SR",
+          "slug": "cyber_barrier_dragon",
+          "atk": "800",
+          "def": "2800"
+        },
+        {
+          "nome": "Cyber Dragon",
+          "raridade": "SR",
+          "slug": "cyber_dragon",
+          "atk": "2100",
+          "def": "1600"
+        },
+        {
+          "nome": "Cyber Dragon Drei",
+          "raridade": "SR",
+          "slug": "cyber_dragon_drei",
+          "atk": "1800",
+          "def": "800"
+        },
+        {
+          "nome": "Cyber Dragon Infinity",
+          "raridade": "SR",
+          "slug": "cyber_dragon_infinity",
+          "atk": "2100",
+          "def": "1600"
+        },
+        {
+          "nome": "Cyber Phoenix",
+          "raridade": "SR",
+          "slug": "cyber_phoenix",
+          "atk": "1200",
+          "def": "1600"
+        },
+        {
+          "nome": "Evolution Burst",
+          "raridade": "SR",
+          "slug": "evolution_burst"
+        },
+        {
+          "nome": "Mystical Space Typhoon",
+          "raridade": "SR",
+          "slug": "mystical_space_typhoon"
+        },
+        {
+          "nome": "Power Bond",
+          "raridade": "SR",
+          "slug": "power_bond"
+        },
+        {
+          "nome": "Super Strident Blaze",
+          "raridade": "SR",
+          "slug": "super_strident_blaze"
+        },
+        {
+          "nome": "Cyber Dragon Core",
+          "raridade": "R",
+          "slug": "cyber_dragon_core",
+          "atk": "400",
+          "def": "1500"
+        },
+        {
+          "nome": "Cyber Dragon Nachster",
+          "raridade": "R",
+          "slug": "cyber_dragon_nachster",
+          "atk": "200",
+          "def": "200"
+        },
+        {
+          "nome": "Cyber Dragon Vier",
+          "raridade": "R",
+          "slug": "cyber_dragon_vier",
+          "atk": "1100",
+          "def": "1600"
+        },
+        {
+          "nome": "Cyber Dragon Zwei",
+          "raridade": "R",
+          "slug": "cyber_dragon_zwei",
+          "atk": "1500",
+          "def": "1000"
+        },
+        {
+          "nome": "Cyber Kirin",
+          "raridade": "R",
+          "slug": "cyber_kirin",
+          "atk": "300",
+          "def": "800"
+        },
+        {
+          "nome": "Cyber Larva",
+          "raridade": "R",
+          "slug": "cyber_larva",
+          "atk": "400",
+          "def": "600"
+        },
+        {
+          "nome": "Cyber Valley",
+          "raridade": "R",
+          "slug": "cyber_valley",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Cyberdark Edge",
+          "raridade": "R",
+          "slug": "cyberdark_edge",
+          "atk": "800",
+          "def": "800"
+        },
+        {
+          "nome": "Cyberdark Horn",
+          "raridade": "R",
+          "slug": "cyberdark_horn",
+          "atk": "800",
+          "def": "800"
+        },
+        {
+          "nome": "Proto-cyber Dragon",
+          "raridade": "R",
+          "slug": "proto-cyber_dragon",
+          "atk": "1100",
+          "def": "600"
         }
       ]
     }
