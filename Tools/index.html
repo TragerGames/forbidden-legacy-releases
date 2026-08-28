@@ -3501,6 +3501,11 @@ document.addEventListener('keydown', e => {
 
   function avaliar() {
     if (fechada) return;
+    /* o preco e reavaliado a cada passada: a deteccao de pais e assincrona
+       (api.country.is) e pode responder DEPOIS que a barra ja apareceu.
+       Confiar so num timeout fixo faria um visitante estrangeiro ver
+       R$ 39,90 se a API demorasse. */
+    precoRegiao();
     var hero = document.querySelector('.hero');
     var oferta = document.getElementById('comprar');
     var cookie = document.getElementById('cookie-banner');
