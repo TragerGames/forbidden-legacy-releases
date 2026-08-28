@@ -9,10 +9,14 @@
 <meta property="og:url" content="https://forbiddenlegacy.com.br/features.html">
 <meta property="og:title" content="Forbidden Legacy — Mecânicas e Diferenciais">
 <meta property="og:description" content="Fusões, campos mágicos, campanha, efeitos, rank e muito mais. Tudo que Forbidden Legacy preserva e expande do FM original.">
-<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
 <link rel="canonical" href="https://forbiddenlegacy.com.br/features.html">
-<link rel="icon" type="image/png" href="/img/favicon-192.png">
-<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -267,14 +271,33 @@ body.en [data-lang="en"] { display: inline-block !important; }
 body.en span[data-lang="en"] { display: inline !important; }
 body.en li[data-lang="en"] { display: flex !important; }
 
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .page-hero-label{font-size:11px}
+  html .page-hero-sub{font-size:11px}
+  html .section-label{font-size:11px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+  html /* ── DISCORD NAV BADGE ── */ .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+}
 </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 
 <nav id="nav">
   <div class="nav-logo">
-    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
@@ -391,14 +414,14 @@ body.en li[data-lang="en"] { display: flex !important; }
         <li>Substitutos de fusão: Goddess with the Third Eye, Versago The Destroyer</li>
         <li>Editor de deck com filtros, inspeção de cartas e painel ampliado</li>
         <li>Banlist por grupos em evolução — indicação visual no editor</li>
-        <li>1000+ cartas disponíveis para colecionar e montar deck</li>
+        <li>1.100+ cartas disponíveis para colecionar e montar deck</li>
       </ul>
       <ul class="feature-list" data-lang="en">
         <li>Specific fusions by name and generic fusions by type, attribute and ATK range</li>
         <li>Fusion substitutes: Goddess with the Third Eye, Versago The Destroyer</li>
         <li>Deck editor with filters, card inspection and enlarged card panel</li>
         <li>Group-based banlist in progress — visual indicators in the editor</li>
-        <li>1000+ cards available to collect and build your deck</li>
+        <li>1,100+ cards available to collect and build your deck</li>
       </ul>
     </div>
 

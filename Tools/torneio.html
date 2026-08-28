@@ -9,10 +9,14 @@
 <meta property="og:url" content="https://forbiddenlegacy.com.br/torneio.html">
 <meta property="og:title" content="Forbidden Legacy — Championship">
 <meta property="og:description" content="Vença 10 duelos seguidos, sobreviva às restrições e conquiste recompensas exclusivas — incluindo as full arts lendárias dos Deuses Egípcios.">
-<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
 <link rel="canonical" href="https://forbiddenlegacy.com.br/torneio.html">
-<link rel="icon" type="image/png" href="/img/favicon-192.png">
-<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -281,6 +285,30 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   .penalty-arrow { transform:rotate(90deg); }
   footer { padding:32px 20px; }
 }
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+  html .hero-badge{font-size:11px}
+  html .page-hero-sub{font-size:11px}
+  html .req-chip{font-size:12px}
+  html .section-label{font-size:11px}
+  html .reward-tier-label{font-size:11px}
+  html .reward-chance{font-size:12px}
+  html .reward-list li::before{font-size:12px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+}
 </style>
 </head>
 <body>
@@ -288,7 +316,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo">
-    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
@@ -547,15 +575,15 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 
     <div class="divine-grid">
       <div class="divine-card">
-        <img src="img/boosters/booster-lendario-slifer.webp" alt="Slifer the Sky Dragon" loading="lazy">
+        <img src="img/boosters/booster-lendario-slifer.webp" alt="Slifer the Sky Dragon" loading="lazy" width="1024" height="1536">
         <div class="divine-card-name">Slifer the Sky Dragon</div>
       </div>
       <div class="divine-card">
-        <img src="img/boosters/booster-lendario-obelisk.webp" alt="Obelisk the Tormentor" loading="lazy">
+        <img src="img/boosters/booster-lendario-obelisk.webp" alt="Obelisk the Tormentor" loading="lazy" width="1024" height="1536">
         <div class="divine-card-name">Obelisk the Tormentor</div>
       </div>
       <div class="divine-card">
-        <img src="img/boosters/booster-lendario-ra.webp" alt="The Winged Dragon of Ra" loading="lazy">
+        <img src="img/boosters/booster-lendario-ra.webp" alt="The Winged Dragon of Ra" loading="lazy" width="1024" height="1536">
         <div class="divine-card-name">The Winged Dragon of Ra</div>
       </div>
     </div>
@@ -591,8 +619,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <ul class="feature-list">
           <li data-lang="pt">Great Shadow Magus e Black Luster Valkyrie, sempre nessa ordem</li>
           <li data-lang="en">Great Shadow Magus and Black Luster Valkyrie, always in that order</li>
-          <li data-lang="pt">Poseidon, King of the Oceans, na sequência</li>
-          <li data-lang="en">Poseidon, King of the Oceans, next</li>
+          <li data-lang="pt">Um duelista sorteado entre Poseidon, King of the Oceans e Lord D. Saurian</li>
+          <li data-lang="en">A duelist drawn from Poseidon, King of the Oceans and Lord D. Saurian</li>
           <li data-lang="pt">Um chefe final sorteado entre Kiram Overlord, Seto Corrupted e Azzazel, Arquiduque Infernal</li>
           <li data-lang="en">A final boss drawn from Kiram Overlord, Seto Corrupted, and Azzazel, Archduke of Hell</li>
         </ul>

@@ -9,10 +9,17 @@
 <meta property="og:url" content="https://forbiddenlegacy.com.br/mods.html">
 <meta property="og:title" content="Mods de Forbidden Memories — Forbidden Legacy">
 <meta property="og:description" content="Coletânea de mods de Forbidden Memories curada pela Trager Games.">
-<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
 <link rel="canonical" href="https://forbiddenlegacy.com.br/mods.html">
-<link rel="icon" type="image/png" href="/img/favicon-192.png">
-<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --gold:       #c8973a;
@@ -271,13 +278,33 @@ body.en [data-lang="en"] { display: inline-block !important; }
 body.en span[data-lang="en"] { display: inline !important; }
 body.en li[data-lang="en"] { display: flex !important; }
 
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+  html .eyebrow{font-size:12px}
+  html .mod-arrow{font-size:11px}
+  html .ver-section-title{font-size:11px}
+  html .ver-btn .ver-label{font-size:11px}
+  html /* ── DISCORD NAV BADGE ── */ .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+}
 </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 <nav id="nav">
   <div class="nav-logo">
-    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
@@ -354,8 +381,8 @@ body.en li[data-lang="en"] { display: flex !important; }
       <div class="funnel-text">
         <h3 data-lang="pt">Gostou de Forbidden Memories?</h3>
         <h3 data-lang="en">Love Forbidden Memories?</h3>
-        <p data-lang="pt">O Forbidden Legacy é a continuação espiritual: campanha completa, mais de 900 cartas, fusões, efeitos modernos e muito mais. Versão gratuita disponível para PC, Android e Linux.</p>
-        <p data-lang="en">Forbidden Legacy is the spiritual successor: full campaign, 900+ cards, fusions, modern effects and much more. Free version available for PC, Android and Linux.</p>
+        <p data-lang="pt">O Forbidden Legacy é a continuação espiritual: campanha completa, mais de 1.100 cartas, fusões, efeitos modernos e muito mais. Versão gratuita disponível para PC, Android e Linux.</p>
+        <p data-lang="en">Forbidden Legacy is the spiritual successor: full campaign, 1,100+ cards, fusions, modern effects and much more. Free version available for PC, Android and Linux.</p>
       </div>
       <a class="funnel-btn" href="/#download" data-lang="pt">▶ Jogar Forbidden Legacy</a>
       <a class="funnel-btn" href="/#download" data-lang="en">▶ Play Forbidden Legacy</a>

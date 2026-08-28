@@ -9,10 +9,14 @@
 <meta property="og:url" content="https://forbiddenlegacy.com.br/catalogo.html">
 <meta property="og:title" content="Forbidden Legacy — Catálogo de Cartas">
 <meta property="og:description" content="Todas as cartas de Forbidden Legacy em um só lugar — busca, filtros por tipo/raça/raridade e visualização ampliada de cada carta.">
-<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
 <link rel="canonical" href="https://forbiddenlegacy.com.br/catalogo.html">
-<link rel="icon" type="image/png" href="/img/favicon-192.png">
-<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -357,14 +361,40 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   .nav-logo { margin: 0 auto; }
   .topbar-right { display: none; }
 }
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .page-hero-label{font-size:11px}
+  html .page-hero-sub{font-size:11px}
+  html .cat-filter-label{font-size:11px}
+  html .cat-chip{font-size:12px}
+  html .cat-count{font-size:12px}
+  html .cat-card-name{font-size:11px}
+  html .cat-card-stats{font-size:11px}
+  html .cat-modal-versao button{font-size:12px}
+  html .cat-modal-rarity{font-size:12px}
+  html .cat-modal-fact-label{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+  html /* ── DISCORD NAV BADGE ── */ .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+}
 </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 
 <nav id="nav">
   <div class="nav-logo">
-    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
@@ -463,10 +493,10 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <span class="cat-filter-label" data-lang="en">Rarity</span>
       <button class="cat-chip active" data-filter-rarity="ALL" data-lang="pt">Todas</button>
       <button class="cat-chip active" data-filter-rarity="ALL" data-lang="en">All</button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="N"><img src="img/raridade/rarity_C.webp" alt="N"><span>N</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp" alt="R"><span>R</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp" alt="SR"><span>SR</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR"><span>UR</span></button>
+      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="N"><img src="img/raridade/rarity_C.webp" alt="N" width="30" height="16"><span>N</span></button>
+      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp" alt="R" width="30" height="16"><span>R</span></button>
+      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp" alt="SR" width="30" height="16"><span>SR</span></button>
+      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR" width="30" height="16"><span>UR</span></button>
       <button class="cat-chip" data-filter-fullart="1" data-lang="pt">✨ Full Art</button>
       <button class="cat-chip" data-filter-fullart="1" data-lang="en">✨ Full Art</button>
       <button class="cat-chip" data-filter-custom="1" data-lang="pt" title="Cartas originais criadas para o Forbidden Legacy">⭐ Custom</button>

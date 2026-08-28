@@ -8,10 +8,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://forbiddenlegacy.com.br/gallery.html">
 <meta property="og:title" content="Forbidden Legacy — Galeria">
-<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
 <link rel="canonical" href="https://forbiddenlegacy.com.br/gallery.html">
-<link rel="icon" type="image/png" href="/img/favicon-192.png">
-<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -302,14 +306,37 @@ body.en [data-lang="en"] { display: inline-block !important; }
 body.en span[data-lang="en"] { display: inline !important; }
 body.en li[data-lang="en"] { display: flex !important; }
 
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .page-hero-label{font-size:11px}
+  html .page-hero-sub{font-size:11px}
+  html .section-label{font-size:11px}
+  html .gallery-caption{font-size:11px}
+  html .placeholder-txt{font-size:12px}
+  html .gallery-sub-label{font-size:11px}
+  html .gal-chip{font-size:12px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+  html /* ── DISCORD NAV BADGE ── */ .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+}
 </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 
 <nav id="nav">
   <div class="nav-logo">
-    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
@@ -389,52 +416,52 @@ body.en li[data-lang="en"] { display: flex !important; }
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/menu-preload.webp" alt="Tela de Carregamento" loading="lazy">
+        <img src="screenshots/menu-preload.webp" alt="Tela de Carregamento" loading="lazy" width="1906" height="1066">
         <div class="gallery-caption" data-lang="pt">Tela de Carregamento</div>
         <div class="gallery-caption" data-lang="en">Loading Screen</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/menu-principal.webp" alt="Menu Principal" loading="lazy">
+        <img src="screenshots/menu-principal.webp" alt="Menu Principal" loading="lazy" width="1911" height="1069">
         <div class="gallery-caption" data-lang="pt">Menu Principal</div>
         <div class="gallery-caption" data-lang="en">Main Menu</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/seletor-idioma.webp" alt="Seleção de Idioma" loading="lazy">
+        <img src="screenshots/seletor-idioma.webp" alt="Seleção de Idioma" loading="lazy" width="1908" height="1073">
         <div class="gallery-caption" data-lang="pt">Seleção de Idioma</div>
         <div class="gallery-caption" data-lang="en">Language Selection</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/escolha-nome.webp" alt="Escolha do Nome" loading="lazy">
+        <img src="screenshots/escolha-nome.webp" alt="Escolha do Nome" loading="lazy" width="1904" height="1064">
         <div class="gallery-caption" data-lang="pt">Escolha do Nome</div>
         <div class="gallery-caption" data-lang="en">Name Selection</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/seletor-save.webp" alt="Seletor de Save" loading="lazy">
+        <img src="screenshots/seletor-save.webp" alt="Seletor de Save" loading="lazy" width="1900" height="1068">
         <div class="gallery-caption" data-lang="pt">Seletor de Save</div>
         <div class="gallery-caption" data-lang="en">Save Selector</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/config-joystick.webp" alt="Configuração do Controle" loading="lazy">
+        <img src="screenshots/config-joystick.webp" alt="Configuração do Controle" loading="lazy" width="1913" height="1075">
         <div class="gallery-caption" data-lang="pt">Configuração do Controle</div>
         <div class="gallery-caption" data-lang="en">Controller Setup</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/deck-inicial.webp" alt="Seleção de Deck Inicial" loading="lazy">
+        <img src="screenshots/deck-inicial.webp" alt="Seleção de Deck Inicial" loading="lazy" width="1897" height="1041">
         <div class="gallery-caption" data-lang="pt">Seleção de Deck Inicial</div>
         <div class="gallery-caption" data-lang="en">Starting Deck Selection</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/avatar-1.webp" alt="Seleção de Avatar" loading="lazy">
+        <img src="screenshots/avatar-1.webp" alt="Seleção de Avatar" loading="lazy" width="1908" height="1073">
         <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
         <div class="gallery-caption" data-lang="en">Avatar Selection</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/avatar-2.webp" alt="Seleção de Avatar" loading="lazy">
+        <img src="screenshots/avatar-2.webp" alt="Seleção de Avatar" loading="lazy" width="1904" height="1064">
         <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
         <div class="gallery-caption" data-lang="en">Avatar Selection</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/avatar-3.webp" alt="Seleção de Avatar" loading="lazy">
+        <img src="screenshots/avatar-3.webp" alt="Seleção de Avatar" loading="lazy" width="1913" height="1072">
         <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
         <div class="gallery-caption" data-lang="en">Avatar Selection</div>
       </div>
@@ -448,12 +475,12 @@ body.en li[data-lang="en"] { display: flex !important; }
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/editor-deck.webp" alt="Editor de Deck" loading="lazy">
+        <img src="screenshots/editor-deck.webp" alt="Editor de Deck" loading="lazy" width="1911" height="1077">
         <div class="gallery-caption" data-lang="pt">Editor de Deck</div>
         <div class="gallery-caption" data-lang="en">Deck Editor</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/gerenciador-deck.webp" alt="Gerenciador de Decks" loading="lazy">
+        <img src="screenshots/gerenciador-deck.webp" alt="Gerenciador de Decks" loading="lazy" width="1915" height="1075">
         <div class="gallery-caption" data-lang="pt">Gerenciador de Decks</div>
         <div class="gallery-caption" data-lang="en">Deck Manager</div>
       </div>
@@ -467,109 +494,109 @@ body.en li[data-lang="en"] { display: flex !important; }
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/free-duel-1.webp" alt="Free Duel" loading="lazy">
+        <img src="screenshots/free-duel-1.webp" alt="Free Duel" loading="lazy" width="1911" height="1074">
         <div class="gallery-caption">Free Duel</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/free-duel-2.webp" alt="Free Duel" loading="lazy">
+        <img src="screenshots/free-duel-2.webp" alt="Free Duel" loading="lazy" width="1905" height="1070">
         <div class="gallery-caption">Free Duel</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/auto-duel.webp" alt="Auto Duel" loading="lazy">
+        <img src="screenshots/auto-duel.webp" alt="Auto Duel" loading="lazy" width="1913" height="1075">
         <div class="gallery-caption">Auto Duel</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/tela-npc.webp" alt="Perfil do NPC" loading="lazy">
+        <img src="screenshots/tela-npc.webp" alt="Perfil do NPC" loading="lazy" width="1913" height="1073">
         <div class="gallery-caption" data-lang="pt">Perfil do NPC</div>
         <div class="gallery-caption" data-lang="en">NPC Profile</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/cartas-em-campo.webp" alt="Cartas em Campo" loading="lazy">
+        <img src="screenshots/cartas-em-campo.webp" alt="Cartas em Campo" loading="lazy" width="1900" height="1073">
         <div class="gallery-caption" data-lang="pt">Cartas em Campo</div>
         <div class="gallery-caption" data-lang="en">Cards on Field</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/carta-detalhe.webp" alt="Detalhe da Carta" loading="lazy">
+        <img src="screenshots/carta-detalhe.webp" alt="Detalhe da Carta" loading="lazy" width="1915" height="1071">
         <div class="gallery-caption" data-lang="pt">Detalhe da Carta</div>
         <div class="gallery-caption" data-lang="en">Card Detail</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/lista-fusoes.webp" alt="Lista de Fusões" loading="lazy">
+        <img src="screenshots/lista-fusoes.webp" alt="Lista de Fusões" loading="lazy" width="1884" height="1069">
         <div class="gallery-caption" data-lang="pt">Lista de Fusões</div>
         <div class="gallery-caption" data-lang="en">Fusion List</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/cemiterio.webp" alt="Cemitério" loading="lazy">
+        <img src="screenshots/cemiterio.webp" alt="Cemitério" loading="lazy" width="1891" height="1060">
         <div class="gallery-caption" data-lang="pt">Cemitério</div>
         <div class="gallery-caption" data-lang="en">Graveyard</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/opcoes-duelo.webp" alt="Opções no Duelo" loading="lazy">
+        <img src="screenshots/opcoes-duelo.webp" alt="Opções no Duelo" loading="lazy" width="820" height="898">
         <div class="gallery-caption" data-lang="pt">Opções no Duelo</div>
         <div class="gallery-caption" data-lang="en">In-Duel Options</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/resultado-duelo.webp" alt="Resultado do Duelo" loading="lazy">
+        <img src="screenshots/resultado-duelo.webp" alt="Resultado do Duelo" loading="lazy" width="1906" height="1075">
         <div class="gallery-caption" data-lang="pt">Resultado do Duelo</div>
         <div class="gallery-caption" data-lang="en">Duel Result</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-forest.webp" alt="Campo: Forest" loading="lazy">
+        <img src="screenshots/campo-forest.webp" alt="Campo: Forest" loading="lazy" width="1914" height="1075">
         <div class="gallery-caption" data-lang="pt">Campo: Forest (Arena Clássica)</div>
         <div class="gallery-caption" data-lang="en">Field: Forest (Classic Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-forest-season2.webp" alt="Campo: Forest (Nova Arena)" loading="lazy">
+        <img src="screenshots/campo-forest-season2.webp" alt="Campo: Forest (Nova Arena)" loading="lazy" width="1913" height="1079">
         <div class="gallery-caption" data-lang="pt">Campo: Forest (Nova Arena)</div>
         <div class="gallery-caption" data-lang="en">Field: Forest (New Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-mountain.webp" alt="Campo: Mountain" loading="lazy">
+        <img src="screenshots/campo-mountain.webp" alt="Campo: Mountain" loading="lazy" width="1906" height="1069">
         <div class="gallery-caption" data-lang="pt">Campo: Mountain (Arena Clássica)</div>
         <div class="gallery-caption" data-lang="en">Field: Mountain (Classic Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-mountain-season2.webp" alt="Campo: Mountain (Nova Arena)" loading="lazy">
+        <img src="screenshots/campo-mountain-season2.webp" alt="Campo: Mountain (Nova Arena)" loading="lazy" width="1914" height="1075">
         <div class="gallery-caption" data-lang="pt">Campo: Mountain (Nova Arena)</div>
         <div class="gallery-caption" data-lang="en">Field: Mountain (New Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-sogen.webp" alt="Campo: Sogen" loading="lazy">
+        <img src="screenshots/campo-sogen.webp" alt="Campo: Sogen" loading="lazy" width="1908" height="1071">
         <div class="gallery-caption" data-lang="pt">Campo: Sogen (Arena Clássica)</div>
         <div class="gallery-caption" data-lang="en">Field: Sogen (Classic Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-sogen-season2.webp" alt="Campo: Sogen (Nova Arena)" loading="lazy">
+        <img src="screenshots/campo-sogen-season2.webp" alt="Campo: Sogen (Nova Arena)" loading="lazy" width="1907" height="1076">
         <div class="gallery-caption" data-lang="pt">Campo: Sogen (Nova Arena)</div>
         <div class="gallery-caption" data-lang="en">Field: Sogen (New Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-umi.webp" alt="Campo: Umi" loading="lazy">
+        <img src="screenshots/campo-umi.webp" alt="Campo: Umi" loading="lazy" width="1906" height="1069">
         <div class="gallery-caption" data-lang="pt">Campo: Umi (Arena Clássica)</div>
         <div class="gallery-caption" data-lang="en">Field: Umi (Classic Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-umi-season2.webp" alt="Campo: Umi (Nova Arena)" loading="lazy">
+        <img src="screenshots/campo-umi-season2.webp" alt="Campo: Umi (Nova Arena)" loading="lazy" width="1914" height="1077">
         <div class="gallery-caption" data-lang="pt">Campo: Umi (Nova Arena)</div>
         <div class="gallery-caption" data-lang="en">Field: Umi (New Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-wasteland.webp" alt="Campo: Wasteland" loading="lazy">
+        <img src="screenshots/campo-wasteland.webp" alt="Campo: Wasteland" loading="lazy" width="1909" height="1075">
         <div class="gallery-caption" data-lang="pt">Campo: Wasteland (Arena Clássica)</div>
         <div class="gallery-caption" data-lang="en">Field: Wasteland (Classic Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-wasteland-season2.webp" alt="Campo: Wasteland (Nova Arena)" loading="lazy">
+        <img src="screenshots/campo-wasteland-season2.webp" alt="Campo: Wasteland (Nova Arena)" loading="lazy" width="1914" height="1078">
         <div class="gallery-caption" data-lang="pt">Campo: Wasteland (Nova Arena)</div>
         <div class="gallery-caption" data-lang="en">Field: Wasteland (New Arena)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-yami.webp" alt="Campo: Yami" loading="lazy">
+        <img src="screenshots/campo-yami.webp" alt="Campo: Yami" loading="lazy" width="1914" height="1079">
         <div class="gallery-caption" data-lang="pt">Campo: Yami</div>
         <div class="gallery-caption" data-lang="en">Field: Yami</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/campo-skyscraper.webp" alt="Campo: Skyscraper" loading="lazy">
+        <img src="screenshots/campo-skyscraper.webp" alt="Campo: Skyscraper" loading="lazy" width="1909" height="1079">
         <div class="gallery-caption" data-lang="pt">Campo: Skyscraper</div>
         <div class="gallery-caption" data-lang="en">Field: Skyscraper</div>
       </div>
@@ -583,12 +610,12 @@ body.en li[data-lang="en"] { display: flex !important; }
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/loja-boosters.webp" alt="Loja de Boosters" loading="lazy">
+        <img src="screenshots/loja-boosters.webp" alt="Loja de Boosters" loading="lazy" width="1917" height="1078">
         <div class="gallery-caption" data-lang="pt">Loja de Boosters</div>
         <div class="gallery-caption" data-lang="en">Booster Shop</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/vitrine-cartas.webp" alt="Vitrine de Cartas" loading="lazy">
+        <img src="screenshots/vitrine-cartas.webp" alt="Vitrine de Cartas" loading="lazy" width="1913" height="1071">
         <div class="gallery-caption" data-lang="pt">Vitrine de Cartas</div>
         <div class="gallery-caption" data-lang="en">Card Showcase</div>
       </div>
@@ -602,22 +629,22 @@ body.en li[data-lang="en"] { display: flex !important; }
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/loja-tickets-roleta.webp" alt="Tickets da Roleta" loading="lazy">
+        <img src="screenshots/loja-tickets-roleta.webp" alt="Tickets da Roleta" loading="lazy" width="1919" height="1073">
         <div class="gallery-caption" data-lang="pt">Tickets da Roleta</div>
         <div class="gallery-caption" data-lang="en">Roulette Tickets</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/loja-tickets-torneio.webp" alt="Tickets de Torneio" loading="lazy">
+        <img src="screenshots/loja-tickets-torneio.webp" alt="Tickets de Torneio" loading="lazy" width="1919" height="1070">
         <div class="gallery-caption" data-lang="pt">Tickets de Torneio</div>
         <div class="gallery-caption" data-lang="en">Tournament Tickets</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/roleta.webp" alt="Roleta" loading="lazy">
+        <img src="screenshots/roleta.webp" alt="Roleta" loading="lazy" width="2400" height="1080">
         <div class="gallery-caption" data-lang="pt">Roleta</div>
         <div class="gallery-caption" data-lang="en">Roulette</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/torneio-em-breve.webp" alt="Torneio (Em Breve)" loading="lazy">
+        <img src="screenshots/torneio-em-breve.webp" alt="Torneio (Em Breve)" loading="lazy" width="1904" height="1066">
         <div class="gallery-caption" data-lang="pt">Torneio (Em Breve)</div>
         <div class="gallery-caption" data-lang="en">Tournament (Coming Soon)</div>
       </div>
@@ -631,7 +658,7 @@ body.en li[data-lang="en"] { display: flex !important; }
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
-        <img src="screenshots/conquistas.webp" alt="Conquistas" loading="lazy">
+        <img src="screenshots/conquistas.webp" alt="Conquistas" loading="lazy" width="1910" height="1077">
         <div class="gallery-caption" data-lang="pt">Conquistas</div>
         <div class="gallery-caption" data-lang="en">Achievements</div>
       </div>

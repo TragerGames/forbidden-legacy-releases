@@ -26,20 +26,23 @@ src="https://www.facebook.com/tr?id=1730849377953646&ev=PageView&noscript=1"
 <meta property="og:url" content="https://forbiddenlegacy.com.br/loja.html">
 <meta property="og:title" content="Forbidden Legacy - Loja">
 <meta property="og:description" content="Pacotes opcionais de Souls para usar dentro da Card Shop do Forbidden Legacy.">
-<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
 <link rel="canonical" href="https://forbiddenlegacy.com.br/loja.html">
-<link rel="icon" type="image/png" href="/img/favicon-192.png">
-<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <style>
 /* ═══════ RESET & TOKENS ═══════ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --gold:#c8973a;--gold2:#e8b840;--gold3:#ffe49a;--gold-dim:#7a5a18;
-  --dark:#08070a;--dark2:#0d0b0f;--dark3:#121018;
-  --border:rgba(200,151,58,.12);
+  --dark:#09080a;--dark2:#0d0b0e;--dark3:#120e12;
+  --border:rgba(200,151,58,.13);
   --muted:#6a5830;--body:#9a8050;
 }
 html{scroll-behavior:smooth}
@@ -788,6 +791,43 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 @media(max-width:1024px){.packs-grid{grid-template-columns:repeat(2,1fr)}.checkout-wrap{grid-template-columns:1fr}}
 @media(max-width:640px){.packs-grid{grid-template-columns:1fr 1fr}.how-grid{grid-template-columns:1fr}.store-hero{padding:110px 24px 80px}.packs-section{padding:60px 20px}.fields-row{grid-template-columns:1fr}}
 @media(max-width:440px){.packs-grid{grid-template-columns:1fr}}
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+  html .hero-badge{font-size:11px}
+  html /* scroll indicator */ .hero-scroll{font-size:11px}
+  html .section-eyebrow{font-size:11px}
+  html .region-chip{font-size:11px}
+  html .region-switch-btn{font-size:11px}
+  html .pack-tier-label{font-size:11px}
+  html .pack-badge{font-size:11px}
+  html .pack-bonus-tag{font-size:11px}
+  html .pack-bonus-tag-summary{font-size:12px}
+  html .pack-souls-label{font-size:11px}
+  html .pack-price-note{font-size:11px}
+  html .pack-select-hint{font-size:11px}
+  html .field label{font-size:11px}
+  html .sum-tier{font-size:11px}
+  html .qty-label{font-size:11px}
+  html .pay-sub{font-size:12px}
+  html .pay-tag{font-size:11px}
+  html .pay-note{font-size:12px}
+  html .pay-choice-sub{font-size:12px}
+  html .pay-secure{font-size:11px}
+  html footer.fl-footer .footer-brand p{font-size:12px}
+  html footer.fl-footer .footer-col h4{font-size:11px}
+  html footer.fl-footer .footer-bottom span{font-size:12px}
+}
 </style>
 </head>
 <body>
@@ -795,7 +835,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo">
-    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
@@ -1018,7 +1058,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
       <div class="sum-rows">
         <div class="sum-row region-br">
           <span data-lang="pt">Valor nacional</span><span data-lang="en">Brazil price</span>
-          <strong id="sum-br">R$ 5,00</strong>
+          <strong id="sum-br">—</strong>
         </div>
         <div class="sum-row region-intl">
           <span data-lang="pt">Valor internacional</span><span data-lang="en">International price</span>

@@ -28,7 +28,7 @@
   <meta property="og:url"         content="https://forbiddenlegacy.com.br/">
   <meta property="og:title"       content="Forbidden Legacy — Remake Fã-Feito de YGO Forbidden Memories">
   <meta property="og:description" content="Remake fã-feito de YGO Forbidden Memories — grátis para jogar. Duelos rápidos, sistema de fusão, campanha completa, mais de 1000 cartas. PC, Android e Linux.">
-  <meta property="og:image"       content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+  <meta property="og:image"       content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
   <meta property="og:image:width"  content="432">
   <meta property="og:image:height" content="432">
   <meta property="og:locale"      content="pt_BR">
@@ -37,7 +37,7 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Forbidden Legacy — Remake Fã de YGO">
   <meta name="twitter:description" content="Remake fan-made de YGO Forbidden Memories (PS1). Grátis para PC, Android e Linux.">
-  <meta name="twitter:image"       content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+  <meta name="twitter:image"       content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
   <!-- Canonical -->
   <link rel="canonical" href="https://forbiddenlegacy.com.br/">
   <!-- Sitemap -->
@@ -79,12 +79,12 @@
   </script>
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
-  <link rel="icon" type="image/png" sizes="32x32"   href="/img/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="32x32"   href="/img/favicon-32.png">
   <link rel="shortcut icon" href="/img/favicon-192.png">
   <link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
+  <link rel="preload" as="image" href="/img/logo_forbidden_legacy.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
   <style>
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -1033,7 +1033,63 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   .topbar-right { display: none; }
 }
 
-  </style>
+  .ti-svg{display:inline-block;vertical-align:-.125em;flex-shrink:0}
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .hero-pill span{font-size:11px}
+  html .hero-scroll{font-size:11px}
+  html .label{font-size:11px}
+  html .sec-label{font-size:11px}
+  html .ss-ph span{font-size:11px}
+  html .ss-tag{font-size:11px}
+  html .feat-tag{font-size:11px}
+  html .npc-card .npc-role{font-size:11px}
+  html .npc-name{font-size:11px}
+  html .dc-stat span{font-size:11px}
+  html .dc-channel{font-size:12px}
+  html .founder-badge{font-size:11px}
+  html .perk-star{font-size:11px}
+  html .price-method{font-size:12px}
+  html .price-souls-badge{font-size:11px}
+  html .price-note{font-size:12px}
+  html .founder-fine{font-size:12px}
+  html .region-chip{font-size:11px}
+  html .region-switch-btn{font-size:11px}
+  html .page-card-desc{font-size:12px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+  html /* ── NAV UPGRADES ── */ .lang-btn{font-size:12px}
+  html .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+  html .yt-new-badge{font-size:11px}
+  html .yt-card-meta{font-size:12px}
+  html .dl-version{font-size:12px}
+  html .dl-plat-ext{font-size:11px}
+  html .dl-note{font-size:12px}
+  html .dl-reqs summary{font-size:12px}
+  html .dl-reqs-tier strong{font-size:11px}
+  html .dl-reqs-abi{font-size:12px}
+  html .news-tag{font-size:11px}
+  html .news-date{font-size:12px}
+  html .news-body ul li::before{font-size:12px}
+  html .news-more{font-size:12px}
+  html .input-group label{font-size:11px}
+  html .pix-copy-label{font-size:11px}
+  html .pix-copy-input{font-size:12px}
+  html .pix-license-note{font-size:12px}
+  html .pix-license-file{font-size:12px}
+  html .pix-note-security{font-size:11px}
+}
+</style>
 </head>
 <body>
 
@@ -1046,7 +1102,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo">
-    <img src="../img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
@@ -1077,7 +1133,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   </div>
   <div style="display:flex; align-items:center; gap:12px;">
     <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
-      <i class="ti ti-brand-discord" aria-hidden="true"></i>
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
       <span class="dc-dot online"></span><span id="discord-online-nav">—</span> online
       <span style="opacity:.4;margin:0 3px">·</span>
       <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> members
@@ -1129,15 +1185,15 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 <section class="hero" id="home">
   <div class="stars"></div>
 
-  <div class="float-card fc-l1"><img src="img/cartas/dark_magician.webp" alt="Dark Magician" loading="lazy"></div>
-  <div class="float-card fc-l2"><img src="img/cartas/black_luster_soldier.webp" alt="Black Luster Soldier" loading="lazy"></div>
-  <div class="float-card fc-l3"><img src="img/cartas/red-eyes_b_dragon.webp" alt="Red-Eyes B. Dragon" loading="lazy"></div>
-  <div class="float-card fc-r1"><img src="img/cartas/obelisk_the_tormentor.webp" alt="Obelisk the Tormentor" loading="lazy"></div>
-  <div class="float-card fc-r2"><img src="img/cartas/blue-eyes_white_dragon.webp" alt="Blue-Eyes White Dragon" loading="lazy"></div>
-  <div class="float-card fc-r3"><img src="img/cartas/summoned_skull.webp" alt="Summoned Skull" loading="lazy"></div>
+  <div class="float-card fc-l1"><img src="img/cartas/dark_magician.webp" alt="Dark Magician" loading="lazy" width="110" height="160"></div>
+  <div class="float-card fc-l2"><img src="img/cartas/black_luster_soldier.webp" alt="Black Luster Soldier" loading="lazy" width="110" height="160"></div>
+  <div class="float-card fc-l3"><img src="img/cartas/red-eyes_b_dragon.webp" alt="Red-Eyes B. Dragon" loading="lazy" width="110" height="160"></div>
+  <div class="float-card fc-r1"><img src="img/cartas/obelisk_the_tormentor.webp" alt="Obelisk the Tormentor" loading="lazy" width="110" height="160"></div>
+  <div class="float-card fc-r2"><img src="img/cartas/blue-eyes_white_dragon.webp" alt="Blue-Eyes White Dragon" loading="lazy" width="110" height="160"></div>
+  <div class="float-card fc-r3"><img src="img/cartas/summoned_skull.webp" alt="Summoned Skull" loading="lazy" width="110" height="160"></div>
 
   <!-- Logo: usa imagem se existir, senão texto -->
-  <img src="../img/logo_forbidden_legacy.png" alt="YGO Forbidden Legacy" class="hero-logo-img"
+  <img src="/img/logo_forbidden_legacy.webp" alt="YGO Forbidden Legacy" class="hero-logo-img" width="995" height="560" fetchpriority="high" decoding="async"
        onerror="this.style.display='none'; document.getElementById('logo-fb').style.display='block'">
   <div id="logo-fb" class="hero-logo-fallback" style="display:none">FORBIDDEN<br>LEGACY</div>
 
@@ -1146,7 +1202,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   <p class="hero-sub" data-lang="en">The PS1 classic you loved — rebuilt from scratch with everything it should have had.</p>
 
   <div class="hero-pills">
-    <div class="hero-pill"><strong id="h-cards">900+</strong><span data-lang="pt">cartas</span><span data-lang="en">cards</span></div>
+    <div class="hero-pill"><strong id="h-cards">1.100+</strong><span data-lang="pt">cartas</span><span data-lang="en">cards</span></div>
     <div class="hero-pill"><strong>29</strong><span data-lang="pt">NPCs</span><span data-lang="en">NPCs</span></div>
     <div class="hero-pill"><strong>Season 1</strong><span data-lang="pt">campanha</span><span data-lang="en">campaign</span></div>
     <div class="hero-pill"><strong>Beta 1.8.2</strong><span data-lang="pt">versão atual</span><span data-lang="en">current version</span></div>
@@ -1185,24 +1241,24 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   <div class="ss-grid">
     <div class="ss ss-main">
       <div class="ss-ph">
-        <img src="screenshots/arena-nova-generico.webp" data-src-pt="screenshots/arena-nova-generico.webp" data-src-en="screenshots/arena-nova-generico.webp" alt="Duelo — Obelisk the Tormentor" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="placeholder-txt" style="display:flex"><i class="ti ti-device-gamepad-2"></i><span data-lang="pt">Tela de Duelo</span><span data-lang="en">Duel Screen</span></div>
+        <img src="screenshots/arena-nova-generico.webp" loading="lazy" decoding="async" width="1920" height="1080" data-src-pt="screenshots/arena-nova-generico.webp" data-src-en="screenshots/arena-nova-generico.webp" alt="Duelo — Obelisk the Tormentor" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /> <path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /> <path d="M8 9v2" /> <path d="M7 10h2" /> <path d="M14 10h2" /></svg><span data-lang="pt">Tela de Duelo</span><span data-lang="en">Duel Screen</span></div>
       </div>
       <div class="ss-tag" data-lang="pt">Duelo</div>
       <div class="ss-tag" data-lang="en">Duel</div>
     </div>
     <div class="ss">
       <div class="ss-ph">
-        <img src="screenshots/campo-skyscraper.webp" data-src-pt="screenshots/campo-skyscraper.webp" data-src-en="screenshots/campo-skyscraper.webp" alt="Campo: Skyscraper" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="placeholder-txt" style="display:flex"><i class="ti ti-cards"></i><span data-lang="pt">Nova Arena</span><span data-lang="en">New Arena</span></div>
+        <img src="screenshots/campo-skyscraper.webp" loading="lazy" decoding="async" width="1920" height="1080" data-src-pt="screenshots/campo-skyscraper.webp" data-src-en="screenshots/campo-skyscraper.webp" alt="Campo: Skyscraper" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /> <path d="M15 4h1a1 1 0 0 1 1 1v3.5" /> <path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg><span data-lang="pt">Nova Arena</span><span data-lang="en">New Arena</span></div>
       </div>
       <div class="ss-tag" data-lang="pt">Campo: Skyscraper</div>
       <div class="ss-tag" data-lang="en">Field: Skyscraper</div>
     </div>
     <div class="ss">
       <div class="ss-ph">
-        <img src="screenshots/campo-yami.webp" data-src-pt="screenshots/campo-yami.webp" data-src-en="screenshots/campo-yami.webp" alt="Campo: Yami" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="placeholder-txt" style="display:flex"><i class="ti ti-map"></i><span data-lang="pt">Nova Arena</span><span data-lang="en">New Arena</span></div>
+        <img src="screenshots/campo-yami.webp" loading="lazy" decoding="async" width="1920" height="1080" data-src-pt="screenshots/campo-yami.webp" data-src-en="screenshots/campo-yami.webp" alt="Campo: Yami" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" /> <path d="M9 4v13" /> <path d="M15 7v13" /></svg><span data-lang="pt">Nova Arena</span><span data-lang="en">New Arena</span></div>
       </div>
       <div class="ss-tag" data-lang="pt">Campo: Yami</div>
       <div class="ss-tag" data-lang="en">Field: Yami</div>
@@ -1307,7 +1363,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/SimonMuran0.png" alt="Simon Muran" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1254" height="1254">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Simon Muran</div>
@@ -1316,7 +1372,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/Teana0.png" alt="Teana" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1004" height="1315">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Teana</div>
@@ -1325,7 +1381,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/Jusell0.png" alt="Jusell" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1254" height="1254">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Jusell</div>
@@ -1334,7 +1390,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/Tarik0.png" alt="Tarik" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1139" height="1136">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Tarik</div>
@@ -1343,7 +1399,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/Amasis0.png" alt="Amasis" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1254" height="1254">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Amasis</div>
@@ -1352,7 +1408,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/Jono0.png" alt="Jono" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1086" height="1448">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Jono</div>
@@ -1361,7 +1417,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/Magesoldier0.png" alt="Mage Soldier" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1086" height="1448">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mage Soldier</div>
@@ -1370,7 +1426,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/desertmage0.png" alt="Desert Mage" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1083">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Desert Mage</div>
@@ -1379,7 +1435,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/meadowmage0.png" alt="Meadow Mage" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Meadow Mage</div>
@@ -1388,7 +1444,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/oceanmage0.png" alt="Ocean Mage" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Ocean Mage</div>
@@ -1397,7 +1453,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/forestmage0.png" alt="Forest Mage" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Forest Mage</div>
@@ -1406,7 +1462,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/mountainmage0.png" alt="Mountain Mage" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mountain Mage</div>
@@ -1415,7 +1471,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/mana0.png" alt="Mana" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1086" height="1357">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mana</div>
@@ -1424,7 +1480,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/mahad0.png" alt="Mahad" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1352">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mahad</div>
@@ -1433,7 +1489,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/Seto0.png" alt="Seto" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1055" height="1391">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Seto</div>
@@ -1442,7 +1498,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/isis0.png" alt="Isis" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1053" height="1094">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Isis</div>
@@ -1451,7 +1507,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/akhenaden0.png" alt="Akhenaden" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Akhenaden</div>
@@ -1460,7 +1516,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/highmagekepura0.png" alt="High Mage Kepura" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Kepura</div>
@@ -1469,7 +1525,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/highmagemartis0.png" alt="High Mage Martis" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1085">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Martis</div>
@@ -1478,7 +1534,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/highmagesecmeton0.png" alt="High Mage Secmeton" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Secmeton</div>
@@ -1487,7 +1543,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/highmageatenza0.png" alt="High Mage Atenza" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Atenza</div>
@@ -1496,7 +1552,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/highmageanubisius0.png" alt="High Mage Anubisius" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Anubisius</div>
@@ -1505,7 +1561,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/neku0.png" alt="Neku" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1317">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Neku</div>
@@ -1514,7 +1570,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/sebek0.png" alt="Sebek" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Sebek</div>
@@ -1523,7 +1579,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/labyrinthmage0.png" alt="Labyrinth Mage" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1086" height="1448">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Labyrinth Mage</div>
@@ -1532,7 +1588,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/thiefbakura0.png" alt="Thief Bakura" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1086" height="1448">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Thief Bakura</div>
@@ -1541,7 +1597,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/setofinal0.png" alt="Seto Final" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Seto Final</div>
@@ -1550,7 +1606,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/heishin0.png" alt="Heishin" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1086" height="1448">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Heishin</div>
@@ -1559,7 +1615,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <div class="npc-card npc-locked">
       <div class="npc-av">
         <img src="img/Npcs/zorc0.png" alt="Zorc" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="1122" height="1402">
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Zorc</div>
@@ -1584,7 +1640,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
       <p class="dl-desc" data-lang="pt">Download direto por plataforma — sem instalação. A versão FREE é totalmente gratuita para sempre.</p>
       <p class="dl-desc" data-lang="en">Direct download per platform — no install required. The FREE version is completely free forever.</p>
       <div class="dl-save-warning" role="note">
-        <i class="ti ti-shield-exclamation" aria-hidden="true"></i>
+        <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M15.04 19.745c-.942 .551 -1.964 .976 -3.04 1.255a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 .195 6.015" /> <path d="M19 16v3" /> <path d="M19 22v.01" /></svg>
         <span data-lang="pt"><strong>Antes de atualizar:</strong> sempre exporte seu save dentro do jogo. Guarde o arquivo em um local seguro para evitar possíveis perdas de progresso.</span>
         <span data-lang="en"><strong>Before updating:</strong> always export your save in-game. Keep the file in a safe place to prevent possible progress loss.</span>
       </div>
@@ -2010,26 +2066,26 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   </div>
   <div class="pages-grid">
     <a href="gallery.html" class="page-card">
-      <i class="ti ti-photo"></i>
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M15 8h.01" /> <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" /> <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" /> <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" /></svg>
       <div class="page-card-title" data-lang="pt">Galeria</div>
       <div class="page-card-title" data-lang="en">Gallery</div>
       <div class="page-card-desc" data-lang="pt">Screenshots e artes do jogo</div>
       <div class="page-card-desc" data-lang="en">Screenshots and game art</div>
     </a>
     <a href="banlist.html" class="page-card">
-      <i class="ti ti-list-check"></i>
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.5 5.5l1.5 1.5l2.5 -2.5" /> <path d="M3.5 11.5l1.5 1.5l2.5 -2.5" /> <path d="M3.5 17.5l1.5 1.5l2.5 -2.5" /> <path d="M11 6l9 0" /> <path d="M11 12l9 0" /> <path d="M11 18l9 0" /></svg>
       <div class="page-card-title">Banlist</div>
       <div class="page-card-desc" data-lang="pt">Grupos e limites de cartas</div>
       <div class="page-card-desc" data-lang="en">Groups and card limits</div>
     </a>
     <a href="boosters.html" class="page-card">
-      <i class="ti ti-cards"></i>
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /> <path d="M15 4h1a1 1 0 0 1 1 1v3.5" /> <path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg>
       <div class="page-card-title">Boosters</div>
       <div class="page-card-desc" data-lang="pt">Pacotes e cartas disponíveis</div>
       <div class="page-card-desc" data-lang="en">Available packs and cards</div>
     </a>
     <a href="conquistas.html" class="page-card">
-      <i class="ti ti-trophy"></i>
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 21l8 0" /> <path d="M12 17l0 4" /> <path d="M7 4l10 0" /> <path d="M17 4v8a5 5 0 0 1 -10 0v-8" /> <path d="M5 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /> <path d="M19 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg>
       <div class="page-card-title" data-lang="pt">Conquistas</div>
       <div class="page-card-title" data-lang="en">Achievements</div>
       <div class="page-card-desc" data-lang="pt">Objetivos e recompensas</div>
@@ -2044,7 +2100,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 <div class="discord-section reveal" id="discord">
   <div class="discord-card">
     <div class="discord-icon">
-      <i class="ti ti-brand-discord" style="font-size:34px;color:var(--gold-dim)"></i>
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
     </div>
     <div class="label">☥ <span data-lang="pt">Comunidade</span><span data-lang="en">Community</span></div>
     <div class="discord-title" data-lang="pt">Entre no servidor do Discord</div>
@@ -2063,7 +2119,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     </div>
     <div style="margin-bottom: 24px;">
       <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="dc-invite-btn">
-        <i class="ti ti-brand-discord"></i> <span data-lang="pt">Entrar no Discord</span><span data-lang="en">Join Discord</span>
+        <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg> <span data-lang="pt">Entrar no Discord</span><span data-lang="en">Join Discord</span>
       </a>
     </div>
     <div class="discord-channels">
@@ -3176,5 +3232,23 @@ document.addEventListener('keydown', e => {
 </script>
 
 
+
+<script>
+// A contagem de cartas do topo sai do proprio catalogo publicado, arredondada
+// pra baixo na centena. Antes era um numero fixo no HTML, que ficou 3 patches
+// defasado (dizia 900+ com 1.149 cartas ja publicadas). O valor no HTML e o
+// fallback: se o fetch falhar, o texto correto continua na tela.
+(function(){
+  var el=document.getElementById('h-cards'); if(!el) return;
+  fetch('data/catalogo.json',{cache:'force-cache'})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(!d||!d.cartas||!d.cartas.length) return;
+      var n=Math.floor(d.cartas.length/100)*100;
+      el.textContent=n.toLocaleString('pt-BR')+'+';
+    })
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>

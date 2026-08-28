@@ -9,10 +9,14 @@
 <meta property="og:url" content="https://forbiddenlegacy.com.br/boosters.html">
 <meta property="og:title" content="Forbidden Legacy — Booster Packs">
 <meta property="og:description" content="Abra boosters temáticos, acumule Souls e expanda sua coleção. Tudo sobre o sistema de Booster Packs do Forbidden Legacy.">
-<meta property="og:image" content="https://forbiddenlegacy.com.br/img/favicon-432.png">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
 <link rel="canonical" href="https://forbiddenlegacy.com.br/boosters.html">
-<link rel="icon" type="image/png" href="/img/favicon-192.png">
-<link rel="apple-touch-icon" href="/img/favicon-432.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -401,14 +405,41 @@ body.en [data-lang="en"] { display: inline-block !important; }
 body.en span[data-lang="en"] { display: inline !important; }
 body.en li[data-lang="en"] { display: flex !important; }
 
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .page-hero-label{font-size:11px}
+  html .page-hero-sub{font-size:11px}
+  html .section-label{font-size:11px}
+  html .rarity-table th{font-size:12px}
+  html .booster-tile-event-tag{font-size:11px}
+  html .booster-tile-name{font-size:12px}
+  html .booster-tile-price{font-size:12px}
+  html .booster-tile-countdown span{font-size:11px}
+  html .card-thumb-name{font-size:11px}
+  html .card-thumb-stats{font-size:11px}
+  html .card-thumb-rarity{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+  html /* ── DISCORD NAV BADGE ── */ .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+}
 </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 
 <nav id="nav">
   <div class="nav-logo">
-    <img src="img/professional_icon_master_final.png" alt="FL" onerror="this.style.display='none'">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
