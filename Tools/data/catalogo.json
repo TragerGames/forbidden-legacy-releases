@@ -1791,7 +1791,8 @@
       "atk": "4200",
       "def": "1000",
       "desc_pt": "EFEITO: Se este card atacar um monstro em Posição de Defesa, cause dano de batalha perfurante em dobro e, depois, ganhe PV igual à metade do dano causado. Enquanto este card estiver em Posição de Defesa, você sofre dano de batalha perfurante causado pelos ataques do seu oponente.",
-      "desc_en": "EFFECT: If this card attacks a Defense Position monster, inflict double piercing battle damage, then gain LP equal to half the damage inflicted. While this card is in Defense Position, you take piercing battle damage caused by your opponent's attacks."
+      "desc_en": "EFFECT: If this card attacks a Defense Position monster, inflict double piercing battle damage, then gain LP equal to half the damage inflicted. While this card is in Defense Position, you take piercing battle damage caused by your opponent's attacks.",
+      "custom": true
     },
     {
       "nome": "Blue-Eyes Corrupted Dragon",
@@ -1808,7 +1809,8 @@
       "atk": "3200",
       "def": "2800",
       "desc_pt": "EFEITO: Enquanto esta carta estiver no campo, reduza pela metade o ATK de todos os monstros do seu oponente, exceto monstros DRAGON. Esta carta sempre sofre dano de batalha perfurante causado pelo seu oponente.",
-      "desc_en": "EFFECT: While this card is on the field, halve the ATK of all monsters your opponent controls, except DRAGON monsters. This card always takes piercing battle damage caused by your opponent."
+      "desc_en": "EFFECT: While this card is on the field, halve the ATK of all monsters your opponent controls, except DRAGON monsters. This card always takes piercing battle damage caused by your opponent.",
+      "custom": true
     },
     {
       "nome": "Blue-Eyes Darkness Corrupted Dragon",
@@ -1825,7 +1827,8 @@
       "atk": "3300",
       "def": "2700",
       "desc_pt": "EFEITO: Quando este card for Invocado, ele ganha 650 ATK e DEF para cada \"Blue-Eyes Corrupted Dragon\" na sua HAND e no seu DECK. Este card não é afetado por TRAP Cards. Enquanto este card estiver em Posição de Defesa, você sofre dano de batalha perfurante causado pelos ataques do seu oponente.",
-      "desc_en": "EFFECT: When this card is Summoned, it gains 650 ATK and DEF for each \"Blue-Eyes Corrupted Dragon\" in your HAND and DECK. This card is unaffected by TRAP Cards. While this card is in Defense Position, you take piercing battle damage caused by your opponent's attacks."
+      "desc_en": "EFFECT: When this card is Summoned, it gains 650 ATK and DEF for each \"Blue-Eyes Corrupted Dragon\" in your HAND and DECK. This card is unaffected by TRAP Cards. While this card is in Defense Position, you take piercing battle damage caused by your opponent's attacks.",
+      "custom": true
     },
     {
       "nome": "Blue-Eyes Shining Dragon",
@@ -1877,7 +1880,8 @@
       "atk": "3200",
       "def": "2800",
       "desc_pt": "EFEITO: Este card pode atacar 2 vezes por turno. Quando este card destruir um monstro do oponente em batalha, cause dano ao seu oponente igual à metade da DEF original desse monstro. Enquanto este card estiver em Posição de Defesa, ele sofre dano de batalha perfurante causado por ataques do seu oponente.",
-      "desc_en": "EFFECT: This card can attack twice per turn. When this card destroys an opponent's monster by battle, inflict damage to your opponent equal to half of that monster's original DEF. While this card is in Defense Position, it takes piercing battle damage caused by your opponent's attacks."
+      "desc_en": "EFFECT: This card can attack twice per turn. When this card destroys an opponent's monster by battle, inflict damage to your opponent equal to half of that monster's original DEF. While this card is in Defense Position, it takes piercing battle damage caused by your opponent's attacks.",
+      "custom": true
     },
     {
       "nome": "Blue-Eyes Ultimate Corrupted Dragon",
@@ -1894,7 +1898,8 @@
       "atk": "4700",
       "def": "3700",
       "desc_pt": "EFEITO: Se este card for destruído e enviado para o GRAVEYARD, descarte 1 \"Blue-Eyes Corrupted Dragon\" ou 1 \"Blue-Eyes White Dragon\" da sua HAND para impedir esse envio. Se fizer isso, este card permanece no campo e ganha 500 ATK e DEF. Se este card em Posição de Defesa for atacado por um monstro com ATK maior que a DEF deste card, você sofre o dano de batalha que normalmente não sofreria.",
-      "desc_en": "EFFECT: If this card is destroyed and would be sent to the GRAVEYARD, discard 1 \"Blue-Eyes Corrupted Dragon\" or 1 \"Blue-Eyes White Dragon\" from your HAND to prevent it. If you do, this card remains on the field and gains 500 ATK and DEF. If this card in Defense Position is attacked by a monster with ATK higher than this card's DEF, you take the battle damage you normally would not take."
+      "desc_en": "EFFECT: If this card is destroyed and would be sent to the GRAVEYARD, discard 1 \"Blue-Eyes Corrupted Dragon\" or 1 \"Blue-Eyes White Dragon\" from your HAND to prevent it. If you do, this card remains on the field and gains 500 ATK and DEF. If this card in Defense Position is attacked by a monster with ATK higher than this card's DEF, you take the battle damage you normally would not take.",
+      "custom": true
     },
     {
       "nome": "Blue-Eyes Ultimate Dragon",
@@ -4547,7 +4552,8 @@
       "atk": "2500",
       "def": "1800",
       "desc_pt": "EFEITO: Uma vez por turno, no início do seu turno: destrua todos os Cards de SPELL e TRAP que seu oponente controla. Seu oponente não pode ativar Cards de SPELL e TRAP em resposta à ativação deste efeito. Se este card for destruído em batalha ou por um efeito de Card do oponente: Invoque 1 monstro DINOSSAURO aleatório do seu Deck.",
-      "desc_en": "EFFECT: Once per turn, at the start of your turn: destroy all SPELL and TRAP Cards your opponent controls. Your opponent cannot activate SPELL and TRAP Cards in response to the activation of this effect. If this card is destroyed by battle or by an opponent's Card effect: Special Summon 1 random DINOSAUR-Type monster from your Deck."
+      "desc_en": "EFFECT: Once per turn, at the start of your turn: destroy all SPELL and TRAP Cards your opponent controls. Your opponent cannot activate SPELL and TRAP Cards in response to the activation of this effect. If this card is destroyed by battle or by an opponent's Card effect: Special Summon 1 random DINOSAUR-Type monster from your Deck.",
+      "custom": true
     },
     {
       "nome": "Darkworld Thorns",
@@ -5243,7 +5249,8 @@
       "def": "????",
       "desc_pt": "EFEITO: Quando esta carta é invocada, seu ATK e DEF se tornam iguais à quantidade de monstros \"Spirit\" de atributo FIRE em seu Cemitério x500. Sempre que você causar dano de efeito aos Pontos de Vida do oponente, esta carta ganha ATK igual ao dano causado. Esta carta é imune a qualquer redução de ATK/DEF.",
       "desc_en": "EFFECT: When this card is Summoned, its ATK and DEF become equal to the number of FIRE-Attribute \"Spirit\" monsters in your Graveyard x500. Whenever you inflict effect damage to your opponent's Life Points, this card gains ATK equal to the damage inflicted. This card is immune to any ATK/DEF reduction.",
-      "full_art": true
+      "full_art": true,
+      "custom": true
     },
     {
       "nome": "Eldeen",
@@ -5958,7 +5965,8 @@
       "icone_atributo": "SPELL",
       "icone_tipo": "spell",
       "desc_pt": "EFEITO: Por 3 turnos, sempre que seu oponente declarar um ataque, ele deve pagar PV igual ao ATK original do monstro atacante. Este efeito se aplica até mesmo a monstros não afetados por SPELL Cards.",
-      "desc_en": "EFFECT: For 3 turns, whenever your opponent declares an attack, they must pay LP equal to the attacking monster's original ATK. This effect applies even to monsters unaffected by SPELL Cards."
+      "desc_en": "EFFECT: For 3 turns, whenever your opponent declares an attack, they must pay LP equal to the attacking monster's original ATK. This effect applies even to monsters unaffected by SPELL Cards.",
+      "custom": true
     },
     {
       "nome": "Evocator Chevalier",
@@ -9712,7 +9720,8 @@
       "atk": "2700",
       "def": "1000",
       "desc_pt": "EFEITO: Qualquer monstro do oponente que batalhar com este card tem seus efeitos negados e, depois, é destruído normalmente. Enquanto este card estiver em campo, monstros que não sejam DINOSSAURO não podem declarar ataque.",
-      "desc_en": "EFFECT: Any opponent's monster that battles with this card has its effects negated. While this card is on the field, monsters that are not DINOSAUR-Type cannot declare an attack."
+      "desc_en": "EFFECT: Any opponent's monster that battles with this card has its effects negated. While this card is on the field, monsters that are not DINOSAUR-Type cannot declare an attack.",
+      "custom": true
     },
     {
       "nome": "Legendary DinoBEAST - T. Rex",
@@ -9729,7 +9738,8 @@
       "atk": "1700",
       "def": "1350",
       "desc_pt": "EFEITO: Este card não pode ser escolhido como alvo de ataque enquanto você controlar outro monstro DINOSSAURO. Ganha 700 de ATK/DEF para cada outro monstro DINOSSAURO em campo. Você não sofre dano de batalhas envolvendo este card.",
-      "desc_en": "EFFECT: This card cannot be selected as an attack target while you control another DINOSAUR-Type monster. Gains 700 ATK/DEF for each other DINOSAUR-Type monster on the field. You take no battle damage from battles involving this card."
+      "desc_en": "EFFECT: This card cannot be selected as an attack target while you control another DINOSAUR-Type monster. Gains 700 ATK/DEF for each other DINOSAUR-Type monster on the field. You take no battle damage from battles involving this card.",
+      "custom": true
     },
     {
       "nome": "Legendary DinoBEAST - Threeranno",
@@ -9746,7 +9756,8 @@
       "atk": "4500",
       "def": "4050",
       "desc_pt": "EFEITO: Quando este card for Invocado, todos os monstros que seu oponente controla perdem 2000 de ATK. Este card pode atacar até 3 vezes por turno, mas não pode atacar diretamente. Toda vez que este card destruir 1 monstro em batalha, cause 1000 de dano ao seu oponente. Este card não é afetado por efeitos de outros monstros, exceto Monstros DINOSSAURO.",
-      "desc_en": "EFFECT: When this card is Summoned, all monsters your opponent controls lose 2000 ATK. This card can attack up to 3 times per turn, but cannot attack directly. Each time this card destroys a monster by battle, inflict 1000 damage to your opponent. This card is not affected by other monsters' effects, except DINOSAUR-Type monsters."
+      "desc_en": "EFFECT: When this card is Summoned, all monsters your opponent controls lose 2000 ATK. This card can attack up to 3 times per turn, but cannot attack directly. Each time this card destroys a monster by battle, inflict 1000 damage to your opponent. This card is not affected by other monsters' effects, except DINOSAUR-Type monsters.",
+      "custom": true
     },
     {
       "nome": "Legendary Flame Lord",
@@ -10076,7 +10087,8 @@
       "def": "????",
       "desc_pt": "EFEITO: Quando esta carta for Invocada, ela ganha 350 ATK e DEF para cada carta em ambos os GRAVEYARDS. Quando esta carta for destruída e enviada para o GRAVEYARD, envie as 3 cartas do topo do seu DECK para o GRAVEYARD; depois, Invoque esta carta do GRAVEYARD em Posição de Ataque.",
       "desc_en": "EFFECT: When this card is Summoned, it gains 350 ATK and DEF for each card in both GRAVEYARDS. When this card is destroyed and sent to the GRAVEYARD, send the top 3 cards of your DECK to the GRAVEYARD; then, Summon this card from the GRAVEYARD in Attack Position.",
-      "full_art": true
+      "full_art": true,
+      "custom": true
     },
     {
       "nome": "Lord of Zemia",
@@ -12505,7 +12517,8 @@
       "raridade_arquivo": "SR",
       "icone_atributo": "SPELL",
       "desc_pt": "EFEITO: Todos os monstros AQUA, SEA SERPENT e FISH ganham 500 de DEF enquanto estiverem em Posição de Defesa. Se \"Poseidon, King of the Oceans\" estiver em campo, sempre que um monstro AQUA, SEA SERPENT ou FISH seu for atacado em Posição de Defesa, ele não pode ser destruído em batalha.",
-      "desc_en": "EFFECT: All AQUA, SEA SERPENT and FISH monsters gain 500 DEF while in Defense Position. If \"Poseidon, King of the Oceans\" is on the field, whenever an AQUA, SEA SERPENT or FISH monster you control is attacked in Defense Position, it cannot be destroyed by battle."
+      "desc_en": "EFFECT: All AQUA, SEA SERPENT and FISH monsters gain 500 DEF while in Defense Position. If \"Poseidon, King of the Oceans\" is on the field, whenever an AQUA, SEA SERPENT or FISH monster you control is attacked in Defense Position, it cannot be destroyed by battle.",
+      "custom": true
     },
     {
       "nome": "Patrol Robo",
@@ -12761,7 +12774,8 @@
       "def": "5000",
       "desc_pt": "EFEITO: Não é afetado por outros efeitos de cards, exceto Cards de Equipamento. Se este card batalhar: ele ganha ATK igual à metade da sua DEF apenas durante essa batalha e se isso acontecer, ele ganha 700 de ATK permanentemente. Se este card causar dano de batalha ao seu oponente: você ganha PV igual ao dano causado.",
       "desc_en": "EFFECT: Not affected by other card effects, except Equip Cards. If this card battles: it gains ATK equal to half its DEF during that battle only, and if that happens, it permanently gains 700 ATK. If this card inflicts battle damage to your opponent: you gain LP equal to the damage dealt.",
-      "full_art": true
+      "full_art": true,
+      "custom": true
     },
     {
       "nome": "Pot the Trick",
@@ -13228,7 +13242,8 @@
       "def": "4000",
       "desc_pt": "EFEITO: Ganha 1 Marcador ao ser invocada. Sempre que seu oponente ativar uma carta SPELL, EQUIP ou TRAP, negue-a e coloque 1 Marcador nesta carta. Para cada Marcador, esta carta ganha 350 ATK e DEF. Com 2 Marcadores, esta carta pode atacar 2 vezes por turno. Com 4 Marcadores, pode atacar 3 vezes por turno. Com 6 ou mais Marcadores, esta carta não pode ser destruída em batalha.",
       "desc_en": "EFFECT: Gains 1 Counter when Summoned. Whenever your opponent activates a SPELL, EQUIP, or TRAP Card, negate it and place 1 Counter on this card. This card gains 350 ATK and DEF for each Counter on it. With 2 Counters, this card can attack twice per turn. With 4 Counters, it can attack 3 times per turn. With 6 or more Counters, this card cannot be destroyed by battle.",
-      "full_art": true
+      "full_art": true,
+      "custom": true
     },
     {
       "nome": "Red-Eyes Archfiend of Lightning",
@@ -14149,7 +14164,8 @@
       "def": "3000",
       "desc_pt": "EFEITO: Esta carta não pode ser destruída em batalha enquanto estiver em Posição de Defesa. No final de cada turno, cause dano aos Pontos de Vida do oponente igual à metade da DEF atual desta carta. Esta carta perde 500 de ATK sempre que for atacada por um monstro. Se o ATK desta carta chegar a 0, destrua esta carta.",
       "desc_en": "EFFECT: This card cannot be destroyed by battle while in Defense Position. At the end of each turn, inflict damage to your opponent's Life Points equal to half this card's current DEF. This card loses 500 ATK every time it is attacked by a monster. If this card's ATK reaches 0, destroy this card.",
-      "full_art": true
+      "full_art": true,
+      "custom": true
     },
     {
       "nome": "Sealmaster Meisei",

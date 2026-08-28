@@ -194,6 +194,24 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   position: absolute; bottom: 100%; right: 4%; margin-bottom: 4px; width: 22%; aspect-ratio: 30/16;
   object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0,0,0,.7));
 }
+/* Alternar entre a arte normal e a Full Art. O modal SEMPRE abre na versao
+   normal — a Full Art e uma recompensa do jogo, nao a face padrao da carta. */
+.cat-modal-versao {
+  display: none; width: 100%; margin-top: 8px; gap: 6px;
+  background: rgba(0,0,0,.35); border: 1px solid var(--gold-dim);
+  border-radius: 6px; padding: 3px;
+}
+.cat-modal-versao.on { display: flex; }
+.cat-modal-versao button {
+  flex: 1; background: none; border: none; cursor: pointer;
+  font-family: inherit; font-size: 11px; font-weight: 700; letter-spacing: .4px;
+  color: #9a9a9a; padding: 6px 4px; border-radius: 4px; transition: all .15s;
+}
+.cat-modal-versao button:hover { color: #e8e8e8; }
+.cat-modal-versao button.active {
+  background: linear-gradient(180deg, rgba(224,170,24,.22), rgba(200,150,10,.12));
+  color: var(--gold-light); box-shadow: inset 0 0 0 1px rgba(224,170,24,.35);
+}
 .cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
 .cat-modal-rarity { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; }
 .cat-modal-rarity.r-N  { color: #999;    background: rgba(153,153,153,.12); }
@@ -208,6 +226,8 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 @media(max-width:520px) {
   .cat-modal { grid-template-columns: 1fr; }
   .cat-modal-img-wrap { max-width: 160px; margin: 0 auto; }
+  /* alvo de toque maior no celular — 27px de altura era apertado pro dedo */
+  .cat-modal-versao button { padding: 10px 4px; font-size: 12px; }
 }
 
 /* ── LANG ── */
@@ -449,6 +469,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR"><span>UR</span></button>
       <button class="cat-chip" data-filter-fullart="1" data-lang="pt">✨ Full Art</button>
       <button class="cat-chip" data-filter-fullart="1" data-lang="en">✨ Full Art</button>
+      <button class="cat-chip" data-filter-custom="1" data-lang="pt" title="Cartas originais criadas para o Forbidden Legacy">⭐ Custom</button>
+      <button class="cat-chip" data-filter-custom="1" data-lang="en" title="Original cards created for Forbidden Legacy">⭐ Custom</button>
       <span class="cat-count" id="cat-count">—</span>
     </div>
   </div>
@@ -467,6 +489,14 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="cat-modal-img-wrap">
       <img class="cat-modal-img" id="cat-modal-img" src="" alt="">
       <img class="cat-modal-rarity-badge" id="cat-modal-rarity-badge" src="" alt="" style="display:none">
+      <div class="cat-modal-versao" id="cat-modal-versao">
+        <button type="button" id="cat-ver-normal" class="active" onclick="setCardVersion('normal')">
+          <span data-lang="pt">🃏 Normal</span><span data-lang="en">🃏 Normal</span>
+        </button>
+        <button type="button" id="cat-ver-full" onclick="setCardVersion('full')">
+          <span data-lang="pt">✨ Full Art</span><span data-lang="en">✨ Full Art</span>
+        </button>
+      </div>
     </div>
     <div>
       <div class="cat-modal-name" id="cat-modal-name"></div>
@@ -525,6 +555,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   let filtroRaridade = 'ALL';
   let filtroRaca = 'ALL';
   let filtroFullArt = false;
+  let filtroCustom = false;
   let termoBusca = '';
 
   function isEn() { return document.body.classList.contains('en'); }
@@ -558,6 +589,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 
   function passaFiltro(c) {
     if (filtroFullArt && !c.full_art) return false;
+    if (filtroCustom && !c.custom) return false;
     if (filtroTipo !== 'ALL' && c.card_type !== filtroTipo) return false;
     if (filtroRaridade !== 'ALL' && c.raridade !== filtroRaridade) return false;
     if (filtroRaca !== 'ALL' && c.tipo !== filtroRaca) return false;
@@ -648,6 +680,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       render();
     });
   });
+  document.querySelectorAll('[data-filter-custom]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtroCustom = !filtroCustom;
+      document.querySelectorAll('[data-filter-custom]').forEach(b => b.classList.toggle('active', filtroCustom));
+      render();
+    });
+  });
 
   let buscaTimeout = null;
   searchInput.addEventListener('input', () => {
@@ -690,11 +729,45 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     );
   }
 
+  // Carta aberta no modal e qual versao esta sendo exibida. O modal SEMPRE
+  // comeca na arte normal, mesmo quando existe Full Art: antes ele abria
+  // direto na Full Art e nao havia como ver a carta como ela aparece no jogo
+  // pra quem ainda nao desbloqueou.
+  let cartaAberta = null;
+  let versaoAtual = 'normal';
+
+  window.setCardVersion = function(v) {
+    if (!cartaAberta) return;
+    if (v === 'full' && !cartaAberta.full_art) v = 'normal';
+    versaoAtual = v;
+    const pasta = v === 'full' ? 'img/cartas_full_grande/' : 'img/cartas_grande/';
+    modalImg.src = pasta + cartaAberta.slug + '.webp?v=' + versaoCache;
+    const bn = document.getElementById('cat-ver-normal');
+    const bf = document.getElementById('cat-ver-full');
+    if (bn) bn.classList.toggle('active', v === 'normal');
+    if (bf) bf.classList.toggle('active', v === 'full');
+  };
+
   window.openCardModal = function(slug) {
     const c = cartas.find(x => x.slug === slug);
     if (!c) return;
-    modalImg.src = (c.full_art ? 'img/cartas_full_grande/' : 'img/cartas_grande/') + c.slug + '.webp?v=' + versaoCache;
+    cartaAberta = c;
+    // Fora do filtro Full Art abre na arte NORMAL (a carta como o jogador ve
+    // no jogo). Com o filtro ligado, o jogador esta justamente navegando as
+    // Full Arts, entao abre nela — mas o alternador fica disponivel nos dois.
+    const abrirEmFull = !!(c.full_art && filtroFullArt);
+    versaoAtual = abrirEmFull ? 'full' : 'normal';
+    modalImg.src = (abrirEmFull ? 'img/cartas_full_grande/' : 'img/cartas_grande/') + c.slug + '.webp?v=' + versaoCache;
     modalImg.alt = c.nome;
+    // alternador so existe quando a carta TEM Full Art
+    const seletor = document.getElementById('cat-modal-versao');
+    if (seletor) {
+      seletor.classList.toggle('on', !!c.full_art);
+      const bn = document.getElementById('cat-ver-normal');
+      const bf = document.getElementById('cat-ver-full');
+      if (bn) bn.classList.toggle('active', !abrirEmFull);
+      if (bf) bf.classList.toggle('active', abrirEmFull);
+    }
     const badgeArquivo = c.raridade_arquivo || c.raridade;
     if (badgeArquivo) {
       modalRarityBadge.src = 'img/raridade/rarity_' + badgeArquivo + '.webp';
