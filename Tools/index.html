@@ -2624,7 +2624,7 @@ async function stripePagar(currency) {
     const res = await fetch('/pagar/stripe_checkout.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ player_code: codigo, email, nome, discord, dispositivo, currency })
+      body: JSON.stringify({ player_code: codigo, email, nome, discord, dispositivo, currency, origem: flOrigem() })
     });
     const data = await res.json();
     if (data.url) {
@@ -2989,7 +2989,7 @@ async function asaasPagar() {
     const resp = await fetch('/pagar/asaas_checkout.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ player_code: codigo, email, nome, cpf, discord, dispositivo, produto: 'founder' }),
+      body: JSON.stringify({ player_code: codigo, email, nome, cpf, discord, dispositivo, produto: 'founder', origem: flOrigem() }),
     });
     const data = await resp.json();
     if (!resp.ok || data.error) throw new Error(data.error || 'Erro ao iniciar pagamento.');
@@ -3052,7 +3052,7 @@ async function pixPagar() {
     const res = await fetch(`${PIX_API_BASE}/criar_pix.php`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ codigo_jogo: codigo, email: email, nome: nome, discord: discord, dispositivo: dispositivo })
+      body: JSON.stringify({ codigo_jogo: codigo, email: email, nome: nome, discord: discord, dispositivo: dispositivo, origem: flOrigem() })
     });
     const data = await res.json();
 
@@ -3248,6 +3248,75 @@ document.addEventListener('keydown', e => {
       el.textContent=n.toLocaleString('pt-BR')+'+';
     })
     .catch(function(){});
+})();
+</script>
+
+<script>
+/* ── ORIGEM DA VENDA (atribuição) ────────────────────────────────────────
+   Guarda de onde o visitante veio para que a venda no banco saiba a
+   procedência. Serve para responder "esse anúncio se paga?" com dinheiro
+   real, sem depender do Pixel (que não vê quem paga com a aba fechada) e
+   sem ser bloqueado por adblock.
+
+   Guarda DUAS coisas:
+     primeira — a origem do primeiro contato, gravada uma vez e nunca mais
+     última   — a origem da visita atual, que é a que costuma fechar a venda
+
+   Tudo dentro de try/catch: navegador com storage bloqueado (aba anônima,
+   iOS restrito) não pode, em hipótese alguma, derrubar um checkout. */
+(function () {
+  var K_PRIM = 'fl_origem_primeira', K_ULT = 'fl_origem_ultima';
+  function ler(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
+  function gravar(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  function capturar() {
+    var p, ref = '';
+    try { p = new URLSearchParams(location.search); } catch (e) { return null; }
+    try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) { ref = ''; }
+    if (ref && ref.indexOf(location.hostname) !== -1) ref = '';   // navegação interna não é origem
+
+    var o = {
+      utm_source:   p.get('utm_source')   || '',
+      utm_medium:   p.get('utm_medium')   || '',
+      utm_campaign: p.get('utm_campaign') || '',
+      utm_content:  p.get('utm_content')  || '',
+      fbclid:       p.get('fbclid')       || '',
+      referrer:     ref,
+      em:           new Date().toISOString()
+    };
+    // fbclid sem utm = clique de anúncio do Facebook sem tagueamento
+    if (!o.utm_source && o.fbclid) { o.utm_source = 'facebook'; o.utm_medium = 'paid'; }
+    // sem nada de anúncio, o referrer ainda diz de onde veio (google, discord…)
+    if (!o.utm_source && !o.fbclid && !o.referrer) return null;
+    return o;
+  }
+
+  var atual = capturar();
+  if (atual) {
+    if (!ler(K_PRIM)) gravar(K_PRIM, atual);
+    gravar(K_ULT, atual);
+  }
+
+  /* Objeto enviado no checkout. Sempre devolve algo — nunca lança. */
+  window.flOrigem = function () {
+    try {
+      var u = ler(K_ULT) || {}, pr = ler(K_PRIM) || {};
+      var resumo = function (o) {
+        if (!o) return '';
+        if (o.utm_source) return (o.utm_source + '/' + (o.utm_medium || 'na') + (o.utm_campaign ? '/' + o.utm_campaign : ''));
+        return o.referrer || '';
+      };
+      return {
+        utm_source:   u.utm_source   || '',
+        utm_medium:   u.utm_medium   || '',
+        utm_campaign: u.utm_campaign || '',
+        utm_content:  u.utm_content  || '',
+        fbclid:       u.fbclid       || '',
+        referrer:     u.referrer     || '',
+        primeira:     resumo(pr)
+      };
+    } catch (e) { return {}; }
+  };
 })();
 </script>
 </body>
