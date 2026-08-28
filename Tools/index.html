@@ -1178,7 +1178,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 
 <!-- ══════════════════ STRIPE SUCCESS BANNER ══════════════════ -->
 <div class="stripe-success-banner" id="stripe-success-banner">
-  <span>✅ &nbsp;Donation confirmed! Your license will be sent to your email shortly. Check your spam folder too. &nbsp;·&nbsp; <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Need help? Discord →</a></span>
+  <span>✅ &nbsp;Donation confirmed! Your license will be sent to your email shortly. Check your spam folder too. &nbsp;·&nbsp; <a href="https://discord.gg/forbidden-legacy" target="_blank">Need help? Discord →</a></span>
   <button id="stripe-banner-close" style="margin-left:16px;background:none;border:1px solid rgba(64,208,128,.4);border-radius:3px;color:#80e0b0;font-size:16px;cursor:pointer;padding:2px 10px;flex-shrink:0;" title="Close">✕</button>
 </div>
 
@@ -1215,7 +1215,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     <a href="mods.html" data-lang="en">FM Mods</a>
   </div>
   <div style="display:flex; align-items:center; gap:12px;">
-    <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
+    <a href="https://discord.gg/forbidden-legacy" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
       <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
       <span class="dc-dot online"></span><span id="discord-online-nav">—</span> online
       <span style="opacity:.4;margin:0 3px">·</span>
@@ -1229,7 +1229,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 
 <!-- MOBILE NAV BAR -->
 <div class="mobile-nav-bar">
-  <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="mobile-discord-bar">
+  <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">
     <span class="dc-dot online"></span><span id="discord-online-mob">—</span>&nbsp;online
     <span style="opacity:.4;margin:0 4px">·</span>
     <span class="dc-dot offline"></span><span id="discord-total-mob">—</span>&nbsp;members — Discord ↗
@@ -1959,6 +1959,13 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
       <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
     </div>
     <div class="label">☥ <span data-lang="pt">Comunidade</span><span data-lang="en">Community</span></div>
+    <div class="dc-server">
+      <img src="img/discord-icone.webp" alt="YGO! - Forbidden Legacy" width="44" height="44" loading="lazy" decoding="async">
+      <div class="dc-server-txt">
+        <strong>YGO! — Forbidden Legacy</strong>
+        <span id="dc-tier-label" style="display:none"></span>
+      </div>
+    </div>
     <div class="discord-title" data-lang="pt">Entre no servidor do Discord</div>
     <div class="discord-title" data-lang="en">Join the Discord Server</div>
     <p class="discord-sub" data-lang="pt">Notícias, changelogs, sorteios, suporte, feedback e a comunidade de duelistas do Forbidden Legacy.</p>
@@ -1972,9 +1979,17 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
         <strong id="discord-total">—</strong>
         <span data-lang="pt">Membros</span><span data-lang="en">Members</span>
       </div>
+      <!-- Impulsos: prova social forte logo antes da oferta.
+                       Servidor que a própria comunidade banca com 36 boosts
+                       não é servidor morto — e o dado vem da API, então nunca
+           fica desatualizado. Escondido se o servidor não tiver. -->
+      <div class="dc-stat" id="dc-boost-stat" style="display:none">
+        <strong id="discord-boosts" style="color:#f47fff">—</strong>
+        <span data-lang="pt">Impulsos</span><span data-lang="en">Boosts</span>
+      </div>
     </div>
     <div style="margin-bottom: 24px;">
-      <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="dc-invite-btn">
+      <a href="https://discord.gg/forbidden-legacy" target="_blank" class="dc-invite-btn">
         <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg> <span data-lang="pt">Entrar no Discord</span><span data-lang="en">Join Discord</span>
       </a>
     </div>
@@ -2162,7 +2177,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Corrigida <strong>Monster Reborn</strong> setada virada para baixo, que não trazia nenhum monstro do Cemitério ao ser ativada</li>
           <li>Bestas Divinas (Slifer, Obelisk e Ra) voltam a ignorar efeitos do adversário que ainda as atingiam, como Legendary - Necro Rex e os dados do Zorc Necrophades</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
       </div>
       <div class="news-body" data-lang="en">
         <ul>
@@ -2173,7 +2188,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Fixed <strong>Monster Reborn</strong> when Set face-down, which brought back no monster from the Graveyard when activated</li>
           <li>Divine Beasts (Slifer, Obelisk and Ra) once again ignore opposing effects that were still hitting them, such as Legendary - Necro Rex and Zorc Necrophades' dice</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2192,7 +2207,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Corrigidos botões do Torneio que ficavam travados/cinza sem motivo, e um bug em que clicar em qualquer lugar da tela acionava botões sem querer</li>
           <li>Ajustado o posicionamento dos ícones nos filtros no Android</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
       </div>
       <div class="news-body" data-lang="en">
         <ul>
@@ -2203,7 +2218,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Fixed Tournament buttons that got stuck grayed out for no reason, and a bug where clicking anywhere on screen would trigger buttons by accident</li>
           <li>Adjusted the positioning of filter icons on Android</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2222,7 +2237,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Corrigido <strong>Zorc Necrophades</strong> contra <strong>Tytannial, Princess of Camellias</strong>: os resultados 4 e 5 do dado agora ignoram a imunidade dela corretamente</li>
           <li>Corrigido um crash ao desconectar um controle no PC durante o jogo, e um travamento raro entre duelos automáticos</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
       </div>
       <div class="news-body" data-lang="en">
         <ul>
@@ -2233,7 +2248,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Fixed <strong>Zorc Necrophades</strong> vs <strong>Tytannial, Princess of Camellias</strong>: dice results 4 and 5 now correctly ignore her immunity</li>
           <li>Fixed a crash when disconnecting a controller on PC mid-game, and a rare freeze between automatic duels</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2252,7 +2267,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Corrigido um travamento envolvendo <strong>Lord of Souls</strong> retornando do Cemitério pelo próprio efeito</li>
           <li>Corrigido o bônus permanente de <strong>Poseidon, King of the Oceans</strong>, que podia não refletir corretamente no visual do monstro após a batalha</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
       </div>
       <div class="news-body" data-lang="en">
         <ul>
@@ -2263,7 +2278,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Fixed a freeze involving <strong>Lord of Souls</strong> returning from the Graveyard via its own effect</li>
           <li>Fixed <strong>Poseidon, King of the Oceans'</strong> permanent bonus, which could fail to reflect correctly in the monster's visuals after battle</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2283,7 +2298,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Corrigido um bug de fusão onde clicar várias vezes na tela de escolha podia invocar o monstro final mais de uma vez, cobrando dano/efeito repetido</li>
           <li>Corrigido: derrotar Neku ou Sebek no labirinto podia não salvar a prova de vitória corretamente, bloqueando o NPC no Free Duel</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
       </div>
       <div class="news-body" data-lang="en">
         <ul>
@@ -2295,7 +2310,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Fixed a fusion bug where clicking multiple times on the result selection screen could summon the final monster more than once, triggering repeated damage/effects</li>
           <li>Fixed: defeating Neku or Sebek in the labyrinth could fail to save proof of victory, locking the NPC out of Free Duel</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2316,7 +2331,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Corrigido o dado 3D de Zorc Necrophades, que podia aparecer como um borrão marrom em vez do cubo animado</li>
           <li>Corrigido um caso raro de trava no Torneio após um fechamento inesperado durante o Modo Hardcore</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
       </div>
       <div class="news-body" data-lang="en">
         <ul>
@@ -2329,7 +2344,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li>Fixed Zorc Necrophades' 3D dice, which could render as a brown blur instead of the animated cube</li>
           <li>Fixed a rare Tournament lockup after an unexpected game closure during Hardcore Mode</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2350,7 +2365,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li><strong>Spellbinding Circle</strong> agora reage à invocação de um monstro do oponente (em vez de a um ataque)</li>
           <li><strong>Bad Reaction to Simochi</strong> agora funciona de verdade: reverte qualquer cura do oponente em dano de mesmo valor</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
       </div>
       <div class="news-body" data-lang="en">
         <ul>
@@ -2363,7 +2378,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <li><strong>Spellbinding Circle</strong> now triggers on the opponent summoning a monster (instead of on an attack)</li>
           <li><strong>Bad Reaction to Simochi</strong> now truly works: reverses any opponent healing into damage of the same amount</li>
         </ul>
-        <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2396,7 +2411,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
     </div>
     <div class="footer-col">
       <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
-      <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank">Discord</a>
+      <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="#discord" data-lang="pt">Servidor</a><a href="#discord" data-lang="en">Server</a>
       <a href="#comprar" data-lang="pt">Versão Founder</a><a href="#comprar" data-lang="en">Founder Version</a>
     </div>
@@ -2650,6 +2665,25 @@ function ytPlay(card, videoId) {
       const navBadge = document.getElementById('discord-nav-badge');
       if (navBadge) navBadge.style.display = 'flex';
       // mobile menu
+      /* Impulsos: só aparece se o servidor realmente tiver algum, para o
+         selo nunca mostrar "0 impulsos" caso os boosts expirem. */
+      const boosts = d.boosts ?? 0, tier = d.tier ?? 0;
+      if (boosts > 0) {
+        const bEl = document.getElementById('discord-boosts');
+        const bWrap = document.getElementById('dc-boost-stat');
+        if (bEl) bEl.textContent = fmt(boosts);
+        if (bWrap) bWrap.style.display = '';
+      }
+      if (tier > 0) {
+        const tEl = document.getElementById('dc-tier-label');
+        if (tEl) {
+          tEl.textContent = (document.body.classList.contains('en')
+            ? 'Level ' + tier + ' server'
+            : 'Servidor nível ' + tier);
+          tEl.style.display = '';
+        }
+      }
+
       const mobOnline = document.getElementById('discord-online-mob');
       const mobTotal  = document.getElementById('discord-total-mob');
       if (mobOnline) mobOnline.textContent = fmt(online);
