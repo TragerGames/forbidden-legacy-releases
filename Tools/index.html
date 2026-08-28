@@ -271,10 +271,48 @@ nav.scrolled {
 .float-card {
   position: absolute !important; border-radius: 6px;
   border: 1px solid rgba(212,168,67,.22);
-  box-shadow: 0 8px 32px rgba(0,0,0,.7);
+  box-shadow: 0 8px 32px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.4);
   overflow: hidden;
+  /* a carta tem 110x160; sem a proporção travada aqui, o object-fit:cover
+     comia ~16% da arte (o rodapé com ATK/DEF) */
+  aspect-ratio: 110 / 160;
+  height: auto !important;
+  will-change: transform;
+  transition: box-shadow .4s ease;
 }
-.float-card img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.float-card img {
+  width:100%; height:100%; object-fit:fill; display:block;
+}
+/* brilho passando por cima, como a luz num sleeve — bem lento e discreto,
+   só nas duas cartas em destaque, para não virar pisca-pisca */
+.float-card::after{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(115deg, transparent 38%, rgba(255,235,190,.16) 48%, transparent 58%);
+  background-size:280% 100%; background-position:200% 0;
+}
+.fc-l1::after, .fc-r1::after{ animation:cardSheen 9s ease-in-out infinite; }
+.fc-r1::after{ animation-delay:4.5s; }
+@keyframes cardSheen{
+  0%, 70%   { background-position:200% 0; }
+  100%      { background-position:-80% 0; }
+}
+/* a camada inteira reage ao mouse (parallax), sem tocar na animação
+   individual de cada carta — as duas se somam sem conflito */
+.hero-cards-layer{
+  /* !important pelo mesmo motivo do .float-card: a regra generica
+     ".hero > :not(#hero-canvas):not(.hero-scroll)" tem especificidade maior
+     e empurraria a camada pro fluxo do flex, levando as cartas junto — foi
+     exatamente o que aconteceu na primeira tentativa (elas se amontoaram
+     atras do logo em vez de ficarem nas laterais). */
+  position:absolute !important; inset:0 !important; width:100% !important;
+  pointer-events:none;
+  transition:transform .5s cubic-bezier(.22,1,.36,1);
+  will-change:transform;
+}
+@media (prefers-reduced-motion: reduce){
+  .float-card, .float-card::after { animation:none !important; }
+  .hero-cards-layer{ transition:none; transform:none !important; }
+}
 .fc-l1 { width:88px; height:122px; left:5%;  top:28%; transform:rotate(-14deg); animation:floatA 5.5s ease-in-out infinite; }
 .fc-l2 { width:68px; height:94px;  left:13%; top:52%; transform:rotate(6deg);   animation:floatC 7s ease-in-out infinite .5s; opacity:.85; }
 .fc-l3 { width:60px; height:83px;  left:21%; top:13%; transform:rotate(-6deg); animation:floatB 6.5s ease-in-out infinite .3s; opacity:.8; }
@@ -1089,6 +1127,51 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   html .pix-license-file{font-size:12px}
   html .pix-note-security{font-size:11px}
 }
+
+/* ── BARRA DE OFERTA (sticky) ─────────────────────────────────────────
+   O preço só aparecia a 54% de uma página de 24 telas: quem chegava do
+   anúncio precisava rolar muito para descobrir quanto custa. A barra
+   carrega a oferta junto com o leitor, e some sozinha quando ele chega
+   na seção de compra — lá o card completo já faz o trabalho. */
+.offer-bar{
+  position:fixed; left:0; right:0; bottom:0; z-index:9990;
+  display:flex; align-items:center; justify-content:center; gap:18px;
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom, 0px));
+  background:rgba(10,7,4,.94);
+  backdrop-filter:blur(10px);
+  border-top:1px solid rgba(212,168,67,.28);
+  box-shadow:0 -6px 24px rgba(0,0,0,.5);
+  transform:translateY(110%);
+  transition:transform .28s cubic-bezier(.22,1,.36,1);
+}
+.offer-bar.show{ transform:translateY(0); }
+.offer-bar-txt{ display:flex; flex-direction:column; gap:1px; line-height:1.25; }
+.offer-bar-t{ font-family:'Bebas Neue',sans-serif; font-size:17px; letter-spacing:1px; color:var(--gold-light); }
+.offer-bar-s{ font-size:12px; color:#a89880; }
+.offer-bar-price{ font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:.5px; color:#fff; white-space:nowrap; }
+.offer-bar-btn{
+  background:linear-gradient(180deg,#f0c04a,#c8960a); color:#1a1206;
+  font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1.4px;
+  padding:11px 22px; border-radius:3px; border:none; cursor:pointer;
+  white-space:nowrap; transition:filter .15s, transform .15s;
+}
+.offer-bar-btn:hover{ filter:brightness(1.08); transform:translateY(-1px); }
+.offer-bar-close{
+  background:none; border:none; color:#6b5c48; font-size:19px; cursor:pointer;
+  padding:0 2px; line-height:1;
+}
+.offer-bar-close:hover{ color:#a89880; }
+@media (max-width:560px){
+  .offer-bar{ gap:11px; padding:9px 12px calc(9px + env(safe-area-inset-bottom, 0px)); }
+  .offer-bar-t{ font-size:15px; }
+  .offer-bar-s{ display:none; }          /* na largura de celular, sobra o essencial */
+  .offer-bar-price{ font-size:21px; }
+  .offer-bar-btn{ font-size:14px; padding:10px 15px; letter-spacing:1px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .offer-bar{ transition:none; }
+}
+
 </style>
 </head>
 <body>
@@ -1185,12 +1268,14 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
 <section class="hero" id="home">
   <div class="stars"></div>
 
-  <div class="float-card fc-l1"><img src="img/cartas/dark_magician.webp" alt="Dark Magician" loading="lazy" width="110" height="160"></div>
-  <div class="float-card fc-l2"><img src="img/cartas/black_luster_soldier.webp" alt="Black Luster Soldier" loading="lazy" width="110" height="160"></div>
-  <div class="float-card fc-l3"><img src="img/cartas/red-eyes_b_dragon.webp" alt="Red-Eyes B. Dragon" loading="lazy" width="110" height="160"></div>
-  <div class="float-card fc-r1"><img src="img/cartas/obelisk_the_tormentor.webp" alt="Obelisk the Tormentor" loading="lazy" width="110" height="160"></div>
-  <div class="float-card fc-r2"><img src="img/cartas/blue-eyes_white_dragon.webp" alt="Blue-Eyes White Dragon" loading="lazy" width="110" height="160"></div>
-  <div class="float-card fc-r3"><img src="img/cartas/summoned_skull.webp" alt="Summoned Skull" loading="lazy" width="110" height="160"></div>
+  <div class="hero-cards-layer" id="hero-cards-layer">
+<div class="float-card fc-l1"><img src="img/cartas/dark_magician.webp" srcset="img/cartas/dark_magician.webp 110w, img/cartas_grande/dark_magician.webp 256w" sizes="(max-width:768px) 70px, 88px" alt="Dark Magician" loading="eager" decoding="async" width="110" height="160"></div>
+  <div class="float-card fc-l2"><img src="img/cartas/black_luster_soldier.webp" alt="Black Luster Soldier" loading="eager" decoding="async" width="110" height="160"></div>
+  <div class="float-card fc-l3"><img src="img/cartas/red-eyes_b_dragon.webp" alt="Red-Eyes B. Dragon" loading="eager" decoding="async" width="110" height="160"></div>
+  <div class="float-card fc-r1"><img src="img/cartas/obelisk_the_tormentor.webp" srcset="img/cartas/obelisk_the_tormentor.webp 110w, img/cartas_grande/obelisk_the_tormentor.webp 256w" sizes="(max-width:768px) 70px, 88px" alt="Obelisk the Tormentor" loading="eager" decoding="async" width="110" height="160"></div>
+  <div class="float-card fc-r2"><img src="img/cartas/blue-eyes_white_dragon.webp" alt="Blue-Eyes White Dragon" loading="eager" decoding="async" width="110" height="160"></div>
+  <div class="float-card fc-r3"><img src="img/cartas/summoned_skull.webp" alt="Summoned Skull" loading="eager" decoding="async" width="110" height="160"></div>
+</div>
 
   <!-- Logo: usa imagem se existir, senão texto -->
   <img src="/img/logo_forbidden_legacy.webp" alt="YGO Forbidden Legacy" class="hero-logo-img" width="995" height="560" fetchpriority="high" decoding="async"
@@ -1645,7 +1730,7 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
         <span data-lang="en"><strong>Before updating:</strong> always export your save in-game. Keep the file in a safe place to prevent possible progress loss.</span>
       </div>
       <div class="dl-platforms">
-        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/launcher-latest/Forbidden.Legacy.Launcher.exe" target="_blank" onclick="return confirmDownloadWarning()">
+        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/launcher-latest/Forbidden.Legacy.Launcher.exe" target="_blank" onclick="return confirmDownloadWarning('pc')">
           <div class="dl-plat-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="28" height="28">
               <path fill="#f25022" d="M0 0h11v11H0z"/>
@@ -1658,12 +1743,12 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
           <div class="dl-plat-ext" data-lang="pt">Launcher</div>
           <div class="dl-plat-ext" data-lang="en">Launcher</div>
         </a>
-        <a class="dl-plat dl-plat-link" href="https://forbiddenlegacy.com.br/downloads/publico.php?asset=android_apk" target="_blank" onclick="return confirmDownloadWarning()">
+        <a class="dl-plat dl-plat-link" href="https://forbiddenlegacy.com.br/downloads/publico.php?asset=android_apk" target="_blank" onclick="return confirmDownloadWarning('android')">
           <div class="dl-plat-icon">&#129302;</div>
           <div class="dl-plat-name">Android</div>
           <div class="dl-plat-ext">.apk</div>
         </a>
-        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/launcher-latest/Forbidden.Legacy.Launcher.x86_64" target="_blank" onclick="return confirmDownloadWarning()">
+        <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/launcher-latest/Forbidden.Legacy.Launcher.x86_64" target="_blank" onclick="return confirmDownloadWarning('linux')">
           <div class="dl-plat-icon">&#128039;</div>
           <div class="dl-plat-name">Linux</div>
           <div class="dl-plat-ext" data-lang="pt">Launcher</div>
@@ -1827,6 +1912,234 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   </div>
 </div>
 
+
+<!-- OUTRAS PÁGINAS -->
+<div class="pages-section reveal">
+  <div class="section-head" style="text-align:center;margin-bottom:36px">
+    <div class="sec-label" style="text-align:center">☥ <span data-lang="pt">Explorar</span><span data-lang="en">Explore</span></div>
+    <div class="sec-title center" data-lang="pt">Mais do projeto</div>
+    <div class="sec-title center" data-lang="en">More of the project</div>
+  </div>
+  <div class="pages-grid">
+    <a href="gallery.html" class="page-card">
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M15 8h.01" /> <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" /> <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" /> <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" /></svg>
+      <div class="page-card-title" data-lang="pt">Galeria</div>
+      <div class="page-card-title" data-lang="en">Gallery</div>
+      <div class="page-card-desc" data-lang="pt">Screenshots e artes do jogo</div>
+      <div class="page-card-desc" data-lang="en">Screenshots and game art</div>
+    </a>
+    <a href="banlist.html" class="page-card">
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.5 5.5l1.5 1.5l2.5 -2.5" /> <path d="M3.5 11.5l1.5 1.5l2.5 -2.5" /> <path d="M3.5 17.5l1.5 1.5l2.5 -2.5" /> <path d="M11 6l9 0" /> <path d="M11 12l9 0" /> <path d="M11 18l9 0" /></svg>
+      <div class="page-card-title">Banlist</div>
+      <div class="page-card-desc" data-lang="pt">Grupos e limites de cartas</div>
+      <div class="page-card-desc" data-lang="en">Groups and card limits</div>
+    </a>
+    <a href="boosters.html" class="page-card">
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /> <path d="M15 4h1a1 1 0 0 1 1 1v3.5" /> <path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg>
+      <div class="page-card-title">Boosters</div>
+      <div class="page-card-desc" data-lang="pt">Pacotes e cartas disponíveis</div>
+      <div class="page-card-desc" data-lang="en">Available packs and cards</div>
+    </a>
+    <a href="conquistas.html" class="page-card">
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 21l8 0" /> <path d="M12 17l0 4" /> <path d="M7 4l10 0" /> <path d="M17 4v8a5 5 0 0 1 -10 0v-8" /> <path d="M5 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /> <path d="M19 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg>
+      <div class="page-card-title" data-lang="pt">Conquistas</div>
+      <div class="page-card-title" data-lang="en">Achievements</div>
+      <div class="page-card-desc" data-lang="pt">Objetivos e recompensas</div>
+      <div class="page-card-desc" data-lang="en">Objectives and rewards</div>
+    </a>
+  </div>
+</div>
+
+<div class="ornament-div">— ☥ ☥ ☥ —</div>
+
+<!-- DISCORD -->
+<div class="discord-section reveal" id="discord">
+  <div class="discord-card">
+    <div class="discord-icon">
+      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
+    </div>
+    <div class="label">☥ <span data-lang="pt">Comunidade</span><span data-lang="en">Community</span></div>
+    <div class="discord-title" data-lang="pt">Entre no servidor do Discord</div>
+    <div class="discord-title" data-lang="en">Join the Discord Server</div>
+    <p class="discord-sub" data-lang="pt">Notícias, changelogs, sorteios, suporte, feedback e a comunidade de duelistas do Forbidden Legacy.</p>
+    <p class="discord-sub" data-lang="en">News, changelogs, giveaways, support, feedback and the Forbidden Legacy duelist community.</p>
+    <div class="discord-stats">
+      <div class="dc-stat">
+        <strong><span class="dc-online-dot"></span><span id="discord-online">—</span></strong>
+        <span data-lang="pt">Online agora</span><span data-lang="en">Online now</span>
+      </div>
+      <div class="dc-stat">
+        <strong id="discord-total">—</strong>
+        <span data-lang="pt">Membros</span><span data-lang="en">Members</span>
+      </div>
+    </div>
+    <div style="margin-bottom: 24px;">
+      <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="dc-invite-btn">
+        <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg> <span data-lang="pt">Entrar no Discord</span><span data-lang="en">Join Discord</span>
+      </a>
+    </div>
+    <div class="discord-channels">
+      <span class="dc-channel">anuncios</span>
+      <span class="dc-channel">changelog</span>
+      <span class="dc-channel">bugs</span>
+      <span class="dc-channel">sugestoes</span>
+      <span class="dc-channel">geral</span>
+      <span class="dc-channel">decks</span>
+    </div>
+  </div>
+</div>
+
+<div class="ornament-div">— ☥ ☥ ☥ —</div>
+
+<!-- ══════════════════ COMO FUNCIONA ══════════════════ -->
+<section class="reveal" style="padding: 80px 40px; max-width: 900px; margin: 0 auto;">
+  <p class="section-label">☥ <span data-lang="pt">Ativação</span><span data-lang="en">Activation</span></p>
+  <h2 class="section-title" data-lang="pt">Como funciona a versão FOUNDER?</h2>
+  <h2 class="section-title" data-lang="en">How does FOUNDER activation work?</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4 data-lang="pt">Abra o jogo</h4><h4 data-lang="en">Open the game</h4>
+      <p data-lang="pt">Vá em <strong>Opções → Ativação</strong> e copie seu <strong>Código do Jogador</strong></p>
+      <p data-lang="en">Go to <strong>Options → Activation</strong> and copy your <strong>Player Code</strong></p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4 data-lang="pt">Compre aqui</h4><h4 data-lang="en">Buy here</h4>
+      <p data-lang="pt">Cole seu código abaixo, informe seu email e escolha como apoiar</p>
+      <p data-lang="en">Paste your code below, enter your email and choose how to support</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4 data-lang="pt">Receba por email</h4><h4 data-lang="en">Receive by email</h4>
+      <p data-lang="pt">Após a confirmação, você recebe automaticamente o arquivo de licença</p>
+      <p data-lang="en">After confirmation, you automatically receive the license file</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4 data-lang="pt">Importe no jogo</h4><h4 data-lang="en">Import in game</h4>
+      <p data-lang="pt">Vá em <strong>Opções → Ativar → Importar Arquivo</strong> e selecione o .json recebido</p>
+      <p data-lang="en">Go to <strong>Options → Activate → Import File</strong> and select the received .json</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder-section reveal" id="comprar">
+  <div class="founder-card">
+    <div class="founder-badge">☥ <span data-lang="pt">Versão Founder</span><span data-lang="en">Founder Version</span></div>
+    <div class="founder-title" data-lang="pt">Apoie o projeto.<br>Jogue o jogo completo.</div>
+    <div class="founder-title" data-lang="en">Support the project.<br>Play the full game.</div>
+    <p class="founder-sub" data-lang="pt">Pagamento único · Licença vitalícia · Enviada por e-mail após o pagamento</p>
+    <p class="founder-sub" data-lang="en">One-time payment · Lifetime license · Sent by email after payment</p>
+    <div class="founder-perks">
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 1 completa</span><span data-lang="en">Full Season 1</span></div>
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Acesso antecipado Season 2</span><span data-lang="en">Season 2 early access</span></div>
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Apoia o dev independente</span><span data-lang="en">Supports the indie dev</span></div>
+    </div>
+    <div class="price-row">
+      <!-- PIX e Cartao BR/Internacional sao controlados por REGIAO (regionIsBR()),
+           nunca pelo idioma da interface — atualizarChipRegiao() no <script> alterna
+           qual bloco aparece. data-lang aqui so traduz o texto dentro do bloco ativo. -->
+      <div class="price-block" id="price-pix-block">
+        <div class="price-method">PIX</div>
+        <div class="price-amount">R$&thinsp;39,90</div>
+        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
+        <div class="price-note" data-lang="pt">Instantâneo · sem taxa</div>
+        <div class="price-note" data-lang="en">Instant · no fee</div>
+      </div>
+      <div class="price-sep" id="price-sep-block"></div>
+      <div class="price-block" id="price-card-br-block">
+        <div class="price-method" data-lang="pt">Cartão de Crédito</div>
+        <div class="price-method" data-lang="en">Credit Card</div>
+        <div class="price-amount">R$&thinsp;39,90</div>
+        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
+        <div class="price-note" data-lang="pt">Parcelável · via Asaas</div>
+        <div class="price-note" data-lang="en">Installments available · via Asaas</div>
+      </div>
+      <div class="price-block" id="price-card-intl-block" style="display:none">
+        <div class="price-method" data-lang="pt">Cartão de Crédito</div>
+        <div class="price-method" data-lang="en">Credit Card</div>
+        <div class="price-amount">$20&thinsp;USD</div>
+        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
+        <div class="price-note" data-lang="pt">Stripe · Cartão internacional</div>
+        <div class="price-note" data-lang="en">Stripe · International card</div>
+      </div>
+    </div>
+
+    <!-- REGIÃO DE PAGAMENTO — deteccao por IP pode falhar/ser bloqueada por
+         ad-blocker; o botao deixa o proprio cliente corrigir (mesmo padrao
+         e mesma chave de localStorage usados em loja.html). -->
+    <div class="region-chip-wrap">
+      <div class="region-chip" id="region-chip">🌐 Brasil — PIX / Cartão</div>
+      <button type="button" class="region-switch-btn" id="region-switch-btn" onclick="toggleRegionOverride()">
+        <span data-lang="pt">Não está no Brasil? Trocar região</span>
+        <span data-lang="en">Not in Brazil? Switch region</span>
+      </button>
+    </div>
+
+    <!-- FORMULÁRIO DE COMPRA INTEGRADO -->
+    <div style="max-width: 560px; margin: 0 auto; text-align: left;" class="buy-box">
+      <div class="input-group">
+        <label data-lang="pt">CÓDIGO DO JOGADOR (exibido em Opções → Ativação)</label>
+        <label data-lang="en">PLAYER CODE (shown in Options → Activation)</label>
+        <input id="input-codigo" type="text" placeholder="FL-PLAYERPC-XXXX-XXXX-XXXX" autocomplete="off">
+      </div>
+      <div class="input-group">
+        <label data-lang="pt">SEU EMAIL (para receber a licença)</label>
+        <label data-lang="en">YOUR EMAIL (to receive the license)</label>
+        <input id="input-email" type="email" placeholder="email@exemplo.com" autocomplete="email">
+      </div>
+      <div class="input-group">
+        <label data-lang="pt">SEU NOME</label>
+        <label data-lang="en">YOUR NAME</label>
+        <input id="input-nome" type="text" placeholder="Seu nome" autocomplete="name">
+      </div>
+      <div class="input-group">
+        <label data-lang="pt">DISCORD (opcional)</label>
+        <label data-lang="en">DISCORD (optional)</label>
+        <input id="input-discord" type="text" placeholder="@usuario" autocomplete="off">
+      </div>
+      <div class="input-group" id="cpf-group" style="display:none">
+        <label data-lang="pt">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(exigido para cartão de crédito)</span></label>
+        <label data-lang="en">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(required for credit card)</span></label>
+        <input id="input-cpf" type="text" placeholder="000.000.000-00" autocomplete="off" maxlength="14" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d3)(\d)/,'$1.$2').replace(/(\d3)(\d)/,'$1.$2').replace(/(\d3)(\d(1, 2))$/,'$1-$2')">
+      </div>
+      <div class="input-group">
+        <label data-lang="pt">DISPOSITIVO <span style="color:#e04040;font-size:10px">*</span></label>
+        <label data-lang="en">DEVICE <span style="color:#e04040;font-size:10px">*</span></label>
+        <select id="input-dispositivo" required>
+          <option value="" data-lang="pt">— selecione —</option>
+          <option value="" data-lang="en">— select —</option>
+          <option value="Windows">Windows</option>
+          <option value="Android">Android</option>
+          <option value="Linux">Linux</option>
+        </select>
+      </div>
+      <div id="form-restored-hint" style="display:none;font-size:11px;color:var(--gold);text-align:center;margin-bottom:6px;letter-spacing:1px;opacity:0.8">
+        <span data-lang="pt">✦ Dados restaurados do seu último acesso</span>
+        <span data-lang="en">✦ Data restored from your last visit</span>
+      </div>
+      <button class="btn-gold" style="width: 100%; border: none; font-size: 16px; margin-top: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;" onclick="abrirModalPagamento()">
+        <span>☥</span>
+        <span data-lang="pt">ATIVAR VERSÃO FOUNDER</span>
+        <span data-lang="en">ACTIVATE FOUNDER VERSION</span>
+      </button>
+    </div>
+
+    <p class="founder-fine" style="margin-top: 28px;" data-lang="pt">Precisa do seu código de jogador — disponível em Opções → Ativação dentro do jogo.</p>
+    <p class="founder-fine" style="margin-top: 28px;" data-lang="en">Needs your player code — available in Options → Activation inside the game.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ NOVIDADES ══════════════════
+     Fica DEPOIS da oferta de propósito. Medido em 390px: esta seção tem
+     6.752px — 37% da página inteira — e antes ficava ENTRE o botão de
+     download e o formulário de compra, que começava a 88% da página.
+     Aqui ela serve a quem já se interessou e quer o detalhe. -->
 <!-- ══════════════════ NOVIDADES ══════════════════ -->
 <section id="novidades" data-reveal>
   <p class="section-label">☥ <span data-lang="pt">Blog</span><span data-lang="en">Blog</span></p>
@@ -2057,228 +2370,6 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   </div>
 </section>
 
-<!-- OUTRAS PÁGINAS -->
-<div class="pages-section reveal">
-  <div class="section-head" style="text-align:center;margin-bottom:36px">
-    <div class="sec-label" style="text-align:center">☥ <span data-lang="pt">Explorar</span><span data-lang="en">Explore</span></div>
-    <div class="sec-title center" data-lang="pt">Mais do projeto</div>
-    <div class="sec-title center" data-lang="en">More of the project</div>
-  </div>
-  <div class="pages-grid">
-    <a href="gallery.html" class="page-card">
-      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M15 8h.01" /> <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" /> <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" /> <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" /></svg>
-      <div class="page-card-title" data-lang="pt">Galeria</div>
-      <div class="page-card-title" data-lang="en">Gallery</div>
-      <div class="page-card-desc" data-lang="pt">Screenshots e artes do jogo</div>
-      <div class="page-card-desc" data-lang="en">Screenshots and game art</div>
-    </a>
-    <a href="banlist.html" class="page-card">
-      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.5 5.5l1.5 1.5l2.5 -2.5" /> <path d="M3.5 11.5l1.5 1.5l2.5 -2.5" /> <path d="M3.5 17.5l1.5 1.5l2.5 -2.5" /> <path d="M11 6l9 0" /> <path d="M11 12l9 0" /> <path d="M11 18l9 0" /></svg>
-      <div class="page-card-title">Banlist</div>
-      <div class="page-card-desc" data-lang="pt">Grupos e limites de cartas</div>
-      <div class="page-card-desc" data-lang="en">Groups and card limits</div>
-    </a>
-    <a href="boosters.html" class="page-card">
-      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /> <path d="M15 4h1a1 1 0 0 1 1 1v3.5" /> <path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg>
-      <div class="page-card-title">Boosters</div>
-      <div class="page-card-desc" data-lang="pt">Pacotes e cartas disponíveis</div>
-      <div class="page-card-desc" data-lang="en">Available packs and cards</div>
-    </a>
-    <a href="conquistas.html" class="page-card">
-      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 21l8 0" /> <path d="M12 17l0 4" /> <path d="M7 4l10 0" /> <path d="M17 4v8a5 5 0 0 1 -10 0v-8" /> <path d="M5 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /> <path d="M19 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg>
-      <div class="page-card-title" data-lang="pt">Conquistas</div>
-      <div class="page-card-title" data-lang="en">Achievements</div>
-      <div class="page-card-desc" data-lang="pt">Objetivos e recompensas</div>
-      <div class="page-card-desc" data-lang="en">Objectives and rewards</div>
-    </a>
-  </div>
-</div>
-
-<div class="ornament-div">— ☥ ☥ ☥ —</div>
-
-<!-- DISCORD -->
-<div class="discord-section reveal" id="discord">
-  <div class="discord-card">
-    <div class="discord-icon">
-      <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
-    </div>
-    <div class="label">☥ <span data-lang="pt">Comunidade</span><span data-lang="en">Community</span></div>
-    <div class="discord-title" data-lang="pt">Entre no servidor do Discord</div>
-    <div class="discord-title" data-lang="en">Join the Discord Server</div>
-    <p class="discord-sub" data-lang="pt">Notícias, changelogs, sorteios, suporte, feedback e a comunidade de duelistas do Forbidden Legacy.</p>
-    <p class="discord-sub" data-lang="en">News, changelogs, giveaways, support, feedback and the Forbidden Legacy duelist community.</p>
-    <div class="discord-stats">
-      <div class="dc-stat">
-        <strong><span class="dc-online-dot"></span><span id="discord-online">—</span></strong>
-        <span data-lang="pt">Online agora</span><span data-lang="en">Online now</span>
-      </div>
-      <div class="dc-stat">
-        <strong id="discord-total">—</strong>
-        <span data-lang="pt">Membros</span><span data-lang="en">Members</span>
-      </div>
-    </div>
-    <div style="margin-bottom: 24px;">
-      <a href="https://discord.gg/MkJXZ9tNQ6" target="_blank" class="dc-invite-btn">
-        <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg> <span data-lang="pt">Entrar no Discord</span><span data-lang="en">Join Discord</span>
-      </a>
-    </div>
-    <div class="discord-channels">
-      <span class="dc-channel">anuncios</span>
-      <span class="dc-channel">changelog</span>
-      <span class="dc-channel">bugs</span>
-      <span class="dc-channel">sugestoes</span>
-      <span class="dc-channel">geral</span>
-      <span class="dc-channel">decks</span>
-    </div>
-  </div>
-</div>
-
-<div class="ornament-div">— ☥ ☥ ☥ —</div>
-
-<!-- ══════════════════ COMO FUNCIONA ══════════════════ -->
-<section class="reveal" style="padding: 80px 40px; max-width: 900px; margin: 0 auto;">
-  <p class="section-label">☥ <span data-lang="pt">Ativação</span><span data-lang="en">Activation</span></p>
-  <h2 class="section-title" data-lang="pt">Como funciona a versão FOUNDER?</h2>
-  <h2 class="section-title" data-lang="en">How does FOUNDER activation work?</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h4 data-lang="pt">Abra o jogo</h4><h4 data-lang="en">Open the game</h4>
-      <p data-lang="pt">Vá em <strong>Opções → Ativação</strong> e copie seu <strong>Código do Jogador</strong></p>
-      <p data-lang="en">Go to <strong>Options → Activation</strong> and copy your <strong>Player Code</strong></p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h4 data-lang="pt">Compre aqui</h4><h4 data-lang="en">Buy here</h4>
-      <p data-lang="pt">Cole seu código abaixo, informe seu email e escolha como apoiar</p>
-      <p data-lang="en">Paste your code below, enter your email and choose how to support</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h4 data-lang="pt">Receba por email</h4><h4 data-lang="en">Receive by email</h4>
-      <p data-lang="pt">Após a confirmação, você recebe automaticamente o arquivo de licença</p>
-      <p data-lang="en">After confirmation, you automatically receive the license file</p>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <h4 data-lang="pt">Importe no jogo</h4><h4 data-lang="en">Import in game</h4>
-      <p data-lang="pt">Vá em <strong>Opções → Ativar → Importar Arquivo</strong> e selecione o .json recebido</p>
-      <p data-lang="en">Go to <strong>Options → Activate → Import File</strong> and select the received .json</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER -->
-<section class="founder-section reveal" id="comprar">
-  <div class="founder-card">
-    <div class="founder-badge">☥ <span data-lang="pt">Versão Founder</span><span data-lang="en">Founder Version</span></div>
-    <div class="founder-title" data-lang="pt">Apoie o projeto.<br>Jogue o jogo completo.</div>
-    <div class="founder-title" data-lang="en">Support the project.<br>Play the full game.</div>
-    <p class="founder-sub" data-lang="pt">Pagamento único · Licença vitalícia · Enviada por e-mail após o pagamento</p>
-    <p class="founder-sub" data-lang="en">One-time payment · Lifetime license · Sent by email after payment</p>
-    <div class="founder-perks">
-      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 1 completa</span><span data-lang="en">Full Season 1</span></div>
-      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Acesso antecipado Season 2</span><span data-lang="en">Season 2 early access</span></div>
-      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Apoia o dev independente</span><span data-lang="en">Supports the indie dev</span></div>
-    </div>
-    <div class="price-row">
-      <!-- PIX e Cartao BR/Internacional sao controlados por REGIAO (regionIsBR()),
-           nunca pelo idioma da interface — atualizarChipRegiao() no <script> alterna
-           qual bloco aparece. data-lang aqui so traduz o texto dentro do bloco ativo. -->
-      <div class="price-block" id="price-pix-block">
-        <div class="price-method">PIX</div>
-        <div class="price-amount">R$&thinsp;39,90</div>
-        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
-        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
-        <div class="price-note" data-lang="pt">Instantâneo · sem taxa</div>
-        <div class="price-note" data-lang="en">Instant · no fee</div>
-      </div>
-      <div class="price-sep" id="price-sep-block"></div>
-      <div class="price-block" id="price-card-br-block">
-        <div class="price-method" data-lang="pt">Cartão de Crédito</div>
-        <div class="price-method" data-lang="en">Credit Card</div>
-        <div class="price-amount">R$&thinsp;39,90</div>
-        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
-        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
-        <div class="price-note" data-lang="pt">Parcelável · via Asaas</div>
-        <div class="price-note" data-lang="en">Installments available · via Asaas</div>
-      </div>
-      <div class="price-block" id="price-card-intl-block" style="display:none">
-        <div class="price-method" data-lang="pt">Cartão de Crédito</div>
-        <div class="price-method" data-lang="en">Credit Card</div>
-        <div class="price-amount">$20&thinsp;USD</div>
-        <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
-        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
-        <div class="price-note" data-lang="pt">Stripe · Cartão internacional</div>
-        <div class="price-note" data-lang="en">Stripe · International card</div>
-      </div>
-    </div>
-
-    <!-- REGIÃO DE PAGAMENTO — deteccao por IP pode falhar/ser bloqueada por
-         ad-blocker; o botao deixa o proprio cliente corrigir (mesmo padrao
-         e mesma chave de localStorage usados em loja.html). -->
-    <div class="region-chip-wrap">
-      <div class="region-chip" id="region-chip">🌐 Brasil — PIX / Cartão</div>
-      <button type="button" class="region-switch-btn" id="region-switch-btn" onclick="toggleRegionOverride()">
-        <span data-lang="pt">Não está no Brasil? Trocar região</span>
-        <span data-lang="en">Not in Brazil? Switch region</span>
-      </button>
-    </div>
-
-    <!-- FORMULÁRIO DE COMPRA INTEGRADO -->
-    <div style="max-width: 560px; margin: 0 auto; text-align: left;" class="buy-box">
-      <div class="input-group">
-        <label data-lang="pt">CÓDIGO DO JOGADOR (exibido em Opções → Ativação)</label>
-        <label data-lang="en">PLAYER CODE (shown in Options → Activation)</label>
-        <input id="input-codigo" type="text" placeholder="FL-PLAYERPC-XXXX-XXXX-XXXX" autocomplete="off">
-      </div>
-      <div class="input-group">
-        <label data-lang="pt">SEU EMAIL (para receber a licença)</label>
-        <label data-lang="en">YOUR EMAIL (to receive the license)</label>
-        <input id="input-email" type="email" placeholder="email@exemplo.com" autocomplete="email">
-      </div>
-      <div class="input-group">
-        <label data-lang="pt">SEU NOME</label>
-        <label data-lang="en">YOUR NAME</label>
-        <input id="input-nome" type="text" placeholder="Seu nome" autocomplete="name">
-      </div>
-      <div class="input-group">
-        <label data-lang="pt">DISCORD (opcional)</label>
-        <label data-lang="en">DISCORD (optional)</label>
-        <input id="input-discord" type="text" placeholder="@usuario" autocomplete="off">
-      </div>
-      <div class="input-group" id="cpf-group" style="display:none">
-        <label data-lang="pt">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(exigido para cartão de crédito)</span></label>
-        <label data-lang="en">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(required for credit card)</span></label>
-        <input id="input-cpf" type="text" placeholder="000.000.000-00" autocomplete="off" maxlength="14" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d3)(\d)/,'$1.$2').replace(/(\d3)(\d)/,'$1.$2').replace(/(\d3)(\d(1, 2))$/,'$1-$2')">
-      </div>
-      <div class="input-group">
-        <label data-lang="pt">DISPOSITIVO <span style="color:#e04040;font-size:10px">*</span></label>
-        <label data-lang="en">DEVICE <span style="color:#e04040;font-size:10px">*</span></label>
-        <select id="input-dispositivo" required>
-          <option value="" data-lang="pt">— selecione —</option>
-          <option value="" data-lang="en">— select —</option>
-          <option value="Windows">Windows</option>
-          <option value="Android">Android</option>
-          <option value="Linux">Linux</option>
-        </select>
-      </div>
-      <div id="form-restored-hint" style="display:none;font-size:11px;color:var(--gold);text-align:center;margin-bottom:6px;letter-spacing:1px;opacity:0.8">
-        <span data-lang="pt">✦ Dados restaurados do seu último acesso</span>
-        <span data-lang="en">✦ Data restored from your last visit</span>
-      </div>
-      <button class="btn-gold" style="width: 100%; border: none; font-size: 16px; margin-top: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;" onclick="abrirModalPagamento()">
-        <span>☥</span>
-        <span data-lang="pt">ATIVAR VERSÃO FOUNDER</span>
-        <span data-lang="en">ACTIVATE FOUNDER VERSION</span>
-      </button>
-    </div>
-
-    <p class="founder-fine" style="margin-top: 28px;" data-lang="pt">Precisa do seu código de jogador — disponível em Opções → Ativação dentro do jogo.</p>
-    <p class="founder-fine" style="margin-top: 28px;" data-lang="en">Needs your player code — available in Options → Activation inside the game.</p>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -2424,6 +2515,22 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
   <img id="lb-img" src="" alt="Zoom Image">
 </div>
 
+
+<!-- ══════════════════ BARRA DE OFERTA ══════════════════ -->
+<div class="offer-bar" id="offer-bar" role="region" aria-label="Versão Founder">
+  <div class="offer-bar-txt">
+    <span class="offer-bar-t" data-lang="pt">Versão Founder</span>
+    <span class="offer-bar-t" data-lang="en">Founder Version</span>
+    <span class="offer-bar-s" data-lang="pt">Pagamento único · licença vitalícia</span>
+    <span class="offer-bar-s" data-lang="en">One-time payment · lifetime license</span>
+  </div>
+  <span class="offer-bar-price" id="offer-bar-price">R$&nbsp;39,90</span>
+  <button class="offer-bar-btn" onclick="irParaOferta()">
+    <span data-lang="pt">QUERO O FOUNDER</span><span data-lang="en">GET FOUNDER</span>
+  </button>
+  <button class="offer-bar-close" onclick="fecharBarraOferta()" aria-label="Fechar">✕</button>
+</div>
+
 <!-- ══════════════════ BANNER LGPD / COOKIES ══════════════════ -->
 <div id="cookie-banner" style="
   display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999;
@@ -2450,6 +2557,8 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
       <li><strong style="color:#f0d080">fl_lang</strong> — preferência de idioma (PT/EN)</li>
       <li><strong style="color:#f0d080">fl_form_v1</strong> — campos do formulário de compra (Código, Email, Nome, Discord)</li>
       <li><strong style="color:#f0d080">fl_cookie_ok</strong> — registro de que você aceitou este aviso</li>
+              <li><strong style="color:#f0d080">fl_origem_primeira</strong> / <strong style="color:#f0d080">fl_origem_ultima</strong> — de onde você chegou ao site (link de anúncio, busca, Discord). Serve para sabermos quais divulgações funcionam</li>
+              <li><strong style="color:#f0d080">fl_visitante</strong> — um número aleatório gerado neste navegador, sem nome nem e-mail. Só liga "baixou o jogo" a "comprou depois" nas nossas estatísticas</li>
       <li><strong style="color:#f0d080">APIs externas</strong> — Discord (contador de membros), api.country.is (detecção de país)</li>
       <li><strong style="color:#f0d080">Doações</strong> — PIX via Efí Bank e cartão via Stripe processam dados de forma segura em seus próprios servidores</li>
     </ul>
@@ -2457,6 +2566,8 @@ body:not(.en) .news-body[data-lang="en"] { display: none !important; flex-grow: 
       <li><strong style="color:#f0d080">fl_lang</strong> — language preference (PT/EN)</li>
       <li><strong style="color:#f0d080">fl_form_v1</strong> — purchase form fields (Code, Email, Name, Discord)</li>
       <li><strong style="color:#f0d080">fl_cookie_ok</strong> — record that you accepted this notice</li>
+              <li><strong style="color:#f0d080">fl_origem_primeira</strong> / <strong style="color:#f0d080">fl_origem_ultima</strong> — where you arrived from (ad link, search, Discord), so we know which channels work</li>
+              <li><strong style="color:#f0d080">fl_visitante</strong> — a random number generated in this browser, with no name or e-mail. It only links "downloaded the game" to "bought later" in our own stats</li>
       <li><strong style="color:#f0d080">External APIs</strong> — Discord (member counter), api.country.is (country detection)</li>
       <li><strong style="color:#f0d080">Donations</strong> — PIX via Efí Bank and card via Stripe process data securely on their own servers</li>
     </ul>
@@ -2713,7 +2824,27 @@ function paypalConfirmar() {
 // pra se aproveitar de um bug ja corrigido, com intencao de atualizar de volta
 // depois. Por isso a mensagem nao deve sugerir "exporte seu save antes", pois
 // isso validaria esse uso. O save simplesmente corrompe nesse ciclo.
-function confirmDownloadWarning() {
+/* Registra o download da versão gratuita com a origem de quem baixou.
+   Deliberadamente "dispare e esqueça": keepalive faz a requisição sobreviver
+   à navegação, e qualquer falha é engolida — nenhum download pode deixar de
+   acontecer por causa de uma métrica. */
+function flRegistrarDownload(plataforma) {
+  try {
+    var corpo = JSON.stringify({
+      plataforma: plataforma,
+      origem: (typeof flOrigem === 'function') ? flOrigem() : {}
+    });
+    fetch('/pagar/evento_site.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: corpo,
+      keepalive: true
+    }).catch(function () {});
+  } catch (e) {}
+}
+
+function confirmDownloadWarning(plataforma) {
+  flRegistrarDownload(plataforma || 'outro');
   const isEN = document.body.classList.contains('en');
   const msg = isEN
     ? "Warning: installing an older version of the game over your current one to take advantage of an already-fixed bug, and then updating back to a newer version, will corrupt your save file.\n\nOnly download an older version if you know exactly what you're doing.\n\nContinue with the download?"
@@ -3291,6 +3422,22 @@ document.addEventListener('keydown', e => {
     return o;
   }
 
+
+  /* Id anônimo do navegador. Não é login nem identifica pessoa: é um número
+     aleatório que serve só para ligar "baixou o grátis" a "comprou depois" —
+     hoje essas duas pontas são registros soltos que ninguém consegue juntar. */
+  function visitante() {
+    try {
+      var v = localStorage.getItem('fl_visitante');
+      if (!v) {
+        v = (crypto && crypto.randomUUID) ? crypto.randomUUID()
+            : 'v-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+        localStorage.setItem('fl_visitante', v);
+      }
+      return v;
+    } catch (e) { return ''; }
+  }
+
   var atual = capturar();
   if (atual) {
     if (!ler(K_PRIM)) gravar(K_PRIM, atual);
@@ -3307,6 +3454,7 @@ document.addEventListener('keydown', e => {
         return o.referrer || '';
       };
       return {
+        visitante:    visitante(),
         utm_source:   u.utm_source   || '',
         utm_medium:   u.utm_medium   || '',
         utm_campaign: u.utm_campaign || '',
@@ -3315,8 +3463,97 @@ document.addEventListener('keydown', e => {
         referrer:     u.referrer     || '',
         primeira:     resumo(pr)
       };
-    } catch (e) { return {}; }
+    } catch (e) { return { visitante: visitante() }; }
   };
+})();
+</script>
+
+<script>
+/* ── BARRA DE OFERTA ──────────────────────────────────────────────────
+   Aparece depois que o hero sai da tela e some quando a seção de compra
+   entra — ali o card completo assume. Fica escondida enquanto o aviso de
+   cookies estiver na tela, para os dois não brigarem pelo rodapé, e
+   respeita quem a fechou (guardado por sessão, não para sempre). */
+(function () {
+  var barra = document.getElementById('offer-bar');
+  if (!barra) return;
+  var fechada = false;
+  try { fechada = sessionStorage.getItem('fl_offerbar_off') === '1'; } catch (e) {}
+
+  window.fecharBarraOferta = function () {
+    fechada = true;
+    barra.classList.remove('show');
+    try { sessionStorage.setItem('fl_offerbar_off', '1'); } catch (e) {}
+  };
+
+  window.irParaOferta = function () {
+    var alvo = document.getElementById('comprar');
+    if (alvo) alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  /* o preço acompanha a região que o visitante já vê no resto da página */
+  function precoRegiao() {
+    var el = document.getElementById('offer-bar-price');
+    if (!el) return;
+    var br = (typeof regionIsBR === 'function') ? regionIsBR() : true;
+    el.innerHTML = br ? 'R$&nbsp;39,90' : 'US$&nbsp;20';
+  }
+
+  function avaliar() {
+    if (fechada) return;
+    var hero = document.querySelector('.hero');
+    var oferta = document.getElementById('comprar');
+    var cookie = document.getElementById('cookie-banner');
+    var cookieNaTela = cookie && getComputedStyle(cookie).display !== 'none';
+
+    var passouHero = hero ? (hero.getBoundingClientRect().bottom < 40) : (scrollY > 500);
+    var naOferta = false;
+    if (oferta) {
+      var r = oferta.getBoundingClientRect();
+      naOferta = r.top < innerHeight * 0.75 && r.bottom > 0;
+    }
+    barra.classList.toggle('show', passouHero && !naOferta && !cookieNaTela);
+  }
+
+  precoRegiao();
+  addEventListener('scroll', avaliar, { passive: true });
+  addEventListener('resize', avaliar);
+  setTimeout(function () { precoRegiao(); avaliar(); }, 1200);   // após a detecção de país
+  avaliar();
+})();
+</script>
+
+<script>
+/* Parallax das cartas do hero: a camada inteira se desloca alguns pixels
+   conforme o mouse, dando profundidade sem competir com a animação de
+   flutuação de cada carta. Desligado no toque (não há cursor) e para quem
+   pede menos movimento. */
+(function () {
+  var camada = document.getElementById('hero-cards-layer');
+  if (!camada) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (matchMedia('(hover: none)').matches) return;
+
+  var hero = document.querySelector('.hero');
+  if (!hero) return;
+  var alvoX = 0, alvoY = 0, atualX = 0, atualY = 0, rodando = false;
+
+  hero.addEventListener('mousemove', function (e) {
+    var r = hero.getBoundingClientRect();
+    alvoX = ((e.clientX - r.left) / r.width - .5) * 26;   // ~13px para cada lado
+    alvoY = ((e.clientY - r.top) / r.height - .5) * 16;
+    if (!rodando) { rodando = true; requestAnimationFrame(anima); }
+  });
+  hero.addEventListener('mouseleave', function () { alvoX = 0; alvoY = 0; });
+
+  function anima() {
+    atualX += (alvoX - atualX) * .08;
+    atualY += (alvoY - atualY) * .08;
+    camada.style.transform = 'translate3d(' + atualX.toFixed(2) + 'px,' + atualY.toFixed(2) + 'px,0)';
+    if (Math.abs(alvoX - atualX) > .1 || Math.abs(alvoY - atualY) > .1) {
+      requestAnimationFrame(anima);
+    } else { rodando = false; }
+  }
 })();
 </script>
 </body>

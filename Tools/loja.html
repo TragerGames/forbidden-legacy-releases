@@ -1757,6 +1757,22 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
     return o;
   }
 
+
+  /* Id anônimo do navegador. Não é login nem identifica pessoa: é um número
+     aleatório que serve só para ligar "baixou o grátis" a "comprou depois" —
+     hoje essas duas pontas são registros soltos que ninguém consegue juntar. */
+  function visitante() {
+    try {
+      var v = localStorage.getItem('fl_visitante');
+      if (!v) {
+        v = (crypto && crypto.randomUUID) ? crypto.randomUUID()
+            : 'v-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+        localStorage.setItem('fl_visitante', v);
+      }
+      return v;
+    } catch (e) { return ''; }
+  }
+
   var atual = capturar();
   if (atual) {
     if (!ler(K_PRIM)) gravar(K_PRIM, atual);
@@ -1773,6 +1789,7 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
         return o.referrer || '';
       };
       return {
+        visitante:    visitante(),
         utm_source:   u.utm_source   || '',
         utm_medium:   u.utm_medium   || '',
         utm_campaign: u.utm_campaign || '',
@@ -1781,7 +1798,7 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
         referrer:     u.referrer     || '',
         primeira:     resumo(pr)
       };
-    } catch (e) { return {}; }
+    } catch (e) { return { visitante: visitante() }; }
   };
 })();
 </script>
