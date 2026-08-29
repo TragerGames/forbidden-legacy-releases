@@ -3276,6 +3276,10 @@ function setRegionOverride(mode) {
   if (mode) localStorage.setItem('fl_region_override', mode);
   else localStorage.removeItem('fl_region_override');
   atualizarChipRegiao();
+  /* A barra de oferta tem o proprio preco: sem este aviso ela so
+     recalcularia no proximo scroll, mostrando um valor e a pagina
+     mostrando outro. */
+  if (typeof flAtualizarPrecoBarra === 'function') flAtualizarPrecoBarra();
 }
 
 function toggleRegionOverride() {
@@ -3883,6 +3887,8 @@ document.addEventListener('keydown', e => {
   };
 
   /* o preço acompanha a região que o visitante já vê no resto da página */
+  /* Publicada para setRegionOverride() poder repintar o preco na hora em
+     que o visitante troca de regiao, sem esperar o proximo scroll. */
   function precoRegiao() {
     var el = document.getElementById('offer-bar-price');
     if (!el) return;
@@ -3911,6 +3917,7 @@ document.addEventListener('keydown', e => {
     barra.classList.toggle('show', passouHero && !naOferta && !cookieNaTela);
   }
 
+  window.flAtualizarPrecoBarra = precoRegiao;
   precoRegiao();
   addEventListener('scroll', avaliar, { passive: true });
   addEventListener('resize', avaliar);
