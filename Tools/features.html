@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -109,6 +109,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -367,17 +370,17 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" class="active" data-lang="pt">Mecânicas</a><a href="features.html" class="active" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" class="active" data-lang="pt">Mecânicas</a><a href="features.html" class="active" data-lang="en">Features</a><a href="features.html" class="active" data-lang="es">Mecánicas</a><a href="features.html" class="active" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -406,18 +409,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" class="active" data-lang="pt">Mecânicas</a><a href="features.html" class="active" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" class="active" data-lang="pt">Mecânicas</a><a href="features.html" class="active" data-lang="en">Features</a><a href="features.html" class="active" data-lang="es">Mecánicas</a><a href="features.html" class="active" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
@@ -426,15 +429,15 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <div class="stars"></div>
   <div class="page-hero-label">☥ Beta 1.8.2</div>
   <h1 class="page-hero-title" data-lang="pt">Mecânicas e Diferenciais</h1>
-  <h1 class="page-hero-title" data-lang="en">Mechanics &amp; Features</h1>
+  <h1 class="page-hero-title" data-lang="en">Mechanics &amp; Features</h1><h1 class="page-hero-title" data-lang="es">Mecánicas y Diferenciales</h1><h1 class="page-hero-title" data-lang="vi">Cơ chế và Điểm khác biệt</h1>
   <div class="page-hero-sub" data-lang="pt">O que Forbidden Legacy preserva e expande</div>
-  <div class="page-hero-sub" data-lang="en">What Forbidden Legacy preserves and expands</div>
+  <div class="page-hero-sub" data-lang="en">What Forbidden Legacy preserves and expands</div><div class="page-hero-sub" data-lang="es">Qué preserva y qué expande Forbidden Legacy</div><div class="page-hero-sub" data-lang="vi">Forbidden Legacy giữ lại và mở rộng những gì</div>
   <p class="page-hero-desc" data-lang="pt">
     Forbidden Legacy nasceu como homenagem direta ao YGO Forbidden Memories, mas não é apenas uma cópia. A ideia é preservar a sensação clássica dos duelos rápidos e das fusões enquanto o projeto evolui com novas cartas, novas cenas e sistemas modernos de progressão.
   </p>
   <p class="page-hero-desc" data-lang="en">
     Forbidden Legacy was born as a direct tribute to YGO Forbidden Memories, but it is not just a copy. The goal is to preserve the classic feeling of fast duels and fusions while expanding with new cards, new scenes and modern progression systems.
-  </p>
+  </p><p class="page-hero-desc" data-lang="es">Forbidden Legacy nació como homenaje directo a YGO Forbidden Memories, pero no es solo una copia. La idea es preservar la sensación clásica de los duelos rápidos y las fusiones mientras el proyecto evoluciona con nuevas cartas, nuevas escenas y sistemas modernos de progresión.</p><p class="page-hero-desc" data-lang="vi">Forbidden Legacy ra đời như lời tri ân trực tiếp tới YGO Forbidden Memories, nhưng không chỉ là bản sao. Ý tưởng là giữ lại cảm giác kinh điển của những trận đấu nhanh và cơ chế hợp thể, trong khi dự án phát triển với thẻ mới, cảnh mới và hệ thống tiến trình hiện đại.</p>
 </div>
 
 <!-- CONTEÚDO -->
@@ -445,7 +448,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="feature-card">
       <div class="feature-icon">🌟</div>
       <div class="feature-title" data-lang="pt">O DNA do Forbidden Memories</div>
-      <div class="feature-title" data-lang="en">The Forbidden Memories DNA</div>
+      <div class="feature-title" data-lang="en">The Forbidden Memories DNA</div><div class="feature-title" data-lang="es">El ADN de Forbidden Memories</div><div class="feature-title" data-lang="vi">DNA của Forbidden Memories</div>
       <ul class="feature-list" data-lang="pt">
         <li>Duelos rápidos e diretos com foco em invocação, fusões e leitura rápida do tabuleiro</li>
         <li>Sistema de fusões como coração do jogo — tentativa e erro como no original</li>
@@ -457,13 +460,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Fusion as the heart of the game — trial and error just like the original</li>
         <li>Field spells with real impact: Mountain, Yami, Sogen, Forest, Wasteland and more</li>
         <li>Duelist-based drops — each NPC has their own deck and drop pool</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Duelos rápidos y directos centrados en la invocación, las fusiones y la lectura rápida del tablero</li> <li>Sistema de fusiones como corazón del juego — prueba y error como en el original</li> <li>Campos mágicos con impacto real: Mountain, Yami, Sogen, Forest, Wasteland y otros</li> <li>Drops por duelista — cada NPC tiene mazo y pool de drops propios</li></ul><ul class="feature-list" data-lang="vi"><li>Trận đấu nhanh và trực diện, tập trung vào triệu hồi, hợp thể và đọc bàn đấu nhanh</li> <li>Hệ thống hợp thể là trái tim của trò chơi — thử và sai như bản gốc</li> <li>Sân phép có tác động thật: Mountain, Yami, Sogen, Forest, Wasteland và những sân khác</li> <li>Thẻ rơi theo từng đấu thủ — mỗi NPC có bộ bài và nhóm thẻ rơi riêng</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">⚔️</div>
       <div class="feature-title" data-lang="pt">O que Forbidden Legacy Expande</div>
-      <div class="feature-title" data-lang="en">What Forbidden Legacy Expands</div>
+      <div class="feature-title" data-lang="en">What Forbidden Legacy Expands</div><div class="feature-title" data-lang="es">Qué Expande Forbidden Legacy</div><div class="feature-title" data-lang="vi">Forbidden Legacy mở rộng gì</div>
       <ul class="feature-list" data-lang="pt">
         <li>Campanha com cenas próprias, diálogos, backgrounds e músicas específicas</li>
         <li>Novos NPCs: Akhenaden, Mountain Mage, High Mage Atenza e outros</li>
@@ -477,13 +480,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Structured Free Duel — NPCs with biographies, portraits and organized drops</li>
         <li>Modern custom cards not present in the original FM</li>
         <li>Own effect engine: damage, healing, immunities, traps, destruction and special interactions</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Campaña con escenas propias, diálogos, fondos y músicas específicas</li> <li>Nuevos NPCs: Akhenaden, Mountain Mage, High Mage Atenza y otros</li> <li>Free Duel estructurado — NPCs con biografías, retratos y drops organizados</li> <li>Cartas modernas y personalizadas que no existían en el FM original</li> <li>Motor propio de efectos: daño, curación, inmunidades, trampas, destrucción e interacciones especiales</li></ul><ul class="feature-list" data-lang="vi"><li>Cốt truyện với cảnh riêng, hội thoại, phông nền và nhạc đặc trưng</li> <li>NPC mới: Akhenaden, Mountain Mage, High Mage Atenza và những nhân vật khác</li> <li>Free Duel có cấu trúc — NPC có tiểu sử, chân dung và thẻ rơi được sắp xếp</li> <li>Thẻ hiện đại và thẻ tùy chỉnh không có trong FM gốc</li> <li>Bộ máy hiệu ứng riêng: sát thương, hồi máu, miễn nhiễm, bẫy, phá hủy và các tương tác đặc biệt</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🃏</div>
       <div class="feature-title" data-lang="pt">Fusões, Cartas e Deckbuilding</div>
-      <div class="feature-title" data-lang="en">Fusions, Cards &amp; Deckbuilding</div>
+      <div class="feature-title" data-lang="en">Fusions, Cards &amp; Deckbuilding</div><div class="feature-title" data-lang="es">Fusiones, Cartas y Deckbuilding</div><div class="feature-title" data-lang="vi">Hợp thể, Thẻ bài và Xây bộ bài</div>
       <ul class="feature-list" data-lang="pt">
         <li>Fusões específicas por nome e genéricas por tipo, atributo e faixa de ATK</li>
         <li>Substitutos de fusão: Goddess with the Third Eye, Versago The Destroyer</li>
@@ -497,13 +500,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Deck editor with filters, card inspection and enlarged card panel</li>
         <li>Group-based banlist in progress — visual indicators in the editor</li>
         <li>1,100+ cards available to collect and build your deck</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Fusiones específicas por nombre y genéricas por tipo, atributo y rango de ATK</li> <li>Sustitutos de fusión: Goddess with the Third Eye, Versago The Destroyer</li> <li>Editor de mazo con filtros, inspección de cartas y panel ampliado</li> <li>Banlist por grupos en evolución — indicación visual en el editor</li> <li>1.100+ cartas disponibles para coleccionar y armar mazos</li></ul><ul class="feature-list" data-lang="vi"><li>Hợp thể cụ thể theo tên và hợp thể chung theo loại, thuộc tính và khoảng ATK</li> <li>Thẻ thay thế hợp thể: Goddess with the Third Eye, Versago The Destroyer</li> <li>Trình sửa bộ bài có bộ lọc, xem chi tiết thẻ và bảng phóng to</li> <li>Banlist theo nhóm liên tục phát triển — hiển thị trực quan trong trình sửa</li> <li>Hơn 1.100 thẻ để sưu tầm và dựng bộ bài</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🏆</div>
       <div class="feature-title" data-lang="pt">Progressão, Rank e Economia</div>
-      <div class="feature-title" data-lang="en">Progression, Rank &amp; Economy</div>
+      <div class="feature-title" data-lang="en">Progression, Rank &amp; Economy</div><div class="feature-title" data-lang="es">Progresión, Rango y Economía</div><div class="feature-title" data-lang="vi">Tiến trình, Hạng và Kinh tế</div>
       <ul class="feature-list" data-lang="pt">
         <li>Rank pós-duelo por desempenho: eficiência, LP restante, fusões e ritmo da partida</li>
         <li>Stars como moeda — ranks melhores entregam mais Stars</li>
@@ -517,13 +520,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Card Shop with rarity-based prices and refreshable showcase</li>
         <li>Themed Booster Packs with SR/UR guarantee system and fragment cycle</li>
         <li>Protected drops — fixed, curated pools per NPC, no accidental strong cards</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Rango post-duelo por desempeño: eficiencia, LP restante, fusiones y ritmo de la partida</li> <li>Stars como moneda — mejores rangos entregan más Stars</li> <li>Tienda de Cartas con precios por rareza y vitrina renovable</li> <li>Booster Packs temáticos con sistema de garantía de SR/UR y ciclo de fragmentos</li> <li>Drops protegidos — pools fijos y curados por NPC, sin cartas fuertes accidentales</li></ul><ul class="feature-list" data-lang="vi"><li>Xếp hạng sau trận theo thành tích: hiệu quả, LP còn lại, số lần hợp thể và nhịp độ trận đấu</li> <li>Stars là tiền tệ — hạng cao hơn cho nhiều Stars hơn</li> <li>Cửa Hàng Thẻ với giá theo độ hiếm và tủ trưng bày làm mới được</li> <li>Booster Pack theo chủ đề với hệ thống đảm bảo SR/UR và vòng lặp mảnh ghép</li> <li>Thẻ rơi được bảo vệ — nhóm cố định và tuyển chọn cho từng NPC, không có thẻ mạnh lọt vào do tình cờ</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🎮</div>
       <div class="feature-title" data-lang="pt">Qualidade de Vida</div>
-      <div class="feature-title" data-lang="en">Quality of Life</div>
+      <div class="feature-title" data-lang="en">Quality of Life</div><div class="feature-title" data-lang="es">Calidad de Vida</div><div class="feature-title" data-lang="vi">Chất lượng trải nghiệm</div>
       <ul class="feature-list" data-lang="pt">
         <li>HUD moderno com avatar, barra de LP animada e integração com o campo mágico ativo</li>
         <li>Velocidade de duelo ajustável — grind e testes mais confortáveis</li>
@@ -539,13 +542,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Accessible card descriptions in enlarged panels</li>
         <li>Campaign checkpoints — no need to repeat sections after duels or scenes</li>
         <li>Visual effect modes (Full / Reduced / Safe) for accessibility</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>HUD moderno con avatar, barra de LP animada e integración con el campo mágico activo</li> <li>Velocidad de duelo ajustable — grindeo y pruebas más cómodos</li> <li>Soporte a mando, teclado, ratón y touch de Android</li> <li>Descripciones de cartas accesibles en paneles ampliados</li> <li>Checkpoints de campaña — sin repetir tramos tras duelos o escenas</li> <li>Modos de efectos visuales (Completo / Reducido / Seguro) para accesibilidad</li></ul><ul class="feature-list" data-lang="vi"><li>HUD hiện đại với avatar, thanh LP có hiệu ứng và tích hợp với sân phép đang hoạt động</li> <li>Tốc độ trận đấu điều chỉnh được — cày và thử nghiệm thoải mái hơn</li> <li>Hỗ trợ tay cầm, bàn phím, chuột và cảm ứng Android</li> <li>Mô tả thẻ bài xem được trong bảng phóng to</li> <li>Điểm lưu cốt truyện — không phải chơi lại đoạn đã qua sau trận đấu hoặc cảnh phim</li> <li>Chế độ hiệu ứng hình ảnh (Đầy đủ / Giảm bớt / An toàn) cho khả năng tiếp cận</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🎭</div>
       <div class="feature-title" data-lang="pt">Campanha e Apresentação</div>
-      <div class="feature-title" data-lang="en">Campaign &amp; Presentation</div>
+      <div class="feature-title" data-lang="en">Campaign &amp; Presentation</div><div class="feature-title" data-lang="es">Campaña y Presentación</div><div class="feature-title" data-lang="vi">Cốt truyện và Trình bày</div>
       <ul class="feature-list" data-lang="pt">
         <li>Cenários específicos: Templo da Isis, Mountain Shrine, santuários e novos locais</li>
         <li>Retratos com corpo, foco, boca e piscada — cenas mais vivas</li>
@@ -559,7 +562,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Music per moment — tracks integrated with events and Free Duel</li>
         <li>Full Season 1 campaign through Zorc — available for Founders</li>
         <li>Typewriter dialogue, smooth transitions and automatic checkpoints</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Escenarios específicos: Templo de Isis, Mountain Shrine, santuarios y nuevos lugares</li> <li>Retratos con cuerpo, foco, boca y parpadeo — escenas más vivas</li> <li>Músicas por momento — pistas integradas a eventos y al Free Duel</li> <li>Campaña Season 1 completa hasta Zorc — disponible para Founders</li> <li>Diálogos con typewriter, transiciones suaves y checkpoints automáticos</li></ul><ul class="feature-list" data-lang="vi"><li>Bối cảnh riêng: Đền Isis, Mountain Shrine, các thánh địa và địa điểm mới</li> <li>Chân dung có thân, cận cảnh, khẩu hình và chớp mắt — cảnh sống động hơn</li> <li>Nhạc theo từng khoảnh khắc — nhạc nền gắn với sự kiện và Free Duel</li> <li>Cốt truyện Season 1 đầy đủ tới Zorc — dành cho Founder</li> <li>Hội thoại kiểu máy đánh chữ, chuyển cảnh mượt và điểm lưu tự động</li></ul>
     </div>
 
   </div>
@@ -569,7 +572,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="feature-card">
       <div class="feature-icon">📱</div>
       <div class="feature-title" data-lang="pt">PC e Android</div>
-      <div class="feature-title" data-lang="en">PC &amp; Android</div>
+      <div class="feature-title" data-lang="en">PC &amp; Android</div><div class="feature-title" data-lang="es">PC y Android</div><div class="feature-title" data-lang="vi">PC và Android</div>
       <ul class="feature-list" data-lang="pt">
         <li>Builds para Windows, Linux e Android com ajustes específicos por plataforma</li>
         <li>Compatibilidade com aparelhos mais antigos via renderer GL Compatibility</li>
@@ -583,13 +586,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Adjustable UI scale on Android for larger and smaller screens</li>
         <li>Progress preservation across versions — saves protected in update builds</li>
         <li>FREE and FOUNDER version support with offline activation via license file</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Builds para Windows, Linux y Android con ajustes específicos por plataforma</li> <li>Compatibilidad con dispositivos más antiguos vía renderer GL Compatibility</li> <li>Escala de UI ajustable en Android para pantallas grandes y pequeñas</li> <li>Preservación del progreso entre versiones — partidas protegidas en builds de actualización</li> <li>Soporte a versión FREE y FOUNDER con activación offline por archivo de licencia</li></ul><ul class="feature-list" data-lang="vi"><li>Bản dựng cho Windows, Linux và Android với điều chỉnh riêng cho từng nền tảng</li> <li>Tương thích với thiết bị cũ hơn qua renderer GL Compatibility</li> <li>Tỉ lệ giao diện điều chỉnh được trên Android cho màn hình lớn và nhỏ</li> <li>Giữ nguyên tiến trình giữa các phiên bản — bản lưu được bảo vệ trong các bản cập nhật</li> <li>Hỗ trợ bản FREE và FOUNDER với kích hoạt ngoại tuyến bằng tệp giấy phép</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🧩</div>
       <div class="feature-title" data-lang="pt">Diferenças Diretas do FM Original</div>
-      <div class="feature-title" data-lang="en">Direct Differences from the Original FM</div>
+      <div class="feature-title" data-lang="en">Direct Differences from the Original FM</div><div class="feature-title" data-lang="es">Diferencias Directas con el FM Original</div><div class="feature-title" data-lang="vi">Khác biệt so với FM gốc</div>
       <ul class="feature-list" data-lang="pt">
         <li><strong style="color:var(--gold-light)">Mais cartas</strong> — além do acervo original do PS1, com reinterpretações modernas</li>
         <li><strong style="color:var(--gold-light)">Mais efeitos</strong> — monstros, magias e traps com mecânicas que o FM original não tinha</li>
@@ -605,26 +608,26 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li><strong style="color:var(--gold-light)">More balance</strong> — protected drops, shop restrictions, rarities and rank</li>
         <li><strong style="color:var(--gold-light)">More visual identity</strong> — HUD, backgrounds, avatars and panels fully recreated</li>
         <li><strong style="color:var(--gold-light)">More quality of life</strong> — speed, shortcuts, full editor, mobile support</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li><strong style="color:var(--gold-light)">Más cartas</strong> — más allá del acervo original de PS1, con reinterpretaciones modernas</li> <li><strong style="color:var(--gold-light)">Más efectos</strong> — monstruos, magias y trampas con mecánicas que el FM original no tenía</li> <li><strong style="color:var(--gold-light)">Más narrativa</strong> — escenas, diálogos, personajes y ambientación propia</li> <li><strong style="color:var(--gold-light)">Más balanceo</strong> — drops protegidos, tienda con restricciones, rarezas y rango</li> <li><strong style="color:var(--gold-light)">Más identidad visual</strong> — HUD, fondos, avatares y paneles recreados</li> <li><strong style="color:var(--gold-light)">Más calidad de vida</strong> — velocidad, atajos, editor completo, soporte móvil</li></ul><ul class="feature-list" data-lang="vi"><li><strong style="color:var(--gold-light)">Nhiều thẻ hơn</strong> — vượt ra ngoài kho thẻ gốc của PS1, với những cách diễn giải hiện đại</li> <li><strong style="color:var(--gold-light)">Nhiều hiệu ứng hơn</strong> — quái thú, phép và bẫy với cơ chế mà FM gốc không có</li> <li><strong style="color:var(--gold-light)">Nhiều cốt truyện hơn</strong> — cảnh phim, hội thoại, nhân vật và bối cảnh riêng</li> <li><strong style="color:var(--gold-light)">Cân bằng hơn</strong> — thẻ rơi được bảo vệ, cửa hàng có giới hạn, độ hiếm và xếp hạng</li> <li><strong style="color:var(--gold-light)">Bản sắc hình ảnh rõ hơn</strong> — HUD, phông nền, avatar và các bảng được dựng lại</li> <li><strong style="color:var(--gold-light)">Trải nghiệm tiện hơn</strong> — tốc độ, phím tắt, trình sửa đầy đủ, hỗ trợ di động</li></ul>
     </div>
 
   </div>
 
   <div class="features-evolving" data-reveal>
     <span data-lang="pt">🛠️ <strong>Em desenvolvimento ativo.</strong> Novas cartas, NPCs, cenas, ajustes de balanceamento, melhorias de controle, correções mobile e refinamentos de campanha continuam chegando. O objetivo não é apagar o Forbidden Memories original, mas construir uma continuação espiritual feita por fã: mais completa, mais viva e mais justa para jogar hoje.</span>
-    <span data-lang="en">🛠️ <strong>In active development.</strong> New cards, NPCs, scenes, balance adjustments, control improvements, mobile fixes and campaign refinements will continue to arrive. The goal is not to erase the original Forbidden Memories, but to build a fan-made spiritual successor: more complete, more alive and fairer to play today.</span>
+    <span data-lang="en">🛠️ <strong>In active development.</strong> New cards, NPCs, scenes, balance adjustments, control improvements, mobile fixes and campaign refinements will continue to arrive. The goal is not to erase the original Forbidden Memories, but to build a fan-made spiritual successor: more complete, more alive and fairer to play today.</span><span data-lang="es">🛠️ <strong>En desarrollo activo.</strong> Nuevas cartas, NPCs, escenas, ajustes de balanceo, mejoras de control, correcciones móviles y refinamientos de campaña siguen llegando. El objetivo no es borrar el Forbidden Memories original, sino construir una continuación espiritual hecha por fans: más completa, más viva y más justa para jugar hoy.</span><span data-lang="vi">🛠️ <strong>Đang phát triển tích cực.</strong> Thẻ mới, NPC, cảnh, điều chỉnh cân bằng, cải thiện điều khiển, sửa lỗi trên di động và tinh chỉnh cốt truyện vẫn liên tục được thêm vào. Mục tiêu không phải xóa bỏ Forbidden Memories gốc, mà xây dựng một phần tiếp nối tinh thần do người hâm mộ làm: đầy đủ hơn, sống động hơn và công bằng hơn để chơi hôm nay.</span>
   </div>
 
   <div class="features-quote" data-reveal>
     <span data-lang="pt">Forbidden Legacy preserva a nostalgia, mas quer crescer como um jogo próprio.</span>
-    <span data-lang="en">Forbidden Legacy preserves the nostalgia, but aims to grow into its own game.</span>
+    <span data-lang="en">Forbidden Legacy preserves the nostalgia, but aims to grow into its own game.</span><span data-lang="es">Forbidden Legacy preserva la nostalgia, pero quiere crecer como un juego propio.</span><span data-lang="vi">Forbidden Legacy giữ lại hoài niệm, nhưng muốn phát triển thành trò chơi của riêng mình.</span>
   </div>
 
   <div style="text-align:center;margin-top:48px" data-reveal>
     <a href="index.html#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;background:rgba(200,151,58,.08);border:1px solid rgba(200,151,58,.35);color:var(--gold);border-radius:2px;text-decoration:none;transition:all .25s">
       <span>⬇</span>
       <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.8.2</span>
-      <span data-lang="en">DOWNLOAD FREE — Beta 1.8.2</span>
+      <span data-lang="en">DOWNLOAD FREE — Beta 1.8.2</span><span data-lang="es">DESCARGAR GRATIS — Beta 1.8.2</span><span data-lang="vi">TẢI MIỄN PHÍ — Beta 1.8.2</span>
     </a>
   </div>
 
@@ -638,9 +641,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   gap:16px; flex-wrap:wrap; font-size:13px; color:var(--text-muted);
   backdrop-filter:blur(6px);">
   <span data-lang="pt">🍪 Este site armazena preferências no seu navegador (idioma, formulário) e realiza chamadas externas para Discord e processamento de doações. Ao continuar, você concorda. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Saiba mais</a></span>
-  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Learn more</a></span>
+  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Learn more</a></span><span data-lang="es">🍪 Este sitio almacena preferencias en tu navegador (idioma, formulario) y realiza llamadas externas a Discord y a los procesadores de pago. Al continuar, aceptas. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Saber más</a></span><span data-lang="vi">🍪 Trang này lưu tùy chọn trong trình duyệt của bạn (ngôn ngữ, biểu mẫu) và gọi ra ngoài tới Discord và các đơn vị xử lý thanh toán. Khi tiếp tục, bạn đồng ý. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Tìm hiểu thêm</a></span>
   <button onclick="cookieAceitar()" style="background:rgba(200,151,58,.15);border:1px solid var(--gold-dim);color:var(--gold-light);padding:7px 20px;border-radius:3px;cursor:pointer;font-size:13px;font-family:monospace;white-space:nowrap;flex-shrink:0">
-    <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span>
+    <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span><span data-lang="es">✓ Entendido</span><span data-lang="vi">✓ Đã hiểu</span>
   </button>
 </div>
 
@@ -648,7 +651,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <div style="background:var(--dark2);border:1px solid var(--gold-dim);border-radius:6px;padding:32px;max-width:500px;width:100%;position:relative">
     <button onclick="document.getElementById('cookie-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:18px;cursor:pointer">✕</button>
     <h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="pt">O que este site armazena</h3>
-    <h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3>
+    <h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3><h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="es">Qué almacena este sitio</h3><h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="vi">Trang này lưu những gì</h3>
     <ul style="color:var(--text-muted);font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="pt">
       <li><strong style="color:var(--gold-light)">fl_lang</strong> — preferência de idioma (PT/EN)</li>
       <li><strong style="color:var(--gold-light)">fl_form_v1</strong> — campos do formulário de compra</li>
@@ -662,9 +665,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <li><strong style="color:var(--gold-light)">fl_cookie_ok</strong> — acceptance record</li>
       <li><strong style="color:var(--gold-light)">External APIs</strong> — Discord (counter) and api.country.is (country)</li>
       <li><strong style="color:var(--gold-light)">Payments</strong> — Efí Bank (PIX) and Stripe process data on their own servers</li>
-    </ul>
+    </ul><ul style="color:var(--text-muted);font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="es"><li><strong style="color:var(--gold-light)">fl_lang</strong> — preferencia de idioma (PT/EN)</li> <li><strong style="color:var(--gold-light)">fl_form_v1</strong> — campos del formulario de compra</li> <li><strong style="color:var(--gold-light)">fl_cookie_ok</strong> — registro de aceptación de este aviso</li> <li><strong style="color:var(--gold-light)">APIs externas</strong> — Discord (contador) y api.country.is (país)</li> <li><strong style="color:var(--gold-light)">Pagos</strong> — Efí Bank (PIX) y Stripe procesan datos en sus propios servidores</li></ul><ul style="color:var(--text-muted);font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="vi"><li><strong style="color:var(--gold-light)">fl_lang</strong> — tùy chọn ngôn ngữ (PT/EN)</li> <li><strong style="color:var(--gold-light)">fl_form_v1</strong> — các trường của biểu mẫu mua hàng</li> <li><strong style="color:var(--gold-light)">fl_cookie_ok</strong> — ghi nhận việc bạn chấp nhận thông báo này</li> <li><strong style="color:var(--gold-light)">API bên ngoài</strong> — Discord (bộ đếm) và api.country.is (quốc gia)</li> <li><strong style="color:var(--gold-light)">Thanh toán</strong> — Efí Bank (PIX) và Stripe xử lý dữ liệu trên máy chủ của chính họ</li></ul>
     <p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="pt">Nenhum dado é vendido ou compartilhado com terceiros além dos processadores citados.</p>
-    <p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p>
+    <p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p><p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="es">Ningún dato se vende ni se comparte con terceros más allá de los procesadores citados.</p><p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="vi">Không dữ liệu nào được bán hay chia sẻ với bên thứ ba ngoài các đơn vị xử lý đã nêu.</p>
   </div>
 </div>
 
@@ -674,28 +677,28 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
-      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
-      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -660,6 +660,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -1284,29 +1287,29 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   </div>
   <div class="nav-links">
     <a href="#sobre" data-lang="pt">O Jogo</a>
-    <a href="#sobre" data-lang="en">The Game</a>
+    <a href="#sobre" data-lang="en">The Game</a><a href="#sobre" data-lang="es">El Juego</a><a href="#sobre" data-lang="vi">Trò chơi</a>
     <a href="#mecanicas" data-lang="pt">Mecânicas</a>
-    <a href="#mecanicas" data-lang="en">Features</a>
+    <a href="#mecanicas" data-lang="en">Features</a><a href="#mecanicas" data-lang="es">Mecánicas</a><a href="#mecanicas" data-lang="vi">Cơ chế</a>
     <a href="#campanha" data-lang="pt">Campanha</a>
-    <a href="#campanha" data-lang="en">Campaign</a>
+    <a href="#campanha" data-lang="en">Campaign</a><a href="#campanha" data-lang="es">Campaña</a><a href="#campanha" data-lang="vi">Cốt truyện</a>
     <a href="gallery.html" data-lang="pt">Galeria</a>
-    <a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
     <a href="banlist.html" data-lang="pt">Banlist</a>
-    <a href="banlist.html" data-lang="en">Banlist</a>
+    <a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
     <a href="boosters.html" data-lang="pt">Boosters</a>
-    <a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
     <a href="catalogo.html" data-lang="pt">Catálogo</a>
-    <a href="catalogo.html" data-lang="en">Catalog</a>
+    <a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
     <a href="montar_deck.html" data-lang="pt">Montar Deck</a>
-    <a href="montar_deck.html" data-lang="en">Deck Builder</a>
+    <a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
     <a href="conquistas.html" data-lang="pt">Conquistas</a>
-    <a href="conquistas.html" data-lang="en">Achievements</a>
+    <a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     <a href="torneio.html" data-lang="pt">Championship</a>
-    <a href="torneio.html" data-lang="en">Championship</a>
+    <a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
     <a href="loja.html" data-lang="pt">Loja</a>
-    <a href="loja.html" data-lang="en">Store</a>
+    <a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
     <a href="mods.html" data-lang="pt">Mods FM</a>
-    <a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
   </div>
   <div style="display:flex; align-items:center; gap:12px;">
     <a href="https://discord.gg/forbidden-legacy" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
@@ -1339,30 +1342,30 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   </a>
   <div class="mobile-nav-links">
     <a href="#sobre" data-lang="pt">O Jogo</a>
-    <a href="#sobre" data-lang="en">The Game</a>
+    <a href="#sobre" data-lang="en">The Game</a><a href="#sobre" data-lang="es">El Juego</a><a href="#sobre" data-lang="vi">Trò chơi</a>
     <a href="gallery.html" data-lang="pt">Galeria</a>
-    <a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
     <a href="features.html" data-lang="pt">Mecânicas</a>
-    <a href="features.html" data-lang="en">Features</a>
+    <a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
     <a href="boosters.html" data-lang="pt">Boosters</a>
-    <a href="boosters.html" data-lang="en">Boosters</a>
+    <a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
     <a href="catalogo.html" data-lang="pt">Catálogo</a>
-    <a href="catalogo.html" data-lang="en">Catalog</a>
+    <a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
     <a href="montar_deck.html" data-lang="pt">Montar Deck</a>
-    <a href="montar_deck.html" data-lang="en">Deck Builder</a>
+    <a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
     <a href="loja.html" data-lang="pt">Loja</a>
-    <a href="loja.html" data-lang="en">Store</a>
+    <a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
     <a href="banlist.html" data-lang="pt">Banlist</a>
-    <a href="banlist.html" data-lang="en">Banlist</a>
+    <a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
     <a href="conquistas.html" data-lang="pt">Conquistas</a>
-    <a href="conquistas.html" data-lang="en">Achievements</a>
+    <a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     <a href="torneio.html" data-lang="pt">Championship</a>
-    <a href="torneio.html" data-lang="en">Championship</a>
+    <a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
     <a href="mods.html" data-lang="pt">Mods FM</a>
-    <a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <a href="#download">Download</a>
     <a href="#novidades" data-lang="pt">Novidades</a>
-    <a href="#novidades" data-lang="en">Updates</a>
+    <a href="#novidades" data-lang="en">Updates</a><a href="#novidades" data-lang="es">Novedades</a><a href="#novidades" data-lang="vi">Tin mới</a>
     <a href="#comprar" class="nav-cta">☥ Founder</a>
   </div>
 </div>
@@ -1387,23 +1390,23 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
   <div class="hero-ornament">— ✦ ✦ ✦ —</div>
   <p class="hero-sub" data-lang="pt">O clássico do PS1 que você amava — reconstruído do zero com tudo que ele deveria ter tido.</p>
-  <p class="hero-sub" data-lang="en">The PS1 classic you loved — rebuilt from scratch with everything it should have had.</p>
+  <p class="hero-sub" data-lang="en">The PS1 classic you loved — rebuilt from scratch with everything it should have had.</p><p class="hero-sub" data-lang="es">El clásico de PS1 que amabas — reconstruido desde cero con todo lo que debió tener.</p><p class="hero-sub" data-lang="vi">Tựa game PS1 kinh điển bạn từng yêu — dựng lại từ đầu với mọi thứ đáng lẽ nó phải có.</p>
 
   <div class="hero-pills">
-    <div class="hero-pill"><strong id="h-cards">1.100+</strong><span data-lang="pt">cartas</span><span data-lang="en">cards</span></div>
-    <div class="hero-pill"><strong>29</strong><span data-lang="pt">NPCs</span><span data-lang="en">NPCs</span></div>
-    <div class="hero-pill"><strong>Season 1</strong><span data-lang="pt">campanha</span><span data-lang="en">campaign</span></div>
-    <div class="hero-pill"><strong>Beta 1.8.2</strong><span data-lang="pt">versão atual</span><span data-lang="en">current version</span></div>
+    <div class="hero-pill"><strong id="h-cards">1.100+</strong><span data-lang="pt">cartas</span><span data-lang="en">cards</span><span data-lang="es">cartas</span><span data-lang="vi">thẻ bài</span></div>
+    <div class="hero-pill"><strong>29</strong><span data-lang="pt">NPCs</span><span data-lang="en">NPCs</span><span data-lang="es">NPCs</span><span data-lang="vi">NPC</span></div>
+    <div class="hero-pill"><strong>Season 1</strong><span data-lang="pt">campanha</span><span data-lang="en">campaign</span><span data-lang="es">campaña</span><span data-lang="vi">cốt truyện</span></div>
+    <div class="hero-pill"><strong>Beta 1.8.2</strong><span data-lang="pt">versão atual</span><span data-lang="en">current version</span><span data-lang="es">versión actual</span><span data-lang="vi">phiên bản hiện tại</span></div>
   </div>
 
   <div class="hero-btns">
     <a href="#download" class="btn-gold">
       <span data-lang="pt">⬇ Baixar Grátis</span>
-      <span data-lang="en">⬇ Download Free</span>
+      <span data-lang="en">⬇ Download Free</span><span data-lang="es">⬇ Descargar Gratis</span><span data-lang="vi">⬇ Tải miễn phí</span>
     </a>
     <a href="#comprar" class="btn-outline">
       <span data-lang="pt">☥ Versão Founder</span>
-      <span data-lang="en">☥ Founder Version</span>
+      <span data-lang="en">☥ Founder Version</span><span data-lang="es">☥ Versión Founder</span><span data-lang="vi">☥ Phiên bản Founder</span>
     </a>
   </div>
 
@@ -1412,11 +1415,11 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
 <!-- STATEMENT -->
 <div class="statement reveal" id="sobre">
-  <div class="label">☥ <span data-lang="pt">O projeto</span><span data-lang="en">The Project</span></div>
+  <div class="label">☥ <span data-lang="pt">O projeto</span><span data-lang="en">The Project</span><span data-lang="es">El proyecto</span><span data-lang="vi">Dự án</span></div>
   <div class="statement-text" data-lang="pt">"O duelo que você lembrava.<br>Com tudo que o original nunca teve."</div>
-  <div class="statement-text" data-lang="en">"The duel you remembered.<br>With everything the original never had."</div>
+  <div class="statement-text" data-lang="en">"The duel you remembered.<br>With everything the original never had."</div><div class="statement-text" data-lang="es">"El duelo que recordabas.<br>Con todo lo que el original nunca tuvo."</div><div class="statement-text" data-lang="vi">"Trận đấu bạn từng nhớ.<br>Với mọi thứ bản gốc chưa từng có."</div>
   <p class="statement-sub" data-lang="pt">Sistema de fusão fiel ao FM, campanha com drama real, IA de oponentes, banlist por grupos, loja e interface reformulada para PC e Android.</p>
-  <p class="statement-sub" data-lang="en">FM-faithful fusion system, campaign with real drama, opponent AI, group banlist, shop and interface redesigned for PC and Android.</p>
+  <p class="statement-sub" data-lang="en">FM-faithful fusion system, campaign with real drama, opponent AI, group banlist, shop and interface redesigned for PC and Android.</p><p class="statement-sub" data-lang="es">Sistema de fusión fiel al FM, campaña con drama real, IA de oponentes, banlist por grupos, tienda e interfaz rediseñada para PC y Android.</p><p class="statement-sub" data-lang="vi">Hệ thống hợp thể trung thành với FM, cốt truyện có chiều sâu, AI đối thủ, banlist theo nhóm, cửa hàng và giao diện làm lại cho PC và Android.</p>
 </div>
 
 <!-- SCREENSHOTS GRID -->
@@ -1424,32 +1427,32 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   <div class="section-head">
     <div class="sec-label">☥ Gameplay</div>
     <div class="sec-title" data-lang="pt">Veja o jogo em ação</div>
-    <div class="sec-title" data-lang="en">See the game in action</div>
+    <div class="sec-title" data-lang="en">See the game in action</div><div class="sec-title" data-lang="es">Mira el juego en acción</div><div class="sec-title" data-lang="vi">Xem trò chơi thực tế</div>
   </div>
   <div class="ss-grid">
     <div class="ss ss-main">
       <div class="ss-ph">
         <img src="screenshots/arena-nova-generico.webp" loading="lazy" decoding="async" width="1920" height="1080" data-src-pt="screenshots/arena-nova-generico.webp" data-src-en="screenshots/arena-nova-generico.webp" alt="Duelo — Obelisk the Tormentor" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /> <path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /> <path d="M8 9v2" /> <path d="M7 10h2" /> <path d="M14 10h2" /></svg><span data-lang="pt">Tela de Duelo</span><span data-lang="en">Duel Screen</span></div>
+        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z" /> <path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232" /> <path d="M8 9v2" /> <path d="M7 10h2" /> <path d="M14 10h2" /></svg><span data-lang="pt">Tela de Duelo</span><span data-lang="en">Duel Screen</span><span data-lang="es">Pantalla de Duelo</span><span data-lang="vi">Màn hình đấu</span></div>
       </div>
       <div class="ss-tag" data-lang="pt">Duelo</div>
-      <div class="ss-tag" data-lang="en">Duel</div>
+      <div class="ss-tag" data-lang="en">Duel</div><div class="ss-tag" data-lang="es">Duelo</div><div class="ss-tag" data-lang="vi">Trận đấu</div>
     </div>
     <div class="ss">
       <div class="ss-ph">
         <img src="screenshots/campo-skyscraper.webp" loading="lazy" decoding="async" width="1920" height="1080" data-src-pt="screenshots/campo-skyscraper.webp" data-src-en="screenshots/campo-skyscraper.webp" alt="Campo: Skyscraper" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /> <path d="M15 4h1a1 1 0 0 1 1 1v3.5" /> <path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg><span data-lang="pt">Nova Arena</span><span data-lang="en">New Arena</span></div>
+        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /> <path d="M15 4h1a1 1 0 0 1 1 1v3.5" /> <path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg><span data-lang="pt">Nova Arena</span><span data-lang="en">New Arena</span><span data-lang="es">Nueva Arena</span><span data-lang="vi">Đấu trường mới</span></div>
       </div>
       <div class="ss-tag" data-lang="pt">Campo: Skyscraper</div>
-      <div class="ss-tag" data-lang="en">Field: Skyscraper</div>
+      <div class="ss-tag" data-lang="en">Field: Skyscraper</div><div class="ss-tag" data-lang="es">Campo: Skyscraper</div><div class="ss-tag" data-lang="vi">Sân: Skyscraper</div>
     </div>
     <div class="ss">
       <div class="ss-ph">
         <img src="screenshots/campo-yami.webp" loading="lazy" decoding="async" width="1920" height="1080" data-src-pt="screenshots/campo-yami.webp" data-src-en="screenshots/campo-yami.webp" alt="Campo: Yami" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" /> <path d="M9 4v13" /> <path d="M15 7v13" /></svg><span data-lang="pt">Nova Arena</span><span data-lang="en">New Arena</span></div>
+        <div class="placeholder-txt" style="display:flex"><svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" /> <path d="M9 4v13" /> <path d="M15 7v13" /></svg><span data-lang="pt">Nova Arena</span><span data-lang="en">New Arena</span><span data-lang="es">Nueva Arena</span><span data-lang="vi">Đấu trường mới</span></div>
       </div>
       <div class="ss-tag" data-lang="pt">Campo: Yami</div>
-      <div class="ss-tag" data-lang="en">Field: Yami</div>
+      <div class="ss-tag" data-lang="en">Field: Yami</div><div class="ss-tag" data-lang="es">Campo: Yami</div><div class="ss-tag" data-lang="vi">Sân: Yami</div>
     </div>
   </div>
 </div>
@@ -1457,9 +1460,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 <!-- ══════════════════ CANAL / VÍDEOS ══════════════════ -->
 <div class="yt-bg" id="videos">
   <div class="yt-inner">
-    <p class="section-label">▶ <span data-lang="pt">Canal</span><span data-lang="en">Channel</span></p>
+    <p class="section-label">▶ <span data-lang="pt">Canal</span><span data-lang="en">Channel</span><span data-lang="es">Canal</span><span data-lang="vi">Kênh</span></p>
     <h2 class="section-title" data-lang="pt">Vídeos sobre o projeto</h2>
-    <h2 class="section-title" data-lang="en">Project videos</h2>
+    <h2 class="section-title" data-lang="en">Project videos</h2><h2 class="section-title" data-lang="es">Vídeos sobre el proyecto</h2><h2 class="section-title" data-lang="vi">Video về dự án</h2>
 
     <!-- Vídeo em destaque -->
     <div class="yt-featured" onclick="ytPlay(this,'LMYsj58Pil0')" data-reveal>
@@ -1467,11 +1470,11 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <img src="https://i.ytimg.com/vi/LMYsj58Pil0/maxresdefault.jpg" alt="Beta 1.8.2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
         <div class="yt-play-icon-lg">▶</div>
         <span class="yt-new-badge" data-lang="pt">MAIS RECENTE</span>
-        <span class="yt-new-badge" data-lang="en">LATEST</span>
+        <span class="yt-new-badge" data-lang="en">LATEST</span><span class="yt-new-badge" data-lang="es">MÁS RECIENTE</span><span class="yt-new-badge" data-lang="vi">MỚI NHẤT</span>
       </div>
       <div class="yt-card-info" style="padding:20px 24px">
         <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="pt">SAIU AGORA! MODO TORNEIO, FULL ARTS, ARENA SEASON 2 e 4 IDIOMAS!</div>
-        <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="en">OUT NOW! TOURNAMENT MODE, FULL ARTS, SEASON 2 ARENA &amp; 4 LANGUAGES!</div>
+        <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="en">OUT NOW! TOURNAMENT MODE, FULL ARTS, SEASON 2 ARENA &amp; 4 LANGUAGES!</div><div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="es">¡YA DISPONIBLE! MODO TORNEO, FULL ARTS, ARENA SEASON 2 y 4 IDIOMAS!</div><div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="vi">ĐÃ RA MẮT! CHẾ ĐỘ GIẢI ĐẤU, FULL ART, ĐẤU TRƯỜNG SEASON 2 và 4 NGÔN NGỮ!</div>
         <div class="yt-card-meta">Trager Games · 2026</div>
       </div>
     </div>
@@ -1484,7 +1487,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div>
           <div class="yt-channel-name">Trager Games</div>
           <div class="yt-channel-sub" data-lang="pt">Devlogs, gameplays e novidades do Forbidden Legacy</div>
-          <div class="yt-channel-sub" data-lang="en">Devlogs, gameplays and Forbidden Legacy updates</div>
+          <div class="yt-channel-sub" data-lang="en">Devlogs, gameplays and Forbidden Legacy updates</div><div class="yt-channel-sub" data-lang="es">Devlogs, gameplays y novedades de Forbidden Legacy</div><div class="yt-channel-sub" data-lang="vi">Devlog, gameplay và tin mới của Forbidden Legacy</div>
         </div>
       </div>
       <a href="https://www.youtube.com/@tragergames" target="_blank" class="yt-sub-btn">▶ Ver Canal</a>
@@ -1499,7 +1502,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         </div>
         <div class="yt-card-info">
           <div class="yt-card-title" data-lang="pt">Forbidden Legacy — Beta 1.6: Auto Duel e Grandes Correções</div>
-          <div class="yt-card-title" data-lang="en">Forbidden Legacy — Beta 1.6: Auto Duel &amp; Major Fixes</div>
+          <div class="yt-card-title" data-lang="en">Forbidden Legacy — Beta 1.6: Auto Duel &amp; Major Fixes</div><div class="yt-card-title" data-lang="es">Forbidden Legacy — Beta 1.6: Auto Duel y Grandes Correcciones</div><div class="yt-card-title" data-lang="vi">Forbidden Legacy — Beta 1.6: Auto Duel và các sửa lỗi lớn</div>
           <div class="yt-card-meta">Trager Games · 2026</div>
         </div>
       </div>
@@ -1511,7 +1514,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         </div>
         <div class="yt-card-info">
           <div class="yt-card-title" data-lang="pt">Testando o novo Sistema de Boosters e Novos Personagens — Forbidden Legacy</div>
-          <div class="yt-card-title" data-lang="en">Testing the new Booster System and New Characters — Forbidden Legacy</div>
+          <div class="yt-card-title" data-lang="en">Testing the new Booster System and New Characters — Forbidden Legacy</div><div class="yt-card-title" data-lang="es">Probando el nuevo Sistema de Boosters y Nuevos Personajes — Forbidden Legacy</div><div class="yt-card-title" data-lang="vi">Thử nghiệm Hệ thống Booster mới và Nhân vật mới — Forbidden Legacy</div>
           <div class="yt-card-meta">Trager Games · 2026</div>
         </div>
       </div>
@@ -1523,7 +1526,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         </div>
         <div class="yt-card-info">
           <div class="yt-card-title" data-lang="pt">NOVO SITE E NOVOS PERSONAGENS! — Forbidden Legacy</div>
-          <div class="yt-card-title" data-lang="en">NEW WEBSITE AND NEW CHARACTERS! — Forbidden Legacy</div>
+          <div class="yt-card-title" data-lang="en">NEW WEBSITE AND NEW CHARACTERS! — Forbidden Legacy</div><div class="yt-card-title" data-lang="es">¡NUEVO SITIO Y NUEVOS PERSONAJES! — Forbidden Legacy</div><div class="yt-card-title" data-lang="vi">TRANG MỚI VÀ NHÂN VẬT MỚI! — Forbidden Legacy</div>
           <div class="yt-card-meta">Trager Games · 2026</div>
         </div>
       </div>
@@ -1532,7 +1535,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <!-- Link para galeria -->
     <div style="text-align:center;margin-top:40px" data-reveal>
       <a href="gallery.html" class="yt-gallery-link" data-lang="pt">📷 Ver galeria de screenshots →</a>
-      <a href="gallery.html" class="yt-gallery-link" data-lang="en">📷 View screenshot gallery →</a>
+      <a href="gallery.html" class="yt-gallery-link" data-lang="en">📷 View screenshot gallery →</a><a href="gallery.html" class="yt-gallery-link" data-lang="es">📷 Ver galería de capturas →</a><a href="gallery.html" class="yt-gallery-link" data-lang="vi">📷 Xem thư viện ảnh →</a>
     </div>
   </div>
 </div>
@@ -1541,11 +1544,11 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
 <!-- CAMPAIGN NPCs -->
 <div class="campaign-section reveal" id="campanha">
-  <div class="label">☥ <span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span></div>
+  <div class="label">☥ <span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span><span data-lang="es">Campaña</span><span data-lang="vi">Cốt truyện</span></div>
   <div class="campaign-title" data-lang="pt">Enfrente os Guardiões do Egito</div>
-  <div class="campaign-title" data-lang="en">Face the Guardians of Egypt</div>
+  <div class="campaign-title" data-lang="en">Face the Guardians of Egypt</div><div class="campaign-title" data-lang="es">Enfrenta a los Guardianes de Egipto</div><div class="campaign-title" data-lang="vi">Đối đầu Người Bảo Vệ Ai Cập</div>
   <p class="campaign-sub" data-lang="pt">29 NPCs com IA e deck próprios. Season 1 completa para Founders. Versão gratuita inclui até Isis.</p>
-  <p class="campaign-sub" data-lang="en">29 NPCs with their own AI and deck. Full Season 1 for Founders. Free version includes up to Isis.</p>
+  <p class="campaign-sub" data-lang="en">29 NPCs with their own AI and deck. Full Season 1 for Founders. Free version includes up to Isis.</p><p class="campaign-sub" data-lang="es">29 NPCs con IA y mazo propios. Season 1 completa para Founders. La versión gratuita incluye hasta Isis.</p><p class="campaign-sub" data-lang="vi">29 NPC với AI và bộ bài riêng. Season 1 đầy đủ cho Founder. Bản miễn phí gồm tới Isis.</p>
 
   <div class="npc-row">
     <div class="npc-card">
@@ -1555,7 +1558,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Simon Muran</div>
-      <div class="npc-role"><span data-lang="pt">Mago Guia</span><span data-lang="en">Guide Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Mago Guia</span><span data-lang="en">Guide Mage</span><span data-lang="es">Mago Guía</span><span data-lang="vi">Pháp Sư Dẫn Đường</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1564,7 +1567,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Teana</div>
-      <div class="npc-role"><span data-lang="pt">Aprendiz</span><span data-lang="en">Apprentice</span></div>
+      <div class="npc-role"><span data-lang="pt">Aprendiz</span><span data-lang="en">Apprentice</span><span data-lang="es">Aprendiz</span><span data-lang="vi">Học viên</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1573,7 +1576,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Jusell</div>
-      <div class="npc-role"><span data-lang="pt">Sacerdote</span><span data-lang="en">Priest</span></div>
+      <div class="npc-role"><span data-lang="pt">Sacerdote</span><span data-lang="en">Priest</span><span data-lang="es">Sacerdote</span><span data-lang="vi">Tư tế</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1582,7 +1585,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Tarik</div>
-      <div class="npc-role"><span data-lang="pt">Guardião</span><span data-lang="en">Guardian</span></div>
+      <div class="npc-role"><span data-lang="pt">Guardião</span><span data-lang="en">Guardian</span><span data-lang="es">Guardián</span><span data-lang="vi">Người bảo vệ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1591,7 +1594,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Amasis</div>
-      <div class="npc-role"><span data-lang="pt">Patriarca</span><span data-lang="en">Patriarch</span></div>
+      <div class="npc-role"><span data-lang="pt">Patriarca</span><span data-lang="en">Patriarch</span><span data-lang="es">Patriarca</span><span data-lang="vi">Tộc trưởng</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1600,7 +1603,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Jono</div>
-      <div class="npc-role"><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span></div>
+      <div class="npc-role"><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span><span data-lang="es">Duelista</span><span data-lang="vi">Đấu thủ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1609,7 +1612,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mage Soldier</div>
-      <div class="npc-role"><span data-lang="pt">Soldado Mago</span><span data-lang="en">Mage Soldier</span></div>
+      <div class="npc-role"><span data-lang="pt">Soldado Mago</span><span data-lang="en">Mage Soldier</span><span data-lang="es">Soldado Mago</span><span data-lang="vi">Chiến Binh Pháp Sư</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1618,7 +1621,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Desert Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago do Deserto</span><span data-lang="en">Desert Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Mago do Deserto</span><span data-lang="en">Desert Mage</span><span data-lang="es">Mago del Desierto</span><span data-lang="vi">Pháp Sư Sa Mạc</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1627,7 +1630,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Meadow Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago do Prado</span><span data-lang="en">Meadow Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Mago do Prado</span><span data-lang="en">Meadow Mage</span><span data-lang="es">Mago del Prado</span><span data-lang="vi">Pháp Sư Đồng Cỏ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1636,7 +1639,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Ocean Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago do Oceano</span><span data-lang="en">Ocean Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Mago do Oceano</span><span data-lang="en">Ocean Mage</span><span data-lang="es">Mago del Océano</span><span data-lang="vi">Pháp Sư Đại Dương</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1645,7 +1648,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Forest Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago da Floresta</span><span data-lang="en">Forest Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Mago da Floresta</span><span data-lang="en">Forest Mage</span><span data-lang="es">Mago del Bosque</span><span data-lang="vi">Pháp Sư Rừng</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1654,7 +1657,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mountain Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago da Montanha</span><span data-lang="en">Mountain Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Mago da Montanha</span><span data-lang="en">Mountain Mage</span><span data-lang="es">Mago de la Montaña</span><span data-lang="vi">Pháp Sư Núi</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1663,7 +1666,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mana</div>
-      <div class="npc-role"><span data-lang="pt">Aprendiz Maga</span><span data-lang="en">Mage Apprentice</span></div>
+      <div class="npc-role"><span data-lang="pt">Aprendiz Maga</span><span data-lang="en">Mage Apprentice</span><span data-lang="es">Aprendiza Maga</span><span data-lang="vi">Nữ Học Viên Pháp Sư</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1672,7 +1675,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mahad</div>
-      <div class="npc-role"><span data-lang="pt">Alto Sacerdote</span><span data-lang="en">High Priest</span></div>
+      <div class="npc-role"><span data-lang="pt">Alto Sacerdote</span><span data-lang="en">High Priest</span><span data-lang="es">Alto Sacerdote</span><span data-lang="vi">Đại Tư Tế</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1681,7 +1684,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Seto</div>
-      <div class="npc-role"><span data-lang="pt">Rival</span><span data-lang="en">Rival</span></div>
+      <div class="npc-role"><span data-lang="pt">Rival</span><span data-lang="en">Rival</span><span data-lang="es">Rival</span><span data-lang="vi">Đối thủ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1690,7 +1693,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Isis</div>
-      <div class="npc-role"><span data-lang="pt">Sacerdotisa</span><span data-lang="en">Priestess</span></div>
+      <div class="npc-role"><span data-lang="pt">Sacerdotisa</span><span data-lang="en">Priestess</span><span data-lang="es">Sacerdotisa</span><span data-lang="vi">Nữ Tư Tế</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1699,7 +1702,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Akhenaden</div>
-      <div class="npc-role"><span data-lang="pt">Traidor</span><span data-lang="en">Traitor</span></div>
+      <div class="npc-role"><span data-lang="pt">Traidor</span><span data-lang="en">Traitor</span><span data-lang="es">Traidor</span><span data-lang="vi">Kẻ phản bội</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1708,7 +1711,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Kepura</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1717,7 +1720,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Martis</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1726,7 +1729,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Secmeton</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1735,7 +1738,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Atenza</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1744,7 +1747,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Anubisius</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1753,7 +1756,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Neku</div>
-      <div class="npc-role"><span data-lang="pt">Guerreiro</span><span data-lang="en">Warrior</span></div>
+      <div class="npc-role"><span data-lang="pt">Guerreiro</span><span data-lang="en">Warrior</span><span data-lang="es">Guerrero</span><span data-lang="vi">Chiến binh</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1762,7 +1765,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Sebek</div>
-      <div class="npc-role"><span data-lang="pt">Guardião</span><span data-lang="en">Guardian</span></div>
+      <div class="npc-role"><span data-lang="pt">Guardião</span><span data-lang="en">Guardian</span><span data-lang="es">Guardián</span><span data-lang="vi">Người bảo vệ</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1771,7 +1774,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Labyrinth Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago do Labirinto</span><span data-lang="en">Labyrinth Mage</span></div>
+      <div class="npc-role"><span data-lang="pt">Mago do Labirinto</span><span data-lang="en">Labyrinth Mage</span><span data-lang="es">Mago del Laberinto</span><span data-lang="vi">Pháp Sư Mê Cung</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1780,7 +1783,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Thief Bakura</div>
-      <div class="npc-role"><span data-lang="pt">Ladrão</span><span data-lang="en">Thief</span></div>
+      <div class="npc-role"><span data-lang="pt">Ladrão</span><span data-lang="en">Thief</span><span data-lang="es">Ladrón</span><span data-lang="vi">Kẻ trộm</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1789,7 +1792,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Seto Final</div>
-      <div class="npc-role"><span data-lang="pt">Faraó Rival</span><span data-lang="en">Rival Pharaoh</span></div>
+      <div class="npc-role"><span data-lang="pt">Faraó Rival</span><span data-lang="en">Rival Pharaoh</span><span data-lang="es">Faraón Rival</span><span data-lang="vi">Pharaoh Đối Thủ</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1798,7 +1801,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Heishin</div>
-      <div class="npc-role"><span data-lang="pt">Vilão Final</span><span data-lang="en">Final Boss</span></div>
+      <div class="npc-role"><span data-lang="pt">Vilão Final</span><span data-lang="en">Final Boss</span><span data-lang="es">Villano Final</span><span data-lang="vi">Trùm cuối</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1807,30 +1810,30 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Zorc</div>
-      <div class="npc-role"><span data-lang="pt">Demônio Final</span><span data-lang="en">Final Demon</span></div>
+      <div class="npc-role"><span data-lang="pt">Demônio Final</span><span data-lang="en">Final Demon</span><span data-lang="es">Demonio Final</span><span data-lang="vi">Ác Quỷ Cuối Cùng</span></div>
     </div>
   </div>
 
   <p class="campaign-note" data-lang="pt">☥ Versão Founder desbloqueia <strong>todos os personagens</strong> — Akhenaden, Altos Magos, Sebek, Labyrinth Mage, Seto Final, Heishin e Zorc.</p>
-  <p class="campaign-note" data-lang="en">☥ Founder version unlocks <strong>all characters</strong> — Akhenaden, the High Mages, Sebek, Labyrinth Mage, Seto Final, Heishin and Zorc.</p>
+  <p class="campaign-note" data-lang="en">☥ Founder version unlocks <strong>all characters</strong> — Akhenaden, the High Mages, Sebek, Labyrinth Mage, Seto Final, Heishin and Zorc.</p><p class="campaign-note" data-lang="es">☥ La Versión Founder desbloquea <strong>todos los personajes</strong> — Akhenaden, Altos Magos, Sebek, Labyrinth Mage, Seto Final, Heishin y Zorc.</p><p class="campaign-note" data-lang="vi">☥ Phiên bản Founder mở khóa <strong>toàn bộ nhân vật</strong> — Akhenaden, các Đại Pháp Sư, Sebek, Labyrinth Mage, Seto Final, Heishin và Zorc.</p>
 </div>
 
 <!-- ══════════════════ DOWNLOAD ══════════════════ -->
 <div class="download-bg" id="download" data-reveal>
   <div class="download-inner">
-    <p class="section-label">☥ <span data-lang="pt">Jogue Agora</span><span data-lang="en">Play Now</span></p>
+    <p class="section-label">☥ <span data-lang="pt">Jogue Agora</span><span data-lang="en">Play Now</span><span data-lang="es">Juega Ahora</span><span data-lang="vi">Chơi Ngay</span></p>
     <h2 class="section-title" data-lang="pt">Download Gratuito</h2>
-    <h2 class="section-title" data-lang="en">Free Download</h2>
+    <h2 class="section-title" data-lang="en">Free Download</h2><h2 class="section-title" data-lang="es">Descarga Gratuita</h2><h2 class="section-title" data-lang="vi">Tải xuống miễn phí</h2>
     <div class="dl-box">
       <div class="dl-version">Beta 1.8.2</div>
       <div class="dl-title" data-lang="pt">Forbidden Legacy — Season 1 Completa</div>
-      <div class="dl-title" data-lang="en">Forbidden Legacy — Season 1 Complete</div>
+      <div class="dl-title" data-lang="en">Forbidden Legacy — Season 1 Complete</div><div class="dl-title" data-lang="es">Forbidden Legacy — Season 1 Completa</div><div class="dl-title" data-lang="vi">Forbidden Legacy — Season 1 đầy đủ</div>
       <p class="dl-desc" data-lang="pt">Download direto por plataforma — sem instalação. A versão FREE é totalmente gratuita para sempre.</p>
-      <p class="dl-desc" data-lang="en">Direct download per platform — no install required. The FREE version is completely free forever.</p>
+      <p class="dl-desc" data-lang="en">Direct download per platform — no install required. The FREE version is completely free forever.</p><p class="dl-desc" data-lang="es">Descarga directa por plataforma — sin instalación. La versión FREE es totalmente gratuita para siempre.</p><p class="dl-desc" data-lang="vi">Tải trực tiếp theo nền tảng — không cần cài đặt. Bản FREE hoàn toàn miễn phí mãi mãi.</p>
       <div class="dl-save-warning" role="note">
         <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M15.04 19.745c-.942 .551 -1.964 .976 -3.04 1.255a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 .195 6.015" /> <path d="M19 16v3" /> <path d="M19 22v.01" /></svg>
         <span data-lang="pt"><strong>Antes de atualizar:</strong> sempre exporte seu save dentro do jogo. Guarde o arquivo em um local seguro para evitar possíveis perdas de progresso.</span>
-        <span data-lang="en"><strong>Before updating:</strong> always export your save in-game. Keep the file in a safe place to prevent possible progress loss.</span>
+        <span data-lang="en"><strong>Before updating:</strong> always export your save in-game. Keep the file in a safe place to prevent possible progress loss.</span><span data-lang="es"><strong>Antes de actualizar:</strong> exporta siempre tu partida dentro del juego. Guarda el archivo en un lugar seguro para evitar posibles pérdidas de progreso.</span><span data-lang="vi"><strong>Trước khi cập nhật:</strong> luôn xuất bản lưu từ trong trò chơi. Cất tệp ở nơi an toàn để tránh mất tiến trình.</span>
       </div>
       <div class="dl-platforms">
         <a class="dl-plat dl-plat-link" href="https://github.com/TragerGames/forbidden-legacy-releases/releases/download/launcher-latest/Forbidden.Legacy.Launcher.exe" target="_blank" onclick="return confirmDownloadWarning('pc')">
@@ -1844,7 +1847,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           </div>
           <div class="dl-plat-name">Windows</div>
           <div class="dl-plat-ext" data-lang="pt">Launcher</div>
-          <div class="dl-plat-ext" data-lang="en">Launcher</div>
+          <div class="dl-plat-ext" data-lang="en">Launcher</div><div class="dl-plat-ext" data-lang="es">Launcher</div><div class="dl-plat-ext" data-lang="vi">Launcher</div>
         </a>
         <a class="dl-plat dl-plat-link" href="https://forbiddenlegacy.com.br/downloads/publico.php?asset=android_apk" target="_blank" onclick="return confirmDownloadWarning('android')">
           <div class="dl-plat-icon">&#129302;</div>
@@ -1855,14 +1858,14 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           <div class="dl-plat-icon">&#128039;</div>
           <div class="dl-plat-name">Linux</div>
           <div class="dl-plat-ext" data-lang="pt">Launcher</div>
-          <div class="dl-plat-ext" data-lang="en">Launcher</div>
+          <div class="dl-plat-ext" data-lang="en">Launcher</div><div class="dl-plat-ext" data-lang="es">Launcher</div><div class="dl-plat-ext" data-lang="vi">Launcher</div>
         </a>
       </div>
 
       <details class="dl-reqs">
         <summary>
           <span data-lang="pt">Como funcionam as atualizações</span>
-          <span data-lang="en">How updates work</span>
+          <span data-lang="en">How updates work</span><span data-lang="es">Cómo funcionan las actualizaciones</span><span data-lang="vi">Cập nhật hoạt động thế nào</span>
         </summary>
         <div class="dl-reqs-body">
           <div class="dl-reqs-grid">
@@ -1885,7 +1888,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
                   <li>When a bigger version comes out, it lets you know and updates itself before launching.</li>
                   <li>The Launcher also updates itself automatically when needed.</li>
                 </ul>
-              </div>
+              </div><div class="dl-reqs-tier" data-lang="es"><strong>Launcher</strong> <ul> <li>Descarga el Launcher una sola vez — es él quien descarga y abre el juego.</li> <li>En cada corrección pequeña, el Launcher descarga solo lo que cambió, no el juego entero de nuevo.</li> <li>Cuando sale una versión mayor, avisa y se actualiza solo antes de abrir.</li> <li>El propio Launcher también se actualiza automáticamente cuando hace falta.</li> </ul></div><div class="dl-reqs-tier" data-lang="vi"><strong>Launcher</strong> <ul> <li>Tải Launcher một lần duy nhất — chính nó tải và mở trò chơi.</li> <li>Mỗi khi có sửa lỗi nhỏ, Launcher chỉ tải phần đã thay đổi, không tải lại toàn bộ trò chơi.</li> <li>Khi có phiên bản lớn, nó báo và tự cập nhật trước khi mở.</li> <li>Bản thân Launcher cũng tự cập nhật khi cần.</li> </ul></div>
             </div>
             <div>
               <div class="dl-reqs-plat">📱 Android</div>
@@ -1904,7 +1907,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
                   <li>When you open the game, it checks for small fixes on its own and applies them in the background, no large downloads.</li>
                   <li>Only when a real major version comes out does the game lock to a mandatory update screen and send you straight to the new APK.</li>
                 </ul>
-              </div>
+              </div><div class="dl-reqs-tier" data-lang="es"><strong>Actualización dentro de la propia app</strong> <ul> <li>Instala el APK normalmente — no hay launcher aparte en Android.</li> <li>Al abrir el juego, él mismo verifica si hay correcciones pequeñas y las aplica en segundo plano, sin descargas grandes.</li> <li>Solo cuando sale una versión mayor de verdad, el juego se detiene en una pantalla de actualización obligatoria y te lleva directo al APK nuevo.</li> </ul></div><div class="dl-reqs-tier" data-lang="vi"><strong>Cập nhật ngay trong ứng dụng</strong> <ul> <li>Cài APK như bình thường — trên Android không có launcher riêng.</li> <li>Khi mở trò chơi, nó tự kiểm tra xem có bản sửa lỗi nhỏ nào không và áp dụng ngầm, không cần tải nặng.</li> <li>Chỉ khi có phiên bản lớn thật sự, trò chơi mới dừng ở màn hình cập nhật bắt buộc và đưa bạn thẳng tới APK mới.</li> </ul></div>
             </div>
           </div>
         </div>
@@ -1913,7 +1916,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <details class="dl-reqs">
         <summary>
           <span data-lang="pt">Requisitos do sistema</span>
-          <span data-lang="en">System requirements</span>
+          <span data-lang="en">System requirements</span><span data-lang="es">Requisitos del sistema</span><span data-lang="vi">Yêu cầu hệ thống</span>
         </summary>
         <div class="dl-reqs-body">
           <div class="dl-reqs-grid">
@@ -1938,7 +1941,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
                   <li>GPU with OpenGL 3.3 or Direct3D 11</li>
                   <li>2 GB free disk space</li>
                 </ul>
-              </div>
+              </div><div class="dl-reqs-tier" data-lang="es"><strong>Mínimo</strong> <ul> <li>Windows 10/11 64-bit</li> <li>CPU dual-core</li> <li>4 GB RAM</li> <li>GPU con OpenGL 3.3 o Direct3D 11</li> <li>2 GB libres en disco</li> </ul></div><div class="dl-reqs-tier" data-lang="vi"><strong>Tối thiểu</strong> <ul> <li>Windows 10/11 64-bit</li> <li>CPU dual-core</li> <li>4 GB RAM</li> <li>GPU hỗ trợ OpenGL 3.3 hoặc Direct3D 11</li> <li>2 GB trống trên ổ đĩa</li> </ul></div>
               <div class="dl-reqs-tier" data-lang="pt">
                 <strong>Recomendado</strong>
                 <ul>
@@ -1958,7 +1961,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
                   <li>Basic dedicated GPU or modern integrated GPU</li>
                   <li>3 GB free disk space</li>
                 </ul>
-              </div>
+              </div><div class="dl-reqs-tier" data-lang="es"><strong>Recomendado</strong> <ul> <li>Windows 10/11 64-bit</li> <li>CPU quad-core</li> <li>8 GB RAM</li> <li>GPU dedicada sencilla o integrada moderna</li> <li>3 GB libres en disco</li> </ul></div><div class="dl-reqs-tier" data-lang="vi"><strong>Khuyến nghị</strong> <ul> <li>Windows 10/11 64-bit</li> <li>CPU quad-core</li> <li>8 GB RAM</li> <li>GPU rời cơ bản hoặc GPU tích hợp đời mới</li> <li>3 GB trống trên ổ đĩa</li> </ul></div>
             </div>
             <div>
               <div class="dl-reqs-plat">📱 Android</div>
@@ -1981,7 +1984,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
                   <li>2 GB free storage</li>
                   <li>Landscape screen</li>
                 </ul>
-              </div>
+              </div><div class="dl-reqs-tier" data-lang="es"><strong>Mínimo</strong> <ul> <li>Android con soporte para OpenGL ES 3.0</li> <li>CPU ARM de 32 o 64 bits</li> <li>3 GB RAM</li> <li>2 GB libres de almacenamiento</li> <li>Pantalla horizontal</li> </ul></div><div class="dl-reqs-tier" data-lang="vi"><strong>Tối thiểu</strong> <ul> <li>Android hỗ trợ OpenGL ES 3.0</li> <li>CPU ARM 32-bit hoặc 64-bit</li> <li>3 GB RAM</li> <li>2 GB trống trong bộ nhớ</li> <li>Màn hình ngang</li> </ul></div>
               <div class="dl-reqs-tier" data-lang="pt">
                 <strong>Recomendado</strong>
                 <ul>
@@ -2001,16 +2004,16 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
                   <li>Decent Adreno/Mali GPU with stable OpenGL ES 3.0</li>
                   <li>3 GB free</li>
                 </ul>
-              </div>
+              </div><div class="dl-reqs-tier" data-lang="es"><strong>Recomendado</strong> <ul> <li>Android 9 o superior</li> <li>ARM64</li> <li>4 GB RAM o más</li> <li>GPU Adreno/Mali razonable con OpenGL ES 3.0 estable</li> <li>3 GB libres</li> </ul></div><div class="dl-reqs-tier" data-lang="vi"><strong>Khuyến nghị</strong> <ul> <li>Android 9 trở lên</li> <li>ARM64</li> <li>4 GB RAM trở lên</li> <li>GPU Adreno/Mali tương đối với OpenGL ES 3.0 ổn định</li> <li>3 GB trống</li> </ul></div>
             </div>
           </div>
           <p class="dl-reqs-abi" data-lang="pt">A build Android atual suporta: <strong>armeabi-v7a</strong> e <strong>arm64-v8a</strong>.</p>
-          <p class="dl-reqs-abi" data-lang="en">The current Android build supports: <strong>armeabi-v7a</strong> and <strong>arm64-v8a</strong>.</p>
+          <p class="dl-reqs-abi" data-lang="en">The current Android build supports: <strong>armeabi-v7a</strong> and <strong>arm64-v8a</strong>.</p><p class="dl-reqs-abi" data-lang="es">La build actual de Android soporta: <strong>armeabi-v7a</strong> y <strong>arm64-v8a</strong>.</p><p class="dl-reqs-abi" data-lang="vi">Bản Android hiện tại hỗ trợ: <strong>armeabi-v7a</strong> và <strong>arm64-v8a</strong>.</p>
         </div>
       </details>
 
       <p class="dl-note" data-lang="pt">Download direto · Sem instalação · Atualizado em Jul/2026</p>
-      <p class="dl-note" data-lang="en">Direct download · No install · Updated Jul/2026</p>
+      <p class="dl-note" data-lang="en">Direct download · No install · Updated Jul/2026</p><p class="dl-note" data-lang="es">Descarga directa · Sin instalación · Actualizado en Jul/2026</p><p class="dl-note" data-lang="vi">Tải trực tiếp · Không cần cài đặt · Cập nhật 07/2026</p>
     </div>
   </div>
 </div>
@@ -2019,36 +2022,36 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 <!-- OUTRAS PÁGINAS -->
 <div class="pages-section reveal">
   <div class="section-head" style="text-align:center;margin-bottom:36px">
-    <div class="sec-label" style="text-align:center">☥ <span data-lang="pt">Explorar</span><span data-lang="en">Explore</span></div>
+    <div class="sec-label" style="text-align:center">☥ <span data-lang="pt">Explorar</span><span data-lang="en">Explore</span><span data-lang="es">Explorar</span><span data-lang="vi">Khám phá</span></div>
     <div class="sec-title center" data-lang="pt">Mais do projeto</div>
-    <div class="sec-title center" data-lang="en">More of the project</div>
+    <div class="sec-title center" data-lang="en">More of the project</div><div class="sec-title center" data-lang="es">Más del proyecto</div><div class="sec-title center" data-lang="vi">Thêm về dự án</div>
   </div>
   <div class="pages-grid">
     <a href="gallery.html" class="page-card">
       <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M15 8h.01" /> <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" /> <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" /> <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" /></svg>
       <div class="page-card-title" data-lang="pt">Galeria</div>
-      <div class="page-card-title" data-lang="en">Gallery</div>
+      <div class="page-card-title" data-lang="en">Gallery</div><div class="page-card-title" data-lang="es">Galería</div><div class="page-card-title" data-lang="vi">Thư viện</div>
       <div class="page-card-desc" data-lang="pt">Screenshots e artes do jogo</div>
-      <div class="page-card-desc" data-lang="en">Screenshots and game art</div>
+      <div class="page-card-desc" data-lang="en">Screenshots and game art</div><div class="page-card-desc" data-lang="es">Capturas y artes del juego</div><div class="page-card-desc" data-lang="vi">Ảnh chụp và tranh của trò chơi</div>
     </a>
     <a href="banlist.html" class="page-card">
       <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.5 5.5l1.5 1.5l2.5 -2.5" /> <path d="M3.5 11.5l1.5 1.5l2.5 -2.5" /> <path d="M3.5 17.5l1.5 1.5l2.5 -2.5" /> <path d="M11 6l9 0" /> <path d="M11 12l9 0" /> <path d="M11 18l9 0" /></svg>
       <div class="page-card-title">Banlist</div>
       <div class="page-card-desc" data-lang="pt">Grupos e limites de cartas</div>
-      <div class="page-card-desc" data-lang="en">Groups and card limits</div>
+      <div class="page-card-desc" data-lang="en">Groups and card limits</div><div class="page-card-desc" data-lang="es">Grupos y límites de cartas</div><div class="page-card-desc" data-lang="vi">Nhóm và giới hạn thẻ bài</div>
     </a>
     <a href="boosters.html" class="page-card">
       <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M3.604 7.197l7.138 -3.109a.96 .96 0 0 1 1.27 .527l4.924 11.902a1 1 0 0 1 -.514 1.304l-7.137 3.109a.96 .96 0 0 1 -1.271 -.527l-4.924 -11.903a1 1 0 0 1 .514 -1.304z" /> <path d="M15 4h1a1 1 0 0 1 1 1v3.5" /> <path d="M20 6c.264 .112 .52 .217 .768 .315a1 1 0 0 1 .53 1.311l-2.298 5.374" /></svg>
       <div class="page-card-title">Boosters</div>
       <div class="page-card-desc" data-lang="pt">Pacotes e cartas disponíveis</div>
-      <div class="page-card-desc" data-lang="en">Available packs and cards</div>
+      <div class="page-card-desc" data-lang="en">Available packs and cards</div><div class="page-card-desc" data-lang="es">Paquetes y cartas disponibles</div><div class="page-card-desc" data-lang="vi">Gói và thẻ hiện có</div>
     </a>
     <a href="conquistas.html" class="page-card">
       <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 21l8 0" /> <path d="M12 17l0 4" /> <path d="M7 4l10 0" /> <path d="M17 4v8a5 5 0 0 1 -10 0v-8" /> <path d="M5 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /> <path d="M19 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg>
       <div class="page-card-title" data-lang="pt">Conquistas</div>
-      <div class="page-card-title" data-lang="en">Achievements</div>
+      <div class="page-card-title" data-lang="en">Achievements</div><div class="page-card-title" data-lang="es">Logros</div><div class="page-card-title" data-lang="vi">Thành tựu</div>
       <div class="page-card-desc" data-lang="pt">Objetivos e recompensas</div>
-      <div class="page-card-desc" data-lang="en">Objectives and rewards</div>
+      <div class="page-card-desc" data-lang="en">Objectives and rewards</div><div class="page-card-desc" data-lang="es">Objetivos y recompensas</div><div class="page-card-desc" data-lang="vi">Mục tiêu và phần thưởng</div>
     </a>
   </div>
 </div>
@@ -2061,7 +2064,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <div class="discord-icon">
       <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
     </div>
-    <div class="label">☥ <span data-lang="pt">Comunidade</span><span data-lang="en">Community</span></div>
+    <div class="label">☥ <span data-lang="pt">Comunidade</span><span data-lang="en">Community</span><span data-lang="es">Comunidad</span><span data-lang="vi">Cộng đồng</span></div>
     <div class="dc-server">
       <img src="img/discord-icone.webp" alt="YGO! - Forbidden Legacy" width="44" height="44" loading="lazy" decoding="async">
       <div class="dc-server-txt">
@@ -2070,17 +2073,17 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
     </div>
     <div class="discord-title" data-lang="pt">Entre no servidor do Discord</div>
-    <div class="discord-title" data-lang="en">Join the Discord Server</div>
+    <div class="discord-title" data-lang="en">Join the Discord Server</div><div class="discord-title" data-lang="es">Entra al servidor de Discord</div><div class="discord-title" data-lang="vi">Tham gia máy chủ Discord</div>
     <p class="discord-sub" data-lang="pt">Notícias, changelogs, sorteios, suporte, feedback e a comunidade de duelistas do Forbidden Legacy.</p>
-    <p class="discord-sub" data-lang="en">News, changelogs, giveaways, support, feedback and the Forbidden Legacy duelist community.</p>
+    <p class="discord-sub" data-lang="en">News, changelogs, giveaways, support, feedback and the Forbidden Legacy duelist community.</p><p class="discord-sub" data-lang="es">Noticias, changelogs, sorteos, soporte, feedback y la comunidad de duelistas de Forbidden Legacy.</p><p class="discord-sub" data-lang="vi">Tin tức, changelog, sự kiện tặng quà, hỗ trợ, góp ý và cộng đồng đấu thủ Forbidden Legacy.</p>
     <div class="discord-stats">
       <div class="dc-stat">
         <strong><span class="dc-online-dot"></span><span id="discord-online">—</span></strong>
-        <span data-lang="pt">Online agora</span><span data-lang="en">Online now</span>
+        <span data-lang="pt">Online agora</span><span data-lang="en">Online now</span><span data-lang="es">En línea ahora</span><span data-lang="vi">Đang trực tuyến</span>
       </div>
       <div class="dc-stat">
         <strong id="discord-total">—</strong>
-        <span data-lang="pt">Membros</span><span data-lang="en">Members</span>
+        <span data-lang="pt">Membros</span><span data-lang="en">Members</span><span data-lang="es">Miembros</span><span data-lang="vi">Thành viên</span>
       </div>
       <!-- Impulsos: prova social forte logo antes da oferta.
                        Servidor que a própria comunidade banca com 36 boosts
@@ -2088,12 +2091,12 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
            fica desatualizado. Escondido se o servidor não tiver. -->
       <div class="dc-stat" id="dc-boost-stat" style="display:none">
         <strong id="discord-boosts" style="color:#f47fff">—</strong>
-        <span data-lang="pt">Impulsos</span><span data-lang="en">Boosts</span>
+        <span data-lang="pt">Impulsos</span><span data-lang="en">Boosts</span><span data-lang="es">Impulsos</span><span data-lang="vi">Lượt tăng cấp</span>
       </div>
     </div>
     <div style="margin-bottom: 24px;">
       <a href="https://discord.gg/forbidden-legacy" target="_blank" class="dc-invite-btn">
-        <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg> <span data-lang="pt">Entrar no Discord</span><span data-lang="en">Join Discord</span>
+        <svg class="ti-svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg> <span data-lang="pt">Entrar no Discord</span><span data-lang="en">Join Discord</span><span data-lang="es">Entrar al Discord</span><span data-lang="vi">Tham gia Discord</span>
       </a>
     </div>
     <div class="discord-channels">
@@ -2111,33 +2114,33 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
 <!-- ══════════════════ COMO FUNCIONA ══════════════════ -->
 <section class="reveal" style="padding: 80px 40px; max-width: 900px; margin: 0 auto;">
-  <p class="section-label">☥ <span data-lang="pt">Ativação</span><span data-lang="en">Activation</span></p>
+  <p class="section-label">☥ <span data-lang="pt">Ativação</span><span data-lang="en">Activation</span><span data-lang="es">Activación</span><span data-lang="vi">Kích hoạt</span></p>
   <h2 class="section-title" data-lang="pt">Como funciona a versão FOUNDER?</h2>
-  <h2 class="section-title" data-lang="en">How does FOUNDER activation work?</h2>
+  <h2 class="section-title" data-lang="en">How does FOUNDER activation work?</h2><h2 class="section-title" data-lang="es">¿Cómo funciona la versión FOUNDER?</h2><h2 class="section-title" data-lang="vi">Phiên bản FOUNDER hoạt động thế nào?</h2>
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
-      <h4 data-lang="pt">Abra o jogo</h4><h4 data-lang="en">Open the game</h4>
+      <h4 data-lang="pt">Abra o jogo</h4><h4 data-lang="en">Open the game</h4><h4 data-lang="es">Abre el juego</h4><h4 data-lang="vi">Mở trò chơi</h4>
       <p data-lang="pt">Vá em <strong>Opções → Ativação</strong> e copie seu <strong>Código do Jogador</strong></p>
-      <p data-lang="en">Go to <strong>Options → Activation</strong> and copy your <strong>Player Code</strong></p>
+      <p data-lang="en">Go to <strong>Options → Activation</strong> and copy your <strong>Player Code</strong></p><p data-lang="es">Ve a <strong>Opciones → Activación</strong> y copia tu <strong>Código de Jugador</strong></p><p data-lang="vi">Vào <strong>Tùy Chọn → Kích hoạt</strong> và sao chép <strong>Mã Người chơi</strong> của bạn</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <h4 data-lang="pt">Compre aqui</h4><h4 data-lang="en">Buy here</h4>
+      <h4 data-lang="pt">Compre aqui</h4><h4 data-lang="en">Buy here</h4><h4 data-lang="es">Compra aquí</h4><h4 data-lang="vi">Mua tại đây</h4>
       <p data-lang="pt">Cole seu código abaixo, informe seu email e escolha como apoiar</p>
-      <p data-lang="en">Paste your code below, enter your email and choose how to support</p>
+      <p data-lang="en">Paste your code below, enter your email and choose how to support</p><p data-lang="es">Pega tu código abajo, indica tu correo y elige cómo apoyar</p><p data-lang="vi">Dán mã của bạn bên dưới, nhập email và chọn cách ủng hộ</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <h4 data-lang="pt">Receba por email</h4><h4 data-lang="en">Receive by email</h4>
+      <h4 data-lang="pt">Receba por email</h4><h4 data-lang="en">Receive by email</h4><h4 data-lang="es">Recíbelo por correo</h4><h4 data-lang="vi">Nhận qua email</h4>
       <p data-lang="pt">Após a confirmação, você recebe automaticamente o arquivo de licença</p>
-      <p data-lang="en">After confirmation, you automatically receive the license file</p>
+      <p data-lang="en">After confirmation, you automatically receive the license file</p><p data-lang="es">Tras la confirmación, recibes automáticamente el archivo de licencia</p><p data-lang="vi">Sau khi xác nhận, bạn tự động nhận được tệp giấy phép</p>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <h4 data-lang="pt">Importe no jogo</h4><h4 data-lang="en">Import in game</h4>
+      <h4 data-lang="pt">Importe no jogo</h4><h4 data-lang="en">Import in game</h4><h4 data-lang="es">Impórtalo en el juego</h4><h4 data-lang="vi">Nhập vào trò chơi</h4>
       <p data-lang="pt">Vá em <strong>Opções → Ativar → Importar Arquivo</strong> e selecione o .json recebido</p>
-      <p data-lang="en">Go to <strong>Options → Activate → Import File</strong> and select the received .json</p>
+      <p data-lang="en">Go to <strong>Options → Activate → Import File</strong> and select the received .json</p><p data-lang="es">Ve a <strong>Opciones → Activar → Importar Archivo</strong> y selecciona el .json recibido</p><p data-lang="vi">Vào <strong>Tùy Chọn → Kích hoạt → Nhập tệp</strong> và chọn tệp .json đã nhận</p>
     </div>
   </div>
 </section>
@@ -2145,15 +2148,15 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 <!-- FOUNDER -->
 <section class="founder-section reveal" id="comprar">
   <div class="founder-card">
-    <div class="founder-badge">☥ <span data-lang="pt">Versão Founder</span><span data-lang="en">Founder Version</span></div>
+    <div class="founder-badge">☥ <span data-lang="pt">Versão Founder</span><span data-lang="en">Founder Version</span><span data-lang="es">Versión Founder</span><span data-lang="vi">Phiên bản Founder</span></div>
     <div class="founder-title" data-lang="pt">Apoie o projeto.<br>Jogue o jogo completo.</div>
-    <div class="founder-title" data-lang="en">Support the project.<br>Play the full game.</div>
+    <div class="founder-title" data-lang="en">Support the project.<br>Play the full game.</div><div class="founder-title" data-lang="es">Apoya el proyecto.<br>Juega el juego completo.</div><div class="founder-title" data-lang="vi">Ủng hộ dự án.<br>Chơi trò chơi đầy đủ.</div>
     <p class="founder-sub" data-lang="pt">Pagamento único · Licença vitalícia · Enviada por e-mail após o pagamento</p>
-    <p class="founder-sub" data-lang="en">One-time payment · Lifetime license · Sent by email after payment</p>
+    <p class="founder-sub" data-lang="en">One-time payment · Lifetime license · Sent by email after payment</p><p class="founder-sub" data-lang="es">Pago único · Licencia de por vida · Enviada por correo tras el pago</p><p class="founder-sub" data-lang="vi">Thanh toán một lần · Giấy phép trọn đời · Gửi qua email sau khi thanh toán</p>
     <div class="founder-perks">
-      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 1 completa</span><span data-lang="en">Full Season 1</span></div>
-      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Acesso antecipado Season 2</span><span data-lang="en">Season 2 early access</span></div>
-      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Apoia o dev independente</span><span data-lang="en">Supports the indie dev</span></div>
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 1 completa</span><span data-lang="en">Full Season 1</span><span data-lang="es">Season 1 completa</span><span data-lang="vi">Season 1 đầy đủ</span></div>
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Acesso antecipado Season 2</span><span data-lang="en">Season 2 early access</span><span data-lang="es">Acceso anticipado a Season 2</span><span data-lang="vi">Truy cập sớm Season 2</span></div>
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Apoia o dev independente</span><span data-lang="en">Supports the indie dev</span><span data-lang="es">Apoya al dev independiente</span><span data-lang="vi">Ủng hộ nhà phát triển độc lập</span></div>
     </div>
     <div class="price-row">
       <!-- PIX e Cartao BR/Internacional sao controlados por REGIAO (regionIsBR()),
@@ -2163,28 +2166,28 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div class="price-method">PIX</div>
         <div class="price-amount">R$&thinsp;39,90</div>
         <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
-        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div><div class="price-souls-badge" data-lang="es">+500 Souls de bono</div><div class="price-souls-badge" data-lang="vi">+500 Souls thưởng</div>
         <div class="price-note" data-lang="pt">Instantâneo · sem taxa</div>
-        <div class="price-note" data-lang="en">Instant · no fee</div>
+        <div class="price-note" data-lang="en">Instant · no fee</div><div class="price-note" data-lang="es">Instantáneo · sin comisión</div><div class="price-note" data-lang="vi">Tức thì · không phí</div>
       </div>
       <div class="price-sep" id="price-sep-block"></div>
       <div class="price-block" id="price-card-br-block">
         <div class="price-method" data-lang="pt">Cartão de Crédito</div>
-        <div class="price-method" data-lang="en">Credit Card</div>
+        <div class="price-method" data-lang="en">Credit Card</div><div class="price-method" data-lang="es">Tarjeta de Crédito</div><div class="price-method" data-lang="vi">Thẻ tín dụng</div>
         <div class="price-amount">R$&thinsp;39,90</div>
         <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
-        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div><div class="price-souls-badge" data-lang="es">+500 Souls de bono</div><div class="price-souls-badge" data-lang="vi">+500 Souls thưởng</div>
         <div class="price-note" data-lang="pt">Parcelável · via Asaas</div>
-        <div class="price-note" data-lang="en">Installments available · via Asaas</div>
+        <div class="price-note" data-lang="en">Installments available · via Asaas</div><div class="price-note" data-lang="es">A plazos · vía Asaas</div><div class="price-note" data-lang="vi">Trả góp · qua Asaas</div>
       </div>
       <div class="price-block" id="price-card-intl-block" style="display:none">
         <div class="price-method" data-lang="pt">Cartão de Crédito</div>
-        <div class="price-method" data-lang="en">Credit Card</div>
+        <div class="price-method" data-lang="en">Credit Card</div><div class="price-method" data-lang="es">Tarjeta de Crédito</div><div class="price-method" data-lang="vi">Thẻ tín dụng</div>
         <div class="price-amount">$20&thinsp;USD</div>
         <div class="price-souls-badge" data-lang="pt">+500 Souls de bônus</div>
-        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div>
+        <div class="price-souls-badge" data-lang="en">+500 bonus Souls</div><div class="price-souls-badge" data-lang="es">+500 Souls de bono</div><div class="price-souls-badge" data-lang="vi">+500 Souls thưởng</div>
         <div class="price-note" data-lang="pt">Stripe · Cartão internacional</div>
-        <div class="price-note" data-lang="en">Stripe · International card</div>
+        <div class="price-note" data-lang="en">Stripe · International card</div><div class="price-note" data-lang="es">Stripe · Tarjeta internacional</div><div class="price-note" data-lang="vi">Stripe · Thẻ quốc tế</div>
       </div>
     </div>
 
@@ -2195,7 +2198,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="region-chip" id="region-chip">🌐 Brasil — PIX / Cartão</div>
       <button type="button" class="region-switch-btn" id="region-switch-btn" onclick="toggleRegionOverride()">
         <span data-lang="pt">Não está no Brasil? Trocar região</span>
-        <span data-lang="en">Not in Brazil? Switch region</span>
+        <span data-lang="en">Not in Brazil? Switch region</span><span data-lang="es">¿No estás en Brasil? Cambiar región</span><span data-lang="vi">Không ở Brazil? Đổi khu vực</span>
       </button>
     </div>
 
@@ -2203,12 +2206,12 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <div style="max-width: 560px; margin: 0 auto; text-align: left;" class="buy-box">
       <div class="input-group">
         <label data-lang="pt">CÓDIGO DO JOGADOR (exibido em Opções → Ativação)</label>
-        <label data-lang="en">PLAYER CODE (shown in Options → Activation)</label>
+        <label data-lang="en">PLAYER CODE (shown in Options → Activation)</label><label data-lang="es">CÓDIGO DE JUGADOR (aparece en Opciones → Activación)</label><label data-lang="vi">MÃ NGƯỜI CHƠI (hiện trong Tùy Chọn → Kích hoạt)</label>
         <input id="input-codigo" type="text" placeholder="FL-PLAYERPC-XXXX-XXXX-XXXX" autocomplete="off">
       </div>
       <div class="input-group">
         <label data-lang="pt">SEU EMAIL (para receber a licença)</label>
-        <label data-lang="en">YOUR EMAIL (to receive the license)</label>
+        <label data-lang="en">YOUR EMAIL (to receive the license)</label><label data-lang="es">TU CORREO (para recibir la licencia)</label><label data-lang="vi">EMAIL CỦA BẠN (để nhận giấy phép)</label>
         <input id="input-email" type="email" placeholder="email@exemplo.com" autocomplete="email">
       </div>
       <div class="input-group">
@@ -2225,25 +2228,25 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
       <div class="input-group">
         <label data-lang="pt">SEU NOME</label>
-        <label data-lang="en">YOUR NAME</label>
+        <label data-lang="en">YOUR NAME</label><label data-lang="es">TU NOMBRE</label><label data-lang="vi">TÊN CỦA BẠN</label>
         <input id="input-nome" type="text" placeholder="Seu nome" autocomplete="name">
       </div>
       <div class="input-group">
         <label data-lang="pt">DISCORD (opcional)</label>
-        <label data-lang="en">DISCORD (optional)</label>
+        <label data-lang="en">DISCORD (optional)</label><label data-lang="es">DISCORD (opcional)</label><label data-lang="vi">DISCORD (tùy chọn)</label>
         <input id="input-discord" type="text" placeholder="@usuario" autocomplete="off">
       </div>
       <div class="input-group" id="cpf-group" style="display:none">
         <label data-lang="pt">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(exigido para cartão de crédito)</span></label>
-        <label data-lang="en">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(required for credit card)</span></label>
+        <label data-lang="en">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(required for credit card)</span></label><label data-lang="es">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(exigido para tarjeta de crédito)</span></label><label data-lang="vi">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(bắt buộc khi dùng thẻ tín dụng)</span></label>
         <input id="input-cpf" type="text" placeholder="000.000.000-00" autocomplete="off" maxlength="14" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d3)(\d)/,'$1.$2').replace(/(\d3)(\d)/,'$1.$2').replace(/(\d3)(\d(1, 2))$/,'$1-$2')">
       </div>
       <div class="input-group">
         <label data-lang="pt">DISPOSITIVO <span style="color:#e04040;font-size:10px">*</span></label>
-        <label data-lang="en">DEVICE <span style="color:#e04040;font-size:10px">*</span></label>
+        <label data-lang="en">DEVICE <span style="color:#e04040;font-size:10px">*</span></label><label data-lang="es">DISPOSITIVO <span style="color:#e04040;font-size:10px">*</span></label><label data-lang="vi">THIẾT BỊ <span style="color:#e04040;font-size:10px">*</span></label>
         <select id="input-dispositivo" required>
           <option value="" data-lang="pt">— selecione —</option>
-          <option value="" data-lang="en">— select —</option>
+          <option value="" data-lang="en">— select —</option><option value="" data-lang="es">— selecciona —</option><option value="" data-lang="vi">— chọn —</option>
           <option value="Windows">Windows</option>
           <option value="Android">Android</option>
           <option value="Linux">Linux</option>
@@ -2251,17 +2254,17 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
       <div id="form-restored-hint" style="display:none;font-size:11px;color:var(--gold);text-align:center;margin-bottom:6px;letter-spacing:1px;opacity:0.8">
         <span data-lang="pt">✦ Dados restaurados do seu último acesso</span>
-        <span data-lang="en">✦ Data restored from your last visit</span>
+        <span data-lang="en">✦ Data restored from your last visit</span><span data-lang="es">✦ Datos restaurados de tu último acceso</span><span data-lang="vi">✦ Dữ liệu khôi phục từ lần truy cập trước</span>
       </div>
       <button class="btn-gold" style="width: 100%; border: none; font-size: 16px; margin-top: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;" onclick="abrirModalPagamento()">
         <span>☥</span>
         <span data-lang="pt">ATIVAR VERSÃO FOUNDER</span>
-        <span data-lang="en">ACTIVATE FOUNDER VERSION</span>
+        <span data-lang="en">ACTIVATE FOUNDER VERSION</span><span data-lang="es">ACTIVATE FOUNDER VERSION</span><span data-lang="vi">ACTIVATE FOUNDER VERSION</span>
       </button>
     </div>
 
     <p class="founder-fine" style="margin-top: 28px;" data-lang="pt">Precisa do seu código de jogador — disponível em Opções → Ativação dentro do jogo.</p>
-    <p class="founder-fine" style="margin-top: 28px;" data-lang="en">Needs your player code — available in Options → Activation inside the game.</p>
+    <p class="founder-fine" style="margin-top: 28px;" data-lang="en">Needs your player code — available in Options → Activation inside the game.</p><p class="founder-fine" style="margin-top: 28px;" data-lang="es">Necesitas tu código de jugador — disponible en Opciones → Activación dentro del juego.</p><p class="founder-fine" style="margin-top: 28px;" data-lang="vi">Bạn cần mã người chơi — có trong Tùy Chọn → Kích hoạt trong trò chơi.</p>
   </div>
 </section>
 
@@ -2272,9 +2275,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
      Aqui ela serve a quem já se interessou e quer o detalhe. -->
 <!-- ══════════════════ NOVIDADES ══════════════════ -->
 <section id="novidades" data-reveal>
-  <p class="section-label">☥ <span data-lang="pt">Blog</span><span data-lang="en">Blog</span></p>
+  <p class="section-label">☥ <span data-lang="pt">Blog</span><span data-lang="en">Blog</span><span data-lang="es">Blog</span><span data-lang="vi">Blog</span></p>
   <h2 class="section-title" data-lang="pt">Novidades do Projeto</h2>
-  <h2 class="section-title" data-lang="en">Project Updates</h2>
+  <h2 class="section-title" data-lang="en">Project Updates</h2><h2 class="section-title" data-lang="es">Novedades del Proyecto</h2><h2 class="section-title" data-lang="vi">Tin mới của dự án</h2>
   <div class="news-grid">
 
     <!-- PATCH 64 -->
@@ -2282,7 +2285,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="news-tag fix">🔧 Hotfix</div>
       <div class="news-date">27 Ago 2026</div>
       <div class="news-title" data-lang="pt">Beta 1.8.2 &mdash; Patch 64: Decks Sumidos e Exodia the Forbidden One de Volta</div>
-      <div class="news-title" data-lang="en">Beta 1.8.2 &mdash; Patch 64: Missing Decks and Exodia the Forbidden One Fixed</div>
+      <div class="news-title" data-lang="en">Beta 1.8.2 &mdash; Patch 64: Missing Decks and Exodia the Forbidden One Fixed</div><div class="news-title" data-lang="es">Beta 1.8.2 &mdash; Patch 64: Mazos Desaparecidos y Exodia the Forbidden One de Vuelta</div><div class="news-title" data-lang="vi">Beta 1.8.2 &mdash; Patch 64: Bộ bài biến mất và Exodia the Forbidden One trở lại</div>
       <div class="news-body" data-lang="pt">
         <ul>
           <li>Corrigidos decks que sumiam do Editor de Deck após o Patch 63, mostrando <strong>"Slot de outro save ou inválido"</strong> — eles não foram apagados e voltam sozinhos ao abrir o jogo</li>
@@ -2304,6 +2307,26 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           <li>Divine Beasts (Slifer, Obelisk and Ra) once again ignore opposing effects that were still hitting them, such as Legendary - Necro Rex and Zorc Necrophades' dice</li>
         </ul>
         <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="es">
+        <ul>
+          <li>Fixed decks disappearing from the Deck Editor after Patch 63, showing <strong>"Slot from another save or invalid"</strong> — they were never deleted and come back on their own when you open the game</li>
+          <li>Fixed <strong>Exodia the Forbidden One</strong> vanishing from the collection of players who already owned it, caused by the card's rename in Patch 63 — it comes back automatically and everyone receives 1 copy as compensation</li>
+          <li>Fixed a performance issue that reloaded card images from disk every time they appeared, freezing long <strong>Auto Duel</strong> sessions</li>
+          <li>Fixed <strong>Cyber Dragon</strong> Spells (such as Cyber Repair Plant and Evolution Burst) that couldn't be Set before you had the required monster on the field</li>
+          <li>Fixed <strong>Monster Reborn</strong> when Set face-down, which brought back no monster from the Graveyard when activated</li>
+          <li>Divine Beasts (Slifer, Obelisk and Ra) once again ignore opposing effects that were still hitting them, such as Legendary - Necro Rex and Zorc Necrophades' dice</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="vi">
+        <ul>
+          <li>Fixed decks disappearing from the Deck Editor after Patch 63, showing <strong>"Slot from another save or invalid"</strong> — they were never deleted and come back on their own when you open the game</li>
+          <li>Fixed <strong>Exodia the Forbidden One</strong> vanishing from the collection of players who already owned it, caused by the card's rename in Patch 63 — it comes back automatically and everyone receives 1 copy as compensation</li>
+          <li>Fixed a performance issue that reloaded card images from disk every time they appeared, freezing long <strong>Auto Duel</strong> sessions</li>
+          <li>Fixed <strong>Cyber Dragon</strong> Spells (such as Cyber Repair Plant and Evolution Burst) that couldn't be Set before you had the required monster on the field</li>
+          <li>Fixed <strong>Monster Reborn</strong> when Set face-down, which brought back no monster from the Graveyard when activated</li>
+          <li>Divine Beasts (Slifer, Obelisk and Ra) once again ignore opposing effects that were still hitting them, such as Legendary - Necro Rex and Zorc Necrophades' dice</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2312,7 +2335,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="news-tag update">⚡ Update</div>
       <div class="news-date">26 Ago 2026</div>
       <div class="news-title" data-lang="pt">Beta 1.8.2 &mdash; Patch 63: Booster Cyber Dragon + Zane Truesdale no Torneio</div>
-      <div class="news-title" data-lang="en">Beta 1.8.2 &mdash; Patch 63: Cyber Dragon Booster + Zane Truesdale in the Tournament</div>
+      <div class="news-title" data-lang="en">Beta 1.8.2 &mdash; Patch 63: Cyber Dragon Booster + Zane Truesdale in the Tournament</div><div class="news-title" data-lang="es">Beta 1.8.2 &mdash; Patch 63: Booster Cyber Dragon + Zane Truesdale en el Torneo</div><div class="news-title" data-lang="vi">Beta 1.8.2 &mdash; Patch 63: Booster Cyber Dragon + Zane Truesdale trong Giải đấu</div>
       <div class="news-body" data-lang="pt">
         <ul>
           <li>Novo booster temático <strong>Cyber Dragon</strong> chega à loja por tempo limitado (<strong>26/08 até 10/09, 11:30 horário de Brasília</strong>), com dragões mecânicos, fusões, equipamentos e suporte do arquétipo</li>
@@ -2334,6 +2357,26 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           <li>Adjusted the positioning of filter icons on Android</li>
         </ul>
         <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="es">
+        <ul>
+          <li>New themed <strong>Cyber Dragon</strong> booster arrives in the shop for a limited time (<strong>Aug 26 through Sep 10, 11:30 Brasília time</strong>), with mechanical dragons, fusions, equips and support for the archetype</li>
+          <li><strong>Zane Truesdale</strong> arrives as the new themed Tournament Boss, available only while the Cyber Dragon booster is active</li>
+          <li>Fixed <strong>Horn of Light</strong>, which wasn't returning to the top of the Deck when sent to the Graveyard as its effect describes</li>
+          <li>Improved <strong>Cross-Save</strong> loading, now more accurate and complete when importing a save from another device</li>
+          <li>Fixed Tournament buttons that got stuck grayed out for no reason, and a bug where clicking anywhere on screen would trigger buttons by accident</li>
+          <li>Adjusted the positioning of filter icons on Android</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="vi">
+        <ul>
+          <li>New themed <strong>Cyber Dragon</strong> booster arrives in the shop for a limited time (<strong>Aug 26 through Sep 10, 11:30 Brasília time</strong>), with mechanical dragons, fusions, equips and support for the archetype</li>
+          <li><strong>Zane Truesdale</strong> arrives as the new themed Tournament Boss, available only while the Cyber Dragon booster is active</li>
+          <li>Fixed <strong>Horn of Light</strong>, which wasn't returning to the top of the Deck when sent to the Graveyard as its effect describes</li>
+          <li>Improved <strong>Cross-Save</strong> loading, now more accurate and complete when importing a save from another device</li>
+          <li>Fixed Tournament buttons that got stuck grayed out for no reason, and a bug where clicking anywhere on screen would trigger buttons by accident</li>
+          <li>Adjusted the positioning of filter icons on Android</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2342,7 +2385,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="news-tag update">⚡ Update</div>
       <div class="news-date">19 Ago 2026</div>
       <div class="news-title" data-lang="pt">Beta 1.8.2 &mdash; Patch 61: Rodízio de Auto Duel + Booster Red-Eyes de Volta</div>
-      <div class="news-title" data-lang="en">Beta 1.8.2 &mdash; Patch 61: Auto Duel Rotation + Red-Eyes Booster Returns</div>
+      <div class="news-title" data-lang="en">Beta 1.8.2 &mdash; Patch 61: Auto Duel Rotation + Red-Eyes Booster Returns</div><div class="news-title" data-lang="es">Beta 1.8.2 &mdash; Patch 61: Rotación de Auto Duel + Vuelve el Booster Red-Eyes</div><div class="news-title" data-lang="vi">Beta 1.8.2 &mdash; Patch 61: Luân phiên Auto Duel + Booster Red-Eyes trở lại</div>
       <div class="news-body" data-lang="pt">
         <ul>
           <li>Novo <strong>Rodízio de Auto Duel</strong>: escolha 3 NPCs, defina a ordem e a stamina de cada um — o jogo encadeia os duelos sozinho, sem repetir ou passar do combinado</li>
@@ -2364,6 +2407,26 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           <li>Fixed a crash when disconnecting a controller on PC mid-game, and a rare freeze between automatic duels</li>
         </ul>
         <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="es">
+        <ul>
+          <li>New <strong>Auto Duel Rotation</strong>: pick 3 NPCs, set the order and stamina for each — the game chains the duels on its own, without repeating or overshooting the plan</li>
+          <li>Auto Duel Dashboard fully reworked with the <strong>Season 2</strong> visual identity, per-duel checkpoint, remaining-time estimate, and options right on the panel</li>
+          <li>The <strong>Red-Eyes</strong> booster returns to the shop alongside <strong>Darklord</strong>, both available until <strong>Aug 26 at 11:30 (Brasília time)</strong></li>
+          <li>Fixed a rare <strong>Pumpking the King of Ghosts</strong> interaction with <strong>Wasteland</strong> that could destroy it using incorrect stats when revealed in battle</li>
+          <li>Fixed <strong>Zorc Necrophades</strong> vs <strong>Tytannial, Princess of Camellias</strong>: dice results 4 and 5 now correctly ignore her immunity</li>
+          <li>Fixed a crash when disconnecting a controller on PC mid-game, and a rare freeze between automatic duels</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="vi">
+        <ul>
+          <li>New <strong>Auto Duel Rotation</strong>: pick 3 NPCs, set the order and stamina for each — the game chains the duels on its own, without repeating or overshooting the plan</li>
+          <li>Auto Duel Dashboard fully reworked with the <strong>Season 2</strong> visual identity, per-duel checkpoint, remaining-time estimate, and options right on the panel</li>
+          <li>The <strong>Red-Eyes</strong> booster returns to the shop alongside <strong>Darklord</strong>, both available until <strong>Aug 26 at 11:30 (Brasília time)</strong></li>
+          <li>Fixed a rare <strong>Pumpking the King of Ghosts</strong> interaction with <strong>Wasteland</strong> that could destroy it using incorrect stats when revealed in battle</li>
+          <li>Fixed <strong>Zorc Necrophades</strong> vs <strong>Tytannial, Princess of Camellias</strong>: dice results 4 and 5 now correctly ignore her immunity</li>
+          <li>Fixed a crash when disconnecting a controller on PC mid-game, and a rare freeze between automatic duels</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2372,7 +2435,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="news-tag fix">🔧 Hotfix</div>
       <div class="news-date">16 Ago 2026</div>
       <div class="news-title" data-lang="pt">Beta 1.8.1 &mdash; Patch 60: Ultimate Flame Swordsman Reformulada</div>
-      <div class="news-title" data-lang="en">Beta 1.8.1 &mdash; Patch 60: Ultimate Flame Swordsman Reworked</div>
+      <div class="news-title" data-lang="en">Beta 1.8.1 &mdash; Patch 60: Ultimate Flame Swordsman Reworked</div><div class="news-title" data-lang="es">Beta 1.8.1 &mdash; Patch 60: Ultimate Flame Swordsman Rediseñada</div><div class="news-title" data-lang="vi">Beta 1.8.1 &mdash; Patch 60: Làm lại Ultimate Flame Swordsman</div>
       <div class="news-body" data-lang="pt">
         <ul>
           <li><strong>Ultimate Flame Swordsman</strong> foi atualizada: ganha 700 ATK na batalha, enfraquece monstros PLANT/INSECT em campo (-1000 ATK), causa dano ao ser invocada e no fim de cada turno</li>
@@ -2394,6 +2457,26 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           <li>Fixed <strong>Poseidon, King of the Oceans'</strong> permanent bonus, which could fail to reflect correctly in the monster's visuals after battle</li>
         </ul>
         <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="es">
+        <ul>
+          <li><strong>Ultimate Flame Swordsman</strong> updated: gains 700 ATK in battle, weakens PLANT/INSECT monsters on the field (-1000 ATK), deals damage on summon and at the end of each turn</li>
+          <li>Fixed <strong>Zorc Necrophades'</strong> dice result 3: the Trap lock now works like Jinzo for real, fully preventing activation</li>
+          <li>Fixed Zorc's dice animation on devices where the cube could render as a dark blur — visuals now use a safe 2D path, no longer dependent on GPU/driver</li>
+          <li>Fixed: Ultimate Flame Swordsman's aura was reducing the ATK of monsters immune to monster effects, like <strong>Tytannial, Princess of Camellias</strong></li>
+          <li>Fixed a freeze involving <strong>Lord of Souls</strong> returning from the Graveyard via its own effect</li>
+          <li>Fixed <strong>Poseidon, King of the Oceans'</strong> permanent bonus, which could fail to reflect correctly in the monster's visuals after battle</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="vi">
+        <ul>
+          <li><strong>Ultimate Flame Swordsman</strong> updated: gains 700 ATK in battle, weakens PLANT/INSECT monsters on the field (-1000 ATK), deals damage on summon and at the end of each turn</li>
+          <li>Fixed <strong>Zorc Necrophades'</strong> dice result 3: the Trap lock now works like Jinzo for real, fully preventing activation</li>
+          <li>Fixed Zorc's dice animation on devices where the cube could render as a dark blur — visuals now use a safe 2D path, no longer dependent on GPU/driver</li>
+          <li>Fixed: Ultimate Flame Swordsman's aura was reducing the ATK of monsters immune to monster effects, like <strong>Tytannial, Princess of Camellias</strong></li>
+          <li>Fixed a freeze involving <strong>Lord of Souls</strong> returning from the Graveyard via its own effect</li>
+          <li>Fixed <strong>Poseidon, King of the Oceans'</strong> permanent bonus, which could fail to reflect correctly in the monster's visuals after battle</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2402,7 +2485,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="news-tag fix">🔧 Hotfix</div>
       <div class="news-date">15 Ago 2026</div>
       <div class="news-title" data-lang="pt">Beta 1.8.1 &mdash; Patch 58: Zorc Necrophades Refeita e Correções de Duelo</div>
-      <div class="news-title" data-lang="en">Beta 1.8.1 &mdash; Patch 58: Zorc Necrophades Reworked &amp; Duel Fixes</div>
+      <div class="news-title" data-lang="en">Beta 1.8.1 &mdash; Patch 58: Zorc Necrophades Reworked &amp; Duel Fixes</div><div class="news-title" data-lang="es">Beta 1.8.1 &mdash; Patch 58: Zorc Necrophades Rehecha y Correcciones de Duelo</div><div class="news-title" data-lang="vi">Beta 1.8.1 &mdash; Patch 58: Làm lại Zorc Necrophades và sửa lỗi trận đấu</div>
       <div class="news-body" data-lang="pt">
         <ul>
           <li><strong>Zorc Necrophades</strong> foi refeita: saiu o resultado de dado que dava vitória automática, entrou um efeito novo baseado no resultado (trava de ações, destruição, bounce ou zerar ATK/DEF). Agora é uma Besta Divina e seu efeito não pode ser negado</li>
@@ -2426,6 +2509,28 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           <li>Fixed: defeating Neku or Sebek in the labyrinth could fail to save proof of victory, locking the NPC out of Free Duel</li>
         </ul>
         <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="es">
+        <ul>
+          <li><strong>Zorc Necrophades</strong> was reworked: removed the dice result that gave an instant win, added a new effect based on the roll (action lock, destruction, bounce, or zeroing ATK/DEF). She's now a Divine-Beast and her effect can no longer be negated</li>
+          <li>Fixed a patch 57 side effect: battle-indestructible cards, like <strong>Guardian Sphinx</strong>, could be destroyed normally</li>
+          <li><strong>Poseidon, King of the Oceans</strong> had its effect reworked, and <strong>Red-Eyes Absolut Darkness Dragon</strong> was adjusted</li>
+          <li><strong>Darklord</strong> monsters no longer suffer the -800 ATK/DEF penalty from the Yami field — thematically they belong to the side of darkness</li>
+          <li><strong>Heishin</strong> no longer summons Obelisk almost every single time right at the start of the duel — his deck was adjusted for more unpredictability</li>
+          <li>Fixed a fusion bug where clicking multiple times on the result selection screen could summon the final monster more than once, triggering repeated damage/effects</li>
+          <li>Fixed: defeating Neku or Sebek in the labyrinth could fail to save proof of victory, locking the NPC out of Free Duel</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="vi">
+        <ul>
+          <li><strong>Zorc Necrophades</strong> was reworked: removed the dice result that gave an instant win, added a new effect based on the roll (action lock, destruction, bounce, or zeroing ATK/DEF). She's now a Divine-Beast and her effect can no longer be negated</li>
+          <li>Fixed a patch 57 side effect: battle-indestructible cards, like <strong>Guardian Sphinx</strong>, could be destroyed normally</li>
+          <li><strong>Poseidon, King of the Oceans</strong> had its effect reworked, and <strong>Red-Eyes Absolut Darkness Dragon</strong> was adjusted</li>
+          <li><strong>Darklord</strong> monsters no longer suffer the -800 ATK/DEF penalty from the Yami field — thematically they belong to the side of darkness</li>
+          <li><strong>Heishin</strong> no longer summons Obelisk almost every single time right at the start of the duel — his deck was adjusted for more unpredictability</li>
+          <li>Fixed a fusion bug where clicking multiple times on the result selection screen could summon the final monster more than once, triggering repeated damage/effects</li>
+          <li>Fixed: defeating Neku or Sebek in the labyrinth could fail to save proof of victory, locking the NPC out of Free Duel</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2434,7 +2539,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="news-tag fix">🔧 Hotfix</div>
       <div class="news-date">13 Ago 2026</div>
       <div class="news-title" data-lang="pt">Beta 1.8.1 &mdash; Patch 57: Fusões dos Darklords e Correções de Duelo</div>
-      <div class="news-title" data-lang="en">Beta 1.8.1 &mdash; Patch 57: Darklord Fusions &amp; Duel Fixes</div>
+      <div class="news-title" data-lang="en">Beta 1.8.1 &mdash; Patch 57: Darklord Fusions &amp; Duel Fixes</div><div class="news-title" data-lang="es">Beta 1.8.1 &mdash; Patch 57: Fusiones de los Darklord y Correcciones de Duelo</div><div class="news-title" data-lang="vi">Beta 1.8.1 &mdash; Patch 57: Hợp thể Darklord và sửa lỗi trận đấu</div>
       <div class="news-body" data-lang="pt">
         <ul>
           <li>Reformuladas as fusões da linhagem <strong>Darklord</strong>: cada carta agora exige uma combinação específica e coerente, formando uma cadeia de evolução real dentro do arquétipo</li>
@@ -2460,6 +2565,30 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           <li>Fixed a rare Tournament lockup after an unexpected game closure during Hardcore Mode</li>
         </ul>
         <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="es">
+        <ul>
+          <li>Reworked the <strong>Darklord</strong> lineage fusions: each card now requires a specific, coherent combination, forming a real evolution chain within the archetype</li>
+          <li>Fixed: equipping multiple Equip cards at once on the same monster only applied the first one correctly</li>
+          <li>Deck Editor: new <strong>CLEAR</strong> button and automatic card count per slot (X/40)</li>
+          <li>Card Catalog search now also matches by effect text, not just by name</li>
+          <li>Easier campaign start: removed the pre-active field spell against the early duelists (Simon Muran, Jusell, Tarik and Amasis)</li>
+          <li>Free Duel: each duelist's themed field spell now requires 50 wins (was 15)</li>
+          <li>Fixed Zorc Necrophades' 3D dice, which could render as a brown blur instead of the animated cube</li>
+          <li>Fixed a rare Tournament lockup after an unexpected game closure during Hardcore Mode</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="vi">
+        <ul>
+          <li>Reworked the <strong>Darklord</strong> lineage fusions: each card now requires a specific, coherent combination, forming a real evolution chain within the archetype</li>
+          <li>Fixed: equipping multiple Equip cards at once on the same monster only applied the first one correctly</li>
+          <li>Deck Editor: new <strong>CLEAR</strong> button and automatic card count per slot (X/40)</li>
+          <li>Card Catalog search now also matches by effect text, not just by name</li>
+          <li>Easier campaign start: removed the pre-active field spell against the early duelists (Simon Muran, Jusell, Tarik and Amasis)</li>
+          <li>Free Duel: each duelist's themed field spell now requires 50 wins (was 15)</li>
+          <li>Fixed Zorc Necrophades' 3D dice, which could render as a brown blur instead of the animated cube</li>
+          <li>Fixed a rare Tournament lockup after an unexpected game closure during Hardcore Mode</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2468,7 +2597,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="news-tag update">⚡ Update</div>
       <div class="news-date">25 Jul 2026</div>
       <div class="news-title" data-lang="pt">Beta 1.8 &mdash; Modo Torneio, Launcher para PC e Full Arts</div>
-      <div class="news-title" data-lang="en">Beta 1.8 &mdash; Tournament Mode, PC Launcher &amp; Full Arts</div>
+      <div class="news-title" data-lang="en">Beta 1.8 &mdash; Tournament Mode, PC Launcher &amp; Full Arts</div><div class="news-title" data-lang="es">Beta 1.8 &mdash; Modo Torneo, Launcher para PC y Full Arts</div><div class="news-title" data-lang="vi">Beta 1.8 &mdash; Chế độ Giải đấu, Launcher cho PC và Full Art</div>
       <div class="news-body" data-lang="pt">
         <ul>
           <li>Novo <strong>Forbidden Legacy Championship</strong>: encare uma sequência de duelistas em dificuldade crescente, com punições sorteadas a cada duelo e recompensas exclusivas — incluindo cartas em versão especial (Full Art)</li>
@@ -2494,6 +2623,30 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
           <li><strong>Bad Reaction to Simochi</strong> now truly works: reverses any opponent healing into damage of the same amount</li>
         </ul>
         <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="es">
+        <ul>
+          <li>New <strong>Forbidden Legacy Championship</strong>: face a sequence of duelists in rising difficulty, with random penalties each duel and exclusive rewards — including special-edition (Full Art) cards</li>
+          <li>The game now has its own <strong>PC Launcher</strong>, which checks for updates automatically and applies small patches without redownloading the whole game for every fix</li>
+          <li>Fixed: the Card Shop showcase reset to the top when exchanging Souls for a booster lower in the list</li>
+          <li>Adjusted the Tournament Ticket price: now costs 1500 Stars (or 50 Standard Tickets)</li>
+          <li>Fixed a crash when dueling against <strong>Duel Master K</strong></li>
+          <li>Updated the art of 4 cards chosen by the community on Discord: <strong>Meteor B. Dragon</strong>, <strong>B. Skull Dragon</strong>, <strong>Perfectly Ultimate Great Moth</strong> and <strong>Blue-Eyes Ultimate Dragon</strong></li>
+          <li><strong>Spellbinding Circle</strong> now triggers on the opponent summoning a monster (instead of on an attack)</li>
+          <li><strong>Bad Reaction to Simochi</strong> now truly works: reverses any opponent healing into damage of the same amount</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
+      </div><div class="news-body" data-lang="vi">
+        <ul>
+          <li>New <strong>Forbidden Legacy Championship</strong>: face a sequence of duelists in rising difficulty, with random penalties each duel and exclusive rewards — including special-edition (Full Art) cards</li>
+          <li>The game now has its own <strong>PC Launcher</strong>, which checks for updates automatically and applies small patches without redownloading the whole game for every fix</li>
+          <li>Fixed: the Card Shop showcase reset to the top when exchanging Souls for a booster lower in the list</li>
+          <li>Adjusted the Tournament Ticket price: now costs 1500 Stars (or 50 Standard Tickets)</li>
+          <li>Fixed a crash when dueling against <strong>Duel Master K</strong></li>
+          <li>Updated the art of 4 cards chosen by the community on Discord: <strong>Meteor B. Dragon</strong>, <strong>B. Skull Dragon</strong>, <strong>Perfectly Ultimate Great Moth</strong> and <strong>Blue-Eyes Ultimate Dragon</strong></li>
+          <li><strong>Spellbinding Circle</strong> now triggers on the opponent summoning a monster (instead of on an attack)</li>
+          <li><strong>Bad Reaction to Simochi</strong> now truly works: reverses any opponent healing into damage of the same amount</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">See full changelog on Discord &rarr;</a>
       </div>
     </div>
 
@@ -2506,29 +2659,29 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="#sobre" data-lang="pt">Sobre</a><a href="#sobre" data-lang="en">About</a>
-      <a href="#mecanicas" data-lang="pt">Mecânicas</a><a href="#mecanicas" data-lang="en">Features</a>
-      <a href="#campanha" data-lang="pt">Campanha</a><a href="#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="#sobre" data-lang="pt">Sobre</a><a href="#sobre" data-lang="en">About</a><a href="#sobre" data-lang="es">Acerca de</a><a href="#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="#mecanicas" data-lang="pt">Mecânicas</a><a href="#mecanicas" data-lang="en">Features</a><a href="#mecanicas" data-lang="es">Mecánicas</a><a href="#mecanicas" data-lang="vi">Cơ chế</a>
+      <a href="#campanha" data-lang="pt">Campanha</a><a href="#campanha" data-lang="en">Campaign</a><a href="#campanha" data-lang="es">Campaña</a><a href="#campanha" data-lang="vi">Cốt truyện</a>
       <a href="features.html">Features</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
-      <a href="#discord" data-lang="pt">Servidor</a><a href="#discord" data-lang="en">Server</a>
-      <a href="#comprar" data-lang="pt">Versão Founder</a><a href="#comprar" data-lang="en">Founder Version</a>
+      <a href="#discord" data-lang="pt">Servidor</a><a href="#discord" data-lang="en">Server</a><a href="#discord" data-lang="es">Servidor</a><a href="#discord" data-lang="vi">Máy chủ</a>
+      <a href="#comprar" data-lang="pt">Versão Founder</a><a href="#comprar" data-lang="en">Founder Version</a><a href="#comprar" data-lang="es">Versión Founder</a><a href="#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -2542,9 +2695,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   <div style="background:var(--dark2);border:1px solid var(--border);border-radius:6px;padding:32px 28px;max-width:440px;width:100%;position:relative">
     <button onclick="fecharModalPagamento()" style="position:absolute;top:14px;right:18px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">✕</button>
     <h3 style="color:var(--gold);font-family:'Bebas Neue', sans-serif;font-size:20px;margin:0 0 6px" data-lang="pt">☥ Escolha como apoiar</h3>
-    <h3 style="color:var(--gold);font-family:'Bebas Neue', sans-serif;font-size:20px;margin:0 0 6px" data-lang="en">☥ Choose how to support</h3>
+    <h3 style="color:var(--gold);font-family:'Bebas Neue', sans-serif;font-size:20px;margin:0 0 6px" data-lang="en">☥ Choose how to support</h3><h3 style="color:var(--gold);font-family:'Bebas Neue', sans-serif;font-size:20px;margin:0 0 6px" data-lang="es">☥ Elige cómo apoyar</h3><h3 style="color:var(--gold);font-family:'Bebas Neue', sans-serif;font-size:20px;margin:0 0 6px" data-lang="vi">☥ Chọn cách ủng hộ</h3>
     <p style="color:var(--text-muted);font-size:12px;margin:0 0 20px" data-lang="pt">Licença vitalícia · Todas as atualizações inclusas</p>
-    <p style="color:var(--text-muted);font-size:12px;margin:0 0 20px" data-lang="en">Lifetime license · All future updates included</p>
+    <p style="color:var(--text-muted);font-size:12px;margin:0 0 20px" data-lang="en">Lifetime license · All future updates included</p><p style="color:var(--text-muted);font-size:12px;margin:0 0 20px" data-lang="es">Licencia de por vida · Todas las actualizaciones incluidas</p><p style="color:var(--text-muted);font-size:12px;margin:0 0 20px" data-lang="vi">Giấy phép trọn đời · Bao gồm mọi bản cập nhật</p>
 
     <!-- PIX — Brasil (controlado por IP, não por idioma) -->
     <button id="pay-opt-pix" class="pay-method-btn pay-method-pix" onclick="fecharModalPagamento();pixPagar()" style="display:none">
@@ -2552,7 +2705,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="pay-method-info">
         <div class="pay-method-name">PIX</div>
         <div class="pay-method-desc" data-lang="pt">Instantâneo · Apenas Brasil · via Efí Bank</div>
-        <div class="pay-method-desc" data-lang="en">Instant · Brazil only · via Efí Bank</div>
+        <div class="pay-method-desc" data-lang="en">Instant · Brazil only · via Efí Bank</div><div class="pay-method-desc" data-lang="es">Instantáneo · Solo Brasil · vía Efí Bank</div><div class="pay-method-desc" data-lang="vi">Tức thì · Chỉ Brazil · qua Efí Bank</div>
       </div>
       <div class="pay-method-price">R$ 39,90</div>
     </button>
@@ -2562,10 +2715,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="pay-method-icon">💳</div>
       <div class="pay-method-info">
         <div class="pay-method-name" data-lang="pt">Cartão de Crédito</div>
-        <div class="pay-method-name" data-lang="en">Credit Card</div>
+        <div class="pay-method-name" data-lang="en">Credit Card</div><div class="pay-method-name" data-lang="es">Tarjeta de Crédito</div><div class="pay-method-name" data-lang="vi">Thẻ tín dụng</div>
         <div class="pay-method-desc">Visa · Mastercard · Elo · Hipercard · BR</div>
         <div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="pt">R$ 39,90 · inclui taxa de processamento</div>
-        <div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="en">R$ 39.90 · processing fee included</div>
+        <div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="en">R$ 39.90 · processing fee included</div><div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="es">R$ 39,90 · incluye tasa de procesamiento</div><div class="pay-method-desc" style="color:rgba(255,200,80,.6);font-size:10px" data-lang="vi">R$ 39,90 · đã gồm phí xử lý</div>
       </div>
       <div class="pay-method-price" style="color:#50c87a">R$ 39,90</div>
     </button>
@@ -2575,14 +2728,14 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="pay-method-icon">🌎</div>
       <div class="pay-method-info">
         <div class="pay-method-name" data-lang="pt">Cartão Internacional</div>
-        <div class="pay-method-name" data-lang="en">International Card</div>
+        <div class="pay-method-name" data-lang="en">International Card</div><div class="pay-method-name" data-lang="es">Tarjeta Internacional</div><div class="pay-method-name" data-lang="vi">Thẻ quốc tế</div>
         <div class="pay-method-desc">Visa · Mastercard · Apple Pay · Google Pay · USD</div>
       </div>
       <div class="pay-method-price" style="color:#6aafff">$20</div>
     </button>
 
     <p style="font-size:11px;color:var(--text-muted);opacity:.6;text-align:center;margin-top:4px" data-lang="pt">🔒 Processado com segurança · Licença enviada por email após confirmação</p>
-    <p style="font-size:11px;color:var(--text-muted);opacity:.6;text-align:center;margin-top:4px" data-lang="en">🔒 Processed securely · License sent by email after confirmation</p>
+    <p style="font-size:11px;color:var(--text-muted);opacity:.6;text-align:center;margin-top:4px" data-lang="en">🔒 Processed securely · License sent by email after confirmation</p><p style="font-size:11px;color:var(--text-muted);opacity:.6;text-align:center;margin-top:4px" data-lang="es">🔒 Procesado de forma segura · Licencia enviada por correo tras la confirmación</p><p style="font-size:11px;color:var(--text-muted);opacity:.6;text-align:center;margin-top:4px" data-lang="vi">🔒 Xử lý an toàn · Giấy phép gửi qua email sau khi xác nhận</p>
   </div>
 </div>
 
@@ -2592,7 +2745,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <button class="pix-close" onclick="pixFechar()" title="Fechar">✕</button>
     <div class="pix-modal-title">☥ FOUNDER — PIX</div>
     <div class="pix-modal-sub" data-lang="pt">Escaneie o QR Code ou copie o código</div>
-    <div class="pix-modal-sub" data-lang="en">Scan the QR Code or copy the code</div>
+    <div class="pix-modal-sub" data-lang="en">Scan the QR Code or copy the code</div><div class="pix-modal-sub" data-lang="es">Escanea el QR Code o copia el código</div><div class="pix-modal-sub" data-lang="vi">Quét mã QR hoặc sao chép mã</div>
     <div class="pix-amount">R$ 39,90</div>
 
     <!-- QR Code -->
@@ -2600,42 +2753,42 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="pix-qr-placeholder" id="pix-qr-placeholder">
         <div class="pix-spinner"></div>
         <span data-lang="pt">Gerando QR Code…</span>
-        <span data-lang="en">Generating QR Code…</span>
+        <span data-lang="en">Generating QR Code…</span><span data-lang="es">Generando QR Code…</span><span data-lang="vi">Đang tạo mã QR…</span>
       </div>
       <img class="pix-qr-img" id="pix-qr-img" src="" alt="QR Code PIX" style="display:none">
     </div>
 
     <!-- Copia e cola -->
     <div class="pix-copy-label" data-lang="pt">CÓDIGO PIX (COPIA E COLA)</div>
-    <div class="pix-copy-label" data-lang="en">PIX CODE (COPY & PASTE)</div>
+    <div class="pix-copy-label" data-lang="en">PIX CODE (COPY & PASTE)</div><div class="pix-copy-label" data-lang="es">CÓDIGO PIX (COPIAR Y PEGAR)</div><div class="pix-copy-label" data-lang="vi">MÃ PIX (SAO CHÉP VÀ DÁN)</div>
     <div class="pix-copy-row">
       <input class="pix-copy-input" id="pix-copy-input" type="text" readonly placeholder="Aguardando…">
       <button class="pix-copy-btn" onclick="pixCopiar()" data-lang="pt">COPIAR</button>
-      <button class="pix-copy-btn" onclick="pixCopiar()" data-lang="en">COPY</button>
+      <button class="pix-copy-btn" onclick="pixCopiar()" data-lang="en">COPY</button><button class="pix-copy-btn" onclick="pixCopiar()" data-lang="es">COPIAR</button><button class="pix-copy-btn" onclick="pixCopiar()" data-lang="vi">SAO CHÉP</button>
     </div>
 
     <!-- Status -->
     <div class="pix-status aguardando" id="pix-status">
       <span class="pix-spinner"></span>
       <span data-lang="pt">Aguardando confirmação…</span>
-      <span data-lang="en">Waiting for confirmation…</span>
+      <span data-lang="en">Waiting for confirmation…</span><span data-lang="es">Esperando confirmación…</span><span data-lang="vi">Đang chờ xác nhận…</span>
     </div>
 
     <!-- Licença (aparece após pagamento) -->
     <div class="pix-license-box" id="pix-license-box">
       <div class="pix-license-title">
         <span data-lang="pt">✓ PAGAMENTO CONFIRMADO — Sua licença:</span>
-        <span data-lang="en">✓ PAYMENT CONFIRMED — Your license:</span>
+        <span data-lang="en">✓ PAYMENT CONFIRMED — Your license:</span><span data-lang="es">✓ PAGO CONFIRMADO — Tu licencia:</span><span data-lang="vi">✓ ĐÃ XÁC NHẬN THANH TOÁN — Giấy phép của bạn:</span>
       </div>
       <div class="pix-license-key" id="pix-license-key"></div>
       <button class="pix-license-copy" onclick="pixCopiarLicenca()" data-lang="pt">📋 COPIAR CHAVE DE ATIVAÇÃO</button>
-      <button class="pix-license-copy" onclick="pixCopiarLicenca()" data-lang="en">📋 COPY ACTIVATION KEY</button>
+      <button class="pix-license-copy" onclick="pixCopiarLicenca()" data-lang="en">📋 COPY ACTIVATION KEY</button><button class="pix-license-copy" onclick="pixCopiarLicenca()" data-lang="es">📋 COPIAR CLAVE DE ACTIVACIÓN</button><button class="pix-license-copy" onclick="pixCopiarLicenca()" data-lang="vi">📋 SAO CHÉP MÃ KÍCH HOẠT</button>
       <div class="pix-license-note" data-lang="pt">A licença também foi enviada para seu email.<br>Em <strong>Opções → Ativação</strong> do jogo, cole esta chave.</div>
-      <div class="pix-license-note" data-lang="en">The license was also sent to your email.<br>In the game's <strong>Options → Activation</strong>, paste this key.</div>
+      <div class="pix-license-note" data-lang="en">The license was also sent to your email.<br>In the game's <strong>Options → Activation</strong>, paste this key.</div><div class="pix-license-note" data-lang="es">La licencia también fue enviada a tu correo.<br>En <strong>Opciones → Activación</strong> del juego, pega esta clave.</div><div class="pix-license-note" data-lang="vi">Giấy phép cũng đã được gửi tới email của bạn.<br>Vào <strong>Tùy Chọn → Kích hoạt</strong> trong trò chơi và dán mã này.</div>
     </div>
 
     <p class="pix-note-security" data-lang="pt">🔒 Processado com segurança via Efí Bank</p>
-    <p class="pix-note-security" data-lang="en">🔒 Securely processed via Efí Bank</p>
+    <p class="pix-note-security" data-lang="en">🔒 Securely processed via Efí Bank</p><p class="pix-note-security" data-lang="es">🔒 Procesado de forma segura vía Efí Bank</p><p class="pix-note-security" data-lang="vi">🔒 Xử lý an toàn qua Efí Bank</p>
   </div>
 </div>
 
@@ -2650,13 +2803,13 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 <div class="offer-bar" id="offer-bar" role="region" aria-label="Versão Founder">
   <div class="offer-bar-txt">
     <span class="offer-bar-t" data-lang="pt">Versão Founder</span>
-    <span class="offer-bar-t" data-lang="en">Founder Version</span>
+    <span class="offer-bar-t" data-lang="en">Founder Version</span><span class="offer-bar-t" data-lang="es">Versión Founder</span><span class="offer-bar-t" data-lang="vi">Phiên bản Founder</span>
     <span class="offer-bar-s" data-lang="pt">Pagamento único · licença vitalícia</span>
-    <span class="offer-bar-s" data-lang="en">One-time payment · lifetime license</span>
+    <span class="offer-bar-s" data-lang="en">One-time payment · lifetime license</span><span class="offer-bar-s" data-lang="es">Pago único · licencia de por vida</span><span class="offer-bar-s" data-lang="vi">Thanh toán một lần · giấy phép trọn đời</span>
   </div>
   <span class="offer-bar-price" id="offer-bar-price">R$&nbsp;39,90</span>
   <button class="offer-bar-btn" onclick="irParaOferta()">
-    <span data-lang="pt">QUERO O FOUNDER</span><span data-lang="en">GET FOUNDER</span>
+    <span data-lang="pt">QUERO O FOUNDER</span><span data-lang="en">GET FOUNDER</span><span data-lang="es">QUIERO EL FOUNDER</span><span data-lang="vi">TÔI MUỐN FOUNDER</span>
   </button>
   <button class="offer-bar-close" onclick="fecharBarraOferta()" aria-label="Fechar">✕</button>
 </div>
@@ -2669,10 +2822,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   gap:16px; flex-wrap:wrap; font-size:13px; color:#a08050;
   backdrop-filter:blur(6px);">
   <span data-lang="pt">🍪 Este site armazena preferências no seu navegador (idioma, formulário) e realiza chamadas externas para Discord e processamento de doações. Ao continuar, você concorda com o uso desses dados. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Saiba mais</a></span>
-  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree to this use. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Learn more</a></span>
+  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree to this use. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Learn more</a></span><span data-lang="es">🍪 Este sitio almacena preferencias en tu navegador (idioma, formulario) y realiza llamadas externas a Discord y a los procesadores de pago. Al continuar, aceptas el uso de esos datos. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Saber más</a></span><span data-lang="vi">🍪 Trang này lưu tùy chọn trong trình duyệt của bạn (ngôn ngữ, biểu mẫu) và gọi ra ngoài tới Discord và các đơn vị xử lý thanh toán. Khi tiếp tục, bạn đồng ý với việc sử dụng những dữ liệu đó. <a href="#" onclick="cookiePolitica(event)" style="color:#c89020">Tìm hiểu thêm</a></span>
   <div style="display:flex;gap:8px;flex-shrink:0">
     <button onclick="cookieAceitar()" style="background:rgba(200,144,32,0.15);border:1px solid #c8940a;color:#f0d080;padding:7px 20px;border-radius:3px;cursor:pointer;font-size:13px;font-family:monospace;white-space:nowrap">
-      <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span>
+      <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span><span data-lang="es">✓ Entendido</span><span data-lang="vi">✓ Đã hiểu</span>
     </button>
   </div>
 </div>
@@ -2682,7 +2835,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   <div style="background:#0d0804;border:1px solid #c8940a;border-radius:6px;padding:32px;max-width:500px;width:100%;position:relative">
     <button onclick="document.getElementById('cookie-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#a08050;font-size:18px;cursor:pointer">✕</button>
     <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="pt">O que este site armazena</h3>
-    <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3>
+    <h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3><h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="es">Qué almacena este sitio</h3><h3 style="color:#f0a800;margin:0 0 16px;font-size:16px" data-lang="vi">Trang này lưu những gì</h3>
     <ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="pt">
       <li><strong style="color:#f0d080">fl_lang</strong> — preferência de idioma (PT/EN)</li>
       <li><strong style="color:#f0d080">fl_form_v1</strong> — campos do formulário de compra (Código, Email, Nome, Discord)</li>
@@ -2700,9 +2853,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
               <li><strong style="color:#f0d080">fl_visitante</strong> — a random number generated in this browser, with no name or e-mail. It only links "downloaded the game" to "bought later" in our own stats</li>
       <li><strong style="color:#f0d080">External APIs</strong> — Discord (member counter), api.country.is (country detection)</li>
       <li><strong style="color:#f0d080">Donations</strong> — PIX via Efí Bank and card via Stripe process data securely on their own servers</li>
-    </ul>
+    </ul><ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="es"><li><strong style="color:#f0d080">fl_lang</strong> — preferencia de idioma (PT/EN)</li> <li><strong style="color:#f0d080">fl_form_v1</strong> — campos del formulario de compra (Código, Correo, Nombre, Discord)</li> <li><strong style="color:#f0d080">fl_cookie_ok</strong> — registro de que aceptaste este aviso</li> <li><strong style="color:#f0d080">fl_origem_primeira</strong> / <strong style="color:#f0d080">fl_origem_ultima</strong> — de dónde llegaste al sitio (enlace de anuncio, búsqueda, Discord). Sirve para saber qué difusiones funcionan</li> <li><strong style="color:#f0d080">fl_visitante</strong> — un número aleatorio generado en este navegador, sin nombre ni correo. Solo conecta "descargó el juego" con "compró después" en nuestras estadísticas</li> <li><strong style="color:#f0d080">APIs externas</strong> — Discord (contador de miembros), api.country.is (detección de país)</li> <li><strong style="color:#f0d080">Donaciones</strong> — PIX vía Efí Bank y tarjeta vía Stripe procesan datos de forma segura en sus propios servidores</li></ul><ul style="color:#a08050;font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="vi"><li><strong style="color:#f0d080">fl_lang</strong> — tùy chọn ngôn ngữ (PT/EN)</li> <li><strong style="color:#f0d080">fl_form_v1</strong> — các trường của biểu mẫu mua hàng (Mã, Email, Tên, Discord)</li> <li><strong style="color:#f0d080">fl_cookie_ok</strong> — ghi nhận việc bạn đã chấp nhận thông báo này</li> <li><strong style="color:#f0d080">fl_origem_primeira</strong> / <strong style="color:#f0d080">fl_origem_ultima</strong> — bạn đến trang này từ đâu (liên kết quảng cáo, tìm kiếm, Discord). Giúp chúng tôi biết kênh nào hiệu quả</li> <li><strong style="color:#f0d080">fl_visitante</strong> — một số ngẫu nhiên tạo trong trình duyệt này, không kèm tên hay email. Chỉ để nối "đã tải trò chơi" với "đã mua sau đó" trong thống kê của chúng tôi</li> <li><strong style="color:#f0d080">API bên ngoài</strong> — Discord (bộ đếm thành viên), api.country.is (nhận diện quốc gia)</li> <li><strong style="color:#f0d080">Quyên góp</strong> — PIX qua Efí Bank và thẻ qua Stripe xử lý dữ liệu an toàn trên máy chủ của chính họ</li></ul>
     <p style="color:#706040;font-size:12px;margin:0" data-lang="pt">Nenhum data é vendido ou compartilhado com terceiros além dos processadores citados.</p>
-    <p style="color:#706040;font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p>
+    <p style="color:#706040;font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p><p style="color:#706040;font-size:12px;margin:0" data-lang="es">Ningún dato se vende ni se comparte con terceros más allá de los procesadores citados.</p><p style="color:#706040;font-size:12px;margin:0" data-lang="vi">Không dữ liệu nào được bán hay chia sẻ với bên thứ ba ngoài các đơn vị xử lý đã nêu.</p>
   </div>
 </div>
 

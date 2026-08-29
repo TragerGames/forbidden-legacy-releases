@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -108,6 +108,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -407,17 +410,17 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" class="active" data-lang="pt">Galeria</a><a href="gallery.html" class="active" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" class="active" data-lang="pt">Galeria</a><a href="gallery.html" class="active" data-lang="en">Gallery</a><a href="gallery.html" class="active" data-lang="es">Galería</a><a href="gallery.html" class="active" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -446,18 +449,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" class="active" data-lang="pt">Galeria</a><a href="gallery.html" class="active" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" class="active" data-lang="pt">Galeria</a><a href="gallery.html" class="active" data-lang="en">Gallery</a><a href="gallery.html" class="active" data-lang="es">Galería</a><a href="gallery.html" class="active" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
@@ -465,81 +468,81 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <div class="stars"></div>
   <div class="page-hero-label">☥ Beta 1.8.2</div>
   <h1 class="page-hero-title" data-lang="pt">Galeria</h1>
-  <h1 class="page-hero-title" data-lang="en">Gallery</h1>
+  <h1 class="page-hero-title" data-lang="en">Gallery</h1><h1 class="page-hero-title" data-lang="es">Galería</h1><h1 class="page-hero-title" data-lang="vi">Thư viện</h1>
   <div class="page-hero-sub" data-lang="pt">O jogo em ação</div>
-  <div class="page-hero-sub" data-lang="en">The game in action</div>
+  <div class="page-hero-sub" data-lang="en">The game in action</div><div class="page-hero-sub" data-lang="es">El juego en acción</div><div class="page-hero-sub" data-lang="vi">Trò chơi trong thực tế</div>
   <p class="page-hero-desc" data-lang="pt">Screenshots de Forbidden Legacy em português e inglês. Clique em qualquer imagem para ampliar.</p>
-  <p class="page-hero-desc" data-lang="en">Forbidden Legacy screenshots in Portuguese and English. Click any image to enlarge.</p>
+  <p class="page-hero-desc" data-lang="en">Forbidden Legacy screenshots in Portuguese and English. Click any image to enlarge.</p><p class="page-hero-desc" data-lang="es">Capturas de Forbidden Legacy en portugués e inglés. Haz clic en cualquier imagen para ampliar.</p><p class="page-hero-desc" data-lang="vi">Ảnh chụp Forbidden Legacy bằng tiếng Bồ Đào Nha và tiếng Anh. Nhấn vào ảnh bất kỳ để phóng to.</p>
 </div>
 
 <div class="gallery-inner">
 
   <!-- Filtro por categoria -->
   <div class="gal-filters" data-reveal>
-    <button class="gal-chip active" data-cat="todos" onclick="setGalFilter(this)"><span data-lang="pt">Todos</span><span data-lang="en">All</span></button>
-    <button class="gal-chip" data-cat="menus" onclick="setGalFilter(this)"><span data-lang="pt">🗂 Menus e Sistema</span><span data-lang="en">🗂 Menus &amp; System</span></button>
-    <button class="gal-chip" data-cat="deck" onclick="setGalFilter(this)"><span data-lang="pt">🃏 Cartas e Deck</span><span data-lang="en">🃏 Cards &amp; Deck</span></button>
-    <button class="gal-chip" data-cat="duelo" onclick="setGalFilter(this)"><span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span></button>
-    <button class="gal-chip" data-cat="loja" onclick="setGalFilter(this)"><span data-lang="pt">🎁 Loja e Economia</span><span data-lang="en">🎁 Shop &amp; Economy</span></button>
-    <button class="gal-chip" data-cat="eventos" onclick="setGalFilter(this)"><span data-lang="pt">🎡 Eventos</span><span data-lang="en">🎡 Events</span></button>
-    <button class="gal-chip" data-cat="conquistas" onclick="setGalFilter(this)"><span data-lang="pt">🏆 Conquistas</span><span data-lang="en">🏆 Achievements</span></button>
+    <button class="gal-chip active" data-cat="todos" onclick="setGalFilter(this)"><span data-lang="pt">Todos</span><span data-lang="en">All</span><span data-lang="es">Todos</span><span data-lang="vi">Tất cả</span></button>
+    <button class="gal-chip" data-cat="menus" onclick="setGalFilter(this)"><span data-lang="pt">🗂 Menus e Sistema</span><span data-lang="en">🗂 Menus &amp; System</span><span data-lang="es">🗂 Menús y Sistema</span><span data-lang="vi">🗂 Menu và Hệ thống</span></button>
+    <button class="gal-chip" data-cat="deck" onclick="setGalFilter(this)"><span data-lang="pt">🃏 Cartas e Deck</span><span data-lang="en">🃏 Cards &amp; Deck</span><span data-lang="es">🃏 Cartas y Mazo</span><span data-lang="vi">🃏 Thẻ và Bộ bài</span></button>
+    <button class="gal-chip" data-cat="duelo" onclick="setGalFilter(this)"><span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span><span data-lang="es">⚔ Duelo</span><span data-lang="vi">⚔ Trận đấu</span></button>
+    <button class="gal-chip" data-cat="loja" onclick="setGalFilter(this)"><span data-lang="pt">🎁 Loja e Economia</span><span data-lang="en">🎁 Shop &amp; Economy</span><span data-lang="es">🎁 Tienda y Economía</span><span data-lang="vi">🎁 Cửa hàng và Kinh tế</span></button>
+    <button class="gal-chip" data-cat="eventos" onclick="setGalFilter(this)"><span data-lang="pt">🎡 Eventos</span><span data-lang="en">🎡 Events</span><span data-lang="es">🎡 Eventos</span><span data-lang="vi">🎡 Sự kiện</span></button>
+    <button class="gal-chip" data-cat="conquistas" onclick="setGalFilter(this)"><span data-lang="pt">🏆 Conquistas</span><span data-lang="en">🏆 Achievements</span><span data-lang="es">🏆 Logros</span><span data-lang="vi">🏆 Thành tựu</span></button>
   </div>
 
   <!-- Menus e Sistema -->
   <div class="gal-section" data-cat="menus">
     <div class="gallery-sub-label" data-reveal>
-      <span data-lang="pt">🗂 Menus e Sistema</span><span data-lang="en">🗂 Menus &amp; System</span>
+      <span data-lang="pt">🗂 Menus e Sistema</span><span data-lang="en">🗂 Menus &amp; System</span><span data-lang="es">🗂 Menús y Sistema</span><span data-lang="vi">🗂 Menu và Hệ thống</span>
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/menu-preload.webp" alt="Tela de Carregamento" loading="lazy" width="1906" height="1066">
         <div class="gallery-caption" data-lang="pt">Tela de Carregamento</div>
-        <div class="gallery-caption" data-lang="en">Loading Screen</div>
+        <div class="gallery-caption" data-lang="en">Loading Screen</div><div class="gallery-caption" data-lang="es">Pantalla de Carga</div><div class="gallery-caption" data-lang="vi">Màn hình tải</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/menu-principal.webp" alt="Menu Principal" loading="lazy" width="1911" height="1069">
         <div class="gallery-caption" data-lang="pt">Menu Principal</div>
-        <div class="gallery-caption" data-lang="en">Main Menu</div>
+        <div class="gallery-caption" data-lang="en">Main Menu</div><div class="gallery-caption" data-lang="es">Menú Principal</div><div class="gallery-caption" data-lang="vi">Menu Chính</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/seletor-idioma.webp" alt="Seleção de Idioma" loading="lazy" width="1908" height="1073">
         <div class="gallery-caption" data-lang="pt">Seleção de Idioma</div>
-        <div class="gallery-caption" data-lang="en">Language Selection</div>
+        <div class="gallery-caption" data-lang="en">Language Selection</div><div class="gallery-caption" data-lang="es">Selección de Idioma</div><div class="gallery-caption" data-lang="vi">Chọn ngôn ngữ</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/escolha-nome.webp" alt="Escolha do Nome" loading="lazy" width="1904" height="1064">
         <div class="gallery-caption" data-lang="pt">Escolha do Nome</div>
-        <div class="gallery-caption" data-lang="en">Name Selection</div>
+        <div class="gallery-caption" data-lang="en">Name Selection</div><div class="gallery-caption" data-lang="es">Elección del Nombre</div><div class="gallery-caption" data-lang="vi">Chọn tên</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/seletor-save.webp" alt="Seletor de Save" loading="lazy" width="1900" height="1068">
         <div class="gallery-caption" data-lang="pt">Seletor de Save</div>
-        <div class="gallery-caption" data-lang="en">Save Selector</div>
+        <div class="gallery-caption" data-lang="en">Save Selector</div><div class="gallery-caption" data-lang="es">Selector de Partida</div><div class="gallery-caption" data-lang="vi">Chọn bản lưu</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/config-joystick.webp" alt="Configuração do Controle" loading="lazy" width="1913" height="1075">
         <div class="gallery-caption" data-lang="pt">Configuração do Controle</div>
-        <div class="gallery-caption" data-lang="en">Controller Setup</div>
+        <div class="gallery-caption" data-lang="en">Controller Setup</div><div class="gallery-caption" data-lang="es">Configuración del Mando</div><div class="gallery-caption" data-lang="vi">Thiết lập tay cầm</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/deck-inicial.webp" alt="Seleção de Deck Inicial" loading="lazy" width="1897" height="1041">
         <div class="gallery-caption" data-lang="pt">Seleção de Deck Inicial</div>
-        <div class="gallery-caption" data-lang="en">Starting Deck Selection</div>
+        <div class="gallery-caption" data-lang="en">Starting Deck Selection</div><div class="gallery-caption" data-lang="es">Selección de Mazo Inicial</div><div class="gallery-caption" data-lang="vi">Chọn bộ bài khởi đầu</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/avatar-1.webp" alt="Seleção de Avatar" loading="lazy" width="1908" height="1073">
         <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
-        <div class="gallery-caption" data-lang="en">Avatar Selection</div>
+        <div class="gallery-caption" data-lang="en">Avatar Selection</div><div class="gallery-caption" data-lang="es">Selección de Avatar</div><div class="gallery-caption" data-lang="vi">Chọn Avatar</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/avatar-2.webp" alt="Seleção de Avatar" loading="lazy" width="1904" height="1064">
         <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
-        <div class="gallery-caption" data-lang="en">Avatar Selection</div>
+        <div class="gallery-caption" data-lang="en">Avatar Selection</div><div class="gallery-caption" data-lang="es">Selección de Avatar</div><div class="gallery-caption" data-lang="vi">Chọn Avatar</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/avatar-3.webp" alt="Seleção de Avatar" loading="lazy" width="1913" height="1072">
         <div class="gallery-caption" data-lang="pt">Seleção de Avatar</div>
-        <div class="gallery-caption" data-lang="en">Avatar Selection</div>
+        <div class="gallery-caption" data-lang="en">Avatar Selection</div><div class="gallery-caption" data-lang="es">Selección de Avatar</div><div class="gallery-caption" data-lang="vi">Chọn Avatar</div>
       </div>
     </div>
   </div>
@@ -547,18 +550,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- Cartas e Deck -->
   <div class="gal-section" data-cat="deck">
     <div class="gallery-sub-label" data-reveal>
-      <span data-lang="pt">🃏 Cartas e Deck</span><span data-lang="en">🃏 Cards &amp; Deck</span>
+      <span data-lang="pt">🃏 Cartas e Deck</span><span data-lang="en">🃏 Cards &amp; Deck</span><span data-lang="es">🃏 Cartas y Mazo</span><span data-lang="vi">🃏 Thẻ và Bộ bài</span>
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/editor-deck.webp" alt="Editor de Deck" loading="lazy" width="1911" height="1077">
         <div class="gallery-caption" data-lang="pt">Editor de Deck</div>
-        <div class="gallery-caption" data-lang="en">Deck Editor</div>
+        <div class="gallery-caption" data-lang="en">Deck Editor</div><div class="gallery-caption" data-lang="es">Editor de Mazo</div><div class="gallery-caption" data-lang="vi">Trình sửa bộ bài</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/gerenciador-deck.webp" alt="Gerenciador de Decks" loading="lazy" width="1915" height="1075">
         <div class="gallery-caption" data-lang="pt">Gerenciador de Decks</div>
-        <div class="gallery-caption" data-lang="en">Deck Manager</div>
+        <div class="gallery-caption" data-lang="en">Deck Manager</div><div class="gallery-caption" data-lang="es">Gestor de Mazos</div><div class="gallery-caption" data-lang="vi">Quản lý bộ bài</div>
       </div>
     </div>
   </div>
@@ -566,7 +569,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- Duelo -->
   <div class="gal-section" data-cat="duelo">
     <div class="gallery-sub-label" data-reveal>
-      <span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span>
+      <span data-lang="pt">⚔ Duelo</span><span data-lang="en">⚔ Duel</span><span data-lang="es">⚔ Duelo</span><span data-lang="vi">⚔ Trận đấu</span>
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
@@ -584,97 +587,97 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/tela-npc.webp" alt="Perfil do NPC" loading="lazy" width="1913" height="1073">
         <div class="gallery-caption" data-lang="pt">Perfil do NPC</div>
-        <div class="gallery-caption" data-lang="en">NPC Profile</div>
+        <div class="gallery-caption" data-lang="en">NPC Profile</div><div class="gallery-caption" data-lang="es">Perfil del NPC</div><div class="gallery-caption" data-lang="vi">Hồ sơ NPC</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/cartas-em-campo.webp" alt="Cartas em Campo" loading="lazy" width="1900" height="1073">
         <div class="gallery-caption" data-lang="pt">Cartas em Campo</div>
-        <div class="gallery-caption" data-lang="en">Cards on Field</div>
+        <div class="gallery-caption" data-lang="en">Cards on Field</div><div class="gallery-caption" data-lang="es">Cartas en Campo</div><div class="gallery-caption" data-lang="vi">Thẻ trên sân</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/carta-detalhe.webp" alt="Detalhe da Carta" loading="lazy" width="1915" height="1071">
         <div class="gallery-caption" data-lang="pt">Detalhe da Carta</div>
-        <div class="gallery-caption" data-lang="en">Card Detail</div>
+        <div class="gallery-caption" data-lang="en">Card Detail</div><div class="gallery-caption" data-lang="es">Detalle de la Carta</div><div class="gallery-caption" data-lang="vi">Chi tiết thẻ bài</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/lista-fusoes.webp" alt="Lista de Fusões" loading="lazy" width="1884" height="1069">
         <div class="gallery-caption" data-lang="pt">Lista de Fusões</div>
-        <div class="gallery-caption" data-lang="en">Fusion List</div>
+        <div class="gallery-caption" data-lang="en">Fusion List</div><div class="gallery-caption" data-lang="es">Lista de Fusiones</div><div class="gallery-caption" data-lang="vi">Danh sách hợp thể</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/cemiterio.webp" alt="Cemitério" loading="lazy" width="1891" height="1060">
         <div class="gallery-caption" data-lang="pt">Cemitério</div>
-        <div class="gallery-caption" data-lang="en">Graveyard</div>
+        <div class="gallery-caption" data-lang="en">Graveyard</div><div class="gallery-caption" data-lang="es">Cementerio</div><div class="gallery-caption" data-lang="vi">Mộ bài</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/opcoes-duelo.webp" alt="Opções no Duelo" loading="lazy" width="820" height="898">
         <div class="gallery-caption" data-lang="pt">Opções no Duelo</div>
-        <div class="gallery-caption" data-lang="en">In-Duel Options</div>
+        <div class="gallery-caption" data-lang="en">In-Duel Options</div><div class="gallery-caption" data-lang="es">Opciones en Duelo</div><div class="gallery-caption" data-lang="vi">Tùy chọn trong trận</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/resultado-duelo.webp" alt="Resultado do Duelo" loading="lazy" width="1906" height="1075">
         <div class="gallery-caption" data-lang="pt">Resultado do Duelo</div>
-        <div class="gallery-caption" data-lang="en">Duel Result</div>
+        <div class="gallery-caption" data-lang="en">Duel Result</div><div class="gallery-caption" data-lang="es">Resultado del Duelo</div><div class="gallery-caption" data-lang="vi">Kết quả trận đấu</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-forest.webp" alt="Campo: Forest" loading="lazy" width="1914" height="1075">
         <div class="gallery-caption" data-lang="pt">Campo: Forest (Arena Clássica)</div>
-        <div class="gallery-caption" data-lang="en">Field: Forest (Classic Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Forest (Classic Arena)</div><div class="gallery-caption" data-lang="es">Campo: Forest (Arena Clásica)</div><div class="gallery-caption" data-lang="vi">Sân: Forest (Đấu trường cổ điển)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-forest-season2.webp" alt="Campo: Forest (Nova Arena)" loading="lazy" width="1913" height="1079">
         <div class="gallery-caption" data-lang="pt">Campo: Forest (Nova Arena)</div>
-        <div class="gallery-caption" data-lang="en">Field: Forest (New Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Forest (New Arena)</div><div class="gallery-caption" data-lang="es">Campo: Forest (Nueva Arena)</div><div class="gallery-caption" data-lang="vi">Sân: Forest (Đấu trường mới)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-mountain.webp" alt="Campo: Mountain" loading="lazy" width="1906" height="1069">
         <div class="gallery-caption" data-lang="pt">Campo: Mountain (Arena Clássica)</div>
-        <div class="gallery-caption" data-lang="en">Field: Mountain (Classic Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Mountain (Classic Arena)</div><div class="gallery-caption" data-lang="es">Campo: Mountain (Arena Clásica)</div><div class="gallery-caption" data-lang="vi">Sân: Mountain (Đấu trường cổ điển)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-mountain-season2.webp" alt="Campo: Mountain (Nova Arena)" loading="lazy" width="1914" height="1075">
         <div class="gallery-caption" data-lang="pt">Campo: Mountain (Nova Arena)</div>
-        <div class="gallery-caption" data-lang="en">Field: Mountain (New Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Mountain (New Arena)</div><div class="gallery-caption" data-lang="es">Campo: Mountain (Nueva Arena)</div><div class="gallery-caption" data-lang="vi">Sân: Mountain (Đấu trường mới)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-sogen.webp" alt="Campo: Sogen" loading="lazy" width="1908" height="1071">
         <div class="gallery-caption" data-lang="pt">Campo: Sogen (Arena Clássica)</div>
-        <div class="gallery-caption" data-lang="en">Field: Sogen (Classic Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Sogen (Classic Arena)</div><div class="gallery-caption" data-lang="es">Campo: Sogen (Arena Clásica)</div><div class="gallery-caption" data-lang="vi">Sân: Sogen (Đấu trường cổ điển)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-sogen-season2.webp" alt="Campo: Sogen (Nova Arena)" loading="lazy" width="1907" height="1076">
         <div class="gallery-caption" data-lang="pt">Campo: Sogen (Nova Arena)</div>
-        <div class="gallery-caption" data-lang="en">Field: Sogen (New Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Sogen (New Arena)</div><div class="gallery-caption" data-lang="es">Campo: Sogen (Nueva Arena)</div><div class="gallery-caption" data-lang="vi">Sân: Sogen (Đấu trường mới)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-umi.webp" alt="Campo: Umi" loading="lazy" width="1906" height="1069">
         <div class="gallery-caption" data-lang="pt">Campo: Umi (Arena Clássica)</div>
-        <div class="gallery-caption" data-lang="en">Field: Umi (Classic Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Umi (Classic Arena)</div><div class="gallery-caption" data-lang="es">Campo: Umi (Arena Clásica)</div><div class="gallery-caption" data-lang="vi">Sân: Umi (Đấu trường cổ điển)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-umi-season2.webp" alt="Campo: Umi (Nova Arena)" loading="lazy" width="1914" height="1077">
         <div class="gallery-caption" data-lang="pt">Campo: Umi (Nova Arena)</div>
-        <div class="gallery-caption" data-lang="en">Field: Umi (New Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Umi (New Arena)</div><div class="gallery-caption" data-lang="es">Campo: Umi (Nueva Arena)</div><div class="gallery-caption" data-lang="vi">Sân: Umi (Đấu trường mới)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-wasteland.webp" alt="Campo: Wasteland" loading="lazy" width="1909" height="1075">
         <div class="gallery-caption" data-lang="pt">Campo: Wasteland (Arena Clássica)</div>
-        <div class="gallery-caption" data-lang="en">Field: Wasteland (Classic Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Wasteland (Classic Arena)</div><div class="gallery-caption" data-lang="es">Campo: Wasteland (Arena Clásica)</div><div class="gallery-caption" data-lang="vi">Sân: Wasteland (Đấu trường cổ điển)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-wasteland-season2.webp" alt="Campo: Wasteland (Nova Arena)" loading="lazy" width="1914" height="1078">
         <div class="gallery-caption" data-lang="pt">Campo: Wasteland (Nova Arena)</div>
-        <div class="gallery-caption" data-lang="en">Field: Wasteland (New Arena)</div>
+        <div class="gallery-caption" data-lang="en">Field: Wasteland (New Arena)</div><div class="gallery-caption" data-lang="es">Campo: Wasteland (Nueva Arena)</div><div class="gallery-caption" data-lang="vi">Sân: Wasteland (Đấu trường mới)</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-yami.webp" alt="Campo: Yami" loading="lazy" width="1914" height="1079">
         <div class="gallery-caption" data-lang="pt">Campo: Yami</div>
-        <div class="gallery-caption" data-lang="en">Field: Yami</div>
+        <div class="gallery-caption" data-lang="en">Field: Yami</div><div class="gallery-caption" data-lang="es">Campo: Yami</div><div class="gallery-caption" data-lang="vi">Sân: Yami</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/campo-skyscraper.webp" alt="Campo: Skyscraper" loading="lazy" width="1909" height="1079">
         <div class="gallery-caption" data-lang="pt">Campo: Skyscraper</div>
-        <div class="gallery-caption" data-lang="en">Field: Skyscraper</div>
+        <div class="gallery-caption" data-lang="en">Field: Skyscraper</div><div class="gallery-caption" data-lang="es">Campo: Skyscraper</div><div class="gallery-caption" data-lang="vi">Sân: Skyscraper</div>
       </div>
     </div>
   </div>
@@ -682,18 +685,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- Loja e Economia -->
   <div class="gal-section" data-cat="loja">
     <div class="gallery-sub-label" data-reveal>
-      <span data-lang="pt">🎁 Loja e Economia</span><span data-lang="en">🎁 Shop &amp; Economy</span>
+      <span data-lang="pt">🎁 Loja e Economia</span><span data-lang="en">🎁 Shop &amp; Economy</span><span data-lang="es">🎁 Tienda y Economía</span><span data-lang="vi">🎁 Cửa hàng và Kinh tế</span>
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/loja-boosters.webp" alt="Loja de Boosters" loading="lazy" width="1917" height="1078">
         <div class="gallery-caption" data-lang="pt">Loja de Boosters</div>
-        <div class="gallery-caption" data-lang="en">Booster Shop</div>
+        <div class="gallery-caption" data-lang="en">Booster Shop</div><div class="gallery-caption" data-lang="es">Tienda de Boosters</div><div class="gallery-caption" data-lang="vi">Cửa hàng Booster</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/vitrine-cartas.webp" alt="Vitrine de Cartas" loading="lazy" width="1913" height="1071">
         <div class="gallery-caption" data-lang="pt">Vitrine de Cartas</div>
-        <div class="gallery-caption" data-lang="en">Card Showcase</div>
+        <div class="gallery-caption" data-lang="en">Card Showcase</div><div class="gallery-caption" data-lang="es">Vitrina de Cartas</div><div class="gallery-caption" data-lang="vi">Tủ trưng bày thẻ</div>
       </div>
     </div>
   </div>
@@ -701,28 +704,28 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- Eventos -->
   <div class="gal-section" data-cat="eventos">
     <div class="gallery-sub-label" data-reveal>
-      <span data-lang="pt">🎡 Eventos</span><span data-lang="en">🎡 Events</span>
+      <span data-lang="pt">🎡 Eventos</span><span data-lang="en">🎡 Events</span><span data-lang="es">🎡 Eventos</span><span data-lang="vi">🎡 Sự kiện</span>
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/loja-tickets-roleta.webp" alt="Tickets da Roleta" loading="lazy" width="1919" height="1073">
         <div class="gallery-caption" data-lang="pt">Tickets da Roleta</div>
-        <div class="gallery-caption" data-lang="en">Roulette Tickets</div>
+        <div class="gallery-caption" data-lang="en">Roulette Tickets</div><div class="gallery-caption" data-lang="es">Tickets de la Ruleta</div><div class="gallery-caption" data-lang="vi">Vé Vòng quay</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/loja-tickets-torneio.webp" alt="Tickets de Torneio" loading="lazy" width="1919" height="1070">
         <div class="gallery-caption" data-lang="pt">Tickets de Torneio</div>
-        <div class="gallery-caption" data-lang="en">Tournament Tickets</div>
+        <div class="gallery-caption" data-lang="en">Tournament Tickets</div><div class="gallery-caption" data-lang="es">Tickets de Torneo</div><div class="gallery-caption" data-lang="vi">Vé Giải đấu</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/roleta.webp" alt="Roleta" loading="lazy" width="2400" height="1080">
         <div class="gallery-caption" data-lang="pt">Roleta</div>
-        <div class="gallery-caption" data-lang="en">Roulette</div>
+        <div class="gallery-caption" data-lang="en">Roulette</div><div class="gallery-caption" data-lang="es">Ruleta</div><div class="gallery-caption" data-lang="vi">Vòng quay</div>
       </div>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/torneio-em-breve.webp" alt="Torneio (Em Breve)" loading="lazy" width="1904" height="1066">
         <div class="gallery-caption" data-lang="pt">Torneio (Em Breve)</div>
-        <div class="gallery-caption" data-lang="en">Tournament (Coming Soon)</div>
+        <div class="gallery-caption" data-lang="en">Tournament (Coming Soon)</div><div class="gallery-caption" data-lang="es">Torneo (Próximamente)</div><div class="gallery-caption" data-lang="vi">Giải đấu (Sắp ra mắt)</div>
       </div>
     </div>
   </div>
@@ -730,13 +733,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- Conquistas -->
   <div class="gal-section" data-cat="conquistas">
     <div class="gallery-sub-label" data-reveal>
-      <span data-lang="pt">🏆 Conquistas</span><span data-lang="en">🏆 Achievements</span>
+      <span data-lang="pt">🏆 Conquistas</span><span data-lang="en">🏆 Achievements</span><span data-lang="es">🏆 Logros</span><span data-lang="vi">🏆 Thành tựu</span>
     </div>
     <div class="gallery-grid-sub" data-reveal>
       <div class="gallery-item" onclick="openLbLang(this)">
         <img src="screenshots/conquistas.webp" alt="Conquistas" loading="lazy" width="1910" height="1077">
         <div class="gallery-caption" data-lang="pt">Conquistas</div>
-        <div class="gallery-caption" data-lang="en">Achievements</div>
+        <div class="gallery-caption" data-lang="en">Achievements</div><div class="gallery-caption" data-lang="es">Logros</div><div class="gallery-caption" data-lang="vi">Thành tựu</div>
       </div>
     </div>
   </div>
@@ -746,7 +749,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <a href="index.html#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;background:rgba(200,151,58,.08);border:1px solid rgba(200,151,58,.35);color:var(--gold);border-radius:2px;text-decoration:none;transition:all .25s">
       <span>⬇</span>
       <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.8.2</span>
-      <span data-lang="en">DOWNLOAD FREE — Beta 1.8.2</span>
+      <span data-lang="en">DOWNLOAD FREE — Beta 1.8.2</span><span data-lang="es">DESCARGAR GRATIS — Beta 1.8.2</span><span data-lang="vi">TẢI MIỄN PHÍ — Beta 1.8.2</span>
     </a>
   </div>
 
@@ -764,28 +767,28 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
-      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
-      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">

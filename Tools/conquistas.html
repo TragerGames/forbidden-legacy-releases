@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -115,6 +115,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -444,17 +447,17 @@ body > nav#nav ~ * .quick-nav,
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" class="active" data-lang="pt">Conquistas</a><a href="conquistas.html" class="active" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" class="active" data-lang="pt">Conquistas</a><a href="conquistas.html" class="active" data-lang="en">Achievements</a><a href="conquistas.html" class="active" data-lang="es">Logros</a><a href="conquistas.html" class="active" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -483,18 +486,18 @@ body > nav#nav ~ * .quick-nav,
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" class="active" data-lang="pt">Conquistas</a><a href="conquistas.html" class="active" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" class="active" data-lang="pt">Conquistas</a><a href="conquistas.html" class="active" data-lang="en">Achievements</a><a href="conquistas.html" class="active" data-lang="es">Logros</a><a href="conquistas.html" class="active" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
@@ -503,71 +506,71 @@ body > nav#nav ~ * .quick-nav,
   <div class="stars"></div>
     <div>
       <div class="eyebrow" data-lang="pt">Sistema de progressao</div>
-      <div class="eyebrow" data-lang="en">Progression system</div>
+      <div class="eyebrow" data-lang="en">Progression system</div><div class="eyebrow" data-lang="es">Sistema de progresión</div><div class="eyebrow" data-lang="vi">Hệ thống tiến trình</div>
       <h1 data-lang="pt">Conquistas de Forbidden Legacy</h1>
-      <h1 data-lang="en">Forbidden Legacy Achievements</h1>
+      <h1 data-lang="en">Forbidden Legacy Achievements</h1><h1 data-lang="es">Logros de Forbidden Legacy</h1><h1 data-lang="vi">Thành tựu Forbidden Legacy</h1>
       <p class="hero-desc" data-lang="pt">Esta pagina explica cada conquista do jogo de forma clara: o que ela mede, qual marco sobe o nivel e qual recompensa o jogador recebe ao coletar.</p>
-      <p class="hero-desc" data-lang="en">This page explains every achievement clearly: what it tracks, which milestone increases its level, and what reward the player receives when collecting it.</p>
+      <p class="hero-desc" data-lang="en">This page explains every achievement clearly: what it tracks, which milestone increases its level, and what reward the player receives when collecting it.</p><p class="hero-desc" data-lang="es">Esta página explica cada logro del juego de forma clara: qué mide, qué marco sube el nivel y qué recompensa recibe el jugador al reclamarlo.</p><p class="hero-desc" data-lang="vi">Trang này giải thích rõ từng thành tựu: đo lường điều gì, mốc nào lên cấp và người chơi nhận thưởng gì khi nhận.</p>
       <div class="hero-note" data-lang="pt">A tela do jogo mostra progresso e coleta. Esta pagina serve como guia: aqui o jogador entende exatamente o que precisa fazer e o que ganha.</div>
-      <div class="hero-note" data-lang="en">The in-game screen shows progress and collection. This page works as a guide: here players understand exactly what to do and what they earn.</div>
+      <div class="hero-note" data-lang="en">The in-game screen shows progress and collection. This page works as a guide: here players understand exactly what to do and what they earn.</div><div class="hero-note" data-lang="es">La pantalla del juego muestra progreso y recolección. Esta página sirve de guía: aquí el jugador entiende exactamente qué hacer y qué gana.</div><div class="hero-note" data-lang="vi">Màn hình trong trò chơi hiển thị tiến trình và việc nhận thưởng. Trang này là hướng dẫn: người chơi hiểu rõ cần làm gì và nhận được gì.</div>
       <div class="hero-actions">
         <a class="hero-btn" href="#duelos" data-lang="pt">Ver conquistas</a>
-        <a class="hero-btn" href="#duels" data-lang="en">View achievements</a>
+        <a class="hero-btn" href="#duels" data-lang="en">View achievements</a><a class="hero-btn" href="#duels" data-lang="es">Ver logros</a><a class="hero-btn" href="#duels" data-lang="vi">Xem thành tựu</a>
         <a class="hero-btn secondary" href="index.html">Home</a>
         <a class="hero-btn secondary" href="boosters.html">Boosters</a>
       </div>
     </div>
     <aside class="hero-panel">
       <div class="hero-panel-title" data-lang="pt">Resumo do sistema</div>
-      <div class="hero-panel-title" data-lang="en">System summary</div>
-      <div class="hero-stat"><strong>21</strong><span data-lang="pt">Conquistas listadas</span><span data-lang="en">Listed achievements</span></div>
-      <div class="hero-stat"><strong>4</strong><span data-lang="pt">Categorias</span><span data-lang="en">Categories</span></div>
-      <div class="hero-stat"><strong>Stars</strong><span data-lang="pt">Recompensa principal</span><span data-lang="en">Main reward</span></div>
-      <div class="hero-stat"><strong>25</strong><span data-lang="pt">Niveis coletados = ticket</span><span data-lang="en">Collected levels = ticket</span></div>
+      <div class="hero-panel-title" data-lang="en">System summary</div><div class="hero-panel-title" data-lang="es">Resumen del sistema</div><div class="hero-panel-title" data-lang="vi">Tóm tắt hệ thống</div>
+      <div class="hero-stat"><strong>21</strong><span data-lang="pt">Conquistas listadas</span><span data-lang="en">Listed achievements</span><span data-lang="es">Logros listados</span><span data-lang="vi">Thành tựu được liệt kê</span></div>
+      <div class="hero-stat"><strong>4</strong><span data-lang="pt">Categorias</span><span data-lang="en">Categories</span><span data-lang="es">Categorías</span><span data-lang="vi">Danh mục</span></div>
+      <div class="hero-stat"><strong>Stars</strong><span data-lang="pt">Recompensa principal</span><span data-lang="en">Main reward</span><span data-lang="es">Recompensa principal</span><span data-lang="vi">Phần thưởng chính</span></div>
+      <div class="hero-stat"><strong>25</strong><span data-lang="pt">Niveis coletados = ticket</span><span data-lang="en">Collected levels = ticket</span><span data-lang="es">Niveles obtenidos = ticket</span><span data-lang="vi">Cấp đã nhận = vé</span></div>
     </aside>
   </section>
 
   <section class="page">
     <nav class="quick-nav" aria-label="Atalhos">
       <a href="#como-funciona" data-lang="pt">Como funciona</a>
-      <a href="#como-funciona" data-lang="en">How it works</a>
+      <a href="#como-funciona" data-lang="en">How it works</a><a href="#como-funciona" data-lang="es">Cómo funciona</a><a href="#como-funciona" data-lang="vi">Cách hoạt động</a>
       <a href="#duelos" data-lang="pt">Duelos</a>
-      <a href="#duels" data-lang="en">Duels</a>
+      <a href="#duels" data-lang="en">Duels</a><a href="#duels" data-lang="es">Duelos</a><a href="#duels" data-lang="vi">Trận đấu</a>
       <a href="#historia" data-lang="pt">Historia</a>
-      <a href="#story" data-lang="en">Story</a>
+      <a href="#story" data-lang="en">Story</a><a href="#story" data-lang="es">Historia</a><a href="#story" data-lang="vi">Cốt truyện</a>
       <a href="#colecao" data-lang="pt">Colecao</a>
-      <a href="#collection" data-lang="en">Collection</a>
+      <a href="#collection" data-lang="en">Collection</a><a href="#collection" data-lang="es">Colección</a><a href="#collection" data-lang="vi">Bộ sưu tập</a>
       <a href="#combate" data-lang="pt">Combate</a>
-      <a href="#combat" data-lang="en">Combat</a>
+      <a href="#combat" data-lang="en">Combat</a><a href="#combat" data-lang="es">Combate</a><a href="#combat" data-lang="vi">Chiến đấu</a>
     </nav>
 
     <section id="como-funciona">
       <div class="section-head">
         <div>
           <h2 class="section-title" data-lang="pt">Como as conquistas funcionam</h2>
-          <h2 class="section-title" data-lang="en">How achievements work</h2>
+          <h2 class="section-title" data-lang="en">How achievements work</h2><h2 class="section-title" data-lang="es">Cómo funcionan los logros</h2><h2 class="section-title" data-lang="vi">Thành tựu hoạt động thế nào</h2>
           <p class="section-copy" data-lang="pt">As conquistas evoluem automaticamente enquanto o jogador joga. Cada uma tem um contador proprio e um marco por nivel. Quando o jogador atinge um novo nivel, pode coletar a recompensa daquela conquista.</p>
-          <p class="section-copy" data-lang="en">Achievements progress automatically while the player plays. Each one has its own counter and a milestone per level. When a new level is reached, the player can collect that achievement reward.</p>
+          <p class="section-copy" data-lang="en">Achievements progress automatically while the player plays. Each one has its own counter and a milestone per level. When a new level is reached, the player can collect that achievement reward.</p><p class="section-copy" data-lang="es">Los logros evolucionan automáticamente mientras el jugador juega. Cada uno tiene su propio contador y un marco por nivel. Al alcanzar un nuevo nivel, el jugador puede reclamar la recompensa de ese logro.</p><p class="section-copy" data-lang="vi">Thành tựu tự động tiến triển trong lúc người chơi chơi. Mỗi thành tựu có bộ đếm riêng và một mốc cho mỗi cấp. Khi đạt cấp mới, người chơi có thể nhận thưởng của thành tựu đó.</p>
         </div>
       </div>
       <div class="info-grid">
         <div class="info-card">
           <div class="info-title" data-lang="pt">O que mede</div>
-          <div class="info-title" data-lang="en">What it tracks</div>
+          <div class="info-title" data-lang="en">What it tracks</div><div class="info-title" data-lang="es">Qué mide</div><div class="info-title" data-lang="vi">Đo lường gì</div>
           <p data-lang="pt">Duelos, vitorias, derrotas, campanha, cartas, boosters, magias, armadilhas, invocacoes e estrelas ganhas.</p>
-          <p data-lang="en">Duels, victories, losses, campaign, cards, boosters, spells, traps, summons and stars earned.</p>
+          <p data-lang="en">Duels, victories, losses, campaign, cards, boosters, spells, traps, summons and stars earned.</p><p data-lang="es">Duelos, victorias, derrotas, campaña, cartas, boosters, magias, trampas, invocaciones y estrellas ganadas.</p><p data-lang="vi">Trận đấu, thắng, thua, cốt truyện, thẻ bài, booster, phép, bẫy, triệu hồi và số sao đã nhận.</p>
         </div>
         <div class="info-card">
           <div class="info-title" data-lang="pt">Como sobe nivel</div>
-          <div class="info-title" data-lang="en">How it levels up</div>
+          <div class="info-title" data-lang="en">How it levels up</div><div class="info-title" data-lang="es">Cómo sube de nivel</div><div class="info-title" data-lang="vi">Cách lên cấp</div>
           <p data-lang="pt">Cada conquista tem um marco fixo. Exemplo: a cada 500 duelos, Duelista Incansavel sobe 1 nivel.</p>
-          <p data-lang="en">Each achievement has a fixed milestone. Example: every 500 duels, Relentless Duelist gains 1 level.</p>
+          <p data-lang="en">Each achievement has a fixed milestone. Example: every 500 duels, Relentless Duelist gains 1 level.</p><p data-lang="es">Cada logro tiene un marco fijo. Ejemplo: cada 500 duelos, Duelista Incansable sube 1 nivel.</p><p data-lang="vi">Mỗi thành tựu có một mốc cố định. Ví dụ: mỗi 500 trận, Đấu Sĩ Không Mệt Mỏi lên 1 cấp.</p>
         </div>
         <div class="info-card">
           <div class="info-title" data-lang="pt">O que ganha</div>
-          <div class="info-title" data-lang="en">What you earn</div>
+          <div class="info-title" data-lang="en">What you earn</div><div class="info-title" data-lang="es">Qué ganas</div><div class="info-title" data-lang="vi">Nhận được gì</div>
           <p data-lang="pt">Ao coletar o nivel, o jogador recebe Fragmentos R. A quantidade muda conforme a conquista.</p>
-          <p data-lang="en">When collecting a level, the player receives R Fragments. The amount depends on the achievement.</p>
+          <p data-lang="en">When collecting a level, the player receives R Fragments. The amount depends on the achievement.</p><p data-lang="es">Al reclamar el nivel, el jugador recibe Fragmentos R. La cantidad varía según el logro.</p><p data-lang="vi">Khi nhận cấp, người chơi được Mảnh R. Số lượng thay đổi tùy thành tựu.</p>
         </div>
       </div>
     </section>
@@ -576,9 +579,9 @@ body > nav#nav ~ * .quick-nav,
       <div class="section-head">
         <div>
           <h2 class="section-title" data-lang="pt">Duelos</h2>
-          <h2 class="section-title" id="duels" data-lang="en">Duels</h2>
+          <h2 class="section-title" id="duels" data-lang="en">Duels</h2><h2 class="section-title" id="duels" data-lang="es">Duelos</h2><h2 class="section-title" id="duels" data-lang="vi">Trận đấu</h2>
           <p class="section-copy" data-lang="pt">Conquistas ligadas ao volume de partidas, desempenho e persistencia contra NPCs.</p>
-          <p class="section-copy" data-lang="en">Achievements tied to match volume, performance and persistence against NPCs.</p>
+          <p class="section-copy" data-lang="en">Achievements tied to match volume, performance and persistence against NPCs.</p><p class="section-copy" data-lang="es">Logros ligados al volumen de partidas, al desempeño y a la persistencia contra NPCs.</p><p class="section-copy" data-lang="vi">Thành tựu gắn với số trận, thành tích và sự bền bỉ trước NPC.</p>
         </div>
         <div class="cat-count">4</div>
       </div>
@@ -589,9 +592,9 @@ body > nav#nav ~ * .quick-nav,
       <div class="section-head">
         <div>
           <h2 class="section-title" data-lang="pt">Historia</h2>
-          <h2 class="section-title" id="story" data-lang="en">Story</h2>
+          <h2 class="section-title" id="story" data-lang="en">Story</h2><h2 class="section-title" id="story" data-lang="es">Historia</h2><h2 class="section-title" id="story" data-lang="vi">Cốt truyện</h2>
           <p class="section-copy" data-lang="pt">Conquista ligada ao avanco da campanha e derrota de personagens importantes.</p>
-          <p class="section-copy" data-lang="en">Achievement tied to campaign progress and defeating important characters.</p>
+          <p class="section-copy" data-lang="en">Achievement tied to campaign progress and defeating important characters.</p><p class="section-copy" data-lang="es">Logro ligado al avance de la campaña y a derrotar personajes importantes.</p><p class="section-copy" data-lang="vi">Thành tựu gắn với tiến trình cốt truyện và hạ gục các nhân vật quan trọng.</p>
         </div>
         <div class="cat-count">1</div>
       </div>
@@ -602,9 +605,9 @@ body > nav#nav ~ * .quick-nav,
       <div class="section-head">
         <div>
           <h2 class="section-title" data-lang="pt">Colecao</h2>
-          <h2 class="section-title" id="collection" data-lang="en">Collection</h2>
+          <h2 class="section-title" id="collection" data-lang="en">Collection</h2><h2 class="section-title" id="collection" data-lang="es">Colección</h2><h2 class="section-title" id="collection" data-lang="vi">Bộ sưu tập</h2>
           <p class="section-copy" data-lang="pt">Conquistas para quem aumenta o catalogo, abre boosters e busca raridades.</p>
-          <p class="section-copy" data-lang="en">Achievements for players who grow their catalogue, open boosters and chase rarities.</p>
+          <p class="section-copy" data-lang="en">Achievements for players who grow their catalogue, open boosters and chase rarities.</p><p class="section-copy" data-lang="es">Logros para quien amplía el catálogo, abre boosters y busca rarezas.</p><p class="section-copy" data-lang="vi">Thành tựu cho người mở rộng danh mục, mở booster và săn thẻ hiếm.</p>
         </div>
         <div class="cat-count">5</div>
       </div>
@@ -615,9 +618,9 @@ body > nav#nav ~ * .quick-nav,
       <div class="section-head">
         <div>
           <h2 class="section-title" data-lang="pt">Combate</h2>
-          <h2 class="section-title" id="combat" data-lang="en">Combat</h2>
+          <h2 class="section-title" id="combat" data-lang="en">Combat</h2><h2 class="section-title" id="combat" data-lang="es">Combate</h2><h2 class="section-title" id="combat" data-lang="vi">Chiến đấu</h2>
           <p class="section-copy" data-lang="pt">Conquistas ligadas a acoes realizadas durante o duelo: invocar, usar magias, ativar armadilhas e acumular estrelas.</p>
-          <p class="section-copy" data-lang="en">Achievements tied to actions performed during duels: summoning, using spells, activating traps and earning stars.</p>
+          <p class="section-copy" data-lang="en">Achievements tied to actions performed during duels: summoning, using spells, activating traps and earning stars.</p><p class="section-copy" data-lang="es">Logros ligados a acciones realizadas durante el duelo: invocar, usar magias, activar trampas y acumular estrellas.</p><p class="section-copy" data-lang="vi">Thành tựu gắn với hành động trong trận: triệu hồi, dùng phép, kích hoạt bẫy và tích lũy sao.</p>
         </div>
         <div class="cat-count">5</div>
       </div>
@@ -628,10 +631,10 @@ body > nav#nav ~ * .quick-nav,
       <div>
         <div class="ticket-number">25</div>
         <div class="ticket-label" data-lang="pt">niveis coletados</div>
-        <div class="ticket-label" data-lang="en">collected levels</div>
+        <div class="ticket-label" data-lang="en">collected levels</div><div class="ticket-label" data-lang="es">niveles obtenidos</div><div class="ticket-label" data-lang="vi">cấp đã nhận</div>
       </div>
       <p data-lang="pt">A cada marco de 25 niveis totais coletados nas conquistas, o jogador recebe ticket dourado. Esse marco considera niveis ja coletados, nao apenas progresso pendente.</p>
-      <p data-lang="en">Every 25 total collected achievement levels grants the player a golden ticket. This milestone counts collected levels, not only pending progress.</p>
+      <p data-lang="en">Every 25 total collected achievement levels grants the player a golden ticket. This milestone counts collected levels, not only pending progress.</p><p data-lang="es">Por cada marco de 25 niveles totales reclamados en los logros, el jugador recibe un ticket dorado. Ese marco considera niveles ya reclamados, no solo progreso pendiente.</p><p data-lang="vi">Cứ mỗi mốc 25 cấp đã nhận từ thành tựu, người chơi được một vé vàng. Mốc này tính các cấp đã nhận, không phải tiến độ đang chờ.</p>
     </section>
   </section>
 </main>
@@ -642,28 +645,28 @@ body > nav#nav ~ * .quick-nav,
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
-      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
-      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -304,6 +304,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -503,17 +506,17 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" class="active" data-lang="pt">Boosters</a><a href="boosters.html" class="active" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" class="active" data-lang="pt">Boosters</a><a href="boosters.html" class="active" data-lang="en">Boosters</a><a href="boosters.html" class="active" data-lang="es">Boosters</a><a href="boosters.html" class="active" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -542,18 +545,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" class="active" data-lang="pt">Boosters</a><a href="boosters.html" class="active" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" class="active" data-lang="pt">Boosters</a><a href="boosters.html" class="active" data-lang="en">Boosters</a><a href="boosters.html" class="active" data-lang="es">Boosters</a><a href="boosters.html" class="active" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
@@ -562,15 +565,15 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <div class="stars"></div>
   <div class="page-hero-label">☥ Beta 1.8.2</div>
   <h1 class="page-hero-title" data-lang="pt">Booster Packs</h1>
-  <h1 class="page-hero-title" data-lang="en">Booster Packs</h1>
+  <h1 class="page-hero-title" data-lang="en">Booster Packs</h1><h1 class="page-hero-title" data-lang="es">Booster Packs</h1><h1 class="page-hero-title" data-lang="vi">Booster Pack</h1>
   <div class="page-hero-sub" data-lang="pt">Expanda sua coleção com pools temáticos</div>
-  <div class="page-hero-sub" data-lang="en">Expand your collection with themed pools</div>
+  <div class="page-hero-sub" data-lang="en">Expand your collection with themed pools</div><div class="page-hero-sub" data-lang="es">Expande tu colección con pools temáticos</div><div class="page-hero-sub" data-lang="vi">Mở rộng bộ sưu tập với các nhóm theo chủ đề</div>
   <p class="page-hero-desc" data-lang="pt">
     Os Boosters são uma nova forma de expandir sua coleção em Forbidden Legacy. Cada pacote possui um tema próprio e pode entregar monstros marcantes, cartas raras e recursos importantes para fortalecer seus decks.
   </p>
   <p class="page-hero-desc" data-lang="en">
     Boosters are a new way to expand your collection in Forbidden Legacy. Each pack has its own theme and may contain iconic monsters, rare cards, and valuable resources for strengthening your decks.
-  </p>
+  </p><p class="page-hero-desc" data-lang="es">Los Boosters son una nueva forma de ampliar tu colección en Forbidden Legacy. Cada paquete tiene un tema propio y puede entregar monstruos memorables, cartas raras y recursos importantes para fortalecer tus mazos.</p><p class="page-hero-desc" data-lang="vi">Booster là cách mới để mở rộng bộ sưu tập trong Forbidden Legacy. Mỗi gói có chủ đề riêng và có thể mang lại quái thú ấn tượng, thẻ hiếm và những tài nguyên quan trọng để tăng sức mạnh bộ bài.</p>
 </div>
 
 <!-- CONTEÚDO -->
@@ -581,7 +584,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="feature-card">
       <div class="feature-icon">🔓</div>
       <div class="feature-title" data-lang="pt">Como Abrir um Booster</div>
-      <div class="feature-title" data-lang="en">How to Open a Booster</div>
+      <div class="feature-title" data-lang="en">How to Open a Booster</div><div class="feature-title" data-lang="es">Cómo Abrir un Booster</div><div class="feature-title" data-lang="vi">Cách mở Booster</div>
       <ul class="feature-list" data-lang="pt">
         <li>Cada Booster tem seu <strong style="color:var(--gold)">próprio preço em Souls</strong> (100 a 250, veja abaixo), calculado pela quantidade de cartas UR disponíveis naquele pacote</li>
         <li>Adicione Souls aos poucos e acompanhe a barra de progresso diretamente no Card Shop</li>
@@ -595,13 +598,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Progress is stored per pack — Souls deposited into one pack stay there</li>
         <li>Once the bar is full, the pack is ready to open</li>
         <li>Divine Beasts <strong>cannot</strong> be obtained from Boosters</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Cada Booster tiene su <strong style="color:var(--gold)">propio precio en Souls</strong> (100 a 250, ver abajo), calculado por la cantidad de cartas UR disponibles en ese paquete</li> <li>Añade Souls poco a poco y sigue la barra de progreso directamente en la Tienda de Cartas</li> <li>El progreso es individual — las Souls de un pack no afectan a otro</li> <li>Al completar la barra, el pack queda disponible para abrir</li> <li>Las Bestias Divinas <strong>no</strong> pueden obtenerse en Boosters</li></ul><ul class="feature-list" data-lang="vi"><li>Mỗi Booster có <strong style="color:var(--gold)">giá Souls riêng</strong> (100 đến 250, xem bên dưới), tính theo số thẻ UR có trong gói đó</li> <li>Nạp Souls từng chút và theo dõi thanh tiến độ ngay tại Cửa Hàng Thẻ</li> <li>Tiến độ là riêng biệt — Souls của gói này không ảnh hưởng tới gói khác</li> <li>Khi thanh đầy, gói sẵn sàng để mở</li> <li>Thần Thú <strong>không</strong> thể nhận được từ Booster</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🃏</div>
       <div class="feature-title" data-lang="pt">10 Cartas por Abertura</div>
-      <div class="feature-title" data-lang="en">10 Cards per Opening</div>
+      <div class="feature-title" data-lang="en">10 Cards per Opening</div><div class="feature-title" data-lang="es">10 Cartas por Apertura</div><div class="feature-title" data-lang="vi">10 thẻ mỗi lần mở</div>
       <table class="rarity-table" data-lang="pt">
         <thead><tr><th>Slots</th><th>Conteúdo</th></tr></thead>
         <tbody>
@@ -617,7 +620,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
           <tr><td>3 cards</td><td>Monsters of <strong>other types</strong> — any type in the game</td></tr>
           <tr><td>3 cards</td><td>Spell, Trap, Equip or Field — full catalog</td></tr>
         </tbody>
-      </table>
+      </table><table class="rarity-table" data-lang="es"><thead><tr><th>Espacios</th><th>Contenido</th></tr></thead> <tbody> <tr><td>4 cartas</td><td>Monstruos del <strong>tipo-tema</strong> del Booster (ej.: Warrior)</td></tr> <tr><td>3 cartas</td><td>Monstruos de <strong>otros tipos</strong> — cualquier tipo del juego</td></tr> <tr><td>3 cartas</td><td>Magia, Trampa, Equipo o Campo — catálogo general</td></tr> </tbody></table><table class="rarity-table" data-lang="vi"><thead><tr><th>Ô</th><th>Nội dung</th></tr></thead> <tbody> <tr><td>4 thẻ</td><td>Quái thú thuộc <strong>loại chủ đề</strong> của Booster (vd: Warrior)</td></tr> <tr><td>3 thẻ</td><td>Quái thú <strong>loại khác</strong> — bất kỳ loại nào trong trò chơi</td></tr> <tr><td>3 thẻ</td><td>Phép, Bẫy, Trang bị hoặc Sân — danh mục chung</td></tr> </tbody></table>
       <ul class="feature-list" style="margin-top:14px" data-lang="pt">
         <li>As 4 cartas do tema e as 3 de outros tipos usam as mesmas chances de raridade — o que muda é só o pool de onde saem</li>
         <li>Os 3 slots de suporte usam o catálogo completo de Magias, Armadilhas, Equipamentos e Campos</li>
@@ -625,35 +628,35 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <ul class="feature-list" style="margin-top:14px" data-lang="en">
         <li>The 4 theme cards and the 3 other-type cards use the same rarity odds — only the source pool changes</li>
         <li>The 3 support slots use the full catalog of Spells, Traps, Equips and Fields</li>
-      </ul>
+      </ul><ul class="feature-list" style="margin-top:14px" data-lang="es"><li>Las 4 cartas del tema y las 3 de otros tipos usan las mismas probabilidades de rareza — lo único que cambia es el pool del que salen</li> <li>Los 3 espacios de soporte usan el catálogo completo de Magias, Trampas, Equipos y Campos</li></ul><ul class="feature-list" style="margin-top:14px" data-lang="vi"><li>4 thẻ theo chủ đề và 3 thẻ loại khác dùng chung tỉ lệ độ hiếm — chỉ khác nhau ở nhóm thẻ mà chúng được rút ra</li> <li>3 ô hỗ trợ dùng toàn bộ danh mục Phép, Bẫy, Trang bị và Sân</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">📊</div>
       <div class="feature-title" data-lang="pt">Chances de Raridade</div>
-      <div class="feature-title" data-lang="en">Rarity Rates</div>
+      <div class="feature-title" data-lang="en">Rarity Rates</div><div class="feature-title" data-lang="es">Probabilidades de Rareza</div><div class="feature-title" data-lang="vi">Tỉ lệ độ hiếm</div>
       <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="pt">Slots comuns (4 no total: 2 do tema + 2 de outros tipos)</div>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="en">Common slots (4 total: 2 theme + 2 other types)</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="en">Common slots (4 total: 2 theme + 2 other types)</div><div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="es">Espacios comunes (4 en total: 2 del tema + 2 de otros tipos)</div><div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px" data-lang="vi">Ô thường (tổng 4: 2 theo chủ đề + 2 loại khác)</div>
       <table class="rarity-table"><tbody>
         <tr><td><span class="badge-n">N</span></td><td>70%</td></tr>
         <tr><td><span class="badge-r">R</span></td><td>30%</td></tr>
       </tbody></table>
       <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="pt">Slots especiais (3 no total: 2 do tema + 1 de outros tipos)</div>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Special slots (3 total: 2 theme + 1 other type)</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Special slots (3 total: 2 theme + 1 other type)</div><div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="es">Espacios especiales (3 en total: 2 del tema + 1 de otros tipos)</div><div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="vi">Ô đặc biệt (tổng 3: 2 theo chủ đề + 1 loại khác)</div>
       <table class="rarity-table"><tbody>
         <tr><td><span class="badge-r">R</span></td><td>82%</td></tr>
         <tr><td><span class="badge-sr">SR</span></td><td>15%</td></tr>
         <tr><td><span class="badge-ur">UR</span></td><td>3%</td></tr>
       </tbody></table>
       <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="pt">Slots de suporte (3 no total)</div>
-      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Support slots (3 total)</div>
+      <div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="en">Support slots (3 total)</div><div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="es">Espacios de soporte (3 en total)</div><div style="font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase;margin:14px 0 6px" data-lang="vi">Ô hỗ trợ (tổng 3)</div>
       <table class="rarity-table"><tbody>
         <tr><td><span class="badge-r">R</span></td><td>46%</td></tr>
         <tr><td><span class="badge-sr">SR</span></td><td>32%</td></tr>
         <tr><td><span class="badge-ur">UR</span></td><td>22%</td></tr>
       </tbody></table>
       <p style="font-size:11px;color:var(--text-muted);margin-top:10px;line-height:1.6" data-lang="pt">Não existe carta de suporte com raridade N no jogo — por isso as Magias/Traps/Equips/Campos só saem R, SR ou UR.</p>
-      <p style="font-size:11px;color:var(--text-muted);margin-top:10px;line-height:1.6" data-lang="en">There are no Normal-rarity support cards in the game — that's why Spells/Traps/Equips/Fields only come as R, SR or UR.</p>
+      <p style="font-size:11px;color:var(--text-muted);margin-top:10px;line-height:1.6" data-lang="en">There are no Normal-rarity support cards in the game — that's why Spells/Traps/Equips/Fields only come as R, SR or UR.</p><p style="font-size:11px;color:var(--text-muted);margin-top:10px;line-height:1.6" data-lang="es">No existe carta de soporte con rareza N en el juego — por eso las Magias/Trampas/Equipos/Campos solo salen R, SR o UR.</p><p style="font-size:11px;color:var(--text-muted);margin-top:10px;line-height:1.6" data-lang="vi">Trong trò chơi không có thẻ hỗ trợ độ hiếm N — vì vậy Phép/Bẫy/Trang bị/Sân chỉ ra R, SR hoặc UR.</p>
     </div>
 
   </div>
@@ -663,7 +666,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="feature-card">
       <div class="feature-icon">🛡️</div>
       <div class="feature-title" data-lang="pt">Sistema de Garantia</div>
-      <div class="feature-title" data-lang="en">Guaranteed Rarity System</div>
+      <div class="feature-title" data-lang="en">Guaranteed Rarity System</div><div class="feature-title" data-lang="es">Sistema de Garantía</div><div class="feature-title" data-lang="vi">Hệ thống đảm bảo</div>
       <ul class="feature-list" data-lang="pt">
         <li>Se <strong>3 aberturas consecutivas</strong> não entregarem SR nem UR, a <strong style="color:var(--gold)">4ª abertura garante uma SR</strong></li>
         <li>Obter uma SR ou UR reinicia o contador da garantia</li>
@@ -673,19 +676,19 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>If <strong>3 consecutive openings</strong> contain no SR or UR, the <strong style="color:var(--gold)">4th opening guarantees an SR</strong></li>
         <li>Obtaining an SR or UR resets the guarantee counter</li>
         <li><strong style="color:var(--gold)">Regular boosters have no UR guarantee.</strong> Limited-time events may have their own guarantee, always shown in the pack details</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Si <strong>3 aperturas consecutivas</strong> no entregan SR ni UR, la <strong style="color:var(--gold)">4ª apertura garantiza una SR</strong></li> <li>Obtener una SR o UR reinicia el contador de la garantía</li> <li><strong style="color:var(--gold)">Los boosters comunes no tienen garantía de UR.</strong> Los eventos temporales pueden tener su propia garantía, siempre indicada en el detalle del paquete</li></ul><ul class="feature-list" data-lang="vi"><li>Nếu <strong>3 lần mở liên tiếp</strong> không ra SR hay UR, <strong style="color:var(--gold)">lần mở thứ 4 đảm bảo một SR</strong></li> <li>Nhận được SR hoặc UR sẽ đặt lại bộ đếm đảm bảo</li> <li><strong style="color:var(--gold)">Booster thường không đảm bảo UR.</strong> Sự kiện tạm thời có thể có đảm bảo riêng, luôn được ghi rõ trong chi tiết gói</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">♻️</div>
       <div class="feature-title" data-lang="pt">Cartas Repetidas</div>
-      <div class="feature-title" data-lang="en">Duplicate Cards</div>
+      <div class="feature-title" data-lang="en">Duplicate Cards</div><div class="feature-title" data-lang="es">Cartas Repetidas</div><div class="feature-title" data-lang="vi">Thẻ trùng lặp</div>
       <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;line-height:1.6" data-lang="pt">
         Cartas são adicionadas à coleção até o limite permitido (geralmente 3 cópias). Cópias excedentes são convertidas automaticamente direto em Souls:
       </p>
       <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;line-height:1.6" data-lang="en">
         Cards are added to your collection up to the allowed limit (usually 3 copies). Extra copies are automatically converted directly into Souls:
-      </p>
+      </p><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;line-height:1.6" data-lang="es">Las cartas se añaden a la colección hasta el límite permitido (normalmente 3 copias). Las copias excedentes se convierten automáticamente en Souls:</p><p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;line-height:1.6" data-lang="vi">Thẻ được thêm vào bộ sưu tập cho tới giới hạn cho phép (thường là 3 bản). Bản dư sẽ tự động chuyển thành Souls:</p>
       <table class="rarity-table" data-lang="pt">
         <thead><tr><th>Raridade</th><th>Conversão</th></tr></thead>
         <tbody>
@@ -703,31 +706,31 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
           <tr><td><span class="badge-sr">SR</span></td><td>3 Souls + 3 Stars</td></tr>
           <tr><td><span class="badge-ur">UR</span></td><td>5 Souls + 5 Stars</td></tr>
         </tbody>
-      </table>
+      </table><table class="rarity-table" data-lang="es"><thead><tr><th>Rareza</th><th>Conversión</th></tr></thead> <tbody> <tr><td><span class="badge-n">N</span></td><td>1 Star</td></tr> <tr><td><span class="badge-r">R</span></td><td>1 Soul + 3 Stars</td></tr> <tr><td><span class="badge-sr">SR</span></td><td>3 Souls + 3 Stars</td></tr> <tr><td><span class="badge-ur">UR</span></td><td>5 Souls + 5 Stars</td></tr> </tbody></table><table class="rarity-table" data-lang="vi"><thead><tr><th>Độ hiếm</th><th>Quy đổi</th></tr></thead> <tbody> <tr><td><span class="badge-n">N</span></td><td>1 Star</td></tr> <tr><td><span class="badge-r">R</span></td><td>1 Soul + 3 Stars</td></tr> <tr><td><span class="badge-sr">SR</span></td><td>3 Souls + 3 Stars</td></tr> <tr><td><span class="badge-ur">UR</span></td><td>5 Souls + 5 Stars</td></tr> </tbody></table>
       <p style="font-size:12px;color:var(--text-muted);margin-top:10px;line-height:1.5" data-lang="pt">A tela de abertura identifica visualmente todas as cartas convertidas.</p>
-      <p style="font-size:12px;color:var(--text-muted);margin-top:10px;line-height:1.5" data-lang="en">Converted cards are clearly identified on the Booster results screen.</p>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:10px;line-height:1.5" data-lang="en">Converted cards are clearly identified on the Booster results screen.</p><p style="font-size:12px;color:var(--text-muted);margin-top:10px;line-height:1.5" data-lang="es">La pantalla de apertura identifica visualmente todas las cartas convertidas.</p><p style="font-size:12px;color:var(--text-muted);margin-top:10px;line-height:1.5" data-lang="vi">Màn hình mở gói hiển thị rõ mọi thẻ đã được chuyển đổi.</p>
     </div>
 
   </div>
 
   <div class="cycle-banner reveal" data-reveal>
     <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:8px" data-lang="pt">O Ciclo da Coleção</div>
-    <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:8px" data-lang="en">The Collection Cycle</div>
+    <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:8px" data-lang="en">The Collection Cycle</div><div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:8px" data-lang="es">El Ciclo de la Colección</div><div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:8px" data-lang="vi">Vòng lặp sưu tầm</div>
     <div style="font-size:13px;color:var(--text-muted);margin-bottom:4px" data-lang="pt">
       Cartas repetidas viram <strong style="color:var(--gold)">Souls direto</strong>, sem etapa intermediária — pronto pra abastecer o próximo booster.
     </div>
     <div style="font-size:13px;color:var(--text-muted);margin-bottom:4px" data-lang="en">
       Duplicate cards turn into <strong style="color:var(--gold)">Souls directly</strong>, no extra step — ready to fund your next booster.
-    </div>
+    </div><div style="font-size:13px;color:var(--text-muted);margin-bottom:4px" data-lang="es">Las cartas repetidas se convierten en <strong style="color:var(--gold)">Souls directamente</strong>, sin paso intermedio — listas para el próximo booster.</div><div style="font-size:13px;color:var(--text-muted);margin-bottom:4px" data-lang="vi">Thẻ trùng lặp chuyển thẳng thành <strong style="color:var(--gold)">Souls</strong>, không qua bước trung gian — sẵn sàng cho booster tiếp theo.</div>
     <div class="cycle-steps">
       <div class="cycle-step" data-lang="pt">🃏 Cartas repetidas</div>
-      <div class="cycle-step" data-lang="en">🃏 Duplicate cards</div>
+      <div class="cycle-step" data-lang="en">🃏 Duplicate cards</div><div class="cycle-step" data-lang="es">🃏 Cartas repetidas</div><div class="cycle-step" data-lang="vi">🃏 Thẻ trùng lặp</div>
       <div class="cycle-arrow">→</div>
       <div class="cycle-step" data-lang="pt">💛 Souls</div>
-      <div class="cycle-step" data-lang="en">💛 Souls</div>
+      <div class="cycle-step" data-lang="en">💛 Souls</div><div class="cycle-step" data-lang="es">💛 Souls</div><div class="cycle-step" data-lang="vi">💛 Souls</div>
       <div class="cycle-arrow">→</div>
       <div class="cycle-step" data-lang="pt">📦 Novos Boosters</div>
-      <div class="cycle-step" data-lang="en">📦 New Boosters</div>
+      <div class="cycle-step" data-lang="en">📦 New Boosters</div><div class="cycle-step" data-lang="es">📦 Nuevos Boosters</div><div class="cycle-step" data-lang="vi">📦 Booster mới</div>
     </div>
   </div>
 
@@ -736,7 +739,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="feature-card">
       <div class="feature-icon">🗺️</div>
       <div class="feature-title" data-lang="pt">Pools por Tipo</div>
-      <div class="feature-title" data-lang="en">Type Pools</div>
+      <div class="feature-title" data-lang="en">Type Pools</div><div class="feature-title" data-lang="es">Pools por Tipo</div><div class="feature-title" data-lang="vi">Nhóm theo Loại</div>
       <ul class="feature-list" data-lang="pt">
         <li>13 Boosters permanentes, um por tipo de monstro (Warrior, Dragon, Spellcaster, Zombie e outros), além de pacotes especiais temporários</li>
         <li>Escolher um pack específico garante 4 das 10 cartas do tipo desejado — as outras 6 vêm de qualquer lugar do catálogo</li>
@@ -748,13 +751,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Choosing a specific pack guarantees 4 of the 10 cards from the type you want — the other 6 come from anywhere in the catalog</li>
         <li>The 3 support slots keep every opening varied using the full Spell, Trap, Equip and Field catalog</li>
         <li>New Boosters and additional cards will be added as Forbidden Legacy continues to grow</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>13 Boosters permanentes, uno por tipo de monstruo (Warrior, Dragon, Spellcaster, Zombie y otros), además de paquetes especiales temporales</li> <li>Elegir un pack específico garantiza 4 de las 10 cartas del tipo deseado — las otras 6 vienen de cualquier parte del catálogo</li> <li>Los 3 espacios de soporte mantienen cada apertura variada, usando el catálogo completo de Magias, Trampas, Equipos y Campos</li> <li>Se añadirán nuevos Boosters y nuevas cartas conforme crezca el contenido de Forbidden Legacy</li></ul><ul class="feature-list" data-lang="vi"><li>13 Booster cố định, mỗi loại quái thú một gói (Warrior, Dragon, Spellcaster, Zombie và các loại khác), cùng các gói đặc biệt tạm thời</li> <li>Chọn một gói cụ thể đảm bảo 4 trong 10 thẻ thuộc loại mong muốn — 6 thẻ còn lại đến từ bất kỳ đâu trong danh mục</li> <li>3 ô hỗ trợ giữ cho mỗi lần mở luôn đa dạng, dùng toàn bộ danh mục Phép, Bẫy, Trang bị và Sân</li> <li>Booster mới và thẻ mới sẽ được thêm khi nội dung của Forbidden Legacy mở rộng</li></ul>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">⭐</div>
       <div class="feature-title" data-lang="pt">Como Conseguir Souls</div>
-      <div class="feature-title" data-lang="en">How to Get Souls</div>
+      <div class="feature-title" data-lang="en">How to Get Souls</div><div class="feature-title" data-lang="es">Cómo Conseguir Souls</div><div class="feature-title" data-lang="vi">Cách nhận Souls</div>
       <ul class="feature-list" data-lang="pt">
         <li>Vença duelos no Free Duel e na campanha para ganhar <strong style="color:var(--gold)">Stars</strong></li>
         <li>Cartas repetidas acima do limite viram Souls automaticamente (veja a tabela de conversão acima)</li>
@@ -766,45 +769,45 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <li>Duplicate cards over the limit automatically turn into Souls (see the conversion table above)</li>
         <li>Founders received <strong style="color:var(--gold)">300 Souls</strong> as the Beta 1.4 launch gift</li>
         <li>Rank S at the end of a duel awards 10 Stars — aim for the highest rank!</li>
-      </ul>
+      </ul><ul class="feature-list" data-lang="es"><li>Gana duelos en el Free Duel y en la campaña para conseguir <strong style="color:var(--gold)">Stars</strong></li> <li>Las cartas repetidas por encima del límite se vuelven Souls automáticamente (mira la tabla de conversión arriba)</li> <li>Los Founders recibieron <strong style="color:var(--gold)">300 Souls</strong> como regalo de lanzamiento de la Beta 1.4</li> <li>El Rango S al final del duelo entrega 10 Stars — ¡busca el rango más alto!</li></ul><ul class="feature-list" data-lang="vi"><li>Thắng các trận ở Free Duel và cốt truyện để nhận <strong style="color:var(--gold)">Stars</strong></li> <li>Thẻ trùng lặp vượt giới hạn tự động chuyển thành Souls (xem bảng quy đổi phía trên)</li> <li>Founder đã nhận <strong style="color:var(--gold)">300 Souls</strong> làm quà ra mắt Beta 1.4</li> <li>Hạng S khi kết thúc trận cho 10 Stars — hãy săn hạng cao nhất!</li></ul>
     </div>
 
   </div>
 
   <div class="section-label" style="margin-top:56px" data-lang="pt">Explore o Conteúdo</div>
-  <div class="section-label" style="margin-top:56px" data-lang="en">Explore the Contents</div>
+  <div class="section-label" style="margin-top:56px" data-lang="en">Explore the Contents</div><div class="section-label" style="margin-top:56px" data-lang="es">Explora el Contenido</div><div class="section-label" style="margin-top:56px" data-lang="vi">Khám phá nội dung</div>
   <div class="section-title" data-lang="pt">O Que Vem em Cada Booster</div>
-  <div class="section-title" data-lang="en">What's Inside Each Booster</div>
+  <div class="section-title" data-lang="en">What's Inside Each Booster</div><div class="section-title" data-lang="es">Qué Trae Cada Booster</div><div class="section-title" data-lang="vi">Mỗi Booster có gì</div>
   <p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="pt">
     Clique em um pacote para ver as cartas do tipo-tema que podem sair nele. As demais cartas de cada abertura são sorteadas aleatoriamente entre <strong style="color:var(--gold-light)">todo o catálogo</strong> de Forbidden Legacy — outros tipos de monstro, magias, armadilhas, equipamentos e campos.
   </p>
   <p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="en">
     Click a pack to see the theme-type cards that can drop from it. The rest of each opening is drawn randomly from <strong style="color:var(--gold-light)">the entire Forbidden Legacy catalog</strong> — other monster types, spells, traps, equips and fields.
-  </p>
+  </p><p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="es">Haz clic en un paquete para ver las cartas del tipo-tema que pueden salir en él. Las demás cartas de cada apertura se sortean al azar entre <strong style="color:var(--gold-light)">todo el catálogo</strong> de Forbidden Legacy — otros tipos de monstruo, magias, trampas, equipos y campos.</p><p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="vi">Nhấn vào một gói để xem các thẻ theo chủ đề có thể xuất hiện. Những thẻ còn lại của mỗi lần mở được rút ngẫu nhiên từ <strong style="color:var(--gold-light)">toàn bộ danh mục</strong> của Forbidden Legacy — các loại quái thú khác, phép, bẫy, trang bị và sân.</p>
 
   <div id="booster-browser" class="reveal" data-reveal>
     <div id="booster-tiles" class="booster-tiles-grid">
       <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="pt">Carregando boosters…</div>
-      <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="en">Loading boosters…</div>
+      <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="en">Loading boosters…</div><div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="es">Cargando boosters…</div><div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="vi">Đang tải booster…</div>
     </div>
     <div id="booster-detail" class="booster-detail-panel" style="display:none"></div>
   </div>
 
   <div class="notice-box" data-reveal>
     <span data-lang="pt">⚠️ <strong style="color:var(--gold-light)">Bestas Divinas não estão disponíveis em Boosters.</strong> Slifer, Obelisk e Ra podem ser encontrados apenas por outras vias dentro do jogo.</span>
-    <span data-lang="en">⚠️ <strong style="color:var(--gold-light)">Divine Beasts are not available in Boosters.</strong> Slifer, Obelisk and Ra can only be found through other means within the game.</span>
+    <span data-lang="en">⚠️ <strong style="color:var(--gold-light)">Divine Beasts are not available in Boosters.</strong> Slifer, Obelisk and Ra can only be found through other means within the game.</span><span data-lang="es">⚠️ <strong style="color:var(--gold-light)">Las Bestias Divinas no están disponibles en Boosters.</strong> Slifer, Obelisk y Ra solo se consiguen por otras vías dentro del juego.</span><span data-lang="vi">⚠️ <strong style="color:var(--gold-light)">Thần Thú không xuất hiện trong Booster.</strong> Slifer, Obelisk và Ra chỉ có thể nhận qua các cách khác trong trò chơi.</span>
   </div>
 
   <div class="features-evolving" data-reveal>
     <span data-lang="pt">🛠️ <strong>Sistema em evolução.</strong> Novos Boosters com temas diferentes chegarão nas próximas versões. Os pools de cartas são revisados junto com cada atualização — mais NPCs desbloqueados, mais cartas disponíveis nos pacotes. O sistema foi desenhado para que jogadores que duelam bastante nunca fiquem sem opção de abastecer packs.</span>
-    <span data-lang="en">🛠️ <strong>System in active evolution.</strong> New Boosters with different themes will arrive in future updates. Card pools are reviewed alongside each release — more unlocked NPCs mean more cards available in packs. The system is designed so players who duel frequently always have a way to supply their packs.</span>
+    <span data-lang="en">🛠️ <strong>System in active evolution.</strong> New Boosters with different themes will arrive in future updates. Card pools are reviewed alongside each release — more unlocked NPCs mean more cards available in packs. The system is designed so players who duel frequently always have a way to supply their packs.</span><span data-lang="es">🛠️ <strong>Sistema en evolución.</strong> Nuevos Boosters con temas distintos llegarán en próximas versiones. Los pools de cartas se revisan junto con cada actualización — más NPCs desbloqueados, más cartas disponibles en los paquetes. El sistema fue diseñado para que quien duela mucho nunca se quede sin forma de abastecer packs.</span><span data-lang="vi">🛠️ <strong>Hệ thống đang phát triển.</strong> Các Booster mới với chủ đề khác sẽ đến trong những phiên bản tới. Nhóm thẻ được rà soát cùng mỗi bản cập nhật — thêm NPC được mở khóa, thêm thẻ có trong các gói. Hệ thống được thiết kế để người chơi nhiều không bao giờ hết cách nạp cho gói bài.</span>
   </div>
 
   <div style="text-align:center;margin-top:48px" data-reveal>
     <a href="index.html#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;background:rgba(200,151,58,.08);border:1px solid rgba(200,151,58,.35);color:var(--gold);border-radius:2px;text-decoration:none;transition:all .25s">
       <span>⬇</span>
       <span data-lang="pt">BAIXAR GRÁTIS — Beta 1.8.2</span>
-      <span data-lang="en">DOWNLOAD FREE — Beta 1.8.2</span>
+      <span data-lang="en">DOWNLOAD FREE — Beta 1.8.2</span><span data-lang="es">DESCARGAR GRATIS — Beta 1.8.2</span><span data-lang="vi">TẢI MIỄN PHÍ — Beta 1.8.2</span>
     </a>
   </div>
 
@@ -818,9 +821,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   gap:16px; flex-wrap:wrap; font-size:13px; color:var(--text-muted);
   backdrop-filter:blur(6px);">
   <span data-lang="pt">🍪 Este site armazena preferências no seu navegador (idioma, formulário) e realiza chamadas externas para Discord e processamento de doações. Ao continuar, você concorda. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Saiba mais</a></span>
-  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Learn more</a></span>
+  <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Learn more</a></span><span data-lang="es">🍪 Este sitio almacena preferencias en tu navegador (idioma, formulario) y realiza llamadas externas a Discord y a los procesadores de pago. Al continuar, aceptas. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Saber más</a></span><span data-lang="vi">🍪 Trang này lưu tùy chọn trong trình duyệt của bạn (ngôn ngữ, biểu mẫu) và gọi ra ngoài tới Discord và các đơn vị xử lý thanh toán. Khi tiếp tục, bạn đồng ý. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Tìm hiểu thêm</a></span>
   <button onclick="cookieAceitar()" style="background:rgba(200,151,58,.15);border:1px solid var(--gold-dim);color:var(--gold-light);padding:7px 20px;border-radius:3px;cursor:pointer;font-size:13px;font-family:monospace;white-space:nowrap;flex-shrink:0">
-    <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span>
+    <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span><span data-lang="es">✓ Entendido</span><span data-lang="vi">✓ Đã hiểu</span>
   </button>
 </div>
 
@@ -828,7 +831,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <div style="background:var(--dark2);border:1px solid var(--gold-dim);border-radius:6px;padding:32px;max-width:500px;width:100%;position:relative">
     <button onclick="document.getElementById('cookie-modal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:18px;cursor:pointer">✕</button>
     <h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="pt">O que este site armazena</h3>
-    <h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3>
+    <h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="en">What this site stores</h3><h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="es">Qué almacena este sitio</h3><h3 style="color:var(--gold);margin:0 0 16px;font-size:16px" data-lang="vi">Trang này lưu những gì</h3>
     <ul style="color:var(--text-muted);font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="pt">
       <li><strong style="color:var(--gold-light)">fl_lang</strong> — preferência de idioma (PT/EN)</li>
       <li><strong style="color:var(--gold-light)">fl_form_v1</strong> — campos do formulário de compra</li>
@@ -840,9 +843,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <li><strong style="color:var(--gold-light)">fl_form_v1</strong> — purchase form fields</li>
       <li><strong style="color:var(--gold-light)">fl_cookie_ok</strong> — acceptance record</li>
       <li><strong style="color:var(--gold-light)">External APIs</strong> — Discord (counter) and api.country.is (country)</li>
-    </ul>
+    </ul><ul style="color:var(--text-muted);font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="es"><li><strong style="color:var(--gold-light)">fl_lang</strong> — preferencia de idioma (PT/EN)</li> <li><strong style="color:var(--gold-light)">fl_form_v1</strong> — campos del formulario de compra</li> <li><strong style="color:var(--gold-light)">fl_cookie_ok</strong> — registro de aceptación de este aviso</li> <li><strong style="color:var(--gold-light)">APIs externas</strong> — Discord (contador) y api.country.is (país)</li></ul><ul style="color:var(--text-muted);font-size:13px;line-height:1.8;padding-left:18px;margin:0 0 16px" data-lang="vi"><li><strong style="color:var(--gold-light)">fl_lang</strong> — tùy chọn ngôn ngữ (PT/EN)</li> <li><strong style="color:var(--gold-light)">fl_form_v1</strong> — các trường của biểu mẫu mua hàng</li> <li><strong style="color:var(--gold-light)">fl_cookie_ok</strong> — ghi nhận việc bạn chấp nhận thông báo này</li> <li><strong style="color:var(--gold-light)">API bên ngoài</strong> — Discord (bộ đếm) và api.country.is (quốc gia)</li></ul>
     <p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="pt">Nenhum dado é vendido ou compartilhado com terceiros além dos processadores citados.</p>
-    <p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p>
+    <p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="en">No data is sold or shared with third parties beyond the processors mentioned above.</p><p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="es">Ningún dato se vende ni se comparte con terceros más allá de los procesadores citados.</p><p style="color:var(--text-muted);font-size:12px;margin:0" data-lang="vi">Không dữ liệu nào được bán hay chia sẻ với bên thứ ba ngoài các đơn vị xử lý đã nêu.</p>
   </div>
 </div>
 
@@ -852,28 +855,28 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
-      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
-      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">

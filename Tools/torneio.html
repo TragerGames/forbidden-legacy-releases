@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -302,6 +302,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -393,17 +396,17 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
     <a href="banlist.html">Banlist</a>
     <a href="boosters.html">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="#" class="active" data-lang="pt">Championship</a><a href="#" class="active" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="#" class="active" data-lang="pt">Championship</a><a href="#" class="active" data-lang="en">Championship</a><a href="#" class="active" data-lang="es">Championship</a><a href="#" class="active" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -430,17 +433,17 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
     <a href="banlist.html">Banlist</a>
     <a href="boosters.html">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="#" data-lang="pt">Championship</a><a href="#" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="#" data-lang="pt">Championship</a><a href="#" data-lang="en">Championship</a><a href="#" data-lang="es">Championship</a><a href="#" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
@@ -449,13 +452,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <div class="hero-badge">
     <span class="hero-badge-dot"></span>
     <span data-lang="pt">Conteúdo de endgame · Exclusivo Founder</span>
-    <span data-lang="en">Endgame content · Founder exclusive</span>
+    <span data-lang="en">Endgame content · Founder exclusive</span><span data-lang="es">Contenido de endgame · Exclusivo Founder</span><span data-lang="vi">Nội dung endgame · Chỉ dành cho Founder</span>
   </div>
 
   <h1 class="page-hero-title" data-lang="pt">Forbidden Legacy Championship</h1>
-  <h1 class="page-hero-title" data-lang="en">Forbidden Legacy Championship</h1>
+  <h1 class="page-hero-title" data-lang="en">Forbidden Legacy Championship</h1><h1 class="page-hero-title" data-lang="es">Forbidden Legacy Championship</h1><h1 class="page-hero-title" data-lang="vi">Forbidden Legacy Championship</h1>
   <div class="page-hero-sub" data-lang="pt">10 duelos · sem parar · sem segunda chance fácil</div>
-  <div class="page-hero-sub" data-lang="en">10 duels · no stopping · no easy second chance</div>
+  <div class="page-hero-sub" data-lang="en">10 duels · no stopping · no easy second chance</div><div class="page-hero-sub" data-lang="es">10 duelos · sin parar · sin segunda oportunidad fácil</div><div class="page-hero-sub" data-lang="vi">10 trận · liên tục · không có cơ hội thứ hai dễ dàng</div>
 
   <p class="page-hero-desc" data-lang="pt">
     O desafio definitivo do Forbidden Legacy. Enfrente 9 duelistas e um Boss final,
@@ -467,11 +470,11 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     Forbidden Legacy's ultimate challenge. Face 9 duelists and a final Boss,
     one right after another, while random restrictions make every round harder — only for you,
     never for the opponent. Win it and claim rewards found nowhere else in the game.
-  </p>
+  </p><p class="page-hero-desc" data-lang="es">El desafío definitivo de Forbidden Legacy. Enfrenta a 9 duelistas y un Boss final, uno tras otro, mientras restricciones aleatorias hacen cada ronda más difícil — solo para ti, nunca para el oponente. Gana y llévate recompensas que no existen en ningún otro lugar del juego.</p><p class="page-hero-desc" data-lang="vi">Thử thách tối thượng của Forbidden Legacy. Đối đầu 9 đấu thủ và một Boss cuối, lần lượt từng người, trong khi các hạn chế ngẫu nhiên khiến mỗi vòng khó hơn — chỉ với bạn, không bao giờ với đối thủ. Chiến thắng và nhận những phần thưởng không tồn tại ở bất kỳ đâu khác trong trò chơi.</p>
 
   <div class="hero-requisitos">
-    <div class="req-chip"><span class="ic">☥</span><span data-lang="pt">Requer Founder</span><span data-lang="en">Requires Founder</span></div>
-    <div class="req-chip"><span class="ic">⚔</span><span data-lang="pt">Requer Season 1 concluída</span><span data-lang="en">Requires Season 1 completed</span></div>
+    <div class="req-chip"><span class="ic">☥</span><span data-lang="pt">Requer Founder</span><span data-lang="en">Requires Founder</span><span data-lang="es">Requiere Founder</span><span data-lang="vi">Cần Founder</span></div>
+    <div class="req-chip"><span class="ic">⚔</span><span data-lang="pt">Requer Season 1 concluída</span><span data-lang="en">Requires Season 1 completed</span><span data-lang="es">Requiere Season 1 completada</span><span data-lang="vi">Cần hoàn thành Season 1</span></div>
   </div>
 </section>
 
@@ -481,29 +484,29 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- REQUISITOS -->
   <div class="reveal">
     <div class="section-label" data-lang="pt">Antes de começar</div>
-    <div class="section-label" data-lang="en">Before you start</div>
+    <div class="section-label" data-lang="en">Before you start</div><div class="section-label" data-lang="es">Antes de empezar</div><div class="section-label" data-lang="vi">Trước khi bắt đầu</div>
     <h2 class="section-title" data-lang="pt">Quem pode entrar</h2>
-    <h2 class="section-title" data-lang="en">Who can enter</h2>
+    <h2 class="section-title" data-lang="en">Who can enter</h2><h2 class="section-title" data-lang="es">Quién puede entrar</h2><h2 class="section-title" data-lang="vi">Ai có thể tham gia</h2>
     <p class="section-sub" data-lang="pt">O Championship é conteúdo de fim de jogo — ele existe para quem já provou o próprio deck contra a campanha inteira.</p>
-    <p class="section-sub" data-lang="en">The Championship is endgame content — it exists for players who already proved their deck against the whole campaign.</p>
+    <p class="section-sub" data-lang="en">The Championship is endgame content — it exists for players who already proved their deck against the whole campaign.</p><p class="section-sub" data-lang="es">El Championship es contenido de fin de juego — existe para quien ya probó su propio mazo contra la campaña entera.</p><p class="section-sub" data-lang="vi">Championship là nội dung cuối trò chơi — dành cho người đã thử bộ bài của mình qua toàn bộ cốt truyện.</p>
 
     <div class="features-grid-2">
       <div class="feature-card">
         <div class="feature-icon">☥</div>
         <div class="feature-title" data-lang="pt">Versão Founder</div>
-        <div class="feature-title" data-lang="en">Founder version</div>
+        <div class="feature-title" data-lang="en">Founder version</div><div class="feature-title" data-lang="es">Versión Founder</div><div class="feature-title" data-lang="vi">Phiên bản Founder</div>
         <ul class="feature-list">
           <li data-lang="pt">O Championship é exclusivo de quem possui a versão Founder — a versão Free não tem acesso, em nenhuma hipótese.</li>
-          <li data-lang="en">The Championship is exclusive to Founder owners — the Free version has no access to it whatsoever.</li>
+          <li data-lang="en">The Championship is exclusive to Founder owners — the Free version has no access to it whatsoever.</li><li data-lang="es">El Championship es exclusivo de quien tiene la versión Founder — la versión Free no tiene acceso, bajo ninguna circunstancia.</li><li data-lang="vi">Championship chỉ dành cho người có bản Founder — bản Free không có quyền truy cập, trong mọi trường hợp.</li>
         </ul>
       </div>
       <div class="feature-card">
         <div class="feature-icon">⚔</div>
         <div class="feature-title" data-lang="pt">Season 1 concluída</div>
-        <div class="feature-title" data-lang="en">Season 1 completed</div>
+        <div class="feature-title" data-lang="en">Season 1 completed</div><div class="feature-title" data-lang="es">Season 1 completada</div><div class="feature-title" data-lang="vi">Season 1 hoàn thành</div>
         <ul class="feature-list">
           <li data-lang="pt">É preciso ter derrotado o desafio final da campanha (Zorc Necrophades) antes de o Championship liberar no menu.</li>
-          <li data-lang="en">You must have defeated the campaign's final challenge (Zorc Necrophades) before the Championship unlocks in the menu.</li>
+          <li data-lang="en">You must have defeated the campaign's final challenge (Zorc Necrophades) before the Championship unlocks in the menu.</li><li data-lang="es">Hay que haber derrotado el desafío final de la campaña (Zorc Necrophades) antes de que el Championship se libere en el menú.</li><li data-lang="vi">Bạn phải hạ được thử thách cuối của cốt truyện (Zorc Necrophades) trước khi Championship mở trong menu.</li>
         </ul>
       </div>
     </div>
@@ -512,40 +515,40 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- COMO FUNCIONA -->
   <div class="reveal" style="margin-top:64px">
     <div class="section-label" data-lang="pt">A estrutura</div>
-    <div class="section-label" data-lang="en">The structure</div>
+    <div class="section-label" data-lang="en">The structure</div><div class="section-label" data-lang="es">La estructura</div><div class="section-label" data-lang="vi">Cấu trúc</div>
     <h2 class="section-title" data-lang="pt">Como funciona</h2>
-    <h2 class="section-title" data-lang="en">How it works</h2>
+    <h2 class="section-title" data-lang="en">How it works</h2><h2 class="section-title" data-lang="es">Cómo funciona</h2><h2 class="section-title" data-lang="vi">Cách hoạt động</h2>
     <p class="section-sub" data-lang="pt">10 duelos seguidos, do primeiro duelista até o Boss, sem interrupção — a dificuldade cresce naturalmente conforme os baralhos dos oponentes ficam mais fortes.</p>
-    <p class="section-sub" data-lang="en">10 duels back to back, from the first duelist to the Boss, without interruption — difficulty grows naturally as opponent decks get stronger.</p>
+    <p class="section-sub" data-lang="en">10 duels back to back, from the first duelist to the Boss, without interruption — difficulty grows naturally as opponent decks get stronger.</p><p class="section-sub" data-lang="es">10 duelos seguidos, del primer duelista hasta el Boss, sin interrupción — la dificultad crece naturalmente conforme los mazos de los oponentes se fortalecen.</p><p class="section-sub" data-lang="vi">10 trận liên tiếp, từ đấu thủ đầu tiên đến Boss, không nghỉ — độ khó tăng dần khi bộ bài của đối thủ mạnh lên.</p>
 
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">🎲</div>
         <div class="feature-title" data-lang="pt">Restrição por rodada</div>
-        <div class="feature-title" data-lang="en">Per-round restriction</div>
+        <div class="feature-title" data-lang="en">Per-round restriction</div><div class="feature-title" data-lang="es">Restricción por ronda</div><div class="feature-title" data-lang="vi">Hạn chế mỗi vòng</div>
         <ul class="feature-list">
           <li data-lang="pt">Cada duelo sorteia 1 de 7 restrições: sem efeito de monstro, sem magia, sem trap, sem equipamento, Dreno Vital, Enfraquecimento dos Monstros ou Espada x Escudo.</li>
-          <li data-lang="en">Each duel rolls 1 of 7 restrictions: no monster effects, no spells, no traps, no equips, Vital Drain, Monster Weakening, or Sword x Shield.</li>
+          <li data-lang="en">Each duel rolls 1 of 7 restrictions: no monster effects, no spells, no traps, no equips, Vital Drain, Monster Weakening, or Sword x Shield.</li><li data-lang="es">Cada duelo sortea 1 de 7 restricciones: sin efecto de monstruo, sin magia, sin trampa, sin equipo, Drenaje Vital, Debilitamiento de Monstruos o Espada x Escudo.</li><li data-lang="vi">Mỗi trận rút ngẫu nhiên 1 trong 7 hạn chế: không hiệu ứng quái thú, không phép, không bẫy, không trang bị, Rút Sinh Lực, Suy Yếu Quái Thú hoặc Kiếm x Khiên.</li>
           <li data-lang="pt">Ela vale <strong style="color:#e0a070">só para você</strong> — o oponente joga sempre com acesso total ao próprio deck.</li>
-          <li data-lang="en">It applies <strong style="color:#e0a070">only to you</strong> — the opponent always plays with full access to their deck.</li>
+          <li data-lang="en">It applies <strong style="color:#e0a070">only to you</strong> — the opponent always plays with full access to their deck.</li><li data-lang="es">Vale <strong style="color:#e0a070">solo para ti</strong> — el oponente siempre juega con acceso total a su propio mazo.</li><li data-lang="vi">Chỉ áp dụng <strong style="color:#e0a070">cho bạn</strong> — đối thủ luôn được dùng trọn vẹn bộ bài của họ.</li>
         </ul>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🚫</div>
         <div class="feature-title" data-lang="pt">Sem vitória instantânea</div>
-        <div class="feature-title" data-lang="en">No instant-win</div>
+        <div class="feature-title" data-lang="en">No instant-win</div><div class="feature-title" data-lang="es">Sin victoria instantánea</div><div class="feature-title" data-lang="vi">Không thắng tức thì</div>
         <ul class="feature-list">
           <li data-lang="pt">Efeitos de vitória automática (peças de Exodia, dados/moedas que decidem o duelo na sorte) são banidos por completo.</li>
-          <li data-lang="en">Automatic win effects (Exodia pieces, luck-based instant-win dice/coins) are entirely banned.</li>
+          <li data-lang="en">Automatic win effects (Exodia pieces, luck-based instant-win dice/coins) are entirely banned.</li><li data-lang="es">Los efectos de victoria automática (piezas de Exodia, dados/monedas que deciden el duelo por suerte) están totalmente prohibidos.</li><li data-lang="vi">Các hiệu ứng thắng tự động (mảnh Exodia, xúc xắc/đồng xu quyết định trận đấu bằng may rủi) bị cấm hoàn toàn.</li>
         </ul>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🧠</div>
         <div class="feature-title" data-lang="pt">IA mais afiada</div>
-        <div class="feature-title" data-lang="en">Sharper AI</div>
+        <div class="feature-title" data-lang="en">Sharper AI</div><div class="feature-title" data-lang="es">IA más afilada</div><div class="feature-title" data-lang="vi">AI sắc bén hơn</div>
         <ul class="feature-list">
           <li data-lang="pt">A partir da metade do Championship, a IA para de "arriscar" e passa a tomar sempre a jogada ótima disponível.</li>
-          <li data-lang="en">From the halfway point on, the AI stops "gambling" and always takes the best play available.</li>
+          <li data-lang="en">From the halfway point on, the AI stops "gambling" and always takes the best play available.</li><li data-lang="es">A partir de la mitad del Championship, la IA deja de "arriesgar" y siempre toma la mejor jugada disponible.</li><li data-lang="vi">Từ giữa Championship, AI ngừng "mạo hiểm" và luôn chọn nước đi tối ưu có sẵn.</li>
         </ul>
       </div>
     </div>
@@ -554,33 +557,33 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- ENTRADA E PROGRESSO -->
   <div class="reveal" style="margin-top:64px">
     <div class="section-label" data-lang="pt">Custo e progresso</div>
-    <div class="section-label" data-lang="en">Cost and progress</div>
+    <div class="section-label" data-lang="en">Cost and progress</div><div class="section-label" data-lang="es">Costo y progreso</div><div class="section-label" data-lang="vi">Chi phí và tiến độ</div>
     <h2 class="section-title" data-lang="pt">Entrada, checkpoints e risco</h2>
-    <h2 class="section-title" data-lang="en">Entry, checkpoints and risk</h2>
+    <h2 class="section-title" data-lang="en">Entry, checkpoints and risk</h2><h2 class="section-title" data-lang="es">Entrada, checkpoints y riesgo</h2><h2 class="section-title" data-lang="vi">Vé vào, điểm lưu và rủi ro</h2>
 
     <div class="steps-grid">
       <div class="step-box">
         <div class="step-num">01</div>
         <div class="step-title" data-lang="pt">Ticket de Torneio</div>
-        <div class="step-title" data-lang="en">Tournament Ticket</div>
+        <div class="step-title" data-lang="en">Tournament Ticket</div><div class="step-title" data-lang="es">Ticket de Torneo</div><div class="step-title" data-lang="vi">Vé Giải đấu</div>
         <p class="step-text" data-lang="pt">Compre na Loja do jogo. Cada ticket vale por uma tentativa completa, consumida ao iniciar.</p>
-        <p class="step-text" data-lang="en">Buy it in the in-game Shop. Each ticket is worth one full attempt, consumed on start.</p>
-        <div class="step-price">1.500 Stars <span data-lang="pt">ou</span><span data-lang="en">or</span> 50 Tickets Padrão</div>
+        <p class="step-text" data-lang="en">Buy it in the in-game Shop. Each ticket is worth one full attempt, consumed on start.</p><p class="step-text" data-lang="es">Cómpralo en la Tienda del juego. Cada ticket vale por un intento completo, consumido al iniciar.</p><p class="step-text" data-lang="vi">Mua tại Cửa hàng trong trò chơi. Mỗi vé dùng cho một lượt chơi đầy đủ, tiêu hao khi bắt đầu.</p>
+        <div class="step-price">1.500 Stars <span data-lang="pt">ou</span><span data-lang="en">or</span><span data-lang="es">o</span><span data-lang="vi">hoặc</span> 50 Tickets Padrão</div>
       </div>
       <div class="step-box">
         <div class="step-num">02</div>
         <div class="step-title" data-lang="pt">Checkpoints</div>
-        <div class="step-title" data-lang="en">Checkpoints</div>
+        <div class="step-title" data-lang="en">Checkpoints</div><div class="step-title" data-lang="es">Checkpoints</div><div class="step-title" data-lang="vi">Điểm lưu</div>
         <p class="step-text" data-lang="pt">Disponíveis após a 3ª e a 6ª vitória. Salvam seu progresso para não recomeçar do zero em caso de derrota.</p>
-        <p class="step-text" data-lang="en">Available after the 3rd and 6th win. They save your progress so a loss doesn't send you back to zero.</p>
-        <div class="step-price">250 <span data-lang="pt">Stars (luta 3)</span><span data-lang="en">Stars (fight 3)</span> · 500 <span data-lang="pt">Stars (luta 6)</span><span data-lang="en">Stars (fight 6)</span></div>
+        <p class="step-text" data-lang="en">Available after the 3rd and 6th win. They save your progress so a loss doesn't send you back to zero.</p><p class="step-text" data-lang="es">Disponibles tras la 3ª y la 6ª victoria. Guardan tu progreso para no empezar de cero si pierdes.</p><p class="step-text" data-lang="vi">Có sau chiến thắng thứ 3 và thứ 6. Lưu tiến trình để bạn không phải làm lại từ đầu khi thua.</p>
+        <div class="step-price">250 <span data-lang="pt">Stars (luta 3)</span><span data-lang="en">Stars (fight 3)</span><span data-lang="es">Stars (pelea 3)</span><span data-lang="vi">Stars (trận 3)</span> · 500 <span data-lang="pt">Stars (luta 6)</span><span data-lang="en">Stars (fight 6)</span><span data-lang="es">Stars (pelea 6)</span><span data-lang="vi">Stars (trận 6)</span></div>
       </div>
       <div class="step-box">
         <div class="step-num">03</div>
         <div class="step-title" data-lang="pt">Editar deck e sair</div>
-        <div class="step-title" data-lang="en">Edit deck and leave</div>
+        <div class="step-title" data-lang="en">Edit deck and leave</div><div class="step-title" data-lang="es">Editar mazo y salir</div><div class="step-title" data-lang="vi">Sửa bộ bài và thoát</div>
         <p class="step-text" data-lang="pt">Nos mesmos pontos de checkpoint, dá para ajustar o deck e desistir do Championship sem custo adicional.</p>
-        <p class="step-text" data-lang="en">At those same checkpoint points, you can adjust your deck and quit the Championship at no extra cost.</p>
+        <p class="step-text" data-lang="en">At those same checkpoint points, you can adjust your deck and quit the Championship at no extra cost.</p><p class="step-text" data-lang="es">En los mismos puntos de checkpoint puedes ajustar el mazo y abandonar el Championship sin costo adicional.</p><p class="step-text" data-lang="vi">Tại chính các điểm lưu, bạn có thể chỉnh bộ bài và rời Championship mà không mất thêm chi phí.</p>
       </div>
     </div>
 
@@ -588,59 +591,59 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <div class="warn-icon">⚠</div>
       <div class="warn-text">
         <span data-lang="pt"><strong>Perder um duelo não zera o Championship</strong> — você volta pro último checkpoint salvo (ou reinicia do zero se ainda não salvou nenhum). Mas toda derrota ou desistência cobra Stars.</span>
-        <span data-lang="en"><strong>Losing a duel doesn't reset the Championship</strong> — you return to your last saved checkpoint (or restart from zero if you haven't saved one yet). But every loss or forfeit costs Stars.</span>
+        <span data-lang="en"><strong>Losing a duel doesn't reset the Championship</strong> — you return to your last saved checkpoint (or restart from zero if you haven't saved one yet). But every loss or forfeit costs Stars.</span><span data-lang="es"><strong>Perder un duelo no reinicia el Championship</strong> — vuelves al último checkpoint guardado (o empiezas de cero si aún no guardaste ninguno). Pero toda derrota o abandono cobra Stars.</span><span data-lang="vi"><strong>Thua một trận không xóa toàn bộ Championship</strong> — bạn quay lại điểm lưu gần nhất (hoặc bắt đầu lại từ đầu nếu chưa lưu). Nhưng mọi lần thua hoặc bỏ cuộc đều tốn Stars.</span>
       </div>
     </div>
 
     <div class="penalty-banner">
       <div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="pt">Penalidade por derrota ou desistência</div>
-      <div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="en">Loss or forfeit penalty</div>
+      <div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="en">Loss or forfeit penalty</div><div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="es">Penalización por derrota o abandono</div><div class="section-eyebrow" style="font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase" data-lang="vi">Phạt khi thua hoặc bỏ cuộc</div>
       <div class="penalty-steps">
-        <div class="penalty-step"><span class="penalty-cap">500 Stars</span> <span data-lang="pt">fixas, toda vez</span><span data-lang="en">flat, every time</span></div>
+        <div class="penalty-step"><span class="penalty-cap">500 Stars</span> <span data-lang="pt">fixas, toda vez</span><span data-lang="en">flat, every time</span><span data-lang="es">fijas, cada vez</span><span data-lang="vi">cố định, mỗi lần</span></div>
       </div>
       <p class="penalty-note" data-lang="pt">Sem escalonar por tentativa — é sempre o mesmo valor, cobrado assim que você perde ou desiste (se não tiver Stars suficientes, a diferença fica como dívida).</p>
-      <p class="penalty-note" data-lang="en">It doesn't scale with attempts — it's always the same amount, charged the moment you lose or forfeit (if you don't have enough Stars, the difference becomes a debt).</p>
+      <p class="penalty-note" data-lang="en">It doesn't scale with attempts — it's always the same amount, charged the moment you lose or forfeit (if you don't have enough Stars, the difference becomes a debt).</p><p class="penalty-note" data-lang="es">Sin escalar por intento — es siempre el mismo valor, cobrado en cuanto pierdes o abandonas (si no tienes Stars suficientes, la diferencia queda como deuda).</p><p class="penalty-note" data-lang="vi">Không tăng theo lượt thử — luôn là cùng một mức, trừ ngay khi bạn thua hoặc bỏ cuộc (nếu không đủ Stars, phần thiếu sẽ thành nợ).</p>
     </div>
   </div>
 
   <!-- RECOMPENSAS -->
   <div class="reveal" style="margin-top:64px">
     <div class="section-label" data-lang="pt">Ao vencer o Boss</div>
-    <div class="section-label" data-lang="en">Upon beating the Boss</div>
+    <div class="section-label" data-lang="en">Upon beating the Boss</div><div class="section-label" data-lang="es">Al vencer al Boss</div><div class="section-label" data-lang="vi">Khi hạ được Boss</div>
     <h2 class="section-title" data-lang="pt">Recompensas</h2>
-    <h2 class="section-title" data-lang="en">Rewards</h2>
+    <h2 class="section-title" data-lang="en">Rewards</h2><h2 class="section-title" data-lang="es">Recompensas</h2><h2 class="section-title" data-lang="vi">Phần thưởng</h2>
     <p class="section-sub" data-lang="pt">Ao iniciar, o jogo sorteia em segredo se o seu Championship é Normal ou Lendário — o narrador só revela qual é na luta 7. A chance de Lendário começa em 15% e sobe 1% a cada tentativa sem sair, até um teto de 20%, voltando a 15% assim que sair.</p>
-    <p class="section-sub" data-lang="en">On start, the game secretly rolls whether your run is Normal or Legendary — the narrator only reveals which one on fight 7. The Legendary chance starts at 15% and climbs 1% per attempt it doesn't hit, up to a 20% cap, resetting to 15% the moment it does.</p>
+    <p class="section-sub" data-lang="en">On start, the game secretly rolls whether your run is Normal or Legendary — the narrator only reveals which one on fight 7. The Legendary chance starts at 15% and climbs 1% per attempt it doesn't hit, up to a 20% cap, resetting to 15% the moment it does.</p><p class="section-sub" data-lang="es">Al iniciar, el juego sortea en secreto si tu Championship es Normal o Legendario — el narrador solo lo revela en la pelea 7. La probabilidad de Legendario empieza en 15% y sube 1% por intento sin salir, hasta un tope de 20%, volviendo a 15% en cuanto salga.</p><p class="section-sub" data-lang="vi">Khi bắt đầu, trò chơi bí mật quyết định Championship của bạn là Thường hay Huyền Thoại — người dẫn chuyện chỉ tiết lộ ở trận 7. Cơ hội Huyền Thoại bắt đầu ở 15% và tăng 1% mỗi lượt không ra, tối đa 20%, rồi trở lại 15% ngay khi ra.</p>
 
     <div class="rewards-grid">
       <div class="reward-card normal">
         <div class="reward-tier-label" data-lang="pt">Championship Normal</div>
-        <div class="reward-tier-label" data-lang="en">Normal Championship</div>
+        <div class="reward-tier-label" data-lang="en">Normal Championship</div><div class="reward-tier-label" data-lang="es">Championship Normal</div><div class="reward-tier-label" data-lang="vi">Championship Thường</div>
         <div class="reward-chance" data-lang="pt">~80-85% de chance de sorteio</div>
-        <div class="reward-chance" data-lang="en">~80-85% roll chance</div>
+        <div class="reward-chance" data-lang="en">~80-85% roll chance</div><div class="reward-chance" data-lang="es">~80-85% de probabilidad</div><div class="reward-chance" data-lang="vi">~80-85% cơ hội xuất hiện</div>
         <div class="reward-title">Recompensa Base</div>
         <ul class="reward-list">
           <li><strong>3.000</strong> Stars</li>
           <li><strong>100</strong> Souls</li>
-          <li><strong>1</strong> <span data-lang="pt">Ticket Gold</span><span data-lang="en">Gold Ticket</span></li>
-          <li><strong>10</strong> <span data-lang="pt">cartas, com 1 UR garantida</span><span data-lang="en">cards, with 1 guaranteed UR</span></li>
+          <li><strong>1</strong> <span data-lang="pt">Ticket Gold</span><span data-lang="en">Gold Ticket</span><span data-lang="es">Ticket Gold</span><span data-lang="vi">Vé Gold</span></li>
+          <li><strong>10</strong> <span data-lang="pt">cartas, com 1 UR garantida</span><span data-lang="en">cards, with 1 guaranteed UR</span><span data-lang="es">cartas, con 1 UR garantizada</span><span data-lang="vi">thẻ, đảm bảo 1 UR</span></li>
           <li data-lang="pt">Pool de 2 boosters normais + 1 booster temático, todos sorteados</li>
-          <li data-lang="en">Pool of 2 random normal boosters + 1 random themed booster</li>
+          <li data-lang="en">Pool of 2 random normal boosters + 1 random themed booster</li><li data-lang="es">Pool de 2 boosters normales + 1 booster temático, todos sorteados</li><li data-lang="vi">Nhóm 2 booster thường + 1 booster chủ đề, tất cả đều ngẫu nhiên</li>
         </ul>
       </div>
       <div class="reward-card legendary">
         <div class="reward-tier-label" data-lang="pt">Championship Lendário</div>
-        <div class="reward-tier-label" data-lang="en">Legendary Championship</div>
+        <div class="reward-tier-label" data-lang="en">Legendary Championship</div><div class="reward-tier-label" data-lang="es">Championship Legendario</div><div class="reward-tier-label" data-lang="vi">Championship Huyền Thoại</div>
         <div class="reward-chance" data-lang="pt">15-20% de chance de sorteio</div>
-        <div class="reward-chance" data-lang="en">15-20% roll chance</div>
+        <div class="reward-chance" data-lang="en">15-20% roll chance</div><div class="reward-chance" data-lang="es">15-20% de probabilidad</div><div class="reward-chance" data-lang="vi">15-20% cơ hội xuất hiện</div>
         <div class="reward-title">Tudo do Normal, +</div>
         <ul class="reward-list">
           <li class="plus" data-lang="pt">Pequena chance extra de a UR garantida ser uma das 3 <strong>Divine Beasts</strong></li>
-          <li class="plus" data-lang="en">Small extra chance the guaranteed UR is one of the 3 <strong>Divine Beasts</strong></li>
+          <li class="plus" data-lang="en">Small extra chance the guaranteed UR is one of the 3 <strong>Divine Beasts</strong></li><li class="plus" data-lang="es">Pequeña probabilidad extra de que la UR garantizada sea una de las 3 <strong>Divine Beasts</strong></li><li class="plus" data-lang="vi">Cơ hội nhỏ để UR đảm bảo là một trong 3 <strong>Divine Beasts</strong></li>
           <li class="plus" data-lang="pt">Cartas <strong>SR/UR repetidas</strong> no prêmio já desbloqueiam a versão <strong>Full Art</strong> (se você já tiver 1 cópia normal)</li>
-          <li class="plus" data-lang="en"><strong>Duplicate SR/UR</strong> cards in the prize unlock the <strong>Full Art</strong> version right away (if you already own 1 normal copy)</li>
+          <li class="plus" data-lang="en"><strong>Duplicate SR/UR</strong> cards in the prize unlock the <strong>Full Art</strong> version right away (if you already own 1 normal copy)</li><li class="plus" data-lang="es">Las cartas <strong>SR/UR repetidas</strong> del premio ya desbloquean la versión <strong>Full Art</strong> (si ya tienes 1 copia normal)</li><li class="plus" data-lang="vi">Thẻ <strong>SR/UR trùng lặp</strong> trong phần thưởng sẽ mở khóa bản <strong>Full Art</strong> (nếu bạn đã có 1 bản thường)</li>
           <li class="plus" data-lang="pt">Abre a chance de o <strong>Portal do Torneio Sombrio</strong> aparecer ao coletar o prêmio</li>
-          <li class="plus" data-lang="en">Unlocks the chance for the <strong>Shadow Tournament Portal</strong> to appear when you collect the prize</li>
+          <li class="plus" data-lang="en">Unlocks the chance for the <strong>Shadow Tournament Portal</strong> to appear when you collect the prize</li><li class="plus" data-lang="es">Abre la posibilidad de que aparezca el <strong>Portal del Torneo Sombrío</strong> al reclamar el premio</li><li class="plus" data-lang="vi">Mở khả năng xuất hiện <strong>Cổng Giải đấu Bóng Tối</strong> khi nhận phần thưởng</li>
         </ul>
       </div>
     </div>
@@ -649,11 +652,11 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- DIVINE BEASTS -->
   <div class="reveal divine-section">
     <div class="section-label" data-lang="pt">O prêmio máximo</div>
-    <div class="section-label" data-lang="en">The ultimate prize</div>
+    <div class="section-label" data-lang="en">The ultimate prize</div><div class="section-label" data-lang="es">El premio máximo</div><div class="section-label" data-lang="vi">Phần thưởng cao nhất</div>
     <h2 class="section-title" data-lang="pt">Os Deuses Egípcios</h2>
-    <h2 class="section-title" data-lang="en">The Egyptian God Cards</h2>
+    <h2 class="section-title" data-lang="en">The Egyptian God Cards</h2><h2 class="section-title" data-lang="es">Los Dioses Egipcios</h2><h2 class="section-title" data-lang="vi">Các Vị Thần Ai Cập</h2>
     <p class="section-sub" data-lang="pt">Slifer the Sky Dragon, Obelisk the Tormentor e The Winged Dragon of Ra — as três lendárias, com arte especial reservada a quem vence um Championship Lendário.</p>
-    <p class="section-sub" data-lang="en">Slifer the Sky Dragon, Obelisk the Tormentor and The Winged Dragon of Ra — the three legendaries, with special art reserved for those who win a Legendary Championship.</p>
+    <p class="section-sub" data-lang="en">Slifer the Sky Dragon, Obelisk the Tormentor and The Winged Dragon of Ra — the three legendaries, with special art reserved for those who win a Legendary Championship.</p><p class="section-sub" data-lang="es">Slifer the Sky Dragon, Obelisk the Tormentor y The Winged Dragon of Ra — las tres legendarias, con arte especial reservada a quien gana un Championship Legendario.</p><p class="section-sub" data-lang="vi">Slifer the Sky Dragon, Obelisk the Tormentor và The Winged Dragon of Ra — bộ ba huyền thoại, với tranh đặc biệt dành riêng cho người thắng Championship Huyền Thoại.</p>
 
     <div class="divine-grid">
       <div class="divine-card">
@@ -672,24 +675,24 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 
     <div class="divine-note">
       <span data-lang="pt"><strong>Como funciona a versão Full Art:</strong> ela substitui visualmente a carta normal em todas as telas do jogo, mas exige que você já possua ao menos 1 cópia normal daquela carta específica antes de poder receber a versão especial — assim ninguém pula direto pra Full Art sem nunca ter tido a carta base.</span>
-      <span data-lang="en"><strong>How the Full Art version works:</strong> it visually replaces the normal card everywhere in the game, but requires you to already own at least 1 normal copy of that specific card before you can receive the special version — so no one skips straight to Full Art without ever owning the base card.</span>
+      <span data-lang="en"><strong>How the Full Art version works:</strong> it visually replaces the normal card everywhere in the game, but requires you to already own at least 1 normal copy of that specific card before you can receive the special version — so no one skips straight to Full Art without ever owning the base card.</span><span data-lang="es"><strong>Cómo funciona la versión Full Art:</strong> sustituye visualmente a la carta normal en todas las pantallas del juego, pero exige que ya tengas al menos 1 copia normal de esa carta específica antes de poder recibir la versión especial — así nadie salta directo al Full Art sin haber tenido nunca la carta base.</span><span data-lang="vi"><strong>Bản Full Art hoạt động thế nào:</strong> nó thay thế hình ảnh của thẻ thường trên mọi màn hình trong trò chơi, nhưng yêu cầu bạn đã có ít nhất 1 bản thường của chính thẻ đó trước khi nhận được bản đặc biệt — để không ai nhảy thẳng tới Full Art mà chưa từng sở hữu thẻ gốc.</span>
     </div>
   </div>
 
   <!-- TORNEIO SOMBRIO -->
   <div class="reveal" style="margin-top:64px">
     <div class="section-label" data-lang="pt">Evento secreto pós-Lendário</div>
-    <div class="section-label" data-lang="en">Post-Legendary secret event</div>
+    <div class="section-label" data-lang="en">Post-Legendary secret event</div><div class="section-label" data-lang="es">Evento secreto post-Legendario</div><div class="section-label" data-lang="vi">Sự kiện bí mật sau Huyền Thoại</div>
     <h2 class="section-title" data-lang="pt">Torneio Sombrio</h2>
-    <h2 class="section-title" data-lang="en">Shadow Tournament</h2>
+    <h2 class="section-title" data-lang="en">Shadow Tournament</h2><h2 class="section-title" data-lang="es">Torneo Sombrío</h2><h2 class="section-title" data-lang="vi">Giải đấu Bóng Tối</h2>
     <p class="section-sub" data-lang="pt">Um portal secreto que pode aparecer ao coletar o prêmio de um Championship Lendário. A chance começa em 30% e sobe 5% a cada vitória Lendária em que ele não aparecer, até um teto de 50%, voltando a 30% assim que aparecer.</p>
-    <p class="section-sub" data-lang="en">A secret portal that can appear when you collect a Legendary Championship's prize. The chance starts at 30% and climbs 5% per Legendary win it doesn't appear, up to a 50% cap, resetting to 30% the moment it does.</p>
+    <p class="section-sub" data-lang="en">A secret portal that can appear when you collect a Legendary Championship's prize. The chance starts at 30% and climbs 5% per Legendary win it doesn't appear, up to a 50% cap, resetting to 30% the moment it does.</p><p class="section-sub" data-lang="es">Un portal secreto que puede aparecer al reclamar el premio de un Championship Legendario. La probabilidad empieza en 30% y sube 5% por cada victoria Legendaria en que no aparezca, hasta un tope de 50%, volviendo a 30% en cuanto aparezca.</p><p class="section-sub" data-lang="vi">Một cổng bí mật có thể xuất hiện khi nhận thưởng từ Championship Huyền Thoại. Cơ hội bắt đầu ở 30% và tăng 5% sau mỗi chiến thắng Huyền Thoại mà nó không xuất hiện, tối đa 50%, rồi trở lại 30% ngay khi xuất hiện.</p>
 
     <div class="warn-banner">
       <div class="warn-icon">💀</div>
       <div class="warn-text">
         <span data-lang="pt"><strong>Sem volta atrás.</strong> Ao atravessar o portal você entra na hora — não há checkpoints nem retorno entre duelos, e perder qualquer um deles encerra o evento na mesma hora.</span>
-        <span data-lang="en"><strong>No turning back.</strong> Crossing the portal starts the run immediately — there are no checkpoints or returns between duels, and losing any of them ends the event on the spot.</span>
+        <span data-lang="en"><strong>No turning back.</strong> Crossing the portal starts the run immediately — there are no checkpoints or returns between duels, and losing any of them ends the event on the spot.</span><span data-lang="es"><strong>Sin vuelta atrás.</strong> Al cruzar el portal entras de inmediato — no hay checkpoints ni retorno entre duelos, y perder cualquiera de ellos termina el evento al instante.</span><span data-lang="vi"><strong>Không quay lại được.</strong> Khi bước qua cổng, bạn vào ngay lập tức — không có điểm lưu hay đường lui giữa các trận, và thua bất kỳ trận nào là sự kiện kết thúc ngay.</span>
       </div>
     </div>
 
@@ -697,26 +700,26 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <div class="feature-card">
         <div class="feature-icon">⚔</div>
         <div class="feature-title" data-lang="pt">4 duelos, sem parar</div>
-        <div class="feature-title" data-lang="en">4 duels, no stopping</div>
+        <div class="feature-title" data-lang="en">4 duels, no stopping</div><div class="feature-title" data-lang="es">4 duelos, sin parar</div><div class="feature-title" data-lang="vi">4 trận liên tiếp</div>
         <ul class="feature-list">
           <li data-lang="pt">Great Shadow Magus e Black Luster Valkyrie, sempre nessa ordem</li>
-          <li data-lang="en">Great Shadow Magus and Black Luster Valkyrie, always in that order</li>
+          <li data-lang="en">Great Shadow Magus and Black Luster Valkyrie, always in that order</li><li data-lang="es">Great Shadow Magus y Black Luster Valkyrie, siempre en ese orden</li><li data-lang="vi">Great Shadow Magus và Black Luster Valkyrie, luôn theo thứ tự đó</li>
           <li data-lang="pt">Um duelista sorteado entre Poseidon, King of the Oceans e Lord D. Saurian</li>
-          <li data-lang="en">A duelist drawn from Poseidon, King of the Oceans and Lord D. Saurian</li>
+          <li data-lang="en">A duelist drawn from Poseidon, King of the Oceans and Lord D. Saurian</li><li data-lang="es">Un duelista sorteado entre Poseidon, King of the Oceans y Lord D. Saurian</li><li data-lang="vi">Một đấu thủ ngẫu nhiên trong Poseidon, King of the Oceans và Lord D. Saurian</li>
           <li data-lang="pt">Um chefe final sorteado entre Kiram Overlord, Seto Corrupted e Azzazel, Arquiduque Infernal</li>
-          <li data-lang="en">A final boss drawn from Kiram Overlord, Seto Corrupted, and Azzazel, Archduke of Hell</li>
+          <li data-lang="en">A final boss drawn from Kiram Overlord, Seto Corrupted, and Azzazel, Archduke of Hell</li><li data-lang="es">Un jefe final sorteado entre Kiram Overlord, Seto Corrupted y Azzazel, Archiduque Infernal</li><li data-lang="vi">Một trùm cuối ngẫu nhiên trong Kiram Overlord, Seto Corrupted và Azzazel, Đại Công Tước Địa Ngục</li>
         </ul>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🎁</div>
         <div class="feature-title" data-lang="pt">Booster Sombrio</div>
-        <div class="feature-title" data-lang="en">Shadow Booster</div>
+        <div class="feature-title" data-lang="en">Shadow Booster</div><div class="feature-title" data-lang="es">Booster Sombrío</div><div class="feature-title" data-lang="vi">Booster Bóng Tối</div>
         <ul class="feature-list">
-          <li><strong>666</strong> Stars <span data-lang="pt">+</span><span data-lang="en">+</span> <strong>66</strong> Souls</li>
+          <li><strong>666</strong> Stars <span data-lang="pt">+</span><span data-lang="en">+</span><span data-lang="es">+</span><span data-lang="vi">+</span> <strong>66</strong> Souls</li>
           <li data-lang="pt">Escolha entre <strong>1 UR garantida</strong> ou <strong>1 carta em Full Art</strong> — as duas são reveladas e você fica só com a que escolher</li>
-          <li data-lang="en">Choose between <strong>1 guaranteed UR</strong> or <strong>1 Full Art card</strong> — both are revealed and you keep only the one you pick</li>
+          <li data-lang="en">Choose between <strong>1 guaranteed UR</strong> or <strong>1 Full Art card</strong> — both are revealed and you keep only the one you pick</li><li data-lang="es">Elige entre <strong>1 UR garantizada</strong> o <strong>1 carta en Full Art</strong> — ambas se revelan y te quedas solo con la que elijas</li><li data-lang="vi">Chọn giữa <strong>1 UR đảm bảo</strong> hoặc <strong>1 thẻ Full Art</strong> — cả hai đều được lộ ra và bạn chỉ giữ thẻ mình chọn</li>
           <li data-lang="pt"><strong>5%</strong> de chance de uma carta <strong>Custom</strong> bônus, garantida independente da escolha</li>
-          <li data-lang="en"><strong>5%</strong> chance of a bonus <strong>Custom</strong> card, guaranteed regardless of your choice</li>
+          <li data-lang="en"><strong>5%</strong> chance of a bonus <strong>Custom</strong> card, guaranteed regardless of your choice</li><li data-lang="es"><strong>5%</strong> de probabilidad de una carta <strong>Custom</strong> de bono, garantizada sin importar la elección</li><li data-lang="vi"><strong>5%</strong> cơ hội nhận thêm một thẻ <strong>Custom</strong>, đảm bảo bất kể bạn chọn gì</li>
         </ul>
       </div>
     </div>
@@ -725,11 +728,11 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <!-- CTA -->
   <div class="reveal final-cta">
     <div class="final-cta-title" data-lang="pt">Pronto para o Championship?</div>
-    <div class="final-cta-title" data-lang="en">Ready for the Championship?</div>
+    <div class="final-cta-title" data-lang="en">Ready for the Championship?</div><div class="final-cta-title" data-lang="es">¿Listo para el Championship?</div><div class="final-cta-title" data-lang="vi">Sẵn sàng cho Championship?</div>
     <p class="final-cta-text" data-lang="pt">Termine a campanha, monte o melhor deck que conseguir e compre seu Ticket de Torneio na Loja do jogo.</p>
-    <p class="final-cta-text" data-lang="en">Finish the campaign, build the best deck you can, and buy your Tournament Ticket in the in-game Shop.</p>
+    <p class="final-cta-text" data-lang="en">Finish the campaign, build the best deck you can, and buy your Tournament Ticket in the in-game Shop.</p><p class="final-cta-text" data-lang="es">Termina la campaña, arma el mejor mazo que puedas y compra tu Ticket de Torneo en la Tienda del juego.</p><p class="final-cta-text" data-lang="vi">Hoàn thành cốt truyện, dựng bộ bài tốt nhất có thể và mua Vé Giải đấu tại Cửa hàng trong trò chơi.</p>
     <a class="btn-primary" href="index.html#comprar" data-lang="pt">☥ Seja Founder</a>
-    <a class="btn-primary" href="index.html#comprar" data-lang="en">☥ Become a Founder</a>
+    <a class="btn-primary" href="index.html#comprar" data-lang="en">☥ Become a Founder</a><a class="btn-primary" href="index.html#comprar" data-lang="es">☥ Sé Founder</a><a class="btn-primary" href="index.html#comprar" data-lang="vi">☥ Trở thành Founder</a>
   </div>
 
 </div>
@@ -741,28 +744,28 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="footer-brand">
       <div class="footer-logo">FORBIDDEN LEGACY</div>
       <p data-lang="pt">Um remake fã-feito de Yu-Gi-Oh! Forbidden Memories, com sistemas novos, campanha expandida e conteúdo de endgame.</p>
-      <p data-lang="en">A fan-made remake of Yu-Gi-Oh! Forbidden Memories, with new systems, an expanded campaign and endgame content.</p>
+      <p data-lang="en">A fan-made remake of Yu-Gi-Oh! Forbidden Memories, with new systems, an expanded campaign and endgame content.</p><p data-lang="es">Un remake hecho por fans de Yu-Gi-Oh! Forbidden Memories, con sistemas nuevos, campaña ampliada y contenido de endgame.</p><p data-lang="vi">Bản làm lại do người hâm mộ thực hiện từ Yu-Gi-Oh! Forbidden Memories, với hệ thống mới, cốt truyện mở rộng và nội dung endgame.</p>
     </div>
     <div class="footer-col">
       <h4 data-lang="pt">Navegação</h4>
-      <h4 data-lang="en">Navigation</h4>
-      <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
+      <h4 data-lang="en">Navigation</h4><h4 data-lang="es">Navegación</h4><h4 data-lang="vi">Điều hướng</h4>
+      <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
     </div>
     <div class="footer-col">
       <h4 data-lang="pt">Comunidade</h4>
-      <h4 data-lang="en">Community</h4>
+      <h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 Forbidden Legacy — Trager Games</span>
     <span data-lang="pt">Projeto fã-feito, sem fins de afiliação com a Konami.</span>
-    <span data-lang="en">Fan-made project, not affiliated with Konami.</span>
+    <span data-lang="en">Fan-made project, not affiliated with Konami.</span><span data-lang="es">Proyecto hecho por fans, sin afiliación con Konami.</span><span data-lang="vi">Dự án do người hâm mộ làm, không liên kết với Konami.</span>
   </div>
 </footer>
 

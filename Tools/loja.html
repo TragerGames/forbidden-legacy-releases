@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -115,6 +115,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -933,17 +936,17 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
     <a href="banlist.html">Banlist</a>
     <a href="boosters.html">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="#" class="active" data-lang="pt">Loja</a><a href="#" class="active" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="#" class="active" data-lang="pt">Loja</a><a href="#" class="active" data-lang="en">Store</a><a href="#" class="active" data-lang="es">Tienda</a><a href="#" class="active" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <span class="sep">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -970,18 +973,18 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
     <a href="banlist.html">Banlist</a>
     <a href="boosters.html">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="#" class="active nav-cta" data-lang="pt">Loja</a><a href="#" class="active nav-cta" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="#" class="active nav-cta" data-lang="pt">Loja</a><a href="#" class="active nav-cta" data-lang="en">Store</a><a href="#" class="active nav-cta" data-lang="es">Tienda</a><a href="#" class="active nav-cta" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
@@ -1002,14 +1005,14 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
       <span data-lang="pt">Loja aberta · Compras liberadas</span>
-      <span data-lang="en">Store open · Purchases available</span>
+      <span data-lang="en">Store open · Purchases available</span><span data-lang="es">Tienda abierta · Compras habilitadas</span><span data-lang="vi">Cửa hàng mở · Đã mở mua hàng</span>
     </div>
 
     <h1 class="hero-title" data-lang="pt">Souls<br>da Card Shop</h1>
-    <h1 class="hero-title" data-lang="en">Card Shop<br>Souls</h1>
+    <h1 class="hero-title" data-lang="en">Card Shop<br>Souls</h1><h1 class="hero-title" data-lang="es">Souls<br>de la Tienda</h1><h1 class="hero-title" data-lang="vi">Souls<br>từ Cửa Hàng Thẻ</h1>
 
     <p class="hero-sub" data-lang="pt">Escolha um pacote de Souls para usar dentro do jogo. O código de resgate é vinculado ao seu Código do Jogador e só pode ser usado uma vez.</p>
-    <p class="hero-sub" data-lang="en">Choose a Soul pack to use in-game. The redeem code is tied to your Player Code and can only be used once.</p>
+    <p class="hero-sub" data-lang="en">Choose a Soul pack to use in-game. The redeem code is tied to your Player Code and can only be used once.</p><p class="hero-sub" data-lang="es">Elige un paquete de Souls para usar dentro del juego. El código de canje se vincula a tu Código de Jugador y solo puede usarse una vez.</p><p class="hero-sub" data-lang="vi">Chọn một gói Souls để dùng trong trò chơi. Mã đổi thưởng được gắn với Mã Người chơi của bạn và chỉ dùng được một lần.</p>
 
     <div class="hero-note" data-lang="pt">
       O pacote entrega <strong>Souls</strong> — o saldo usado na Card Shop para abrir boosters.<br>
@@ -1018,19 +1021,19 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <div class="hero-note" data-lang="en">
       The pack grants <strong>Souls</strong> — the balance used in the Card Shop to open boosters.<br>
       The Souls cost varies per booster. This is not a direct booster bundle.
-    </div>
+    </div><div class="hero-note" data-lang="es">El paquete entrega <strong>Souls</strong> — el saldo usado en la Tienda de Cartas para abrir boosters.<br> El costo en Souls varía por booster. No es un paquete de boosters directo.</div><div class="hero-note" data-lang="vi">Gói này cấp <strong>Souls</strong> — số dư dùng tại Cửa Hàng Thẻ để mở booster.<br> Chi phí Souls thay đổi theo từng booster. Đây không phải gói booster trực tiếp.</div>
 
     <div class="hero-actions">
       <a class="btn-primary" href="#packs" data-lang="pt">☥ Ver Pacotes</a>
-      <a class="btn-primary" href="#packs" data-lang="en">☥ View Packs</a>
+      <a class="btn-primary" href="#packs" data-lang="en">☥ View Packs</a><a class="btn-primary" href="#packs" data-lang="es">☥ Ver Paquetes</a><a class="btn-primary" href="#packs" data-lang="vi">☥ Xem gói</a>
       <a class="btn-secondary" href="boosters.html" data-lang="pt">Como funcionam os boosters</a>
-      <a class="btn-secondary" href="boosters.html" data-lang="en">How boosters work</a>
+      <a class="btn-secondary" href="boosters.html" data-lang="en">How boosters work</a><a class="btn-secondary" href="boosters.html" data-lang="es">Cómo funcionan los boosters</a><a class="btn-secondary" href="boosters.html" data-lang="vi">Booster hoạt động thế nào</a>
     </div>
   </div>
 
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
-    <span data-lang="pt">rolar</span><span data-lang="en">scroll</span>
+    <span data-lang="pt">rolar</span><span data-lang="en">scroll</span><span data-lang="es">desplazar</span><span data-lang="vi">cuộn</span>
   </div>
 </section>
 
@@ -1041,11 +1044,11 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 <section class="packs-section" id="packs">
   <div class="section-header">
     <div class="section-eyebrow" data-lang="pt">Escolha seu tier</div>
-    <div class="section-eyebrow" data-lang="en">Choose your tier</div>
+    <div class="section-eyebrow" data-lang="en">Choose your tier</div><div class="section-eyebrow" data-lang="es">Elige tu tier</div><div class="section-eyebrow" data-lang="vi">Chọn hạng của bạn</div>
     <h2 class="section-title" data-lang="pt">Pacotes de Souls</h2>
-    <h2 class="section-title" data-lang="en">Soul Packs</h2>
+    <h2 class="section-title" data-lang="en">Soul Packs</h2><h2 class="section-title" data-lang="es">Paquetes de Souls</h2><h2 class="section-title" data-lang="vi">Gói Souls</h2>
     <p class="section-sub" data-lang="pt">Cada alma contida no pacote equivale a saldo na Card Shop. Quanto mais Souls, mais boosters você abre.</p>
-    <p class="section-sub" data-lang="en">Each Soul in the pack equals balance in the Card Shop. More Souls, more boosters you can open.</p>
+    <p class="section-sub" data-lang="en">Each Soul in the pack equals balance in the Card Shop. More Souls, more boosters you can open.</p><p class="section-sub" data-lang="es">Cada alma del paquete equivale a saldo en la Tienda de Cartas. Cuantas más Souls, más boosters abres.</p><p class="section-sub" data-lang="vi">Mỗi linh hồn trong gói tương ứng với số dư tại Cửa Hàng Thẻ. Càng nhiều Souls, càng mở được nhiều booster.</p>
   </div>
 
   <!-- PACKS GRID (rendered by JS) -->
@@ -1056,23 +1059,23 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <div class="how-box">
       <div class="how-num">01</div>
       <div class="how-title" data-lang="pt">O que você recebe</div>
-      <div class="how-title" data-lang="en">What you receive</div>
+      <div class="how-title" data-lang="en">What you receive</div><div class="how-title" data-lang="es">Qué recibes</div><div class="how-title" data-lang="vi">Bạn nhận được gì</div>
       <p class="how-text" data-lang="pt">Um código de resgate único com a quantidade de Souls do pacote escolhido — entregue por email após confirmação.</p>
-      <p class="how-text" data-lang="en">A unique redeem code with the Soul amount of the chosen pack — delivered by email after confirmation.</p>
+      <p class="how-text" data-lang="en">A unique redeem code with the Soul amount of the chosen pack — delivered by email after confirmation.</p><p class="how-text" data-lang="es">Un código de canje único con la cantidad de Souls del paquete elegido — entregado por correo tras la confirmación.</p><p class="how-text" data-lang="vi">Một mã đổi thưởng duy nhất với số Souls của gói đã chọn — gửi qua email sau khi xác nhận.</p>
     </div>
     <div class="how-box">
       <div class="how-num">02</div>
       <div class="how-title" data-lang="pt">Onde usar</div>
-      <div class="how-title" data-lang="en">Where to use</div>
+      <div class="how-title" data-lang="en">Where to use</div><div class="how-title" data-lang="es">Dónde usar</div><div class="how-title" data-lang="vi">Dùng ở đâu</div>
       <p class="how-text" data-lang="pt">Na Card Shop do jogo, em Resgatar Código. As Souls são creditadas no seu saldo e usadas para abrir boosters.</p>
-      <p class="how-text" data-lang="en">In the in-game Card Shop, under Redeem Code. Souls are credited to your balance and used to open boosters.</p>
+      <p class="how-text" data-lang="en">In the in-game Card Shop, under Redeem Code. Souls are credited to your balance and used to open boosters.</p><p class="how-text" data-lang="es">En la Tienda de Cartas del juego, en Canjear código. Las Souls se acreditan a tu saldo y sirven para abrir boosters.</p><p class="how-text" data-lang="vi">Trong Cửa Hàng Thẻ của trò chơi, mục Nhập mã. Souls được cộng vào số dư và dùng để mở booster.</p>
     </div>
     <div class="how-box">
       <div class="how-num">03</div>
       <div class="how-title" data-lang="pt">Como é protegido</div>
-      <div class="how-title" data-lang="en">How it's protected</div>
+      <div class="how-title" data-lang="en">How it's protected</div><div class="how-title" data-lang="es">Cómo se protege</div><div class="how-title" data-lang="vi">Cách được bảo vệ</div>
       <p class="how-text" data-lang="pt">O código fica vinculado ao FL-PLAYER informado na compra e só pode ser usado uma única vez.</p>
-      <p class="how-text" data-lang="en">The code is tied to the FL-PLAYER provided at purchase and can only be redeemed once.</p>
+      <p class="how-text" data-lang="en">The code is tied to the FL-PLAYER provided at purchase and can only be redeemed once.</p><p class="how-text" data-lang="es">El código queda vinculado al FL-PLAYER indicado en la compra y solo puede usarse una vez.</p><p class="how-text" data-lang="vi">Mã được gắn với FL-PLAYER đã nhập khi mua và chỉ dùng được một lần.</p>
     </div>
   </div>
 
@@ -1081,14 +1084,14 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <!-- FORM -->
     <div class="checkout-form" id="form-box">
       <h2 class="checkout-h" data-lang="pt">☥ Dados para resgate</h2>
-      <h2 class="checkout-h" data-lang="en">☥ Redeem details</h2>
+      <h2 class="checkout-h" data-lang="en">☥ Redeem details</h2><h2 class="checkout-h" data-lang="es">☥ Datos para el canje</h2><h2 class="checkout-h" data-lang="vi">☥ Thông tin đổi thưởng</h2>
 
       <div class="region-highlight">
         <div class="region-chip-wrap">
           <div class="region-chip" id="region-chip">🌐 Brasil — PIX</div>
           <button type="button" class="region-switch-btn" id="region-switch-btn" onclick="toggleRegionOverride()">
             <span data-lang="pt">Não está no Brasil? Trocar região</span>
-            <span data-lang="en">Not in Brazil? Switch region</span>
+            <span data-lang="en">Not in Brazil? Switch region</span><span data-lang="es">¿No estás en Brasil? Cambiar región</span><span data-lang="vi">Không ở Brazil? Đổi khu vực</span>
           </button>
         </div>
       </div>
@@ -1096,7 +1099,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
       <div class="fields-row">
         <div class="field">
           <label data-lang="pt">Email <span style="color:#e04040">*</span></label>
-          <label data-lang="en">Email <span style="color:#e04040">*</span></label>
+          <label data-lang="en">Email <span style="color:#e04040">*</span></label><label data-lang="es">Correo <span style="color:#e04040">*</span></label><label data-lang="vi">Email <span style="color:#e04040">*</span></label>
           <input id="email" type="email" placeholder="email@exemplo.com" autocomplete="email">
         </div>
         <div class="field">
@@ -1113,20 +1116,20 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
         </div>
         <div class="field">
           <label data-lang="pt">Nome <span style="color:#e04040">*</span></label>
-          <label data-lang="en">Name <span style="color:#e04040">*</span></label>
+          <label data-lang="en">Name <span style="color:#e04040">*</span></label><label data-lang="es">Nombre <span style="color:#e04040">*</span></label><label data-lang="vi">Tên <span style="color:#e04040">*</span></label>
           <input id="nome" placeholder="Seu nome" autocomplete="name">
         </div>
       </div>
 
       <div class="field">
         <label data-lang="pt">Código do Jogador <span style="color:#e04040">*</span></label>
-        <label data-lang="en">Player Code <span style="color:#e04040">*</span></label>
+        <label data-lang="en">Player Code <span style="color:#e04040">*</span></label><label data-lang="es">Código de Jugador <span style="color:#e04040">*</span></label><label data-lang="vi">Mã Người chơi <span style="color:#e04040">*</span></label>
         <input id="player-code" placeholder="FL-PLAYERPC-XXXX-XXXX-XXXX" autocomplete="off" style="font-family:monospace;letter-spacing:.5px">
       </div>
 
       <div class="field" id="cpf-field" style="display:none">
         <label data-lang="pt">CPF <span style="color:#e04040">*</span> <span style="color:#3a2f1a;font-size:10px">(exigido para cartão)</span></label>
-        <label data-lang="en">CPF <span style="color:#e04040">*</span> <span style="color:#3a2f1a;font-size:10px">(required for card)</span></label>
+        <label data-lang="en">CPF <span style="color:#e04040">*</span> <span style="color:#3a2f1a;font-size:10px">(required for card)</span></label><label data-lang="es">CPF <span style="color:#e04040">*</span> <span style="color:#3a2f1a;font-size:10px">(exigido para tarjeta)</span></label><label data-lang="vi">CPF <span style="color:#e04040">*</span> <span style="color:#3a2f1a;font-size:10px">(bắt buộc khi dùng thẻ)</span></label>
         <input id="cpf" placeholder="000.000.000-00" autocomplete="off" maxlength="14"
           oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
       </div>
@@ -1134,12 +1137,12 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
       <div class="fields-row">
         <div class="field">
           <label data-lang="pt">Discord <span style="color:#3a2f1a;font-size:10px">(opcional)</span></label>
-          <label data-lang="en">Discord <span style="color:#3a2f1a;font-size:10px">(optional)</span></label>
+          <label data-lang="en">Discord <span style="color:#3a2f1a;font-size:10px">(optional)</span></label><label data-lang="es">Discord <span style="color:#3a2f1a;font-size:10px">(opcional)</span></label><label data-lang="vi">Discord <span style="color:#3a2f1a;font-size:10px">(tùy chọn)</span></label>
           <input id="discord" placeholder="@usuario" autocomplete="off">
         </div>
         <div class="field">
           <label data-lang="pt">Dispositivo <span style="color:#e04040">*</span></label>
-          <label data-lang="en">Device <span style="color:#e04040">*</span></label>
+          <label data-lang="en">Device <span style="color:#e04040">*</span></label><label data-lang="es">Dispositivo <span style="color:#e04040">*</span></label><label data-lang="vi">Thiết bị <span style="color:#e04040">*</span></label>
           <select id="dispositivo" required>
             <option value="">—</option>
             <option>Windows</option>
@@ -1153,7 +1156,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <!-- SUMMARY -->
     <aside class="summary-panel" id="summary-box">
       <h2 class="checkout-h" data-lang="pt">Resumo</h2>
-      <h2 class="checkout-h" data-lang="en">Summary</h2>
+      <h2 class="checkout-h" data-lang="en">Summary</h2><h2 class="checkout-h" data-lang="es">Resumen</h2><h2 class="checkout-h" data-lang="vi">Tóm tắt</h2>
 
       <div class="sum-selected">
         <div class="sum-tier" id="sum-tier">Duelista</div>
@@ -1161,7 +1164,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
         <div class="pack-bonus-tag-summary" id="sum-bonus" style="display:none"></div>
         <div class="qty-row">
           <span class="qty-label" data-lang="pt">Quantidade de pacotes</span>
-          <span class="qty-label" data-lang="en">Number of packs</span>
+          <span class="qty-label" data-lang="en">Number of packs</span><span class="qty-label" data-lang="es">Cantidad de paquetes</span><span class="qty-label" data-lang="vi">Số lượng gói</span>
           <div class="qty-stepper">
             <button type="button" class="qty-btn" id="qty-minus" onclick="alterarQuantidade(-1)">−</button>
             <span class="qty-value" id="qty-value">1</span>
@@ -1172,19 +1175,19 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 
       <div class="sum-rows">
         <div class="sum-row region-br">
-          <span data-lang="pt">Valor nacional</span><span data-lang="en">Brazil price</span>
+          <span data-lang="pt">Valor nacional</span><span data-lang="en">Brazil price</span><span data-lang="es">Precio en Brasil</span><span data-lang="vi">Giá tại Brazil</span>
           <strong id="sum-br">—</strong>
         </div>
         <div class="sum-row region-intl">
-          <span data-lang="pt">Valor internacional</span><span data-lang="en">International price</span>
+          <span data-lang="pt">Valor internacional</span><span data-lang="en">International price</span><span data-lang="es">Precio internacional</span><span data-lang="vi">Giá quốc tế</span>
           <strong id="sum-usd">US$ 2.49</strong>
         </div>
         <div class="sum-row">
-          <span data-lang="pt">Entrega</span><span data-lang="en">Delivery</span>
-          <strong data-lang="pt">Código de resgate</strong><strong data-lang="en">Redeem code</strong>
+          <span data-lang="pt">Entrega</span><span data-lang="en">Delivery</span><span data-lang="es">Entrega</span><span data-lang="vi">Giao hàng</span>
+          <strong data-lang="pt">Código de resgate</strong><strong data-lang="en">Redeem code</strong><strong data-lang="es">Código de canje</strong><strong data-lang="vi">Mã đổi thưởng</strong>
         </div>
         <div class="sum-row">
-          <span data-lang="pt">Vínculo</span><span data-lang="en">Binding</span>
+          <span data-lang="pt">Vínculo</span><span data-lang="en">Binding</span><span data-lang="es">Vinculación</span><span data-lang="vi">Liên kết</span>
           <strong>FL-PLAYER</strong>
         </div>
       </div>
@@ -1195,7 +1198,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
           <div>
             <div class="pay-name">PIX</div>
             <div class="pay-sub" data-lang="pt">Instantâneo · via Efí Bank</div>
-            <div class="pay-sub" data-lang="en">Instant · via Efí Bank</div>
+            <div class="pay-sub" data-lang="en">Instant · via Efí Bank</div><div class="pay-sub" data-lang="es">Instantáneo · vía Efí Bank</div><div class="pay-sub" data-lang="vi">Tức thì · qua Efí Bank</div>
           </div>
           <span class="pay-tag">Brasil</span>
         </div>
@@ -1203,7 +1206,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
           <div class="pay-icon">💳</div>
           <div>
             <div class="pay-name" data-lang="pt">Cartão BR</div>
-            <div class="pay-name" data-lang="en">BR Card</div>
+            <div class="pay-name" data-lang="en">BR Card</div><div class="pay-name" data-lang="es">Tarjeta BR</div><div class="pay-name" data-lang="vi">Thẻ BR</div>
             <div class="pay-sub">Visa · Master · Elo · Hipercard · Asaas</div>
           </div>
           <span class="pay-tag">Brasil</span>
@@ -1235,16 +1238,16 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
     <div class="copy-row">
       <input class="copy-input" id="pix-copy" readonly>
       <button class="buy-btn" onclick="copyPix()" style="width:auto;padding:12px 18px;clip-path:none;font-size:12px" data-lang="pt">Copiar</button>
-      <button class="buy-btn" onclick="copyPix()" style="width:auto;padding:12px 18px;clip-path:none;font-size:12px" data-lang="en">Copy</button>
+      <button class="buy-btn" onclick="copyPix()" style="width:auto;padding:12px 18px;clip-path:none;font-size:12px" data-lang="en">Copy</button><button class="buy-btn" onclick="copyPix()" style="width:auto;padding:12px 18px;clip-path:none;font-size:12px" data-lang="es">Copiar</button><button class="buy-btn" onclick="copyPix()" style="width:auto;padding:12px 18px;clip-path:none;font-size:12px" data-lang="vi">Sao chép</button>
     </div>
     <div class="pix-status" id="pix-status" data-lang="pt">Aguardando pagamento...</div>
-    <div class="pix-status" id="pix-status-en" data-lang="en">Waiting for payment...</div>
+    <div class="pix-status" id="pix-status-en" data-lang="en">Waiting for payment...</div><div class="pix-status" id="pix-status-en" data-lang="es">Esperando el pago...</div><div class="pix-status" id="pix-status-en" data-lang="vi">Đang chờ thanh toán...</div>
     <div class="redeem-block" id="redeem-box">
       <div data-lang="pt">Código de resgate</div>
-      <div data-lang="en">Redeem code</div>
+      <div data-lang="en">Redeem code</div><div data-lang="es">Código de canje</div><div data-lang="vi">Mã đổi thưởng</div>
       <div class="redeem-code-text" id="redeem-code"></div>
       <button class="buy-btn" onclick="copyRedeem()" data-lang="pt" style="margin-top:10px">Copiar código</button>
-      <button class="buy-btn" onclick="copyRedeem()" data-lang="en" style="margin-top:10px">Copy code</button>
+      <button class="buy-btn" onclick="copyRedeem()" data-lang="en" style="margin-top:10px">Copy code</button><button class="buy-btn" onclick="copyRedeem()" data-lang="es" style="margin-top:10px">Copiar código</button><button class="buy-btn" onclick="copyRedeem()" data-lang="vi" style="margin-top:10px">Sao chép mã</button>
     </div>
   </div>
 </div>
@@ -1254,14 +1257,14 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
   <div class="pay-choice-box">
     <button onclick="document.getElementById('pay-choice-overlay').style.display='none'" style="position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer">✕</button>
     <h3 data-lang="pt">☥ Escolha como pagar</h3>
-    <h3 data-lang="en">☥ Choose payment method</h3>
+    <h3 data-lang="en">☥ Choose payment method</h3><h3 data-lang="es">☥ Elige cómo pagar</h3><h3 data-lang="vi">☥ Chọn cách thanh toán</h3>
     <p class="pay-choice-desc" id="pay-choice-desc"></p>
     <button onclick="payChoicePix()" class="pay-choice-btn">
       <div class="pay-choice-icon">⬡</div>
       <div>
         <div class="pay-choice-label">PIX</div>
         <div class="pay-choice-sub" data-lang="pt">Instantâneo · via Efí Bank</div>
-        <div class="pay-choice-sub" data-lang="en">Instant · via Efí Bank</div>
+        <div class="pay-choice-sub" data-lang="en">Instant · via Efí Bank</div><div class="pay-choice-sub" data-lang="es">Instantáneo · vía Efí Bank</div><div class="pay-choice-sub" data-lang="vi">Tức thì · qua Efí Bank</div>
       </div>
       <div class="pay-choice-price" id="pay-choice-pix-price"></div>
     </button>
@@ -1269,13 +1272,13 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
       <div class="pay-choice-icon">💳</div>
       <div>
         <div class="pay-choice-label" data-lang="pt">Cartão de Crédito</div>
-        <div class="pay-choice-label" data-lang="en">Credit Card</div>
+        <div class="pay-choice-label" data-lang="en">Credit Card</div><div class="pay-choice-label" data-lang="es">Tarjeta de Crédito</div><div class="pay-choice-label" data-lang="vi">Thẻ tín dụng</div>
         <div class="pay-choice-sub">Visa · Master · Elo · Hipercard · Asaas</div>
       </div>
       <div class="pay-choice-price" id="pay-choice-card-price" style="color:#42d987"></div>
     </button>
     <p class="pay-secure" data-lang="pt">🔒 Processado com segurança · Código enviado por email</p>
-    <p class="pay-secure" data-lang="en">🔒 Processed securely · Code sent by email</p>
+    <p class="pay-secure" data-lang="en">🔒 Processed securely · Code sent by email</p><p class="pay-secure" data-lang="es">🔒 Procesado de forma segura · Código enviado por correo</p><p class="pay-secure" data-lang="vi">🔒 Xử lý an toàn · Mã được gửi qua email</p>
   </div>
 </div>
 
@@ -1685,7 +1688,7 @@ function renderPacks(){
       <div class="pack-price">${price}</div>
       <div class="pack-price-note">${priceNote}</div>
       <div class="pack-select-hint" data-lang="pt">Selecionar</div>
-      <div class="pack-select-hint" data-lang="en">Select</div>`;
+      <div class="pack-select-hint" data-lang="en">Select</div><div class="pack-select-hint" data-lang="es">Seleccionar</div><div class="pack-select-hint" data-lang="vi">Chọn</div>`;
     if(STORE_ENABLED) el.onclick=()=>{selected=p;quantidade=1;renderPacks();updateSummary()};
     else el.style.cursor='default';
     root.appendChild(el);
@@ -1889,28 +1892,28 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
-      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
-      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">

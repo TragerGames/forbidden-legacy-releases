@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -277,6 +277,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -471,17 +474,17 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" class="active" data-lang="pt">Catálogo</a><a href="catalogo.html" class="active" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" class="active" data-lang="pt">Catálogo</a><a href="catalogo.html" class="active" data-lang="en">Catalog</a><a href="catalogo.html" class="active" data-lang="es">Catálogo</a><a href="catalogo.html" class="active" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -510,18 +513,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" class="active" data-lang="pt">Catálogo</a><a href="catalogo.html" class="active" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" class="active" data-lang="pt">Catálogo</a><a href="catalogo.html" class="active" data-lang="en">Catalog</a><a href="catalogo.html" class="active" data-lang="es">Catálogo</a><a href="catalogo.html" class="active" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
@@ -530,15 +533,15 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   <div class="stars"></div>
   <div class="page-hero-label">☥ Beta 1.8.2</div>
   <h1 class="page-hero-title" data-lang="pt">Catálogo de Cartas</h1>
-  <h1 class="page-hero-title" data-lang="en">Card Catalog</h1>
+  <h1 class="page-hero-title" data-lang="en">Card Catalog</h1><h1 class="page-hero-title" data-lang="es">Catálogo de Cartas</h1><h1 class="page-hero-title" data-lang="vi">Danh mục thẻ bài</h1>
   <div class="page-hero-sub" data-lang="pt">Todas as cartas do jogo em um só lugar</div>
-  <div class="page-hero-sub" data-lang="en">Every card in the game, in one place</div>
+  <div class="page-hero-sub" data-lang="en">Every card in the game, in one place</div><div class="page-hero-sub" data-lang="es">Todas las cartas del juego en un solo lugar</div><div class="page-hero-sub" data-lang="vi">Tất cả thẻ bài của trò chơi ở một nơi</div>
   <p class="page-hero-desc" data-lang="pt">
     Busque por nome, filtre por tipo, raça e raridade, e clique em qualquer carta para ver a arte ampliada e todas as informações — exatamente como no seletor de deck dentro do jogo.
   </p>
   <p class="page-hero-desc" data-lang="en">
     Search by name, filter by type, race and rarity, and click any card to see the full artwork and all its information — just like the deck builder inside the game.
-  </p>
+  </p><p class="page-hero-desc" data-lang="es">Busca por nombre, filtra por tipo, raza y rareza, y haz clic en cualquier carta para ver la ilustración ampliada y toda la información — igual que en el selector de mazo dentro del juego.</p><p class="page-hero-desc" data-lang="vi">Tìm theo tên, lọc theo loại, chủng loại và độ hiếm, rồi nhấn vào thẻ bất kỳ để xem tranh phóng to cùng đầy đủ thông tin — giống hệt trình chọn bài trong trò chơi.</p>
 </div>
 
 <!-- CONTEÚDO -->
@@ -551,45 +554,45 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     </div>
     <div class="cat-filter-row">
       <span class="cat-filter-label" data-lang="pt">Tipo</span>
-      <span class="cat-filter-label" data-lang="en">Type</span>
+      <span class="cat-filter-label" data-lang="en">Type</span><span class="cat-filter-label" data-lang="es">Tipo</span><span class="cat-filter-label" data-lang="vi">Loại</span>
       <button class="cat-chip active" data-filter-type="ALL" data-lang="pt">Todos</button>
-      <button class="cat-chip active" data-filter-type="ALL" data-lang="en">All</button>
+      <button class="cat-chip active" data-filter-type="ALL" data-lang="en">All</button><button class="cat-chip active" data-filter-type="ALL" data-lang="es">Todos</button><button class="cat-chip active" data-filter-type="ALL" data-lang="vi">Tất cả</button>
       <button class="cat-chip" data-filter-type="Monster" data-lang="pt">Monstro</button>
-      <button class="cat-chip" data-filter-type="Monster" data-lang="en">Monster</button>
+      <button class="cat-chip" data-filter-type="Monster" data-lang="en">Monster</button><button class="cat-chip" data-filter-type="Monster" data-lang="es">Monstruo</button><button class="cat-chip" data-filter-type="Monster" data-lang="vi">Quái thú</button>
       <button class="cat-chip" data-filter-type="Spell" data-lang="pt">Magia</button>
-      <button class="cat-chip" data-filter-type="Spell" data-lang="en">Spell</button>
+      <button class="cat-chip" data-filter-type="Spell" data-lang="en">Spell</button><button class="cat-chip" data-filter-type="Spell" data-lang="es">Magia</button><button class="cat-chip" data-filter-type="Spell" data-lang="vi">Phép</button>
       <button class="cat-chip" data-filter-type="Trap" data-lang="pt">Armadilha</button>
-      <button class="cat-chip" data-filter-type="Trap" data-lang="en">Trap</button>
+      <button class="cat-chip" data-filter-type="Trap" data-lang="en">Trap</button><button class="cat-chip" data-filter-type="Trap" data-lang="es">Trampa</button><button class="cat-chip" data-filter-type="Trap" data-lang="vi">Bẫy</button>
       <button class="cat-chip" data-filter-type="Equip">Equip</button>
       <button class="cat-chip" data-filter-type="Field" data-lang="pt">Campo</button>
-      <button class="cat-chip" data-filter-type="Field" data-lang="en">Field</button>
+      <button class="cat-chip" data-filter-type="Field" data-lang="en">Field</button><button class="cat-chip" data-filter-type="Field" data-lang="es">Campo</button><button class="cat-chip" data-filter-type="Field" data-lang="vi">Sân</button>
     </div>
     <div class="cat-filter-row" id="cat-race-row">
       <span class="cat-filter-label" data-lang="pt">Raça</span>
-      <span class="cat-filter-label" data-lang="en">Race</span>
+      <span class="cat-filter-label" data-lang="en">Race</span><span class="cat-filter-label" data-lang="es">Raza</span><span class="cat-filter-label" data-lang="vi">Chủng loại</span>
       <button class="cat-chip active" data-filter-race="ALL" data-lang="pt">Todas</button>
-      <button class="cat-chip active" data-filter-race="ALL" data-lang="en">All</button>
+      <button class="cat-chip active" data-filter-race="ALL" data-lang="en">All</button><button class="cat-chip active" data-filter-race="ALL" data-lang="es">Todas</button><button class="cat-chip active" data-filter-race="ALL" data-lang="vi">Tất cả</button>
     </div>
     <div class="cat-filter-row">
       <span class="cat-filter-label" data-lang="pt">Raridade</span>
-      <span class="cat-filter-label" data-lang="en">Rarity</span>
+      <span class="cat-filter-label" data-lang="en">Rarity</span><span class="cat-filter-label" data-lang="es">Rareza</span><span class="cat-filter-label" data-lang="vi">Độ hiếm</span>
       <button class="cat-chip active" data-filter-rarity="ALL" data-lang="pt">Todas</button>
-      <button class="cat-chip active" data-filter-rarity="ALL" data-lang="en">All</button>
+      <button class="cat-chip active" data-filter-rarity="ALL" data-lang="en">All</button><button class="cat-chip active" data-filter-rarity="ALL" data-lang="es">Todas</button><button class="cat-chip active" data-filter-rarity="ALL" data-lang="vi">Tất cả</button>
       <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="N"><img src="img/raridade/rarity_C.webp" alt="N" width="30" height="16"><span>N</span></button>
       <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp" alt="R" width="30" height="16"><span>R</span></button>
       <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp" alt="SR" width="30" height="16"><span>SR</span></button>
       <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR" width="30" height="16"><span>UR</span></button>
       <button class="cat-chip" data-filter-fullart="1" data-lang="pt">✨ Full Art</button>
-      <button class="cat-chip" data-filter-fullart="1" data-lang="en">✨ Full Art</button>
+      <button class="cat-chip" data-filter-fullart="1" data-lang="en">✨ Full Art</button><button class="cat-chip" data-filter-fullart="1" data-lang="es">✨ Full Art</button><button class="cat-chip" data-filter-fullart="1" data-lang="vi">✨ Full Art</button>
       <button class="cat-chip" data-filter-custom="1" data-lang="pt" title="Cartas originais criadas para o Forbidden Legacy">⭐ Custom</button>
-      <button class="cat-chip" data-filter-custom="1" data-lang="en" title="Original cards created for Forbidden Legacy">⭐ Custom</button>
+      <button class="cat-chip" data-filter-custom="1" data-lang="en" title="Original cards created for Forbidden Legacy">⭐ Custom</button><button class="cat-chip" data-filter-custom="1" data-lang="es" title="Original cards created for Forbidden Legacy">⭐ Custom</button><button class="cat-chip" data-filter-custom="1" data-lang="vi" title="Original cards created for Forbidden Legacy">⭐ Custom</button>
       <span class="cat-count" id="cat-count">—</span>
     </div>
   </div>
 
   <div class="cat-grid" id="cat-grid">
     <div class="cat-empty" data-lang="pt">Carregando catálogo…</div>
-    <div class="cat-empty" data-lang="en">Loading catalog…</div>
+    <div class="cat-empty" data-lang="en">Loading catalog…</div><div class="cat-empty" data-lang="es">Cargando catálogo…</div><div class="cat-empty" data-lang="vi">Đang tải danh mục…</div>
   </div>
 
 </div>
@@ -603,10 +606,10 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <img class="cat-modal-rarity-badge" id="cat-modal-rarity-badge" src="" alt="" style="display:none">
       <div class="cat-modal-versao" id="cat-modal-versao">
         <button type="button" id="cat-ver-normal" class="active" onclick="setCardVersion('normal')">
-          <span data-lang="pt">🃏 Normal</span><span data-lang="en">🃏 Normal</span>
+          <span data-lang="pt">🃏 Normal</span><span data-lang="en">🃏 Normal</span><span data-lang="es">🃏 Normal</span><span data-lang="vi">🃏 Thường</span>
         </button>
         <button type="button" id="cat-ver-full" onclick="setCardVersion('full')">
-          <span data-lang="pt">✨ Full Art</span><span data-lang="en">✨ Full Art</span>
+          <span data-lang="pt">✨ Full Art</span><span data-lang="en">✨ Full Art</span><span data-lang="es">✨ Full Art</span><span data-lang="vi">✨ Full Art</span>
         </button>
       </div>
     </div>
@@ -625,28 +628,28 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
-      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
-      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -98,6 +98,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -371,17 +374,17 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" class="active" data-lang="pt">Mods FM</a><a href="mods.html" class="active" data-lang="en">FM Mods</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" class="active" data-lang="pt">Mods FM</a><a href="mods.html" class="active" data-lang="en">FM Mods</a><a href="mods.html" class="active" data-lang="es">Mods FM</a><a href="mods.html" class="active" data-lang="vi">Mods FM</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -410,18 +413,18 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" class="active" data-lang="pt">Mods FM</a><a href="mods.html" class="active" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" class="active" data-lang="pt">Mods FM</a><a href="mods.html" class="active" data-lang="en">FM Mods</a><a href="mods.html" class="active" data-lang="es">Mods FM</a><a href="mods.html" class="active" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
@@ -429,13 +432,13 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
   <section class="hero">
   <div class="stars"></div>
     <p class="eyebrow" data-lang="pt">Comunidade</p>
-    <p class="eyebrow" data-lang="en">Community</p>
+    <p class="eyebrow" data-lang="en">Community</p><p class="eyebrow" data-lang="es">Comunidad</p><p class="eyebrow" data-lang="vi">Cộng đồng</p>
     <h1 data-lang="pt">Mods de Forbidden Memories</h1>
-    <h1 data-lang="en">Forbidden Memories Mods</h1>
+    <h1 data-lang="en">Forbidden Memories Mods</h1><h1 data-lang="es">Mods de Forbidden Memories</h1><h1 data-lang="vi">Mods của Forbidden Memories</h1>
     <p class="lead" data-lang="pt">Uma coletânea de mods e traduções do clássico Yu-Gi-Oh! Forbidden Memories (PS1), reunida pela Trager Games. Reviva o original do seu jeito — e conheça o Forbidden Legacy, a evolução moderna feita por fã.</p>
-    <p class="lead" data-lang="en">A curated collection of mods and translations for the classic Yu-Gi-Oh! Forbidden Memories (PS1), gathered by Trager Games. Relive the original your way — and discover Forbidden Legacy, the modern fan-made evolution.</p>
+    <p class="lead" data-lang="en">A curated collection of mods and translations for the classic Yu-Gi-Oh! Forbidden Memories (PS1), gathered by Trager Games. Relive the original your way — and discover Forbidden Legacy, the modern fan-made evolution.</p><p class="lead" data-lang="es">Una colección de mods y traducciones del clásico Yu-Gi-Oh! Forbidden Memories (PS1), reunida por Trager Games. Revive el original a tu manera — y conoce Forbidden Legacy, la evolución moderna hecha por fans.</p><p class="lead" data-lang="vi">Tuyển tập mod và bản dịch của tựa game kinh điển Yu-Gi-Oh! Forbidden Memories (PS1), do Trager Games tập hợp. Sống lại bản gốc theo cách của bạn — và khám phá Forbidden Legacy, bản tiến hóa hiện đại do người hâm mộ làm.</p>
     <div class="note" data-lang="pt"><strong>Créditos & uso:</strong> todos os mods pertencem aos seus respectivos autores. Aplique os patches na sua própria cópia legal do jogo. Caso seja autor de um mod e queira removê-lo ou ajustar os créditos, fale com a gente pelo <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>.</div>
-    <div class="note" data-lang="en"><strong>Credits & usage:</strong> all mods belong to their respective authors. Apply the patches to your own legal copy of the game. If you are a mod author and want it removed or your credit adjusted, reach us on <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>.</div>
+    <div class="note" data-lang="en"><strong>Credits & usage:</strong> all mods belong to their respective authors. Apply the patches to your own legal copy of the game. If you are a mod author and want it removed or your credit adjusted, reach us on <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>.</div><div class="note" data-lang="es"><strong>Créditos y uso:</strong> todos los mods pertenecen a sus respectivos autores. Aplica los parches en tu propia copia legal del juego. Si eres autor de un mod y quieres retirarlo o ajustar los créditos, háblanos por <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>.</div><div class="note" data-lang="vi"><strong>Ghi công và sử dụng:</strong> mọi mod thuộc về tác giả tương ứng. Hãy áp dụng bản vá lên bản sao hợp pháp của chính bạn. Nếu bạn là tác giả một mod và muốn gỡ bỏ hoặc chỉnh phần ghi công, hãy liên hệ với chúng tôi qua <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>.</div>
   </section>
 
   <section class="wrap">
@@ -452,12 +455,12 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
     <div class="funnel">
       <div class="funnel-text">
         <h3 data-lang="pt">Gostou de Forbidden Memories?</h3>
-        <h3 data-lang="en">Love Forbidden Memories?</h3>
+        <h3 data-lang="en">Love Forbidden Memories?</h3><h3 data-lang="es">¿Te gustó Forbidden Memories?</h3><h3 data-lang="vi">Bạn thích Forbidden Memories?</h3>
         <p data-lang="pt">O Forbidden Legacy é a continuação espiritual: campanha completa, mais de 1.100 cartas, fusões, efeitos modernos e muito mais. Versão gratuita disponível para PC, Android e Linux.</p>
-        <p data-lang="en">Forbidden Legacy is the spiritual successor: full campaign, 1,100+ cards, fusions, modern effects and much more. Free version available for PC, Android and Linux.</p>
+        <p data-lang="en">Forbidden Legacy is the spiritual successor: full campaign, 1,100+ cards, fusions, modern effects and much more. Free version available for PC, Android and Linux.</p><p data-lang="es">Forbidden Legacy es la continuación espiritual: campaña completa, más de 1.100 cartas, fusiones, efectos modernos y mucho más. Versión gratuita disponible para PC, Android y Linux.</p><p data-lang="vi">Forbidden Legacy là phần tiếp nối tinh thần: cốt truyện đầy đủ, hơn 1.100 thẻ bài, hợp thể, hiệu ứng hiện đại và nhiều hơn nữa. Bản miễn phí có cho PC, Android và Linux.</p>
       </div>
       <a class="funnel-btn" href="/#download" data-lang="pt">▶ Jogar Forbidden Legacy</a>
-      <a class="funnel-btn" href="/#download" data-lang="en">▶ Play Forbidden Legacy</a>
+      <a class="funnel-btn" href="/#download" data-lang="en">▶ Play Forbidden Legacy</a><a class="funnel-btn" href="/#download" data-lang="es">▶ Jugar Forbidden Legacy</a><a class="funnel-btn" href="/#download" data-lang="vi">▶ Chơi Forbidden Legacy</a>
     </div>
   </section>
 </main>
@@ -467,28 +470,28 @@ h1{margin:0 0 18px;font-size:clamp(34px,5.4vw,60px);line-height:.98;color:var(--
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
-      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
-      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">

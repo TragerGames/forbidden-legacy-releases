@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
 <head>
 <script>
 /* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
@@ -400,6 +400,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
   display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
   background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
   color: var(--text-muted, #6a5830);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
@@ -470,17 +473,17 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" class="active" data-lang="pt">Banlist</a><a href="banlist.html" class="active" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" class="active" data-lang="pt">Banlist</a><a href="banlist.html" class="active" data-lang="en">Banlist</a><a href="banlist.html" class="active" data-lang="es">Banlist</a><a href="banlist.html" class="active" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
     <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
     <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
   </div>
@@ -509,28 +512,28 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 <div class="mobile-nav-bar" id="mobile-nav-bar">
   <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
   <div class="mobile-nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
-    <a href="banlist.html" class="active" data-lang="pt">Banlist</a><a href="banlist.html" class="active" data-lang="en">Banlist</a>
-    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a>
-    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a>
-    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a>
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html" class="active" data-lang="pt">Banlist</a><a href="banlist.html" class="active" data-lang="en">Banlist</a><a href="banlist.html" class="active" data-lang="es">Banlist</a><a href="banlist.html" class="active" data-lang="vi">Banlist</a>
+    <a href="boosters.html" data-lang="pt">Boosters</a><a href="boosters.html" data-lang="en">Boosters</a><a href="boosters.html" data-lang="es">Boosters</a><a href="boosters.html" data-lang="vi">Booster</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="page-hero">
   <div class="stars"></div>
-  <div class="page-hero-label" data-lang-pt="Sistema de Balanceamento · Beta 1.8.2" data-lang-en="Balancing System · Beta 1.8.2">Sistema de Balanceamento · Beta 1.8.2</div>
-  <h1 class="page-hero-title" data-lang-pt="Banlist de Grupos" data-lang-en="Group Banlist">Banlist de Grupos</h1>
-  <div class="page-hero-sub" data-lang-pt="Equilíbrio por impacto estratégico" data-lang-en="Balance through strategic impact">Equilíbrio por impacto estratégico</div>
-  <p class="page-hero-desc" data-lang-pt="A banlist de Forbidden Legacy não olha só para o nome da carta. Ela olha para o que a carta faz. Cartas com efeitos de impacto parecido compartilham um limite de grupo — garantindo variedade, criatividade e duelos mais saudáveis." data-lang-en="Forbidden Legacy's banlist doesn't just look at card names. It looks at what the card does. Cards with similar high-impact effects share a group limit — ensuring variety, creativity, and healthier duels.">A banlist de Forbidden Legacy não olha só para o nome da carta. Ela olha para o que a carta faz. Cartas com efeitos de impacto parecido compartilham um limite de grupo — garantindo variedade, criatividade e duelos mais saudáveis.</p>
+  <div class="page-hero-label" data-lang-pt="Sistema de Balanceamento · Beta 1.8.2" data-lang-en="Balancing System · Beta 1.8.2" data-lang-es="Sistema de Balanceo · Beta 1.8.2" data-lang-vi="Hệ thống cân bằng · Beta 1.8.2">Sistema de Balanceamento · Beta 1.8.2</div>
+  <h1 class="page-hero-title" data-lang-pt="Banlist de Grupos" data-lang-en="Group Banlist" data-lang-es="Banlist por Grupos" data-lang-vi="Banlist theo Nhóm">Banlist de Grupos</h1>
+  <div class="page-hero-sub" data-lang-pt="Equilíbrio por impacto estratégico" data-lang-en="Balance through strategic impact" data-lang-es="Equilibrio por impacto estratégico" data-lang-vi="Cân bằng theo tác động chiến thuật">Equilíbrio por impacto estratégico</div>
+  <p class="page-hero-desc" data-lang-pt="A banlist de Forbidden Legacy não olha só para o nome da carta. Ela olha para o que a carta faz. Cartas com efeitos de impacto parecido compartilham um limite de grupo — garantindo variedade, criatividade e duelos mais saudáveis." data-lang-en="Forbidden Legacy's banlist doesn't just look at card names. It looks at what the card does. Cards with similar high-impact effects share a group limit — ensuring variety, creativity, and healthier duels." data-lang-es="La banlist de Forbidden Legacy no mira solo el nombre de la carta. Mira lo que la carta hace. Cartas con efectos de impacto parecido comparten un límite de grupo — garantizando variedad, creatividad y duelos más sanos." data-lang-vi="Banlist của Forbidden Legacy không chỉ nhìn vào tên thẻ. Nó nhìn vào những gì thẻ làm được. Các thẻ có hiệu ứng tác động tương tự dùng chung một giới hạn nhóm — đảm bảo sự đa dạng, sáng tạo và những trận đấu lành mạnh hơn.">A banlist de Forbidden Legacy não olha só para o nome da carta. Ela olha para o que a carta faz. Cartas com efeitos de impacto parecido compartilham um limite de grupo — garantindo variedade, criatividade e duelos mais saudáveis.</p>
 </div>
 
 <!-- CONTENT -->
@@ -540,34 +543,34 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   <div class="intro-grid reveal">
     <div class="intro-card">
       <div class="intro-card-icon">🎯</div>
-      <h3 data-lang-pt="Por impacto, não por nome" data-lang-en="By impact, not by name">Por impacto, não por nome</h3>
-      <p data-lang-pt="Duas cartas diferentes com o mesmo tipo de efeito contam para o mesmo grupo. O limite controla o impacto estratégico, não a identidade da carta." data-lang-en="Two different cards with the same type of effect count toward the same group. The limit controls strategic impact, not card identity.">Duas cartas diferentes com o mesmo tipo de efeito contam para o mesmo grupo. O limite controla o impacto estratégico, não a identidade da carta.</p>
+      <h3 data-lang-pt="Por impacto, não por nome" data-lang-en="By impact, not by name" data-lang-es="Por impacto, no por nombre" data-lang-vi="Theo tác động, không theo tên">Por impacto, não por nome</h3>
+      <p data-lang-pt="Duas cartas diferentes com o mesmo tipo de efeito contam para o mesmo grupo. O limite controla o impacto estratégico, não a identidade da carta." data-lang-en="Two different cards with the same type of effect count toward the same group. The limit controls strategic impact, not card identity." data-lang-es="Dos cartas distintas con el mismo tipo de efecto cuentan para el mismo grupo. El límite controla el impacto estratégico, no la identidad de la carta." data-lang-vi="Hai thẻ khác nhau có cùng loại hiệu ứng được tính chung một nhóm. Giới hạn kiểm soát tác động chiến thuật, không phải danh tính của thẻ.">Duas cartas diferentes com o mesmo tipo de efeito contam para o mesmo grupo. O limite controla o impacto estratégico, não a identidade da carta.</p>
     </div>
     <div class="intro-card">
       <div class="intro-card-icon">🃏</div>
-      <h3 data-lang-pt="Visível no Editor de Deck" data-lang-en="Visible in Deck Editor">Visível no Editor de Deck</h3>
-      <p data-lang-pt="O Editor de Deck mostra ícone, contador e limite de grupo para cada carta. Ao clicar na carta, o painel exibe o grupo e o progresso atual do seu deck." data-lang-en="The Deck Editor shows group icons, counters, and limits for each card. Clicking a card shows the group and your deck's current progress.">O Editor de Deck mostra ícone, contador e limite de grupo para cada carta. Ao clicar na carta, o painel exibe o grupo e o progresso atual do seu deck.</p>
+      <h3 data-lang-pt="Visível no Editor de Deck" data-lang-en="Visible in Deck Editor" data-lang-es="Visible en el Editor de Mazo" data-lang-vi="Hiển thị trong Trình sửa bộ bài">Visível no Editor de Deck</h3>
+      <p data-lang-pt="O Editor de Deck mostra ícone, contador e limite de grupo para cada carta. Ao clicar na carta, o painel exibe o grupo e o progresso atual do seu deck." data-lang-en="The Deck Editor shows group icons, counters, and limits for each card. Clicking a card shows the group and your deck's current progress." data-lang-es="El Editor de Mazo muestra icono, contador y límite de grupo para cada carta. Al hacer clic, el panel muestra el grupo y el progreso actual de tu mazo." data-lang-vi="Trình sửa bộ bài hiển thị biểu tượng, bộ đếm và giới hạn nhóm cho từng thẻ. Khi nhấn vào thẻ, bảng thông tin hiện nhóm và tiến độ hiện tại của bộ bài.">O Editor de Deck mostra ícone, contador e limite de grupo para cada carta. Ao clicar na carta, o painel exibe o grupo e o progresso atual do seu deck.</p>
     </div>
     <div class="intro-card">
       <div class="intro-card-icon">⚖️</div>
-      <h3 data-lang-pt="Sistema vivo" data-lang-en="Living system">Sistema vivo</h3>
-      <p data-lang-pt="Os limites podem ser ajustados com o crescimento do projeto. A banlist é uma ferramenta de balanceamento contínuo, não uma regra imutável." data-lang-en="Limits can be adjusted as the project grows. The banlist is a continuous balancing tool, not an immutable rule.">Os limites podem ser ajustados com o crescimento do projeto. A banlist é uma ferramenta de balanceamento contínuo, não uma regra imutável.</p>
+      <h3 data-lang-pt="Sistema vivo" data-lang-en="Living system" data-lang-es="Sistema vivo" data-lang-vi="Hệ thống sống">Sistema vivo</h3>
+      <p data-lang-pt="Os limites podem ser ajustados com o crescimento do projeto. A banlist é uma ferramenta de balanceamento contínuo, não uma regra imutável." data-lang-en="Limits can be adjusted as the project grows. The banlist is a continuous balancing tool, not an immutable rule." data-lang-es="Los límites pueden ajustarse conforme el proyecto crece. La banlist es una herramienta de balanceo continuo, no una regla inmutable." data-lang-vi="Các giới hạn có thể được điều chỉnh khi dự án phát triển. Banlist là công cụ cân bằng liên tục, không phải quy tắc bất biến.">Os limites podem ser ajustados com o crescimento do projeto. A banlist é uma ferramenta de balanceamento contínuo, não uma regra imutável.</p>
     </div>
   </div>
 
   <!-- GRUPOS -->
   <div class="groups-section reveal">
-    <div class="section-label" data-lang-pt="Grupos Ativos · Beta 1.8.2" data-lang-en="Active Groups · Beta 1.8.2">Grupos Ativos · Beta 1.8.2</div>
-    <h2 class="section-title" data-lang-pt="Os 27 grupos da banlist" data-lang-en="The 27 banlist groups">Os 27 grupos da banlist</h2>
+    <div class="section-label" data-lang-pt="Grupos Ativos · Beta 1.8.2" data-lang-en="Active Groups · Beta 1.8.2" data-lang-es="Grupos Activos · Beta 1.8.2" data-lang-vi="Nhóm đang hoạt động · Beta 1.8.2">Grupos Ativos · Beta 1.8.2</div>
+    <h2 class="section-title" data-lang-pt="Os 27 grupos da banlist" data-lang-en="The 27 banlist groups" data-lang-es="Los 27 grupos de la banlist" data-lang-vi="27 nhóm của banlist">Os 27 grupos da banlist</h2>
 
     <div class="groups-grid">
 
       <div class="group-card special">
         <div class="group-tag special">DIV</div>
-        <div class="group-name" data-lang-pt="Bestas Divinas" data-lang-en="Divine Beasts">Bestas Divinas</div>
-        <div class="group-desc" data-lang-pt="Os Deuses Egípcios. Grupo próprio para não misturar sua restrição com cartas comuns. Cada Deus é limitado individualmente a 1 cópia." data-lang-en="The Egyptian Gods. Their own group so their restriction doesn't mix with common cards. Each God is individually limited to 1 copy.">Os Deuses Egípcios. Grupo próprio para não misturar sua restrição com cartas comuns. Cada Deus é limitado individualmente a 1 cópia.</div>
+        <div class="group-name" data-lang-pt="Bestas Divinas" data-lang-en="Divine Beasts" data-lang-es="Bestias Divinas" data-lang-vi="Thần Thú">Bestas Divinas</div>
+        <div class="group-desc" data-lang-pt="Os Deuses Egípcios. Grupo próprio para não misturar sua restrição com cartas comuns. Cada Deus é limitado individualmente a 1 cópia." data-lang-en="The Egyptian Gods. Their own group so their restriction doesn't mix with common cards. Each God is individually limited to 1 copy." data-lang-es="Los Dioses Egipcios. Grupo propio para no mezclar su restricción con cartas comunes. Cada Dios está limitado individualmente a 1 copia." data-lang-vi="Các Vị Thần Ai Cập. Nhóm riêng để giới hạn của họ không lẫn với thẻ thường. Mỗi Vị Thần bị giới hạn riêng ở 1 bản.">Os Deuses Egípcios. Grupo próprio para não misturar sua restrição com cartas comuns. Cada Deus é limitado individualmente a 1 cópia.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -575,10 +578,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">CLR</div>
-        <div class="group-name" data-lang-pt="Limpeza de campo" data-lang-en="Field Clear">Limpeza de campo</div>
-        <div class="group-desc" data-lang-pt="Cartas capazes de limpar monstros, campo ou causar destruição ampla." data-lang-en="Cards capable of clearing monsters, the field, or causing wide destruction.">Cartas capazes de limpar monstros, campo ou causar destruição ampla.</div>
+        <div class="group-name" data-lang-pt="Limpeza de campo" data-lang-en="Field Clear" data-lang-es="Limpieza de campo" data-lang-vi="Dọn sạch sân">Limpeza de campo</div>
+        <div class="group-desc" data-lang-pt="Cartas capazes de limpar monstros, campo ou causar destruição ampla." data-lang-en="Cards capable of clearing monsters, the field, or causing wide destruction." data-lang-es="Cartas capaces de limpiar monstruos, campo o causar destrucción amplia." data-lang-vi="Thẻ có thể dọn sạch quái thú, sân bài hoặc gây phá hủy diện rộng.">Cartas capazes de limpar monstros, campo ou causar destruição ampla.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -586,10 +589,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">3X</div>
-        <div class="group-name" data-lang-pt="Ataque triplo" data-lang-en="Triple Attack">Ataque triplo</div>
-        <div class="group-desc" data-lang-pt="Cartas que permitem atacar três ou mais vezes no mesmo turno." data-lang-en="Cards that allow attacking three or more times in the same turn.">Cartas que permitem atacar três ou mais vezes no mesmo turno.</div>
+        <div class="group-name" data-lang-pt="Ataque triplo" data-lang-en="Triple Attack" data-lang-es="Ataque triple" data-lang-vi="Tấn công ba lần">Ataque triplo</div>
+        <div class="group-desc" data-lang-pt="Cartas que permitem atacar três ou mais vezes no mesmo turno." data-lang-en="Cards that allow attacking three or more times in the same turn." data-lang-es="Cartas que permiten atacar tres o más veces en el mismo turno." data-lang-vi="Thẻ cho phép tấn công ba lần trở lên trong cùng lượt.">Cartas que permitem atacar três ou mais vezes no mesmo turno.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">1</span>
           <div class="limit-dots"><div class="limit-dot filled"></div></div>
         </div>
@@ -597,10 +600,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">2X</div>
-        <div class="group-name" data-lang-pt="Ataque múltiplo" data-lang-en="Multi-attack">Ataque múltiplo</div>
-        <div class="group-desc" data-lang-pt="Cartas que permitem atacar duas vezes no mesmo turno." data-lang-en="Cards that allow attacking twice in the same turn.">Cartas que permitem atacar duas vezes no mesmo turno.</div>
+        <div class="group-name" data-lang-pt="Ataque múltiplo" data-lang-en="Multi-attack" data-lang-es="Ataque múltiple" data-lang-vi="Tấn công nhiều lần">Ataque múltiplo</div>
+        <div class="group-desc" data-lang-pt="Cartas que permitem atacar duas vezes no mesmo turno." data-lang-en="Cards that allow attacking twice in the same turn." data-lang-es="Cartas que permiten atacar dos veces en el mismo turno." data-lang-vi="Thẻ cho phép tấn công hai lần trong cùng lượt.">Cartas que permitem atacar duas vezes no mesmo turno.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">2</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -608,10 +611,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">DIR</div>
-        <div class="group-name" data-lang-pt="Ataque direto" data-lang-en="Direct Attack">Ataque direto</div>
-        <div class="group-desc" data-lang-pt="Cartas que ignoram monstros do adversário para atacar diretamente os LP." data-lang-en="Cards that bypass the opponent's monsters to attack LP directly.">Cartas que ignoram monstros do adversário para atacar diretamente os LP.</div>
+        <div class="group-name" data-lang-pt="Ataque direto" data-lang-en="Direct Attack" data-lang-es="Ataque directo" data-lang-vi="Tấn công trực tiếp">Ataque direto</div>
+        <div class="group-desc" data-lang-pt="Cartas que ignoram monstros do adversário para atacar diretamente os LP." data-lang-en="Cards that bypass the opponent's monsters to attack LP directly." data-lang-es="Cartas que ignoran a los monstruos del rival para atacar directo a los LP." data-lang-vi="Thẻ bỏ qua quái thú của đối thủ để tấn công thẳng vào LP.">Cartas que ignoram monstros do adversário para atacar diretamente os LP.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">2</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -619,10 +622,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">IMM</div>
-        <div class="group-name" data-lang-pt="Imunidade forte" data-lang-en="Strong Immunity">Imunidade forte</div>
-        <div class="group-desc" data-lang-pt="Cartas com imunidades relevantes, bloqueio de magias/traps ou proteção muito forte." data-lang-en="Cards with relevant immunities, spell/trap negation, or very strong protection.">Cartas com imunidades relevantes, bloqueio de magias/traps ou proteção muito forte.</div>
+        <div class="group-name" data-lang-pt="Imunidade forte" data-lang-en="Strong Immunity" data-lang-es="Inmunidad fuerte" data-lang-vi="Miễn nhiễm mạnh">Imunidade forte</div>
+        <div class="group-desc" data-lang-pt="Cartas com imunidades relevantes, bloqueio de magias/traps ou proteção muito forte." data-lang-en="Cards with relevant immunities, spell/trap negation, or very strong protection." data-lang-es="Cartas con inmunidades relevantes, bloqueo de magias/trampas o protección muy fuerte." data-lang-vi="Thẻ có khả năng miễn nhiễm đáng kể, chặn phép/bẫy hoặc bảo vệ rất mạnh.">Cartas com imunidades relevantes, bloqueio de magias/traps ou proteção muito forte.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -630,10 +633,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">SPN</div>
-        <div class="group-name" data-lang-pt="Negação de magia" data-lang-en="Spell Negation">Negação de magia</div>
-        <div class="group-desc" data-lang-pt="Cartas que negam a ativação ou o efeito de Magias adversárias." data-lang-en="Cards that negate the activation or effect of opposing Spells.">Cartas que negam a ativação ou o efeito de Magias adversárias.</div>
+        <div class="group-name" data-lang-pt="Negação de magia" data-lang-en="Spell Negation" data-lang-es="Negación de magia" data-lang-vi="Vô hiệu hóa phép">Negação de magia</div>
+        <div class="group-desc" data-lang-pt="Cartas que negam a ativação ou o efeito de Magias adversárias." data-lang-en="Cards that negate the activation or effect of opposing Spells." data-lang-es="Cartas que niegan la activación o el efecto de Magias del oponente." data-lang-vi="Thẻ vô hiệu hóa việc kích hoạt hoặc hiệu ứng Phép của đối thủ.">Cartas que negam a ativação ou o efeito de Magias adversárias.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">2</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -641,10 +644,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">ATN</div>
-        <div class="group-name" data-lang-pt="Negação de ataque" data-lang-en="Attack Negation">Negação de ataque</div>
-        <div class="group-desc" data-lang-pt="Cartas que impedem ou anulam um ataque adversário." data-lang-en="Cards that prevent or nullify an opposing attack.">Cartas que impedem ou anulam um ataque adversário.</div>
+        <div class="group-name" data-lang-pt="Negação de ataque" data-lang-en="Attack Negation" data-lang-es="Negación de ataque" data-lang-vi="Vô hiệu hóa tấn công">Negação de ataque</div>
+        <div class="group-desc" data-lang-pt="Cartas que impedem ou anulam um ataque adversário." data-lang-en="Cards that prevent or nullify an opposing attack." data-lang-es="Cartas que impiden o anulan un ataque del oponente." data-lang-vi="Thẻ ngăn chặn hoặc vô hiệu hóa đòn tấn công của đối thủ.">Cartas que impedem ou anulam um ataque adversário.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">2</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -652,10 +655,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">LCK</div>
-        <div class="group-name" data-lang-pt="Trava de atacante" data-lang-en="Attacker Lock">Trava de atacante</div>
-        <div class="group-desc" data-lang-pt="Cartas que impedem monstros específicos de atacar ou mudar de posição." data-lang-en="Cards that prevent specific monsters from attacking or changing position.">Cartas que impedem monstros específicos de atacar ou mudar de posição.</div>
+        <div class="group-name" data-lang-pt="Trava de atacante" data-lang-en="Attacker Lock" data-lang-es="Bloqueo de atacante" data-lang-vi="Khóa kẻ tấn công">Trava de atacante</div>
+        <div class="group-desc" data-lang-pt="Cartas que impedem monstros específicos de atacar ou mudar de posição." data-lang-en="Cards that prevent specific monsters from attacking or changing position." data-lang-es="Cartas que impiden a monstruos específicos atacar o cambiar de posición." data-lang-vi="Thẻ ngăn quái thú cụ thể tấn công hoặc đổi tư thế.">Cartas que impedem monstros específicos de atacar ou mudar de posição.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -663,10 +666,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">BTR</div>
-        <div class="group-name" data-lang-pt="Resistência de batalha" data-lang-en="Battle Resistance">Resistência de batalha</div>
-        <div class="group-desc" data-lang-pt="Cartas com proteção forte em batalha, sobrevivendo a confrontos que normalmente as destruiriam." data-lang-en="Cards with strong battle protection, surviving fights that would normally destroy them.">Cartas com proteção forte em batalha, sobrevivendo a confrontos que normalmente as destruiriam.</div>
+        <div class="group-name" data-lang-pt="Resistência de batalha" data-lang-en="Battle Resistance" data-lang-es="Resistencia de batalla" data-lang-vi="Kháng chiến đấu">Resistência de batalha</div>
+        <div class="group-desc" data-lang-pt="Cartas com proteção forte em batalha, sobrevivendo a confrontos que normalmente as destruiriam." data-lang-en="Cards with strong battle protection, surviving fights that would normally destroy them." data-lang-es="Cartas con protección fuerte en batalla, que sobreviven a enfrentamientos que normalmente las destruirían." data-lang-vi="Thẻ có khả năng bảo vệ mạnh trong trận, sống sót qua những đối đầu thường sẽ tiêu diệt chúng.">Cartas com proteção forte em batalha, sobrevivendo a confrontos que normalmente as destruiriam.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -674,10 +677,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">EQ+</div>
-        <div class="group-name" data-lang-pt="Equip absurdo" data-lang-en="Extreme Equip">Equip absurdo</div>
-        <div class="group-desc" data-lang-pt="Equipamentos com impacto extremo, como cartas que dobram poder ou escalam de forma explosiva. Megamorph continua limitada individualmente a 1 cópia." data-lang-en="Equipment with extreme impact — doubles power or scales explosively. Megamorph remains individually limited to 1 copy.">Equipamentos com impacto extremo, como cartas que dobram poder ou escalam de forma explosiva. Megamorph continua limitada individualmente a 1 cópia.</div>
+        <div class="group-name" data-lang-pt="Equip absurdo" data-lang-en="Extreme Equip" data-lang-es="Equipo extremo" data-lang-vi="Trang bị cực mạnh">Equip absurdo</div>
+        <div class="group-desc" data-lang-pt="Equipamentos com impacto extremo, como cartas que dobram poder ou escalam de forma explosiva. Megamorph continua limitada individualmente a 1 cópia." data-lang-en="Equipment with extreme impact — doubles power or scales explosively. Megamorph remains individually limited to 1 copy." data-lang-es="Equipos con impacto extremo, como cartas que duplican poder o escalan de forma explosiva. Megamorph sigue limitada individualmente a 1 copia." data-lang-vi="Trang bị có tác động cực lớn, như thẻ nhân đôi sức mạnh hoặc tăng trưởng bùng nổ. Megamorph vẫn bị giới hạn riêng ở 1 bản.">Equipamentos com impacto extremo, como cartas que dobram poder ou escalam de forma explosiva. Megamorph continua limitada individualmente a 1 cópia.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">2</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -685,10 +688,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">EQM</div>
-        <div class="group-name" data-lang-pt="Monstro full equip" data-lang-en="Equip Monster">Monstro full equip</div>
-        <div class="group-desc" data-lang-pt="Monstros que abusam muito bem de equipamentos ou aceitam uma gama ampla demais de equips." data-lang-en="Monsters that greatly abuse equipment or accept an excessively wide range of equips.">Monstros que abusam muito bem de equipamentos ou aceitam uma gama ampla demais de equips.</div>
+        <div class="group-name" data-lang-pt="Monstro full equip" data-lang-en="Equip Monster" data-lang-es="Monstruo con equipos" data-lang-vi="Quái thú trang bị đầy đủ">Monstro full equip</div>
+        <div class="group-desc" data-lang-pt="Monstros que abusam muito bem de equipamentos ou aceitam uma gama ampla demais de equips." data-lang-en="Monsters that greatly abuse equipment or accept an excessively wide range of equips." data-lang-es="Monstruos que aprovechan demasiado bien los equipos o aceptan una gama excesiva de ellos." data-lang-vi="Quái thú tận dụng trang bị quá tốt hoặc nhận được quá nhiều loại trang bị.">Monstros que abusam muito bem de equipamentos ou aceitam uma gama ampla demais de equips.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -696,10 +699,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">ATK+</div>
-        <div class="group-name" data-lang-pt="Bônus de ATK" data-lang-en="ATK Bonus">Bônus de ATK</div>
-        <div class="group-desc" data-lang-pt="Cartas com ganho relevante de poder, buffs fortes ou crescimento ofensivo." data-lang-en="Cards with relevant power gain, strong buffs, or offensive scaling.">Cartas com ganho relevante de poder, buffs fortes ou crescimento ofensivo.</div>
+        <div class="group-name" data-lang-pt="Bônus de ATK" data-lang-en="ATK Bonus" data-lang-es="Bono de ATK" data-lang-vi="Thưởng ATK">Bônus de ATK</div>
+        <div class="group-desc" data-lang-pt="Cartas com ganho relevante de poder, buffs fortes ou crescimento ofensivo." data-lang-en="Cards with relevant power gain, strong buffs, or offensive scaling." data-lang-es="Cartas con ganancia relevante de poder, buffs fuertes o crecimiento ofensivo." data-lang-vi="Thẻ có mức tăng sức mạnh đáng kể, buff mạnh hoặc phát triển tấn công.">Cartas com ganho relevante de poder, buffs fortes ou crescimento ofensivo.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">6</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -707,10 +710,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">BRN</div>
-        <div class="group-name" data-lang-pt="Burn direto" data-lang-en="Direct Burn">Burn direto</div>
-        <div class="group-desc" data-lang-pt="Dano direto imediato e incondicional, sem gatilho ou condição especial." data-lang-en="Immediate, unconditional direct damage, with no trigger or special condition.">Dano direto imediato e incondicional, sem gatilho ou condição especial.</div>
+        <div class="group-name" data-lang-pt="Burn direto" data-lang-en="Direct Burn" data-lang-es="Burn directo" data-lang-vi="Burn trực tiếp">Burn direto</div>
+        <div class="group-desc" data-lang-pt="Dano direto imediato e incondicional, sem gatilho ou condição especial." data-lang-en="Immediate, unconditional direct damage, with no trigger or special condition." data-lang-es="Daño directo inmediato e incondicional, sin disparador ni condición especial." data-lang-vi="Sát thương trực tiếp tức thì, không cần điều kiện hay kích hoạt đặc biệt.">Dano direto imediato e incondicional, sem gatilho ou condição especial.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">6</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -718,10 +721,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">B-REC</div>
-        <div class="group-name" data-lang-pt="Burn recorrente" data-lang-en="Recurring Burn">Burn recorrente</div>
-        <div class="group-desc" data-lang-pt="Dano direto que se repete a cada turno ou gatilho, em vez de acontecer uma única vez." data-lang-en="Direct damage that repeats every turn or trigger, instead of happening once.">Dano direto que se repete a cada turno ou gatilho, em vez de acontecer uma única vez.</div>
+        <div class="group-name" data-lang-pt="Burn recorrente" data-lang-en="Recurring Burn" data-lang-es="Burn recurrente" data-lang-vi="Burn liên tục">Burn recorrente</div>
+        <div class="group-desc" data-lang-pt="Dano direto que se repete a cada turno ou gatilho, em vez de acontecer uma única vez." data-lang-en="Direct damage that repeats every turn or trigger, instead of happening once." data-lang-es="Daño directo que se repite cada turno o disparador, en vez de ocurrir una sola vez." data-lang-vi="Sát thương trực tiếp lặp lại mỗi lượt hoặc mỗi lần kích hoạt, thay vì chỉ một lần.">Dano direto que se repete a cada turno ou gatilho, em vez de acontecer uma única vez.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -729,10 +732,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">B-COND</div>
-        <div class="group-name" data-lang-pt="Burn condicional" data-lang-en="Conditional Burn">Burn condicional</div>
-        <div class="group-desc" data-lang-pt="Dano que depende de mão, campo, equip ou contagem de cartas para escalar." data-lang-en="Damage that depends on hand, field, equip, or card count to scale.">Dano que depende de mão, campo, equip ou contagem de cartas para escalar.</div>
+        <div class="group-name" data-lang-pt="Burn condicional" data-lang-en="Conditional Burn" data-lang-es="Burn condicional" data-lang-vi="Burn có điều kiện">Burn condicional</div>
+        <div class="group-desc" data-lang-pt="Dano que depende de mão, campo, equip ou contagem de cartas para escalar." data-lang-en="Damage that depends on hand, field, equip, or card count to scale." data-lang-es="Daño que escala según la mano, el campo, los equipos o el conteo de cartas." data-lang-vi="Sát thương tăng theo bài trên tay, sân, trang bị hoặc số lượng thẻ.">Dano que depende de mão, campo, equip ou contagem de cartas para escalar.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">4</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -740,10 +743,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">B-KILL</div>
-        <div class="group-name" data-lang-pt="Burn de combate" data-lang-en="Combat Burn">Burn de combate</div>
-        <div class="group-desc" data-lang-pt="Dano ligado a destruir um monstro em batalha ou vencer o confronto." data-lang-en="Damage tied to destroying a monster in battle or winning the fight.">Dano ligado a destruir um monstro em batalha ou vencer o confronto.</div>
+        <div class="group-name" data-lang-pt="Burn de combate" data-lang-en="Combat Burn" data-lang-es="Burn de combate" data-lang-vi="Burn khi chiến đấu">Burn de combate</div>
+        <div class="group-desc" data-lang-pt="Dano ligado a destruir um monstro em batalha ou vencer o confronto." data-lang-en="Damage tied to destroying a monster in battle or winning the fight." data-lang-es="Daño ligado a destruir un monstruo en batalla o ganar el enfrentamiento." data-lang-vi="Sát thương gắn với việc phá hủy quái thú trong trận hoặc thắng đối đầu.">Dano ligado a destruir um monstro em batalha ou vencer o confronto.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">4</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -751,10 +754,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">LP+</div>
-        <div class="group-name" data-lang-pt="Recuperação de LP" data-lang-en="LP Recovery">Recuperação de LP</div>
-        <div class="group-desc" data-lang-pt="Cartas que recuperam pontos de vida de forma relevante." data-lang-en="Cards that recover life points in a relevant amount.">Cartas que recuperam pontos de vida de forma relevante.</div>
+        <div class="group-name" data-lang-pt="Recuperação de LP" data-lang-en="LP Recovery" data-lang-es="Recuperación de LP" data-lang-vi="Hồi phục LP">Recuperação de LP</div>
+        <div class="group-desc" data-lang-pt="Cartas que recuperam pontos de vida de forma relevante." data-lang-en="Cards that recover life points in a relevant amount." data-lang-es="Cartas que recuperan puntos de vida de forma relevante." data-lang-vi="Thẻ hồi phục điểm sinh mệnh một cách đáng kể.">Cartas que recuperam pontos de vida de forma relevante.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -762,10 +765,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">MILL</div>
-        <div class="group-name" data-lang-pt="Mill / Deck Out" data-lang-en="Mill / Deck Out">Mill / Deck Out</div>
-        <div class="group-desc" data-lang-pt="Cartas que atacam o deck do oponente, forçando descarte ou acelerando deck out." data-lang-en="Cards that attack the opponent's deck, forcing discard or accelerating deck out.">Cartas que atacam o deck do oponente, forçando descarte ou acelerando deck out.</div>
+        <div class="group-name" data-lang-pt="Mill / Deck Out" data-lang-en="Mill / Deck Out" data-lang-es="Mill / Deck Out" data-lang-vi="Mill / Deck Out">Mill / Deck Out</div>
+        <div class="group-desc" data-lang-pt="Cartas que atacam o deck do oponente, forçando descarte ou acelerando deck out." data-lang-en="Cards that attack the opponent's deck, forcing discard or accelerating deck out." data-lang-es="Cartas que atacan el mazo del oponente, forzando descartes o acelerando el deck out." data-lang-vi="Thẻ tấn công bộ bài đối thủ, buộc bỏ bài hoặc đẩy nhanh deck out.">Cartas que atacam o deck do oponente, forçando descarte ou acelerando deck out.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -773,10 +776,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">CTL</div>
-        <div class="group-name" data-lang-pt="Controle de poder" data-lang-en="Power Control">Controle de poder</div>
-        <div class="group-desc" data-lang-pt="Cartas que reduzem, dividem, travam ou manipulam o poder dos monstros." data-lang-en="Cards that reduce, halve, lock, or manipulate monster power.">Cartas que reduzem, dividem, travam ou manipulam o poder dos monstros.</div>
+        <div class="group-name" data-lang-pt="Controle de poder" data-lang-en="Power Control" data-lang-es="Control de poder" data-lang-vi="Kiểm soát sức mạnh">Controle de poder</div>
+        <div class="group-desc" data-lang-pt="Cartas que reduzem, dividem, travam ou manipulam o poder dos monstros." data-lang-en="Cards that reduce, halve, lock, or manipulate monster power." data-lang-es="Cartas que reducen, dividen, bloquean o manipulan el poder de los monstruos." data-lang-vi="Thẻ giảm, chia, khóa hoặc thao túng sức mạnh của quái thú.">Cartas que reduzem, dividem, travam ou manipulam o poder dos monstros.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">4</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -784,10 +787,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">BTD</div>
-        <div class="group-name" data-lang-pt="Destruição em batalha" data-lang-en="Battle Destruction">Destruição em batalha</div>
-        <div class="group-desc" data-lang-pt="Cartas que destroem o monstro adversário só de entrar em batalha, independente de ATK/DEF." data-lang-en="Cards that destroy the opponent's monster just by battling it, regardless of ATK/DEF.">Cartas que destroem o monstro adversário só de entrar em batalha, independente de ATK/DEF.</div>
+        <div class="group-name" data-lang-pt="Destruição em batalha" data-lang-en="Battle Destruction" data-lang-es="Destrucción en batalla" data-lang-vi="Phá hủy khi chiến đấu">Destruição em batalha</div>
+        <div class="group-desc" data-lang-pt="Cartas que destroem o monstro adversário só de entrar em batalha, independente de ATK/DEF." data-lang-en="Cards that destroy the opponent's monster just by battling it, regardless of ATK/DEF." data-lang-es="Cartas que destruyen al monstruo rival con solo entrar en batalla, sin importar ATK/DEF." data-lang-vi="Thẻ phá hủy quái thú đối thủ ngay khi vào trận, bất kể ATK/DEF.">Cartas que destroem o monstro adversário só de entrar em batalha, independente de ATK/DEF.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -795,10 +798,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">REM</div>
-        <div class="group-name" data-lang-pt="Remoção pontual forte" data-lang-en="Targeted Removal">Remoção pontual forte</div>
-        <div class="group-desc" data-lang-pt="Cartas que destroem ou removem monstros específicos com impacto alto. Cartas que removem apenas backrow pertencem ao grupo BKR." data-lang-en="Cards that destroy or remove specific monsters with high impact. Cards that only remove backrow belong to the BKR group.">Cartas que destroem ou removem monstros específicos com impacto alto. Cartas que removem apenas backrow pertencem ao grupo BKR.</div>
+        <div class="group-name" data-lang-pt="Remoção pontual forte" data-lang-en="Targeted Removal" data-lang-es="Remoción puntual fuerte" data-lang-vi="Loại bỏ mục tiêu mạnh">Remoção pontual forte</div>
+        <div class="group-desc" data-lang-pt="Cartas que destroem ou removem monstros específicos com impacto alto. Cartas que removem apenas backrow pertencem ao grupo BKR." data-lang-en="Cards that destroy or remove specific monsters with high impact. Cards that only remove backrow belong to the BKR group." data-lang-es="Cartas que destruyen o eliminan monstruos específicos con alto impacto. Las que solo quitan backrow pertenecen al grupo BKR." data-lang-vi="Thẻ phá hủy hoặc loại bỏ quái thú cụ thể với tác động lớn. Thẻ chỉ dọn backrow thuộc nhóm BKR.">Cartas que destroem ou removem monstros específicos com impacto alto. Cartas que removem apenas backrow pertencem ao grupo BKR.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">4</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -806,10 +809,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">BKR</div>
-        <div class="group-name" data-lang-pt="Limpeza de backrow" data-lang-en="Backrow Clear">Limpeza de backrow</div>
-        <div class="group-desc" data-lang-pt="Cartas focadas em destruir magias, traps ou backrow." data-lang-en="Cards focused on destroying spells, traps, or backrow.">Cartas focadas em destruir magias, traps ou backrow.</div>
+        <div class="group-name" data-lang-pt="Limpeza de backrow" data-lang-en="Backrow Clear" data-lang-es="Limpieza de backrow" data-lang-vi="Dọn sạch backrow">Limpeza de backrow</div>
+        <div class="group-desc" data-lang-pt="Cartas focadas em destruir magias, traps ou backrow." data-lang-en="Cards focused on destroying spells, traps, or backrow." data-lang-es="Cartas enfocadas en destruir magias, trampas o backrow." data-lang-vi="Thẻ tập trung phá hủy phép, bẫy hoặc backrow.">Cartas focadas em destruir magias, traps ou backrow.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -817,10 +820,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">PRC</div>
-        <div class="group-name" data-lang-pt="Pressão / Perfurante" data-lang-en="Pressure / Piercing">Pressão / Perfurante</div>
-        <div class="group-desc" data-lang-pt="Cartas que causam dano perfurante, pressionam defesa ou vencem trocas com facilidade." data-lang-en="Cards that deal piercing damage, pressure defenses, or easily win battle exchanges.">Cartas que causam dano perfurante, pressionam defesa ou vencem trocas com facilidade.</div>
+        <div class="group-name" data-lang-pt="Pressão / Perfurante" data-lang-en="Pressure / Piercing" data-lang-es="Presión / Perforante" data-lang-vi="Áp lực / Xuyên giáp">Pressão / Perfurante</div>
+        <div class="group-desc" data-lang-pt="Cartas que causam dano perfurante, pressionam defesa ou vencem trocas com facilidade." data-lang-en="Cards that deal piercing damage, pressure defenses, or easily win battle exchanges." data-lang-es="Cartas que causan daño perforante, presionan la defensa o ganan intercambios con facilidad." data-lang-vi="Thẻ gây sát thương xuyên giáp, gây áp lực lên phòng thủ hoặc dễ thắng đối đầu.">Cartas que causam dano perfurante, pressionam defesa ou vencem trocas com facilidade.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -828,10 +831,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">SUB</div>
-        <div class="group-name" data-lang-pt="Substituto de fusão" data-lang-en="Fusion Substitute">Substituto de fusão</div>
-        <div class="group-desc" data-lang-pt="Cartas que substituem materiais de fusão." data-lang-en="Cards that substitute fusion materials.">Cartas que substituem materiais de fusão.</div>
+        <div class="group-name" data-lang-pt="Substituto de fusão" data-lang-en="Fusion Substitute" data-lang-es="Sustituto de fusión" data-lang-vi="Thẻ thay thế hợp thể">Substituto de fusão</div>
+        <div class="group-desc" data-lang-pt="Cartas que substituem materiais de fusão." data-lang-en="Cards that substitute fusion materials." data-lang-es="Cartas que sustituyen materiales de fusión." data-lang-vi="Thẻ thay thế nguyên liệu hợp thể.">Cartas que substituem materiais de fusão.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -839,10 +842,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card">
         <div class="group-tag">ACC</div>
-        <div class="group-name" data-lang-pt="Acelerador / Evolução" data-lang-en="Accelerator / Evolution">Acelerador / Evolução</div>
-        <div class="group-desc" data-lang-pt="Cartas que aceleram acesso a monstros, evoluções ou bosses." data-lang-en="Cards that accelerate access to monsters, evolutions, or boss cards.">Cartas que aceleram acesso a monstros, evoluções ou bosses.</div>
+        <div class="group-name" data-lang-pt="Acelerador / Evolução" data-lang-en="Accelerator / Evolution" data-lang-es="Acelerador / Evolución" data-lang-vi="Tăng tốc / Tiến hóa">Acelerador / Evolução</div>
+        <div class="group-desc" data-lang-pt="Cartas que aceleram acesso a monstros, evoluções ou bosses." data-lang-en="Cards that accelerate access to monsters, evolutions, or boss cards." data-lang-es="Cartas que aceleran el acceso a monstruos, evoluciones o bosses." data-lang-vi="Thẻ tăng tốc tiếp cận quái thú, tiến hóa hoặc boss.">Cartas que aceleram acesso a monstros, evoluções ou bosses.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">3</span>
           <div class="limit-dots"><div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div></div>
         </div>
@@ -850,10 +853,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
       <div class="group-card special">
         <div class="group-tag special">EXO</div>
-        <div class="group-name" data-lang-pt="Partes do Exodia" data-lang-en="Exodia Parts">Partes do Exodia</div>
-        <div class="group-desc" data-lang-pt="Grupo visual das partes do Exodia. O limite individual das peças é controlado separadamente." data-lang-en="Visual group for Exodia parts. The individual limit of each piece is controlled separately.">Grupo visual das partes do Exodia. O limite individual das peças é controlado separadamente.</div>
+        <div class="group-name" data-lang-pt="Partes do Exodia" data-lang-en="Exodia Parts" data-lang-es="Partes de Exodia" data-lang-vi="Các phần Exodia">Partes do Exodia</div>
+        <div class="group-desc" data-lang-pt="Grupo visual das partes do Exodia. O limite individual das peças é controlado separadamente." data-lang-en="Visual group for Exodia parts. The individual limit of each piece is controlled separately." data-lang-es="Grupo visual de las partes de Exodia. El límite individual de cada pieza se controla aparte." data-lang-vi="Nhóm hiển thị các phần Exodia. Giới hạn riêng của từng mảnh được kiểm soát tách biệt.">Grupo visual das partes do Exodia. O limite individual das peças é controlado separadamente.</div>
         <div class="group-limit">
-          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit">Limite</span>
+          <span class="limit-label" data-lang-pt="Limite" data-lang-en="Limit" data-lang-es="Límite" data-lang-vi="Giới hạn">Limite</span>
           <span class="limit-value">5</span>
           <div class="limit-dots">
             <div class="limit-dot filled"></div><div class="limit-dot filled"></div><div class="limit-dot filled"></div>
@@ -867,67 +870,67 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
   <!-- COMO FUNCIONA -->
   <div class="how-section reveal">
-    <div class="section-label" data-lang-pt="Mecânica" data-lang-en="Mechanics">Mecânica</div>
-    <h2 data-lang-pt="Como os grupos funcionam na prática" data-lang-en="How groups work in practice">Como os grupos funcionam na prática</h2>
-    <p data-lang-pt="Cada carta pertence a um ou mais grupos. Dentro do Editor de Deck, um contador de grupo é atualizado em tempo real conforme você monta o deck." data-lang-en="Each card belongs to one or more groups. Inside the Deck Editor, a group counter updates in real time as you build your deck.">Cada carta pertence a um ou mais grupos. Dentro do Editor de Deck, um contador de grupo é atualizado em tempo real conforme você monta o deck.</p>
-    <p data-lang-pt="Quando o limite de um grupo é atingido, o jogo impede a adição de novas cartas daquele grupo. Isso funciona independentemente de quantas cópias da mesma carta você tem — o que importa é o total de cartas do grupo no deck." data-lang-en="When a group limit is reached, the game prevents adding more cards from that group. This works regardless of how many copies of the same card you have — what matters is the total number of cards from that group in the deck.">Quando o limite de um grupo é atingido, o jogo impede a adição de novas cartas daquele grupo. Isso funciona independentemente de quantas cópias da mesma carta você tem — o que importa é o total de cartas do grupo no deck.</p>
+    <div class="section-label" data-lang-pt="Mecânica" data-lang-en="Mechanics" data-lang-es="Mecánica" data-lang-vi="Cơ chế">Mecânica</div>
+    <h2 data-lang-pt="Como os grupos funcionam na prática" data-lang-en="How groups work in practice" data-lang-es="Cómo funcionan los grupos en la práctica" data-lang-vi="Các nhóm hoạt động thế nào trong thực tế">Como os grupos funcionam na prática</h2>
+    <p data-lang-pt="Cada carta pertence a um ou mais grupos. Dentro do Editor de Deck, um contador de grupo é atualizado em tempo real conforme você monta o deck." data-lang-en="Each card belongs to one or more groups. Inside the Deck Editor, a group counter updates in real time as you build your deck." data-lang-es="Cada carta pertenece a uno o más grupos. Dentro del Editor de Mazo, un contador de grupo se actualiza en tiempo real mientras armas el mazo." data-lang-vi="Mỗi thẻ thuộc một hoặc nhiều nhóm. Trong Trình sửa bộ bài, bộ đếm nhóm cập nhật theo thời gian thực khi bạn dựng bài.">Cada carta pertence a um ou mais grupos. Dentro do Editor de Deck, um contador de grupo é atualizado em tempo real conforme você monta o deck.</p>
+    <p data-lang-pt="Quando o limite de um grupo é atingido, o jogo impede a adição de novas cartas daquele grupo. Isso funciona independentemente de quantas cópias da mesma carta você tem — o que importa é o total de cartas do grupo no deck." data-lang-en="When a group limit is reached, the game prevents adding more cards from that group. This works regardless of how many copies of the same card you have — what matters is the total number of cards from that group in the deck." data-lang-es="Cuando se alcanza el límite de un grupo, el juego impide añadir nuevas cartas de ese grupo. Esto funciona sin importar cuántas copias de la misma carta tengas — lo que cuenta es el total de cartas del grupo en el mazo." data-lang-vi="Khi đạt giới hạn của một nhóm, trò chơi ngăn bạn thêm thẻ mới thuộc nhóm đó. Điều này áp dụng bất kể bạn có bao nhiêu bản của cùng một thẻ — điều quan trọng là tổng số thẻ của nhóm trong bộ bài.">Quando o limite de um grupo é atingido, o jogo impede a adição de novas cartas daquele grupo. Isso funciona independentemente de quantas cópias da mesma carta você tem — o que importa é o total de cartas do grupo no deck.</p>
 
     <div class="example-box">
-      <strong data-lang-pt="Exemplo:" data-lang-en="Example:">Exemplo:</strong><br><br>
-      <span data-lang-pt="<strong>Black Luster Soldier</strong> e <strong>Blue-Eyes Twin Burst Dragon</strong> pertencem ao grupo <strong>2X — Ataque múltiplo</strong> (limite 2).<br><br>Se o seu deck já tem 1 cópia de cada, o grupo está cheio. Não importa que são cartas diferentes — juntas, elas ocupam as 2 vagas do grupo. Nenhuma outra carta do grupo pode ser adicionada." data-lang-en="<strong>Black Luster Soldier</strong> and <strong>Blue-Eyes Twin Burst Dragon</strong> both belong to the <strong>2X — Multi-attack</strong> group (limit 2).<br><br>If your deck already has 1 copy of each, the group is full. It doesn't matter that they are different cards — together they occupy both group slots. No other card from the group can be added."><strong>Black Luster Soldier</strong> e <strong>Blue-Eyes Twin Burst Dragon</strong> pertencem ao grupo <strong>2X — Ataque múltiplo</strong> (limite 2).<br><br>Se o seu deck já tem 1 cópia de cada, o grupo está cheio. Não importa que são cartas diferentes — juntas, elas ocupam as 2 vagas do grupo. Nenhuma outra carta do grupo pode ser adicionada.</span>
+      <strong data-lang-pt="Exemplo:" data-lang-en="Example:" data-lang-es="Ejemplo:" data-lang-vi="Ví dụ:">Exemplo:</strong><br><br>
+      <span data-lang-pt="<strong>Black Luster Soldier</strong> e <strong>Blue-Eyes Twin Burst Dragon</strong> pertencem ao grupo <strong>2X — Ataque múltiplo</strong> (limite 2).<br><br>Se o seu deck já tem 1 cópia de cada, o grupo está cheio. Não importa que são cartas diferentes — juntas, elas ocupam as 2 vagas do grupo. Nenhuma outra carta do grupo pode ser adicionada." data-lang-en="<strong>Black Luster Soldier</strong> and <strong>Blue-Eyes Twin Burst Dragon</strong> both belong to the <strong>2X — Multi-attack</strong> group (limit 2).<br><br>If your deck already has 1 copy of each, the group is full. It doesn't matter that they are different cards — together they occupy both group slots. No other card from the group can be added." data-lang-es="<strong>Black Luster Soldier</strong> y <strong>Blue-Eyes Twin Burst Dragon</strong> pertenecen al grupo <strong>2X — Ataque múltiple</strong> (límite 2).<br><br>Si tu mazo ya tiene 1 copia de cada una, el grupo está lleno. No importa que sean cartas distintas — juntas ocupan las 2 plazas del grupo. Ninguna otra carta del grupo puede añadirse." data-lang-vi="<strong>Black Luster Soldier</strong> và <strong>Blue-Eyes Twin Burst Dragon</strong> thuộc nhóm <strong>2X — Tấn công nhiều lần</strong> (giới hạn 2).<br><br>Nếu bộ bài của bạn đã có 1 bản mỗi thẻ, nhóm đã đầy. Không quan trọng chúng là hai thẻ khác nhau — cùng nhau, chúng chiếm cả 2 chỗ của nhóm. Không thẻ nào khác trong nhóm được thêm vào nữa."><strong>Black Luster Soldier</strong> e <strong>Blue-Eyes Twin Burst Dragon</strong> pertencem ao grupo <strong>2X — Ataque múltiplo</strong> (limite 2).<br><br>Se o seu deck já tem 1 cópia de cada, o grupo está cheio. Não importa que são cartas diferentes — juntas, elas ocupam as 2 vagas do grupo. Nenhuma outra carta do grupo pode ser adicionada.</span>
     </div>
 
-    <p data-lang-pt="Uma carta pode pertencer a mais de um grupo. Nesse caso, ela conta separadamente para cada grupo em que está registrada." data-lang-en="A card can belong to more than one group. In that case, it counts separately toward each group it belongs to.">Uma carta pode pertencer a mais de um grupo. Nesse caso, ela conta separadamente para cada grupo em que está registrada.</p>
+    <p data-lang-pt="Uma carta pode pertencer a mais de um grupo. Nesse caso, ela conta separadamente para cada grupo em que está registrada." data-lang-en="A card can belong to more than one group. In that case, it counts separately toward each group it belongs to." data-lang-es="Una carta puede pertenecer a más de un grupo. En ese caso, cuenta por separado para cada grupo en el que está registrada." data-lang-vi="Một thẻ có thể thuộc nhiều nhóm. Khi đó, nó được tính riêng cho từng nhóm mà nó thuộc về.">Uma carta pode pertencer a mais de um grupo. Nesse caso, ela conta separadamente para cada grupo em que está registrada.</p>
   </div>
 
   <!-- AVISO SAVE -->
   <div class="save-warn reveal">
     <div class="save-warn-icon">⚠️</div>
     <div>
-      <h3 data-lang-pt="O que acontece com decks antigos?" data-lang-en="What happens to old decks?">O que acontece com decks antigos?</h3>
-      <p data-lang-pt="Ao abrir a Beta 1.3 pela primeira vez, o jogo verifica automaticamente os decks salvos. Se um deck estiver fora das novas regras, as cartas excedentes podem ser removidas do deck — mas continuam disponíveis na sua coleção. O jogo exibirá um aviso recomendando que você abra o Editor de Deck e confira se o deck está completo antes de duelar." data-lang-en="When opening Beta 1.3 for the first time, the game automatically checks saved decks. If a deck violates the new rules, excess cards may be removed from the deck — but they remain available in your collection. The game will display a warning recommending you open the Deck Editor and verify your deck is complete before dueling.">Ao abrir a Beta 1.3 pela primeira vez, o jogo verifica automaticamente os decks salvos. Se um deck estiver fora das novas regras, as cartas excedentes podem ser removidas do deck — mas continuam disponíveis na sua coleção. O jogo exibirá um aviso recomendando que você abra o Editor de Deck e confira se o deck está completo antes de duelar.</p>
+      <h3 data-lang-pt="O que acontece com decks antigos?" data-lang-en="What happens to old decks?" data-lang-es="¿Qué pasa con los mazos antiguos?" data-lang-vi="Bộ bài cũ thì sao?">O que acontece com decks antigos?</h3>
+      <p data-lang-pt="Ao abrir a Beta 1.3 pela primeira vez, o jogo verifica automaticamente os decks salvos. Se um deck estiver fora das novas regras, as cartas excedentes podem ser removidas do deck — mas continuam disponíveis na sua coleção. O jogo exibirá um aviso recomendando que você abra o Editor de Deck e confira se o deck está completo antes de duelar." data-lang-en="When opening Beta 1.3 for the first time, the game automatically checks saved decks. If a deck violates the new rules, excess cards may be removed from the deck — but they remain available in your collection. The game will display a warning recommending you open the Deck Editor and verify your deck is complete before dueling." data-lang-es="Al abrir la Beta 1.3 por primera vez, el juego revisa automáticamente los mazos guardados. Si un mazo queda fuera de las nuevas reglas, las cartas excedentes pueden ser retiradas del mazo — pero siguen disponibles en tu colección. El juego mostrará un aviso recomendando que abras el Editor de Mazo y verifiques si el mazo está completo antes de duelar." data-lang-vi="Khi mở Beta 1.3 lần đầu, trò chơi tự động kiểm tra các bộ bài đã lưu. Nếu một bộ bài không còn hợp lệ theo luật mới, các thẻ dư có thể bị gỡ khỏi bộ bài — nhưng vẫn còn trong bộ sưu tập của bạn. Trò chơi sẽ hiện thông báo khuyên bạn mở Trình sửa bộ bài và kiểm tra bộ bài đã đủ chưa trước khi vào trận.">Ao abrir a Beta 1.3 pela primeira vez, o jogo verifica automaticamente os decks salvos. Se um deck estiver fora das novas regras, as cartas excedentes podem ser removidas do deck — mas continuam disponíveis na sua coleção. O jogo exibirá um aviso recomendando que você abra o Editor de Deck e confira se o deck está completo antes de duelar.</p>
     </div>
   </div>
 
   <!-- FAQ -->
-  <div class="section-label reveal" data-lang-pt="Dúvidas Frequentes" data-lang-en="Frequently Asked Questions">Dúvidas Frequentes</div>
-  <h2 class="section-title reveal" data-lang-pt="Perguntas sobre a banlist" data-lang-en="Banlist questions">Perguntas sobre a banlist</h2>
+  <div class="section-label reveal" data-lang-pt="Dúvidas Frequentes" data-lang-en="Frequently Asked Questions" data-lang-es="Preguntas Frecuentes" data-lang-vi="Câu hỏi thường gặp">Dúvidas Frequentes</div>
+  <h2 class="section-title reveal" data-lang-pt="Perguntas sobre a banlist" data-lang-en="Banlist questions" data-lang-es="Preguntas sobre la banlist" data-lang-vi="Câu hỏi về banlist">Perguntas sobre a banlist</h2>
 
   <div class="faq-list reveal">
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        <span data-lang-pt="A banlist remove cartas da minha coleção?" data-lang-en="Does the banlist remove cards from my collection?">A banlist remove cartas da minha coleção?</span>
+        <span data-lang-pt="A banlist remove cartas da minha coleção?" data-lang-en="Does the banlist remove cards from my collection?" data-lang-es="¿La banlist elimina cartas de mi colección?" data-lang-vi="Banlist có xóa thẻ khỏi bộ sưu tập không?">A banlist remove cartas da minha coleção?</span>
         <span class="faq-arrow">▼</span>
       </div>
-      <div class="faq-a" data-lang-pt="Não. A banlist afeta a montagem do deck, não a coleção. A carta continua disponível no seu baú mesmo que saia do deck." data-lang-en="No. The banlist affects deck building, not your collection. The card remains available in your inventory even if it leaves the deck.">Não. A banlist afeta a montagem do deck, não a coleção. A carta continua disponível no seu baú mesmo que saia do deck.</div>
+      <div class="faq-a" data-lang-pt="Não. A banlist afeta a montagem do deck, não a coleção. A carta continua disponível no seu baú mesmo que saia do deck." data-lang-en="No. The banlist affects deck building, not your collection. The card remains available in your inventory even if it leaves the deck." data-lang-es="No. La banlist afecta el armado del mazo, no la colección. La carta sigue disponible en tu baúl aunque salga del mazo." data-lang-vi="Không. Banlist ảnh hưởng tới việc dựng bộ bài, không phải bộ sưu tập. Thẻ vẫn còn trong kho dù bị loại khỏi bộ bài.">Não. A banlist afeta a montagem do deck, não a coleção. A carta continua disponível no seu baú mesmo que saia do deck.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        <span data-lang-pt="Por que cartas diferentes contam no mesmo grupo?" data-lang-en="Why do different cards count in the same group?">Por que cartas diferentes contam no mesmo grupo?</span>
+        <span data-lang-pt="Por que cartas diferentes contam no mesmo grupo?" data-lang-en="Why do different cards count in the same group?" data-lang-es="¿Por qué cartas distintas cuentan en el mismo grupo?" data-lang-vi="Tại sao các thẻ khác nhau lại tính chung một nhóm?">Por que cartas diferentes contam no mesmo grupo?</span>
         <span class="faq-arrow">▼</span>
       </div>
-      <div class="faq-a" data-lang-pt="Porque a banlist olha para o tipo de impacto estratégico do efeito. Cartas diferentes podem causar o mesmo desequilíbrio quando usadas em excesso no mesmo deck." data-lang-en="Because the banlist looks at the type of strategic impact an effect has. Different cards can cause the same imbalance when used in excess in the same deck.">Porque a banlist olha para o tipo de impacto estratégico do efeito. Cartas diferentes podem causar o mesmo desequilíbrio quando usadas em excesso no mesmo deck.</div>
+      <div class="faq-a" data-lang-pt="Porque a banlist olha para o tipo de impacto estratégico do efeito. Cartas diferentes podem causar o mesmo desequilíbrio quando usadas em excesso no mesmo deck." data-lang-en="Because the banlist looks at the type of strategic impact an effect has. Different cards can cause the same imbalance when used in excess in the same deck." data-lang-es="Porque la banlist mira el tipo de impacto estratégico del efecto. Cartas distintas pueden causar el mismo desequilibrio si se usan en exceso en el mismo mazo." data-lang-vi="Vì banlist nhìn vào loại tác động chiến thuật của hiệu ứng. Các thẻ khác nhau có thể gây mất cân bằng như nhau khi dùng quá nhiều trong cùng bộ bài.">Porque a banlist olha para o tipo de impacto estratégico do efeito. Cartas diferentes podem causar o mesmo desequilíbrio quando usadas em excesso no mesmo deck.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        <span data-lang-pt="Por que os Deuses têm grupo próprio?" data-lang-en="Why do the Gods have their own group?">Por que os Deuses têm grupo próprio?</span>
+        <span data-lang-pt="Por que os Deuses têm grupo próprio?" data-lang-en="Why do the Gods have their own group?" data-lang-es="¿Por qué los Dioses tienen grupo propio?" data-lang-vi="Tại sao các Vị Thần có nhóm riêng?">Por que os Deuses têm grupo próprio?</span>
         <span class="faq-arrow">▼</span>
       </div>
-      <div class="faq-a" data-lang-pt="As Bestas Divinas possuem poder e raridade únicas. Elas ficam separadas para que seu limite de grupo (até 3, um de cada Deus) não se misture com o limite dos outros grupos. Além disso, cada Deus individualmente só pode ter 1 cópia no deck." data-lang-en="The Divine Beasts have unique power and rarity. They're kept separate so their group limit (up to 3, one of each God) doesn't blend with other group limits. On top of that, each God is individually limited to 1 copy in the deck.">As Bestas Divinas possuem poder e raridade únicas. Elas ficam separadas para que seu limite de grupo (até 3, um de cada Deus) não se misture com o limite dos outros grupos. Além disso, cada Deus individualmente só pode ter 1 cópia no deck.</div>
+      <div class="faq-a" data-lang-pt="As Bestas Divinas possuem poder e raridade únicas. Elas ficam separadas para que seu limite de grupo (até 3, um de cada Deus) não se misture com o limite dos outros grupos. Além disso, cada Deus individualmente só pode ter 1 cópia no deck." data-lang-en="The Divine Beasts have unique power and rarity. They're kept separate so their group limit (up to 3, one of each God) doesn't blend with other group limits. On top of that, each God is individually limited to 1 copy in the deck." data-lang-es="Las Bestias Divinas tienen poder y rareza únicos. Están separadas para que su límite de grupo (hasta 3, uno de cada Dios) no se mezcle con el de los demás grupos. Además, cada Dios individualmente solo puede tener 1 copia en el mazo." data-lang-vi="Thần Thú có sức mạnh và độ hiếm độc nhất. Chúng được tách riêng để giới hạn nhóm của mình (tối đa 3, mỗi Vị Thần một bản) không lẫn với các nhóm khác. Ngoài ra, mỗi Vị Thần chỉ được có 1 bản trong bộ bài.">As Bestas Divinas possuem poder e raridade únicas. Elas ficam separadas para que seu limite de grupo (até 3, um de cada Deus) não se misture com o limite dos outros grupos. Além disso, cada Deus individualmente só pode ter 1 cópia no deck.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        <span data-lang-pt="Os limites vão mudar?" data-lang-en="Will the limits change?">Os limites vão mudar?</span>
+        <span data-lang-pt="Os limites vão mudar?" data-lang-en="Will the limits change?" data-lang-es="¿Los límites van a cambiar?" data-lang-vi="Giới hạn có thay đổi không?">Os limites vão mudar?</span>
         <span class="faq-arrow">▼</span>
       </div>
-      <div class="faq-a" data-lang-pt="Possivelmente. Esta é a primeira versão funcional do sistema. Os limites podem ser ajustados com base nos testes da comunidade, relatos e comportamento real dos decks." data-lang-en="Possibly. This is the first functional version of the system. Limits may be adjusted based on community testing, reports, and real deck behavior.">Possivelmente. Esta é a primeira versão funcional do sistema. Os limites podem ser ajustados com base nos testes da comunidade, relatos e comportamento real dos decks.</div>
+      <div class="faq-a" data-lang-pt="Possivelmente. Esta é a primeira versão funcional do sistema. Os limites podem ser ajustados com base nos testes da comunidade, relatos e comportamento real dos decks." data-lang-en="Possibly. This is the first functional version of the system. Limits may be adjusted based on community testing, reports, and real deck behavior." data-lang-es="Posiblemente. Esta es la primera versión funcional del sistema. Los límites pueden ajustarse según las pruebas de la comunidad, los reportes y el comportamiento real de los mazos." data-lang-vi="Có thể. Đây là phiên bản hoạt động đầu tiên của hệ thống. Giới hạn có thể được điều chỉnh dựa trên thử nghiệm của cộng đồng, phản hồi và cách các bộ bài vận hành thực tế.">Possivelmente. Esta é a primeira versão funcional do sistema. Os limites podem ser ajustados com base nos testes da comunidade, relatos e comportamento real dos decks.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        <span data-lang-pt="Posso conferir a banlist dentro do jogo?" data-lang-en="Can I check the banlist inside the game?">Posso conferir a banlist dentro do jogo?</span>
+        <span data-lang-pt="Posso conferir a banlist dentro do jogo?" data-lang-en="Can I check the banlist inside the game?" data-lang-es="¿Puedo ver la banlist dentro del juego?" data-lang-vi="Tôi có xem được banlist trong trò chơi không?">Posso conferir a banlist dentro do jogo?</span>
         <span class="faq-arrow">▼</span>
       </div>
-      <div class="faq-a" data-lang-pt="Sim. O Editor de Deck tem um botão dedicado de BANLIST. Ao clicar em qualquer carta, o painel ampliado mostra o grupo, o contador atual e o limite daquele grupo no seu deck." data-lang-en="Yes. The Deck Editor has a dedicated BANLIST button. Clicking any card shows the group, current counter, and group limit in the expanded card panel.">Sim. O Editor de Deck tem um botão dedicado de BANLIST. Ao clicar em qualquer carta, o painel ampliado mostra o grupo, o contador atual e o limite daquele grupo no seu deck.</div>
+      <div class="faq-a" data-lang-pt="Sim. O Editor de Deck tem um botão dedicado de BANLIST. Ao clicar em qualquer carta, o painel ampliado mostra o grupo, o contador atual e o limite daquele grupo no seu deck." data-lang-en="Yes. The Deck Editor has a dedicated BANLIST button. Clicking any card shows the group, current counter, and group limit in the expanded card panel." data-lang-es="Sí. El Editor de Mazo tiene un botón dedicado de BANLIST. Al hacer clic en cualquier carta, el panel ampliado muestra el grupo, el contador actual y el límite de ese grupo en tu mazo." data-lang-vi="Có. Trình sửa bộ bài có nút BANLIST riêng. Khi nhấn vào thẻ bất kỳ, bảng mở rộng hiển thị nhóm, bộ đếm hiện tại và giới hạn của nhóm đó trong bộ bài của bạn.">Sim. O Editor de Deck tem um botão dedicado de BANLIST. Ao clicar em qualquer carta, o painel ampliado mostra o grupo, o contador atual e o limite daquele grupo no seu deck.</div>
     </div>
   </div>
 
@@ -939,28 +942,28 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <div class="footer-brand">
       <div class="footer-logo">☥ Forbidden Legacy</div>
       <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
-      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4>
-      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a>
-      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a>
-      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a>
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4>
-      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a>
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
       <a href="banlist.html">Banlist</a>
       <a href="boosters.html">Boosters</a>
-      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a>
-      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a>
-      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     </div>
     <div class="footer-col">
-      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4>
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
-      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
     </div>
   </div>
   <div class="footer-bottom">
