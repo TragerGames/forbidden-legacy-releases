@@ -426,9 +426,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   </div>
   <div style="display:flex; align-items:center; gap:12px;">
     <a href="https://discord.gg/forbidden-legacy" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
-      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> online
+      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> <span data-lang="pt">online</span><span data-lang="en">online</span><span data-lang="es">en línea</span><span data-lang="vi">trực tuyến</span>
       <span style="opacity:.4;margin:0 3px">·</span>
-      <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> members
+      <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> <span data-lang="pt">membros</span><span data-lang="en">members</span><span data-lang="es">miembros</span><span data-lang="vi">thành viên</span>
     </a>
     <div class="lang-pick" id="lang-pick">
       <button class="lang-pick-btn" type="button" id="lang-atual"
@@ -949,6 +949,31 @@ window.setGalFilter=setGalFilter;
     el.style.transitionDelay=(i*0.1)+'s';
     io.observe(el);
   });
+})();
+</script>
+
+<script>
+/* Contador do Discord da barra superior. Vive em cada pagina porque a
+   barra existe em todas — antes so o index buscava, e nas outras dez os
+   numeros ficavam em "—" para sempre. Falha de rede e silenciosa: a
+   barra some em vez de anunciar um erro que nao interessa ao visitante. */
+(function () {
+  fetch('/discord_counter.php', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      var online = d.online || 0, total = d.total || 0;
+      if (!total) return;
+      var fmt = function (n) { return Number(n).toLocaleString(); };
+      var o = document.getElementById('discord-online-nav');
+      var t = document.getElementById('discord-total-nav');
+      if (o) o.textContent = fmt(online);
+      if (t) t.textContent = fmt(total);
+      /* 'flex', nao '': o CSS da barra e display:none por padrao,
+         entao string vazia a deixaria invisivel com os dados na mao. */
+      var badge = document.getElementById('discord-nav-badge');
+      if (badge) badge.style.display = 'flex';
+    })
+    .catch(function () {});
 })();
 </script>
 </body>
