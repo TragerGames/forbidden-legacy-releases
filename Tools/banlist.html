@@ -1034,6 +1034,9 @@ function setLang(lang, saveToStorage = true) {
      carregamento esta funcao pode rodar antes de a pagina declarar suas
      variaveis de regiao (zona morta temporal do let/const), e sem esta
      protecao o erro aborta a troca de idioma inteira. */
+  /* Listas montadas por JS precisam ser refeitas: o texto delas foi
+     escolhido no idioma anterior. A pagina registra a sua em flRedesenhar. */
+  try { if (typeof flRedesenhar === 'function') flRedesenhar(); } catch (e) {}
   try { if (typeof atualizarChipRegiao === 'function') atualizarChipRegiao(); } catch (e) {}
 }
 window.setLang = setLang;

@@ -915,7 +915,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   const ENDING_IDS = ['especial_darklord', 'especial_red_eyes'];
   const STARTING_IDS = ['especial_cyber_dragon'];
 
-  function isEn() { return document.body.classList.contains('en'); }
+  /* Escolhe o campo do idioma ativo, caindo para ingles e depois portugues
+   quando a traducao daquele item nao existe. Os nomes de campo mudam de
+   arquivo para arquivo (desc_pt no catalogo, pt nas conquistas), por isso
+   os quatro sao passados explicitamente. */
+function flCampo(obj, pt, en, es, vi) {
+  if (!obj) return '';
+  var l = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+  var chave = { pt: pt, en: en, es: es, vi: vi }[l] || en;
+  return obj[chave] || obj[en] || obj[pt] || '';
+}
+
+function isEn() { return document.body.classList.contains('en'); }
 
   function formatCountdown(ms, modo) {
     if (ms <= 0) return null;
@@ -959,7 +970,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   }
 
   function tileHtml(b) {
-    const nome = isEn() ? b.nome_en : b.nome_pt;
+    const nome = flCampo(b, 'nome_pt', 'nome_en', 'nome_es', 'nome_vi');
     const packImg = b.imagem || ('img/boosters/' + b.id + '.png');
     const eventTag = b.evento
       ? '<span class="booster-tile-event-tag">' + (isEn() ? 'LIMITED' : 'TEMPORÁRIO') + '</span>'
@@ -996,6 +1007,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   }
 
   function renderTiles() {
+    /* Registrada para o setLang refazer os tiles no idioma novo — sem isto
+       os nomes ficam presos no idioma em que a pagina carregou. */
+    window.flRedesenhar = renderTiles;
     tilesEl.innerHTML = boostersData.map(tileHtml).join('');
     tilesEl.querySelectorAll('.booster-tile').forEach(el => {
       if (el.classList.contains('locked')) return; // sem clique enquanto bloqueado
@@ -1026,8 +1040,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       el.classList.toggle('active', el.getAttribute('data-id') === id);
     });
 
-    const nome = isEn() ? b.nome_en : b.nome_pt;
-    const desc = isEn() ? b.desc_en : b.desc_pt;
+    const nome = flCampo(b, 'nome_pt', 'nome_en', 'nome_es', 'nome_vi');
+    const desc = flCampo(b, 'desc_pt', 'desc_en', 'desc_es', 'desc_vi');
     const tipoLabelTxt = isEn()
       ? (b.total_tema + ' ' + b.tipo_label + ' cards possible in this pack')
       : (b.total_tema + ' cartas de ' + b.tipo_label + ' possíveis neste pacote');
@@ -1182,6 +1196,9 @@ function setLang(lang, saveToStorage = true) {
      carregamento esta funcao pode rodar antes de a pagina declarar suas
      variaveis de regiao (zona morta temporal do let/const), e sem esta
      protecao o erro aborta a troca de idioma inteira. */
+  /* Listas montadas por JS precisam ser refeitas: o texto delas foi
+     escolhido no idioma anterior. A pagina registra a sua em flRedesenhar. */
+  try { if (typeof flRedesenhar === 'function') flRedesenhar(); } catch (e) {}
   try { if (typeof atualizarChipRegiao === 'function') atualizarChipRegiao(); } catch (e) {}
 }
 window.setLang = setLang;

@@ -686,27 +686,27 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 const ACHIEVEMENTS = [
   // GERADO por Tools/exportar_conquistas_site.py a partir de
   // Scripts/conquistas_manager.gd — nao editar a mao.
-  {cat:'duels', icon:'⚔️', pt:'Duelista Incansável', en:'Relentless Duelist', ptReq:'A cada 500 duelos realizados', enReq:'Every 500 duels played', reward:'400 Stars por nível', rewardEn:'400 Stars per level'},
-  {cat:'collection', icon:'📦', pt:'Aventureiro de Boosters', en:'Booster Adventurer', ptReq:'A cada 5 boosters abertos', enReq:'Every 5 boosters opened', reward:'25 Frag. R por nível', rewardEn:'25 R Frag. per level'},
-  {cat:'collection', icon:'🃏', pt:'Caçador de Drops', en:'Drop Hunter', ptReq:'A cada 500 cartas obtidas por drop', enReq:'Every 500 cards obtained from drops', reward:'300 Stars por nível', rewardEn:'300 Stars per level'},
-  {cat:'collection', icon:'📚', pt:'Colecionador Supremo', en:'Supreme Collector', ptReq:'A cada 100 cartas únicas na coleção', enReq:'Every 100 unique cards in collection', reward:'250 Stars por nível', rewardEn:'250 Stars per level'},
-  {cat:'duels', icon:'🏆', pt:'Vencedor do Reino das Sombras', en:'Shadow Realm Victor', ptReq:'A cada 300 vitórias em duelo', enReq:'Every 300 duel victories', reward:'350 Stars por nível', rewardEn:'350 Stars per level'},
-  {cat:'duels', icon:'🛡️', pt:'Sobrevivente dos Duelos', en:'Duel Survivor', ptReq:'A cada 300 derrotas acumuladas', enReq:'Every 300 losses accumulated', reward:'150 Stars por nível', rewardEn:'150 Stars per level'},
-  {cat:'story', icon:'📖', pt:'Desafiante da História', en:'History Challenger', ptReq:'A cada personagem vencido no modo história', enReq:'For each character defeated in story mode', reward:'150 Stars por nível', rewardEn:'150 Stars per level'},
-  {cat:'duels', icon:'🔄', pt:'Rival Persistente', en:'Persistent Rival', ptReq:'A cada 500 duelos contra o mesmo NPC', enReq:'Every 500 duels against the same NPC', reward:'500 Stars por nível', rewardEn:'500 Stars per level'},
-  {cat:'combat', icon:'✨', pt:'Especialista em Magias', en:'Spell Specialist', ptReq:'A cada 500 cartas mágicas usadas', enReq:'Every 500 spell cards used', reward:'250 Stars por nível', rewardEn:'250 Stars per level'},
-  {cat:'combat', icon:'🪤', pt:'Armeiro de Armadilhas', en:'Trap Master', ptReq:'A cada 500 armadilhas ativadas', enReq:'Every 500 traps activated', reward:'250 Stars por nível', rewardEn:'250 Stars per level'},
-  {cat:'combat', icon:'👹', pt:'Invocador de Monstros', en:'Monster Summoner', ptReq:'A cada 1000 monstros invocados', enReq:'Every 1000 monsters summoned', reward:'300 Stars por nível', rewardEn:'300 Stars per level'},
-  {cat:'combat', icon:'🐉', pt:'Domador de Dragões', en:'Dragon Tamer', ptReq:'A cada 500 dragões invocados', enReq:'Every 500 dragons summoned', reward:'300 Stars por nível', rewardEn:'300 Stars per level'},
-  {cat:'collection', icon:'⭐', pt:'Senhor das Estrelas', en:'Lord of Stars', ptReq:'A cada 50.000 estrelas ganhas em duelos', enReq:'Every 50,000 stars earned from duels', reward:'1 Ticket de Torneio', rewardEn:'1 Tournament Ticket'},
-  {cat:'collection', icon:'🥈', pt:'Caçador de SR', en:'SR Hunter', ptReq:'A cada 50 cartas SR obtidas', enReq:'Every 50 SR cards obtained', reward:'200 Stars por nível', rewardEn:'200 Stars per level'},
-  {cat:'collection', icon:'💎', pt:'Caçador de UR', en:'UR Hunter', ptReq:'A cada 15 cartas UR obtidas', enReq:'Every 15 UR cards obtained', reward:'350 Stars por nível', rewardEn:'350 Stars per level'},
-  {cat:'collection', icon:'🖼️', pt:'Guardião do Brilho Eterno', en:'Guardian of the Eternal Glow', ptReq:'A cada 5 cartas Full Art desbloqueadas', enReq:'Every 5 Full Art cards unlocked', reward:'400 Stars por nível', rewardEn:'400 Stars per level'},
-  {cat:'story', icon:'🏆', pt:'Campeão do Torneio', en:'Tournament Champion', ptReq:'A cada Torneio completo vencido', enReq:'Every completed Tournament won', reward:'500 Stars por nível', rewardEn:'500 Stars per level'},
-  {cat:'story', icon:'🎖️', pt:'Veterano do Torneio', en:'Tournament Veteran', ptReq:'A cada 10 duelos vencidos dentro do Torneio', enReq:'Every 10 duels won inside the Tournament', reward:'60 Stars por nível', rewardEn:'60 Stars per level'},
-  {cat:'story', icon:'🩹', pt:'Resiliência do Torneio', en:'Tournament Resilience', ptReq:'A cada 10 duelos perdidos dentro do Torneio', enReq:'Every 10 duels lost inside the Tournament', reward:'50 Stars por nível', rewardEn:'50 Stars per level'},
-  {cat:'story', icon:'👑', pt:'Lenda Viva', en:'Living Legend', ptReq:'A cada vitória no Torneio Lendário', enReq:'Every Legendary Tournament victory', reward:'800 Stars por nível', rewardEn:'800 Stars per level'},
-  {cat:'story', icon:'🌑', pt:'Andarilho das Sombras', en:'Shadow Walker', ptReq:'A cada vitória no Torneio Sombrio', enReq:'Every Shadow Tournament victory', reward:'1500 Stars por nível', rewardEn:'1500 Stars per level'}
+  {cat:'duels', icon:'⚔️', pt:'Duelista Incansável', en:'Relentless Duelist', es:'Duelista Incansable', vi:'Đấu Sĩ Không Mệt Mỏi', ptReq:'A cada 500 duelos realizados', enReq:'Every 500 duels played', esReq:'Cada 500 duelos realizados', viReq:'Mỗi 500 trận đấu đã thực hiện', reward:'400 Stars por nível', rewardEn:'400 Stars per level', rewardEs:'400 Stars por nivel', rewardVi:'400 Stars mỗi cấp'},
+  {cat:'collection', icon:'📦', pt:'Aventureiro de Boosters', en:'Booster Adventurer', es:'Aventurero de Boosters', vi:'Nhà Thám Hiểm Booster', ptReq:'A cada 5 boosters abertos', enReq:'Every 5 boosters opened', esReq:'Cada 5 boosters abiertos', viReq:'Mỗi 5 gói Booster đã mở', reward:'25 Frag. R por nível', rewardEn:'25 R Frag. per level', rewardEs:'25 Frag. R por nivel', rewardVi:'25 Mảnh R mỗi cấp'},
+  {cat:'collection', icon:'🃏', pt:'Caçador de Drops', en:'Drop Hunter', es:'Cazador de Drops', vi:'Thợ Săn Phần Thưởng', ptReq:'A cada 500 cartas obtidas por drop', enReq:'Every 500 cards obtained from drops', esReq:'Cada 500 cartas obtenidas por drop', viReq:'Mỗi 500 lá bài nhận được từ phần thưởng', reward:'300 Stars por nível', rewardEn:'300 Stars per level', rewardEs:'300 Stars por nivel', rewardVi:'300 Stars mỗi cấp'},
+  {cat:'collection', icon:'📚', pt:'Colecionador Supremo', en:'Supreme Collector', es:'Coleccionista Supremo', vi:'Nhà Sưu Tầm Tối Thượng', ptReq:'A cada 100 cartas únicas na coleção', enReq:'Every 100 unique cards in collection', esReq:'Cada 100 cartas unicas en la coleccion', viReq:'Mỗi 100 lá bài độc nhất trong bộ sưu tập', reward:'250 Stars por nível', rewardEn:'250 Stars per level', rewardEs:'250 Stars por nivel', rewardVi:'250 Stars mỗi cấp'},
+  {cat:'duels', icon:'🏆', pt:'Vencedor do Reino das Sombras', en:'Shadow Realm Victor', es:'Vencedor del Reino de las Sombras', vi:'Nhà Vô Địch Vương Quốc Bóng Tối', ptReq:'A cada 300 vitórias em duelo', enReq:'Every 300 duel victories', esReq:'Cada 300 victorias en duelo', viReq:'Mỗi 300 trận thắng đấu bài', reward:'350 Stars por nível', rewardEn:'350 Stars per level', rewardEs:'350 Stars por nivel', rewardVi:'350 Stars mỗi cấp'},
+  {cat:'duels', icon:'🛡️', pt:'Sobrevivente dos Duelos', en:'Duel Survivor', es:'Sobreviviente de los Duelos', vi:'Người Sống Sót Qua Trận Đấu', ptReq:'A cada 300 derrotas acumuladas', enReq:'Every 300 losses accumulated', esReq:'Cada 300 derrotas acumuladas', viReq:'Mỗi 300 trận thua tích lũy', reward:'150 Stars por nível', rewardEn:'150 Stars per level', rewardEs:'150 Stars por nivel', rewardVi:'150 Stars mỗi cấp'},
+  {cat:'story', icon:'📖', pt:'Desafiante da História', en:'History Challenger', es:'Retador de la Historia', vi:'Người Thách Thức Cốt Truyện', ptReq:'A cada personagem vencido no modo história', enReq:'For each character defeated in story mode', esReq:'Por cada personaje derrotado en el modo historia', viReq:'Mỗi nhân vật đánh bại trong Chế Độ Cốt Truyện', reward:'150 Stars por nível', rewardEn:'150 Stars per level', rewardEs:'150 Stars por nivel', rewardVi:'150 Stars mỗi cấp'},
+  {cat:'duels', icon:'🔄', pt:'Rival Persistente', en:'Persistent Rival', es:'Rival Persistente', vi:'Kình Địch Bền Bỉ', ptReq:'A cada 500 duelos contra o mesmo NPC', enReq:'Every 500 duels against the same NPC', esReq:'Cada 500 duelos contra el mismo NPC', viReq:'Mỗi 500 trận đấu với cùng một NPC', reward:'500 Stars por nível', rewardEn:'500 Stars per level', rewardEs:'500 Stars por nivel', rewardVi:'500 Stars mỗi cấp'},
+  {cat:'combat', icon:'✨', pt:'Especialista em Magias', en:'Spell Specialist', es:'Especialista en Magias', vi:'Chuyên Gia Phép Thuật', ptReq:'A cada 500 cartas mágicas usadas', enReq:'Every 500 spell cards used', esReq:'Cada 500 cartas magicas usadas', viReq:'Mỗi 500 lá Phép Thuật đã dùng', reward:'250 Stars por nível', rewardEn:'250 Stars per level', rewardEs:'250 Stars por nivel', rewardVi:'250 Stars mỗi cấp'},
+  {cat:'combat', icon:'🪤', pt:'Armeiro de Armadilhas', en:'Trap Master', es:'Armero de Trampas', vi:'Thợ Chế Bẫy', ptReq:'A cada 500 armadilhas ativadas', enReq:'Every 500 traps activated', esReq:'Cada 500 trampas activadas', viReq:'Mỗi 500 lá Bẫy đã kích hoạt', reward:'250 Stars por nível', rewardEn:'250 Stars per level', rewardEs:'250 Stars por nivel', rewardVi:'250 Stars mỗi cấp'},
+  {cat:'combat', icon:'👹', pt:'Invocador de Monstros', en:'Monster Summoner', es:'Invocador de Monstruos', vi:'Người Triệu Hồi Quái Thú', ptReq:'A cada 1000 monstros invocados', enReq:'Every 1000 monsters summoned', esReq:'Cada 1000 monstruos invocados', viReq:'Mỗi 1000 quái thú đã triệu hồi', reward:'300 Stars por nível', rewardEn:'300 Stars per level', rewardEs:'300 Stars por nivel', rewardVi:'300 Stars mỗi cấp'},
+  {cat:'combat', icon:'🐉', pt:'Domador de Dragões', en:'Dragon Tamer', es:'Domador de Dragones', vi:'Người Thuần Hóa Rồng', ptReq:'A cada 500 dragões invocados', enReq:'Every 500 dragons summoned', esReq:'Cada 500 dragones invocados', viReq:'Mỗi 500 quái thú DRAGON đã triệu hồi', reward:'300 Stars por nível', rewardEn:'300 Stars per level', rewardEs:'300 Stars por nivel', rewardVi:'300 Stars mỗi cấp'},
+  {cat:'collection', icon:'⭐', pt:'Senhor das Estrelas', en:'Lord of Stars', es:'Senor de las Estrellas', vi:'Chúa Tể Ngôi Sao', ptReq:'A cada 50.000 estrelas ganhas em duelos', enReq:'Every 50,000 stars earned from duels', esReq:'Cada 50.000 estrellas ganadas en duelos', viReq:'Mỗi 50.000 Sao kiếm được từ đấu bài', reward:'1 Ticket de Torneio', rewardEn:'1 Tournament Ticket', rewardEs:'1 Ticket de Torneo', rewardVi:'1 Vé Giải đấu'},
+  {cat:'collection', icon:'🥈', pt:'Caçador de SR', en:'SR Hunter', es:'Cazador de SR', vi:'Thợ Săn Thẻ SR', ptReq:'A cada 50 cartas SR obtidas', enReq:'Every 50 SR cards obtained', esReq:'Cada 50 cartas SR obtenidas', viReq:'Mỗi 50 lá bài SR nhận được', reward:'200 Stars por nível', rewardEn:'200 Stars per level', rewardEs:'200 Stars por nivel', rewardVi:'200 Stars mỗi cấp'},
+  {cat:'collection', icon:'💎', pt:'Caçador de UR', en:'UR Hunter', es:'Cazador de UR', vi:'Thợ Săn Thẻ UR', ptReq:'A cada 15 cartas UR obtidas', enReq:'Every 15 UR cards obtained', esReq:'Cada 15 cartas UR obtenidas', viReq:'Mỗi 15 lá bài UR nhận được', reward:'350 Stars por nível', rewardEn:'350 Stars per level', rewardEs:'350 Stars por nivel', rewardVi:'350 Stars mỗi cấp'},
+  {cat:'collection', icon:'🖼️', pt:'Guardião do Brilho Eterno', en:'Guardian of the Eternal Glow', es:'Guardián del Brillo Eterno', vi:'Người Bảo Vệ Ánh Sáng Vĩnh Cửu', ptReq:'A cada 5 cartas Full Art desbloqueadas', enReq:'Every 5 Full Art cards unlocked', esReq:'Cada 5 cartas Full Art desbloqueadas', viReq:'Mỗi 5 lá bài Full Art được mở khóa', reward:'400 Stars por nível', rewardEn:'400 Stars per level', rewardEs:'400 Stars por nivel', rewardVi:'400 Stars mỗi cấp'},
+  {cat:'story', icon:'🏆', pt:'Campeão do Torneio', en:'Tournament Champion', es:'Campeón del Torneo', vi:'Nhà Vô Địch Giải Đấu', ptReq:'A cada Torneio completo vencido', enReq:'Every completed Tournament won', esReq:'Cada Torneo completo ganado', viReq:'Mỗi lần hoàn thành chiến thắng Giải Đấu', reward:'500 Stars por nível', rewardEn:'500 Stars per level', rewardEs:'500 Stars por nivel', rewardVi:'500 Stars mỗi cấp'},
+  {cat:'story', icon:'🎖️', pt:'Veterano do Torneio', en:'Tournament Veteran', es:'Veterano del Torneo', vi:'Cựu Chiến Binh Giải Đấu', ptReq:'A cada 10 duelos vencidos dentro do Torneio', enReq:'Every 10 duels won inside the Tournament', esReq:'Cada 10 duelos ganados dentro del Torneo', viReq:'Mỗi 10 trận đấu thắng trong Giải Đấu', reward:'60 Stars por nível', rewardEn:'60 Stars per level', rewardEs:'60 Stars por nivel', rewardVi:'60 Stars mỗi cấp'},
+  {cat:'story', icon:'🩹', pt:'Resiliência do Torneio', en:'Tournament Resilience', es:'Resiliencia del Torneo', vi:'Sức Bền Giải Đấu', ptReq:'A cada 10 duelos perdidos dentro do Torneio', enReq:'Every 10 duels lost inside the Tournament', esReq:'Cada 10 duelos perdidos dentro del Torneo', viReq:'Mỗi 10 trận đấu thua trong Giải Đấu', reward:'50 Stars por nível', rewardEn:'50 Stars per level', rewardEs:'50 Stars por nivel', rewardVi:'50 Stars mỗi cấp'},
+  {cat:'story', icon:'👑', pt:'Lenda Viva', en:'Living Legend', es:'Leyenda Viva', vi:'Huyền Thoại Sống', ptReq:'A cada vitória no Torneio Lendário', enReq:'Every Legendary Tournament victory', esReq:'Cada victoria en el Torneo Legendario', viReq:'Mỗi lần chiến thắng Giải Đấu Huyền Thoại', reward:'800 Stars por nível', rewardEn:'800 Stars per level', rewardEs:'800 Stars por nivel', rewardVi:'800 Stars mỗi cấp'},
+  {cat:'story', icon:'🌑', pt:'Andarilho das Sombras', en:'Shadow Walker', es:'Andante de las Sombras', vi:'Lữ Khách Bóng Tối', ptReq:'A cada vitória no Torneio Sombrio', enReq:'Every Shadow Tournament victory', esReq:'Cada victoria en el Torneo Sombrío', viReq:'Mỗi lần chiến thắng Giải Đấu Bóng Tối', reward:'1500 Stars por nível', rewardEn:'1500 Stars per level', rewardEs:'1500 Stars por nivel', rewardVi:'1500 Stars mỗi cấp'}
 ];
 
 const GRID_BY_CAT = {
@@ -715,6 +715,17 @@ const GRID_BY_CAT = {
   collection: document.getElementById('collection-grid'),
   combat: document.getElementById('combat-grid')
 };
+
+/* Escolhe o campo do idioma ativo, caindo para ingles e depois portugues
+   quando a traducao daquele item nao existe. Os nomes de campo mudam de
+   arquivo para arquivo (desc_pt no catalogo, pt nas conquistas), por isso
+   os quatro sao passados explicitamente. */
+function flCampo(obj, pt, en, es, vi) {
+  if (!obj) return '';
+  var l = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+  var chave = { pt: pt, en: en, es: es, vi: vi }[l] || en;
+  return obj[chave] || obj[en] || obj[pt] || '';
+}
 
 function isEn(){ return document.body.classList.contains('en'); }
 function catName(cat){
@@ -734,24 +745,28 @@ function renderAchievements(){
       <div class="ach-top">
         <div class="ach-icon">${a.icon}</div>
         <div>
-          <h3 class="ach-title">${isEn() ? a.en : a.pt}</h3>
+          <h3 class="ach-title">${flCampo(a, 'pt', 'en', 'es', 'vi')}</h3>
           <div class="ach-category">${catName(a.cat)}</div>
         </div>
       </div>
-      <p class="ach-desc">${isEn() ? a.enDesc : a.ptDesc}</p>
       <div class="ach-detail">
         <div class="detail-box">
           <div class="detail-label">${isEn() ? 'Level milestone' : 'Marco por nivel'}</div>
-          <div class="detail-value">${isEn() ? a.enReq : a.ptReq}</div>
+          <div class="detail-value">${flCampo(a, 'ptReq', 'enReq', 'esReq', 'viReq')}</div>
         </div>
         <div class="detail-box">
           <div class="detail-label">${isEn() ? 'Reward' : 'Recompensa'}</div>
-          <div class="detail-value reward">${a.reward.replace('por nivel', isEn() ? 'per level' : 'por nivel')}</div>
+          <div class="detail-value reward">${flCampo(a, 'reward', 'rewardEn', 'rewardEs', 'rewardVi')}</div>
         </div>
       </div>`;
     GRID_BY_CAT[a.cat].appendChild(card);
   });
 }
+
+/* A funcao existia mas ninguem a chamava: a pagina anunciava as conquistas
+   no resumo e mostrava a grade vazia. */
+renderAchievements();
+window.flRedesenhar = renderAchievements;
 
 var FL_IDIOMAS = {
   pt: { nome: 'Português', locale: 'pt-BR', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg>' },
@@ -806,6 +821,9 @@ function setLang(lang, saveToStorage = true) {
      carregamento esta funcao pode rodar antes de a pagina declarar suas
      variaveis de regiao (zona morta temporal do let/const), e sem esta
      protecao o erro aborta a troca de idioma inteira. */
+  /* Listas montadas por JS precisam ser refeitas: o texto delas foi
+     escolhido no idioma anterior. A pagina registra a sua em flRedesenhar. */
+  try { if (typeof flRedesenhar === 'function') flRedesenhar(); } catch (e) {}
   try { if (typeof atualizarChipRegiao === 'function') atualizarChipRegiao(); } catch (e) {}
 }
 window.setLang = setLang;

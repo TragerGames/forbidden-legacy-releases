@@ -670,7 +670,18 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   let filtroCustom = false;
   let termoBusca = '';
 
-  function isEn() { return document.body.classList.contains('en'); }
+  /* Escolhe o campo do idioma ativo, caindo para ingles e depois portugues
+   quando a traducao daquele item nao existe. Os nomes de campo mudam de
+   arquivo para arquivo (desc_pt no catalogo, pt nas conquistas), por isso
+   os quatro sao passados explicitamente. */
+function flCampo(obj, pt, en, es, vi) {
+  if (!obj) return '';
+  var l = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+  var chave = { pt: pt, en: en, es: es, vi: vi }[l] || en;
+  return obj[chave] || obj[en] || obj[pt] || '';
+}
+
+function isEn() { return document.body.classList.contains('en'); }
 
   function cardHtml(c) {
     const nome = isEn() ? c.nome : c.nome_pt;
@@ -903,7 +914,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       facts.push(factHtml('ATK / DEF', 'ATK / DEF', (c.atk || '0') + ' / ' + (c.def || '0')));
     }
     modalFacts.innerHTML = facts.join('');
-    const desc = isEn() ? (c.desc_en || c.desc_pt) : (c.desc_pt || c.desc_en);
+    const desc = flCampo(c, 'desc_pt', 'desc_en', 'desc_es', 'desc_vi');
     modalDesc.textContent = desc || (isEn() ? 'No effect text for this card.' : 'Sem texto de efeito para esta carta.');
     overlay.classList.add('open');
   };
@@ -975,6 +986,9 @@ function setLang(lang, saveToStorage = true) {
      carregamento esta funcao pode rodar antes de a pagina declarar suas
      variaveis de regiao (zona morta temporal do let/const), e sem esta
      protecao o erro aborta a troca de idioma inteira. */
+  /* Listas montadas por JS precisam ser refeitas: o texto delas foi
+     escolhido no idioma anterior. A pagina registra a sua em flRedesenhar. */
+  try { if (typeof flRedesenhar === 'function') flRedesenhar(); } catch (e) {}
   try { if (typeof atualizarChipRegiao === 'function') atualizarChipRegiao(); } catch (e) {}
 }
 window.setLang = setLang;
