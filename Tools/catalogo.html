@@ -1,6 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en">
 <head>
+<script>
+/* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
+   escreve no <html>: o <body> ainda não existe neste ponto do parse.
+   data-idiomas lista o que ESTA página tem traduzido; pedir um idioma
+   fora da lista cai no inglês, para nunca existir meia página vazia. */
+(function () {
+  var raiz = document.documentElement;
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  var escolhido = null;
+  try { escolhido = localStorage.getItem('fl_lang'); } catch (e) {}
+  if (!escolhido) {
+    var nav = (navigator.language || 'pt').slice(0, 2).toLowerCase();
+    escolhido = ({ pt: 'pt', en: 'en', es: 'es', vi: 'vi' })[nav] || 'en';
+  }
+  if (sup.indexOf(escolhido) < 0) escolhido = sup.indexOf('en') >= 0 ? 'en' : sup[0];
+  raiz.setAttribute('data-lang-ativo', escolhido);
+  raiz.setAttribute('lang', { pt: 'pt-BR', en: 'en', es: 'es', vi: 'vi' }[escolhido] || 'pt-BR');
+})();
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forbidden Legacy — Catálogo de Cartas</title>
@@ -235,13 +255,66 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 }
 
 /* ── LANG ── */
-[data-lang="en"] { display:none !important; }
-span[data-lang="en"] { display:none !important; }
-body.en [data-lang="pt"] { display:none !important; }
-body.en span[data-lang="pt"] { display:none !important; }
-body.en [data-lang="en"] { display:block !important; }
-body.en span[data-lang="en"] { display:inline !important; }
-body.en li[data-lang="en"] { display:flex !important; }
+/* ── IDIOMAS ──────────────────────────────────────────────────────────
+   Uma regra por idioma, e todas apenas ESCONDEM. O elemento do idioma
+   ativo nunca recebe regra de display, então conserva o display natural
+   que o resto da folha deu a ele.
+
+   Isto substituiu uma matriz de body.en [data-lang=en]{display:block} +
+   span{inline} + li{flex}, que precisava readivinhar o display de cada
+   tipo de elemento: toda tag nova exigia mais uma linha, e a regra de
+   span forçava a inline até os spans que o layout fazia block — ou
+   seja, o inglês herdava um bug de layout que o português não tinha.
+
+   O marcador vive no <html>, não no <body>, para o script do <head>
+   resolver o idioma antes do primeiro pixel. */
+html[data-lang-ativo="pt"] [data-lang]:not([data-lang="pt"]) { display: none !important; }
+html[data-lang-ativo="en"] [data-lang]:not([data-lang="en"]) { display: none !important; }
+html[data-lang-ativo="es"] [data-lang]:not([data-lang="es"]) { display: none !important; }
+html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !important; }
+
+/* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
+.lang-pick { position: relative; display: inline-block; }
+.lang-pick-btn {
+  display: flex; align-items: center; gap: 7px;
+  background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
+  color: var(--text-muted, #6a5830);
+  padding: 4px 9px; border-radius: 3px; cursor: pointer;
+  font-size: 11px; letter-spacing: .6px; font-family: 'Inter', sans-serif;
+  transition: border-color .2s, color .2s;
+}
+.lang-pick-btn:hover, .lang-pick.aberto .lang-pick-btn {
+  border-color: var(--gold, #c8973a); color: var(--gold-light, #e8b840);
+}
+.lang-pick-btn svg, .lang-opt svg {
+  width: 18px; height: 12.6px; border-radius: 1px; flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.35);
+}
+.lang-caret { font-size: 8px; opacity: .7; transition: transform .2s; }
+.lang-pick.aberto .lang-caret { transform: rotate(180deg); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 3000;
+  min-width: 158px; padding: 4px;
+  background: #14100a; border: 1px solid var(--gold-dim, #7a5a18);
+  border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,.65);
+  display: none; flex-direction: column; gap: 1px;
+}
+.lang-pick.aberto .lang-menu { display: flex; }
+.lang-opt {
+  display: flex; align-items: center; gap: 9px; width: 100%;
+  background: transparent; border: none; cursor: pointer;
+  padding: 8px 10px; border-radius: 3px; text-align: left;
+  color: var(--text-body, #9a8050); font-size: 12.5px;
+  font-family: 'Inter', sans-serif; white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.lang-opt:hover { background: rgba(200,151,58,.12); color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"] { color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"]::after { content: '\2713'; margin-left: auto; font-size: 11px; }
+@media (max-width: 560px) {
+  .lang-pick-btn .lang-nome { display: none; }   /* na nav estreita fica só a bandeira */
+  .lang-menu { right: 0; }
+}
 
 /* ── LANG BUTTONS ── */
 .topbar-right { display:flex; gap:8px; align-items:center; }
@@ -418,8 +491,17 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <span style="opacity:.4;margin:0 3px">·</span>
       <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> members
     </a>
-    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <div class="lang-pick" id="lang-pick">
+      <button class="lang-pick-btn" type="button" id="lang-atual"
+              aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma"
+              onclick="toggleLangMenu(event)"></button>
+      <div class="lang-menu" role="listbox">
+        <button class="lang-opt" role="option" data-idioma="pt" aria-selected="false" onclick="setLang('pt')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg><span>Português</span></button>
+        <button class="lang-opt" role="option" data-idioma="en" aria-selected="false" onclick="setLang('en')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><g fill="#b22234"><rect width="30" height="1.62"/><rect y="3.23" width="30" height="1.62"/><rect y="6.46" width="30" height="1.62"/><rect y="9.69" width="30" height="1.62"/><rect y="12.92" width="30" height="1.62"/><rect y="16.15" width="30" height="1.62"/><rect y="19.38" width="30" height="1.62"/></g><rect width="13" height="11.3" fill="#3c3b6e"/></svg><span>English</span></button>
+        <button class="lang-opt" role="option" data-idioma="es" aria-selected="false" onclick="setLang('es')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#c60b1e"/><rect y="5.25" width="30" height="10.5" fill="#ffc400"/></svg><span>Español</span></button>
+        <button class="lang-opt" role="option" data-idioma="vi" aria-selected="false" onclick="setLang('vi')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#da251d"/><path d="M15 5 16.65 10.05 21.95 10.05 17.65 13.15 19.3 18.2 15 15.1 10.7 18.2 12.35 13.15 8.05 10.05 13.35 10.05Z" fill="#ff0"/></svg><span>Tiếng Việt</span></button>
+      </div>
+    </div>
     <a href="index.html#comprar" class="nav-cta">☥ Founder</a>
   </div>
 </nav>
@@ -840,16 +922,100 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
 
 // Idioma
-function setLang(lang, saveToStorage=true) {
+var FL_IDIOMAS = {
+  pt: { nome: 'Português', locale: 'pt-BR', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg>' },
+  en: { nome: 'English', locale: 'en', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><g fill="#b22234"><rect width="30" height="1.62"/><rect y="3.23" width="30" height="1.62"/><rect y="6.46" width="30" height="1.62"/><rect y="9.69" width="30" height="1.62"/><rect y="12.92" width="30" height="1.62"/><rect y="16.15" width="30" height="1.62"/><rect y="19.38" width="30" height="1.62"/></g><rect width="13" height="11.3" fill="#3c3b6e"/></svg>' },
+  es: { nome: 'Español', locale: 'es', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#c60b1e"/><rect y="5.25" width="30" height="10.5" fill="#ffc400"/></svg>' },
+  vi: { nome: 'Tiếng Việt', locale: 'vi', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#da251d"/><path d="M15 5 16.65 10.05 21.95 10.05 17.65 13.15 19.3 18.2 15 15.1 10.7 18.2 12.35 13.15 8.05 10.05 13.35 10.05Z" fill="#ff0"/></svg>' }
+};
+
+function setLang(lang, saveToStorage = true) {
+  var raiz = document.documentElement;
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  if (sup.indexOf(lang) < 0) lang = sup.indexOf('en') >= 0 ? 'en' : sup[0];
+
+  raiz.setAttribute('data-lang-ativo', lang);
+  raiz.setAttribute('lang', (FL_IDIOMAS[lang] || {}).locale || 'pt-BR');
+  /* .en continua existindo: há CSS e JS antigos que consultam a classe */
   document.body.classList.toggle('en', lang === 'en');
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]');
-  if (btn) btn.classList.add('active');
-  if (saveToStorage) localStorage.setItem('fl_lang', lang);
-  const input = document.getElementById('cat-search-input');
-  if (input) input.placeholder = lang === 'en' ? input.getAttribute('data-lang-en-placeholder') : input.getAttribute('data-lang-pt-placeholder');
-  if (window.__catalogoRender) window.__catalogoRender();
+
+  if (saveToStorage) { try { localStorage.setItem('fl_lang', lang); } catch (e) {} }
+
+  /* Botão do seletor mostra a bandeira e o nome do idioma escolhido */
+  var alvo = FL_IDIOMAS[lang] || FL_IDIOMAS.en;
+  var bt = document.getElementById('lang-atual');
+  if (bt && alvo) bt.innerHTML = alvo.flag + '<span class="lang-nome">' + alvo.nome + '</span>';
+  document.querySelectorAll('.lang-opt[data-idioma]').forEach(function (o) {
+    o.setAttribute('aria-selected', o.dataset.idioma === lang ? 'true' : 'false');
+  });
+  fecharLangMenu();
+
+  /* Leitor de tela: as outras línguas continuam no DOM, escondidas por
+     CSS. Sem isto elas seriam lidas em voz alta junto com a ativa. */
+  document.querySelectorAll('[data-lang]').forEach(function (el) {
+    if (el.getAttribute('data-lang') === lang) el.removeAttribute('aria-hidden');
+    else el.setAttribute('aria-hidden', 'true');
+  });
+
+  /* Textos guardados em atributo (data-lang-pt / -en / -es / -vi).
+     Cai para inglês e depois português quando o idioma falta. */
+  document.querySelectorAll('[data-lang-pt]').forEach(function (el) {
+    var v = el.dataset['lang' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+    el.innerHTML = v || el.dataset.langEn || el.dataset.langPt;
+  });
+
+  /* Imagens com versão por idioma (data-src-pt / data-src-en / ...) */
+  document.querySelectorAll('img[data-src-pt]').forEach(function (img) {
+    var v = img.dataset['src' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+    var src = v || img.dataset.srcEn || img.dataset.srcPt;
+    if (src) img.src = src;
+  });
+
+  /* O chip de regiao e um extra do idioma, nao parte dele. No primeiro
+     carregamento esta funcao pode rodar antes de a pagina declarar suas
+     variaveis de regiao (zona morta temporal do let/const), e sem esta
+     protecao o erro aborta a troca de idioma inteira. */
+  try { if (typeof atualizarChipRegiao === 'function') atualizarChipRegiao(); } catch (e) {}
 }
+window.setLang = setLang;
+
+function toggleLangMenu(ev) {
+  if (ev) ev.stopPropagation();
+  var p = document.getElementById('lang-pick');
+  if (!p) return;
+  var abrindo = !p.classList.contains('aberto');
+  p.classList.toggle('aberto', abrindo);
+  var b = p.querySelector('.lang-pick-btn');
+  if (b) b.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+}
+function fecharLangMenu() {
+  var p = document.getElementById('lang-pick');
+  if (!p) return;
+  p.classList.remove('aberto');
+  var b = p.querySelector('.lang-pick-btn');
+  if (b) b.setAttribute('aria-expanded', 'false');
+}
+window.toggleLangMenu = toggleLangMenu;
+document.addEventListener('click', function (e) {
+  var p = document.getElementById('lang-pick');
+  if (p && !p.contains(e.target)) fecharLangMenu();
+});
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharLangMenu(); });
+
+/* O idioma já foi decidido no <head>. Aqui só sincronizamos o que depende
+   do <body> existir: a classe .en legada, o rótulo do seletor, o
+   aria-hidden e a remoção dos idiomas que esta página ainda não tem. */
+(function () {
+  var raiz = document.documentElement;
+  var lang = raiz.getAttribute('data-lang-ativo') || 'pt';
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  document.querySelectorAll('.lang-opt[data-idioma]').forEach(function (o) {
+    if (sup.indexOf(o.dataset.idioma) < 0) o.remove();
+  });
+  /* Um idioma só: o seletor não tem função nenhuma */
+  if (sup.length < 2) { var p = document.getElementById('lang-pick'); if (p) p.remove(); }
+  setLang(lang, false);
+})();
 window.setLang = setLang;
 
 (function() {
