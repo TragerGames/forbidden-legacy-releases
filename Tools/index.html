@@ -630,6 +630,32 @@ html[data-lang-ativo="en"] [data-lang]:not([data-lang="en"]) { display: none !im
 html[data-lang-ativo="es"] [data-lang]:not([data-lang="es"]) { display: none !important; }
 html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !important; }
 
+
+/* Seletor de idioma do e-mail: mesma moldura dos campos de texto do
+   formulario, senao ele aparece com o estilo cru do sistema. */
+.input-group select {
+  width: 100%;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--border, rgba(200,151,58,.13));
+  border-radius: 4px;
+  color: var(--gold-light, #e8b840);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 11px 12px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23c8973a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+  padding-right: 32px;
+}
+.input-group select:focus {
+  outline: none;
+  border-color: var(--gold, #c8973a);
+}
+.input-group select option { background: #14100a; color: #e8dcc0; }
+
 /* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
@@ -2186,6 +2212,18 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <input id="input-email" type="email" placeholder="email@exemplo.com" autocomplete="email">
       </div>
       <div class="input-group">
+        <label data-lang="pt">IDIOMA DO E-MAIL</label>
+        <label data-lang="en">EMAIL LANGUAGE</label>
+        <label data-lang="es">IDIOMA DEL CORREO</label>
+        <label data-lang="vi">NGÔN NGỮ EMAIL</label>
+        <select id="email-idioma" autocomplete="off">
+          <option value="pt">Português</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="vi">Tiếng Việt</option>
+        </select>
+      </div>
+      <div class="input-group">
         <label data-lang="pt">SEU NOME</label>
         <label data-lang="en">YOUR NAME</label>
         <input id="input-nome" type="text" placeholder="Seu nome" autocomplete="name">
@@ -2846,7 +2884,7 @@ async function stripePagar(currency) {
     const res = await fetch('/pagar/stripe_checkout.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ player_code: codigo, email, nome, discord, dispositivo, currency, origem: flOrigem() })
+      body: JSON.stringify({ player_code: codigo, email, nome, discord, dispositivo, currency, origem: flOrigem(), idioma: flIdioma() })
     });
     const data = await res.json();
     if (data.url) {
@@ -2943,7 +2981,8 @@ function flRegistrarDownload(plataforma) {
   try {
     var corpo = JSON.stringify({
       plataforma: plataforma,
-      origem: (typeof flOrigem === 'function') ? flOrigem() : {}
+      origem: (typeof flOrigem === 'function') ? flOrigem() : {},
+      idioma: (typeof flIdioma === 'function') ? flIdioma() : 'pt'
     });
     fetch('/pagar/evento_site.php', {
       method: 'POST',
@@ -3307,7 +3346,7 @@ async function asaasPagar() {
     const resp = await fetch('/pagar/asaas_checkout.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ player_code: codigo, email, nome, cpf, discord, dispositivo, produto: 'founder', origem: flOrigem() }),
+      body: JSON.stringify({ player_code: codigo, email, nome, cpf, discord, dispositivo, produto: 'founder', origem: flOrigem(), idioma: flIdioma() }),
     });
     const data = await resp.json();
     if (!resp.ok || data.error) throw new Error(data.error || 'Erro ao iniciar pagamento.');
@@ -3370,7 +3409,7 @@ async function pixPagar() {
     const res = await fetch(`${PIX_API_BASE}/criar_pix.php`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ codigo_jogo: codigo, email: email, nome: nome, discord: discord, dispositivo: dispositivo, origem: flOrigem() })
+      body: JSON.stringify({ codigo_jogo: codigo, email: email, nome: nome, discord: discord, dispositivo: dispositivo, origem: flOrigem(), idioma: flIdioma() })
     });
     const data = await res.json();
 
@@ -3632,6 +3671,15 @@ document.addEventListener('keydown', e => {
   }
 
   /* Objeto enviado no checkout. Sempre devolve algo — nunca lança. */
+  /* Idioma em que o comprador quer receber o e-mail. Por padrão é o
+     idioma que ele já está lendo no site; o seletor do formulário
+     sobrepõe isso quando a pessoa escolhe outro. */
+  window.flIdioma = function () {
+    var escolhido = document.getElementById('email-idioma');
+    if (escolhido && escolhido.value) return escolhido.value;
+    return document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+  };
+
   window.flOrigem = function () {
     try {
       var u = ler(K_ULT) || {}, pr = ler(K_PRIM) || {};
@@ -3746,6 +3794,29 @@ document.addEventListener('keydown', e => {
       requestAnimationFrame(anima);
     } else { rodando = false; }
   }
+})();
+</script>
+
+<script>
+/* O seletor de idioma do e-mail comeca no idioma que a pessoa esta lendo,
+   e acompanha se ela trocar o idioma do site depois — a menos que ja tenha
+   escolhido um idioma diferente ali de proposito, caso em que a escolha
+   dela manda. */
+(function () {
+  var sel = document.getElementById('email-idioma');
+  if (!sel) return;
+  var tocado = false;
+  sel.addEventListener('change', function () { tocado = true; });
+
+  function sincronizar() {
+    if (tocado) return;
+    var atual = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+    if (sel.value !== atual) sel.value = atual;
+  }
+  sincronizar();
+  /* setLang nao emite evento, entao observamos o atributo direto */
+  new MutationObserver(sincronizar).observe(document.documentElement,
+    { attributes: true, attributeFilter: ['data-lang-ativo'] });
 })();
 </script>
 </body>

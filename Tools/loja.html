@@ -88,6 +88,29 @@ html[data-lang-ativo="en"] [data-lang]:not([data-lang="en"]) { display: none !im
 html[data-lang-ativo="es"] [data-lang]:not([data-lang="es"]) { display: none !important; }
 html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !important; }
 
+
+/* Seletor de idioma do e-mail: mesma moldura dos campos de texto do
+   formulario, senao ele aparece com o estilo cru do sistema. */
+.field select, .input-group select {
+  width: 100%;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--border, rgba(200,151,58,.13));
+  border-radius: 4px;
+  color: var(--gold-light, #e8b840);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 11px 12px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23c8973a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+  padding-right: 32px;
+}
+.field select:focus, .input-group select:focus { outline: none; border-color: var(--gold, #c8973a); }
+.field select option, .input-group select option { background: #14100a; color: #e8dcc0; }
+
 /* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
 .lang-pick { position: relative; display: inline-block; }
 .lang-pick-btn {
@@ -1077,6 +1100,18 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
           <input id="email" type="email" placeholder="email@exemplo.com" autocomplete="email">
         </div>
         <div class="field">
+          <label data-lang="pt">Idioma do e-mail</label>
+          <label data-lang="en">Email language</label>
+          <label data-lang="es">Idioma del correo</label>
+          <label data-lang="vi">Ngôn ngữ email</label>
+          <select id="email-idioma" autocomplete="off">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="vi">Tiếng Việt</option>
+          </select>
+        </div>
+        <div class="field">
           <label data-lang="pt">Nome <span style="color:#e04040">*</span></label>
           <label data-lang="en">Name <span style="color:#e04040">*</span></label>
           <input id="nome" placeholder="Seu nome" autocomplete="name">
@@ -1739,12 +1774,12 @@ async function asaasPay(d){
   const cpf=(document.getElementById('cpf')?.value??'').trim();
   if(cpf.replace(/\D/g,'').length!==11){alert(t('CPF obrigatório para cartão.','CPF required for card.'));document.getElementById('cpf')?.focus();return;}
   const btn=document.getElementById('paybtn');btn.disabled=true;btn.textContent=t('Processando...','Processing...');
-  try{const res=await fetch('/pagar/asaas_checkout.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,cpf,produto:'souls',pacote_id:selected.id,origem:flOrigem()})});const data=await res.json();if(data.url)window.open(data.url,'_blank');else alert(data.error||t('Erro.','Error.'));}catch(e){alert(t('Erro de conexão.','Connection error.'));}
+  try{const res=await fetch('/pagar/asaas_checkout.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,cpf,produto:'souls',pacote_id:selected.id,origem:flOrigem(),idioma:flIdioma()})});const data=await res.json();if(data.url)window.open(data.url,'_blank');else alert(data.error||t('Erro.','Error.'));}catch(e){alert(t('Erro de conexão.','Connection error.'));}
   btn.disabled=!STORE_ENABLED;applyRegionMode();
 }
 async function stripePay(d){
   const btn=document.getElementById('paybtn');btn.disabled=true;btn.textContent=t('Conectando...','Connecting...');
-  try{const res=await fetch('/pagar/stripe_checkout.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,currency:'usd',origem:flOrigem()})});const data=await res.json();if(data.url)window.open(data.url,'_blank');else alert(data.error||t('Erro.','Error.'));}catch(e){alert(t('Erro de conexão.','Connection error.'));}
+  try{const res=await fetch('/pagar/stripe_checkout.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,currency:'usd',origem:flOrigem(),idioma:flIdioma()})});const data=await res.json();if(data.url)window.open(data.url,'_blank');else alert(data.error||t('Erro.','Error.'));}catch(e){alert(t('Erro de conexão.','Connection error.'));}
   btn.disabled=!STORE_ENABLED;applyRegionMode();
 }
 async function pixPay(d){
@@ -1754,7 +1789,7 @@ async function pixPay(d){
   document.getElementById('redeem-box').classList.remove('visible');
   document.getElementById('pix-status').textContent=t('Criando cobrança...','Creating charge...');
   try{
-    const res=await fetch('/pagar/criar_pix.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,origem:flOrigem()})});
+    const res=await fetch('/pagar/criar_pix.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,origem:flOrigem(),idioma:flIdioma()})});
     const data=await res.json();
     if(!res.ok||data.erro){document.getElementById('pix-status').textContent=data.erro||t('Erro.','Error.');return;}
     pixTxid=data.txid;const pix=data.pixCopiaECola||'';
@@ -1944,6 +1979,15 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
   }
 
   /* Objeto enviado no checkout. Sempre devolve algo — nunca lança. */
+  /* Idioma em que o comprador quer receber o e-mail. Por padrão é o
+     idioma que ele já está lendo no site; o seletor do formulário
+     sobrepõe isso quando a pessoa escolhe outro. */
+  window.flIdioma = function () {
+    var escolhido = document.getElementById('email-idioma');
+    if (escolhido && escolhido.value) return escolhido.value;
+    return document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+  };
+
   window.flOrigem = function () {
     try {
       var u = ler(K_ULT) || {}, pr = ler(K_PRIM) || {};
@@ -1964,6 +2008,26 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
       };
     } catch (e) { return { visitante: visitante() }; }
   };
+})();
+</script>
+
+<script>
+/* O seletor de idioma do e-mail comeca no idioma que a pessoa esta lendo,
+   e acompanha se ela trocar o idioma do site depois — a menos que ja tenha
+   escolhido outro ali de proposito, caso em que a escolha dela manda. */
+(function () {
+  var sel = document.getElementById('email-idioma');
+  if (!sel) return;
+  var tocado = false;
+  sel.addEventListener('change', function () { tocado = true; });
+  function sincronizar() {
+    if (tocado) return;
+    var atual = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+    if (sel.value !== atual) sel.value = atual;
+  }
+  sincronizar();
+  new MutationObserver(sincronizar).observe(document.documentElement,
+    { attributes: true, attributeFilter: ['data-lang-ativo'] });
 })();
 </script>
 </body>
