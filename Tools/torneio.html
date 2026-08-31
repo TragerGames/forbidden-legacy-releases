@@ -242,7 +242,9 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .divine-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:820px; margin:36px auto 0; }
 .divine-card { position:relative; }
 .divine-card img {
-  width:100%; aspect-ratio:2/3; object-fit:cover; border-radius:6px;
+  /* height:auto e obrigatorio: sem ele o atributo height="1536" do HTML
+     vale como altura CSS e o aspect-ratio abaixo e ignorado. */
+  width:100%; height:auto; aspect-ratio:2/3; object-fit:cover; border-radius:6px;
   border:1px solid rgba(155,89,182,.3);
   box-shadow:0 0 30px rgba(155,89,182,.12);
   transition:transform .3s, box-shadow .3s;
@@ -280,6 +282,109 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .btn-primary:hover { filter:brightness(1.12); }
 
 /* ── LANG ── */
+
+/* ══════════════ CHAMPIONSHIP — SECOES DETALHADAS ══════════════ */
+
+/* Numero grande como ancora da secao: o olho pousa nele antes de ler. */
+.big-stat { font-family:'Bebas Neue',sans-serif; font-size:clamp(52px,9vw,104px);
+  line-height:.92; letter-spacing:1px; color:var(--gold-light);
+  text-shadow:0 0 40px rgba(212,168,67,.18); }
+.big-stat.roxo { color:var(--purple); text-shadow:0 0 40px rgba(155,89,182,.22); }
+.big-stat-sub { font-size:13px; letter-spacing:2.4px; text-transform:uppercase;
+  color:var(--text-muted); margin-top:6px; }
+
+/* ── A JORNADA: 4 fases ─────────────────────────────────────────── */
+.fases { display:flex; flex-direction:column; gap:14px; max-width:940px; margin:40px auto 0; }
+.fase {
+  display:grid; grid-template-columns:104px 1fr; gap:22px; align-items:center;
+  background:linear-gradient(90deg, rgba(212,168,67,.05), rgba(212,168,67,.01));
+  border:1px solid var(--border); border-left:2px solid var(--gold-dim);
+  border-radius:8px; padding:20px 24px;
+  transition:border-color .25s, background .25s;
+}
+.fase:hover { border-left-color:var(--gold); background:linear-gradient(90deg, rgba(212,168,67,.09), rgba(212,168,67,.02)); }
+.fase.boss { border-left-color:#b0342c; background:linear-gradient(90deg, rgba(176,52,44,.08), rgba(176,52,44,.01)); }
+.fase.boss:hover { border-left-color:#e0483c; }
+.fase-num { font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;
+  color:var(--gold); letter-spacing:1px; }
+.fase.boss .fase-num { color:#e0483c; }
+.fase-num small { display:block; font-family:'Inter',sans-serif; font-size:10px;
+  letter-spacing:1.8px; text-transform:uppercase; color:var(--text-muted); margin-top:5px; }
+.fase-corpo h3 { font-family:'Bebas Neue',sans-serif; font-size:19px; letter-spacing:1.2px;
+  color:var(--gold-light); margin:0 0 4px; }
+.fase-corpo p { font-size:13px; color:var(--text-muted); margin:0 0 12px; line-height:1.6; }
+.fase-duelistas { display:flex; flex-wrap:wrap; gap:7px; }
+.fase-duelista { display:flex; align-items:center; gap:7px;
+  background:rgba(0,0,0,.3); border:1px solid var(--border); border-radius:20px;
+  padding:4px 11px 4px 4px; font-size:11.5px; color:var(--text-body); }
+.fase-duelista img { width:24px; height:24px; border-radius:50%; object-fit:cover;
+  object-position:top center; flex-shrink:0; }
+@media (max-width:640px){
+  .fase { grid-template-columns:1fr; gap:12px; padding:18px; }
+}
+
+/* ── PUNICOES ───────────────────────────────────────────────────── */
+.pun-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:14px; max-width:1000px; margin:40px auto 0; }
+.pun-card {
+  background:rgba(255,255,255,.015); border:1px solid var(--border);
+  border-radius:8px; padding:22px 20px; position:relative; overflow:hidden;
+  transition:border-color .25s, transform .25s;
+}
+.pun-card:hover { border-color:rgba(212,168,67,.4); transform:translateY(-3px); }
+/* faixa lateral: cor separa o que restringe carta do que dana com o tempo */
+.pun-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
+  background:var(--gold-dim); }
+.pun-card.dano::before { background:#b0342c; }
+.pun-nome { font-family:'Bebas Neue',sans-serif; font-size:17px; letter-spacing:1.1px;
+  color:var(--gold-light); margin-bottom:8px; }
+.pun-card.dano .pun-nome { color:#e8776c; }
+.pun-desc { font-size:12.5px; color:var(--text-muted); line-height:1.65; }
+
+/* ── CHANCES / PITY ─────────────────────────────────────────────── */
+.chances { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px; max-width:900px; margin:44px auto 0; }
+.chance-card { background:rgba(255,255,255,.02); border:1px solid var(--border);
+  border-radius:10px; padding:28px 26px; }
+.chance-card.roxo { border-color:var(--purple-dim); background:rgba(155,89,182,.04); }
+.chance-topo { display:flex; align-items:baseline; gap:10px; margin-bottom:4px; }
+.chance-de { font-family:'Bebas Neue',sans-serif; font-size:46px; line-height:1; color:var(--gold-light); }
+.chance-card.roxo .chance-de { color:var(--purple); }
+.chance-ate { font-size:14px; color:var(--text-muted); }
+.chance-nome { font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1.2px;
+  color:var(--text-body); margin-bottom:14px; }
+/* barra do pity: mostra o intervalo, nao um valor unico */
+.pity-barra { height:6px; border-radius:4px; background:rgba(255,255,255,.06);
+  position:relative; overflow:hidden; margin-bottom:12px; }
+.pity-fill { position:absolute; top:0; bottom:0; left:0;
+  background:linear-gradient(90deg,var(--gold-dim),var(--gold-light)); border-radius:4px; }
+.chance-card.roxo .pity-fill { background:linear-gradient(90deg,var(--purple-dim),var(--purple)); }
+.chance-nota { font-size:12.5px; color:var(--text-muted); line-height:1.65; }
+
+/* ── DUELISTAS DO SOMBRIO ───────────────────────────────────────── */
+.sombrio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:18px; max-width:1000px; margin:36px auto 0; }
+.sombrio-card {
+  position:relative; border-radius:10px; overflow:hidden;
+  border:1px solid var(--purple-dim); background:#0b0710;
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+}
+.sombrio-card:hover { transform:translateY(-5px); border-color:var(--purple);
+  box-shadow:0 14px 40px rgba(155,89,182,.28); }
+.sombrio-card img { width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
+  object-position:top center; display:block; }
+.sombrio-info { position:absolute; left:0; right:0; bottom:0; padding:32px 14px 13px;
+  background:linear-gradient(180deg, transparent, rgba(6,3,10,.93) 55%); }
+.sombrio-nome { font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:.9px;
+  color:#e8dcf5; line-height:1.15; }
+.sombrio-papel { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase;
+  color:var(--purple); margin-top:3px; }
+/* etapa do confronto: fixo, sorteado ou chefe */
+.sombrio-etapa { position:absolute; top:10px; left:10px; z-index:2;
+  background:rgba(6,3,10,.82); border:1px solid var(--purple-dim); border-radius:3px;
+  padding:3px 8px; font-size:9.5px; letter-spacing:1.3px; text-transform:uppercase;
+  color:var(--purple); }
+
 /* ── IDIOMAS ──────────────────────────────────────────────────────────
    Uma regra por idioma, e todas apenas ESCONDEM. O elemento do idioma
    ativo nunca recebe regra de display, então conserva o display natural
@@ -556,6 +661,148 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     </div>
   </div>
 
+
+  <!-- OS DUELISTAS / AS FASES -->
+  <div class="reveal" style="margin-top:72px">
+    <div class="section-label" data-lang="pt">A jornada</div><div class="section-label" data-lang="en">The run</div><div class="section-label" data-lang="es">El recorrido</div><div class="section-label" data-lang="vi">Hành trình</div>
+    <h2 class="section-title" data-lang="pt">Dez duelos, dificuldade crescente</h2><h2 class="section-title" data-lang="en">Ten duels, rising difficulty</h2><h2 class="section-title" data-lang="es">Diez duelos, dificultad creciente</h2><h2 class="section-title" data-lang="vi">Mười trận, độ khó tăng dần</h2>
+    <p class="section-sub" data-lang="pt">Cada duelo sorteia um duelista da faixa correspondente. A força do baralho acompanha o avanço — quem aparece no duelo 8 não aparece no duelo 2.</p><p class="section-sub" data-lang="en">Each duel draws a duelist from the matching tier. Deck strength follows your progress — whoever shows up in duel 8 never shows up in duel 2.</p><p class="section-sub" data-lang="es">Cada duelo sortea un duelista del rango correspondiente. La fuerza del mazo acompaña el avance — quien aparece en el duelo 8 nunca aparece en el duelo 2.</p><p class="section-sub" data-lang="vi">Mỗi trận rút một đấu thủ từ nhóm tương ứng. Sức mạnh bộ bài tăng theo tiến độ — người xuất hiện ở trận 8 không bao giờ xuất hiện ở trận 2.</p>
+
+    <div class="fases">
+      <div class="fase">
+        <div class="fase-num">1–3<small data-lang="pt">Abertura</small><small data-lang="en">Opening</small><small data-lang="es">Apertura</small><small data-lang="vi">Mở đầu</small></div>
+        <div class="fase-corpo">
+          <h3 data-lang="pt">Os primeiros guardiões</h3><h3 data-lang="en">The first guardians</h3><h3 data-lang="es">Los primeros guardianes</h3><h3 data-lang="vi">Những người bảo vệ đầu tiên</h3>
+          <p data-lang="pt">Duelistas do início da campanha. Baralhos diretos, sem combos longos.</p><p data-lang="en">Duelists from the early campaign. Straightforward decks, no long combos.</p><p data-lang="es">Duelistas del inicio de la campaña. Mazos directos, sin combos largos.</p><p data-lang="vi">Đấu thủ từ đầu cốt truyện. Bộ bài đơn giản, không combo dài.</p>
+          <div class="fase-duelistas">
+            <span class="fase-duelista"><img src="img/Npcs/SimonMuran0.webp" alt="Simon Muran" loading="lazy" width="24" height="24">Simon Muran</span>
+            <span class="fase-duelista"><img src="img/Npcs/Teana0.webp" alt="Teana" loading="lazy" width="24" height="24">Teana</span>
+            <span class="fase-duelista"><img src="img/Npcs/Jusell0.webp" alt="Jusell" loading="lazy" width="24" height="24">Jusell</span>
+            <span class="fase-duelista"><img src="img/Npcs/Tarik0.webp" alt="Tarik" loading="lazy" width="24" height="24">Tarik</span>
+            <span class="fase-duelista"><img src="img/Npcs/Amasis0.webp" alt="Amasis" loading="lazy" width="24" height="24">Amasis</span>
+            <span class="fase-duelista"><img src="img/Npcs/Jono0.webp" alt="Jono" loading="lazy" width="24" height="24">Jono</span>
+            <span class="fase-duelista"><img src="img/Npcs/Magesoldier0.webp" alt="Mage Soldier" loading="lazy" width="24" height="24">Mage Soldier</span>
+            <span class="fase-duelista"><img src="img/Npcs/Seto0.webp" alt="Seto" loading="lazy" width="24" height="24">Seto</span>
+            <span class="fase-duelista"><img src="img/Npcs/mana0.webp" alt="Mana" loading="lazy" width="24" height="24">Mana</span>
+            <span class="fase-duelista"><img src="img/Npcs/mahad0.webp" alt="Mahad" loading="lazy" width="24" height="24">Mahad</span>
+            <span class="fase-duelista"><img src="img/Npcs/SolomonMuto0.webp" alt="Solomon Muto" loading="lazy" width="24" height="24">Solomon Muto</span>
+            <span class="fase-duelista"><img src="img/Npcs/JoeyWheeler0.webp" alt="Joey Wheeler" loading="lazy" width="24" height="24">Joey Wheeler</span>
+            <span class="fase-duelista"><img src="img/Npcs/Tristan0.webp" alt="Tristan" loading="lazy" width="24" height="24">Tristan</span>
+            <span class="fase-duelista"><img src="img/Npcs/TeaGardner0.webp" alt="Tea Gardner" loading="lazy" width="24" height="24">Tea Gardner</span>
+          </div>
+        </div>
+      </div>
+      <div class="fase">
+        <div class="fase-num">4–6<small data-lang="pt">Meio</small><small data-lang="en">Middle</small><small data-lang="es">Medio</small><small data-lang="vi">Giữa</small></div>
+        <div class="fase-corpo">
+          <h3 data-lang="pt">Magos e guardiões</h3><h3 data-lang="en">Mages and guardians</h3><h3 data-lang="es">Magos y guardianes</h3><h3 data-lang="vi">Pháp sư và người bảo vệ</h3>
+          <p data-lang="pt">Decks temáticos com campo mágico próprio e sinergia real.</p><p data-lang="en">Themed decks with their own magic field and real synergy.</p><p data-lang="es">Mazos temáticos con campo mágico propio y sinergia real.</p><p data-lang="vi">Bộ bài theo chủ đề với sân phép riêng và sự phối hợp thực sự.</p>
+          <div class="fase-duelistas">
+            <span class="fase-duelista"><img src="img/Npcs/isis0.webp" alt="Isis" loading="lazy" width="24" height="24">Isis</span>
+            <span class="fase-duelista"><img src="img/Npcs/akhenaden0.webp" alt="Akhenaden" loading="lazy" width="24" height="24">Akhenaden</span>
+            <span class="fase-duelista"><img src="img/Npcs/mountainmage0.webp" alt="Mountain Mage" loading="lazy" width="24" height="24">Mountain Mage</span>
+            <span class="fase-duelista"><img src="img/Npcs/forestmage0.webp" alt="Forest Mage" loading="lazy" width="24" height="24">Forest Mage</span>
+            <span class="fase-duelista"><img src="img/Npcs/labyrinthmage0.webp" alt="Labyrinth Mage" loading="lazy" width="24" height="24">Labyrinth Mage</span>
+            <span class="fase-duelista"><img src="img/Npcs/sebek0.webp" alt="Sebek" loading="lazy" width="24" height="24">Sebek</span>
+            <span class="fase-duelista"><img src="img/Npcs/neku0.webp" alt="Neku" loading="lazy" width="24" height="24">Neku</span>
+            <span class="fase-duelista"><img src="img/Npcs/desertmage0.webp" alt="Desert Mage" loading="lazy" width="24" height="24">Desert Mage</span>
+            <span class="fase-duelista"><img src="img/Npcs/meadowmage0.webp" alt="Meadow Mage" loading="lazy" width="24" height="24">Meadow Mage</span>
+            <span class="fase-duelista"><img src="img/Npcs/oceanmage0.webp" alt="Ocean Mage" loading="lazy" width="24" height="24">Ocean Mage</span>
+          </div>
+        </div>
+      </div>
+      <div class="fase">
+        <div class="fase-num">7–9<small data-lang="pt">Reta final</small><small data-lang="en">Final stretch</small><small data-lang="es">Recta final</small><small data-lang="vi">Chặng cuối</small></div>
+        <div class="fase-corpo">
+          <h3 data-lang="pt">Altos Magos</h3><h3 data-lang="en">The High Mages</h3><h3 data-lang="es">Altos Magos</h3><h3 data-lang="vi">Các Đại Pháp Sư</h3>
+          <p data-lang="pt">A partir daqui a IA para de arriscar e passa a jogar sempre a melhor jogada disponível.</p><p data-lang="en">From here the AI stops taking risks and always plays the best available move.</p><p data-lang="es">Desde aquí la IA deja de arriesgar y siempre juega la mejor jugada disponible.</p><p data-lang="vi">Từ đây AI ngừng mạo hiểm và luôn chọn nước đi tốt nhất.</p>
+          <div class="fase-duelistas">
+            <span class="fase-duelista"><img src="img/Npcs/highmageatenza0.webp" alt="High Mage Atenza" loading="lazy" width="24" height="24">High Mage Atenza</span>
+            <span class="fase-duelista"><img src="img/Npcs/highmageanubisius0.webp" alt="High Mage Anubisius" loading="lazy" width="24" height="24">High Mage Anubisius</span>
+            <span class="fase-duelista"><img src="img/Npcs/highmagesecmeton0.webp" alt="High Mage Secmeton" loading="lazy" width="24" height="24">High Mage Secmeton</span>
+            <span class="fase-duelista"><img src="img/Npcs/highmagekepura0.webp" alt="High Mage Kepura" loading="lazy" width="24" height="24">High Mage Kepura</span>
+            <span class="fase-duelista"><img src="img/Npcs/highmagemartis0.webp" alt="High Mage Martis" loading="lazy" width="24" height="24">High Mage Martis</span>
+            <span class="fase-duelista"><img src="img/Npcs/thiefbakura0.webp" alt="Thief Bakura" loading="lazy" width="24" height="24">Thief Bakura</span>
+          </div>
+        </div>
+      </div>
+      <div class="fase boss">
+        <div class="fase-num">10<small data-lang="pt">Boss</small><small data-lang="en">Boss</small><small data-lang="es">Boss</small><small data-lang="vi">Boss</small></div>
+        <div class="fase-corpo">
+          <h3 data-lang="pt">O confronto final</h3><h3 data-lang="en">The final clash</h3><h3 data-lang="es">El enfrentamiento final</h3><h3 data-lang="vi">Trận đối đầu cuối cùng</h3>
+          <p data-lang="pt">Um dos três chefes da campanha fecha a sequência.</p><p data-lang="en">One of the three campaign bosses closes the run.</p><p data-lang="es">Uno de los tres jefes de la campaña cierra la secuencia.</p><p data-lang="vi">Một trong ba trùm của cốt truyện khép lại chuỗi trận.</p>
+          <div class="fase-duelistas">
+            <span class="fase-duelista"><img src="img/Npcs/heishin0.webp" alt="Heishin" loading="lazy" width="24" height="24">Heishin</span>
+            <span class="fase-duelista"><img src="img/Npcs/setofinal0.webp" alt="Seto Final" loading="lazy" width="24" height="24">Seto Final</span>
+            <span class="fase-duelista"><img src="img/Npcs/zorc0.webp" alt="Zorc" loading="lazy" width="24" height="24">Zorc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="divine-note" data-lang="pt">Os quatro duelistas da Season 2 entram no sorteio conforme você os derrota na campanha — quem ainda não foi enfrentado não aparece.</p><p class="divine-note" data-lang="en">The four Season 2 duelists join the draw as you beat them in the campaign — anyone you haven't faced yet won't show up.</p><p class="divine-note" data-lang="es">Los cuatro duelistas de la Season 2 entran en el sorteo conforme los derrotas en la campaña — quien aún no enfrentaste no aparece.</p><p class="divine-note" data-lang="vi">Bốn đấu thủ Season 2 tham gia bốc thăm khi bạn hạ họ trong cốt truyện — ai chưa gặp sẽ không xuất hiện.</p>
+  </div>
+
+  <!-- AS PUNICOES -->
+  <div class="reveal" style="margin-top:72px">
+    <div class="section-label" data-lang="pt">Restrição por rodada</div><div class="section-label" data-lang="en">Per-round restriction</div><div class="section-label" data-lang="es">Restricción por ronda</div><div class="section-label" data-lang="vi">Hạn chế mỗi vòng</div>
+    <h2 class="section-title" data-lang="pt">Sete punições, uma por duelo</h2><h2 class="section-title" data-lang="en">Seven punishments, one per duel</h2><h2 class="section-title" data-lang="es">Siete castigos, uno por duelo</h2><h2 class="section-title" data-lang="vi">Bảy hình phạt, mỗi trận một</h2>
+    <p class="section-sub" data-lang="pt">Antes de cada duelo o jogo sorteia uma restrição — e ela nunca repete a do duelo anterior. Vale só para você: o oponente joga com o baralho inteiro à disposição.</p><p class="section-sub" data-lang="en">Before each duel the game draws a restriction — and it never repeats the previous one. It applies only to you: the opponent always plays with their full deck.</p><p class="section-sub" data-lang="es">Antes de cada duelo el juego sortea una restricción — y nunca repite la del duelo anterior. Vale solo para ti: el oponente siempre juega con su mazo completo.</p><p class="section-sub" data-lang="vi">Trước mỗi trận, trò chơi rút một hạn chế — và không bao giờ lặp lại hạn chế của trận trước. Chỉ áp dụng với bạn: đối thủ luôn dùng trọn bộ bài.</p>
+
+    <div class="pun-grid">
+      <div class="pun-card">
+        <div class="pun-nome" data-lang="pt">Sem efeitos de monstro</div><div class="pun-nome" data-lang="en">No monster effects</div><div class="pun-nome" data-lang="es">Sin efectos de monstruo</div><div class="pun-nome" data-lang="vi">Không hiệu ứng quái thú</div>
+        <div class="pun-desc" data-lang="pt">Os efeitos dos seus monstros não disparam durante o duelo inteiro.</div><div class="pun-desc" data-lang="en">Your monsters' effects don't trigger for the whole duel.</div><div class="pun-desc" data-lang="es">Los efectos de tus monstruos no se activan durante todo el duelo.</div><div class="pun-desc" data-lang="vi">Hiệu ứng quái thú của bạn không kích hoạt trong suốt trận đấu.</div>
+      </div>
+      <div class="pun-card">
+        <div class="pun-nome" data-lang="pt">Sem magias</div><div class="pun-nome" data-lang="en">No spells</div><div class="pun-nome" data-lang="es">Sin magias</div><div class="pun-nome" data-lang="vi">Không phép thuật</div>
+        <div class="pun-desc" data-lang="pt">Você não pode ativar nenhuma carta de Magia.</div><div class="pun-desc" data-lang="en">You can't activate any Spell card.</div><div class="pun-desc" data-lang="es">No puedes activar ninguna carta de Magia.</div><div class="pun-desc" data-lang="vi">Bạn không thể kích hoạt bất kỳ lá Phép nào.</div>
+      </div>
+      <div class="pun-card">
+        <div class="pun-nome" data-lang="pt">Sem armadilhas</div><div class="pun-nome" data-lang="en">No traps</div><div class="pun-nome" data-lang="es">Sin trampas</div><div class="pun-nome" data-lang="vi">Không bẫy</div>
+        <div class="pun-desc" data-lang="pt">Nenhuma Armadilha pode ser ativada — nem as que já estavam no campo.</div><div class="pun-desc" data-lang="en">No Trap can be activated — not even ones already set on the field.</div><div class="pun-desc" data-lang="es">Ninguna Trampa puede activarse — ni las que ya estaban en el campo.</div><div class="pun-desc" data-lang="vi">Không lá Bẫy nào được kích hoạt — kể cả lá đã úp sẵn trên sân.</div>
+      </div>
+      <div class="pun-card">
+        <div class="pun-nome" data-lang="pt">Sem equipamentos</div><div class="pun-nome" data-lang="en">No equip cards</div><div class="pun-nome" data-lang="es">Sin equipos</div><div class="pun-nome" data-lang="vi">Không trang bị</div>
+        <div class="pun-desc" data-lang="pt">Cartas de Equipamento ficam bloqueadas.</div><div class="pun-desc" data-lang="en">Equip cards are blocked.</div><div class="pun-desc" data-lang="es">Las cartas de Equipo quedan bloqueadas.</div><div class="pun-desc" data-lang="vi">Các lá Trang bị bị khóa.</div>
+      </div>
+      <div class="pun-card dano">
+        <div class="pun-nome" data-lang="pt">Dreno Vital</div><div class="pun-nome" data-lang="en">Vital Drain</div><div class="pun-nome" data-lang="es">Drenaje Vital</div><div class="pun-nome" data-lang="vi">Hút Sinh Lực</div>
+        <div class="pun-desc" data-lang="pt">Você perde 1.500 LP e o oponente ganha 1.500 LP no fim de cada turno.</div><div class="pun-desc" data-lang="en">You lose 1,500 LP and your opponent gains 1,500 LP at the end of each turn.</div><div class="pun-desc" data-lang="es">Pierdes 1.500 LP y tu oponente gana 1.500 LP al final de cada turno.</div><div class="pun-desc" data-lang="vi">Bạn mất 1.500 LP và đối thủ nhận 1.500 LP vào cuối mỗi lượt.</div>
+      </div>
+      <div class="pun-card dano">
+        <div class="pun-nome" data-lang="pt">Enfraquecimento</div><div class="pun-nome" data-lang="en">Weakening</div><div class="pun-nome" data-lang="es">Debilitamiento</div><div class="pun-nome" data-lang="vi">Suy Yếu</div>
+        <div class="pun-desc" data-lang="pt">Seus monstros perdem 500 ATK/DEF no fim de cada turno. Se chegarem a 0, são destruídos.</div><div class="pun-desc" data-lang="en">Your monsters lose 500 ATK/DEF at the end of each turn. If they reach 0, they're destroyed.</div><div class="pun-desc" data-lang="es">Tus monstruos pierden 500 ATK/DEF al final de cada turno. Si llegan a 0, son destruidos.</div><div class="pun-desc" data-lang="vi">Quái thú của bạn mất 500 ATK/DEF vào cuối mỗi lượt. Nếu về 0, chúng bị phá hủy.</div>
+      </div>
+      <div class="pun-card dano">
+        <div class="pun-nome" data-lang="pt">Espada x Escudo</div><div class="pun-nome" data-lang="en">Sword x Shield</div><div class="pun-nome" data-lang="es">Espada x Escudo</div><div class="pun-nome" data-lang="vi">Kiếm x Khiên</div>
+        <div class="pun-desc" data-lang="pt">Os valores de ATK e DEF trocam de lugar ao invocar.</div><div class="pun-desc" data-lang="en">ATK and DEF values swap when you summon.</div><div class="pun-desc" data-lang="es">Los valores de ATK y DEF se intercambian al invocar.</div><div class="pun-desc" data-lang="vi">Giá trị ATK và DEF hoán đổi khi triệu hồi.</div>
+      </div>
+    </div>
+    <p class="divine-note" data-lang="pt">As quatro primeiras proíbem um tipo de carta. As três últimas não proíbem nada — elas corroem o seu lado enquanto o duelo se estende, e é isso que torna o duelo longo perigoso.</p><p class="divine-note" data-lang="en">The first four forbid a card type. The last three forbid nothing — they wear your side down as the duel drags on, which is what makes a long duel dangerous.</p><p class="divine-note" data-lang="es">Las cuatro primeras prohíben un tipo de carta. Las tres últimas no prohíben nada — desgastan tu lado mientras el duelo se alarga, y eso es lo que hace peligroso un duelo largo.</p><p class="divine-note" data-lang="vi">Bốn hạn chế đầu cấm một loại thẻ. Ba hạn chế cuối không cấm gì — chúng bào mòn phía bạn khi trận đấu kéo dài, và đó là điều khiến trận dài trở nên nguy hiểm.</p>
+  </div>
+
+  <!-- AS CHANCES -->
+  <div class="reveal" style="margin-top:72px">
+    <div class="section-label" data-lang="pt">Sorteio e acúmulo</div><div class="section-label" data-lang="en">Draw and buildup</div><div class="section-label" data-lang="es">Sorteo y acumulación</div><div class="section-label" data-lang="vi">Bốc thăm và tích lũy</div>
+    <h2 class="section-title" data-lang="pt">As chances reais</h2><h2 class="section-title" data-lang="en">The real odds</h2><h2 class="section-title" data-lang="es">Las probabilidades reales</h2><h2 class="section-title" data-lang="vi">Tỉ lệ thực tế</h2>
+    <p class="section-sub" data-lang="pt">Nenhuma das duas é sorte pura: a chance sobe a cada tentativa em que o evento não aparece, e volta ao mínimo assim que ele sai. Quanto mais você tenta sem ver, mais perto fica.</p><p class="section-sub" data-lang="en">Neither is pure luck: the chance rises with every attempt where the event doesn't show, and resets once it does. The longer you go without seeing it, the closer you get.</p><p class="section-sub" data-lang="es">Ninguna de las dos es pura suerte: la probabilidad sube en cada intento en que el evento no aparece, y vuelve al mínimo en cuanto sale. Cuanto más lo intentas sin verlo, más cerca estás.</p><p class="section-sub" data-lang="vi">Cả hai đều không phải may rủi thuần túy: tỉ lệ tăng sau mỗi lượt mà sự kiện không xuất hiện, và trở lại mức thấp nhất ngay khi nó xuất hiện. Càng thử lâu mà chưa thấy, bạn càng đến gần.</p>
+
+    <div class="chances">
+      <div class="chance-card">
+        <div class="chance-topo"><span class="chance-de">15%</span><span class="chance-ate">→ 20%</span></div>
+        <div class="chance-nome" data-lang="pt">Championship Lendário</div><div class="chance-nome" data-lang="en">Legendary Championship</div><div class="chance-nome" data-lang="es">Championship Legendario</div><div class="chance-nome" data-lang="vi">Championship Huyền Thoại</div>
+        <div class="pity-barra"><span class="pity-fill" style="width:20%"></span></div>
+        <div class="chance-nota" data-lang="pt">Sorteado em segredo no início — o narrador só revela na luta 7. Sobe 1% a cada tentativa sem sair, até 20%.</div><div class="chance-nota" data-lang="en">Drawn in secret at the start — the narrator only reveals it on fight 7. Rises 1% per attempt without showing, up to 20%.</div><div class="chance-nota" data-lang="es">Sorteado en secreto al inicio — el narrador solo lo revela en la pelea 7. Sube 1% por intento sin salir, hasta 20%.</div><div class="chance-nota" data-lang="vi">Được bốc thăm bí mật lúc bắt đầu — người dẫn chuyện chỉ tiết lộ ở trận 7. Tăng 1% mỗi lượt không ra, tối đa 20%.</div>
+      </div>
+      <div class="chance-card roxo">
+        <div class="chance-topo"><span class="chance-de">30%</span><span class="chance-ate">→ 50%</span></div>
+        <div class="chance-nome" data-lang="pt">Portal do Torneio Sombrio</div><div class="chance-nome" data-lang="en">Shadow Tournament portal</div><div class="chance-nome" data-lang="es">Portal del Torneo Sombrío</div><div class="chance-nome" data-lang="vi">Cổng Giải đấu Bóng Tối</div>
+        <div class="pity-barra"><span class="pity-fill" style="width:50%"></span></div>
+        <div class="chance-nota" data-lang="pt">Só pode aparecer ao coletar o prêmio de um Lendário. Sobe 5% a cada Lendário sem portal, até 50%.</div><div class="chance-nota" data-lang="en">Can only appear when you collect a Legendary's prize. Rises 5% per Legendary without a portal, up to 50%.</div><div class="chance-nota" data-lang="es">Solo puede aparecer al reclamar el premio de un Legendario. Sube 5% por cada Legendario sin portal, hasta 50%.</div><div class="chance-nota" data-lang="vi">Chỉ xuất hiện khi bạn nhận thưởng từ một Huyền Thoại. Tăng 5% mỗi lần Huyền Thoại không có cổng, tối đa 50%.</div>
+      </div>
+    </div>
+  </div>
+
   <!-- ENTRADA E PROGRESSO -->
   <div class="reveal" style="margin-top:64px">
     <div class="section-label" data-lang="pt">Custo e progresso</div>
@@ -689,6 +936,67 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <h2 class="section-title" data-lang="en">Shadow Tournament</h2><h2 class="section-title" data-lang="es">Torneo Sombrío</h2><h2 class="section-title" data-lang="vi">Giải đấu Bóng Tối</h2>
     <p class="section-sub" data-lang="pt">Um portal secreto que pode aparecer ao coletar o prêmio de um Championship Lendário. A chance começa em 30% e sobe 5% a cada vitória Lendária em que ele não aparecer, até um teto de 50%, voltando a 30% assim que aparecer.</p>
     <p class="section-sub" data-lang="en">A secret portal that can appear when you collect a Legendary Championship's prize. The chance starts at 30% and climbs 5% per Legendary win it doesn't appear, up to a 50% cap, resetting to 30% the moment it does.</p><p class="section-sub" data-lang="es">Un portal secreto que puede aparecer al reclamar el premio de un Championship Legendario. La probabilidad empieza en 30% y sube 5% por cada victoria Legendaria en que no aparezca, hasta un tope de 50%, volviendo a 30% en cuanto aparezca.</p><p class="section-sub" data-lang="vi">Một cổng bí mật có thể xuất hiện khi nhận thưởng từ Championship Huyền Thoại. Cơ hội bắt đầu ở 30% và tăng 5% sau mỗi chiến thắng Huyền Thoại mà nó không xuất hiện, tối đa 50%, rồi trở lại 30% ngay khi xuất hiện.</p>
+
+    <div class="sombrio-grid">
+      <div class="sombrio-card">
+        <span class="sombrio-etapa" data-lang="pt">Duelo 1 · fixo</span><span class="sombrio-etapa" data-lang="en">Duel 1 · fixed</span><span class="sombrio-etapa" data-lang="es">Duelo 1 · fijo</span><span class="sombrio-etapa" data-lang="vi">Trận 1 · cố định</span>
+        <img src="img/torneio/great-shadow-magus.webp" alt="Great Shadow Magus" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Great Shadow Magus</div>
+          <div class="sombrio-papel" data-lang="pt">Abre o portal</div><div class="sombrio-papel" data-lang="en">Opens the portal</div><div class="sombrio-papel" data-lang="es">Abre el portal</div><div class="sombrio-papel" data-lang="vi">Mở cổng</div>
+        </div>
+      </div>
+      <div class="sombrio-card">
+        <span class="sombrio-etapa" data-lang="pt">Duelo 2 · fixo</span><span class="sombrio-etapa" data-lang="en">Duel 2 · fixed</span><span class="sombrio-etapa" data-lang="es">Duelo 2 · fijo</span><span class="sombrio-etapa" data-lang="vi">Trận 2 · cố định</span>
+        <img src="img/torneio/black-luster-valkyrie.webp" alt="Black Luster Valkyrie" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Black Luster Valkyrie</div>
+          <div class="sombrio-papel" data-lang="pt">Sempre a segunda</div><div class="sombrio-papel" data-lang="en">Always second</div><div class="sombrio-papel" data-lang="es">Siempre la segunda</div><div class="sombrio-papel" data-lang="vi">Luôn là người thứ hai</div>
+        </div>
+      </div>
+      <div class="sombrio-card">
+        <span class="sombrio-etapa" data-lang="pt">Duelo 3 · sorteado</span><span class="sombrio-etapa" data-lang="en">Duel 3 · drawn</span><span class="sombrio-etapa" data-lang="es">Duelo 3 · sorteado</span><span class="sombrio-etapa" data-lang="vi">Trận 3 · ngẫu nhiên</span>
+        <img src="img/torneio/poseidon.webp" alt="Poseidon, King of the Oceans" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Poseidon, King of the Oceans</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos dois</div><div class="sombrio-papel" data-lang="en">One of two</div><div class="sombrio-papel" data-lang="es">Uno de los dos</div><div class="sombrio-papel" data-lang="vi">Một trong hai</div>
+        </div>
+      </div>
+      <div class="sombrio-card">
+        <span class="sombrio-etapa" data-lang="pt">Duelo 3 · sorteado</span><span class="sombrio-etapa" data-lang="en">Duel 3 · drawn</span><span class="sombrio-etapa" data-lang="es">Duelo 3 · sorteado</span><span class="sombrio-etapa" data-lang="vi">Trận 3 · ngẫu nhiên</span>
+        <img src="img/torneio/lord-d-saurian.webp" alt="Lord D. Saurian" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Lord D. Saurian</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos dois</div><div class="sombrio-papel" data-lang="en">One of two</div><div class="sombrio-papel" data-lang="es">Uno de los dos</div><div class="sombrio-papel" data-lang="vi">Một trong hai</div>
+        </div>
+      </div>
+      <div class="sombrio-card">
+        <span class="sombrio-etapa" data-lang="pt">Chefe · sorteado</span><span class="sombrio-etapa" data-lang="en">Boss · drawn</span><span class="sombrio-etapa" data-lang="es">Jefe · sorteado</span><span class="sombrio-etapa" data-lang="vi">Trùm · ngẫu nhiên</span>
+        <img src="img/torneio/azzazel.webp" alt="Azzazel, Arquiduque Infernal" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Azzazel, Arquiduque Infernal</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos três</div><div class="sombrio-papel" data-lang="en">One of three</div><div class="sombrio-papel" data-lang="es">Uno de los tres</div><div class="sombrio-papel" data-lang="vi">Một trong ba</div>
+        </div>
+      </div>
+      <div class="sombrio-card">
+        <span class="sombrio-etapa" data-lang="pt">Chefe · sorteado</span><span class="sombrio-etapa" data-lang="en">Boss · drawn</span><span class="sombrio-etapa" data-lang="es">Jefe · sorteado</span><span class="sombrio-etapa" data-lang="vi">Trùm · ngẫu nhiên</span>
+        <img src="img/torneio/seto-corrupted.webp" alt="Seto Corrupted" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Seto Corrupted</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos três</div><div class="sombrio-papel" data-lang="en">One of three</div><div class="sombrio-papel" data-lang="es">Uno de los tres</div><div class="sombrio-papel" data-lang="vi">Một trong ba</div>
+        </div>
+      </div>
+      <div class="sombrio-card">
+        <span class="sombrio-etapa" data-lang="pt">Chefe · sorteado</span><span class="sombrio-etapa" data-lang="en">Boss · drawn</span><span class="sombrio-etapa" data-lang="es">Jefe · sorteado</span><span class="sombrio-etapa" data-lang="vi">Trùm · ngẫu nhiên</span>
+        <img src="img/torneio/kiram-overlord.webp" alt="Kiram Overlord" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Kiram Overlord</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos três</div><div class="sombrio-papel" data-lang="en">One of three</div><div class="sombrio-papel" data-lang="es">Uno de los tres</div><div class="sombrio-papel" data-lang="vi">Một trong ba</div>
+        </div>
+      </div>
+    </div>
+    <p class="divine-note" data-lang="pt">Quatro duelos, sem checkpoint e sem volta: perder qualquer um encerra o evento na hora. Os dois primeiros são sempre os mesmos; o terceiro e o chefe são sorteados a cada entrada.</p><p class="divine-note" data-lang="en">Four duels, no checkpoints and no way back: losing any of them ends the event on the spot. The first two are always the same; the third and the boss are drawn on every entry.</p><p class="divine-note" data-lang="es">Cuatro duelos, sin checkpoints y sin vuelta atrás: perder cualquiera termina el evento al instante. Los dos primeros son siempre los mismos; el tercero y el jefe se sortean en cada entrada.</p><p class="divine-note" data-lang="vi">Bốn trận, không điểm lưu và không đường lui: thua bất kỳ trận nào là sự kiện kết thúc ngay. Hai trận đầu luôn cố định; trận thứ ba và trùm được bốc thăm mỗi lần vào.</p>
+
 
     <div class="warn-banner">
       <div class="warn-icon">💀</div>
