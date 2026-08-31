@@ -462,11 +462,14 @@ nav.scrolled {
   border-color: rgba(212,168,67,.08);
   background: rgba(0,0,0,.3);
 }
-.npc-card .npc-role {
-  font-size: 9px; color: var(--gold-dim); letter-spacing: 1px;
-  margin-top: 2px; text-transform: uppercase;
+.npc-name {
+  font-size:9px; letter-spacing:.5px; color:var(--text-muted);
+  /* Duas linhas reservadas: sem o rotulo de papel embaixo, nomes de
+     uma linha (Teana) e de duas (High Mage Anubisius) davam cards de
+     alturas diferentes na mesma grade. */
+  line-height:1.35; min-height:2.7em;
+  display:flex; align-items:center; justify-content:center;
 }
-.npc-name { font-size:9px; letter-spacing:.5px; color:var(--text-muted); }
 .npc-locked { opacity:.3; }
 .campaign-note { font-size:13px; color:var(--text-muted); }
 .campaign-note strong { color:var(--gold); }
@@ -1209,7 +1212,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   html .ss-ph span{font-size:11px}
   html .ss-tag{font-size:11px}
   html .feat-tag{font-size:11px}
-  html .npc-card .npc-role{font-size:11px}
   html .npc-name{font-size:11px}
   html .dc-stat span{font-size:11px}
   html .dc-channel{font-size:12px}
@@ -1602,7 +1604,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Simon Muran</div>
-      <div class="npc-role"><span data-lang="pt">Mago Guia</span><span data-lang="en">Guide Mage</span><span data-lang="es">Mago Guía</span><span data-lang="vi">Pháp Sư Dẫn Đường</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1611,7 +1612,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Teana</div>
-      <div class="npc-role"><span data-lang="pt">Aprendiz</span><span data-lang="en">Apprentice</span><span data-lang="es">Aprendiz</span><span data-lang="vi">Học viên</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1620,7 +1620,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Jusell</div>
-      <div class="npc-role"><span data-lang="pt">Sacerdote</span><span data-lang="en">Priest</span><span data-lang="es">Sacerdote</span><span data-lang="vi">Tư tế</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1629,7 +1628,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Tarik</div>
-      <div class="npc-role"><span data-lang="pt">Guardião</span><span data-lang="en">Guardian</span><span data-lang="es">Guardián</span><span data-lang="vi">Người bảo vệ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1638,7 +1636,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Amasis</div>
-      <div class="npc-role"><span data-lang="pt">Patriarca</span><span data-lang="en">Patriarch</span><span data-lang="es">Patriarca</span><span data-lang="vi">Tộc trưởng</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1647,7 +1644,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Jono</div>
-      <div class="npc-role"><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span><span data-lang="es">Duelista</span><span data-lang="vi">Đấu thủ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1656,7 +1652,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mage Soldier</div>
-      <div class="npc-role"><span data-lang="pt">Soldado Mago</span><span data-lang="en">Mage Soldier</span><span data-lang="es">Soldado Mago</span><span data-lang="vi">Chiến Binh Pháp Sư</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1665,7 +1660,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Desert Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago do Deserto</span><span data-lang="en">Desert Mage</span><span data-lang="es">Mago del Desierto</span><span data-lang="vi">Pháp Sư Sa Mạc</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1674,7 +1668,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Meadow Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago do Prado</span><span data-lang="en">Meadow Mage</span><span data-lang="es">Mago del Prado</span><span data-lang="vi">Pháp Sư Đồng Cỏ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1683,7 +1676,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Ocean Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago do Oceano</span><span data-lang="en">Ocean Mage</span><span data-lang="es">Mago del Océano</span><span data-lang="vi">Pháp Sư Đại Dương</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1692,7 +1684,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Forest Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago da Floresta</span><span data-lang="en">Forest Mage</span><span data-lang="es">Mago del Bosque</span><span data-lang="vi">Pháp Sư Rừng</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1701,7 +1692,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mountain Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago da Montanha</span><span data-lang="en">Mountain Mage</span><span data-lang="es">Mago de la Montaña</span><span data-lang="vi">Pháp Sư Núi</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1710,7 +1700,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mana</div>
-      <div class="npc-role"><span data-lang="pt">Aprendiz Maga</span><span data-lang="en">Mage Apprentice</span><span data-lang="es">Aprendiza Maga</span><span data-lang="vi">Nữ Học Viên Pháp Sư</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1719,7 +1708,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Mahad</div>
-      <div class="npc-role"><span data-lang="pt">Alto Sacerdote</span><span data-lang="en">High Priest</span><span data-lang="es">Alto Sacerdote</span><span data-lang="vi">Đại Tư Tế</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1728,7 +1716,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Seto</div>
-      <div class="npc-role"><span data-lang="pt">Rival</span><span data-lang="en">Rival</span><span data-lang="es">Rival</span><span data-lang="vi">Đối thủ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1737,7 +1724,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">⚔</div>
       </div>
       <div class="npc-name">Isis</div>
-      <div class="npc-role"><span data-lang="pt">Sacerdotisa</span><span data-lang="en">Priestess</span><span data-lang="es">Sacerdotisa</span><span data-lang="vi">Nữ Tư Tế</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1746,7 +1732,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Akhenaden</div>
-      <div class="npc-role"><span data-lang="pt">Traidor</span><span data-lang="en">Traitor</span><span data-lang="es">Traidor</span><span data-lang="vi">Kẻ phản bội</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1755,7 +1740,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Kepura</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1764,7 +1748,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Martis</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1773,7 +1756,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Secmeton</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1782,7 +1764,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Atenza</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1791,7 +1772,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">High Mage Anubisius</div>
-      <div class="npc-role"><span data-lang="pt">Alto Mago</span><span data-lang="en">High Mage</span><span data-lang="es">Alto Mago</span><span data-lang="vi">Đại Pháp Sư</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1800,7 +1780,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Neku</div>
-      <div class="npc-role"><span data-lang="pt">Guerreiro</span><span data-lang="en">Warrior</span><span data-lang="es">Guerrero</span><span data-lang="vi">Chiến binh</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1809,7 +1788,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Sebek</div>
-      <div class="npc-role"><span data-lang="pt">Guardião</span><span data-lang="en">Guardian</span><span data-lang="es">Guardián</span><span data-lang="vi">Người bảo vệ</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1818,7 +1796,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Labyrinth Mage</div>
-      <div class="npc-role"><span data-lang="pt">Mago do Labirinto</span><span data-lang="en">Labyrinth Mage</span><span data-lang="es">Mago del Laberinto</span><span data-lang="vi">Pháp Sư Mê Cung</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1827,7 +1804,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Thief Bakura</div>
-      <div class="npc-role"><span data-lang="pt">Ladrão</span><span data-lang="en">Thief</span><span data-lang="es">Ladrón</span><span data-lang="vi">Kẻ trộm</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1836,7 +1812,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Seto Final</div>
-      <div class="npc-role"><span data-lang="pt">Faraó Rival</span><span data-lang="en">Rival Pharaoh</span><span data-lang="es">Faraón Rival</span><span data-lang="vi">Pharaoh Đối Thủ</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1845,7 +1820,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Heishin</div>
-      <div class="npc-role"><span data-lang="pt">Vilão Final</span><span data-lang="en">Final Boss</span><span data-lang="es">Villano Final</span><span data-lang="vi">Trùm cuối</span></div>
     </div>
     <div class="npc-card npc-locked">
       <div class="npc-av">
@@ -1854,7 +1828,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Zorc</div>
-      <div class="npc-role"><span data-lang="pt">Demônio Final</span><span data-lang="en">Final Demon</span><span data-lang="es">Demonio Final</span><span data-lang="vi">Ác Quỷ Cuối Cùng</span></div>
     </div>
   </div>
 
@@ -1866,7 +1839,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Solomon Muto</div>
-      <div class="npc-role"><span data-lang="pt">Dono da Loja</span><span data-lang="en">Shop Owner</span><span data-lang="es">Dueño de la Tienda</span><span data-lang="vi">Chủ Cửa Hàng</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1875,7 +1847,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Joey Wheeler</div>
-      <div class="npc-role"><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span><span data-lang="es">Duelista</span><span data-lang="vi">Đấu thủ</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1884,7 +1855,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Tristan</div>
-      <div class="npc-role"><span data-lang="pt">Companheiro</span><span data-lang="en">Companion</span><span data-lang="es">Compañero</span><span data-lang="vi">Người đồng hành</span></div>
     </div>
     <div class="npc-card">
       <div class="npc-av">
@@ -1893,7 +1863,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
         <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
       </div>
       <div class="npc-name">Tea Gardner</div>
-      <div class="npc-role"><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span><span data-lang="es">Duelista</span><span data-lang="vi">Đấu thủ</span></div>
     </div>
   </div>
 
