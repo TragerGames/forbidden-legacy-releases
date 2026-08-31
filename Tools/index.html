@@ -837,7 +837,9 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   transition: background .2s; text-transform: uppercase;
 }
 .yt-sub-btn:hover { background: #E00000; }
-.yt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+/* auto-fit em vez de 3 colunas fixas: com 4 videos, a coluna fixa
+   deixava um card sozinho na segunda linha. */
+.yt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .yt-card {
   cursor: pointer;
   background: var(--dark3); border: 1px solid var(--border);
@@ -1487,16 +1489,18 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <h2 class="section-title" data-lang="en">Project videos</h2><h2 class="section-title" data-lang="es">Vídeos sobre el proyecto</h2><h2 class="section-title" data-lang="vi">Video về dự án</h2>
 
     <!-- Vídeo em destaque -->
-    <div class="yt-featured" onclick="ytPlay(this,'LMYsj58Pil0')" data-reveal>
-      <div class="yt-thumb" id="yt-LMYsj58Pil0">
-        <img src="https://i.ytimg.com/vi/LMYsj58Pil0/maxresdefault.jpg" alt="Beta 1.8.2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+    <div class="yt-featured" onclick="ytPlay(this,'dsBx6zdYGaY')" data-reveal>
+      <div class="yt-thumb" id="yt-dsBx6zdYGaY">
+        <img src="https://i.ytimg.com/vi/dsBx6zdYGaY/maxresdefault.jpg" alt="Season 2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
         <div class="yt-play-icon-lg">▶</div>
         <span class="yt-new-badge" data-lang="pt">MAIS RECENTE</span>
         <span class="yt-new-badge" data-lang="en">LATEST</span><span class="yt-new-badge" data-lang="es">MÁS RECIENTE</span><span class="yt-new-badge" data-lang="vi">MỚI NHẤT</span>
       </div>
       <div class="yt-card-info" style="padding:20px 24px">
-        <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="pt">SAIU AGORA! MODO TORNEIO, FULL ARTS, ARENA SEASON 2 e 4 IDIOMAS!</div>
-        <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="en">OUT NOW! TOURNAMENT MODE, FULL ARTS, SEASON 2 ARENA &amp; 4 LANGUAGES!</div><div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="es">¡YA DISPONIBLE! MODO TORNEO, FULL ARTS, ARENA SEASON 2 y 4 IDIOMAS!</div><div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="vi">ĐÃ RA MẮT! CHẾ ĐỘ GIẢI ĐẤU, FULL ART, ĐẤU TRƯỜNG SEASON 2 và 4 NGÔN NGỮ!</div>
+        <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="pt">SEASON 2 CHEGOU! Novos Personagens e Boss — YGO Forbidden Legacy</div>
+        <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="en">SEASON 2 IS HERE! New Characters and Boss — YGO Forbidden Legacy</div>
+        <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="es">¡LLEGÓ LA SEASON 2! Nuevos Personajes y Boss — YGO Forbidden Legacy</div>
+        <div class="yt-card-title" style="font-size:17px;line-height:1.4" data-lang="vi">SEASON 2 ĐÃ RA MẮT! Nhân vật mới và Boss — YGO Forbidden Legacy</div>
         <div class="yt-card-meta">Trager Games · 2026</div>
       </div>
     </div>
@@ -1517,6 +1521,18 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
     <!-- Outros vídeos -->
     <div class="yt-grid" data-reveal>
+      <div class="yt-card" onclick="ytPlay(this,'LMYsj58Pil0')">
+        <div class="yt-thumb" id="yt-LMYsj58Pil0">
+          <img src="https://i.ytimg.com/vi/LMYsj58Pil0/hqdefault.jpg" alt="Beta 1.8.2" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
+          <div class="yt-play-icon">▶</div>
+        </div>
+        <div class="yt-card-info">
+          <div class="yt-card-title" data-lang="pt">SAIU AGORA! MODO TORNEIO, FULL ARTS, ARENA SEASON 2 e 4 IDIOMAS!</div>
+          <div class="yt-card-title" data-lang="en">OUT NOW! TOURNAMENT MODE, FULL ARTS, SEASON 2 ARENA &amp; 4 LANGUAGES!</div><div class="yt-card-title" data-lang="es">¡YA DISPONIBLE! MODO TORNEO, FULL ARTS, ARENA SEASON 2 y 4 IDIOMAS!</div><div class="yt-card-title" data-lang="vi">ĐÃ RA MẮT! CHẾ ĐỘ GIẢI ĐẤU, FULL ART, ĐẤU TRƯỜNG SEASON 2 và 4 NGÔN NGỮ!</div>
+          <div class="yt-card-meta">Trager Games · 2026</div>
+        </div>
+      </div>
+
       <div class="yt-card" onclick="ytPlay(this,'wv0XsB8Okrk')">
         <div class="yt-thumb" id="yt-wv0XsB8Okrk">
           <img src="https://i.ytimg.com/vi/wv0XsB8Okrk/hqdefault.jpg" alt="Beta 1.6" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:8px 8px 0 0">
@@ -1843,7 +1859,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   </div>
 
   <div class="npc-row" data-season="2" hidden>
-    <div class="npc-card npc-locked">
+    <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/SolomonMuto0.webp" alt="Solomon Muto" loading="lazy"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
@@ -1852,7 +1868,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="npc-name">Solomon Muto</div>
       <div class="npc-role"><span data-lang="pt">Dono da Loja</span><span data-lang="en">Shop Owner</span><span data-lang="es">Dueño de la Tienda</span><span data-lang="vi">Chủ Cửa Hàng</span></div>
     </div>
-    <div class="npc-card npc-locked">
+    <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/JoeyWheeler0.webp" alt="Joey Wheeler" loading="lazy"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="190">
@@ -1861,7 +1877,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="npc-name">Joey Wheeler</div>
       <div class="npc-role"><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span><span data-lang="es">Duelista</span><span data-lang="vi">Đấu thủ</span></div>
     </div>
-    <div class="npc-card npc-locked">
+    <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/Tristan0.webp" alt="Tristan" loading="lazy"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="165">
@@ -1870,7 +1886,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <div class="npc-name">Tristan</div>
       <div class="npc-role"><span data-lang="pt">Companheiro</span><span data-lang="en">Companion</span><span data-lang="es">Compañero</span><span data-lang="vi">Người đồng hành</span></div>
     </div>
-    <div class="npc-card npc-locked">
+    <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/TeaGardner0.webp" alt="Tea Gardner" loading="lazy"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="154" height="192">
