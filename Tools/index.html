@@ -435,6 +435,9 @@ nav.scrolled {
 .campaign-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(22px,3vw,36px); color:var(--gold); margin-bottom:10px; text-shadow:0 0 24px rgba(212,168,67,.2); }
 .campaign-sub { color:var(--text-muted); font-size:14px; max-width:480px; margin:0 auto 48px; line-height:1.7; }
 .npc-row { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:36px; }
+/* display:flex acima e regra de autor e venceria o [hidden] do
+   navegador, deixando as duas seasons visiveis ao mesmo tempo. */
+.npc-row[hidden] { display: none; }
 .npc-card {
   width:78px; background:rgba(212,168,67,.03);
   border:1px solid rgba(212,168,67,.1); border-radius:6px;
@@ -655,6 +658,25 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   border-color: var(--gold, #c8973a);
 }
 .input-group select option { background: #14100a; color: #e8dcc0; }
+
+
+/* ── ABAS DE SEASON (galeria de personagens) ──────────────────────── */
+.season-tabs {
+  display: flex; justify-content: center; gap: 8px; margin: 0 0 22px;
+}
+.season-tab {
+  background: rgba(212,168,67,.04);
+  border: 1px solid rgba(212,168,67,.18);
+  color: var(--text-muted); cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 1.4px;
+  padding: 7px 20px; border-radius: 3px;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.season-tab:hover { border-color: rgba(212,168,67,.4); color: var(--gold-light); }
+.season-tab.on {
+  border-color: var(--gold); color: var(--gold-light);
+  background: rgba(212,168,67,.1);
+}
 
 /* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
 .lang-pick { position: relative; display: inline-block; }
@@ -1394,7 +1416,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 
   <div class="hero-pills">
     <div class="hero-pill"><strong id="h-cards">1.100+</strong><span data-lang="pt">cartas</span><span data-lang="en">cards</span><span data-lang="es">cartas</span><span data-lang="vi">thẻ bài</span></div>
-    <div class="hero-pill"><strong>29</strong><span data-lang="pt">NPCs</span><span data-lang="en">NPCs</span><span data-lang="es">NPCs</span><span data-lang="vi">NPC</span></div>
+    <div class="hero-pill"><strong>33</strong><span data-lang="pt">NPCs</span><span data-lang="en">NPCs</span><span data-lang="es">NPCs</span><span data-lang="vi">NPC</span></div>
     <div class="hero-pill"><strong>Season 2</strong><span data-lang="pt">campanha</span><span data-lang="en">campaign</span><span data-lang="es">campaña</span><span data-lang="vi">cốt truyện</span></div>
     <div class="hero-pill"><strong>Beta 1.9</strong><span data-lang="pt">versão atual</span><span data-lang="en">current version</span><span data-lang="es">versión actual</span><span data-lang="vi">phiên bản hiện tại</span></div>
   </div>
@@ -1550,7 +1572,13 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   <p class="campaign-sub" data-lang="pt">33 NPCs com IA e deck próprios. Season 1 completa e Season 2 em andamento para Founders. Versão gratuita inclui até Isis.</p>
   <p class="campaign-sub" data-lang="en">33 NPCs with their own AI and deck. Full Season 1 and Season 2 underway for Founders. Free version includes up to Isis.</p><p class="campaign-sub" data-lang="es">33 NPCs con IA y mazo propios. Season 1 completa y Season 2 en curso para Founders. La versión gratuita incluye hasta Isis.</p><p class="campaign-sub" data-lang="vi">33 NPC với AI và bộ bài riêng. Season 1 đầy đủ và Season 2 đang diễn ra cho Founder. Bản miễn phí gồm tới Isis.</p>
 
-  <div class="npc-row">
+  <div class="season-tabs" role="tablist">
+    <button class="season-tab on" type="button" role="tab" aria-selected="true"
+            data-season="1" onclick="mostrarSeason(1)">Season 1</button>
+    <button class="season-tab" type="button" role="tab" aria-selected="false"
+            data-season="2" onclick="mostrarSeason(2)">Season 2</button>
+  </div>
+  <div class="npc-row" data-season="1">
     <div class="npc-card">
       <div class="npc-av">
         <img src="img/Npcs/SimonMuran0.png" alt="Simon Muran" loading="lazy"
@@ -1811,6 +1839,45 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
       <div class="npc-name">Zorc</div>
       <div class="npc-role"><span data-lang="pt">Demônio Final</span><span data-lang="en">Final Demon</span><span data-lang="es">Demonio Final</span><span data-lang="vi">Ác Quỷ Cuối Cùng</span></div>
+    </div>
+  </div>
+
+  <div class="npc-row" data-season="2" hidden>
+    <div class="npc-card npc-locked">
+      <div class="npc-av">
+        <img src="img/Npcs/SolomonMuto0.webp" alt="Solomon Muto" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Solomon Muto</div>
+      <div class="npc-role"><span data-lang="pt">Dono da Loja</span><span data-lang="en">Shop Owner</span><span data-lang="es">Dueño de la Tienda</span><span data-lang="vi">Chủ Cửa Hàng</span></div>
+    </div>
+    <div class="npc-card npc-locked">
+      <div class="npc-av">
+        <img src="img/Npcs/JoeyWheeler0.webp" alt="Joey Wheeler" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="190">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Joey Wheeler</div>
+      <div class="npc-role"><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span><span data-lang="es">Duelista</span><span data-lang="vi">Đấu thủ</span></div>
+    </div>
+    <div class="npc-card npc-locked">
+      <div class="npc-av">
+        <img src="img/Npcs/Tristan0.webp" alt="Tristan" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="165">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Tristan</div>
+      <div class="npc-role"><span data-lang="pt">Companheiro</span><span data-lang="en">Companion</span><span data-lang="es">Compañero</span><span data-lang="vi">Người đồng hành</span></div>
+    </div>
+    <div class="npc-card npc-locked">
+      <div class="npc-av">
+        <img src="img/Npcs/TeaGardner0.webp" alt="Tea Gardner" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="154" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Tea Gardner</div>
+      <div class="npc-role"><span data-lang="pt">Duelista</span><span data-lang="en">Duelist</span><span data-lang="es">Duelista</span><span data-lang="vi">Đấu thủ</span></div>
     </div>
   </div>
 
@@ -4029,6 +4096,22 @@ document.addEventListener('keydown', e => {
   new MutationObserver(sincronizar).observe(document.documentElement,
     { attributes: true, attributeFilter: ['data-lang-ativo'] });
 })();
+</script>
+
+<script>
+/* Abas da galeria de personagens. O atributo hidden basta: as duas listas
+   ja existem no HTML, entao a troca nao recarrega nem busca nada. */
+function mostrarSeason(n) {
+  document.querySelectorAll('.npc-row[data-season]').forEach(function (r) {
+    r.hidden = r.dataset.season !== String(n);
+  });
+  document.querySelectorAll('.season-tab').forEach(function (b) {
+    var ativa = b.dataset.season === String(n);
+    b.classList.toggle('on', ativa);
+    b.setAttribute('aria-selected', ativa ? 'true' : 'false');
+  });
+}
+window.mostrarSeason = mostrarSeason;
 </script>
 </body>
 </html>
