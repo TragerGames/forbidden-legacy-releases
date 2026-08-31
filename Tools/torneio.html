@@ -605,6 +605,47 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .premio-moeda span { display:block; font-size:10.5px; letter-spacing:1.5px;
   text-transform:uppercase; color:var(--text-muted); margin-top:5px; }
 
+
+/* ── SORTEIO DO BOOSTER LENDARIO ────────────────────────────────── */
+.divine-card { position:relative; }
+.divine-selo { position:absolute; top:10px; left:10px; z-index:2;
+  background:rgba(6,3,10,.86); border:1px solid rgba(212,168,67,.45);
+  border-radius:3px; padding:3px 8px; font-size:9.5px; letter-spacing:1.4px;
+  text-transform:uppercase; color:var(--gold-light); }
+.divine-passos { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:2px; max-width:940px; margin:34px auto 0;
+  border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+.divine-passo { background:var(--dark2); padding:24px 22px; }
+.divine-passo-n { font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:2px;
+  color:var(--gold); margin-bottom:10px; }
+.divine-passo p { font-size:12.5px; color:var(--text-muted); line-height:1.7; margin:0; }
+.divine-passo strong { color:var(--gold-light); }
+
+
+/* ── MODO HARDCORE ──────────────────────────────────────────────── */
+.hardcore {
+  display:grid; grid-template-columns:1fr 1fr; gap:2px;
+  max-width:940px; margin:40px auto 0;
+  border:1px solid rgba(176,52,44,.34); border-radius:10px; overflow:hidden;
+}
+.hardcore-lado { background:var(--dark2); padding:28px 26px; }
+.hardcore-lado.troca { background:linear-gradient(180deg, rgba(176,52,44,.09), var(--dark2) 55%); }
+.hardcore-rotulo { font-size:10px; letter-spacing:3px; text-transform:uppercase;
+  font-weight:700; margin-bottom:14px; color:#e8776c; }
+.hardcore-lado.troca .hardcore-rotulo { color:var(--gold); }
+.hardcore-valor { font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1;
+  color:#e8776c; letter-spacing:.5px; }
+.hardcore-lado.troca .hardcore-valor { color:var(--gold-light); }
+.hardcore-valor small { display:block; font-family:'Inter',sans-serif; font-size:11.5px;
+  letter-spacing:1.4px; text-transform:uppercase; color:var(--text-muted);
+  margin-top:7px; font-weight:500; }
+.hardcore p { font-size:12.5px; color:var(--text-muted); line-height:1.7; margin:16px 0 0; }
+.hardcore-cab { max-width:760px; margin:44px auto 0; text-align:center; }
+.hardcore-cab h3 { font-family:'Bebas Neue',sans-serif; font-size:27px; letter-spacing:1.4px;
+  color:#e8776c; margin:0 0 10px; }
+.hardcore-cab p { font-size:13.5px; color:var(--text-muted); line-height:1.75; margin:0; }
+@media (max-width:640px){ .hardcore { grid-template-columns:1fr; } }
+
 /* ── IDIOMAS ──────────────────────────────────────────────────────────
    Uma regra por idioma, e todas apenas ESCONDEM. O elemento do idioma
    ativo nunca recebe regra de display, então conserva o display natural
@@ -874,11 +915,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       </div>
       <div class="feature-card">
         <div class="feature-icon">🚫</div>
-        <div class="feature-title" data-lang="pt">Sem vitória instantânea</div>
-        <div class="feature-title" data-lang="en">No instant-win</div><div class="feature-title" data-lang="es">Sin victoria instantánea</div><div class="feature-title" data-lang="vi">Không thắng tức thì</div>
+        <div class="feature-title" data-lang="pt">Exodia não vence aqui</div><div class="feature-title" data-lang="en">No Exodia win here</div><div class="feature-title" data-lang="es">Exodia no gana aquí</div><div class="feature-title" data-lang="vi">Exodia không thắng ở đây</div>
         <ul class="feature-list">
-          <li data-lang="pt">Efeitos de vitória automática (peças de Exodia, dados/moedas que decidem o duelo na sorte) são banidos por completo.</li>
-          <li data-lang="en">Automatic win effects (Exodia pieces, luck-based instant-win dice/coins) are entirely banned.</li><li data-lang="es">Los efectos de victoria automática (piezas de Exodia, dados/monedas que deciden el duelo por suerte) están totalmente prohibidos.</li><li data-lang="vi">Các hiệu ứng thắng tự động (mảnh Exodia, xúc xắc/đồng xu quyết định trận đấu bằng may rủi) bị cấm hoàn toàn.</li>
+          <li data-lang="pt">Vitória por Exodia não conta aqui: reunir as cinco peças não encerra o duelo durante o Championship. Elas continuam valendo normalmente na campanha e no Free Duel.</li><li data-lang="en">Exodia wins don't count here: gathering all five pieces doesn't end the duel during the Championship. They still work normally in the campaign and Free Duel.</li><li data-lang="es">La victoria por Exodia no cuenta aquí: reunir las cinco piezas no termina el duelo durante el Championship. Siguen funcionando normalmente en la campaña y el Free Duel.</li><li data-lang="vi">Chiến thắng bằng Exodia không tính ở đây: gom đủ năm mảnh không kết thúc trận trong Championship. Chúng vẫn hoạt động bình thường ở chiến dịch và Free Duel.</li>
         </ul>
       </div>
       <div class="feature-card">
@@ -886,8 +925,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <div class="feature-title" data-lang="pt">IA mais afiada</div>
         <div class="feature-title" data-lang="en">Sharper AI</div><div class="feature-title" data-lang="es">IA más afilada</div><div class="feature-title" data-lang="vi">AI sắc bén hơn</div>
         <ul class="feature-list">
-          <li data-lang="pt">A partir da metade do Championship, a IA para de "arriscar" e passa a tomar sempre a jogada ótima disponível.</li>
-          <li data-lang="en">From the halfway point on, the AI stops "gambling" and always takes the best play available.</li><li data-lang="es">A partir de la mitad del Championship, la IA deja de "arriesgar" y siempre toma la mejor jugada disponible.</li><li data-lang="vi">Từ giữa Championship, AI ngừng "mạo hiểm" và luôn chọn nước đi tối ưu có sẵn.</li>
+          <li data-lang="pt">A partir do <strong>duelo 2</strong> a IA para de hesitar: toda jogada que ela calcula como vantajosa, ela executa. Só o duelo 1 é aquecimento.</li><li data-lang="en">From <strong>duel 2</strong> on, the AI stops hesitating: every play it judges favorable, it makes. Only duel 1 is a warm-up.</li><li data-lang="es">Desde el <strong>duelo 2</strong>, la IA deja de dudar: toda jugada que calcula como ventajosa, la ejecuta. Solo el duelo 1 es calentamiento.</li><li data-lang="vi">Từ <strong>trận 2</strong> trở đi, AI ngừng do dự: mọi nước đi nó tính là có lợi, nó sẽ thực hiện. Chỉ trận 1 là khởi động.</li>
         </ul>
       </div>
     </div>
@@ -956,7 +994,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <div class="fase-num">7–9<small data-lang="pt">Reta final</small><small data-lang="en">Final stretch</small><small data-lang="es">Recta final</small><small data-lang="vi">Chặng cuối</small></div>
         <div class="fase-corpo">
           <h3 data-lang="pt">Altos Magos</h3><h3 data-lang="en">The High Mages</h3><h3 data-lang="es">Altos Magos</h3><h3 data-lang="vi">Các Đại Pháp Sư</h3>
-          <p data-lang="pt">A partir daqui a IA para de arriscar e passa a jogar sempre a melhor jogada disponível.</p><p data-lang="en">From here the AI stops taking risks and always plays the best available move.</p><p data-lang="es">Desde aquí la IA deja de arriesgar y siempre juega la mejor jugada disponible.</p><p data-lang="vi">Từ đây AI ngừng mạo hiểm và luôn chọn nước đi tốt nhất.</p>
+          <p data-lang="pt">Os Altos Magos do fim da campanha, com os decks mais fechados do sorteio.</p><p data-lang="en">The High Mages from the end of the campaign, with the tightest decks in the draw.</p><p data-lang="es">Los Altos Magos del final de la campaña, con los mazos más cerrados del sorteo.</p><p data-lang="vi">Các Đại Pháp Sư cuối chiến dịch, với những bộ bài chặt chẽ nhất.</p>
           <div class="fase-duelistas">
             <span class="fase-duelista"><img src="img/Npcs/highmageatenza0.webp" alt="High Mage Atenza" loading="lazy" width="44" height="44">High Mage Atenza</span>
             <span class="fase-duelista"><img src="img/Npcs/highmageanubisius0.webp" alt="High Mage Anubisius" loading="lazy" width="44" height="44">High Mage Anubisius</span>
@@ -989,7 +1027,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         </div>
       </div>
     </div>
-    <p class="divine-note" data-lang="pt">Os quatro duelistas da Season 2 entram no sorteio conforme você os derrota na campanha — quem ainda não foi enfrentado não aparece.</p><p class="divine-note" data-lang="en">The four Season 2 duelists join the draw as you beat them in the campaign — anyone you haven't faced yet won't show up.</p><p class="divine-note" data-lang="es">Los cuatro duelistas de la Season 2 entran en el sorteo conforme los derrotas en la campaña — quien aún no enfrentaste no aparece.</p><p class="divine-note" data-lang="vi">Bốn đấu thủ Season 2 tham gia bốc thăm khi bạn hạ họ trong cốt truyện — ai chưa gặp sẽ không xuất hiện.</p>
+    <p class="fase-nota" data-lang="pt">No Championship, todo duelista que tem campo mágico próprio entra <strong>sempre</strong> com ele ativo — diferente do Free Duel, onde o campo só aparece depois de um número de vitórias. Os quatro duelistas da Season 2 entram no sorteio conforme você os derrota na campanha; quem ainda não foi enfrentado não aparece.</p><p class="fase-nota" data-lang="en">In the Championship, every duelist with their own magic field <strong>always</strong> starts with it active — unlike Free Duel, where the field only shows up after a number of wins. The four Season 2 duelists join the draw as you beat them in the campaign; anyone not yet faced won't appear.</p><p class="fase-nota" data-lang="es">En el Championship, todo duelista con campo mágico propio entra <strong>siempre</strong> con él activo — a diferencia del Free Duel, donde el campo solo aparece tras cierto número de victorias. Los cuatro duelistas de la Season 2 entran en el sorteo conforme los derrotas en la campaña; quien aún no fue enfrentado no aparece.</p><p class="fase-nota" data-lang="vi">Trong Championship, mọi đấu thủ có sân phép riêng <strong>luôn</strong> bắt đầu với nó — khác Free Duel, nơi sân chỉ xuất hiện sau một số chiến thắng. Bốn đấu thủ Season 2 tham gia bốc thăm khi bạn đánh bại họ trong chiến dịch; ai chưa gặp sẽ không xuất hiện.</p>
   </div>
 
     </div>
@@ -1086,9 +1124,27 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     </div>
     <p class="custo-nota" data-lang="pt"><strong>Perder um duelo não zera o Championship.</strong> Você volta para o último checkpoint salvo — ou recomeça do zero, se ainda não tiver salvado nenhum.</p><p class="custo-nota" data-lang="en"><strong>Losing a duel doesn't reset the Championship.</strong> You return to your last saved checkpoint — or start over, if you haven't saved one yet.</p><p class="custo-nota" data-lang="es"><strong>Perder un duelo no reinicia el Championship.</strong> Vuelves al último checkpoint guardado — o empiezas de cero, si aún no guardaste ninguno.</p><p class="custo-nota" data-lang="vi"><strong>Thua một trận không xóa toàn bộ Championship.</strong> Bạn quay lại điểm lưu gần nhất — hoặc bắt đầu lại, nếu chưa lưu lần nào.</p>
   </div>
+  <div class="hardcore-cab reveal">
+      <h3 data-lang="pt">Modo Hardcore</h3><h3 data-lang="en">Hardcore Mode</h3><h3 data-lang="es">Modo Hardcore</h3><h3 data-lang="vi">Chế Độ Hardcore</h3>
+      <p data-lang="pt">Uma segunda forma de entrar, oferecida na mesma tela de início. Custos, penalidades e punições são exatamente os mesmos — o que muda é que não existe rede de segurança.</p><p data-lang="en">A second way in, offered on the same start screen. Costs, penalties and restrictions are exactly the same — what changes is that there's no safety net.</p><p data-lang="es">Una segunda forma de entrar, ofrecida en la misma pantalla de inicio. Costos, penalidades y restricciones son exactamente los mismos — lo que cambia es que no hay red de seguridad.</p><p data-lang="vi">Một cách vào thứ hai, ở cùng màn hình bắt đầu. Chi phí, hình phạt và hạn chế hoàn toàn giống nhau — khác biệt là không có lưới an toàn.</p>
+    </div>
+    <div class="hardcore stagger">
+      <div class="hardcore-lado">
+        <div class="hardcore-rotulo" data-lang="pt">O que você abre mão</div><div class="hardcore-rotulo" data-lang="en">What you give up</div><div class="hardcore-rotulo" data-lang="es">A qué renuncias</div><div class="hardcore-rotulo" data-lang="vi">Bạn từ bỏ điều gì</div>
+        <div class="hardcore-valor">0<small><span data-lang="pt">checkpoints</span><span data-lang="en">checkpoints</span><span data-lang="es">checkpoints</span><span data-lang="vi">điểm lưu</span></small></div>
+        <p data-lang="pt">Não há checkpoint nas lutas 3 e 6 — nem pagando. Perder ou sair a qualquer altura devolve a tentativa ao <strong>duelo 1</strong>, não a um ponto salvo.</p><p data-lang="en">There's no checkpoint at fights 3 and 6 — not even paying for it. Losing or leaving at any point sends the run back to <strong>duel 1</strong>, not to a saved point.</p><p data-lang="es">No hay checkpoint en las peleas 3 y 6 — ni pagando. Perder o salir en cualquier momento devuelve el intento al <strong>duelo 1</strong>, no a un punto guardado.</p><p data-lang="vi">Không có điểm lưu ở trận 3 và 6 — kể cả khi trả phí. Thua hoặc rời đi bất cứ lúc nào đưa lượt chơi về <strong>trận 1</strong>, không phải điểm đã lưu.</p>
+      </div>
+      <div class="hardcore-lado troca">
+        <div class="hardcore-rotulo" data-lang="pt">O que você ganha</div><div class="hardcore-rotulo" data-lang="en">What you get</div><div class="hardcore-rotulo" data-lang="es">Qué ganas</div><div class="hardcore-rotulo" data-lang="vi">Bạn nhận được gì</div>
+        <div class="hardcore-valor">30%<small><span data-lang="pt">de Championship Lendário</span><span data-lang="en">Legendary Championship chance</span><span data-lang="es">de Championship Legendario</span><span data-lang="vi">cơ hội Championship Huyền Thoại</span></small></div>
+        <p data-lang="pt">A chance de a tentativa ser Lendária sobe de 15–20% para <strong>30% fixos</strong> — sem pity, sem acúmulo, o valor mais alto que o Championship oferece.</p><p data-lang="en">The chance of the run being Legendary rises from 15–20% to a <strong>flat 30%</strong> — no pity, no build-up, the highest the Championship offers.</p><p data-lang="es">La probabilidad de que el intento sea Legendario sube de 15–20% a un <strong>30% fijo</strong> — sin pity, sin acumulación, el valor más alto del Championship.</p><p data-lang="vi">Cơ hội lượt chơi là Huyền Thoại tăng từ 15–20% lên <strong>30% cố định</strong> — không pity, không tích lũy, mức cao nhất Championship có.</p>
+      </div>
+    </div>
   </div>
 
   <div class="painel" data-painel="premios" hidden>
+
+
 <!-- RECOMPENSAS -->
   <div class="reveal" style="margin-top:64px" id="premios">
     <div class="section-label" data-lang="pt">Ao vencer o Boss</div>
@@ -1111,8 +1167,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
           <div class="premio-moeda"><b>10</b><span><span data-lang="pt">cartas</span><span data-lang="en">cards</span><span data-lang="es">cartas</span><span data-lang="vi">thẻ bài</span></span></div>
         </div>
         <ul class="reward-list">
-          <li data-lang="pt">Pool de 2 boosters normais + 1 booster temático, todos sorteados</li>
-          <li data-lang="en">Pool of 2 random normal boosters + 1 random themed booster</li><li data-lang="es">Pool de 2 boosters normales + 1 booster temático, todos sorteados</li><li data-lang="vi">Nhóm 2 booster thường + 1 booster chủ đề, tất cả đều ngẫu nhiên</li>
+          <li data-lang="pt">8 monstros vindos de <strong>2 boosters sorteados</strong> + 2 cartas de suporte do catálogo completo</li><li data-lang="en">8 monsters from <strong>2 drawn boosters</strong> + 2 support cards from the full catalog</li><li data-lang="es">8 monstruos de <strong>2 boosters sorteados</strong> + 2 cartas de soporte del catálogo completo</li><li data-lang="vi">8 quái thú từ <strong>2 booster được rút</strong> + 2 thẻ hỗ trợ từ toàn bộ danh mục</li>
+          <li data-lang="pt"><strong>1 UR garantida</strong> por cima das 10, em toda vitória</li><li data-lang="en"><strong>1 guaranteed UR</strong> on top of the 10, on every win</li><li data-lang="es"><strong>1 UR garantizada</strong> además de las 10, en cada victoria</li><li data-lang="vi"><strong>1 UR đảm bảo</strong> ngoài 10 thẻ, ở mọi chiến thắng</li>
         </ul>
       </div>
       <div class="reward-card legendary">
@@ -1122,8 +1178,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <div class="reward-chance" data-lang="en">15-20% roll chance</div><div class="reward-chance" data-lang="es">15-20% de probabilidad</div><div class="reward-chance" data-lang="vi">15-20% cơ hội xuất hiện</div>
         <div class="reward-title">Tudo do Normal, +</div>
         <ul class="reward-list">
-          <li class="plus" data-lang="pt">Pequena chance extra de a UR garantida ser uma das 3 <strong>Divine Beasts</strong></li>
-          <li class="plus" data-lang="en">Small extra chance the guaranteed UR is one of the 3 <strong>Divine Beasts</strong></li><li class="plus" data-lang="es">Pequeña probabilidad extra de que la UR garantizada sea una de las 3 <strong>Divine Beasts</strong></li><li class="plus" data-lang="vi">Cơ hội nhỏ để UR đảm bảo là một trong 3 <strong>Divine Beasts</strong></li>
+          <li class="plus" data-lang="pt"><strong>1%</strong> de a UR garantida ser o Deus do booster sorteado</li><li class="plus" data-lang="en"><strong>1%</strong> chance the guaranteed UR is the drawn booster's God</li><li class="plus" data-lang="es"><strong>1%</strong> de que la UR garantizada sea el Dios del booster sorteado</li><li class="plus" data-lang="vi"><strong>1%</strong> khả năng UR đảm bảo là vị Thần của booster đã rút</li>
           <li class="plus" data-lang="pt">Cartas <strong>SR/UR repetidas</strong> no prêmio já desbloqueiam a versão <strong>Full Art</strong> (se você já tiver 1 cópia normal)</li>
           <li class="plus" data-lang="en"><strong>Duplicate SR/UR</strong> cards in the prize unlock the <strong>Full Art</strong> version right away (if you already own 1 normal copy)</li><li class="plus" data-lang="es">Las cartas <strong>SR/UR repetidas</strong> del premio ya desbloquean la versión <strong>Full Art</strong> (si ya tienes 1 copia normal)</li><li class="plus" data-lang="vi">Thẻ <strong>SR/UR trùng lặp</strong> trong phần thưởng sẽ mở khóa bản <strong>Full Art</strong> (nếu bạn đã có 1 bản thường)</li>
           <li class="plus" data-lang="pt">Abre a chance de o <strong>Portal do Torneio Sombrio</strong> aparecer ao coletar o prêmio</li>
@@ -1146,21 +1201,39 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="section-label" data-lang="en">The ultimate prize</div><div class="section-label" data-lang="es">El premio máximo</div><div class="section-label" data-lang="vi">Phần thưởng cao nhất</div>
     <h2 class="section-title" data-lang="pt">Os Deuses Egípcios</h2>
     <h2 class="section-title" data-lang="en">The Egyptian God Cards</h2><h2 class="section-title" data-lang="es">Los Dioses Egipcios</h2><h2 class="section-title" data-lang="vi">Các Vị Thần Ai Cập</h2>
-    <p class="section-sub" data-lang="pt">Slifer the Sky Dragon, Obelisk the Tormentor e The Winged Dragon of Ra — as três lendárias, com arte especial reservada a quem vence um Championship Lendário.</p>
-    <p class="section-sub" data-lang="en">Slifer the Sky Dragon, Obelisk the Tormentor and The Winged Dragon of Ra — the three legendaries, with special art reserved for those who win a Legendary Championship.</p><p class="section-sub" data-lang="es">Slifer the Sky Dragon, Obelisk the Tormentor y The Winged Dragon of Ra — las tres legendarias, con arte especial reservada a quien gana un Championship Legendario.</p><p class="section-sub" data-lang="vi">Slifer the Sky Dragon, Obelisk the Tormentor và The Winged Dragon of Ra — bộ ba huyền thoại, với tranh đặc biệt dành riêng cho người thắng Championship Huyền Thoại.</p>
+        <p class="section-sub" data-lang="pt">Ao vencer um Championship Lendário, o jogo sorteia <strong>um</strong> dos três boosters divinos. O booster que sair decide qual dos Deuses está em jogo naquela tentativa — não os três.</p><p class="section-sub" data-lang="en">When you win a Legendary Championship, the game draws <strong>one</strong> of the three divine boosters. Whichever booster comes up decides which God is in play for that run — not all three.</p><p class="section-sub" data-lang="es">Al ganar un Championship Legendario, el juego sortea <strong>uno</strong> de los tres boosters divinos. El booster que salga decide cuál de los Dioses está en juego en ese intento — no los tres.</p><p class="section-sub" data-lang="vi">Khi thắng Championship Huyền Thoại, trò chơi rút <strong>một</strong> trong ba booster thần thánh. Booster nào ra sẽ quyết định vị Thần nào xuất hiện trong lượt đó — không phải cả ba.</p>
+
 
     <div class="divine-grid">
       <div class="divine-card">
+        <div class="divine-selo" data-lang="pt">Booster</div><div class="divine-selo" data-lang="en">Booster</div><div class="divine-selo" data-lang="es">Booster</div><div class="divine-selo" data-lang="vi">Booster</div>
         <img src="img/boosters/booster-lendario-slifer.webp" alt="Slifer the Sky Dragon" loading="lazy" width="1024" height="1536">
-        <div class="divine-card-name">Slifer the Sky Dragon</div>
+        <div class="divine-card-name" data-lang="pt">Booster de Slifer</div><div class="divine-card-name" data-lang="en">Slifer Booster</div><div class="divine-card-name" data-lang="es">Booster de Slifer</div><div class="divine-card-name" data-lang="vi">Booster Slifer</div>
       </div>
       <div class="divine-card">
+        <div class="divine-selo" data-lang="pt">Booster</div><div class="divine-selo" data-lang="en">Booster</div><div class="divine-selo" data-lang="es">Booster</div><div class="divine-selo" data-lang="vi">Booster</div>
         <img src="img/boosters/booster-lendario-obelisk.webp" alt="Obelisk the Tormentor" loading="lazy" width="1024" height="1536">
-        <div class="divine-card-name">Obelisk the Tormentor</div>
+        <div class="divine-card-name" data-lang="pt">Booster de Obelisk</div><div class="divine-card-name" data-lang="en">Obelisk Booster</div><div class="divine-card-name" data-lang="es">Booster de Obelisk</div><div class="divine-card-name" data-lang="vi">Booster Obelisk</div>
       </div>
       <div class="divine-card">
+        <div class="divine-selo" data-lang="pt">Booster</div><div class="divine-selo" data-lang="en">Booster</div><div class="divine-selo" data-lang="es">Booster</div><div class="divine-selo" data-lang="vi">Booster</div>
         <img src="img/boosters/booster-lendario-ra.webp" alt="The Winged Dragon of Ra" loading="lazy" width="1024" height="1536">
-        <div class="divine-card-name">The Winged Dragon of Ra</div>
+        <div class="divine-card-name" data-lang="pt">Booster de Ra</div><div class="divine-card-name" data-lang="en">Ra Booster</div><div class="divine-card-name" data-lang="es">Booster de Ra</div><div class="divine-card-name" data-lang="vi">Booster Ra</div>
+      </div>
+    </div>
+
+        <div class="divine-passos stagger">
+      <div class="divine-passo">
+        <div class="divine-passo-n" data-lang="pt">01 · O sorteio</div><div class="divine-passo-n" data-lang="en">01 · The draw</div><div class="divine-passo-n" data-lang="es">01 · El sorteo</div><div class="divine-passo-n" data-lang="vi">01 · Rút thăm</div>
+        <p data-lang="pt">Vencido o Boss de um Championship Lendário, um dos três boosters divinos é sorteado. É ele que define o Deus daquela tentativa.</p><p data-lang="en">Once you beat the Boss of a Legendary Championship, one of the three divine boosters is drawn. It defines that run's God.</p><p data-lang="es">Vencido el Jefe de un Championship Legendario, se sortea uno de los tres boosters divinos. Él define el Dios de ese intento.</p><p data-lang="vi">Sau khi hạ Trùm của Championship Huyền Thoại, một trong ba booster thần thánh được rút. Nó quyết định vị Thần của lượt đó.</p>
+      </div>
+      <div class="divine-passo">
+        <div class="divine-passo-n" data-lang="pt">02 · A carta garantida</div><div class="divine-passo-n" data-lang="en">02 · The guaranteed card</div><div class="divine-passo-n" data-lang="es">02 · La carta garantizada</div><div class="divine-passo-n" data-lang="vi">02 · Thẻ đảm bảo</div>
+        <p data-lang="pt">Todo Championship fecha com uma UR garantida por cima das 10 cartas. No Lendário, ela tem <strong>1% de chance</strong> de ser o Deus do booster sorteado.</p><p data-lang="en">Every Championship ends with a guaranteed UR on top of the 10 cards. In a Legendary run, it has a <strong>1% chance</strong> of being the drawn booster's God.</p><p data-lang="es">Todo Championship cierra con una UR garantizada además de las 10 cartas. En el Legendario, tiene <strong>1% de probabilidad</strong> de ser el Dios del booster sorteado.</p><p data-lang="vi">Mỗi Championship kết thúc với một UR đảm bảo ngoài 10 thẻ. Ở Huyền Thoại, nó có <strong>1% cơ hội</strong> là vị Thần của booster đã rút.</p>
+      </div>
+      <div class="divine-passo">
+        <div class="divine-passo-n" data-lang="pt">03 · O que isso significa</div><div class="divine-passo-n" data-lang="en">03 · What that means</div><div class="divine-passo-n" data-lang="es">03 · Lo que significa</div><div class="divine-passo-n" data-lang="vi">03 · Điều đó nghĩa là</div>
+        <p data-lang="pt">Não dá para escolher o Deus, e não dá para levar os três de uma vez. Cada Lendário vencido é uma chance nova, com um booster novo sorteado.</p><p data-lang="en">You can't pick the God, and you can't take all three at once. Each Legendary win is a fresh chance, with a newly drawn booster.</p><p data-lang="es">No puedes elegir el Dios, ni llevarte los tres de una vez. Cada Legendario ganado es una nueva oportunidad, con un booster nuevo sorteado.</p><p data-lang="vi">Bạn không thể chọn vị Thần, cũng không thể lấy cả ba cùng lúc. Mỗi lần thắng Huyền Thoại là một cơ hội mới, với một booster mới được rút.</p>
       </div>
     </div>
 
@@ -1247,7 +1320,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
       </div>
     </div>
-    <p class="divine-note" data-lang="es">Cuatro duelos, sin checkpoints y sin vuelta atrás: perder cualquiera termina el evento al instante. Los dos primeros son siempre los mismos; el tercero y el jefe se sortean en cada entrada.</p><p class="divine-note" data-lang="vi">Bốn trận, không điểm lưu và không đường lui: thua bất kỳ trận nào là sự kiện kết thúc ngay. Hai trận đầu luôn cố định; trận thứ ba và trùm được bốc thăm mỗi lần vào.</p>
+    
 
 
     <div class="warn-banner">
@@ -1257,6 +1330,27 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <span data-lang="en"><strong>No turning back.</strong> Crossing the portal starts the run immediately — there are no checkpoints or returns between duels, and losing any of them ends the event on the spot.</span><span data-lang="es"><strong>Sin vuelta atrás.</strong> Al cruzar el portal entras de inmediato — no hay checkpoints ni retorno entre duelos, y perder cualquiera de ellos termina el evento al instante.</span><span data-lang="vi"><strong>Không quay lại được.</strong> Khi bước qua cổng, bạn vào ngay lập tức — không có điểm lưu hay đường lui giữa các trận, và thua bất kỳ trận nào là sự kiện kết thúc ngay.</span>
       </div>
     </div>
+
+    <h3 class="section-title" data-lang="pt">A premiação</h3><h3 class="section-title" data-lang="en">The prize</h3><h3 class="section-title" data-lang="es">La premiación</h3><h3 class="section-title" data-lang="vi">Phần thưởng</h3>
+    <div class="premio-capa roxo">
+      <div>
+        <img src="img/boosters/booster-shadow-tournament.webp" alt="Booster Sombrio" loading="lazy" width="420" height="630">
+        <div class="premio-capa-txt" data-lang="pt">O Booster Sombrio, exclusivo deste evento</div><div class="premio-capa-txt" data-lang="en">The Shadow Booster, exclusive to this event</div><div class="premio-capa-txt" data-lang="es">El Booster Sombrío, exclusivo de este evento</div><div class="premio-capa-txt" data-lang="vi">Booster Bóng Tối, độc quyền của sự kiện này</div>
+      </div>
+    </div>
+    <div class="premio-sombrio">
+      <div class="premio-sombrio-topo">
+        <span class="premio-valor">666<small>Stars</small></span>
+        <span class="premio-valor">66<small>Souls</small></span>
+      </div>
+      <div class="chance-nota" data-lang="pt">Premiação própria do Torneio Sombrio, diferente de tudo que o Championship comum entrega.</div><div class="chance-nota" data-lang="en">The Shadow Tournament's own prize, unlike anything the regular Championship gives.</div><div class="chance-nota" data-lang="es">Premiación propia del Torneo Sombrío, distinta de todo lo que entrega el Championship común.</div><div class="chance-nota" data-lang="vi">Phần thưởng riêng của Giải đấu Bóng Tối, khác hẳn mọi thứ Championship thường trao.</div>
+      <ul class="premio-lista">
+        <li data-lang="pt">Um <strong>Booster Sombrio</strong> fechado, que sorteia 1 UR e 1 carta em Full Art — as duas são reveladas e você fica só com a que escolher.</li><li data-lang="en">A sealed <strong>Shadow Booster</strong> that draws 1 UR and 1 Full Art card — both are revealed and you keep only the one you pick.</li><li data-lang="es">Un <strong>Booster Sombrío</strong> sellado que sortea 1 UR y 1 carta en Full Art — ambas se revelan y te quedas solo con la que elijas.</li><li data-lang="vi">Một <strong>Booster Bóng Tối</strong> chưa mở, rút 1 UR và 1 thẻ Full Art — cả hai đều được lộ ra và bạn chỉ giữ thẻ mình chọn.</li>
+        <li data-lang="pt"><strong>5% de chance</strong> de uma carta <strong>Custom</strong> bônus, garantida independente da escolha.</li><li data-lang="en"><strong>5% chance</strong> of a bonus <strong>Custom</strong> card, guaranteed regardless of your pick.</li><li data-lang="es"><strong>5% de probabilidad</strong> de una carta <strong>Custom</strong> de bono, garantizada sin importar la elección.</li><li data-lang="vi"><strong>5% cơ hội</strong> nhận thêm một thẻ <strong>Custom</strong>, đảm bảo bất kể bạn chọn gì.</li>
+        <li data-lang="pt">As três UR Sphinx e os três Wicked Gods só aparecem aqui — nenhum booster da loja e nenhum Championship comum entrega essas cartas.</li><li data-lang="en">The three UR Sphinx and the three Wicked Gods only show up here — no shop booster and no regular Championship gives those cards.</li><li data-lang="es">Las tres UR Sphinx y los tres Wicked Gods solo aparecen aquí — ningún booster de la tienda ni Championship común entrega esas cartas.</li><li data-lang="vi">Ba lá UR Sphinx và ba Wicked God chỉ xuất hiện ở đây — không booster nào trong cửa hàng và không Championship thường nào trao những thẻ đó.</li>
+      </ul>
+    </div>
+
 
     <div class="features-grid-2" style="margin-top:20px">
       <div class="feature-card">
