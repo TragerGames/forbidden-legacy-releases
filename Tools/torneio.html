@@ -537,6 +537,9 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 
 /* ── CAPA DO PREMIO ─────────────────────────────────────────────── */
 .premio-capa { display:flex; justify-content:center; margin:34px auto 0; }
+/* A imagem e inline dentro do wrapper: sem isto ela herda text-align:start
+   e encosta na esquerda de uma caixa que a legenda deixou mais larga. */
+.premio-capa > div { text-align:center; }
 .premio-capa img {
   /* height:auto junto do aspect-ratio: sem ele o atributo height do HTML
      vale como altura e a capa estica. */
@@ -1113,13 +1116,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       </div>
       <div class="custo-col">
         <div class="custo-rotulo" data-lang="pt">Checkpoints</div><div class="custo-rotulo" data-lang="en">Checkpoints</div><div class="custo-rotulo" data-lang="es">Checkpoints</div><div class="custo-rotulo" data-lang="vi">Điểm lưu</div>
-        <div class="custo-valor">250 · 500<small><span data-lang="pt">Stars · luta 3 e 6</span><span data-lang="en">Stars · fights 3 and 6</span><span data-lang="es">Stars · peleas 3 y 6</span><span data-lang="vi">Stars · trận 3 và 6</span></small></div>
-        <p class="custo-desc" data-lang="pt">Salvam seu progresso após a 3ª e a 6ª vitória. Nos mesmos pontos dá para ajustar o deck e desistir sem custo adicional.</p><p class="custo-desc" data-lang="en">They save your progress after the 3rd and 6th win. At those same points you can adjust your deck and quit at no extra cost.</p><p class="custo-desc" data-lang="es">Guardan tu progreso tras la 3ª y la 6ª victoria. En esos mismos puntos puedes ajustar el mazo y abandonar sin costo adicional.</p><p class="custo-desc" data-lang="vi">Lưu tiến trình sau chiến thắng thứ 3 và thứ 6. Tại chính các điểm đó, bạn có thể chỉnh bộ bài và rời đi mà không mất thêm phí.</p>
+        <div class="custo-valor">250 e 500<small><span data-lang="pt">Stars, nas lutas 3 e 6</span><span data-lang="en">Stars, at fights 3 and 6</span><span data-lang="es">Stars, en las peleas 3 y 6</span><span data-lang="vi">Stars, ở trận 3 và 6</span></small></div>
+        <p class="custo-desc" data-lang="pt">Salvam seu progresso após a 3ª e a 6ª vitória. Nesses mesmos pontos você ajusta o deck antes de seguir, e pode sair sem perder o que já conquistou.</p><p class="custo-desc" data-lang="en">They save your progress after the 3rd and 6th win. At those same points you can adjust your deck before moving on, and leave without losing what you have earned.</p><p class="custo-desc" data-lang="es">Guardan tu progreso tras la 3ª y la 6ª victoria. En esos mismos puntos ajustas el mazo antes de seguir, y puedes salir sin perder lo ya conquistado.</p><p class="custo-desc" data-lang="vi">Lưu tiến trình sau chiến thắng thứ 3 và thứ 6. Tại chính các điểm đó, bạn chỉnh bộ bài trước khi đi tiếp, và có thể rời đi mà không mất thành quả.</p>
       </div>
       <div class="custo-col risco">
-        <div class="custo-rotulo" data-lang="pt">Se você perder</div><div class="custo-rotulo" data-lang="en">If you lose</div><div class="custo-rotulo" data-lang="es">Si pierdes</div><div class="custo-rotulo" data-lang="vi">Nếu bạn thua</div>
-        <div class="custo-valor">500<small><span data-lang="pt">Stars, sempre</span><span data-lang="en">Stars, always</span><span data-lang="es">Stars, siempre</span><span data-lang="vi">Stars, luôn luôn</span></small></div>
-        <p class="custo-desc" data-lang="pt">Valor fixo, sem escalonar por tentativa, cobrado assim que você perde ou desiste. Sem Stars suficientes, a diferença fica como dívida.</p><p class="custo-desc" data-lang="en">A flat amount, no scaling per attempt, charged the moment you lose or quit. Without enough Stars, the difference becomes debt.</p><p class="custo-desc" data-lang="es">Valor fijo, sin escalar por intento, cobrado en cuanto pierdes o abandonas. Sin Stars suficientes, la diferencia queda como deuda.</p><p class="custo-desc" data-lang="vi">Số cố định, không tăng theo lượt, trừ ngay khi bạn thua hoặc bỏ cuộc. Không đủ Stars, phần thiếu sẽ thành nợ.</p>
+        <div class="custo-rotulo" data-lang="pt">Ao perder um duelo</div><div class="custo-rotulo" data-lang="en">On losing a duel</div><div class="custo-rotulo" data-lang="es">Al perder un duelo</div><div class="custo-rotulo" data-lang="vi">Khi thua một trận</div>
+        <div class="custo-valor">500<small><span data-lang="pt">Stars, valor fixo</span><span data-lang="en">Stars, flat rate</span><span data-lang="es">Stars, valor fijo</span><span data-lang="vi">Stars, cố định</span></small></div>
+        <p class="custo-desc" data-lang="pt">Cobradas ao <strong>perder um duelo</strong>, sempre no mesmo valor. Sair pelo menu não custa Stars — você só abre mão do progresso ainda não salvo.</p><p class="custo-desc" data-lang="en">Charged when you <strong>lose a duel</strong>, always the same amount. Leaving through the menu costs no Stars — you only give up progress you had not saved.</p><p class="custo-desc" data-lang="es">Se cobran al <strong>perder un duelo</strong>, siempre por el mismo valor. Salir por el menú no cuesta Stars — solo renuncias al progreso aún no guardado.</p><p class="custo-desc" data-lang="vi">Bị trừ khi <strong>thua một trận</strong>, luôn cùng một mức. Rời đi qua menu không tốn Stars — bạn chỉ mất phần tiến trình chưa lưu.</p>
       </div>
     </div>
     <p class="custo-nota" data-lang="pt"><strong>Perder um duelo não zera o Championship.</strong> Você volta para o último checkpoint salvo — ou recomeça do zero, se ainda não tiver salvado nenhum.</p><p class="custo-nota" data-lang="en"><strong>Losing a duel doesn't reset the Championship.</strong> You return to your last saved checkpoint — or start over, if you haven't saved one yet.</p><p class="custo-nota" data-lang="es"><strong>Perder un duelo no reinicia el Championship.</strong> Vuelves al último checkpoint guardado — o empiezas de cero, si aún no guardaste ninguno.</p><p class="custo-nota" data-lang="vi"><strong>Thua một trận không xóa toàn bộ Championship.</strong> Bạn quay lại điểm lưu gần nhất — hoặc bắt đầu lại, nếu chưa lưu lần nào.</p>
@@ -1130,7 +1133,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     </div>
     <div class="hardcore stagger">
       <div class="hardcore-lado">
-        <div class="hardcore-rotulo" data-lang="pt">O que você abre mão</div><div class="hardcore-rotulo" data-lang="en">What you give up</div><div class="hardcore-rotulo" data-lang="es">A qué renuncias</div><div class="hardcore-rotulo" data-lang="vi">Bạn từ bỏ điều gì</div>
+        <div class="hardcore-rotulo" data-lang="pt">Do que você abre mão</div><div class="hardcore-rotulo" data-lang="en">What you give up</div><div class="hardcore-rotulo" data-lang="es">A qué renuncias</div><div class="hardcore-rotulo" data-lang="vi">Bạn từ bỏ điều gì</div>
         <div class="hardcore-valor">0<small><span data-lang="pt">checkpoints</span><span data-lang="en">checkpoints</span><span data-lang="es">checkpoints</span><span data-lang="vi">điểm lưu</span></small></div>
         <p data-lang="pt">Não há checkpoint nas lutas 3 e 6 — nem pagando. Perder ou sair a qualquer altura devolve a tentativa ao <strong>duelo 1</strong>, não a um ponto salvo.</p><p data-lang="en">There's no checkpoint at fights 3 and 6 — not even paying for it. Losing or leaving at any point sends the run back to <strong>duel 1</strong>, not to a saved point.</p><p data-lang="es">No hay checkpoint en las peleas 3 y 6 — ni pagando. Perder o salir en cualquier momento devuelve el intento al <strong>duelo 1</strong>, no a un punto guardado.</p><p data-lang="vi">Không có điểm lưu ở trận 3 và 6 — kể cả khi trả phí. Thua hoặc rời đi bất cứ lúc nào đưa lượt chơi về <strong>trận 1</strong>, không phải điểm đã lưu.</p>
       </div>
@@ -1157,28 +1160,26 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <div class="reward-card normal">
         <div class="reward-tier-label" data-lang="pt">Championship Normal</div>
         <div class="reward-tier-label" data-lang="en">Normal Championship</div><div class="reward-tier-label" data-lang="es">Championship Normal</div><div class="reward-tier-label" data-lang="vi">Championship Thường</div>
-        <div class="reward-chance" data-lang="pt">~80-85% de chance de sorteio</div>
-        <div class="reward-chance" data-lang="en">~80-85% roll chance</div><div class="reward-chance" data-lang="es">~80-85% de probabilidad</div><div class="reward-chance" data-lang="vi">~80-85% cơ hội xuất hiện</div>
-        <div class="reward-title">Recompensa Base</div>
+        <div class="reward-chance" data-lang="pt">80–85% das tentativas</div><div class="reward-chance" data-lang="en">80–85% of attempts</div><div class="reward-chance" data-lang="es">80–85% de los intentos</div><div class="reward-chance" data-lang="vi">80–85% số lượt</div>
+        <div class="reward-title" data-lang="pt">O pacote base</div><div class="reward-title" data-lang="en">The base package</div><div class="reward-title" data-lang="es">El paquete base</div><div class="reward-title" data-lang="vi">Gói cơ bản</div>
                 <div class="premio-moedas">
           <div class="premio-moeda"><b>3.000</b><span>Stars</span></div>
           <div class="premio-moeda"><b>100</b><span>Souls</span></div>
           <div class="premio-moeda"><b>1</b><span><span data-lang="pt">Ticket Gold</span><span data-lang="en">Gold Ticket</span><span data-lang="es">Ticket Gold</span><span data-lang="vi">Vé Gold</span></span></div>
-          <div class="premio-moeda"><b>10</b><span><span data-lang="pt">cartas</span><span data-lang="en">cards</span><span data-lang="es">cartas</span><span data-lang="vi">thẻ bài</span></span></div>
+          <div class="premio-moeda"><b>11</b><span><span data-lang="pt">cartas</span><span data-lang="en">cards</span><span data-lang="es">cartas</span><span data-lang="vi">thẻ bài</span></span></div>
         </div>
         <ul class="reward-list">
-          <li data-lang="pt">8 monstros vindos de <strong>2 boosters sorteados</strong> + 2 cartas de suporte do catálogo completo</li><li data-lang="en">8 monsters from <strong>2 drawn boosters</strong> + 2 support cards from the full catalog</li><li data-lang="es">8 monstruos de <strong>2 boosters sorteados</strong> + 2 cartas de soporte del catálogo completo</li><li data-lang="vi">8 quái thú từ <strong>2 booster được rút</strong> + 2 thẻ hỗ trợ từ toàn bộ danh mục</li>
-          <li data-lang="pt"><strong>1 UR garantida</strong> por cima das 10, em toda vitória</li><li data-lang="en"><strong>1 guaranteed UR</strong> on top of the 10, on every win</li><li data-lang="es"><strong>1 UR garantizada</strong> además de las 10, en cada victoria</li><li data-lang="vi"><strong>1 UR đảm bảo</strong> ngoài 10 thẻ, ở mọi chiến thắng</li>
+          <li data-lang="pt">8 monstros de <strong>2 boosters sorteados</strong> e 2 cartas de suporte do catálogo completo</li><li data-lang="en">8 monsters from <strong>2 drawn boosters</strong> and 2 support cards from the full catalog</li><li data-lang="es">8 monstruos de <strong>2 boosters sorteados</strong> y 2 cartas de soporte del catálogo completo</li><li data-lang="vi">8 quái thú từ <strong>2 booster được rút</strong> và 2 thẻ hỗ trợ từ toàn bộ danh mục</li>
+          <li data-lang="pt"><strong>1 UR garantida</strong> ao final, fechando as 11</li><li data-lang="en"><strong>1 guaranteed UR</strong> at the end, closing out the 11</li><li data-lang="es"><strong>1 UR garantizada</strong> al final, cerrando las 11</li><li data-lang="vi"><strong>1 UR đảm bảo</strong> ở cuối, khép lại 11 thẻ</li>
         </ul>
       </div>
       <div class="reward-card legendary">
         <div class="reward-tier-label" data-lang="pt">Championship Lendário</div>
         <div class="reward-tier-label" data-lang="en">Legendary Championship</div><div class="reward-tier-label" data-lang="es">Championship Legendario</div><div class="reward-tier-label" data-lang="vi">Championship Huyền Thoại</div>
-        <div class="reward-chance" data-lang="pt">15-20% de chance de sorteio</div>
-        <div class="reward-chance" data-lang="en">15-20% roll chance</div><div class="reward-chance" data-lang="es">15-20% de probabilidad</div><div class="reward-chance" data-lang="vi">15-20% cơ hội xuất hiện</div>
-        <div class="reward-title">Tudo do Normal, +</div>
+        <div class="reward-chance" data-lang="pt">15–20% das tentativas</div><div class="reward-chance" data-lang="en">15–20% of attempts</div><div class="reward-chance" data-lang="es">15–20% de los intentos</div><div class="reward-chance" data-lang="vi">15–20% số lượt</div>
+        <div class="reward-title" data-lang="pt">Tudo isso, mais</div><div class="reward-title" data-lang="en">All of that, plus</div><div class="reward-title" data-lang="es">Todo eso, más</div><div class="reward-title" data-lang="vi">Tất cả, cộng thêm</div>
         <ul class="reward-list">
-          <li class="plus" data-lang="pt"><strong>1%</strong> de a UR garantida ser o Deus do booster sorteado</li><li class="plus" data-lang="en"><strong>1%</strong> chance the guaranteed UR is the drawn booster's God</li><li class="plus" data-lang="es"><strong>1%</strong> de que la UR garantizada sea el Dios del booster sorteado</li><li class="plus" data-lang="vi"><strong>1%</strong> khả năng UR đảm bảo là vị Thần của booster đã rút</li>
+          <li class="plus" data-lang="pt"><strong>1% de chance</strong> de essa UR ser o Deus do booster sorteado</li><li class="plus" data-lang="en"><strong>1% chance</strong> that this UR is the drawn booster's God</li><li class="plus" data-lang="es"><strong>1% de probabilidad</strong> de que esa UR sea el Dios del booster sorteado</li><li class="plus" data-lang="vi"><strong>1% cơ hội</strong> UR đó là vị Thần của booster đã rút</li>
           <li class="plus" data-lang="pt">Cartas <strong>SR/UR repetidas</strong> no prêmio já desbloqueiam a versão <strong>Full Art</strong> (se você já tiver 1 cópia normal)</li>
           <li class="plus" data-lang="en"><strong>Duplicate SR/UR</strong> cards in the prize unlock the <strong>Full Art</strong> version right away (if you already own 1 normal copy)</li><li class="plus" data-lang="es">Las cartas <strong>SR/UR repetidas</strong> del premio ya desbloquean la versión <strong>Full Art</strong> (si ya tienes 1 copia normal)</li><li class="plus" data-lang="vi">Thẻ <strong>SR/UR trùng lặp</strong> trong phần thưởng sẽ mở khóa bản <strong>Full Art</strong> (nếu bạn đã có 1 bản thường)</li>
           <li class="plus" data-lang="pt">Abre a chance de o <strong>Portal do Torneio Sombrio</strong> aparecer ao coletar o prêmio</li>
