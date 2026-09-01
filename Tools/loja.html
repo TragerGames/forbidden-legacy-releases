@@ -1092,6 +1092,68 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 .pay-extra-in b{color:var(--gold3); font-weight:600}
 @media (prefers-reduced-motion:reduce){ .pay-extra{transition:none} }
 
+
+.pack-corpo{width:100%; display:flex; flex-direction:column; align-items:center}
+
+/* ═══ CELULAR: encurtar o caminho ate a compra ═══════════════════════
+   Medido em 375x812 antes disto: 6472px de pagina (8 telas) e o botao de
+   pagar a 5594px — quase 7 telas de rolagem para comprar. So mobile;
+   o desktop fica exatamente como esta. */
+@media (max-width:700px){
+  /* 1. o hero ocupava uma tela inteira (812px) so para se apresentar */
+  .store-hero{min-height:0!important; padding:78px 18px 30px!important}
+  .hero-title{font-size:clamp(30px,9vw,42px)!important; line-height:1!important}
+  .hero-sub{font-size:13px!important; line-height:1.6!important; margin-bottom:14px!important}
+  .hero-note{display:none!important}         /* repete o que a secao abaixo ja diz */
+  .btn-secondary{display:none!important}     /* "como funcionam os boosters" ja esta na nav */
+  .store-hero .btn-primary{margin-top:4px}
+
+  /* 2. cards em linha: 418px cada empilhado -> ~150px */
+  .packs-grid{gap:12px}
+  .pack-card{
+    flex-direction:row!important; align-items:center; text-align:left!important;
+    padding:16px 16px 16px 12px!important; gap:14px;
+  }
+  .pack-card .soul-wrap{width:54px; height:68px; flex-shrink:0; margin:0}
+  .pack-corpo{flex:1; min-width:0; display:flex; flex-direction:column; gap:2px}
+  .pack-card .pack-tier-label{margin:0 0 3px!important}
+  .pack-card:not(.tem-fita) .pack-tier-label{margin-top:0!important}
+  .pack-fita{position:absolute; top:8px; right:38px; margin:0!important; font-size:8px}
+  .pack-souls-count{font-size:30px; line-height:1}
+  .pack-souls-label{display:inline; margin:0 0 0 5px; font-size:9px; letter-spacing:2px}
+  .pack-bonus-tag{
+    justify-content:flex-start; padding:2px 7px; font-size:10px;
+    margin-bottom:3px; width:auto; white-space:nowrap;   /* quebrava em 4 linhas */
+  }
+  .pack-bonus-tag .pack-bonus-icone{width:10px; height:10px}
+  .pack-bonus-tag i{font-size:9.5px}
+  .pack-rodape{
+    /* a regra base tem width:100%, que no layout em linha esticava o
+       preco por 317px e empurrava o resto */
+    margin:0; padding:0; border:none!important; width:auto!important;
+    text-align:right; flex-shrink:0; align-self:center;
+  }
+  .pack-price{font-size:19px; white-space:nowrap}
+  .pack-rodape{min-width:74px}
+  .pack-price-note{display:none}
+  .pack-check{top:8px; right:8px; width:19px; height:19px}
+
+  /* o respiro entre o hero e os pacotes: 96px de folga + 96px de padding
+     da secao faziam meia tela de vazio depois de o hero encolher */
+  .packs-section{padding-top:26px!important}
+  .store-hero + *,
+  main{margin-top:0!important}
+  .section-header{margin-bottom:18px!important}
+
+  /* 3. "o que voce recebe / onde usar / como e protegido" (672px) sai do
+        meio do funil e vai para depois do checkout */
+  .packs-section{display:flex; flex-direction:column}
+  .packs-section > .section-header{order:1}
+  .packs-section > .packs-grid{order:2}
+  .packs-section > .checkout-wrap{order:3}
+  .packs-section > .how-grid{order:4; margin-top:34px}
+}
+
 </style>
 </head>
 <body>
@@ -1619,23 +1681,42 @@ function applyRegionMode(){
   if(s) s.classList.toggle('active', !showBrPay);
   document.getElementById('cpf-field').style.display = showBrPay?'':'none';
   document.getElementById('region-chip').innerHTML = showBrPay
-    ? '🌐 Brasil — PIX / '+t('Cartão','Card')
-    : '🌐 '+t('Internacional','International')+' — Stripe';
+    ? '🌐 Brasil — PIX / '+t4('Cartão','Card','Tarjeta','Thẻ')
+    : '🌐 '+t4('Internacional','International','Internacional','Quốc tế')+' — Stripe';
   const switchBtn=document.getElementById('region-switch-btn');
   if(switchBtn){
-    const ptSpan=switchBtn.querySelector('span[data-lang="pt"]'), enSpan=switchBtn.querySelector('span[data-lang="en"]');
-    if(ptSpan) ptSpan.textContent = showBrPay ? 'Não está no Brasil? Trocar região' : 'Está no Brasil? Trocar região';
-    if(enSpan) enSpan.textContent = showBrPay ? 'Not in Brazil? Switch region' : 'In Brazil? Switch region';
+    /* Os 4 idiomas: antes so pt/en eram atualizados, entao em es/vi o
+       botao ficava preso no texto original do HTML — dizia "Nao esta no
+       Brasil?" mesmo para quem ja estava fora. */
+    var TXT_REG = {
+      pt:['Não está no Brasil? Trocar região','Está no Brasil? Trocar região'],
+      en:['Not in Brazil? Switch region','In Brazil? Switch region'],
+      es:['¿No estás en Brasil? Cambiar región','¿Estás en Brasil? Cambiar región'],
+      vi:['Không ở Brazil? Đổi khu vực','Đang ở Brazil? Đổi khu vực']
+    };
+    Object.keys(TXT_REG).forEach(function(l){
+      var sp=switchBtn.querySelector('span[data-lang="'+l+'"]');
+      if(sp) sp.textContent = TXT_REG[l][showBrPay?0:1];
+    });
   }
   const stEl=document.getElementById('soon-text');
-  if(stEl) stEl.textContent = t(
-    STORE_ENABLED?'Após a confirmação, você receberá um código de resgate vinculado ao seu FL-PLAYER.':'Compras ainda não ativas. Em breve.',
-    STORE_ENABLED?'After payment confirmation, you will receive a Soul redeem code tied to your Player Code.':'Purchases not active yet. Coming soon.'
-  );
+  if(stEl) stEl.textContent = STORE_ENABLED ? t4(
+    'Após a confirmação, você receberá um código de resgate vinculado ao seu FL-PLAYER.',
+    'After payment confirmation, you will receive a Soul redeem code tied to your Player Code.',
+    'Tras la confirmación, recibirás un código de canje vinculado a tu FL-PLAYER.',
+    'Sau khi xác nhận, bạn sẽ nhận mã đổi thưởng gắn với FL-PLAYER của bạn.'
+  ) : t4('Compras ainda não ativas. Em breve.','Purchases not active yet. Coming soon.',
+         'Compras aún no activas. Muy pronto.','Chưa mở mua hàng. Sắp có.');
   const ntEl=document.getElementById('payment-note');
   if(ntEl) ntEl.textContent = showBrPay
-    ? t('PIX via Efí Bank. Código enviado por email após confirmação.','PIX via Efí Bank. Code sent by email after confirmation.')
-    : t('Cartão internacional via Stripe em USD. Código enviado por email.','International card via Stripe in USD. Code sent by email after confirmation.');
+    ? t4('PIX via Efí Bank. Código enviado por email após confirmação.',
+          'PIX via Efí Bank. Code sent by email after confirmation.',
+          'PIX vía Efí Bank. Código enviado por correo tras la confirmación.',
+          'PIX qua Efí Bank. Mã gửi qua email sau khi xác nhận.')
+    : t4('Cartão internacional via Stripe em USD. Código enviado por email.',
+         'International card via Stripe in USD. Code sent by email after confirmation.',
+         'Tarjeta internacional vía Stripe en USD. Código enviado por correo.',
+         'Thẻ quốc tế qua Stripe bằng USD. Mã gửi qua email.');
   const btn=document.getElementById('paybtn');
   if(btn){
     btn.textContent = STORE_ENABLED
@@ -1743,12 +1824,13 @@ function renderPacks(){
     el.innerHTML=`
       ${fita}
       <span class="pack-check">✓</span>
-      <span class="pack-tier-label">${tier}</span>
       ${soulHTML(p.tier)}
-      <div class="pack-souls-count">${p.souls.toLocaleString(isEn()?'en-US':'pt-BR')}</div>
-      <span class="pack-souls-label">Souls</span>
-      ${soulsBonusHTML}
-      ${starsBonusHTML}
+      <div class="pack-corpo">
+        <span class="pack-tier-label">${tier}</span>
+        <div class="pack-souls-count">${p.souls.toLocaleString(isEn()?'en-US':'pt-BR')}<span class="pack-souls-label">Souls</span></div>
+        ${soulsBonusHTML}
+        ${starsBonusHTML}
+      </div>
       <div class="pack-rodape">
         <div class="pack-price">${price}</div>
         <div class="pack-price-note">${priceNote}</div>
