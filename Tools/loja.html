@@ -70,6 +70,7 @@ body{background:var(--dark);color:var(--body);font-family:'Inter',sans-serif;ove
 a{text-decoration:none;color:inherit}
 
 /* BILINGUAL */
+
 /* ── IDIOMAS ──────────────────────────────────────────────────────────
    Uma regra por idioma, e todas apenas ESCONDEM. O elemento do idioma
    ativo nunca recebe regra de display, então conserva o display natural
@@ -925,6 +926,110 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
   html footer.fl-footer .footer-col h4{font-size:11px}
   html footer.fl-footer .footer-bottom span{font-size:12px}
 }
+
+/* ═══ CARDS DE PACOTE (reforma) ═══════════════════════════════════════ */
+.packs-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(228px,1fr));
+  gap:18px; align-items:stretch; border:none; background:none;
+}
+.pack-card{
+  position:relative; isolation:isolate;
+  background:linear-gradient(178deg,var(--dark3),var(--dark2) 58%)!important;
+  border:1px solid var(--border)!important; border-radius:14px;
+  padding:26px 20px 22px!important; text-align:center;
+  display:flex; flex-direction:column; align-items:center;
+  transition:transform .42s cubic-bezier(.34,1.56,.64,1), border-color .3s,
+             box-shadow .42s cubic-bezier(.4,0,.2,1);
+  opacity:0; transform:translateY(26px);
+  animation:packSobe .62s cubic-bezier(.4,0,.2,1) forwards;
+  animation-delay:var(--atraso,0s);
+}
+@keyframes packSobe{to{opacity:1; transform:none}}
+.pack-card::before{
+  content:''; position:absolute; inset:-1px; border-radius:14px; z-index:-1;
+  background:radial-gradient(120% 80% at 50% 0%,var(--tier-color),transparent 62%);
+  opacity:0; transition:opacity .42s cubic-bezier(.4,0,.2,1); height:auto;
+}
+.pack-card::after{display:none}
+.pack-card:hover{transform:translateY(-6px); border-color:rgba(200,151,58,.34)!important}
+.pack-card:hover::before{opacity:.16}
+.pack-card:focus-visible{outline:2px solid var(--gold2); outline-offset:3px}
+.pack-card.active{
+  border-color:var(--tier-color)!important; transform:translateY(-6px);
+  box-shadow:0 16px 44px rgba(0,0,0,.6), inset 0 0 0 1px var(--tier-color);
+  background:linear-gradient(178deg,var(--dark3),var(--dark2) 58%)!important;
+}
+.pack-card.active::before{opacity:.26}
+.pack-check{
+  position:absolute; top:12px; right:12px; width:22px; height:22px;
+  border-radius:50%; display:grid; place-items:center;
+  background:var(--tier-color); color:#0b0709; font-size:12px; font-weight:700;
+  transform:scale(0) rotate(-90deg);
+  transition:transform .42s cubic-bezier(.34,1.56,.64,1);
+}
+.pack-card.active .pack-check{transform:scale(1) rotate(0)}
+.pack-header{display:block; margin:0}
+.pack-tier-label{
+  display:block; font-size:9.5px; letter-spacing:2.6px; text-transform:uppercase;
+  color:var(--tier-color); font-weight:700; margin-bottom:16px;
+}
+.pack-badge{display:none}
+.pack-fita{
+  display:inline-block; margin-bottom:9px;
+  font-size:8.5px; letter-spacing:1.6px; text-transform:uppercase; font-weight:700;
+  color:#120d04; background:linear-gradient(100deg,var(--gold3),var(--gold));
+  border-radius:3px; padding:3px 9px; box-shadow:0 3px 12px rgba(200,151,58,.3);
+}
+.pack-card:not(.tem-fita) .pack-tier-label{margin-top:23px}
+
+/* ── a alma ── */
+.soul-wrap{width:96px; height:120px; position:relative; margin:0 0 6px}
+.soul-wrap svg{width:100%; height:100%; overflow:visible; display:block}
+.alma-orb{transform-origin:50px 62px; animation:almaFlutua 3.6s ease-in-out infinite}
+@keyframes almaFlutua{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-7px) scale(1.045)}}
+.alma-chama{transform-origin:50px 74px; animation:almaLambe 2.1s ease-in-out infinite}
+@keyframes almaLambe{0%,100%{transform:scaleY(1) scaleX(1)}35%{transform:scaleY(1.16) scaleX(.93)}70%{transform:scaleY(.93) scaleX(1.06)}}
+.alma-anel{transform-origin:50px 62px; animation:almaGira 14s linear infinite}
+@keyframes almaGira{to{transform:rotate(360deg)}}
+.alma-fagulha{animation:almaFagulha var(--d,3.4s) ease-in infinite; animation-delay:var(--at,0s); opacity:0}
+@keyframes almaFagulha{
+  0%{opacity:0; transform:translateY(6px) scale(.5)}
+  22%{opacity:.95}
+  100%{opacity:0; transform:translateY(-46px) scale(.2)}
+}
+.pack-card:hover .alma-orb,.pack-card.active .alma-orb{animation-duration:2.2s}
+
+.pack-souls-count{
+  font-family:'Bebas Neue',sans-serif; font-size:50px; line-height:1;
+  color:var(--gold3); letter-spacing:1px; font-variant-numeric:tabular-nums;
+}
+.pack-souls-label{
+  display:block; font-size:10px; letter-spacing:3.4px; text-transform:uppercase;
+  color:var(--muted); margin:2px 0 14px;
+}
+.pack-bonus-tag{
+  display:flex; align-items:center; justify-content:center; gap:7px; width:100%;
+  font-size:11.5px; letter-spacing:.2px; padding:6px 10px; border-radius:6px;
+  margin-bottom:6px; background:rgba(200,151,58,.07);
+  border:1px solid rgba(200,151,58,.16); color:var(--gold3);
+}
+.pack-bonus-tag b{font-weight:700; font-variant-numeric:tabular-nums}
+.pack-bonus-tag i{font-style:normal; color:var(--muted); font-size:11px}
+.pack-bonus-tag.stars{background:rgba(120,90,200,.07); border-color:rgba(150,120,230,.2); color:#c3b0ee}
+.pack-bonus-icone{width:13px; height:13px; flex-shrink:0}
+.pack-rule{display:none}
+.pack-rodape{margin-top:auto; width:100%; padding-top:16px; border-top:1px solid var(--border)}
+.pack-price{
+  font-family:'Bebas Neue',sans-serif; font-size:29px; color:#e8dcc0;
+  letter-spacing:.6px; font-variant-numeric:tabular-nums;
+}
+.pack-price-note{font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-top:3px}
+.pack-select-hint{display:none}
+@media (prefers-reduced-motion:reduce){
+  .pack-card{opacity:1; transform:none; animation:none}
+  .alma-orb,.alma-chama,.alma-anel,.alma-fagulha{animation:none}
+}
+
 </style>
 </head>
 <body>
@@ -1494,203 +1599,85 @@ const SOUL_DEFS = {
   }
 };
 
+/* A alma: nucleo com gradiente radial, chama, anel girando e fagulhas.
+   Tudo SVG + CSS — sem imagem, escala sem borrar, e cada tier recebe a
+   propria cor a partir de SOUL_DEFS (que continua sendo a fonte). */
 function soulHTML(tier){
   const d = SOUL_DEFS[tier] || SOUL_DEFS[1];
-  const id = d.id + '_' + Math.random().toString(36).slice(2,6);
-  const dur1 = [2.2,2.8,2.5,3][tier-1];
-  const dur2 = dur1 + 0.6;
-  const dur3 = dur1 - 0.4;
-  
-  let w1P = "";
-  let w2P = "";
-  let w3P = "";
-  
-  if (tier === 1) {
-    w1P = `M48,102 C38,85 45,65 42,48 C39,36 47,24 50,15 C52,24 48,36 49,48 C51,65 58,85 58,102 Z;
-           M50,102 C39,83 47,63 43,45 C40,33 49,21 52,12 C53,21 49,33 51,45 C53,63 60,83 60,102 Z;
-           M46,102 C36,87 43,67 40,51 C37,39 45,27 48,18 C50,27 46,39 47,51 C49,67 56,87 56,102 Z;
-           M48,102 C38,85 45,65 42,48 C39,36 47,24 50,15 C52,24 48,36 49,48 C51,65 58,85 58,102 Z`;
-    w2P = `M54,100 C48,75 62,50 56,25 C52,15 62,5 60,0 C63,5 58,15 62,25 C68,50 58,75 66,100 Z;
-           M56,100 C50,77 64,52 58,27 C54,17 64,7 62,2 C65,7 60,17 64,27 C70,52 60,77 68,100 Z;
-           M52,100 C46,73 60,48 54,23 C50,13 60,3 58,-2 C61,3 56,13 60,23 C66,48 56,73 64,100 Z;
-           M54,100 C48,75 62,50 56,25 C52,15 62,5 60,0 C63,5 58,15 62,25 C68,50 58,75 66,100 Z`;
-    w3P = `M62,102 C62,85 69,65 71,48 C72,36 81,24 70,15 C72,24 80,36 78,48 C75,65 82,85 72,102 Z;
-           M60,102 C60,83 67,63 69,45 C70,33 79,21 68,12 C70,21 78,33 76,45 C73,63 80,83 70,102 Z;
-           M64,102 C64,87 71,67 73,51 C74,39 83,27 72,18 C74,27 82,39 80,51 C77,67 84,87 74,102 Z;
-           M62,102 C62,85 69,65 71,48 C72,36 81,24 70,15 C72,24 80,36 78,48 C75,65 82,85 72,102 Z`;
-  } else if (tier === 2) {
-    w1P = `M65,108 C68,90 55,75 48,60 C42,48 48,32 40,20 C46,30 38,45 44,58 C50,70 62,85 55,108 Z;
-           M67,108 C70,92 57,77 50,62 C44,50 50,34 42,22 C48,32 40,47 46,60 C52,72 64,87 57,108 Z;
-           M63,108 C66,88 53,73 46,58 C40,46 46,30 38,18 C44,28 36,43 42,56 C48,68 60,83 53,108 Z;
-           M65,108 C68,90 55,75 48,60 C42,48 48,32 40,20 C46,30 38,45 44,58 C50,70 62,85 55,108 Z`;
-    w2P = `M55,100 C50,80 60,60 55,40 C50,28 65,16 58,5 C62,14 55,26 60,38 C65,58 55,78 65,100 Z;
-           M57,100 C52,82 62,62 57,42 C52,30 67,18 60,7 C64,16 57,28 62,40 C67,60 57,80 67,100 Z;
-           M53,100 C48,78 58,58 53,38 C48,26 63,14 56,3 C60,12 53,24 58,36 C63,56 53,76 63,100 Z;
-           M55,100 C50,80 60,60 55,40 C50,28 65,16 58,5 C62,14 55,26 60,38 C65,58 55,78 65,100 Z`;
-    w3P = `M60,105 C72,88 65,68 72,50 C77,38 70,24 78,12 C72,22 75,36 70,48 C65,65 72,82 60,105 Z;
-           M58,105 C70,86 63,66 70,48 C75,36 68,22 76,10 C70,20 73,34 68,46 C63,63 70,80 58,105 Z;
-           M62,105 C74,90 67,70 74,52 C79,40 72,26 80,14 C74,24 77,38 72,50 C67,67 74,84 62,105 Z;
-           M60,105 C72,88 65,68 72,50 C77,38 70,24 78,12 C72,22 75,36 70,48 C65,65 72,82 60,105 Z`;
-  } else if (tier === 3) {
-    w1P = `M52,102 C42,88 40,68 45,50 C50,35 42,20 52,5 C48,18 42,32 47,48 C52,64 58,82 58,102 Z;
-           M54,102 C44,90 42,70 47,52 C52,37 44,22 54,7 C50,20 44,34 49,50 C54,66 60,84 60,102 Z;
-           M50,102 C40,86 38,66 43,48 C48,33 40,18 50,3 C46,16 40,30 45,46 C50,62 56,80 56,102 Z;
-           M52,102 C42,88 40,68 45,50 C50,35 42,20 52,5 C48,18 42,32 47,48 C52,64 58,82 58,102 Z`;
-    w2P = `M56,100 C58,75 52,55 58,35 C64,20 56,10 60,0 C63,10 57,20 62,35 C58,55 64,75 64,100 Z;
-           M58,100 C60,77 54,57 60,37 C66,22 58,12 62,2 C65,12 59,22 64,37 C60,57 66,77 66,100 Z;
-           M54,100 C56,73 50,53 56,33 C62,18 54,8 58,-2 C61,8 55,18 60,33 C56,53 62,73 62,100 Z;
-           M56,100 C58,75 52,55 58,35 C64,20 56,10 60,0 C63,10 57,20 62,35 C58,55 64,75 64,100 Z`;
-    w3P = `M62,102 C72,88 74,68 69,50 C64,35 72,20 62,5 C66,18 72,32 67,48 C62,64 66,82 56,102 Z;
-           M60,102 C70,90 72,70 67,52 C62,37 70,22 60,7 C64,20 70,34 65,50 C60,66 64,84 54,102 Z;
-           M64,102 C74,86 76,66 71,48 C66,33 74,18 64,3 C68,16 74,30 69,46 C64,62 68,80 58,102 Z;
-           M62,102 C72,88 74,68 69,50 C64,35 72,20 62,5 C66,18 72,32 67,48 C62,64 66,82 56,102 Z`;
-  } else {
-    w1P = `M48,102 C38,82 50,68 42,48 C34,28 52,18 46,5 C52,15 42,28 48,45 C54,62 42,82 56,102 Z;
-           M50,102 C40,84 52,70 44,50 C36,30 54,20 48,7 C54,17 44,30 50,47 C56,64 44,84 58,102 Z;
-           M46,102 C36,80 48,66 40,46 C32,26 50,16 44,3 C50,13 40,26 46,43 C52,60 40,80 54,102 Z;
-           M48,102 C38,82 50,68 42,48 C34,28 52,18 46,5 C52,15 42,28 48,45 C54,62 42,82 56,102 Z`;
-    w2P = `M54,100 C64,75 48,50 62,25 C72,12 50,6 60,0 C57,6 66,12 56,25 C48,50 64,75 58,100 Z;
-           M56,100 C66,77 50,52 64,27 C74,14 52,8 62,2 C59,8 68,14 58,27 C50,52 66,77 60,100 Z;
-           M52,100 C62,73 46,48 60,23 C70,10 48,4 58,-2 C55,4 64,10 54,23 C46,48 62,73 56,100 Z;
-           M54,100 C64,75 48,50 62,25 C72,12 50,6 60,0 C57,6 66,12 56,25 C48,50 64,75 58,100 Z`;
-    w3P = `M62,102 C72,82 60,68 68,48 C76,28 58,18 64,5 C58,15 68,28 62,45 C56,62 68,82 54,102 Z;
-           M60,102 C70,84 58,70 66,50 C74,30 56,20 62,7 C56,17 66,30 60,47 C54,64 66,84 52,102 Z;
-           M64,102 C74,80 62,66 70,46 C78,26 60,16 66,3 C60,13 70,26 64,43 C58,60 70,80 56,102 Z;
-           M62,102 C72,82 60,68 68,48 C76,28 58,18 64,5 C58,15 68,28 62,45 C56,62 68,82 54,102 Z`;
+  const g = 'sg' + tier + '_' + Math.random().toString(36).slice(2,6);
+  /* Espelha as --tier-color de .pack-card.t-N: orbA e o NUCLEO branco
+     nos tiers 2 e 3, nao a cor de identidade. */
+  const CORES_TIER = {1:'#d98a3a', 2:'#8ab4cc', 3:'#e8b840', 4:'#a06cc0'};
+  const cor = CORES_TIER[tier] || d.orbB, corB = d.orbC;
+  let fag = '';
+  for (let i = 0; i < 4; i++){
+    fag += '<circle class="alma-fagulha" cx="' + (42 + i*5.5) + '" cy="' + (74 - i*2) +
+           '" r="' + (1.5 - i*0.16).toFixed(2) + '" fill="' + cor +
+           '" style="--d:' + (3.1 + i*0.45) + 's;--at:' + (i*0.65) + 's"/>';
   }
-
-  return `<div class="soul-container">
-<svg viewBox="0 0 120 150" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <filter id="glow_${id}" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur1"/>
-      <feGaussianBlur stdDeviation="3" result="blur2"/>
-      <feMerge>
-        <feMergeNode in="blur1"/>
-        <feMergeNode in="blur2"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="sofglow_${id}" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="14" result="blur"/>
-    </filter>
-    <radialGradient id="orb_${id}" cx="35%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="25%" stop-color="${d.orbA}"/>
-      <stop offset="65%" stop-color="${d.orbB}"/>
-      <stop offset="100%" stop-color="${d.orbC}"/>
-    </radialGradient>
-    <radialGradient id="ground_${id}" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="${d.glowColor}"/>
-      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
-    </radialGradient>
-    <linearGradient id="wisp_${id}_1" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="${d.orbB}" stop-opacity="0.95"/>
-      <stop offset="45%" stop-color="${d.orbA}" stop-opacity="0.8"/>
-      <stop offset="80%" stop-color="${d.wA}" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="${d.wC}" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="wisp_${id}_2" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="${d.orbC}" stop-opacity="0.9"/>
-      <stop offset="50%" stop-color="${d.orbB}" stop-opacity="0.75"/>
-      <stop offset="85%" stop-color="${d.wB}" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="${d.wC}" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="wisp_${id}_3" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="${d.orbB}" stop-opacity="0.9"/>
-      <stop offset="40%" stop-color="${d.orbA}" stop-opacity="0.7"/>
-      <stop offset="75%" stop-color="${d.wB}" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="${d.wC}" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-
-  <ellipse cx="60" cy="138" rx="34" ry="8" fill="url(#ground_${id})" opacity="0.85">
-    <animate attributeName="rx" values="32;36;32" dur="${dur1}s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.7;0.95;0.7" dur="${dur1}s" repeatCount="indefinite"/>
-  </ellipse>
-
-  <circle cx="60" cy="100" r="38" fill="${d.glowColor}" filter="url(#sofglow_${id})">
-    <animate attributeName="r" values="34;42;34" dur="${dur2}s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.4;0.75;0.4" dur="${dur2}s" repeatCount="indefinite"/>
-  </circle>
-
-  <g filter="url(#glow_${id})">
-    <path fill="url(#wisp_${id}_1)">
-      <animate attributeName="d" dur="${dur1}s" repeatCount="indefinite" values="${w1P}"/>
-    </path>
-    <path fill="url(#wisp_${id}_3)">
-      <animate attributeName="d" dur="${dur2}s" repeatCount="indefinite" values="${w3P}"/>
-    </path>
-    <path fill="url(#wisp_${id}_2)">
-      <animate attributeName="d" dur="${dur3}s" repeatCount="indefinite" values="${w2P}"/>
-    </path>
-  </g>
-
-  <circle cx="60" cy="100" r="23" fill="url(#orb_${id})" filter="url(#glow_${id})">
-    <animate attributeName="r" values="22.2;23.8;22.2" dur="${dur1}s" repeatCount="indefinite"/>
-  </circle>
-
-  <ellipse cx="53" cy="93" rx="7" ry="4" fill="#ffffff" opacity="0.65" transform="rotate(-15 53 93)"/>
-
-  <g filter="url(#glow_${id})">
-    <circle cx="45" cy="85" r="2" fill="${d.wB}" opacity="0">
-      <animate attributeName="cy" values="90;55;20" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="45;38;48" dur="2.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.9;0" dur="2.4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="75" cy="85" r="1.5" fill="${d.wA}" opacity="0">
-      <animate attributeName="cy" values="85;45;15" dur="2.8s" begin="0.7s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="75;82;72" dur="2.8s" begin="0.7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="2.8s" begin="0.7s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="60" cy="80" r="1.8" fill="${d.wC}" opacity="0">
-      <animate attributeName="cy" values="80;40;10" dur="2.0s" begin="1.4s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="60;64;56" dur="2.0s" begin="1.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.95;0" dur="2.0s" begin="1.4s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-</svg>
-</div>`;
+  return '<div class="soul-wrap"><svg viewBox="0 0 100 124" aria-hidden="true">' +
+    '<defs>' +
+      '<radialGradient id="' + g + 'n" cx="50%" cy="42%" r="58%">' +
+        '<stop offset="0%" stop-color="#fff" stop-opacity=".95"/>' +
+        '<stop offset="42%" stop-color="' + cor + '" stop-opacity=".92"/>' +
+        '<stop offset="100%" stop-color="' + corB + '" stop-opacity=".15"/></radialGradient>' +
+      '<radialGradient id="' + g + 'h" cx="50%" cy="50%" r="50%">' +
+        '<stop offset="0%" stop-color="' + cor + '" stop-opacity=".42"/>' +
+        '<stop offset="100%" stop-color="' + cor + '" stop-opacity="0"/></radialGradient>' +
+      '<linearGradient id="' + g + 'c" x1="0" y1="1" x2="0" y2="0">' +
+        '<stop offset="0%" stop-color="' + cor + '" stop-opacity="0"/>' +
+        '<stop offset="55%" stop-color="' + cor + '" stop-opacity=".55"/>' +
+        '<stop offset="100%" stop-color="#fff" stop-opacity=".9"/></linearGradient>' +
+    '</defs>' +
+    '<ellipse cx="50" cy="62" rx="46" ry="46" fill="url(#' + g + 'h)"/>' +
+    '<g class="alma-anel"><ellipse cx="50" cy="62" rx="30" ry="11" fill="none" stroke="' + cor +
+      '" stroke-opacity=".5" stroke-width="1.1" stroke-dasharray="5 9" transform="rotate(-18 50 62)"/></g>' +
+    '<g class="alma-chama"><path d="M50 84 C41 74 43 62 47 54 C49 50 50 46 50 42 C50 46 51 50 53 54 C57 62 59 74 50 84 Z" fill="url(#' + g + 'c)" opacity=".85"/></g>' +
+    '<g class="alma-orb"><circle cx="50" cy="62" r="21" fill="url(#' + g + 'n)"/>' +
+      '<circle cx="43.5" cy="55" r="5.6" fill="#fff" opacity=".5"/></g>' +
+    '<ellipse cx="50" cy="107" rx="19" ry="4" fill="' + cor + '" opacity=".16"/>' +
+    fag + '</svg></div>';
 }
 
 function renderPacks(){
   const root=document.getElementById('pack-list');
   if(!root) return;
   root.innerHTML='';
-  PACKS.forEach(p=>{
+  PACKS.forEach((p,i)=>{
     const el=document.createElement('button');
     el.type='button';
-    el.className=`pack-card t-${p.tier}`+(p.id===selected.id?' active':'');
+    /* O pacote em destaque e o mesmo que o site ja tratava como principal:
+       o primeiro que da Stars de brinde. Nada de valor novo inventado. */
+    const destaque = p.bonusStars && !PACKS.slice(0,i).some(x=>x.bonusStars);
+    el.className=`pack-card t-${p.tier}`+(p.id===selected.id?' active':'')+(destaque?' tem-fita':'');
+    el.style.setProperty('--atraso',(i*0.09)+'s');
+    el.setAttribute('aria-pressed', p.id===selected.id ? 'true' : 'false');
     const tier=isEn()?p.tierEn:p.tierPt;
     const brRegion=regionIsBR();
     const price=brRegion?p.br:p.usd;
-    const status=STORE_ENABLED?t('Disponível','Available'):t('Em breve','Soon');
-    const statusClass=STORE_ENABLED?'':'soon';
-    const priceNote=brRegion?t('Nacional · R$','National · BRL'):t('Internacional · USD','International · USD');
+    const priceNote=brRegion?t('Nacional · BRL','National · BRL'):t('Internacional · USD','International · USD');
     const totalSouls=totalSoulsFor(p);
-    const soulsBonusHTML=`<div class="pack-bonus-tag">🎉 ${t(
-      `+50% de bônus: ${p.souls} + ${totalSouls-p.souls} = ${totalSouls} Souls`,
-      `+50% bonus: ${p.souls} + ${totalSouls-p.souls} = ${totalSouls} Souls`
-    )}</div>`;
-    const starsBonusHTML=p.bonusStars?`<div class="pack-bonus-tag">⭐ ${t(
-      `+${p.bonusStars.toLocaleString('pt-BR')} Stars de brinde`,
-      `+${p.bonusStars.toLocaleString('en-US')} bonus Stars`
-    )}</div>`:'';
+    const bonusSouls=totalSouls-p.souls;
+    const fita=destaque?`<span class="pack-fita">${t('Mais escolhido','Most chosen')}</span>`:'';
+    const soulsBonusHTML=`<div class="pack-bonus-tag">
+      <svg class="pack-bonus-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      <span><b>${bonusSouls.toLocaleString(isEn()?'en-US':'pt-BR')}</b> ${t('de bônus','bonus')} <i>= ${totalSouls.toLocaleString(isEn()?'en-US':'pt-BR')}</i></span></div>`;
+    const starsBonusHTML=p.bonusStars?`<div class="pack-bonus-tag stars">
+      <svg class="pack-bonus-icone" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5 6.1 20.6l1.2-6.5L2.5 9.5l6.6-.9z"/></svg>
+      <span><b>${p.bonusStars.toLocaleString(isEn()?'en-US':'pt-BR')}</b> ${t('Stars de brinde','bonus Stars')}</span></div>`:'';
     el.innerHTML=`
-      <div class="pack-header">
-        <span class="pack-tier-label">${tier}</span>
-        <span class="pack-badge ${statusClass}">${status}</span>
-      </div>
+      ${fita}
+      <span class="pack-check">✓</span>
+      <span class="pack-tier-label">${tier}</span>
       ${soulHTML(p.tier)}
-      <div class="pack-souls-count">${p.souls}</div>
+      <div class="pack-souls-count">${p.souls.toLocaleString(isEn()?'en-US':'pt-BR')}</div>
       <span class="pack-souls-label">Souls</span>
       ${soulsBonusHTML}
       ${starsBonusHTML}
-      <div class="pack-rule"></div>
-      <div class="pack-price">${price}</div>
-      <div class="pack-price-note">${priceNote}</div>
-      <div class="pack-select-hint" data-lang="pt">Selecionar</div>
-      <div class="pack-select-hint" data-lang="en">Select</div><div class="pack-select-hint" data-lang="es">Seleccionar</div><div class="pack-select-hint" data-lang="vi">Chọn</div>`;
+      <div class="pack-rodape">
+        <div class="pack-price">${price}</div>
+        <div class="pack-price-note">${priceNote}</div>
+      </div>`;
     if(STORE_ENABLED) el.onclick=()=>{selected=p;quantidade=1;renderPacks();updateSummary()};
     else el.style.cursor='default';
     root.appendChild(el);
