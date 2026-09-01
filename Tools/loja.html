@@ -1030,6 +1030,37 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
   .alma-orb,.alma-chama,.alma-anel,.alma-fagulha{animation:none}
 }
 
+
+/* ═══ VALIDACAO AO VIVO (reforma) ════════════════════════════════════ */
+.field{position:relative}
+.field .marca{
+  position:absolute; right:11px; top:33px; width:18px; height:18px;
+  display:grid; place-items:center; border-radius:50%;
+  font-size:11px; font-weight:700; pointer-events:none;
+  opacity:0; transform:scale(.4);
+  transition:opacity .3s, transform .34s cubic-bezier(.34,1.56,.64,1);
+}
+.field.ok .marca{opacity:1; transform:scale(1); background:rgba(59,165,92,.16); color:#3ba55c}
+.field.ok input{border-color:rgba(59,165,92,.42)!important}
+.field.ruim .marca{opacity:1; transform:scale(1); background:rgba(196,72,60,.16); color:#c4483c}
+.field.ruim input{border-color:rgba(196,72,60,.55)!important}
+.field input{padding-right:36px}
+.campo-dica{
+  font-size:11.5px; color:var(--muted); margin-top:7px; line-height:1.6;
+}
+.campo-dica b{color:var(--gold2); font-weight:600}
+.field.ruim .campo-dica{color:#d08a80}
+/* campo preenchido a partir do proprio codigo do jogador */
+.field.auto select{border-color:var(--gold2)!important; animation:campoBrilha 1.4s cubic-bezier(.4,0,.2,1)}
+@keyframes campoBrilha{
+  0%{box-shadow:0 0 0 0 rgba(232,184,64,.5)}
+  100%{box-shadow:0 0 0 12px rgba(232,184,64,0)}
+}
+@media (prefers-reduced-motion:reduce){
+  .field .marca{transition:none}
+  .field.auto select{animation:none}
+}
+
 </style>
 </head>
 <body>
@@ -1208,6 +1239,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
           <label data-lang="pt">Email <span style="color:#e04040">*</span></label>
           <label data-lang="en">Email <span style="color:#e04040">*</span></label><label data-lang="es">Correo <span style="color:#e04040">*</span></label><label data-lang="vi">Email <span style="color:#e04040">*</span></label>
           <input id="email" type="email" placeholder="email@exemplo.com" autocomplete="email">
+        <div class="marca"></div>
         </div>
         <div class="field">
           <label data-lang="pt">Idioma do e-mail</label>
@@ -1225,6 +1257,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
           <label data-lang="pt">Nome <span style="color:#e04040">*</span></label>
           <label data-lang="en">Name <span style="color:#e04040">*</span></label><label data-lang="es">Nombre <span style="color:#e04040">*</span></label><label data-lang="vi">Tên <span style="color:#e04040">*</span></label>
           <input id="nome" placeholder="Seu nome" autocomplete="name">
+        <div class="marca"></div>
         </div>
       </div>
 
@@ -1232,6 +1265,8 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
         <label data-lang="pt">Código do Jogador <span style="color:#e04040">*</span></label>
         <label data-lang="en">Player Code <span style="color:#e04040">*</span></label><label data-lang="es">Código de Jugador <span style="color:#e04040">*</span></label><label data-lang="vi">Mã Người chơi <span style="color:#e04040">*</span></label>
         <input id="player-code" placeholder="FL-PLAYERPC-XXXX-XXXX-XXXX" autocomplete="off" style="font-family:monospace;letter-spacing:.5px">
+        <div class="marca"></div>
+        <div class="campo-dica" data-lang="pt">No jogo, abra a <b>Card Shop</b> e toque em <b>Resgatar Código</b>: seu código aparece ali, com botão de copiar. Os hífens entram sozinhos e o Dispositivo se preenche a partir dele.</div><div class="campo-dica" data-lang="en">In game, open the <b>Card Shop</b> and tap <b>Redeem Code</b>: your code is shown there, with a copy button. Hyphens are added automatically and Device fills itself from it.</div><div class="campo-dica" data-lang="es">En el juego, abre la <b>Card Shop</b> y toca <b>Canjear código</b>: tu código aparece ahí, con botón de copiar. Los guiones se agregan solos y Dispositivo se completa a partir de él.</div><div class="campo-dica" data-lang="vi">Trong game, mở <b>Card Shop</b> và chạm <b>Nhập mã</b>: mã của bạn hiện ở đó, kèm nút sao chép. Dấu gạch tự thêm và Thiết bị tự điền theo mã.</div>
       </div>
 
       <div class="field" id="cpf-field" style="display:none">
@@ -1239,6 +1274,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
         <label data-lang="en">CPF <span style="color:#e04040">*</span> <span style="color:#3a2f1a;font-size:10px">(required for card)</span></label><label data-lang="es">CPF <span style="color:#e04040">*</span> <span style="color:#3a2f1a;font-size:10px">(exigido para tarjeta)</span></label><label data-lang="vi">CPF <span style="color:#e04040">*</span> <span style="color:#3a2f1a;font-size:10px">(bắt buộc khi dùng thẻ)</span></label>
         <input id="cpf" placeholder="000.000.000-00" autocomplete="off" maxlength="14"
           oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
+        <div class="marca"></div>
       </div>
 
       <div class="fields-row">
@@ -1409,6 +1445,14 @@ window._flIsBR = true;
 
 function isEn(){ return document.body.classList.contains('en'); }
 function t(pt,en){ return isEn() ? en : pt; }
+/* A pagina tem 4 idiomas (ver as regras html[data-lang-ativo=...] no CSS),
+   mas t() so cobre 2 — texto montado em JS caia em PT para es/vi.
+   t4 le a MESMA fonte que o CSS: o data-lang-ativo do <html>. */
+function langAtual(){ return document.documentElement.getAttribute('data-lang-ativo') || 'pt'; }
+function t4(pt,en,es,vi){
+  var l=langAtual();
+  return l==='en' ? en : l==='es' ? es : l==='vi' ? vi : pt;
+}
 
 var FL_IDIOMAS = {
   pt: { nome: 'Português', locale: 'pt-BR', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg>' },
@@ -1655,16 +1699,16 @@ function renderPacks(){
     const tier=isEn()?p.tierEn:p.tierPt;
     const brRegion=regionIsBR();
     const price=brRegion?p.br:p.usd;
-    const priceNote=brRegion?t('Nacional · BRL','National · BRL'):t('Internacional · USD','International · USD');
+    const priceNote=brRegion?t4('Nacional · BRL','National · BRL','Nacional · BRL','Trong nước · BRL'):t4('Internacional · USD','International · USD','Internacional · USD','Quốc tế · USD');
     const totalSouls=totalSoulsFor(p);
     const bonusSouls=totalSouls-p.souls;
-    const fita=destaque?`<span class="pack-fita">${t('Mais escolhido','Most chosen')}</span>`:'';
+    const fita=destaque?`<span class="pack-fita">${t4('Mais escolhido','Most chosen','Más elegido','Được chọn nhiều nhất')}</span>`:'';
     const soulsBonusHTML=`<div class="pack-bonus-tag">
       <svg class="pack-bonus-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-      <span><b>${bonusSouls.toLocaleString(isEn()?'en-US':'pt-BR')}</b> ${t('de bônus','bonus')} <i>= ${totalSouls.toLocaleString(isEn()?'en-US':'pt-BR')}</i></span></div>`;
+      <span><b>${bonusSouls.toLocaleString(isEn()?'en-US':'pt-BR')}</b> ${t4('de bônus','bonus','de bono','tiền thưởng')} <i>= ${totalSouls.toLocaleString(isEn()?'en-US':'pt-BR')}</i></span></div>`;
     const starsBonusHTML=p.bonusStars?`<div class="pack-bonus-tag stars">
       <svg class="pack-bonus-icone" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5 6.1 20.6l1.2-6.5L2.5 9.5l6.6-.9z"/></svg>
-      <span><b>${p.bonusStars.toLocaleString(isEn()?'en-US':'pt-BR')}</b> ${t('Stars de brinde','bonus Stars')}</span></div>`:'';
+      <span><b>${p.bonusStars.toLocaleString(isEn()?'en-US':'pt-BR')}</b> ${t4('Stars de brinde','bonus Stars','Stars de regalo','Stars tặng kèm')}</span></div>`:'';
     el.innerHTML=`
       ${fita}
       <span class="pack-check">✓</span>
@@ -2048,6 +2092,81 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
       if (badge) badge.style.display = 'flex';
     })
     .catch(function () {});
+})();
+</script>
+
+<script>
+/* ── VALIDACAO AO VIVO (reforma) ──────────────────────────────────────
+   Camada extra sobre o validate() do submit, que continua intacto.
+   Os prefixos e os formatos vem de Scripts/license_manager.gd
+   (_PREFIXOS_CODIGO / _gerar_codigo_jogador). A ordem importa: o legado
+   "FLPLAYER" fica por ULTIMO porque todos os outros comecam com ele. */
+(function(){
+  var PREFIXOS = [
+    {cru:'FLPLAYERAND', fmt:'FL-PLAYERAND', grupos:3, disp:'Android'},
+    {cru:'FLPLAYERMAC', fmt:'FL-PLAYERMAC', grupos:3, disp:''},
+    {cru:'FLPLAYERLNX', fmt:'FL-PLAYERLNX', grupos:3, disp:'Linux'},
+    {cru:'FLPLAYERPC',  fmt:'FL-PLAYERPC',  grupos:3, disp:'Windows'},
+    {cru:'FLPLAYER',    fmt:'FL-PLAYER',    grupos:4, disp:''}
+  ];
+  function achaPrefixo(cru){
+    for (var i=0;i<PREFIXOS.length;i++) if (cru.indexOf(PREFIXOS[i].cru)===0) return PREFIXOS[i];
+    return null;
+  }
+  function mascaraCodigo(v){
+    var cru=(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+    var p=achaPrefixo(cru);
+    if(!p) return cru;                       // ainda digitando o prefixo
+    var resto=cru.slice(p.cru.length).slice(0,p.grupos*4), out=p.fmt;
+    for(var i=0;i<resto.length;i+=4) out+='-'+resto.slice(i,i+4);
+    return out;
+  }
+  function marcar(campo, ok, preenchido){
+    if(!campo) return;
+    campo.classList.toggle('ok', !!(ok&&preenchido));
+    campo.classList.toggle('ruim', !!(!ok&&preenchido));
+  }
+  function campoDe(el){ return el ? el.closest('.field') : null; }
+
+  function validarCodigo(){
+    var el=document.getElementById('player-code'); if(!el) return;
+    var campo=campoDe(el), v=el.value.trim();
+    var p=achaPrefixo(v.toUpperCase().replace(/[^A-Z0-9]/g,''));
+    var ok=!!p && new RegExp('^'+p.fmt+'(-[A-Z0-9]{4}){'+p.grupos+'}$','i').test(v);
+    marcar(campo, ok, v!=='');
+    if(ok && p.disp){
+      var d=document.getElementById('dispositivo');
+      if(d && d.value!==p.disp){
+        d.value=p.disp;
+        var cd=campoDe(d);
+        if(cd){ cd.classList.add('auto'); setTimeout(function(){cd.classList.remove('auto')},1400); }
+      }
+    }
+  }
+  function ligar(id, testa){
+    var el=document.getElementById(id); if(!el) return;
+    var campo=campoDe(el);
+    function checa(){ var v=el.value.trim(); marcar(campo, testa(v), v!==''); }
+    el.addEventListener('input', checa);
+    el.addEventListener('blur', checa);
+    el.addEventListener('change', checa);
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var cod=document.getElementById('player-code');
+    if(cod){
+      cod.addEventListener('input', function(){
+        var pos=cod.selectionStart===cod.value.length;
+        cod.value=mascaraCodigo(cod.value);
+        if(pos) cod.selectionStart=cod.selectionEnd=cod.value.length;
+        validarCodigo();
+      });
+      cod.addEventListener('blur', validarCodigo);
+    }
+    ligar('email', function(v){ return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v); });
+    ligar('nome',  function(v){ return v.length>=2; });
+    ligar('cpf',   function(v){ return v.replace(/\D/g,'').length===11; });
+  });
 })();
 </script>
 </body>
