@@ -1061,6 +1061,37 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
   .field.auto select{animation:none}
 }
 
+
+/* ═══ METODOS DE PAGAMENTO (reforma) ═════════════════════════════════ */
+.pay-moeda{
+  display:inline-block; margin-left:7px; vertical-align:1px;
+  font-size:9px; letter-spacing:1.1px; font-weight:700;
+  padding:2px 6px; border-radius:3px;
+  background:rgba(200,151,58,.12); color:var(--gold2);
+  border:1px solid rgba(200,151,58,.24);
+}
+.pay-moeda.usd{background:rgba(90,140,220,.12); color:#8fb4e8; border-color:rgba(90,140,220,.26)}
+.pay-exige{color:#b08a4a}
+.pay-valor{
+  flex-shrink:0; margin-left:auto; padding-left:12px;
+  font-family:'Bebas Neue',sans-serif; font-size:20px;
+  color:var(--gold3); letter-spacing:.5px; font-variant-numeric:tabular-nums;
+}
+.pay-valor i{font-style:normal; font-size:12px; color:var(--muted)}
+.pay-opt .pay-tag{display:none}
+.pay-extra{
+  max-height:0; overflow:hidden; opacity:0;
+  transition:max-height .42s cubic-bezier(.4,0,.2,1), opacity .3s, margin .42s;
+}
+.pay-opt.active + .pay-extra{max-height:170px; opacity:1; margin:-2px 0 8px}
+.pay-extra-in{
+  font-size:11.5px; line-height:1.65; color:var(--muted);
+  padding:11px 15px; border-left:2px solid rgba(200,151,58,.3);
+  margin-left:9px; background:rgba(200,151,58,.03);
+}
+.pay-extra-in b{color:var(--gold3); font-weight:600}
+@media (prefers-reduced-motion:reduce){ .pay-extra{transition:none} }
+
 </style>
 </head>
 <body>
@@ -2166,6 +2197,105 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
     ligar('email', function(v){ return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v); });
     ligar('nome',  function(v){ return v.length>=2; });
     ligar('cpf',   function(v){ return v.replace(/\D/g,'').length===11; });
+  });
+})();
+</script>
+
+<script>
+/* ── METODOS DE PAGAMENTO: moeda, valor e requisito (reforma) ─────────
+   Nao mexe em applyRegionMode() nem em quem fica visivel — so descreve
+   o que cada metodo cobra e exige. A moeda vem do METODO porque e assim
+   que o backend decide (stripe_checkout.php forca 'usd' para Souls). */
+(function(){
+  var META = {
+    'pay-opt-pix': {
+      moeda:'BRL',
+      exige:['requer conta em banco brasileiro','requires a Brazilian bank account',
+             'requiere cuenta bancaria brasileña','cần tài khoản ngân hàng Brazil'],
+      extra:['Você recebe um <b>QR Code</b> na tela. Assim que o banco confirma, as Souls entram sozinhas — não precisa enviar comprovante. Cobrado <b>em reais</b>.',
+             'You get a <b>QR Code</b> on screen. As soon as the bank confirms, the Souls arrive on their own — no receipt needed. Charged <b>in reais</b>.',
+             'Recibes un <b>código QR</b> en pantalla. En cuanto el banco confirma, las Souls llegan solas — sin enviar comprobante. Cobrado <b>en reales</b>.',
+             'Bạn nhận <b>mã QR</b> trên màn hình. Ngay khi ngân hàng xác nhận, Souls tự vào — không cần gửi biên lai. Tính <b>bằng real</b>.']},
+    'pay-opt-card-br': {
+      moeda:'BRL',
+      exige:['requer CPF brasileiro','requires a Brazilian CPF',
+             'requiere CPF brasileño','cần CPF Brazil'],
+      extra:['Processado pela <b>Asaas</b>, <b>em reais</b>. Exige <b>CPF</b> para emitir a cobrança, e a confirmação costuma levar alguns minutos.',
+             'Processed by <b>Asaas</b>, <b>in reais</b>. Requires a <b>CPF</b> to issue the charge, and confirmation usually takes a few minutes.',
+             'Procesado por <b>Asaas</b>, <b>en reales</b>. Exige <b>CPF</b> para emitir el cobro, y la confirmación suele tardar unos minutos.',
+             'Xử lý bởi <b>Asaas</b>, <b>bằng real</b>. Cần <b>CPF</b> để tạo hóa đơn, và xác nhận thường mất vài phút.']},
+    'pay-opt-stripe': {
+      moeda:'USD', exige:null,
+      extra:['Você é levado ao checkout seguro da <b>Stripe</b> e volta para cá no fim. Cobrado <b>em dólar</b> — é o caminho de quem está fora do Brasil.',
+             'You are taken to <b>Stripe</b> secure checkout and come back here at the end. Charged <b>in dollars</b> — the route for those outside Brazil.',
+             'Vas al checkout seguro de <b>Stripe</b> y vuelves aquí al final. Cobrado <b>en dólares</b> — el camino para quien está fuera de Brasil.',
+             'Bạn được đưa tới trang thanh toán an toàn của <b>Stripe</b> rồi quay lại đây. Tính <b>bằng đô la</b> — dành cho người ngoài Brazil.']}
+  };
+  function idx(){ var l=langAtual(); return l==='en'?1:l==='es'?2:l==='vi'?3:0; }
+
+  function preparar(){
+    Object.keys(META).forEach(function(id){
+      var el=document.getElementById(id); if(!el || el.dataset.reformado) return;
+      el.dataset.reformado='1';
+      var m=META[id];
+      var nome=el.querySelector('.pay-name');
+      if(nome && !nome.querySelector('.pay-moeda')){
+        var sp=document.createElement('span');
+        sp.className='pay-moeda'+(m.moeda==='USD'?' usd':'');
+        sp.textContent = m.moeda==='BRL' ? 'R$' : 'US$';
+        nome.appendChild(sp);
+      }
+      if(!el.querySelector('.pay-valor')){
+        var v=document.createElement('span'); v.className='pay-valor'; el.appendChild(v);
+      }
+      if(!el.nextElementSibling || !el.nextElementSibling.classList.contains('pay-extra')){
+        var ex=document.createElement('div'); ex.className='pay-extra';
+        ex.innerHTML='<div class="pay-extra-in"></div>';
+        el.parentNode.insertBefore(ex, el.nextSibling);
+      }
+      el.addEventListener('click', function(){ setTimeout(atualizar,0); });
+    });
+  }
+
+  window.flAtualizarPagamentos = function atualizar(){
+    preparar();
+    var i=idx();
+    Object.keys(META).forEach(function(id){
+      var el=document.getElementById(id); if(!el) return;
+      var m=META[id];
+      /* preco na moeda DO METODO, direto do PACKS — sem duplicar valor */
+      var v=el.querySelector('.pay-valor');
+      if(v && typeof selected!=='undefined'){
+        var unit = (m.moeda==='BRL') ? selected.brlNum : selected.usdNum;
+        var tot = unit * (typeof quantidade!=='undefined' ? quantidade : 1);
+        v.innerHTML = (m.moeda==='BRL' ? 'R$ '+tot.toFixed(2).replace('.',',')
+                                       : 'US$ '+tot.toFixed(2))
+                    + ((typeof quantidade!=='undefined' && quantidade>1) ? ' <i>×'+quantidade+'</i>' : '');
+      }
+      var sub=el.querySelector('.pay-sub');
+      if(sub && m.exige && !sub.dataset.exigeAplicado){ sub.dataset.exigeBase = sub.innerHTML; }
+      if(sub && m.exige){
+        sub.innerHTML=(sub.dataset.exigeBase||sub.innerHTML).split(' · <span class="pay-exige">')[0]
+          + ' · <span class="pay-exige">'+m.exige[i]+'</span>';
+        sub.dataset.exigeAplicado='1';
+      }
+      var ex=el.nextElementSibling;
+      if(ex && ex.classList.contains('pay-extra')) ex.querySelector('.pay-extra-in').innerHTML=m.extra[i];
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    window.flAtualizarPagamentos();
+    /* acompanha troca de pacote/quantidade/idioma sem tocar em updateSummary */
+    var alvo=document.getElementById('pack-list');
+    if(alvo) new MutationObserver(function(){ window.flAtualizarPagamentos(); })
+      .observe(alvo,{childList:true});
+    new MutationObserver(function(){ window.flAtualizarPagamentos(); })
+      .observe(document.documentElement,{attributes:true,attributeFilter:['data-lang-ativo']});
+    ['qty-minus','qty-plus'].forEach(function(id){
+      var b=document.getElementById(id);
+      if(b) b.addEventListener('click', function(){ setTimeout(window.flAtualizarPagamentos,0); });
+    });
   });
 })();
 </script>
