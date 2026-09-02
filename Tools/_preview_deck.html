@@ -270,6 +270,23 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
   .row{opacity:1}
 }
+
+/* ═══ BARRA DE ROLAGEM — padrao do site ══════════════════════════════
+   Vale para a pagina e para qualquer area rolavel (listas, cofre,
+   modais). As regras de `display:none` das faixas de filtro horizontal
+   continuam valendo: elas vem depois e sao mais especificas. */
+* { scrollbar-width: thin; scrollbar-color: var(--gold-dim, #7a5a18) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--dark3, #120e12); border-radius: 6px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-dim, #7a5a18), #59410f);
+  border-radius: 6px;
+  border: 2px solid var(--dark, #09080a);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
+}
+::-webkit-scrollbar-corner { background: transparent; }
 </style>
 </head>
 <body>
@@ -422,16 +439,24 @@ function validarAdicao(nome){
 
 function montarFiltroBanlist(){
   const sel=document.getElementById('f-ban');
-  /* conta quantas cartas cada grupo tem, e ordena do maior para o menor —
-     grupo com 96 cartas e mais util no topo que um com 2 */
+  /* Conta por CHAVE DE CONTAGEM (<id>|monster / <id>|support), nao por
+     grupo. Nos 14 grupos de scope generico o teto vale separado para
+     monstro e para suporte — "Bonus de ATK max 6" sao 6 monstros E 6
+     suportes. Uma linha so escondia isso. */
   const cont={};
-  Object.keys(BAN.cartas).forEach(n=>(BAN.cartas[n].grupos||[]).forEach(g=>cont[g]=(cont[g]||0)+1));
-  const lista=Object.keys(BAN.grupos)
-    .filter(g=>cont[g])
-    .sort((a,b)=>cont[b]-cont[a]);
-  sel.innerHTML='<option value="">Todas as banlists</option>'+lista.map(g=>{
-    const gg=BAN.grupos[g];
-    return `<option value="${g}">${gg.label||g} · ${cont[g]} cartas · máx ${gg.max_in_deck}</option>`;
+  Object.keys(BAN.cartas).forEach(n=>{
+    gruposDe(n).forEach(g=>{ const k=chaveGrupo(g,n); cont[k]=(cont[k]||0)+1; });
+  });
+  const chaves=Object.keys(cont).sort((a,b)=>cont[b]-cont[a]);
+  const rotCat={monster:'monstros', support:'equip/suporte'};
+  sel.innerHTML='<option value="">Todas as banlists</option>'+chaves.map(k=>{
+    const [gid,cat]=k.split('|');
+    const g=BAN.grupos[gid]; if(!g) return '';
+    /* so anota a categoria quando o grupo REALMENTE se divide — num grupo
+       de scope monster nao ha o que separar, e o rotulo so poluiria */
+    const dividido=cont[gid+'|monster']&&cont[gid+'|support'];
+    const nome=(g.label||gid)+(dividido?' — '+rotCat[cat]:'');
+    return `<option value="${k}">${nome} · ${cont[k]} cartas · máx ${g.max_in_deck}</option>`;
   }).join('');
   sel.onchange=()=>{ filtroBan=sel.value; sel.classList.toggle('ativo',!!filtroBan); render(); };
 }
@@ -465,8 +490,10 @@ function render(){
       if(modoBusca==='efeito' ? !(casaEfeito||casaNome) : !casaNome) return false;
     }
     if(filtroBan){
-      const r=BAN.cartas[c.nome];
-      if(!r||!r.grupos||r.grupos.indexOf(filtroBan)<0) return false;
+      /* filtroBan e a chave de contagem (<id>|monster / <id>|support), a
+         MESMA que a validacao usa — assim filtro e regra nao divergem */
+      const bate=gruposDe(c.nome).some(g=>chaveGrupo(g,c.nome)===filtroBan);
+      if(!bate) return false;
     }
     if(filtro.rar && (c.raridade||'N').toUpperCase()!==filtro.rar) return false;
     if(filtro.cat && c.card_type!==filtro.cat) return false;
