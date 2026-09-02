@@ -1011,9 +1011,12 @@ function isEn() { return document.body.classList.contains('en'); }
   const modalFacts = document.getElementById('cat-modal-facts');
   const modalDesc = document.getElementById('cat-modal-desc');
 
-  function factHtml(labelPt, labelEn, value, iconSrc, iconAlt) {
+  function factHtml(labelPt, labelEn, value, iconSrc, iconAlt, extraSrc, extraAlt) {
     if (!value) return '';
-    const icone = iconSrc ? '<img src="' + iconSrc + '" alt="' + (iconAlt || '') + '">' : '';
+    let icone = iconSrc ? '<img src="' + iconSrc + '" alt="' + (iconAlt || '') + '">' : '';
+    /* icone adicional de subtipo (Continua) ao lado do de Magia/Armadilha */
+    if (extraSrc) icone += '<img src="' + extraSrc + '" alt="' + (extraAlt || '') +
+      '" title="' + (extraAlt || '') + '" style="margin-left:-2px">';
     return (
       '<div><div class="cat-modal-fact-label">' + (isEn() ? labelEn : labelPt) + '</div>' +
       '<div class="cat-modal-fact-value">' + icone + '<span>' + value + '</span></div></div>'
@@ -1075,7 +1078,16 @@ function isEn() { return document.body.classList.contains('en'); }
     const iconeAttrSrc = c.icone_atributo ? 'img/atributos/' + c.icone_atributo + '.webp' : '';
     const iconeTipoSrc = c.icone_tipo ? 'img/tipos/' + c.icone_tipo + '.webp' : '';
     const ehMonstro = c.card_type === 'Monster';
-    facts.push(factHtml('Tipo', 'Card Type', ehMonstro ? (isEn() ? 'Monster' : 'Monstro') : c.card_type, ehMonstro ? '' : iconeAttrSrc, c.atributo));
+    /* Magia/Armadilha continua: o jogo grava o subtipo na propria coluna
+       Tipo ("trap continuous"), sempre ao lado da palavra-base. */
+    const ehContinua = !ehMonstro && String(c.tipo || '').toLowerCase().indexOf('continu') >= 0;
+    const rotContinua = { pt: 'Contínua', en: 'Continuous', es: 'Continua', vi: 'Liên tục' };
+    const langAtual = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+    facts.push(factHtml('Tipo', 'Card Type',
+      ehMonstro ? (isEn() ? 'Monster' : 'Monstro')
+                : c.card_type + (ehContinua ? ' · ' + (rotContinua[langAtual] || rotContinua.pt) : ''),
+      ehMonstro ? '' : iconeAttrSrc, c.atributo,
+      ehContinua ? 'img/tipos/continuous.webp' : '', rotContinua[langAtual] || rotContinua.pt));
     if (ehMonstro) {
       facts.push(factHtml('Raça', 'Race', c.tipo, iconeTipoSrc, c.tipo));
       facts.push(factHtml('Atributo', 'Attribute', c.atributo, iconeAttrSrc, c.atributo));
@@ -1285,6 +1297,14 @@ window.setLang = setLang;
            '<b>También sale por fusión.</b> Con la combinación correcta la consigues sin depender de la suerte del booster.',
            '<b>Cũng có thể hợp thể.</b> Kết hợp đúng thẻ, bạn có nó mà không cần may mắn từ booster.'],
     outras:['Outras cartas de ','Other cards from ','Otras cartas de ','Thẻ khác từ '],
+    custom:['<b>Carta Custom — sai do Booster Sombrio.</b> Toda Custom é elegível ao bônus de 5% que o Booster Sombrio entrega ao ser aberto. É por aí que ela vem pronta.',
+            '<b>Custom card — comes from the Shadow Booster.</b> Every Custom is eligible for the 5% bonus the Shadow Booster grants when opened. That is how you get it ready-made.',
+            '<b>Carta Custom — sale del Booster Sombrío.</b> Toda Custom es elegible al bono del 5% que el Booster Sombrío entrega al abrirse. Así es como la consigues lista.',
+            '<b>Thẻ Custom — đến từ Booster Bóng Tối.</b> Mọi thẻ Custom đều đủ điều kiện cho phần thưởng 5% khi mở Booster Bóng Tối. Đó là cách bạn có sẵn thẻ này.'],
+    soFusao:['Fora isso, a única forma de ter esta carta é <b>fundindo</b> — ela não aparece em booster da loja nem cai de duelista.',
+             'Otherwise, the only way to have this card is by <b>fusing</b> — it is not in shop boosters and no duelist drops it.',
+             'Fuera de eso, la única forma de tener esta carta es <b>fusionando</b> — no aparece en boosters de la tienda ni la suelta ningún duelista.',
+             'Ngoài ra, cách duy nhất để có thẻ này là <b>hợp thể</b> — nó không có trong booster cửa hàng và không đấu thủ nào làm rơi.'],
     fOrigem:[['Qualquer','Booster','Drop de duelista','Fusão','Exclusiva'],
              ['Any','Booster','Duelist drop','Fusion','Exclusive'],
              ['Cualquiera','Booster','Drop de duelista','Fusión','Exclusiva'],
@@ -1401,7 +1421,16 @@ window.setLang = setLang;
            's" onclick="catVerNpc('+ni+')">'+p.nome+'<span class="seta">→</span></button>'; });
       h+='</div></div>';
     }
-    if(o.f) h+='<div class="cat-aviso fusao" style="margin-top:11px;margin-bottom:0">'+ICO.f+'<div>'+T.fusao[i]+'</div></div>';
+    /* ORDEM: primeiro de onde a carta vem PRONTA (exclusiva, booster,
+       duelista, bonus Custom), e so entao "tambem sai por fusao" — fusao
+       e um caminho a mais, nunca a resposta de "onde consigo esta carta". */
+    if(o.cs) h+='<div class="cat-aviso" style="background:rgba(90,180,150,.06);border-color:rgba(90,180,150,.26);color:#9fd4bf">'+
+      ICO.x+'<div>'+T.custom[i]+'</div></div>';
+    if(o.f){
+      var soFusao = !o.b && !o.n && !o.cs;
+      h+='<div class="cat-aviso fusao" style="margin-top:11px;margin-bottom:0">'+ICO.f+'<div>'+
+         T.fusao[i]+(soFusao?(' '+T.soFusao[i]):'')+'</div></div>';
+    }
     h+='</div>';
     /* outras cartas do mesmo booster */
     if(o.b&&o.b.length){
@@ -1446,7 +1475,7 @@ window.setLang = setLang;
     if(h&&window.openCardModal) openCardModal(h);
   }
   document.addEventListener('catalogo-pronto',function(){ _pronto=true; ligar(); });
-  fetch('data/origens.json').then(function(r){return r.json()})
+  fetch('data/origens.json?t=' + Date.now()).then(function(r){return r.json()})
     .then(function(d){ _dados=d; ligar(); })
     .catch(function(){ _pronto&&stats(); });
 
