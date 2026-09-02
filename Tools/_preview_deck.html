@@ -320,6 +320,7 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
       </div>
       <div class="btn-linha">
         <button class="btn fantasma" id="importar">Carregar código</button>
+        <button class="btn fantasma" id="imagem">Baixar imagem</button>
         <button class="btn fantasma" id="limpar">Limpar</button>
       </div>
 
@@ -759,6 +760,96 @@ document.getElementById('salvar-nome').addEventListener('keydown',function(e){
   if(e.key==='Enter') salvarAtual();
 });
 renderSalvos();
+
+
+/* == IMAGEM DO COFRE ==================================================
+   Desenha o deck num canvas e baixa como PNG. As cartas vem do mesmo
+   dominio, entao o canvas nao fica tainted e o toDataURL funciona.
+   Carta que falhar vira quadro vazio — nunca derruba a exportacao. */
+function carregarImg(src){
+  return new Promise(function(res){
+    var im=new Image();
+    im.onload=function(){ res(im); };
+    im.onerror=function(){ res(null); };
+    im.src=src;
+  });
+}
+async function baixarImagem(){
+  if(!deck.length) return aviso('Monte um deck antes de gerar a imagem.','err');
+  var btn=document.getElementById('imagem'), txtOrig=btn.textContent;
+  btn.textContent='Gerando…'; btn.disabled=true;
+  try{
+    var cont={}; deck.forEach(function(n){ cont[n]=(cont[n]||0)+1; });
+    var nomes=Object.keys(cont).sort();
+    var COLS=8, CW=110, CH=160, GAP=10, PAD=26, TOPO=92, RODAPE=54;
+    var linhas=Math.ceil(nomes.length/COLS);
+    var W=PAD*2+COLS*CW+(COLS-1)*GAP;
+    var H=TOPO+linhas*CH+(linhas-1)*GAP+RODAPE+PAD;
+    var cv=document.createElement('canvas');
+    cv.width=W; cv.height=H;
+    var g=cv.getContext('2d');
+
+    /* fundo no tom do site */
+    g.fillStyle='#09080a'; g.fillRect(0,0,W,H);
+    var grad=g.createRadialGradient(W/2,0,0,W/2,0,W*0.75);
+    grad.addColorStop(0,'rgba(200,151,58,.13)'); grad.addColorStop(1,'rgba(200,151,58,0)');
+    g.fillStyle=grad; g.fillRect(0,0,W,H*0.6);
+
+    /* cabecalho */
+    var nomeDeck=(document.getElementById('salvar-nome').value||'').trim()||'Deck';
+    g.fillStyle='#e8b840';
+    g.font='600 34px Inter, system-ui, sans-serif';
+    g.fillText(nomeDeck, PAD, 52);
+    g.fillStyle='#6a5830';
+    g.font='500 15px Inter, system-ui, sans-serif';
+    var cats={Monster:0,Spell:0,Trap:0,Equip:0,Field:0};
+    deck.forEach(function(n){ var c=CARTAS.find(function(x){return x.nome===n});
+      if(c&&cats[c.card_type]!==undefined) cats[c.card_type]++; });
+    var resumo=deck.length+'/40 cartas  ·  M '+cats.Monster+'  S '+cats.Spell+
+               '  T '+cats.Trap+'  E '+cats.Equip;
+    g.fillText(resumo, PAD, 76);
+
+    /* as cartas */
+    var imgs=await Promise.all(nomes.map(function(n){
+      var c=CARTAS.find(function(x){return x.nome===n})||{};
+      return carregarImg('img/cartas/'+c.slug+'.webp');
+    }));
+    nomes.forEach(function(n,i){
+      var x=PAD+(i%COLS)*(CW+GAP), y=TOPO+Math.floor(i/COLS)*(CH+GAP);
+      var im=imgs[i];
+      if(im){ g.drawImage(im,x,y,CW,CH); }
+      else { g.fillStyle='#120e12'; g.fillRect(x,y,CW,CH); }
+      g.strokeStyle='rgba(200,151,58,.3)'; g.lineWidth=1;
+      g.strokeRect(x+.5,y+.5,CW-1,CH-1);
+      /* quantidade, so quando ha mais de uma copia */
+      if(cont[n]>1){
+        var bw=26,bh=20, bx=x+CW-bw-4, by=y+CH-bh-4;
+        g.fillStyle='rgba(6,3,10,.9)'; g.fillRect(bx,by,bw,bh);
+        g.strokeStyle='#c8973a'; g.strokeRect(bx+.5,by+.5,bw-1,bh-1);
+        g.fillStyle='#ffe49a'; g.font='700 13px Inter, system-ui, sans-serif';
+        g.textAlign='center'; g.fillText('x'+cont[n], bx+bw/2, by+14); g.textAlign='left';
+      }
+    });
+
+    /* rodape */
+    g.fillStyle='#4a3f28';
+    g.font='500 13px Inter, system-ui, sans-serif';
+    g.fillText('Forbidden Legacy · forbiddenlegacy.com.br', PAD, H-PAD+4);
+
+    var url=cv.toDataURL('image/png');
+    var a=document.createElement('a');
+    a.href=url;
+    a.download=nomeDeck.normalize('NFD').replace(/[̀-ͯ]/g,'')
+      .replace(/[^\w\s-]/g,'').trim().replace(/\s+/g,'_').toLowerCase()+'.png';
+    document.body.appendChild(a); a.click(); a.remove();
+    aviso('Imagem do deck baixada.','ok');
+  }catch(e){
+    aviso('Nao foi possivel gerar a imagem.','err');
+  }finally{
+    btn.textContent=txtOrig; btn.disabled=false;
+  }
+}
+document.getElementById('imagem').onclick=baixarImagem;
 
 window.remover=remover;
 </script>
