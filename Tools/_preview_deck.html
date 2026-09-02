@@ -55,7 +55,7 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
 
 /* ── CATALOGO EM LISTA (como o editor do jogo) ── */
 .lista{display:flex; flex-direction:column; gap:3px; max-height:64vh; overflow-y:auto; padding-right:3px}
-.row{display:flex; align-items:center; gap:10px; padding:5px 9px; min-height:50px;
+.row{display:flex; align-items:center; gap:10px; padding:6px 11px; min-height:42px;
   text-align:left;   /* <button> centraliza por padrao e jogava o nome pro meio */
   border-radius:7px; background:var(--dark3); border:1px solid var(--border); cursor:pointer;
   transition:border-color .18s, background .18s, transform .18s;
@@ -65,8 +65,6 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
 .row:focus-visible{outline:2px solid var(--gold2); outline-offset:1px}
 .row.bloq{opacity:.4; cursor:not-allowed}
 .row.bloq:hover{transform:none; border-color:rgba(196,72,60,.4); background:rgba(196,72,60,.05)}
-.row img{width:26px; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:3px;
-  flex-shrink:0; border:1px solid var(--border)}
 .row-c{flex:1; min-width:0}
 .row-nome{font-size:12.5px; color:var(--text); overflow:hidden; text-overflow:ellipsis;
   white-space:nowrap; line-height:1.3}
@@ -98,19 +96,32 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
 .comp span{transition:width .4s var(--suave)}
 .comp-leg{display:flex; gap:10px; flex-wrap:wrap; font-size:9.5px; color:var(--muted); margin-bottom:10px}
 .comp-leg i{display:inline-block; width:7px; height:7px; border-radius:2px; margin-right:4px}
-.deck-lista{display:flex; flex-direction:column; gap:3px; max-height:40vh; overflow-y:auto;
-  margin-bottom:11px; padding-right:3px}
-.dl{display:flex; align-items:center; gap:8px; padding:4px 8px; border-radius:6px;
-  background:var(--dark3); border:1px solid var(--border); cursor:pointer;
-  transition:border-color .18s, background .18s; animation:pop .26s var(--mola)}
-@keyframes pop{from{opacity:0;transform:translateX(-7px)}to{opacity:1;transform:none}}
-.dl:hover{border-color:rgba(196,72,60,.5); background:rgba(196,72,60,.06)}
-.dl img{width:22px; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:3px;
-  flex-shrink:0; border:1px solid var(--border)}
-.dl-nome{flex:1; min-width:0; font-size:11.5px; color:var(--text); overflow:hidden;
-  text-overflow:ellipsis; white-space:nowrap}
-.dl-q{font-size:11px; font-weight:700; color:var(--gold3); font-variant-numeric:tabular-nums}
-.dl-x{opacity:0; color:var(--erro); font-size:12px; transition:opacity .2s}
+/* COFRE DO DECK — grade de 6 colunas com mini-cartas, como o
+   deck_grid do editor do jogo (columns=6, 80x116, separacao 18) */
+.cofre-tit{font-family:'Bebas Neue',sans-serif; font-size:17px; letter-spacing:1.5px;
+  color:var(--gold2); line-height:1}
+.cofre-sub{font-size:9.5px; letter-spacing:1.3px; text-transform:uppercase;
+  color:var(--muted); margin:2px 0 10px}
+.deck-lista{display:grid; grid-template-columns:repeat(6,1fr); gap:9px;
+  max-height:42vh; overflow-y:auto; margin-bottom:11px; padding:2px 3px 2px 2px;
+  align-content:start}
+@media(max-width:1060px){ .deck-lista{grid-template-columns:repeat(8,1fr)} }
+@media(max-width:560px){ .deck-lista{grid-template-columns:repeat(5,1fr)} }
+.deck-lista .vazio-msg{grid-column:1/-1}
+.dl{position:relative; cursor:pointer; background:none; border:none; padding:0;
+  animation:pop .26s var(--mola)}
+@keyframes pop{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:none}}
+.dl img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:4px;
+  display:block; border:1px solid var(--border); background:#050408;
+  transition:transform .22s var(--mola), border-color .22s}
+.dl:hover img{transform:translateY(-3px); border-color:var(--erro)}
+.dl-q{position:absolute; right:2px; bottom:2px; z-index:2; min-width:16px; height:16px;
+  border-radius:8px; background:rgba(6,3,10,.9); border:1px solid var(--gold-dim);
+  color:var(--gold3); font-size:9.5px; font-weight:700; display:grid; place-items:center;
+  padding:0 4px; font-variant-numeric:tabular-nums}
+.dl-x{position:absolute; inset:0; display:grid; place-items:center; z-index:3;
+  opacity:0; color:#fff; font-size:15px; background:rgba(140,30,24,.55);
+  border-radius:4px; transition:opacity .2s}
 .dl:hover .dl-x{opacity:1}
 .deck-vazio{text-align:center; padding:24px 12px; color:var(--muted); font-size:12px; line-height:1.7}
 /* grupos de banlist em uso */
@@ -188,6 +199,8 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
       <div class="comp" id="comp"></div>
       <div class="comp-leg" id="comp-leg"></div>
       <div class="grupos" id="grupos"></div>
+      <div class="cofre-tit">Cofre do Deck</div>
+      <div class="cofre-sub">cartas montadas para duelo</div>
       <div class="deck-lista" id="dlista"></div>
       <button class="btn" id="gerar" disabled>Gerar código do deck</button>
       <div class="btn-linha">
@@ -314,8 +327,7 @@ function render(){
     b.type='button'; b.className='row'+(bloq?' bloq':''); b.dataset.r=r;
     b.style.setProperty('--atraso',Math.min(i,18)*0.014+'s');
     b.title=bloq&&!v.ok ? v.msg.replace(/<\/?b>/g,'') : (c.nome_pt||c.nome);
-    b.innerHTML=`<img src="img/cartas/${c.slug}.webp" alt="" loading="lazy">
-      <span class="row-c">
+    b.innerHTML=`<span class="row-c">
         <span class="row-nome">${c.nome_pt||c.nome}</span>
         <span class="row-sub">
           <span class="tagx rar" style="color:${CORES[r]}">${r}</span>
@@ -381,14 +393,15 @@ function sincDeck(){
   const c2={}; deck.forEach(n=>c2[n]=(c2[n]||0)+1);
   const L=document.getElementById('dlista');
   if(!deck.length){
-    L.innerHTML='<div class="deck-vazio">Clique nas cartas ao lado para montar seu deck.<br>São 40 cartas, com a banlist do jogo valendo aqui.</div>';
+    L.innerHTML='<div class="deck-vazio vazio-msg">Clique nas cartas ao lado para montar seu deck.<br>São 40 cartas, com a banlist do jogo valendo aqui.</div>';
   } else {
     L.innerHTML=Object.keys(c2).sort().map(n=>{
       const c=CARTAS.find(x=>x.nome===n)||{};
-      return `<div class="dl" onclick="remover(${JSON.stringify(n).replace(/"/g,'&quot;')})" title="Clique para remover">
-        <img src="img/cartas/${c.slug}.webp" alt="" loading="lazy">
-        <span class="dl-nome">${c.nome_pt||n}</span>
-        <span class="dl-q">${c2[n]}</span><span class="dl-x">✕</span></div>`;
+      const t=(c.nome_pt||n).replace(/"/g,'&quot;');
+      return `<button class="dl" type="button" onclick="remover(${JSON.stringify(n).replace(/"/g,'&quot;')})" title="${t} ×${c2[n]} — clique para remover">
+        <img src="img/cartas/${c.slug}.webp" alt="${t}" loading="lazy">
+        ${c2[n]>1?`<span class="dl-q">${c2[n]}</span>`:''}
+        <span class="dl-x">✕</span></button>`;
     }).join('');
   }
 }
