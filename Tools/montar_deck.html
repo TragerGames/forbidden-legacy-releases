@@ -541,6 +541,55 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
 }
 ::-webkit-scrollbar-corner { background: transparent; }
+
+/* ═══ CODIGO DE DECK / BUSCA POR EFEITO / FILTRO DE BANLIST ══════════ */
+.md-ferramentas{display:flex; gap:6px; margin:8px 0}
+.md-ferramentas select{flex:1; min-width:0; background:var(--dark3,#120e12);
+  border:1px solid var(--border,rgba(200,151,58,.13)); border-radius:7px;
+  color:var(--text-body,#9a8050); font-size:11px; padding:7px 9px;
+  font-family:inherit; cursor:pointer; outline:none; transition:border-color .22s}
+.md-ferramentas select:focus{border-color:var(--gold,#c8973a)}
+.md-ferramentas select.ativo{border-color:var(--gold,#c8973a); color:var(--gold-light,#e8b840);
+  background:rgba(200,151,58,.08)}
+.md-modo{display:flex; border:1px solid var(--border,rgba(200,151,58,.13));
+  border-radius:7px; overflow:hidden; flex-shrink:0}
+.md-modo button{background:var(--dark3,#120e12); border:none; color:var(--text-muted,#6a5830);
+  font-size:10px; padding:7px 11px; cursor:pointer; font-family:inherit;
+  letter-spacing:.4px; transition:all .2s}
+.md-modo button.on{background:rgba(200,151,58,.16); color:var(--gold-light,#e8b840)}
+.md-modo button:hover:not(.on){color:var(--text-body,#9a8050)}
+.md-trecho{font-size:9.5px; color:var(--gold-dim,#7a5a18); font-style:italic;
+  display:block; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+
+.md-codigo{margin-top:10px; padding:12px; border-radius:9px;
+  background:rgba(200,151,58,.05); border:1px solid rgba(200,151,58,.2)}
+.md-codigo-tit{font-size:9.5px; letter-spacing:1.7px; text-transform:uppercase;
+  color:var(--gold,#c8973a); margin-bottom:8px; font-weight:600}
+.md-travado{width:100%; background:var(--dark3,#120e12); color:#5a4e33;
+  border:1px dashed var(--gold-dim,#7a5a18); border-radius:8px; padding:10px;
+  font-family:'Bebas Neue',sans-serif; font-size:14px; letter-spacing:1.5px;
+  cursor:not-allowed}
+.md-aviso{display:flex; gap:9px; align-items:flex-start; margin-top:8px; padding:9px 11px;
+  border-radius:7px; font-size:11px; line-height:1.55;
+  background:rgba(200,151,58,.06); border:1px dashed rgba(200,151,58,.3);
+  color:var(--text-muted,#6a5830)}
+.md-aviso b{color:var(--gold-light,#e8b840)}
+.md-linha{display:flex; gap:6px; margin-top:8px}
+.md-linha input{flex:1; min-width:0; background:var(--dark3,#120e12);
+  border:1px solid var(--border,rgba(200,151,58,.13)); border-radius:6px;
+  padding:8px 10px; color:var(--gold-light,#e8b840);
+  font-family:ui-monospace,Menlo,monospace; font-size:11px; outline:none}
+.md-linha input:focus{border-color:var(--gold,#c8973a)}
+.md-linha button{flex-shrink:0; padding:8px 13px; border-radius:6px;
+  border:1px solid var(--gold-dim,#7a5a18); background:rgba(200,151,58,.1);
+  color:var(--gold-light,#e8b840); cursor:pointer; font-family:inherit;
+  font-size:11.5px; transition:all .2s}
+.md-linha button:hover{background:rgba(200,151,58,.2); border-color:var(--gold,#c8973a)}
+.md-msg{font-size:11.5px; margin-top:8px; padding:8px 10px; border-radius:6px;
+  line-height:1.55; display:none}
+.md-msg.on{display:block}
+.md-msg.ok{background:rgba(59,165,92,.1); border:1px solid rgba(59,165,92,.3); color:#8fd6a8}
+.md-msg.err{background:rgba(196,72,60,.1); border:1px solid rgba(196,72,60,.3); color:#e0a49c}
 </style>
 </head>
 <body>
@@ -632,6 +681,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <span class="cat-search-icon">🔍</span>
         <input type="text" id="cat-search-input" data-lang-pt-placeholder="Buscar carta pelo nome…" data-lang-en-placeholder="Search card by name…" placeholder="Buscar carta pelo nome…">
       </div>
+      <div class="md-ferramentas">
+        <div class="md-modo">
+          <button id="md-m-nome" class="on" onclick="mdModo('nome')"><span data-lang="pt">Nome</span><span data-lang="en">Name</span><span data-lang="es">Nombre</span><span data-lang="vi">Tên</span></button>
+          <button id="md-m-efeito" onclick="mdModo('efeito')"><span data-lang="pt">Efeito</span><span data-lang="en">Effect</span><span data-lang="es">Efecto</span><span data-lang="vi">Hiệu ứng</span></button>
+        </div>
+        <select id="md-f-ban"></select>
+      </div>
       <div class="cat-filter-row">
         <span class="cat-filter-label" data-lang="pt">Tipo</span>
         <span class="cat-filter-label" data-lang="en">Type</span><span class="cat-filter-label" data-lang="es">Tipo</span><span class="cat-filter-label" data-lang="vi">Loại</span>
@@ -706,6 +762,24 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <button class="deck-btn primary" style="width:100%" onclick="baixarImagemDeck()">
       <span data-lang="pt">⬇ Baixar imagem do deck</span><span data-lang="en">⬇ Download deck image</span><span data-lang="es">⬇ Descargar imagen del mazo</span><span data-lang="vi">⬇ Tải ảnh bộ bài</span>
     </button>
+
+    <div class="md-codigo">
+      <div class="md-codigo-tit"><span data-lang="pt">Código de deck</span><span data-lang="en">Deck code</span><span data-lang="es">Código de mazo</span><span data-lang="vi">Mã bộ bài</span></div>
+      <button class="md-travado" disabled title="Em breve">&#128274; <span data-lang="pt">Gerar código</span><span data-lang="en">Generate code</span><span data-lang="es">Generar código</span><span data-lang="vi">Tạo mã</span></button>
+      <div class="md-aviso">
+        <div>
+          <span data-lang="pt">O <b>código de deck</b> entra na <b>próxima atualização do jogo</b>. Assim que o Editor de Deck souber lê-lo, este botão libera aqui.</span>
+          <span data-lang="en">The <b>deck code</b> arrives in the <b>next game update</b>. Once the Deck Editor can read it, this button unlocks here.</span>
+          <span data-lang="es">El <b>código de mazo</b> llega en la <b>próxima actualización del juego</b>. Cuando el Editor de Mazos pueda leerlo, este botón se habilita aquí.</span>
+          <span data-lang="vi">Mã bộ bài sẽ có trong <b>bản cập nhật tới của trò chơi</b>. Khi Trình sửa bộ bài đọc được, nút này sẽ mở ở đây.</span>
+        </div>
+      </div>
+      <div class="md-linha">
+        <input id="md-seed" type="text" spellcheck="false" placeholder="FL1-…">
+        <button onclick="mdCarregarCodigo()"><span data-lang="pt">Carregar</span><span data-lang="en">Load</span><span data-lang="es">Cargar</span><span data-lang="vi">Tải</span></button>
+      </div>
+      <div class="md-msg" id="md-msg"></div>
+    </div>
   </aside>
 </div>
 
@@ -797,7 +871,7 @@ function isEn() { return document.body.classList.contains('en'); }
   let filtroTipo = 'ALL';
   let filtroRaridade = 'ALL';
   let filtroRaca = 'ALL';
-  let termoBusca = '';
+  let termoBusca = ''; window.mdTermo = termoBusca;
 
   function cardHtml(c) {
     const nome = isEn() ? c.nome : c.nome_pt;
@@ -819,10 +893,14 @@ function isEn() { return document.body.classList.contains('en'); }
   }
 
   function passaFiltro(c) {
+    /* filtro de banlist / busca por efeito (bloco no fim do arquivo) */
+    if (window.mdFiltroExtra && !window.mdFiltroExtra(c)) return false;
     if (filtroTipo !== 'ALL' && c.card_type !== filtroTipo) return false;
     if (filtroRaridade !== 'ALL' && c.raridade !== filtroRaridade) return false;
     if (filtroRaca !== 'ALL' && c.tipo !== filtroRaca) return false;
-    if (termoBusca) {
+    if (termoBusca && !window.mdModoEfeito) {
+      /* no modo Efeito quem decide e mdFiltroExtra, que olha nome E
+         texto do efeito — filtrar por nome aqui zeraria o resultado */
       const alvo = (c.nome + ' ' + c.nome_pt).toLowerCase();
       if (!alvo.includes(termoBusca)) return false;
     }
@@ -911,7 +989,7 @@ function isEn() { return document.body.classList.contains('en'); }
   searchInput.addEventListener('input', () => {
     clearTimeout(buscaTimeout);
     buscaTimeout = setTimeout(() => {
-      termoBusca = searchInput.value.trim().toLowerCase();
+      termoBusca = searchInput.value.trim().toLowerCase(); window.mdTermo = termoBusca;
       render();
     }, 180);
   });
@@ -1264,6 +1342,15 @@ Promise.all([
   popularSeletorDecks();
   document.getElementById('deck-nome-input').value = deckNomeAtual;
   atualizarPainelDeck();
+  /* o bloco de codigo de deck / filtro de banlist vive em outro <script>
+     e precisa ler estes; sem isto o filtro fica vazio */
+  window.cartas = cartas;
+  window.deckRules = deckRules;
+  window.deckAtual = deckAtual;
+  window.render = window.__deckRender;
+  window.renderDeck = atualizarPainelDeck;
+  window.limiteIndividual = limiteIndividual;
+  document.dispatchEvent(new CustomEvent('deck-pronto'));
 }).catch(() => {
   document.getElementById('cat-grid').innerHTML = '<div class="cat-empty">' + (isEn() ? 'Could not load cards right now.' : 'Não foi possível carregar as cartas agora.') + '</div>';
 });
@@ -1404,6 +1491,192 @@ window.setLang = setLang;
       if (badge) badge.style.display = 'flex';
     })
     .catch(function () {});
+})();
+</script>
+
+<script>
+/* == CODIGO DE DECK, BUSCA POR EFEITO E FILTRO DE BANLIST ============
+   Estende a pagina por fora — nao reescreve nada do que ja existia. */
+(function(){
+  var IDS={}, POR_ID={}, modoBusca='nome', filtroBan='';
+  var SUP=['spell','magic','trap','equip','support','backrow'];
+
+  function L(){ var l=document.documentElement.getAttribute('data-lang-ativo')||'pt';
+    return l==='en'?1:l==='es'?2:l==='vi'?3:0; }
+  function T(a){ return a[L()]; }
+
+  var TX={
+    carregado:['Deck carregado: %n cartas.','Deck loaded: %n cards.',
+               'Mazo cargado: %n cartas.','Đã tải bộ bài: %n thẻ.'],
+    parcial:['Carregadas %n cartas. %f ficaram de fora pela banlist ou pelo limite de 40.',
+             'Loaded %n cards. %f were left out by the banlist or the 40 limit.',
+             'Cargadas %n cartas. %f quedaron fuera por la banlist o el límite de 40.',
+             'Đã tải %n thẻ. %f bị loại do banlist hoặc giới hạn 40.'],
+    prefixo:['Código inválido: falta o prefixo FL1-.','Invalid code: missing the FL1- prefix.',
+             'Código inválido: falta el prefijo FL1-.','Mã không hợp lệ: thiếu tiền tố FL1-.'],
+    truncado:['Código incompleto ou truncado.','Incomplete or truncated code.',
+              'Código incompleto o truncado.','Mã không đầy đủ hoặc bị cắt.'],
+    versao:['Este código é de outra versão do formato.','This code is from another format version.',
+            'Este código es de otra versión del formato.','Mã này thuộc phiên bản định dạng khác.'],
+    checksum:['Código corrompido — confira se copiou inteiro.','Corrupted code — check that you copied all of it.',
+              'Código corrupto — verifica que lo copiaste completo.','Mã bị hỏng — kiểm tra xem bạn đã sao chép đủ chưa.'],
+    vazio:['O código não trouxe nenhuma carta conhecida.','The code brought no known cards.',
+           'El código no trajo ninguna carta conocida.','Mã không mang lại thẻ nào đã biết.'],
+    todas:['Todas as banlists','All banlists','Todas las banlists','Tất cả banlist'],
+    monstros:['monstros','monsters','monstruos','quái thú'],
+    suporte:['equip/suporte','equip/support','equip/soporte','trang bị/hỗ trợ'],
+    cartas:['cartas','cards','cartas','thẻ'],
+    phNome:['Buscar carta pelo nome…','Search card by name…','Buscar carta por nombre…','Tìm thẻ theo tên…'],
+    phEfeito:['Buscar no efeito…','Search in effect text…','Buscar en el efecto…','Tìm trong hiệu ứng…']
+  };
+  function msg(t,tipo){
+    var m=document.getElementById('md-msg');
+    m.className='md-msg on '+(tipo||'ok'); m.innerHTML=t;
+    clearTimeout(window._mdT); window._mdT=setTimeout(function(){ m.classList.remove('on'); },5000);
+  }
+
+  /* ---- chave de contagem: espelha _chave_contagem_grupo do jogo ---- */
+  function catDaCarta(nome){
+    var c=(window.cartas||[]).find(function(x){return x.nome===nome});
+    return (c&&c.card_type==='Monster')?'monster':'support';
+  }
+  function chaveGrupo(g,nome){
+    var sc=String(g.scope||'effect').toLowerCase();
+    if(sc==='monster') return g.id+'|monster';
+    if(SUP.indexOf(sc)>=0) return g.id+'|support';
+    return g.id+'|'+catDaCarta(nome);
+  }
+  function gruposDe(nome){
+    var r=(window.deckRules&&deckRules.cartas)?deckRules.cartas[nome]:null;
+    if(!r||!r.grupos) return [];
+    return r.grupos.map(function(id){
+      var g=deckRules.grupos[id];
+      return g?Object.assign({id:id},g):null;
+    }).filter(Boolean);
+  }
+
+  /* ---- filtro de banlist, separando monstro de suporte ---- */
+  function montarFiltro(){
+    var sel=document.getElementById('md-f-ban');
+    if(!sel||!window.deckRules||!deckRules.cartas) return;
+    var cont={};
+    Object.keys(deckRules.cartas).forEach(function(n){
+      gruposDe(n).forEach(function(g){ var k=chaveGrupo(g,n); cont[k]=(cont[k]||0)+1; });
+    });
+    var chaves=Object.keys(cont).sort(function(a,b){ return cont[b]-cont[a]; });
+    var html='<option value="">'+T(TX.todas)+'</option>';
+    chaves.forEach(function(k){
+      var p=k.split('|'), g=deckRules.grupos[p[0]]; if(!g) return;
+      /* so anota a categoria quando o grupo REALMENTE se divide */
+      var dividido=cont[p[0]+'|monster']&&cont[p[0]+'|support'];
+      var nome=(g.label||p[0])+(dividido?' — '+(p[1]==='monster'?T(TX.monstros):T(TX.suporte)):'');
+      html+='<option value="'+k+'">'+nome+' · '+cont[k]+' '+T(TX.cartas)+' · máx '+g.max_in_deck+'</option>';
+    });
+    sel.innerHTML=html;
+    sel.value=filtroBan;
+    sel.onchange=function(){
+      filtroBan=sel.value; sel.classList.toggle('ativo',!!filtroBan);
+      if(window.render) render();
+    };
+  }
+
+  /* ---- consultado pela peneira que ja existe ---- */
+  window.mdFiltroExtra=function(c){
+    if(filtroBan){
+      var bate=gruposDe(c.nome).some(function(g){ return chaveGrupo(g,c.nome)===filtroBan; });
+      if(!bate) return false;
+    }
+    if(modoBusca==='efeito' && window.mdTermo){
+      var l=document.documentElement.getAttribute('data-lang-ativo')||'pt';
+      var ef=String(c['desc_'+l]||c.desc_pt||'').toLowerCase();
+      var nome=String(c.nome_pt||c.nome||'').toLowerCase();
+      /* no modo Efeito o nome continua valendo */
+      if(ef.indexOf(window.mdTermo)<0 && nome.indexOf(window.mdTermo)<0) return false;
+    }
+    return true;
+  };
+
+  window.mdModo=function(m){
+    modoBusca=m; window.mdModoEfeito=(m==='efeito');
+    document.getElementById('md-m-nome').classList.toggle('on',m==='nome');
+    document.getElementById('md-m-efeito').classList.toggle('on',m==='efeito');
+    var inp=document.getElementById('cat-search-input');
+    if(inp) inp.placeholder = m==='efeito'?T(TX.phEfeito):T(TX.phNome);
+    if(window.render) render();
+  };
+
+  /* ---- leitura do codigo de deck ---- */
+  function deB64url(t){
+    t=t.replace(/-/g,'+').replace(/_/g,'/');
+    while(t.length%4) t+='=';
+    var b=atob(t), a=new Uint8Array(b.length);
+    for(var i=0;i<b.length;i++) a[i]=b.charCodeAt(i);
+    return a;
+  }
+  function lerSeed(txt){
+    var t=(txt||'').trim();
+    if(t.indexOf('FL1-')!==0) throw new Error(T(TX.prefixo));
+    var a=deB64url(t.slice(4));
+    if(a.length<4||(a.length-2)%2) throw new Error(T(TX.truncado));
+    if(a[0]!==1) throw new Error(T(TX.versao));
+    var soma=a[0];
+    for(var i=1;i<a.length-1;i++) soma=(soma+a[i])&0xFF;
+    if(soma!==a[a.length-1]) throw new Error(T(TX.checksum));
+    var out=[];
+    for(var j=1;j<a.length-1;j+=2){
+      var id=(a[j]<<4)|(a[j+1]>>4), q=a[j+1]&0x0F, nome=POR_ID[id];
+      if(nome) for(var k=0;k<q;k++) out.push(nome);
+    }
+    return out;
+  }
+  window.mdCarregarCodigo=function(){
+    try{
+      var lista=lerSeed(document.getElementById('md-seed').value);
+      if(!lista.length) throw new Error(T(TX.vazio));
+      /* usa a validacao da propria pagina, para banlist e limite serem
+         exatamente os mesmos de quando se clica numa carta */
+      window.deckAtual=[];
+      var fora=0;
+      lista.forEach(function(n){
+        if(deckAtual.length>=40){ fora++; return; }
+        var lim=(window.limiteIndividual?limiteIndividual(n):3);
+        var jaTem=deckAtual.filter(function(x){return x===n}).length;
+        if(jaTem>=lim){ fora++; return; }
+        var cont={};
+        deckAtual.forEach(function(m2){ gruposDe(m2).forEach(function(g){
+          var k=chaveGrupo(g,m2); cont[k]=(cont[k]||0)+1; }); });
+        var barrou=gruposDe(n).some(function(g){
+          return (cont[chaveGrupo(g,n)]||0) >= (g.max_in_deck!==undefined?g.max_in_deck:3); });
+        if(barrou){ fora++; return; }
+        deckAtual.push(n);
+      });
+      if(window.renderDeck) renderDeck();
+      if(window.render) render();
+      if(window.atualizarContadorDeck) atualizarContadorDeck();
+      msg(fora
+        ? T(TX.parcial).replace('%n',deckAtual.length).replace('%f',fora)
+        : T(TX.carregado).replace('%n',deckAtual.length), fora?'err':'ok');
+    }catch(e){ msg(e.message,'err'); }
+  };
+
+  /* ---- carrega os ids e liga tudo ---- */
+  fetch('data/card_ids.json?t='+Date.now()).then(function(r){return r.json()})
+    .then(function(d){
+      IDS=d.ids||{};
+      Object.keys(IDS).forEach(function(n){ POR_ID[IDS[n]]=n; });
+    }).catch(function(){});
+
+  function tentarLigar(n){
+    if(window.deckRules && deckRules.cartas && Object.keys(deckRules.cartas).length){
+      montarFiltro(); return;
+    }
+    if(n<40) setTimeout(function(){ tentarLigar(n+1); },250);
+  }
+  document.addEventListener('deck-pronto',function(){ montarFiltro(); });
+  document.addEventListener('DOMContentLoaded',function(){ tentarLigar(0); });
+  tentarLigar(0);
+  new MutationObserver(function(){ montarFiltro(); mdModo(modoBusca); })
+    .observe(document.documentElement,{attributes:true,attributeFilter:['data-lang-ativo']});
 })();
 </script>
 </body>
