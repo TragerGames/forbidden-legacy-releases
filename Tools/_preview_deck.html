@@ -21,146 +21,144 @@ body{background:var(--dark); color:var(--body); font-family:'Inter',sans-serif;
   min-height:100vh; overflow-x:hidden; -webkit-font-smoothing:antialiased}
 body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
   background:radial-gradient(1200px 640px at 50% -10%, rgba(200,151,58,.10), transparent 62%)}
-.env{position:relative; z-index:1; max-width:1400px; margin:0 auto; padding:0 18px 60px}
-
-.topo{text-align:center; padding:44px 0 22px}
+.env{position:relative; z-index:1; max-width:1340px; margin:0 auto; padding:0 18px 50px}
+.topo{text-align:center; padding:40px 0 20px}
 .selo{display:inline-flex; gap:8px; font-size:10px; letter-spacing:3.4px; text-transform:uppercase;
   color:var(--gold); border:1px solid rgba(200,151,58,.3); border-radius:100px;
-  padding:6px 16px; margin-bottom:14px; background:rgba(200,151,58,.05)}
-h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(32px,5.5vw,56px);
+  padding:6px 16px; margin-bottom:13px; background:rgba(200,151,58,.05)}
+h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5vw,52px);
   line-height:1; letter-spacing:1.5px; color:var(--gold2); text-shadow:0 0 44px rgba(200,151,58,.26)}
-.sub{max-width:600px; margin:10px auto 0; font-size:13.5px; line-height:1.7; color:var(--muted)}
+.sub{max-width:600px; margin:10px auto 0; font-size:13px; line-height:1.7; color:var(--muted)}
 
-/* ── LAYOUT ── */
-.arena{display:grid; grid-template-columns:1fr 390px; gap:18px; align-items:start}
-@media(max-width:1080px){ .arena{grid-template-columns:1fr} }
+.arena{display:grid; grid-template-columns:1fr 400px; gap:16px; align-items:start}
+@media(max-width:1060px){ .arena{grid-template-columns:1fr} }
+.painel{background:var(--dark2); border:1px solid var(--border); border-radius:12px; padding:13px}
 
-/* ── CATALOGO ── */
-.painel{background:var(--dark2); border:1px solid var(--border); border-radius:12px; padding:14px}
+/* ── BUSCA E FILTROS ── */
 .busca{display:flex; align-items:center; gap:9px; background:var(--dark3); border:1px solid var(--border);
-  border-radius:8px; padding:9px 13px; margin-bottom:10px; transition:border-color .25s, box-shadow .25s}
+  border-radius:8px; padding:9px 12px; margin-bottom:9px; transition:border-color .25s, box-shadow .25s}
 .busca:focus-within{border-color:var(--gold); box-shadow:0 0 0 3px rgba(200,151,58,.1)}
 .busca input{flex:1; background:none; border:none; outline:none; color:var(--text);
   font-size:13.5px; font-family:inherit; min-width:0}
 .busca input::placeholder{color:#3d3320}
 .busca svg{width:15px;height:15px;color:var(--gold-dim);flex-shrink:0}
-.chips{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:11px}
-.chip{border:1px solid var(--border); background:var(--dark3); color:var(--muted); font-size:11px;
-  padding:5px 11px; border-radius:20px; cursor:pointer; transition:all .18s; font-family:inherit;
-  display:inline-flex; align-items:center; gap:5px; white-space:nowrap}
-.chip:hover{border-color:rgba(200,151,58,.35); color:var(--text); transform:translateY(-1px)}
-.chip img{width:14px;height:14px;object-fit:contain}
+.chips{display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px}
+.chip{border:1px solid var(--border); background:var(--dark3); color:var(--muted); font-size:10.5px;
+  padding:4px 10px; border-radius:20px; cursor:pointer; transition:all .18s; font-family:inherit;
+  white-space:nowrap}
+.chip:hover{border-color:rgba(200,151,58,.35); color:var(--text)}
 .chip.on{background:rgba(200,151,58,.14); border-color:var(--gold); color:var(--gold3)}
 .chip.on[data-r="N"]{border-color:var(--r-n);color:var(--r-n)}
 .chip.on[data-r="R"]{border-color:var(--r-r);color:var(--r-r)}
 .chip.on[data-r="SR"]{border-color:var(--r-sr);color:var(--r-sr)}
 .chip.on[data-r="UR"]{border-color:var(--r-ur);color:var(--r-ur)}
-.grade{display:grid; grid-template-columns:repeat(auto-fill,minmax(92px,1fr)); gap:12px 9px;
-  max-height:62vh; overflow-y:auto; padding:3px}
-.gc{position:relative; cursor:pointer; background:none; border:none; padding:0; font-family:inherit;
-  color:inherit; text-align:center;
-  opacity:0; transform:translateY(9px); animation:sobe .35s var(--suave) forwards;
-  animation-delay:var(--atraso,0s)}
-@keyframes sobe{to{opacity:1;transform:none}}
-.gc-img{position:relative; border-radius:6px; transition:transform .3s var(--mola), box-shadow .3s}
-.gc img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; display:block;
-  border-radius:6px; border:2px solid rgba(255,255,255,.07); background:#050408}
-.gc[data-r="N"] img{border-color:rgba(140,140,140,.4)}
-.gc[data-r="R"] img{border-color:rgba(136,170,221,.5)}
-.gc[data-r="SR"] img{border-color:rgba(187,136,238,.55)}
-.gc[data-r="UR"] img{border-color:rgba(232,184,64,.7)}
-.gc:hover .gc-img{transform:translateY(-5px) scale(1.04)}
-.gc[data-r="UR"]:hover .gc-img{box-shadow:0 10px 24px rgba(232,184,64,.3)}
-.gc:focus-visible{outline:2px solid var(--gold2); outline-offset:2px; border-radius:6px}
-.gc-nome{font-size:9.5px; color:var(--muted); margin-top:5px; line-height:1.25}
-/* quantas ja estao no deck */
-.gc-qtd{position:absolute; top:4px; right:4px; z-index:2; min-width:19px; height:19px;
-  border-radius:10px; background:var(--gold2); color:#120d04; font-size:10.5px; font-weight:700;
-  display:grid; place-items:center; padding:0 5px;
-  transform:scale(0); transition:transform .3s var(--mola)}
-.gc.tem .gc-qtd{transform:scale(1)}
-.gc.cheia{opacity:.42}
-.gc.cheia .gc-img{filter:grayscale(.55)}
-/* nao possuida */
-.gc.falta img{filter:grayscale(1) brightness(.5)}
-.gc-cadeado{position:absolute; inset:0; display:grid; place-items:center; z-index:2;
-  font-size:17px; opacity:.85; pointer-events:none}
+
+/* ── CATALOGO EM LISTA (como o editor do jogo) ── */
+.lista{display:flex; flex-direction:column; gap:3px; max-height:64vh; overflow-y:auto; padding-right:3px}
+.row{display:flex; align-items:center; gap:10px; padding:5px 9px; min-height:50px;
+  text-align:left;   /* <button> centraliza por padrao e jogava o nome pro meio */
+  border-radius:7px; background:var(--dark3); border:1px solid var(--border); cursor:pointer;
+  transition:border-color .18s, background .18s, transform .18s;
+  opacity:0; animation:entra .3s var(--suave) forwards; animation-delay:var(--atraso,0s)}
+@keyframes entra{to{opacity:1}}
+.row:hover{border-color:rgba(200,151,58,.4); background:rgba(200,151,58,.05); transform:translateX(2px)}
+.row:focus-visible{outline:2px solid var(--gold2); outline-offset:1px}
+.row.bloq{opacity:.4; cursor:not-allowed}
+.row.bloq:hover{transform:none; border-color:rgba(196,72,60,.4); background:rgba(196,72,60,.05)}
+.row img{width:26px; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:3px;
+  flex-shrink:0; border:1px solid var(--border)}
+.row-c{flex:1; min-width:0}
+.row-nome{font-size:12.5px; color:var(--text); overflow:hidden; text-overflow:ellipsis;
+  white-space:nowrap; line-height:1.3}
+.row[data-r="UR"] .row-nome{color:var(--r-ur)}
+.row[data-r="SR"] .row-nome{color:var(--r-sr)}
+.row[data-r="R"] .row-nome{color:var(--r-r)}
+.row-sub{display:flex; gap:5px; align-items:center; margin-top:2px; flex-wrap:wrap}
+.tagx{font-size:9px; padding:1px 6px; border-radius:3px; border:1px solid; white-space:nowrap}
+.tagx.rar{border-color:currentColor; opacity:.85}
+.tagx.grupo{border-color:currentColor}
+.tagx.stat{border-color:var(--border); color:var(--muted)}
+.row-q{flex-shrink:0; min-width:36px; text-align:right; font-family:'Bebas Neue',sans-serif;
+  font-size:16px; color:var(--gold3); font-variant-numeric:tabular-nums}
+.row-q small{font-size:11px; color:var(--muted)}
+.row-q.cheio{color:var(--erro)}
 
 /* ── DECK ── */
-.deck{position:sticky; top:14px}
-.deck-topo{display:flex; align-items:center; gap:12px; margin-bottom:12px}
-.deck-cont{font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1; color:var(--gold3);
+.deck{position:sticky; top:13px}
+.deck-topo{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.deck-cont{font-family:'Bebas Neue',sans-serif; font-size:32px; line-height:1; color:var(--gold3);
   font-variant-numeric:tabular-nums}
-.deck-cont small{font-size:16px; color:var(--muted)}
+.deck-cont small{font-size:15px; color:var(--muted)}
 .deck-barra{flex:1; height:5px; border-radius:3px; background:var(--dark3); overflow:hidden}
-.deck-fill{height:100%; width:0%; border-radius:3px; transition:width .45s var(--suave),
-  background .3s; background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.deck-fill{height:100%; width:0%; border-radius:3px;
+  transition:width .45s var(--suave), background .3s;
+  background:linear-gradient(90deg,var(--gold),var(--gold2))}
 .deck-fill.cheio{background:linear-gradient(90deg,#2f8f52,var(--ok))}
-.deck-lista{display:flex; flex-direction:column; gap:4px; max-height:44vh; overflow-y:auto;
-  margin-bottom:12px; padding-right:3px}
-.dl{display:flex; align-items:center; gap:9px; padding:5px 8px; border-radius:6px;
+.comp{display:flex; height:5px; border-radius:3px; overflow:hidden; margin-bottom:5px; background:var(--dark3)}
+.comp span{transition:width .4s var(--suave)}
+.comp-leg{display:flex; gap:10px; flex-wrap:wrap; font-size:9.5px; color:var(--muted); margin-bottom:10px}
+.comp-leg i{display:inline-block; width:7px; height:7px; border-radius:2px; margin-right:4px}
+.deck-lista{display:flex; flex-direction:column; gap:3px; max-height:40vh; overflow-y:auto;
+  margin-bottom:11px; padding-right:3px}
+.dl{display:flex; align-items:center; gap:8px; padding:4px 8px; border-radius:6px;
   background:var(--dark3); border:1px solid var(--border); cursor:pointer;
-  transition:border-color .2s, background .2s; animation:pop .28s var(--mola)}
-@keyframes pop{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+  transition:border-color .18s, background .18s; animation:pop .26s var(--mola)}
+@keyframes pop{from{opacity:0;transform:translateX(-7px)}to{opacity:1;transform:none}}
 .dl:hover{border-color:rgba(196,72,60,.5); background:rgba(196,72,60,.06)}
-.dl img{width:26px; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:3px;
+.dl img{width:22px; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:3px;
   flex-shrink:0; border:1px solid var(--border)}
 .dl-nome{flex:1; min-width:0; font-size:11.5px; color:var(--text); overflow:hidden;
   text-overflow:ellipsis; white-space:nowrap}
 .dl-q{font-size:11px; font-weight:700; color:var(--gold3); font-variant-numeric:tabular-nums}
-.dl-x{opacity:0; color:var(--erro); font-size:13px; transition:opacity .2s}
+.dl-x{opacity:0; color:var(--erro); font-size:12px; transition:opacity .2s}
 .dl:hover .dl-x{opacity:1}
-.dl.limite{border-color:rgba(196,72,60,.45)}
-.deck-vazio{text-align:center; padding:26px 12px; color:var(--muted); font-size:12.5px; line-height:1.7}
-/* barrinhas de composicao */
-.comp{display:flex; height:6px; border-radius:3px; overflow:hidden; margin-bottom:6px; background:var(--dark3)}
-.comp span{transition:width .4s var(--suave)}
-.comp-leg{display:flex; gap:11px; flex-wrap:wrap; font-size:10px; color:var(--muted); margin-bottom:12px}
-.comp-leg i{display:inline-block; width:7px; height:7px; border-radius:2px; margin-right:4px}
+.deck-vazio{text-align:center; padding:24px 12px; color:var(--muted); font-size:12px; line-height:1.7}
+/* grupos de banlist em uso */
+.grupos{display:flex; flex-direction:column; gap:4px; margin-bottom:10px}
+.gp{display:flex; align-items:center; gap:8px; font-size:10.5px; padding:4px 8px;
+  border-radius:5px; background:var(--dark3); border:1px solid var(--border)}
+.gp-b{flex:1; height:4px; border-radius:2px; background:rgba(255,255,255,.06); overflow:hidden}
+.gp-f{height:100%; border-radius:2px; transition:width .4s var(--suave)}
+.gp-n{font-variant-numeric:tabular-nums; font-size:10px}
+.gp.cheio{border-color:rgba(196,72,60,.45)}
 
-.btn{font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1.6px; padding:11px 20px;
+.btn{font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1.6px; padding:11px 18px;
   border-radius:8px; border:none; cursor:pointer; width:100%;
   background:linear-gradient(100deg,var(--gold3),var(--gold)); color:#120d04;
-  transition:transform .22s var(--mola), box-shadow .3s; position:relative; overflow:hidden}
+  transition:transform .22s var(--mola), box-shadow .3s}
 .btn:hover:not(:disabled){transform:translateY(-2px); box-shadow:0 10px 26px rgba(200,151,58,.3)}
 .btn:disabled{background:var(--dark3); color:#4a3f28; border:1px solid var(--border); cursor:not-allowed}
 .btn.fantasma{background:transparent; border:1px solid var(--gold-dim); color:var(--gold2); box-shadow:none}
 .btn.fantasma:hover{background:rgba(200,151,58,.08); border-color:var(--gold); box-shadow:none}
-.btn-linha{display:flex; gap:8px; margin-top:8px}
+.btn-linha{display:flex; gap:7px; margin-top:7px}
 
-/* ── SEED ── */
-.seed-box{margin-top:12px; padding:13px; border-radius:9px; background:rgba(200,151,58,.05);
+.seed-box{margin-top:11px; padding:12px; border-radius:9px; background:rgba(200,151,58,.05);
   border:1px solid rgba(200,151,58,.2); max-height:0; overflow:hidden; opacity:0;
   transition:max-height .45s var(--suave), opacity .3s, margin .45s, padding .45s}
-.seed-box.on{max-height:300px; opacity:1}
+.seed-box.on{max-height:340px; opacity:1}
 .seed-rot{font-size:9.5px; letter-spacing:1.7px; text-transform:uppercase; color:var(--gold);
-  margin-bottom:8px; font-weight:600}
-.seed-campo{display:flex; gap:7px}
+  margin-bottom:7px; font-weight:600}
+.seed-campo{display:flex; gap:6px}
 .seed-campo input{flex:1; min-width:0; background:var(--dark3); border:1px solid var(--border);
-  border-radius:6px; padding:9px 11px; color:var(--gold3); font-family:ui-monospace,Menlo,monospace;
-  font-size:11.5px; letter-spacing:.4px; outline:none}
+  border-radius:6px; padding:9px 10px; color:var(--gold3);
+  font-family:ui-monospace,Menlo,monospace; font-size:11px; outline:none}
 .seed-campo input:focus{border-color:var(--gold)}
-.seed-campo button{flex-shrink:0; padding:9px 14px; border-radius:6px; border:1px solid var(--gold-dim);
+.seed-campo button{flex-shrink:0; padding:9px 13px; border-radius:6px; border:1px solid var(--gold-dim);
   background:rgba(200,151,58,.1); color:var(--gold2); cursor:pointer; font-family:inherit;
   font-size:11.5px; transition:all .2s}
 .seed-campo button:hover{background:rgba(200,151,58,.2); border-color:var(--gold)}
-.seed-nota{font-size:11px; color:var(--muted); line-height:1.6; margin-top:8px}
+.seed-nota{font-size:10.5px; color:var(--muted); line-height:1.6; margin-top:7px}
 .seed-nota b{color:var(--gold3)}
-.msg{font-size:11.5px; margin-top:8px; padding:8px 11px; border-radius:6px; line-height:1.55; display:none}
+.msg{font-size:11.5px; margin-top:8px; padding:8px 10px; border-radius:6px; line-height:1.55; display:none}
 .msg.on{display:block; animation:pop .3s var(--mola)}
 .msg.ok{background:rgba(59,165,92,.1); border:1px solid rgba(59,165,92,.3); color:#8fd6a8}
 .msg.err{background:rgba(196,72,60,.1); border:1px solid rgba(196,72,60,.3); color:#e0a49c}
-
-.aviso-banlist{display:flex; gap:9px; padding:9px 11px; border-radius:7px; font-size:11.5px;
-  line-height:1.55; background:rgba(196,72,60,.08); border:1px solid rgba(196,72,60,.28);
-  color:#e0a49c; margin-bottom:10px; animation:pop .3s var(--mola)}
-
-.nota{max-width:1400px; margin:30px auto 0; padding:14px 18px; font-size:11.5px; color:var(--muted);
+.nota{max-width:1340px; margin:26px auto 0; padding:13px 18px; font-size:11.5px; color:var(--muted);
   text-align:center; border-top:1px solid var(--border); line-height:1.7}
 .nota b{color:var(--gold2)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-  .gc{opacity:1;transform:none}
+  .row{opacity:1}
 }
 </style>
 </head>
@@ -169,21 +167,19 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(32px,5.
   <div class="topo">
     <div class="selo">Modelo · Montar Deck</div>
     <h1>Montar Deck</h1>
-    <p class="sub">Monte seu deck aqui e leve para dentro do jogo com um <strong style="color:var(--gold3)">código de deck</strong>. As mesmas regras de banlist do jogo valem aqui.</p>
+    <p class="sub">Mesmas regras de banlist do jogo. Ao terminar, gere um <strong style="color:var(--gold3)">código de deck</strong> e carregue no Editor de Deck.</p>
   </div>
 
   <div class="arena">
-    <!-- CATALOGO -->
     <div class="painel">
       <div class="busca">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         <input id="q" type="text" placeholder="Buscar carta pelo nome…" autocomplete="off">
       </div>
       <div class="chips" id="chips"></div>
-      <div class="grade" id="grade"></div>
+      <div class="lista" id="cat"></div>
     </div>
 
-    <!-- DECK -->
     <div class="painel deck">
       <div class="deck-topo">
         <div class="deck-cont"><span id="n">0</span><small>/40</small></div>
@@ -191,30 +187,28 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(32px,5.
       </div>
       <div class="comp" id="comp"></div>
       <div class="comp-leg" id="comp-leg"></div>
-      <div id="avisos"></div>
-      <div class="deck-lista" id="lista"></div>
-
+      <div class="grupos" id="grupos"></div>
+      <div class="deck-lista" id="dlista"></div>
       <button class="btn" id="gerar" disabled>Gerar código do deck</button>
       <div class="btn-linha">
         <button class="btn fantasma" id="importar">Carregar código</button>
         <button class="btn fantasma" id="limpar">Limpar</button>
       </div>
-
       <div class="seed-box" id="seed-box">
         <div class="seed-rot" id="seed-rot">Seu código de deck</div>
         <div class="seed-campo">
           <input id="seed" type="text" spellcheck="false" placeholder="FL1-…">
-          <button id="acao-seed">Copiar</button>
+          <button id="acao">Copiar</button>
         </div>
         <div class="msg" id="msg"></div>
-        <p class="seed-nota">No jogo, abra o <b>Editor de Deck</b> e use <b>Carregar código</b>. Só entram as cartas que você já possui — o resto fica de fora e o jogo avisa quais.</p>
+        <p class="seed-nota">No jogo, abra o <b>Editor de Deck</b> e use <b>Carregar código</b>. Lá o jogo entra com o que você <b>possui</b> — o site não tem como saber isso, e o jogo avisa o que faltou.</p>
       </div>
     </div>
   </div>
 </div>
 
-<p class="nota"><b>Modelo para aprovação</b> — 1.191 cartas reais, banlist real de <code>deckbuilder.json</code> e o código
-de deck gerado com os IDs estáveis de <code>card_ids.json</code>. Ao aplicar, tudo entra nos quatro idiomas.</p>
+<p class="nota"><b>Modelo para aprovação</b> — 1.191 cartas reais, banlist real de <code>deckbuilder.json</code> aplicada
+com a mesma regra do jogo, e código de deck com os IDs de <code>card_ids.json</code>. Ao aplicar, tudo entra nos quatro idiomas.</p>
 
 <script>
 let CARTAS=[], IDS={}, POR_ID={}, BAN={limite_padrao:3,grupos:{},cartas:{}};
@@ -229,92 +223,118 @@ Promise.all([
   CARTAS=Array.isArray(cat)?cat:(cat.cartas||Object.values(cat));
   BAN=ban; IDS=ids.ids||{};
   Object.keys(IDS).forEach(n=>POR_ID[IDS[n]]=n);
-  simularPosse();          /* antes do render: senao tudo sai como "nao possui" */
   chips(); render(); sincDeck();
 });
 
-/* ── BANLIST: mesma regra do jogo ─────────────────────────────────────
-   limite da carta = o menor entre o limite proprio dela e o max_in_deck
-   de cada grupo a que pertence; na falta dos dois, o limite padrao. */
-function limiteDe(nome){
-  const r=BAN.cartas[nome];
-  let lim=BAN.limite_padrao||3;
-  if(r){
-    if(typeof r.limite==='number') lim=Math.min(lim,r.limite);
-    (r.grupos||[]).forEach(g=>{
-      const gg=BAN.grupos[g];
-      if(gg&&typeof gg.max_in_deck==='number') lim=Math.min(lim,gg.max_in_deck);
-    });
-  }
-  return lim;
+/* ══ BANLIST — porte fiel de Scripts/deck_banlist_rules.gd ════════════
+   Duas regras distintas, e eu tinha confundido as duas:
+     1. limite INDIVIDUAL: quantas copias da MESMA carta (padrao 3, ou o
+        `limite` proprio da carta);
+     2. max_in_deck do GRUPO: quantas cartas DAQUELE GRUPO cabem no deck
+        inteiro — NAO e limite por copia.
+   E a contagem do grupo e por CATEGORIA, seguindo _chave_contagem_grupo:
+     scope "monster"                        -> <id>|monster
+     scope spell/magic/trap/equip/support   -> <id>|support
+     qualquer outro (ex.: "effect")         -> <id>|<categoria da carta>  */
+const CAT_SUPORTE=['spell','magic','trap','equip','support','backrow'];
+function catDaCarta(nome){
+  const c=CARTAS.find(x=>x.nome===nome);
+  return (c && c.card_type==='Monster') ? 'monster' : 'support';
 }
 function gruposDe(nome){
   const r=BAN.cartas[nome];
-  return (r&&r.grupos||[]).map(g=>BAN.grupos[g]).filter(Boolean);
+  if(!r||!r.grupos) return [];
+  return r.grupos.map(id=>{const g=BAN.grupos[id]; return g?Object.assign({id:id},g):null}).filter(Boolean);
 }
-const qtdNoDeck=n=>deck.filter(x=>x===n).length;
-
-/* posse simulada: no site nao sabemos o que o jogador tem, entao o modelo
-   mostra o comportamento com uma amostra — no jogo isto vem de verdade */
-const POSSUI=new Set();
-function simularPosse(){
-  CARTAS.forEach((c,i)=>{ if(i%7!==0) POSSUI.add(c.nome); });
+function chaveGrupo(g,nome){
+  const s=String(g.scope||'effect').toLowerCase();
+  if(s==='monster') return g.id+'|monster';
+  if(CAT_SUPORTE.indexOf(s)>=0) return g.id+'|support';
+  return g.id+'|'+catDaCarta(nome);
+}
+function limiteIndividual(nome){
+  const r=BAN.cartas[nome];
+  return (r&&typeof r.limite==='number') ? r.limite : (BAN.limite_padrao||3);
+}
+function contagemGrupos(lista){
+  const c={};
+  lista.forEach(n=>gruposDe(n).forEach(g=>{
+    const k=chaveGrupo(g,n); c[k]=(c[k]||0)+1;
+  }));
+  return c;
+}
+function validarAdicao(nome){
+  const lim=limiteIndividual(nome);
+  if(deck.filter(x=>x===nome).length>=lim)
+    return {ok:false, tipo:'carta', msg:`Limite de <b>${lim}</b> cópia(s) atingido para <b>${nome}</b>.`};
+  const cont=contagemGrupos(deck);
+  for(const g of gruposDe(nome)){
+    const k=chaveGrupo(g,nome), max=(typeof g.max_in_deck==='number')?g.max_in_deck:3;
+    if((cont[k]||0)>=max){
+      const catTxt = k.endsWith('|monster') ? 'monstros' : 'suporte';
+      return {ok:false, tipo:'grupo', grupo:g,
+        msg:`O grupo <b>${g.label||g.id}</b> permite no máximo <b>${max}</b> cartas de ${catTxt} no deck.`};
+    }
+  }
+  return {ok:true};
 }
 
 function chips(){
   const el=document.getElementById('chips'); el.innerHTML='';
-  const add=(campo,v,rot,extra)=>{
+  const add=(campo,v,rot)=>{
     const b=document.createElement('button');
     b.className='chip'+(filtro[campo]===v?' on':'');
     if(campo==='rar'&&v) b.dataset.r=v;
-    b.innerHTML=(extra||'')+rot;
+    b.textContent=rot;
     b.onclick=()=>{ filtro[campo]=filtro[campo]===v?'':v; chips(); render(); };
     el.appendChild(b);
   };
-  add('rar','','Todas');
-  ['UR','SR','R','N'].forEach(r=>add('rar',r,r));
+  add('rar','','Todas'); ['UR','SR','R','N'].forEach(r=>add('rar',r,r));
   [['Monster','Monstro'],['Spell','Magia'],['Trap','Armadilha'],['Equip','Equip'],['Field','Campo']]
     .forEach(([v,l])=>add('cat',v,l));
 }
 
 function render(){
-  const g=document.getElementById('grade');
+  const el=document.getElementById('cat');
   const lista=CARTAS.filter(c=>{
     if(busca && !(c.nome_pt||c.nome||'').toLowerCase().includes(busca)
              && !(c.nome||'').toLowerCase().includes(busca)) return false;
     if(filtro.rar && (c.raridade||'N').toUpperCase()!==filtro.rar) return false;
     if(filtro.cat && c.card_type!==filtro.cat) return false;
     return true;
-  }).slice(0,150);
-  g.innerHTML='';
+  }).slice(0,120);
+  el.innerHTML='';
+  const CORES={N:'var(--r-n)',R:'var(--r-r)',SR:'var(--r-sr)',UR:'var(--r-ur)'};
   lista.forEach((c,i)=>{
-    const q=qtdNoDeck(c.nome), lim=limiteDe(c.nome), tem=POSSUI.has(c.nome);
+    const q=deck.filter(x=>x===c.nome).length, lim=limiteIndividual(c.nome);
+    const v=validarAdicao(c.nome), bloq=!v.ok||deck.length>=MAX;
+    const r=(c.raridade||'N').toUpperCase();
+    const gs=gruposDe(c.nome);
     const b=document.createElement('button');
-    b.type='button';
-    b.className='gc'+(q?' tem':'')+(q>=lim||deck.length>=MAX?' cheia':'')+(tem?'':' falta');
-    b.dataset.r=(c.raridade||'N').toUpperCase();
-    b.style.setProperty('--atraso',Math.min(i,20)*0.016+'s');
-    b.title=(c.nome_pt||c.nome)+(tem?'':' — você ainda não tem esta carta')+' · limite '+lim;
-    b.innerHTML=`<div class="gc-img">
-        <span class="gc-qtd">${q}</span>
-        ${tem?'':'<span class="gc-cadeado">🔒</span>'}
-        <img src="img/cartas/${c.slug}.webp" alt="" loading="lazy"></div>
-      <div class="gc-nome">${c.nome_pt||c.nome}</div>`;
+    b.type='button'; b.className='row'+(bloq?' bloq':''); b.dataset.r=r;
+    b.style.setProperty('--atraso',Math.min(i,18)*0.014+'s');
+    b.title=bloq&&!v.ok ? v.msg.replace(/<\/?b>/g,'') : (c.nome_pt||c.nome);
+    b.innerHTML=`<img src="img/cartas/${c.slug}.webp" alt="" loading="lazy">
+      <span class="row-c">
+        <span class="row-nome">${c.nome_pt||c.nome}</span>
+        <span class="row-sub">
+          <span class="tagx rar" style="color:${CORES[r]}">${r}</span>
+          ${c.card_type==='Monster'?`<span class="tagx stat">${c.atk}/${c.def}</span>`:
+            `<span class="tagx stat">${c.card_type}</span>`}
+          ${gs.map(g=>`<span class="tagx grupo" style="color:${g.cor||'var(--gold)'}">${g.label||g.id} ${g.max_in_deck}</span>`).join('')}
+        </span>
+      </span>
+      <span class="row-q${q>=lim?' cheio':''}">${q}<small>/${lim}</small></span>`;
     b.onclick=()=>adicionar(c);
-    g.appendChild(b);
+    el.appendChild(b);
   });
+  if(!lista.length) el.innerHTML='<div class="deck-vazio">Nenhuma carta com esses filtros.</div>';
 }
 
 function adicionar(c){
-  if(deck.length>=MAX) return aviso('Deck cheio: 40 cartas.','err');
-  const lim=limiteDe(c.nome);
-  if(qtdNoDeck(c.nome)>=lim){
-    const gs=gruposDe(c.nome);
-    const porGrupo=gs.find(g=>g.max_in_deck===lim);
-    return aviso(porGrupo
-      ? `Limite de <b>${lim}</b> por causa do grupo <b>${porGrupo.label}</b>.`
-      : `Esta carta tem limite de <b>${lim}</b> no deck.`,'err');
-  }
+  if(deck.length>=MAX) return aviso('O deck já tem 40 cartas.','err');
+  const v=validarAdicao(c.nome);
+  if(!v.ok) return aviso(v.msg,'err');
   deck.push(c.nome); sincDeck(); render();
 }
 function remover(nome){
@@ -333,72 +353,70 @@ function sincDeck(){
   const f=document.getElementById('fill');
   f.style.width=(deck.length/MAX*100)+'%';
   f.classList.toggle('cheio',deck.length===MAX);
-  document.getElementById('gerar').disabled=deck.length===0;
+  document.getElementById('gerar').disabled=!deck.length;
 
-  /* composicao */
   const cats={Monster:0,Spell:0,Trap:0,Equip:0,Field:0};
   deck.forEach(n=>{const c=CARTAS.find(x=>x.nome===n); if(c&&cats[c.card_type]!==undefined) cats[c.card_type]++});
   const cores={Monster:'#c8973a',Spell:'#4a9fd8',Trap:'#b06cc0',Equip:'#6cba9a',Field:'#d88a4a'};
   const rot={Monster:'Monstro',Spell:'Magia',Trap:'Armadilha',Equip:'Equip',Field:'Campo'};
   document.getElementById('comp').innerHTML=Object.keys(cats).map(k=>
     cats[k]?`<span style="width:${cats[k]/Math.max(1,deck.length)*100}%;background:${cores[k]}"></span>`:'').join('');
-  document.getElementById('comp-leg').innerHTML=Object.keys(cats).filter(k=>cats[k]).map(k=>
-    `<span><i style="background:${cores[k]}"></i>${rot[k]} ${cats[k]}</span>`).join('');
+  document.getElementById('comp-leg').innerHTML=Object.keys(cats).filter(k=>cats[k])
+    .map(k=>`<span><i style="background:${cores[k]}"></i>${rot[k]} ${cats[k]}</span>`).join('');
 
-  /* lista agrupada */
-  const cont={}; deck.forEach(n=>cont[n]=(cont[n]||0)+1);
-  const L=document.getElementById('lista');
+  /* grupos de banlist EM USO, com o quanto ja foi gasto de cada teto */
+  const cont=contagemGrupos(deck), G=document.getElementById('grupos');
+  const chaves=Object.keys(cont).sort();
+  G.innerHTML=chaves.map(k=>{
+    const [gid,categoria]=k.split('|');
+    const g=BAN.grupos[gid]; if(!g) return '';
+    const max=(typeof g.max_in_deck==='number')?g.max_in_deck:3, usado=cont[k];
+    const cor=g.cor||'var(--gold)';
+    return `<div class="gp${usado>=max?' cheio':''}">
+      <span style="color:${cor};font-size:10px">${g.label||gid}</span>
+      <span class="gp-b"><span class="gp-f" style="width:${Math.min(100,usado/max*100)}%;background:${cor}"></span></span>
+      <span class="gp-n" style="color:${usado>=max?'var(--erro)':'var(--muted)'}">${usado}/${max}</span></div>`;
+  }).join('');
+
+  const c2={}; deck.forEach(n=>c2[n]=(c2[n]||0)+1);
+  const L=document.getElementById('dlista');
   if(!deck.length){
-    L.innerHTML='<div class="deck-vazio">Clique nas cartas ao lado para montar seu deck.<br>São 40 cartas, respeitando a banlist do jogo.</div>';
+    L.innerHTML='<div class="deck-vazio">Clique nas cartas ao lado para montar seu deck.<br>São 40 cartas, com a banlist do jogo valendo aqui.</div>';
   } else {
-    L.innerHTML=Object.keys(cont).sort().map(n=>{
+    L.innerHTML=Object.keys(c2).sort().map(n=>{
       const c=CARTAS.find(x=>x.nome===n)||{};
-      const lim=limiteDe(n);
-      return `<div class="dl${cont[n]>=lim?' limite':''}" onclick="remover('${n.replace(/'/g,"\\'")}')" title="Clique para remover">
+      return `<div class="dl" onclick="remover(${JSON.stringify(n).replace(/"/g,'&quot;')})" title="Clique para remover">
         <img src="img/cartas/${c.slug}.webp" alt="" loading="lazy">
         <span class="dl-nome">${c.nome_pt||n}</span>
-        <span class="dl-q">${cont[n]}${cont[n]>=lim?'/'+lim:''}</span>
-        <span class="dl-x">✕</span></div>`;
+        <span class="dl-q">${c2[n]}</span><span class="dl-x">✕</span></div>`;
     }).join('');
   }
-  /* avisos de banlist */
-  const av=document.getElementById('avisos'); av.innerHTML='';
-  const estouro=Object.keys(cont).filter(n=>cont[n]>limiteDe(n));
-  if(estouro.length) av.innerHTML=`<div class="aviso-banlist">⚠ <div><b>${estouro.length}</b> carta(s) acima do limite da banlist: ${estouro.slice(0,3).join(', ')}${estouro.length>3?'…':''}</div></div>`;
 }
 
 /* ══ CODIGO DE DECK ═══════════════════════════════════════════════════
-   FL1-<base64url>. Payload: versao(1B) + entradas(2B cada) + soma(1B).
-   Cada entrada = 12 bits de id + 4 bits de quantidade, o que cobre 4095
-   cartas e 15 copias com folga. Os ids vem de card_ids.json, que e
-   APPEND-ONLY: uma carta nunca troca de id, entao um codigo gerado hoje
-   continua valendo depois de qualquer atualizacao de conteudo. */
-function b64url(bytes){
-  let s=btoa(String.fromCharCode.apply(null,bytes));
-  return s.replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
-}
+   FL1-<base64url>: versao(1B) + entradas de 2B (12 bits de id + 4 de
+   quantidade) + checksum. Os ids vem de card_ids.json, APPEND-ONLY, o
+   que mantem um codigo valido depois de qualquer atualizacao. */
+const b64url=b=>btoa(String.fromCharCode.apply(null,b)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
 function deB64url(s){
-  s=s.replace(/-/g,'+').replace(/_/g,'/');
-  while(s.length%4) s+='=';
+  s=s.replace(/-/g,'+').replace(/_/g,'/'); while(s.length%4) s+='=';
   const b=atob(s), a=new Uint8Array(b.length);
   for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i);
   return a;
 }
 function gerarSeed(){
-  const cont={}; deck.forEach(n=>cont[n]=(cont[n]||0)+1);
-  const bytes=[1];
-  let soma=1;
-  Object.keys(cont).forEach(n=>{
+  const c={}; deck.forEach(n=>c[n]=(c[n]||0)+1);
+  const bytes=[1]; let soma=1;
+  Object.keys(c).forEach(n=>{
     const id=IDS[n]; if(!id) return;
-    const q=Math.min(15,cont[n]);
-    const b1=(id>>4)&0xFF, b2=((id&0x0F)<<4)|q;
+    const q=Math.min(15,c[n]), b1=(id>>4)&0xFF, b2=((id&0x0F)<<4)|q;
     bytes.push(b1,b2); soma=(soma+b1+b2)&0xFF;
   });
   bytes.push(soma);
   return 'FL1-'+b64url(bytes);
 }
-function lerSeed(txt){
-  const t=(txt||'').trim();
+function lerSeed(t){
+  t=(t||'').trim();
   if(t.indexOf('FL1-')!==0) throw new Error('Código inválido: falta o prefixo FL1-.');
   const a=deB64url(t.slice(4));
   if(a.length<4||(a.length-2)%2) throw new Error('Código incompleto ou truncado.');
@@ -408,8 +426,7 @@ function lerSeed(txt){
   if(soma!==a[a.length-1]) throw new Error('Código corrompido — confira se copiou inteiro.');
   const out=[];
   for(let i=1;i<a.length-1;i+=2){
-    const id=(a[i]<<4)|(a[i+1]>>4), q=a[i+1]&0x0F;
-    const nome=POR_ID[id];
+    const id=(a[i]<<4)|(a[i+1]>>4), q=a[i+1]&0x0F, nome=POR_ID[id];
     if(nome) for(let k=0;k<q;k++) out.push(nome);
   }
   return out;
@@ -419,19 +436,19 @@ document.getElementById('gerar').onclick=()=>{
   modo='gerar';
   document.getElementById('seed-rot').textContent='Seu código de deck';
   document.getElementById('seed').value=gerarSeed();
-  document.getElementById('acao-seed').textContent='Copiar';
+  document.getElementById('acao').textContent='Copiar';
   document.getElementById('seed-box').classList.add('on');
-  aviso(`Código de <b>${deck.length}</b> cartas gerado. Cole no Editor de Deck do jogo.`,'ok');
+  aviso(`Código de <b>${deck.length}</b> cartas gerado.`,'ok');
 };
 document.getElementById('importar').onclick=()=>{
   modo='ler';
   document.getElementById('seed-rot').textContent='Cole um código de deck';
   document.getElementById('seed').value='';
-  document.getElementById('acao-seed').textContent='Carregar';
+  document.getElementById('acao').textContent='Carregar';
   document.getElementById('seed-box').classList.add('on');
   document.getElementById('seed').focus();
 };
-document.getElementById('acao-seed').onclick=async()=>{
+document.getElementById('acao').onclick=async()=>{
   const campo=document.getElementById('seed');
   if(modo==='gerar'){
     try{ await navigator.clipboard.writeText(campo.value); aviso('Código copiado.','ok'); }
@@ -441,16 +458,15 @@ document.getElementById('acao-seed').onclick=async()=>{
   try{
     const cartas=lerSeed(campo.value);
     if(!cartas.length) throw new Error('O código não trouxe nenhuma carta conhecida.');
-    /* aplica respeitando banlist e o limite de 40 */
     deck=[]; const fora=[];
     cartas.forEach(n=>{
       if(deck.length>=MAX) return fora.push(n);
-      if(qtdNoDeck(n)>=limiteDe(n)) return fora.push(n);
+      if(!validarAdicao(n).ok) return fora.push(n);
       deck.push(n);
     });
     sincDeck(); render();
     aviso(fora.length
-      ? `Carregadas <b>${deck.length}</b> cartas. <b>${fora.length}</b> ficaram de fora por limite de banlist ou pelo teto de 40.`
+      ? `Carregadas <b>${deck.length}</b> cartas. <b>${fora.length}</b> ficaram de fora pela banlist ou pelo teto de 40.`
       : `Deck de <b>${deck.length}</b> cartas carregado.`, fora.length?'err':'ok');
   }catch(e){ aviso(e.message,'err'); }
 };
