@@ -771,6 +771,87 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
 }
 ::-webkit-scrollbar-corner { background: transparent; }
+
+/* ═══ BARRA DE SEÇÕES — antes quase invisivel ════════════════════════
+   Era so um grupo de botoes de texto solto: nada dizia que ali se troca
+   de conteudo. Ganha painel, rotulo e estado ativo com peso. */
+.indice{
+  position:relative; display:flex; flex-wrap:wrap; justify-content:center;
+  gap:4px; padding:7px; margin:26px auto 34px; max-width:920px;
+  background:linear-gradient(180deg, rgba(200,151,58,.07), rgba(13,11,14,.9));
+  border:1px solid rgba(200,151,58,.28); border-radius:12px;
+  box-shadow:0 6px 24px rgba(0,0,0,.4), inset 0 1px 0 rgba(200,151,58,.12);
+}
+.indice::before{
+  content:attr(data-rotulo);
+  position:absolute; top:-8px; left:50%; transform:translateX(-50%);
+  font-size:8.5px; letter-spacing:2.6px; text-transform:uppercase;
+  color:var(--gold); background:var(--dark); padding:0 10px; white-space:nowrap;
+}
+.indice button{
+  position:relative; background:transparent; border:1px solid transparent;
+  color:var(--text-muted); font-family:inherit; font-size:11.5px;
+  letter-spacing:1.4px; text-transform:uppercase; padding:9px 16px;
+  border-radius:8px; cursor:pointer;
+  transition:color .2s, background .2s, border-color .2s;
+}
+.indice button:hover{color:var(--gold-light); background:rgba(200,151,58,.08)}
+.indice button.aqui{
+  color:#120d04; font-weight:700;
+  background:linear-gradient(160deg,var(--gold-light),var(--gold));
+  border-color:var(--gold-light);
+  box-shadow:0 3px 14px rgba(200,151,58,.34);
+}
+.indice button:focus-visible{outline:2px solid var(--gold-light); outline-offset:2px}
+@media(max-width:640px){
+  .indice{gap:3px; padding:6px}
+  .indice button{font-size:10.5px; padding:8px 11px; letter-spacing:1px}
+}
+
+/* ═══ INFO DA CARTA NO DECK DO NPC ═══════════════════════════════════ */
+.deck-carta .info-btn{
+  position:absolute; top:4px; left:4px; z-index:3;
+  width:20px; height:20px; border-radius:50%;
+  background:rgba(6,3,10,.88); border:1px solid var(--gold-dim);
+  color:var(--gold-light); font-size:11px; font-weight:700; font-style:italic;
+  font-family:Georgia,serif; cursor:pointer; display:grid; place-items:center;
+  opacity:.72; transition:opacity .2s, background .2s, border-color .2s;
+}
+.deck-carta:hover .info-btn, .deck-carta .info-btn:focus-visible{opacity:1}
+.deck-carta .info-btn:hover{background:var(--gold); color:#120d04; border-color:var(--gold-light)}
+@media(hover:none){ .deck-carta .info-btn{opacity:1} }
+
+.carta-info{
+  position:fixed; inset:0; z-index:9100; display:none;
+  align-items:center; justify-content:center; padding:18px;
+  background:rgba(4,2,8,.88); backdrop-filter:blur(6px);
+}
+.carta-info.aberto{display:flex}
+.carta-info-cx{
+  width:100%; max-width:520px; background:linear-gradient(178deg,#120e12,#0d0b0e 60%);
+  border:1px solid var(--gold-dim); border-radius:12px; padding:20px;
+  display:grid; grid-template-columns:150px 1fr; gap:18px; position:relative;
+  animation:infoEntra .3s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes infoEntra{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:560px){ .carta-info-cx{grid-template-columns:1fr}
+  .carta-info-arte{max-width:150px;margin:0 auto} }
+.carta-info-arte img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover;
+  border-radius:6px; border:2px solid var(--gold-dim); display:block; background:#050408}
+.carta-info-nome{font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--gold-light);
+  letter-spacing:.8px; line-height:1.15; margin-bottom:7px; padding-right:26px}
+.carta-info-chips{display:flex; gap:5px; flex-wrap:wrap; margin-bottom:11px}
+.carta-info-chip{font-size:10px; padding:2px 8px; border-radius:4px;
+  border:1px solid var(--border); color:var(--text-muted)}
+.carta-info-chip.r-UR{color:#e8b840;border-color:#e8b84055}
+.carta-info-chip.r-SR{color:#bb88ee;border-color:#bb88ee55}
+.carta-info-chip.r-R{color:#88aadd;border-color:#88aadd55}
+.carta-info-ef{font-size:12px; line-height:1.7; color:var(--text-muted);
+  white-space:pre-line; max-height:190px; overflow-y:auto;
+  border-top:1px solid var(--border); padding-top:11px}
+.carta-info-x{position:absolute; top:10px; right:12px; background:none; border:none;
+  color:var(--text-muted); font-size:19px; cursor:pointer; line-height:1}
+.carta-info-x:hover{color:var(--gold-light)}
 </style>
 </head>
 <body>
@@ -901,7 +982,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   </div>
 
 
-  <nav class="indice" role="tablist">
+  <nav class="indice" role="tablist" data-rotulo="Seções">
     <button type="button" role="tab" data-aba="estrutura" class="aqui" aria-selected="true" onclick="mostrarSecao('estrutura')"><span data-lang="pt">Como funciona</span><span data-lang="en">How it works</span><span data-lang="es">Cómo funciona</span><span data-lang="vi">Cách hoạt động</span></button>
     <button type="button" role="tab" data-aba="duelistas" aria-selected="false" onclick="mostrarSecao('duelistas')"><span data-lang="pt">Duelistas</span><span data-lang="en">Duelists</span><span data-lang="es">Duelistas</span><span data-lang="vi">Đấu thủ</span></button>
     <button type="button" role="tab" data-aba="regras" aria-selected="false" onclick="mostrarSecao('regras')"><span data-lang="pt">Punições e chances</span><span data-lang="en">Punishments & odds</span><span data-lang="es">Castigos y probabilidades</span><span data-lang="vi">Hình phạt và tỉ lệ</span></button>
@@ -1754,6 +1835,8 @@ window.mostrarSecao = mostrarSecao;
       document.getElementById('deck-corpo').innerHTML =
         '<div class="deck-grade">' + deck.cartas.map(function (c) {
           return '<div class="deck-carta" title="' + c.n.replace(/"/g, '&quot;') + '">' +
+                 '<button type="button" class="info-btn" onclick="infoCarta(' +
+                   JSON.stringify(c.n).replace(/"/g, '&quot;') + ')" aria-label="Informações">i</button>' +
                  '<img src="img/cartas/' + c.s + '.webp" alt="' + c.n.replace(/"/g, '&quot;') +
                  '" loading="lazy" width="256" height="374">' +
                  (c.q > 1 ? '<span class="deck-qtd">' + c.q + 'x</span>' : '') + '</div>';
@@ -1772,6 +1855,83 @@ window.mostrarSecao = mostrarSecao;
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') fecharDeck();
   });
+})();
+</script>
+
+<!-- INFO DA CARTA (deck do NPC) -->
+<div class="carta-info" id="carta-info" onclick="if(event.target===this)fecharInfo()">
+  <div class="carta-info-cx" id="carta-info-cx"></div>
+</div>
+<script>
+/* Dados da carta clicada dentro do deck do NPC. O catalogo.json so e
+   buscado na primeira vez que alguem abre uma carta — sao ~900 KB que a
+   maioria dos visitantes da pagina do Championship nunca precisa. */
+(function(){
+  var CAT=null, buscando=null;
+  function idioma(){ return document.documentElement.getAttribute('data-lang-ativo')||'pt'; }
+  var TXT={
+    carregando:{pt:'Carregando…',en:'Loading…',es:'Cargando…',vi:'Đang tải…'},
+    erro:{pt:'Não foi possível carregar os dados desta carta.',
+          en:'Could not load this card data.',
+          es:'No se pudieron cargar los datos de esta carta.',
+          vi:'Không tải được dữ liệu thẻ này.'},
+    semEfeito:{pt:'Esta carta não tem texto de efeito.',en:'This card has no effect text.',
+               es:'Esta carta no tiene texto de efecto.',vi:'Thẻ này không có văn bản hiệu ứng.'}
+  };
+  function buscar(){
+    if(CAT) return Promise.resolve(CAT);
+    if(!buscando) buscando=fetch('data/catalogo.json?t='+Date.now())
+      .then(function(r){return r.json()})
+      .then(function(d){ CAT=(d.cartas||d); return CAT; });
+    return buscando;
+  }
+  window.infoCarta=function(nome){
+    var cx=document.getElementById('carta-info-cx'), l=idioma();
+    cx.innerHTML='<div style="padding:26px;color:var(--text-muted);font-size:12.5px">'+TXT.carregando[l]+'</div>';
+    document.getElementById('carta-info').classList.add('aberto');
+    document.body.style.overflow='hidden';
+    buscar().then(function(lista){
+      var c=lista.find(function(x){return x.nome===nome});
+      if(!c) throw new Error('nao achei');
+      var r=(c.raridade||'N').toUpperCase();
+      var ef=(c['desc_'+l]||c.desc_pt||'').trim();
+      cx.innerHTML=
+        '<button class="carta-info-x" onclick="fecharInfo()" aria-label="Fechar">&times;</button>'+
+        '<div class="carta-info-arte"><img src="img/cartas_grande/'+c.slug+'.webp" alt=""></div>'+
+        '<div><div class="carta-info-nome">'+(c.nome_pt||c.nome)+'</div>'+
+        '<div class="carta-info-chips">'+
+          '<span class="carta-info-chip r-'+r+'">'+r+'</span>'+
+          (c.tipo?'<span class="carta-info-chip">'+c.tipo+'</span>':'')+
+          (c.atributo?'<span class="carta-info-chip">'+c.atributo+'</span>':'')+
+          (c.card_type==='Monster'?'<span class="carta-info-chip">ATK '+c.atk+' / DEF '+c.def+'</span>':'')+
+          (c.nivel?'<span class="carta-info-chip">Nv '+c.nivel+'</span>':'')+
+        '</div>'+
+        '<div class="carta-info-ef">'+(ef||TXT.semEfeito[l])+'</div></div>';
+    }).catch(function(){
+      cx.innerHTML='<div style="padding:26px;color:#e0a49c;font-size:12.5px">'+TXT.erro[idioma()]+'</div>';
+    });
+  };
+  window.fecharInfo=function(){
+    document.getElementById('carta-info').classList.remove('aberto');
+    /* o modal do DECK continua aberto atras: so libera o scroll se ele
+       tambem estiver fechado */
+    var deckAberto=document.getElementById('deck-modal');
+    if(!deckAberto||!deckAberto.classList.contains('aberto')) document.body.style.overflow='';
+  };
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&document.getElementById('carta-info').classList.contains('aberto')){
+      e.stopImmediatePropagation(); fecharInfo();
+    }
+  },true);
+  /* rotulo da barra de secoes nos 4 idiomas */
+  var ROT={pt:'Seções',en:'Sections',es:'Secciones',vi:'Phần'};
+  function rotulo(){
+    var n=document.querySelector('.indice');
+    if(n) n.setAttribute('data-rotulo',ROT[idioma()]||ROT.pt);
+  }
+  rotulo();
+  new MutationObserver(rotulo).observe(document.documentElement,
+    {attributes:true,attributeFilter:['data-lang-ativo']});
 })();
 </script>
 </body>

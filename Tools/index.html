@@ -677,9 +677,13 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 }
 .season-tab:hover { border-color: rgba(212,168,67,.4); color: var(--gold-light); }
 .season-tab.on {
-  border-color: var(--gold); color: var(--gold-light);
-  background: rgba(212,168,67,.1);
+  /* preenchida: antes a ativa so trocava a cor da borda e ficava quase
+     igual a inativa — nao dava para ver qual Season estava aberta */
+  border-color: var(--gold-light); color: #120d04; font-weight: 700;
+  background: linear-gradient(160deg, var(--gold-light), var(--gold));
+  box-shadow: 0 3px 14px rgba(200,151,58,.3);
 }
+.season-tab:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
 
 /* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
 .lang-pick { position: relative; display: inline-block; }

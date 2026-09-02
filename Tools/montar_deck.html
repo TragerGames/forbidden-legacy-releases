@@ -51,6 +51,13 @@
   --border:     rgba(200,151,58,.13);
   --text-muted: #6a5830;
   --text-body:  #9a8050;
+  /* apelidos usados pelo layout do editor (arena/altar/cofre): mesmos
+     valores dos tokens acima, com os nomes do modelo aprovado */
+  --gold2:  #e8b840;  --gold3: #ffe49a;
+  --muted:  #6a5830;  --body:  #9a8050;  --text: #c9b183;
+  --r-n:#8c8c8c; --r-r:#88aadd; --r-sr:#bb88ee; --r-ur:#e8b840;
+  --ok:#3ba55c; --erro:#c4483c;
+  --mola:cubic-bezier(.34,1.56,.64,1); --suave:cubic-bezier(.4,0,.2,1);
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', 'Segoe UI', sans-serif; background: var(--dark); color: var(--text-body); min-height:100vh; overflow-x:hidden; }
@@ -105,199 +112,10 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .page-hero-sub { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:18px; }
 .page-hero-desc { max-width:640px; margin:0 auto; font-size:14px; line-height:1.7; color:var(--text-muted); }
 
-/* ── LAYOUT PRINCIPAL: lista do catalogo (esquerda) + grade do deck (direita) ── */
-.deck-layout {
-  max-width: 1400px; margin: 0 auto; padding: 28px 20px 80px;
-  display: grid; grid-template-columns: 400px 1fr; gap: 22px; align-items: start;
-}
-.deck-main { min-width: 0; }
-.deck-side {
-  position: sticky; top: 78px;
-  background: rgba(9,8,10,.96); border: 1px solid var(--border); border-radius: 6px;
-  padding: 16px; max-height: calc(100vh - 100px); overflow-y: auto;
-}
+/* ── BOTAO DE DECK NO MOBILE ──────────────────────────────────────
+   Unico resto do layout antigo com dono no HTML: abaixo de 900px a
+   arena empilha, e o botao rola ate o Cofre em vez de abrir painel. */
 
-/* ── TOOLBAR (identico ao catalogo) ── */
-.cat-toolbar {
-  position: sticky; top: 62px; z-index: 90;
-  background: rgba(9,8,10,.96); backdrop-filter: blur(6px);
-  border: 1px solid var(--border); border-radius: 6px;
-  padding: 16px 18px; margin-bottom: 28px;
-}
-.cat-search {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--dark2); border: 1px solid var(--border); border-radius: 4px;
-  padding: 10px 14px; margin-bottom: 14px;
-}
-.cat-search input {
-  flex: 1; background: transparent; border: none; outline: none;
-  color: var(--text-body); font-size: 14px; font-family: 'Inter', sans-serif;
-}
-.cat-search input::placeholder { color: var(--text-muted); }
-.cat-search-icon { color: var(--gold-dim); font-size: 15px; }
-.cat-filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
-.cat-filter-row:last-child { margin-bottom: 0; }
-.cat-filter-label {
-  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-dim);
-  margin-right: 4px; flex-shrink: 0;
-}
-.cat-chip {
-  border: 1px solid var(--border); background: var(--dark2); color: var(--text-muted);
-  font-size: 11px; letter-spacing: .5px; padding: 6px 13px; border-radius: 20px; cursor: pointer;
-  transition: all .15s; font-family: 'Inter', sans-serif; white-space: nowrap;
-}
-.cat-chip:hover { border-color: rgba(200,151,58,.35); color: var(--text-body); }
-.cat-chip.active { background: rgba(200,151,58,.14); border-color: var(--gold); color: var(--gold-light); }
-.cat-chip-icon { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px 5px 8px; }
-.cat-chip-icon img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
-.cat-chip-icon.cat-chip-rarity img { width: 28px; height: 14px; object-fit: contain; }
-.cat-chip-icon-only { padding: 6px 10px; }
-.cat-chip-icon-only img { width: 22px; height: 22px; }
-.cat-count { font-size: 11px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
-
-/* ── LISTA DO CATALOGO (esquerda) — linhas de texto compactas, igual o
-   editor de deck do jogo (catalogo em lista, sem arte grande por carta) ── */
-.cat-empty { text-align: center; padding: 40px 0; font-size: 13px; color: var(--text-muted); }
-.deck-cat-list { display: flex; flex-direction: column; }
-.deck-cat-row {
-  display: flex; align-items: center; gap: 10px; padding: 8px 6px;
-  border-bottom: 1px solid rgba(200,151,58,.08); cursor: pointer; transition: background .15s;
-}
-.deck-cat-row:hover { background: rgba(200,151,58,.06); }
-.deck-cat-row-name { flex: 1; min-width: 0; font-size: 13px; color: var(--text-body); line-height: 1.3; }
-.deck-cat-row-name .qty { color: var(--gold-light); font-weight: 700; margin-left: 6px; font-family: 'Bebas Neue', sans-serif; }
-.deck-cat-row-icons { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
-.deck-cat-row-icons img { width: 18px; height: 18px; object-fit: contain; }
-.deck-cat-row-icons img.rarity { width: 26px; height: 13px; }
-.deck-cat-row-stats { font-size: 11px; color: var(--gold-dim); font-weight: 600; width: 68px; text-align: right; flex-shrink: 0; }
-.deck-cat-row-info {
-  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
-  background: rgba(9,8,10,.6); border: 1px solid rgba(200,151,58,.35); color: var(--gold-light);
-  font-size: 11px; font-style: italic; font-family: Georgia, serif; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-}
-.deck-cat-row-info:hover { border-color: var(--gold); }
-.cat-load-more {
-  display: block; margin: 22px auto 0; padding: 10px 26px;
-  background: rgba(200,151,58,.08); border: 1px solid var(--gold-dim); color: var(--gold-light);
-  font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; cursor: pointer;
-  font-family: 'Inter', sans-serif; transition: background .2s, border-color .2s;
-}
-.cat-load-more:hover { background: rgba(200,151,58,.16); border-color: var(--gold); }
-
-/* ── GRADE DO DECK (direita) — imagens das cartas adicionadas, uma por copia ── */
-.deck-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 10px; margin-bottom: 16px; }
-.deck-grid-item { position: relative; cursor: pointer; }
-.deck-grid-item img.card-img {
-  width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 4px; display: block;
-  border: 2px solid rgba(255,255,255,.08); background: #050408;
-}
-.deck-grid-item.r-N img.card-img  { border-color: rgba(153,153,153,.5); }
-.deck-grid-item.r-R img.card-img  { border-color: rgba(136,170,221,.6); }
-.deck-grid-item.r-SR img.card-img { border-color: rgba(187,136,238,.65); }
-.deck-grid-item.r-UR img.card-img { border-color: rgba(232,184,64,.8); }
-.deck-grid-item-remove {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  background: rgba(160,30,20,0); color: #fff; font-size: 22px; opacity: 0; transition: all .15s; border-radius: 4px;
-}
-.deck-grid-item:hover .deck-grid-item-remove { background: rgba(160,30,20,.75); opacity: 1; }
-.deck-grid-empty { font-size: 12px; color: var(--text-muted); text-align: center; padding: 20px 0; }
-
-/* ── PAINEL DO DECK ── */
-.deck-side h2 {
-  font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--gold-light);
-  letter-spacing: 1px; margin-bottom: 12px;
-}
-.deck-name-row { display: flex; gap: 6px; margin-bottom: 10px; }
-.deck-name-row input {
-  flex: 1; background: var(--dark2); border: 1px solid var(--border); border-radius: 4px;
-  padding: 8px 10px; color: var(--text-body); font-size: 13px; font-family: 'Inter', sans-serif;
-}
-.deck-select-row { display: flex; gap: 6px; margin-bottom: 10px; }
-.deck-select-row select {
-  flex: 1; background: var(--dark2); border: 1px solid var(--border); border-radius: 4px;
-  padding: 8px 8px; color: var(--text-body); font-size: 12px; font-family: 'Inter', sans-serif;
-}
-.deck-btn-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
-.deck-btn {
-  flex: 1; min-width: 70px; background: rgba(200,151,58,.08); border: 1px solid var(--gold-dim);
-  color: var(--gold-light); font-size: 11px; letter-spacing: .5px; text-transform: uppercase;
-  padding: 7px 8px; border-radius: 4px; cursor: pointer; font-family: 'Inter', sans-serif;
-  transition: background .2s, border-color .2s;
-}
-.deck-btn:hover { background: rgba(200,151,58,.16); border-color: var(--gold); }
-.deck-btn.danger { border-color: rgba(200,60,20,.4); color: #d59070; }
-.deck-btn.danger:hover { background: rgba(200,48,16,.1); border-color: #c83010; }
-.deck-btn.primary { background: var(--gold); color: var(--dark); border-color: var(--gold); font-weight: 700; }
-.deck-btn.primary:hover { background: var(--gold-light); }
-
-.deck-counter {
-  text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: var(--gold-light);
-  border: 1px solid var(--border); border-radius: 6px; padding: 8px 0; margin-bottom: 14px;
-}
-.deck-counter span { font-size: 14px; color: var(--text-muted); font-family: 'Inter', sans-serif; }
-.deck-counter.full { color: #92e28f; }
-
-.deck-groups { margin-bottom: 16px; }
-.deck-group-chip {
-  display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted);
-  padding: 4px 8px; border-left: 3px solid var(--gold-dim); margin-bottom: 4px; background: rgba(255,255,255,.02);
-}
-.deck-group-chip.cheio { color: #e8b840; border-left-color: var(--gold); }
-
-.deck-toast {
-  font-size: 12px; color: #d59070; background: rgba(200,48,16,.08); border: 1px solid rgba(160,60,20,.3);
-  border-radius: 4px; padding: 8px 10px; margin-bottom: 12px; line-height: 1.5; display: none;
-}
-.deck-toast.show { display: block; }
-
-/* ── MODAL DE CARTA (identico ao catalogo, so info) ── */
-.cat-modal-overlay {
-  display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.88);
-  align-items: center; justify-content: center; padding: 20px;
-}
-.cat-modal-overlay.open { display: flex; }
-.cat-modal {
-  background: var(--dark2); border: 1px solid var(--gold-dim); border-radius: 8px;
-  max-width: 560px; width: 100%; max-height: 88vh; overflow-y: auto;
-  padding: 26px; position: relative;
-  display: grid; grid-template-columns: 180px 1fr; gap: 22px;
-}
-.cat-modal-close {
-  position: absolute; top: 10px; right: 14px; background: none; border: none;
-  color: var(--text-muted); font-size: 20px; cursor: pointer; line-height: 1;
-}
-.cat-modal-close:hover { color: var(--gold); }
-.cat-modal-img-wrap { position: relative; }
-.cat-modal-img {
-  width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 6px;
-  border: 2px solid var(--gold-dim); background: #050408; display: block;
-}
-.cat-modal-rarity-badge {
-  position: absolute; bottom: 100%; right: 4%; margin-bottom: 4px; width: 22%; aspect-ratio: 30/16;
-  object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0,0,0,.7));
-}
-.cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
-.cat-modal-rarity { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; }
-.cat-modal-rarity.r-N  { color: #999;    background: rgba(153,153,153,.12); }
-.cat-modal-rarity.r-R  { color: #88aadd; background: rgba(136,170,221,.12); }
-.cat-modal-rarity.r-SR { color: #bb88ee; background: rgba(187,136,238,.12); }
-.cat-modal-rarity.r-UR { color: #e8b840; background: rgba(232,184,64,.14); }
-.cat-modal-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-bottom: 14px; }
-.cat-modal-fact-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-dim); }
-.cat-modal-fact-value { font-size: 13px; color: var(--text-body); display: flex; align-items: center; gap: 6px; }
-.cat-modal-fact-value img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
-.cat-modal-desc { font-size: 12px; line-height: 1.7; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 12px; white-space: pre-line; }
-.cat-modal-add-btn {
-  margin-top: 14px; width: 100%; background: var(--gold); color: var(--dark); border: none;
-  font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 1px; padding: 10px 0;
-  border-radius: 4px; cursor: pointer;
-}
-.cat-modal-add-btn:hover { background: var(--gold-light); }
-@media(max-width:520px) {
-  .cat-modal { grid-template-columns: 1fr; }
-  .cat-modal-img-wrap { max-width: 160px; margin: 0 auto; }
-}
 
 /* ── LANG ── */
 /* ── IDIOMAS ──────────────────────────────────────────────────────────
@@ -466,12 +284,6 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px) {
-  .deck-layout { grid-template-columns: 1fr; }
-  .deck-side {
-    display: none; position: fixed; inset: auto 0 0 0; top: 10%; z-index: 240;
-    max-height: 90%; border-radius: 12px 12px 0 0; box-shadow: 0 -8px 30px rgba(0,0,0,.6);
-  }
-  .deck-side.open { display: block; }
   .deck-mobile-toggle { display: block; }
 }
 @media(max-width:700px) {
@@ -514,7 +326,6 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   html .deck-cat-row-info{font-size:12px}
   html .deck-btn{font-size:12px}
   html .deck-group-chip{font-size:12px}
-  html .cat-modal-rarity{font-size:12px}
   html .cat-modal-fact-label{font-size:11px}
   html .lang-btn{font-size:12px}
   html .footer-brand p{font-size:12px}
@@ -542,54 +353,256 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 }
 ::-webkit-scrollbar-corner { background: transparent; }
 
-/* ═══ CODIGO DE DECK / BUSCA POR EFEITO / FILTRO DE BANLIST ══════════ */
-.md-ferramentas{display:flex; gap:6px; margin:8px 0}
-.md-ferramentas select{flex:1; min-width:0; background:var(--dark3,#120e12);
-  border:1px solid var(--border,rgba(200,151,58,.13)); border-radius:7px;
-  color:var(--text-body,#9a8050); font-size:11px; padding:7px 9px;
-  font-family:inherit; cursor:pointer; outline:none; transition:border-color .22s}
-.md-ferramentas select:focus{border-color:var(--gold,#c8973a)}
-.md-ferramentas select.ativo{border-color:var(--gold,#c8973a); color:var(--gold-light,#e8b840);
-  background:rgba(200,151,58,.08)}
-.md-modo{display:flex; border:1px solid var(--border,rgba(200,151,58,.13));
-  border-radius:7px; overflow:hidden; flex-shrink:0}
-.md-modo button{background:var(--dark3,#120e12); border:none; color:var(--text-muted,#6a5830);
-  font-size:10px; padding:7px 11px; cursor:pointer; font-family:inherit;
-  letter-spacing:.4px; transition:all .2s}
-.md-modo button.on{background:rgba(200,151,58,.16); color:var(--gold-light,#e8b840)}
-.md-modo button:hover:not(.on){color:var(--text-body,#9a8050)}
-.md-trecho{font-size:9.5px; color:var(--gold-dim,#7a5a18); font-style:italic;
-  display:block; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
 
-.md-codigo{margin-top:10px; padding:12px; border-radius:9px;
-  background:rgba(200,151,58,.05); border:1px solid rgba(200,151,58,.2)}
-.md-codigo-tit{font-size:9.5px; letter-spacing:1.7px; text-transform:uppercase;
-  color:var(--gold,#c8973a); margin-bottom:8px; font-weight:600}
-.md-travado{width:100%; background:var(--dark3,#120e12); color:#5a4e33;
-  border:1px dashed var(--gold-dim,#7a5a18); border-radius:8px; padding:10px;
-  font-family:'Bebas Neue',sans-serif; font-size:14px; letter-spacing:1.5px;
-  cursor:not-allowed}
-.md-aviso{display:flex; gap:9px; align-items:flex-start; margin-top:8px; padding:9px 11px;
-  border-radius:7px; font-size:11px; line-height:1.55;
-  background:rgba(200,151,58,.06); border:1px dashed rgba(200,151,58,.3);
-  color:var(--text-muted,#6a5830)}
-.md-aviso b{color:var(--gold-light,#e8b840)}
-.md-linha{display:flex; gap:6px; margin-top:8px}
-.md-linha input{flex:1; min-width:0; background:var(--dark3,#120e12);
-  border:1px solid var(--border,rgba(200,151,58,.13)); border-radius:6px;
-  padding:8px 10px; color:var(--gold-light,#e8b840);
+/* ═══ EDITOR DE DECK — catalogo | altar | cofre ═════════════════════
+   Porte do modelo aprovado: as tres colunas do Editor de Deck do
+   jogo. O cofre e a coluna maior porque e ele que mostra as
+   miniaturas. */
+/* tres colunas como o editor: catalogo | altar | cofre. O COFRE e a
+   maior porque e ele que mostra as miniaturas. */
+.deck-env{max-width:1560px; margin:0 auto; padding:0 18px 50px}
+.arena{display:grid; grid-template-columns:352px 244px 1fr; gap:14px; align-items:start}
+@media(max-width:1240px){ .arena{grid-template-columns:330px 1fr} .altar-col{display:none} }
+@media(max-width:900px){ .arena{grid-template-columns:1fr} }
+/* item de grid nao encolhe abaixo do proprio min-content sem isto: era
+   a linha do catalogo esticando a coluna e, com ela, a pagina toda */
+.arena > *{min-width:0}
+/* redesenho sem animacao: a linha nasce opacity:0 e so chega a 1 no fim
+   do keyframe, entao desligar a animacao sem isto apagaria a lista */
+.row.sem-anim{animation:none; opacity:1}
+.lista, .row{min-width:0}
+.painel{background:var(--dark2); border:1px solid var(--border); border-radius:12px; padding:13px}
+
+/* ── BUSCA E FILTROS ── */
+.busca{display:flex; align-items:center; gap:9px; background:var(--dark3); border:1px solid var(--border);
+  border-radius:8px; padding:9px 12px; margin-bottom:9px; transition:border-color .25s, box-shadow .25s}
+.busca:focus-within{border-color:var(--gold); box-shadow:0 0 0 3px rgba(200,151,58,.1)}
+.busca input{flex:1; background:none; border:none; outline:none; color:var(--text);
+  font-size:13.5px; font-family:inherit; min-width:0}
+.busca input::placeholder{color:#3d3320}
+.busca svg{width:15px;height:15px;color:var(--gold-dim);flex-shrink:0}
+.chips{display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px}
+.chip{border:1px solid var(--border); background:var(--dark3); color:var(--muted); font-size:10.5px;
+  padding:4px 10px; border-radius:20px; cursor:pointer; transition:all .18s; font-family:inherit;
+  white-space:nowrap}
+.chip:hover{border-color:rgba(200,151,58,.35); color:var(--text)}
+.chip.on{background:rgba(200,151,58,.14); border-color:var(--gold); color:var(--gold3)}
+.chip.on[data-r="N"]{border-color:var(--r-n);color:var(--r-n)}
+.chip.on[data-r="R"]{border-color:var(--r-r);color:var(--r-r)}
+.chip.on[data-r="SR"]{border-color:var(--r-sr);color:var(--r-sr)}
+.chip.on[data-r="UR"]{border-color:var(--r-ur);color:var(--r-ur)}
+
+/* linha de ferramentas: modo de busca + filtro de banlist */
+.ferramentas{display:flex; gap:6px; margin-bottom:9px}
+.ferramentas select{flex:1; min-width:0; background:var(--dark3); border:1px solid var(--border);
+  border-radius:7px; color:var(--text); font-size:11px; padding:7px 9px; font-family:inherit;
+  cursor:pointer; outline:none; transition:border-color .22s}
+.ferramentas select:focus{border-color:var(--gold)}
+.ferramentas select.ativo{border-color:var(--gold); color:var(--gold3); background:rgba(200,151,58,.08)}
+.busca-modo{display:flex; gap:0; border:1px solid var(--border); border-radius:7px; overflow:hidden;
+  flex-shrink:0}
+.busca-modo button{background:var(--dark3); border:none; color:var(--muted); font-size:10px;
+  padding:7px 10px; cursor:pointer; font-family:inherit; letter-spacing:.4px; transition:all .2s}
+.busca-modo button.on{background:rgba(200,151,58,.16); color:var(--gold3)}
+.busca-modo button:hover:not(.on){color:var(--text)}
+/* trecho do efeito que casou com a busca */
+.col-stat.efeito{color:var(--gold-dim); font-style:italic; text-align:left; font-size:9px}
+.row-nome mark{background:rgba(232,184,64,.26); color:var(--gold3); border-radius:2px; padding:0 1px}
+
+/* ── CATALOGO EM LISTA (como o editor do jogo) ── */
+.lista{display:flex; flex-direction:column; gap:3px; max-height:64vh; overflow-y:auto; padding-right:3px}
+.row{display:grid; grid-template-columns:1fr 24px 52px 22px 38px; align-items:center;
+  gap:6px; padding:0 9px; height:38px; flex-shrink:0;
+  text-align:left;   /* <button> centraliza por padrao e jogava o nome pro meio */
+  border-radius:7px; background:var(--dark3); border:1px solid var(--border); cursor:pointer;
+  transition:border-color .18s, background .18s, transform .18s;
+  opacity:0; animation:entra .3s var(--suave) forwards; animation-delay:var(--atraso,0s)}
+@keyframes entra{to{opacity:1}}
+.row:hover{border-color:rgba(200,151,58,.4); background:rgba(200,151,58,.05); transform:translateX(2px)}
+.row:focus-visible{outline:2px solid var(--gold2); outline-offset:1px}
+.row.bloq{opacity:.4; cursor:not-allowed}
+.row.bloq:hover{transform:none; border-color:rgba(196,72,60,.4); background:rgba(196,72,60,.05)}
+.row-nome{font-size:12.5px; color:var(--text); overflow:hidden; text-overflow:ellipsis;
+  white-space:nowrap; line-height:1.3; min-width:0}
+.row[data-r="UR"] .row-nome{color:var(--r-ur)}
+.row[data-r="SR"] .row-nome{color:var(--r-sr)}
+.row[data-r="R"] .row-nome{color:var(--r-r)}
+/* cada coluna com largura propria: e isso que alinha as linhas entre si */
+.col-rar{font-size:8.5px; font-weight:700; text-align:center; border:1px solid currentColor;
+  border-radius:3px; padding:1px 0; letter-spacing:.3px}
+.col-stat{font-size:9.5px; color:var(--muted); text-align:right;
+  font-variant-numeric:tabular-nums; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis}
+/* chip de banlist curto — o nome inteiro fica no tooltip. Antes ele tinha
+   113px e estourava a linha. */
+.col-ban{display:flex; justify-content:center}
+.col-ban i{font-style:normal; font-size:8.5px; font-weight:700; padding:1px 5px;
+  border-radius:3px; border:1px solid currentColor; line-height:1.5}
+.row-q{text-align:right; font-family:'Bebas Neue',sans-serif; font-size:15px;
+  color:var(--gold3); font-variant-numeric:tabular-nums; letter-spacing:.3px}
+.row-q small{font-size:10px; color:var(--muted)}
+.row-q.cheio{color:var(--erro)}
+.row-q.zero{color:var(--muted)}
+/* apertou: primeiro some ATK/DEF, depois a marca de banlist. Nome e
+   contador nunca saem — sao o que a linha existe para mostrar. */
+@media(max-width:1120px){
+  .row{grid-template-columns:1fr 24px 22px 38px}
+  .col-stat{display:none}
+}
+@media(max-width:760px){
+  .row{grid-template-columns:1fr 24px 38px}
+  .col-ban{display:none}
+}
+
+/* ── ALTAR DA CARTA (painel central do editor) ── */
+.altar-col{position:sticky; top:13px}
+.altar-tit{font-family:'Bebas Neue',sans-serif; font-size:12px; letter-spacing:2.4px;
+  color:var(--gold); text-align:center; margin-bottom:9px}
+.altar-arte{width:100%; max-width:170px; margin:0 auto 11px; display:block}
+.altar-arte img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover;
+  border-radius:6px; border:2px solid var(--gold-dim); display:block; background:#050408;
+  box-shadow:0 8px 26px rgba(0,0,0,.5)}
+.altar-nome{font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:.6px;
+  color:var(--gold3); text-align:center; line-height:1.1; margin-bottom:3px}
+.altar-sub{font-size:10.5px; color:var(--muted); text-align:center; margin-bottom:9px;
+  text-transform:lowercase}
+.altar-stats{display:flex; gap:6px; justify-content:center; margin-bottom:10px}
+.altar-stat{font-size:10.5px; padding:3px 9px; border-radius:4px; background:var(--dark3);
+  border:1px solid var(--border); color:var(--text); font-variant-numeric:tabular-nums}
+.altar-ef{font-size:11px; line-height:1.6; color:var(--muted); background:var(--dark3);
+  border:1px solid var(--border); border-radius:7px; padding:9px 11px; max-height:150px;
+  overflow-y:auto; white-space:pre-line}
+.altar-ban{margin-top:9px; font-size:10.5px; text-align:center; color:var(--gold2);
+  border:1px solid rgba(200,151,58,.28); border-radius:6px; padding:6px 9px;
+  background:rgba(200,151,58,.06)}
+.altar-vazio{text-align:center; padding:40px 12px; font-size:11.5px; color:var(--muted);
+  line-height:1.7}
+
+/* ── DECK ── */
+.deck{position:sticky; top:13px}
+.deck-topo{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.deck-cont{font-family:'Bebas Neue',sans-serif; font-size:32px; line-height:1; color:var(--gold3);
+  font-variant-numeric:tabular-nums}
+.deck-cont small{font-size:15px; color:var(--muted)}
+.deck-barra{flex:1; height:5px; border-radius:3px; background:var(--dark3); overflow:hidden}
+.deck-fill{height:100%; width:0%; border-radius:3px;
+  transition:width .45s var(--suave), background .3s;
+  background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.deck-fill.cheio{background:linear-gradient(90deg,#2f8f52,var(--ok))}
+.comp{display:flex; height:5px; border-radius:3px; overflow:hidden; margin-bottom:5px; background:var(--dark3)}
+.comp span{transition:width .4s var(--suave)}
+/* M27 S3 T6 E6 — os mesmos contadores do cofre no jogo */
+.mste{display:flex; gap:5px; margin-bottom:10px; flex-wrap:wrap}
+.mste span{font-size:10px; font-weight:700; padding:2px 8px; border-radius:4px;
+  border:1px solid var(--border); background:var(--dark3);
+  font-variant-numeric:tabular-nums; letter-spacing:.4px}
+/* COFRE DO DECK — grade de 6 colunas com mini-cartas, como o
+   deck_grid do editor do jogo (columns=6, 80x116, separacao 18) */
+.cofre-tit{font-family:'Bebas Neue',sans-serif; font-size:17px; letter-spacing:1.5px;
+  color:var(--gold2); line-height:1}
+.cofre-sub{font-size:9.5px; letter-spacing:1.3px; text-transform:uppercase;
+  color:var(--muted); margin:2px 0 10px}
+.deck-lista{display:grid; grid-template-columns:repeat(auto-fill,minmax(72px,1fr)); gap:11px;
+  max-height:56vh; overflow-y:auto; margin-bottom:11px; padding:2px 4px 2px 2px;
+  align-content:start}
+@media(max-width:560px){ .deck-lista{grid-template-columns:repeat(auto-fill,minmax(58px,1fr)); gap:8px} }
+.deck-lista .vazio-msg{grid-column:1/-1}
+.dl{position:relative; cursor:pointer; background:none; border:none; padding:0;
+  animation:pop .26s var(--mola)}
+@keyframes pop{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:none}}
+.dl img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:4px;
+  display:block; border:1px solid var(--border); background:#050408;
+  transition:transform .22s var(--mola), border-color .22s}
+.dl:hover img{transform:translateY(-3px); border-color:var(--erro)}
+.dl-q{position:absolute; right:2px; bottom:2px; z-index:2; min-width:16px; height:16px;
+  border-radius:8px; background:rgba(6,3,10,.9); border:1px solid var(--gold-dim);
+  color:var(--gold3); font-size:9.5px; font-weight:700; display:grid; place-items:center;
+  padding:0 4px; font-variant-numeric:tabular-nums}
+.dl-x{position:absolute; inset:0; display:grid; place-items:center; z-index:3;
+  opacity:0; color:#fff; font-size:15px; background:rgba(140,30,24,.55);
+  border-radius:4px; transition:opacity .2s}
+.dl:hover .dl-x{opacity:1}
+.deck-vazio{text-align:center; padding:24px 12px; color:var(--muted); font-size:12px; line-height:1.7}
+/* grupos de banlist em uso */
+.grupos{display:flex; flex-direction:column; gap:4px; margin-bottom:10px}
+.gp{display:flex; align-items:center; gap:8px; font-size:10.5px; padding:4px 8px;
+  border-radius:5px; background:var(--dark3); border:1px solid var(--border)}
+.gp-b{flex:1; height:4px; border-radius:2px; background:rgba(255,255,255,.06); overflow:hidden}
+.gp-f{height:100%; border-radius:2px; transition:width .4s var(--suave)}
+.gp-n{font-variant-numeric:tabular-nums; font-size:10px}
+.gp.cheio{border-color:rgba(196,72,60,.45)}
+
+.btn{font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1.6px; padding:11px 18px;
+  border-radius:8px; border:none; cursor:pointer; width:100%;
+  background:linear-gradient(100deg,var(--gold3),var(--gold)); color:#120d04;
+  transition:transform .22s var(--mola), box-shadow .3s}
+.btn:hover:not(:disabled){transform:translateY(-2px); box-shadow:0 10px 26px rgba(200,151,58,.3)}
+.btn:disabled{background:var(--dark3); color:#4a3f28; border:1px solid var(--border); cursor:not-allowed}
+.btn.fantasma{background:transparent; border:1px solid var(--gold-dim); color:var(--gold2); box-shadow:none}
+.btn.fantasma:hover{background:rgba(200,151,58,.08); border-color:var(--gold); box-shadow:none}
+.btn-linha{display:flex; gap:7px; margin-top:7px}
+
+.seed-box{margin-top:11px; padding:12px; border-radius:9px; background:rgba(200,151,58,.05);
+  border:1px solid rgba(200,151,58,.2); max-height:0; overflow:hidden; opacity:0;
+  transition:max-height .45s var(--suave), opacity .3s, margin .45s, padding .45s}
+.seed-box.on{max-height:340px; opacity:1}
+.seed-rot{font-size:9.5px; letter-spacing:1.7px; text-transform:uppercase; color:var(--gold);
+  margin-bottom:7px; font-weight:600}
+.seed-campo{display:flex; gap:6px}
+.seed-campo input{flex:1; min-width:0; background:var(--dark3); border:1px solid var(--border);
+  border-radius:6px; padding:9px 10px; color:var(--gold3);
   font-family:ui-monospace,Menlo,monospace; font-size:11px; outline:none}
-.md-linha input:focus{border-color:var(--gold,#c8973a)}
-.md-linha button{flex-shrink:0; padding:8px 13px; border-radius:6px;
-  border:1px solid var(--gold-dim,#7a5a18); background:rgba(200,151,58,.1);
-  color:var(--gold-light,#e8b840); cursor:pointer; font-family:inherit;
+.seed-campo input:focus{border-color:var(--gold)}
+.seed-campo button{flex-shrink:0; padding:9px 13px; border-radius:6px; border:1px solid var(--gold-dim);
+  background:rgba(200,151,58,.1); color:var(--gold2); cursor:pointer; font-family:inherit;
   font-size:11.5px; transition:all .2s}
-.md-linha button:hover{background:rgba(200,151,58,.2); border-color:var(--gold,#c8973a)}
-.md-msg{font-size:11.5px; margin-top:8px; padding:8px 10px; border-radius:6px;
-  line-height:1.55; display:none}
-.md-msg.on{display:block}
-.md-msg.ok{background:rgba(59,165,92,.1); border:1px solid rgba(59,165,92,.3); color:#8fd6a8}
-.md-msg.err{background:rgba(196,72,60,.1); border:1px solid rgba(196,72,60,.3); color:#e0a49c}
+.seed-campo button:hover{background:rgba(200,151,58,.2); border-color:var(--gold)}
+.seed-nota{font-size:10.5px; color:var(--muted); line-height:1.6; margin-top:7px}
+.seed-nota b{color:var(--gold3)}
+.msg{font-size:11.5px; margin-top:8px; padding:8px 10px; border-radius:6px; line-height:1.55; display:none}
+.msg.on{display:block; animation:pop .3s var(--mola)}
+.msg.ok{background:rgba(59,165,92,.1); border:1px solid rgba(59,165,92,.3); color:#8fd6a8}
+.msg.err{background:rgba(196,72,60,.1); border:1px solid rgba(196,72,60,.3); color:#e0a49c}
+/* ── DECKS SALVOS (localStorage) ── */
+.salvos{margin-top:11px; border-top:1px solid var(--border); padding-top:11px}
+.salvos-tit{font-size:9.5px; letter-spacing:1.7px; text-transform:uppercase; color:var(--muted);
+  margin-bottom:8px; font-weight:600; display:flex; align-items:center; gap:7px}
+.salvos-tit span{margin-left:auto; font-size:9px; color:var(--gold-dim)}
+.slot{display:flex; align-items:center; gap:8px; padding:6px 9px; border-radius:6px;
+  background:var(--dark3); border:1px solid var(--border); margin-bottom:4px;
+  animation:pop .26s var(--mola)}
+.slot-nome{flex:1; min-width:0; font-size:11.5px; color:var(--text); overflow:hidden;
+  text-overflow:ellipsis; white-space:nowrap; cursor:pointer}
+.slot-nome:hover{color:var(--gold3)}
+.slot-n{font-size:10px; color:var(--muted); font-variant-numeric:tabular-nums; flex-shrink:0}
+.slot button{background:none; border:none; cursor:pointer; font-size:11px; padding:2px 4px;
+  color:var(--muted); transition:color .2s}
+.slot button:hover{color:var(--erro)}
+.salvos-vazio{font-size:11px; color:var(--muted); line-height:1.6; font-style:italic}
+.salvar-linha{display:flex; gap:6px; margin-top:7px}
+.salvar-linha input{flex:1; min-width:0; background:var(--dark3); border:1px solid var(--border);
+  border-radius:6px; padding:7px 10px; color:var(--text); font-size:11.5px;
+  font-family:inherit; outline:none}
+.salvar-linha input:focus{border-color:var(--gold)}
+.salvar-linha button{flex-shrink:0; padding:7px 13px; border-radius:6px;
+  border:1px solid var(--gold-dim); background:rgba(200,151,58,.1); color:var(--gold2);
+  cursor:pointer; font-family:inherit; font-size:11.5px; transition:all .2s}
+.salvar-linha button:hover{background:rgba(200,151,58,.2); border-color:var(--gold)}
+/* travado ate o jogo saber ler o codigo */
+.btn.travado{background:var(--dark3); color:#5a4e33; border:1px dashed var(--gold-dim);
+  cursor:not-allowed}
+.btn.travado:hover{transform:none; box-shadow:none}
+.aviso-breve{display:flex; gap:9px; align-items:flex-start; margin-top:8px; padding:9px 11px;
+  border-radius:7px; font-size:11px; line-height:1.55;
+  background:rgba(200,151,58,.06); border:1px dashed rgba(200,151,58,.3); color:var(--muted)}
+.aviso-breve b{color:var(--gold2)}
+.aviso-breve svg{width:14px; height:14px; flex-shrink:0; margin-top:1px; color:var(--gold)}
+
+
+/* o botao de Deck no mobile agora rola ate o cofre — a arena empilha em
+   uma coluna abaixo de 900px, entao nao ha painel para abrir/fechar */
+@media(max-width:900px){ .deck, .altar-col{position:static} }
+@media(prefers-reduced-motion:reduce){ .row{opacity:1} }
 </style>
 </head>
 <body>
@@ -670,137 +683,83 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   </p><p class="page-hero-desc" data-lang="es">Haz clic en una carta para añadirla al mazo. El límite de copias y los grupos de banlist se aplican igual que en el juego. Al terminar, descarga una imagen del mazo para publicarla en Discord. El mazo se guarda solo en este navegador.</p><p class="page-hero-desc" data-lang="vi">Nhấn vào một thẻ để thêm vào bộ bài. Giới hạn số bản và các nhóm banlist được áp dụng giống như trong trò chơi. Khi xong, tải ảnh bộ bài để đăng lên Discord. Bộ bài chỉ được lưu trong trình duyệt này.</p>
 </div>
 
-<button class="deck-mobile-toggle" id="deck-mobile-toggle" onclick="toggleDeckPainel()">
+<button class="deck-mobile-toggle" id="deck-mobile-toggle" onclick="document.getElementById('deck-painel').scrollIntoView({behavior:'smooth'})">
   <span data-lang="pt">Deck</span><span data-lang="en">Deck</span><span data-lang="es">Mazo</span><span data-lang="vi">Bộ bài</span> (<span id="deck-mobile-count">0/40</span>)
 </button>
 
-<div class="deck-layout">
-  <div class="deck-main">
-    <div class="cat-toolbar">
-      <div class="cat-search">
-        <span class="cat-search-icon">🔍</span>
-        <input type="text" id="cat-search-input" data-lang-pt-placeholder="Buscar carta pelo nome…" data-lang-en-placeholder="Search card by name…" placeholder="Buscar carta pelo nome…">
-      </div>
-      <div class="md-ferramentas">
-        <div class="md-modo">
-          <button id="md-m-nome" class="on" onclick="mdModo('nome')"><span data-lang="pt">Nome</span><span data-lang="en">Name</span><span data-lang="es">Nombre</span><span data-lang="vi">Tên</span></button>
-          <button id="md-m-efeito" onclick="mdModo('efeito')"><span data-lang="pt">Efeito</span><span data-lang="en">Effect</span><span data-lang="es">Efecto</span><span data-lang="vi">Hiệu ứng</span></button>
-        </div>
-        <select id="md-f-ban"></select>
-      </div>
-      <div class="cat-filter-row">
-        <span class="cat-filter-label" data-lang="pt">Tipo</span>
-        <span class="cat-filter-label" data-lang="en">Type</span><span class="cat-filter-label" data-lang="es">Tipo</span><span class="cat-filter-label" data-lang="vi">Loại</span>
-        <button class="cat-chip active" data-filter-type="ALL" data-lang="pt">Todos</button>
-        <button class="cat-chip active" data-filter-type="ALL" data-lang="en">All</button><button class="cat-chip active" data-filter-type="ALL" data-lang="es">Todos</button><button class="cat-chip active" data-filter-type="ALL" data-lang="vi">Tất cả</button>
-        <button class="cat-chip" data-filter-type="Monster" data-lang="pt">Monstro</button>
-        <button class="cat-chip" data-filter-type="Monster" data-lang="en">Monster</button><button class="cat-chip" data-filter-type="Monster" data-lang="es">Monstruo</button><button class="cat-chip" data-filter-type="Monster" data-lang="vi">Quái thú</button>
-        <button class="cat-chip" data-filter-type="Spell" data-lang="pt">Magia</button>
-        <button class="cat-chip" data-filter-type="Spell" data-lang="en">Spell</button><button class="cat-chip" data-filter-type="Spell" data-lang="es">Magia</button><button class="cat-chip" data-filter-type="Spell" data-lang="vi">Phép</button>
-        <button class="cat-chip" data-filter-type="Trap" data-lang="pt">Armadilha</button>
-        <button class="cat-chip" data-filter-type="Trap" data-lang="en">Trap</button><button class="cat-chip" data-filter-type="Trap" data-lang="es">Trampa</button><button class="cat-chip" data-filter-type="Trap" data-lang="vi">Bẫy</button>
-        <button class="cat-chip" data-filter-type="Equip">Equip</button>
-        <button class="cat-chip" data-filter-type="Field" data-lang="pt">Campo</button>
-        <button class="cat-chip" data-filter-type="Field" data-lang="en">Field</button><button class="cat-chip" data-filter-type="Field" data-lang="es">Campo</button><button class="cat-chip" data-filter-type="Field" data-lang="vi">Sân</button>
-      </div>
-      <div class="cat-filter-row" id="cat-race-row">
-        <span class="cat-filter-label" data-lang="pt">Raça</span>
-        <span class="cat-filter-label" data-lang="en">Race</span><span class="cat-filter-label" data-lang="es">Raza</span><span class="cat-filter-label" data-lang="vi">Chủng loại</span>
-        <button class="cat-chip active" data-filter-race="ALL" data-lang="pt">Todas</button>
-        <button class="cat-chip active" data-filter-race="ALL" data-lang="en">All</button><button class="cat-chip active" data-filter-race="ALL" data-lang="es">Todas</button><button class="cat-chip active" data-filter-race="ALL" data-lang="vi">Tất cả</button>
-      </div>
-      <div class="cat-filter-row">
-        <span class="cat-filter-label" data-lang="pt">Raridade</span>
-        <span class="cat-filter-label" data-lang="en">Rarity</span><span class="cat-filter-label" data-lang="es">Rareza</span><span class="cat-filter-label" data-lang="vi">Độ hiếm</span>
-        <button class="cat-chip active" data-filter-rarity="ALL" data-lang="pt">Todas</button>
-        <button class="cat-chip active" data-filter-rarity="ALL" data-lang="en">All</button><button class="cat-chip active" data-filter-rarity="ALL" data-lang="es">Todas</button><button class="cat-chip active" data-filter-rarity="ALL" data-lang="vi">Tất cả</button>
-        <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="N"><img src="img/raridade/rarity_C.webp" alt="N" width="30" height="16"><span>N</span></button>
-        <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp" alt="R" width="30" height="16"><span>R</span></button>
-        <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp" alt="SR" width="30" height="16"><span>SR</span></button>
-        <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR" width="30" height="16"><span>UR</span></button>
-        <span class="cat-count" id="cat-count">—</span>
-      </div>
-    </div>
+<div class="deck-env">
+<div class="arena">
 
-    <div class="deck-cat-list" id="cat-grid">
-      <div class="cat-empty" data-lang="pt">Carregando cartas…</div>
-      <div class="cat-empty" data-lang="en">Loading cards…</div><div class="cat-empty" data-lang="es">Cargando cartas…</div><div class="cat-empty" data-lang="vi">Đang tải thẻ bài…</div>
+  <!-- ── CATALOGO ─────────────────────────────────────────────────── -->
+  <div class="painel">
+    <div class="busca">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="text" autocomplete="off" placeholder="Buscar carta pelo nome…">
     </div>
+    <div class="ferramentas">
+      <div class="busca-modo">
+        <button id="m-nome" class="on"><span data-lang="pt">Nome</span><span data-lang="en">Name</span><span data-lang="es">Nombre</span><span data-lang="vi">Tên</span></button>
+        <button id="m-efeito"><span data-lang="pt">Efeito</span><span data-lang="en">Effect</span><span data-lang="es">Efecto</span><span data-lang="vi">Hiệu ứng</span></button>
+      </div>
+      <select id="f-ban"></select>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="lista" id="cat"></div>
   </div>
 
-  <!-- PAINEL DO DECK -->
-  <aside class="deck-side" id="deck-side">
-    <h2 data-lang="pt">Seu Deck</h2>
-    <h2 data-lang="en">Your Deck</h2><h2 data-lang="es">Tu Mazo</h2><h2 data-lang="vi">Bộ bài của bạn</h2>
+  <!-- ── ALTAR DA CARTA ───────────────────────────────────────────── -->
+  <div class="painel altar-col">
+    <div class="altar-tit"><span data-lang="pt">✦ Altar da Carta ✦</span><span data-lang="en">✦ Card Altar ✦</span><span data-lang="es">✦ Altar de la Carta ✦</span><span data-lang="vi">✦ Bệ thờ Thẻ ✦</span></div>
+    <div id="altar"></div>
+  </div>
 
-    <div class="deck-name-row">
-      <input type="text" id="deck-nome-input" data-lang-pt-placeholder="Nome do deck…" data-lang-en-placeholder="Deck name…" placeholder="Nome do deck…" value="Meu Deck">
+  <!-- ── COFRE DO DECK ────────────────────────────────────────────── -->
+  <div class="painel deck" id="deck-painel">
+    <div class="deck-topo">
+      <div class="deck-cont"><span id="n">0</span><small>/40</small></div>
+      <div class="deck-barra"><div class="deck-fill" id="fill"></div></div>
     </div>
-    <div class="deck-select-row">
-      <select id="deck-select"></select>
-    </div>
-    <div class="deck-btn-row">
-      <button class="deck-btn" onclick="novoDeck()" data-lang="pt">Novo</button>
-      <button class="deck-btn" onclick="novoDeck()" data-lang="en">New</button><button class="deck-btn" onclick="novoDeck()" data-lang="es">Nuevo</button><button class="deck-btn" onclick="novoDeck()" data-lang="vi">Mới</button>
-      <button class="deck-btn" onclick="salvarDeckAtual()" data-lang="pt">Salvar</button>
-      <button class="deck-btn" onclick="salvarDeckAtual()" data-lang="en">Save</button><button class="deck-btn" onclick="salvarDeckAtual()" data-lang="es">Guardar</button><button class="deck-btn" onclick="salvarDeckAtual()" data-lang="vi">Lưu</button>
-      <button class="deck-btn danger" onclick="excluirDeckSalvo()" data-lang="pt">Excluir</button>
-      <button class="deck-btn danger" onclick="excluirDeckSalvo()" data-lang="en">Delete</button><button class="deck-btn danger" onclick="excluirDeckSalvo()" data-lang="es">Eliminar</button><button class="deck-btn danger" onclick="excluirDeckSalvo()" data-lang="vi">Xóa</button>
-    </div>
+    <div class="comp" id="comp"></div>
+    <div class="mste" id="mste"></div>
+    <div class="grupos" id="grupos"></div>
 
-    <div class="deck-toast" id="deck-toast"></div>
+    <div class="cofre-tit"><span data-lang="pt">Cofre do Deck</span><span data-lang="en">Deck Vault</span><span data-lang="es">Cofre del Mazo</span><span data-lang="vi">Kho bộ bài</span></div>
+    <div class="cofre-sub"><span data-lang="pt">cartas montadas para duelo</span><span data-lang="en">cards ready for the duel</span><span data-lang="es">cartas listas para el duelo</span><span data-lang="vi">thẻ sẵn sàng cho trận đấu</span></div>
+    <div class="deck-lista" id="dlista"></div>
 
-    <div class="deck-counter" id="deck-counter">0 <span>/ 40</span></div>
-
-    <div class="deck-grid" id="deck-list">
-      <div class="deck-grid-empty" data-lang="pt">Nenhuma carta ainda. Clique numa carta na lista pra adicionar.</div>
-      <div class="deck-grid-empty" data-lang="en">No cards yet. Click a card in the list to add it.</div><div class="deck-grid-empty" data-lang="es">Ninguna carta aún. Haz clic en una carta de la lista para añadirla.</div><div class="deck-grid-empty" data-lang="vi">Chưa có thẻ nào. Nhấn vào một thẻ trong danh sách để thêm.</div>
+    <button class="btn travado" id="gerar" disabled>&#128274; <span data-lang="pt">Gerar código do deck</span><span data-lang="en">Generate deck code</span><span data-lang="es">Generar código del mazo</span><span data-lang="vi">Tạo mã bộ bài</span></button>
+    <div class="aviso-breve">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.2v.1"/></svg>
+      <div><div data-lang="pt">O <b>código de deck</b> entra na <b>próxima atualização do jogo</b>. Assim que o Editor de Deck souber lê-lo, este botão libera aqui — seu deck continua salvo abaixo até lá.</div><div data-lang="en">The <b>deck code</b> arrives in the <b>next game update</b>. Once the Deck Editor can read it, this button unlocks here — your deck stays saved below until then.</div><div data-lang="es">El <b>código de mazo</b> llega en la <b>próxima actualización del juego</b>. Cuando el Editor de Mazos pueda leerlo, este botón se habilita aquí — tu mazo sigue guardado abajo hasta entonces.</div><div data-lang="vi"><b>Mã bộ bài</b> sẽ có trong <b>bản cập nhật tới của trò chơi</b>. Khi Trình sửa bộ bài đọc được, nút này sẽ mở ở đây — bộ bài của bạn vẫn được lưu bên dưới cho đến lúc đó.</div></div>
     </div>
 
-    <div class="deck-groups" id="deck-groups"></div>
+    <div class="btn-linha">
+      <button class="btn fantasma" id="importar"><span data-lang="pt">Carregar código</span><span data-lang="en">Load code</span><span data-lang="es">Cargar código</span><span data-lang="vi">Tải mã</span></button>
+      <button class="btn fantasma" id="imagem"><span data-lang="pt">Baixar imagem</span><span data-lang="en">Download image</span><span data-lang="es">Descargar imagen</span><span data-lang="vi">Tải ảnh</span></button>
+      <button class="btn fantasma" id="limpar"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span><span data-lang="es">Limpiar</span><span data-lang="vi">Xóa</span></button>
+    </div>
 
-    <button class="deck-btn primary" style="width:100%" onclick="baixarImagemDeck()">
-      <span data-lang="pt">⬇ Baixar imagem do deck</span><span data-lang="en">⬇ Download deck image</span><span data-lang="es">⬇ Descargar imagen del mazo</span><span data-lang="vi">⬇ Tải ảnh bộ bài</span>
-    </button>
-
-    <div class="md-codigo">
-      <div class="md-codigo-tit"><span data-lang="pt">Código de deck</span><span data-lang="en">Deck code</span><span data-lang="es">Código de mazo</span><span data-lang="vi">Mã bộ bài</span></div>
-      <button class="md-travado" disabled title="Em breve">&#128274; <span data-lang="pt">Gerar código</span><span data-lang="en">Generate code</span><span data-lang="es">Generar código</span><span data-lang="vi">Tạo mã</span></button>
-      <div class="md-aviso">
-        <div>
-          <span data-lang="pt">O <b>código de deck</b> entra na <b>próxima atualização do jogo</b>. Assim que o Editor de Deck souber lê-lo, este botão libera aqui.</span>
-          <span data-lang="en">The <b>deck code</b> arrives in the <b>next game update</b>. Once the Deck Editor can read it, this button unlocks here.</span>
-          <span data-lang="es">El <b>código de mazo</b> llega en la <b>próxima actualización del juego</b>. Cuando el Editor de Mazos pueda leerlo, este botón se habilita aquí.</span>
-          <span data-lang="vi">Mã bộ bài sẽ có trong <b>bản cập nhật tới của trò chơi</b>. Khi Trình sửa bộ bài đọc được, nút này sẽ mở ở đây.</span>
-        </div>
+    <div class="salvos">
+      <div class="salvos-tit"><span data-lang="pt">Meus decks</span><span data-lang="en">My decks</span><span data-lang="es">Mis mazos</span><span data-lang="vi">Bộ bài của tôi</span> <span id="salvos-qtd"></span></div>
+      <div id="salvos-lista"></div>
+      <div class="salvar-linha">
+        <input id="salvar-nome" type="text" maxlength="40" placeholder="Nome do deck">
+        <button id="salvar"><span data-lang="pt">Salvar</span><span data-lang="en">Save</span><span data-lang="es">Guardar</span><span data-lang="vi">Lưu</span></button>
       </div>
-      <div class="md-linha">
-        <input id="md-seed" type="text" spellcheck="false" placeholder="FL1-…">
-        <button onclick="mdCarregarCodigo()"><span data-lang="pt">Carregar</span><span data-lang="en">Load</span><span data-lang="es">Cargar</span><span data-lang="vi">Tải</span></button>
-      </div>
-      <div class="md-msg" id="md-msg"></div>
+      <p class="seed-nota"><div data-lang="pt">Ficam guardados <b>neste navegador</b>, só para você — não sobem para nenhum servidor e somem se você limpar os dados do site.</div><div data-lang="en">They stay in <b>this browser</b>, only for you — they never reach any server and disappear if you clear the site data.</div><div data-lang="es">Se guardan en <b>este navegador</b>, solo para ti — no llegan a ningún servidor y desaparecen si borras los datos del sitio.</div><div data-lang="vi">Chúng được lưu trong <b>trình duyệt này</b>, chỉ dành cho bạn — không gửi lên máy chủ nào và sẽ mất nếu bạn xóa dữ liệu trang.</div></p>
     </div>
-  </aside>
+
+    <div class="seed-box" id="seed-box">
+      <div class="seed-rot" id="seed-rot"></div>
+      <div class="seed-campo">
+        <input id="seed" type="text" spellcheck="false" placeholder="FL1-…">
+        <button id="acao"></button>
+      </div>
+      <div class="msg" id="msg"></div>
+      <p class="seed-nota"><div data-lang="pt">No jogo, abra o <b>Editor de Deck</b> e use <b>Carregar código</b>. Lá o jogo entra com o que você <b>possui</b> — o site não tem como saber isso, e o jogo avisa o que faltou.</div><div data-lang="en">In the game, open the <b>Deck Editor</b> and use <b>Load code</b>. There the game brings in what you <b>own</b> — the site cannot know that, and the game tells you what was missing.</div><div data-lang="es">En el juego, abre el <b>Editor de Mazos</b> y usa <b>Cargar código</b>. Allí el juego entra con lo que <b>posees</b> — el sitio no puede saberlo, y el juego avisa qué faltó.</div><div data-lang="vi">Trong trò chơi, mở <b>Trình sửa bộ bài</b> và dùng <b>Tải mã</b>. Ở đó trò chơi chỉ nạp những thẻ bạn <b>sở hữu</b> — trang web không thể biết điều đó, và trò chơi sẽ báo những gì còn thiếu.</div></p>
+    </div>
+  </div>
 </div>
-
-<!-- MODAL DE CARTA -->
-<div class="cat-modal-overlay" id="cat-modal-overlay" onclick="if(event.target===this) closeCardModal()">
-  <div class="cat-modal">
-    <button class="cat-modal-close" onclick="closeCardModal()">✕</button>
-    <div class="cat-modal-img-wrap">
-      <img class="cat-modal-img" id="cat-modal-img" src="" alt="">
-      <img class="cat-modal-rarity-badge" id="cat-modal-rarity-badge" src="" alt="" style="display:none">
-    </div>
-    <div>
-      <div class="cat-modal-name" id="cat-modal-name"></div>
-      <div class="cat-modal-rarity" id="cat-modal-rarity"></div>
-      <div class="cat-modal-facts" id="cat-modal-facts"></div>
-      <div class="cat-modal-desc" id="cat-modal-desc"></div>
-      <button class="cat-modal-add-btn" id="cat-modal-add-btn" onclick="adicionarDoModal()">
-        <span data-lang="pt">+ Adicionar ao deck</span><span data-lang="en">+ Add to deck</span><span data-lang="es">+ Añadir al mazo</span><span data-lang="vi">+ Thêm vào bộ bài</span>
-      </button>
-    </div>
-  </div>
 </div>
 
 <!-- FOOTER -->
@@ -840,520 +799,611 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 </footer>
 
 <script>
-const DECK_MAX = 40;
-const STORAGE_KEY = 'fl_decks';
-let cartas = [];
-let cartaPorNome = {};
-let versaoCache = '';
-let deckRules = { grupos: {}, cartas: {}, limite_padrao: 3 };
-let deckAtual = [];
-let deckNomeAtual = 'Meu Deck';
-let modalCartaAtual = null;
+/* == EDITOR DE DECK ===================================================
+   Porte do modelo aprovado. Catalogo em linhas, Altar da Carta ao lado e
+   Cofre em grade, com a banlist do jogo valendo aqui. */
+let CARTAS=[], IDS={}, POR_ID={}, BAN={limite_padrao:3,grupos:{},cartas:{}};
+let deck=[], filtro={rar:'',cat:''}, busca='', modo='gerar';
+let modoBusca='nome', filtroBan='', cartaNoAltar=null;
+/* so anima quando o CONJUNTO visivel muda; redesenho por clique no
+   deck reaproveita a lista parada */
+let animarLista=true;
+const MAX=40;
 
-/* Escolhe o campo do idioma ativo, caindo para ingles e depois portugues
-   quando a traducao daquele item nao existe. Os nomes de campo mudam de
-   arquivo para arquivo (desc_pt no catalogo, pt nas conquistas), por isso
-   os quatro sao passados explicitamente. */
-function flCampo(obj, pt, en, es, vi) {
-  if (!obj) return '';
-  var l = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
-  var chave = { pt: pt, en: en, es: es, vi: vi }[l] || en;
-  return obj[chave] || obj[en] || obj[pt] || '';
+/* -- idioma -------------------------------------------------------- */
+function LG(){ return document.documentElement.getAttribute('data-lang-ativo')||'pt'; }
+function IL(){ var l=LG(); return l==='en'?1:l==='es'?2:l==='vi'?3:0; }
+const T={
+  todasBan:['Todas as banlists','All banlists','Todas las banlists','Tất cả banlist'],
+  monstros:['monstros','monsters','monstruos','quái thú'],
+  suporteCat:['equip/suporte','equip/support','equip/soporte','trang bị/hỗ trợ'],
+  suporte:['suporte','support','soporte','hỗ trợ'],
+  cartas:['cartas','cards','cartas','thẻ'],
+  max:['máx','max','máx','tối đa'],
+  todas:['Todas','All','Todas','Tất cả'],
+  Monster:['Monstro','Monster','Monstruo','Quái thú'],
+  Spell:['Magia','Spell','Magia','Phép'],
+  Trap:['Armadilha','Trap','Trampa','Bẫy'],
+  Equip:['Equip','Equip','Equip','Trang bị'],
+  Field:['Campo','Field','Campo','Sân'],
+  phNome:['Buscar carta pelo nome…','Search card by name…','Buscar carta por nombre…','Tìm thẻ theo tên…'],
+  phEfeito:['Buscar no efeito… ex.: destrói, ATK, invocar','Search in effect… e.g. destroy, ATK, summon',
+            'Buscar en el efecto… ej.: destruye, ATK, invocar','Tìm trong hiệu ứng… vd: phá hủy, ATK, triệu hồi'],
+  phNomeDeck:['Nome do deck','Deck name','Nombre del mazo','Tên bộ bài'],
+  semCarta:['Nenhuma carta com esses filtros.','No cards match these filters.',
+            'Ninguna carta con esos filtros.','Không có thẻ nào khớp bộ lọc.'],
+  altarVazio:['Passe o mouse numa carta da lista para vê-la aqui.',
+              'Hover a card in the list to see it here.',
+              'Pasa el ratón por una carta de la lista para verla aquí.',
+              'Di chuột lên một thẻ trong danh sách để xem tại đây.'],
+  noDeck:['no deck','in deck','en el mazo','trong bộ bài'],
+  limite:['Limite','Limit','Límite','Giới hạn'],
+  deckVazio:['Clique nas cartas ao lado para montar seu deck.<br>São 40 cartas, com a banlist do jogo valendo aqui.',
+             'Click the cards beside to build your deck.<br>40 cards, with the game banlist applied here.',
+             'Haz clic en las cartas de al lado para armar tu mazo.<br>Son 40 cartas, con la banlist del juego aplicada aquí.',
+             'Nhấn vào các thẻ bên cạnh để tạo bộ bài.<br>40 thẻ, áp dụng banlist của trò chơi.'],
+  cheio40:['O deck já tem 40 cartas.','The deck already has 40 cards.',
+           'El mazo ya tiene 40 cartas.','Bộ bài đã có 40 thẻ.'],
+  limCopias:['Limite de <b>%l</b> cópia(s) atingido para <b>%n</b>.',
+             'Limit of <b>%l</b> copy(ies) reached for <b>%n</b>.',
+             'Límite de <b>%l</b> copia(s) alcanzado para <b>%n</b>.',
+             'Đã đạt giới hạn <b>%l</b> bản cho <b>%n</b>.'],
+  limGrupo:['O grupo <b>%g</b> permite no máximo <b>%m</b> cartas de %c no deck.',
+            'Group <b>%g</b> allows at most <b>%m</b> %c cards in the deck.',
+            'El grupo <b>%g</b> permite como máximo <b>%m</b> cartas de %c en el mazo.',
+            'Nhóm <b>%g</b> chỉ cho phép tối đa <b>%m</b> thẻ %c trong bộ bài.'],
+  seuCodigo:['Seu código de deck','Your deck code','Tu código de mazo','Mã bộ bài của bạn'],
+  coleCodigo:['Cole um código de deck','Paste a deck code','Pega un código de mazo','Dán mã bộ bài'],
+  copiar:['Copiar','Copy','Copiar','Sao chép'],
+  carregarBtn:['Carregar','Load','Cargar','Tải'],
+  copiado:['Código copiado.','Code copied.','Código copiado.','Đã sao chép mã.'],
+  selecionado:['Selecionado — use Ctrl+C para copiar.','Selected — press Ctrl+C to copy.',
+               'Seleccionado — usa Ctrl+C para copiar.','Đã chọn — nhấn Ctrl+C để sao chép.'],
+  prefixo:['Código inválido: falta o prefixo FL1-.','Invalid code: missing the FL1- prefix.',
+           'Código inválido: falta el prefijo FL1-.','Mã không hợp lệ: thiếu tiền tố FL1-.'],
+  truncado:['Código incompleto ou truncado.','Incomplete or truncated code.',
+            'Código incompleto o truncado.','Mã không đầy đủ hoặc bị cắt.'],
+  versao:['Este código é de outra versão do formato.','This code is from another format version.',
+          'Este código es de otra versión del formato.','Mã này thuộc phiên bản định dạng khác.'],
+  corrompido:['Código corrompido — confira se copiou inteiro.','Corrupted code — check that you copied all of it.',
+              'Código corrupto — verifica que lo copiaste completo.','Mã bị hỏng — kiểm tra xem bạn đã sao chép đủ chưa.'],
+  semConhecida:['O código não trouxe nenhuma carta conhecida.','The code brought no known cards.',
+                'El código no trajo ninguna carta conocida.','Mã không mang lại thẻ nào đã biết.'],
+  carregadoOk:['Deck de <b>%n</b> cartas carregado.','Deck of <b>%n</b> cards loaded.',
+               'Mazo de <b>%n</b> cartas cargado.','Đã tải bộ bài <b>%n</b> thẻ.'],
+  carregadoPar:['Carregadas <b>%n</b> cartas. <b>%f</b> ficaram de fora pela banlist ou pelo teto de 40.',
+                'Loaded <b>%n</b> cards. <b>%f</b> were left out by the banlist or the 40 limit.',
+                'Cargadas <b>%n</b> cartas. <b>%f</b> quedaron fuera por la banlist o el límite de 40.',
+                'Đã tải <b>%n</b> thẻ. <b>%f</b> bị loại do banlist hoặc giới hạn 40.'],
+  semSalvos:['Nenhum deck salvo ainda.','No decks saved yet.','Ningún mazo guardado aún.','Chưa có bộ bài nào được lưu.'],
+  monteAntes:['Monte um deck antes de salvar.','Build a deck before saving.',
+              'Arma un mazo antes de guardar.','Hãy tạo bộ bài trước khi lưu.'],
+  deNome:['Dê um nome ao deck.','Give the deck a name.','Ponle un nombre al mazo.','Hãy đặt tên cho bộ bài.'],
+  dezDecks:['Você já tem 10 decks salvos — exclua um antes.','You already have 10 saved decks — delete one first.',
+            'Ya tienes 10 mazos guardados — elimina uno antes.','Bạn đã có 10 bộ bài — hãy xóa bớt một cái.'],
+  salvoOk:['Deck salvo neste navegador.','Deck saved in this browser.',
+           'Mazo guardado en este navegador.','Đã lưu bộ bài trong trình duyệt này.'],
+  atualizado:['Deck atualizado.','Deck updated.','Mazo actualizado.','Đã cập nhật bộ bài.'],
+  excluido:['Deck excluído.','Deck deleted.','Mazo eliminado.','Đã xóa bộ bài.'],
+  semGravar:['Não foi possível salvar neste navegador.','Could not save in this browser.',
+             'No se pudo guardar en este navegador.','Không thể lưu trong trình duyệt này.'],
+  semLer:['Não foi possível ler este deck salvo.','Could not read this saved deck.',
+          'No se pudo leer este mazo guardado.','Không đọc được bộ bài đã lưu này.'],
+  salvoCarregado:['%d carregado.','%d loaded.','%d cargado.','Đã tải %d.'],
+  salvoParcial:['%d carregado com %n cartas — %f ficaram de fora pela banlist.',
+                '%d loaded with %n cards — %f were left out by the banlist.',
+                '%d cargado con %n cartas — %f quedaron fuera por la banlist.',
+                'Đã tải %d với %n thẻ — %f bị loại do banlist.'],
+  monteImagem:['Monte um deck antes de gerar a imagem.','Build a deck before generating the image.',
+               'Arma un mazo antes de generar la imagen.','Hãy tạo bộ bài trước khi tạo ảnh.'],
+  gerando:['Gerando…','Generating…','Generando…','Đang tạo…'],
+  imagemOk:['Imagem do deck baixada.','Deck image downloaded.',
+            'Imagen del mazo descargada.','Đã tải ảnh bộ bài.'],
+  imagemErro:['Não foi possível gerar a imagem.','Could not generate the image.',
+              'No se pudo generar la imagen.','Không thể tạo ảnh.'],
+  semCartas:['Não foi possível carregar as cartas agora.','Could not load the cards right now.',
+             'No se pudieron cargar las cartas ahora.','Hiện không tải được các thẻ.'],
+  codigoGerado:['Código de <b>%n</b> cartas gerado.','Code for <b>%n</b> cards generated.',
+                'Código de <b>%n</b> cartas generado.','Đã tạo mã cho <b>%n</b> thẻ.'],
+  cartasResumo:['cartas','cards','cartas','thẻ']
+};
+function t(k){ return T[k][IL()]; }
+
+Promise.all([
+  fetch('data/catalogo.json').then(r=>r.json()),
+  fetch('data/deckbuilder.json').then(r=>r.json()),
+  fetch('data/card_ids.json').then(r=>r.json())
+]).then(([cat,ban,ids])=>{
+  CARTAS=Array.isArray(cat)?cat:(cat.cartas||Object.values(cat));
+  BAN=ban; IDS=ids.ids||{};
+  Object.keys(IDS).forEach(n=>POR_ID[IDS[n]]=n);
+  montarFiltroBanlist(); chips(); render(); sincDeck(); altarVazio();
+}).catch(()=>{
+  document.getElementById('cat').innerHTML='<div class="deck-vazio">'+t('semCartas')+'</div>';
+});
+
+/* == BANLIST - porte fiel de Scripts/deck_banlist_rules.gd ============
+   Duas regras distintas:
+     1. limite INDIVIDUAL: quantas copias da MESMA carta (padrao 3, ou o
+        `limite` proprio da carta);
+     2. max_in_deck do GRUPO: quantas cartas DAQUELE GRUPO cabem no deck
+        inteiro - NAO e limite por copia.
+   E a contagem do grupo e por CATEGORIA, seguindo _chave_contagem_grupo. */
+const CAT_SUPORTE=['spell','magic','trap','equip','support','backrow'];
+function catDaCarta(nome){
+  const c=CARTAS.find(x=>x.nome===nome);
+  return (c && c.card_type==='Monster') ? 'monster' : 'support';
+}
+function gruposDe(nome){
+  const r=BAN.cartas[nome];
+  if(!r||!r.grupos) return [];
+  return r.grupos.map(id=>{const g=BAN.grupos[id]; return g?Object.assign({id:id},g):null}).filter(Boolean);
+}
+function chaveGrupo(g,nome){
+  const s=String(g.scope||'effect').toLowerCase();
+  if(s==='monster') return g.id+'|monster';
+  if(CAT_SUPORTE.indexOf(s)>=0) return g.id+'|support';
+  return g.id+'|'+catDaCarta(nome);
+}
+function limiteIndividual(nome){
+  const r=BAN.cartas[nome];
+  return (r&&typeof r.limite==='number') ? r.limite : (BAN.limite_padrao||3);
+}
+function contagemGrupos(lista){
+  const c={};
+  lista.forEach(n=>gruposDe(n).forEach(g=>{ const k=chaveGrupo(g,n); c[k]=(c[k]||0)+1; }));
+  return c;
+}
+function validarAdicao(nome){
+  const lim=limiteIndividual(nome);
+  if(deck.filter(x=>x===nome).length>=lim)
+    return {ok:false, tipo:'carta', msg:t('limCopias').replace('%l',lim).replace('%n',nome)};
+  const cont=contagemGrupos(deck);
+  for(const g of gruposDe(nome)){
+    const k=chaveGrupo(g,nome), max=(typeof g.max_in_deck==='number')?g.max_in_deck:3;
+    if((cont[k]||0)>=max){
+      const catTxt = k.endsWith('|monster') ? t('monstros') : t('suporte');
+      return {ok:false, tipo:'grupo', grupo:g,
+        msg:t('limGrupo').replace('%g',g.label||g.id).replace('%m',max).replace('%c',catTxt)};
+    }
+  }
+  return {ok:true};
 }
 
-function isEn() { return document.body.classList.contains('en'); }
+function montarFiltroBanlist(){
+  const sel=document.getElementById('f-ban');
+  /* Conta por CHAVE DE CONTAGEM (<id>|monster / <id>|support), nao por
+     grupo: nos grupos de scope generico o teto vale separado para monstro
+     e para suporte, e uma linha so escondia dois tetos independentes. */
+  const cont={};
+  Object.keys(BAN.cartas).forEach(n=>{
+    gruposDe(n).forEach(g=>{ const k=chaveGrupo(g,n); cont[k]=(cont[k]||0)+1; });
+  });
+  const chaves=Object.keys(cont).sort((a,b)=>cont[b]-cont[a]);
+  sel.innerHTML='<option value="">'+t('todasBan')+'</option>'+chaves.map(k=>{
+    const p=k.split('|'), g=BAN.grupos[p[0]]; if(!g) return '';
+    /* so anota a categoria quando o grupo REALMENTE se divide */
+    const dividido=cont[p[0]+'|monster']&&cont[p[0]+'|support'];
+    const nome=(g.label||p[0])+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');
+    return '<option value="'+k+'">'+nome+' · '+cont[k]+' '+t('cartas')+' · '+t('max')+' '+g.max_in_deck+'</option>';
+  }).join('');
+  sel.value=filtroBan;
+  sel.onchange=()=>{ filtroBan=sel.value; sel.classList.toggle('ativo',!!filtroBan); renderNovo(); };
+}
 
-// ══════════════════ CATÁLOGO / GRADE (mesma logica do catalogo.html) ══════════════════
-(function() {
-  const grid = document.getElementById('cat-grid');
-  const countEl = document.getElementById('cat-count');
-  const searchInput = document.getElementById('cat-search-input');
-  let filtroTipo = 'ALL';
-  let filtroRaridade = 'ALL';
-  let filtroRaca = 'ALL';
-  let termoBusca = ''; window.mdTermo = termoBusca;
+function chips(){
+  const el=document.getElementById('chips'); el.innerHTML='';
+  const add=(campo,v,rot)=>{
+    const b=document.createElement('button');
+    b.className='chip'+(filtro[campo]===v?' on':'');
+    if(campo==='rar'&&v) b.dataset.r=v;
+    b.textContent=rot;
+    b.onclick=()=>{ filtro[campo]=filtro[campo]===v?'':v; chips(); renderNovo(); };
+    el.appendChild(b);
+  };
+  add('rar','',t('todas')); ['UR','SR','R','N'].forEach(r=>add('rar',r,r));
+  ['Monster','Spell','Trap','Equip','Field'].forEach(v=>add('cat',v,t(v)));
+}
 
-  function cardHtml(c) {
-    const nome = isEn() ? c.nome : c.nome_pt;
-    const badgeArquivo = c.raridade_arquivo || c.raridade;
-    const rarityImg = badgeArquivo
-      ? '<img class="rarity" src="img/raridade/rarity_' + badgeArquivo + '.webp" alt="' + c.raridade + '" title="' + c.raridade + '">'
-      : '';
-    const attrImg = c.icone_atributo ? '<img src="img/atributos/' + c.icone_atributo + '.webp" alt="' + c.atributo + '" title="' + c.atributo + '">' : '';
-    const tipoImg = c.icone_tipo ? '<img src="img/tipos/' + c.icone_tipo + '.webp" alt="' + c.tipo + '" title="' + c.tipo + '">' : '';
-    const stats = (c.atk !== undefined) ? ((c.atk || '0') + ' / ' + (c.def || '0')) : '';
-    return (
-      '<div class="deck-cat-row" data-slug="' + c.slug + '" data-nome="' + c.nome.replace(/"/g,'&quot;') + '">' +
-        '<div class="deck-cat-row-name">' + nome + '<span class="qty" data-qty-slug="' + c.slug + '"></span></div>' +
-        '<div class="deck-cat-row-icons">' + attrImg + tipoImg + rarityImg + '</div>' +
-        '<div class="deck-cat-row-stats">' + stats + '</div>' +
-        '<button class="deck-cat-row-info" data-info-slug="' + c.slug + '">i</button>' +
-      '</div>'
-    );
-  }
-
-  function passaFiltro(c) {
-    /* filtro de banlist / busca por efeito (bloco no fim do arquivo) */
-    if (window.mdFiltroExtra && !window.mdFiltroExtra(c)) return false;
-    if (filtroTipo !== 'ALL' && c.card_type !== filtroTipo) return false;
-    if (filtroRaridade !== 'ALL' && c.raridade !== filtroRaridade) return false;
-    if (filtroRaca !== 'ALL' && c.tipo !== filtroRaca) return false;
-    if (termoBusca && !window.mdModoEfeito) {
-      /* no modo Efeito quem decide e mdFiltroExtra, que olha nome E
-         texto do efeito — filtrar por nome aqui zeraria o resultado */
-      const alvo = (c.nome + ' ' + c.nome_pt).toLowerCase();
-      if (!alvo.includes(termoBusca)) return false;
+function render(){
+  const el=document.getElementById('cat'), L=LG();
+  const rolagem=el.scrollTop;
+  const efeitoDe=c=>String(c['desc_'+L]||c.desc_pt||'').toLowerCase();
+  const lista=CARTAS.filter(c=>{
+    if(busca){
+      const casaNome=(c.nome_pt||c.nome||'').toLowerCase().includes(busca)
+                   ||(c.nome||'').toLowerCase().includes(busca);
+      const casaEfeito=efeitoDe(c).includes(busca);
+      /* no modo Efeito o nome ainda vale - quem digita "dragao" espera achar
+         a carta chamada dragao junto das que mencionam dragao no texto */
+      if(modoBusca==='efeito' ? !(casaEfeito||casaNome) : !casaNome) return false;
     }
+    if(filtroBan){
+      /* filtroBan e a chave de contagem, a MESMA que a validacao usa */
+      if(!gruposDe(c.nome).some(g=>chaveGrupo(g,c.nome)===filtroBan)) return false;
+    }
+    if(filtro.rar && (c.raridade||'N').toUpperCase()!==filtro.rar) return false;
+    if(filtro.cat && c.card_type!==filtro.cat) return false;
     return true;
-  }
-
-  const PAGINA = 90;
-  let renderLimit = PAGINA;
-
-  function render(manterLimite) {
-    if (!manterLimite) renderLimit = PAGINA;
-    const oldBtn = document.querySelector('.cat-load-more');
-    if (oldBtn) oldBtn.remove();
-
-    const filtradas = cartas.filter(passaFiltro);
-    countEl.textContent = filtradas.length + (isEn() ? ' cards' : ' cartas');
-    if (filtradas.length === 0) {
-      grid.innerHTML = '<div class="cat-empty">' + (isEn() ? 'No cards match these filters.' : 'Nenhuma carta encontrada com esses filtros.') + '</div>';
-      return;
-    }
-    const visiveis = filtradas.slice(0, renderLimit);
-    grid.innerHTML = visiveis.map(cardHtml).join('');
-    grid.querySelectorAll('.deck-cat-row').forEach(el => {
-      el.addEventListener('click', (e) => {
-        if (e.target.closest('.deck-cat-row-info')) return;
-        tentarAdicionarCarta(el.getAttribute('data-nome'));
-      });
-    });
-    grid.querySelectorAll('.deck-cat-row-info').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openCardModal(btn.getAttribute('data-info-slug'));
-      });
-    });
-    if (filtradas.length > renderLimit) {
-      const restante = filtradas.length - renderLimit;
-      const btn = document.createElement('button');
-      btn.className = 'cat-load-more';
-      btn.textContent = (isEn() ? 'Load more (' : 'Carregar mais (') + restante + (isEn() ? ' remaining)' : ' restantes)');
-      btn.addEventListener('click', () => { renderLimit += PAGINA; render(true); });
-      grid.after(btn);
-    }
-    atualizarBadgesGrade();
-  }
-
-  function popularRacas() {
-    const racaIcone = {};
-    cartas.filter(c => c.card_type === 'Monster').forEach(c => {
-      if (c.icone_tipo && !racaIcone[c.tipo]) racaIcone[c.tipo] = c.icone_tipo;
-    });
-    const racas = Object.keys(racaIcone).sort();
-    const row = document.getElementById('cat-race-row');
-    racas.forEach(r => {
-      const btn = document.createElement('button');
-      btn.className = 'cat-chip cat-chip-icon cat-chip-icon-only';
-      btn.setAttribute('data-filter-race', r);
-      btn.title = r;
-      btn.innerHTML = '<img src="img/tipos/' + racaIcone[r] + '.webp" alt="' + r + '">';
-      row.appendChild(btn);
-    });
-    document.querySelectorAll('[data-filter-race]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        filtroRaca = btn.getAttribute('data-filter-race');
-        document.querySelectorAll('[data-filter-race]').forEach(b => b.classList.toggle('active', b.getAttribute('data-filter-race') === filtroRaca));
-        render();
-      });
-    });
-  }
-
-  document.querySelectorAll('[data-filter-type]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      filtroTipo = btn.getAttribute('data-filter-type');
-      document.querySelectorAll('[data-filter-type]').forEach(b => b.classList.toggle('active', b.getAttribute('data-filter-type') === filtroTipo));
-      render();
-    });
+  }).slice(0,120);
+  el.innerHTML='';
+  const CORES={N:'var(--r-n)',R:'var(--r-r)',SR:'var(--r-sr)',UR:'var(--r-ur)'};
+  lista.forEach((c,i)=>{
+    const q=deck.filter(x=>x===c.nome).length, lim=limiteIndividual(c.nome);
+    const v=validarAdicao(c.nome), bloq=!v.ok||deck.length>=MAX;
+    const r=(c.raridade||'N').toUpperCase(), gs=gruposDe(c.nome);
+    const b=document.createElement('button');
+    b.type='button'; b.className='row'+(bloq?' bloq':''); b.dataset.r=r;
+    if(animarLista) b.style.setProperty('--atraso',Math.min(i,18)*0.014+'s');
+    else b.classList.add('sem-anim');
+    const gTxt=gs.map(g=>(g.label||g.id)+' ('+t('max')+' '+g.max_in_deck+')').join(' · ');
+    b.title=(bloq&&!v.ok) ? v.msg.replace(/<\/?b>/g,'')
+                          : (c.nome_pt||c.nome)+(gTxt?' - '+gTxt:'');
+    const nomeTxt=c.nome_pt||c.nome;
+    const iN=busca?nomeTxt.toLowerCase().indexOf(busca):-1;
+    const nomeHTML=iN>=0
+      ? nomeTxt.slice(0,iN)+'<mark>'+nomeTxt.slice(iN,iN+busca.length)+'</mark>'+nomeTxt.slice(iN+busca.length)
+      : nomeTxt;
+    b.innerHTML='<span class="row-nome">'+nomeHTML+'</span>'+
+      '<span class="col-rar" style="color:'+CORES[r]+'">'+r+'</span>'+
+      (()=>{
+        const ef=String(c['desc_'+L]||c.desc_pt||'');
+        const p=busca?ef.toLowerCase().indexOf(busca):-1;
+        /* casou pelo efeito e nao pelo nome: mostra o trecho no lugar do ATK/DEF */
+        if(modoBusca==='efeito'&&p>=0&&!(c.nome_pt||c.nome||'').toLowerCase().includes(busca)){
+          const a=Math.max(0,p-12);
+          return '<span class="col-stat efeito" title="'+ef.replace(/"/g,'&quot;')+'">…'+
+                 ef.slice(a,p+busca.length+14)+'…</span>';
+        }
+        return '<span class="col-stat">'+(c.card_type==='Monster'?c.atk+'/'+c.def:(T[c.card_type]?t(c.card_type):c.card_type))+'</span>';
+      })()+
+      '<span class="col-ban">'+(gs.length
+        ? '<i style="color:'+(gs[0].cor||'var(--gold)')+'">'+gs[0].max_in_deck+'</i>' : '')+'</span>'+
+      '<span class="row-q'+(q>=lim?' cheio':(q?'':' zero'))+'">'+q+'<small>/'+lim+'</small></span>';
+    b.onclick=()=>adicionar(c);
+    b.onmouseenter=()=>mostrarAltar(c);
+    b.onfocus=()=>mostrarAltar(c);
+    el.appendChild(b);
   });
-  document.querySelectorAll('[data-filter-rarity]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      filtroRaridade = btn.getAttribute('data-filter-rarity');
-      document.querySelectorAll('[data-filter-rarity]').forEach(b => b.classList.toggle('active', b.getAttribute('data-filter-rarity') === filtroRaridade));
-      render();
-    });
-  });
+  if(!lista.length) el.innerHTML='<div class="deck-vazio">'+t('semCarta')+'</div>';
+  if(!animarLista) el.scrollTop=rolagem;
+  animarLista=false;
+}
+/* atalho para quem muda o conjunto visivel */
+function renderNovo(){ animarLista=true; render(); }
 
-  let buscaTimeout = null;
-  searchInput.addEventListener('input', () => {
-    clearTimeout(buscaTimeout);
-    buscaTimeout = setTimeout(() => {
-      termoBusca = searchInput.value.trim().toLowerCase(); window.mdTermo = termoBusca;
-      render();
-    }, 180);
-  });
-
-  window.__deckRender = render;
-  window.__deckPopularRacas = popularRacas;
-})();
-
-function atualizarBadgesGrade() {
-  const contagem = {};
-  deckAtual.forEach(nome => { contagem[nome] = (contagem[nome] || 0) + 1; });
-  document.querySelectorAll('.deck-cat-row-name .qty').forEach(el => {
-    const slug = el.getAttribute('data-qty-slug');
-    const carta = cartas.find(c => c.slug === slug);
-    const qtd = carta ? (contagem[carta.nome] || 0) : 0;
-    el.textContent = qtd > 0 ? ('×' + qtd) : '';
-  });
+function altarVazio(){
+  cartaNoAltar=null;
+  document.getElementById('altar').innerHTML='<div class="altar-vazio">'+t('altarVazio')+'</div>';
+}
+function mostrarAltar(c){
+  cartaNoAltar=c;
+  const L=LG(), desc=(c['desc_'+L]||c.desc_pt||'').trim();
+  const gs=gruposDe(c.nome), lim=limiteIndividual(c.nome);
+  const noDeck=deck.filter(x=>x===c.nome).length, cont=contagemGrupos(deck);
+  document.getElementById('altar').innerHTML=
+    '<div class="altar-arte"><img src="img/cartas_grande/'+c.slug+'.webp" alt=""></div>'+
+    '<div class="altar-nome">'+(c.nome_pt||c.nome)+'</div>'+
+    '<div class="altar-sub">'+(c.tipo||c.card_type||'').toLowerCase()+(c.atributo?' · '+c.atributo:'')+'</div>'+
+    (c.card_type==='Monster'
+      ? '<div class="altar-stats"><span class="altar-stat">ATK '+c.atk+'</span>'+
+        '<span class="altar-stat">DEF '+c.def+'</span>'+
+        (c.nivel?'<span class="altar-stat">Nv '+c.nivel+'</span>':'')+'</div>' : '')+
+    (desc?'<div class="altar-ef">'+desc+'</div>':'')+
+    '<div class="altar-ban">'+(gs.length
+      ? gs.map(g=>(g.label||g.id)+' '+(cont[chaveGrupo(g,c.nome)]||0)+'/'+g.max_in_deck).join(' · ')
+        +' · '+t('noDeck')+' '+noDeck+'/'+lim
+      : t('limite')+' '+lim+' · '+t('noDeck')+' '+noDeck)+'</div>';
 }
 
-// ══════════════════ REGRAS DE DECK (porta de DeckBanlistRules.validar_adicao) ══════════════════
-function categoriaCarta(carta) {
-  return (carta && carta.card_type === 'Monster') ? 'monster' : 'support';
+function adicionar(c){
+  if(deck.length>=MAX) return aviso(t('cheio40'),'err');
+  const v=validarAdicao(c.nome);
+  if(!v.ok) return aviso(v.msg,'err');
+  deck.push(c.nome); sincDeck(); render();
+  if(cartaNoAltar&&cartaNoAltar.nome===c.nome) mostrarAltar(c);
+}
+function remover(nome){
+  const i=deck.lastIndexOf(nome);
+  if(i>=0){ deck.splice(i,1); sincDeck(); render();
+    if(cartaNoAltar&&cartaNoAltar.nome===nome) mostrarAltar(cartaNoAltar); }
+}
+function aviso(txt,tipo){
+  const m=document.getElementById('msg');
+  m.className='msg on '+(tipo||'ok'); m.innerHTML=txt;
+  document.getElementById('seed-box').classList.add('on');
+  clearTimeout(window._t); window._t=setTimeout(()=>m.classList.remove('on'),4200);
 }
 
-function chaveContagemGrupo(grupo, gid, carta) {
-  const scope = (grupo.scope || 'effect').toLowerCase();
-  if (scope === 'monster') return gid + '|monster';
-  if (['spell', 'magic', 'trap', 'equip', 'support', 'backrow'].includes(scope)) return gid + '|support';
-  return gid + '|' + categoriaCarta(carta);
-}
+function sincDeck(){
+  document.getElementById('n').textContent=deck.length;
+  const f=document.getElementById('fill');
+  f.style.width=(deck.length/MAX*100)+'%';
+  f.classList.toggle('cheio',deck.length===MAX);
+  const mc=document.getElementById('deck-mobile-count');
+  if(mc) mc.textContent=deck.length+'/40';
+  /* o gerar segue travado ate o jogo saber ler o codigo - nao depende do
+     tamanho do deck */
 
-function gruposDaCartaNome(nome) {
-  const entry = deckRules.cartas[nome];
-  if (!entry || !entry.grupos) return [];
-  return entry.grupos.map(gid => Object.assign({ id: gid }, deckRules.grupos[gid] || {}));
-}
+  const cats={Monster:0,Spell:0,Trap:0,Equip:0,Field:0};
+  deck.forEach(n=>{const c=CARTAS.find(x=>x.nome===n); if(c&&cats[c.card_type]!==undefined) cats[c.card_type]++});
+  const cores={Monster:'#c8973a',Spell:'#4a9fd8',Trap:'#b06cc0',Equip:'#6cba9a',Field:'#d88a4a'};
+  document.getElementById('comp').innerHTML=Object.keys(cats).map(k=>
+    cats[k]?'<span style="width:'+(cats[k]/Math.max(1,deck.length)*100)+'%;background:'+cores[k]+'"></span>':'').join('');
+  const sigla={Monster:'M',Spell:'S',Trap:'T',Equip:'E',Field:'C'};
+  document.getElementById('mste').innerHTML=Object.keys(cats)
+    .map(k=>'<span title="'+t(k)+'" style="color:'+cores[k]+';border-color:'+cores[k]+'44">'+sigla[k]+' '+cats[k]+'</span>').join('');
 
-function limiteIndividual(nome) {
-  const entry = deckRules.cartas[nome];
-  return (entry && entry.limite) || deckRules.limite_padrao || 3;
-}
-
-// Espelha DeckBanlistRules.validar_adicao(deck_atual, nome_carta, limite_individual)
-function validarAdicao(nomeCarta) {
-  if (deckAtual.length >= DECK_MAX) {
-    return { ok: false, motivo: isEn() ? `Deck full (${DECK_MAX} cards).` : `Deck cheio (${DECK_MAX} cartas).` };
-  }
-  const limite = limiteIndividual(nomeCarta);
-  let contagemCarta = 0;
-  const contagemGrupos = {};
-  deckAtual.forEach(item => {
-    if (item === nomeCarta) contagemCarta++;
-    gruposDaCartaNome(item).forEach(grupo => {
-      const chave = chaveContagemGrupo(grupo, grupo.id, cartaPorNome[item]);
-      contagemGrupos[chave] = (contagemGrupos[chave] || 0) + 1;
-    });
-  });
-  if (contagemCarta >= limite) {
-    return {
-      ok: false,
-      motivo: isEn()
-        ? `Limit of ${limite} ${limite === 1 ? 'copy' : 'copies'} reached for ${nomeCarta}.`
-        : `Limite de ${limite} cópia${limite === 1 ? '' : 's'} atingido para ${nomeCarta}.`,
-    };
-  }
-  const cartaNova = cartaPorNome[nomeCarta];
-  for (const grupo of gruposDaCartaNome(nomeCarta)) {
-    const limiteGrupo = grupo.max_in_deck || 3;
-    const chave = chaveContagemGrupo(grupo, grupo.id, cartaNova);
-    const qtd = contagemGrupos[chave] || 0;
-    if (qtd >= limiteGrupo) {
-      return {
-        ok: false,
-        motivo: isEn()
-          ? `Group "${grupo.label}" allows at most ${limiteGrupo} card${limiteGrupo === 1 ? '' : 's'} of this category.`
-          : `Grupo "${grupo.label}" permite no máximo ${limiteGrupo} carta${limiteGrupo === 1 ? '' : 's'} desta categoria.`,
-      };
-    }
-  }
-  return { ok: true };
-}
-
-function mostrarToast(msg) {
-  const el = document.getElementById('deck-toast');
-  el.textContent = msg;
-  el.classList.add('show');
-  clearTimeout(window.__toastTimeout);
-  window.__toastTimeout = setTimeout(() => el.classList.remove('show'), 3500);
-}
-
-function tentarAdicionarCarta(nomeCarta) {
-  if (!nomeCarta || !cartaPorNome[nomeCarta]) return false;
-  const validacao = validarAdicao(nomeCarta);
-  if (!validacao.ok) {
-    mostrarToast(validacao.motivo);
-    return false;
-  }
-  deckAtual.push(nomeCarta);
-  atualizarPainelDeck();
-  return true;
-}
-
-function removerCartaPorIndice(idx) {
-  if (idx < 0 || idx >= deckAtual.length) return;
-  deckAtual.splice(idx, 1);
-  atualizarPainelDeck();
-}
-
-// ══════════════════ PAINEL DO DECK ══════════════════
-function resumoGruposDeck() {
-  const contagem = {};
-  deckAtual.forEach(item => {
-    gruposDaCartaNome(item).forEach(grupo => {
-      const chave = chaveContagemGrupo(grupo, grupo.id, cartaPorNome[item]);
-      if (!contagem[chave]) contagem[chave] = { grupo, count: 0 };
-      contagem[chave].count++;
-    });
-  });
-  return Object.values(contagem).sort((a, b) => b.count - a.count);
-}
-
-function atualizarPainelDeck() {
-  const counterEl = document.getElementById('deck-counter');
-  counterEl.innerHTML = deckAtual.length + ' <span>/ ' + DECK_MAX + '</span>';
-  counterEl.classList.toggle('full', deckAtual.length >= DECK_MAX);
-  document.getElementById('deck-mobile-count').textContent = deckAtual.length + '/' + DECK_MAX;
-
-  const listEl = document.getElementById('deck-list');
-  if (deckAtual.length === 0) {
-    listEl.innerHTML = '<div class="deck-grid-empty">' + (isEn() ? 'No cards yet. Click a card in the list to add it.' : 'Nenhuma carta ainda. Clique numa carta na lista pra adicionar.') + '</div>';
-  } else {
-    listEl.innerHTML = deckAtual.map((nome, idx) => {
-      const c = cartaPorNome[nome];
-      if (!c) return '';
-      const nomeExibido = isEn() ? c.nome : c.nome_pt;
-      return (
-        '<div class="deck-grid-item r-' + c.raridade + '" data-idx="' + idx + '" title="' + nomeExibido.replace(/"/g, '&quot;') + '">' +
-          '<img class="card-img" src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="' + nomeExibido + '">' +
-          '<div class="deck-grid-item-remove">✕</div>' +
-        '</div>'
-      );
-    }).join('');
-    listEl.querySelectorAll('.deck-grid-item').forEach(el => {
-      el.addEventListener('click', () => removerCartaPorIndice(parseInt(el.getAttribute('data-idx'), 10)));
-    });
-  }
-
-  const gruposEl = document.getElementById('deck-groups');
-  const resumo = resumoGruposDeck();
-  gruposEl.innerHTML = resumo.map(({ grupo, count }) => {
-    const limite = grupo.max_in_deck || 3;
-    const cheio = count >= limite;
-    return (
-      '<div class="deck-group-chip' + (cheio ? ' cheio' : '') + '">' +
-        '<span>' + (grupo.label || grupo.id) + '</span><span>' + count + '/' + limite + '</span>' +
-      '</div>'
-    );
+  /* grupos de banlist EM USO, com o quanto ja foi gasto de cada teto */
+  const cont=contagemGrupos(deck), G=document.getElementById('grupos');
+  G.innerHTML=Object.keys(cont).sort().map(k=>{
+    const p=k.split('|'), g=BAN.grupos[p[0]]; if(!g) return '';
+    const max=(typeof g.max_in_deck==='number')?g.max_in_deck:3, usado=cont[k];
+    const cor=g.cor||'var(--gold)';
+    const dividido=(cont[p[0]+'|monster']!==undefined)&&(cont[p[0]+'|support']!==undefined);
+    const rot=(g.label||p[0])+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');
+    return '<div class="gp'+(usado>=max?' cheio':'')+'">'+
+      '<span style="color:'+cor+';font-size:10px">'+rot+'</span>'+
+      '<span class="gp-b"><span class="gp-f" style="width:'+Math.min(100,usado/max*100)+'%;background:'+cor+'"></span></span>'+
+      '<span class="gp-n" style="color:'+(usado>=max?'var(--erro)':'var(--muted)')+'">'+usado+'/'+max+'</span></div>';
   }).join('');
 
-  atualizarBadgesGrade();
+  const c2={}; deck.forEach(n=>c2[n]=(c2[n]||0)+1);
+  const L=document.getElementById('dlista');
+  if(!deck.length){
+    L.innerHTML='<div class="deck-vazio vazio-msg">'+t('deckVazio')+'</div>';
+  } else {
+    L.innerHTML=Object.keys(c2).sort().map(n=>{
+      const c=CARTAS.find(x=>x.nome===n)||{};
+      const tt=(c.nome_pt||n).replace(/"/g,'&quot;');
+      return '<button class="dl" type="button" onclick="remover('+JSON.stringify(n).replace(/"/g,'&quot;')+')" title="'+tt+' x'+c2[n]+'">'+
+        '<img src="img/cartas/'+c.slug+'.webp" alt="'+tt+'" loading="lazy">'+
+        (c2[n]>1?'<span class="dl-q">'+c2[n]+'</span>':'')+
+        '<span class="dl-x">&#10005;</span></button>';
+    }).join('');
+  }
 }
 
-// ══════════════════ DECKS SALVOS (localStorage) ══════════════════
-function carregarDecksSalvos() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
-  catch (e) { return {}; }
+/* == CODIGO DE DECK ===================================================
+   FL1-<base64url>: versao(1B) + entradas de 2B (12 bits de id + 4 de
+   quantidade) + checksum. Os ids vem de card_ids.json, APPEND-ONLY, o
+   que mantem um codigo valido depois de qualquer atualizacao. */
+const b64url=b=>btoa(String.fromCharCode.apply(null,b)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+function deB64url(x){
+  x=x.replace(/-/g,'+').replace(/_/g,'/'); while(x.length%4) x+='=';
+  const b=atob(x), a=new Uint8Array(b.length);
+  for(let i=0;i<b.length;i++) a[i]=b.charCodeAt(i);
+  return a;
 }
-function gravarDecksSalvos(obj) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-}
-function popularSeletorDecks() {
-  const decks = carregarDecksSalvos();
-  const sel = document.getElementById('deck-select');
-  const nomes = Object.keys(decks).sort();
-  sel.innerHTML = '<option value="">' + (isEn() ? '— Saved decks —' : '— Decks salvos —') + '</option>' +
-    nomes.map(n => '<option value="' + n.replace(/"/g, '&quot;') + '">' + n + ' (' + decks[n].length + ')</option>').join('');
-}
-function novoDeck() {
-  deckAtual = [];
-  deckNomeAtual = isEn() ? 'My Deck' : 'Meu Deck';
-  document.getElementById('deck-nome-input').value = deckNomeAtual;
-  document.getElementById('deck-select').value = '';
-  atualizarPainelDeck();
-}
-function salvarDeckAtual() {
-  const nome = document.getElementById('deck-nome-input').value.trim();
-  if (!nome) { mostrarToast(isEn() ? 'Give your deck a name first.' : 'Dê um nome ao deck primeiro.'); return; }
-  const decks = carregarDecksSalvos();
-  decks[nome] = deckAtual.slice();
-  gravarDecksSalvos(decks);
-  deckNomeAtual = nome;
-  popularSeletorDecks();
-  document.getElementById('deck-select').value = nome;
-  mostrarToast(isEn() ? `Deck "${nome}" saved.` : `Deck "${nome}" salvo.`);
-}
-function excluirDeckSalvo() {
-  const sel = document.getElementById('deck-select');
-  const nome = sel.value;
-  if (!nome) return;
-  const decks = carregarDecksSalvos();
-  delete decks[nome];
-  gravarDecksSalvos(decks);
-  popularSeletorDecks();
-}
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('deck-select').addEventListener('change', (e) => {
-    const nome = e.target.value;
-    if (!nome) return;
-    const decks = carregarDecksSalvos();
-    deckAtual = (decks[nome] || []).filter(n => cartaPorNome[n]);
-    deckNomeAtual = nome;
-    document.getElementById('deck-nome-input').value = nome;
-    atualizarPainelDeck();
+function gerarSeed(){
+  const c={}; deck.forEach(n=>c[n]=(c[n]||0)+1);
+  const bytes=[1]; let soma=1;
+  Object.keys(c).forEach(n=>{
+    const id=IDS[n]; if(!id) return;
+    const q=Math.min(15,c[n]), b1=(id>>4)&0xFF, b2=((id&0x0F)<<4)|q;
+    bytes.push(b1,b2); soma=(soma+b1+b2)&0xFF;
   });
-});
-
-// ══════════════════ DRAWER MOBILE ══════════════════
-function toggleDeckPainel() {
-  document.getElementById('deck-side').classList.toggle('open');
+  bytes.push(soma);
+  return 'FL1-'+b64url(bytes);
+}
+function lerSeed(x){
+  x=(x||'').trim();
+  if(x.indexOf('FL1-')!==0) throw new Error(t('prefixo'));
+  const a=deB64url(x.slice(4));
+  if(a.length<4||(a.length-2)%2) throw new Error(t('truncado'));
+  if(a[0]!==1) throw new Error(t('versao'));
+  let soma=a[0];
+  for(let i=1;i<a.length-1;i++) soma=(soma+a[i])&0xFF;
+  if(soma!==a[a.length-1]) throw new Error(t('corrompido'));
+  const out=[];
+  for(let i=1;i<a.length-1;i+=2){
+    const id=(a[i]<<4)|(a[i+1]>>4), q=a[i+1]&0x0F, nome=POR_ID[id];
+    if(nome) for(let k=0;k<q;k++) out.push(nome);
+  }
+  return out;
 }
 
-// ══════════════════ EXPORTAR IMAGEM (canvas) ══════════════════
-function baixarImagemDeck() {
-  if (deckAtual.length === 0) {
-    mostrarToast(isEn() ? 'Add cards to your deck first.' : 'Adicione cartas ao deck primeiro.');
+document.getElementById('gerar').onclick=()=>{
+  /* travado ate o jogo saber ler o codigo */
+  if(document.getElementById('gerar').classList.contains('travado')) return;
+  modo='gerar';
+  document.getElementById('seed-rot').textContent=t('seuCodigo');
+  document.getElementById('seed').value=gerarSeed();
+  document.getElementById('acao').textContent=t('copiar');
+  document.getElementById('seed-box').classList.add('on');
+  aviso(t('codigoGerado').replace('%n',deck.length),'ok');
+};
+document.getElementById('importar').onclick=()=>{
+  modo='ler';
+  document.getElementById('seed-rot').textContent=t('coleCodigo');
+  document.getElementById('seed').value='';
+  document.getElementById('acao').textContent=t('carregarBtn');
+  document.getElementById('seed-box').classList.add('on');
+  document.getElementById('seed').focus();
+};
+document.getElementById('acao').onclick=async()=>{
+  const campo=document.getElementById('seed');
+  if(modo==='gerar'){
+    try{ await navigator.clipboard.writeText(campo.value); aviso(t('copiado'),'ok'); }
+    catch(e){ campo.select(); aviso(t('selecionado'),'ok'); }
     return;
   }
-  const cols = 8;
-  const cardW = 110, cardH = 160, gap = 8, pad = 24, headerH = 64;
-  const rows = Math.ceil(deckAtual.length / cols);
-  const canvas = document.createElement('canvas');
-  canvas.width = pad * 2 + cols * cardW + (cols - 1) * gap;
-  canvas.height = pad * 2 + headerH + rows * cardH + Math.max(0, rows - 1) * gap;
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = '#09080a';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#e8b840';
-  ctx.font = 'bold 26px Georgia, serif';
-  ctx.fillText((deckNomeAtual || (isEn() ? 'My Deck' : 'Meu Deck')) + ' — Forbidden Legacy', pad, pad + 26);
-  ctx.fillStyle = '#9a8050';
-  ctx.font = '14px Georgia, serif';
-  ctx.fillText(deckAtual.length + (isEn() ? ' cards' : ' cartas'), pad, pad + 46);
+  try{
+    const lista=lerSeed(campo.value);
+    if(!lista.length) throw new Error(t('semConhecida'));
+    deck=[]; let fora=0;
+    lista.forEach(n=>{
+      if(deck.length>=MAX||!validarAdicao(n).ok){ fora++; return; }
+      deck.push(n);
+    });
+    sincDeck(); render();
+    aviso(fora
+      ? t('carregadoPar').replace('%n',deck.length).replace('%f',fora)
+      : t('carregadoOk').replace('%n',deck.length), fora?'err':'ok');
+  }catch(e){ aviso(e.message,'err'); }
+};
+document.getElementById('limpar').onclick=()=>{ deck=[]; sincDeck(); render(); };
+document.getElementById('q').addEventListener('input',e=>{ busca=e.target.value.trim().toLowerCase(); renderNovo(); });
+['nome','efeito'].forEach(m=>{
+  document.getElementById('m-'+m).onclick=()=>{
+    modoBusca=m;
+    document.getElementById('m-nome').classList.toggle('on',m==='nome');
+    document.getElementById('m-efeito').classList.toggle('on',m==='efeito');
+    document.getElementById('q').placeholder = m==='efeito'?t('phEfeito'):t('phNome');
+    renderNovo();
+  };
+});
 
-  const carregamentos = deckAtual.map((nome, i) => new Promise(resolve => {
-    const c = cartaPorNome[nome];
-    const img = new Image();
-    img.onload = () => {
-      const col = i % cols, row = Math.floor(i / cols);
-      const x = pad + col * (cardW + gap);
-      const y = pad + headerH + row * (cardH + gap);
-      ctx.drawImage(img, x, y, cardW, cardH);
-      resolve();
-    };
-    img.onerror = resolve;
-    img.src = 'img/cartas/' + (c ? c.slug : '') + '.webp?v=' + versaoCache;
-  }));
-
-  Promise.all(carregamentos).then(() => {
-    canvas.toBlob(blob => {
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = (deckNomeAtual || 'deck').replace(/[^a-z0-9_-]+/gi, '_') + '.png';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 2000);
-    }, 'image/png');
+/* == DECKS SALVOS NO NAVEGADOR ========================================
+   Guarda o codigo compacto no lugar da lista de nomes. localStorage pode
+   falhar (janela anonima, dados bloqueados): toda leitura e escrita vai
+   em try/catch e a pagina segue funcionando sem os salvos. */
+const CHAVE='fl_decks_v1';
+function lerSalvos(){ try{ return JSON.parse(localStorage.getItem(CHAVE)||'[]'); }catch(e){ return []; } }
+function gravarSalvos(l){
+  try{ localStorage.setItem(CHAVE,JSON.stringify(l)); return true; }
+  catch(e){ aviso(t('semGravar'),'err'); return false; }
+}
+function renderSalvos(){
+  const l=lerSalvos(), el=document.getElementById('salvos-lista');
+  document.getElementById('salvos-qtd').textContent=l.length?l.length+'/10':'';
+  if(!l.length){ el.innerHTML='<div class="salvos-vazio">'+t('semSalvos')+'</div>'; return; }
+  el.innerHTML='';
+  l.forEach((d,i)=>{
+    const div=document.createElement('div'); div.className='slot';
+    const nome=document.createElement('span');
+    nome.className='slot-nome'; nome.textContent=d.nome; nome.title=d.nome;
+    nome.onclick=()=>carregarSalvo(i);
+    const n=document.createElement('span'); n.className='slot-n'; n.textContent=d.n;
+    const x=document.createElement('button'); x.innerHTML='&#10005;';
+    x.onclick=()=>excluirSalvo(i);
+    div.appendChild(nome); div.appendChild(n); div.appendChild(x);
+    el.appendChild(div);
   });
 }
+function salvarAtual(){
+  const campo=document.getElementById('salvar-nome');
+  const nome=(campo.value||'').trim();
+  if(!deck.length) return aviso(t('monteAntes'),'err');
+  if(!nome) return aviso(t('deNome'),'err');
+  const l=lerSalvos();
+  let j=-1;
+  for(let k=0;k<l.length;k++) if(l[k].nome===nome) j=k;
+  if(l.length>=10 && j<0) return aviso(t('dezDecks'),'err');
+  const item={nome:nome, n:deck.length, codigo:gerarSeed(), em:Date.now()};
+  if(j>=0) l[j]=item; else l.push(item);
+  if(gravarSalvos(l)){ renderSalvos(); campo.value='';
+    aviso(j>=0 ? t('atualizado') : t('salvoOk'),'ok'); }
+}
+function carregarSalvo(i){
+  const d=lerSalvos()[i]; if(!d) return;
+  try{
+    const lista=lerSeed(d.codigo); let fora=0;
+    deck=[];
+    lista.forEach(n=>{
+      if(deck.length>=MAX||!validarAdicao(n).ok){ fora++; return; }
+      deck.push(n);
+    });
+    sincDeck(); render();
+    aviso(fora
+      ? t('salvoParcial').replace('%d',d.nome).replace('%n',deck.length).replace('%f',fora)
+      : t('salvoCarregado').replace('%d',d.nome), fora?'err':'ok');
+  }catch(e){ aviso(t('semLer'),'err'); }
+}
+function excluirSalvo(i){
+  const l=lerSalvos(); if(!l[i]) return;
+  l.splice(i,1);
+  if(gravarSalvos(l)){ renderSalvos(); aviso(t('excluido'),'ok'); }
+}
+document.getElementById('salvar').onclick=salvarAtual;
+document.getElementById('salvar-nome').addEventListener('keydown',e=>{ if(e.key==='Enter') salvarAtual(); });
+renderSalvos();
 
-// ══════════════════ MODAL DE CARTA (info, com botao adicionar) ══════════════════
-(function() {
-  const overlay = document.getElementById('cat-modal-overlay');
-  const modalImg = document.getElementById('cat-modal-img');
-  const modalRarityBadge = document.getElementById('cat-modal-rarity-badge');
-  const modalName = document.getElementById('cat-modal-name');
-  const modalRarity = document.getElementById('cat-modal-rarity');
-  const modalFacts = document.getElementById('cat-modal-facts');
-  const modalDesc = document.getElementById('cat-modal-desc');
+/* == IMAGEM DO COFRE ==================================================
+   Desenha o deck num canvas e baixa como PNG. As cartas vem do mesmo
+   dominio, entao o canvas nao fica tainted e o toDataURL funciona.
+   Carta que falhar vira quadro vazio - nunca derruba a exportacao. */
+function carregarImg(src){
+  return new Promise(res=>{ const im=new Image();
+    im.onload=()=>res(im); im.onerror=()=>res(null); im.src=src; });
+}
+async function baixarImagem(){
+  if(!deck.length) return aviso(t('monteImagem'),'err');
+  const btn=document.getElementById('imagem'), htmlOrig=btn.innerHTML;
+  btn.textContent=t('gerando'); btn.disabled=true;
+  try{
+    const cont={}; deck.forEach(n=>{ cont[n]=(cont[n]||0)+1; });
+    const nomes=Object.keys(cont).sort();
+    const COLS=8, CW=110, CH=160, GAP=10, PAD=26, TOPO=92, RODAPE=54;
+    const linhas=Math.ceil(nomes.length/COLS);
+    const W=PAD*2+COLS*CW+(COLS-1)*GAP;
+    const H=TOPO+linhas*CH+(linhas-1)*GAP+RODAPE+PAD;
+    const cv=document.createElement('canvas');
+    cv.width=W; cv.height=H;
+    const g=cv.getContext('2d');
 
-  function factHtml(labelPt, labelEn, value, iconSrc, iconAlt) {
-    if (!value) return '';
-    const icone = iconSrc ? '<img src="' + iconSrc + '" alt="' + (iconAlt || '') + '">' : '';
-    return (
-      '<div><div class="cat-modal-fact-label">' + (isEn() ? labelEn : labelPt) + '</div>' +
-      '<div class="cat-modal-fact-value">' + icone + '<span>' + value + '</span></div></div>'
-    );
-  }
+    g.fillStyle='#09080a'; g.fillRect(0,0,W,H);
+    const grad=g.createRadialGradient(W/2,0,0,W/2,0,W*0.75);
+    grad.addColorStop(0,'rgba(200,151,58,.13)'); grad.addColorStop(1,'rgba(200,151,58,0)');
+    g.fillStyle=grad; g.fillRect(0,0,W,H*0.6);
 
-  window.openCardModal = function(slug) {
-    const c = cartas.find(x => x.slug === slug);
-    if (!c) return;
-    modalCartaAtual = c;
-    modalImg.src = 'img/cartas_grande/' + c.slug + '.webp?v=' + versaoCache;
-    modalImg.alt = c.nome;
-    const badgeArquivo = c.raridade_arquivo || c.raridade;
-    if (badgeArquivo) {
-      modalRarityBadge.src = 'img/raridade/rarity_' + badgeArquivo + '.webp';
-      modalRarityBadge.alt = c.raridade;
-      modalRarityBadge.style.display = '';
-    } else {
-      modalRarityBadge.style.display = 'none';
-    }
-    modalName.textContent = isEn() ? c.nome : c.nome_pt;
-    modalRarity.className = 'cat-modal-rarity r-' + c.raridade;
-    modalRarity.textContent = c.raridade;
-    const facts = [];
-    const iconeAttrSrc = c.icone_atributo ? 'img/atributos/' + c.icone_atributo + '.webp' : '';
-    const iconeTipoSrc = c.icone_tipo ? 'img/tipos/' + c.icone_tipo + '.webp' : '';
-    const ehMonstro = c.card_type === 'Monster';
-    facts.push(factHtml('Tipo', 'Card Type', ehMonstro ? (isEn() ? 'Monster' : 'Monstro') : c.card_type, ehMonstro ? '' : iconeAttrSrc, c.atributo));
-    if (ehMonstro) {
-      facts.push(factHtml('Raça', 'Race', c.tipo, iconeTipoSrc, c.tipo));
-      facts.push(factHtml('Atributo', 'Attribute', c.atributo, iconeAttrSrc, c.atributo));
-      facts.push(factHtml('Nível', 'Level', c.nivel));
-      facts.push(factHtml('ATK / DEF', 'ATK / DEF', (c.atk || '0') + ' / ' + (c.def || '0')));
-    }
-    modalFacts.innerHTML = facts.join('');
-    const desc = flCampo(c, 'desc_pt', 'desc_en', 'desc_es', 'desc_vi');
-    modalDesc.textContent = desc || (isEn() ? 'No effect text for this card.' : 'Sem texto de efeito para esta carta.');
-    overlay.classList.add('open');
-  };
+    const nomeDeck=(document.getElementById('salvar-nome').value||'').trim()||'Deck';
+    g.fillStyle='#e8b840'; g.font='600 34px Inter, system-ui, sans-serif';
+    g.fillText(nomeDeck, PAD, 52);
+    const cats={Monster:0,Spell:0,Trap:0,Equip:0,Field:0};
+    deck.forEach(n=>{ const c=CARTAS.find(x=>x.nome===n);
+      if(c&&cats[c.card_type]!==undefined) cats[c.card_type]++; });
+    g.fillStyle='#6a5830'; g.font='500 15px Inter, system-ui, sans-serif';
+    g.fillText(deck.length+'/40 '+t('cartasResumo')+'  ·  M '+cats.Monster+'  S '+cats.Spell+
+               '  T '+cats.Trap+'  E '+cats.Equip, PAD, 76);
 
-  window.closeCardModal = function() {
-    overlay.classList.remove('open');
-  };
+    const imgs=await Promise.all(nomes.map(n=>{
+      const c=CARTAS.find(x=>x.nome===n)||{};
+      return carregarImg('img/cartas/'+c.slug+'.webp');
+    }));
+    nomes.forEach((n,i)=>{
+      const x=PAD+(i%COLS)*(CW+GAP), y=TOPO+Math.floor(i/COLS)*(CH+GAP);
+      if(imgs[i]) g.drawImage(imgs[i],x,y,CW,CH);
+      else { g.fillStyle='#120e12'; g.fillRect(x,y,CW,CH); }
+      g.strokeStyle='rgba(200,151,58,.3)'; g.lineWidth=1;
+      g.strokeRect(x+.5,y+.5,CW-1,CH-1);
+      if(cont[n]>1){
+        const bw=26,bh=20, bx=x+CW-bw-4, by=y+CH-bh-4;
+        g.fillStyle='rgba(6,3,10,.9)'; g.fillRect(bx,by,bw,bh);
+        g.strokeStyle='#c8973a'; g.strokeRect(bx+.5,by+.5,bw-1,bh-1);
+        g.fillStyle='#ffe49a'; g.font='700 13px Inter, system-ui, sans-serif';
+        g.textAlign='center'; g.fillText('x'+cont[n], bx+bw/2, by+14); g.textAlign='left';
+      }
+    });
 
-  window.adicionarDoModal = function() {
-    if (!modalCartaAtual) return;
-    if (tentarAdicionarCarta(modalCartaAtual.nome)) closeCardModal();
-  };
+    g.fillStyle='#4a3f28'; g.font='500 13px Inter, system-ui, sans-serif';
+    g.fillText('Forbidden Legacy · forbiddenlegacy.com.br', PAD, H-PAD+4);
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeCardModal();
-  });
-})();
+    const a=document.createElement('a');
+    a.href=cv.toDataURL('image/png');
+    a.download=nomeDeck.normalize('NFD').replace(/[̀-ͯ]/g,'')
+      .replace(/[^\w\s-]/g,'').trim().replace(/\s+/g,'_').toLowerCase()+'.png';
+    document.body.appendChild(a); a.click(); a.remove();
+    aviso(t('imagemOk'),'ok');
+  }catch(e){ aviso(t('imagemErro'),'err'); }
+  finally{ btn.innerHTML=htmlOrig; btn.disabled=false; }
+}
+document.getElementById('imagem').onclick=baixarImagem;
+window.remover=remover;
 
-// ══════════════════ CARREGAMENTO DE DADOS ══════════════════
-Promise.all([
-  fetch('data/catalogo.json?t=' + Date.now()).then(r => r.json()),
-  fetch('data/deckbuilder.json?t=' + Date.now()).then(r => r.json()),
-]).then(([catalogo, regras]) => {
-  cartas = catalogo.cartas || [];
-  versaoCache = catalogo.versao || '';
-  cartas.forEach(c => { cartaPorNome[c.nome] = c; });
-  deckRules = regras || deckRules;
-  window.__deckPopularRacas();
-  window.__deckRender();
-  popularSeletorDecks();
-  document.getElementById('deck-nome-input').value = deckNomeAtual;
-  atualizarPainelDeck();
-  /* o bloco de codigo de deck / filtro de banlist vive em outro <script>
-     e precisa ler estes; sem isto o filtro fica vazio */
-  window.cartas = cartas;
-  window.deckRules = deckRules;
-  window.deckAtual = deckAtual;
-  window.render = window.__deckRender;
-  window.renderDeck = atualizarPainelDeck;
-  window.limiteIndividual = limiteIndividual;
-  document.dispatchEvent(new CustomEvent('deck-pronto'));
-}).catch(() => {
-  document.getElementById('cat-grid').innerHTML = '<div class="cat-empty">' + (isEn() ? 'Could not load cards right now.' : 'Não foi possível carregar as cartas agora.') + '</div>';
-});
+/* trocar de idioma redesenha tudo que o JS escreveu - sem isso o
+   catalogo, o altar e o cofre ficariam presos no idioma do primeiro
+   carregamento */
+function reidiomar(){
+  document.getElementById('q').placeholder = modoBusca==='efeito'?t('phEfeito'):t('phNome');
+  document.getElementById('salvar-nome').placeholder = t('phNomeDeck');
+  if(CARTAS.length){ montarFiltroBanlist(); chips(); renderNovo(); sincDeck(); }
+  if(cartaNoAltar) mostrarAltar(cartaNoAltar); else altarVazio();
+  renderSalvos();
+}
+reidiomar();
+new MutationObserver(reidiomar).observe(document.documentElement,
+  {attributes:true, attributeFilter:['data-lang-ativo']});
 
 // Nav scroll
 const nav = document.getElementById('nav');
@@ -1494,190 +1544,6 @@ window.setLang = setLang;
 })();
 </script>
 
-<script>
-/* == CODIGO DE DECK, BUSCA POR EFEITO E FILTRO DE BANLIST ============
-   Estende a pagina por fora — nao reescreve nada do que ja existia. */
-(function(){
-  var IDS={}, POR_ID={}, modoBusca='nome', filtroBan='';
-  var SUP=['spell','magic','trap','equip','support','backrow'];
 
-  function L(){ var l=document.documentElement.getAttribute('data-lang-ativo')||'pt';
-    return l==='en'?1:l==='es'?2:l==='vi'?3:0; }
-  function T(a){ return a[L()]; }
-
-  var TX={
-    carregado:['Deck carregado: %n cartas.','Deck loaded: %n cards.',
-               'Mazo cargado: %n cartas.','Đã tải bộ bài: %n thẻ.'],
-    parcial:['Carregadas %n cartas. %f ficaram de fora pela banlist ou pelo limite de 40.',
-             'Loaded %n cards. %f were left out by the banlist or the 40 limit.',
-             'Cargadas %n cartas. %f quedaron fuera por la banlist o el límite de 40.',
-             'Đã tải %n thẻ. %f bị loại do banlist hoặc giới hạn 40.'],
-    prefixo:['Código inválido: falta o prefixo FL1-.','Invalid code: missing the FL1- prefix.',
-             'Código inválido: falta el prefijo FL1-.','Mã không hợp lệ: thiếu tiền tố FL1-.'],
-    truncado:['Código incompleto ou truncado.','Incomplete or truncated code.',
-              'Código incompleto o truncado.','Mã không đầy đủ hoặc bị cắt.'],
-    versao:['Este código é de outra versão do formato.','This code is from another format version.',
-            'Este código es de otra versión del formato.','Mã này thuộc phiên bản định dạng khác.'],
-    checksum:['Código corrompido — confira se copiou inteiro.','Corrupted code — check that you copied all of it.',
-              'Código corrupto — verifica que lo copiaste completo.','Mã bị hỏng — kiểm tra xem bạn đã sao chép đủ chưa.'],
-    vazio:['O código não trouxe nenhuma carta conhecida.','The code brought no known cards.',
-           'El código no trajo ninguna carta conocida.','Mã không mang lại thẻ nào đã biết.'],
-    todas:['Todas as banlists','All banlists','Todas las banlists','Tất cả banlist'],
-    monstros:['monstros','monsters','monstruos','quái thú'],
-    suporte:['equip/suporte','equip/support','equip/soporte','trang bị/hỗ trợ'],
-    cartas:['cartas','cards','cartas','thẻ'],
-    phNome:['Buscar carta pelo nome…','Search card by name…','Buscar carta por nombre…','Tìm thẻ theo tên…'],
-    phEfeito:['Buscar no efeito…','Search in effect text…','Buscar en el efecto…','Tìm trong hiệu ứng…']
-  };
-  function msg(t,tipo){
-    var m=document.getElementById('md-msg');
-    m.className='md-msg on '+(tipo||'ok'); m.innerHTML=t;
-    clearTimeout(window._mdT); window._mdT=setTimeout(function(){ m.classList.remove('on'); },5000);
-  }
-
-  /* ---- chave de contagem: espelha _chave_contagem_grupo do jogo ---- */
-  function catDaCarta(nome){
-    var c=(window.cartas||[]).find(function(x){return x.nome===nome});
-    return (c&&c.card_type==='Monster')?'monster':'support';
-  }
-  function chaveGrupo(g,nome){
-    var sc=String(g.scope||'effect').toLowerCase();
-    if(sc==='monster') return g.id+'|monster';
-    if(SUP.indexOf(sc)>=0) return g.id+'|support';
-    return g.id+'|'+catDaCarta(nome);
-  }
-  function gruposDe(nome){
-    var r=(window.deckRules&&deckRules.cartas)?deckRules.cartas[nome]:null;
-    if(!r||!r.grupos) return [];
-    return r.grupos.map(function(id){
-      var g=deckRules.grupos[id];
-      return g?Object.assign({id:id},g):null;
-    }).filter(Boolean);
-  }
-
-  /* ---- filtro de banlist, separando monstro de suporte ---- */
-  function montarFiltro(){
-    var sel=document.getElementById('md-f-ban');
-    if(!sel||!window.deckRules||!deckRules.cartas) return;
-    var cont={};
-    Object.keys(deckRules.cartas).forEach(function(n){
-      gruposDe(n).forEach(function(g){ var k=chaveGrupo(g,n); cont[k]=(cont[k]||0)+1; });
-    });
-    var chaves=Object.keys(cont).sort(function(a,b){ return cont[b]-cont[a]; });
-    var html='<option value="">'+T(TX.todas)+'</option>';
-    chaves.forEach(function(k){
-      var p=k.split('|'), g=deckRules.grupos[p[0]]; if(!g) return;
-      /* so anota a categoria quando o grupo REALMENTE se divide */
-      var dividido=cont[p[0]+'|monster']&&cont[p[0]+'|support'];
-      var nome=(g.label||p[0])+(dividido?' — '+(p[1]==='monster'?T(TX.monstros):T(TX.suporte)):'');
-      html+='<option value="'+k+'">'+nome+' · '+cont[k]+' '+T(TX.cartas)+' · máx '+g.max_in_deck+'</option>';
-    });
-    sel.innerHTML=html;
-    sel.value=filtroBan;
-    sel.onchange=function(){
-      filtroBan=sel.value; sel.classList.toggle('ativo',!!filtroBan);
-      if(window.render) render();
-    };
-  }
-
-  /* ---- consultado pela peneira que ja existe ---- */
-  window.mdFiltroExtra=function(c){
-    if(filtroBan){
-      var bate=gruposDe(c.nome).some(function(g){ return chaveGrupo(g,c.nome)===filtroBan; });
-      if(!bate) return false;
-    }
-    if(modoBusca==='efeito' && window.mdTermo){
-      var l=document.documentElement.getAttribute('data-lang-ativo')||'pt';
-      var ef=String(c['desc_'+l]||c.desc_pt||'').toLowerCase();
-      var nome=String(c.nome_pt||c.nome||'').toLowerCase();
-      /* no modo Efeito o nome continua valendo */
-      if(ef.indexOf(window.mdTermo)<0 && nome.indexOf(window.mdTermo)<0) return false;
-    }
-    return true;
-  };
-
-  window.mdModo=function(m){
-    modoBusca=m; window.mdModoEfeito=(m==='efeito');
-    document.getElementById('md-m-nome').classList.toggle('on',m==='nome');
-    document.getElementById('md-m-efeito').classList.toggle('on',m==='efeito');
-    var inp=document.getElementById('cat-search-input');
-    if(inp) inp.placeholder = m==='efeito'?T(TX.phEfeito):T(TX.phNome);
-    if(window.render) render();
-  };
-
-  /* ---- leitura do codigo de deck ---- */
-  function deB64url(t){
-    t=t.replace(/-/g,'+').replace(/_/g,'/');
-    while(t.length%4) t+='=';
-    var b=atob(t), a=new Uint8Array(b.length);
-    for(var i=0;i<b.length;i++) a[i]=b.charCodeAt(i);
-    return a;
-  }
-  function lerSeed(txt){
-    var t=(txt||'').trim();
-    if(t.indexOf('FL1-')!==0) throw new Error(T(TX.prefixo));
-    var a=deB64url(t.slice(4));
-    if(a.length<4||(a.length-2)%2) throw new Error(T(TX.truncado));
-    if(a[0]!==1) throw new Error(T(TX.versao));
-    var soma=a[0];
-    for(var i=1;i<a.length-1;i++) soma=(soma+a[i])&0xFF;
-    if(soma!==a[a.length-1]) throw new Error(T(TX.checksum));
-    var out=[];
-    for(var j=1;j<a.length-1;j+=2){
-      var id=(a[j]<<4)|(a[j+1]>>4), q=a[j+1]&0x0F, nome=POR_ID[id];
-      if(nome) for(var k=0;k<q;k++) out.push(nome);
-    }
-    return out;
-  }
-  window.mdCarregarCodigo=function(){
-    try{
-      var lista=lerSeed(document.getElementById('md-seed').value);
-      if(!lista.length) throw new Error(T(TX.vazio));
-      /* usa a validacao da propria pagina, para banlist e limite serem
-         exatamente os mesmos de quando se clica numa carta */
-      window.deckAtual=[];
-      var fora=0;
-      lista.forEach(function(n){
-        if(deckAtual.length>=40){ fora++; return; }
-        var lim=(window.limiteIndividual?limiteIndividual(n):3);
-        var jaTem=deckAtual.filter(function(x){return x===n}).length;
-        if(jaTem>=lim){ fora++; return; }
-        var cont={};
-        deckAtual.forEach(function(m2){ gruposDe(m2).forEach(function(g){
-          var k=chaveGrupo(g,m2); cont[k]=(cont[k]||0)+1; }); });
-        var barrou=gruposDe(n).some(function(g){
-          return (cont[chaveGrupo(g,n)]||0) >= (g.max_in_deck!==undefined?g.max_in_deck:3); });
-        if(barrou){ fora++; return; }
-        deckAtual.push(n);
-      });
-      if(window.renderDeck) renderDeck();
-      if(window.render) render();
-      if(window.atualizarContadorDeck) atualizarContadorDeck();
-      msg(fora
-        ? T(TX.parcial).replace('%n',deckAtual.length).replace('%f',fora)
-        : T(TX.carregado).replace('%n',deckAtual.length), fora?'err':'ok');
-    }catch(e){ msg(e.message,'err'); }
-  };
-
-  /* ---- carrega os ids e liga tudo ---- */
-  fetch('data/card_ids.json?t='+Date.now()).then(function(r){return r.json()})
-    .then(function(d){
-      IDS=d.ids||{};
-      Object.keys(IDS).forEach(function(n){ POR_ID[IDS[n]]=n; });
-    }).catch(function(){});
-
-  function tentarLigar(n){
-    if(window.deckRules && deckRules.cartas && Object.keys(deckRules.cartas).length){
-      montarFiltro(); return;
-    }
-    if(n<40) setTimeout(function(){ tentarLigar(n+1); },250);
-  }
-  document.addEventListener('deck-pronto',function(){ montarFiltro(); });
-  document.addEventListener('DOMContentLoaded',function(){ tentarLigar(0); });
-  tentarLigar(0);
-  new MutationObserver(function(){ montarFiltro(); mdModo(modoBusca); })
-    .observe(document.documentElement,{attributes:true,attributeFilter:['data-lang-ativo']});
-})();
-</script>
 </body>
 </html>
