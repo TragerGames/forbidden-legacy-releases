@@ -464,6 +464,143 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   html .mobile-discord-bar{font-size:12px}
   html .mobile-nav-links a{font-size:12px}
 }
+
+/* ═══ REFORMA VISUAL — padrao da Loja e do Championship ══════════════ */
+:root{
+  --mola:cubic-bezier(.34,1.56,.64,1); --suave:cubic-bezier(.4,0,.2,1);
+  --r-n:#8c8c8c; --r-r:#88aadd; --r-sr:#bb88ee; --r-ur:#e8b840;
+}
+body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:radial-gradient(1200px 640px at 50% -10%, rgba(200,151,58,.10), transparent 62%)}
+.page-content{position:relative; z-index:1}
+
+/* barra de filtros */
+.cat-toolbar{border-radius:12px!important; backdrop-filter:blur(10px)}
+.cat-search{border-radius:8px!important; transition:border-color .25s, box-shadow .25s}
+.cat-search:focus-within{border-color:var(--gold)!important; box-shadow:0 0 0 3px rgba(200,151,58,.1)}
+.cat-chip{transition:all .18s!important}
+.cat-chip:hover{transform:translateY(-1px)}
+.cat-chip.active[data-filter-rar="N"]{border-color:var(--r-n);color:var(--r-n);background:rgba(140,140,140,.12)}
+.cat-chip.active[data-filter-rar="R"]{border-color:var(--r-r);color:var(--r-r);background:rgba(136,170,221,.12)}
+.cat-chip.active[data-filter-rar="SR"]{border-color:var(--r-sr);color:var(--r-sr);background:rgba(187,136,238,.12)}
+.cat-chip.active[data-filter-rar="UR"]{border-color:var(--r-ur);color:var(--r-ur);background:rgba(232,184,64,.14)}
+
+/* cartas da grade */
+.cat-card{
+  position:relative; background:none; border:none; padding:0;
+  opacity:0; transform:translateY(12px);
+  animation:catSobe .42s var(--suave) forwards; animation-delay:var(--atraso,0s);
+}
+@keyframes catSobe{to{opacity:1; transform:none}}
+.cat-card:hover{transform:none}          /* a elevacao passa para o wrapper */
+.cat-card-img-wrap{
+  border-radius:8px;
+  transition:transform .34s var(--mola), box-shadow .34s var(--suave);
+}
+.cat-card img{
+  /* height:auto e obrigatorio: o <img> nao tem atributo de altura aqui, mas
+     a regra antiga tambem nao garantia — sem isto o aspect-ratio pode ser
+     ignorado e a carta sai quase quadrada. */
+  height:auto!important; border-radius:8px;
+}
+.cat-card:hover .cat-card-img-wrap{transform:translateY(-7px) scale(1.03)}
+.cat-card.r-N:hover  .cat-card-img-wrap{box-shadow:0 12px 28px rgba(140,140,140,.22)}
+.cat-card.r-R:hover  .cat-card-img-wrap{box-shadow:0 12px 28px rgba(136,170,221,.3)}
+.cat-card.r-SR:hover .cat-card-img-wrap{box-shadow:0 12px 30px rgba(187,136,238,.32)}
+.cat-card.r-UR:hover .cat-card-img-wrap{box-shadow:0 14px 32px rgba(232,184,64,.36)}
+.cat-card-name mark{background:rgba(232,184,64,.24); color:var(--gold-light); border-radius:2px; padding:0 1px}
+
+/* selos no canto da carta */
+.cat-selos{position:absolute; top:6px; left:6px; z-index:2; display:flex;
+  flex-direction:column; gap:3px; align-items:flex-start; pointer-events:none}
+.cat-selo{font-size:7.5px; font-weight:700; letter-spacing:.7px; text-transform:uppercase;
+  padding:2px 6px; border-radius:3px; background:rgba(6,3,10,.9); border:1px solid}
+.cat-selo.exc{border-color:rgba(155,89,182,.55); color:#c9a3e8}
+.cat-selo.fa{border-color:rgba(232,184,64,.5); color:var(--gold-light)}
+.cat-selo.cu{border-color:rgba(90,180,150,.5); color:#9fd4bf}
+
+/* modal */
+.cat-modal{
+  max-width:830px!important; border-radius:14px!important;
+  background:linear-gradient(178deg,var(--dark3),var(--dark2) 60%)!important;
+  animation:catEntra .32s var(--mola);
+}
+@keyframes catEntra{from{opacity:0; transform:translateY(18px) scale(.97)}to{opacity:1; transform:none}}
+.cat-modal-img{height:auto!important}
+.cat-modal-name{font-size:27px!important}
+
+/* ═══ ONDE CONSEGUIR ═════════════════════════════════════════════════ */
+.cat-stats{display:flex; justify-content:center; flex-wrap:wrap; margin:22px auto 0;
+  max-width:660px; border:1px solid var(--border); border-radius:12px; overflow:hidden}
+.cat-stat{flex:1; min-width:104px; padding:13px 10px; background:var(--dark2);
+  text-align:center; border-right:1px solid var(--border); position:relative}
+.cat-stat:last-child{border-right:none}
+.cat-stat-n{font-family:'Bebas Neue',sans-serif; font-size:25px; line-height:1;
+  color:var(--gold-light); font-variant-numeric:tabular-nums}
+.cat-stat[data-r="N"] .cat-stat-n{color:var(--r-n)} .cat-stat[data-r="R"] .cat-stat-n{color:var(--r-r)}
+.cat-stat[data-r="SR"] .cat-stat-n{color:var(--r-sr)} .cat-stat[data-r="UR"] .cat-stat-n{color:var(--r-ur)}
+.cat-stat-l{font-size:9px; letter-spacing:2px; text-transform:uppercase;
+  color:var(--text-muted); margin-top:4px}
+.cat-stat-bar{position:absolute; left:0; right:0; bottom:0; height:2px; background:currentColor;
+  opacity:.35; transform:scaleX(0); transform-origin:left; transition:transform .9s var(--suave)}
+.cat-stat[data-r="N"] .cat-stat-bar{color:var(--r-n)} .cat-stat[data-r="R"] .cat-stat-bar{color:var(--r-r)}
+.cat-stat[data-r="SR"] .cat-stat-bar{color:var(--r-sr)} .cat-stat[data-r="UR"] .cat-stat-bar{color:var(--r-ur)}
+
+.cat-pills{display:flex; align-items:center; gap:7px; flex-wrap:wrap; margin-top:9px;
+  padding-top:9px; border-top:1px solid rgba(200,151,58,.07)}
+.cat-pills:empty{display:none}
+.cat-pill{display:inline-flex; align-items:center; gap:6px; font-size:11px; padding:4px 9px;
+  border-radius:5px; background:rgba(200,151,58,.1); border:1px solid rgba(200,151,58,.28);
+  color:var(--gold-light); animation:catPop .3s var(--mola)}
+@keyframes catPop{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
+.cat-pill button{background:none;border:none;color:inherit;cursor:pointer;font-size:13px;
+  line-height:1;opacity:.7;padding:0}
+.cat-pill button:hover{opacity:1}
+
+.cat-origem{border-top:1px solid var(--border); margin-top:16px; padding-top:14px}
+.cat-origem-tit{font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1.4px;
+  color:var(--gold); margin-bottom:12px; display:flex; align-items:center; gap:9px}
+.cat-origem-tit::before{content:''; width:3px; height:14px; border-radius:2px;
+  background:linear-gradient(180deg,var(--gold),transparent)}
+.cat-fonte{margin-bottom:12px}.cat-fonte:last-child{margin-bottom:0}
+.cat-fonte-rot{display:flex; align-items:center; gap:7px; font-size:9.5px; letter-spacing:1.6px;
+  text-transform:uppercase; color:var(--text-muted); margin-bottom:7px; font-weight:600}
+.cat-fonte-rot svg{width:12px;height:12px;flex-shrink:0}
+.cat-tags{display:flex; flex-wrap:wrap; gap:6px}
+.cat-tag{font-size:11.5px; padding:5px 11px; border-radius:6px; background:var(--dark3);
+  border:1px solid var(--border); color:var(--text-body); display:inline-flex; align-items:center;
+  gap:6px; cursor:pointer; font-family:inherit; transition:all .2s;
+  opacity:0; transform:translateY(7px);
+  animation:catSobe .38s var(--suave) forwards; animation-delay:var(--atraso,0s)}
+.cat-tag:hover{transform:translateY(-2px); border-color:var(--gold)}
+.cat-tag b{color:var(--gold-light); font-weight:600; font-size:10.5px; font-variant-numeric:tabular-nums}
+.cat-tag.booster{border-color:rgba(200,151,58,.26); background:rgba(200,151,58,.06)}
+.cat-tag.npc{border-color:rgba(90,140,220,.24); background:rgba(90,140,220,.05); color:#a8c4e8}
+.cat-tag.evento{border-color:rgba(220,120,60,.3); background:rgba(220,120,60,.07); color:#e0a878}
+.cat-tag .seta{opacity:0; margin-left:-4px; transition:opacity .2s, margin .2s; font-size:10px}
+.cat-tag:hover .seta{opacity:.8; margin-left:0}
+.cat-aviso{display:flex; gap:11px; padding:11px 13px; border-radius:8px; font-size:12px;
+  line-height:1.6; background:rgba(155,89,182,.07); border:1px solid rgba(155,89,182,.26);
+  color:#cbb0e8; margin-bottom:11px}
+.cat-aviso.fusao{background:rgba(90,180,150,.06); border-color:rgba(90,180,150,.24); color:#9fd4bf}
+.cat-aviso svg{width:15px;height:15px;flex-shrink:0;margin-top:1px}
+.cat-aviso b{color:#fff;font-weight:600}
+.cat-sem-origem{font-size:12px; color:var(--text-muted); line-height:1.65; font-style:italic}
+.cat-rel{border-top:1px solid var(--border); margin-top:15px; padding-top:13px}
+.cat-rel-tit{font-size:9.5px; letter-spacing:1.6px; text-transform:uppercase;
+  color:var(--text-muted); margin-bottom:9px; font-weight:600}
+.cat-rel-lista{display:flex; gap:8px; overflow-x:auto; padding-bottom:4px}
+.cat-rel-c{flex-shrink:0; width:56px; cursor:pointer; background:none; border:none; padding:0}
+.cat-rel-c img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:4px;
+  border:1px solid var(--border); display:block; transition:transform .25s, border-color .25s}
+.cat-rel-c:hover img{transform:translateY(-3px); border-color:var(--gold)}
+.cat-nav{position:absolute; top:50%; transform:translateY(-50%); z-index:1010;
+  width:38px; height:38px; border-radius:50%; background:rgba(9,8,10,.92);
+  border:1px solid var(--border); color:var(--gold); font-size:17px; cursor:pointer;
+  display:grid; place-items:center; transition:all .2s}
+.cat-nav:hover{border-color:var(--gold); background:rgba(200,151,58,.14)}
+.cat-nav.ant{left:14px} .cat-nav.prox{right:14px}
+@media(min-width:1000px){ .cat-nav.ant{left:calc(50% - 470px)} .cat-nav.prox{right:calc(50% - 470px)} }
 </style>
 </head>
 <body>
@@ -547,6 +684,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <!-- CONTEÚDO -->
 <div class="page-content">
 
+  <div class="cat-stats" id="cat-stats"></div>
+
   <div class="cat-toolbar">
     <div class="cat-search">
       <span class="cat-search-icon">🔍</span>
@@ -588,6 +727,11 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
       <button class="cat-chip" data-filter-custom="1" data-lang="en" title="Original cards created for Forbidden Legacy">⭐ Custom</button><button class="cat-chip" data-filter-custom="1" data-lang="es" title="Original cards created for Forbidden Legacy">⭐ Custom</button><button class="cat-chip" data-filter-custom="1" data-lang="vi" title="Original cards created for Forbidden Legacy">⭐ Custom</button>
       <span class="cat-count" id="cat-count">—</span>
     </div>
+    <div class="cat-filter-row" id="cat-origem-row">
+      <span class="cat-filter-label" data-lang="pt">Origem</span><span class="cat-filter-label" data-lang="en">Source</span><span class="cat-filter-label" data-lang="es">Origen</span><span class="cat-filter-label" data-lang="vi">Nguồn</span>
+    </div>
+    <div class="cat-pills" id="cat-pills">
+    </div>
   </div>
 
   <div class="cat-grid" id="cat-grid">
@@ -598,6 +742,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 </div>
 
 <!-- MODAL DE CARTA -->
+<button class="cat-nav ant" id="cat-nav-ant" onclick="catNavega(-1)" aria-label="Anterior" style="display:none">‹</button>
+<button class="cat-nav prox" id="cat-nav-prox" onclick="catNavega(1)" aria-label="Próxima" style="display:none">›</button>
 <div class="cat-modal-overlay" id="cat-modal-overlay" onclick="if(event.target===this) closeCardModal()">
   <div class="cat-modal">
     <button class="cat-modal-close" onclick="closeCardModal()">✕</button>
@@ -700,9 +846,15 @@ function isEn() { return document.body.classList.contains('en'); }
     if (c.icone_tipo) icones.push('<img src="img/tipos/' + c.icone_tipo + '.webp" alt="' + c.tipo + '" title="' + c.tipo + '" loading="lazy">');
     const linhaIcones = icones.length ? '<div class="cat-card-icons">' + icones.join('') + '</div>' : '';
     const pastaImg = (filtroFullArt && c.full_art) ? 'img/cartas_full/' : 'img/cartas/';
+    const o = window.catOrigemDe ? catOrigemDe(c.nome) : null;
+    const selos =
+      (o && o.x ? '<span class="cat-selo exc">Exclusiva</span>' : '') +
+      (c.full_art ? '<span class="cat-selo fa">FA</span>' : '') +
+      (c.custom ? '<span class="cat-selo cu">✦</span>' : '');
     return (
       '<div class="cat-card r-' + c.raridade + '" data-slug="' + c.slug + '">' +
         '<div class="cat-card-img-wrap">' +
+          (selos ? '<span class="cat-selos">' + selos + '</span>' : '') +
           '<img src="' + pastaImg + c.slug + '.webp?v=' + versaoCache + '" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
           badge +
         '</div>' +
@@ -714,6 +866,10 @@ function isEn() { return document.body.classList.contains('en'); }
   }
 
   function passaFiltro(c) {
+    /* filtro de origem (booster / duelista / fusao / exclusiva) — vive no
+       bloco da reforma, no fim do arquivo, e e opcional: se origens.json
+       ainda nao carregou, catPassaExtra devolve true. */
+    if (window.catPassaExtra && !window.catPassaExtra(c)) return false;
     if (filtroFullArt && !c.full_art) return false;
     if (filtroCustom && !c.custom) return false;
     if (filtroTipo !== 'ALL' && c.card_type !== filtroTipo) return false;
@@ -744,6 +900,9 @@ function isEn() { return document.body.classList.contains('en'); }
     }
     const visiveis = filtradas.slice(0, renderLimit);
     grid.innerHTML = visiveis.map(cardHtml).join('');
+    grid.querySelectorAll('.cat-card').forEach((el, i) => {
+      el.style.setProperty('--atraso', Math.min(i, 22) * 0.02 + 's');
+    });
     grid.querySelectorAll('.cat-card').forEach(el => {
       el.addEventListener('click', () => openCardModal(el.getAttribute('data-slug')));
     });
@@ -832,6 +991,12 @@ function isEn() { return document.body.classList.contains('en'); }
       versaoCache = data.versao || '';
       popularRacas();
       render();
+      /* o bloco da reforma vive em outro <script> e precisa ler estes
+         tres; sem isto as estatisticas e o filtro de origem ficam vazios */
+      window.cartas = cartas;
+      window.render = render;
+      window.passaFiltro = passaFiltro;
+      document.dispatchEvent(new CustomEvent('catalogo-pronto'));
     })
     .catch(() => {
       grid.innerHTML = '<div class="cat-empty">' + (isEn() ? 'Could not load the catalog right now.' : 'Não foi possível carregar o catálogo agora.') + '</div>';
@@ -902,6 +1067,7 @@ function isEn() { return document.body.classList.contains('en'); }
     } else {
       modalRarityBadge.style.display = 'none';
     }
+    window.cartaAbertaSlug = c.slug;
     modalName.textContent = isEn() ? c.nome : c.nome_pt;
     modalRarity.className = 'cat-modal-rarity r-' + c.raridade;
     modalRarity.textContent = c.raridade;
@@ -919,10 +1085,31 @@ function isEn() { return document.body.classList.contains('en'); }
     modalFacts.innerHTML = facts.join('');
     const desc = flCampo(c, 'desc_pt', 'desc_en', 'desc_es', 'desc_vi');
     modalDesc.textContent = desc || (isEn() ? 'No effect text for this card.' : 'Sem texto de efeito para esta carta.');
+    /* painel "Onde conseguir" — anexado depois da descricao, no mesmo
+       container, para nao mexer no layout do modal */
+    if (window.catBlocoOrigem) {
+      var _ant = document.getElementById('cat-origem-box');
+      if (_ant) _ant.remove();
+      var _box = document.createElement('div');
+      _box.id = 'cat-origem-box';
+      _box.innerHTML = catBlocoOrigem(c);
+      modalDesc.parentNode.insertBefore(_box, modalDesc.nextSibling);
+    }
+    try { history.replaceState(null, '', '#' + c.slug); } catch (e) {}
+    ['cat-nav-ant','cat-nav-prox'].forEach(function(id){
+      var b = document.getElementById(id); if (b) b.style.display = 'grid';
+    });
     overlay.classList.add('open');
   };
 
   window.closeCardModal = function() {
+    /* as setas vivem FORA do overlay (para poderem ficar nas bordas da
+       tela), entao somem junto com ele na mao */
+    ['cat-nav-ant','cat-nav-prox'].forEach(function(id){
+      var b = document.getElementById(id); if (b) b.style.display = 'none';
+    });
+    window.cartaAbertaSlug = null;
+    try { history.replaceState(null, '', location.pathname); } catch (e) {}
     overlay.classList.remove('open');
   };
 
@@ -1067,6 +1254,204 @@ window.setLang = setLang;
       if (badge) badge.style.display = 'flex';
     })
     .catch(function () {});
+})();
+</script>
+
+<script>
+/* ── ONDE CONSEGUIR + navegacao por origem ────────────────────────────
+   Estende o catalogo por fora: nao altera cardHtml/passaFiltro/render,
+   so encadeia neles. origens.json e carregado sob demanda (51 KB). */
+(function(){
+  var ORIG=null, filtroBooster=null, filtroNpc=null, filtroOrigem='';
+  var T={
+    onde:['Onde conseguir','Where to get it','Dónde conseguirla','Nhận ở đâu'],
+    boosters:['Boosters da loja','Shop boosters','Boosters de la tienda','Booster cửa hàng'],
+    duelistas:['Duelistas que soltam','Duelists who drop it','Duelistas que la sueltan','Đấu thủ rơi ra'],
+    souls:['Souls','Souls','Souls','Souls'],
+    sem:['Esta carta não está em booster nem no drop de duelistas — em geral são prêmios, cartas de evento encerrado ou material só de fusão.',
+         'This card is not in any booster or duelist drop — usually prizes, cards from a closed event, or fusion-only material.',
+         'Esta carta no está en booster ni en el drop de duelistas — suelen ser premios, cartas de evento cerrado o material solo de fusión.',
+         'Thẻ này không có trong booster hay drop của đấu thủ — thường là phần thưởng, thẻ sự kiện đã đóng, hoặc chỉ dùng để hợp thể.'],
+    sombrio:['<b>Exclusiva do Torneio Sombrio.</b> Não sai em booster da loja nem no Championship comum — só na premiação do evento secreto.',
+             '<b>Shadow Tournament exclusive.</b> Not in shop boosters or the regular Championship — only in the secret event’s prize.',
+             '<b>Exclusiva del Torneo Sombrío.</b> No sale en boosters de la tienda ni en el Championship común — solo en la premiación del evento secreto.',
+             '<b>Độc quyền Giải Bóng Tối.</b> Không có trong booster cửa hàng hay Championship thường — chỉ ở phần thưởng sự kiện bí mật.'],
+    travada:['<b>Travada até você derrotar o duelista dela na campanha.</b> Depois disso entra normalmente nos pools de booster, drop e prêmio.',
+             '<b>Locked until you beat its duelist in the campaign.</b> After that it enters the booster, drop and prize pools normally.',
+             '<b>Bloqueada hasta que derrotes a su duelista en la campaña.</b> Después entra normalmente en los pools de booster, drop y premio.',
+             '<b>Khóa đến khi bạn hạ đấu thủ của nó trong chiến dịch.</b> Sau đó nó vào các pool booster, drop và phần thưởng như bình thường.'],
+    fusao:['<b>Também sai por fusão.</b> Combinando as cartas certas você chega nela sem depender de sorte de booster.',
+           '<b>Also obtainable by fusion.</b> With the right combination you get it without relying on booster luck.',
+           '<b>También sale por fusión.</b> Con la combinación correcta la consigues sin depender de la suerte del booster.',
+           '<b>Cũng có thể hợp thể.</b> Kết hợp đúng thẻ, bạn có nó mà không cần may mắn từ booster.'],
+    outras:['Outras cartas de ','Other cards from ','Otras cartas de ','Thẻ khác từ '],
+    fOrigem:[['Qualquer','Booster','Drop de duelista','Fusão','Exclusiva'],
+             ['Any','Booster','Duelist drop','Fusion','Exclusive'],
+             ['Cualquiera','Booster','Drop de duelista','Fusión','Exclusiva'],
+             ['Bất kỳ','Booster','Drop đấu thủ','Hợp thể','Độc quyền']],
+    cartas:['cartas','cards','cartas','thẻ'],
+    booster:['Booster: ','Booster: ','Booster: ','Booster: '],
+    duelista:['Duelista: ','Duelist: ','Duelista: ','Đấu thủ: ']
+  };
+  function L(){ var l=document.documentElement.getAttribute('data-lang-ativo')||'pt';
+    return l==='en'?1:l==='es'?2:l==='vi'?3:0; }
+  var ICO={
+    b:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>',
+    n:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c0-4.1 3.4-6.4 7.5-6.4s7.5 2.3 7.5 6.4"/></svg>',
+    f:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="12" r="5"/><circle cx="15.5" cy="12" r="5"/></svg>',
+    x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.4a4 4 0 0 1 8 0v3.1"/></svg>'
+  };
+  window.catOrigemDe=function(nome){ return (ORIG&&ORIG.cartas[nome])||null; };
+
+  /* estatisticas por raridade */
+  function stats(){
+    var el=document.getElementById('cat-stats'); if(!el||!window.cartas) return;
+    var por={}; cartas.forEach(function(c){var r=(c.raridade||'N').toUpperCase(); por[r]=(por[r]||0)+1});
+    var itens=[['', T.cartas[L()], cartas.length]];
+    ['UR','SR','R','N'].forEach(function(r){ itens.push([r,r,por[r]||0]) });
+    el.innerHTML=itens.map(function(i){
+      return '<div class="cat-stat"'+(i[0]?' data-r="'+i[0]+'"':'')+'>'+
+        '<div class="cat-stat-n" data-alvo="'+i[2]+'">0</div>'+
+        '<div class="cat-stat-l">'+i[1]+'</div><div class="cat-stat-bar"></div></div>';
+    }).join('');
+    var reduz=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    el.querySelectorAll('.cat-stat').forEach(function(sEl,i){
+      var n=sEl.querySelector('.cat-stat-n'), alvo=+n.dataset.alvo;
+      if(reduz){ n.textContent=alvo.toLocaleString('pt-BR'); }
+      else { var t0=performance.now(); (function p(t){
+        var k=Math.min(1,(t-t0)/850), e=1-Math.pow(1-k,3);
+        n.textContent=Math.round(alvo*e).toLocaleString('pt-BR');
+        if(k<1) requestAnimationFrame(p); })(t0);
+        /* rAF nao roda com a aba em segundo plano: sem esta trava a
+           contagem fica em 0 para sempre se a pagina abrir escondida */
+        setTimeout(function(){ n.textContent=alvo.toLocaleString('pt-BR') },1000); }
+      var bar=sEl.querySelector('.cat-stat-bar');
+      setTimeout(function(){ bar.style.transform='scaleX('+(i===0?1:alvo/cartas.length)+')' },120+i*90);
+    });
+  }
+
+  /* filtro de origem */
+  function montarOrigem(){
+    var row=document.getElementById('cat-origem-row'); if(!row||!ORIG) return;
+    row.querySelectorAll('.cat-chip').forEach(function(b){b.remove()});
+    var rot=T.fOrigem[L()], vals=['','b','n','f','x'];
+    vals.forEach(function(v,i){
+      var b=document.createElement('button');
+      b.className='cat-chip'+(filtroOrigem===v?' active':'');
+      var n=v?cartas.filter(function(c){var o=catOrigemDe(c.nome); return o&&o[v]}).length:cartas.length;
+      b.innerHTML=rot[i]+' <span style="font-size:9.5px;opacity:.7">'+n+'</span>';
+      b.onclick=function(){ filtroOrigem=v; filtroBooster=filtroNpc=null; montarOrigem(); render(); pills(); };
+      row.appendChild(b);
+    });
+  }
+  function pills(){
+    var el=document.getElementById('cat-pills'); if(!el) return;
+    el.innerHTML='';
+    function add(txt,limpa){
+      var p=document.createElement('span'); p.className='cat-pill';
+      p.innerHTML=txt+' <button aria-label="x">✕</button>';
+      p.querySelector('button').onclick=function(){ limpa(); montarOrigem(); render(); pills(); };
+      el.appendChild(p);
+    }
+    if(filtroBooster!==null&&ORIG){var b=ORIG.boosters[filtroBooster];
+      if(b) add(T.booster[L()]+b[['pt','en','es','vi'][L()]],function(){filtroBooster=null})}
+    if(filtroNpc!==null&&ORIG){var n=ORIG.npcs[filtroNpc];
+      if(n) add(T.duelista[L()]+n.nome,function(){filtroNpc=null})}
+  }
+
+  /* encadeia no passaFiltro existente, sem reescrever */
+  var passaOriginal=window.passaFiltro;
+  window.catPassaExtra=function(c){
+    if(!ORIG) return true;
+    var o=catOrigemDe(c.nome);
+    if(filtroOrigem && !(o&&o[filtroOrigem])) return false;
+    if(filtroBooster!==null && !(o&&o.b&&o.b.indexOf(filtroBooster)>=0)) return false;
+    if(filtroNpc!==null && !(o&&o.n&&o.n.indexOf(filtroNpc)>=0)) return false;
+    return true;
+  };
+
+  window.catVerBooster=function(i){ filtroBooster=i; filtroNpc=null; filtroOrigem='';
+    if(window.closeCardModal) closeCardModal();
+    montarOrigem(); render(); pills(); window.scrollTo({top:0,behavior:'smooth'}); };
+  window.catVerNpc=function(i){ filtroNpc=i; filtroBooster=null; filtroOrigem='';
+    if(window.closeCardModal) closeCardModal();
+    montarOrigem(); render(); pills(); window.scrollTo({top:0,behavior:'smooth'}); };
+
+  /* o painel do modal */
+  window.catBlocoOrigem=function(c){
+    if(!ORIG) return '';
+    var i=L(), o=catOrigemDe(c.nome);
+    var h='<div class="cat-origem"><div class="cat-origem-tit">'+T.onde[i]+'</div>';
+    if(!o) return h+'<p class="cat-sem-origem">'+T.sem[i]+'</p></div>';
+    var k=0;
+    if(o.x==='sombrio') h+='<div class="cat-aviso">'+ICO.x+'<div>'+T.sombrio[i]+'</div></div>';
+    else if(o.x&&o.x.indexOf('npc:')===0) h+='<div class="cat-aviso">'+ICO.x+'<div>'+T.travada[i]+'</div></div>';
+    if(o.b&&o.b.length){
+      h+='<div class="cat-fonte"><div class="cat-fonte-rot">'+ICO.b+' '+T.boosters[i]+'</div><div class="cat-tags">';
+      o.b.forEach(function(bi){ var b=ORIG.boosters[bi]; if(!b) return;
+        h+='<button class="cat-tag booster'+(b.evento?' evento':'')+'" style="--atraso:'+(k++*0.04)+
+           's" onclick="catVerBooster('+bi+')">'+b[['pt','en','es','vi'][i]]+
+           '<b>'+b.custo+' '+T.souls[i]+'</b><span class="seta">→</span></button>'; });
+      h+='</div></div>';
+    }
+    if(o.n&&o.n.length){
+      h+='<div class="cat-fonte"><div class="cat-fonte-rot">'+ICO.n+' '+T.duelistas[i]+'</div><div class="cat-tags">';
+      o.n.forEach(function(ni){ var p=ORIG.npcs[ni]; if(!p) return;
+        h+='<button class="cat-tag npc" style="--atraso:'+(k++*0.04)+
+           's" onclick="catVerNpc('+ni+')">'+p.nome+'<span class="seta">→</span></button>'; });
+      h+='</div></div>';
+    }
+    if(o.f) h+='<div class="cat-aviso fusao" style="margin-top:11px;margin-bottom:0">'+ICO.f+'<div>'+T.fusao[i]+'</div></div>';
+    h+='</div>';
+    /* outras cartas do mesmo booster */
+    if(o.b&&o.b.length){
+      var bi=o.b[0], b=ORIG.boosters[bi];
+      if(b){
+        var irmas=cartas.filter(function(x){ if(x.slug===c.slug) return false;
+          var oo=catOrigemDe(x.nome); return oo&&oo.b&&oo.b.indexOf(bi)>=0; }).slice(0,14);
+        if(irmas.length){
+          h+='<div class="cat-rel"><div class="cat-rel-tit">'+T.outras[i]+b[['pt','en','es','vi'][i]]+'</div><div class="cat-rel-lista">'+
+            irmas.map(function(x){ return '<button class="cat-rel-c" onclick="openCardModal(\''+x.slug+'\')" title="'+
+              String(x.nome_pt||x.nome).replace(/"/g,'&quot;')+'"><img src="img/cartas/'+x.slug+'.webp" alt="" loading="lazy"></button>'; }).join('')+
+            '</div></div>';
+        }
+      }
+    }
+    return h;
+  };
+
+  /* navegacao entre cartas do modal */
+  window.catNavega=function(d){
+    var lista=(window.cartas||[]).filter(function(c){
+      return (!window.passaFiltro||passaFiltro(c)) && catPassaExtra(c); });
+    if(!lista.length||!window.cartaAbertaSlug) return;
+    var i=lista.findIndex(function(c){return c.slug===window.cartaAbertaSlug});
+    if(i<0) return;
+    openCardModal(lista[(i+d+lista.length)%lista.length].slug);
+  };
+  document.addEventListener('keydown',function(e){
+    var ov=document.getElementById('cat-modal-overlay');
+    if(!ov||!ov.classList.contains('open')) return;
+    if(e.key==='ArrowLeft') catNavega(-1);
+    if(e.key==='ArrowRight') catNavega(1);
+  });
+
+  /* carrega o dado e liga tudo */
+  var _dados=null, _pronto=false;
+  function ligar(){
+    if(!_dados||!_pronto||!window.cartas) return;
+    ORIG=_dados; stats(); montarOrigem();
+    if(window.render) render();
+    var h=location.hash.slice(1);
+    if(h&&window.openCardModal) openCardModal(h);
+  }
+  document.addEventListener('catalogo-pronto',function(){ _pronto=true; ligar(); });
+  fetch('data/origens.json').then(function(r){return r.json()})
+    .then(function(d){ _dados=d; ligar(); })
+    .catch(function(){ _pronto&&stats(); });
+
+  new MutationObserver(function(){ stats(); montarOrigem(); pills(); })
+    .observe(document.documentElement,{attributes:true,attributeFilter:['data-lang-ativo']});
 })();
 </script>
 </body>
