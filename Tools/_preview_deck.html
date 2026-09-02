@@ -57,6 +57,23 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
 .chip.on[data-r="SR"]{border-color:var(--r-sr);color:var(--r-sr)}
 .chip.on[data-r="UR"]{border-color:var(--r-ur);color:var(--r-ur)}
 
+/* linha de ferramentas: modo de busca + filtro de banlist */
+.ferramentas{display:flex; gap:6px; margin-bottom:9px}
+.ferramentas select{flex:1; min-width:0; background:var(--dark3); border:1px solid var(--border);
+  border-radius:7px; color:var(--text); font-size:11px; padding:7px 9px; font-family:inherit;
+  cursor:pointer; outline:none; transition:border-color .22s}
+.ferramentas select:focus{border-color:var(--gold)}
+.ferramentas select.ativo{border-color:var(--gold); color:var(--gold3); background:rgba(200,151,58,.08)}
+.busca-modo{display:flex; gap:0; border:1px solid var(--border); border-radius:7px; overflow:hidden;
+  flex-shrink:0}
+.busca-modo button{background:var(--dark3); border:none; color:var(--muted); font-size:10px;
+  padding:7px 10px; cursor:pointer; font-family:inherit; letter-spacing:.4px; transition:all .2s}
+.busca-modo button.on{background:rgba(200,151,58,.16); color:var(--gold3)}
+.busca-modo button:hover:not(.on){color:var(--text)}
+/* trecho do efeito que casou com a busca */
+.col-stat.efeito{color:var(--gold-dim); font-style:italic; text-align:left; font-size:9px}
+.row-nome mark{background:rgba(232,184,64,.26); color:var(--gold3); border-radius:2px; padding:0 1px}
+
 /* ── CATALOGO EM LISTA (como o editor do jogo) ── */
 .lista{display:flex; flex-direction:column; gap:3px; max-height:64vh; overflow-y:auto; padding-right:3px}
 .row{display:grid; grid-template-columns:1fr 24px 52px 22px 38px; align-items:center;
@@ -234,6 +251,13 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         <input id="q" type="text" placeholder="Buscar carta pelo nome…" autocomplete="off">
       </div>
+      <div class="ferramentas">
+        <div class="busca-modo">
+          <button id="m-nome" class="on" title="Buscar no nome da carta">Nome</button>
+          <button id="m-efeito" title="Buscar no texto do efeito">Efeito</button>
+        </div>
+        <select id="f-ban"><option value="">Todas as banlists</option></select>
+      </div>
       <div class="chips" id="chips"></div>
       <div class="lista" id="cat"></div>
     </div>
@@ -278,6 +302,7 @@ com a mesma regra do jogo, e código de deck com os IDs de <code>card_ids.json</
 <script>
 let CARTAS=[], IDS={}, POR_ID={}, BAN={limite_padrao:3,grupos:{},cartas:{}};
 let deck=[], filtro={rar:'',cat:''}, busca='', modo='gerar';
+let modoBusca='nome', filtroBan='';
 const MAX=40;
 
 Promise.all([
@@ -288,6 +313,7 @@ Promise.all([
   CARTAS=Array.isArray(cat)?cat:(cat.cartas||Object.values(cat));
   BAN=ban; IDS=ids.ids||{};
   Object.keys(IDS).forEach(n=>POR_ID[IDS[n]]=n);
+  montarFiltroBanlist();
   chips(); render(); sincDeck();
 });
 
@@ -344,6 +370,22 @@ function validarAdicao(nome){
   return {ok:true};
 }
 
+function montarFiltroBanlist(){
+  const sel=document.getElementById('f-ban');
+  /* conta quantas cartas cada grupo tem, e ordena do maior para o menor —
+     grupo com 96 cartas e mais util no topo que um com 2 */
+  const cont={};
+  Object.keys(BAN.cartas).forEach(n=>(BAN.cartas[n].grupos||[]).forEach(g=>cont[g]=(cont[g]||0)+1));
+  const lista=Object.keys(BAN.grupos)
+    .filter(g=>cont[g])
+    .sort((a,b)=>cont[b]-cont[a]);
+  sel.innerHTML='<option value="">Todas as banlists</option>'+lista.map(g=>{
+    const gg=BAN.grupos[g];
+    return `<option value="${g}">${gg.label||g} · ${cont[g]} cartas · máx ${gg.max_in_deck}</option>`;
+  }).join('');
+  sel.onchange=()=>{ filtroBan=sel.value; sel.classList.toggle('ativo',!!filtroBan); render(); };
+}
+
 function chips(){
   const el=document.getElementById('chips'); el.innerHTML='';
   const add=(campo,v,rot)=>{
@@ -361,9 +403,21 @@ function chips(){
 
 function render(){
   const el=document.getElementById('cat');
+  const L=document.documentElement.getAttribute('data-lang-ativo')||'pt';
+  const efeitoDe=c=>String(c['desc_'+L]||c.desc_pt||'').toLowerCase();
   const lista=CARTAS.filter(c=>{
-    if(busca && !(c.nome_pt||c.nome||'').toLowerCase().includes(busca)
-             && !(c.nome||'').toLowerCase().includes(busca)) return false;
+    if(busca){
+      const casaNome=(c.nome_pt||c.nome||'').toLowerCase().includes(busca)
+                   ||(c.nome||'').toLowerCase().includes(busca);
+      const casaEfeito=efeitoDe(c).includes(busca);
+      /* no modo Efeito o nome ainda vale — quem digita "dragao" espera achar
+         a carta chamada dragao junto das que mencionam dragao no texto */
+      if(modoBusca==='efeito' ? !(casaEfeito||casaNome) : !casaNome) return false;
+    }
+    if(filtroBan){
+      const r=BAN.cartas[c.nome];
+      if(!r||!r.grupos||r.grupos.indexOf(filtroBan)<0) return false;
+    }
     if(filtro.rar && (c.raridade||'N').toUpperCase()!==filtro.rar) return false;
     if(filtro.cat && c.card_type!==filtro.cat) return false;
     return true;
@@ -381,9 +435,23 @@ function render(){
     const gTxt=gs.map(g=>`${g.label||g.id} (máx ${g.max_in_deck})`).join(' · ');
     b.title=(bloq&&!v.ok) ? v.msg.replace(/<\/?b>/g,'')
                           : (c.nome_pt||c.nome)+(gTxt?' — '+gTxt:'');
-    b.innerHTML=`<span class="row-nome">${c.nome_pt||c.nome}</span>
+    const nomeTxt=c.nome_pt||c.nome;
+    const iN=busca?nomeTxt.toLowerCase().indexOf(busca):-1;
+    const nomeHTML=iN>=0
+      ? nomeTxt.slice(0,iN)+'<mark>'+nomeTxt.slice(iN,iN+busca.length)+'</mark>'+nomeTxt.slice(iN+busca.length)
+      : nomeTxt;
+    b.innerHTML=`<span class="row-nome">${nomeHTML}</span>
       <span class="col-rar" style="color:${CORES[r]}">${r}</span>
-      <span class="col-stat">${c.card_type==='Monster'?`${c.atk}/${c.def}`:c.card_type}</span>
+      ${(()=>{
+        const ef=String(c['desc_'+L]||c.desc_pt||'');
+        const i=busca?ef.toLowerCase().indexOf(busca):-1;
+        /* casou pelo efeito e nao pelo nome: mostra o trecho no lugar do ATK/DEF */
+        if(modoBusca==='efeito'&&i>=0&&!(c.nome_pt||c.nome||'').toLowerCase().includes(busca)){
+          const ini=Math.max(0,i-12);
+          return `<span class="col-stat efeito" title="${ef.replace(/"/g,'&quot;')}">…${ef.slice(ini,i+busca.length+14)}…</span>`;
+        }
+        return `<span class="col-stat">${c.card_type==='Monster'?`${c.atk}/${c.def}`:c.card_type}</span>`;
+      })()}
       <span class="col-ban">${gs.length
         ? `<i style="color:${gs[0].cor||'var(--gold)'}">${gs[0].max_in_deck}</i>` : ''}</span>
       <span class="row-q${q>=lim?' cheio':(q?'':' zero')}">${q}<small>/${lim}</small></span>`;
@@ -556,6 +624,17 @@ document.getElementById('acao').onclick=async()=>{
 };
 document.getElementById('limpar').onclick=()=>{ deck=[]; sincDeck(); render(); };
 document.getElementById('q').addEventListener('input',e=>{ busca=e.target.value.trim().toLowerCase(); render(); });
+['nome','efeito'].forEach(m=>{
+  document.getElementById('m-'+m).onclick=()=>{
+    modoBusca=m;
+    document.getElementById('m-nome').classList.toggle('on',m==='nome');
+    document.getElementById('m-efeito').classList.toggle('on',m==='efeito');
+    document.getElementById('q').placeholder = m==='efeito'
+      ? 'Buscar no efeito… ex.: destrói, ATK, invocar'
+      : 'Buscar carta pelo nome…';
+    render();
+  };
+});
 window.remover=remover;
 </script>
 </body>
