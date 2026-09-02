@@ -30,8 +30,12 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
   line-height:1; letter-spacing:1.5px; color:var(--gold2); text-shadow:0 0 44px rgba(200,151,58,.26)}
 .sub{max-width:600px; margin:10px auto 0; font-size:13px; line-height:1.7; color:var(--muted)}
 
-.arena{display:grid; grid-template-columns:1fr 400px; gap:16px; align-items:start}
-@media(max-width:1060px){ .arena{grid-template-columns:1fr} }
+/* tres colunas como o editor: catalogo | altar | cofre. O COFRE e a
+   maior porque e ele que mostra as miniaturas. */
+.arena{display:grid; grid-template-columns:300px 260px 1fr; gap:14px; align-items:start}
+@media(max-width:1240px){ .arena{grid-template-columns:280px 1fr} .altar-col{display:none} }
+@media(max-width:900px){ .arena{grid-template-columns:1fr} }
+.env{max-width:1560px}
 .painel{background:var(--dark2); border:1px solid var(--border); border-radius:12px; padding:13px}
 
 /* ── BUSCA E FILTROS ── */
@@ -81,6 +85,30 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
 .row-q small{font-size:11px; color:var(--muted)}
 .row-q.cheio{color:var(--erro)}
 
+/* ── ALTAR DA CARTA (painel central do editor) ── */
+.altar-col{position:sticky; top:13px}
+.altar-tit{font-family:'Bebas Neue',sans-serif; font-size:12px; letter-spacing:2.4px;
+  color:var(--gold); text-align:center; margin-bottom:9px}
+.altar-arte{width:100%; max-width:170px; margin:0 auto 11px; display:block}
+.altar-arte img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover;
+  border-radius:6px; border:2px solid var(--gold-dim); display:block; background:#050408;
+  box-shadow:0 8px 26px rgba(0,0,0,.5)}
+.altar-nome{font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:.6px;
+  color:var(--gold3); text-align:center; line-height:1.1; margin-bottom:3px}
+.altar-sub{font-size:10.5px; color:var(--muted); text-align:center; margin-bottom:9px;
+  text-transform:lowercase}
+.altar-stats{display:flex; gap:6px; justify-content:center; margin-bottom:10px}
+.altar-stat{font-size:10.5px; padding:3px 9px; border-radius:4px; background:var(--dark3);
+  border:1px solid var(--border); color:var(--text); font-variant-numeric:tabular-nums}
+.altar-ef{font-size:11px; line-height:1.6; color:var(--muted); background:var(--dark3);
+  border:1px solid var(--border); border-radius:7px; padding:9px 11px; max-height:150px;
+  overflow-y:auto; white-space:pre-line}
+.altar-ban{margin-top:9px; font-size:10.5px; text-align:center; color:var(--gold2);
+  border:1px solid rgba(200,151,58,.28); border-radius:6px; padding:6px 9px;
+  background:rgba(200,151,58,.06)}
+.altar-vazio{text-align:center; padding:40px 12px; font-size:11.5px; color:var(--muted);
+  line-height:1.7}
+
 /* ── DECK ── */
 .deck{position:sticky; top:13px}
 .deck-topo{display:flex; align-items:center; gap:12px; margin-bottom:10px}
@@ -94,19 +122,21 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
 .deck-fill.cheio{background:linear-gradient(90deg,#2f8f52,var(--ok))}
 .comp{display:flex; height:5px; border-radius:3px; overflow:hidden; margin-bottom:5px; background:var(--dark3)}
 .comp span{transition:width .4s var(--suave)}
-.comp-leg{display:flex; gap:10px; flex-wrap:wrap; font-size:9.5px; color:var(--muted); margin-bottom:10px}
-.comp-leg i{display:inline-block; width:7px; height:7px; border-radius:2px; margin-right:4px}
+/* M27 S3 T6 E6 — os mesmos contadores do cofre no jogo */
+.mste{display:flex; gap:5px; margin-bottom:10px; flex-wrap:wrap}
+.mste span{font-size:10px; font-weight:700; padding:2px 8px; border-radius:4px;
+  border:1px solid var(--border); background:var(--dark3);
+  font-variant-numeric:tabular-nums; letter-spacing:.4px}
 /* COFRE DO DECK — grade de 6 colunas com mini-cartas, como o
    deck_grid do editor do jogo (columns=6, 80x116, separacao 18) */
 .cofre-tit{font-family:'Bebas Neue',sans-serif; font-size:17px; letter-spacing:1.5px;
   color:var(--gold2); line-height:1}
 .cofre-sub{font-size:9.5px; letter-spacing:1.3px; text-transform:uppercase;
   color:var(--muted); margin:2px 0 10px}
-.deck-lista{display:grid; grid-template-columns:repeat(6,1fr); gap:9px;
-  max-height:42vh; overflow-y:auto; margin-bottom:11px; padding:2px 3px 2px 2px;
+.deck-lista{display:grid; grid-template-columns:repeat(auto-fill,minmax(72px,1fr)); gap:11px;
+  max-height:56vh; overflow-y:auto; margin-bottom:11px; padding:2px 4px 2px 2px;
   align-content:start}
-@media(max-width:1060px){ .deck-lista{grid-template-columns:repeat(8,1fr)} }
-@media(max-width:560px){ .deck-lista{grid-template-columns:repeat(5,1fr)} }
+@media(max-width:560px){ .deck-lista{grid-template-columns:repeat(auto-fill,minmax(58px,1fr)); gap:8px} }
 .deck-lista .vazio-msg{grid-column:1/-1}
 .dl{position:relative; cursor:pointer; background:none; border:none; padding:0;
   animation:pop .26s var(--mola)}
@@ -191,13 +221,18 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
       <div class="lista" id="cat"></div>
     </div>
 
+    <div class="painel altar-col">
+      <div class="altar-tit">✦ Altar da Carta ✦</div>
+      <div id="altar"><div class="altar-vazio">Passe o mouse numa carta da lista para vê-la aqui.</div></div>
+    </div>
+
     <div class="painel deck">
       <div class="deck-topo">
         <div class="deck-cont"><span id="n">0</span><small>/40</small></div>
         <div class="deck-barra"><div class="deck-fill" id="fill"></div></div>
       </div>
       <div class="comp" id="comp"></div>
-      <div class="comp-leg" id="comp-leg"></div>
+      <div class="mste" id="mste"></div>
       <div class="grupos" id="grupos"></div>
       <div class="cofre-tit">Cofre do Deck</div>
       <div class="cofre-sub">cartas montadas para duelo</div>
@@ -338,9 +373,29 @@ function render(){
       </span>
       <span class="row-q${q>=lim?' cheio':''}">${q}<small>/${lim}</small></span>`;
     b.onclick=()=>adicionar(c);
+    b.onmouseenter=()=>mostrarAltar(c);
+    b.onfocus=()=>mostrarAltar(c);
     el.appendChild(b);
   });
   if(!lista.length) el.innerHTML='<div class="deck-vazio">Nenhuma carta com esses filtros.</div>';
+}
+
+function mostrarAltar(c){
+  const L=document.documentElement.getAttribute('data-lang-ativo')||'pt';
+  const desc=(c['desc_'+L]||c.desc_pt||'').trim();
+  const gs=gruposDe(c.nome), lim=limiteIndividual(c.nome);
+  const noDeck=deck.filter(x=>x===c.nome).length;
+  document.getElementById('altar').innerHTML=`
+    <div class="altar-arte"><img src="img/cartas_grande/${c.slug}.webp" alt=""></div>
+    <div class="altar-nome">${c.nome_pt||c.nome}</div>
+    <div class="altar-sub">${(c.tipo||c.card_type||'').toLowerCase()}${c.atributo?' · '+c.atributo:''}</div>
+    ${c.card_type==='Monster'?`<div class="altar-stats">
+      <span class="altar-stat">ATK ${c.atk}</span><span class="altar-stat">DEF ${c.def}</span>
+      ${c.nivel?`<span class="altar-stat">Nv ${c.nivel}</span>`:''}</div>`:''}
+    ${desc?`<div class="altar-ef">${desc}</div>`:''}
+    <div class="altar-ban">${gs.length
+      ? gs.map(g=>`${g.label||g.id} ${contagemGrupos(deck)[chaveGrupo(g,c.nome)]||0}/${g.max_in_deck}`).join(' · ')+` · no deck ${noDeck}/${lim}`
+      : `Limite ${lim} · no deck ${noDeck}`}</div>`;
 }
 
 function adicionar(c){
@@ -373,8 +428,9 @@ function sincDeck(){
   const rot={Monster:'Monstro',Spell:'Magia',Trap:'Armadilha',Equip:'Equip',Field:'Campo'};
   document.getElementById('comp').innerHTML=Object.keys(cats).map(k=>
     cats[k]?`<span style="width:${cats[k]/Math.max(1,deck.length)*100}%;background:${cores[k]}"></span>`:'').join('');
-  document.getElementById('comp-leg').innerHTML=Object.keys(cats).filter(k=>cats[k])
-    .map(k=>`<span><i style="background:${cores[k]}"></i>${rot[k]} ${cats[k]}</span>`).join('');
+  const sigla={Monster:'M',Spell:'S',Trap:'T',Equip:'E',Field:'C'};
+  document.getElementById('mste').innerHTML=Object.keys(cats)
+    .map(k=>`<span style="color:${cores[k]};border-color:${cores[k]}44">${sigla[k]} ${cats[k]}</span>`).join('');
 
   /* grupos de banlist EM USO, com o quanto ja foi gasto de cada teto */
   const cont=contagemGrupos(deck), G=document.getElementById('grupos');
