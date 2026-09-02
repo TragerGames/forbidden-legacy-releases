@@ -228,6 +228,41 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
 .msg.on{display:block; animation:pop .3s var(--mola)}
 .msg.ok{background:rgba(59,165,92,.1); border:1px solid rgba(59,165,92,.3); color:#8fd6a8}
 .msg.err{background:rgba(196,72,60,.1); border:1px solid rgba(196,72,60,.3); color:#e0a49c}
+/* ── DECKS SALVOS (localStorage) ── */
+.salvos{margin-top:11px; border-top:1px solid var(--border); padding-top:11px}
+.salvos-tit{font-size:9.5px; letter-spacing:1.7px; text-transform:uppercase; color:var(--muted);
+  margin-bottom:8px; font-weight:600; display:flex; align-items:center; gap:7px}
+.salvos-tit span{margin-left:auto; font-size:9px; color:var(--gold-dim)}
+.slot{display:flex; align-items:center; gap:8px; padding:6px 9px; border-radius:6px;
+  background:var(--dark3); border:1px solid var(--border); margin-bottom:4px;
+  animation:pop .26s var(--mola)}
+.slot-nome{flex:1; min-width:0; font-size:11.5px; color:var(--text); overflow:hidden;
+  text-overflow:ellipsis; white-space:nowrap; cursor:pointer}
+.slot-nome:hover{color:var(--gold3)}
+.slot-n{font-size:10px; color:var(--muted); font-variant-numeric:tabular-nums; flex-shrink:0}
+.slot button{background:none; border:none; cursor:pointer; font-size:11px; padding:2px 4px;
+  color:var(--muted); transition:color .2s}
+.slot button:hover{color:var(--erro)}
+.salvos-vazio{font-size:11px; color:var(--muted); line-height:1.6; font-style:italic}
+.salvar-linha{display:flex; gap:6px; margin-top:7px}
+.salvar-linha input{flex:1; min-width:0; background:var(--dark3); border:1px solid var(--border);
+  border-radius:6px; padding:7px 10px; color:var(--text); font-size:11.5px;
+  font-family:inherit; outline:none}
+.salvar-linha input:focus{border-color:var(--gold)}
+.salvar-linha button{flex-shrink:0; padding:7px 13px; border-radius:6px;
+  border:1px solid var(--gold-dim); background:rgba(200,151,58,.1); color:var(--gold2);
+  cursor:pointer; font-family:inherit; font-size:11.5px; transition:all .2s}
+.salvar-linha button:hover{background:rgba(200,151,58,.2); border-color:var(--gold)}
+/* travado ate o jogo saber ler o codigo */
+.btn.travado{background:var(--dark3); color:#5a4e33; border:1px dashed var(--gold-dim);
+  cursor:not-allowed}
+.btn.travado:hover{transform:none; box-shadow:none}
+.aviso-breve{display:flex; gap:9px; align-items:flex-start; margin-top:8px; padding:9px 11px;
+  border-radius:7px; font-size:11px; line-height:1.55;
+  background:rgba(200,151,58,.06); border:1px dashed rgba(200,151,58,.3); color:var(--muted)}
+.aviso-breve b{color:var(--gold2)}
+.aviso-breve svg{width:14px; height:14px; flex-shrink:0; margin-top:1px; color:var(--gold)}
+
 .nota{max-width:1340px; margin:26px auto 0; padding:13px 18px; font-size:11.5px; color:var(--muted);
   text-align:center; border-top:1px solid var(--border); line-height:1.7}
 .nota b{color:var(--gold2)}
@@ -278,10 +313,24 @@ h1{font-family:'Bebas Neue',sans-serif; font-weight:400; font-size:clamp(30px,5v
       <div class="cofre-tit">Cofre do Deck</div>
       <div class="cofre-sub">cartas montadas para duelo</div>
       <div class="deck-lista" id="dlista"></div>
-      <button class="btn" id="gerar" disabled>Gerar código do deck</button>
+      <button class="btn travado" id="gerar" title="Disponível quando o jogo receber a atualização">&#128274; Gerar código do deck</button>
+      <div class="aviso-breve">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.2v.1"/></svg>
+        <div>O <b>código de deck</b> entra na <b>próxima atualização do jogo</b>. Assim que o Editor de Deck souber lê-lo, este botão libera aqui — seu deck continua salvo abaixo até lá.</div>
+      </div>
       <div class="btn-linha">
         <button class="btn fantasma" id="importar">Carregar código</button>
         <button class="btn fantasma" id="limpar">Limpar</button>
+      </div>
+
+      <div class="salvos">
+        <div class="salvos-tit">Meus decks <span id="salvos-qtd"></span></div>
+        <div id="salvos-lista"></div>
+        <div class="salvar-linha">
+          <input id="salvar-nome" type="text" placeholder="Nome do deck" maxlength="40">
+          <button id="salvar">Salvar</button>
+        </div>
+        <p class="seed-nota">Ficam guardados <b>neste navegador</b>, só para você — não sobem para nenhum servidor e somem se você limpar os dados do site.</p>
       </div>
       <div class="seed-box" id="seed-box">
         <div class="seed-rot" id="seed-rot">Seu código de deck</div>
@@ -503,7 +552,8 @@ function sincDeck(){
   const f=document.getElementById('fill');
   f.style.width=(deck.length/MAX*100)+'%';
   f.classList.toggle('cheio',deck.length===MAX);
-  document.getElementById('gerar').disabled=!deck.length;
+  /* o gerar segue travado ate o jogo saber ler o codigo - nao depende
+     do tamanho do deck */
 
   const cats={Monster:0,Spell:0,Trap:0,Equip:0,Field:0};
   deck.forEach(n=>{const c=CARTAS.find(x=>x.nome===n); if(c&&cats[c.card_type]!==undefined) cats[c.card_type]++});
@@ -585,6 +635,7 @@ function lerSeed(t){
 }
 
 document.getElementById('gerar').onclick=()=>{
+  if(document.getElementById('gerar').classList.contains('travado')) return;
   modo='gerar';
   document.getElementById('seed-rot').textContent='Seu código de deck';
   document.getElementById('seed').value=gerarSeed();
@@ -635,6 +686,80 @@ document.getElementById('q').addEventListener('input',e=>{ busca=e.target.value.
     render();
   };
 });
+
+/* == DECKS SALVOS NO NAVEGADOR ========================================
+   Guarda o mesmo formato do codigo (compacto) no lugar da lista de
+   nomes. localStorage pode falhar (janela anonima, dados bloqueados),
+   entao toda leitura e escrita vai em try/catch e a pagina segue
+   funcionando sem os salvos. */
+var CHAVE='fl_decks_v1';
+function lerSalvos(){
+  try{ return JSON.parse(localStorage.getItem(CHAVE)||'[]'); }catch(e){ return []; }
+}
+function gravarSalvos(l){
+  try{ localStorage.setItem(CHAVE,JSON.stringify(l)); return true; }
+  catch(e){ aviso('Nao foi possivel salvar neste navegador.','err'); return false; }
+}
+function renderSalvos(){
+  var l=lerSalvos(), el=document.getElementById('salvos-lista');
+  document.getElementById('salvos-qtd').textContent=l.length?l.length+'/10':'';
+  if(!l.length){ el.innerHTML='<div class="salvos-vazio">Nenhum deck salvo ainda.</div>'; return; }
+  el.innerHTML='';
+  l.forEach(function(d,i){
+    var div=document.createElement('div'); div.className='slot';
+    var nome=document.createElement('span');
+    nome.className='slot-nome'; nome.textContent=d.nome;
+    nome.title='Carregar '+d.nome;
+    nome.onclick=function(){ carregarSalvo(i); };
+    var n=document.createElement('span'); n.className='slot-n'; n.textContent=d.n;
+    var x=document.createElement('button'); x.textContent='✕'; x.title='Excluir';
+    x.onclick=function(){ excluirSalvo(i); };
+    div.appendChild(nome); div.appendChild(n); div.appendChild(x);
+    el.appendChild(div);
+  });
+}
+function salvarAtual(){
+  var campo=document.getElementById('salvar-nome');
+  var nome=(campo.value||'').trim();
+  if(!deck.length) return aviso('Monte um deck antes de salvar.','err');
+  if(!nome) return aviso('De um nome ao deck.','err');
+  var l=lerSalvos();
+  var j=-1;
+  for(var k=0;k<l.length;k++) if(l[k].nome===nome) j=k;
+  if(l.length>=10 && j<0) return aviso('Voce ja tem 10 decks salvos - exclua um antes.','err');
+  var item={nome:nome, n:deck.length, codigo:gerarSeed(), em:Date.now()};
+  if(j>=0) l[j]=item; else l.push(item);
+  if(gravarSalvos(l)){
+    renderSalvos(); campo.value='';
+    aviso(j>=0 ? 'Deck atualizado.' : 'Deck salvo neste navegador.','ok');
+  }
+}
+function carregarSalvo(i){
+  var d=lerSalvos()[i]; if(!d) return;
+  try{
+    var cartas=lerSeed(d.codigo), fora=[];
+    deck=[];
+    cartas.forEach(function(n){
+      if(deck.length>=MAX||!validarAdicao(n).ok){ fora.push(n); return; }
+      deck.push(n);
+    });
+    sincDeck(); render();
+    aviso(fora.length
+      ? d.nome+' carregado com '+deck.length+' cartas - '+fora.length+' ficaram de fora pela banlist.'
+      : d.nome+' carregado.', fora.length?'err':'ok');
+  }catch(e){ aviso('Nao foi possivel ler este deck salvo.','err'); }
+}
+function excluirSalvo(i){
+  var l=lerSalvos(), d=l[i]; if(!d) return;
+  l.splice(i,1);
+  if(gravarSalvos(l)){ renderSalvos(); aviso('Deck excluido.','ok'); }
+}
+document.getElementById('salvar').onclick=salvarAtual;
+document.getElementById('salvar-nome').addEventListener('keydown',function(e){
+  if(e.key==='Enter') salvarAtual();
+});
+renderSalvos();
+
 window.remover=remover;
 </script>
 </body>
