@@ -116,7 +116,7 @@ select.ord:focus{border-color:var(--gold)}
 @keyframes sobe{to{opacity:1; transform:none}}
 .carta-img{position:relative; border-radius:8px;
   transition:transform .34s var(--mola), box-shadow .34s var(--suave)}
-.carta img{width:100%; aspect-ratio:110/160; object-fit:cover; display:block;
+.carta img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; display:block;
   background:#050408; border:2px solid rgba(255,255,255,.07); border-radius:8px}
 .carta[data-r="N"] img{border-color:rgba(140,140,140,.45)}
 .carta[data-r="R"] img{border-color:rgba(136,170,221,.55)}
@@ -164,7 +164,7 @@ select.ord:focus{border-color:var(--gold)}
 .corpo{display:grid; grid-template-columns:206px 1fr; gap:24px; padding:26px}
 @media(max-width:660px){ .corpo{grid-template-columns:1fr; padding:20px}
   .modal-arte{max-width:186px; margin:0 auto} }
-.modal-arte img{width:100%; aspect-ratio:110/160; object-fit:cover; border-radius:8px;
+.modal-arte img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:8px;
   border:2px solid var(--gold-dim); display:block; background:#050408}
 .modal-nome{font-family:'Bebas Neue',sans-serif; font-size:27px; color:var(--gold3);
   letter-spacing:1px; line-height:1.1; margin-bottom:7px; padding-right:34px}
@@ -218,9 +218,28 @@ select.ord:focus{border-color:var(--gold)}
   margin-bottom:9px; font-weight:600}
 .rel-lista{display:flex; gap:8px; overflow-x:auto; padding-bottom:4px; scrollbar-width:thin}
 .rel-c{flex-shrink:0; width:58px; cursor:pointer; background:none; border:none; padding:0}
-.rel-c img{width:100%; aspect-ratio:110/160; object-fit:cover; border-radius:4px;
+.rel-c img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:4px;
   border:1px solid var(--border); display:block; transition:transform .25s, border-color .25s}
 .rel-c:hover img{transform:translateY(-3px); border-color:var(--gold)}
+
+/* alternador de versao da arte, como no catalogo atual */
+.versao{display:none; gap:5px; margin-top:9px; padding:3px;
+  background:rgba(0,0,0,.35); border:1px solid var(--gold-dim); border-radius:7px}
+.versao.on{display:flex}
+.versao button{flex:1; background:none; border:none; cursor:pointer; font-family:inherit;
+  font-size:11px; font-weight:700; letter-spacing:.4px; color:#9a9a9a; padding:6px 4px;
+  border-radius:5px; transition:all .18s}
+.versao button:hover{color:#e8e8e8}
+.versao button.on{background:linear-gradient(180deg,rgba(224,170,24,.22),rgba(200,150,10,.12));
+  color:var(--gold3); box-shadow:inset 0 0 0 1px rgba(224,170,24,.35)}
+.desc{font-size:12.5px; line-height:1.75; color:var(--muted); white-space:pre-line;
+  border-top:1px solid var(--border); padding-top:13px; margin-top:14px}
+/* selo de custom/full art na grade */
+.carta-selo.fa{border-color:rgba(232,184,64,.5); color:var(--gold3)}
+.carta-selo.cu{border-color:rgba(90,180,150,.5); color:#9fd4bf}
+.selos-canto{position:absolute; top:6px; right:6px; z-index:2; display:flex;
+  flex-direction:column; gap:3px; align-items:flex-end}
+@media(max-width:660px){ .versao button{padding:9px 4px; font-size:12px} }
 
 .nota{max-width:1300px; margin:36px auto 0; padding:14px 20px; font-size:11.5px;
   color:var(--muted); text-align:center; border-top:1px solid var(--border); line-height:1.7}
@@ -262,6 +281,7 @@ select.ord:focus{border-color:var(--gold)}
     <div class="linha-f"><span class="rot">Categoria</span><span id="f-cat"></span></div>
     <div class="linha-f"><span class="rot">Atributo</span><span id="f-atr"></span></div>
     <div class="linha-f"><span class="rot">Origem</span><span id="f-org"></span></div>
+    <div class="linha-f"><span class="rot">Especiais</span><span id="f-esp"></span></div>
     <div class="ativos" id="ativos"></div>
   </div>
 
@@ -285,7 +305,8 @@ mantendo os filtros de tipo/raça e o alternador de Full Art que o catálogo já
 
 <script>
 let CARTAS=[], ORIG={cartas:{},boosters:[],npcs:[]}, VISIVEIS=[], iAtual=-1;
-let f={rar:'',cat:'',atr:'',org:'',booster:null,npc:null}, busca='', ordem='nome', LIM=0;
+let f={rar:'',cat:'',atr:'',org:'',booster:null,npc:null,fa:false,cu:false},
+    busca='', ordem='nome', LIM=0, versaoAtual='normal';
 const PASSO=60, RAR_ORD={UR:4,SR:3,R:2,N:1};
 
 const ICO={
@@ -358,6 +379,17 @@ function montarFiltros(){
   ATRIBS.forEach(a=>{const n=conta('atr',a); if(n)
     A.appendChild(chip('atr',a,a.charAt(0)+a.slice(1).toLowerCase()+`<span class="qt">${n}</span>`,
       `<img src="img/atributos/${a}.webp" alt="" loading="lazy">`))});
+  const E=document.getElementById('f-esp'); E.innerHTML='';
+  [['fa','⭐ Full Art',CARTAS.filter(c=>c.full_art).length,
+    'Cartas com versão em arte completa'],
+   ['cu','✦ Custom',CARTAS.filter(c=>c.custom).length,
+    'Cartas originais criadas para o Forbidden Legacy']].forEach(([k,l,n,t])=>{
+    const b=document.createElement('button');
+    b.className='chip'+(f[k]?' on':''); b.title=t;
+    b.innerHTML=l+`<span class="qt">${n}</span>`;
+    b.onclick=()=>{ f[k]=!f[k]; f.booster=f.npc=null; sinc(); };
+    E.appendChild(b);
+  });
   const O=document.getElementById('f-org'); O.innerHTML='';
   O.appendChild(chip('org','','Qualquer'));
   [['b','Booster'],['n','Drop de duelista'],['f','Fusão'],['x','Exclusiva']]
@@ -374,6 +406,8 @@ function passa(c){
   if(f.org && !(o&&o[f.org])) return false;
   if(f.booster!==null && !(o&&o.b&&o.b.includes(f.booster))) return false;
   if(f.npc!==null && !(o&&o.n&&o.n.includes(f.npc))) return false;
+  if(f.fa && !c.full_art) return false;
+  if(f.cu && !c.custom) return false;
   return true;
 }
 function ordenar(a,b){
@@ -410,8 +444,15 @@ function render(zerar){
     const b=document.createElement('button');
     b.type='button'; b.className='carta'; b.dataset.r=(c.raridade||'N').toUpperCase();
     b.style.setProperty('--atraso',Math.min(i-LIM,22)*0.02+'s');
+    /* com o filtro Full Art ligado a grade mostra a arte completa —
+       mesmo comportamento do catalogo atual (pastaImg) */
+    const pasta=(f.fa&&c.full_art)?'img/cartas_full/':'img/cartas/';
     b.innerHTML=`<div class="carta-img">${o&&o.x?'<span class="carta-selo">Exclusiva</span>':''}
-        <img src="img/cartas/${c.slug}.webp" alt="" loading="lazy" width="110" height="160"></div>
+        <span class="selos-canto">
+          ${c.full_art?'<span class="carta-selo fa" title="Tem Full Art">FA</span>':''}
+          ${c.custom?'<span class="carta-selo cu" title="Carta Custom">✦</span>':''}
+        </span>
+        <img src="${pasta}${c.slug}.webp" alt="" loading="lazy" width="110" height="160"></div>
       <div class="carta-nome">${destaca(c.nome_pt||c.nome)}</div>
       ${c.card_type==='Monster'?`<div class="carta-stats">${c.atk} / ${c.def}</div>`:''}`;
     b.onclick=()=>abrir(c);
@@ -442,11 +483,13 @@ function pills(){
   if(f.cat) add('Categoria: '+(CATS.find(x=>x[0]===f.cat)||[,f.cat])[1],()=>f.cat='');
   if(f.atr) add('Atributo: '+f.atr,()=>f.atr='');
   if(f.org) add('Origem',()=>f.org='');
+  if(f.fa) add('Full Art',()=>f.fa=false);
+  if(f.cu) add('Custom',()=>f.cu=false);
   if(busca) add('Busca: “'+busca+'”',()=>{busca='';document.getElementById('q').value='';
     document.getElementById('busca-wrap').classList.remove('tem')});
   if(el.children.length){
     const b=document.createElement('button'); b.className='limpar'; b.textContent='Limpar tudo';
-    b.onclick=()=>{f={rar:'',cat:'',atr:'',org:'',booster:null,npc:null}; busca='';
+    b.onclick=()=>{f={rar:'',cat:'',atr:'',org:'',booster:null,npc:null,fa:false,cu:false}; busca='';
       document.getElementById('q').value=''; document.getElementById('busca-wrap').classList.remove('tem'); sinc()};
     el.appendChild(b);
   }
@@ -456,9 +499,9 @@ function pills(){
 }
 
 /* filtrar a partir do modal — o atalho que liga as duas metades */
-function verBooster(i){ f={rar:'',cat:'',atr:'',org:'',booster:i,npc:null}; busca='';
+function verBooster(i){ f={rar:'',cat:'',atr:'',org:'',booster:i,npc:null,fa:false,cu:false}; busca='';
   document.getElementById('q').value=''; fechar(); sinc(); window.scrollTo({top:0,behavior:'smooth'}); }
-function verNpc(i){ f={rar:'',cat:'',atr:'',org:'',booster:null,npc:i}; busca='';
+function verNpc(i){ f={rar:'',cat:'',atr:'',org:'',booster:null,npc:i,fa:false,cu:false}; busca='';
   document.getElementById('q').value=''; fechar(); sinc(); window.scrollTo({top:0,behavior:'smooth'}); }
 
 function blocoOrigem(c){
@@ -493,22 +536,45 @@ function blocoRelacionadas(c){
       <img src="img/cartas/${x.slug}.webp" alt="" loading="lazy"></button>`).join('')+'</div></div>';
 }
 
+let cartaAberta=null;
+function setVersao(v){
+  if(!cartaAberta) return;
+  if(v==='full' && !cartaAberta.full_art) v='normal';
+  versaoAtual=v;
+  const img=document.getElementById('arte');
+  img.src=(v==='full'?'img/cartas_full_grande/':'img/cartas_grande/')+cartaAberta.slug+'.webp';
+  document.getElementById('v-normal').classList.toggle('on',v==='normal');
+  document.getElementById('v-full').classList.toggle('on',v==='full');
+}
 function abrirPorSlug(s){ const c=CARTAS.find(x=>x.slug===s); if(c) abrir(c); }
 function abrir(c){
   iAtual=VISIVEIS.findIndex(x=>x.slug===c.slug);
   const r=(c.raridade||'N').toUpperCase(), mon=c.card_type==='Monster', a=atrDe(c);
   const temIcone=ATRIBS.includes(a);
+  const L=document.documentElement.getAttribute('data-lang-ativo')||'pt';
+  const desc=(c['desc_'+L]||c.desc_pt||'').trim();
+  /* o modal SEMPRE abre na arte normal — a Full Art e recompensa do jogo,
+     nao a face padrao da carta (mesma regra do catalogo atual) */
+  versaoAtual='normal'; cartaAberta=c;
   document.getElementById('corpo').innerHTML=`
-    <div class="modal-arte"><img src="img/cartas_grande/${c.slug}.webp" alt=""></div>
+    <div class="modal-arte">
+      <img id="arte" src="img/cartas_grande/${c.slug}.webp" alt="">
+      <div class="versao${c.full_art?' on':''}" id="versao">
+        <button type="button" id="v-normal" class="on" onclick="setVersao('normal')">Normal</button>
+        <button type="button" id="v-full" onclick="setVersao('full')">Full Art</button>
+      </div>
+    </div>
     <div>
       <div class="modal-nome">${c.nome_pt||c.nome}</div>
       <div class="selos"><span class="rar ${r}">${r}</span>
         ${temIcone?`<span class="mini"><img src="img/atributos/${a}.webp" alt="">${a.charAt(0)+a.slice(1).toLowerCase()}</span>`:''}
-        ${c.tipo?`<span class="mini">${c.tipo}</span>`:''}</div>
+        ${c.tipo?`<span class="mini">${c.tipo}</span>`:''}
+        ${c.custom?'<span class="mini" style="color:#9fd4bf;border-color:rgba(90,180,150,.3)">✦ Custom</span>':''}</div>
       ${mon?`<div class="fatos">
         <div><div class="fato-r">Nível</div><div class="fato-v">${c.nivel||'—'}</div></div>
         <div><div class="fato-r">ATK / DEF</div><div class="fato-v">${c.atk} / ${c.def}</div></div>
       </div>`:''}
+      ${desc?`<div class="desc">${desc}</div>`:''}
       ${blocoOrigem(c)}
       ${blocoRelacionadas(c)}
     </div>`;
