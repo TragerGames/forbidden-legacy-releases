@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1788220541",
+  "versao": "1788898339",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -657,10 +657,10 @@
       "nivel": "8",
       "atk": "3000",
       "def": "2000",
-      "desc_pt": "EFEITO: Esta carta ganha 500 de poder para cada monstro ARCHFIEND no campo e no cemitério.",
-      "desc_en": "EFFECT: Gains 500 power for each ARCHFIEND monster on the field and in the Graveyard.",
-      "desc_vi": "HIỆU ỨNG: Nhận thêm 500 sức mạnh cho mỗi quái thú ARCHFIEND trên sân và trong Mộ bài.",
-      "desc_es": "EFECTO: Esta carta gana 500 de poder por cada monstruo ARCHFIEND en el campo y en el Cementerio.",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 500 de ATK e DEF para cada monstro ARCHFIEND no campo e no Cemitério.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 500 ATK and DEF for each ARCHFIEND monster on the field and in the Graveyard.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 500 ATK và DEF cho mỗi quái thú ARCHFIEND trên sân và trong Mộ bài.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 500 de ATK y DEF por cada monstruo ARCHFIEND en el campo y en el Cementerio.",
       "full_art": true
     },
     {
@@ -817,10 +817,10 @@
       "nivel": "10",
       "atk": "3000",
       "def": "2000",
-      "desc_pt": "EFEITO: Quando invocado, destrua um monstro aleatório no campo do oponente. Ganha 200 de poder para cada monstro MACHINE na sua mão.",
-      "desc_en": "EFFECT: When Summoned, destroy a random monster on your opponent's field. Gains 200 ATK for each MACHINE monster in your hand.",
-      "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, phá hủy một quái thú ngẫu nhiên trên sân của đối thủ. Nhận thêm 200 ATK cho mỗi quái thú MACHINE trên tay bạn.",
-      "desc_es": "EFECTO: Al ser invocado, destruye un monstruo aleatorio en el campo del oponente. Gana 200 de poder por cada monstruo MACHINE en tu mano.",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, destrua 1 carta aleatória no campo do seu oponente. Enquanto houver um monstro MACHINE no campo, esta carta ganha 500 de ATK.",
+      "desc_en": "EFFECT: When this card is Summoned, destroy 1 random card on your opponent's field. While a MACHINE monster is on the field, this card gains 500 ATK.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, phá hủy ngẫu nhiên 1 lá bài trên sân của đối thủ. Khi có một quái thú MACHINE trên sân, lá bài này nhận thêm 500 ATK.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, destruye al azar 1 carta en el campo de tu oponente. Mientras haya un monstruo MACHINE en el campo, esta carta gana 500 de ATK.",
       "full_art": true
     },
     {
@@ -856,10 +856,10 @@
       "nivel": "5",
       "atk": "2400",
       "def": "1700",
-      "desc_pt": "EFEITO: Quando invocado, destrua um monstro aleatório no campo do oponente.",
-      "desc_en": "EFFECT: When Summoned, destroy a random monster on your opponent's field.",
-      "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, phá hủy một quái thú ngẫu nhiên trên sân của đối thủ.",
-      "desc_es": "EFECTO: Al ser invocado, destruye un monstruo aleatorio en el campo del oponente."
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, destrua 1 SPELL, TRAP ou o FIELD ativo aleatoriamente no campo do seu oponente.",
+      "desc_en": "EFFECT: When this card is Summoned, destroy 1 random SPELL, TRAP or the active FIELD on your opponent's field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, phá hủy ngẫu nhiên 1 lá SPELL, TRAP hoặc FIELD đang hoạt động trên sân của đối thủ.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, destruye al azar 1 SPELL, TRAP o el FIELD activo en el campo de tu oponente."
     },
     {
       "nome": "Armed Dragon LV7",
@@ -872,7 +872,7 @@
       "raridade_arquivo": "UR",
       "icone_atributo": "WIND",
       "icone_tipo": "dragon",
-      "nivel": "5",
+      "nivel": "7",
       "atk": "2800",
       "def": "1000",
       "desc_pt": "EFEITO: Quando invocado, destrua um monstro aleatório no campo do oponente.",
@@ -1720,10 +1720,10 @@
       "nivel": "1",
       "atk": "800",
       "def": "500",
-      "desc_pt": "EFEITO: Quando Invocada, traga um \"Red-eyes B. Dragon\" do seu DECK para o CAMPO.",
-      "desc_en": "EFFECT: When Summoned, bring 1 \"Red-eyes B. Dragon\" from your DECK to the FIELD.",
-      "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, đưa 1 \"Red-eyes B. Dragon\" từ DECK của bạn ra SÂN.",
-      "desc_es": "EFECTO: Al ser Invocada, trae un \"Red-eyes B. Dragon\" de tu DECK al CAMPO."
+      "desc_pt": "EFEITO: Esta carta pode substituir 1 Monstro material de fusão, mas somente em uma fusão que resulte em um monstro \"Red-Eyes\". Esta carta é considerada RED-EYES.",
+      "desc_en": "EFFECT: This card can substitute for 1 Fusion Material Monster, but only for a Fusion Summon of a \"Red-Eyes\" monster. This card is treated as RED-EYES.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này có thể thay thế 1 Quái thú Nguyên liệu Dung hợp, nhưng chỉ trong dung hợp tạo ra một quái thú \"Red-Eyes\". Lá bài này được xem là RED-EYES.",
+      "desc_es": "EFECTO: Esta carta puede sustituir 1 Monstruo material de fusión, pero solo en una fusión que resulte en un monstruo \"Red-Eyes\". Esta carta es considerada RED-EYES."
     },
     {
       "nome": "Black Luster Soldier",
@@ -1979,6 +1979,44 @@
       "nivel": "3",
       "atk": "800",
       "def": "900"
+    },
+    {
+      "nome": "Blaster, Dragon Ruler of Infernos",
+      "nome_pt": "Blaster, Dragon Ruler of Infernos",
+      "slug": "blaster_dragon_ruler_of_infernos",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "2800",
+      "def": "1800",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: envie 2 monstros FIRE e/ou DRAGON aleatórios da sua mão e/ou do seu Deck para o Cemitério e, depois, destrua 1 carta aleatória no campo do seu oponente. Se esta carta for destruída: cause 1800 de dano ao seu oponente. Enquanto esta carta estiver em campo, os monstros \"Dragon Ruler\" que você controla causam dano de batalha perfurante, exceto esta.",
+      "desc_en": "EFFECT: When this card is Summoned: send 2 random FIRE and/or DRAGON monsters from your hand and/or Deck to the Graveyard, then destroy 1 random card on your opponent's field. If this card is destroyed: inflict 1800 damage to your opponent. While this card is on the field, \"Dragon Ruler\" monsters you control inflict piercing battle damage, except this one.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi 2 quái thú FIRE và/hoặc DRAGON ngẫu nhiên từ tay và/hoặc Deck của bạn xuống Mộ bài, sau đó phá hủy 1 lá bài ngẫu nhiên trên sân của đối thủ. Nếu lá bài này bị phá hủy: gây 1800 sát thương cho đối thủ. Khi lá bài này ở trên sân, các quái thú \"Dragon Ruler\" mà bạn điều khiển gây sát thương xuyên giáp, ngoại trừ lá này.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: envía 2 monstruos FIRE y/o DRAGON aleatorios de tu mano y/o tu Deck al Cementerio y, después, destruye 1 carta aleatoria en el campo de tu oponente. Si esta carta es destruida: inflige 1800 de daño a tu oponente. Mientras esta carta esté en el campo, los monstruos \"Dragon Ruler\" que controles infligen daño de batalla perforante, excepto esta."
+    },
+    {
+      "nome": "Blaze, Supreme Ruler of all Dragons",
+      "nome_pt": "Blaze, Supreme Ruler of all Dragons",
+      "slug": "blaze_supreme_ruler_of_all_dragons",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "2800",
+      "def": "1800",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: ative o campo \"Molten Destruction\". No final do turno do seu oponente: destrua 1 carta aleatória que seu oponente controla.",
+      "desc_en": "EFFECT: When this card is Summoned: activate the \"Molten Destruction\" field. At the end of your opponent's turn: destroy 1 random card your opponent controls.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: kích hoạt sân \"Molten Destruction\". Vào cuối lượt của đối thủ: phá hủy 1 lá bài ngẫu nhiên mà đối thủ điều khiển.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: activa el campo \"Molten Destruction\". Al final del turno de tu oponente: destruye 1 carta aleatoria que tu oponente controle."
     },
     {
       "nome": "Blocker",
@@ -2423,6 +2461,25 @@
       "def": "800"
     },
     {
+      "nome": "Burner, Dragon Ruler of Sparks",
+      "nome_pt": "Burner, Dragon Ruler of Sparks",
+      "slug": "burner_dragon_ruler_of_sparks",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "3",
+      "atk": "1000",
+      "def": "200",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: cause 1000 de dano ao seu oponente. Quando esta carta for destruída: envie 1 monstro FIRE ou DRAGON aleatório do seu Deck para o Cemitério e, depois, Invoque 1 \"Blaster, Dragon Ruler of Infernos\" do seu Deck.",
+      "desc_en": "EFFECT: When this card is Summoned: inflict 1000 damage to your opponent. When this card is destroyed: send 1 random FIRE or DRAGON monster from your Deck to the Graveyard, then Summon 1 \"Blaster, Dragon Ruler of Infernos\" from your Deck.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gây 1000 sát thương cho đối thủ. Khi lá bài này bị phá hủy: gửi 1 quái thú FIRE hoặc DRAGON ngẫu nhiên từ Deck của bạn xuống Mộ bài, sau đó Triệu hồi 1 \"Blaster, Dragon Ruler of Infernos\" từ Deck của bạn.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: inflige 1000 de daño a tu oponente. Cuando esta carta sea destruida: envía 1 monstruo FIRE o DRAGON aleatorio de tu Deck al Cementerio y, después, Invoca 1 \"Blaster, Dragon Ruler of Infernos\" de tu Deck."
+    },
+    {
       "nome": "Burning Spear",
       "nome_pt": "Burning Spear",
       "slug": "burning_spear",
@@ -2452,10 +2509,10 @@
       "nivel": "7",
       "atk": "2600",
       "def": "2300",
-      "desc_pt": "EFEITO: Esta carta ganha 200 de poder para cada carta DRAGON em ambos os campos.",
-      "desc_en": "EFFECT: This card gains 200 power for each DRAGON cards on both field.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 200 sức mạnh cho mỗi lá DRAGON trên cả hai sân.",
-      "desc_es": "EFECTO: Esta carta gana 200 de poder por cada carta DRAGON en ambos campos."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 300 de ATK para cada monstro DRAGON no campo.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 300 ATK for each DRAGON monster on the field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 300 ATK cho mỗi quái thú DRAGON trên sân.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 300 de ATK por cada monstruo DRAGON en el campo."
     },
     {
       "nome": "Buster Dragon",
@@ -2557,7 +2614,23 @@
       "desc_pt": "EFEITO: Enquanto esta carta estiver no campo, todos os monstros DARK no campo de quem a invocou ganham 400 de poder.",
       "desc_en": "EFFECT: While this card is on the field, all DARK monsters on the controller's field gain 400 power.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, tất cả quái thú DARK trên sân của người điều khiển nó nhận thêm 400 sức mạnh.",
-      "desc_es": "EFECTO: Mientras esta carta esté en el campo, todos los monstruos DARK en el campo de quien la invocó ganan 400 de poder."
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, todos los monstruos DARK en el campo de quien la invocó ganan 400 de poder.",
+      "full_art": true
+    },
+    {
+      "nome": "Castle of Dragon Souls",
+      "nome_pt": "Castle of Dragon Souls",
+      "slug": "castle_of_dragon_souls",
+      "card_type": "Trap",
+      "tipo": "trap continuous",
+      "atributo": "trap",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "TRAP",
+      "desc_pt": "EFEITO: Uma vez por turno, quando um monstro DRAGON no seu campo for atacado: você pode retornar 1 monstro DRAGON aleatório do seu Cemitério para o seu Deck e, se o fizer, esse monstro ganha 700 de ATK até o final deste turno, mesmo que esta carta deixe o campo.",
+      "desc_en": "EFFECT: Once per turn, when a DRAGON monster you control is attacked: you can return 1 random DRAGON monster from your Graveyard to your Deck, and if you do, that monster gains 700 ATK until the end of this turn, even if this card leaves the field.",
+      "desc_vi": "HIỆU ỨNG: Một lần mỗi lượt, khi một quái thú DRAGON trên sân của bạn bị tấn công: bạn có thể trả 1 quái thú DRAGON ngẫu nhiên từ Mộ bài về Deck của bạn, và nếu bạn làm vậy, quái thú đó nhận thêm 700 ATK cho đến cuối lượt này, kể cả khi lá bài này rời sân.",
+      "desc_es": "EFECTO: Una vez por turno, cuando un monstruo DRAGON en tu campo sea atacado: puedes devolver 1 monstruo DRAGON aleatorio de tu Cementerio a tu Deck y, si lo haces, ese monstruo gana 700 de ATK hasta el final de este turno, incluso si esta carta deja el campo."
     },
     {
       "nome": "Cat's Ear Tribe",
@@ -2762,6 +2835,26 @@
       "desc_es": "\"Monster Egg\" + \"Hinotama Soul\""
     },
     {
+      "nome": "Chasma, Dragon Ruler of Auroras",
+      "nome_pt": "Chasma, Dragon Ruler of Auroras",
+      "slug": "chasma_dragon_ruler_of_auroras",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "3000",
+      "def": "1600",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: envie 1 monstro \"Dragon Ruler\" de Nível 7 aleatório do seu Deck para o Cemitério e, depois, esta carta ganha o efeito desse monstro. Se esta carta for destruída: Invoque 1 monstro \"Dragon Ruler\" com o maior ATK do seu Cemitério, exceto \"Chasma, Dragon Ruler of Auroras\". Enquanto esta carta estiver em campo, você não sofre dano de batalha de batalhas envolvendo os seus monstros \"Dragon Ruler\", exceto esta.",
+      "desc_en": "EFFECT: When this card is Summoned: send 1 random Level 7 \"Dragon Ruler\" monster from your Deck to the Graveyard, then this card gains that monster's effect. If this card is destroyed: Summon 1 \"Dragon Ruler\" monster with the highest ATK from your Graveyard, except \"Chasma, Dragon Ruler of Auroras\". While this card is on the field, you take no battle damage from battles involving your \"Dragon Ruler\" monsters, except this one.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi 1 quái thú \"Dragon Ruler\" Cấp 7 ngẫu nhiên từ Deck của bạn xuống Mộ bài, sau đó lá bài này nhận hiệu ứng của quái thú đó. Nếu lá bài này bị phá hủy: Triệu hồi 1 quái thú \"Dragon Ruler\" có ATK cao nhất từ Mộ bài của bạn, ngoại trừ \"Chasma, Dragon Ruler of Auroras\". Khi lá bài này ở trên sân, bạn không nhận sát thương chiến đấu từ các trận đấu có sự tham gia của các quái thú \"Dragon Ruler\" của bạn, ngoại trừ lá này.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: envía 1 monstruo \"Dragon Ruler\" de Nivel 7 aleatorio de tu Deck al Cementerio y, después, esta carta gana el efecto de ese monstruo. Si esta carta es destruida: Invoca 1 monstruo \"Dragon Ruler\" con el mayor ATK de tu Cementerio, excepto \"Chasma, Dragon Ruler of Auroras\". Mientras esta carta esté en el campo, no recibes daño de batalla de batallas que involucren a tus monstruos \"Dragon Ruler\", excepto esta.",
+      "full_art": true
+    },
+    {
       "nome": "Chimera the Flying Mythical Beast",
       "nome_pt": "Chimera the Flying Mythical Beast",
       "slug": "chimera_the_flying_mythical_beast",
@@ -2816,7 +2909,8 @@
       "desc_pt": "EFEITO: Quando esta carta for invocada, o ATK dela se torna igual à quantidade de cartas \"Cyber Dragon\" na sua MÃO e no DECK, multiplicado por 350. Esta carta é considerada uma carta \"Cyber Dragon\".",
       "desc_en": "EFFECT: When this card is Summoned, its ATK becomes equal to the number of \"Cyber Dragon\" cards in your HAND and DECK, multiplied by 350. This card is treated as a \"Cyber Dragon\" card.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, ATK của nó trở thành bằng số lá \"Cyber Dragon\" trong TAY và DECK của bạn, nhân với 350. Lá bài này được xem là một lá \"Cyber Dragon\".",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada, su ATK se vuelve igual a la cantidad de cartas \"Cyber Dragon\" en tu MANO y DECK, multiplicado por 350. Esta carta se considera una carta \"Cyber Dragon\"."
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, su ATK se vuelve igual a la cantidad de cartas \"Cyber Dragon\" en tu MANO y DECK, multiplicado por 350. Esta carta se considera una carta \"Cyber Dragon\".",
+      "full_art": true
     },
     {
       "nome": "Chimeratech Megafleet Dragon",
@@ -2835,7 +2929,8 @@
       "desc_pt": "EFEITO: Quando esta carta for invocada, o ATK dela se torna igual à quantidade de cartas \"Cyber Dragon\" na sua MÃO, multiplicado por 1000.",
       "desc_en": "EFFECT: When this card is Summoned, its ATK becomes equal to the number of \"Cyber Dragon\" cards in your HAND, multiplied by 1000.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, ATK của nó trở thành bằng số lá \"Cyber Dragon\" trong TAY của bạn, nhân với 1000.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada, su ATK se vuelve igual a la cantidad de cartas \"Cyber Dragon\" en tu MANO, multiplicado por 1000."
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, su ATK se vuelve igual a la cantidad de cartas \"Cyber Dragon\" en tu MANO, multiplicado por 1000.",
+      "full_art": true
     },
     {
       "nome": "Chimeratech Overdragon",
@@ -2990,7 +3085,8 @@
       "desc_pt": "EFEITO: Esta carta ganha 2000 de ATK ao batalhar contra outro monstro. Se o monstro adversário for destruído, esta carta ganha metade do ATK original desse monstro permanentemente. Esta carta não sofre penalidade em \"Yami\".",
       "desc_en": "EFFECT: This card gains 2000 ATK while battling another monster. If that monster is destroyed, this card permanently gains half of that monster's original ATK. This card does not suffer penalty in \"Yami\".",
       "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 2000 ATK khi chiến đấu với quái thú khác. Nếu quái thú đó bị phá hủy, lá bài này nhận vĩnh viễn một nửa ATK gốc của quái thú đó. Lá bài này không chịu hình phạt tại \"Yami\".",
-      "desc_es": "EFECTO: Esta carta gana 2000 ATK mientras batalla contra otro monstruo. Si ese monstruo es destruido, esta carta gana permanentemente la mitad del ATK original de ese monstruo. Esta carta no sufre penalización en \"Yami\"."
+      "desc_es": "EFECTO: Esta carta gana 2000 ATK mientras batalla contra otro monstruo. Si ese monstruo es destruido, esta carta gana permanentemente la mitad del ATK original de ese monstruo. Esta carta no sufre penalización en \"Yami\".",
+      "full_art": true
     },
     {
       "nome": "Contract with Exodia",
@@ -3370,7 +3466,8 @@
       "desc_pt": "EFEITO: Quando esta carta for invocada, aumenta o poder de todos os monstros DINOSAUR que você controla em 500 pontos.",
       "desc_en": "EFFECT: When this card is summoned, increases the power of all DINOSAUR monsters you control by 500 points.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, tăng 500 sức mạnh cho tất cả quái thú DINOSAUR mà bạn điều khiển.",
-      "desc_es": "EFECTO: Cuando esta carta sea invocada, aumenta el poder de todos los monstruos DINOSAUR que controlas en 500 puntos."
+      "desc_es": "EFECTO: Cuando esta carta sea invocada, aumenta el poder de todos los monstruos DINOSAUR que controlas en 500 puntos.",
+      "full_art": true
     },
     {
       "nome": "Cyber Dragon",
@@ -3446,7 +3543,8 @@
       "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 150 de ATK para cada carta \"Cyber Dragon\" na sua MÃO e no DECK.",
       "desc_en": "EFFECT: When this card is Summoned, it gains 150 ATK for each \"Cyber Dragon\" card in your HAND and DECK.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận 150 ATK cho mỗi lá \"Cyber Dragon\" trong TAY và DECK của bạn.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada, gana 150 de ATK por cada carta \"Cyber Dragon\" en tu MANO y DECK."
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, gana 150 de ATK por cada carta \"Cyber Dragon\" en tu MANO y DECK.",
+      "full_art": true
     },
     {
       "nome": "Cyber Dragon Nachster",
@@ -3541,7 +3639,8 @@
       "desc_pt": "EFEITO: Quando esta carta for invocada, o ATK dela se torna igual à quantidade de cartas \"Cyber Dragon\" na sua MÃO e no DECK, multiplicado por 350. Envie ao CEMITÉRIO todos os monstros em Posição de Ataque no CAMPO do oponente.",
       "desc_en": "EFFECT: When this card is Summoned, its ATK becomes equal to the number of \"Cyber Dragon\" cards in your HAND and DECK, multiplied by 350. Send all monsters in Attack Position on your opponent's FIELD to the GRAVEYARD.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, ATK của nó trở thành bằng số lá \"Cyber Dragon\" trong TAY và DECK của bạn, nhân với 350. Gửi tất cả quái thú ở Tư thế Tấn công trên FIELD của đối thủ vào GRAVEYARD.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada, su ATK se vuelve igual a la cantidad de cartas \"Cyber Dragon\" en tu MANO y DECK, multiplicado por 350. Envía al CEMENTERIO a todos los monstruos en Posición de Ataque en el CAMPO de tu oponente."
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, su ATK se vuelve igual a la cantidad de cartas \"Cyber Dragon\" en tu MANO y DECK, multiplicado por 350. Envía al CEMENTERIO a todos los monstruos en Posición de Ataque en el CAMPO de tu oponente.",
+      "full_art": true
     },
     {
       "nome": "Cyber End Dragon",
@@ -3618,7 +3717,8 @@
       "desc_pt": "EFEITO: Quando esta carta é destruída, destrua todos os monstros no campo; então ambos os jogadores descartam as 2 cartas do topo do seu Deck para o Cemitério.",
       "desc_en": "EFFECT: When this card is destroyed, destroy all monsters on the field; then both players send the top 2 cards of their Deck to the Graveyard.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này bị phá hủy, phá hủy tất cả quái thú trên sân; sau đó cả hai người chơi gửi 2 lá bài trên cùng Deck của mình vào Nghĩa Địa.",
-      "desc_es": "EFECTO: Cuando esta carta es destruida, destruye todos los monstruos en el campo; luego ambos jugadores envían las 2 cartas superiores de su Deck al Cementerio."
+      "desc_es": "EFECTO: Cuando esta carta es destruida, destruye todos los monstruos en el campo; luego ambos jugadores envían las 2 cartas superiores de su Deck al Cementerio.",
+      "full_art": true
     },
     {
       "nome": "Cyber Kirin",
@@ -3952,10 +4052,10 @@
       "nivel": "6",
       "atk": "2400",
       "def": "1000",
-      "desc_pt": "EFEITO: Quando invocado aumenta 300 de poder dos monstros no seu campo.",
-      "desc_en": "EFFECT: When summoned, increase the power of monsters on your field by 300.",
-      "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, tăng 300 sức mạnh cho các quái thú trên sân của bạn.",
-      "desc_es": "EFECTO: Al ser invocado, aumenta 300 de poder de los monstruos en tu campo."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, todos os monstros no seu campo ganham 300 de ATK e DEF.",
+      "desc_en": "EFFECT: While this card is on the field, all monsters on your field gain 300 ATK and DEF.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, tất cả quái thú trên sân của bạn nhận thêm 300 ATK và DEF.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, todos los monstruos en tu campo ganan 300 de ATK y DEF."
     },
     {
       "nome": "Cybernetic Overflow",
@@ -4002,10 +4102,10 @@
       "nivel": "8",
       "atk": "2500",
       "def": "2000",
-      "desc_pt": "EFEITO: Esta carta ganha 300 de poder para cada \"Des Frog\", \"Treeborn Frog\" e \"Frog the Jam\" na mão, campo e cemitério.",
-      "desc_en": "EFFECT: This card gains 300 ATK/DEF for each \"Des Frog\", \"Treeborn Frog\", and \"Frog the Jam\" in your hand, field, and Graveyard.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 300 ATK/DEF cho mỗi \"Des Frog\", \"Treeborn Frog\" và \"Frog the Jam\" trên tay, sân và Mộ bài.",
-      "desc_es": "EFECTO: Esta carta gana 300 de poder por cada \"Des Frog\", \"Treeborn Frog\" y \"Frog the Jam\" en la mano, campo y Cementerio.",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 300 de ATK e DEF para cada \"Des Frog\", \"Treeborn Frog\" e \"Frog the Jam\" na sua mão, no campo e no Cemitério.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 300 ATK and DEF for each \"Des Frog\", \"Treeborn Frog\" and \"Frog the Jam\" in your hand, on the field and in the Graveyard.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 300 ATK và DEF cho mỗi \"Des Frog\", \"Treeborn Frog\" và \"Frog the Jam\" trên tay bạn, trên sân và trong Mộ bài.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 300 de ATK y DEF por cada \"Des Frog\", \"Treeborn Frog\" y \"Frog the Jam\" en tu mano, en el campo y en el Cementerio.",
       "full_art": true
     },
     {
@@ -4178,7 +4278,8 @@
       "desc_pt": "EFEITO: Esta carta ganha 50 de ATK e DEF para cada monstro dos grupos \"Female\" e \"Elf\" na sua mão e no seu Deck.",
       "desc_en": "EFFECT: This card gains 50 ATK and DEF for each \"Female\" and \"Elf\" monster in your hand and Deck.",
       "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 50 ATK và DEF cho mỗi quái thú thuộc nhóm \"Female\" và \"Elf\" trong tay và Deck của bạn.",
-      "desc_es": "EFECTO: Esta carta gana 50 ATK y DEF por cada monstruo de los grupos \"Female\" y \"Elf\" en tu mano y tu Deck."
+      "desc_es": "EFECTO: Esta carta gana 50 ATK y DEF por cada monstruo de los grupos \"Female\" y \"Elf\" en tu mano y tu Deck.",
+      "full_art": true
     },
     {
       "nome": "Dark Energy",
@@ -4411,7 +4512,8 @@
       "desc_pt": "EFEITO: Quando essa carta destroi uma carta do oponente, todas as copias da mesma carta que estão no DECK tambem irão para o CEMITERIO.",
       "desc_en": "EFFECT: When this card destroys an opponent's card, all copies of that card in their DECK will also be sent to the GRAVEYARD.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này phá hủy một lá bài của đối thủ, tất cả các bản sao của lá bài đó trong DECK cũng sẽ bị đưa vào MỘ BÀI.",
-      "desc_es": "EFECTO: Cuando esta carta destruye una carta del oponente, todas las copias de esa carta que estén en el DECK también irán al CEMENTERIO."
+      "desc_es": "EFECTO: Cuando esta carta destruye una carta del oponente, todas las copias de esa carta que estén en el DECK también irán al CEMENTERIO.",
+      "full_art": true
     },
     {
       "nome": "Dark Magician the Dragon Knight",
@@ -4483,10 +4585,10 @@
       "nivel": "9",
       "atk": "2900",
       "def": "2400",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, reduz o poder de todos os monstros DRAGON que seu oponente controla em 0.",
-      "desc_en": "EFFECT: When this card is summoned, decreases the power of all DRAGON monsters your opponent control by 0.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, giảm sức mạnh của tất cả quái thú DRAGON mà đối thủ điều khiển xuống 0.",
-      "desc_es": "EFECTO: Cuando esta carta sea invocada, reduce a 0 el poder de todos los monstruos DRAGON que tu oponente controla.",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, negue o efeito de todas as cartas SPELL ativas, incluindo o FIELD ativo, e destrua-as. Enquanto esta carta estiver em campo, todos os monstros DRAGON que seu oponente controla perdem 1000 de ATK.",
+      "desc_en": "EFFECT: When this card is Summoned, negate the effects of all active SPELL cards, including the active FIELD, and destroy them. While this card is on the field, all DRAGON monsters your opponent controls lose 1000 ATK.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, vô hiệu hóa hiệu ứng của tất cả các lá bài SPELL đang hoạt động, bao gồm cả FIELD đang hoạt động, và phá hủy chúng. Khi lá bài này còn trên sân, tất cả quái thú DRAGON mà đối thủ điều khiển bị giảm 1000 ATK.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, niega el efecto de todas las cartas SPELL activas, incluyendo el FIELD activo, y destrúyelas. Mientras esta carta esté en el campo, todos los monstruos DRAGON que controle tu oponente pierden 1000 de ATK.",
       "full_art": true
     },
     {
@@ -5098,7 +5200,8 @@
       "desc_en": "EFFECT: Once per turn, at the start of your turn: destroy all SPELL and TRAP Cards your opponent controls. Your opponent cannot activate SPELL and TRAP Cards in response to the activation of this effect. If this card is destroyed by battle or by an opponent's Card effect: Special Summon 1 random DINOSAUR-Type monster from your Deck.",
       "desc_vi": "HIỆU ỨNG: Mỗi lượt một lần, vào đầu lượt của bạn: phá hủy tất cả các Lá SPELL và TRAP mà đối thủ của bạn điều khiển. Đối thủ của bạn không thể kích hoạt Lá SPELL và TRAP để đáp trả việc kích hoạt hiệu ứng này. Nếu lá bài này bị phá hủy trong chiến đấu hoặc bởi hiệu ứng của lá bài đối thủ: Triệu hồi Đặc Biệt 1 quái thú hệ DINOSAUR ngẫu nhiên từ Deck của bạn.",
       "desc_es": "EFECTO: Una vez por turno, al inicio de tu turno: destruye todas las Cartas de SPELL y TRAP que controla tu oponente. Tu oponente no puede activar Cartas de SPELL y TRAP en respuesta a la activación de este efecto. Si esta carta es destruida en batalla o por el efecto de una Carta del oponente: Invoca de Modo Especial 1 monstruo de Tipo DINOSAUR aleatorio de tu Deck.",
-      "custom": true
+      "custom": true,
+      "full_art": true
     },
     {
       "nome": "Darkworld Thorns",
@@ -5331,6 +5434,26 @@
       "def": "1000"
     },
     {
+      "nome": "Disaster, Dragon Ruler of All Apocalypses",
+      "nome_pt": "Disaster, Dragon Ruler of All Apocalypses",
+      "slug": "disaster_dragon_ruler_of_all_apocalypses",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "????",
+      "def": "????",
+      "desc_pt": "EFEITO: Esta carta também é considerada WATER, EARTH, FIRE, WIND e DARK. Enquanto esta carta estiver em campo, ela ganha 700 de ATK para cada monstro \"Dragon Ruler\" com nome diferente no seu Cemitério. Se houver monstros com 6 Atributos diferentes no seu Cemitério, esta carta também não é afetada por efeitos de outras cartas.",
+      "desc_en": "EFFECT: This card is also treated as WATER, EARTH, FIRE, WIND and DARK. While this card is on the field, it gains 700 ATK for each differently named \"Dragon Ruler\" monster in your Graveyard. If there are monsters with 6 different Attributes in your Graveyard, this card is also unaffected by other cards' effects.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này cũng được coi là WATER, EARTH, FIRE, WIND và DARK. Khi lá bài này ở trên sân, nó tăng 700 ATK cho mỗi quái thú \"Dragon Ruler\" có tên khác nhau trong Mộ bài của bạn. Nếu có quái thú với 6 Hệ khác nhau trong Mộ bài của bạn, lá bài này cũng không bị ảnh hưởng bởi hiệu ứng của các lá bài khác.",
+      "desc_es": "EFECTO: Esta carta también es considerada WATER, EARTH, FIRE, WIND y DARK. Mientras esta carta esté en el campo, gana 700 ATK por cada monstruo \"Dragon Ruler\" con nombre diferente en tu Cementerio. Si hay monstruos con 6 Atributos diferentes en tu Cementerio, esta carta tampoco es afectada por efectos de otras cartas.",
+      "full_art": true
+    },
+    {
       "nome": "Disk Magician",
       "nome_pt": "Disk Magician",
       "slug": "disk_magician",
@@ -5361,6 +5484,44 @@
       "def": "1000"
     },
     {
+      "nome": "Divine Dragon - Excelion",
+      "nome_pt": "Divine Dragon - Excelion",
+      "slug": "divine_dragon_-_excelion",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "5",
+      "atk": "1500",
+      "def": "900",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, ela recebe 1 dos seguintes efeitos aleatórios para cada \"Divine Dragon - Excelion\" no seu Cemitério. Esses efeitos não podem se acumular. 1: Esta carta ganha 1000 de ATK. 2: Se esta carta destruir um monstro do oponente em batalha, ela pode atacar novamente uma vez em sequência. 3: Quando esta carta destruir um monstro em batalha e enviá-lo para o Cemitério, cause dano ao seu oponente igual ao ATK do monstro destruído.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 1 of the following effects at random for each \"Divine Dragon - Excelion\" in your Graveyard. These effects cannot stack. 1: This card gains 1000 ATK. 2: If this card destroys an opponent's monster by battle, it can attack once again in a row. 3: When this card destroys a monster by battle and sends it to the Graveyard, inflict damage to your opponent equal to that monster's ATK.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận ngẫu nhiên 1 trong các hiệu ứng sau cho mỗi \"Divine Dragon - Excelion\" trong Mộ bài của bạn. Các hiệu ứng này không thể cộng dồn. 1: Lá bài này nhận thêm 1000 ATK. 2: Nếu lá bài này phá hủy một quái thú của đối thủ trong chiến đấu, nó có thể tấn công thêm một lần nữa liên tiếp. 3: Khi lá bài này phá hủy một quái thú trong chiến đấu và đưa nó xuống Mộ bài, gây sát thương cho đối thủ bằng ATK của quái thú đó.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada, recibe 1 de los siguientes efectos al azar por cada \"Divine Dragon - Excelion\" en tu Cementerio. Estos efectos no pueden acumularse. 1: Esta carta gana 1000 de ATK. 2: Si esta carta destruye un monstruo del oponente en batalla, puede atacar de nuevo una vez en sucesión. 3: Cuando esta carta destruya un monstruo en batalla y lo envíe al Cementerio, inflige daño a tu oponente igual al ATK de ese monstruo."
+    },
+    {
+      "nome": "Divine Dragon Apocralyph",
+      "nome_pt": "Divine Dragon Apocralyph",
+      "slug": "divine_dragon_apocralyph",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "4",
+      "atk": "1000",
+      "def": "1500",
+      "desc_pt": "EFEITO: No final de cada turno: envie 1 monstro DRAGON aleatório do seu Deck para o seu Cemitério.",
+      "desc_en": "EFFECT: At the end of each turn: send 1 random DRAGON monster from your Deck to your Graveyard.",
+      "desc_vi": "HIỆU ỨNG: Vào cuối mỗi lượt: gửi 1 quái thú DRAGON ngẫu nhiên từ Deck của bạn xuống Mộ bài.",
+      "desc_es": "EFECTO: Al final de cada turno: envía 1 monstruo DRAGON aleatorio de tu Deck a tu Cementerio."
+    },
+    {
       "nome": "Divine Dragon Aquabizarre",
       "nome_pt": "Divine Dragon Aquabizarre",
       "slug": "divine_dragon_aquabizarre",
@@ -5380,6 +5541,25 @@
       "desc_es": "EFECTO: Cuando esta carta sea Invocada, activa el campo \"Umi\". Mientras esta carta esté boca arriba, el campo \"Umi\" no puede ser destruido."
     },
     {
+      "nome": "Divine Dragon Lord Felgrand",
+      "nome_pt": "Divine Dragon Lord Felgrand",
+      "slug": "divine_dragon_lord_felgrand",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "8",
+      "atk": "2800",
+      "def": "2800",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, envie 1 monstro aleatório que seu oponente controla para o Cemitério, junto com todas as cópias dele na mão e no Deck dele. Se o fizer, esta carta ganha ATK e DEF iguais ao LEVEL original daquele monstro x 100.",
+      "desc_en": "EFFECT: When this card is Summoned, send 1 random monster your opponent controls to the Graveyard, along with every copy of it in their hand and Deck. If you do, this card gains ATK and DEF equal to that monster's original LEVEL x 100.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, gửi 1 quái thú ngẫu nhiên mà đối thủ điều khiển xuống Mộ bài, cùng với tất cả bản sao của nó trong tay và Deck của đối thủ. Nếu bạn làm vậy, lá bài này nhận thêm ATK và DEF bằng LEVEL gốc của quái thú đó x 100.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada, envía 1 monstruo aleatorio que tu oponente controla al Cementerio, junto con todas las copias de él en su mano y su Deck. Si lo haces, esta carta gana ATK y DEF iguales al LEVEL original de ese monstruo x 100."
+    },
+    {
       "nome": "Divine Dragon Ragnarok",
       "nome_pt": "Divine Dragon Ragnarok",
       "slug": "divine_dragon_ragnarok",
@@ -5397,6 +5577,25 @@
       "desc_en": "A legendary dragon sent by the gods as their instrument. Legends say that if provoked, the whole world will sink beneath the sea.",
       "desc_vi": "Một con rồng huyền thoại được các vị thần gửi xuống làm công cụ của họ. Truyền thuyết kể rằng nếu bị chọc giận, cả thế giới sẽ chìm xuống đáy biển.",
       "desc_es": "Un dragón legendario enviado por los dioses como su instrumento. Las leyendas dicen que si es provocado, el mundo entero se hundirá bajo el mar."
+    },
+    {
+      "nome": "Divine Dragon Titanomakhia",
+      "nome_pt": "Divine Dragon Titanomakhia",
+      "slug": "divine_dragon_titanomakhia",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "10",
+      "atk": "3000",
+      "def": "2000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, ela ganha 500 de ATK e DEF para cada \"Divine Dragon\" no seu Cemitério. Esta carta não pode ser destruída em batalha. No final de cada turno: envie 1 monstro DRAGON aleatório do seu Deck para o seu Cemitério.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 500 ATK and DEF for each \"Divine Dragon\" in your Graveyard. This card cannot be destroyed by battle. At the end of each turn: send 1 random DRAGON monster from your Deck to your Graveyard.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận thêm 500 ATK và DEF cho mỗi \"Divine Dragon\" trong Mộ bài của bạn. Lá bài này không thể bị phá hủy trong chiến đấu. Vào cuối mỗi lượt: gửi 1 quái thú DRAGON ngẫu nhiên từ Deck của bạn xuống Mộ bài.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada, gana 500 de ATK y DEF por cada \"Divine Dragon\" en tu Cementerio. Esta carta no puede ser destruida en batalla. Al final de cada turno: envía 1 monstruo DRAGON aleatorio de tu Deck a tu Cementerio."
     },
     {
       "nome": "Divine Wrath",
@@ -5591,6 +5790,22 @@
       "def": "2000"
     },
     {
+      "nome": "Dragon Shield",
+      "nome_pt": "Dragon Shield",
+      "slug": "dragon_shield",
+      "card_type": "Equip",
+      "tipo": "Equip",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "equip",
+      "desc_pt": "EFEITO: Equipe apenas a um monstro DRAGON. Esta carta não pode ser destruída por efeitos de cartas. O monstro equipado não sofre dano de batalha em batalhas que o envolvam.",
+      "desc_en": "EFFECT: Equip only to a DRAGON monster. This card cannot be destroyed by card effects. The equipped monster takes no battle damage from battles involving it.",
+      "desc_vi": "HIỆU ỨNG: Chỉ trang bị cho một quái thú DRAGON. Lá bài này không thể bị phá hủy bởi hiệu ứng của lá bài. Quái thú được trang bị không nhận sát thương chiến đấu từ các trận chiến có nó tham gia.",
+      "desc_es": "EFECTO: Equipa solo a un monstruo DRAGON. Esta carta no puede ser destruida por efectos de cartas. El monstruo equipado no recibe daño de batalla en batallas que lo involucren."
+    },
+    {
       "nome": "Dragon Spirit of White",
       "nome_pt": "Dragon Spirit of White",
       "slug": "dragon_spirit_of_white",
@@ -5655,6 +5870,21 @@
       "atk": "1600",
       "def": "0",
       "full_art": true
+    },
+    {
+      "nome": "Dragon's Rage",
+      "nome_pt": "Dragon's Rage",
+      "slug": "dragons_rage",
+      "card_type": "Trap",
+      "tipo": "trap continuous",
+      "atributo": "trap",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "TRAP",
+      "desc_pt": "EFEITO: Esta carta se revela na primeira batalha e permanece no campo. Enquanto esta carta estiver com a face para cima no campo, os monstros DRAGON que você controla ganham 200 de ATK e causam dano de batalha perfurante.",
+      "desc_en": "EFFECT: This card reveals itself at the first battle and remains on the field. While this card is face up on the field, DRAGON monsters you control gain 200 ATK and inflict piercing battle damage.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này tự lật lên ở trận chiến đầu tiên và ở lại trên sân. Khi lá bài này ngửa trên sân, các quái thú DRAGON trên sân của bạn nhận thêm 200 ATK và gây sát thương chiến đấu xuyên giáp.",
+      "desc_es": "EFECTO: Esta carta se revela en la primera batalla y permanece en el campo. Mientras esta carta esté boca arriba en el campo, los monstruos DRAGON en tu campo ganan 200 de ATK e infligen daño de batalla perforante."
     },
     {
       "nome": "Dragoness the Wicked Knight",
@@ -5784,10 +6014,10 @@
       "nivel": "4",
       "atk": "1700",
       "def": "1200",
-      "desc_pt": "EFEITO: Ganha 200 de poder para cada monstro DARK e LIGHT no campo.",
-      "desc_en": "EFFECT: Gains 200 power for each DARK and LIGHT monster on the field.",
-      "desc_vi": "HIỆU ỨNG: Nhận thêm 200 sức mạnh cho mỗi quái thú DARK và LIGHT trên sân.",
-      "desc_es": "EFECTO: Gana 200 de poder por cada monstruo DARK y LIGHT en el campo.",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 200 de ATK e DEF para cada monstro DARK e LIGHT no campo.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 200 ATK and DEF for each DARK and LIGHT monster on the field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 200 ATK và DEF cho mỗi quái thú DARK và LIGHT trên sân.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 200 de ATK y DEF por cada monstruo DARK y LIGHT en el campo.",
       "full_art": true
     },
     {
@@ -5821,6 +6051,26 @@
       "desc_en": "EFFECT: If a monster with a DEF factor of 1500 or less attacks, destroy that monster.",
       "desc_vi": "HIỆU ỨNG: Nếu một quái thú có chỉ số DEF từ 1500 trở xuống tấn công, hãy phá hủy quái thú đó.",
       "desc_es": "EFECTO: Si un monstruo con un factor de DEF de 1500 o menos ataca, destruye a ese monstruo."
+    },
+    {
+      "nome": "Eclipse, Dragon Ruler of Catastrophes",
+      "nome_pt": "Eclipse, Dragon Ruler of Catastrophes",
+      "slug": "eclipse_dragon_ruler_of_catastrophes",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "2700",
+      "def": "1900",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: embaralhe 1 monstro \"Dragon Ruler\" de Nível 4 ou menos aleatório do seu Cemitério no Deck e, depois, Invoque 1 monstro \"Dragon Ruler\" de Nível 7 aleatório do seu Deck ou do seu Cemitério. Uma vez por turno: quando seu oponente ativar 1 carta de SPELL ou TRAP ou o efeito dela; negue a ativação e, se isso acontecer, destrua essa carta e, depois, envie 1 carta do topo do seu Deck para o Cemitério. Enquanto esta carta estiver em campo, os monstros \"Dragon Ruler\" que você controla podem atacar diretamente, exceto esta. Esta carta ganha 700 de ATK no campo Yami.",
+      "desc_en": "EFFECT: When this card is Summoned: shuffle 1 random Level 4 or lower \"Dragon Ruler\" monster from your Graveyard into the Deck, then Summon 1 random Level 7 \"Dragon Ruler\" monster from your Deck or Graveyard. Once per turn: when your opponent activates a SPELL or TRAP card or its effect; negate the activation and, if you do, destroy that card, then send 1 card from the top of your Deck to the Graveyard. While this card is on the field, \"Dragon Ruler\" monsters you control can attack directly, except this one. This card gains 700 ATK on the Yami field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: xáo trộn 1 quái thú \"Dragon Ruler\" Cấp 4 hoặc thấp hơn ngẫu nhiên từ Mộ bài của bạn vào Deck, sau đó Triệu hồi 1 quái thú \"Dragon Ruler\" Cấp 7 ngẫu nhiên từ Deck hoặc Mộ bài của bạn. Một lần mỗi lượt: khi đối thủ kích hoạt 1 lá bài SPELL hoặc TRAP hoặc hiệu ứng của nó; vô hiệu hóa việc kích hoạt và, nếu bạn làm vậy, phá hủy lá bài đó, sau đó gửi 1 lá bài từ trên cùng Deck của bạn xuống Mộ bài. Khi lá bài này ở trên sân, các quái thú \"Dragon Ruler\" mà bạn điều khiển có thể tấn công trực tiếp, ngoại trừ lá này. Lá bài này tăng 700 ATK trên sân Yami.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: baraja 1 monstruo \"Dragon Ruler\" de Nivel 4 o menor aleatorio de tu Cementerio en el Deck y, después, Invoca 1 monstruo \"Dragon Ruler\" de Nivel 7 aleatorio de tu Deck o tu Cementerio. Una vez por turno: cuando tu oponente active 1 carta de SPELL o TRAP o su efecto; niega la activación y, si lo haces, destruye esa carta, después envía 1 carta de la parte superior de tu Deck al Cementerio. Mientras esta carta esté en el campo, los monstruos \"Dragon Ruler\" que controles pueden atacar directamente, excepto esta. Esta carta gana 700 ATK en el campo Yami.",
+      "full_art": true
     },
     {
       "nome": "Efreet, Spirit of the Ancestral Flame",
@@ -5919,6 +6169,25 @@
       "desc_en": "EFFECT: Increase the power of Harpie Lady by 1000 points.",
       "desc_vi": "HIỆU ỨNG: Tăng 1000 sức mạnh cho Harpie Lady.",
       "desc_es": "EFECTO: Aumenta el poder de Harpie Lady en 1000 puntos."
+    },
+    {
+      "nome": "Element Dragon",
+      "nome_pt": "Element Dragon",
+      "slug": "element_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "4",
+      "atk": "1500",
+      "def": "1200",
+      "desc_pt": "EFEITO: Esta carta recebe os seguintes efeitos enquanto houver um monstro com o Atributo correspondente no campo. FIRE: Esta carta ganha 500 de ATK. WIND: Se esta carta destruir um monstro do seu oponente em batalha, ela pode atacar novamente em sequência.",
+      "desc_en": "EFFECT: This card gains the following effects while there is a monster with the matching Attribute on the field. FIRE: This card gains 500 ATK. WIND: If this card destroys an opponent's monster by battle, it can attack once again in a row.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này nhận các hiệu ứng sau khi có một quái thú với Thuộc tính tương ứng trên sân. FIRE: Lá bài này nhận thêm 500 ATK. WIND: Nếu lá bài này phá hủy một quái thú của đối thủ trong chiến đấu, nó có thể tấn công thêm một lần nữa liên tiếp.",
+      "desc_es": "EFECTO: Esta carta recibe los siguientes efectos mientras haya un monstruo con el Atributo correspondiente en el campo. FIRE: Esta carta gana 500 de ATK. WIND: Si esta carta destruye un monstruo de tu oponente en batalla, puede atacar de nuevo en sucesión."
     },
     {
       "nome": "Elemental HERO Avian",
@@ -6071,7 +6340,8 @@
       "desc_pt": "EFEITO: Quando esta carta destruir um monstro em batalha, cause dano ao seu oponente igual ao ATK original do monstro destruído.",
       "desc_en": "EFFECT: When this card destroys a monster by battle, inflict damage to your opponent equal to the destroyed monster's original ATK.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này phá hủy một quái thú bằng chiến đấu, gây sát thương cho đối thủ bằng ATK gốc của quái thú bị phá hủy.",
-      "desc_es": "EFECTO: Cuando esta carta destruya un monstruo en batalla, inflige daño a tu oponente igual al ATK original del monstruo destruido."
+      "desc_es": "EFECTO: Cuando esta carta destruya un monstruo en batalla, inflige daño a tu oponente igual al ATK original del monstruo destruido.",
+      "full_art": true
     },
     {
       "nome": "Elemental HERO Grandmerge",
@@ -6633,7 +6903,8 @@
       "desc_en": "EFFECT: For 3 turns, whenever your opponent declares an attack, they must pay LP equal to the attacking monster's original ATK. This effect applies even to monsters unaffected by SPELL Cards.",
       "desc_vi": "HIỆU ỨNG: Trong 3 lượt, mỗi khi đối thủ tuyên bố tấn công, họ phải trả PV bằng ATK gốc của quái thú đang tấn công. Hiệu ứng này vẫn áp dụng ngay cả với quái thú không bị ảnh hưởng bởi SPELL Cards.",
       "desc_es": "EFECTO: Durante 3 turnos, cada vez que tu oponente declare un ataque, debe pagar PV igual al ATK original del monstruo atacante. Este efecto se aplica incluso a monstruos no afectados por SPELL Cards.",
-      "custom": true
+      "custom": true,
+      "full_art": true
     },
     {
       "nome": "Evocator Chevalier",
@@ -6706,7 +6977,8 @@
       "desc_pt": "EFEITO: Quando invocada, ganha 500 de ATK para cada carta de monstro \"Exodia\" ou \"The Forbidden\" na sua mão e/ou Cemitério.",
       "desc_en": "EFFECT: When Summoned, gains 500 ATK for each \"Exodia\" or \"The Forbidden\" monster card in your hand and/or Graveyard.",
       "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, nhận thêm 500 ATK cho mỗi lá bài quái thú \"Exodia\" hoặc \"The Forbidden\" trong tay và/hoặc Mộ bài của bạn.",
-      "desc_es": "EFECTO: Cuando es Invocada, gana 500 ATK por cada carta de monstruo \"Exodia\" o \"The Forbidden\" en tu mano y/o Cementerio."
+      "desc_es": "EFECTO: Cuando es Invocada, gana 500 ATK por cada carta de monstruo \"Exodia\" o \"The Forbidden\" en tu mano y/o Cementerio.",
+      "full_art": true
     },
     {
       "nome": "Exodia the Forbidden One",
@@ -6763,7 +7035,8 @@
       "desc_pt": "EFEITO: Esta carta em campo ganha 1000 de ATK para cada Monstro Normal no seu Cemitério. Se houver 5 cards \"The Forbidden\" diferentes no seu Cemitério no fim do seu turno e esta carta estiver no seu campo, você vence o Duelo.",
       "desc_en": "EFFECT: This card on the field gains 1000 ATK for each Normal Monster in your Graveyard. If there are 5 different \"The Forbidden\" cards in your Graveyard at the end of your turn and this card is on your field, you win the Duel.",
       "desc_vi": "HIỆU ỨNG: Lá bài này trên sân nhận thêm 1000 ATK cho mỗi Quái thú Thường trong Mộ bài của bạn. Nếu có 5 lá bài \"The Forbidden\" khác nhau trong Mộ bài của bạn vào cuối lượt của bạn và lá bài này đang ở trên sân của bạn, bạn thắng trận đấu.",
-      "desc_es": "EFECTO: Esta carta en el campo gana 1000 ATK por cada Monstruo Normal en tu Cementerio. Si hay 5 cartas \"The Forbidden\" diferentes en tu Cementerio al final de tu turno y esta carta está en tu campo, ganas el Duelo."
+      "desc_es": "EFECTO: Esta carta en el campo gana 1000 ATK por cada Monstruo Normal en tu Cementerio. Si hay 5 cartas \"The Forbidden\" diferentes en tu Cementerio al final de tu turno y esta carta está en tu campo, ganas el Duelo.",
+      "full_art": true
     },
     {
       "nome": "Exxod, Master of The Guard",
@@ -7178,14 +7451,18 @@
       "slug": "firewing_pegasus",
       "card_type": "Monster",
       "tipo": "Beast",
-      "atributo": "Fire",
+      "atributo": "FIRE",
       "raridade": "SR",
       "raridade_arquivo": "SR",
       "icone_atributo": "FIRE",
       "icone_tipo": "beast",
       "nivel": "6",
       "atk": "2250",
-      "def": "1800"
+      "def": "1800",
+      "desc_pt": "EFEITO: Enquanto houver um FIELD ativo, esta carta ganha 500 de ATK e DEF.",
+      "desc_en": "EFFECT: While any FIELD is active, this card gains 500 ATK and DEF.",
+      "desc_vi": "HIỆU ỨNG: Khi có bất kỳ FIELD nào đang hoạt động, lá bài này nhận thêm 500 ATK và DEF.",
+      "desc_es": "EFECTO: Mientras haya un FIELD activo, esta carta gana 500 de ATK y DEF."
     },
     {
       "nome": "Fireyarou",
@@ -7201,6 +7478,86 @@
       "nivel": "4",
       "atk": "1300",
       "def": "1000"
+    },
+    {
+      "nome": "First of the Dragonlords",
+      "nome_pt": "First of the Dragonlords",
+      "slug": "first_of_the_dragonlords",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "11",
+      "atk": "3700",
+      "def": "3000",
+      "desc_pt": "EFEITO: Esta carta não pode ser destruída em batalha e não é afetada por efeitos de outros monstros. Uma vez enquanto esta carta estiver em campo, quando uma carta de SPELL ou TRAP ou um efeito de monstro for ativado: destrua todas as cartas de SPELL e TRAP no campo.",
+      "desc_en": "EFFECT: This card cannot be destroyed by battle and is unaffected by other monsters' effects. Once while this card is on the field, when a SPELL or TRAP card or a monster effect is activated: destroy all SPELL and TRAP cards on the field.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này không thể bị phá hủy trong chiến đấu và không bị ảnh hưởng bởi hiệu ứng của các quái thú khác. Một lần khi lá bài này ở trên sân, khi một lá SPELL hoặc TRAP hay một hiệu ứng quái thú được kích hoạt: phá hủy tất cả các lá SPELL và TRAP trên sân.",
+      "desc_es": "EFECTO: Esta carta no puede ser destruida en batalla y no es afectada por efectos de otros monstruos. Una vez mientras esta carta esté en el campo, cuando una carta de SPELL o TRAP o un efecto de monstruo sea activado: destruye todas las cartas de SPELL y TRAP en el campo.",
+      "full_art": true
+    },
+    {
+      "nome": "First of the Dragons",
+      "nome_pt": "First of the Dragons",
+      "slug": "first_of_the_dragons",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "9",
+      "atk": "2700",
+      "def": "2000",
+      "desc_pt": "EFEITO: Esta carta não pode ser destruída em batalha, exceto em batalha com um Monstro Normal, e não é afetada por efeitos de outros monstros.",
+      "desc_en": "EFFECT: This card cannot be destroyed by battle, except by battle with a Normal Monster, and is unaffected by other monsters' effects.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này không thể bị phá hủy trong chiến đấu, ngoại trừ khi chiến đấu với một Quái thú Thường, và không bị ảnh hưởng bởi hiệu ứng của các quái thú khác.",
+      "desc_es": "EFECTO: Esta carta no puede ser destruida en batalla, excepto en batalla con un Monstruo Normal, y no es afectada por efectos de otros monstruos.",
+      "full_art": true
+    },
+    {
+      "nome": "Five-Headed Dragon",
+      "nome_pt": "Five-Headed Dragon",
+      "slug": "five-headed_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "12",
+      "atk": "5000",
+      "def": "5000",
+      "desc_pt": "EFEITO: Esta carta não pode ser destruída em batalha por monstros DARK, EARTH, WATER, FIRE ou WIND.",
+      "desc_en": "EFFECT: This card cannot be destroyed by battle by DARK, EARTH, WATER, FIRE or WIND monsters.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này không thể bị phá hủy trong chiến đấu bởi quái thú DARK, EARTH, WATER, FIRE hoặc WIND.",
+      "desc_es": "EFECTO: Esta carta no puede ser destruida en batalla por monstruos DARK, EARTH, WATER, FIRE o WIND.",
+      "full_art": true
+    },
+    {
+      "nome": "Five-Headed Link Dragon",
+      "nome_pt": "Five-Headed Link Dragon",
+      "slug": "five-headed_link_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "12",
+      "atk": "5000",
+      "def": "0",
+      "desc_pt": "EFEITO: Uma vez por turno, esta carta não é afetada por efeitos de outras cartas. Esta carta pode ser equipada por cartas EQUIP que exijam DARK, FIRE, WATER, WIND ou EARTH.",
+      "desc_en": "EFFECT: Once per turn, this card is unaffected by other cards' effects. This card can be equipped by EQUIP cards that require DARK, FIRE, WATER, WIND or EARTH.",
+      "desc_vi": "HIỆU ỨNG: Một lần mỗi lượt, lá bài này không bị ảnh hưởng bởi hiệu ứng của các lá bài khác. Lá bài này có thể được trang bị bởi các lá EQUIP yêu cầu DARK, FIRE, WATER, WIND hoặc EARTH.",
+      "desc_es": "EFECTO: Una vez por turno, esta carta no es afectada por efectos de otras cartas. Esta carta puede ser equipada por cartas EQUIP que requieran DARK, FIRE, WATER, WIND o EARTH.",
+      "full_art": true
     },
     {
       "nome": "Flame Cerebrus",
@@ -8004,10 +8361,10 @@
       "nivel": "7",
       "atk": "2600",
       "def": "2200",
-      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo com SOGEN ativo, ela ganha 700 pontos de ATK. Quando um monstro do oponente batalhar com esta carta, ele perde 500 pontos de ATK.",
-      "desc_en": "EFFECT: While this card is on the field and SOGEN is active, it gains 700 ATK. When an opponent's monster battles this card, it loses 500 ATK.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân và SOGEN đang hoạt động, nó nhận thêm 700 ATK. Khi một quái thú của đối thủ chiến đấu với lá bài này, quái thú đó mất 500 ATK.",
-      "desc_es": "EFECTO: Mientras esta carta esté en el campo y SOGEN esté activo, gana 700 de ATK. Cuando un monstruo del oponente entre en batalla con esta carta, pierde 500 de ATK.",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, o campo torna-se SOGEN. Esta carta pode ser equipada por qualquer carta EQUIP que tenha \"Sword\" no nome. O bônus de ATK e DEF das cartas EQUIP com \"Sword\" no nome equipadas a esta carta é dobrado.",
+      "desc_en": "EFFECT: When this card is Summoned, the Field becomes SOGEN. This card can be equipped by any EQUIP card with \"Sword\" in its name. The ATK and DEF bonus of EQUIP cards with \"Sword\" in their name equipped to this card is doubled.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, Địa hình trở thành SOGEN. Lá bài này có thể được trang bị bởi bất kỳ lá bài EQUIP nào có \"Sword\" trong tên. Lượng ATK và DEF mà các lá EQUIP có \"Sword\" trong tên cộng cho lá bài này được nhân đôi.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, el campo se convierte en SOGEN. Esta carta puede ser equipada por cualquier carta EQUIP que tenga \"Sword\" en su nombre. El bono de ATK y DEF de las cartas EQUIP con \"Sword\" en su nombre equipadas a esta carta se duplica.",
       "full_art": true
     },
     {
@@ -8249,7 +8606,8 @@
       "desc_pt": "EFEITO: Este monstro pode ser equipado por qualquer equipamento do jogo. Quando este card for Invocado, ganha 400 de ATK e DEF para cada carta EQUIP na sua mão.",
       "desc_en": "EFFECT: This monster can be equipped by any Equip card in the game. When this card is summoned, it gains 400 ATK and DEF for each EQUIP card in your hand.",
       "desc_vi": "HIỆU ỨNG: Quái thú này có thể được trang bị bởi bất kỳ lá Trang bị nào trong trò chơi. Khi lá bài này được Triệu hồi, nó nhận thêm 400 ATK và DEF cho mỗi lá EQUIP trên tay bạn.",
-      "desc_es": "EFECTO: Este monstruo puede ser equipado por cualquier carta de Equipo del juego. Cuando esta carta sea Invocada, gana 400 de ATK y DEF por cada carta EQUIP en tu mano."
+      "desc_es": "EFECTO: Este monstruo puede ser equipado por cualquier carta de Equipo del juego. Cuando esta carta sea Invocada, gana 400 de ATK y DEF por cada carta EQUIP en tu mano.",
+      "full_art": true
     },
     {
       "nome": "Gilford the Lightning",
@@ -8268,7 +8626,8 @@
       "desc_pt": "EFEITO: Quando este card for Invocado, destrua todos os monstros que seu oponente controla, exceto monstros WARRIOR e THUNDER.",
       "desc_en": "EFFECT: When this card is summoned, destroy all monsters your opponent controls, except WARRIOR and THUNDER monsters.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, phá hủy tất cả quái thú mà đối thủ điều khiển, ngoại trừ quái thú WARRIOR và THUNDER.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada, destruye todos los monstruos que controle tu oponente, excepto los monstruos WARRIOR y THUNDER."
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, destruye todos los monstruos que controle tu oponente, excepto los monstruos WARRIOR y THUNDER.",
+      "full_art": true
     },
     {
       "nome": "Gilti-Gearfried The Magical Steel Knight",
@@ -9438,6 +9797,25 @@
       "def": "900"
     },
     {
+      "nome": "Hyozanryu",
+      "nome_pt": "Hyozanryu",
+      "slug": "hyozanryu",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "2100",
+      "def": "2800",
+      "desc_pt": "Um dragão criado a partir de um diamante gigantesco, que reluz com uma luz ofuscante.",
+      "desc_en": "A dragon created from a gigantic diamond, shining with a blinding light.",
+      "desc_vi": "Một con rồng được tạo ra từ một viên kim cương khổng lồ, tỏa sáng với ánh sáng chói lòa.",
+      "desc_es": "Un dragón creado a partir de un diamante gigantesco que reluce con una luz cegadora."
+    },
+    {
       "nome": "Ice Water",
       "nome_pt": "Ice Water",
       "slug": "ice_water",
@@ -10248,10 +10626,10 @@
       "nivel": "1",
       "atk": "????",
       "def": "????",
-      "desc_pt": "EFEITO: Esta carta ganha 700 de poder para cada \"King of the Skull Servants\" e \"Skull Servant\" no campo e no cemitério.",
-      "desc_en": "EFFECT: This card gains 700 power for each \"King of the Skull Servants\" and \"Skull Servant\" on the field and in the Graveyard.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 700 sức mạnh cho mỗi \"King of the Skull Servants\" và \"Skull Servant\" trên sân và trong Mộ bài.",
-      "desc_es": "EFECTO: Esta carta gana 700 de poder por cada \"King of the Skull Servants\" y \"Skull Servant\" en el campo y en el Cementerio.",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 700 de ATK e DEF para cada \"King of The Skull Servants\" e \"Skull Servant\" no campo e no Cemitério.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 700 ATK and DEF for each \"King of The Skull Servants\" and \"Skull Servant\" on the field and in the Graveyard.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 700 ATK và DEF cho mỗi \"King of The Skull Servants\" và \"Skull Servant\" trên sân và trong Mộ bài.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 700 de ATK y DEF por cada \"King of The Skull Servants\" y \"Skull Servant\" en el campo y en el Cementerio.",
       "full_art": true
     },
     {
@@ -10732,7 +11110,8 @@
       "desc_en": "EFFECT: Any opponent's monster that battles with this card has its effects negated. While this card is on the field, monsters that are not DINOSAUR-Type cannot declare an attack.",
       "desc_vi": "HIỆU ỨNG: Bất kỳ quái thú nào của đối thủ chiến đấu với lá bài này đều bị vô hiệu hóa hiệu ứng. Trong khi lá bài này ở trên sân, quái thú không thuộc hệ DINOSAUR không thể tuyên bố tấn công.",
       "desc_es": "EFECTO: Cualquier monstruo del oponente que combata con esta carta tiene sus efectos negados. Mientras esta carta esté en el campo, los monstruos que no sean de Tipo DINOSAUR no pueden declarar un ataque.",
-      "custom": true
+      "custom": true,
+      "full_art": true
     },
     {
       "nome": "Legendary DinoBEAST - T. Rex",
@@ -10752,7 +11131,8 @@
       "desc_en": "EFFECT: This card cannot be selected as an attack target while you control another DINOSAUR-Type monster. Gains 700 ATK/DEF for each other DINOSAUR-Type monster on the field. You take no battle damage from battles involving this card.",
       "desc_vi": "HIỆU ỨNG: Lá bài này không thể được chọn làm mục tiêu tấn công khi bạn điều khiển một quái thú hệ DINOSAUR khác. Nhận 700 ATK/DEF cho mỗi quái thú hệ DINOSAUR khác trên sân. Bạn không nhận sát thương chiến đấu từ các trận chiến liên quan đến lá bài này.",
       "desc_es": "EFECTO: Esta carta no puede ser seleccionada como objetivo de ataque mientras controles otro monstruo de Tipo DINOSAUR. Gana 700 ATK/DEF por cada otro monstruo de Tipo DINOSAUR en el campo. No recibes daño de batalla de batallas que involucren a esta carta.",
-      "custom": true
+      "custom": true,
+      "full_art": true
     },
     {
       "nome": "Legendary DinoBEAST - Threeranno",
@@ -10905,6 +11285,44 @@
       "desc_es": "EFECTO: Cuando esta carta sea Invocada, si el campo \"Umi\" está activo, destruye todas las cartas en el campo, excepto esta carta."
     },
     {
+      "nome": "Light and Darkness Dragon",
+      "nome_pt": "Light and Darkness Dragon",
+      "slug": "light_and_darkness_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "8",
+      "atk": "2800",
+      "def": "2400",
+      "desc_pt": "EFEITO: Esta carta também é considerada DARK. Uma vez por turno, durante o turno de qualquer jogador, quando uma carta de SPELL, EQUIP, FIELD ou TRAP ou um efeito de monstro for ativado: esta carta perde exatamente 500 de ATK e DEF e essa ativação é negada. Quando esta carta for destruída e enviada para o Cemitério: Invoque 1 monstro LIGHT ou DARK aleatório do seu Cemitério, se houver.",
+      "desc_en": "EFFECT: This card is also treated as DARK. Once per turn, during either player's turn, when a SPELL, EQUIP, FIELD or TRAP card or a monster effect is activated: this card loses exactly 500 ATK and DEF and that activation is negated. When this card is destroyed and sent to the Graveyard: Summon 1 random LIGHT or DARK monster from your Graveyard, if there is one.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này cũng được coi là DARK. Một lần mỗi lượt, trong lượt của bất kỳ người chơi nào, khi một lá SPELL, EQUIP, FIELD hoặc TRAP hay một hiệu ứng quái thú được kích hoạt: lá bài này mất đúng 500 ATK và DEF và kích hoạt đó bị vô hiệu hóa. Khi lá bài này bị phá hủy và đưa vào Mộ bài: Triệu hồi 1 quái thú LIGHT hoặc DARK ngẫu nhiên từ Mộ bài của bạn, nếu có.",
+      "desc_es": "EFECTO: Esta carta también es considerada DARK. Una vez por turno, durante el turno de cualquier jugador, cuando una carta de SPELL, EQUIP, FIELD o TRAP o un efecto de monstruo sea activado: esta carta pierde exactamente 500 de ATK y DEF y esa activación es negada. Cuando esta carta sea destruida y enviada al Cementerio: Invoca 1 monstruo LIGHT o DARK aleatorio de tu Cementerio, si lo hay."
+    },
+    {
+      "nome": "Light and Darkness Dragonlord",
+      "nome_pt": "Light and Darkness Dragonlord",
+      "slug": "light_and_darkness_dragonlord",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "10",
+      "atk": "3400",
+      "def": "3000",
+      "desc_pt": "EFEITO: Esta carta também é considerada DARK. Uma vez por turno, quando uma carta de SPELL, EQUIP, FIELD ou TRAP ou um efeito de monstro for ativado: negue essa ativação, e esta carta não pode atacar no turno dela. Quando esta carta for destruída e enviada para o Cemitério: Invoque 1 monstro LIGHT ou DARK aleatório do seu Deck.",
+      "desc_en": "EFFECT: This card is also treated as DARK. Once per turn, when a SPELL, EQUIP, FIELD or TRAP card or a monster effect is activated: negate that activation, and this card cannot attack during its next turn. When this card is destroyed and sent to the Graveyard: Summon 1 random LIGHT or DARK monster from your Deck.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này cũng được coi là DARK. Một lần mỗi lượt, khi một lá SPELL, EQUIP, FIELD hoặc TRAP hay một hiệu ứng quái thú được kích hoạt: vô hiệu hóa kích hoạt đó, và lá bài này không thể tấn công trong lượt của nó. Khi lá bài này bị phá hủy và đưa vào Mộ bài: Triệu hồi 1 quái thú LIGHT hoặc DARK ngẫu nhiên từ Deck của bạn.",
+      "desc_es": "EFECTO: Esta carta también es considerada DARK. Una vez por turno, cuando una carta de SPELL, EQUIP, FIELD o TRAP o un efecto de monstruo sea activado: niega esa activación, y esta carta no puede atacar en su turno. Cuando esta carta sea destruida y enviada al Cementerio: Invoca 1 monstruo LIGHT o DARK aleatorio de tu Deck."
+    },
+    {
       "nome": "Lightning Blade",
       "nome_pt": "Lightning Blade",
       "slug": "lightning_blade",
@@ -10934,10 +11352,29 @@
       "nivel": "8",
       "atk": "2800",
       "def": "2000",
-      "desc_pt": "EFEITO: Quando esta carta é Invocada, diminui em 700 o poder de todos os monstros do oponente.",
-      "desc_en": "EFFECT: When this card is Summoned, decrease the power of all opponent's monsters by 700.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, giảm 700 sức mạnh của tất cả quái thú đối thủ.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada, disminuye en 700 el poder de todos los monstruos del oponente."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 300 de ATK para cada monstro BEAST e THUNDER no seu campo. Esta carta também é considerada um monstro THUNDER para cartas EQUIP.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 300 ATK for each BEAST and THUNDER monster on your field. This card is also treated as a THUNDER monster for EQUIP cards.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 300 ATK cho mỗi quái thú BEAST và THUNDER trên sân của bạn. Lá bài này cũng được xem là quái thú THUNDER đối với các lá bài EQUIP.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 300 de ATK por cada monstruo BEAST y THUNDER en tu campo. Esta carta también es considerada un monstruo THUNDER para las cartas EQUIP."
+    },
+    {
+      "nome": "Lightning, Dragon Ruler of Drafts",
+      "nome_pt": "Lightning, Dragon Ruler of Drafts",
+      "slug": "lightning_dragon_ruler_of_drafts",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "WIND",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "WIND",
+      "icone_tipo": "dragon",
+      "nivel": "3",
+      "atk": "500",
+      "def": "1800",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: embaralhe 1 carta aleatória que seu oponente controla no Deck dele. Quando esta carta for destruída: envie 1 monstro WIND ou DRAGON aleatório do seu Deck para o Cemitério e, depois, Invoque 1 \"Tempest, Dragon Ruler of Storms\" do seu Deck.",
+      "desc_en": "EFFECT: When this card is Summoned: shuffle 1 random card your opponent controls into their Deck. When this card is destroyed: send 1 random WIND or DRAGON monster from your Deck to the Graveyard, then Summon 1 \"Tempest, Dragon Ruler of Storms\" from your Deck.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: xáo trộn 1 lá bài ngẫu nhiên mà đối thủ điều khiển vào Deck của đối thủ. Khi lá bài này bị phá hủy: gửi 1 quái thú WIND hoặc DRAGON ngẫu nhiên từ Deck của bạn xuống Mộ bài, sau đó Triệu hồi 1 \"Tempest, Dragon Ruler of Storms\" từ Deck của bạn.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: baraja 1 carta aleatoria que tu oponente controla en su Deck. Cuando esta carta sea destruida: envía 1 monstruo WIND o DRAGON aleatorio de tu Deck al Cementerio y, después, Invoca 1 \"Tempest, Dragon Ruler of Storms\" de tu Deck."
     },
     {
       "nome": "Limiter Removal",
@@ -11437,8 +11874,8 @@
       "card_type": "Trap",
       "tipo": "Trap",
       "atributo": "trap",
-      "raridade": "R",
-      "raridade_arquivo": "R",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
       "desc_pt": "EFEITO: Quando seu oponente ativar uma carta de Magia, negue o efeito dela e destrua-a.",
@@ -11492,10 +11929,10 @@
       "nivel": "9",
       "atk": "2800",
       "def": "2600",
-      "desc_pt": "EFEITO: Esta carta ganha 300 de poder para cada carta de atributo DARK em sua mão.",
-      "desc_en": "EFFECT: This card gains 300 power for each DARK attribute cards in your hand.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 300 sức mạnh cho mỗi lá thuộc tính DARK trên tay bạn.",
-      "desc_es": "EFECTO: Esta carta gana 300 de poder por cada carta de atributo DARK en tu mano.",
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 200 de ATK para cada monstro DARK no campo e nos dois Cemitérios.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 200 ATK for each DARK monster on the field and in both Graveyards.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 200 ATK cho mỗi quái thú DARK trên sân và trong cả hai Mộ bài.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 200 de ATK por cada monstruo DARK en el campo y en ambos Cementerios.",
       "full_art": true
     },
     {
@@ -12308,7 +12745,8 @@
       "desc_pt": "EFEITO: Quando Invocada, envie para o CEMITÉRIO todos os monstros em Posição de Ataque no CAMPO do oponente. Depois, cause dano aos Pontos de Vida dele igual à metade da soma do ATK atual dos monstros enviados ao CEMITÉRIO por este efeito.",
       "desc_en": "EFFECT: When Summoned, send all Attack Position monsters on your opponent's FIELD to the GRAVEYARD. Then, inflict damage to their Life Points equal to half the combined current ATK of the monsters sent to the GRAVEYARD by this effect.",
       "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, đưa tất cả quái thú ở Vị trí Tấn công trên SÂN của đối thủ vào MỘ BÀI. Sau đó, gây sát thương lên LP của họ bằng một nửa tổng ATK hiện tại của các quái thú bị đưa vào MỘ BÀI bởi hiệu ứng này.",
-      "desc_es": "EFECTO: Al ser Invocada, envía al CEMENTERIO todos los monstruos en Posición de Ataque en el CAMPO del oponente. Luego, inflige daño a sus Puntos de Vida igual a la mitad de la suma del ATK actual de los monstruos enviados al CEMENTERIO por este efecto."
+      "desc_es": "EFECTO: Al ser Invocada, envía al CEMENTERIO todos los monstruos en Posición de Ataque en el CAMPO del oponente. Luego, inflige daño a sus Puntos de Vida igual a la mitad de la suma del ATK actual de los monstruos enviados al CEMENTERIO por este efecto.",
+      "full_art": true
     },
     {
       "nome": "Meteor Dragon",
@@ -12407,7 +12845,8 @@
       "desc_pt": "EFEITO: Aumenta o poder dos seus monstros ROCK em 500 quando é invocado.",
       "desc_en": "EFFECT: Increase the power of your ROCK monsters by 500 when Summoned.",
       "desc_vi": "HIỆU ỨNG: Tăng 500 sức mạnh cho các quái thú ROCK của bạn khi được Triệu hồi.",
-      "desc_es": "EFECTO: Aumenta el poder de tus monstruos ROCK en 500 cuando es invocado."
+      "desc_es": "EFECTO: Aumenta el poder de tus monstruos ROCK en 500 cuando es invocado.",
+      "full_art": true
     },
     {
       "nome": "Millennium Shield",
@@ -12502,7 +12941,8 @@
       "desc_pt": "EFEITO: Quando um monstro do oponente declarar um ataque, destrua todos os monstros em Posição de Ataque no campo dele.",
       "desc_en": "EFFECT: When an opponent's monster declares an attack, destroy every monster in Attack Position on their field.",
       "desc_vi": "HIỆU ỨNG: Khi quái thú của đối thủ tuyên bố tấn công, phá hủy tất cả quái thú ở Vị trí Tấn công trên sân của họ.",
-      "desc_es": "EFECTO: Cuando un monstruo del oponente declare un ataque, destruye todos los monstruos en Posición de Ataque en su campo."
+      "desc_es": "EFECTO: Cuando un monstruo del oponente declare un ataque, destruye todos los monstruos en Posición de Ataque en su campo.",
+      "full_art": true
     },
     {
       "nome": "Mirror of Yata",
@@ -12534,6 +12974,22 @@
       "nivel": "5",
       "atk": "1400",
       "def": "1600"
+    },
+    {
+      "nome": "Molten Destruction",
+      "nome_pt": "Molten Destruction",
+      "slug": "molten_destruction",
+      "card_type": "Field",
+      "tipo": "Field",
+      "atributo": "spell",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "field",
+      "desc_pt": "EFEITO: Aumente o ATK e o DEF de todos os monstros FIRE em 500 pontos e diminua o ATK e o DEF de todos os monstros WATER em 200 pontos.",
+      "desc_en": "EFFECT: Increase the ATK and DEF of all FIRE monsters by 500, and decrease the ATK and DEF of all WATER monsters by 200.",
+      "desc_vi": "HIỆU ỨNG: Tăng 500 ATK và DEF của tất cả quái thú FIRE, và giảm 200 ATK và DEF của tất cả quái thú WATER.",
+      "desc_es": "EFECTO: Aumenta el ATK y la DEF de todos los monstruos FIRE en 500 puntos y disminuye el ATK y la DEF de todos los monstruos WATER en 200 puntos."
     },
     {
       "nome": "Mon Larvas",
@@ -12613,7 +13069,8 @@
       "desc_pt": "EFEITO: Escolha 1 dos 3 monstros com maior ATK entre os dois CEMITÉRIOS e traga-o para o CAMPO.",
       "desc_en": "EFFECT: Choose 1 of the 3 highest-ATK monsters between both GRAVEYARDS and bring it to the FIELD.",
       "desc_vi": "HIỆU ỨNG: Chọn 1 trong 3 quái thú có ATK cao nhất giữa hai GRAVEYARD và đưa nó ra FIELD.",
-      "desc_es": "EFECTO: Elige 1 de los 3 monstruos con mayor ATK entre ambos CEMENTERIOS y tráelo al CAMPO."
+      "desc_es": "EFECTO: Elige 1 de los 3 monstruos con mayor ATK entre ambos CEMENTERIOS y tráelo al CAMPO.",
+      "full_art": true
     },
     {
       "nome": "Monster Tamer",
@@ -13150,10 +13607,29 @@
       "nivel": "10",
       "atk": "2800",
       "def": "2400",
-      "desc_pt": "EFEITO: Ao ser Invocado, ganha 100 de poder para cada carta no seu Cemitério.",
-      "desc_en": "EFFECT: Gains 100 power for each card in your Graveyard when Summoned.",
-      "desc_vi": "HIỆU ỨNG: Nhận thêm 100 sức mạnh cho mỗi lá bài trong Mộ bài của bạn khi được Triệu hồi.",
-      "desc_es": "EFECTO: Al ser Invocado, gana 100 de poder por cada carta en tu Cementerio."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 100 de ATK para cada carta no seu Cemitério.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 100 ATK for each card in your Graveyard.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 100 ATK cho mỗi lá bài trong Mộ bài của bạn.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 100 de ATK por cada carta en tu Cementerio."
+    },
+    {
+      "nome": "Nebulis, Dragon Ruler of Mishaps",
+      "nome_pt": "Nebulis, Dragon Ruler of Mishaps",
+      "slug": "nebulis_dragon_ruler_of_mishaps",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "DARK",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "DARK",
+      "icone_tipo": "dragon",
+      "nivel": "2",
+      "atk": "1000",
+      "def": "600",
+      "desc_pt": "EFEITO: Esta carta pode atacar diretamente. Se esta carta for enviada do campo ou do seu Deck para o Cemitério: envie 1 monstro DARK ou DRAGON aleatório do seu Deck para o Cemitério e, depois, Invoque 2 monstros \"Dragon Ruler\" aleatórios do seu Deck. Esta carta ganha 500 de ATK enquanto o Field ativo for YAMI.",
+      "desc_en": "EFFECT: This card can attack directly. If this card is sent from the field or from your Deck to the Graveyard: send 1 random DARK or DRAGON monster from your Deck to the Graveyard, then Summon 2 random \"Dragon Ruler\" monsters from your Deck. This card gains 500 ATK while the active Field is YAMI.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này có thể tấn công trực tiếp. Nếu lá bài này được gửi từ sân hoặc từ Deck của bạn xuống Mộ bài: gửi 1 quái thú DARK hoặc DRAGON ngẫu nhiên từ Deck của bạn xuống Mộ bài, sau đó Triệu hồi 2 quái thú \"Dragon Ruler\" ngẫu nhiên từ Deck của bạn. Lá bài này nhận thêm 500 ATK khi Field đang hoạt động là YAMI.",
+      "desc_es": "EFECTO: Esta carta puede atacar directamente. Si esta carta es enviada desde el campo o desde tu Deck al Cementerio: envía 1 monstruo DARK o DRAGON aleatorio de tu Deck al Cementerio y, después, Invoca 2 monstruos \"Dragon Ruler\" aleatorios de tu Deck. Esta carta gana 500 de ATK mientras el Field activo sea YAMI."
     },
     {
       "nome": "Neck Hunter",
@@ -13886,7 +14362,8 @@
       "desc_pt": "EFEITO: Quando esta carta for invocada, ganha 100 de ATK para cada monstro Machine no campo e no seu cemitério. Enquanto esta carta estiver em campo, ganha 400 de ATK para cada monstro Earth/Machine no campo.",
       "desc_en": "EFFECT: When this card is Summoned, it gains 100 ATK for each Machine monster on the field and in your Graveyard. While this card is on the field, it gains 400 ATK for each Earth/Machine monster on the field.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận thêm 100 ATK cho mỗi quái thú hệ Máy Móc trên sân và trong Mộ bài của bạn. Trong khi lá bài này ở trên sân, nó nhận thêm 400 ATK cho mỗi quái thú hệ Đất/Máy Móc trên sân.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada, gana 100 de ATK por cada monstruo de Tipo Máquina en el campo y en tu Cementerio. Mientras esta carta esté en el campo, gana 400 de ATK por cada monstruo Tierra/Máquina en el campo."
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, gana 100 de ATK por cada monstruo de Tipo Máquina en el campo y en tu Cementerio. Mientras esta carta esté en el campo, gana 400 de ATK por cada monstruo Tierra/Máquina en el campo.",
+      "full_art": true
     },
     {
       "nome": "Perfectly Ultimate Great Moth",
@@ -14160,6 +14637,25 @@
       "def": "2000"
     },
     {
+      "nome": "Prime Material Dragon",
+      "nome_pt": "Prime Material Dragon",
+      "slug": "prime_material_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "6",
+      "atk": "2400",
+      "def": "2000",
+      "desc_pt": "EFEITO: Qualquer dano de efeito que seria causado a um jogador aumenta os LP desse jogador na mesma quantidade. Durante o turno de qualquer jogador, quando uma carta ou efeito que destruiria um ou mais monstros no campo for ativado: você pode enviar 1 carta aleatória da sua mão para o Cemitério; negue essa ativação e destrua essa carta.",
+      "desc_en": "EFFECT: Any effect damage that would be inflicted to a player increases that player's LP by the same amount instead. During either player's turn, when a card or effect is activated that would destroy one or more monsters on the field: you can send 1 random card from your hand to the Graveyard; negate that activation and destroy that card.",
+      "desc_vi": "HIỆU ỨNG: Bất kỳ sát thương hiệu ứng nào gây lên một người chơi sẽ tăng LP của người chơi đó với cùng lượng đó. Trong lượt của bất kỳ người chơi nào, khi một lá bài hoặc hiệu ứng có thể phá hủy một hoặc nhiều quái thú trên sân được kích hoạt: bạn có thể gửi 1 lá bài ngẫu nhiên từ tay xuống Mộ bài; vô hiệu hóa kích hoạt đó và phá hủy lá bài đó.",
+      "desc_es": "EFECTO: Cualquier daño de efecto que sería infligido a un jugador aumenta los LP de ese jugador en la misma cantidad. Durante el turno de cualquier jugador, cuando una carta o efecto que destruiría uno o más monstruos en el campo sea activado: puedes enviar 1 carta aleatoria de tu mano al Cementerio; niega esa activación y destruye esa carta."
+    },
+    {
       "nome": "Princess of Tsurugi",
       "nome_pt": "Princess of Tsurugi",
       "slug": "princess_of_tsurugi",
@@ -14393,6 +14889,25 @@
       "desc_es": "EFECTO: Reduce en 1000 puntos el poder del monstruo WINGEDBEAST que tu oponente controla cuando este sea Invocado."
     },
     {
+      "nome": "Rabidragon",
+      "nome_pt": "Rabidragon",
+      "slug": "rabidragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "8",
+      "atk": "2950",
+      "def": "2900",
+      "desc_pt": "Um dragão mutante em forma de bola de neve, com orelhas superacústicas gigantes, que vive nos campos nevados! Não há como ninguém escapar.",
+      "desc_en": "A mutant dragon shaped like a snowball, with giant super-acoustic ears, that lives in the snowy fields! There is no way for anyone to escape.",
+      "desc_vi": "Một con rồng đột biến có hình dạng quả cầu tuyết, với đôi tai siêu thính khổng lồ, sống ở những cánh đồng tuyết! Không ai có thể trốn thoát.",
+      "desc_es": "¡Un dragón mutante con forma de bola de nieve, orejas super acústicas gigantes y que vive en los campos nevados! No hay forma de que nadie escape."
+    },
+    {
       "nome": "Raging Flame Sprite",
       "nome_pt": "Raging Flame Sprite",
       "slug": "raging_flame_sprite",
@@ -14510,6 +15025,25 @@
       "def": "1000"
     },
     {
+      "nome": "Reactan Dragon Ruler of Pebbles",
+      "nome_pt": "Reactan Dragon Ruler of Pebbles",
+      "slug": "reactan_dragon_ruler_of_pebbles",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dragon",
+      "nivel": "4",
+      "atk": "1800",
+      "def": "1200",
+      "desc_pt": "EFEITO: Quando esta carta batalhar, o dano de batalha dessa batalha é dobrado. Quando esta carta for destruída: envie 1 monstro EARTH ou DRAGON aleatório do seu Deck para o Cemitério e, depois, Invoque 1 \"Redox, Dragon Ruler of Boulders\" do seu Deck. Esta carta ganha 500 de ATK enquanto o Field ativo for WASTELAND.",
+      "desc_en": "EFFECT: When this card battles, the battle damage from that battle is doubled. When this card is destroyed: send 1 random EARTH or DRAGON monster from your Deck to the Graveyard, then Summon 1 \"Redox, Dragon Ruler of Boulders\" from your Deck. This card gains 500 ATK while the active Field is WASTELAND.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này chiến đấu, sát thương chiến đấu của trận đó được nhân đôi. Khi lá bài này bị phá hủy: gửi 1 quái thú EARTH hoặc DRAGON ngẫu nhiên từ Deck của bạn xuống Mộ bài, sau đó Triệu hồi 1 \"Redox, Dragon Ruler of Boulders\" từ Deck của bạn. Lá bài này nhận thêm 500 ATK khi Field đang hoạt động là WASTELAND.",
+      "desc_es": "EFECTO: Cuando esta carta batalla, el daño de batalla de esa batalla se duplica. Cuando esta carta sea destruida: envía 1 monstruo EARTH o DRAGON aleatorio de tu Deck al Cementerio y, después, Invoca 1 \"Redox, Dragon Ruler of Boulders\" de tu Deck. Esta carta gana 500 de ATK mientras el Field activo sea WASTELAND."
+    },
+    {
       "nome": "Reaper of the Cards",
       "nome_pt": "Reaper of the Cards",
       "slug": "reaper_of_the_cards",
@@ -14618,10 +15152,10 @@
       "nivel": "8",
       "atk": "2800",
       "def": "2400",
-      "desc_pt": "EFEITO: Esse monstro aplica dano perfurante em oponentes que estejam em modo de defesa.",
-      "desc_en": "EFFECT: This monster inflicts piercing damage on opponents who are in defense mode.",
-      "desc_vi": "HIỆU ỨNG: Quái thú này gây sát thương xuyên giáp lên đối thủ đang ở chế độ phòng thủ.",
-      "desc_es": "EFECTO: Este monstruo inflige daño perforante a oponentes que estén en modo de defensa."
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, ela ganha 300 de ATK para cada \"Metalmorph\" na sua mão. Se esta carta atacar um monstro em Posição de Defesa, causa dano de batalha perfurante.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 300 ATK for each \"Metalmorph\" in your hand. If this card attacks a Defense Position monster, inflict piercing battle damage.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận thêm 300 ATK cho mỗi \"Metalmorph\" trên tay bạn. Nếu lá bài này tấn công một quái thú ở Thế Thủ, nó gây sát thương xuyên giáp.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, gana 300 de ATK por cada \"Metalmorph\" en tu mano. Si esta carta ataca a un monstruo en Posición de Defensa, inflige daño de batalla perforante."
     },
     {
       "nome": "Red-Eyes Baby Dragon",
@@ -14656,10 +15190,10 @@
       "nivel": "7",
       "atk": "2400",
       "def": "2000",
-      "desc_pt": "EFEITO: Esta carta ganha 250 de ATK e DEF para cada monstro DRAGON nos dois CAMPOS e nos dois CEMITÉRIOS.",
-      "desc_en": "EFFECT: This card gains 250 ATK and DEF for each DRAGON monster on both FIELDS and in both GRAVEYARDS.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 250 ATK và DEF cho mỗi quái thú DRAGON trên cả hai SÂN và trong cả hai MỘ BÀI.",
-      "desc_es": "EFECTO: Esta carta gana 250 de ATK y DEF por cada monstruo DRAGON en ambos CAMPOS y en ambos CEMENTERIOS."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 200 de ATK e DEF para cada monstro DRAGON no campo e nos dois Cemitérios. Enquanto esta carta estiver em campo, o monstro \"Red-Eyes\" com maior ATK que você controla ganha 1000 de ATK e o mesmo bônus.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 200 ATK and DEF for each DRAGON monster on the field and in both Graveyards. While this card is on the field, the \"Red-Eyes\" monster with the highest ATK that you control gains 1000 ATK and the same bonus.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 200 ATK và DEF cho mỗi quái thú DRAGON trên sân và trong cả hai Mộ bài. Khi lá bài này còn trên sân, quái thú \"Red-Eyes\" có ATK cao nhất mà bạn điều khiển nhận thêm 1000 ATK và cùng lượng thưởng đó.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 200 de ATK y DEF por cada monstruo DRAGON en el campo y en ambos Cementerios. Mientras esta carta esté en el campo, el monstruo \"Red-Eyes\" con mayor ATK que controles gana 1000 de ATK y el mismo bono."
     },
     {
       "nome": "Red-Eyes Black Flare Dragon",
@@ -14714,10 +15248,11 @@
       "nivel": "8",
       "atk": "3000",
       "def": "2500",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 250 de ATK e DEF para cada monstro DRAGON na sua mão.",
-      "desc_en": "EFFECT: When this card is summoned, it gains 250 ATK and DEF for each DRAGON monster in your hand.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận thêm 250 ATK và DEF cho mỗi quái thú DRAGON trên tay bạn.",
-      "desc_es": "EFECTO: Cuando esta carta sea invocada, gana 250 de ATK y DEF por cada monstruo DRAGON en tu mano."
+      "desc_pt": "EFEITO: Esta carta não pode ser destruída por efeitos de cartas. Cada vez que seu oponente ativar um efeito de carta, esta carta ganha 500 de ATK.",
+      "desc_en": "EFFECT: This card cannot be destroyed by card effects. Each time your opponent activates a card effect, this card gains 500 ATK.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này không thể bị phá hủy bởi hiệu ứng của lá bài. Mỗi khi đối thủ kích hoạt một hiệu ứng lá bài, lá bài này nhận thêm 500 ATK.",
+      "desc_es": "EFECTO: Esta carta no puede ser destruida por efectos de cartas. Cada vez que tu oponente active un efecto de carta, esta carta gana 500 de ATK.",
+      "full_art": true
     },
     {
       "nome": "Red-Eyes Darkness Dragon",
@@ -14826,10 +15361,10 @@
       "nivel": "7",
       "atk": "2800",
       "def": "2400",
-      "desc_pt": "EFEITO: Quando esta carta for destruída em batalha, traga um monstro WARRIOR aleatório do seu DECK para o CAMPO. Esta carta pode receber cartas EQUIP destinadas a monstros WARRIOR.",
-      "desc_en": "EFFECT: When this card is destroyed by battle, bring a random WARRIOR monster from your DECK to the FIELD. This card can receive EQUIP Cards intended for WARRIOR monsters.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này bị phá hủy trong chiến đấu, đưa một quái thú WARRIOR ngẫu nhiên từ DECK của bạn ra SÂN. Lá bài này có thể nhận các lá EQUIP dành cho quái thú WARRIOR.",
-      "desc_es": "EFECTO: Cuando esta carta sea destruida en batalla, trae un monstruo WARRIOR aleatorio de tu DECK al CAMPO. Esta carta puede recibir cartas EQUIP destinadas a monstruos WARRIOR."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 200 de ATK para cada monstro WARRIOR nos dois Cemitérios. Enquanto esta carta estiver em campo, os monstros WARRIOR no seu campo não podem ser escolhidos como alvo de ataque pelo seu oponente. Esta carta é considerada um monstro WARRIOR para cartas EQUIP.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 200 ATK for each WARRIOR monster in both Graveyards. While this card is on the field, WARRIOR monsters on your field cannot be chosen as an attack target by your opponent. This card is treated as a WARRIOR monster for EQUIP cards.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 200 ATK cho mỗi quái thú WARRIOR trong cả hai Mộ bài. Khi lá bài này còn trên sân, các quái thú WARRIOR trên sân của bạn không thể bị đối thủ chọn làm mục tiêu tấn công. Lá bài này được xem là quái thú WARRIOR đối với các lá bài EQUIP.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 200 de ATK por cada monstruo WARRIOR en ambos Cementerios. Mientras esta carta esté en el campo, los monstruos WARRIOR en tu campo no pueden ser elegidos como objetivo de ataque por tu oponente. Esta carta es considerada un monstruo WARRIOR para las cartas EQUIP."
     },
     {
       "nome": "Red-Eyes Toon Dragon",
@@ -14885,10 +15420,10 @@
       "nivel": "7",
       "atk": "2400",
       "def": "2000",
-      "desc_pt": "EFEITO: Sempre que esta carta destruir um monstro em batalha, ela ganha 250 de ATK e DEF.",
-      "desc_en": "EFFECT: Each time this card destroys a monster by battle, it gains 250 ATK and DEF.",
-      "desc_vi": "HIỆU ỨNG: Mỗi khi lá bài này phá hủy một quái thú bằng chiến đấu, nó nhận thêm 250 ATK và DEF.",
-      "desc_es": "EFECTO: Cada vez que esta carta destruya un monstruo en batalla, gana 250 de ATK y DEF."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, os monstros ZOMBIE no seu campo ganham 100 de ATK para cada monstro \"Red-Eyes\" no seu Cemitério.",
+      "desc_en": "EFFECT: While this card is on the field, ZOMBIE monsters on your field gain 100 ATK for each \"Red-Eyes\" monster in your Graveyard.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, các quái thú ZOMBIE trên sân của bạn nhận thêm 100 ATK cho mỗi quái thú \"Red-Eyes\" trong Mộ bài của bạn.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, los monstruos ZOMBIE en tu campo ganan 100 de ATK por cada monstruo \"Red-Eyes\" en tu Cementerio."
     },
     {
       "nome": "Red-Eyes Zombie Dragon Lord",
@@ -14927,6 +15462,25 @@
       "desc_en": "EFFECT: While this card is on the FIELD, all ZOMBIE and RED-EYES monsters you control gain 300 ATK and DEF.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên SÂN, tất cả quái thú ZOMBIE và RED-EYES mà bạn điều khiển nhận thêm 300 ATK và DEF.",
       "desc_es": "EFECTO: Mientras esta carta esté en el CAMPO, todos los monstruos ZOMBIE y RED-EYES que controlas ganan 300 de ATK y DEF."
+    },
+    {
+      "nome": "Redox, Dragon Ruler of Boulders",
+      "nome_pt": "Redox, Dragon Ruler of Boulders",
+      "slug": "redox_dragon_ruler_of_boulders",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "EARTH",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "EARTH",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "1600",
+      "def": "3000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: envie 2 monstros EARTH ou DRAGON aleatórios da sua mão e/ou do seu Deck para o Cemitério e, depois, se os 2 monstros enviados eram monstros \"Dragon Ruler\", esta carta não pode ser destruída por efeitos de cartas. Se esta carta for enviada do campo ou do seu Deck para o Cemitério: Invoque 1 monstro \"Dragon Ruler\" com o maior ATK do seu Deck. Enquanto esta carta estiver em campo, seu oponente não pode atacar os monstros DRAGON no seu campo, exceto esta. Esta carta ganha 700 de ATK enquanto o Field ativo for WASTELAND.",
+      "desc_en": "EFFECT: When this card is Summoned: send 2 random EARTH or DRAGON monsters from your hand and/or Deck to the Graveyard, then, if both sent monsters were \"Dragon Ruler\" monsters, this card cannot be destroyed by card effects. If this card is sent from the field or from your Deck to the Graveyard: Summon 1 \"Dragon Ruler\" monster with the highest ATK from your Deck. While this card is on the field, your opponent cannot attack DRAGON monsters you control, except this one. This card gains 700 ATK while the active Field is WASTELAND.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi 2 quái thú EARTH hoặc DRAGON ngẫu nhiên từ tay và/hoặc Deck của bạn xuống Mộ bài, sau đó, nếu cả 2 quái thú được gửi đều là quái thú \"Dragon Ruler\", lá bài này không thể bị phá hủy bởi hiệu ứng của lá bài. Nếu lá bài này được gửi từ sân hoặc từ Deck của bạn xuống Mộ bài: Triệu hồi 1 quái thú \"Dragon Ruler\" có ATK cao nhất từ Deck của bạn. Khi lá bài này ở trên sân, đối thủ không thể tấn công các quái thú DRAGON trên sân của bạn, ngoại trừ lá này. Lá bài này nhận thêm 700 ATK khi Field đang hoạt động là WASTELAND.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: envía 2 monstruos EARTH o DRAGON aleatorios de tu mano y/o tu Deck al Cementerio y, después, si los 2 monstruos enviados eran monstruos \"Dragon Ruler\", esta carta no puede ser destruida por efectos de cartas. Si esta carta es enviada desde el campo o desde tu Deck al Cementerio: Invoca 1 monstruo \"Dragon Ruler\" con el mayor ATK de tu Deck. Mientras esta carta esté en el campo, tu oponente no puede atacar los monstruos DRAGON en tu campo, excepto esta. Esta carta gana 700 de ATK mientras el Field activo sea WASTELAND."
     },
     {
       "nome": "Reinforcements",
@@ -15097,10 +15651,10 @@
       "nivel": "6",
       "atk": "2100",
       "def": "1800",
-      "desc_pt": "EFEITO: Quando invocado diminui em 300 o poder de todos os monstros do oponente.",
-      "desc_en": "EFFECT: When summoned, it reduces the power of all the opponent's monsters by 300.",
-      "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, giảm 300 sức mạnh của tất cả quái thú của đối thủ.",
-      "desc_es": "EFECTO: Al ser invocado, disminuye en 300 el poder de todos los monstruos del oponente."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, todos os monstros que seu oponente controla perdem 300 de ATK e DEF.",
+      "desc_en": "EFFECT: While this card is on the field, all monsters your opponent controls lose 300 ATK and DEF.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, tất cả quái thú mà đối thủ điều khiển bị giảm 300 ATK và DEF.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, todos los monstruos que controle tu oponente pierden 300 de ATK y DEF."
     },
     {
       "nome": "Robolady",
@@ -15359,6 +15913,21 @@
       "def": "1600"
     },
     {
+      "nome": "Ruins of the Divine Dragon Lords",
+      "nome_pt": "Ruins of the Divine Dragon Lords",
+      "slug": "ruins_of_the_divine_dragon_lords",
+      "card_type": "Spell",
+      "tipo": "spell continuous",
+      "atributo": "spell",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "SPELL",
+      "desc_pt": "EFEITO: Uma vez por turno, se um monstro for Invocado, exceto do Cemitério, enquanto você controlar um monstro \"Divine Dragon\": negue os efeitos desse monstro Invocado até o final deste turno, mesmo que esta carta deixe o campo. Monstros DRAGON no seu campo ganham 300 de ATK e DEF apenas durante o seu turno.",
+      "desc_en": "EFFECT: Once per turn, if a monster is Summoned, except from the Graveyard, while you control a \"Divine Dragon\" monster: negate the effects of that Summoned monster until the end of this turn, even if this card leaves the field. DRAGON monsters you control gain 300 ATK and DEF during your turn only.",
+      "desc_vi": "HIỆU ỨNG: Một lần mỗi lượt, nếu một quái thú được Triệu hồi, ngoại trừ từ Mộ bài, khi bạn điều khiển một quái thú \"Divine Dragon\": vô hiệu hóa hiệu ứng của quái thú được Triệu hồi đó cho đến cuối lượt này, kể cả khi lá bài này rời sân. Quái thú DRAGON trên sân của bạn nhận thêm 300 ATK và DEF chỉ trong lượt của bạn.",
+      "desc_es": "EFECTO: Una vez por turno, si un monstruo es Invocado, excepto desde el Cementerio, mientras controles un monstruo \"Divine Dragon\": niega los efectos de ese monstruo Invocado hasta el final de este turno, incluso si esta carta deja el campo. Los monstruos DRAGON en tu campo ganan 300 de ATK y DEF solo durante tu turno."
+    },
+    {
       "nome": "Ryu Senshi",
       "nome_pt": "Ryu Senshi",
       "slug": "ryu_senshi",
@@ -15553,6 +16122,92 @@
       "nivel": "3",
       "atk": "1000",
       "def": "600"
+    },
+    {
+      "nome": "Sangen Furo",
+      "nome_pt": "Sangen Furo",
+      "slug": "sangen_furo",
+      "card_type": "Spell",
+      "tipo": "spell continuous",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "desc_pt": "EFEITO: Uma vez por turno, quando um monstro FIRE do tipo DRAGON que você controla for destruído em batalha: Invoque-o de volta ao seu campo em Posição de Defesa.",
+      "desc_en": "EFFECT: Once per turn, when a FIRE DRAGON monster you control is destroyed by battle: Summon it back to your field in Defense Position.",
+      "desc_vi": "HIỆU ỨNG: Một lần mỗi lượt, khi một quái thú FIRE hệ DRAGON mà bạn điều khiển bị phá hủy trong chiến đấu: Triệu hồi nó trở lại sân của bạn ở Tư thế Phòng thủ.",
+      "desc_es": "EFECTO: Una vez por turno, cuando un monstruo FIRE de tipo DRAGON que controles es destruido en batalla: Invócalo de vuelta a tu campo en Posición de Defensa."
+    },
+    {
+      "nome": "Sangen Kaiho",
+      "nome_pt": "Sangen Kaiho",
+      "slug": "sangen_kaiho",
+      "card_type": "Trap",
+      "tipo": "Trap",
+      "atributo": "trap",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "TRAP",
+      "icone_tipo": "trap",
+      "desc_pt": "EFEITO: Quando um monstro FIRE do tipo DRAGON que você controla for destruído e enviado para o Cemitério: Invoque até 2 monstros FIRE do tipo DRAGON aleatórios do seu Cemitério, exceto o monstro destruído.",
+      "desc_en": "EFFECT: When a FIRE DRAGON monster you control is destroyed and sent to the Graveyard: Summon up to 2 random FIRE DRAGON monsters from your Graveyard, except the destroyed monster.",
+      "desc_vi": "HIỆU ỨNG: Khi một quái thú FIRE hệ DRAGON mà bạn điều khiển bị phá hủy và được gửi xuống Mộ bài: Triệu hồi tối đa 2 quái thú FIRE hệ DRAGON ngẫu nhiên từ Mộ bài của bạn, ngoại trừ quái thú đã bị phá hủy.",
+      "desc_es": "EFECTO: Cuando un monstruo FIRE de tipo DRAGON que controles es destruido y enviado al Cementerio: Invoca hasta 2 monstruos FIRE de tipo DRAGON aleatorios de tu Cementerio, excepto el monstruo destruido."
+    },
+    {
+      "nome": "Sangen Kaimen",
+      "nome_pt": "Sangen Kaimen",
+      "slug": "sangen_kaimen",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Invoque 1 monstro \"Tenpai Dragon\" de Nível 4 ou menos aleatório do seu Deck.",
+      "desc_en": "EFFECT: Summon 1 random \"Tenpai Dragon\" monster of Level 4 or lower from your Deck.",
+      "desc_vi": "HIỆU ỨNG: Triệu hồi 1 quái thú \"Tenpai Dragon\" Cấp 4 hoặc thấp hơn ngẫu nhiên từ Deck của bạn.",
+      "desc_es": "EFECTO: Invoca 1 monstruo \"Tenpai Dragon\" de Nivel 4 o menor aleatorio de tu Deck."
+    },
+    {
+      "nome": "Sangenpai Bident Dragion",
+      "nome_pt": "Sangenpai Bident Dragion",
+      "slug": "sangenpai_bident_dragion",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "2600",
+      "def": "2000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: Invoque 1 monstro FIRE do tipo DRAGON aleatório do seu Cemitério. No final do seu turno: destrua 1 carta de SPELL, EQUIP, FIELD ou TRAP aleatória no campo do seu oponente.",
+      "desc_en": "EFFECT: When this card is Summoned: Summon 1 random FIRE DRAGON monster from your Graveyard. At the end of your turn: destroy 1 random SPELL, EQUIP, FIELD or TRAP card on your opponent's field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: Triệu hồi 1 quái thú FIRE hệ DRAGON ngẫu nhiên từ Mộ bài của bạn. Vào cuối lượt của bạn: phá hủy 1 lá bài SPELL, EQUIP, FIELD hoặc TRAP ngẫu nhiên trên sân của đối thủ.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: Invoca 1 monstruo FIRE de tipo DRAGON aleatorio de tu Cementerio. Al final de tu turno: destruye 1 carta de SPELL, EQUIP, FIELD o TRAP aleatoria en el campo de tu oponente."
+    },
+    {
+      "nome": "Sangenpai Transcendent Dragion",
+      "nome_pt": "Sangenpai Transcendent Dragion",
+      "slug": "sangenpai_transcendent_dragion",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "10",
+      "atk": "3000",
+      "def": "3000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: ela ganha 500 de ATK e DEF para cada monstro \"Sangenpai\" no seu campo e no seu Cemitério. Enquanto esta carta estiver em campo, todos os monstros que seu oponente controla são obrigados a ficar em Posição de Ataque. No final do seu turno: destrua 1 carta aleatória no campo do seu oponente.",
+      "desc_en": "EFFECT: When this card is Summoned: it gains 500 ATK and DEF for each \"Sangenpai\" monster on your field and in your Graveyard. While this card is on the field, all monsters your opponent controls are forced into Attack Position. At the end of your turn: destroy 1 random card on your opponent's field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: nó tăng 500 ATK và DEF cho mỗi quái thú \"Sangenpai\" trên sân và trong Mộ bài của bạn. Khi lá bài này ở trên sân, tất cả quái thú mà đối thủ điều khiển bị buộc chuyển sang Tư thế Tấn công. Vào cuối lượt của bạn: phá hủy 1 lá bài ngẫu nhiên trên sân của đối thủ.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: gana 500 ATK y DEF por cada monstruo \"Sangenpai\" en tu campo y en tu Cementerio. Mientras esta carta esté en el campo, todos los monstruos que tu oponente controle son forzados a Posición de Ataque. Al final de tu turno: destruye 1 carta aleatoria en el campo de tu oponente.",
+      "full_art": true
     },
     {
       "nome": "Sanwitch",
@@ -16012,10 +16667,10 @@
       "nivel": "7",
       "atk": "2700",
       "def": "1000",
-      "desc_pt": "EFEITO: Ganha 200 de poder para cada monstro WIND na mão. Quando invocado, ambos os jogadores perdem 2000 pontos de vida.",
-      "desc_en": "EFFECT: Gains 200 ATK for each WIND monster in your hand. When Summoned, both players take 2000 damage.",
-      "desc_vi": "HIỆU ỨNG: Nhận thêm 200 ATK cho mỗi quái thú WIND trên tay bạn. Khi được Triệu hồi, cả hai người chơi chịu 2000 sát thương.",
-      "desc_es": "EFECTO: Gana 200 de poder por cada monstruo WIND en tu mano. Al ser invocado, ambos jugadores pierden 2000 puntos de vida."
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, ambos os jogadores sofrem 2000 de dano. Enquanto esta carta estiver em campo, ela ganha 200 de ATK para cada monstro WIND no seu campo e no seu Cemitério.",
+      "desc_en": "EFFECT: When this card is Summoned, both players take 2000 damage. While this card is on the field, it gains 200 ATK for each WIND monster on your field and in your Graveyard.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, cả hai người chơi nhận 2000 sát thương. Khi lá bài này còn trên sân, nó nhận thêm 200 ATK cho mỗi quái thú WIND trên sân của bạn và trong Mộ bài của bạn.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, ambos jugadores reciben 2000 de daño. Mientras esta carta esté en el campo, gana 200 de ATK por cada monstruo WIND en tu campo y en tu Cementerio."
     },
     {
       "nome": "Sinister Serpent",
@@ -16510,6 +17165,25 @@
       "desc_es": "EFECTO: Este monstruo inflige daño perforante a oponentes que estén en modo de defensa."
     },
     {
+      "nome": "Spectral, Dragon Ruler of Flickers",
+      "nome_pt": "Spectral, Dragon Ruler of Flickers",
+      "slug": "spectral_dragon_ruler_of_flickers",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "LIGHT",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "LIGHT",
+      "icone_tipo": "dragon",
+      "nivel": "2",
+      "atk": "600",
+      "def": "1000",
+      "desc_pt": "EFEITO: Você não sofre dano de batalha em batalhas que envolvam esta carta. Se esta carta for enviada do seu Deck para o Cemitério: envie 1 monstro LIGHT ou DRAGON aleatório do seu Deck para o Cemitério e, depois, Invoque 2 monstros \"Dragon Ruler\" aleatórios do seu Deck.",
+      "desc_en": "EFFECT: You take no battle damage from battles involving this card. If this card is sent from your Deck to the Graveyard: send 1 random LIGHT or DRAGON monster from your Deck to the Graveyard, then Summon 2 random \"Dragon Ruler\" monsters from your Deck.",
+      "desc_vi": "HIỆU ỨNG: Bạn không nhận sát thương chiến đấu từ các trận chiến có lá bài này tham gia. Nếu lá bài này được gửi từ Deck của bạn xuống Mộ bài: gửi 1 quái thú LIGHT hoặc DRAGON ngẫu nhiên từ Deck của bạn xuống Mộ bài, sau đó Triệu hồi 2 quái thú \"Dragon Ruler\" ngẫu nhiên từ Deck của bạn.",
+      "desc_es": "EFECTO: No recibes daño de batalla en batallas que involucren esta carta. Si esta carta es enviada de tu Deck al Cementerio: envía 1 monstruo LIGHT o DRAGON aleatorio de tu Deck al Cementerio y, después, Invoca 2 monstruos \"Dragon Ruler\" aleatorios de tu Deck."
+    },
+    {
       "nome": "Spellbinding Circle",
       "nome_pt": "Spellbinding Circle",
       "slug": "spellbinding_circle",
@@ -16755,7 +17429,8 @@
       "desc_pt": "EFEITO: Quando este card batalhar contra um monstro DARK, o ATK e a DEF desse monstro voltam aos valores originais durante essa batalha.",
       "desc_en": "EFFECT: When this card battles a DARK monster, that monster's ATK and DEF become its original values during that battle.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này chiến đấu với một quái thú DARK, ATK và DEF của quái thú đó trở về giá trị gốc trong trận chiến đó.",
-      "desc_es": "EFECTO: Cuando esta carta luche contra un monstruo DARK, el ATK y la DEF de ese monstruo vuelven a sus valores originales durante esa batalla."
+      "desc_es": "EFECTO: Cuando esta carta luche contra un monstruo DARK, el ATK y la DEF de ese monstruo vuelven a sus valores originales durante esa batalla.",
+      "full_art": true
     },
     {
       "nome": "Stain Storm",
@@ -16772,6 +17447,22 @@
       "desc_en": "EFFECT: Acid rain destroys an opponent's MACHINE monsters.",
       "desc_vi": "HIỆU ỨNG: Mưa axit phá hủy các quái thú MACHINE của đối thủ.",
       "desc_es": "EFECTO: La lluvia ácida destruye los monstruos MACHINE del oponente."
+    },
+    {
+      "nome": "Stamping Destruction",
+      "nome_pt": "Stamping Destruction",
+      "slug": "stamping_destruction",
+      "card_type": "Spell",
+      "tipo": "Spell",
+      "atributo": "spell",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "SPELL",
+      "icone_tipo": "spell",
+      "desc_pt": "EFEITO: Se você controlar um monstro DRAGON: destrua 1 carta de SPELL, TRAP, EQUIP ou FIELD aleatória que seu oponente controla e, se o fizer, cause 500 de dano ao seu oponente.",
+      "desc_en": "EFFECT: If you control a DRAGON monster: destroy 1 random SPELL, TRAP, EQUIP or FIELD card your opponent controls, and if you do, inflict 500 damage to your opponent.",
+      "desc_vi": "HIỆU ỨNG: Nếu bạn điều khiển một quái thú DRAGON: phá hủy 1 lá SPELL, TRAP, EQUIP hoặc FIELD ngẫu nhiên mà đối thủ điều khiển, và nếu bạn làm vậy, gây 500 sát thương cho đối thủ.",
+      "desc_es": "EFECTO: Si controlas un monstruo DRAGON: destruye 1 carta de SPELL, TRAP, EQUIP o FIELD aleatoria que tu oponente controle y, si lo haces, inflige 500 de daño a tu oponente."
     },
     {
       "nome": "Star Boy",
@@ -16947,6 +17638,25 @@
       "desc_en": "EFFECT: Forces an opponent's monster card positioned for defense into the attack position.",
       "desc_vi": "HIỆU ỨNG: Buộc một quái thú của đối thủ đang ở vị trí phòng thủ chuyển sang vị trí tấn công.",
       "desc_es": "EFECTO: Fuerza a un monstruo del oponente en posición de defensa a entrar en posición de ataque."
+    },
+    {
+      "nome": "Stream, Dragon Ruler of Droplets",
+      "nome_pt": "Stream, Dragon Ruler of Droplets",
+      "slug": "stream_dragon_ruler_of_droplets",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "WATER",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "WATER",
+      "icone_tipo": "dragon",
+      "nivel": "3",
+      "atk": "1600",
+      "def": "2000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: ganhe 1000 LP. Quando esta carta for destruída: envie 1 monstro WATER ou DRAGON aleatório do seu Deck para o Cemitério e, depois, Invoque 1 \"Tidal, Dragon Ruler of Waterfalls\" do seu Deck. Esta carta ganha 500 de ATK enquanto o Field ativo for UMI.",
+      "desc_en": "EFFECT: When this card is Summoned: gain 1000 LP. When this card is destroyed: send 1 random WATER or DRAGON monster from your Deck to the Graveyard, then Summon 1 \"Tidal, Dragon Ruler of Waterfalls\" from your Deck. This card gains 500 ATK while the active Field is UMI.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: nhận 1000 LP. Khi lá bài này bị phá hủy: gửi 1 quái thú WATER hoặc DRAGON ngẫu nhiên từ Deck của bạn xuống Mộ bài, sau đó Triệu hồi 1 \"Tidal, Dragon Ruler of Waterfalls\" từ Deck của bạn. Lá bài này nhận thêm 500 ATK khi Field đang hoạt động là UMI.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: gana 1000 LP. Cuando esta carta sea destruida: envía 1 monstruo WATER o DRAGON aleatorio de tu Deck al Cementerio y, después, Invoca 1 \"Tidal, Dragon Ruler of Waterfalls\" de tu Deck. Esta carta gana 500 de ATK mientras el Field activo sea UMI."
     },
     {
       "nome": "Stuffed Animal",
@@ -17484,6 +18194,25 @@
       "def": "1600"
     },
     {
+      "nome": "Tempest, Dragon Ruler of Storms",
+      "nome_pt": "Tempest, Dragon Ruler of Storms",
+      "slug": "tempest_dragon_ruler_of_storms",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "WIND",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "WIND",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "2400",
+      "def": "2200",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: envie até 2 monstros WIND ou DRAGON aleatórios da sua mão e/ou do seu Deck para o Cemitério e, depois, embaralhe até 2 cartas aleatórias que seu oponente controla no Deck dele. Se esta carta for destruída: Invoque 1 monstro \"Dragon Ruler\" com a maior DEF do seu Deck. Enquanto esta carta estiver em campo, os monstros DRAGON no seu campo não são afetados por efeitos de SPELL e TRAP do seu oponente, exceto esta.",
+      "desc_en": "EFFECT: When this card is Summoned: send up to 2 random WIND or DRAGON monsters from your hand and/or Deck to the Graveyard, then shuffle up to 2 random cards your opponent controls into their Deck. If this card is destroyed: Summon 1 \"Dragon Ruler\" monster with the highest DEF from your Deck. While this card is on the field, DRAGON monsters you control are unaffected by your opponent's SPELL and TRAP effects, except this one.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi tối đa 2 quái thú WIND hoặc DRAGON ngẫu nhiên từ tay và/hoặc Deck của bạn xuống Mộ bài, sau đó xáo trộn tối đa 2 lá bài ngẫu nhiên mà đối thủ điều khiển vào Deck của đối thủ. Nếu lá bài này bị phá hủy: Triệu hồi 1 quái thú \"Dragon Ruler\" có DEF cao nhất từ Deck của bạn. Khi lá bài này ở trên sân, các quái thú DRAGON trên sân của bạn không bị ảnh hưởng bởi hiệu ứng SPELL và TRAP của đối thủ, ngoại trừ lá này.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: envía hasta 2 monstruos WIND o DRAGON aleatorios de tu mano y/o tu Deck al Cementerio y, después, baraja hasta 2 cartas aleatorias que tu oponente controle en su Deck. Si esta carta es destruida: Invoca 1 monstruo \"Dragon Ruler\" con la mayor DEF de tu Deck. Mientras esta carta esté en el campo, los monstruos DRAGON en tu campo no son afectados por efectos de SPELL y TRAP de tu oponente, excepto esta."
+    },
+    {
       "nome": "Temple of Skulls",
       "nome_pt": "Temple of Skulls",
       "slug": "temple_of_skulls",
@@ -17512,6 +18241,82 @@
       "nivel": "3",
       "atk": "700",
       "def": "1400"
+    },
+    {
+      "nome": "Tenpai Dragon Chundra",
+      "nome_pt": "Tenpai Dragon Chundra",
+      "slug": "tenpai_dragon_chundra",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "4",
+      "atk": "1500",
+      "def": "1000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: Invoque 1 monstro FIRE do tipo DRAGON de Nível 4 ou menos aleatório do seu Deck.",
+      "desc_en": "EFFECT: When this card is Summoned: Summon 1 random FIRE DRAGON monster of Level 4 or lower from your Deck.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: Triệu hồi 1 quái thú FIRE hệ DRAGON Cấp 4 hoặc thấp hơn ngẫu nhiên từ Deck của bạn.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: Invoca 1 monstruo FIRE de tipo DRAGON de Nivel 4 o menor aleatorio de tu Deck."
+    },
+    {
+      "nome": "Tenpai Dragon Fadra",
+      "nome_pt": "Tenpai Dragon Fadra",
+      "slug": "tenpai_dragon_fadra",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "3",
+      "atk": "1600",
+      "def": "1000",
+      "desc_pt": "EFEITO: Se esta carta batalhar: Invoque 1 monstro FIRE do tipo DRAGON de Nível 4 ou menos aleatório do seu Cemitério. Enquanto esta carta estiver em campo, os monstros FIRE do tipo DRAGON que você controla não podem ser destruídos em batalha.",
+      "desc_en": "EFFECT: If this card battles: Summon 1 random FIRE DRAGON monster of Level 4 or lower from your Graveyard. While this card is on the field, FIRE DRAGON monsters you control cannot be destroyed by battle.",
+      "desc_vi": "HIỆU ỨNG: Nếu lá bài này chiến đấu: Triệu hồi 1 quái thú FIRE hệ DRAGON Cấp 4 hoặc thấp hơn ngẫu nhiên từ Mộ bài của bạn. Khi lá bài này ở trên sân, các quái thú FIRE hệ DRAGON mà bạn điều khiển không thể bị phá hủy trong chiến đấu.",
+      "desc_es": "EFECTO: Si esta carta batalla: Invoca 1 monstruo FIRE de tipo DRAGON de Nivel 4 o menor aleatorio de tu Cementerio. Mientras esta carta esté en el campo, los monstruos FIRE de tipo DRAGON que controles no pueden ser destruidos en batalla."
+    },
+    {
+      "nome": "Tenpai Dragon Genroku",
+      "nome_pt": "Tenpai Dragon Genroku",
+      "slug": "tenpai_dragon_genroku",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "R",
+      "raridade_arquivo": "R",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "3",
+      "atk": "0",
+      "def": "1000",
+      "desc_pt": "EFEITO: Quando esta carta for destruída e enviada para o Cemitério: Invoque 1 monstro FIRE do tipo DRAGON de Nível 4 ou menos aleatório do seu Deck.",
+      "desc_en": "EFFECT: When this card is destroyed and sent to the Graveyard: Summon 1 random FIRE DRAGON monster of Level 4 or lower from your Deck.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này bị phá hủy và được gửi xuống Mộ bài: Triệu hồi 1 quái thú FIRE hệ DRAGON Cấp 4 hoặc thấp hơn ngẫu nhiên từ Deck của bạn.",
+      "desc_es": "EFECTO: Cuando esta carta es destruida y enviada al Cementerio: Invoca 1 monstruo FIRE de tipo DRAGON de Nivel 4 o menor aleatorio de tu Deck."
+    },
+    {
+      "nome": "Tenpai Dragon Paidra",
+      "nome_pt": "Tenpai Dragon Paidra",
+      "slug": "tenpai_dragon_paidra",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "3",
+      "atk": "1700",
+      "def": "1000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: coloque 1 carta de SPELL ou TRAP \"Sangen\" aleatória do seu Deck virada para baixo no campo. Enquanto esta carta estiver em campo, você não sofre dano de batalha de batalhas envolvendo os seus monstros FIRE do tipo DRAGON.",
+      "desc_en": "EFFECT: When this card is Summoned: place 1 random \"Sangen\" SPELL or TRAP card from your Deck face-down on the field. While this card is on the field, you take no battle damage from battles involving your FIRE DRAGON monsters.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: úp 1 lá bài SPELL hoặc TRAP \"Sangen\" ngẫu nhiên từ Deck của bạn lên sân. Khi lá bài này ở trên sân, bạn không nhận sát thương chiến đấu từ các trận đấu có sự tham gia của các quái thú FIRE hệ DRAGON của bạn.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: coloca 1 carta de SPELL o TRAP \"Sangen\" aleatoria de tu Deck boca abajo en el campo. Mientras esta carta esté en el campo, no recibes daño de batalla de batallas que involucren a tus monstruos FIRE de tipo DRAGON."
     },
     {
       "nome": "Tentacle Plant",
@@ -17654,7 +18459,8 @@
       "desc_pt": "EFEITO: Enquanto este card estiver no campo, toda vez que um monstro LIGHT for invocado no seu lado do campo, causa 1000 de dano aos Pontos de Vida do seu oponente.",
       "desc_en": "EFFECT: While this card is on the field, each time a LIGHT monster is summoned to your side of the field, inflict 1000 damage to your opponent's Life Points.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, mỗi khi một quái thú LIGHT được Triệu hồi ở phía sân của bạn, gây 1000 sát thương lên Điểm Sinh Mệnh của đối thủ.",
-      "desc_es": "EFECTO: Mientras esta carta esté en el campo, cada vez que un monstruo LIGHT sea Invocado en tu lado del campo, inflige 1000 puntos de daño a los Puntos de Vida de tu oponente."
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, cada vez que un monstruo LIGHT sea Invocado en tu lado del campo, inflige 1000 puntos de daño a los Puntos de Vida de tu oponente.",
+      "full_art": true
     },
     {
       "nome": "The Creator Incarnate",
@@ -17709,10 +18515,10 @@
       "nivel": "8",
       "atk": "2800",
       "def": "2500",
-      "desc_pt": "EFEITO: Esta carta ganha 700 de poder para cada \"Buster Dragon\" em seu deck e mão.",
-      "desc_en": "EFFECT: This card gains 700 power for each \"Buster Dragon\" in your deck+hand.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 700 sức mạnh cho mỗi \"Buster Dragon\" trong deck và trên tay bạn.",
-      "desc_es": "EFECTO: Esta carta gana 700 de poder por cada \"Buster Dragon\" en tu deck y mano."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, ela ganha 500 de ATK para cada monstro DRAGON no campo e nos dois Cemitérios. Enquanto esta carta estiver em campo, os efeitos de todos os monstros DRAGON no campo são negados.",
+      "desc_en": "EFFECT: While this card is on the field, it gains 500 ATK for each DRAGON monster on the field and in both Graveyards. While this card is on the field, the effects of all DRAGON monsters on the field are negated.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, nó nhận thêm 500 ATK cho mỗi quái thú DRAGON trên sân và trong cả hai Mộ bài. Khi lá bài này còn trên sân, hiệu ứng của tất cả quái thú DRAGON trên sân đều bị vô hiệu hóa.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, gana 500 de ATK por cada monstruo DRAGON en el campo y en ambos Cementerios. Mientras esta carta esté en el campo, los efectos de todos los monstruos DRAGON en el campo son negados."
     },
     {
       "nome": "The Drdek",
@@ -17830,7 +18636,8 @@
       "desc_pt": "EFEITO: Este card em campo ganha 1000 de ATK para cada monstro \"The Forbidden\" no seu CEMITÉRIO. Imune a efeitos de redução de ATK e DEF.",
       "desc_en": "EFFECT: This card on the field gains 1000 ATK for each \"The Forbidden\" monster in your GRAVEYARD. Immune to ATK and DEF reduction effects.",
       "desc_vi": "HIỆU ỨNG: Lá bài này trên sân nhận 1000 ATK cho mỗi quái thú \"The Forbidden\" trong NGHĨA ĐỊA của bạn. Miễn nhiễm với hiệu ứng giảm ATK và DEF.",
-      "desc_es": "EFECTO: Esta carta en el campo gana 1000 ATK por cada monstruo \"The Forbidden\" en su CEMENTERIO. Inmune a efectos de reducción de ATK y DEF."
+      "desc_es": "EFECTO: Esta carta en el campo gana 1000 ATK por cada monstruo \"The Forbidden\" en su CEMENTERIO. Inmune a efectos de reducción de ATK y DEF.",
+      "full_art": true
     },
     {
       "nome": "The Little Swordsman of Aile",
@@ -17901,12 +18708,13 @@
       "nome": "The Sanctuary in the Sky",
       "nome_pt": "The Sanctuary in the Sky",
       "slug": "the_sanctuary_in_the_sky",
-      "card_type": "Spell",
-      "tipo": "spell continuous",
+      "card_type": "Field",
+      "tipo": "Field",
       "atributo": "SPELL",
       "raridade": "SR",
       "raridade_arquivo": "SR",
       "icone_atributo": "SPELL",
+      "icone_tipo": "field",
       "desc_pt": "EFEITO: Todos os monstros FAIRY no campo ganham 400 de ATK e DEF. Toda vez que um efeito de recuperar Pontos de Vida for ativado, os monstros FAIRY no seu campo ganham mais 100 de ATK e DEF.",
       "desc_en": "EFFECT: All FAIRY monsters on the field gain 400 ATK and DEF. Each time a Life Point recovery effect is activated, FAIRY monsters on your field gain an additional 100 ATK and DEF.",
       "desc_vi": "HIỆU ỨNG: Tất cả quái thú FAIRY trên sân nhận thêm 400 ATK và DEF. Mỗi khi một hiệu ứng hồi phục Điểm Sinh Mệnh được kích hoạt, các quái thú FAIRY trên sân của bạn nhận thêm 100 ATK và DEF.",
@@ -17994,7 +18802,8 @@
       "desc_pt": "EFEITO: Esta carta não pode ser destruída por batalha e/ou por efeitos de monstros. Esta carta em campo ganha 500 de DEF para cada carta de monstro \"Exodia\" ou \"The Forbidden\" no seu Cemitério.",
       "desc_en": "EFFECT: This card cannot be destroyed by battle and/or by monster effects. This card on the field gains 500 DEF for each \"Exodia\" or \"The Forbidden\" monster card in your Graveyard.",
       "desc_vi": "HIỆU ỨNG: Lá bài này không thể bị phá hủy do chiến đấu và/hoặc do hiệu ứng của quái thú. Lá bài này trên sân nhận thêm 500 DEF cho mỗi lá bài quái thú \"Exodia\" hoặc \"The Forbidden\" trong Mộ bài của bạn.",
-      "desc_es": "EFECTO: Esta carta no puede ser destruida por batalla y/o por efectos de monstruos. Esta carta en el campo gana 500 DEF por cada carta de monstruo \"Exodia\" o \"The Forbidden\" en tu Cementerio."
+      "desc_es": "EFECTO: Esta carta no puede ser destruida por batalla y/o por efectos de monstruos. Esta carta en el campo gana 500 DEF por cada carta de monstruo \"Exodia\" o \"The Forbidden\" en tu Cementerio.",
+      "full_art": true
     },
     {
       "nome": "The Wandering Doomed",
@@ -18162,7 +18971,8 @@
       "desc_pt": "\"Time Wizard\" + \"Baby Dragon\"",
       "desc_en": "\"Time Wizard\" + \"Baby Dragon\"",
       "desc_vi": "\"Time Wizard\" + \"Baby Dragon\"",
-      "desc_es": "\"Time Wizard\" + \"Baby Dragon\""
+      "desc_es": "\"Time Wizard\" + \"Baby Dragon\"",
+      "full_art": true
     },
     {
       "nome": "Three-legged Zombies",
@@ -18233,6 +19043,25 @@
       "desc_en": "EFFECT: When this card is summoned, all monsters on your opponent's field lose 500 ATK and DEF. This card is also treated as a THUNDER monster for Equip Cards.",
       "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, tất cả quái thú trên sân của đối thủ mất 500 ATK và DEF. Lá bài này cũng được xem là quái thú THUNDER đối với các lá Equip.",
       "desc_es": "EFECTO: Cuando esta carta sea invocada, todos los monstruos en el campo de tu oponente pierden 500 de ATK y DEF. Esta carta también se considera un monstruo THUNDER para efectos de Equipo."
+    },
+    {
+      "nome": "Tidal, Dragon Ruler of Waterfalls",
+      "nome_pt": "Tidal, Dragon Ruler of Waterfalls",
+      "slug": "tidal_dragon_ruler_of_waterfalls",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "WATER",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "WATER",
+      "icone_tipo": "dragon",
+      "nivel": "7",
+      "atk": "2600",
+      "def": "2000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada: envie 2 monstros WATER e/ou DRAGON aleatórios da sua mão e/ou do seu Deck para o Cemitério e, depois, embaralhe até 2 cartas aleatórias que seu oponente controla no Deck dele. Se esta carta for destruída: ganhe 1600 PV. Enquanto esta carta estiver em campo, os monstros \"Dragon Ruler\" que você controla não são afetados por efeitos de monstro do seu oponente, exceto esta. Esta carta ganha 700 de ATK no campo Umi.",
+      "desc_en": "EFFECT: When this card is Summoned: send 2 random WATER and/or DRAGON monsters from your hand and/or Deck to the Graveyard, then shuffle up to 2 random cards your opponent controls into their Deck. If this card is destroyed: gain 1600 LP. While this card is on the field, \"Dragon Ruler\" monsters you control are unaffected by your opponent's monster effects, except this one. This card gains 700 ATK on the Umi field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi 2 quái thú WATER và/hoặc DRAGON ngẫu nhiên từ tay và/hoặc Deck của bạn xuống Mộ bài, sau đó xáo trộn tối đa 2 lá bài ngẫu nhiên mà đối thủ điều khiển vào Deck của đối thủ. Nếu lá bài này bị phá hủy: nhận 1600 LP. Khi lá bài này ở trên sân, các quái thú \"Dragon Ruler\" mà bạn điều khiển không bị ảnh hưởng bởi hiệu ứng quái thú của đối thủ, ngoại trừ lá này. Lá bài này tăng 700 ATK trên sân Umi.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: envía 2 monstruos WATER y/o DRAGON aleatorios de tu mano y/o tu Deck al Cementerio y, después, baraja hasta 2 cartas aleatorias que tu oponente controle en su Deck. Si esta carta es destruida: gana 1600 LP. Mientras esta carta esté en el campo, los monstruos \"Dragon Ruler\" que controles no son afectados por efectos de monstruo de tu oponente, excepto esta. Esta carta gana 700 ATK en el campo Umi."
     },
     {
       "nome": "Tiger Axe",
@@ -18492,10 +19321,10 @@
       "nivel": "1",
       "atk": "100",
       "def": "100",
-      "desc_pt": "EFEITO: Aumente o poder dos monstros FROG que você controla em 1000 quando Invocado.",
-      "desc_en": "EFFECT: Increase the power of FROG monsters you control by 1000 when Summoned.",
-      "desc_vi": "HIỆU ỨNG: Tăng 1000 sức mạnh cho các quái thú FROG mà bạn điều khiển khi được Triệu hồi.",
-      "desc_es": "EFECTO: Aumenta el poder de los monstruos FROG que controlas en 1000 cuando es Invocado."
+      "desc_pt": "EFEITO: Enquanto esta carta estiver em campo, todos os monstros \"Frog\" no seu campo ganham 1000 de ATK e DEF.",
+      "desc_en": "EFFECT: While this card is on the field, all \"Frog\" monsters on your field gain 1000 ATK and DEF.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, tất cả quái thú \"Frog\" trên sân của bạn nhận thêm 1000 ATK và DEF.",
+      "desc_es": "EFECTO: Mientras esta carta esté en el campo, todos los monstruos \"Frog\" en tu campo ganan 1000 de ATK y DEF."
     },
     {
       "nome": "Tremendous Fire",
@@ -18563,6 +19392,26 @@
       "def": "900"
     },
     {
+      "nome": "Trident Dragion",
+      "nome_pt": "Trident Dragion",
+      "slug": "trident_dragion",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "10",
+      "atk": "3000",
+      "def": "2800",
+      "desc_pt": "EFEITO: Esta carta pode atacar até 3 vezes por turno, mas não pode atacar seu oponente diretamente.",
+      "desc_en": "EFFECT: This card can attack up to 3 times per turn, but it cannot attack your opponent directly.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này có thể tấn công tối đa 3 lần mỗi lượt, nhưng không thể tấn công trực tiếp đối thủ.",
+      "desc_es": "EFECTO: Esta carta puede atacar hasta 3 veces por turno, pero no puede atacar directamente a tu oponente.",
+      "full_art": true
+    },
+    {
       "nome": "Tripwire Beast",
       "nome_pt": "Tripwire Beast",
       "slug": "tripwire_beast",
@@ -18576,6 +19425,25 @@
       "nivel": "4",
       "atk": "1200",
       "def": "1300"
+    },
+    {
+      "nome": "Trishula, Dragon of the Ice Barrier",
+      "nome_pt": "Trishula, Dragon of the Ice Barrier",
+      "slug": "trishula_dragon_of_the_ice_barrier",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "WATER",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
+      "icone_atributo": "WATER",
+      "icone_tipo": "dragon",
+      "nivel": "9",
+      "atk": "2700",
+      "def": "2000",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, embaralhe 1 carta aleatória que seu oponente controla no Deck dele.",
+      "desc_en": "EFFECT: When this card is Summoned, shuffle 1 random card your opponent controls into their Deck.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, xáo trộn 1 lá bài ngẫu nhiên mà đối thủ điều khiển vào Deck của đối thủ.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada, baraja 1 carta aleatoria que tu oponente controla en su Deck."
     },
     {
       "nome": "Turtle Bird",
@@ -18800,6 +19668,25 @@
       "desc_en": "EFFECT: This card's original ATK becomes equal to the number of DINOSAUR-Type monsters in your Graveyard x 500.",
       "desc_vi": "HIỆU ỨNG: ATK gốc của lá bài này trở thành bằng số lượng quái thú hệ DINOSAUR trong Mộ của bạn x 500.",
       "desc_es": "EFECTO: El ATK original de esta carta se vuelve igual al número de monstruos de Tipo DINOSAUR en tu Cementerio x 500."
+    },
+    {
+      "nome": "Tyrant Dragon",
+      "nome_pt": "Tyrant Dragon",
+      "slug": "tyrant_dragon",
+      "card_type": "Monster",
+      "tipo": "Dragon",
+      "atributo": "FIRE",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "FIRE",
+      "icone_tipo": "dragon",
+      "nivel": "8",
+      "atk": "2900",
+      "def": "2500",
+      "desc_pt": "EFEITO: Durante a sua Fase de Batalha, se seu oponente controlar um monstro após o primeiro ataque desta carta, esta carta pode realizar um segundo ataque. Negue quaisquer efeitos de TRAP que tenham esta carta como alvo no campo.",
+      "desc_en": "EFFECT: During your Battle Phase, if your opponent controls a monster after this card's first attack, this card can make a second attack. Negate any TRAP effects that target this card on the field.",
+      "desc_vi": "HIỆU ỨNG: Trong Battle Phase của bạn, nếu đối thủ điều khiển một quái thú sau đòn tấn công đầu tiên của lá bài này, lá bài này có thể tấn công lần thứ hai. Vô hiệu hóa mọi hiệu ứng TRAP nhắm vào lá bài này trên sân.",
+      "desc_es": "EFECTO: Durante tu Battle Phase, si tu oponente controla un monstruo después del primer ataque de esta carta, esta carta puede realizar un segundo ataque. Niega cualquier efecto de TRAP que tenga como objetivo esta carta en el campo."
     },
     {
       "nome": "Tytannial, Princess of Camellias",
@@ -19951,10 +20838,10 @@
       "nivel": "5",
       "atk": "1600",
       "def": "1800",
-      "desc_pt": "EFEITO: Ganha +200 ATK se o Field ativo for Mountain.",
-      "desc_en": "EFFECT: Gains +200 ATK if the active Field is Mountain.",
-      "desc_vi": "HIỆU ỨNG: Nhận thêm +200 ATK nếu Field đang hoạt động là Mountain.",
-      "desc_es": "EFECTO: Gana +200 ATK si el Field activo es MOUNTAIN."
+      "desc_pt": "EFEITO: Esta carta também é considerada um monstro PYRO.",
+      "desc_en": "EFFECT: This card is also treated as a PYRO monster.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này cũng được coi là quái thú PYRO.",
+      "desc_es": "EFECTO: Esta carta también es considerada un monstruo PYRO."
     },
     {
       "nome": "Yamata Dragon",
@@ -20114,7 +21001,8 @@
       "icone_tipo": "fiend",
       "nivel": "7",
       "atk": "2600",
-      "def": "1900"
+      "def": "1900",
+      "full_art": true
     },
     {
       "nome": "Zombie Warrior",

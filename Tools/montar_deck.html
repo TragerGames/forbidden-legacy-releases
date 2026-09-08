@@ -727,10 +727,10 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="cofre-sub"><span data-lang="pt">cartas montadas para duelo</span><span data-lang="en">cards ready for the duel</span><span data-lang="es">cartas listas para el duelo</span><span data-lang="vi">thẻ sẵn sàng cho trận đấu</span></div>
     <div class="deck-lista" id="dlista"></div>
 
-    <button class="btn travado" id="gerar" disabled>&#128274; <span data-lang="pt">Gerar código do deck</span><span data-lang="en">Generate deck code</span><span data-lang="es">Generar código del mazo</span><span data-lang="vi">Tạo mã bộ bài</span></button>
+    <button class="btn travado" id="gerar" disabled><span data-lang="pt">Gerar código do deck</span><span data-lang="en">Generate deck code</span><span data-lang="es">Generar código del mazo</span><span data-lang="vi">Tạo mã bộ bài</span></button>
     <div class="aviso-breve">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.2v.1"/></svg>
-      <div><div data-lang="pt">O <b>código de deck</b> entra na <b>próxima atualização do jogo</b>. Assim que o Editor de Deck souber lê-lo, este botão libera aqui — seu deck continua salvo abaixo até lá.</div><div data-lang="en">The <b>deck code</b> arrives in the <b>next game update</b>. Once the Deck Editor can read it, this button unlocks here — your deck stays saved below until then.</div><div data-lang="es">El <b>código de mazo</b> llega en la <b>próxima actualización del juego</b>. Cuando el Editor de Mazos pueda leerlo, este botón se habilita aquí — tu mazo sigue guardado abajo hasta entonces.</div><div data-lang="vi"><b>Mã bộ bài</b> sẽ có trong <b>bản cập nhật tới của trò chơi</b>. Khi Trình sửa bộ bài đọc được, nút này sẽ mở ở đây — bộ bài của bạn vẫn được lưu bên dưới cho đến lúc đó.</div></div>
+      <div><div data-lang="pt">Gere o código e copie. No jogo, abra o <b>Editor de Deck</b> e clique em <b>CÓDIGO</b>, ao lado de BANLIST. Esse botão chega na <b>próxima atualização do jogo</b> — e o código que você gerar hoje continua valendo depois dela.</div><div data-lang="en">Generate the code and copy it. In the game, open the <b>Deck Editor</b> and click <b>DECK CODE</b>, next to BANLIST. That button arrives in the <b>next game update</b> — and the code you generate today keeps working after it.</div><div data-lang="es">Genera el código y cópialo. En el juego, abre el <b>Editor de Mazos</b> y pulsa <b>CÓDIGO</b>, junto a BANLIST. Ese botón llega en la <b>próxima actualización del juego</b> — y el código que generes hoy sigue valiendo después.</div><div data-lang="vi">Tạo mã và sao chép. Trong trò chơi, mở <b>Trình sửa bộ bài</b> và bấm <b>MÃ BỘ BÀI</b>, cạnh BANLIST. Nút đó sẽ có trong <b>bản cập nhật tới của trò chơi</b> — và mã bạn tạo hôm nay vẫn dùng được sau đó.</div></div>
     </div>
 
     <div class="btn-linha">
@@ -756,7 +756,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <button id="acao"></button>
       </div>
       <div class="msg" id="msg"></div>
-      <p class="seed-nota"><div data-lang="pt">No jogo, abra o <b>Editor de Deck</b> e use <b>Carregar código</b>. Lá o jogo entra com o que você <b>possui</b> — o site não tem como saber isso, e o jogo avisa o que faltou.</div><div data-lang="en">In the game, open the <b>Deck Editor</b> and use <b>Load code</b>. There the game brings in what you <b>own</b> — the site cannot know that, and the game tells you what was missing.</div><div data-lang="es">En el juego, abre el <b>Editor de Mazos</b> y usa <b>Cargar código</b>. Allí el juego entra con lo que <b>posees</b> — el sitio no puede saberlo, y el juego avisa qué faltó.</div><div data-lang="vi">Trong trò chơi, mở <b>Trình sửa bộ bài</b> và dùng <b>Tải mã</b>. Ở đó trò chơi chỉ nạp những thẻ bạn <b>sở hữu</b> — trang web không thể biết điều đó, và trò chơi sẽ báo những gì còn thiếu.</div></p>
+      <p class="seed-nota"><div data-lang="pt">No jogo, abra o <b>Editor de Deck</b> e use o botão <b>CÓDIGO</b>. Lá o jogo entra com o que você <b>possui</b> — o site não tem como saber isso, e o jogo avisa o que faltou.</div><div data-lang="en">In the game, open the <b>Deck Editor</b> and use the <b>DECK CODE</b> button. There the game brings in what you <b>own</b> — the site cannot know that, and the game tells you what was missing.</div><div data-lang="es">En el juego, abre el <b>Editor de Mazos</b> y usa el botón <b>CÓDIGO</b>. Allí el juego entra con lo que <b>posees</b> — el sitio no puede saberlo, y el juego avisa qué faltó.</div><div data-lang="vi">Trong trò chơi, mở <b>Trình sửa bộ bài</b> và dùng nút <b>MÃ BỘ BÀI</b>. Ở đó trò chơi chỉ nạp những thẻ bạn <b>sở hữu</b> — trang web không thể biết điều đó, và trò chơi sẽ báo những gì còn thiếu.</div></p>
     </div>
   </div>
 </div>
@@ -1122,8 +1122,11 @@ function sincDeck(){
   f.classList.toggle('cheio',deck.length===MAX);
   const mc=document.getElementById('deck-mobile-count');
   if(mc) mc.textContent=deck.length+'/40';
-  /* o gerar segue travado ate o jogo saber ler o codigo - nao depende do
-     tamanho do deck */
+  /* o gerar so depende de haver carta no deck */
+  const bg=document.getElementById('gerar');
+  const vazio=deck.length===0;
+  bg.classList.toggle('travado',vazio);
+  bg.disabled=vazio;
 
   const cats={Monster:0,Spell:0,Trap:0,Equip:0,Field:0};
   deck.forEach(n=>{const c=CARTAS.find(x=>x.nome===n); if(c&&cats[c.card_type]!==undefined) cats[c.card_type]++});
@@ -1204,7 +1207,7 @@ function lerSeed(x){
 }
 
 document.getElementById('gerar').onclick=()=>{
-  /* travado ate o jogo saber ler o codigo */
+  /* travado = deck vazio (sincDeck cuida do estado) */
   if(document.getElementById('gerar').classList.contains('travado')) return;
   modo='gerar';
   document.getElementById('seed-rot').textContent=t('seuCodigo');

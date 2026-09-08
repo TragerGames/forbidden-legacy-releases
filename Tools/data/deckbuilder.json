@@ -1,12 +1,18 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1788220566",
+  "versao": "1788898297",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
       "label": "Bestas Divinas",
       "cor": "#f4d64a",
       "max_in_deck": 4,
+      "scope": "monster"
+    },
+    "wicked_god": {
+      "label": "Deuses Malignos",
+      "cor": "#7a4dbf",
+      "max_in_deck": 3,
       "scope": "monster"
     },
     "board_wipe": {
@@ -54,7 +60,7 @@
     "attacker_lock": {
       "label": "Trava de atacante",
       "cor": "#c13cff",
-      "max_in_deck": 3,
+      "max_in_deck": 4,
       "scope": "support"
     },
     "battle_resistance": {
@@ -75,17 +81,89 @@
       "max_in_deck": 3,
       "scope": "monster"
     },
-    "self_growth": {
-      "label": "Crescimento proprio",
+    "self_define_poder": {
+      "label": "Monstro · Define o Próprio Poder",
+      "cor": "#b04ddb",
+      "max_in_deck": 2,
+      "scope": "monster"
+    },
+    "self_escala_arquetipo": {
+      "label": "Monstro · Cresce por Arquétipo",
       "cor": "#e8a33d",
       "max_in_deck": 8,
       "scope": "monster"
     },
-    "attack_boost": {
-      "label": "Bonus de ATK",
-      "cor": "#f2b447",
+    "self_escala_cemiterio": {
+      "label": "Monstro · Cresce pelo Cemitério",
+      "cor": "#9a7b4f",
+      "max_in_deck": 5,
+      "scope": "monster"
+    },
+    "self_escala_campo": {
+      "label": "Monstro · Cresce pelo Campo",
+      "cor": "#c98f3d",
+      "max_in_deck": 4,
+      "scope": "monster"
+    },
+    "self_escala_mao": {
+      "label": "Monstro · Cresce pela Mão",
+      "cor": "#d8b25a",
+      "max_in_deck": 5,
+      "scope": "monster"
+    },
+    "self_snowball_batalha": {
+      "label": "Monstro · Cresce em Batalha",
+      "cor": "#d9713d",
       "max_in_deck": 6,
-      "scope": "effect"
+      "scope": "monster"
+    },
+    "self_bonus_fixo": {
+      "label": "Monstro · Bônus Próprio Fixo",
+      "cor": "#c2a76a",
+      "max_in_deck": 6,
+      "scope": "monster"
+    },
+    "buff_equip_alto": {
+      "label": "Equip · Bônus Alto",
+      "cor": "#ff9d2e",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "buff_aura_alta_mon": {
+      "label": "Monstro · Aura Alta",
+      "cor": "#ffd166",
+      "max_in_deck": 3,
+      "scope": "monster"
+    },
+    "buff_equip_medio": {
+      "label": "Equip · Bônus Médio",
+      "cor": "#f2b447",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "buff_aura_media_mon": {
+      "label": "Monstro · Aura Média",
+      "cor": "#e8c063",
+      "max_in_deck": 8,
+      "scope": "monster"
+    },
+    "buff_equip_escala": {
+      "label": "Equip · Bônus Escalável",
+      "cor": "#d9a75f",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "buff_aura_escala_mon": {
+      "label": "Monstro · Aura Escalável",
+      "cor": "#c9a94e",
+      "max_in_deck": 3,
+      "scope": "monster"
+    },
+    "buff_aura_sup": {
+      "label": "Magia/Trap/Campo · Aura",
+      "cor": "#b8933f",
+      "max_in_deck": 2,
+      "scope": "support"
     },
     "burn_direct": {
       "label": "Burn direto",
@@ -117,17 +195,71 @@
       "max_in_deck": 5,
       "scope": "effect"
     },
-    "mill_pressure": {
-      "label": "Mill/Deck Out",
+    "mill_oponente": {
+      "label": "Monstro · Deck Out",
       "cor": "#9d77ff",
       "max_in_deck": 3,
       "scope": "monster"
     },
-    "power_lock": {
-      "label": "Controle de poder",
+    "mill_proprio": {
+      "label": "Monstro · Auto-Mill",
+      "cor": "#6b5aa8",
+      "max_in_deck": 40,
+      "scope": "monster"
+    },
+    "corte_poder_mon": {
+      "label": "Monstro · Corte de Poder",
+      "cor": "#3fae86",
+      "max_in_deck": 3,
+      "scope": "monster"
+    },
+    "corte_poder_sup": {
+      "label": "Magia/Trap · Corte de Poder",
+      "cor": "#2f8f6d",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "redefine_poder_opp": {
+      "label": "Redefine Poder do Oponente",
       "cor": "#46d39a",
-      "max_in_deck": 4,
+      "max_in_deck": 3,
       "scope": "effect"
+    },
+    "debuff_massa_mon": {
+      "label": "Monstro · Enfraquecimento em Massa",
+      "cor": "#5fbf9c",
+      "max_in_deck": 3,
+      "scope": "monster"
+    },
+    "debuff_massa_sup": {
+      "label": "Magia/Trap · Enfraquecimento em Massa",
+      "cor": "#4aa88a",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "debuff_alvo_mon": {
+      "label": "Monstro · Enfraquece Alvo",
+      "cor": "#7ad0b0",
+      "max_in_deck": 6,
+      "scope": "monster"
+    },
+    "debuff_alvo_sup": {
+      "label": "Magia/Trap · Enfraquece Alvo",
+      "cor": "#5cb896",
+      "max_in_deck": 2,
+      "scope": "support"
+    },
+    "mudanca_posicao_mon": {
+      "label": "Monstro · Muda Posição",
+      "cor": "#8fd6c0",
+      "max_in_deck": 5,
+      "scope": "monster"
+    },
+    "mudanca_posicao_sup": {
+      "label": "Magia/Trap · Muda Posição",
+      "cor": "#6dbfa6",
+      "max_in_deck": 3,
+      "scope": "support"
     },
     "battle_destroy": {
       "label": "Destruicao em batalha",
@@ -135,17 +267,59 @@
       "max_in_deck": 3,
       "scope": "monster"
     },
-    "removal_control": {
-      "label": "Remocao pontual forte",
+    "backrow_mon": {
+      "label": "Monstro · Limpa Magia/Trap",
+      "cor": "#4db5ff",
+      "max_in_deck": 5,
+      "scope": "monster"
+    },
+    "backrow_sup": {
+      "label": "Magia/Trap · Limpa Magia/Trap",
+      "cor": "#3a93d6",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "remocao_alvo_mon": {
+      "label": "Monstro · Remoção de Alvo",
       "cor": "#e66fcb",
+      "max_in_deck": 4,
+      "scope": "monster"
+    },
+    "remocao_alvo_sup": {
+      "label": "Magia/Trap · Remoção de Alvo",
+      "cor": "#c655ad",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "remocao_aleatoria": {
+      "label": "Remoção Aleatória",
+      "cor": "#d94fb0",
       "max_in_deck": 4,
       "scope": "effect"
     },
-    "backrow_wipe": {
-      "label": "Limpeza de magia/trap",
-      "cor": "#4db5ff",
-      "max_in_deck": 3,
+    "remocao_raca": {
+      "label": "Magia · Remoção por Raça",
+      "cor": "#b03d95",
+      "max_in_deck": 2,
       "scope": "effect"
+    },
+    "punicao_atacante": {
+      "label": "Trap · Pune o Atacante",
+      "cor": "#ff6d6d",
+      "max_in_deck": 2,
+      "scope": "effect"
+    },
+    "bounce_shuffle_mon": {
+      "label": "Monstro · Devolve ao Deck ou à Mão",
+      "cor": "#7fd1ff",
+      "max_in_deck": 3,
+      "scope": "monster"
+    },
+    "bounce_shuffle_sup": {
+      "label": "Magia/Trap · Devolve ao Deck ou à Mão",
+      "cor": "#5cb3e6",
+      "max_in_deck": 2,
+      "scope": "support"
     },
     "piercing_pressure": {
       "label": "Pressao/perfurante",
@@ -159,11 +333,59 @@
       "max_in_deck": 3,
       "scope": "monster"
     },
-    "evolution_accelerator": {
-      "label": "Acelerador/evolucao",
+    "acel_busca_mon": {
+      "label": "Monstro · Busca no Deck",
       "cor": "#d4e157",
+      "max_in_deck": 4,
+      "scope": "monster"
+    },
+    "acel_busca_sup": {
+      "label": "Magia/Trap · Busca no Deck",
+      "cor": "#b0c93a",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "acel_reposicao_mon": {
+      "label": "Monstro · Reposição",
+      "cor": "#9ccc65",
       "max_in_deck": 5,
-      "scope": "effect"
+      "scope": "monster"
+    },
+    "acel_reposicao_sup": {
+      "label": "Magia/Trap · Reposição",
+      "cor": "#7cb342",
+      "max_in_deck": 2,
+      "scope": "support"
+    },
+    "acel_revival_mon": {
+      "label": "Monstro · Ressurreição",
+      "cor": "#26c6da",
+      "max_in_deck": 4,
+      "scope": "monster"
+    },
+    "acel_revival_sup": {
+      "label": "Magia/Trap · Ressurreição",
+      "cor": "#0097a7",
+      "max_in_deck": 3,
+      "scope": "support"
+    },
+    "acel_auto_revival_mon": {
+      "label": "Monstro · Volta Sozinho",
+      "cor": "#4dd0b1",
+      "max_in_deck": 3,
+      "scope": "monster"
+    },
+    "acel_suporte_mon": {
+      "label": "Monstro · Monta Suporte",
+      "cor": "#aed581",
+      "max_in_deck": 4,
+      "scope": "monster"
+    },
+    "acel_suporte_sup": {
+      "label": "Magia/Trap · Monta Suporte",
+      "cor": "#8bc34a",
+      "max_in_deck": 2,
+      "scope": "support"
     },
     "exodia_piece": {
       "label": "Partes do Exodia",
@@ -172,13 +394,13 @@
       "scope": "monster"
     },
     "custom_monster": {
-      "label": "Cartas Custom",
+      "label": "Monstro · Carta Custom",
       "cor": "#f27ce0",
       "max_in_deck": 6,
       "scope": "monster"
     },
     "custom_support": {
-      "label": "Cartas Custom",
+      "label": "Magia/Trap · Carta Custom",
       "cor": "#f27ce0",
       "max_in_deck": 2,
       "scope": "support"
@@ -206,6 +428,7 @@
     "Poseidon, King of the Oceans": {
       "grupos": [
         "divine_beast",
+        "custom_monster",
         "lp_recovery"
       ],
       "limite": 1
@@ -213,6 +436,27 @@
     "Zorc Necrophades": {
       "grupos": [
         "divine_beast"
+      ],
+      "limite": 1
+    },
+    "The Wicked Eraser": {
+      "grupos": [
+        "wicked_god"
+      ],
+      "limite": 1
+    },
+    "The Wicked Avatar": {
+      "grupos": [
+        "wicked_god",
+        "backrow_mon",
+        "backrow_sup"
+      ],
+      "limite": 1
+    },
+    "The Wicked Dreadroot": {
+      "grupos": [
+        "wicked_god",
+        "strong_immunity"
       ],
       "limite": 1
     },
@@ -275,8 +519,7 @@
     },
     "Ocean Dragon Lord - Neo-Daedalus": {
       "grupos": [
-        "multi_attack",
-        "backrow_wipe"
+        "multi_attack"
       ]
     },
     "Catapult Turtle": {
@@ -296,8 +539,7 @@
     },
     "Dark Sage": {
       "grupos": [
-        "strong_immunity",
-        "self_growth"
+        "strong_immunity"
       ]
     },
     "Jinzo": {
@@ -374,126 +616,12 @@
     },
     "Maha Vailo": {
       "grupos": [
-        "equip_enabler_monster",
-        "self_growth"
+        "equip_enabler_monster"
       ]
     },
     "Gearfried The Iron Knight": {
       "grupos": [
         "equip_enabler_monster"
-      ]
-    },
-    "Axe of Despair": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Beast Fangs": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Bright Castle": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Chakra": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Electro-Whip": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Elegant Egotist": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Harpie Lady Sisters": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Horn of the Unicorn": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Insect Armor with Laser Cannon": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Invigoration": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Kunai with Chain": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Legendary Flame Lord": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Magic Formula": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Malevolent Nuzzler": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Master of Chaos": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Metalmorph": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Mystical Moon": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Salamandra": {
-      "grupos": [
-        "attack_boost",
-        "burn_conditional"
-      ]
-    },
-    "Shadow Spell": {
-      "grupos": [
-        "attack_boost",
-        "power_lock"
-      ]
-    },
-    "Sword of Dark Destruction": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Cerulean Sacred Phoenix of Nephthys": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Rosaria, the Stately Fallen Angel": {
-      "grupos": [
-        "attack_boost",
-        "lp_recovery"
       ]
     },
     "Hinotama": {
@@ -529,7 +657,8 @@
     "Ruddy Rose Dragon": {
       "grupos": [
         "burn_direct",
-        "backrow_wipe"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Curse of Dragon": {
@@ -550,6 +679,11 @@
     "Backfire": {
       "grupos": [
         "burn_recurring"
+      ]
+    },
+    "Salamandra": {
+      "grupos": [
+        "burn_conditional"
       ]
     },
     "Mine Golem": {
@@ -579,20 +713,17 @@
     },
     "Burning Spear": {
       "grupos": [
-        "burn_conditional",
-        "attack_boost"
+        "burn_conditional"
       ]
     },
     "Inferno Fire Blast": {
       "grupos": [
-        "burn_conditional",
-        "attack_boost"
+        "burn_conditional"
       ]
     },
     "Rock Bombardment": {
       "grupos": [
-        "burn_conditional",
-        "attack_boost"
+        "burn_conditional"
       ]
     },
     "Red-Eyes Flare Metal Dragon": {
@@ -617,8 +748,7 @@
     },
     "Infernal Flame Emperor": {
       "grupos": [
-        "burn_on_kill",
-        "self_growth"
+        "burn_on_kill"
       ]
     },
     "Meteor Black Comet Dragon": {
@@ -672,194 +802,19 @@
         "lp_recovery"
       ]
     },
-    "Magician of chaos": {
+    "Rosaria, the Stately Fallen Angel": {
       "grupos": [
-        "mill_pressure",
-        "battle_destroy"
-      ]
-    },
-    "Reaper of the Cards": {
-      "grupos": [
-        "mill_pressure"
-      ]
-    },
-    "Whispark Fairy Girl": {
-      "grupos": [
-        "mill_pressure",
-        "burn_direct"
-      ]
-    },
-    "Whispering Fairy": {
-      "grupos": [
-        "mill_pressure"
-      ]
-    },
-    "Dark Magician of Chaos": {
-      "grupos": [
-        "mill_pressure"
-      ]
-    },
-    "Blue-Eyes Chaos MAX Dragon": {
-      "grupos": [
-        "power_lock",
-        "piercing_pressure"
-      ]
-    },
-    "Dark Paladin": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Reverse Trap": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Sorcerer of Dark Magic": {
-      "grupos": [
-        "power_lock",
-        "backrow_wipe"
-      ]
-    },
-    "Little-Winguard": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Paladin of White Dragon": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Lord of D.": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "The Masked Beast": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Shrink": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Acid Trap Hole": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Breath of Light": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Crush Card": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Dark Magician Girl the Dragon Knight": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Des Frog": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Dragon Capture Jar": {
-      "grupos": [
-        "removal_control"
+        "lp_recovery"
       ]
     },
     "Eatgaboon": {
       "grupos": [
-        "removal_control"
+        "punicao_atacante"
       ]
     },
-    "Eradicating Aerosol": {
+    "Blue-Eyes Chaos MAX Dragon": {
       "grupos": [
-        "removal_control"
-      ]
-    },
-    "Eternal Draught": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Eternal Rest": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Goblin Fan": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "House of Adhesive Tape": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Invisible Wire": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Stain Storm": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Timaeus the United Dragon": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Warrior Elimination": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Armed Dragon LV5": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Armed Dragon LV7": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Armed Dragon LV10": {
-      "grupos": [
-        "removal_control",
-        "self_growth"
-      ]
-    },
-    "Danger! Thunderbird!": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Fiend Skull Dragon": {
-      "grupos": [
-        "backrow_wipe"
-      ]
-    },
-    "Harpie's Feather Duster": {
-      "grupos": [
-        "backrow_wipe"
-      ]
-    },
-    "Sacred Phoenix of Nephthys": {
-      "grupos": [
-        "backrow_wipe"
+        "piercing_pressure"
       ]
     },
     "Dark Cavalry": {
@@ -909,18 +864,12 @@
     },
     "Kaibaman": {
       "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "The White Stone of Legend": {
-      "grupos": [
-        "evolution_accelerator"
+        "acel_busca_mon"
       ]
     },
     "Level Up!": {
       "grupos": [
-        "evolution_accelerator",
-        "attack_boost"
+        "acel_busca_sup"
       ]
     },
     "Right Leg of the Forbidden One": {
@@ -965,8 +914,7 @@
     },
     "Blue-Eyes Darkness Corrupted Dragon": {
       "grupos": [
-        "custom_monster",
-        "self_growth"
+        "custom_monster"
       ]
     },
     "Blue-Eyes Twin Corrupted Burst-Dragon": {
@@ -979,10 +927,39 @@
         "custom_monster"
       ]
     },
-    "Lord of Souls": {
+    "Darksaurus": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Efreet, Spirit of the Ancestral Flame": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Legendary - Necro Rex": {
       "grupos": [
         "custom_monster",
-        "self_growth"
+        "battle_resistance"
+      ]
+    },
+    "Legendary DinoBEAST - T. Rex": {
+      "grupos": [
+        "custom_monster",
+        "battle_resistance"
+      ]
+    },
+    "Legendary DinoBEAST - Threeranno": {
+      "grupos": [
+        "custom_monster",
+        "triple_attack",
+        "multi_attack",
+        "strong_immunity"
+      ]
+    },
+    "Lord of Souls": {
+      "grupos": [
+        "custom_monster"
       ]
     },
     "Red-Eyes Absolut Darkness Dragon": {
@@ -994,12 +971,6 @@
     "Sea Serpent of the Oceanic Void": {
       "grupos": [
         "custom_monster"
-      ]
-    },
-    "Efreet, Spirit of the Ancestral Flame": {
-      "grupos": [
-        "custom_monster",
-        "self_growth"
       ]
     },
     "Evil Swords of Dark Light": {
@@ -1017,16 +988,6 @@
         "piercing_pressure"
       ]
     },
-    "Amphibian Beast": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Ancient Gear": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Ancient Gear Cannon": {
       "grupos": [
         "burn_direct"
@@ -1034,7 +995,8 @@
     },
     "Ancient Gear Engineer": {
       "grupos": [
-        "backrow_wipe"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Ancient Gear Golem": {
@@ -1048,56 +1010,24 @@
         "burn_on_kill"
       ]
     },
-    "Aqua Dragon": {
+    "Armed Dragon LV5": {
       "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Aqua Jet": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Archfiend Emperor": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Archfiend Empress": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Archfiend's Manifestation": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Arisen Gaia the Fierce Knight": {
-      "grupos": [
-        "evolution_accelerator"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Armored Cybern": {
       "grupos": [
-        "self_growth",
         "burn_direct"
       ]
     },
     "Aromaseraphy Rosemary": {
       "grupos": [
-        "self_growth",
         "lp_recovery"
-      ]
-    },
-    "Attack The Moon!": {
-      "grupos": [
-        "attack_boost"
       ]
     },
     "Avenging Knight Parshath": {
       "grupos": [
-        "power_lock",
         "piercing_pressure"
       ]
     },
@@ -1111,39 +1041,9 @@
         "lp_recovery"
       ]
     },
-    "Battleguard Cadet": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Battleguard King": {
       "grupos": [
         "piercing_pressure"
-      ]
-    },
-    "Bear Trap": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Beast King Barbaros": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Beast Machine King Barbaros": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Beautiful Beast Trainer": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Beginning Knight": {
-      "grupos": [
-        "evolution_accelerator"
       ]
     },
     "Beta Evolution Pill - Ultranscedance": {
@@ -1151,72 +1051,34 @@
         "fusion_substitute"
       ]
     },
-    "Bickuribox": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Black Dragon's Chick": {
       "grupos": [
-        "evolution_accelerator"
+        "fusion_substitute"
       ]
     },
     "Black Luster Soldier - Envoy of the Beginning": {
       "grupos": [
-        "multi_attack",
-        "removal_control"
-      ]
-    },
-    "Black Luster Soldier - Envoy of the Evening Twilight": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Black Luster Soldier - Sacred Soldier": {
-      "grupos": [
-        "removal_control"
+        "multi_attack"
       ]
     },
     "Black Luster Soldier - Soldier of Light and Darkness": {
       "grupos": [
-        "battle_resistance",
-        "self_growth"
+        "battle_resistance"
       ]
     },
     "Black Luster Soldier - Super Soldier": {
       "grupos": [
-        "burn_on_kill",
-        "evolution_accelerator"
+        "burn_on_kill"
       ]
     },
-    "Black Metal Dragon": {
+    "Blaster, Dragon Ruler of Infernos": {
       "grupos": [
-        "evolution_accelerator"
+        "piercing_pressure"
       ]
     },
-    "Black Pendant": {
+    "Burner, Dragon Ruler of Sparks": {
       "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Blade Knight": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Blue-Eyes Shining Dragon": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Book of Secret Arts": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Buster Blader": {
-      "grupos": [
-        "self_growth"
+        "burn_direct"
       ]
     },
     "Call of the Haunted": {
@@ -1225,85 +1087,20 @@
         "attack_negation"
       ]
     },
-    "Castle of Dark Illusions": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Cestus of Dagla": {
       "grupos": [
-        "attack_boost",
         "lp_recovery"
       ]
     },
-    "Chaos Sorcerer": {
+    "Chasma, Dragon Ruler of Auroras": {
       "grupos": [
-        "power_lock"
-      ]
-    },
-    "Chimera the King of Phantom Beasts": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Chimeratech Fortress Dragon": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Chimeratech Megafleet Dragon": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Chimeratech Overdragon": {
-      "grupos": [
-        "self_growth"
+        "battle_resistance"
       ]
     },
     "Chimeratech Rampage Dragon": {
       "grupos": [
-        "backrow_wipe"
-      ]
-    },
-    "Codarus": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Command Knight": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Condemned Darklord": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Copycat": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Crab Turtle": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Criosphinx": {
-      "grupos": [
-        "mill_pressure"
-      ]
-    },
-    "Curse of Dragon, the Cursed Dragon": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Cyber Archfiend": {
-      "grupos": [
-        "attack_boost"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Cyber Barrier Dragon": {
@@ -1311,56 +1108,8 @@
         "attack_negation"
       ]
     },
-    "Cyber Dinosaur": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Cyber Dragon": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Cyber Dragon Core": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Cyber Dragon Drei": {
-      "grupos": [
-        "attack_boost",
-        "power_lock"
-      ]
-    },
-    "Cyber Dragon Infinity": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Cyber Dragon Nachster": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Cyber Dragon Nova": {
-      "grupos": [
-        "self_growth",
-        "evolution_accelerator"
-      ]
-    },
-    "Cyber Dragon Vier": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Cyber Dragon Zwei": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Cyber Eltanin": {
       "grupos": [
-        "self_growth",
         "burn_on_kill"
       ]
     },
@@ -1370,37 +1119,14 @@
         "piercing_pressure"
       ]
     },
-    "Cyber Eternity Dragon": {
-      "grupos": [
-        "power_lock",
-        "evolution_accelerator"
-      ]
-    },
-    "Cyber Jar": {
-      "grupos": [
-        "mill_pressure"
-      ]
-    },
-    "Cyber Kirin": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
     "Cyber Larva": {
       "grupos": [
-        "battle_resistance",
-        "evolution_accelerator"
-      ]
-    },
-    "Cyber Laser Dragon": {
-      "grupos": [
-        "removal_control"
+        "battle_resistance"
       ]
     },
     "Cyber Phoenix": {
       "grupos": [
-        "strong_immunity",
-        "evolution_accelerator"
+        "strong_immunity"
       ]
     },
     "Cyber Repair Plant": {
@@ -1413,11 +1139,6 @@
         "strong_immunity"
       ]
     },
-    "Cyber Shield": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Cyber Twin Dragon": {
       "grupos": [
         "multi_attack"
@@ -1425,58 +1146,32 @@
     },
     "Cyber Valley": {
       "grupos": [
-        "battle_destroy",
-        "evolution_accelerator"
-      ]
-    },
-    "Cyberdark Dragon": {
-      "grupos": [
-        "self_growth"
+        "battle_destroy"
       ]
     },
     "Cyberdark Edge": {
       "grupos": [
-        "direct_attack",
-        "self_growth"
+        "direct_attack"
       ]
     },
     "Cyberdark Horn": {
       "grupos": [
-        "self_growth",
         "piercing_pressure"
       ]
     },
     "Cybernetic Hidden Technology": {
       "grupos": [
-        "attack_negation",
-        "mill_pressure"
-      ]
-    },
-    "Cybernetic Magician": {
-      "grupos": [
-        "attack_boost"
+        "attack_negation"
       ]
     },
     "Cybernetic Overflow": {
       "grupos": [
-        "attack_negation",
-        "evolution_accelerator"
-      ]
-    },
-    "D.3.S. Frog": {
-      "grupos": [
-        "self_growth"
+        "attack_negation"
       ]
     },
     "Damage Polarizer": {
       "grupos": [
-        "spell_negation",
-        "mill_pressure"
-      ]
-    },
-    "Dark Energy": {
-      "grupos": [
-        "attack_boost"
+        "spell_negation"
       ]
     },
     "Dark Flare Knight": {
@@ -1489,57 +1184,34 @@
         "strong_immunity"
       ]
     },
-    "Dark Lucius LV6": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Dark Lucius LV8": {
       "grupos": [
         "strong_immunity",
         "battle_resistance"
       ]
     },
-    "Dark Magician Girl": {
+    "Dark Paladin": {
       "grupos": [
-        "self_growth"
-      ]
-    },
-    "Dark Mirror Force": {
-      "grupos": [
-        "power_lock"
+        "board_wipe",
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Dark Tyranno": {
       "grupos": [
-        "direct_attack",
-        "evolution_accelerator"
+        "direct_attack"
       ]
     },
-    "Darklord Asmodeus": {
+    "Darklord Amdusc": {
       "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Darklord Dance": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Darklord Djehuty": {
-      "grupos": [
-        "evolution_accelerator"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Darklord Edeh Arae": {
       "grupos": [
         "lp_recovery",
         "piercing_pressure"
-      ]
-    },
-    "Darklord Gulgalta": {
-      "grupos": [
-        "attack_boost"
       ]
     },
     "Darklord Marie": {
@@ -1551,6 +1223,12 @@
       "grupos": [
         "strong_immunity",
         "lp_recovery"
+      ]
+    },
+    "Darklord Nasten": {
+      "grupos": [
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Darklord Nergal": {
@@ -1569,11 +1247,6 @@
         "attack_negation"
       ]
     },
-    "Darklord Tezcatlipoca": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
     "Darklord Ukoback": {
       "grupos": [
         "battle_destroy"
@@ -1584,39 +1257,14 @@
         "lp_recovery"
       ]
     },
-    "Darklord Zerato": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Darksaurus": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Despair From The Dark": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Destruction Ring": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
     "Dimension Sphinx": {
       "grupos": [
         "burn_on_kill"
       ]
     },
-    "Divine Wrath": {
+    "Divine Dragon Titanomakhia": {
       "grupos": [
-        "removal_control"
-      ]
-    },
-    "Dokurorider": {
-      "grupos": [
-        "self_growth"
+        "battle_resistance"
       ]
     },
     "Double Evolution Pill": {
@@ -1624,14 +1272,20 @@
         "fusion_substitute"
       ]
     },
-    "Dragon Spirit of White": {
+    "Dragon Shield": {
       "grupos": [
-        "backrow_wipe"
+        "battle_resistance"
       ]
     },
-    "Dragon Treasure": {
+    "Dragon Spirit of White": {
       "grupos": [
-        "attack_boost"
+        "backrow_mon",
+        "backrow_sup"
+      ]
+    },
+    "Dragon's Rage": {
+      "grupos": [
+        "piercing_pressure"
       ]
     },
     "Draining Shield": {
@@ -1639,14 +1293,14 @@
         "lp_recovery"
       ]
     },
-    "Dwarf Star Dragon Planeter": {
+    "Eclipse, Dragon Ruler of Catastrophes": {
       "grupos": [
-        "self_growth"
+        "direct_attack"
       ]
     },
-    "E - Emergency Call": {
+    "Element Dragon": {
       "grupos": [
-        "evolution_accelerator"
+        "multi_attack"
       ]
     },
     "Elemental HERO Bladedge": {
@@ -1689,14 +1343,10 @@
         "burn_on_kill"
       ]
     },
-    "Elemental HERO Shining Phoenix Enforcer": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Elemental HERO Wild Wingman": {
       "grupos": [
-        "backrow_wipe"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Elemental HERO Wildheart": {
@@ -1704,59 +1354,9 @@
         "strong_immunity"
       ]
     },
-    "Elf's Light": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Enraged Muka Muka": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Envoy of Chaos": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Evening Twilight Knight": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Evocator Chevalier": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Evolution Burst": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Exodia Necross": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Exodia, the Legendary Defender": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Exodius the Ultimate Forbidden Lord": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Exxod, Master of The Guard": {
       "grupos": [
         "burn_conditional"
-      ]
-    },
-    "Fallen Angel of Roses": {
-      "grupos": [
-        "attack_boost"
       ]
     },
     "Fire Sorcerer": {
@@ -1764,36 +1364,42 @@
         "burn_direct"
       ]
     },
+    "First of the Dragonlords": {
+      "grupos": [
+        "strong_immunity",
+        "battle_resistance"
+      ]
+    },
+    "First of the Dragons": {
+      "grupos": [
+        "strong_immunity",
+        "battle_resistance"
+      ]
+    },
+    "Five-Headed Dragon": {
+      "grupos": [
+        "battle_resistance"
+      ]
+    },
     "Flame Cerebrus": {
       "grupos": [
         "triple_attack"
       ]
     },
-    "Follow Wind": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Fossil Dragon Skullgar": {
       "grupos": [
-        "power_lock",
         "piercing_pressure"
       ]
     },
     "Fossil Dragon Skullgios": {
       "grupos": [
-        "self_growth",
         "piercing_pressure"
-      ]
-    },
-    "Freya, Spirit of Victory": {
-      "grupos": [
-        "attack_boost"
       ]
     },
     "Frostosaurus": {
       "grupos": [
-        "backrow_wipe"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Fushi No Tori": {
@@ -1802,85 +1408,26 @@
         "lp_recovery"
       ]
     },
-    "Fusilier Dragon": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Gagagigo": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Gaia the Fierce Knight Origin": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Gaia the Magical Knight": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Gaia the Magical Knight of Dragons": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Gaia, the Mid-Knight Sun": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Gaia, the Polar Knight": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Gate Guardian of Thunder and Wind": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Gate Guardian of Water and Thunder": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Gate Guardian of Wind and Water": {
       "grupos": [
-        "backrow_wipe"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Gearfried the Red-Eyes Iron Knight": {
       "grupos": [
-        "backrow_wipe"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Gearfried the Swordmaster": {
       "grupos": [
-        "power_lock"
-      ]
-    },
-    "Giga Gagagigo": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Gigantic Cephalotus": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Gigaplant": {
-      "grupos": [
-        "attack_boost"
+        "explosive_equip"
       ]
     },
     "Gilford the Legend": {
       "grupos": [
-        "equip_enabler_monster",
-        "self_growth"
+        "equip_enabler_monster"
       ]
     },
     "Gilti-Gearfried The Magical Steel Knight": {
@@ -1888,20 +1435,15 @@
         "multi_attack"
       ]
     },
-    "Great Moth": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
     "H - Heated Heart": {
       "grupos": [
-        "attack_boost",
         "piercing_pressure"
       ]
     },
-    "Heavy Mech Support Platform": {
+    "Harpie's Feather Duster": {
       "grupos": [
-        "attack_boost"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Hero Heart": {
@@ -1914,34 +1456,19 @@
         "battle_resistance"
       ]
     },
-    "Horn of Light": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Horus the Black Flame Dragon LV4": {
       "grupos": [
         "burn_direct"
       ]
     },
+    "House of Adhesive Tape": {
+      "grupos": [
+        "punicao_atacante"
+      ]
+    },
     "Humanoid Worm Drake": {
       "grupos": [
         "burn_conditional"
-      ]
-    },
-    "Indulged Darklord": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Infernal Incinerator": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Inferno": {
-      "grupos": [
-        "attack_boost"
       ]
     },
     "Jam Defender": {
@@ -1959,40 +1486,9 @@
         "board_wipe"
       ]
     },
-    "Jurassic Power": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Kairyu-Shin": {
-      "grupos": [
-        "attack_boost",
-        "power_lock"
-      ]
-    },
-    "Kaiser Glider": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Kaiser Sea Horse": {
       "grupos": [
         "fusion_substitute"
-      ]
-    },
-    "King Dragun": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "King of the Feral Imps": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "King of The Skull Servants": {
-      "grupos": [
-        "self_growth"
       ]
     },
     "King Pyron": {
@@ -2000,67 +1496,9 @@
         "burn_direct"
       ]
     },
-    "Laser Cannon Armor": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Lava Battleguard": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Legendary - Necro Rex": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Legendary DinoBEAST - T. Rex": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Legendary DinoBEAST - Threeranno": {
-      "grupos": [
-        "triple_attack",
-        "multi_attack",
-        "strong_immunity",
-        "power_lock"
-      ]
-    },
-    "Legendary Sword": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Levia-Dragon - Daedalus": {
       "grupos": [
         "board_wipe"
-      ]
-    },
-    "Lightning Blade": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Lightning Tricorn": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Little Chimera": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Lord Gaia the Fierce Knight": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Lord of the Red": {
-      "grupos": [
-        "self_growth"
       ]
     },
     "Mach Mega Falcon": {
@@ -2069,29 +1507,9 @@
         "lp_recovery"
       ]
     },
-    "Machine Conversion Factory": {
+    "Magician of chaos": {
       "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Machine King": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Magi Magi Magician": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Magician of Black Chaos": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Magician of Faith": {
-      "grupos": [
-        "attack_boost"
+        "battle_destroy"
       ]
     },
     "Maiden of the Moonlight": {
@@ -2109,29 +1527,9 @@
         "multi_attack"
       ]
     },
-    "Megarock Dragon": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Metalzoa": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Meteor Dragon Red-Eyes Impact": {
       "grupos": [
         "battle_resistance"
-      ]
-    },
-    "Millennium Golem": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Mirror of Yata": {
-      "grupos": [
-        "attack_boost"
       ]
     },
     "Monk Fighter": {
@@ -2139,56 +1537,30 @@
         "battle_resistance"
       ]
     },
-    "Muka Muka": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Mystic Swordsman LV4": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Mystic Swordsman LV6": {
       "grupos": [
-        "self_growth",
         "piercing_pressure"
       ]
     },
     "Mystical Space Typhoon": {
       "grupos": [
-        "backrow_wipe"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
-    "Naturia Beast": {
+    "Nebulis, Dragon Ruler of Mishaps": {
       "grupos": [
-        "self_growth"
-      ]
-    },
-    "Naturia Exterio": {
-      "grupos": [
-        "self_growth"
+        "direct_attack"
       ]
     },
     "Neo-Parshath, the Sky Paladin": {
       "grupos": [
-        "self_growth",
         "piercing_pressure"
       ]
     },
     "Paladin of Dark Dragon": {
       "grupos": [
         "piercing_pressure"
-      ]
-    },
-    "Perfect Machine King": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Perfectly Ultimate Great Moth": {
-      "grupos": [
-        "attack_boost"
       ]
     },
     "Pharaonic Guardian Sphinx": {
@@ -2198,18 +1570,12 @@
     },
     "Power Bond": {
       "grupos": [
-        "attack_boost",
         "burn_conditional"
       ]
     },
-    "Power of Kaishin": {
+    "Prime Material Dragon": {
       "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Predaplant Chimerafflesia": {
-      "grupos": [
-        "self_growth"
+        "lp_recovery"
       ]
     },
     "Proto-cyber Dragon": {
@@ -2217,49 +1583,15 @@
         "fusion_substitute"
       ]
     },
-    "Pumpking the King of Ghosts": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Pyramid of Light": {
       "grupos": [
         "attack_negation"
       ]
     },
-    "Queen of Autumn Leaves": {
+    "R - Righteous Justice": {
       "grupos": [
-        "self_growth"
-      ]
-    },
-    "Rabid Horseman": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Red-Eyes Archfiend of Lightning": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Red-Eyes Baby Dragon": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Red-Eyes Dark Dragoon": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Red-Eyes Darkness Dragon": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Red-Eyes Darkness Metal Dragon": {
-      "grupos": [
-        "evolution_accelerator"
+        "backrow_mon",
+        "backrow_sup"
       ]
     },
     "Red-Eyes Fang with Chain": {
@@ -2267,14 +1599,9 @@
         "multi_attack"
       ]
     },
-    "Red-Eyes Retro Dragon": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
     "Red-Eyes Slash Dragon": {
       "grupos": [
-        "evolution_accelerator"
+        "strong_immunity"
       ]
     },
     "Red-Eyes Toon Dragon": {
@@ -2282,24 +1609,9 @@
         "direct_attack"
       ]
     },
-    "Red-Eyes Wyvern": {
+    "Redox, Dragon Ruler of Boulders": {
       "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Red-Eyes Zombie Dragon": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Red-Eyes Zombie Dragon Lord": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Release Restraint": {
-      "grupos": [
-        "removal_control"
+        "strong_immunity"
       ]
     },
     "Revival Jam": {
@@ -2307,31 +1619,9 @@
         "battle_resistance"
       ]
     },
-    "Rigorous Reaver": {
-      "grupos": [
-        "mill_pressure",
-        "power_lock"
-      ]
-    },
-    "Ring of Destruction": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Roaring Ocean Snake": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
     "Rocket Warrior": {
       "grupos": [
-        "battle_resistance",
-        "power_lock"
-      ]
-    },
-    "Rose Spectre of Dunn": {
-      "grupos": [
-        "attack_boost"
+        "battle_resistance"
       ]
     },
     "Ryu Senshi": {
@@ -2344,35 +1634,9 @@
         "piercing_pressure"
       ]
     },
-    "Sakuretsu Armor": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Sauropod Brachion": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Sengenjin": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Shield & Sword": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Shining Angel": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Silent Swordsman LV5": {
       "grupos": [
-        "strong_immunity",
-        "power_lock"
+        "strong_immunity"
       ]
     },
     "Silent Swordsman LV7": {
@@ -2380,45 +1644,9 @@
         "strong_immunity"
       ]
     },
-    "Silver Bow and Arrow": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Simorgh, Bird of Divinity": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Skelgon": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Skull Dice": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Skull Guardian": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Skull Knight": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Sky Galloping Gaia the Dragon Champion": {
       "grupos": [
-        "power_lock",
         "piercing_pressure"
-      ]
-    },
-    "Soldier Gaia the Fierce Knight": {
-      "grupos": [
-        "removal_control"
       ]
     },
     "Solemn Wishes": {
@@ -2426,19 +1654,9 @@
         "lp_recovery"
       ]
     },
-    "Soul of Fire": {
+    "Spectral, Dragon Ruler of Flickers": {
       "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Sparkhearts Girl": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Sphinx of the Cycle": {
-      "grupos": [
-        "power_lock"
+        "battle_resistance"
       ]
     },
     "Sphinx Teleia": {
@@ -2446,29 +1664,14 @@
         "burn_on_kill"
       ]
     },
-    "Spirit Illusion": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Spirit of Flames": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Steel Shell": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
     "Stone Statue of the Aztecs": {
       "grupos": [
         "piercing_pressure"
       ]
     },
-    "Stop Defense": {
+    "Stream, Dragon Ruler of Droplets": {
       "grupos": [
-        "power_lock"
+        "lp_recovery"
       ]
     },
     "Submarine Frog": {
@@ -2476,15 +1679,9 @@
         "piercing_pressure"
       ]
     },
-    "Summoned Skull": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
     "Super Conductor Tyranno": {
       "grupos": [
-        "burn_direct",
-        "power_lock"
+        "burn_direct"
       ]
     },
     "Super Robolady": {
@@ -2492,19 +1689,9 @@
         "direct_attack"
       ]
     },
-    "Super Roboyarou": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Super Soldier Shield": {
       "grupos": [
         "attack_negation"
-      ]
-    },
-    "Super Soldier Soul": {
-      "grupos": [
-        "self_growth"
       ]
     },
     "Super Strident Blaze": {
@@ -2512,19 +1699,9 @@
         "multi_attack"
       ]
     },
-    "Super War-Lion": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Survival of the Fittest": {
       "grupos": [
         "multi_attack"
-      ]
-    },
-    "Sword of Dark Rites": {
-      "grupos": [
-        "attack_boost"
       ]
     },
     "Sword of Kusanagi": {
@@ -2535,48 +1712,28 @@
     },
     "Swords of Revealing Light": {
       "grupos": [
-        "power_lock"
+        "attacker_lock"
       ]
     },
-    "Tethys, Goddess of Light": {
+    "Tempest, Dragon Ruler of Storms": {
       "grupos": [
-        "attack_boost"
+        "strong_immunity"
       ]
     },
-    "The A. Forces": {
+    "Tenpai Dragon Fadra": {
       "grupos": [
-        "attack_boost"
+        "battle_resistance"
       ]
     },
-    "The Creator Incarnate": {
+    "Tenpai Dragon Paidra": {
       "grupos": [
-        "power_lock"
-      ]
-    },
-    "The Dark Magicians": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "The Dragon Destroyer": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "The Fiend Megacyber": {
-      "grupos": [
-        "attack_boost"
+        "battle_resistance"
       ]
     },
     "The First Darklord": {
       "grupos": [
         "strong_immunity",
         "lp_recovery"
-      ]
-    },
-    "The Legendary Exodia Incarnate": {
-      "grupos": [
-        "self_growth"
       ]
     },
     "The Sanctified Darklord": {
@@ -2586,7 +1743,6 @@
     },
     "The Sanctuary in the Sky": {
       "grupos": [
-        "attack_boost",
         "lp_recovery"
       ]
     },
@@ -2600,25 +1756,15 @@
         "battle_resistance"
       ]
     },
-    "The Wicked Dreadroot": {
-      "grupos": [
-        "strong_immunity",
-        "power_lock"
-      ]
-    },
-    "Theinen the Great Sphinx": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
     "Thunder Dragon Titan": {
       "grupos": [
         "triple_attack"
       ]
     },
-    "Thunder Unicorn": {
+    "Tidal, Dragon Ruler of Waterfalls": {
       "grupos": [
-        "power_lock"
+        "strong_immunity",
+        "lp_recovery"
       ]
     },
     "Toon Black Luster Soldier": {
@@ -2631,15 +1777,10 @@
         "board_wipe"
       ]
     },
-    "Treasure Panda": {
+    "Trident Dragion": {
       "grupos": [
-        "mill_pressure",
-        "evolution_accelerator"
-      ]
-    },
-    "Treeborn Frog": {
-      "grupos": [
-        "attack_boost"
+        "triple_attack",
+        "multi_attack"
       ]
     },
     "Twin Swords of Flashing Light - Tryce": {
@@ -2649,8 +1790,13 @@
     },
     "Twin-Headed Fire Dragon": {
       "grupos": [
-        "attack_boost",
         "burn_direct"
+      ]
+    },
+    "Tyrant Dragon": {
+      "grupos": [
+        "multi_attack",
+        "strong_immunity"
       ]
     },
     "Tytannial, Princess of Camellias": {
@@ -2665,55 +1811,17 @@
     },
     "Ultimate Baseball Kid": {
       "grupos": [
-        "self_growth",
         "burn_on_kill"
       ]
     },
     "Ultimate Flame Swordsman": {
       "grupos": [
-        "self_growth",
         "burn_recurring"
-      ]
-    },
-    "Ultimate Insect LV3": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Ultimate Insect LV5": {
-      "grupos": [
-        "power_lock"
-      ]
-    },
-    "Ultimate Insect LV7": {
-      "grupos": [
-        "power_lock"
       ]
     },
     "Ultimate Obedient Fiend": {
       "grupos": [
-        "battle_resistance",
-        "mill_pressure"
-      ]
-    },
-    "Unexpected Dai": {
-      "grupos": [
-        "evolution_accelerator"
-      ]
-    },
-    "Vennu, Bright Bird of Divinity": {
-      "grupos": [
-        "self_growth"
-      ]
-    },
-    "Vile Germs": {
-      "grupos": [
-        "attack_boost"
-      ]
-    },
-    "Violet Crystal": {
-      "grupos": [
-        "attack_boost"
+        "battle_resistance"
       ]
     },
     "Waboku": {
@@ -2721,41 +1829,19 @@
         "battle_resistance"
       ]
     },
-    "Wall of Illusion": {
+    "Whispark Fairy Girl": {
       "grupos": [
-        "power_lock"
-      ]
-    },
-    "Weapon Change": {
-      "grupos": [
-        "power_lock"
+        "burn_direct"
       ]
     },
     "Wicked-Breaking Flamberge - Baou": {
       "grupos": [
-        "battle_resistance",
-        "attack_boost"
-      ]
-    },
-    "Widespread Ruin": {
-      "grupos": [
-        "removal_control"
-      ]
-    },
-    "Windstorm of Etaqua": {
-      "grupos": [
-        "power_lock"
+        "battle_resistance"
       ]
     },
     "Winged Trumpeter": {
       "grupos": [
-        "attack_boost",
         "lp_recovery"
-      ]
-    },
-    "Zera The Mant": {
-      "grupos": [
-        "self_growth"
       ]
     },
     "Black Luster Soldier - Legendary Swordsman": {
