@@ -962,10 +962,60 @@ function isEn() { return document.body.classList.contains('en'); }
     return prefixo + mins + 'm';
   }
 
+  /* ── BOOSTER LIGADO PELO PAINEL DE EVENTOS ───────────────────────────────
+     Fonte: pagar/eventos_ativos.php, o MESMO endpoint que o jogo consulta.
+     Sem isto o site precisaria repetir na mão a data de cada reativação, e
+     era exatamente essa cópia que fazia a página e o jogo discordarem.
+
+     O relógio é o do SERVIDOR (campo servidor_utc da resposta), não o do
+     visitante: um navegador com a hora errada mostraria um contador que não
+     bate com o do jogo. */
+  let EVENTOS_BOOSTER = {};   // id do booster -> fim do evento em ms
+  let RELOGIO_OFFSET_MS = 0;  // servidor - navegador
+
+  function agoraMs() { return Date.now() + RELOGIO_OFFSET_MS; }
+
+  function carregarEventosBooster() {
+    return fetch('pagar/eventos_ativos.php?t=' + Date.now(), { cache: 'no-store' })
+      .then(r => r.json())
+      .then(doc => {
+        if (doc && doc.servidor_utc) {
+          RELOGIO_OFFSET_MS = (doc.servidor_utc * 1000) - Date.now();
+        }
+        const mapa = {};
+        (doc && doc.eventos ? doc.eventos : []).forEach(ev => {
+          const fim = (ev.fim_utc || 0) * 1000;
+          (ev.efeitos || []).forEach(ef => {
+            if (ef.token !== 'BOOSTER_EVENTO_ATIVO') return;
+            const id = (ef.booster_id || '').trim();
+            if (!id || !fim) return;
+            /* Dois eventos ligando o mesmo booster: vale o que termina por
+               último, igual à regra do jogo. */
+            if (!mapa[id] || fim > mapa[id]) mapa[id] = fim;
+          });
+        });
+        EVENTOS_BOOSTER = mapa;
+      })
+      /* Falha de rede é silenciosa: a página volta a mostrar só as janelas
+         fixas, que é o comportamento de antes deste bloco existir. */
+      .catch(() => {});
+  }
+
+  function eventoAtivoDoBooster(id) {
+    const fim = EVENTOS_BOOSTER[id];
+    return (fim && fim > agoraMs()) ? fim : 0;
+  }
+
   // Estado dinamico (ribbon/travamento/contagem) dos boosters presos ao
   // LAUNCH_UTC. Retorna null pros demais (usam so RIBBON_OVERRIDES estatico).
   function dynamicState(b) {
-    const restante = LAUNCH_UTC - Date.now();
+    /* O painel de eventos vence as tabelas fixas: um booster revivido por
+       evento nao pode continuar com a faixa ENCERRADO de uma janela antiga. */
+    const fimEvento = eventoAtivoDoBooster(b.id);
+    if (fimEvento) {
+      return { ribbon: null, locked: false, countdownModo: "ends", alvoMs: fimEvento };
+    }
+    const restante = LAUNCH_UTC - agoraMs();
     if (ENDING_IDS.includes(b.id)) {
       if (restante <= 0) {
         return { ribbon: { texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado' }, locked: true, countdownModo: null };
@@ -986,7 +1036,7 @@ function isEn() { return document.body.classList.contains('en'); }
     if (!b) return null;
     const dyn = dynamicState(b);
     if (!dyn || !dyn.countdownModo) return null;
-    return formatCountdown(LAUNCH_UTC - Date.now(), dyn.countdownModo);
+    return formatCountdown((dyn.alvoMs || LAUNCH_UTC) - agoraMs(), dyn.countdownModo);
   }
 
   function tileHtml(b) {
@@ -1109,13 +1159,15 @@ function isEn() { return document.body.classList.contains('en'); }
     detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  fetch('data/boosters.json?t=' + Date.now())
+  carregarEventosBooster()
+    .then(() => fetch('data/boosters.json?t=' + Date.now()))
     .then(r => r.json())
     .then(data => {
       // Ordem de exibicao: primeiro os boosters presos ao LAUNCH_UTC (saindo
       // ou entrando agora), depois os demais temporarios, depois o resto —
       // preservando ordem relativa original dentro de cada grupo (sort estavel).
-      const prioridade = (x) => STARTING_IDS.includes(x.id) ? 0 : (ENDING_IDS.includes(x.id) ? 1 : (x.evento ? 2 : 3));
+      const prioridade = (x) => eventoAtivoDoBooster(x.id) ? -1
+        : (STARTING_IDS.includes(x.id) ? 0 : (ENDING_IDS.includes(x.id) ? 1 : (x.evento ? 2 : 3)));
       boostersData = (data.boosters || []).slice().sort((a, b) => prioridade(a) - prioridade(b));
       versaoCache = data.versao || '';
       pastLaunch = Date.now() >= LAUNCH_UTC;
