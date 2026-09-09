@@ -925,6 +925,16 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     'especial_elemental_hero': {
       texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado', bloqueado: true,
     },
+    /* Dragoes Elementais ja esta no boosters.json (o painel de eventos le a
+       lista DESSE arquivo, entao ele precisa estar la para poder ser ligado),
+       mas o pacote so existe no jogo quando o evento for ligado no painel.
+       Travado = o azulejo aparece como EM BREVE e o clique nao abre a lista de
+       cartas. Nao precisa lembrar de tirar esta entrada depois: assim que o
+       evento ficar ativo, o dynamicState acima devolve o estado do evento e a
+       faixa some sozinha. */
+    'especial_elemental_dragons': {
+      texto_pt: 'EM BREVE', texto_en: 'COMING SOON', classe: 'em-breve', bloqueado: true,
+    },
   };
 
   // Virada do Patch 63 (2026-08-26 11:30 Brasília / 14:30 UTC, mesmo instante

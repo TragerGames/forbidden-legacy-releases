@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1788007543",
+  "versao": "1788967393",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -7205,6 +7205,371 @@
           "slug": "proto-cyber_dragon",
           "atk": "1100",
           "def": "600"
+        }
+      ]
+    },
+    {
+      "id": "especial_elemental_dragons",
+      "tipo_label": "ELEMENTAL DRAGONS",
+      "nome_pt": "Dragões Elementais",
+      "nome_en": "Elemental Dragons",
+      "nome_es": "Dragones Elementales",
+      "nome_vi": "Rồng Nguyên Tố",
+      "desc_pt": "Edicao especial e temporaria dedicada aos dragoes elementais: os Dragon Ruler dos seis atributos, a linhagem Divine Dragon, os Tenpai e Sangenpai, e os grandes dragoes de luz e trevas. Traz tambem dois campos novos e o suporte de magia, equipamento e armadilha do tema. Depois que o evento terminar, essas cartas deixam a circulacao temporaria e passam a poder aparecer no torneio.",
+      "desc_en": "A special, time-limited edition dedicated to the elemental dragons: the Dragon Rulers of all six Attributes, the Divine Dragon line, the Tenpai and Sangenpai, and the great dragons of light and darkness. It also brings two new Field cards and the theme's spell, equip and trap support. When the event ends, these cards leave temporary circulation and become eligible for tournament rewards.",
+      "desc_es": "Edición especial y temporal dedicada a los dragones elementales: los Dragon Ruler de los seis Atributos, el linaje Divine Dragon, los Tenpai y Sangenpai, y los grandes dragones de luz y oscuridad. Trae también dos campos nuevos y el soporte de magia, equipo y trampa del tema. Cuando el evento termine, estas cartas dejan la circulación temporal y pueden aparecer en el torneo.",
+      "desc_vi": "Phien ban dac biet, gioi han thoi gian danh cho cac rong nguyen to: Dragon Ruler cua ca sau He, dong ho Divine Dragon, Tenpai va Sangenpai, cung cac rong lon cua anh sang va bong toi. Cung mang den hai la bai San moi va cac phep, trang bi, bay ho tro cua chu de. Khi su kien ket thuc, cac la nay roi luu hanh tam thoi va co the xuat hien trong phan thuong giai dau.",
+      "cor": "#e0563b",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 15,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-elemental-dragons.webp",
+      "total_tema": 54,
+      "cartas_tema": [
+        {
+          "nome": "Blaster, Dragon Ruler of Infernos",
+          "raridade": "UR",
+          "slug": "blaster_dragon_ruler_of_infernos",
+          "atk": "2800",
+          "def": "1800"
+        },
+        {
+          "nome": "Blaze, Supreme Ruler of all Dragons",
+          "raridade": "UR",
+          "slug": "blaze_supreme_ruler_of_all_dragons",
+          "atk": "2800",
+          "def": "1800"
+        },
+        {
+          "nome": "Castle of Dragon Souls",
+          "raridade": "UR",
+          "slug": "castle_of_dragon_souls"
+        },
+        {
+          "nome": "Chasma, Dragon Ruler of Auroras",
+          "raridade": "UR",
+          "slug": "chasma_dragon_ruler_of_auroras",
+          "atk": "3000",
+          "def": "1600"
+        },
+        {
+          "nome": "Disaster, Dragon Ruler of All Apocalypses",
+          "raridade": "UR",
+          "slug": "disaster_dragon_ruler_of_all_apocalypses",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Divine Dragon Lord Felgrand",
+          "raridade": "UR",
+          "slug": "divine_dragon_lord_felgrand",
+          "atk": "2800",
+          "def": "2800"
+        },
+        {
+          "nome": "Divine Dragon Titanomakhia",
+          "raridade": "UR",
+          "slug": "divine_dragon_titanomakhia",
+          "atk": "3000",
+          "def": "2000"
+        },
+        {
+          "nome": "Dragon Shield",
+          "raridade": "UR",
+          "slug": "dragon_shield"
+        },
+        {
+          "nome": "Dragon's Rage",
+          "raridade": "UR",
+          "slug": "dragons_rage"
+        },
+        {
+          "nome": "Eclipse, Dragon Ruler of Catastrophes",
+          "raridade": "UR",
+          "slug": "eclipse_dragon_ruler_of_catastrophes",
+          "atk": "2700",
+          "def": "1900"
+        },
+        {
+          "nome": "First of the Dragonlords",
+          "raridade": "UR",
+          "slug": "first_of_the_dragonlords",
+          "atk": "3700",
+          "def": "3000"
+        },
+        {
+          "nome": "First of the Dragons",
+          "raridade": "UR",
+          "slug": "first_of_the_dragons",
+          "atk": "2700",
+          "def": "2000"
+        },
+        {
+          "nome": "Five-Headed Dragon",
+          "raridade": "UR",
+          "slug": "five-headed_dragon",
+          "atk": "5000",
+          "def": "5000"
+        },
+        {
+          "nome": "Five-Headed Link Dragon",
+          "raridade": "UR",
+          "slug": "five-headed_link_dragon",
+          "atk": "5000",
+          "def": "0"
+        },
+        {
+          "nome": "Light and Darkness Dragon",
+          "raridade": "UR",
+          "slug": "light_and_darkness_dragon",
+          "atk": "2800",
+          "def": "2400"
+        },
+        {
+          "nome": "Light and Darkness Dragonlord",
+          "raridade": "UR",
+          "slug": "light_and_darkness_dragonlord",
+          "atk": "3400",
+          "def": "3000"
+        },
+        {
+          "nome": "Magic Jammer",
+          "raridade": "UR",
+          "slug": "magic_jammer"
+        },
+        {
+          "nome": "Mirror Force",
+          "raridade": "UR",
+          "slug": "mirror_force"
+        },
+        {
+          "nome": "Ruins of the Divine Dragon Lords",
+          "raridade": "UR",
+          "slug": "ruins_of_the_divine_dragon_lords"
+        },
+        {
+          "nome": "Sangenpai Bident Dragion",
+          "raridade": "UR",
+          "slug": "sangenpai_bident_dragion",
+          "atk": "2600",
+          "def": "2000"
+        },
+        {
+          "nome": "Sangenpai Transcendent Dragion",
+          "raridade": "UR",
+          "slug": "sangenpai_transcendent_dragion",
+          "atk": "3000",
+          "def": "3000"
+        },
+        {
+          "nome": "Torrential Tribute",
+          "raridade": "UR",
+          "slug": "torrential_tribute"
+        },
+        {
+          "nome": "Trident Dragion",
+          "raridade": "UR",
+          "slug": "trident_dragion",
+          "atk": "3000",
+          "def": "2800"
+        },
+        {
+          "nome": "Tyrant Dragon",
+          "raridade": "UR",
+          "slug": "tyrant_dragon",
+          "atk": "2900",
+          "def": "2500"
+        },
+        {
+          "nome": "Element Dragon",
+          "raridade": "SR",
+          "slug": "element_dragon",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Hyozanryu",
+          "raridade": "SR",
+          "slug": "hyozanryu",
+          "atk": "2100",
+          "def": "2800"
+        },
+        {
+          "nome": "Mountain",
+          "raridade": "SR",
+          "slug": "mountain"
+        },
+        {
+          "nome": "Negate Attack",
+          "raridade": "SR",
+          "slug": "negate_attack"
+        },
+        {
+          "nome": "Prime Material Dragon",
+          "raridade": "SR",
+          "slug": "prime_material_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Rabidragon",
+          "raridade": "SR",
+          "slug": "rabidragon",
+          "atk": "2950",
+          "def": "2900"
+        },
+        {
+          "nome": "Reactan Dragon Ruler of Pebbles",
+          "raridade": "SR",
+          "slug": "reactan_dragon_ruler_of_pebbles",
+          "atk": "1800",
+          "def": "1200"
+        },
+        {
+          "nome": "Redox, Dragon Ruler of Boulders",
+          "raridade": "SR",
+          "slug": "redox_dragon_ruler_of_boulders",
+          "atk": "1600",
+          "def": "3000"
+        },
+        {
+          "nome": "Sangen Furo",
+          "raridade": "SR",
+          "slug": "sangen_furo"
+        },
+        {
+          "nome": "Sangen Kaiho",
+          "raridade": "SR",
+          "slug": "sangen_kaiho"
+        },
+        {
+          "nome": "Stamping Destruction",
+          "raridade": "SR",
+          "slug": "stamping_destruction"
+        },
+        {
+          "nome": "Stream, Dragon Ruler of Droplets",
+          "raridade": "SR",
+          "slug": "stream_dragon_ruler_of_droplets",
+          "atk": "1600",
+          "def": "2000"
+        },
+        {
+          "nome": "Tempest, Dragon Ruler of Storms",
+          "raridade": "SR",
+          "slug": "tempest_dragon_ruler_of_storms",
+          "atk": "2400",
+          "def": "2200"
+        },
+        {
+          "nome": "Tenpai Dragon Fadra",
+          "raridade": "SR",
+          "slug": "tenpai_dragon_fadra",
+          "atk": "1600",
+          "def": "1000"
+        },
+        {
+          "nome": "Tenpai Dragon Paidra",
+          "raridade": "SR",
+          "slug": "tenpai_dragon_paidra",
+          "atk": "1700",
+          "def": "1000"
+        },
+        {
+          "nome": "Tidal, Dragon Ruler of Waterfalls",
+          "raridade": "SR",
+          "slug": "tidal_dragon_ruler_of_waterfalls",
+          "atk": "2600",
+          "def": "2000"
+        },
+        {
+          "nome": "Trishula, Dragon of the Ice Barrier",
+          "raridade": "SR",
+          "slug": "trishula_dragon_of_the_ice_barrier",
+          "atk": "2700",
+          "def": "2000"
+        },
+        {
+          "nome": "Burner, Dragon Ruler of Sparks",
+          "raridade": "R",
+          "slug": "burner_dragon_ruler_of_sparks",
+          "atk": "1000",
+          "def": "200"
+        },
+        {
+          "nome": "Divine Dragon - Excelion",
+          "raridade": "R",
+          "slug": "divine_dragon_-_excelion",
+          "atk": "1500",
+          "def": "900"
+        },
+        {
+          "nome": "Divine Dragon Apocralyph",
+          "raridade": "R",
+          "slug": "divine_dragon_apocralyph",
+          "atk": "1000",
+          "def": "1500"
+        },
+        {
+          "nome": "Dragon Treasure",
+          "raridade": "R",
+          "slug": "dragon_treasure"
+        },
+        {
+          "nome": "Lightning, Dragon Ruler of Drafts",
+          "raridade": "R",
+          "slug": "lightning_dragon_ruler_of_drafts",
+          "atk": "500",
+          "def": "1800"
+        },
+        {
+          "nome": "Molten Destruction",
+          "raridade": "R",
+          "slug": "molten_destruction"
+        },
+        {
+          "nome": "Nebulis, Dragon Ruler of Mishaps",
+          "raridade": "R",
+          "slug": "nebulis_dragon_ruler_of_mishaps",
+          "atk": "1000",
+          "def": "600"
+        },
+        {
+          "nome": "Sangen Kaimen",
+          "raridade": "R",
+          "slug": "sangen_kaimen"
+        },
+        {
+          "nome": "Spectral, Dragon Ruler of Flickers",
+          "raridade": "R",
+          "slug": "spectral_dragon_ruler_of_flickers",
+          "atk": "600",
+          "def": "1000"
+        },
+        {
+          "nome": "Stop Defense",
+          "raridade": "R",
+          "slug": "stop_defense"
+        },
+        {
+          "nome": "Tenpai Dragon Chundra",
+          "raridade": "R",
+          "slug": "tenpai_dragon_chundra",
+          "atk": "1500",
+          "def": "1000"
+        },
+        {
+          "nome": "Tenpai Dragon Genroku",
+          "raridade": "R",
+          "slug": "tenpai_dragon_genroku",
+          "atk": "0",
+          "def": "1000"
+        },
+        {
+          "nome": "Waboku",
+          "raridade": "R",
+          "slug": "waboku"
         }
       ]
     }
