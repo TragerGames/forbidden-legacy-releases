@@ -945,6 +945,15 @@ function chaveGrupo(g,nome){
   if(CAT_SUPORTE.indexOf(s)>=0) return g.id+'|support';
   return g.id+'|'+catDaCarta(nome);
 }
+/* Porte fiel de DeckBanlistRules.limite_do_grupo: o lado SUPORTE
+   (magia/trap/equip) usa max_in_deck_support quando o grupo declara um; sem o
+   campo, os dois lados usam max_in_deck. */
+function limiteDoGrupo(g,chave){
+  const padrao=(typeof g.max_in_deck==='number')?g.max_in_deck:3;
+  if(String(chave||'').split('|')[1]!=='support') return padrao;
+  const s=(typeof g.max_in_deck_support==='number')?g.max_in_deck_support:0;
+  return s>0 ? s : padrao;
+}
 function limiteIndividual(nome){
   const r=BAN.cartas[nome];
   return (r&&typeof r.limite==='number') ? r.limite : (BAN.limite_padrao||3);
@@ -960,7 +969,7 @@ function validarAdicao(nome){
     return {ok:false, tipo:'carta', msg:t('limCopias').replace('%l',lim).replace('%n',nome)};
   const cont=contagemGrupos(deck);
   for(const g of gruposDe(nome)){
-    const k=chaveGrupo(g,nome), max=(typeof g.max_in_deck==='number')?g.max_in_deck:3;
+    const k=chaveGrupo(g,nome), max=limiteDoGrupo(g,k);
     if((cont[k]||0)>=max){
       const catTxt = k.endsWith('|monster') ? t('monstros') : t('suporte');
       return {ok:false, tipo:'grupo', grupo:g,
@@ -985,7 +994,7 @@ function montarFiltroBanlist(){
     /* so anota a categoria quando o grupo REALMENTE se divide */
     const dividido=cont[p[0]+'|monster']&&cont[p[0]+'|support'];
     const nome=(g.label||p[0])+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');
-    return '<option value="'+k+'">'+nome+' · '+cont[k]+' '+t('cartas')+' · '+t('max')+' '+g.max_in_deck+'</option>';
+    return '<option value="'+k+'">'+nome+' · '+cont[k]+' '+t('cartas')+' · '+t('max')+' '+limiteDoGrupo(g,k)+'</option>';
   }).join('');
   sel.value=filtroBan;
   sel.onchange=()=>{ filtroBan=sel.value; sel.classList.toggle('ativo',!!filtroBan); renderNovo(); };
@@ -1036,7 +1045,7 @@ function render(){
     b.type='button'; b.className='row'+(bloq?' bloq':''); b.dataset.r=r;
     if(animarLista) b.style.setProperty('--atraso',Math.min(i,18)*0.014+'s');
     else b.classList.add('sem-anim');
-    const gTxt=gs.map(g=>(g.label||g.id)+' ('+t('max')+' '+g.max_in_deck+')').join(' · ');
+    const gTxt=gs.map(g=>(g.label||g.id)+' ('+t('max')+' '+limiteDoGrupo(g,chaveGrupo(g,c.nome))+')').join(' · ');
     b.title=(bloq&&!v.ok) ? v.msg.replace(/<\/?b>/g,'')
                           : (c.nome_pt||c.nome)+(gTxt?' - '+gTxt:'');
     const nomeTxt=c.nome_pt||c.nome;
@@ -1058,7 +1067,7 @@ function render(){
         return '<span class="col-stat">'+(c.card_type==='Monster'?c.atk+'/'+c.def:(T[c.card_type]?t(c.card_type):c.card_type))+'</span>';
       })()+
       '<span class="col-ban">'+(gs.length
-        ? '<i style="color:'+(gs[0].cor||'var(--gold)')+'">'+gs[0].max_in_deck+'</i>' : '')+'</span>'+
+        ? '<i style="color:'+(gs[0].cor||'var(--gold)')+'">'+limiteDoGrupo(gs[0],chaveGrupo(gs[0],c.nome))+'</i>' : '')+'</span>'+
       '<span class="row-q'+(q>=lim?' cheio':(q?'':' zero'))+'">'+q+'<small>/'+lim+'</small></span>';
     b.onclick=()=>adicionar(c);
     b.onmouseenter=()=>mostrarAltar(c);
@@ -1091,7 +1100,7 @@ function mostrarAltar(c){
         (c.nivel?'<span class="altar-stat">Nv '+c.nivel+'</span>':'')+'</div>' : '')+
     (desc?'<div class="altar-ef">'+desc+'</div>':'')+
     '<div class="altar-ban">'+(gs.length
-      ? gs.map(g=>(g.label||g.id)+' '+(cont[chaveGrupo(g,c.nome)]||0)+'/'+g.max_in_deck).join(' · ')
+      ? gs.map(g=>(g.label||g.id)+' '+(cont[chaveGrupo(g,c.nome)]||0)+'/'+limiteDoGrupo(g,chaveGrupo(g,c.nome))).join(' · ')
         +' · '+t('noDeck')+' '+noDeck+'/'+lim
       : t('limite')+' '+lim+' · '+t('noDeck')+' '+noDeck)+'</div>';
 }
@@ -1141,7 +1150,7 @@ function sincDeck(){
   const cont=contagemGrupos(deck), G=document.getElementById('grupos');
   G.innerHTML=Object.keys(cont).sort().map(k=>{
     const p=k.split('|'), g=BAN.grupos[p[0]]; if(!g) return '';
-    const max=(typeof g.max_in_deck==='number')?g.max_in_deck:3, usado=cont[k];
+    const max=limiteDoGrupo(g,k), usado=cont[k];
     const cor=g.cor||'var(--gold)';
     const dividido=(cont[p[0]+'|monster']!==undefined)&&(cont[p[0]+'|support']!==undefined);
     const rot=(g.label||p[0])+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');

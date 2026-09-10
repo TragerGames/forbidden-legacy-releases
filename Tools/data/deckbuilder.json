@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1789050674",
+  "versao": "1789063440",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -109,7 +109,8 @@
       "label": "Aura Média",
       "cor": "#e8c063",
       "max_in_deck": 8,
-      "scope": "effect"
+      "scope": "effect",
+      "max_in_deck_support": 2
     },
     "burn_direct": {
       "label": "Burn direto",
@@ -151,19 +152,22 @@
       "label": "Enfraquece Alvo",
       "cor": "#7ad0b0",
       "max_in_deck": 6,
-      "scope": "effect"
+      "scope": "effect",
+      "max_in_deck_support": 2
     },
     "backrow": {
       "label": "Limpa Magia/Trap",
       "cor": "#4db5ff",
       "max_in_deck": 5,
-      "scope": "effect"
+      "scope": "effect",
+      "max_in_deck_support": 3
     },
     "remocao_alvo": {
       "label": "Remoção de Alvo",
       "cor": "#e66fcb",
       "max_in_deck": 4,
-      "scope": "effect"
+      "scope": "effect",
+      "max_in_deck_support": 3
     },
     "remocao_aleatoria": {
       "label": "Remoção Aleatória",
@@ -181,7 +185,8 @@
       "label": "Devolve ao Deck ou à Mão",
       "cor": "#7fd1ff",
       "max_in_deck": 3,
-      "scope": "effect"
+      "scope": "effect",
+      "max_in_deck_support": 2
     },
     "piercing_pressure": {
       "label": "Pressao/perfurante",
@@ -193,19 +198,22 @@
       "label": "Busca no Deck",
       "cor": "#d4e157",
       "max_in_deck": 4,
-      "scope": "effect"
+      "scope": "effect",
+      "max_in_deck_support": 3
     },
     "acel_reposicao": {
       "label": "Reposição",
       "cor": "#9ccc65",
       "max_in_deck": 5,
-      "scope": "effect"
+      "scope": "effect",
+      "max_in_deck_support": 2
     },
     "acel_revival": {
       "label": "Ressurreição",
       "cor": "#26c6da",
       "max_in_deck": 4,
-      "scope": "effect"
+      "scope": "effect",
+      "max_in_deck_support": 3
     },
     "exodia_piece": {
       "label": "Partes do Exodia",
