@@ -1241,18 +1241,33 @@ function isEn() { return document.body.classList.contains('en'); }
       tilesEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)">Não foi possível carregar os boosters agora.</div>';
     });
 
-  // Enquanto o relogio nao cruza LAUNCH_UTC, so atualiza o texto da contagem
-  // regressiva ao vivo (sem re-renderizar as tiles inteiras, pra nao perder o
-  // estado "active" selecionado). No minuto em que cruza, os 3 boosters presos
-  // a esse horario mudam de estado (ribbon/travamento) de verdade — nesse caso
-  // sim precisa re-renderizar tudo pra trocar EM BREVE/ENCERRADO e destravar.
-  let pastLaunch = Date.now() >= LAUNCH_UTC;
+  /* O tique so atualiza o TEXTO da contagem (re-renderizar as tiles perde o
+     azulejo selecionado). Mas quando um booster muda de ESTADO — EM BREVE
+     vira ativo, ativo vira ENCERRADO, um evento do painel comeca ou termina —
+     a tile inteira precisa ser refeita.
+     Antes isso so era detectado na virada de LAUNCH_UTC. Quem estivesse com a
+     pagina aberta no instante em que uma janela terminava via a contagem
+     sumir e o azulejo continuar destravado, sem a faixa ENCERRADO, ate
+     recarregar. A assinatura abaixo cobre QUALQUER virada, de qualquer
+     booster, e so dispara o re-render quando ela muda de fato. */
+  function assinaturaEstados() {
+    return boostersData.map(b => {
+      const d = dynamicState(b);
+      if (!d) return b.id + ':-';
+      return b.id + ':' + (d.ribbon ? d.ribbon.classe : '-')
+           + (d.locked ? 'L' : '') + (d.countdownModo || '');
+    }).join('|');
+  }
+  let assinatura = null;
   setInterval(() => {
-    const agoraPassou = Date.now() >= LAUNCH_UTC;
-    if (agoraPassou !== pastLaunch) {
-      pastLaunch = agoraPassou;
-      renderTiles();
-      return;
+    if (boostersData.length) {
+      const agora = assinaturaEstados();
+      if (assinatura !== null && agora !== assinatura) {
+        assinatura = agora;
+        renderTiles();
+        return;
+      }
+      assinatura = agora;
     }
     document.querySelectorAll('[data-countdown-id]').forEach(el => {
       const txt = countdownTextFor(el.getAttribute('data-countdown-id'));
