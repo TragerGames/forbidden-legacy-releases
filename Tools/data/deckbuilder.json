@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1788898297",
+  "versao": "1789050674",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -39,12 +39,6 @@
       "max_in_deck": 2,
       "scope": "monster"
     },
-    "strong_immunity": {
-      "label": "Imunidade forte",
-      "cor": "#37d6c2",
-      "max_in_deck": 3,
-      "scope": "effect"
-    },
     "spell_negation": {
       "label": "Negacao de magia",
       "cor": "#4cc9f0",
@@ -63,12 +57,6 @@
       "max_in_deck": 4,
       "scope": "support"
     },
-    "battle_resistance": {
-      "label": "Resistencia de batalha",
-      "cor": "#6fd0ff",
-      "max_in_deck": 3,
-      "scope": "monster"
-    },
     "explosive_equip": {
       "label": "Equip absurdo",
       "cor": "#ff9f3d",
@@ -81,29 +69,11 @@
       "max_in_deck": 3,
       "scope": "monster"
     },
-    "self_define_poder": {
-      "label": "Monstro · Define o Próprio Poder",
-      "cor": "#b04ddb",
-      "max_in_deck": 2,
-      "scope": "monster"
-    },
     "self_escala_arquetipo": {
-      "label": "Monstro · Cresce por Arquétipo",
+      "label": "Cresce por Arquétipo",
       "cor": "#e8a33d",
       "max_in_deck": 8,
-      "scope": "monster"
-    },
-    "self_escala_cemiterio": {
-      "label": "Monstro · Cresce pelo Cemitério",
-      "cor": "#9a7b4f",
-      "max_in_deck": 5,
-      "scope": "monster"
-    },
-    "self_escala_campo": {
-      "label": "Monstro · Cresce pelo Campo",
-      "cor": "#c98f3d",
-      "max_in_deck": 4,
-      "scope": "monster"
+      "scope": "effect"
     },
     "self_escala_mao": {
       "label": "Monstro · Cresce pela Mão",
@@ -114,12 +84,6 @@
     "self_snowball_batalha": {
       "label": "Monstro · Cresce em Batalha",
       "cor": "#d9713d",
-      "max_in_deck": 6,
-      "scope": "monster"
-    },
-    "self_bonus_fixo": {
-      "label": "Monstro · Bônus Próprio Fixo",
-      "cor": "#c2a76a",
       "max_in_deck": 6,
       "scope": "monster"
     },
@@ -141,29 +105,11 @@
       "max_in_deck": 3,
       "scope": "support"
     },
-    "buff_aura_media_mon": {
-      "label": "Monstro · Aura Média",
+    "buff_aura_media": {
+      "label": "Aura Média",
       "cor": "#e8c063",
       "max_in_deck": 8,
-      "scope": "monster"
-    },
-    "buff_equip_escala": {
-      "label": "Equip · Bônus Escalável",
-      "cor": "#d9a75f",
-      "max_in_deck": 3,
-      "scope": "support"
-    },
-    "buff_aura_escala_mon": {
-      "label": "Monstro · Aura Escalável",
-      "cor": "#c9a94e",
-      "max_in_deck": 3,
-      "scope": "monster"
-    },
-    "buff_aura_sup": {
-      "label": "Magia/Trap/Campo · Aura",
-      "cor": "#b8933f",
-      "max_in_deck": 2,
-      "scope": "support"
+      "scope": "effect"
     },
     "burn_direct": {
       "label": "Burn direto",
@@ -201,106 +147,28 @@
       "max_in_deck": 3,
       "scope": "monster"
     },
-    "mill_proprio": {
-      "label": "Monstro · Auto-Mill",
-      "cor": "#6b5aa8",
-      "max_in_deck": 40,
-      "scope": "monster"
-    },
-    "corte_poder_mon": {
-      "label": "Monstro · Corte de Poder",
-      "cor": "#3fae86",
-      "max_in_deck": 3,
-      "scope": "monster"
-    },
-    "corte_poder_sup": {
-      "label": "Magia/Trap · Corte de Poder",
-      "cor": "#2f8f6d",
-      "max_in_deck": 3,
-      "scope": "support"
-    },
-    "redefine_poder_opp": {
-      "label": "Redefine Poder do Oponente",
-      "cor": "#46d39a",
-      "max_in_deck": 3,
-      "scope": "effect"
-    },
-    "debuff_massa_mon": {
-      "label": "Monstro · Enfraquecimento em Massa",
-      "cor": "#5fbf9c",
-      "max_in_deck": 3,
-      "scope": "monster"
-    },
-    "debuff_massa_sup": {
-      "label": "Magia/Trap · Enfraquecimento em Massa",
-      "cor": "#4aa88a",
-      "max_in_deck": 3,
-      "scope": "support"
-    },
-    "debuff_alvo_mon": {
-      "label": "Monstro · Enfraquece Alvo",
+    "debuff_alvo": {
+      "label": "Enfraquece Alvo",
       "cor": "#7ad0b0",
       "max_in_deck": 6,
-      "scope": "monster"
+      "scope": "effect"
     },
-    "debuff_alvo_sup": {
-      "label": "Magia/Trap · Enfraquece Alvo",
-      "cor": "#5cb896",
-      "max_in_deck": 2,
-      "scope": "support"
-    },
-    "mudanca_posicao_mon": {
-      "label": "Monstro · Muda Posição",
-      "cor": "#8fd6c0",
-      "max_in_deck": 5,
-      "scope": "monster"
-    },
-    "mudanca_posicao_sup": {
-      "label": "Magia/Trap · Muda Posição",
-      "cor": "#6dbfa6",
-      "max_in_deck": 3,
-      "scope": "support"
-    },
-    "battle_destroy": {
-      "label": "Destruicao em batalha",
-      "cor": "#d86a5f",
-      "max_in_deck": 3,
-      "scope": "monster"
-    },
-    "backrow_mon": {
-      "label": "Monstro · Limpa Magia/Trap",
+    "backrow": {
+      "label": "Limpa Magia/Trap",
       "cor": "#4db5ff",
       "max_in_deck": 5,
-      "scope": "monster"
+      "scope": "effect"
     },
-    "backrow_sup": {
-      "label": "Magia/Trap · Limpa Magia/Trap",
-      "cor": "#3a93d6",
-      "max_in_deck": 3,
-      "scope": "support"
-    },
-    "remocao_alvo_mon": {
-      "label": "Monstro · Remoção de Alvo",
+    "remocao_alvo": {
+      "label": "Remoção de Alvo",
       "cor": "#e66fcb",
       "max_in_deck": 4,
-      "scope": "monster"
-    },
-    "remocao_alvo_sup": {
-      "label": "Magia/Trap · Remoção de Alvo",
-      "cor": "#c655ad",
-      "max_in_deck": 3,
-      "scope": "support"
+      "scope": "effect"
     },
     "remocao_aleatoria": {
       "label": "Remoção Aleatória",
       "cor": "#d94fb0",
       "max_in_deck": 4,
-      "scope": "effect"
-    },
-    "remocao_raca": {
-      "label": "Magia · Remoção por Raça",
-      "cor": "#b03d95",
-      "max_in_deck": 2,
       "scope": "effect"
     },
     "punicao_atacante": {
@@ -309,83 +177,35 @@
       "max_in_deck": 2,
       "scope": "effect"
     },
-    "bounce_shuffle_mon": {
-      "label": "Monstro · Devolve ao Deck ou à Mão",
+    "bounce_shuffle": {
+      "label": "Devolve ao Deck ou à Mão",
       "cor": "#7fd1ff",
       "max_in_deck": 3,
-      "scope": "monster"
-    },
-    "bounce_shuffle_sup": {
-      "label": "Magia/Trap · Devolve ao Deck ou à Mão",
-      "cor": "#5cb3e6",
-      "max_in_deck": 2,
-      "scope": "support"
+      "scope": "effect"
     },
     "piercing_pressure": {
       "label": "Pressao/perfurante",
       "cor": "#ff7a45",
-      "max_in_deck": 3,
+      "max_in_deck": 5,
       "scope": "effect"
     },
-    "fusion_substitute": {
-      "label": "Substituto de fusao",
-      "cor": "#55d86a",
-      "max_in_deck": 3,
-      "scope": "monster"
-    },
-    "acel_busca_mon": {
-      "label": "Monstro · Busca no Deck",
+    "acel_busca": {
+      "label": "Busca no Deck",
       "cor": "#d4e157",
       "max_in_deck": 4,
-      "scope": "monster"
+      "scope": "effect"
     },
-    "acel_busca_sup": {
-      "label": "Magia/Trap · Busca no Deck",
-      "cor": "#b0c93a",
-      "max_in_deck": 3,
-      "scope": "support"
-    },
-    "acel_reposicao_mon": {
-      "label": "Monstro · Reposição",
+    "acel_reposicao": {
+      "label": "Reposição",
       "cor": "#9ccc65",
       "max_in_deck": 5,
-      "scope": "monster"
+      "scope": "effect"
     },
-    "acel_reposicao_sup": {
-      "label": "Magia/Trap · Reposição",
-      "cor": "#7cb342",
-      "max_in_deck": 2,
-      "scope": "support"
-    },
-    "acel_revival_mon": {
-      "label": "Monstro · Ressurreição",
+    "acel_revival": {
+      "label": "Ressurreição",
       "cor": "#26c6da",
       "max_in_deck": 4,
-      "scope": "monster"
-    },
-    "acel_revival_sup": {
-      "label": "Magia/Trap · Ressurreição",
-      "cor": "#0097a7",
-      "max_in_deck": 3,
-      "scope": "support"
-    },
-    "acel_auto_revival_mon": {
-      "label": "Monstro · Volta Sozinho",
-      "cor": "#4dd0b1",
-      "max_in_deck": 3,
-      "scope": "monster"
-    },
-    "acel_suporte_mon": {
-      "label": "Monstro · Monta Suporte",
-      "cor": "#aed581",
-      "max_in_deck": 4,
-      "scope": "monster"
-    },
-    "acel_suporte_sup": {
-      "label": "Magia/Trap · Monta Suporte",
-      "cor": "#8bc34a",
-      "max_in_deck": 2,
-      "scope": "support"
+      "scope": "effect"
     },
     "exodia_piece": {
       "label": "Partes do Exodia",
@@ -404,6 +224,36 @@
       "cor": "#f27ce0",
       "max_in_deck": 2,
       "scope": "support"
+    },
+    "imune_a_efeito": {
+      "label": "Imune a Efeito",
+      "cor": "#37d6c2",
+      "max_in_deck": 4,
+      "scope": "effect"
+    },
+    "intocavel_absoluto": {
+      "label": "Monstro · Intocável",
+      "cor": "#20b8a4",
+      "max_in_deck": 2,
+      "scope": "monster"
+    },
+    "indestrutivel_batalha": {
+      "label": "Monstro · Indestrutível em Batalha",
+      "cor": "#6fd0ff",
+      "max_in_deck": 4,
+      "scope": "monster"
+    },
+    "sem_dano_de_batalha": {
+      "label": "Sem Dano de Batalha",
+      "cor": "#4fa8d8",
+      "max_in_deck": 4,
+      "scope": "effect"
+    },
+    "protege_equipe": {
+      "label": "Protege a Equipe",
+      "cor": "#2f8f9c",
+      "max_in_deck": 3,
+      "scope": "effect"
     }
   },
   "cartas": {
@@ -448,15 +298,13 @@
     "The Wicked Avatar": {
       "grupos": [
         "wicked_god",
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ],
       "limite": 1
     },
     "The Wicked Dreadroot": {
       "grupos": [
-        "wicked_god",
-        "strong_immunity"
+        "wicked_god"
       ],
       "limite": 1
     },
@@ -532,36 +380,6 @@
         "direct_attack"
       ]
     },
-    "Dark Magician the Dragon Knight": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Dark Sage": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Jinzo": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Chaos Command Magician": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Horus the Black Flame Dragon LV6": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Horus the Black Flame Dragon LV8": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
     "Magic Jammer": {
       "grupos": [
         "spell_negation"
@@ -582,21 +400,6 @@
         "attacker_lock"
       ],
       "limite": 1
-    },
-    "Different Dimension Dragon": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Guardian Sphinx": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Wall Shadow": {
-      "grupos": [
-        "battle_resistance"
-      ]
     },
     "Megamorph": {
       "grupos": [
@@ -657,8 +460,7 @@
     "Ruddy Rose Dragon": {
       "grupos": [
         "burn_direct",
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Curse of Dragon": {
@@ -852,24 +654,9 @@
         "piercing_pressure"
       ]
     },
-    "Goddess with the Third Eye": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
-    "Versago The Destroyer": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
     "Kaibaman": {
       "grupos": [
-        "acel_busca_mon"
-      ]
-    },
-    "Level Up!": {
-      "grupos": [
-        "acel_busca_sup"
+        "acel_busca"
       ]
     },
     "Right Leg of the Forbidden One": {
@@ -939,22 +726,19 @@
     },
     "Legendary - Necro Rex": {
       "grupos": [
-        "custom_monster",
-        "battle_resistance"
+        "custom_monster"
       ]
     },
     "Legendary DinoBEAST - T. Rex": {
       "grupos": [
-        "custom_monster",
-        "battle_resistance"
+        "custom_monster"
       ]
     },
     "Legendary DinoBEAST - Threeranno": {
       "grupos": [
         "custom_monster",
         "triple_attack",
-        "multi_attack",
-        "strong_immunity"
+        "multi_attack"
       ]
     },
     "Lord of Souls": {
@@ -995,13 +779,11 @@
     },
     "Ancient Gear Engineer": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Ancient Gear Golem": {
       "grupos": [
-        "strong_immunity",
         "piercing_pressure"
       ]
     },
@@ -1012,8 +794,7 @@
     },
     "Armed Dragon LV5": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Armored Cybern": {
@@ -1046,24 +827,9 @@
         "piercing_pressure"
       ]
     },
-    "Beta Evolution Pill - Ultranscedance": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
-    "Black Dragon's Chick": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
     "Black Luster Soldier - Envoy of the Beginning": {
       "grupos": [
         "multi_attack"
-      ]
-    },
-    "Black Luster Soldier - Soldier of Light and Darkness": {
-      "grupos": [
-        "battle_resistance"
       ]
     },
     "Black Luster Soldier - Super Soldier": {
@@ -1092,15 +858,9 @@
         "lp_recovery"
       ]
     },
-    "Chasma, Dragon Ruler of Auroras": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
     "Chimeratech Rampage Dragon": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Cyber Barrier Dragon": {
@@ -1115,18 +875,7 @@
     },
     "Cyber End Dragon": {
       "grupos": [
-        "strong_immunity",
         "piercing_pressure"
-      ]
-    },
-    "Cyber Larva": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Cyber Phoenix": {
-      "grupos": [
-        "strong_immunity"
       ]
     },
     "Cyber Repair Plant": {
@@ -1134,19 +883,9 @@
         "board_wipe"
       ]
     },
-    "Cyber Revsystem": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
     "Cyber Twin Dragon": {
       "grupos": [
         "multi_attack"
-      ]
-    },
-    "Cyber Valley": {
-      "grupos": [
-        "battle_destroy"
       ]
     },
     "Cyberdark Edge": {
@@ -1179,22 +918,10 @@
         "burn_direct"
       ]
     },
-    "Dark Guardian": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Dark Lucius LV8": {
-      "grupos": [
-        "strong_immunity",
-        "battle_resistance"
-      ]
-    },
     "Dark Paladin": {
       "grupos": [
         "board_wipe",
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Dark Tyranno": {
@@ -1204,8 +931,7 @@
     },
     "Darklord Amdusc": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Darklord Edeh Arae": {
@@ -1221,14 +947,12 @@
     },
     "Darklord Morningstar": {
       "grupos": [
-        "strong_immunity",
         "lp_recovery"
       ]
     },
     "Darklord Nasten": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Darklord Nergal": {
@@ -1247,11 +971,6 @@
         "attack_negation"
       ]
     },
-    "Darklord Ukoback": {
-      "grupos": [
-        "battle_destroy"
-      ]
-    },
     "Darklord Uprising": {
       "grupos": [
         "lp_recovery"
@@ -1262,25 +981,9 @@
         "burn_on_kill"
       ]
     },
-    "Divine Dragon Titanomakhia": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Double Evolution Pill": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
-    "Dragon Shield": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
     "Dragon Spirit of White": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Dragon's Rage": {
@@ -1318,11 +1021,6 @@
         "burn_on_kill"
       ]
     },
-    "Elemental HERO Grandmerge": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
     "Elemental HERO Mariner": {
       "grupos": [
         "direct_attack"
@@ -1333,11 +1031,6 @@
         "piercing_pressure"
       ]
     },
-    "Elemental HERO Prisma": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
     "Elemental HERO Shining Flare Wingman": {
       "grupos": [
         "burn_on_kill"
@@ -1345,13 +1038,7 @@
     },
     "Elemental HERO Wild Wingman": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
-      ]
-    },
-    "Elemental HERO Wildheart": {
-      "grupos": [
-        "strong_immunity"
+        "backrow"
       ]
     },
     "Exxod, Master of The Guard": {
@@ -1362,23 +1049,6 @@
     "Fire Sorcerer": {
       "grupos": [
         "burn_direct"
-      ]
-    },
-    "First of the Dragonlords": {
-      "grupos": [
-        "strong_immunity",
-        "battle_resistance"
-      ]
-    },
-    "First of the Dragons": {
-      "grupos": [
-        "strong_immunity",
-        "battle_resistance"
-      ]
-    },
-    "Five-Headed Dragon": {
-      "grupos": [
-        "battle_resistance"
       ]
     },
     "Flame Cerebrus": {
@@ -1398,8 +1068,7 @@
     },
     "Frostosaurus": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Fushi No Tori": {
@@ -1410,14 +1079,12 @@
     },
     "Gate Guardian of Wind and Water": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Gearfried the Red-Eyes Iron Knight": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Gearfried the Swordmaster": {
@@ -1442,18 +1109,12 @@
     },
     "Harpie's Feather Duster": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Hero Heart": {
       "grupos": [
         "multi_attack"
-      ]
-    },
-    "Hieracosphinx": {
-      "grupos": [
-        "battle_resistance"
       ]
     },
     "Horus the Black Flame Dragon LV4": {
@@ -1486,11 +1147,6 @@
         "board_wipe"
       ]
     },
-    "Kaiser Sea Horse": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
     "King Pyron": {
       "grupos": [
         "burn_direct"
@@ -1507,34 +1163,14 @@
         "lp_recovery"
       ]
     },
-    "Magician of chaos": {
-      "grupos": [
-        "battle_destroy"
-      ]
-    },
     "Maiden of the Moonlight": {
       "grupos": [
         "lp_recovery"
       ]
     },
-    "Man-Eater Bug": {
-      "grupos": [
-        "battle_destroy"
-      ]
-    },
     "Master Monk": {
       "grupos": [
         "multi_attack"
-      ]
-    },
-    "Meteor Dragon Red-Eyes Impact": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Monk Fighter": {
-      "grupos": [
-        "battle_resistance"
       ]
     },
     "Mystic Swordsman LV6": {
@@ -1544,8 +1180,7 @@
     },
     "Mystical Space Typhoon": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Nebulis, Dragon Ruler of Mishaps": {
@@ -1578,11 +1213,6 @@
         "lp_recovery"
       ]
     },
-    "Proto-cyber Dragon": {
-      "grupos": [
-        "fusion_substitute"
-      ]
-    },
     "Pyramid of Light": {
       "grupos": [
         "attack_negation"
@@ -1590,8 +1220,7 @@
     },
     "R - Righteous Justice": {
       "grupos": [
-        "backrow_mon",
-        "backrow_sup"
+        "backrow"
       ]
     },
     "Red-Eyes Fang with Chain": {
@@ -1599,49 +1228,14 @@
         "multi_attack"
       ]
     },
-    "Red-Eyes Slash Dragon": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
     "Red-Eyes Toon Dragon": {
       "grupos": [
         "direct_attack"
       ]
     },
-    "Redox, Dragon Ruler of Boulders": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Revival Jam": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Rocket Warrior": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Ryu Senshi": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
     "Sacred Arch-Airknight Parshath": {
       "grupos": [
         "piercing_pressure"
-      ]
-    },
-    "Silent Swordsman LV5": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Silent Swordsman LV7": {
-      "grupos": [
-        "strong_immunity"
       ]
     },
     "Sky Galloping Gaia the Dragon Champion": {
@@ -1652,11 +1246,6 @@
     "Solemn Wishes": {
       "grupos": [
         "lp_recovery"
-      ]
-    },
-    "Spectral, Dragon Ruler of Flickers": {
-      "grupos": [
-        "battle_resistance"
       ]
     },
     "Sphinx Teleia": {
@@ -1715,24 +1304,8 @@
         "attacker_lock"
       ]
     },
-    "Tempest, Dragon Ruler of Storms": {
-      "grupos": [
-        "strong_immunity"
-      ]
-    },
-    "Tenpai Dragon Fadra": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Tenpai Dragon Paidra": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
     "The First Darklord": {
       "grupos": [
-        "strong_immunity",
         "lp_recovery"
       ]
     },
@@ -1746,16 +1319,6 @@
         "lp_recovery"
       ]
     },
-    "The Snake Hair": {
-      "grupos": [
-        "battle_destroy"
-      ]
-    },
-    "The Unstoppable Exodia Incarnate": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
     "Thunder Dragon Titan": {
       "grupos": [
         "triple_attack"
@@ -1763,7 +1326,6 @@
     },
     "Tidal, Dragon Ruler of Waterfalls": {
       "grupos": [
-        "strong_immunity",
         "lp_recovery"
       ]
     },
@@ -1795,13 +1357,7 @@
     },
     "Tyrant Dragon": {
       "grupos": [
-        "multi_attack",
-        "strong_immunity"
-      ]
-    },
-    "Tytannial, Princess of Camellias": {
-      "grupos": [
-        "strong_immunity"
+        "multi_attack"
       ]
     },
     "Ultimate Ancient Gear Golem": {
@@ -1819,24 +1375,9 @@
         "burn_recurring"
       ]
     },
-    "Ultimate Obedient Fiend": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
-    "Waboku": {
-      "grupos": [
-        "battle_resistance"
-      ]
-    },
     "Whispark Fairy Girl": {
       "grupos": [
         "burn_direct"
-      ]
-    },
-    "Wicked-Breaking Flamberge - Baou": {
-      "grupos": [
-        "battle_resistance"
       ]
     },
     "Winged Trumpeter": {
