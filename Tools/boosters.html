@@ -937,19 +937,31 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   // configurado em EVENTO_CYBER_DRAGON_INICIO_ISO no card_shop_rules.gd do
   // jogo): Darklord + Red-Eyes saem de circulacao E o Cyber Dragon entra,
   // no mesmo timestamp. Um so relogio pros tres — nunca duplicar o instante.
-  const LAUNCH_UTC = Date.UTC(2026, 7, 26, 14, 30, 0);
+  /* Toda janela de booster desta pagina e escrita em HORARIO DE BRASILIA, que
+     e como o lancamento e anunciado. UTC-3 fixo — o Brasil nao tem horario de
+     verao desde 2019. Antes as datas viviam em UTC com um comentario dizendo
+     "isto e 11:30 de Brasilia": toda edicao exigia refazer a conta de cabeca,
+     e um erro de tres horas nao apareceria em teste nenhum. */
+  function brt(ano, mes, dia, hora, min) {
+    return Date.UTC(ano, mes, dia, hora + 3, min, 0);
+  }
+
+  const LAUNCH_UTC = brt(2026, 7, 26, 11, 30);   // virada do Patch 63
   const ENDING_IDS = ['especial_darklord', 'especial_red_eyes'];
   const STARTING_IDS = ['especial_cyber_dragon'];
 
-  /* Fim ABSOLUTO por booster, espelhando as constantes *_FIM_ISO do
-     card_shop_rules.gd. Sem isto o Cyber Dragon ficava destravado e sem faixa
-     PARA SEMPRE depois que o evento do painel expirava: o ramo de STARTING_IDS
-     so sabia responder "ainda nao lancou" ou "ja lancou", nunca "acabou".
-     O painel continua vencendo — booster revivido num fim de semana volta a
-     aparecer ativo, e so cai aqui quando aquela janela tambem termina. */
-  const FIM_FIXO_UTC = {
-    // EVENTO_CYBER_DRAGON_FIM_ISO = "2026-09-09 14:30:00" (UTC)
-    'especial_cyber_dragon': Date.UTC(2026, 8, 9, 14, 30, 0),
+  /* Fim PUBLICO da janela de cada booster — o que o jogador do SITE ve, em
+     horario de Brasilia.
+     Um evento do painel que COMECOU depois deste instante reativa o pacote
+     normalmente (revival): azulejo destravado, cartas a mostra, contagem ate
+     o fim daquele evento e ENCERRADO de volta quando ele acabar.
+     Um evento que ja corria ANTES dele nao reativa — e o caso do evento em
+     paralelo que fica ligado para os moderadores testarem a build nova, e que
+     nao pode segurar o pacote no ar para quem esta na build antiga. Quem faz
+     essa distincao e eventoAtivoDoBooster, pelo inicio do evento. */
+  const FIM_PUBLICO = {
+    // janela original de 15 dias: 26/08 11:30 BRT + 15 dias
+    'especial_cyber_dragon': { quando: brt(2026, 8, 10, 11, 30) },
   };
 
   /* Trava de LANCAMENTO: o pacote existe no boosters.json (o painel de eventos
@@ -995,7 +1007,7 @@ function isEn() { return document.body.classList.contains('en'); }
      O relógio é o do SERVIDOR (campo servidor_utc da resposta), não o do
      visitante: um navegador com a hora errada mostraria um contador que não
      bate com o do jogo. */
-  let EVENTOS_BOOSTER = {};   // id do booster -> fim do evento em ms
+  let EVENTOS_BOOSTER = {};   // id do booster -> { inicio, fim } em ms
   let RELOGIO_OFFSET_MS = 0;  // servidor - navegador
 
   function agoraMs() { return Date.now() + RELOGIO_OFFSET_MS; }
@@ -1010,13 +1022,16 @@ function isEn() { return document.body.classList.contains('en'); }
         const mapa = {};
         (doc && doc.eventos ? doc.eventos : []).forEach(ev => {
           const fim = (ev.fim_utc || 0) * 1000;
+          const inicio = (ev.inicio_utc || 0) * 1000;
           (ev.efeitos || []).forEach(ef => {
             if (ef.token !== 'BOOSTER_EVENTO_ATIVO') return;
             const id = (ef.booster_id || '').trim();
             if (!id || !fim) return;
             /* Dois eventos ligando o mesmo booster: vale o que termina por
-               último, igual à regra do jogo. */
-            if (!mapa[id] || fim > mapa[id]) mapa[id] = fim;
+               último, igual à regra do jogo. O início vem junto porque é ele
+               que distingue um revival de um evento que já corria em paralelo
+               à janela antiga (ver eventoAtivoDoBooster). */
+            if (!mapa[id] || fim > mapa[id]) mapa[id] = { inicio: inicio, fim: fim };
           });
         });
         EVENTOS_BOOSTER = mapa;
@@ -1027,8 +1042,16 @@ function isEn() { return document.body.classList.contains('en'); }
   }
 
   function eventoAtivoDoBooster(id) {
-    const fim = EVENTOS_BOOSTER[id];
-    return (fim && fim > agoraMs()) ? fim : 0;
+    const ev = EVENTOS_BOOSTER[id];
+    if (!ev || !(ev.fim > agoraMs())) return 0;
+    /* Evento que ja estava rodando ANTES de a janela publica do pacote fechar
+       nao o reativa aqui: e o caso do evento em paralelo que fica ligado para
+       os moderadores testarem a build nova, e ele nao pode segurar o pacote no
+       ar para quem esta na build antiga. Um evento criado DEPOIS do fim e um
+       revival de verdade, e vale normalmente. */
+    const fimPublico = FIM_PUBLICO[id];
+    if (fimPublico && ev.inicio && ev.inicio < fimPublico.quando) return 0;
+    return ev.fim;
   }
 
   // Estado dinamico (ribbon/travamento/contagem) dos boosters presos ao
@@ -1040,16 +1063,21 @@ function isEn() { return document.body.classList.contains('en'); }
     if (TRAVA_LANCAMENTO.includes(b.id)) {
       return { ribbon: { texto_pt: 'EM BREVE', texto_en: 'COMING SOON', classe: 'em-breve' }, locked: true, countdownModo: null };
     }
-    /* O painel de eventos vence as tabelas fixas: um booster revivido por
-       evento nao pode continuar com a faixa ENCERRADO de uma janela antiga. */
+    /* Um REVIVAL pelo painel vence as tabelas fixas: azulejo destravado, as
+       cartas a mostra e contagem ate o fim daquele evento. Evento paralelo a
+       uma janela ja encerrada nao chega aqui — eventoAtivoDoBooster o filtra. */
     const fimEvento = eventoAtivoDoBooster(b.id);
     if (fimEvento) {
       return { ribbon: null, locked: false, countdownModo: "ends", alvoMs: fimEvento };
     }
-    /* Sem evento vivo: passou o fim absoluto, volta a ENCERRADO. */
-    const fimFixo = FIM_FIXO_UTC[b.id];
-    if (fimFixo && agoraMs() >= fimFixo) {
-      return { ribbon: { texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado' }, locked: true, countdownModo: null };
+    /* Sem revival: antes do fim da janela publica conta ate ele; depois,
+       ENCERRADO. */
+    const fimPublico = FIM_PUBLICO[b.id];
+    if (fimPublico) {
+      if (agoraMs() >= fimPublico.quando) {
+        return { ribbon: { texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado' }, locked: true, countdownModo: null };
+      }
+      return { ribbon: null, locked: false, countdownModo: 'ends', alvoMs: fimPublico.quando };
     }
     const restante = LAUNCH_UTC - agoraMs();
     if (ENDING_IDS.includes(b.id)) {
