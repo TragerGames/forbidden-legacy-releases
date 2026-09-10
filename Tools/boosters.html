@@ -925,13 +925,9 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     'especial_elemental_hero': {
       texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado', bloqueado: true,
     },
-    /* Dragoes Elementais ja esta no boosters.json (o painel de eventos le a
-       lista DESSE arquivo, entao ele precisa estar la para poder ser ligado),
-       mas o pacote so existe no jogo quando o evento for ligado no painel.
-       Travado = o azulejo aparece como EM BREVE e o clique nao abre a lista de
-       cartas. Nao precisa lembrar de tirar esta entrada depois: assim que o
-       evento ficar ativo, o dynamicState acima devolve o estado do evento e a
-       faixa some sozinha. */
+    /* Dragoes Elementais: a trava de verdade vive em TRAVA_LANCAMENTO (mais
+       abaixo), que vence ate o painel de eventos. Esta entrada fica como
+       reserva, para o caso de alguem tirar o id de la sem querer. */
     'especial_elemental_dragons': {
       texto_pt: 'EM BREVE', texto_en: 'COMING SOON', classe: 'em-breve', bloqueado: true,
     },
@@ -944,6 +940,25 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   const LAUNCH_UTC = Date.UTC(2026, 7, 26, 14, 30, 0);
   const ENDING_IDS = ['especial_darklord', 'especial_red_eyes'];
   const STARTING_IDS = ['especial_cyber_dragon'];
+
+  /* Fim ABSOLUTO por booster, espelhando as constantes *_FIM_ISO do
+     card_shop_rules.gd. Sem isto o Cyber Dragon ficava destravado e sem faixa
+     PARA SEMPRE depois que o evento do painel expirava: o ramo de STARTING_IDS
+     so sabia responder "ainda nao lancou" ou "ja lancou", nunca "acabou".
+     O painel continua vencendo — booster revivido num fim de semana volta a
+     aparecer ativo, e so cai aqui quando aquela janela tambem termina. */
+  const FIM_FIXO_UTC = {
+    // EVENTO_CYBER_DRAGON_FIM_ISO = "2026-09-09 14:30:00" (UTC)
+    'especial_cyber_dragon': Date.UTC(2026, 8, 9, 14, 30, 0),
+  };
+
+  /* Trava de LANCAMENTO: o pacote existe no boosters.json (o painel de eventos
+     le a lista deste arquivo, entao ele precisa estar la para poder ser
+     ligado), mas ainda nao foi anunciado ao publico. Diferente do resto, esta
+     trava vence ATE o painel de eventos — ligar o evento para testar com os
+     moderadores nao pode estrear o pacote no site sem querer.
+     PARA LANCAR: apagar a linha do booster aqui. */
+  const TRAVA_LANCAMENTO = ['especial_elemental_dragons'];
 
   /* Escolhe o campo do idioma ativo, caindo para ingles e depois portugues
    quando a traducao daquele item nao existe. Os nomes de campo mudam de
@@ -1019,11 +1034,22 @@ function isEn() { return document.body.classList.contains('en'); }
   // Estado dinamico (ribbon/travamento/contagem) dos boosters presos ao
   // LAUNCH_UTC. Retorna null pros demais (usam so RIBBON_OVERRIDES estatico).
   function dynamicState(b) {
+    /* Trava de lancamento vem ANTES de tudo, inclusive do painel: enquanto o
+       pacote nao foi anunciado, nem um evento ligado para teste pode estrea-lo
+       no site. */
+    if (TRAVA_LANCAMENTO.includes(b.id)) {
+      return { ribbon: { texto_pt: 'EM BREVE', texto_en: 'COMING SOON', classe: 'em-breve' }, locked: true, countdownModo: null };
+    }
     /* O painel de eventos vence as tabelas fixas: um booster revivido por
        evento nao pode continuar com a faixa ENCERRADO de uma janela antiga. */
     const fimEvento = eventoAtivoDoBooster(b.id);
     if (fimEvento) {
       return { ribbon: null, locked: false, countdownModo: "ends", alvoMs: fimEvento };
+    }
+    /* Sem evento vivo: passou o fim absoluto, volta a ENCERRADO. */
+    const fimFixo = FIM_FIXO_UTC[b.id];
+    if (fimFixo && agoraMs() >= fimFixo) {
+      return { ribbon: { texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado' }, locked: true, countdownModo: null };
     }
     const restante = LAUNCH_UTC - agoraMs();
     if (ENDING_IDS.includes(b.id)) {
