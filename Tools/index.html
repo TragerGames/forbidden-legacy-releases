@@ -1316,6 +1316,51 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
 }
 ::-webkit-scrollbar-corner { background: transparent; }
+
+/* ═══ NOVIDADES: lista que abre no clique ════════════════════════════
+   Os 8 releases ficavam todos abertos num grid de 3 colunas: 4340px de
+   altura, 5,7 telas de rolagem. Viram linhas; o corpo abre no clique. */
+.news-grid.lista { grid-template-columns: 1fr; gap: 10px; }
+.news-grid.lista .news-card { padding: 0; overflow: hidden; }
+
+.news-head {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  background: none; border: none; text-align: left; cursor: pointer;
+  padding: 16px 20px; font-family: inherit; color: inherit;
+  transition: background .22s;
+}
+.news-head:hover { background: rgba(200,151,58,.05); }
+.news-head:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+/* dentro da linha o selo perde as margens que tinha empilhado */
+.news-head .news-tag { margin: 0; align-self: center; flex-shrink: 0; }
+.news-head .news-date { margin: 0; flex-shrink: 0; }
+.news-head-tit { flex: 1; min-width: 0; }
+.news-head-tit .news-title { margin: 0; font-size: 17px; }
+.news-card.featured .news-head-tit .news-title { font-size: 19px; }
+.news-seta {
+  flex-shrink: 0; color: var(--gold-dim); font-size: 11px; line-height: 1;
+  transition: transform .3s ease, color .22s;
+}
+.news-head:hover .news-seta { color: var(--gold); }
+.news-card.aberto .news-seta { transform: rotate(180deg); color: var(--gold); }
+.news-card.aberto { border-color: var(--gold-dim); }
+
+/* 0fr -> 1fr anima ate a altura REAL do conteudo, entao trocar de idioma
+   com o card aberto nao corta o texto nem deixa sobra. */
+.news-colapso { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .32s ease; }
+.news-card.aberto .news-colapso { grid-template-rows: 1fr; }
+.news-colapso-interno { overflow: hidden; min-height: 0; }
+.news-colapso .news-body { padding: 0 20px 20px; flex-grow: 0; }
+
+@media (max-width: 640px) {
+  .news-head { flex-wrap: wrap; gap: 8px 10px; padding: 14px 16px; }
+  .news-head-tit { flex-basis: 100%; order: 3; }
+  .news-seta { margin-left: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .news-colapso { transition: none; }
+  .news-seta { transition: none; }
+}
 </style>
 </head>
 <body>
@@ -4118,6 +4163,71 @@ function mostrarSeason(n) {
   });
 }
 window.mostrarSeason = mostrarSeason;
+</script>
+
+<script>
+/* NOVIDADES: transforma cada release numa linha que abre no clique.
+   Roda por cima do HTML existente de proposito — o conteudo de cada card vive
+   em quatro idiomas (32 blocos na secao), e reescrever isso a mao seria a
+   chance de perder ou trocar um. Sem JS, a secao fica como era: tudo aberto. */
+(function () {
+  var grid = document.querySelector('#novidades .news-grid');
+  if (!grid) return;
+  var cards = [].slice.call(grid.querySelectorAll('.news-card'));
+  if (!cards.length) return;
+
+  grid.classList.add('lista');
+
+  cards.forEach(function (card, i) {
+    var tag    = card.querySelector('.news-tag');
+    var data   = card.querySelector('.news-date');
+    var titulos = [].slice.call(card.querySelectorAll('.news-title'));
+    var corpos  = [].slice.call(card.querySelectorAll('.news-body'));
+    if (!titulos.length || !corpos.length) return;
+
+    var head = document.createElement('button');
+    head.type = 'button';
+    head.className = 'news-head';
+    head.setAttribute('aria-expanded', i === 0 ? 'true' : 'false');
+
+    if (tag) head.appendChild(tag);
+    var caixaTit = document.createElement('span');
+    caixaTit.className = 'news-head-tit';
+    titulos.forEach(function (t) { caixaTit.appendChild(t); });
+    head.appendChild(caixaTit);
+    if (data) head.appendChild(data);
+
+    var seta = document.createElement('span');
+    seta.className = 'news-seta';
+    seta.setAttribute('aria-hidden', 'true');
+    seta.textContent = '▼';
+    head.appendChild(seta);
+
+    var colapso = document.createElement('div');
+    colapso.className = 'news-colapso';
+    var interno = document.createElement('div');
+    interno.className = 'news-colapso-interno';
+    corpos.forEach(function (c) { interno.appendChild(c); });
+    colapso.appendChild(interno);
+
+    var id = 'novidade-' + i;
+    colapso.id = id;
+    head.setAttribute('aria-controls', id);
+
+    card.insertBefore(head, card.firstChild);
+    card.appendChild(colapso);
+
+    /* O mais recente nasce aberto: a home continua respondendo "o que ha de
+       novo" sem exigir clique. */
+    if (i === 0) card.classList.add('aberto');
+
+    head.addEventListener('click', function () {
+      var abrindo = !card.classList.contains('aberto');
+      card.classList.toggle('aberto', abrindo);
+      head.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+    });
+  });
+})();
 </script>
 </body>
 </html>
