@@ -200,9 +200,10 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-modal-overlay.open { display: flex; }
 .cat-modal {
   background: var(--dark2); border: 1px solid var(--gold-dim); border-radius: 8px;
-  max-width: 560px; width: 100%; max-height: 88vh; overflow-y: auto;
+  max-width: 560px; width: 100%; max-height: 88vh;
+  overflow-y: auto; overflow-x: hidden;
   padding: 26px; position: relative;
-  display: grid; grid-template-columns: 180px 1fr; gap: 22px;
+  display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px;
 }
 .cat-modal-close {
   position: absolute; top: 10px; right: 14px; background: none; border: none;
@@ -248,7 +249,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-modal-fact-value img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .cat-modal-desc { font-size: 12px; line-height: 1.7; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 12px; white-space: pre-line; }
 @media(max-width:520px) {
-  .cat-modal { grid-template-columns: 1fr; }
+  .cat-modal { grid-template-columns: minmax(0, 1fr); }
   .cat-modal-img-wrap { max-width: 160px; margin: 0 auto; }
   /* alvo de toque maior no celular — 27px de altura era apertado pro dedo */
   .cat-modal-versao button { padding: 10px 4px; font-size: 12px; }
@@ -589,7 +590,7 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
 .cat-rel{border-top:1px solid var(--border); margin-top:15px; padding-top:13px}
 .cat-rel-tit{font-size:9.5px; letter-spacing:1.6px; text-transform:uppercase;
   color:var(--text-muted); margin-bottom:9px; font-weight:600}
-.cat-rel-lista{display:flex; gap:8px; overflow-x:auto; padding-bottom:4px}
+.cat-rel-lista{display:flex; flex-wrap:wrap; gap:8px; padding-bottom:4px}
 .cat-rel-c{flex-shrink:0; width:56px; cursor:pointer; background:none; border:none; padding:0}
 .cat-rel-c img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:4px;
   border:1px solid var(--border); display:block; transition:transform .25s, border-color .25s}
