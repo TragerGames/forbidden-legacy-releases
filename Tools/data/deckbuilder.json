@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1789063440",
+  "versao": "1789225923",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -722,6 +722,12 @@
         "custom_monster"
       ]
     },
+    "Darklord Samael, the First Serpent": {
+      "grupos": [
+        "custom_monster",
+        "lp_recovery"
+      ]
+    },
     "Darksaurus": {
       "grupos": [
         "custom_monster"
@@ -1303,7 +1309,6 @@
     },
     "Sword of Kusanagi": {
       "grupos": [
-        "burn_recurring",
         "piercing_pressure"
       ]
     },

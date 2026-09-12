@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1789063354",
+  "versao": "1789225922",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -5091,6 +5091,27 @@
       "desc_es": "EFECTO: Si un monstruo \"Darklord\" que controlas es atacado, niega el ataque y destruye al monstruo atacante."
     },
     {
+      "nome": "Darklord Samael, the First Serpent",
+      "nome_pt": "Darklord Samael, the First Serpent",
+      "slug": "darklord_samael_the_first_serpent",
+      "card_type": "Monster",
+      "tipo": "Fairy",
+      "atributo": "DARK",
+      "raridade": "UR",
+      "raridade_arquivo": "UR",
+      "icone_atributo": "DARK",
+      "icone_tipo": "fairy",
+      "nivel": "12",
+      "atk": "4250",
+      "def": "4250",
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, ela ganha 1 Marcador para cada monstro FAIRY ou DRAGON no campo, e ganha mais 1 Marcador sempre que um monstro FAIRY ou DRAGON for Invocado em qualquer um dos campos. Cada vez que esta carta ganha 1 Marcador, você ganha 500 de LP. Cada vez que esta carta seria destruída em batalha ou por efeito de card, ela não é destruída e 1 Marcador é removido no lugar. Enquanto o campo \"Yami\" estiver ativo, esta carta ganha 700 de ATK e DEF e não é afetada por TRAPS.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 1 Counter for each FAIRY or DRAGON monster on the field, and it gains 1 more Counter each time a FAIRY or DRAGON monster is Summoned to either field. Each time this card gains 1 Counter, you gain 500 LP. Each time this card would be destroyed by battle or by a card effect, it is not destroyed and 1 Counter is removed instead. While the \"Yami\" FIELD is active, this card gains 700 ATK and DEF and is not affected by TRAPS.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận 1 Dấu cho mỗi quái thú FAIRY hoặc DRAGON trên sân, và nhận thêm 1 Dấu mỗi khi một quái thú FAIRY hoặc DRAGON được Triệu hồi lên bất kỳ sân nào. Mỗi khi lá bài này nhận 1 Dấu, bạn hồi 500 LP. Mỗi khi lá bài này sắp bị phá hủy trong chiến đấu hoặc bởi hiệu ứng của lá bài, nó không bị phá hủy và thay vào đó 1 Dấu bị loại bỏ. Trong khi SÂN \"Yami\" đang hoạt động, lá bài này nhận thêm 700 ATK và DEF và không bị ảnh hưởng bởi TRAP.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, gana 1 Contador por cada monstruo FAIRY o DRAGON en el campo, y gana 1 Contador más cada vez que un monstruo FAIRY o DRAGON sea Invocado a cualquiera de los campos. Cada vez que esta carta gana 1 Contador, ganas 500 LP. Cada vez que esta carta fuera a ser destruida en batalla o por efecto de una carta, no es destruida y en su lugar se retira 1 Contador. Mientras el CAMPO \"Yami\" esté activo, esta carta gana 700 ATK y DEF y no es afectada por TRAPS.",
+      "custom": true,
+      "full_art": true
+    },
+    {
       "nome": "Darklord Superbia",
       "nome_pt": "Darklord Superbia",
       "slug": "darklord_superbia",
@@ -6086,10 +6107,10 @@
       "nivel": "11",
       "atk": "????",
       "def": "????",
-      "desc_pt": "EFEITO: Quando esta carta é invocada, seu ATK e DEF se tornam iguais à quantidade de monstros \"Spirit\" de atributo FIRE em seu Cemitério x500. Sempre que você causar dano de efeito aos Pontos de Vida do oponente, esta carta ganha ATK igual ao dano causado. Esta carta é imune a qualquer redução de ATK/DEF.",
-      "desc_en": "EFFECT: When this card is Summoned, its ATK and DEF become equal to the number of FIRE-Attribute \"Spirit\" monsters in your Graveyard x500. Whenever you inflict effect damage to your opponent's Life Points, this card gains ATK equal to the damage inflicted. This card is immune to any ATK/DEF reduction.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, ATK và DEF của nó trở thành bằng số lượng quái thú \"Spirit\" thuộc thuộc tính FIRE trong Mộ bài của bạn x500. Bất cứ khi nào bạn gây sát thương hiệu ứng lên Điểm Sinh Mệnh của đối thủ, lá bài này nhận thêm ATK bằng với sát thương đã gây ra. Lá bài này miễn nhiễm với mọi sự giảm ATK/DEF.",
-      "desc_es": "EFECTO: Cuando esta carta es Invocada, su ATK y DEF se vuelven iguales a la cantidad de monstruos \"Spirit\" de atributo FIRE en tu Cementerio x500. Siempre que causes daño de efecto a los Puntos de Vida de tu oponente, esta carta gana ATK igual al daño infligido. Esta carta es inmune a cualquier reducción de ATK/DEF.",
+      "desc_pt": "EFEITO: Quando esta carta é Invocada, ela ganha 1000 de ATK e DEF para cada carta no campo. Sempre que você causar dano de efeito aos Pontos de Vida do seu oponente, esta carta ganha ATK igual ao dano causado. Toda vez que um monstro \"Spirit\" for Invocado no seu campo ou retornar para a sua mão, Invoque 1 monstro FIRE aleatório do seu DECK para o seu campo.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 1000 ATK and DEF for each card on the field. Whenever you inflict effect damage to your opponent's Life Points, this card gains ATK equal to the damage inflicted. Whenever a \"Spirit\" monster is Summoned to your field or returns to your hand, Summon 1 random FIRE monster from your DECK to your field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận 1000 ATK và DEF cho mỗi lá bài trên sân. Bất cứ khi nào bạn gây sát thương hiệu ứng lên Điểm Sinh Mệnh của đối thủ, lá bài này nhận ATK bằng với sát thương đã gây ra. Mỗi khi một quái thú \"Spirit\" được Triệu hồi lên sân của bạn hoặc trở về tay bạn, hãy Triệu hồi 1 quái thú FIRE ngẫu nhiên từ DECK của bạn lên sân của bạn.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada, gana 1000 ATK y DEF por cada carta en el campo. Siempre que inflijas daño de efecto a los Puntos de Vida de tu adversario, esta carta gana ATK igual al daño infligido. Cada vez que un monstruo \"Spirit\" sea Invocado a tu campo o regrese a tu mano, Invoca 1 monstruo FIRE aleatorio de tu DECK a tu campo.",
       "custom": true,
       "full_art": true
     },
@@ -7198,10 +7219,10 @@
       "raridade": "SR",
       "raridade_arquivo": "SR",
       "icone_atributo": "SPELL",
-      "desc_pt": "EFEITO: No turno em que esta carta for ativada, os monstros do seu oponente não podem ser destruídos em batalha, porém toda vez que ocorrer uma batalha neste turno, cause 500 pontos de dano aos Pontos de Vida do oponente.",
-      "desc_en": "EFFECT: During the turn this card is activated, your opponent's monsters cannot be destroyed by battle, but each time a battle occurs this turn, inflict 500 damage to your opponent's Life Points.",
-      "desc_vi": "HIỆU ỨNG: Trong lượt mà lá bài này được kích hoạt, quái thú của đối thủ không thể bị phá hủy trong chiến đấu, nhưng mỗi khi xảy ra một trận chiến trong lượt này, gây 500 sát thương lên Điểm Sinh Mệnh của đối thủ.",
-      "desc_es": "EFECTO: Durante el turno en que esta carta sea activada, los monstruos de tu oponente no pueden ser destruidos en batalla, pero cada vez que ocurra una batalla este turno, inflige 500 puntos de daño a los Puntos de Vida de tu oponente."
+      "desc_pt": "EFEITO: Quando esta carta for ativada, Invoque 1 monstro \"Spirit\" aleatório da sua mão. Enquanto esta carta permanecer no campo, sempre que um monstro \"Spirit\" retornar para a mão do seu dono, cause 1000 de dano aos Pontos de Vida do seu oponente.",
+      "desc_en": "EFFECT: When this card is activated, Summon 1 random \"Spirit\" monster from your hand. While this card remains on the field, whenever a \"Spirit\" monster returns to its owner's hand, inflict 1000 damage to your opponent's Life Points.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được kích hoạt, hãy Triệu hồi 1 quái thú \"Spirit\" ngẫu nhiên từ tay bạn. Khi lá bài này còn trên sân, mỗi khi một quái thú \"Spirit\" trở về tay chủ nhân của nó, gây 1000 sát thương lên Điểm Sinh Mệnh của đối thủ.",
+      "desc_es": "EFECTO: Cuando esta carta sea activada, Invoca 1 monstruo \"Spirit\" aleatorio de tu mano. Mientras esta carta permanezca en el campo, cada vez que un monstruo \"Spirit\" regrese a la mano de su dueño, inflige 1000 puntos de daño a los Puntos de Vida de tu adversario."
     },
     {
       "nome": "Feral Imp",
@@ -7888,17 +7909,17 @@
       "card_type": "Monster",
       "tipo": "Winged Beast",
       "atributo": "FIRE",
-      "raridade": "R",
-      "raridade_arquivo": "R",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
       "icone_atributo": "FIRE",
       "icone_tipo": "winged_beast",
       "nivel": "4",
       "atk": "1200",
       "def": "0",
-      "desc_pt": "EFEITO: Esta carta retorna à mão do seu dono durante a Fase Final do turno em que foi invocada, a menos que isso deixe seu lado do campo sem nenhum monstro. Quando esta carta infligir Dano de Batalha aos Pontos de Vida do oponente, aumente seus Pontos de Vida em uma quantidade igual a esse Dano de Batalha. Esta carta pode atacar diretamente o oponente. Esta é uma carta \"Spirit\".",
-      "desc_en": "EFFECT: This card returns to its owner's hand during the End Phase of the turn it was Summoned, unless doing so would leave your side of the field with no monsters. When this card inflicts Battle Damage to your opponent's Life Points, increase your Life Points by an amount equal to that Battle Damage. This card can attack your opponent directly. This is a \"Spirit\" card.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này trở về tay của chủ sở hữu trong Giai đoạn Kết thúc của lượt mà nó được Triệu hồi, trừ khi điều đó khiến bên sân của bạn không còn quái thú nào. Khi lá bài này gây Sát thương Chiến đấu lên Điểm Sinh Mệnh của đối thủ, tăng Điểm Sinh Mệnh của bạn một lượng bằng với Sát thương Chiến đấu đó. Lá bài này có thể tấn công trực tiếp đối thủ. Đây là một lá bài \"Spirit\".",
-      "desc_es": "EFECTO: Esta carta regresa a la mano de su propietario durante la Fase Final del turno en que fue Invocada, a menos que eso deje tu lado del campo sin ningún monstruo. Cuando esta carta inflige Daño de Batalla a los Puntos de Vida de tu oponente, aumenta tus Puntos de Vida en una cantidad igual a ese Daño de Batalla. Esta carta puede atacar directamente a tu oponente. Esta es una carta \"Spirit\"."
+      "desc_pt": "EFEITO: Quando esta carta infligir Dano de Batalha aos Pontos de Vida do seu oponente, aumente os seus Pontos de Vida em uma quantidade igual ao Dano causado. Esta carta pode atacar diretamente o seu oponente. Esta é uma carta \"Spirit\" e retorna à sua mão durante a Fase Final do turno em que foi Invocada.",
+      "desc_en": "EFFECT: When this card inflicts Battle Damage to your opponent's Life Points, increase your Life Points by the same amount. This card can attack your opponent directly. This card is a \"Spirit\" card and returns to your hand during the End Phase of the turn it was Summoned.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này gây Sát Thương Chiến Đấu lên Điểm Sinh Mệnh của đối thủ, hãy tăng Điểm Sinh Mệnh của bạn một lượng bằng với sát thương đã gây ra. Lá bài này có thể tấn công trực tiếp đối thủ. Đây là một lá bài \"Spirit\" và trở về tay bạn trong End Phase của lượt mà nó được Triệu hồi.",
+      "desc_es": "EFECTO: Cuando esta carta inflija Daño de Batalla a los Puntos de Vida de tu adversario, aumenta tus Puntos de Vida en una cantidad igual al daño infligido. Esta carta puede atacar directamente a tu adversario. Esta es una carta \"Spirit\" y regresa a tu mano durante la Fase Final del turno en que fue Invocada."
     },
     {
       "nome": "Fusilier Dragon",
@@ -9402,10 +9423,10 @@
       "nivel": "8",
       "atk": "2800",
       "def": "2900",
-      "desc_pt": "EFEITO: Esta carta retorna à mão do seu dono durante a Fase Final do turno em que foi invocada, a menos que isso deixe seu lado do campo sem nenhum monstro. Se esta carta infligir Dano de Batalha ao oponente, ele descarta todas as cartas da mão; para cada monstro descartado dessa forma, ele sofre 300 pontos de dano. Esta é uma carta \"Spirit\".",
-      "desc_en": "EFFECT: This card returns to its owner's hand during the End Phase of the turn it was Summoned, unless doing so would leave your side of the field with no monsters. If this card inflicts Battle Damage to your opponent, they discard their entire hand; for each monster discarded this way, they take 300 damage. This is a \"Spirit\" card.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này trở về tay của chủ sở hữu trong Giai đoạn Kết thúc của lượt mà nó được Triệu hồi, trừ khi điều đó khiến bên sân của bạn không còn quái thú nào. Nếu lá bài này gây Sát thương Chiến đấu cho đối thủ của bạn, đối thủ phải gửi toàn bộ bài trên tay vào Mộ bài; với mỗi quái thú bị gửi đi theo cách này, đối thủ nhận 300 sát thương. Đây là một lá bài \"Spirit\".",
-      "desc_es": "EFECTO: Esta carta regresa a la mano de su propietario durante la Fase Final del turno en que fue Invocada, a menos que eso deje tu lado del campo sin ningún monstruo. Si esta carta inflige Daño de Batalla a tu oponente, este descarta toda su mano; por cada monstruo descartado de esta forma, sufre 300 puntos de daño. Esta es una carta \"Spirit\"."
+      "desc_pt": "EFEITO: No final de cada turno, se o seu oponente controlar 2 ou mais monstros, destrua 1 deles aleatoriamente. Se esta carta infligir Dano de Batalha ao seu oponente, ele descarta da mão um número de cartas igual ao número de monstros no seu campo; para cada monstro descartado dessa forma, ele sofre 300 pontos de dano. Esta é uma carta \"Spirit\" e retorna à sua mão durante a Fase Final do turno em que foi Invocada.",
+      "desc_en": "EFFECT: At the end of each turn, if your opponent controls 2 or more monsters, destroy 1 of them at random. If this card inflicts Battle Damage to your opponent, they discard cards from their hand equal to the number of monsters on your field; for each monster discarded this way, they take 300 damage. This card is a \"Spirit\" card and returns to your hand during the End Phase of the turn it was Summoned.",
+      "desc_vi": "HIỆU ỨNG: Vào cuối mỗi lượt, nếu đối thủ điều khiển từ 2 quái thú trở lên, hãy phá hủy ngẫu nhiên 1 trong số đó. Nếu lá bài này gây Sát Thương Chiến Đấu lên đối thủ, họ bỏ từ tay số lá bài bằng số quái thú trên sân của bạn; với mỗi quái thú bị bỏ theo cách này, họ nhận 300 sát thương. Đây là một lá bài \"Spirit\" và trở về tay bạn trong End Phase của lượt mà nó được Triệu hồi.",
+      "desc_es": "EFECTO: Al final de cada turno, si tu adversario controla 2 o más monstruos, destruye 1 de ellos al azar. Si esta carta inflige Daño de Batalla a tu adversario, él descarta de su mano un número de cartas igual al número de monstruos en tu campo; por cada monstruo descartado de esta forma, recibe 300 puntos de daño. Esta es una carta \"Spirit\" y regresa a tu mano durante la Fase Final del turno en que fue Invocada."
     },
     {
       "nome": "Hinotama",
@@ -9931,10 +9952,10 @@
       "nivel": "4",
       "atk": "1100",
       "def": "1900",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, aumente em 500 o poder dos seus monstros FIRE no campo.",
-      "desc_en": "EFFECT: When this card is summoned, increase the power of your FIRE monsters on the field by 500.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, tăng sức mạnh của các quái thú FIRE trên sân của bạn thêm 500.",
-      "desc_es": "EFECTO: Cuando esta carta sea invocada, aumenta en 500 el poder de tus monstruos FIRE en el campo."
+      "desc_pt": "EFEITO: Quando este card for destruído no campo, cause 1000 de dano aos Pontos de Vida do seu oponente.",
+      "desc_en": "EFFECT: When this card is destroyed on the field, inflict 1000 damage to your opponent's Life Points.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này bị phá hủy trên sân, gây 1000 sát thương lên Điểm Sinh Mệnh của đối thủ.",
+      "desc_es": "EFECTO: Cuando esta carta sea destruida en el campo, inflige 1000 puntos de daño a los Puntos de Vida de tu adversario."
     },
     {
       "nome": "Inferno Fire Blast",
@@ -10539,10 +10560,10 @@
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "SPELL",
-      "desc_pt": "EFEITO: Causa 500 pontos de dano aos Pontos de Vida do oponente toda vez que um monstro FIRE for invocado no seu lado do campo.",
-      "desc_en": "EFFECT: Inflict 500 damage to your opponent's Life Points every time a FIRE monster is Summoned to your side of the field.",
-      "desc_vi": "HIỆU ỨNG: Gây 500 sát thương lên Điểm Sinh Mệnh của đối thủ mỗi khi một quái thú FIRE được Triệu hồi ở phía sân của bạn.",
-      "desc_es": "EFECTO: Inflige 500 puntos de daño a los Puntos de Vida de tu oponente cada vez que un monstruo FIRE sea Invocado en tu lado del campo."
+      "desc_pt": "EFEITO: Cause 500 de dano aos Pontos de Vida do seu oponente toda vez que um monstro FIRE for Invocado no seu lado do campo. Enquanto o seu oponente controlar 3 ou mais cards no campo, esta carta não pode ser destruída por efeitos do seu oponente.",
+      "desc_en": "EFFECT: Inflict 500 damage to your opponent's Life Points each time a FIRE monster is Summoned to your side of the field. While your opponent controls 3 or more cards on the field, this card cannot be destroyed by your opponent's effects.",
+      "desc_vi": "HIỆU ỨNG: Gây 500 sát thương lên Điểm Sinh Mệnh của đối thủ mỗi khi một quái thú FIRE được Triệu hồi lên phía sân của bạn. Khi đối thủ điều khiển từ 3 lá bài trở lên trên sân, lá bài này không thể bị phá hủy bởi hiệu ứng của đối thủ.",
+      "desc_es": "EFECTO: Inflige 500 puntos de daño a los Puntos de Vida de tu adversario cada vez que un monstruo FIRE sea Invocado a tu lado del campo. Mientras tu adversario controle 3 o más cartas en el campo, esta carta no puede ser destruida por efectos de tu adversario."
     },
     {
       "nome": "Killer Needle",
@@ -12956,10 +12977,10 @@
       "raridade_arquivo": "R",
       "icone_atributo": "SPELL",
       "icone_tipo": "equip",
-      "desc_pt": "EFEITO: Equipe apenas a um monstro \"Spirit\". O monstro equipado ganha 300 de ATK e DEF para cada monstro \"Spirit\" na sua mão. O monstro equipado não precisa ter seu efeito de retorno para a mão ativado.",
-      "desc_en": "EFFECT: Equip only to a \"Spirit\" monster. The equipped monster gains 300 ATK and DEF for each \"Spirit\" monster in your hand. The equipped monster does not have to activate its return-to-hand effect.",
-      "desc_vi": "HIỆU ỨNG: Chỉ trang bị cho một quái thú \"Spirit\". Quái thú được trang bị nhận thêm 300 ATK và DEF cho mỗi quái thú \"Spirit\" trên tay bạn. Quái thú được trang bị không cần kích hoạt hiệu ứng trở về tay của nó.",
-      "desc_es": "EFECTO: Equipa solo a un monstruo \"Spirit\". El monstruo equipado gana 300 de ATK y DEF por cada monstruo \"Spirit\" en tu mano. El monstruo equipado no necesita activar su efecto de regreso a la mano."
+      "desc_pt": "EFEITO: Equipe apenas a um monstro \"Spirit\". O monstro equipado ganha 1000 de ATK e DEF e não é afetado por efeitos de Armadilha.",
+      "desc_en": "EFFECT: Equip only to a \"Spirit\" monster. The equipped monster gains 1000 ATK and DEF and is unaffected by Trap effects.",
+      "desc_vi": "HIỆU ỨNG: Chỉ trang bị cho một quái thú \"Spirit\". Quái thú được trang bị nhận 1000 ATK và DEF và không bị ảnh hưởng bởi hiệu ứng Bẫy.",
+      "desc_es": "EFECTO: Equipa sólo a un monstruo \"Spirit\". El monstruo equipado gana 1000 ATK y DEF y no es afectado por efectos de Trampa."
     },
     {
       "nome": "Misairuzame",
@@ -17317,10 +17338,10 @@
       "nivel": "4",
       "atk": "1700",
       "def": "1000",
-      "desc_pt": "EFEITO: Quando esta carta for invocada, ela ganha 300 de ATK e DEF para cada monstro FIRE na sua mão.",
-      "desc_en": "EFFECT: When this card is summoned, it gains 300 ATK and DEF for each FIRE monster in your hand.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận thêm 300 ATK và DEF cho mỗi quái thú FIRE trên tay bạn.",
-      "desc_es": "EFECTO: Cuando esta carta sea invocada, gana 300 de ATK y DEF por cada monstruo FIRE en tu mano."
+      "desc_pt": "EFEITO: Quando esta carta for Invocada, ela ganha 300 de ATK e DEF para cada monstro FIRE na sua mão. Este é um card \"Spirit\".",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 300 ATK and DEF for each FIRE monster in your hand. This card is a \"Spirit\" card.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận 300 ATK và DEF cho mỗi quái thú FIRE trong tay bạn. Đây là một lá bài \"Spirit\".",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada, gana 300 ATK y DEF por cada monstruo FIRE en tu mano. Esta es una carta \"Spirit\"."
     },
     {
       "nome": "Spirit of the Books",
@@ -17387,16 +17408,15 @@
       "nome_pt": "Spirit's Invitation",
       "slug": "spirits_invitation",
       "card_type": "Trap",
-      "tipo": "Trap",
+      "tipo": "trap continuous",
       "atributo": "trap",
       "raridade": "SR",
       "raridade_arquivo": "SR",
       "icone_atributo": "TRAP",
-      "icone_tipo": "trap",
-      "desc_pt": "EFEITO: Toda vez que um monstro \"Spirit\" seu retornar para a sua mão, retorne para a mão de seu dono um monstro aleatório no campo do seu oponente.",
-      "desc_en": "EFFECT: Each time a \"Spirit\" monster you control returns to your hand, return 1 random monster on your opponent's field to its owner's hand.",
-      "desc_vi": "HIỆU ỨNG: Mỗi khi một quái thú \"Spirit\" mà bạn điều khiển trở về tay bạn, hãy trả 1 quái thú ngẫu nhiên trên sân của đối thủ về tay của chủ sở hữu nó.",
-      "desc_es": "EFECTO: Cada vez que un monstruo \"Spirit\" que controlas regrese a tu mano, regresa a la mano de su propietario 1 monstruo aleatorio en el campo de tu oponente."
+      "desc_pt": "EFEITO: Uma vez por turno, quando o seu oponente declarar um ataque e você não controlar nenhum monstro, Invoque 1 monstro \"Spirit\" aleatório do seu DECK em Posição de Defesa. O monstro Invocado passa a ser o alvo desse ataque.",
+      "desc_en": "EFFECT: Once per turn, when your opponent declares an attack while you control no monsters, Summon 1 random \"Spirit\" monster from your DECK in Defense Position. The Summoned monster becomes the target of that attack.",
+      "desc_vi": "HIỆU ỨNG: Một lần mỗi lượt, khi đối thủ tuyên bố tấn công trong lúc bạn không điều khiển quái thú nào, hãy Triệu hồi 1 quái thú \"Spirit\" ngẫu nhiên từ DECK của bạn ở Tư thế Phòng thủ. Quái thú được Triệu hồi trở thành mục tiêu của đòn tấn công đó.",
+      "desc_es": "EFECTO: Una vez por turno, cuando tu adversario declare un ataque mientras no controlas monstruos, Invoca 1 monstruo \"Spirit\" aleatorio de tu DECK en Posición de Defensa. El monstruo Invocado pasa a ser el objetivo de ese ataque."
     },
     {
       "nome": "Spiritual Energy Settle Machine",
@@ -17408,10 +17428,10 @@
       "raridade": "UR",
       "raridade_arquivo": "UR",
       "icone_atributo": "SPELL",
-      "desc_pt": "EFEITO: Enquanto esta carta permanecer virada para cima no campo, todos os monstros \"Spirit\" ganham 400 de ATK e DEF e não retornam para as mãos de seus donos durante a Fase Final.",
-      "desc_en": "EFFECT: While this card remains face-up on the field, all \"Spirit\" monsters gain 400 ATK and DEF and do not return to their owners' hands during the End Phase.",
-      "desc_vi": "HIỆU ỨNG: Trong khi lá bài này còn ngửa trên sân, tất cả quái thú \"Spirit\" nhận thêm 400 ATK và DEF, đồng thời không trở về tay của chủ sở hữu trong Giai đoạn Kết thúc.",
-      "desc_es": "EFECTO: Mientras esta carta permanezca boca arriba en el campo, todos los monstruos \"Spirit\" ganan 400 de ATK y DEF y no regresan a la mano de sus propietarios durante la Fase Final."
+      "desc_pt": "EFEITO: Enquanto esta carta permanecer no campo, todos os monstros \"Spirit\" ganham 400 de ATK e DEF. Sempre que um monstro \"Spirit\" for Invocado, o seu oponente envia a carta do topo do DECK dele para o Cemitério e o efeito seguinte é aplicado conforme o tipo da carta enviada. Monstro: cause dano igual a 100 x o Nível dele aos Pontos de Vida do seu oponente. Magia, Equipamento ou Campo: ganhe 2000 Pontos de Vida. Armadilha: destrua 1 card aleatório no campo do seu oponente.",
+      "desc_en": "EFFECT: While this card remains on the field, all \"Spirit\" monsters gain 400 ATK and DEF. Whenever a \"Spirit\" monster is Summoned, your opponent sends the top card of their DECK to the GRAVEYARD and the following effect is applied according to the type of the card sent. Monster: inflict damage equal to 100 x its Level to your opponent's Life Points. Spell, Equip or Field: gain 2000 Life Points. Trap: destroy 1 random card on your opponent's field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này còn trên sân, tất cả quái thú \"Spirit\" nhận 400 ATK và DEF. Mỗi khi một quái thú \"Spirit\" được Triệu hồi, đối thủ của bạn đưa lá bài trên cùng DECK của họ vào Mộ và hiệu ứng sau được áp dụng theo loại lá bài đã đưa đi. Quái thú: gây sát thương bằng 100 x Cấp độ của nó lên Điểm Sinh Mệnh của đối thủ. Phép, Trang bị hoặc Sân: nhận 2000 Điểm Sinh Mệnh. Bẫy: phá hủy ngẫu nhiên 1 lá bài trên sân của đối thủ.",
+      "desc_es": "EFECTO: Mientras esta carta permanezca en el campo, todos los monstruos \"Spirit\" ganan 400 ATK y DEF. Cada vez que un monstruo \"Spirit\" sea Invocado, tu adversario manda la carta superior de su DECK al Cementerio y se aplica el siguiente efecto según el tipo de la carta mandada. Monstruo: inflige daño igual a 100 x su Nivel a los Puntos de Vida de tu adversario. Mágica, Equipo o Campo: gana 2000 Puntos de Vida. Trampa: destruye 1 carta aleatoria en el campo de tu adversario."
     },
     {
       "nome": "St. Joan",
@@ -17998,10 +18018,10 @@
       "raridade_arquivo": "UR",
       "icone_atributo": "SPELL",
       "icone_tipo": "equip",
-      "desc_pt": "EFEITO: Equipe apenas a um monstro SPIRIT. Enquanto estiver equipado, se o monstro equipado atacar um monstro em Posição de Defesa, cause dano de batalha perfurante. Se o monstro equipado retornar para a mão de seu dono na Fase Final do turno, cause 1000 pontos de dano aos Pontos de Vida do oponente.",
-      "desc_en": "EFFECT: Equip only to a SPIRIT monster. While equipped, if the equipped monster attacks a monster in Defense Position, inflict piercing battle damage. If the equipped monster returns to its owner's hand during the End Phase, inflict 1000 damage to your opponent's Life Points.",
-      "desc_vi": "HIỆU ỨNG: Chỉ trang bị cho một quái thú SPIRIT. Trong khi được trang bị, nếu quái thú được trang bị tấn công một quái thú ở Tư thế Phòng thủ, gây sát thương chiến đấu xuyên giáp. Nếu quái thú được trang bị trở về tay của chủ sở hữu trong Giai đoạn Kết thúc, gây 1000 sát thương lên Điểm Sinh Mệnh của đối thủ.",
-      "desc_es": "EFECTO: Equipa solo a un monstruo SPIRIT. Mientras esté equipado, si el monstruo equipado ataca a un monstruo en Posición de Defensa, inflige daño de batalla perforante. Si el monstruo equipado regresa a la mano de su propietario durante la Fase Final, inflige 1000 puntos de daño a los Puntos de Vida de tu oponente."
+      "desc_pt": "EFEITO: Equipe apenas a um monstro \"Spirit\". Quando o monstro equipado atacar um monstro em Posição de Defesa cujo DEF seja menor que o ATK dele, cause dano de batalha perfurante. Enquanto esta carta estiver no seu Cemitério, os monstros \"Spirit\" no seu campo ganham 500 de ATK e DEF.",
+      "desc_en": "EFFECT: Equip only to a \"Spirit\" monster. When the equipped monster attacks a monster in Defense Position whose DEF is lower than its ATK, inflict piercing battle damage. While this card is in your GRAVEYARD, \"Spirit\" monsters on your field gain 500 ATK and DEF.",
+      "desc_vi": "HIỆU ỨNG: Chỉ trang bị cho một quái thú \"Spirit\". Khi quái thú được trang bị tấn công một quái thú ở Tư thế Phòng thủ có DEF thấp hơn ATK của nó, hãy gây sát thương chiến đấu xuyên thấu. Khi lá bài này ở trong Mộ của bạn, các quái thú \"Spirit\" trên sân của bạn nhận 500 ATK và DEF.",
+      "desc_es": "EFECTO: Equipa sólo a un monstruo \"Spirit\". Cuando el monstruo equipado ataque a un monstruo en Posición de Defensa cuya DEF sea menor que su ATK, inflige daño de batalla perforante. Mientras esta carta esté en tu Cementerio, los monstruos \"Spirit\" en tu campo ganan 500 ATK y DEF."
     },
     {
       "nome": "Swords of Revealing Light",
@@ -18208,10 +18228,10 @@
       "nivel": "7",
       "atk": "2400",
       "def": "2200",
-      "desc_pt": "EFEITO: Quando esta carta for Invocada: envie até 2 monstros WIND ou DRAGON aleatórios da sua mão e/ou do seu Deck para o Cemitério e, depois, embaralhe até 2 cartas aleatórias que seu oponente controla no Deck dele. Se esta carta for destruída: Invoque 1 monstro \"Dragon Ruler\" com a maior DEF do seu Deck. Enquanto esta carta estiver em campo, os monstros DRAGON no seu campo não são afetados por efeitos de SPELL e TRAP do seu oponente, exceto esta.",
-      "desc_en": "EFFECT: When this card is Summoned: send up to 2 random WIND or DRAGON monsters from your hand and/or Deck to the Graveyard, then shuffle up to 2 random cards your opponent controls into their Deck. If this card is destroyed: Summon 1 \"Dragon Ruler\" monster with the highest DEF from your Deck. While this card is on the field, DRAGON monsters you control are unaffected by your opponent's SPELL and TRAP effects, except this one.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi tối đa 2 quái thú WIND hoặc DRAGON ngẫu nhiên từ tay và/hoặc Deck của bạn xuống Mộ bài, sau đó xáo trộn tối đa 2 lá bài ngẫu nhiên mà đối thủ điều khiển vào Deck của đối thủ. Nếu lá bài này bị phá hủy: Triệu hồi 1 quái thú \"Dragon Ruler\" có DEF cao nhất từ Deck của bạn. Khi lá bài này ở trên sân, các quái thú DRAGON trên sân của bạn không bị ảnh hưởng bởi hiệu ứng SPELL và TRAP của đối thủ, ngoại trừ lá này.",
-      "desc_es": "EFECTO: Cuando esta carta es Invocada: envía hasta 2 monstruos WIND o DRAGON aleatorios de tu mano y/o tu Deck al Cementerio y, después, baraja hasta 2 cartas aleatorias que tu oponente controle en su Deck. Si esta carta es destruida: Invoca 1 monstruo \"Dragon Ruler\" con la mayor DEF de tu Deck. Mientras esta carta esté en el campo, los monstruos DRAGON en tu campo no son afectados por efectos de SPELL y TRAP de tu oponente, excepto esta."
+      "desc_pt": "EFFECT: When this card is Summoned: send 2 random WIND or DRAGON monsters from your hand and/or Deck to the Graveyard, then shuffle up to 2 random cards your opponent controls into their Deck. If this card is destroyed: Summon 1 \"Dragon Ruler\" monster with the highest DEF from your Deck. While this card is on the field, DRAGON monsters you control are unaffected by your opponent's SPELL and TRAP effects, except this one.",
+      "desc_en": "EFEITO: Quando esta carta for Invocada: envie 2 monstros WIND ou DRAGON aleatórios da sua mão e/ou do seu Deck para o Cemitério e, depois, embaralhe até 2 cartas aleatórias que seu oponente controla no Deck dele. Se esta carta for destruída: Invoque 1 monstro \"Dragon Ruler\" com a maior DEF do seu Deck. Enquanto esta carta estiver em campo, os monstros DRAGON no seu campo não são afetados por efeitos de SPELL e TRAP do seu oponente, exceto esta.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi 2 quái thú WIND hoặc DRAGON ngẫu nhiên từ tay và/hoặc Deck của bạn xuống Mộ bài, sau đó xáo trộn tối đa 2 lá bài ngẫu nhiên mà đối thủ điều khiển vào Deck của đối thủ. Nếu lá bài này bị phá hủy: Triệu hồi 1 quái thú \"Dragon Ruler\" có DEF cao nhất từ Deck của bạn. Khi lá bài này ở trên sân, các quái thú DRAGON trên sân của bạn không bị ảnh hưởng bởi hiệu ứng SPELL và TRAP của đối thủ, ngoại trừ lá này.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada: envía 2 monstruos WIND o DRAGON aleatorios de tu mano y/o tu Deck al Cementerio y, después, baraja hasta 2 cartas aleatorias que tu oponente controle en su Deck. Si esta carta es destruida: Invoca 1 monstruo \"Dragon Ruler\" con la mayor DEF de tu Deck. Mientras esta carta esté en el campo, los monstruos DRAGON en tu campo no son afectados por efectos de SPELL y TRAP de tu oponente, excepto esta."
     },
     {
       "nome": "Temple of Skulls",
@@ -19736,17 +19756,17 @@
       "card_type": "Monster",
       "tipo": "Warrior",
       "atributo": "FIRE",
-      "raridade": "R",
-      "raridade_arquivo": "R",
+      "raridade": "SR",
+      "raridade_arquivo": "SR",
       "icone_atributo": "FIRE",
       "icone_tipo": "warrior",
       "nivel": "3",
       "atk": "500",
       "def": "1000",
-      "desc_pt": "EFEITO: Quando invocada, esta carta ganha 750 de ATK para cada monstro FIRE em seu campo. Sempre que um monstro FIRE em seu campo participar de uma batalha, cause 500 de dano ao oponente.",
-      "desc_en": "EFFECT: When Summoned, this card gains 750 ATK for each FIRE monster on your field. Whenever a FIRE monster on your field battles, inflict 500 damage to your opponent.",
-      "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, lá bài này nhận thêm 750 ATK cho mỗi quái thú FIRE trên sân của bạn. Bất cứ khi nào một quái thú FIRE trên sân của bạn tham gia chiến đấu, gây 500 sát thương cho đối thủ.",
-      "desc_es": "EFECTO: Cuando es Invocada, esta carta gana 750 de ATK por cada monstruo FIRE en tu campo. Cada vez que un monstruo FIRE en tu campo participe en una batalla, inflige 500 de daño a tu oponente."
+      "desc_pt": "EFEITO: Quando esta carta é Invocada, ela ganha 750 de ATK para cada monstro FIRE no campo. Sempre que um monstro FIRE no seu campo participar de uma batalha, cause 500 de dano ao seu oponente.",
+      "desc_en": "EFFECT: When this card is Summoned, it gains 750 ATK for each FIRE monster on the field. Whenever a FIRE monster on your field participates in a battle, inflict 500 damage to your opponent.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, nó nhận 750 ATK cho mỗi quái thú FIRE trên sân. Mỗi khi một quái thú FIRE trên sân của bạn tham gia một trận chiến, gây 500 sát thương lên đối thủ.",
+      "desc_es": "EFECTO: Cuando esta carta es Invocada, gana 750 ATK por cada monstruo FIRE en el campo. Siempre que un monstruo FIRE en tu campo participe en una batalla, inflige 500 puntos de daño a tu adversario."
     },
     {
       "nome": "Ultimate Flame Swordsman",
@@ -19841,10 +19861,10 @@
       "nivel": "10",
       "atk": "3500",
       "def": "3000",
-      "desc_pt": "EFEITO: Esta carta não sofre dano de batalha. Os efeitos de monstros destruídos por esta carta em batalha são negados permanentemente pelo restante do duelo — incluindo todas as outras cópias desses monstros no Deck, Mão, Campo ou Cemitério de qualquer jogador.",
-      "desc_en": "EFFECT: This card takes no battle damage. The effects of monsters destroyed by this card in battle are negated permanently for the rest of the Duel — including all other copies of those monsters in either player's Deck, Hand, Field, or Graveyard.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này không nhận sát thương chiến đấu. Hiệu ứng của những quái thú bị lá bài này phá hủy trong chiến đấu sẽ bị vô hiệu hóa vĩnh viễn cho đến hết trận đấu — bao gồm tất cả các bản sao khác của những quái thú đó trong Bộ bài, Bài trên tay, Sân đấu hoặc Mộ bài của cả hai người chơi.",
-      "desc_es": "EFECTO: Esta carta no recibe daño de batalla. Los efectos de los monstruos destruidos por esta carta en batalla quedan negados permanentemente por el resto del Duelo, incluyendo todas las demás copias de esos monstruos en el Deck, la Mano, el Campo o el Cementerio de cualquier jugador.",
+      "desc_pt": "EFEITO: Esta carta não causa dano de batalha. Quando esta carta atacar um monstro, os efeitos desse monstro são negados durante a batalha.",
+      "desc_en": "EFFECT: This card inflicts no battle damage. When this card attacks a monster, that monster's effects are negated during the battle.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này không gây sát thương chiến đấu. Khi lá bài này tấn công một quái thú, các hiệu ứng của quái thú đó bị vô hiệu hóa trong suốt trận chiến.",
+      "desc_es": "EFECTO: Esta carta no inflige daño de batalla. Cuando esta carta ataque a un monstruo, los efectos de ese monstruo son negados durante la batalla.",
       "full_art": true
     },
     {
@@ -20858,10 +20878,10 @@
       "nivel": "7",
       "atk": "2600",
       "def": "3100",
-      "desc_pt": "EFEITO: Esta carta retorna à mão do seu dono durante a Fase Final do turno em que foi invocada, a menos que isso deixe seu lado do campo sem nenhum monstro. Quando invocada, você pode atacar até 9 vezes por turno com esta carta, porém ela não pode atacar diretamente os Pontos de Vida do oponente. Se esta carta atacar um monstro em Posição de Defesa, cause dano de batalha perfurante. Esta é uma carta \"Spirit\".",
-      "desc_en": "EFFECT: This card returns to its owner's hand during the End Phase of the turn it was Summoned, unless doing so would leave your side of the field with no monsters. When Summoned, you can attack up to 9 times per turn with this card, but it cannot attack your opponent's Life Points directly. If this card attacks a monster in Defense Position, inflict piercing battle damage. This is a \"Spirit\" card.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này trở về tay của chủ sở hữu trong Giai đoạn Kết thúc của lượt mà nó được Triệu hồi, trừ khi điều đó khiến bên sân của bạn không còn quái thú nào. Khi được Triệu hồi, bạn có thể tấn công tối đa 9 lần mỗi lượt với lá bài này, nhưng nó không thể tấn công trực tiếp vào Điểm Sinh Mệnh của đối thủ. Nếu lá bài này tấn công một quái thú ở Tư thế Phòng thủ, gây sát thương chiến đấu xuyên giáp. Đây là một lá bài \"Spirit\".",
-      "desc_es": "EFECTO: Esta carta regresa a la mano de su propietario durante la Fase Final del turno en que fue Invocada, a menos que eso deje tu lado del campo sin ningún monstruo. Cuando es Invocada, puedes atacar hasta 9 veces por turno con esta carta, pero no puede atacar directamente los Puntos de Vida de tu oponente. Si esta carta ataca a un monstruo en Posición de Defensa, inflige daño de batalla perforante. Esta es una carta \"Spirit\"."
+      "desc_pt": "EFEITO: Quando Invocada, você pode atacar até 9 vezes por turno com esta carta. A cada ataque, envie 1 monstro aleatório do DECK do seu oponente para o Cemitério; para cada carta enviada dessa forma, ele sofre 300 pontos de dano. Esta carta não causa dano aos Pontos de Vida em ataques diretos. Esta é uma carta \"Spirit\" e retorna à sua mão durante a Fase Final do turno em que foi Invocada.",
+      "desc_en": "EFFECT: When Summoned, you can attack up to 9 times per turn with this card. For each attack, send 1 random monster from your opponent's DECK to the GRAVEYARD; for each card sent this way, they take 300 damage. This card inflicts no damage to Life Points on direct attacks. This card is a \"Spirit\" card and returns to your hand during the End Phase of the turn it was Summoned.",
+      "desc_vi": "HIỆU ỨNG: Khi được Triệu hồi, bạn có thể tấn công tối đa 9 lần mỗi lượt bằng lá bài này. Với mỗi lần tấn công, đưa 1 quái thú ngẫu nhiên từ DECK của đối thủ vào Mộ; với mỗi lá bài được đưa đi theo cách này, họ nhận 300 sát thương. Lá bài này không gây sát thương lên Điểm Sinh Mệnh khi tấn công trực tiếp. Đây là một lá bài \"Spirit\" và trở về tay bạn trong End Phase của lượt mà nó được Triệu hồi.",
+      "desc_es": "EFECTO: Cuando es Invocada, puedes atacar hasta 9 veces por turno con esta carta. Por cada ataque, manda 1 monstruo aleatorio del DECK de tu adversario al Cementerio; por cada carta mandada de esta forma, él recibe 300 puntos de daño. Esta carta no inflige daño a los Puntos de Vida en ataques directos. Esta es una carta \"Spirit\" y regresa a tu mano durante la Fase Final del turno en que fue Invocada."
     },
     {
       "nome": "Yamatano Dragon Scroll",
