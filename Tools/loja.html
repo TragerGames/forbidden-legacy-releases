@@ -55,7 +55,7 @@ src="https://www.facebook.com/tr?id=1730849377953646&ev=PageView&noscript=1"
 <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Marcellus+SC&display=swap" rel="stylesheet">
 <style>
 /* ═══════ RESET & TOKENS ═══════ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -1171,6 +1171,140 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
   background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
 }
 ::-webkit-scrollbar-corner { background: transparent; }
+
+/* ═══ LOJA DO SOLOMON (loja nova, 2026-09-14) ═══════════════════════════
+   Cena do balcao + vitrine dos 8 Itens do Milenio. Classes com prefixo lv-
+   para nao colidir com o CSS antigo da loja. Prévia aprovada pelo Felipe. */
+.lv-loja{
+  --lv-noite:#0c0a08; --lv-pedra:#1a140e; --lv-pedra-2:#241b12;
+  --lv-ouro:#c8973a; --lv-ouro-vivo:#f0c35a; --lv-ouro-luz:#ffe8a8;
+  --lv-papiro:#efe2c2; --lv-areia:#a8956c; --lv-areia-2:#7d6d4d;
+  --lv-linha:rgba(240,195,90,.16);
+  --lv-titulo:'Bebas Neue','Arial Narrow',Impact,sans-serif;
+  --lv-item:'Marcellus SC','Trajan Pro',Georgia,serif;
+  max-width:1280px;margin:0 auto;padding:92px 24px 10px;box-sizing:border-box
+}
+.lv-loja *,.lv-como *{box-sizing:border-box}
+.lv-cena{position:relative;display:grid;grid-template-columns:minmax(300px,.82fr) 1.5fr;border-radius:18px;overflow:hidden;isolation:isolate;
+  background:
+    radial-gradient(ellipse 60% 70% at 22% 8%,rgba(255,196,110,.20),transparent 60%),
+    radial-gradient(ellipse 50% 60% at 78% 20%,rgba(240,195,90,.10),transparent 65%),
+    repeating-linear-gradient(0deg,transparent 0 62px,rgba(0,0,0,.28) 62px 64px),
+    repeating-linear-gradient(90deg,transparent 0 118px,rgba(0,0,0,.18) 118px 120px),
+    linear-gradient(180deg,#221a11,#15100b 70%);
+  border:1px solid var(--lv-linha);min-height:560px;color:var(--lv-papiro)}
+.lv-cena>*,.lv-vitrine,.lv-vidro{min-width:0}
+.lv-poeira{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.lv-balcao{position:absolute;left:0;right:0;bottom:0;height:128px;z-index:2;
+  background:linear-gradient(180deg,#3b2817 0,#2a1c10 18%,#1c130b 100%);
+  border-top:2px solid var(--lv-ouro);box-shadow:0 -14px 40px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,232,168,.35);
+  display:flex;align-items:center;justify-content:center}
+.lv-balcao span{font:18px/1 var(--lv-titulo);letter-spacing:.34em;color:rgba(240,195,90,.3);white-space:nowrap;padding-top:8px}
+.lv-lado-solomon{position:relative;z-index:1;min-height:560px;display:flex;flex-direction:column;gap:14px;padding:18px 0 0 18px}
+.lv-solomon-area{position:relative;flex:1;min-height:340px}
+.lv-solomon{position:absolute;left:50%;bottom:0;height:100%;max-height:640px;width:auto;max-width:none;transform:translateX(-52%);filter:drop-shadow(0 18px 30px rgba(0,0,0,.6));transform-origin:50% 100%;animation:lv-respira 5.5s ease-in-out infinite}
+@keyframes lv-respira{0%,100%{transform:translateX(-52%) scaleY(1)}50%{transform:translateX(-52%) scaleY(1.008)}}
+.lv-fala{position:relative;z-index:3;margin-right:-34px;background:linear-gradient(180deg,rgba(26,20,14,.96),rgba(18,13,9,.96));border:1px solid rgba(240,195,90,.5);border-radius:14px;padding:14px 16px 12px;box-shadow:0 12px 34px rgba(0,0,0,.55);cursor:pointer;text-align:left}
+.lv-fala::after{content:"";position:absolute;left:46%;bottom:-9px;width:16px;height:16px;background:#130e09;border-right:1px solid rgba(240,195,90,.5);border-bottom:1px solid rgba(240,195,90,.5);transform:rotate(45deg)}
+.lv-fala-quem{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.lv-fala-quem img{width:34px;height:34px;border-radius:50%;border:1px solid var(--lv-ouro);background:#2a1f14;object-fit:cover}
+.lv-fala-quem b{display:block;font:17px/1.1 var(--lv-item);color:var(--lv-ouro-luz)}
+.lv-fala-quem small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lv-areia)}
+.lv-fala-texto{margin:0;min-height:4.8em;font-size:14.5px;line-height:1.6;color:var(--lv-papiro)}
+.lv-cursor{display:inline-block;width:.5em;color:var(--lv-ouro-vivo);animation:lv-pisca 1s steps(2) infinite}
+@keyframes lv-pisca{50%{opacity:0}}
+.lv-perguntas{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.lv-perguntas button{font:inherit;border:1px solid var(--lv-linha);background:rgba(240,195,90,.06);border-radius:999px;padding:5px 11px;font-size:12.5px;color:var(--lv-ouro-luz);cursor:pointer}
+.lv-perguntas button:hover{background:rgba(240,195,90,.14);border-color:rgba(240,195,90,.4)}
+.lv-vitrine{position:relative;z-index:1;padding:22px 26px 150px 58px;display:grid;align-content:start;gap:10px}
+.lv-vitrine-cab{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;text-align:left}
+.lv-vitrine-cab h1{margin:0;font:clamp(34px,4.2vw,52px)/.95 var(--lv-titulo);letter-spacing:.03em;color:var(--lv-ouro-luz);text-wrap:balance}
+.lv-vitrine-cab p{margin:0;font-size:13px;color:var(--lv-areia);max-width:34ch}
+.lv-vidro{position:relative;border-radius:12px;background:linear-gradient(180deg,rgba(255,232,168,.07),rgba(255,232,168,.02));border:1px solid rgba(255,232,168,.12);padding:14px 14px 0}
+.lv-prateleira{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-bottom:16px;position:relative}
+.lv-prateleira+.lv-prateleira{margin-top:14px}
+.lv-prateleira::after{content:"";position:absolute;left:-14px;right:-14px;bottom:0;height:6px;background:linear-gradient(180deg,rgba(255,232,168,.28),rgba(255,232,168,.04));border-top:1px solid rgba(255,232,168,.35)}
+.lv-pack{--c1:#e8b840;--c2:#5a4012;position:relative;border:0;padding:0;background:none;cursor:pointer;display:grid;gap:6px;justify-items:center;font:inherit;color:inherit;transition:transform .35s cubic-bezier(.2,.9,.3,1.3)}
+.lv-pack-corpo{position:relative;width:100%;aspect-ratio:5/7.4;border-radius:7px 7px 9px 9px;overflow:hidden;
+  background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.28) 0,transparent 42%),linear-gradient(160deg,var(--c1) 0%,var(--c1) 34%,var(--c2) 100%);
+  box-shadow:0 10px 18px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.18),inset 0 -24px 30px rgba(0,0,0,.35);transition:box-shadow .35s}
+.lv-pack-corpo::before{content:"";position:absolute;left:0;right:0;top:0;height:11px;background:repeating-linear-gradient(90deg,rgba(0,0,0,.35) 0 3px,rgba(255,255,255,.18) 3px 5px);border-bottom:1px solid rgba(0,0,0,.35)}
+.lv-pack-corpo::after{content:"";position:absolute;inset:-40% -60%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.38) 50%,transparent 58%);transform:translateX(-60%);transition:transform .9s ease}
+.lv-pack:hover .lv-pack-corpo::after,.lv-pack[aria-pressed="true"] .lv-pack-corpo::after{transform:translateX(60%)}
+.lv-medalhao{position:absolute;left:50%;top:40%;width:58%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 40% 35%,rgba(255,244,210,.55),rgba(0,0,0,.25) 70%);box-shadow:0 0 0 1px rgba(255,240,200,.45),0 0 22px rgba(255,220,150,.35)}
+.lv-medalhao svg{width:74%;height:74%;color:#fff7dd;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
+.lv-pack-nome{position:absolute;left:6px;right:6px;bottom:9px;text-align:center;font:clamp(11px,1.05vw,13.5px)/1.15 var(--lv-item);color:#fff7e3;text-shadow:0 1px 3px rgba(0,0,0,.8);text-wrap:balance}
+.lv-fita{position:absolute;right:-3px;top:17px;font:12px/1 var(--lv-titulo);letter-spacing:.08em;padding:4px 7px 3px 8px;border-radius:3px 0 0 3px;color:#1b1206;background:linear-gradient(90deg,#ffd6f5,#b9f3ff 35%,#fff0a8 70%,#ffc4c4);box-shadow:0 2px 6px rgba(0,0,0,.45)}
+.lv-pack-preco{font:17px/1 var(--lv-titulo);letter-spacing:.04em;color:var(--lv-ouro-luz)}
+.lv-pack-souls{font-size:11.5px;color:var(--lv-areia);font-variant-numeric:tabular-nums;margin-top:-4px}
+.lv-pack:hover{transform:translateY(-5px)}
+.lv-pack[aria-pressed="true"]{transform:translateY(-12px) rotate(-1.5deg)}
+.lv-pack[aria-pressed="true"] .lv-pack-corpo{box-shadow:0 18px 30px rgba(0,0,0,.55),0 0 0 2px var(--lv-ouro-luz),0 0 34px rgba(255,220,150,.45),inset 0 -24px 30px rgba(0,0,0,.3)}
+.lv-pack:focus-visible{outline:2px solid var(--lv-ouro-vivo);outline-offset:4px;border-radius:8px}
+.lv-pack-trono .lv-pack-corpo{background:conic-gradient(from 0deg at 50% 42%,rgba(255,255,255,0),rgba(255,248,214,.35),rgba(255,255,255,0) 12%,rgba(255,248,214,.3) 25%,rgba(255,255,255,0) 37%,rgba(255,248,214,.3) 50%,rgba(255,255,255,0) 62%,rgba(255,248,214,.3) 75%,rgba(255,255,255,0) 87%,rgba(255,248,214,.35)),linear-gradient(160deg,#fff6d6 0%,#f0c35a 40%,#8a5a12 100%)}
+.lv-pack-trono .lv-medalhao svg{color:#3a2408;filter:none}
+.lv-pack-trono .lv-pack-nome{color:#2a1804;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+.lv-escolhido{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:rgba(12,10,8,.72);border:1px solid var(--lv-linha);border-radius:12px;padding:10px 14px;text-align:left}
+.lv-escolhido-texto{font-size:14px;color:var(--lv-papiro)}
+.lv-escolhido-texto b{font-family:var(--lv-item);font-weight:400;color:var(--lv-ouro-luz);font-size:16px}
+.lv-continuar{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:10px;padding:10px 16px;font:19px/1 var(--lv-titulo);letter-spacing:.08em;color:#1b1206;background:linear-gradient(180deg,#ffe8a8,#f0c35a 45%,#c8973a);box-shadow:0 6px 18px rgba(240,195,90,.25)}
+.lv-continuar:hover{filter:brightness(1.06)}
+
+/* Resumo da compra: conteudo do pacote e aviso da versao do jogo */
+.lv-conteudo{display:grid;gap:6px;margin:10px 0 4px;text-align:left}
+.lv-linha{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13px;color:#cdbb92;font-variant-numeric:tabular-nums}
+.lv-linha b{color:#ffe8a8;font-weight:600}
+.lv-linha small{display:block;font-size:11px;color:#8d7b56}
+.lv-linha.lv-vazia{opacity:.5}
+.lv-carimbo{display:inline-block;font:12px/1 'Bebas Neue',Impact,sans-serif;letter-spacing:.06em;color:#0f2414;background:#8fe0a4;padding:3px 5px 2px;border-radius:3px;transform:rotate(-4deg);margin-left:4px}
+.lv-limite{font-size:11.5px;color:#8d7b56;margin-top:4px;text-align:left}
+.lv-aviso-p04{margin:14px 0 12px;padding:11px 13px;border-radius:10px;border:1px solid rgba(240,195,90,.55);background:linear-gradient(180deg,rgba(240,195,90,.13),rgba(240,195,90,.05));text-align:left}
+.lv-aviso-p04 strong{display:block;font-size:13px;color:#ffe8a8;margin-bottom:3px}
+.lv-aviso-p04 p{margin:0;font-size:12.5px;line-height:1.5;color:#dccb9f}
+.lv-aviso-p04 p b{color:#ffe8a8}
+
+/* Como funciona (depois do checkout) */
+.lv-como{display:grid;grid-template-columns:1.1fr 2fr;gap:18px;align-items:start;margin-top:42px;text-align:left;color:#efe2c2}
+.lv-como>*{min-width:0}
+.lv-como h2{margin:0;font:clamp(28px,3vw,38px)/1 'Bebas Neue',Impact,sans-serif;letter-spacing:.03em;color:#ffe8a8;text-wrap:balance}
+.lv-como-intro>p{margin:8px 0 0;color:#a8956c;font-size:14px;max-width:40ch}
+.lv-passos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:lvpasso}
+.lv-passos li{counter-increment:lvpasso;background:#1a140e;border:1px solid rgba(240,195,90,.16);border-radius:12px;padding:14px 16px}
+.lv-passos li::before{content:counter(lvpasso);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid #c8973a;font:17px/1 'Bebas Neue',Impact,sans-serif;color:#ffe8a8;margin-bottom:8px}
+.lv-passos b{display:block;font-size:14.5px;color:#efe2c2}
+.lv-passos span{font-size:13px;color:#a8956c}
+.lv-urs{display:flex;align-items:center;gap:14px;margin-top:14px}
+.lv-urs-cartas{display:flex;flex-shrink:0}
+.lv-urs-cartas img{width:54px;height:auto;border-radius:4px;box-shadow:0 6px 14px rgba(0,0,0,.5);border:1px solid rgba(255,232,168,.35)}
+.lv-urs-cartas img+img{margin-left:-18px}
+.lv-urs-cartas img:nth-child(1){transform:rotate(-8deg)}
+.lv-urs-cartas img:nth-child(3){transform:rotate(8deg)}
+.lv-urs p{margin:0;font-size:12.5px;color:#a8956c;max-width:46ch}
+
+@media (max-width:1020px){.lv-como{grid-template-columns:1fr}}
+@media (max-width:860px){
+  .lv-loja{padding:78px 16px 6px}
+  .lv-cena{grid-template-columns:1fr;min-height:0}
+  .lv-lado-solomon{min-height:0;padding:16px 16px 0}
+  .lv-solomon-area{display:none}
+  .lv-fala{margin-right:0}
+  .lv-fala::after{display:none}
+  .lv-vitrine{padding:18px 16px 104px}
+  .lv-balcao{height:84px}
+  .lv-balcao span{font-size:13px;letter-spacing:.22em}
+  .lv-prateleira{grid-template-columns:repeat(4,118px);overflow-x:auto;padding-top:14px;scroll-snap-type:x mandatory}
+  .lv-prateleira .lv-pack{scroll-snap-align:start}
+  .lv-prateleira::after{left:0;right:0}
+  .lv-passos{grid-template-columns:1fr}
+}
+/* Ate 700px o site tem a segunda barra fixa (mobile-nav-bar, termina em ~117px) e
+   uma regra antiga forca section{padding-top:96px!important}: a borda da cena
+   ficava escondida atras da barra. */
+@media (max-width:700px){section.lv-loja{padding-top:128px!important}}
+@media (prefers-reduced-motion:reduce){
+  .lv-loja *,.lv-loja *::before,.lv-loja *::after{animation:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -1236,52 +1370,40 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
   </div>
 </div>
 
-<!-- HERO -->
-<section class="store-hero" id="top">
-  <div class="hero-bg"></div>
-
-  <!-- Anéis do portal -->
-  <div class="portal-ring"></div>
-  <div class="portal-ring"></div>
-  <div class="portal-ring"></div>
-  <div class="portal-ring"></div>
-
-  <!-- Partículas de almas -->
-  <div class="soul-particles" id="soul-particles"></div>
-
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      <span data-lang="pt">Loja aberta · Compras liberadas</span>
-      <span data-lang="en">Store open · Purchases available</span><span data-lang="es">Tienda abierta · Compras habilitadas</span><span data-lang="vi">Cửa hàng mở · Đã mở mua hàng</span>
+<!-- LOJA DO SOLOMON: cena do balcao + vitrine dos Itens do Milenio -->
+<section class="lv-loja" id="top">
+  <div class="lv-cena">
+    <canvas class="lv-poeira" id="lv-poeira" aria-hidden="true"></canvas>
+    <div class="lv-lado-solomon">
+      <div class="lv-fala" id="lv-fala">
+        <div class="lv-fala-quem">
+          <img src="img/Npcs/SolomonMuto0.webp" alt="" width="34" height="34">
+          <div><b>Solomon Muto</b><small data-lang="pt">dono da loja</small><small data-lang="en">shop owner</small><small data-lang="es">dueño de la tienda</small><small data-lang="vi">chủ cửa hàng</small></div>
+        </div>
+        <p class="lv-fala-texto" id="lv-fala-texto" aria-live="polite"></p>
+        <div class="lv-perguntas">
+          <button type="button" data-lv-assunto="boost"><span data-lang="pt">O que é Ticket de Boost?</span><span data-lang="en">What is a Boost Ticket?</span><span data-lang="es">¿Qué es un Ticket de Boost?</span><span data-lang="vi">Vé Boost là gì?</span></button>
+          <button type="button" data-lv-assunto="ur"><span data-lang="pt">Como a UR é sorteada?</span><span data-lang="en">How is the UR drawn?</span><span data-lang="es">¿Cómo se sortea la UR?</span><span data-lang="vi">Thẻ UR được bốc thế nào?</span></button>
+          <button type="button" data-lv-assunto="codigo"><span data-lang="pt">Como eu recebo?</span><span data-lang="en">How do I receive it?</span><span data-lang="es">¿Cómo lo recibo?</span><span data-lang="vi">Tôi nhận thế nào?</span></button>
+        </div>
+      </div>
+      <div class="lv-solomon-area"><img class="lv-solomon" src="img/loja/solomon_balcao.webp" alt="Solomon Muto" width="460" height="851"></div>
     </div>
-
-    <h1 class="hero-title" data-lang="pt">Souls<br>da Card Shop</h1>
-    <h1 class="hero-title" data-lang="en">Card Shop<br>Souls</h1><h1 class="hero-title" data-lang="es">Souls<br>de la Tienda</h1><h1 class="hero-title" data-lang="vi">Souls<br>từ Cửa Hàng Thẻ</h1>
-
-    <p class="hero-sub" data-lang="pt">Escolha um pacote de Souls para usar dentro do jogo. O código de resgate é vinculado ao seu Código do Jogador e só pode ser usado uma vez.</p>
-    <p class="hero-sub" data-lang="en">Choose a Soul pack to use in-game. The redeem code is tied to your Player Code and can only be used once.</p><p class="hero-sub" data-lang="es">Elige un paquete de Souls para usar dentro del juego. El código de canje se vincula a tu Código de Jugador y solo puede usarse una vez.</p><p class="hero-sub" data-lang="vi">Chọn một gói Souls để dùng trong trò chơi. Mã đổi thưởng được gắn với Mã Người chơi của bạn và chỉ dùng được một lần.</p>
-
-    <div class="hero-note" data-lang="pt">
-      O pacote entrega <strong>Souls</strong> — o saldo usado na Card Shop para abrir boosters.<br>
-      O custo em Souls varia por booster. Não é um pacote de boosters direto.
+    <div class="lv-vitrine">
+      <div class="lv-vitrine-cab">
+        <h1 data-lang="pt">Os Itens do Milênio</h1><h1 data-lang="en">The Millennium Items</h1><h1 data-lang="es">Los Objetos del Milenio</h1><h1 data-lang="vi">Bảo vật Ngàn năm</h1>
+        <p data-lang="pt">Toda compra leva +50% de Souls de bônus. A partir do Anel, cartas UR garantidas.</p><p data-lang="en">Every purchase comes with +50% bonus Souls. From the Ring up, guaranteed UR cards.</p><p data-lang="es">Toda compra lleva +50% de Souls de bono. Desde el Anillo, cartas UR garantizadas.</p><p data-lang="vi">Mọi đơn đều được thưởng thêm 50% Souls. Từ gói Nhẫn trở lên có thẻ UR chắc chắn.</p>
+      </div>
+      <div class="lv-vidro" id="pack-list">
+        <div class="lv-prateleira" id="lv-prateleira1" role="group"></div>
+        <div class="lv-prateleira" id="lv-prateleira2" role="group"></div>
+      </div>
+      <div class="lv-escolhido">
+        <span class="lv-escolhido-texto" id="lv-escolhido-texto"></span>
+        <a class="lv-continuar" href="#form-box"><span data-lang="pt">Continuar</span><span data-lang="en">Continue</span><span data-lang="es">Continuar</span><span data-lang="vi">Tiếp tục</span> &rarr;</a>
+      </div>
     </div>
-    <div class="hero-note" data-lang="en">
-      The pack grants <strong>Souls</strong> — the balance used in the Card Shop to open boosters.<br>
-      The Souls cost varies per booster. This is not a direct booster bundle.
-    </div><div class="hero-note" data-lang="es">El paquete entrega <strong>Souls</strong> — el saldo usado en la Tienda de Cartas para abrir boosters.<br> El costo en Souls varía por booster. No es un paquete de boosters directo.</div><div class="hero-note" data-lang="vi">Gói này cấp <strong>Souls</strong> — số dư dùng tại Cửa Hàng Thẻ để mở booster.<br> Chi phí Souls thay đổi theo từng booster. Đây không phải gói booster trực tiếp.</div>
-
-    <div class="hero-actions">
-      <a class="btn-primary" href="#packs" data-lang="pt">☥ Ver Pacotes</a>
-      <a class="btn-primary" href="#packs" data-lang="en">☥ View Packs</a><a class="btn-primary" href="#packs" data-lang="es">☥ Ver Paquetes</a><a class="btn-primary" href="#packs" data-lang="vi">☥ Xem gói</a>
-      <a class="btn-secondary" href="boosters.html" data-lang="pt">Como funcionam os boosters</a>
-      <a class="btn-secondary" href="boosters.html" data-lang="en">How boosters work</a><a class="btn-secondary" href="boosters.html" data-lang="es">Cómo funcionan los boosters</a><a class="btn-secondary" href="boosters.html" data-lang="vi">Booster hoạt động thế nào</a>
-    </div>
-  </div>
-
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    <span data-lang="pt">rolar</span><span data-lang="en">scroll</span><span data-lang="es">desplazar</span><span data-lang="vi">cuộn</span>
+    <div class="lv-balcao" aria-hidden="true"><span data-lang="pt">LOJA DE CARTAS · DESDE O FARAÓ</span><span data-lang="en">CARD SHOP · SINCE THE PHARAOH</span><span data-lang="es">TIENDA DE CARTAS · DESDE EL FARAÓN</span><span data-lang="vi">CỬA HÀNG THẺ · TỪ THỜI PHARAOH</span></div>
   </div>
 </section>
 
@@ -1291,40 +1413,10 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 <main>
 <section class="packs-section" id="packs">
   <div class="section-header">
-    <div class="section-eyebrow" data-lang="pt">Escolha seu tier</div>
-    <div class="section-eyebrow" data-lang="en">Choose your tier</div><div class="section-eyebrow" data-lang="es">Elige tu tier</div><div class="section-eyebrow" data-lang="vi">Chọn hạng của bạn</div>
-    <h2 class="section-title" data-lang="pt">Pacotes de Souls</h2>
-    <h2 class="section-title" data-lang="en">Soul Packs</h2><h2 class="section-title" data-lang="es">Paquetes de Souls</h2><h2 class="section-title" data-lang="vi">Gói Souls</h2>
-    <p class="section-sub" data-lang="pt">Cada alma contida no pacote equivale a saldo na Card Shop. Quanto mais Souls, mais boosters você abre.</p>
-    <p class="section-sub" data-lang="en">Each Soul in the pack equals balance in the Card Shop. More Souls, more boosters you can open.</p><p class="section-sub" data-lang="es">Cada alma del paquete equivale a saldo en la Tienda de Cartas. Cuantas más Souls, más boosters abres.</p><p class="section-sub" data-lang="vi">Mỗi linh hồn trong gói tương ứng với số dư tại Cửa Hàng Thẻ. Càng nhiều Souls, càng mở được nhiều booster.</p>
-  </div>
-
-  <!-- PACKS GRID (rendered by JS) -->
-  <div class="packs-grid" id="pack-list"></div>
-
-  <!-- HOW IT WORKS -->
-  <div class="how-grid">
-    <div class="how-box">
-      <div class="how-num">01</div>
-      <div class="how-title" data-lang="pt">O que você recebe</div>
-      <div class="how-title" data-lang="en">What you receive</div><div class="how-title" data-lang="es">Qué recibes</div><div class="how-title" data-lang="vi">Bạn nhận được gì</div>
-      <p class="how-text" data-lang="pt">Um código de resgate único com a quantidade de Souls do pacote escolhido — entregue por email após confirmação.</p>
-      <p class="how-text" data-lang="en">A unique redeem code with the Soul amount of the chosen pack — delivered by email after confirmation.</p><p class="how-text" data-lang="es">Un código de canje único con la cantidad de Souls del paquete elegido — entregado por correo tras la confirmación.</p><p class="how-text" data-lang="vi">Một mã đổi thưởng duy nhất với số Souls của gói đã chọn — gửi qua email sau khi xác nhận.</p>
-    </div>
-    <div class="how-box">
-      <div class="how-num">02</div>
-      <div class="how-title" data-lang="pt">Onde usar</div>
-      <div class="how-title" data-lang="en">Where to use</div><div class="how-title" data-lang="es">Dónde usar</div><div class="how-title" data-lang="vi">Dùng ở đâu</div>
-      <p class="how-text" data-lang="pt">Na Card Shop do jogo, em Resgatar Código. As Souls são creditadas no seu saldo e usadas para abrir boosters.</p>
-      <p class="how-text" data-lang="en">In the in-game Card Shop, under Redeem Code. Souls are credited to your balance and used to open boosters.</p><p class="how-text" data-lang="es">En la Tienda de Cartas del juego, en Canjear código. Las Souls se acreditan a tu saldo y sirven para abrir boosters.</p><p class="how-text" data-lang="vi">Trong Cửa Hàng Thẻ của trò chơi, mục Nhập mã. Souls được cộng vào số dư và dùng để mở booster.</p>
-    </div>
-    <div class="how-box">
-      <div class="how-num">03</div>
-      <div class="how-title" data-lang="pt">Como é protegido</div>
-      <div class="how-title" data-lang="en">How it's protected</div><div class="how-title" data-lang="es">Cómo se protege</div><div class="how-title" data-lang="vi">Cách được bảo vệ</div>
-      <p class="how-text" data-lang="pt">O código fica vinculado ao FL-PLAYER informado na compra e só pode ser usado uma única vez.</p>
-      <p class="how-text" data-lang="en">The code is tied to the FL-PLAYER provided at purchase and can only be redeemed once.</p><p class="how-text" data-lang="es">El código queda vinculado al FL-PLAYER indicado en la compra y solo puede usarse una vez.</p><p class="how-text" data-lang="vi">Mã được gắn với FL-PLAYER đã nhập khi mua và chỉ dùng được một lần.</p>
-    </div>
+    <div class="section-eyebrow" data-lang="pt">O código chega no seu e-mail</div>
+    <div class="section-eyebrow" data-lang="en">The code arrives in your e-mail</div><div class="section-eyebrow" data-lang="es">El código llega a tu correo</div><div class="section-eyebrow" data-lang="vi">Mã sẽ được gửi qua email</div>
+    <h2 class="section-title" data-lang="pt">Sua compra</h2>
+    <h2 class="section-title" data-lang="en">Your purchase</h2><h2 class="section-title" data-lang="es">Tu compra</h2><h2 class="section-title" data-lang="vi">Đơn hàng của bạn</h2>
   </div>
 
   <!-- CHECKOUT -->
@@ -1412,9 +1504,9 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
       <h2 class="checkout-h" data-lang="en">Summary</h2><h2 class="checkout-h" data-lang="es">Resumen</h2><h2 class="checkout-h" data-lang="vi">Tóm tắt</h2>
 
       <div class="sum-selected">
-        <div class="sum-tier" id="sum-tier">Duelista</div>
-        <div class="sum-souls" id="sum-pack">300 Souls</div>
-        <div class="pack-bonus-tag-summary" id="sum-bonus" style="display:none"></div>
+        <div class="sum-tier" id="sum-tier"></div>
+        <div class="sum-souls" id="sum-pack"></div>
+        <div class="lv-conteudo" id="sum-bonus"></div>
         <div class="qty-row">
           <span class="qty-label" data-lang="pt">Quantidade de pacotes</span>
           <span class="qty-label" data-lang="en">Number of packs</span><span class="qty-label" data-lang="es">Cantidad de paquetes</span><span class="qty-label" data-lang="vi">Số lượng gói</span>
@@ -1424,6 +1516,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
             <button type="button" class="qty-btn" id="qty-plus" onclick="alterarQuantidade(1)">+</button>
           </div>
         </div>
+        <div class="lv-limite" id="lv-limite"></div>
       </div>
 
       <div class="sum-rows">
@@ -1474,10 +1567,36 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
         </div>
       </div>
 
+      <div class="lv-aviso-p04" role="note">
+        <strong data-lang="pt">Atualize o jogo antes de resgatar</strong><strong data-lang="en">Update the game before redeeming</strong><strong data-lang="es">Actualiza el juego antes de canjear</strong><strong data-lang="vi">Hãy cập nhật game trước khi đổi mã</strong>
+        <p data-lang="pt">Os novos pacotes só funcionam na <b>Beta 1.9.1 p04</b> ou mais nova. Com o jogo desatualizado o resgate não acontece, e o código continua válido para depois da atualização.</p>
+        <p data-lang="en">The new packs only work on <b>Beta 1.9.1 p04</b> or newer. With an outdated game the code won't redeem, and it stays valid for after you update.</p>
+        <p data-lang="es">Los nuevos paquetes solo funcionan en la <b>Beta 1.9.1 p04</b> o más nueva. Con el juego desactualizado el canje no ocurre, y el código sigue válido para después de actualizar.</p>
+        <p data-lang="vi">Các gói mới chỉ hoạt động trên <b>Beta 1.9.1 p04</b> trở lên. Nếu game chưa cập nhật, mã sẽ không đổi được và vẫn còn hiệu lực sau khi cập nhật.</p>
+      </div>
       <button class="buy-btn" id="paybtn">☥ Comprar Souls</button>
       <div class="soon-notice" id="soon-text"></div>
       <p class="pay-note" id="payment-note"></p>
     </aside>
+  </div>
+  <div class="lv-como">
+    <div class="lv-como-intro">
+      <h2 data-lang="pt">Do balcão para a sua coleção</h2><h2 data-lang="en">From the counter to your collection</h2><h2 data-lang="es">Del mostrador a tu colección</h2><h2 data-lang="vi">Từ quầy hàng đến bộ sưu tập của bạn</h2>
+      <p data-lang="pt">Tudo chega por um código que você resgata dentro do jogo.</p><p data-lang="en">Everything arrives through a code you redeem inside the game.</p><p data-lang="es">Todo llega con un código que canjeas dentro del juego.</p><p data-lang="vi">Mọi thứ đến qua một mã mà bạn đổi ngay trong game.</p>
+      <div class="lv-urs">
+        <div class="lv-urs-cartas">
+          <img src="img/cartas_full/dark_magician_of_chaos.webp" alt="Dark Magician of Chaos" width="54" height="79" loading="lazy">
+          <img src="img/cartas_full/the_wicked_avatar.webp" alt="The Wicked Avatar" width="54" height="79" loading="lazy">
+          <img src="img/cartas/andro_sphinx.webp" alt="Andro Sphinx" width="54" height="79" loading="lazy">
+        </div>
+        <p data-lang="pt">Até as exclusivas do Torneio Sombrio podem sair na UR garantida. As URs de um mesmo pacote nunca se repetem.</p><p data-lang="en">Even Shadow Tournament exclusives can come out as the guaranteed UR. URs in the same pack never repeat.</p><p data-lang="es">Hasta las exclusivas del Torneo Sombrío pueden salir en la UR garantizada. Las UR de un mismo paquete nunca se repiten.</p><p data-lang="vi">Kể cả thẻ độc quyền của Giải Bóng Tối cũng có thể ra ở thẻ UR chắc chắn. Các thẻ UR trong cùng một gói không bao giờ trùng.</p>
+      </div>
+    </div>
+    <ol class="lv-passos">
+      <li><b data-lang="pt">Pague como preferir</b><b data-lang="en">Pay your way</b><b data-lang="es">Paga como prefieras</b><b data-lang="vi">Thanh toán theo cách bạn muốn</b><span data-lang="pt">PIX ou cartão no Brasil, cartão internacional em dólar.</span><span data-lang="en">PIX or card in Brazil, international card in dollars.</span><span data-lang="es">PIX o tarjeta en Brasil, tarjeta internacional en dólares.</span><span data-lang="vi">PIX hoặc thẻ tại Brazil, thẻ quốc tế bằng đô la.</span></li>
+      <li><b data-lang="pt">Receba o código</b><b data-lang="en">Get the code</b><b data-lang="es">Recibe el código</b><b data-lang="vi">Nhận mã</b><span data-lang="pt">Um código FL-SOUL chega no seu e-mail logo depois da confirmação.</span><span data-lang="en">An FL-SOUL code lands in your e-mail right after confirmation.</span><span data-lang="es">Un código FL-SOUL llega a tu correo justo después de la confirmación.</span><span data-lang="vi">Mã FL-SOUL sẽ đến email ngay sau khi xác nhận.</span></li>
+      <li><b data-lang="pt">Resgate no jogo</b><b data-lang="en">Redeem in the game</b><b data-lang="es">Canjea en el juego</b><b data-lang="vi">Đổi mã trong game</b><span data-lang="pt">Na Loja de Cartas, em Resgatar código, com a Beta 1.9.1 p04 ou mais nova.</span><span data-lang="en">In the Card Shop, under Redeem Code, on Beta 1.9.1 p04 or newer.</span><span data-lang="es">En la Tienda de Cartas, en Canjear código, con la Beta 1.9.1 p04 o más nueva.</span><span data-lang="vi">Trong Cửa Hàng Thẻ, mục Nhập mã, với Beta 1.9.1 p04 trở lên.</span></li>
+    </ol>
   </div>
 </section>
 </main>
@@ -1538,13 +1657,76 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 <script>
 /* ── CONFIG ── */
 const STORE_ENABLED = true;
+/* Os 8 Itens do Milenio. Espelho de FL_SOUL_PACKS_V2 em pagar/souls_config.php:
+   `souls` e a BASE e o +50% entra na compra (fl_souls_com_bonus); `tickets` e
+   `ur` sao por pacote; `max` e o limite por compra. Mudou la, muda aqui. */
 const PACKS = [
-  { id:'souls_300',  tierPt:'Duelista',  tierEn:'Duelist',   souls:300,  br:'R$ 12,90', usd:'US$ 5.99',  brlNum:12.90, usdNum:5.99,  tier:2 },
-  { id:'souls_600',  tierPt:'Templo',    tierEn:'Temple',    souls:600,  br:'R$ 21,90', usd:'US$ 9.99',  brlNum:21.90, usdNum:9.99,  tier:3 },
-  { id:'souls_1000', tierPt:'Faraó',     tierEn:'Pharaoh',   souls:1000, br:'R$ 29,90', usd:'US$ 14.99', brlNum:29.90, usdNum:14.99, tier:4, bonusStars:15000 },
-  { id:'souls_2000', tierPt:'Divino',    tierEn:'Divine',    souls:2000, br:'R$ 54,90', usd:'US$ 27.99', brlNum:54.90, usdNum:27.99, tier:4, bonusStars:30000 }
+  { id:'milenio_colar',   souls:450,   stars:0,      tickets:1,  ur:0,  max:10, brlNum:12.90,  usdNum:5.99,   br:'R$ 12,90',  usd:'US$ 5.99',   c1:'#b87332', c2:'#4a2610',
+    nome:['Colar do Milênio','Millennium Necklace','Collar del Milenio','Vòng cổ Ngàn năm'],
+    frase:['A porta de entrada da coleção.','The gateway to your collection.','La puerta de entrada a tu colección.','Cánh cửa đầu tiên của bộ sưu tập.'],
+    selo:['Para começar','To start','Para empezar','Để bắt đầu'],
+    fala:['O Colar do Milênio é a porta de entrada. São 450 Souls, e eu coloco mais 50% por conta da casa: 675 no total. Vai junto 1 Ticket de Boost para você sentir o gostinho.',
+          'The Millennium Necklace is the way in. That\'s 450 Souls, and I add 50% on the house: 675 in total. It comes with 1 Boost Ticket so you can get a taste.',
+          'El Collar del Milenio es la puerta de entrada. Son 450 Souls, y yo pongo un 50% más por cuenta de la casa: 675 en total. Viene con 1 Ticket de Boost para que lo pruebes.',
+          'Vòng cổ Ngàn năm là bước khởi đầu. 450 Souls, và ta tặng thêm 50%: tổng cộng 675. Kèm theo 1 Vé Boost để cháu dùng thử.'] },
+  { id:'milenio_balanca', souls:900,   stars:0,      tickets:2,  ur:0,  max:10, brlNum:21.90,  usdNum:9.99,   br:'R$ 21,90',  usd:'US$ 9.99',   c1:'#d9892b', c2:'#57300c',
+    nome:['Balança do Milênio','Millennium Scale','Balanza del Milenio','Cán cân Ngàn năm'],
+    frase:['O dobro do Colar, com dois tickets.','Twice the Necklace, with two tickets.','El doble del Collar, con dos tickets.','Gấp đôi Vòng cổ, kèm hai vé.'],
+    selo:null,
+    fala:['A Balança pesa a seu favor: 900 Souls mais 450 de bônus, e 2 Tickets de Boost. Dá para dobrar as Souls das cartas repetidas por duas horas... ou tentar a sorte no Torneio.',
+          'The Scale tips in your favor: 900 Souls plus 450 bonus, and 2 Boost Tickets. Double the Souls from duplicate cards for two hours... or try your luck in the Tournament.',
+          'La Balanza se inclina a tu favor: 900 Souls más 450 de bono, y 2 Tickets de Boost. Puedes duplicar las Souls de las cartas repetidas por dos horas... o probar suerte en el Torneo.',
+          'Cán cân nghiêng về phía cháu: 900 Souls cộng 450 thưởng, và 2 Vé Boost. Nhân đôi Souls từ thẻ trùng trong hai giờ... hoặc thử vận may ở Giải đấu.'] },
+  { id:'milenio_chave',   souls:1500,  stars:15000,  tickets:4,  ur:0,  max:10, brlNum:29.90,  usdNum:14.99,  br:'R$ 29,90',  usd:'US$ 14.99',  c1:'#e8b840', c2:'#6b4a0e',
+    nome:['Chave do Milênio','Millennium Key','Llave del Milenio','Chìa khóa Ngàn năm'],
+    frase:['Onde entram as Stars.','Where the Stars come in.','Donde entran las Stars.','Nơi Stars bắt đầu xuất hiện.'],
+    selo:null,
+    fala:['A Chave abre o cofre das Stars: 15.000 Stars, 2.250 Souls com o bônus e 4 Tickets de Boost. É o primeiro pacote que traz Stars.',
+          'The Key opens the Stars vault: 15,000 Stars, 2,250 Souls with the bonus and 4 Boost Tickets. It\'s the first pack that brings Stars.',
+          'La Llave abre la bóveda de Stars: 15.000 Stars, 2.250 Souls con el bono y 4 Tickets de Boost. Es el primer paquete que trae Stars.',
+          'Chìa khóa mở kho Stars: 15.000 Stars, 2.250 Souls kèm thưởng và 4 Vé Boost. Đây là gói đầu tiên có Stars.'] },
+  { id:'milenio_anel',    souls:3000,  stars:30000,  tickets:8,  ur:1,  max:10, brlNum:54.90,  usdNum:27.99,  br:'R$ 54,90',  usd:'US$ 27.99',  c1:'#3fae7a', c2:'#0f3a26',
+    nome:['Anel do Milênio','Millennium Ring','Anillo del Milenio','Nhẫn Ngàn năm'],
+    frase:['O primeiro com carta UR garantida.','The first with a guaranteed UR card.','El primero con carta UR garantizada.','Gói đầu tiên có thẻ UR chắc chắn.'],
+    selo:['Primeira UR','First UR','Primera UR','UR đầu tiên'],
+    fala:['O Anel do Milênio é onde a coleção começa de verdade: 1 carta UR sorteada na hora do resgate, 4.500 Souls, 30.000 Stars e 8 Tickets de Boost.',
+          'The Millennium Ring is where the collection really begins: 1 UR card drawn when you redeem, 4,500 Souls, 30,000 Stars and 8 Boost Tickets.',
+          'El Anillo del Milenio es donde la colección empieza de verdad: 1 carta UR sorteada al canjear, 4.500 Souls, 30.000 Stars y 8 Tickets de Boost.',
+          'Nhẫn Ngàn năm là nơi bộ sưu tập thật sự bắt đầu: 1 thẻ UR bốc ngẫu nhiên khi đổi mã, 4.500 Souls, 30.000 Stars và 8 Vé Boost.'] },
+  { id:'milenio_olho',    souls:5700,  stars:50000,  tickets:10, ur:2,  max:10, brlNum:99.90,  usdNum:49.99,  br:'R$ 99,90',  usd:'US$ 49.99',  c1:'#4d7fd6', c2:'#12264f',
+    nome:['Olho do Milênio','Millennium Eye','Ojo del Milenio','Con mắt Ngàn năm'],
+    frase:['Duas URs diferentes.','Two different URs.','Dos UR distintas.','Hai thẻ UR khác nhau.'],
+    selo:null,
+    fala:['O Olho enxerga longe: 2 URs diferentes, 8.550 Souls, 50.000 Stars e 10 Tickets de Boost. Duas cartas raras de uma vez só.',
+          'The Eye sees far: 2 different URs, 8,550 Souls, 50,000 Stars and 10 Boost Tickets. Two rare cards in one go.',
+          'El Ojo ve lejos: 2 UR distintas, 8.550 Souls, 50.000 Stars y 10 Tickets de Boost. Dos cartas raras de una sola vez.',
+          'Con mắt nhìn thấu xa: 2 thẻ UR khác nhau, 8.550 Souls, 50.000 Stars và 10 Vé Boost. Hai thẻ hiếm cùng một lúc.'] },
+  { id:'milenio_cetro',   souls:8700,  stars:70000,  tickets:12, ur:3,  max:5,  brlNum:149.90, usdNum:74.99,  br:'R$ 149,90', usd:'US$ 74.99',  c1:'#9b59d0', c2:'#2e1248',
+    nome:['Cetro do Milênio','Millennium Rod','Cetro del Milenio','Quyền trượng Ngàn năm'],
+    frase:['Três URs para montar deck de chefe.','Three URs to build a boss deck.','Tres UR para armar un mazo de jefe.','Ba thẻ UR để dựng bộ bài trùm.'],
+    selo:null,
+    fala:['Com o Cetro vêm 3 URs diferentes, 13.050 Souls, 70.000 Stars e 12 Tickets. Para quem quer montar um deck de chefe sem esperar.',
+          'The Rod brings 3 different URs, 13,050 Souls, 70,000 Stars and 12 Tickets. For those who want a boss deck without waiting.',
+          'Con el Cetro vienen 3 UR distintas, 13.050 Souls, 70.000 Stars y 12 Tickets. Para quien quiere armar un mazo de jefe sin esperar.',
+          'Quyền trượng mang đến 3 thẻ UR khác nhau, 13.050 Souls, 70.000 Stars và 12 Vé. Dành cho ai muốn có bộ bài trùm ngay.'] },
+  { id:'milenio_enigma',  souls:14700, stars:100000, tickets:16, ur:5,  max:5,  brlNum:249.90, usdNum:124.99, br:'R$ 249,90', usd:'US$ 124.99', c1:'#d2434f', c2:'#4a0d15',
+    nome:['Enigma do Milênio','Millennium Puzzle','Rompecabezas del Milenio','Câu đố Ngàn năm'],
+    frase:['Cinco URs, já montado.','Five URs, already assembled.','Cinco UR, ya armado.','Năm thẻ UR, đã ghép sẵn.'],
+    selo:null,
+    fala:['O Enigma do Milênio... meu neto montou o dele peça por peça. O seu já vem pronto: 5 URs diferentes, 22.050 Souls, 100.000 Stars e 16 Tickets de Boost.',
+          'The Millennium Puzzle... my grandson put his together piece by piece. Yours comes ready: 5 different URs, 22,050 Souls, 100,000 Stars and 16 Boost Tickets.',
+          'El Rompecabezas del Milenio... mi nieto armó el suyo pieza por pieza. El tuyo viene listo: 5 UR distintas, 22.050 Souls, 100.000 Stars y 16 Tickets de Boost.',
+          'Câu đố Ngàn năm... cháu trai ta đã ghép từng mảnh. Của cháu thì có sẵn: 5 thẻ UR khác nhau, 22.050 Souls, 100.000 Stars và 16 Vé Boost.'] },
+  { id:'milenio_trono',   souls:30000, stars:150000, tickets:20, ur:10, max:2,  brlNum:499.90, usdNum:249.99, br:'R$ 499,90', usd:'US$ 249.99', c1:'#f0c35a', c2:'#8a5a12', trono:true,
+    nome:['Trono do Faraó','Pharaoh\'s Throne','Trono del Faraón','Ngai vàng Pharaoh'],
+    frase:['O maior tesouro da loja.','The shop\'s greatest treasure.','El mayor tesoro de la tienda.','Kho báu lớn nhất cửa hàng.'],
+    selo:['Maior tesouro','Greatest treasure','Mayor tesoro','Kho báu lớn nhất'],
+    fala:['O Trono do Faraó é o maior tesouro da loja: 10 URs diferentes, 45.000 Souls, 150.000 Stars e 20 Tickets de Boost. Nenhum outro pacote chega perto.',
+          'The Pharaoh\'s Throne is the shop\'s greatest treasure: 10 different URs, 45,000 Souls, 150,000 Stars and 20 Boost Tickets. No other pack comes close.',
+          'El Trono del Faraón es el mayor tesoro de la tienda: 10 UR distintas, 45.000 Souls, 150.000 Stars y 20 Tickets de Boost. Ningún otro paquete se le acerca.',
+          'Ngai vàng Pharaoh là kho báu lớn nhất cửa hàng: 10 thẻ UR khác nhau, 45.000 Souls, 150.000 Stars và 20 Vé Boost. Không gói nào sánh bằng.'] }
 ];
-let selected = PACKS[0];
+let selected = PACKS[3];
 let quantidade = 1;
 const QTD_MAX = 10;
 // +50% de Souls de bônus em TODOS os pacotes (mesma regra do backend em souls_config.php).
@@ -1744,155 +1926,174 @@ function applyRegionMode(){
   renderPacks(); updateSummary();
 }
 
-/* ── SVG SOULS por tier ── */
-const SOUL_DEFS = {
-  // T1 Essencial — Bronze / Fogo
-  1: {
-    id:'s1', orbA:'#ff9e45', orbB:'#b84500', orbC:'#3a0d00',
-    glowColor:'rgba(255,100,20,.45)', groundColor:'rgba(255,80,10,.25)',
-    wA:'#ff4500', wB:'#ff9e45', wC:'#ffffff'
-  },
-  // T2 Duelista — Azul Gelo
-  2: {
-    id:'s2', orbA:'#ffffff', orbB:'#60c0ff', orbC:'#0a3870',
-    glowColor:'rgba(0,180,255,.4)', groundColor:'rgba(0,120,255,.2)',
-    wA:'#00e5ff', wB:'#60c0ff', wC:'#ffffff'
-  },
-  // T3 Templo — Ouro
-  3: {
-    id:'s3', orbA:'#ffffff', orbB:'#ffcc00', orbC:'#5a3500',
-    glowColor:'rgba(255,200,0,.45)', groundColor:'rgba(230,170,0,.22)',
-    wA:'#ffd700', wB:'#ffea70', wC:'#ffffff'
-  },
-  // T4 Faraó — Amatista
-  4: {
-    id:'s4', orbA:'#ff80ff', orbB:'#9b3fc0', orbC:'#1a003a',
-    glowColor:'rgba(189,0,255,.45)', groundColor:'rgba(155,50,220,.22)',
-    wA:'#bd00ff', wB:'#ff80ff', wC:'#ffffff'
-  }
-};
+/* ── LOJA DO SOLOMON: vitrine, fala e emblemas ── */
+function lvIdx(){ var l=langAtual(); return l==='en'?1:l==='es'?2:l==='vi'?3:0; }
+function lvNum(v){ return Number(v).toLocaleString(langAtual()==='en'?'en-US':'pt-BR'); }
+function nomePack(p){ return p.nome[lvIdx()]; }
 
-/* A alma: nucleo com gradiente radial, chama, anel girando e fagulhas.
-   Tudo SVG + CSS — sem imagem, escala sem borrar, e cada tier recebe a
-   propria cor a partir de SOUL_DEFS (que continua sendo a fonte). */
-function soulHTML(tier){
-  const d = SOUL_DEFS[tier] || SOUL_DEFS[1];
-  const g = 'sg' + tier + '_' + Math.random().toString(36).slice(2,6);
-  /* Espelha as --tier-color de .pack-card.t-N: orbA e o NUCLEO branco
-     nos tiers 2 e 3, nao a cor de identidade. */
-  const CORES_TIER = {1:'#d98a3a', 2:'#8ab4cc', 3:'#e8b840', 4:'#a06cc0'};
-  const cor = CORES_TIER[tier] || d.orbB, corB = d.orbC;
-  let fag = '';
-  for (let i = 0; i < 4; i++){
-    fag += '<circle class="alma-fagulha" cx="' + (42 + i*5.5) + '" cy="' + (74 - i*2) +
-           '" r="' + (1.5 - i*0.16).toFixed(2) + '" fill="' + cor +
-           '" style="--d:' + (3.1 + i*0.45) + 's;--at:' + (i*0.65) + 's"/>';
-  }
-  return '<div class="soul-wrap"><svg viewBox="0 0 100 124" aria-hidden="true">' +
-    '<defs>' +
-      '<radialGradient id="' + g + 'n" cx="50%" cy="42%" r="58%">' +
-        '<stop offset="0%" stop-color="#fff" stop-opacity=".95"/>' +
-        '<stop offset="42%" stop-color="' + cor + '" stop-opacity=".92"/>' +
-        '<stop offset="100%" stop-color="' + corB + '" stop-opacity=".15"/></radialGradient>' +
-      '<radialGradient id="' + g + 'h" cx="50%" cy="50%" r="50%">' +
-        '<stop offset="0%" stop-color="' + cor + '" stop-opacity=".42"/>' +
-        '<stop offset="100%" stop-color="' + cor + '" stop-opacity="0"/></radialGradient>' +
-      '<linearGradient id="' + g + 'c" x1="0" y1="1" x2="0" y2="0">' +
-        '<stop offset="0%" stop-color="' + cor + '" stop-opacity="0"/>' +
-        '<stop offset="55%" stop-color="' + cor + '" stop-opacity=".55"/>' +
-        '<stop offset="100%" stop-color="#fff" stop-opacity=".9"/></linearGradient>' +
-    '</defs>' +
-    '<ellipse cx="50" cy="62" rx="46" ry="46" fill="url(#' + g + 'h)"/>' +
-    '<g class="alma-anel"><ellipse cx="50" cy="62" rx="30" ry="11" fill="none" stroke="' + cor +
-      '" stroke-opacity=".5" stroke-width="1.1" stroke-dasharray="5 9" transform="rotate(-18 50 62)"/></g>' +
-    '<g class="alma-chama"><path d="M50 84 C41 74 43 62 47 54 C49 50 50 46 50 42 C50 46 51 50 53 54 C57 62 59 74 50 84 Z" fill="url(#' + g + 'c)" opacity=".85"/></g>' +
-    '<g class="alma-orb"><circle cx="50" cy="62" r="21" fill="url(#' + g + 'n)"/>' +
-      '<circle cx="43.5" cy="55" r="5.6" fill="#fff" opacity=".5"/></g>' +
-    '<ellipse cx="50" cy="107" rx="19" ry="4" fill="' + cor + '" opacity=".16"/>' +
-    fag + '</svg></div>';
+const LV_ASSUNTOS = {
+  saudacao:['Bem-vindo à minha loja! Toque em um pacote que eu conto o que tem dentro.',
+            'Welcome to my shop! Tap a pack and I\'ll tell you what\'s inside.',
+            '¡Bienvenido a mi tienda! Toca un paquete y te cuento qué trae.',
+            'Chào mừng đến cửa hàng của ta! Chạm vào một gói, ta sẽ kể cho cháu bên trong có gì.'],
+  boost:['Cada Ticket de Boost vale duas horas, e você escolhe no jogo, em Meus Boosts: +10% de chance de Torneio Lendário, Sombrio ou Hardcore, +2,5% na Roleta, ou o dobro de Souls nas cartas repetidas. Tickets do mesmo tipo entram na fila, até seis horas seguidas.',
+         'Each Boost Ticket lasts two hours, and you pick it in the game, under My Boosts: +10% chance of a Legendary, Shadow or Hardcore Tournament, +2.5% on the Roulette, or double Souls from duplicate cards. Tickets of the same kind queue up, up to six hours in a row.',
+         'Cada Ticket de Boost dura dos horas, y lo eliges en el juego, en Mis Boosts: +10% de probabilidad de Torneo Legendario, Sombrío o Hardcore, +2,5% en la Ruleta, o el doble de Souls en las cartas repetidas. Los tickets del mismo tipo hacen fila, hasta seis horas seguidas.',
+         'Mỗi Vé Boost kéo dài hai giờ, và cháu chọn trong game, ở mục Boost của tôi: +10% cơ hội Giải Huyền Thoại, Bóng Tối hoặc Hardcore, +2,5% ở Vòng quay, hoặc nhân đôi Souls từ thẻ trùng. Vé cùng loại sẽ xếp hàng, tối đa sáu giờ liên tục.'],
+  ur:['As URs são sorteadas quando você resgata o código, e nunca se repetem no mesmo pacote. Vale qualquer UR do jogo, até as exclusivas do Torneio Sombrio. Só ficam de fora as cartas divinas, as peças do Exodia, as cartas do booster de evento que estiver no ar e as cartas de duelistas da Season 2 que você ainda não derrotou.',
+      'URs are drawn when you redeem the code, and never repeat within the same pack. Any UR in the game can come out, even Shadow Tournament exclusives. Only divine cards, Exodia pieces, cards from the event booster currently running and cards from Season 2 duelists you haven\'t defeated yet are left out.',
+      'Las UR se sortean cuando canjeas el código, y nunca se repiten en el mismo paquete. Vale cualquier UR del juego, hasta las exclusivas del Torneo Sombrío. Solo quedan fuera las cartas divinas, las piezas de Exodia, las cartas del booster de evento en curso y las de duelistas de la Season 2 que aún no derrotaste.',
+      'Thẻ UR được bốc khi cháu đổi mã, và không bao giờ trùng trong cùng một gói. Mọi thẻ UR trong game đều có thể ra, kể cả thẻ độc quyền của Giải Bóng Tối. Chỉ loại trừ thẻ thần, các mảnh Exodia, thẻ của booster sự kiện đang diễn ra và thẻ của đấu sĩ Season 2 mà cháu chưa đánh bại.'],
+  codigo:['Pagou, recebeu. O código chega no seu e-mail e você resgata na Loja de Cartas do jogo, com a Beta 1.9.1 p04 ou mais nova. Tudo entra na hora: Souls, Stars, Tickets de Boost e as URs.',
+          'Pay and it\'s yours. The code arrives in your e-mail and you redeem it in the game\'s Card Shop, on Beta 1.9.1 p04 or newer. Everything lands at once: Souls, Stars, Boost Tickets and the URs.',
+          'Pagas y es tuyo. El código llega a tu correo y lo canjeas en la Tienda de Cartas del juego, con la Beta 1.9.1 p04 o más nueva. Todo entra al instante: Souls, Stars, Tickets de Boost y las UR.',
+          'Thanh toán là có. Mã sẽ đến email của cháu và cháu đổi trong Cửa Hàng Thẻ của game, với Beta 1.9.1 p04 trở lên. Mọi thứ vào ngay: Souls, Stars, Vé Boost và thẻ UR.']
+};
+const LV_EMBLEMAS = {
+  milenio_colar:'<circle cx="32" cy="37" r="15"/><path d="M19 12c3 7 23 7 26 0"/><path d="M22 37c5-6 15-6 20 0-5 6-15 6-20 0z"/><circle cx="32" cy="37" r="2.6" fill="currentColor"/>',
+  milenio_balanca:'<path d="M32 10v42M20 54h24M12 20h40"/><circle cx="32" cy="14" r="3"/><path d="M12 20 6 36h12zM52 20l-6 16h12z"/>',
+  milenio_chave:'<path d="M32 30c-7 0-10-7-10-11 0-6 4-10 10-10s10 4 10 10c0 4-3 11-10 11zM32 30v26M20 37h24"/>',
+  milenio_anel:'<circle cx="32" cy="28" r="16"/><path d="M22 20h20L32 37z"/><path d="M19 44v8M25.5 46v9M32 46v9M38.5 46v9M45 44v8"/>',
+  milenio_olho:'<path d="M7 30c11-13 39-13 50 0-11 13-39 13-50 0z"/><circle cx="32" cy="30" r="7"/><circle cx="32" cy="30" r="2.6" fill="currentColor"/><path d="M27 42l-5 13M34 43c0 5 3 9 8 10"/>',
+  milenio_cetro:'<path d="M32 27v31"/><circle cx="32" cy="18" r="8"/><path d="M24 17C15 15 10 9 8 4M40 17c9-2 14-8 16-13"/><path d="M28 18c2-2.5 6-2.5 8 0-2 2.5-6 2.5-8 0z"/>',
+  milenio_enigma:'<path d="M11 16h42L32 54z"/><path d="M27 16c0-7 10-7 10 0"/><path d="M23 27c5-6 13-6 18 0-5 6-13 6-18 0z"/><circle cx="32" cy="27" r="2.4" fill="currentColor"/>',
+  milenio_trono:'<path d="M18 58V32h28v26M14 32h36M23 32V12c0-3 18-3 18 0v20M18 46h28"/><path d="M27 21c2.5-3 7.5-3 10 0-2.5 3-7.5 3-10 0z"/>'
+};
+const LV_REDUZIR = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+let lvFalaAtual = null;   // {tipo:'pack'|'assunto', chave, saudacao}
+let lvDigitando = null;
+
+function lvTextoFala(){
+  if(!lvFalaAtual) return '';
+  var i=lvIdx();
+  if(lvFalaAtual.tipo==='assunto') return LV_ASSUNTOS[lvFalaAtual.chave][i];
+  var p=PACKS.find(function(x){return x.id===lvFalaAtual.chave;}) || selected;
+  return (lvFalaAtual.saudacao ? LV_ASSUNTOS.saudacao[i]+' ' : '') + p.fala[i];
+}
+function lvFalar(novaFala, instantaneo){
+  if(novaFala) lvFalaAtual=novaFala;
+  var p=document.getElementById('lv-fala-texto');
+  if(!p) return;
+  var texto=lvTextoFala();
+  if(lvDigitando){ clearInterval(lvDigitando); lvDigitando=null; }
+  p.dataset.completo=texto;
+  if(LV_REDUZIR || instantaneo){ p.textContent=texto; return; }
+  var n=0, alvo=document.createTextNode(''), cursor=document.createElement('span');
+  cursor.className='lv-cursor'; cursor.textContent='▍';
+  p.textContent=''; p.appendChild(alvo); p.appendChild(cursor);
+  lvDigitando=setInterval(function(){
+    n+=2; alvo.nodeValue=texto.slice(0,n);
+    if(n>=texto.length){ clearInterval(lvDigitando); lvDigitando=null; alvo.nodeValue=texto; cursor.remove(); }
+  },16);
+}
+
+function lvPackHTML(p){
+  var ativo=p.id===selected.id;
+  var preco=regionIsBR()?p.br:p.usd;
+  return '<button type="button" class="lv-pack'+(p.trono?' lv-pack-trono':'')+'" data-pack="'+p.id+'" aria-pressed="'+ativo+'" style="--c1:'+p.c1+';--c2:'+p.c2+'">'+
+    '<span class="lv-pack-corpo">'+(p.ur?'<span class="lv-fita">'+p.ur+' UR</span>':'')+
+    '<span class="lv-medalhao"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+LV_EMBLEMAS[p.id]+'</svg></span>'+
+    '<span class="lv-pack-nome">'+nomePack(p)+'</span></span>'+
+    '<span class="lv-pack-preco">'+preco+'</span>'+
+    '<span class="lv-pack-souls">'+lvNum(totalSoulsFor(p))+' Souls</span></button>';
 }
 
 function renderPacks(){
-  const root=document.getElementById('pack-list');
-  if(!root) return;
-  root.innerHTML='';
-  PACKS.forEach((p,i)=>{
-    const el=document.createElement('button');
-    el.type='button';
-    /* O pacote em destaque e o mesmo que o site ja tratava como principal:
-       o primeiro que da Stars de brinde. Nada de valor novo inventado. */
-    const destaque = p.bonusStars && !PACKS.slice(0,i).some(x=>x.bonusStars);
-    el.className=`pack-card t-${p.tier}`+(p.id===selected.id?' active':'')+(destaque?' tem-fita':'');
-    el.style.setProperty('--atraso',(i*0.09)+'s');
-    el.setAttribute('aria-pressed', p.id===selected.id ? 'true' : 'false');
-    const tier=isEn()?p.tierEn:p.tierPt;
-    const brRegion=regionIsBR();
-    const price=brRegion?p.br:p.usd;
-    const priceNote=brRegion?t4('Nacional · BRL','National · BRL','Nacional · BRL','Trong nước · BRL'):t4('Internacional · USD','International · USD','Internacional · USD','Quốc tế · USD');
-    const totalSouls=totalSoulsFor(p);
-    const bonusSouls=totalSouls-p.souls;
-    const fita=destaque?`<span class="pack-fita">${t4('Mais escolhido','Most chosen','Más elegido','Được chọn nhiều nhất')}</span>`:'';
-    const soulsBonusHTML=`<div class="pack-bonus-tag">
-      <svg class="pack-bonus-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-      <span><b>${bonusSouls.toLocaleString(isEn()?'en-US':'pt-BR')}</b> ${t4('de bônus','bonus','de bono','tiền thưởng')} <i>= ${totalSouls.toLocaleString(isEn()?'en-US':'pt-BR')}</i></span></div>`;
-    const starsBonusHTML=p.bonusStars?`<div class="pack-bonus-tag stars">
-      <svg class="pack-bonus-icone" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5 6.1 20.6l1.2-6.5L2.5 9.5l6.6-.9z"/></svg>
-      <span><b>${p.bonusStars.toLocaleString(isEn()?'en-US':'pt-BR')}</b> ${t4('Stars de brinde','bonus Stars','Stars de regalo','Stars tặng kèm')}</span></div>`:'';
-    el.innerHTML=`
-      ${fita}
-      <span class="pack-check">✓</span>
-      ${soulHTML(p.tier)}
-      <div class="pack-corpo">
-        <span class="pack-tier-label">${tier}</span>
-        <div class="pack-souls-count">${p.souls.toLocaleString(isEn()?'en-US':'pt-BR')}<span class="pack-souls-label">Souls</span></div>
-        ${soulsBonusHTML}
-        ${starsBonusHTML}
-      </div>
-      <div class="pack-rodape">
-        <div class="pack-price">${price}</div>
-        <div class="pack-price-note">${priceNote}</div>
-      </div>`;
-    if(STORE_ENABLED) el.onclick=()=>{selected=p;quantidade=1;renderPacks();updateSummary()};
-    else el.style.cursor='default';
-    root.appendChild(el);
+  var a=document.getElementById('lv-prateleira1'), b=document.getElementById('lv-prateleira2');
+  if(!a||!b) return;
+  a.innerHTML=PACKS.slice(0,4).map(lvPackHTML).join('');
+  b.innerHTML=PACKS.slice(4).map(lvPackHTML).join('');
+  document.querySelectorAll('.lv-pack[data-pack]').forEach(function(el){
+    if(!STORE_ENABLED){ el.style.cursor='default'; return; }
+    el.addEventListener('click', function(){
+      var p=PACKS.find(function(x){return x.id===el.dataset.pack;});
+      if(!p) return;
+      if(p.id!==selected.id) quantidade=1;
+      selected=p;
+      renderPacks(); updateSummary();
+      lvFalar({tipo:'pack', chave:p.id});
+    });
   });
+  var tx=document.getElementById('lv-escolhido-texto');
+  if(tx) tx.innerHTML='<b>'+nomePack(selected)+'</b> · '+(regionIsBR()?selected.br:selected.usd)+' · '+lvNum(totalSoulsFor(selected))+' Souls';
 }
+
+/* Troca de idioma: setLang chama isto. A vitrine e a fala sao montadas em JS. */
+function flRedesenhar(){ renderPacks(); updateSummary(); lvFalar(null, true); }
+
+(function lvIniciarCena(){
+  var fala=document.getElementById('lv-fala');
+  if(fala) fala.addEventListener('click', function(e){
+    if(e.target.closest('button')) return;
+    var p=document.getElementById('lv-fala-texto');
+    if(lvDigitando && p){ clearInterval(lvDigitando); lvDigitando=null; p.textContent=p.dataset.completo||''; }
+  });
+  document.querySelectorAll('[data-lv-assunto]').forEach(function(b){
+    b.addEventListener('click', function(){ lvFalar({tipo:'assunto', chave:b.dataset.lvAssunto}); });
+  });
+  lvFalaAtual={tipo:'pack', chave:selected.id, saudacao:true};
+
+  /* poeira dourada no ar da loja: leve e parada com movimento reduzido */
+  var cv=document.getElementById('lv-poeira');
+  if(!cv || !cv.getContext) return;
+  var ctx=cv.getContext('2d'), cena=cv.parentElement, pts=[], dpr=Math.min(2, window.devicePixelRatio||1);
+  function medir(){ cv.width=cena.clientWidth*dpr; cv.height=cena.clientHeight*dpr; }
+  medir(); window.addEventListener('resize', medir);
+  for(var k=0;k<42;k++) pts.push({x:Math.random(), y:Math.random(), r:.6+Math.random()*1.6, v:.00012+Math.random()*.00028, f:Math.random()*6.28});
+  function quadro(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    pts.forEach(function(p){
+      if(!LV_REDUZIR){ p.y-=p.v*16; p.f+=.01; if(p.y<-0.02){ p.y=1.02; p.x=Math.random(); } }
+      var a=.18+.22*Math.sin(p.f*1.7)*Math.sin(p.f*1.7);
+      ctx.fillStyle='rgba(255,220,150,'+a.toFixed(3)+')';
+      ctx.beginPath(); ctx.arc((p.x+Math.sin(p.f)*.004)*cv.width, p.y*cv.height, p.r*dpr, 0, 6.283); ctx.fill();
+    });
+    if(!LV_REDUZIR) requestAnimationFrame(quadro);
+  }
+  quadro();
+})();
 
 function formatBRL(v){ return 'R$ '+v.toFixed(2).replace('.',','); }
 function formatUSD(v){ return 'US$ '+v.toFixed(2); }
 
 function alterarQuantidade(delta){
-  quantidade=Math.min(QTD_MAX,Math.max(1,quantidade+delta));
+  quantidade=Math.min(selected.max||QTD_MAX,Math.max(1,quantidade+delta));
   updateSummary();
 }
 
 function updateSummary(){
-  const totalSouls=totalSoulsFor(selected);
-  document.getElementById('sum-pack').textContent=(totalSouls*quantidade)+' Souls';
-  document.getElementById('sum-br').textContent=formatBRL(selected.brlNum*quantidade);
-  document.getElementById('sum-usd').textContent=formatUSD(selected.usdNum*quantidade);
-  const sumBonus=document.getElementById('sum-bonus');
-  if(sumBonus){
-    const soulsBonusTotal=(totalSouls-selected.souls)*quantidade;
-    const starsTotal=(selected.bonusStars||0)*quantidade;
-    const linhas=['🎉 '+t('+'+soulsBonusTotal+' Souls de bônus (+50%)','+'+soulsBonusTotal+' bonus Souls (+50%)')];
-    if(starsTotal>0){
-      linhas.push('⭐ '+t('+'+starsTotal.toLocaleString('pt-BR')+' Stars de brinde','+'+starsTotal.toLocaleString('en-US')+' bonus Stars'));
-    }
-    sumBonus.style.display='block';
-    sumBonus.innerHTML=linhas.join('<br>');
+  var q=quantidade, i=lvIdx();
+  var total=totalSoulsFor(selected), bonus=total-selected.souls;
+  var tier=document.getElementById('sum-tier');
+  if(tier) tier.textContent=nomePack(selected);
+  var box=document.getElementById('summary-box');
+  if(box) box.style.setProperty('--sel-color',selected.c1);
+  var pack=document.getElementById('sum-pack');
+  if(pack) pack.textContent=lvNum(total*q)+' Souls';
+  document.getElementById('sum-br').textContent=formatBRL(selected.brlNum*q);
+  document.getElementById('sum-usd').textContent=formatUSD(selected.usdNum*q);
+
+  var linha=function(rotulo,detalhe,valor,vazia){
+    return '<div class="lv-linha'+(vazia?' lv-vazia':'')+'"><span>'+rotulo+(detalhe?'<small>'+detalhe+'</small>':'')+'</span><b>'+valor+'</b></div>';
+  };
+  var c=document.getElementById('sum-bonus');
+  if(c){
+    c.innerHTML=
+      linha('Souls', lvNum(selected.souls*q)+' + '+lvNum(bonus*q)+' '+t4('de bônus','bonus','de bono','thưởng')+' <span class="lv-carimbo">+50%</span>', lvNum(total*q)) +
+      linha('Stars', selected.stars?'':t4('A partir da Chave do Milênio','From the Millennium Key up','Desde la Llave del Milenio','Từ gói Chìa khóa trở lên'), selected.stars?lvNum(selected.stars*q):'—', !selected.stars) +
+      linha(t4('Tickets de Boost','Boost Tickets','Tickets de Boost','Vé Boost'), t4('2h cada, você escolhe o bônus no jogo','2h each, you pick the bonus in the game','2h cada uno, eliges el bono en el juego','mỗi vé 2 giờ, chọn phần thưởng trong game'), lvNum(selected.tickets*q)) +
+      linha(t4('Cartas UR garantidas','Guaranteed UR cards','Cartas UR garantizadas','Thẻ UR chắc chắn'), selected.ur?t4('Diferentes entre si, sorteadas no resgate','All different, drawn when you redeem','Distintas entre sí, sorteadas al canjear','Khác nhau, bốc khi đổi mã'):t4('A partir do Anel do Milênio','From the Millennium Ring up','Desde el Anillo del Milenio','Từ gói Nhẫn trở lên'), selected.ur?lvNum(selected.ur*q):'—', !selected.ur);
   }
-  const tierLabel=document.getElementById('sum-tier');
-  if(tierLabel){
-    tierLabel.textContent=isEn()?selected.tierEn:selected.tierPt;
-    const tierColors=['','#b87332','#8ab4cc','#e8b840','#a06cc0'];
-    document.getElementById('summary-box').style.setProperty('--sel-color',tierColors[selected.tier]);
-  }
-  const qtyValue=document.getElementById('qty-value');
-  if(qtyValue) qtyValue.textContent=quantidade;
-  const qtyMinus=document.getElementById('qty-minus'), qtyPlus=document.getElementById('qty-plus');
-  if(qtyMinus) qtyMinus.disabled=(quantidade<=1);
-  if(qtyPlus) qtyPlus.disabled=(quantidade>=QTD_MAX);
+  var lim=document.getElementById('lv-limite');
+  if(lim) lim.textContent=t4('Até '+selected.max+' pacotes por compra.','Up to '+selected.max+' packs per purchase.','Hasta '+selected.max+' paquetes por compra.','Tối đa '+selected.max+' gói mỗi lần mua.');
+  var qtyValue=document.getElementById('qty-value');
+  if(qtyValue) qtyValue.textContent=q;
+  var qtyMinus=document.getElementById('qty-minus'), qtyPlus=document.getElementById('qty-plus');
+  if(qtyMinus) qtyMinus.disabled=(q<=1);
+  if(qtyPlus) qtyPlus.disabled=(q>=(selected.max||QTD_MAX));
+  var tx=document.getElementById('lv-escolhido-texto');
+  if(tx) tx.innerHTML='<b>'+nomePack(selected)+(q>1?' ×'+q:'')+'</b> · '+(regionIsBR()?formatBRL(selected.brlNum*q):formatUSD(selected.usdNum*q))+' · '+lvNum(total*q)+' Souls';
+  if(typeof window.flAtualizarPagamentos==='function') window.flAtualizarPagamentos();
 }
 
 function formData(){
@@ -1911,11 +2112,16 @@ function validate(d){
   if(!d.email||!d.email.includes('@')){alert(t('Informe um email válido.','Enter a valid email.'));return false;}
   if(!d.nome){alert(t('Informe seu nome.','Enter your name.'));return false;}
   if(!d.dispositivo){alert(t('Selecione o dispositivo.','Select your device.'));return false;}
-  const soulsTotal=selected.souls*quantidade;
-  const qtyTxt=quantidade>1?` (${quantidade}x ${selected.souls})`:'';
-  return confirm(t(
-    `Confirmar ${soulsTotal} Souls${qtyTxt} para:\n${d.codigo_jogo}\n\nSó funciona nesse código.`,
-    `Confirm ${soulsTotal} Souls${qtyTxt} for:\n${d.codigo_jogo}\n\nOnly works with this Player Code.`
+  const q=quantidade, nome=nomePack(selected)+(q>1?' ×'+q:'');
+  const conteudo=[lvNum(totalSoulsFor(selected)*q)+' Souls'];
+  if(selected.stars) conteudo.push(lvNum(selected.stars*q)+' Stars');
+  if(selected.tickets) conteudo.push(lvNum(selected.tickets*q)+' '+(selected.tickets*q===1?t4('Ticket de Boost','Boost Ticket','Ticket de Boost','Vé Boost'):t4('Tickets de Boost','Boost Tickets','Tickets de Boost','Vé Boost')));
+  if(selected.ur) conteudo.push(lvNum(selected.ur*q)+' UR');
+  return confirm(t4(
+    `Confirmar ${nome} para:\n${d.codigo_jogo}\n\n${conteudo.join(' · ')}\n\nSó funciona nesse Código do Jogador, na Beta 1.9.1 p04 ou mais nova.`,
+    `Confirm ${nome} for:\n${d.codigo_jogo}\n\n${conteudo.join(' · ')}\n\nOnly works with this Player Code, on Beta 1.9.1 p04 or newer.`,
+    `Confirmar ${nome} para:\n${d.codigo_jogo}\n\n${conteudo.join(' · ')}\n\nSolo funciona con este Código de Jugador, en la Beta 1.9.1 p04 o más nueva.`,
+    `Xác nhận ${nome} cho:\n${d.codigo_jogo}\n\n${conteudo.join(' · ')}\n\nChỉ dùng được với Mã Người chơi này, trên Beta 1.9.1 p04 trở lên.`
   ));
 }
 let _pending=null;
@@ -1929,7 +2135,7 @@ async function pay(){
   if(regionIsBR()){
     _pending=d;
     const precoTotal=formatBRL(selected.brlNum*quantidade);
-    document.getElementById('pay-choice-desc').textContent=`${selected.souls*quantidade} Souls · ${precoTotal}`;
+    document.getElementById('pay-choice-desc').textContent=`${nomePack(selected)}${quantidade>1?' ×'+quantidade:''} · ${lvNum(totalSoulsFor(selected)*quantidade)} Souls · ${precoTotal}`;
     document.getElementById('pay-choice-pix-price').textContent=precoTotal;
     document.getElementById('pay-choice-card-price').textContent=precoTotal;
     document.getElementById('pay-choice-overlay').style.display='flex';
@@ -1989,28 +2195,6 @@ document.getElementById('paybtn').onclick=pay;
 
 /* NAV scroll */
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40),{passive:true});
-
-/* Partículas hero */
-(function(){
-  const c=document.getElementById('soul-particles');
-  if(!c)return;
-  const tiers=['rgba(184,115,50','rgba(124,199,255','rgba(232,184,48','rgba(155,89,182'];
-  for(let i=0;i<18;i++){
-    const s=document.createElement('span');
-    const sz=Math.random()*4+2;
-    const t=tiers[Math.floor(Math.random()*tiers.length)];
-    s.style.cssText=`
-      left:${Math.random()*100}%;
-      width:${sz}px;height:${sz}px;
-      background:${t},${.7+Math.random()*.3});
-      box-shadow:0 0 ${sz*3}px ${t},.4);
-      animation-duration:${8+Math.random()*12}s;
-      animation-delay:${Math.random()*8}s;
-      --dx:${(Math.random()-.5)*80}px;
-    `;
-    c.appendChild(s);
-  }
-})();
 
 /* Boot */
 (function(){
