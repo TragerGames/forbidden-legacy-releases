@@ -1238,6 +1238,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 .lv-fita{position:absolute;right:-3px;top:17px;font:12px/1 var(--lv-titulo);letter-spacing:.08em;padding:4px 7px 3px 8px;border-radius:3px 0 0 3px;color:#1b1206;background:linear-gradient(90deg,#ffd6f5,#b9f3ff 35%,#fff0a8 70%,#ffc4c4);box-shadow:0 2px 6px rgba(0,0,0,.45)}
 .lv-pack-preco{font:17px/1 var(--lv-titulo);letter-spacing:.04em;color:var(--lv-ouro-luz)}
 .lv-pack-souls{font-size:11.5px;color:var(--lv-areia);font-variant-numeric:tabular-nums;margin-top:-4px}
+.lv-mais50{display:inline-block;margin-left:3px;font:11px/1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;color:#0f2414;background:#8fe0a4;padding:2px 4px 1px;border-radius:3px;vertical-align:1px}
 .lv-pack:hover{transform:translateY(-5px)}
 .lv-pack[aria-pressed="true"]{transform:translateY(-12px) rotate(-1.5deg)}
 .lv-pack[aria-pressed="true"] .lv-pack-corpo{box-shadow:0 18px 30px rgba(0,0,0,.55),0 0 0 2px var(--lv-ouro-luz),0 0 34px rgba(255,220,150,.45),inset 0 -24px 30px rgba(0,0,0,.3)}
@@ -1681,50 +1682,50 @@ const PACKS = [
     nome:['Chave do Milênio','Millennium Key','Llave del Milenio','Chìa khóa Ngàn năm'],
     frase:['Onde entram as Stars.','Where the Stars come in.','Donde entran las Stars.','Nơi Stars bắt đầu xuất hiện.'],
     selo:null,
-    fala:['A Chave abre o cofre das Stars: 15.000 Stars, 2.250 Souls com o bônus e 4 Tickets de Boost. É o primeiro pacote que traz Stars.',
-          'The Key opens the Stars vault: 15,000 Stars, 2,250 Souls with the bonus and 4 Boost Tickets. It\'s the first pack that brings Stars.',
-          'La Llave abre la bóveda de Stars: 15.000 Stars, 2.250 Souls con el bono y 4 Tickets de Boost. Es el primer paquete que trae Stars.',
-          'Chìa khóa mở kho Stars: 15.000 Stars, 2.250 Souls kèm thưởng và 4 Vé Boost. Đây là gói đầu tiên có Stars.'] },
+    fala:['A Chave abre o cofre das Stars: 15.000 Stars, 1.500 Souls com mais 50% de bônus e 4 Tickets de Boost. É o primeiro pacote que traz Stars.',
+          'The Key opens the Stars vault: 15,000 Stars, 1,500 Souls plus a 50% bonus and 4 Boost Tickets. It\'s the first pack that brings Stars.',
+          'La Llave abre la bóveda de Stars: 15.000 Stars, 1.500 Souls con un 50% más de bono y 4 Tickets de Boost. Es el primer paquete que trae Stars.',
+          'Chìa khóa mở kho Stars: 15.000 Stars, 1.500 Souls cộng thêm 50% thưởng và 4 Vé Boost. Đây là gói đầu tiên có Stars.'] },
   { id:'milenio_anel',    souls:3000,  stars:30000,  tickets:8,  ur:1,  max:10, brlNum:54.90,  usdNum:27.99,  br:'R$ 54,90',  usd:'US$ 27.99',  c1:'#3fae7a', c2:'#0f3a26',
     nome:['Anel do Milênio','Millennium Ring','Anillo del Milenio','Nhẫn Ngàn năm'],
     frase:['O primeiro com carta UR garantida.','The first with a guaranteed UR card.','El primero con carta UR garantizada.','Gói đầu tiên có thẻ UR chắc chắn.'],
     selo:['Primeira UR','First UR','Primera UR','UR đầu tiên'],
-    fala:['O Anel do Milênio é onde a coleção começa de verdade: 1 carta UR sorteada na hora do resgate, 4.500 Souls, 30.000 Stars e 8 Tickets de Boost.',
-          'The Millennium Ring is where the collection really begins: 1 UR card drawn when you redeem, 4,500 Souls, 30,000 Stars and 8 Boost Tickets.',
-          'El Anillo del Milenio es donde la colección empieza de verdad: 1 carta UR sorteada al canjear, 4.500 Souls, 30.000 Stars y 8 Tickets de Boost.',
-          'Nhẫn Ngàn năm là nơi bộ sưu tập thật sự bắt đầu: 1 thẻ UR bốc ngẫu nhiên khi đổi mã, 4.500 Souls, 30.000 Stars và 8 Vé Boost.'] },
+    fala:['O Anel do Milênio é onde a coleção começa de verdade: 1 carta UR sorteada na hora do resgate, 3.000 Souls com mais 50% de bônus, 30.000 Stars e 8 Tickets de Boost.',
+          'The Millennium Ring is where the collection really begins: 1 UR card drawn when you redeem, 3,000 Souls plus a 50% bonus, 30,000 Stars and 8 Boost Tickets.',
+          'El Anillo del Milenio es donde la colección empieza de verdad: 1 carta UR sorteada al canjear, 3.000 Souls con un 50% más de bono, 30.000 Stars y 8 Tickets de Boost.',
+          'Nhẫn Ngàn năm là nơi bộ sưu tập thật sự bắt đầu: 1 thẻ UR bốc ngẫu nhiên khi đổi mã, 3.000 Souls cộng thêm 50% thưởng, 30.000 Stars và 8 Vé Boost.'] },
   { id:'milenio_olho',    souls:5700,  stars:50000,  tickets:10, ur:2,  max:10, brlNum:99.90,  usdNum:49.99,  br:'R$ 99,90',  usd:'US$ 49.99',  c1:'#4d7fd6', c2:'#12264f',
     nome:['Olho do Milênio','Millennium Eye','Ojo del Milenio','Con mắt Ngàn năm'],
     frase:['Duas URs diferentes.','Two different URs.','Dos UR distintas.','Hai thẻ UR khác nhau.'],
     selo:null,
-    fala:['O Olho enxerga longe: 2 URs diferentes, 8.550 Souls, 50.000 Stars e 10 Tickets de Boost. Duas cartas raras de uma vez só.',
-          'The Eye sees far: 2 different URs, 8,550 Souls, 50,000 Stars and 10 Boost Tickets. Two rare cards in one go.',
-          'El Ojo ve lejos: 2 UR distintas, 8.550 Souls, 50.000 Stars y 10 Tickets de Boost. Dos cartas raras de una sola vez.',
-          'Con mắt nhìn thấu xa: 2 thẻ UR khác nhau, 8.550 Souls, 50.000 Stars và 10 Vé Boost. Hai thẻ hiếm cùng một lúc.'] },
+    fala:['O Olho enxerga longe: 2 URs diferentes, 5.700 Souls com mais 50% de bônus, 50.000 Stars e 10 Tickets de Boost. Duas cartas raras de uma vez só.',
+          'The Eye sees far: 2 different URs, 5,700 Souls plus a 50% bonus, 50,000 Stars and 10 Boost Tickets. Two rare cards in one go.',
+          'El Ojo ve lejos: 2 UR distintas, 5.700 Souls con un 50% más de bono, 50.000 Stars y 10 Tickets de Boost. Dos cartas raras de una sola vez.',
+          'Con mắt nhìn thấu xa: 2 thẻ UR khác nhau, 5.700 Souls cộng thêm 50% thưởng, 50.000 Stars và 10 Vé Boost. Hai thẻ hiếm cùng một lúc.'] },
   { id:'milenio_cetro',   souls:8700,  stars:70000,  tickets:12, ur:3,  max:5,  brlNum:149.90, usdNum:74.99,  br:'R$ 149,90', usd:'US$ 74.99',  c1:'#9b59d0', c2:'#2e1248',
     nome:['Cetro do Milênio','Millennium Rod','Cetro del Milenio','Quyền trượng Ngàn năm'],
     frase:['Três URs para montar deck de chefe.','Three URs to build a boss deck.','Tres UR para armar un mazo de jefe.','Ba thẻ UR để dựng bộ bài trùm.'],
     selo:null,
-    fala:['Com o Cetro vêm 3 URs diferentes, 13.050 Souls, 70.000 Stars e 12 Tickets. Para quem quer montar um deck de chefe sem esperar.',
-          'The Rod brings 3 different URs, 13,050 Souls, 70,000 Stars and 12 Tickets. For those who want a boss deck without waiting.',
-          'Con el Cetro vienen 3 UR distintas, 13.050 Souls, 70.000 Stars y 12 Tickets. Para quien quiere armar un mazo de jefe sin esperar.',
-          'Quyền trượng mang đến 3 thẻ UR khác nhau, 13.050 Souls, 70.000 Stars và 12 Vé. Dành cho ai muốn có bộ bài trùm ngay.'] },
+    fala:['Com o Cetro vêm 3 URs diferentes, 8.700 Souls com mais 50% de bônus, 70.000 Stars e 12 Tickets. Para quem quer montar um deck de chefe sem esperar.',
+          'The Rod brings 3 different URs, 8,700 Souls plus a 50% bonus, 70,000 Stars and 12 Tickets. For those who want a boss deck without waiting.',
+          'Con el Cetro vienen 3 UR distintas, 8.700 Souls con un 50% más de bono, 70.000 Stars y 12 Tickets. Para quien quiere armar un mazo de jefe sin esperar.',
+          'Quyền trượng mang đến 3 thẻ UR khác nhau, 8.700 Souls cộng thêm 50% thưởng, 70.000 Stars và 12 Vé. Dành cho ai muốn có bộ bài trùm ngay.'] },
   { id:'milenio_enigma',  souls:14700, stars:100000, tickets:16, ur:5,  max:5,  brlNum:249.90, usdNum:124.99, br:'R$ 249,90', usd:'US$ 124.99', c1:'#d2434f', c2:'#4a0d15',
     nome:['Enigma do Milênio','Millennium Puzzle','Rompecabezas del Milenio','Câu đố Ngàn năm'],
     frase:['Cinco URs, já montado.','Five URs, already assembled.','Cinco UR, ya armado.','Năm thẻ UR, đã ghép sẵn.'],
     selo:null,
-    fala:['O Enigma do Milênio... meu neto montou o dele peça por peça. O seu já vem pronto: 5 URs diferentes, 22.050 Souls, 100.000 Stars e 16 Tickets de Boost.',
-          'The Millennium Puzzle... my grandson put his together piece by piece. Yours comes ready: 5 different URs, 22,050 Souls, 100,000 Stars and 16 Boost Tickets.',
-          'El Rompecabezas del Milenio... mi nieto armó el suyo pieza por pieza. El tuyo viene listo: 5 UR distintas, 22.050 Souls, 100.000 Stars y 16 Tickets de Boost.',
-          'Câu đố Ngàn năm... cháu trai ta đã ghép từng mảnh. Của cháu thì có sẵn: 5 thẻ UR khác nhau, 22.050 Souls, 100.000 Stars và 16 Vé Boost.'] },
+    fala:['O Enigma do Milênio... meu neto montou o dele peça por peça. O seu já vem pronto: 5 URs diferentes, 14.700 Souls com mais 50% de bônus, 100.000 Stars e 16 Tickets de Boost.',
+          'The Millennium Puzzle... my grandson put his together piece by piece. Yours comes ready: 5 different URs, 14,700 Souls plus a 50% bonus, 100,000 Stars and 16 Boost Tickets.',
+          'El Rompecabezas del Milenio... mi nieto armó el suyo pieza por pieza. El tuyo viene listo: 5 UR distintas, 14.700 Souls con un 50% más de bono, 100.000 Stars y 16 Tickets de Boost.',
+          'Câu đố Ngàn năm... cháu trai ta đã ghép từng mảnh. Của cháu thì có sẵn: 5 thẻ UR khác nhau, 14.700 Souls cộng thêm 50% thưởng, 100.000 Stars và 16 Vé Boost.'] },
   { id:'milenio_trono',   souls:30000, stars:150000, tickets:20, ur:10, max:2,  brlNum:499.90, usdNum:249.99, br:'R$ 499,90', usd:'US$ 249.99', c1:'#f0c35a', c2:'#8a5a12', trono:true,
     nome:['Trono do Faraó','Pharaoh\'s Throne','Trono del Faraón','Ngai vàng Pharaoh'],
     frase:['O maior tesouro da loja.','The shop\'s greatest treasure.','El mayor tesoro de la tienda.','Kho báu lớn nhất cửa hàng.'],
     selo:['Maior tesouro','Greatest treasure','Mayor tesoro','Kho báu lớn nhất'],
-    fala:['O Trono do Faraó é o maior tesouro da loja: 10 URs diferentes, 45.000 Souls, 150.000 Stars e 20 Tickets de Boost. Nenhum outro pacote chega perto.',
-          'The Pharaoh\'s Throne is the shop\'s greatest treasure: 10 different URs, 45,000 Souls, 150,000 Stars and 20 Boost Tickets. No other pack comes close.',
-          'El Trono del Faraón es el mayor tesoro de la tienda: 10 UR distintas, 45.000 Souls, 150.000 Stars y 20 Tickets de Boost. Ningún otro paquete se le acerca.',
-          'Ngai vàng Pharaoh là kho báu lớn nhất cửa hàng: 10 thẻ UR khác nhau, 45.000 Souls, 150.000 Stars và 20 Vé Boost. Không gói nào sánh bằng.'] }
+    fala:['O Trono do Faraó é o maior tesouro da loja: 10 URs diferentes, 30.000 Souls com mais 50% de bônus, 150.000 Stars e 20 Tickets de Boost. Nenhum outro pacote chega perto.',
+          'The Pharaoh\'s Throne is the shop\'s greatest treasure: 10 different URs, 30,000 Souls plus a 50% bonus, 150,000 Stars and 20 Boost Tickets. No other pack comes close.',
+          'El Trono del Faraón es el mayor tesoro de la tienda: 10 UR distintas, 30.000 Souls con un 50% más de bono, 150.000 Stars y 20 Tickets de Boost. Ningún otro paquete se le acerca.',
+          'Ngai vàng Pharaoh là kho báu lớn nhất cửa hàng: 10 thẻ UR khác nhau, 30.000 Souls cộng thêm 50% thưởng, 150.000 Stars và 20 Vé Boost. Không gói nào sánh bằng.'] }
 ];
 let selected = PACKS[3];
 let quantidade = 1;
@@ -1930,6 +1931,10 @@ function applyRegionMode(){
 function lvIdx(){ var l=langAtual(); return l==='en'?1:l==='es'?2:l==='vi'?3:0; }
 function lvNum(v){ return Number(v).toLocaleString(langAtual()==='en'?'en-US':'pt-BR'); }
 function nomePack(p){ return p.nome[lvIdx()]; }
+/* Souls sempre como BASE + 50% (pedido do Felipe): mostrar o total (4.500) fazia
+   a pessoa entender que ainda ganharia +50% em cima dele. */
+function lvSoulsBaseHTML(p, q){ return lvNum(p.souls*(q||1))+' Souls <span class="lv-mais50">+50%</span>'; }
+function lvSoulsBaseTexto(p, q){ var n=q||1; return lvNum(p.souls*n)+' Souls + 50% '+t4('de bônus','bonus','de bono','thưởng')+' = '+lvNum(totalSoulsFor(p)*n); }
 
 const LV_ASSUNTOS = {
   saudacao:['Bem-vindo à minha loja! Toque em um pacote que eu conto o que tem dentro.',
@@ -1995,7 +2000,7 @@ function lvPackHTML(p){
     '<span class="lv-medalhao"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+LV_EMBLEMAS[p.id]+'</svg></span>'+
     '<span class="lv-pack-nome">'+nomePack(p)+'</span></span>'+
     '<span class="lv-pack-preco">'+preco+'</span>'+
-    '<span class="lv-pack-souls">'+lvNum(totalSoulsFor(p))+' Souls</span></button>';
+    '<span class="lv-pack-souls">'+lvSoulsBaseHTML(p)+'</span></button>';
 }
 
 function renderPacks(){
@@ -2015,7 +2020,7 @@ function renderPacks(){
     });
   });
   var tx=document.getElementById('lv-escolhido-texto');
-  if(tx) tx.innerHTML='<b>'+nomePack(selected)+'</b> · '+(regionIsBR()?selected.br:selected.usd)+' · '+lvNum(totalSoulsFor(selected))+' Souls';
+  if(tx) tx.innerHTML='<b>'+nomePack(selected)+'</b> · '+(regionIsBR()?selected.br:selected.usd)+' · '+lvSoulsBaseHTML(selected);
 }
 
 /* Troca de idioma: setLang chama isto. A vitrine e a fala sao montadas em JS. */
@@ -2069,7 +2074,7 @@ function updateSummary(){
   var box=document.getElementById('summary-box');
   if(box) box.style.setProperty('--sel-color',selected.c1);
   var pack=document.getElementById('sum-pack');
-  if(pack) pack.textContent=lvNum(total*q)+' Souls';
+  if(pack) pack.innerHTML=lvSoulsBaseHTML(selected, q);
   document.getElementById('sum-br').textContent=formatBRL(selected.brlNum*q);
   document.getElementById('sum-usd').textContent=formatUSD(selected.usdNum*q);
 
@@ -2079,7 +2084,7 @@ function updateSummary(){
   var c=document.getElementById('sum-bonus');
   if(c){
     c.innerHTML=
-      linha('Souls', lvNum(selected.souls*q)+' + '+lvNum(bonus*q)+' '+t4('de bônus','bonus','de bono','thưởng')+' <span class="lv-carimbo">+50%</span>', lvNum(total*q)) +
+      linha('Souls', lvNum(selected.souls*q)+' + '+lvNum(bonus*q)+' '+t4('de bônus','bonus','de bono','thưởng')+' <span class="lv-carimbo">+50%</span>', '= '+lvNum(total*q)) +
       linha('Stars', selected.stars?'':t4('A partir da Chave do Milênio','From the Millennium Key up','Desde la Llave del Milenio','Từ gói Chìa khóa trở lên'), selected.stars?lvNum(selected.stars*q):'—', !selected.stars) +
       linha(t4('Tickets de Boost','Boost Tickets','Tickets de Boost','Vé Boost'), t4('2h cada, você escolhe o bônus no jogo','2h each, you pick the bonus in the game','2h cada uno, eliges el bono en el juego','mỗi vé 2 giờ, chọn phần thưởng trong game'), lvNum(selected.tickets*q)) +
       linha(t4('Cartas UR garantidas','Guaranteed UR cards','Cartas UR garantizadas','Thẻ UR chắc chắn'), selected.ur?t4('Diferentes entre si, sorteadas no resgate','All different, drawn when you redeem','Distintas entre sí, sorteadas al canjear','Khác nhau, bốc khi đổi mã'):t4('A partir do Anel do Milênio','From the Millennium Ring up','Desde el Anillo del Milenio','Từ gói Nhẫn trở lên'), selected.ur?lvNum(selected.ur*q):'—', !selected.ur);
@@ -2092,7 +2097,7 @@ function updateSummary(){
   if(qtyMinus) qtyMinus.disabled=(q<=1);
   if(qtyPlus) qtyPlus.disabled=(q>=(selected.max||QTD_MAX));
   var tx=document.getElementById('lv-escolhido-texto');
-  if(tx) tx.innerHTML='<b>'+nomePack(selected)+(q>1?' ×'+q:'')+'</b> · '+(regionIsBR()?formatBRL(selected.brlNum*q):formatUSD(selected.usdNum*q))+' · '+lvNum(total*q)+' Souls';
+  if(tx) tx.innerHTML='<b>'+nomePack(selected)+(q>1?' ×'+q:'')+'</b> · '+(regionIsBR()?formatBRL(selected.brlNum*q):formatUSD(selected.usdNum*q))+' · '+lvSoulsBaseHTML(selected, q);
   if(typeof window.flAtualizarPagamentos==='function') window.flAtualizarPagamentos();
 }
 
@@ -2113,7 +2118,7 @@ function validate(d){
   if(!d.nome){alert(t('Informe seu nome.','Enter your name.'));return false;}
   if(!d.dispositivo){alert(t('Selecione o dispositivo.','Select your device.'));return false;}
   const q=quantidade, nome=nomePack(selected)+(q>1?' ×'+q:'');
-  const conteudo=[lvNum(totalSoulsFor(selected)*q)+' Souls'];
+  const conteudo=[lvSoulsBaseTexto(selected, q)];
   if(selected.stars) conteudo.push(lvNum(selected.stars*q)+' Stars');
   if(selected.tickets) conteudo.push(lvNum(selected.tickets*q)+' '+(selected.tickets*q===1?t4('Ticket de Boost','Boost Ticket','Ticket de Boost','Vé Boost'):t4('Tickets de Boost','Boost Tickets','Tickets de Boost','Vé Boost')));
   if(selected.ur) conteudo.push(lvNum(selected.ur*q)+' UR');
@@ -2135,7 +2140,7 @@ async function pay(){
   if(regionIsBR()){
     _pending=d;
     const precoTotal=formatBRL(selected.brlNum*quantidade);
-    document.getElementById('pay-choice-desc').textContent=`${nomePack(selected)}${quantidade>1?' ×'+quantidade:''} · ${lvNum(totalSoulsFor(selected)*quantidade)} Souls · ${precoTotal}`;
+    document.getElementById('pay-choice-desc').textContent=`${nomePack(selected)}${quantidade>1?' ×'+quantidade:''} · ${lvSoulsBaseTexto(selected, quantidade)} · ${precoTotal}`;
     document.getElementById('pay-choice-pix-price').textContent=precoTotal;
     document.getElementById('pay-choice-card-price').textContent=precoTotal;
     document.getElementById('pay-choice-overlay').style.display='flex';
