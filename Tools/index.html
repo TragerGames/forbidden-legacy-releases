@@ -1291,12 +1291,56 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   padding:0 2px; line-height:1;
 }
 .offer-bar-close:hover{ color:#a89880; }
-@media (max-width:560px){
-  .offer-bar{ gap:11px; padding:9px 12px calc(9px + env(safe-area-inset-bottom, 0px)); }
-  .offer-bar-t{ font-size:15px; }
+/* Quem ja comprou tambem ve a barra: o link leva direto a ativacao de outro
+   dispositivo, separado da compra por um filete para nao competir com ela. */
+.offer-bar-dev{
+  display:flex; flex-direction:column; gap:1px; line-height:1.25;
+  padding-left:18px; border-left:1px solid rgba(212,168,67,.18);
+  text-decoration:none; white-space:nowrap;
+}
+.offer-bar-dev-q{ font-size:11px; color:#8a7a62; }
+.offer-bar-dev-a{
+  font-size:13px; color:var(--gold);
+  text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(200,151,58,.45);
+}
+.offer-bar-dev:hover .offer-bar-dev-a{ color:var(--gold-light); text-decoration-color:currentColor; }
+.offer-bar-dev:focus-visible{ outline:1px solid var(--gold); outline-offset:4px; border-radius:2px; }
+@media (max-width:820px){
+  /* sem a pergunta, o link cabe ao lado do botao em tablet */
+  .offer-bar{ gap:14px; }
+  .offer-bar-dev{ padding-left:14px; }
+  .offer-bar-dev-q{ display:none; }
+}
+@media (max-width:720px){
+  /* Estreito: o link desce para baixo de "Versao Founder", no lugar da
+     linha de pagamento, e a barra fica com a mesma altura de antes. Em
+     espanhol e vietnamita a linha de pagamento ja quebrava abaixo disto. */
+  .offer-bar{
+    display:grid; grid-template-columns:auto auto auto auto;
+    grid-template-areas:"t p b x" "d p b x";
+    justify-content:center; align-items:center; column-gap:16px; row-gap:1px;
+  }
+  .offer-bar-txt{ display:contents; }
+  .offer-bar-t{ grid-area:t; align-self:end; }
   .offer-bar-s{ display:none; }          /* na largura de celular, sobra o essencial */
+  .offer-bar-dev{ grid-area:d; align-self:start; padding-left:0; border-left:0; }
+  .offer-bar-dev-a{ font-size:12px; }
+  .offer-bar-price{ grid-area:p; }
+  .offer-bar-btn{ grid-area:b; }
+  .offer-bar-close{ grid-area:x; }
+}
+@media (max-width:560px){
+  .offer-bar{ column-gap:11px; padding:9px 12px calc(9px + env(safe-area-inset-bottom, 0px)); }
+  .offer-bar-t{ font-size:15px; }
+  .offer-bar-dev-a{ font-size:11.5px; }
   .offer-bar-price{ font-size:21px; }
   .offer-bar-btn{ font-size:14px; padding:10px 15px; letter-spacing:1px; }
+}
+@media (max-width:400px){
+  /* celular pequeno (360 px): em espanhol e vietnamita o link passava da borda */
+  .offer-bar{ column-gap:8px; padding-left:10px; padding-right:10px; }
+  .offer-bar-dev-a{ font-size:11px; }
+  .offer-bar-btn{ padding:10px 12px; }
 }
 @media (prefers-reduced-motion: reduce){
   .offer-bar{ transition:none; }
@@ -3235,6 +3279,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   <button class="offer-bar-btn" onclick="irParaOferta()">
     <span data-lang="pt">QUERO O FOUNDER</span><span data-lang="en">GET FOUNDER</span><span data-lang="es">QUIERO EL FOUNDER</span><span data-lang="vi">TÔI MUỐN FOUNDER</span>
   </button>
+  <a class="offer-bar-dev" href="ativar_dispositivo.html">
+    <span class="offer-bar-dev-q" data-lang="pt">Já é Founder?</span><span class="offer-bar-dev-q" data-lang="en">Already a Founder?</span><span class="offer-bar-dev-q" data-lang="es">¿Ya eres Founder?</span><span class="offer-bar-dev-q" data-lang="vi">Đã là Founder?</span>
+    <span class="offer-bar-dev-a" data-lang="pt">Ativar outro dispositivo</span><span class="offer-bar-dev-a" data-lang="en">Activate another device</span><span class="offer-bar-dev-a" data-lang="es">Activa otro dispositivo</span><span class="offer-bar-dev-a" data-lang="vi">Kích hoạt thiết bị khác</span>
+  </a>
   <button class="offer-bar-close" onclick="fecharBarraOferta()" aria-label="Fechar">✕</button>
 </div>
 
