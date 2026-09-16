@@ -553,6 +553,9 @@ nav.scrolled {
 .price-sep { width:1px; background:var(--border); }
 .founder-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
 .founder-fine { font-size:11px; color:#3a3020; }
+.founder-devices { max-width:560px; margin:22px auto 0; font-size:13px; line-height:1.6; color:#9a8050; text-align:center; }
+.founder-devices strong { color:var(--gold); font-weight:600; }
+.founder-devices a { color:var(--gold); text-decoration:underline; text-underline-offset:3px; }
 .region-chip-wrap { display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center; margin: -14px 0 30px; width:100%; }
 .region-chip {
   display:inline-flex; align-items:center; gap:6px;
@@ -2274,6 +2277,8 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
     <div class="founder-perks">
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 1 completa</span><span data-lang="en">Full Season 1</span><span data-lang="es">Season 1 completa</span><span data-lang="vi">Season 1 đầy đủ</span></div>
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 2 — Capítulo 1: O Convite</span><span data-lang="en">Season 2 — Chapter 1: The Invitation</span><span data-lang="es">Season 2 — Capítulo 1: La Invitación</span><span data-lang="vi">Season 2 — Chương 1: Lời Mời</span></div>
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Até 3 dispositivos na mesma compra</span><span data-lang="en">Up to 3 devices on one purchase</span><span data-lang="es">Hasta 3 dispositivos con la misma compra</span><span data-lang="vi">Tối đa 3 thiết bị cho một lần mua</span></div>
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Cross-Save: o mesmo progresso no PC e no celular</span><span data-lang="en">Cross-Save: the same progress on PC and phone</span><span data-lang="es">Cross-Save: el mismo progreso en PC y celular</span><span data-lang="vi">Cross-Save: cùng tiến trình trên PC và điện thoại</span></div>
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Apoia o dev independente</span><span data-lang="en">Supports the indie dev</span><span data-lang="es">Apoya al dev independiente</span><span data-lang="vi">Ủng hộ nhà phát triển độc lập</span></div>
     </div>
     <div class="price-row">
@@ -2381,6 +2386,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </button>
     </div>
 
+    <!-- Quem ja comprou ativa o 2o e o 3o aparelho sozinho (ativar_dispositivo.html). Fica
+         logo abaixo do botao para quem esta comprando saber disso ANTES de pagar. -->
+    <p class="founder-devices" data-lang="pt">A licença vale para até <strong>3 dispositivos</strong> com o mesmo e-mail, e o Cross-Save leva seu progresso entre eles. Já é Founder? <a href="ativar_dispositivo.html">Ative outro dispositivo</a>.</p>
+    <p class="founder-devices" data-lang="en">Your license works on up to <strong>3 devices</strong> with the same email, and Cross-Save carries your progress between them. Already a Founder? <a href="ativar_dispositivo.html">Activate another device</a>.</p><p class="founder-devices" data-lang="es">La licencia vale para hasta <strong>3 dispositivos</strong> con el mismo correo, y el Cross-Save lleva tu progreso entre ellos. ¿Ya eres Founder? <a href="ativar_dispositivo.html">Activa otro dispositivo</a>.</p><p class="founder-devices" data-lang="vi">Giấy phép dùng được trên tối đa <strong>3 thiết bị</strong> với cùng email, và Cross-Save mang tiến trình của bạn giữa các thiết bị. Đã là Founder? <a href="ativar_dispositivo.html">Kích hoạt thiết bị khác</a>.</p>
     <p class="founder-fine" style="margin-top: 28px;" data-lang="pt">Precisa do seu código de jogador — disponível em Opções → Ativação dentro do jogo.</p>
     <p class="founder-fine" style="margin-top: 28px;" data-lang="en">Needs your player code — available in Options → Activation inside the game.</p><p class="founder-fine" style="margin-top: 28px;" data-lang="es">Necesitas tu código de jugador — disponible en Opciones → Activación dentro del juego.</p><p class="founder-fine" style="margin-top: 28px;" data-lang="vi">Bạn cần mã người chơi — có trong Tùy Chọn → Kích hoạt trong trò chơi.</p>
   </div>
@@ -3096,6 +3105,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
       <a href="#discord" data-lang="pt">Servidor</a><a href="#discord" data-lang="en">Server</a><a href="#discord" data-lang="es">Servidor</a><a href="#discord" data-lang="vi">Máy chủ</a>
       <a href="#comprar" data-lang="pt">Versão Founder</a><a href="#comprar" data-lang="en">Founder Version</a><a href="#comprar" data-lang="es">Versión Founder</a><a href="#comprar" data-lang="vi">Phiên bản Founder</a>
+      <a href="ativar_dispositivo.html" data-lang="pt">Ativar outro dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate another device</a><a href="ativar_dispositivo.html" data-lang="es">Activar otro dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị khác</a>
     </div>
   </div>
   <div class="footer-bottom">

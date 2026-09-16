@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
+<head>
+<script>
+/* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
+   escreve no <html>: o <body> ainda não existe neste ponto do parse.
+   data-idiomas lista o que ESTA página tem traduzido; pedir um idioma
+   fora da lista cai no inglês, para nunca existir meia página vazia. */
+(function () {
+  var raiz = document.documentElement;
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  var escolhido = null;
+  try { escolhido = localStorage.getItem('fl_lang'); } catch (e) {}
+  if (!escolhido) {
+    var nav = (navigator.language || 'pt').slice(0, 2).toLowerCase();
+    escolhido = ({ pt: 'pt', en: 'en', es: 'es', vi: 'vi' })[nav] || 'en';
+  }
+  if (sup.indexOf(escolhido) < 0) escolhido = sup.indexOf('en') >= 0 ? 'en' : sup[0];
+  raiz.setAttribute('data-lang-ativo', escolhido);
+  raiz.setAttribute('lang', { pt: 'pt-BR', en: 'en', es: 'es', vi: 'vi' }[escolhido] || 'pt-BR');
+})();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1730849377953646');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1730849377953646&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<title>Forbidden Legacy - Ativar outro dispositivo</title>
+<meta name="description" content="Ative a sua compra Founder do Forbidden Legacy em outro PC ou celular. Até 3 dispositivos por compra.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/ativar_dispositivo.html">
+<meta property="og:title" content="Forbidden Legacy - Ativar outro dispositivo">
+<meta property="og:description" content="Até 3 dispositivos por compra Founder, sem custo.">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/ativar_dispositivo.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Marcellus+SC&display=swap" rel="stylesheet">
+<style>
+/* ═══════ RESET & TOKENS ═══════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c8973a;--gold2:#e8b840;--gold3:#ffe49a;--gold-dim:#7a5a18;
+  --dark:#09080a;--dark2:#0d0b0e;--dark3:#120e12;
+  --border:rgba(200,151,58,.13);
+  --muted:#6a5830;--body:#9a8050;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--body);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* BILINGUAL */
+
+/* ── IDIOMAS ──────────────────────────────────────────────────────────
+   Uma regra por idioma, e todas apenas ESCONDEM. O elemento do idioma
+   ativo nunca recebe regra de display, então conserva o display natural
+   que o resto da folha deu a ele.
+
+   Isto substituiu uma matriz de body.en [data-lang=en]{display:block} +
+   span{inline} + li{flex}, que precisava readivinhar o display de cada
+   tipo de elemento: toda tag nova exigia mais uma linha, e a regra de
+   span forçava a inline até os spans que o layout fazia block — ou
+   seja, o inglês herdava um bug de layout que o português não tinha.
+
+   O marcador vive no <html>, não no <body>, para o script do <head>
+   resolver o idioma antes do primeiro pixel. */
+html[data-lang-ativo="pt"] [data-lang]:not([data-lang="pt"]) { display: none !important; }
+html[data-lang-ativo="en"] [data-lang]:not([data-lang="en"]) { display: none !important; }
+html[data-lang-ativo="es"] [data-lang]:not([data-lang="es"]) { display: none !important; }
+html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !important; }
+
+
+/* Seletor de idioma do e-mail: mesma moldura dos campos de texto do
+   formulario, senao ele aparece com o estilo cru do sistema. */
+.field select, .input-group select {
+  width: 100%;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--border, rgba(200,151,58,.13));
+  border-radius: 4px;
+  color: var(--gold-light, #e8b840);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 11px 12px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23c8973a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+  padding-right: 32px;
+}
+.field select:focus, .input-group select:focus { outline: none; border-color: var(--gold, #c8973a); }
+.field select option, .input-group select option { background: #14100a; color: #e8dcc0; }
+
+/* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
+.lang-pick { position: relative; display: inline-block; }
+.lang-pick-btn {
+  display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
+  background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
+  color: var(--text-muted, #6a5830);
+  padding: 4px 9px; border-radius: 3px; cursor: pointer;
+  font-size: 11px; letter-spacing: .6px; font-family: 'Inter', sans-serif;
+  transition: border-color .2s, color .2s;
+}
+.lang-pick-btn:hover, .lang-pick.aberto .lang-pick-btn {
+  border-color: var(--gold, #c8973a); color: var(--gold-light, #e8b840);
+}
+.lang-pick-btn svg, .lang-opt svg {
+  width: 18px; height: 12.6px; border-radius: 1px; flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.35);
+}
+.lang-caret { font-size: 8px; opacity: .7; transition: transform .2s; }
+.lang-pick.aberto .lang-caret { transform: rotate(180deg); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 3000;
+  min-width: 158px; padding: 4px;
+  background: #14100a; border: 1px solid var(--gold-dim, #7a5a18);
+  border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,.65);
+  display: none; flex-direction: column; gap: 1px;
+}
+.lang-pick.aberto .lang-menu { display: flex; }
+.lang-opt {
+  display: flex; align-items: center; gap: 9px; width: 100%;
+  background: transparent; border: none; cursor: pointer;
+  padding: 8px 10px; border-radius: 3px; text-align: left;
+  color: var(--text-body, #9a8050); font-size: 12.5px;
+  font-family: 'Inter', sans-serif; white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.lang-opt:hover { background: rgba(200,151,58,.12); color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"] { color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"]::after { content: '\2713'; margin-left: auto; font-size: 11px; }
+@media (max-width: 560px) {
+  .lang-pick-btn .lang-nome { display: none; }   /* na nav estreita fica só a bandeira */
+  .lang-menu { right: 0; }
+}
+
+/* ═══════ NAV ═══════ */
+nav#nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 40px;
+  background:rgba(7,8,15,0);border-bottom:1px solid transparent;
+  transition:background .35s,border-color .35s;font-family:'Inter',sans-serif;
+}
+nav#nav.scrolled{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:36px;width:auto}
+.nav-logo-fallback{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--gold);text-shadow:0 0 16px rgba(212,168,67,.4)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{font-size:10px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links .sep{color:rgba(212,168,67,.15)}
+.nav-cta{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:2px;color:var(--dark)!important;background:var(--gold);padding:7px 20px;border-radius:2px;transition:background .2s}
+.nav-cta:hover{background:var(--gold2)!important}
+.lang-btn{background:transparent;border:1px solid rgba(212,168,67,.25)!important;color:var(--muted)!important;padding:4px 10px;border-radius:3px;cursor:pointer;font-size:11px;letter-spacing:1px;transition:all .2s;font-family:'Inter',sans-serif}
+.lang-btn.active{border-color:var(--gold)!important;color:var(--gold)!important}
+.dc-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.dc-dot.online{background:#3ba55c}.dc-dot.offline{background:#747f8d}
+.discord-nav-badge{display:none;align-items:center;gap:5px;font-size:10px;color:#7289da;text-decoration:none;border:1px solid rgba(88,101,242,.3);border-radius:3px;padding:4px 9px;background:rgba(88,101,242,.08);transition:background .2s}
+
+/* mobile nav */
+.mobile-nav-bar{display:none;position:fixed;top:52px;left:0;right:0;z-index:198;background:rgba(5,3,1,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);flex-direction:column}
+.mobile-discord-bar{display:flex;align-items:center;justify-content:center;gap:6px;padding:5px 16px;background:rgba(88,101,242,.07);border-bottom:1px solid rgba(88,101,242,.15);font-size:11px;color:#7289da;text-decoration:none;letter-spacing:.3px}
+.mobile-nav-links{display:flex;overflow-x:auto;gap:0;scrollbar-width:none;-ms-overflow-style:none}
+.mobile-nav-links::-webkit-scrollbar{display:none}
+.mobile-nav-links a{flex-shrink:0;padding:10px 16px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;border-right:1px solid var(--border);white-space:nowrap;transition:color .2s,background .2s}
+.mobile-nav-links a:hover{color:var(--gold);background:rgba(200,144,32,.06)}
+.mobile-nav-links a.nav-cta{color:var(--gold2)}
+@media(max-width:700px){
+  nav#nav{padding:12px 20px}
+  .nav-links,nav#nav .nav-cta{display:none!important}
+  .mobile-nav-bar{display:flex}
+  main,section.hero,section{padding-top:96px!important}
+}
+
+.field{margin-bottom:18px}
+.field label{
+  display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold-dim);margin-bottom:8px;font-weight:600;
+}
+.field input,.field select{
+  width:100%;
+  background:rgba(4,3,2,.9);
+  border:1px solid rgba(200,151,58,.1);
+  border-bottom:1px solid rgba(200,151,58,.2);
+  color:#c4a870;padding:13px 14px;font-size:14px;
+  outline:none;font-family:'Inter',sans-serif;
+  transition:border-color .2s,box-shadow .2s;
+  border-radius:0;
+  appearance:none;
+}
+.field input:focus,.field select:focus{
+  border-color:rgba(200,151,58,.4);
+  box-shadow:0 4px 20px rgba(200,151,58,.06),inset 0 0 0 0;
+  background:rgba(8,6,3,.95);
+}
+.field input::placeholder{color:rgba(200,151,58,.2)}
+.field select option{background:#0d0b08;color:#c4a870}
+.fields-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+
+/* ═══════ FOOTER ═══════ */
+footer.fl-footer{background:#04050d;border-top:1px solid var(--border);padding:40px;font-family:'Inter',sans-serif}
+footer.fl-footer .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:32px}
+footer.fl-footer .footer-brand .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);margin-bottom:6px}
+footer.fl-footer .footer-brand p{font-size:11px;color:#3a3020;max-width:240px;line-height:1.6}
+footer.fl-footer .footer-col h4{font-size:10px;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:12px}
+footer.fl-footer .footer-col a{display:block;font-size:12px;color:#3a3020;margin-bottom:6px;transition:color .2s;text-decoration:none}
+footer.fl-footer .footer-col a:hover{color:var(--gold)}
+footer.fl-footer .footer-bottom{border-top:1px solid rgba(212,168,67,.05);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
+
+/* ═══ BARRA DE ROLAGEM — padrao do site ══════════════════════════════
+   Vale para a pagina e para qualquer area rolavel (listas, cofre,
+   modais). As regras de `display:none` das faixas de filtro horizontal
+   continuam valendo: elas vem depois e sao mais especificas. */
+* { scrollbar-width: thin; scrollbar-color: var(--gold-dim, #7a5a18) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--dark3, #120e12); border-radius: 6px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-dim, #7a5a18), #59410f);
+  border-radius: 6px;
+  border: 2px solid var(--dark, #09080a);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
+}
+::-webkit-scrollbar-corner { background: transparent; }
+
+</style>
+<style>
+/* ═══════ ATIVAR OUTRO DISPOSITIVO ═══════ */
+nav#nav{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
+.ad-pagina{max-width:1060px;margin:0 auto;padding:128px 24px 88px}
+.ad-topo{text-align:center;margin-bottom:34px}
+.ad-eyebrow{font-family:'Marcellus SC',serif;font-size:13px;letter-spacing:3px;color:var(--gold);opacity:.8;margin-bottom:10px}
+.ad-titulo{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(40px,6vw,66px);letter-spacing:3px;line-height:1;color:var(--gold2);text-wrap:balance;text-shadow:0 0 34px rgba(200,151,58,.18)}
+.ad-sub{margin:14px auto 0;max-width:58ch;color:#b9a276;font-size:15px;line-height:1.65;text-wrap:balance}
+
+.ad-passos{list-style:none;display:flex;align-items:center;max-width:620px;margin:0 auto 26px}
+.ad-passo{display:flex;align-items:center;gap:10px;flex:1;color:var(--muted);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600}
+.ad-passo:last-child{flex:0 0 auto}
+.ad-passo:not(:last-child)::after{content:'';flex:1;height:1px;background:rgba(200,151,58,.16);margin:0 12px}
+.ad-passo .n{width:24px;height:24px;flex-shrink:0;display:grid;place-items:center;transform:rotate(45deg);border:1px solid var(--gold-dim)}
+.ad-passo .n i{transform:rotate(-45deg);font-style:normal;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:0;color:var(--gold-dim)}
+.ad-passo.feito{color:#a88a4e}
+.ad-passo.feito .n{border-color:var(--gold)}
+.ad-passo.feito .n i{color:var(--gold)}
+.ad-passo.atual{color:var(--gold2)}
+.ad-passo.atual .n{background:var(--gold);border-color:var(--gold)}
+.ad-passo.atual .n i{color:var(--dark)}
+.ad-passo.alerta .n{background:#8a3a2a;border-color:#c0503a}
+.ad-passo.alerta .n i{color:#f3d6cc}
+
+.ad-grade{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:2px;background:rgba(200,151,58,.06)}
+.ad-card,.ad-lado{position:relative}
+.ad-card{background:var(--dark2);padding:36px}
+.ad-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold-dim),var(--gold),var(--gold-dim))}
+.ad-lado{background:rgba(10,8,5,.97);padding:32px 28px}
+.ad-lado::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.ad-h{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:24px;letter-spacing:2px;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.ad-h::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(200,151,58,.2),transparent)}
+.ad-texto{color:#b9a276;font-size:14px;line-height:1.65;margin-bottom:20px}
+.ad-texto b,.ad-dica b,.ad-regras b,.ad-ok-passos b{color:#e2cf9f;font-weight:600}
+
+.field input.invalido{border-color:rgba(192,80,58,.6)}
+.ad-aviso{margin:-6px 0 18px;padding:12px 14px;border-left:2px solid #c0503a;background:rgba(192,80,58,.08);color:#e8ad99;font-size:13.5px;line-height:1.55}
+.ad-aviso.ok{border-left-color:#5aa36b;background:rgba(90,163,107,.08);color:#a9d8b3}
+.ad-aviso b{color:inherit}
+/* A regra .field input,.field select (copiada da loja) usa o atalho `background`
+   e apaga a seta que o seletor de idioma ganha antes. Devolve a seta aqui. */
+.ad-card .field select{cursor:pointer;padding-right:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23c8973a'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:10px 6px}
+.ad-dica{font-size:12.5px;color:#8f7a4d;margin-top:8px;line-height:1.55}
+.ad-erro-campo{font-size:12.5px;color:#e3a48f;margin-top:8px}
+.ad-codigo input{font-family:'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.ad-otp input{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:16px;text-align:center;padding:10px 14px}
+
+.ad-btn{display:flex;width:100%;justify-content:center;align-items:center;gap:10px;margin-top:6px;padding:14px 18px;border:0;cursor:pointer;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--dark);background:linear-gradient(180deg,var(--gold2),var(--gold));transition:filter .2s}
+.ad-btn:hover{filter:brightness(1.08)}
+.ad-btn:focus-visible,.ad-link:focus-visible,.ad-btn-sec:focus-visible{outline:2px solid var(--gold3);outline-offset:3px}
+.ad-btn[disabled]{opacity:.55;cursor:default;filter:none}
+.ad-btn-sec{display:flex;width:100%;justify-content:center;align-items:center;gap:10px;margin-top:10px;padding:12px 18px;cursor:pointer;
+  background:transparent;border:1px solid rgba(200,151,58,.3);color:var(--gold2);font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px}
+.ad-btn-sec:hover{background:rgba(200,151,58,.07)}
+.ad-btn-sec.discord{border-color:rgba(88,101,242,.45);color:#9aa5f5}
+.ad-btn-sec.discord:hover{background:rgba(88,101,242,.1)}
+.ad-acoes-sec{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:16px}
+.ad-link{background:none;border:0;padding:0;color:var(--gold);font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-family:'Inter',sans-serif}
+.ad-link[disabled]{color:var(--muted);text-decoration:none;cursor:default}
+
+.ad-selo{width:54px;height:54px;display:grid;place-items:center;transform:rotate(45deg);margin:4px 0 22px 4px;border:1px solid var(--gold);background:rgba(200,151,58,.08)}
+.ad-selo span{transform:rotate(-45deg);font-size:24px;color:var(--gold2);line-height:1}
+.ad-selo.alerta{border-color:#c0503a;background:rgba(192,80,58,.1)}
+.ad-selo.alerta span{color:#e8a08b}
+.ad-resultado-h{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:32px;letter-spacing:2px;line-height:1.05;color:var(--gold2);margin-bottom:10px;text-wrap:balance}
+.ad-resultado-h.alerta{color:#eaa58f}
+.ad-ok-passos{list-style:none;counter-reset:ok;margin:6px 0 4px}
+.ad-ok-passos li{counter-increment:ok;position:relative;padding:12px 0 12px 40px;border-top:1px solid var(--border);color:#b9a276;font-size:14px;line-height:1.55}
+.ad-ok-passos li::before{content:counter(ok);position:absolute;left:0;top:11px;width:26px;height:26px;display:grid;place-items:center;border:1px solid var(--gold-dim);font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold)}
+.ad-nota{font-size:12.5px;color:#8f7a4d;margin-top:14px;line-height:1.55}
+
+.ad-lado-h{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dim);font-weight:600;margin-bottom:14px}
+.ad-regras{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:26px}
+.ad-regras li{position:relative;padding-left:20px;font-size:13.5px;line-height:1.55;color:#a88f60}
+.ad-regras li::before{content:'';position:absolute;left:2px;top:7px;width:6px;height:6px;transform:rotate(45deg);background:var(--gold)}
+.ad-onde{border:1px solid rgba(200,151,58,.12);background:rgba(5,4,2,.6);padding:16px}
+.ad-caminho{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.ad-caminho span{font-size:12px;color:#e2cf9f;border:1px solid rgba(200,151,58,.22);padding:4px 8px;background:rgba(200,151,58,.05)}
+.ad-caminho i{font-style:normal;color:var(--gold-dim)}
+
+.ad-vagas{display:flex;gap:6px;margin:4px 0 8px}
+.ad-vaga{flex:1;height:10px;border:1px solid var(--gold-dim)}
+.ad-vaga.usada{background:var(--gold-dim);border-color:var(--gold-dim)}
+.ad-vaga.nova{background:var(--gold2);border-color:var(--gold2);box-shadow:0 0 14px rgba(232,184,64,.45)}
+.ad-vagas-legenda{font-size:12.5px;color:#a88f60;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.ad-disp{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--border);font-size:13.5px;color:#d6c291;font-variant-numeric:tabular-nums}
+.ad-disp small{font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);border:1px solid rgba(200,151,58,.18);padding:2px 6px}
+.ad-disp small.novo{color:var(--dark);background:var(--gold2);border-color:var(--gold2)}
+
+.ad-previa{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:400;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:calc(100% - 32px);
+  padding:8px 10px;background:rgba(20,16,10,.96);border:1px dashed var(--gold-dim);font-size:11px;color:var(--muted)}
+.ad-previa button{background:transparent;border:1px solid rgba(200,151,58,.25);color:var(--gold2);padding:4px 8px;font-size:11px;cursor:pointer}
+
+@media (max-width:860px){.ad-grade{grid-template-columns:1fr}}
+@media (max-width:700px){main.ad-pagina{padding-top:140px!important}}
+@media (max-width:560px){
+  .ad-card{padding:26px 20px}.ad-lado{padding:26px 20px}
+  .ad-passo span:not(.n){display:none}
+  .ad-passo.atual span:not(.n){display:inline}
+  .ad-otp input{font-size:28px;letter-spacing:10px}
+}
+@media (prefers-reduced-motion:reduce){.ad-pagina *{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
+    <div class="nav-logo-fallback">Forbidden Legacy</div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html">Banlist</a>
+    <a href="boosters.html">Boosters</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <span class="sep">|</span>
+    <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="https://discord.gg/forbidden-legacy" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
+      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> <span data-lang="pt">online</span><span data-lang="en">online</span><span data-lang="es">en línea</span><span data-lang="vi">trực tuyến</span>
+      <span style="opacity:.4;margin:0 3px">·</span>
+      <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> <span data-lang="pt">membros</span><span data-lang="en">members</span><span data-lang="es">miembros</span><span data-lang="vi">thành viên</span>
+    </a>
+    <div class="lang-pick" id="lang-pick">
+      <button class="lang-pick-btn" type="button" id="lang-atual"
+              aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma"
+              onclick="toggleLangMenu(event)"></button>
+      <div class="lang-menu" role="listbox">
+        <button class="lang-opt" role="option" data-idioma="pt" aria-selected="false" onclick="setLang('pt')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg><span>Português</span></button>
+        <button class="lang-opt" role="option" data-idioma="en" aria-selected="false" onclick="setLang('en')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><g fill="#b22234"><rect width="30" height="1.62"/><rect y="3.23" width="30" height="1.62"/><rect y="6.46" width="30" height="1.62"/><rect y="9.69" width="30" height="1.62"/><rect y="12.92" width="30" height="1.62"/><rect y="16.15" width="30" height="1.62"/><rect y="19.38" width="30" height="1.62"/></g><rect width="13" height="11.3" fill="#3c3b6e"/></svg><span>English</span></button>
+        <button class="lang-opt" role="option" data-idioma="es" aria-selected="false" onclick="setLang('es')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#c60b1e"/><rect y="5.25" width="30" height="10.5" fill="#ffc400"/></svg><span>Español</span></button>
+        <button class="lang-opt" role="option" data-idioma="vi" aria-selected="false" onclick="setLang('vi')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#da251d"/><path d="M15 5 16.65 10.05 21.95 10.05 17.65 13.15 19.3 18.2 15 15.1 10.7 18.2 12.35 13.15 8.05 10.05 13.35 10.05Z" fill="#ff0"/></svg><span>Tiếng Việt</span></button>
+      </div>
+    </div>
+    <a href="index.html#comprar" class="nav-cta">☥ Founder</a>
+  </div>
+</nav>
+
+<!-- MOBILE NAV BAR -->
+<div class="mobile-nav-bar" id="mobile-nav-bar">
+  <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
+  <div class="mobile-nav-links">
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html">Banlist</a>
+    <a href="boosters.html">Boosters</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+    <a href="loja.html" data-lang="pt">Loja</a><a href="loja.html" data-lang="en">Store</a><a href="loja.html" data-lang="es">Tienda</a><a href="loja.html" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
+  </div>
+</div>
+
+<main class="ad-pagina" id="top">
+  <header class="ad-topo">
+    <div class="ad-eyebrow" data-t="eyebrow"></div>
+    <h1 class="ad-titulo" data-t="titulo"></h1>
+    <p class="ad-sub" data-t="sub"></p>
+  </header>
+
+  <ol class="ad-passos" id="ad-passos">
+    <li class="ad-passo" data-passo="1"><span class="n"><i>1</i></span><span data-t="passo1"></span></li>
+    <li class="ad-passo" data-passo="2"><span class="n"><i>2</i></span><span data-t="passo2"></span></li>
+    <li class="ad-passo" data-passo="3"><span class="n"><i>3</i></span><span data-t="passo3"></span></li>
+  </ol>
+
+  <div class="ad-grade">
+    <div class="ad-card" id="ad-principal" aria-live="polite"></div>
+    <aside class="ad-lado" id="ad-lado"></aside>
+  </div>
+</main>
+
+<footer class="fl-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">☥ Forbidden Legacy</div>
+      <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="index.html#sobre" data-lang="pt">Sobre</a><a href="index.html#sobre" data-lang="en">About</a><a href="index.html#sobre" data-lang="es">Acerca de</a><a href="index.html#sobre" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="index.html#campanha" data-lang="pt">Campanha</a><a href="index.html#campanha" data-lang="en">Campaign</a><a href="index.html#campanha" data-lang="es">Campaña</a><a href="index.html#campanha" data-lang="vi">Cốt truyện</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+      <a href="banlist.html">Banlist</a>
+      <a href="boosters.html">Boosters</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
+      <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
+      <a href="ativar_dispositivo.html" data-lang="pt">Ativar outro dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate another device</a><a href="ativar_dispositivo.html" data-lang="es">Activar otro dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị khác</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.9.1</span>
+    <span>Fan-made project · Not affiliated with Konami</span>
+  </div>
+</footer>
+
+<script>
+/* ═══════ ATIVAR OUTRO DISPOSITIVO ═══════
+   Fluxo: e-mail da compra + Codigo do Jogador -> codigo de confirmacao no
+   e-mail -> licenca enviada ao e-mail. A pagina NUNCA entrega o arquivo:
+   quem recebe e sempre o e-mail da compra.
+   🔴 PREVIA: as respostas abaixo sao simuladas ate o endpoint existir. */
+var AD_LIMITE = 3;
+
+var AD_TXT = {
+  pt: {
+    eyebrow: '☥ Versão Founder',
+    titulo: 'Ativar outro dispositivo',
+    sub: 'Jogue com a mesma compra no PC e no celular. Cada compra Founder libera até 3 dispositivos, sem custo.',
+    passo1: 'Seus dados', passo2: 'Confirmação', passo3: 'Licença',
+    h_form: 'Novo dispositivo',
+    lbl_email: 'E-mail usado na compra', ph_email: 'voce@email.com',
+    lbl_idioma: 'Idioma do e-mail',
+    lbl_codigo: 'Código do Jogador do novo dispositivo', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
+    dica_codigo: 'Abra o jogo <b>no dispositivo novo</b> e copie o código na tela de ativação.',
+    dica_idioma: 'O código de confirmação e a licença chegam neste idioma.',
+    erro_email: 'Digite um e-mail válido.',
+    erro_codigo: 'Isso não parece um Código do Jogador. Ele começa com FL-PLAYER.',
+    btn_enviar: 'Enviar código de confirmação', enviando: 'Enviando…',
+    h_otp: 'Confirme que o e-mail é seu',
+    otp_texto: 'Se houver uma compra Founder em <b>{email}</b>, enviamos um código de 6 dígitos. Ele vale por 10 minutos. Confira também o spam.',
+    lbl_otp: 'Código de confirmação', btn_confirmar: 'Confirmar e ativar',
+    otp_errado: 'Código incorreto. Restam {n} tentativas.',
+    reenviar: 'Reenviar código', reenviar_em: 'Reenviar em {s}s', voltar: 'Corrigir e-mail ou código',
+    h_ok: 'Licença enviada',
+    ok_texto: 'O arquivo da licença foi para <b>{email}</b>.',
+    ok_p1: 'Abra esse e-mail no dispositivo novo e baixe o arquivo <b>.json</b>.',
+    ok_p2: 'No jogo, vá em <b>Opções → Ativar versão Founder → Importar arquivo de licença</b>.',
+    ok_p3: 'Escolha o arquivo baixado. A versão Founder fica ativa na hora.',
+    ok_nota: 'Não chegou em 5 minutos? Confira o spam antes de pedir de novo.',
+    h_reenviado: 'Este dispositivo já estava ativado',
+    reenviado_texto: 'Enviamos de novo a mesma licença para <b>{email}</b>. Nenhuma vaga foi usada.',
+    h_limite: 'Esta compra já usa os 3 dispositivos',
+    limite_texto: 'Para trocar um dispositivo antigo por este, fale com o suporte no Discord e informe o e-mail da compra.',
+    h_bloqueado: 'Este código não pode ser ativado por aqui',
+    bloqueado_texto: 'Por segurança, alguns códigos só podem ser liberados pelo suporte. Fale com a gente no Discord e informe o e-mail da compra.',
+    btn_discord: 'Falar com o suporte no Discord', btn_outro: 'Ativar mais um dispositivo',
+    lado_h: 'Como funciona',
+    regra1: 'Até <b>3 dispositivos</b> por compra Founder, contando o da compra.',
+    regra2: 'Use o <b>mesmo e-mail da compra</b>: o código de confirmação e a licença chegam nele.',
+    regra3: 'Reinstalou no mesmo aparelho? Peça de novo: a mesma licença volta <b>sem gastar vaga</b>.',
+    regra4: 'Vale para Windows, Linux e Android.',
+    onde_h: 'Onde está o código', onde_1: 'Opções', onde_2: 'Ativar versão Founder', onde_3: 'Copiar código',
+    vagas_h: 'Dispositivos desta compra', vagas_de: '{u} de 3 em uso',
+    tag_compra: 'compra', tag_novo: 'novo',
+    erro_rede: 'Não foi possível falar com o servidor. Confira sua internet e tente de novo.',
+    erro_muitas: 'Muitas tentativas. Aguarde alguns minutos e tente de novo.',
+    erro_dados: 'Confira o e-mail e o código e tente de novo.',
+    otp_curto: 'Digite os 6 números do código que chegou no e-mail.',
+    otp_expirado: 'Este código expirou ou já foi usado. Clique em <b>Reenviar código</b> para receber outro.',
+    erro_email: 'Não conseguimos enviar o e-mail agora. Tente de novo em alguns minutos: se a licença já tiver sido criada, ela é reenviada sem gastar vaga.',
+    reenviado_msg: 'Enviamos um código novo. Use só o mais recente.'
+  },
+  en: {
+    eyebrow: '☥ Founder Version',
+    titulo: 'Activate another device',
+    sub: 'Play the same purchase on PC and phone. Each Founder purchase covers up to 3 devices, at no cost.',
+    passo1: 'Your details', passo2: 'Confirmation', passo3: 'License',
+    h_form: 'New device',
+    lbl_email: 'Email used for the purchase', ph_email: 'you@email.com',
+    lbl_idioma: 'Email language',
+    lbl_codigo: 'Player Code of the new device', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
+    dica_codigo: 'Open the game <b>on the new device</b> and copy the code from the activation screen.',
+    dica_idioma: 'The confirmation code and the license arrive in this language.',
+    erro_email: 'Enter a valid email.',
+    erro_codigo: 'That does not look like a Player Code. It starts with FL-PLAYER.',
+    btn_enviar: 'Send confirmation code', enviando: 'Sending…',
+    h_otp: 'Confirm this email is yours',
+    otp_texto: 'If there is a Founder purchase under <b>{email}</b>, we sent a 6-digit code. It is valid for 10 minutes. Check your spam folder too.',
+    lbl_otp: 'Confirmation code', btn_confirmar: 'Confirm and activate',
+    otp_errado: 'Wrong code. {n} attempts left.',
+    reenviar: 'Resend code', reenviar_em: 'Resend in {s}s', voltar: 'Fix email or code',
+    h_ok: 'License sent',
+    ok_texto: 'The license file was sent to <b>{email}</b>.',
+    ok_p1: 'Open that email on the new device and download the <b>.json</b> file.',
+    ok_p2: 'In the game, go to <b>Options → Activate Founder Version → Import license file</b>.',
+    ok_p3: 'Pick the downloaded file. Founder is active right away.',
+    ok_nota: 'Nothing after 5 minutes? Check spam before asking again.',
+    h_reenviado: 'This device was already activated',
+    reenviado_texto: 'We sent the same license again to <b>{email}</b>. No slot was used.',
+    h_limite: 'This purchase already uses all 3 devices',
+    limite_texto: 'To swap an old device for this one, contact support on Discord with your purchase email.',
+    h_bloqueado: 'This code cannot be activated here',
+    bloqueado_texto: 'For security, some codes can only be released by support. Reach us on Discord with your purchase email.',
+    btn_discord: 'Contact support on Discord', btn_outro: 'Activate one more device',
+    lado_h: 'How it works',
+    regra1: 'Up to <b>3 devices</b> per Founder purchase, including the one you bought on.',
+    regra2: 'Use the <b>same email as the purchase</b>: the confirmation code and the license go there.',
+    regra3: 'Reinstalled on the same device? Ask again: the same license comes back <b>without using a slot</b>.',
+    regra4: 'Works on Windows, Linux and Android.',
+    onde_h: 'Where to find the code', onde_1: 'Options', onde_2: 'Activate Founder Version', onde_3: 'Copy code',
+    vagas_h: 'Devices on this purchase', vagas_de: '{u} of 3 in use',
+    tag_compra: 'purchase', tag_novo: 'new',
+    erro_rede: 'Could not reach the server. Check your connection and try again.',
+    erro_muitas: 'Too many attempts. Wait a few minutes and try again.',
+    erro_dados: 'Check the email and the code and try again.',
+    otp_curto: 'Enter the 6 digits of the code sent to your email.',
+    otp_expirado: 'This code expired or was already used. Click <b>Resend code</b> to get a new one.',
+    erro_email: 'We could not send the email right now. Try again in a few minutes: if the license was already created, it is sent again without using a slot.',
+    reenviado_msg: 'We sent a new code. Use only the latest one.'
+  },
+  es: {
+    eyebrow: '☥ Versión Founder',
+    titulo: 'Activar otro dispositivo',
+    sub: 'Juega con la misma compra en PC y en el celular. Cada compra Founder cubre hasta 3 dispositivos, sin costo.',
+    passo1: 'Tus datos', passo2: 'Confirmación', passo3: 'Licencia',
+    h_form: 'Nuevo dispositivo',
+    lbl_email: 'Correo usado en la compra', ph_email: 'tu@correo.com',
+    lbl_idioma: 'Idioma del correo',
+    lbl_codigo: 'Código de Jugador del nuevo dispositivo', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
+    dica_codigo: 'Abre el juego <b>en el dispositivo nuevo</b> y copia el código en la pantalla de activación.',
+    dica_idioma: 'El código de confirmación y la licencia llegan en este idioma.',
+    erro_email: 'Escribe un correo válido.',
+    erro_codigo: 'Eso no parece un Código de Jugador. Empieza con FL-PLAYER.',
+    btn_enviar: 'Enviar código de confirmación', enviando: 'Enviando…',
+    h_otp: 'Confirma que el correo es tuyo',
+    otp_texto: 'Si hay una compra Founder en <b>{email}</b>, enviamos un código de 6 dígitos. Vale por 10 minutos. Revisa también el spam.',
+    lbl_otp: 'Código de confirmación', btn_confirmar: 'Confirmar y activar',
+    otp_errado: 'Código incorrecto. Quedan {n} intentos.',
+    reenviar: 'Reenviar código', reenviar_em: 'Reenviar en {s}s', voltar: 'Corregir correo o código',
+    h_ok: 'Licencia enviada',
+    ok_texto: 'El archivo de la licencia fue enviado a <b>{email}</b>.',
+    ok_p1: 'Abre ese correo en el dispositivo nuevo y descarga el archivo <b>.json</b>.',
+    ok_p2: 'En el juego, ve a <b>Opciones → Activar versión Founder → Importar archivo de licencia</b>.',
+    ok_p3: 'Elige el archivo descargado. Founder queda activo al instante.',
+    ok_nota: '¿No llegó en 5 minutos? Revisa el spam antes de pedirlo de nuevo.',
+    h_reenviado: 'Este dispositivo ya estaba activado',
+    reenviado_texto: 'Enviamos otra vez la misma licencia a <b>{email}</b>. No se usó ningún cupo.',
+    h_limite: 'Esta compra ya usa los 3 dispositivos',
+    limite_texto: 'Para cambiar un dispositivo antiguo por este, habla con soporte en Discord e indica el correo de la compra.',
+    h_bloqueado: 'Este código no se puede activar aquí',
+    bloqueado_texto: 'Por seguridad, algunos códigos solo los libera el soporte. Escríbenos en Discord con el correo de la compra.',
+    btn_discord: 'Hablar con soporte en Discord', btn_outro: 'Activar un dispositivo más',
+    lado_h: 'Cómo funciona',
+    regra1: 'Hasta <b>3 dispositivos</b> por compra Founder, contando el de la compra.',
+    regra2: 'Usa el <b>mismo correo de la compra</b>: ahí llegan el código de confirmación y la licencia.',
+    regra3: '¿Reinstalaste en el mismo aparato? Pídelo de nuevo: la misma licencia vuelve <b>sin gastar cupo</b>.',
+    regra4: 'Vale para Windows, Linux y Android.',
+    onde_h: 'Dónde está el código', onde_1: 'Opciones', onde_2: 'Activar versión Founder', onde_3: 'Copiar código',
+    vagas_h: 'Dispositivos de esta compra', vagas_de: '{u} de 3 en uso',
+    tag_compra: 'compra', tag_novo: 'nuevo',
+    erro_rede: 'No se pudo conectar con el servidor. Revisa tu conexión e inténtalo de nuevo.',
+    erro_muitas: 'Demasiados intentos. Espera unos minutos e inténtalo de nuevo.',
+    erro_dados: 'Revisa el correo y el código e inténtalo de nuevo.',
+    otp_curto: 'Escribe los 6 números del código que llegó a tu correo.',
+    otp_expirado: 'Este código venció o ya fue usado. Haz clic en <b>Reenviar código</b> para recibir otro.',
+    erro_email: 'No pudimos enviar el correo ahora. Inténtalo en unos minutos: si la licencia ya se creó, se reenvía sin gastar cupo.',
+    reenviado_msg: 'Enviamos un código nuevo. Usa solo el más reciente.'
+  },
+  vi: {
+    eyebrow: '☥ Phiên bản Founder',
+    titulo: 'Kích hoạt thiết bị khác',
+    sub: 'Chơi cùng một lần mua trên PC và điện thoại. Mỗi lần mua Founder dùng được tối đa 3 thiết bị, miễn phí.',
+    passo1: 'Thông tin', passo2: 'Xác nhận', passo3: 'Giấy phép',
+    h_form: 'Thiết bị mới',
+    lbl_email: 'Email đã dùng khi mua', ph_email: 'ban@email.com',
+    lbl_idioma: 'Ngôn ngữ email',
+    lbl_codigo: 'Mã Người Chơi của thiết bị mới', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
+    dica_codigo: 'Mở game <b>trên thiết bị mới</b> và sao chép mã ở màn hình kích hoạt.',
+    dica_idioma: 'Mã xác nhận và giấy phép sẽ được gửi bằng ngôn ngữ này.',
+    erro_email: 'Nhập email hợp lệ.',
+    erro_codigo: 'Đây không giống Mã Người Chơi. Mã bắt đầu bằng FL-PLAYER.',
+    btn_enviar: 'Gửi mã xác nhận', enviando: 'Đang gửi…',
+    h_otp: 'Xác nhận email là của bạn',
+    otp_texto: 'Nếu <b>{email}</b> có lần mua Founder, chúng tôi đã gửi mã 6 chữ số. Mã có hiệu lực 10 phút. Hãy kiểm tra cả thư rác.',
+    lbl_otp: 'Mã xác nhận', btn_confirmar: 'Xác nhận và kích hoạt',
+    otp_errado: 'Sai mã. Còn {n} lần thử.',
+    reenviar: 'Gửi lại mã', reenviar_em: 'Gửi lại sau {s}s', voltar: 'Sửa email hoặc mã',
+    h_ok: 'Đã gửi giấy phép',
+    ok_texto: 'Tệp giấy phép đã được gửi tới <b>{email}</b>.',
+    ok_p1: 'Mở email đó trên thiết bị mới và tải tệp <b>.json</b>.',
+    ok_p2: 'Trong game, vào <b>Tùy chọn → Kích hoạt phiên bản Founder → Nhập tệp giấy phép</b>.',
+    ok_p3: 'Chọn tệp vừa tải. Founder được kích hoạt ngay.',
+    ok_nota: 'Sau 5 phút chưa nhận được? Kiểm tra thư rác trước khi yêu cầu lại.',
+    h_reenviado: 'Thiết bị này đã được kích hoạt',
+    reenviado_texto: 'Chúng tôi đã gửi lại cùng giấy phép tới <b>{email}</b>. Không dùng thêm suất nào.',
+    h_limite: 'Lần mua này đã dùng đủ 3 thiết bị',
+    limite_texto: 'Để thay thiết bị cũ bằng thiết bị này, hãy liên hệ hỗ trợ trên Discord kèm email mua hàng.',
+    h_bloqueado: 'Không thể kích hoạt mã này tại đây',
+    bloqueado_texto: 'Vì lý do bảo mật, một số mã chỉ bộ phận hỗ trợ mới mở được. Liên hệ chúng tôi trên Discord kèm email mua hàng.',
+    btn_discord: 'Liên hệ hỗ trợ trên Discord', btn_outro: 'Kích hoạt thêm thiết bị',
+    lado_h: 'Cách hoạt động',
+    regra1: 'Tối đa <b>3 thiết bị</b> cho mỗi lần mua Founder, tính cả thiết bị đã mua.',
+    regra2: 'Dùng <b>đúng email đã mua</b>: mã xác nhận và giấy phép sẽ gửi tới email đó.',
+    regra3: 'Cài lại trên cùng thiết bị? Yêu cầu lại: cùng giấy phép được gửi <b>mà không tốn suất</b>.',
+    regra4: 'Áp dụng cho Windows, Linux và Android.',
+    onde_h: 'Mã nằm ở đâu', onde_1: 'Tùy chọn', onde_2: 'Kích hoạt phiên bản Founder', onde_3: 'Sao chép mã',
+    vagas_h: 'Thiết bị của lần mua này', vagas_de: 'Đang dùng {u}/3',
+    tag_compra: 'đã mua', tag_novo: 'mới',
+    erro_rede: 'Không thể kết nối máy chủ. Kiểm tra kết nối mạng và thử lại.',
+    erro_muitas: 'Thử quá nhiều lần. Hãy đợi vài phút rồi thử lại.',
+    erro_dados: 'Kiểm tra lại email và mã rồi thử lại.',
+    otp_curto: 'Nhập đủ 6 chữ số của mã đã gửi tới email.',
+    otp_expirado: 'Mã này đã hết hạn hoặc đã được dùng. Bấm <b>Gửi lại mã</b> để nhận mã mới.',
+    erro_email: 'Hiện chưa gửi được email. Hãy thử lại sau vài phút: nếu giấy phép đã được tạo, nó sẽ được gửi lại mà không tốn suất.',
+    reenviado_msg: 'Đã gửi mã mới. Chỉ dùng mã mới nhất.'
+  }
+};
+
+var AD = { etapa: 'form', email: '', codigo: '', idioma: '', tentativas: 5, erroOtp: false, erroEmail: false, erroCodigo: false,
+           resultado: null, dispositivos: [], enviando: false, reenvioAte: 0, relogio: null, avisoChave: '', avisoOk: false };
+
+var AD_IDIOMAS = [['pt', 'Português'], ['en', 'English'], ['es', 'Español'], ['vi', 'Tiếng Việt']];
+/* O e-mail sai no idioma escolhido aqui; o padrao e o idioma em que a pessoa
+   esta lendo a pagina. Mesmo campo que a loja ja tem no checkout. */
+function adIdiomaEscolhido() {
+  if (AD.idioma) return AD.idioma;
+  var l = (typeof langAtual === 'function') ? langAtual() : 'pt';
+  return AD_IDIOMAS.some(function (i) { return i[0] === l; }) ? l : 'pt';
+}
+
+var AD_RE_CODIGO = /^FL-PLAYER(?:(?:PC|AND|MAC|LNX)(?:-[0-9A-F]{4}){3}|(?:-[0-9A-F]{4}){4})$/;
+var AD_RE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function adTx(k, vars) {
+  var l = (typeof langAtual === 'function') ? langAtual() : 'pt';
+  var s = (AD_TXT[l] && AD_TXT[l][k]) || AD_TXT.en[k] || AD_TXT.pt[k] || k;
+  if (vars) Object.keys(vars).forEach(function (a) { s = s.split('{' + a + '}').join(vars[a]); });
+  return s;
+}
+function adEsc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function adMascararEmail(e) {
+  var p = String(e).split('@');
+  return adEsc((p[0] ? p[0].charAt(0) : '') + '•••' + (p[1] ? '@' + p[1] : ''));
+}
+function adNormalizarCodigo(v) { return String(v || '').toUpperCase().replace(/\s+/g, ''); }
+
+/* ── servidor: pagar/dispositivo_iniciar.php e dispositivo_confirmar.php ── */
+function adPost(url, corpo) {
+  return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo), cache: 'no-store' })
+    .then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        d = (d && typeof d === 'object') ? d : {};
+        if (!r.ok && !d.erro) d.erro = 'erro_servidor';
+        return d;
+      });
+    })
+    .catch(function () { return { ok: false, erro: 'rede' }; });
+}
+var AD_API = {
+  iniciar: function (email, codigo, idioma) { return adPost('/pagar/dispositivo_iniciar.php', { email: email, codigo: codigo, idioma: idioma }); },
+  confirmar: function (email, codigo, otp) { return adPost('/pagar/dispositivo_confirmar.php', { email: email, codigo: codigo, otp: otp }); }
+};
+function adChaveErro(erro) {
+  return { muitas_tentativas: 'erro_muitas', dados_invalidos: 'erro_dados', otp_expirado: 'otp_expirado', email_falhou: 'erro_email' }[erro] || 'erro_rede';
+}
+function adAviso() {
+  if (!AD.avisoChave) return '';
+  return '<div class="ad-aviso' + (AD.avisoOk ? ' ok' : '') + '" role="status">' + adTx(AD.avisoChave) + '</div>';
+}
+
+/* ── desenho ──────────────────────────────────────────────────────────── */
+function adPassos() {
+  var atual = AD.etapa === 'form' ? 1 : AD.etapa === 'otp' ? 2 : 3;
+  var alerta = AD.etapa === 'resultado' && (AD.resultado === 'limite' || AD.resultado === 'bloqueado');
+  document.querySelectorAll('#ad-passos .ad-passo').forEach(function (li) {
+    var n = +li.dataset.passo;
+    li.classList.toggle('feito', n < atual);
+    li.classList.toggle('atual', n === atual && !alerta);
+    li.classList.toggle('alerta', n === atual && alerta);
+    if (n === atual) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+  });
+}
+
+function adTelaForm() {
+  return '<h2 class="ad-h">' + adTx('h_form') + '</h2>' + adAviso() +
+    '<form id="ad-form" novalidate>' +
+      '<div class="field"><label for="ad-email">' + adTx('lbl_email') + '</label>' +
+        '<input id="ad-email" type="email" autocomplete="email" inputmode="email" placeholder="' + adTx('ph_email') + '" value="' + adEsc(AD.email) + '"' + (AD.erroEmail ? ' class="invalido" aria-invalid="true"' : '') + '>' +
+        (AD.erroEmail ? '<div class="ad-erro-campo">' + adTx('erro_email') + '</div>' : '') + '</div>' +
+      '<div class="field"><label for="ad-idioma">' + adTx('lbl_idioma') + '</label>' +
+        '<select id="ad-idioma" autocomplete="off">' + AD_IDIOMAS.map(function (i) {
+          return '<option value="' + i[0] + '"' + (i[0] === adIdiomaEscolhido() ? ' selected' : '') + '>' + i[1] + '</option>';
+        }).join('') + '</select>' +
+        '<div class="ad-dica">' + adTx('dica_idioma') + '</div></div>' +
+      '<div class="field ad-codigo"><label for="ad-codigo">' + adTx('lbl_codigo') + '</label>' +
+        '<input id="ad-codigo" type="text" autocomplete="off" spellcheck="false" placeholder="' + adTx('ph_codigo') + '" value="' + adEsc(AD.codigo) + '"' + (AD.erroCodigo ? ' class="invalido" aria-invalid="true"' : '') + '>' +
+        (AD.erroCodigo ? '<div class="ad-erro-campo">' + adTx('erro_codigo') + '</div>' : '<div class="ad-dica">' + adTx('dica_codigo') + '</div>') + '</div>' +
+      '<button class="ad-btn" type="submit"' + (AD.enviando ? ' disabled' : '') + '>' + adTx(AD.enviando ? 'enviando' : 'btn_enviar') + '</button>' +
+    '</form>';
+}
+
+function adTelaOtp() {
+  var falta = Math.max(0, Math.ceil((AD.reenvioAte - Date.now()) / 1000));
+  return '<h2 class="ad-h">' + adTx('h_otp') + '</h2>' + adAviso() +
+    '<p class="ad-texto">' + adTx('otp_texto', { email: adMascararEmail(AD.email) }) + '</p>' +
+    '<form id="ad-form-otp" novalidate>' +
+      '<div class="field ad-otp"><label for="ad-otp">' + adTx('lbl_otp') + '</label>' +
+        '<input id="ad-otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="••••••"' + (AD.erroOtp ? ' class="invalido" aria-invalid="true"' : '') + '>' +
+        (AD.erroOtp ? '<div class="ad-erro-campo">' + adTx('otp_errado', { n: AD.tentativas }) + '</div>' : '') + '</div>' +
+      '<button class="ad-btn" type="submit"' + (AD.enviando ? ' disabled' : '') + '>' + adTx(AD.enviando ? 'enviando' : 'btn_confirmar') + '</button>' +
+    '</form>' +
+    '<div class="ad-acoes-sec">' +
+      '<button class="ad-link" type="button" id="ad-voltar">' + adTx('voltar') + '</button>' +
+      '<button class="ad-link" type="button" id="ad-reenviar"' + (falta > 0 ? ' disabled' : '') + '>' + (falta > 0 ? adTx('reenviar_em', { s: falta }) : adTx('reenviar')) + '</button>' +
+    '</div>';
+}
+
+function adBotaoDiscord() {
+  return '<a class="ad-btn-sec discord" href="https://discord.gg/forbidden-legacy" target="_blank" rel="noopener">' + adTx('btn_discord') + '</a>';
+}
+
+function adTelaResultado() {
+  var email = adMascararEmail(AD.email);
+  if (AD.resultado === 'enviada' || AD.resultado === 'reenviada') {
+    var reenv = AD.resultado === 'reenviada';
+    return '<div class="ad-selo"><span>☥</span></div>' +
+      '<h2 class="ad-resultado-h">' + adTx(reenv ? 'h_reenviado' : 'h_ok') + '</h2>' +
+      '<p class="ad-texto">' + adTx(reenv ? 'reenviado_texto' : 'ok_texto', { email: email }) + '</p>' +
+      '<ol class="ad-ok-passos"><li>' + adTx('ok_p1') + '</li><li>' + adTx('ok_p2') + '</li><li>' + adTx('ok_p3') + '</li></ol>' +
+      '<p class="ad-nota">' + adTx('ok_nota') + '</p>' +
+      (AD.dispositivos.length < AD_LIMITE ? '<button class="ad-btn-sec" type="button" id="ad-outro">' + adTx('btn_outro') + '</button>' : '');
+  }
+  var limite = AD.resultado === 'limite';
+  return '<div class="ad-selo alerta"><span>!</span></div>' +
+    '<h2 class="ad-resultado-h alerta">' + adTx(limite ? 'h_limite' : 'h_bloqueado') + '</h2>' +
+    '<p class="ad-texto">' + adTx(limite ? 'limite_texto' : 'bloqueado_texto') + '</p>' +
+    adBotaoDiscord() +
+    '<div class="ad-acoes-sec"><button class="ad-link" type="button" id="ad-voltar">' + adTx('voltar') + '</button></div>';
+}
+
+function adLado() {
+  if (AD.etapa === 'resultado' && AD.dispositivos.length) {
+    var usados = AD.dispositivos.length;
+    var barras = '';
+    for (var i = 0; i < AD_LIMITE; i++) {
+      var d = AD.dispositivos[i];
+      barras += '<span class="ad-vaga' + (d ? (d.novo ? ' nova' : ' usada') : '') + '"></span>';
+    }
+    var lista = AD.dispositivos.map(function (d) {
+      var tag = d.novo ? '<small class="novo">' + adTx('tag_novo') + '</small>' : d.compra ? '<small>' + adTx('tag_compra') + '</small>' : '';
+      return '<div class="ad-disp"><span>' + adEsc(d.plataforma) + ' ···' + adEsc(d.final) + '</span>' + tag + '</div>';
+    }).join('');
+    return '<div class="ad-lado-h">' + adTx('vagas_h') + '</div>' +
+      '<div class="ad-vagas" aria-hidden="true">' + barras + '</div>' +
+      '<div class="ad-vagas-legenda">' + adTx('vagas_de', { u: usados }) + '</div>' + lista;
+  }
+  return '<div class="ad-lado-h">' + adTx('lado_h') + '</div>' +
+    '<ul class="ad-regras"><li>' + adTx('regra1') + '</li><li>' + adTx('regra2') + '</li><li>' + adTx('regra3') + '</li><li>' + adTx('regra4') + '</li></ul>' +
+    '<div class="ad-onde"><div class="ad-lado-h" style="margin-bottom:0">' + adTx('onde_h') + '</div>' +
+      '<div class="ad-caminho"><span>' + adTx('onde_1') + '</span><i>→</i><span>' + adTx('onde_2') + '</span><i>→</i><span>' + adTx('onde_3') + '</span></div></div>';
+}
+
+function adRender() {
+  var principal = document.getElementById('ad-principal');
+  var lado = document.getElementById('ad-lado');
+  if (!principal || !lado) return;
+  adPassos();
+  principal.innerHTML = AD.etapa === 'form' ? adTelaForm() : AD.etapa === 'otp' ? adTelaOtp() : adTelaResultado();
+  lado.innerHTML = adLado();
+  adLigar();
+}
+
+/* Chamado pelo setLang do site: troca de idioma redesenha tudo. */
+function flRedesenhar() {
+  document.querySelectorAll('[data-t]').forEach(function (el) { el.innerHTML = adTx(el.dataset.t); });
+  adRender();
+}
+
+function adLigar() {
+  var f = document.getElementById('ad-form');
+  if (f) f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    AD.email = document.getElementById('ad-email').value.trim();
+    AD.codigo = adNormalizarCodigo(document.getElementById('ad-codigo').value);
+    AD.idioma = document.getElementById('ad-idioma').value;
+    AD.erroEmail = !AD_RE_EMAIL.test(AD.email);
+    AD.erroCodigo = !AD_RE_CODIGO.test(AD.codigo);
+    if (AD.erroEmail || AD.erroCodigo) { adRender(); return; }
+    AD.enviando = true; AD.avisoChave = ''; adRender();
+    AD_API.iniciar(AD.email, AD.codigo, AD.idioma).then(function (d) {
+      AD.enviando = false;
+      if (!d.ok) { AD.avisoChave = adChaveErro(d.erro); AD.avisoOk = false; adRender(); return; }
+      AD.etapa = 'otp'; AD.erroOtp = false; AD.avisoChave = '';
+      AD.reenvioAte = Date.now() + (d.reenvio_em || 60) * 1000;
+      adRender(); adRelogio();
+      var o = document.getElementById('ad-otp'); if (o) o.focus();
+    });
+  });
+  var cod = document.getElementById('ad-codigo');
+  if (cod) cod.addEventListener('input', function () { var p = cod.selectionStart; cod.value = cod.value.toUpperCase(); cod.setSelectionRange(p, p); AD.codigo = adNormalizarCodigo(cod.value); });
+  /* Guarda o que foi digitado a cada tecla: trocar o idioma da pagina redesenha
+     o formulario, e sem isto o e-mail, o codigo e o idioma escolhido sumiam. */
+  var em = document.getElementById('ad-email');
+  if (em) em.addEventListener('input', function () { AD.email = em.value.trim(); });
+  var idi = document.getElementById('ad-idioma');
+  if (idi) idi.addEventListener('change', function () { AD.idioma = idi.value; });
+
+  var fo = document.getElementById('ad-form-otp');
+  if (fo) fo.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var otp = document.getElementById('ad-otp').value.replace(/\D/g, '');
+    if (otp.length !== 6) { AD.erroOtp = false; AD.avisoChave = 'otp_curto'; AD.avisoOk = false; adRender(); return; }
+    AD.enviando = true; AD.avisoChave = ''; adRender();
+    AD_API.confirmar(AD.email, AD.codigo, otp).then(function (r) {
+      AD.enviando = false; AD.erroOtp = false;
+      if (!r.ok) {
+        if (r.erro === 'otp_invalido') { AD.erroOtp = true; AD.tentativas = r.tentativas_restantes; }
+        else if (r.erro === 'otp_expirado') { AD.avisoChave = 'otp_expirado'; AD.reenvioAte = 0; }
+        else if (r.erro === 'email_falhou') { AD.etapa = 'form'; AD.avisoChave = 'erro_email'; }
+        else { AD.avisoChave = adChaveErro(r.erro); }
+        AD.avisoOk = false; adRender(); adRelogio(); return;
+      }
+      AD.etapa = 'resultado'; AD.resultado = r.resultado; AD.dispositivos = r.dispositivos || []; AD.avisoChave = ''; adRender();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  var otpIn = document.getElementById('ad-otp');
+  if (otpIn) otpIn.addEventListener('input', function () { otpIn.value = otpIn.value.replace(/\D/g, '').slice(0, 6); });
+
+  var v = document.getElementById('ad-voltar');
+  if (v) v.addEventListener('click', function () { AD.etapa = 'form'; AD.resultado = null; AD.dispositivos = []; AD.avisoChave = ''; adRender(); });
+  var r = document.getElementById('ad-reenviar');
+  if (r) r.addEventListener('click', function () {
+    AD.reenvioAte = Date.now() + 60000; AD.avisoChave = ''; adRender(); adRelogio();
+    AD_API.iniciar(AD.email, AD.codigo, adIdiomaEscolhido()).then(function (d) {
+      if (d.ok) { AD.avisoChave = 'reenviado_msg'; AD.avisoOk = true; AD.reenvioAte = Date.now() + (d.reenvio_em || 60) * 1000; }
+      else { AD.avisoChave = adChaveErro(d.erro); AD.avisoOk = false; }
+      if (AD.etapa === 'otp') { adRender(); adRelogio(); }
+    });
+  });
+  var o = document.getElementById('ad-outro');
+  if (o) o.addEventListener('click', function () { AD.etapa = 'form'; AD.codigo = ''; AD.resultado = null; AD.dispositivos = []; AD.avisoChave = ''; adRender(); });
+}
+
+function adRelogio() {
+  clearInterval(AD.relogio);
+  AD.relogio = setInterval(function () {
+    var r = document.getElementById('ad-reenviar');
+    if (AD.etapa !== 'otp' || !r) { clearInterval(AD.relogio); return; }
+    var falta = Math.max(0, Math.ceil((AD.reenvioAte - Date.now()) / 1000));
+    r.disabled = falta > 0;
+    r.textContent = falta > 0 ? adTx('reenviar_em', { s: falta }) : adTx('reenviar');
+    if (falta <= 0) clearInterval(AD.relogio);
+  }, 1000);
+}
+
+
+</script>
+<script>
+function langAtual(){ return document.documentElement.getAttribute('data-lang-ativo') || 'pt'; }
+function t4(pt,en,es,vi){
+  var l=langAtual();
+  return l==='en' ? en : l==='es' ? es : l==='vi' ? vi : pt;
+}
+
+var FL_IDIOMAS = {
+  pt: { nome: 'Português', locale: 'pt-BR', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg>' },
+  en: { nome: 'English', locale: 'en', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><g fill="#b22234"><rect width="30" height="1.62"/><rect y="3.23" width="30" height="1.62"/><rect y="6.46" width="30" height="1.62"/><rect y="9.69" width="30" height="1.62"/><rect y="12.92" width="30" height="1.62"/><rect y="16.15" width="30" height="1.62"/><rect y="19.38" width="30" height="1.62"/></g><rect width="13" height="11.3" fill="#3c3b6e"/></svg>' },
+  es: { nome: 'Español', locale: 'es', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#c60b1e"/><rect y="5.25" width="30" height="10.5" fill="#ffc400"/></svg>' },
+  vi: { nome: 'Tiếng Việt', locale: 'vi', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#da251d"/><path d="M15 5 16.65 10.05 21.95 10.05 17.65 13.15 19.3 18.2 15 15.1 10.7 18.2 12.35 13.15 8.05 10.05 13.35 10.05Z" fill="#ff0"/></svg>' }
+};
+
+function setLang(lang, saveToStorage = true) {
+  var raiz = document.documentElement;
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  if (sup.indexOf(lang) < 0) lang = sup.indexOf('en') >= 0 ? 'en' : sup[0];
+
+  raiz.setAttribute('data-lang-ativo', lang);
+  raiz.setAttribute('lang', (FL_IDIOMAS[lang] || {}).locale || 'pt-BR');
+  /* .en continua existindo: há CSS e JS antigos que consultam a classe */
+  document.body.classList.toggle('en', lang === 'en');
+
+  if (saveToStorage) { try { localStorage.setItem('fl_lang', lang); } catch (e) {} }
+
+  /* Botão do seletor mostra a bandeira e o nome do idioma escolhido */
+  var alvo = FL_IDIOMAS[lang] || FL_IDIOMAS.en;
+  var bt = document.getElementById('lang-atual');
+  if (bt && alvo) bt.innerHTML = alvo.flag + '<span class="lang-nome">' + alvo.nome + '</span>';
+  document.querySelectorAll('.lang-opt[data-idioma]').forEach(function (o) {
+    o.setAttribute('aria-selected', o.dataset.idioma === lang ? 'true' : 'false');
+  });
+  fecharLangMenu();
+
+  /* Leitor de tela: as outras línguas continuam no DOM, escondidas por
+     CSS. Sem isto elas seriam lidas em voz alta junto com a ativa. */
+  document.querySelectorAll('[data-lang]').forEach(function (el) {
+    if (el.getAttribute('data-lang') === lang) el.removeAttribute('aria-hidden');
+    else el.setAttribute('aria-hidden', 'true');
+  });
+
+  /* Textos guardados em atributo (data-lang-pt / -en / -es / -vi).
+     Cai para inglês e depois português quando o idioma falta. */
+  document.querySelectorAll('[data-lang-pt]').forEach(function (el) {
+    var v = el.dataset['lang' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+    el.innerHTML = v || el.dataset.langEn || el.dataset.langPt;
+  });
+
+  /* Imagens com versão por idioma (data-src-pt / data-src-en / ...) */
+  document.querySelectorAll('img[data-src-pt]').forEach(function (img) {
+    var v = img.dataset['src' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+    var src = v || img.dataset.srcEn || img.dataset.srcPt;
+    if (src) img.src = src;
+  });
+
+  /* O chip de regiao e um extra do idioma, nao parte dele. No primeiro
+     carregamento esta funcao pode rodar antes de a pagina declarar suas
+     variaveis de regiao (zona morta temporal do let/const), e sem esta
+     protecao o erro aborta a troca de idioma inteira. */
+  /* Listas montadas por JS precisam ser refeitas: o texto delas foi
+     escolhido no idioma anterior. A pagina registra a sua em flRedesenhar. */
+  try { if (typeof flRedesenhar === 'function') flRedesenhar(); } catch (e) {}
+  try { if (typeof atualizarChipRegiao === 'function') atualizarChipRegiao(); } catch (e) {}
+}
+window.setLang = setLang;
+
+function toggleLangMenu(ev) {
+  if (ev) ev.stopPropagation();
+  var p = document.getElementById('lang-pick');
+  if (!p) return;
+  var abrindo = !p.classList.contains('aberto');
+  p.classList.toggle('aberto', abrindo);
+  var b = p.querySelector('.lang-pick-btn');
+  if (b) b.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+}
+function fecharLangMenu() {
+  var p = document.getElementById('lang-pick');
+  if (!p) return;
+  p.classList.remove('aberto');
+  var b = p.querySelector('.lang-pick-btn');
+  if (b) b.setAttribute('aria-expanded', 'false');
+}
+window.toggleLangMenu = toggleLangMenu;
+document.addEventListener('click', function (e) {
+  var p = document.getElementById('lang-pick');
+  if (p && !p.contains(e.target)) fecharLangMenu();
+});
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharLangMenu(); });
+
+/* O idioma já foi decidido no <head>. Aqui só sincronizamos o que depende
+   do <body> existir: a classe .en legada, o rótulo do seletor, o
+   aria-hidden e a remoção dos idiomas que esta página ainda não tem. */
+(function () {
+  var raiz = document.documentElement;
+  var lang = raiz.getAttribute('data-lang-ativo') || 'pt';
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  document.querySelectorAll('.lang-opt[data-idioma]').forEach(function (o) {
+    if (sup.indexOf(o.dataset.idioma) < 0) o.remove();
+  });
+  /* Um idioma só: o seletor não tem função nenhuma */
+  if (sup.length < 2) { var p = document.getElementById('lang-pick'); if (p) p.remove(); }
+  setLang(lang, false);
+})();
+</script>
+</body>
+</html>
