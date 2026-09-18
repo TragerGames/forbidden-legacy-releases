@@ -3825,7 +3825,19 @@ function openLbLang(item) {
 window.openLbLang = openLbLang;
 
 // ── País detectado via IP (controla opções de pagamento, independente do idioma) ──
-window._flIsBR = true; // padrão Brasil até detecção completar
+// Palpite de pais ANTES da consulta por IP, e reserva se ela falhar: o fuso
+// horario do aparelho. O padrao antigo era "Brasil", e a consulta ao
+// api.country.is cai com bloqueador de anuncio/privacidade — o visitante de fora
+// ficava preso vendo precos em R$, em qualquer idioma. O fuso nao depende do
+// idioma e nenhum bloqueador o esconde. A consulta por IP continua sendo a
+// palavra final quando responde, e o botao "Trocar regiao" segue valendo.
+function flFusoEhBrasil() {
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    return /^(America\/(Sao_Paulo|Araguaina|Bahia|Belem|Boa_Vista|Campo_Grande|Cuiaba|Eirunepe|Fortaleza|Maceio|Manaus|Noronha|Porto_Velho|Recife|Rio_Branco|Santarem)|Brazil\/)/.test(tz);
+  } catch (e) { return false; }
+}
+window._flIsBR = flFusoEhBrasil(); // palpite pelo fuso até a detecção por IP completar
 
 // ── Override manual de região (mesma chave usada em loja.html — corrige
 // deteccao por IP errada/bloqueada por ad-blocker; sincroniza com a loja) ──
@@ -3944,7 +3956,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Idioma: só altera se não houver preferência salva
       if (!saved && !window._flIsBR) setLang('en', false);
     })
-    .catch(() => { window._flIsBR = true; atualizarChipRegiao(); }); // fallback: assume Brasil
+    .catch(() => { atualizarChipRegiao(); }); // falhou: fica o palpite pelo fuso, nunca "Brasil" por padrão
 })();
 
 // ── Scroll suave ──────────────────────────────────────────────────────────

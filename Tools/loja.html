@@ -1734,7 +1734,19 @@ const QTD_MAX = 10;
 const SOULS_BONUS_PCT = 0.5;
 function totalSoulsFor(p){ return Math.round(p.souls*(1+SOULS_BONUS_PCT)); }
 let pixTxid = '', pollTimer = null;
-window._flIsBR = true;
+// Palpite de pais ANTES da consulta por IP, e reserva se ela falhar: o fuso
+// horario do aparelho. O padrao antigo era "Brasil", e a consulta ao
+// api.country.is cai com bloqueador de anuncio/privacidade — o visitante de fora
+// ficava preso vendo precos em R$, em qualquer idioma. O fuso nao depende do
+// idioma e nenhum bloqueador o esconde. A consulta por IP continua sendo a
+// palavra final quando responde, e o botao "Trocar regiao" segue valendo.
+function flFusoEhBrasil() {
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    return /^(America\/(Sao_Paulo|Araguaina|Bahia|Belem|Boa_Vista|Campo_Grande|Cuiaba|Eirunepe|Fortaleza|Maceio|Manaus|Noronha|Porto_Velho|Recife|Rio_Branco|Santarem)|Brazil\/)/.test(tz);
+  } catch (e) { return false; }
+}
+window._flIsBR = flFusoEhBrasil();
 
 function isEn(){ return document.body.classList.contains('en'); }
 function t(pt,en){ return isEn() ? en : pt; }
@@ -2217,11 +2229,12 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
     el.addEventListener('input',()=>localStorage.setItem('fl_form_'+id,el.value));
     el.addEventListener('change',()=>localStorage.setItem('fl_form_'+id,el.value));
   });
+  applyRegionMode(); // aplica o palpite pelo fuso já na carga, sem esperar a API
   fetch('https://api.country.is/').then(r=>r.json()).then(d=>{
     window._flIsBR=((d.country||'BR').toUpperCase()==='BR');
     if(!saved&&!window._flIsBR) setLang('en',false);
     else applyRegionMode();
-  }).catch(()=>{window._flIsBR=true;applyRegionMode();});
+  }).catch(()=>{applyRegionMode();}); // falhou: fica o palpite pelo fuso
   const p=new URLSearchParams(location.search);
   if(p.get('stripe_ok')==='1'||p.get('asaas_ok')==='1'){
     alert(t('Pagamento confirmado. Código de Souls enviado por email.','Payment confirmed. Soul code sent by email.'));
