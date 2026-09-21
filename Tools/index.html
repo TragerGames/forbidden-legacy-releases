@@ -1311,6 +1311,11 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   .offer-bar-dev{ padding-left:14px; }
   .offer-bar-dev-q{ display:none; }
 }
+/* O atalho do suporte so aparece com a barra ainda em UMA linha nos quatro
+   idiomas: medido, cabe a partir de 880 px; 920 da folga para fonte que
+   renderiza maior. Abaixo disso ele quebrava a barra (66 -> 112 px em 725).
+   No celular e no tablet o suporte continua no rodape da pagina. */
+@media (max-width:919px){ .offer-bar-sup{ display:none; } }
 @media (max-width:720px){
   /* Estreito: o link desce para baixo de "Versao Founder", no lugar da
      linha de pagamento, e a barra fica com a mesma altura de antes. Em
@@ -3471,6 +3476,10 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   <a class="offer-bar-dev" href="ativar_dispositivo.html">
     <span class="offer-bar-dev-q" data-lang="pt">Já é Founder?</span><span class="offer-bar-dev-q" data-lang="en">Already a Founder?</span><span class="offer-bar-dev-q" data-lang="es">¿Ya eres Founder?</span><span class="offer-bar-dev-q" data-lang="vi">Đã là Founder?</span>
     <span class="offer-bar-dev-a" data-lang="pt">Ativar outro dispositivo</span><span class="offer-bar-dev-a" data-lang="en">Activate another device</span><span class="offer-bar-dev-a" data-lang="es">Activa otro dispositivo</span><span class="offer-bar-dev-a" data-lang="vi">Kích hoạt thiết bị khác</span>
+  </a>
+  <a class="offer-bar-dev offer-bar-sup" href="suporte.html">
+    <span class="offer-bar-dev-q" data-lang="pt">Dúvidas?</span><span class="offer-bar-dev-q" data-lang="en">Questions?</span><span class="offer-bar-dev-q" data-lang="es">¿Dudas?</span><span class="offer-bar-dev-q" data-lang="vi">Có thắc mắc?</span>
+    <span class="offer-bar-dev-a" data-lang="pt">Fale com o suporte</span><span class="offer-bar-dev-a" data-lang="en">Contact support</span><span class="offer-bar-dev-a" data-lang="es">Contactar soporte</span><span class="offer-bar-dev-a" data-lang="vi">Liên hệ hỗ trợ</span>
   </a>
   <button class="offer-bar-close" onclick="fecharBarraOferta()" aria-label="Fechar">✕</button>
 </div>
