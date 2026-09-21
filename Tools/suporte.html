@@ -40,19 +40,19 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1730849377953646&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<title>Forbidden Legacy - Ativar outro dispositivo</title>
-<meta name="description" content="Ative a sua compra Founder do Forbidden Legacy em outro PC ou celular. Até 3 dispositivos por compra.">
+<title>Forbidden Legacy - Fale com o suporte</title>
+<meta name="description" content="Tire dúvidas, reporte bugs ou mande sugestões para a equipe do Forbidden Legacy, mesmo sem Discord.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://forbiddenlegacy.com.br/ativar_dispositivo.html">
-<meta property="og:title" content="Forbidden Legacy - Ativar outro dispositivo">
-<meta property="og:description" content="Até 3 dispositivos por compra Founder, sem custo.">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/suporte.html">
+<meta property="og:title" content="Forbidden Legacy - Fale com o suporte">
+<meta property="og:description" content="Dúvidas, bugs e sugestões, direto para a equipe.">
 <meta property="og:site_name" content="Forbidden Legacy">
 <meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://forbiddenlegacy.com.br/ativar_dispositivo.html">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/suporte.html">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
@@ -357,6 +357,26 @@ nav#nav{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
   .ad-otp input{font-size:28px;letter-spacing:10px}
 }
 @media (prefers-reduced-motion:reduce){.ad-pagina *{transition:none!important}}
+
+/* ═══════ FALE COM O SUPORTE ═══════ */
+.sp-tipos{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.sp-tipo{position:relative}
+.sp-tipo input{position:absolute;opacity:0;pointer-events:none}
+.sp-tipo span{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border:1px solid rgba(200,151,58,.25);color:#c9b48a;font-size:13.5px;cursor:pointer;background:rgba(200,151,58,.03);transition:background .15s,border-color .15s,color .15s}
+.sp-tipo span:hover{border-color:rgba(200,151,58,.5)}
+.sp-tipo input:checked + span{background:rgba(200,151,58,.14);border-color:var(--gold);color:var(--gold2)}
+.sp-tipo input:focus-visible + span{outline:2px solid var(--gold3);outline-offset:2px}
+.sp-linha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.field textarea{width:100%;min-height:170px;resize:vertical;font:15px/1.6 'Inter',sans-serif}
+.sp-conta{display:flex;justify-content:space-between;gap:10px;margin-top:6px;font-size:12px;color:#8f7a4d;font-variant-numeric:tabular-nums}
+.sp-conta.limite{color:#e3a48f}
+.sp-opc{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-left:6px;font-weight:500}
+.sp-isca{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.sp-protocolo{display:inline-block;margin:6px 0 16px;padding:8px 14px;border:1px solid rgba(200,151,58,.35);background:rgba(200,151,58,.06);font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:var(--gold2);font-variant-numeric:tabular-nums}
+.sp-lista{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0 0 22px}
+.sp-lista li{position:relative;padding-left:20px;font-size:13.5px;line-height:1.55;color:#a88f60}
+.sp-lista li::before{content:'';position:absolute;left:2px;top:7px;width:6px;height:6px;transform:rotate(45deg);background:var(--gold)}
+@media (max-width:560px){.sp-linha{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -429,15 +449,9 @@ nav#nav{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
     <p class="ad-sub" data-t="sub"></p>
   </header>
 
-  <ol class="ad-passos" id="ad-passos">
-    <li class="ad-passo" data-passo="1"><span class="n"><i>1</i></span><span data-t="passo1"></span></li>
-    <li class="ad-passo" data-passo="2"><span class="n"><i>2</i></span><span data-t="passo2"></span></li>
-    <li class="ad-passo" data-passo="3"><span class="n"><i>3</i></span><span data-t="passo3"></span></li>
-  </ol>
-
   <div class="ad-grade">
-    <div class="ad-card" id="ad-principal" aria-live="polite"></div>
-    <aside class="ad-lado" id="ad-lado"></aside>
+    <div class="ad-card" id="sp-principal" aria-live="polite"></div>
+    <aside class="ad-lado" id="sp-lado"></aside>
   </div>
 </main>
 
@@ -479,239 +493,217 @@ nav#nav{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
 </footer>
 
 <script>
-/* ═══════ ATIVAR OUTRO DISPOSITIVO ═══════
-   Fluxo: e-mail da compra + Codigo do Jogador -> codigo de confirmacao no
-   e-mail -> licenca enviada ao e-mail. A pagina NUNCA entrega o arquivo:
-   quem recebe e sempre o e-mail da compra.
-   🔴 PREVIA: as respostas abaixo sao simuladas ate o endpoint existir. */
-var AD_LIMITE = 3;
+/* ═══════ FALE COM O SUPORTE ═══════
+   Formulario -> /pagar/suporte_enviar.php, que grava a mensagem e avisa a
+   equipe por e-mail (ver pagar/suporte_lib.php). O jogador recebe um
+   protocolo NA TELA; o site nunca manda e-mail para o endereco digitado.
+   Aceita ?tipo=bug|duvida|sugestao|pagamento|outro para ja abrir escolhido. */
+var SP_TIPOS = ['duvida', 'bug', 'sugestao', 'pagamento', 'outro'];
+var SP_MSG_MAX = 4000;
+var SP_MSG_MIN = 10;
 
-var AD_TXT = {
+var SP_TXT = {
   pt: {
-    eyebrow: '☥ Versão Founder',
-    titulo: 'Ativar outro dispositivo',
-    sub: 'Jogue com a mesma compra no PC e no celular. Cada compra Founder libera até 3 dispositivos, sem custo.',
-    passo1: 'Seus dados', passo2: 'Confirmação', passo3: 'Licença',
-    h_form: 'Novo dispositivo',
-    lbl_email: 'E-mail usado na compra', ph_email: 'voce@email.com',
-    lbl_idioma: 'Idioma do e-mail',
-    lbl_codigo: 'Código do Jogador do novo dispositivo', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
-    dica_codigo: 'Abra o jogo <b>no dispositivo novo</b> e copie o código na tela de ativação.',
-    dica_idioma: 'O código de confirmação e a licença chegam neste idioma.',
+    eyebrow: '☥ Suporte',
+    titulo: 'Fale com o suporte',
+    sub: 'Dúvida, bug ou sugestão? Mande aqui mesmo sem ter Discord. A resposta chega no seu e-mail.',
+    h_form: 'Sua mensagem',
+    lbl_tipo: 'Sobre o que é?',
+    tipo_duvida: 'Dúvida', tipo_bug: 'Bug', tipo_sugestao: 'Sugestão', tipo_pagamento: 'Pagamento / licença', tipo_outro: 'Outro',
+    lbl_email: 'Seu e-mail', ph_email: 'voce@email.com',
+    dica_email: 'É para este e-mail que vamos responder.',
+    lbl_nome: 'Nome ou apelido', opcional: 'opcional',
+    lbl_plataforma: 'Onde você joga', plat_vazio: 'Escolha…', plat_pc: 'PC (Windows)', plat_android: 'Android', plat_linux: 'Linux', plat_outro: 'Outro',
+    lbl_codigo: 'Código do Jogador', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
+    dica_codigo: 'Ajuda muito em bug e em pagamento. Fica em <b>Opções → Ativação</b>, dentro do jogo.',
+    lbl_msg: 'Mensagem',
+    ph_duvida: 'Qual é a sua dúvida?',
+    ph_bug: 'O que aconteceu? O que você esperava que acontecesse? Se lembrar, diga em qual tela ou contra qual duelista foi.',
+    ph_sugestao: 'Conte sua ideia. Se for sobre uma carta ou duelista, diga qual.',
+    ph_pagamento: 'Conte o que aconteceu com a compra ou a ativação. Se tiver, diga o e-mail usado na compra.',
+    ph_outro: 'Escreva sua mensagem.',
+    conta: '{n} / {max}',
+    btn_enviar: 'Enviar mensagem', enviando: 'Enviando…',
     erro_email: 'Digite um e-mail válido.',
-    erro_codigo: 'Isso não parece um Código do Jogador. Ele começa com FL-PLAYER.',
-    btn_enviar: 'Enviar código de confirmação', enviando: 'Enviando…',
-    h_otp: 'Confirme que o e-mail é seu',
-    otp_texto: 'Se houver uma compra Founder em <b>{email}</b>, enviamos um código de 6 dígitos. Ele vale por 10 minutos. Confira também o spam.',
-    lbl_otp: 'Código de confirmação', btn_confirmar: 'Confirmar e ativar',
-    otp_errado: 'Código incorreto. Restam {n} tentativas.',
-    reenviar: 'Reenviar código', reenviar_em: 'Reenviar em {s}s', voltar: 'Corrigir e-mail ou código',
-    h_ok: 'Licença enviada',
-    ok_texto: 'O arquivo da licença foi para <b>{email}</b>.',
-    ok_p1: 'Abra esse e-mail no dispositivo novo e baixe o arquivo <b>.json</b>.',
-    ok_p2: 'No jogo, vá em <b>Opções → Ativar versão Founder → Importar arquivo de licença</b>.',
-    ok_p3: 'Escolha o arquivo baixado. A versão Founder fica ativa na hora.',
-    ok_nota: 'Não chegou em 5 minutos? Confira o spam antes de pedir de novo.',
-    h_reenviado: 'Este dispositivo já estava ativado',
-    reenviado_texto: 'Enviamos de novo a mesma licença para <b>{email}</b>. Nenhuma vaga foi usada.',
-    h_limite: 'Esta compra já usa os 3 dispositivos',
-    limite_texto: 'Para trocar um dispositivo antigo por este, fale com o suporte no Discord e informe o e-mail da compra.',
-    h_bloqueado: 'Este código não pode ser ativado por aqui',
-    bloqueado_texto: 'Por segurança, alguns códigos só podem ser liberados pelo suporte. Fale com a gente no Discord e informe o e-mail da compra.',
-    btn_discord: 'Falar com o suporte no Discord', btn_outro: 'Ativar mais um dispositivo',
-    lado_h: 'Como funciona',
-    regra1: 'Até <b>3 dispositivos</b> por compra Founder, contando o da compra.',
-    regra2: 'Use o <b>mesmo e-mail da compra</b>: o código de confirmação e a licença chegam nele.',
-    regra3: 'Reinstalou no mesmo aparelho? Peça de novo: a mesma licença volta <b>sem gastar vaga</b>.',
-    regra4: 'Vale para Windows, Linux e Android.',
-    onde_h: 'Onde está o código', onde_1: 'Opções', onde_2: 'Ativar versão Founder', onde_3: 'Copiar código',
-    vagas_h: 'Dispositivos desta compra', vagas_de: '{u} de 3 em uso',
-    tag_compra: 'compra', tag_novo: 'novo',
-    erro_rede: 'Não foi possível falar com o servidor. Confira sua internet e tente de novo.',
-    erro_muitas: 'Muitas tentativas. Aguarde alguns minutos e tente de novo.',
-    erro_dados: 'Confira o e-mail e o código e tente de novo.',
-    otp_curto: 'Digite os 6 números do código que chegou no e-mail.',
-    otp_expirado: 'Este código expirou ou já foi usado. Clique em <b>Reenviar código</b> para receber outro.',
-    erro_email: 'Não conseguimos enviar o e-mail agora. Tente de novo em alguns minutos: se a licença já tiver sido criada, ela é reenviada sem gastar vaga.',
-    reenviado_msg: 'Enviamos um código novo. Use só o mais recente.'
+    erro_codigo: 'Esse código não parece certo. Copie direto do jogo, ou deixe em branco.',
+    erro_msg_curta: 'Escreva um pouco mais, pelo menos {min} caracteres.',
+    erro_msg_longa: 'A mensagem passou de {max} caracteres.',
+    erro_muitas: 'Você enviou várias mensagens seguidas. Espere um pouco e tente de novo.',
+    erro_dados: 'Algum campo não foi aceito. Confira e tente de novo.',
+    erro_rede: 'Não foi possível enviar agora. Confira sua conexão e tente de novo.',
+    ok_h: 'Mensagem enviada',
+    ok_txt: 'Recebemos sua mensagem. Vamos responder no e-mail <b>{email}</b>.',
+    ok_protocolo: 'Seu protocolo',
+    ok_dica: 'Guarde o protocolo: se precisar falar com a gente de novo sobre o mesmo assunto, é só mencionar.',
+    ok_spam: 'Nossa resposta sai de <b>forbiddenlegacy.com.br</b>. Se não chegar, olhe a caixa de spam.',
+    btn_outra: 'Enviar outra mensagem',
+    lado_h: 'Prefere conversar?',
+    lado_discord: 'No Discord a comunidade e a equipe respondem na hora, e você acompanha as novidades.',
+    btn_discord: 'Entrar no Discord',
+    dicas_h: 'Para a gente ajudar mais rápido',
+    dica1: 'Em <b>bug</b>, diga o que fez antes de acontecer e se acontece sempre.',
+    dica2: 'Em <b>pagamento</b>, informe o e-mail usado na compra e o Código do Jogador.',
+    dica3: 'Uma mensagem por assunto deixa tudo mais fácil de acompanhar.',
+    aviso_resposta: 'Respondemos o quanto antes. O jogo é feito por uma equipe pequena, então pode levar alguns dias.'
   },
   en: {
-    eyebrow: '☥ Founder Version',
-    titulo: 'Activate another device',
-    sub: 'Play the same purchase on PC and phone. Each Founder purchase covers up to 3 devices, at no cost.',
-    passo1: 'Your details', passo2: 'Confirmation', passo3: 'License',
-    h_form: 'New device',
-    lbl_email: 'Email used for the purchase', ph_email: 'you@email.com',
-    lbl_idioma: 'Email language',
-    lbl_codigo: 'Player Code of the new device', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
-    dica_codigo: 'Open the game <b>on the new device</b> and copy the code from the activation screen.',
-    dica_idioma: 'The confirmation code and the license arrive in this language.',
-    erro_email: 'Enter a valid email.',
-    erro_codigo: 'That does not look like a Player Code. It starts with FL-PLAYER.',
-    btn_enviar: 'Send confirmation code', enviando: 'Sending…',
-    h_otp: 'Confirm this email is yours',
-    otp_texto: 'If there is a Founder purchase under <b>{email}</b>, we sent a 6-digit code. It is valid for 10 minutes. Check your spam folder too.',
-    lbl_otp: 'Confirmation code', btn_confirmar: 'Confirm and activate',
-    otp_errado: 'Wrong code. {n} attempts left.',
-    reenviar: 'Resend code', reenviar_em: 'Resend in {s}s', voltar: 'Fix email or code',
-    h_ok: 'License sent',
-    ok_texto: 'The license file was sent to <b>{email}</b>.',
-    ok_p1: 'Open that email on the new device and download the <b>.json</b> file.',
-    ok_p2: 'In the game, go to <b>Options → Activate Founder Version → Import license file</b>.',
-    ok_p3: 'Pick the downloaded file. Founder is active right away.',
-    ok_nota: 'Nothing after 5 minutes? Check spam before asking again.',
-    h_reenviado: 'This device was already activated',
-    reenviado_texto: 'We sent the same license again to <b>{email}</b>. No slot was used.',
-    h_limite: 'This purchase already uses all 3 devices',
-    limite_texto: 'To swap an old device for this one, contact support on Discord with your purchase email.',
-    h_bloqueado: 'This code cannot be activated here',
-    bloqueado_texto: 'For security, some codes can only be released by support. Reach us on Discord with your purchase email.',
-    btn_discord: 'Contact support on Discord', btn_outro: 'Activate one more device',
-    lado_h: 'How it works',
-    regra1: 'Up to <b>3 devices</b> per Founder purchase, including the one you bought on.',
-    regra2: 'Use the <b>same email as the purchase</b>: the confirmation code and the license go there.',
-    regra3: 'Reinstalled on the same device? Ask again: the same license comes back <b>without using a slot</b>.',
-    regra4: 'Works on Windows, Linux and Android.',
-    onde_h: 'Where to find the code', onde_1: 'Options', onde_2: 'Activate Founder Version', onde_3: 'Copy code',
-    vagas_h: 'Devices on this purchase', vagas_de: '{u} of 3 in use',
-    tag_compra: 'purchase', tag_novo: 'new',
-    erro_rede: 'Could not reach the server. Check your connection and try again.',
-    erro_muitas: 'Too many attempts. Wait a few minutes and try again.',
-    erro_dados: 'Check the email and the code and try again.',
-    otp_curto: 'Enter the 6 digits of the code sent to your email.',
-    otp_expirado: 'This code expired or was already used. Click <b>Resend code</b> to get a new one.',
-    erro_email: 'We could not send the email right now. Try again in a few minutes: if the license was already created, it is sent again without using a slot.',
-    reenviado_msg: 'We sent a new code. Use only the latest one.'
+    eyebrow: '☥ Support',
+    titulo: 'Contact support',
+    sub: 'A question, a bug or an idea? Send it here, no Discord needed. We reply to your email.',
+    h_form: 'Your message',
+    lbl_tipo: 'What is it about?',
+    tipo_duvida: 'Question', tipo_bug: 'Bug', tipo_sugestao: 'Suggestion', tipo_pagamento: 'Payment / license', tipo_outro: 'Other',
+    lbl_email: 'Your email', ph_email: 'you@email.com',
+    dica_email: 'This is the address we will reply to.',
+    lbl_nome: 'Name or nickname', opcional: 'optional',
+    lbl_plataforma: 'Where you play', plat_vazio: 'Choose…', plat_pc: 'PC (Windows)', plat_android: 'Android', plat_linux: 'Linux', plat_outro: 'Other',
+    lbl_codigo: 'Player Code', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
+    dica_codigo: 'Very helpful for bugs and payments. You will find it in <b>Options → Activation</b>, inside the game.',
+    lbl_msg: 'Message',
+    ph_duvida: 'What is your question?',
+    ph_bug: 'What happened? What did you expect to happen? If you remember, tell us which screen or which duelist.',
+    ph_sugestao: 'Tell us your idea. If it is about a card or a duelist, say which one.',
+    ph_pagamento: 'Tell us what happened with the purchase or the activation. If you can, include the email used to buy.',
+    ph_outro: 'Write your message.',
+    conta: '{n} / {max}',
+    btn_enviar: 'Send message', enviando: 'Sending…',
+    erro_email: 'Please enter a valid email.',
+    erro_codigo: 'That code does not look right. Copy it straight from the game, or leave it blank.',
+    erro_msg_curta: 'Please write a bit more, at least {min} characters.',
+    erro_msg_longa: 'The message is over {max} characters.',
+    erro_muitas: 'You sent several messages in a row. Please wait a little and try again.',
+    erro_dados: 'Some field was not accepted. Please check and try again.',
+    erro_rede: 'We could not send it right now. Check your connection and try again.',
+    ok_h: 'Message sent',
+    ok_txt: 'We got your message. We will reply to <b>{email}</b>.',
+    ok_protocolo: 'Your ticket number',
+    ok_dica: 'Keep this number: if you contact us again about the same issue, just mention it.',
+    ok_spam: 'Our reply comes from <b>forbiddenlegacy.com.br</b>. If it does not arrive, check your spam folder.',
+    btn_outra: 'Send another message',
+    lado_h: 'Rather chat?',
+    lado_discord: 'On Discord the community and the team answer right away, and you keep up with the news.',
+    btn_discord: 'Join the Discord',
+    dicas_h: 'Help us help you faster',
+    dica1: 'For a <b>bug</b>, say what you did right before it happened and whether it always happens.',
+    dica2: 'For <b>payment</b>, include the email used to buy and your Player Code.',
+    dica3: 'One message per topic keeps everything easy to follow.',
+    aviso_resposta: 'We reply as soon as we can. The game is made by a small team, so it may take a few days.'
   },
   es: {
-    eyebrow: '☥ Versión Founder',
-    titulo: 'Activar otro dispositivo',
-    sub: 'Juega con la misma compra en PC y en el celular. Cada compra Founder cubre hasta 3 dispositivos, sin costo.',
-    passo1: 'Tus datos', passo2: 'Confirmación', passo3: 'Licencia',
-    h_form: 'Nuevo dispositivo',
-    lbl_email: 'Correo usado en la compra', ph_email: 'tu@correo.com',
-    lbl_idioma: 'Idioma del correo',
-    lbl_codigo: 'Código de Jugador del nuevo dispositivo', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
-    dica_codigo: 'Abre el juego <b>en el dispositivo nuevo</b> y copia el código en la pantalla de activación.',
-    dica_idioma: 'El código de confirmación y la licencia llegan en este idioma.',
+    eyebrow: '☥ Soporte',
+    titulo: 'Contactar soporte',
+    sub: '¿Una duda, un bug o una sugerencia? Envíalo aquí, sin necesidad de Discord. Te respondemos por correo.',
+    h_form: 'Tu mensaje',
+    lbl_tipo: '¿De qué se trata?',
+    tipo_duvida: 'Duda', tipo_bug: 'Bug', tipo_sugestao: 'Sugerencia', tipo_pagamento: 'Pago / licencia', tipo_outro: 'Otro',
+    lbl_email: 'Tu correo', ph_email: 'tu@correo.com',
+    dica_email: 'Responderemos a este correo.',
+    lbl_nome: 'Nombre o apodo', opcional: 'opcional',
+    lbl_plataforma: 'Dónde juegas', plat_vazio: 'Elige…', plat_pc: 'PC (Windows)', plat_android: 'Android', plat_linux: 'Linux', plat_outro: 'Otro',
+    lbl_codigo: 'Código de Jugador', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
+    dica_codigo: 'Ayuda mucho con bugs y pagos. Está en <b>Opciones → Activación</b>, dentro del juego.',
+    lbl_msg: 'Mensaje',
+    ph_duvida: '¿Cuál es tu duda?',
+    ph_bug: '¿Qué pasó? ¿Qué esperabas que pasara? Si lo recuerdas, di en qué pantalla o contra qué duelista.',
+    ph_sugestao: 'Cuéntanos tu idea. Si es sobre una carta o un duelista, di cuál.',
+    ph_pagamento: 'Cuéntanos qué pasó con la compra o la activación. Si puedes, indica el correo usado en la compra.',
+    ph_outro: 'Escribe tu mensaje.',
+    conta: '{n} / {max}',
+    btn_enviar: 'Enviar mensaje', enviando: 'Enviando…',
     erro_email: 'Escribe un correo válido.',
-    erro_codigo: 'Eso no parece un Código de Jugador. Empieza con FL-PLAYER.',
-    btn_enviar: 'Enviar código de confirmación', enviando: 'Enviando…',
-    h_otp: 'Confirma que el correo es tuyo',
-    otp_texto: 'Si hay una compra Founder en <b>{email}</b>, enviamos un código de 6 dígitos. Vale por 10 minutos. Revisa también el spam.',
-    lbl_otp: 'Código de confirmación', btn_confirmar: 'Confirmar y activar',
-    otp_errado: 'Código incorrecto. Quedan {n} intentos.',
-    reenviar: 'Reenviar código', reenviar_em: 'Reenviar en {s}s', voltar: 'Corregir correo o código',
-    h_ok: 'Licencia enviada',
-    ok_texto: 'El archivo de la licencia fue enviado a <b>{email}</b>.',
-    ok_p1: 'Abre ese correo en el dispositivo nuevo y descarga el archivo <b>.json</b>.',
-    ok_p2: 'En el juego, ve a <b>Opciones → Activar versión Founder → Importar archivo de licencia</b>.',
-    ok_p3: 'Elige el archivo descargado. Founder queda activo al instante.',
-    ok_nota: '¿No llegó en 5 minutos? Revisa el spam antes de pedirlo de nuevo.',
-    h_reenviado: 'Este dispositivo ya estaba activado',
-    reenviado_texto: 'Enviamos otra vez la misma licencia a <b>{email}</b>. No se usó ningún cupo.',
-    h_limite: 'Esta compra ya usa los 3 dispositivos',
-    limite_texto: 'Para cambiar un dispositivo antiguo por este, habla con soporte en Discord e indica el correo de la compra.',
-    h_bloqueado: 'Este código no se puede activar aquí',
-    bloqueado_texto: 'Por seguridad, algunos códigos solo los libera el soporte. Escríbenos en Discord con el correo de la compra.',
-    btn_discord: 'Hablar con soporte en Discord', btn_outro: 'Activar un dispositivo más',
-    lado_h: 'Cómo funciona',
-    regra1: 'Hasta <b>3 dispositivos</b> por compra Founder, contando el de la compra.',
-    regra2: 'Usa el <b>mismo correo de la compra</b>: ahí llegan el código de confirmación y la licencia.',
-    regra3: '¿Reinstalaste en el mismo aparato? Pídelo de nuevo: la misma licencia vuelve <b>sin gastar cupo</b>.',
-    regra4: 'Vale para Windows, Linux y Android.',
-    onde_h: 'Dónde está el código', onde_1: 'Opciones', onde_2: 'Activar versión Founder', onde_3: 'Copiar código',
-    vagas_h: 'Dispositivos de esta compra', vagas_de: '{u} de 3 en uso',
-    tag_compra: 'compra', tag_novo: 'nuevo',
-    erro_rede: 'No se pudo conectar con el servidor. Revisa tu conexión e inténtalo de nuevo.',
-    erro_muitas: 'Demasiados intentos. Espera unos minutos e inténtalo de nuevo.',
-    erro_dados: 'Revisa el correo y el código e inténtalo de nuevo.',
-    otp_curto: 'Escribe los 6 números del código que llegó a tu correo.',
-    otp_expirado: 'Este código venció o ya fue usado. Haz clic en <b>Reenviar código</b> para recibir otro.',
-    erro_email: 'No pudimos enviar el correo ahora. Inténtalo en unos minutos: si la licencia ya se creó, se reenvía sin gastar cupo.',
-    reenviado_msg: 'Enviamos un código nuevo. Usa solo el más reciente.'
+    erro_codigo: 'Ese código no parece correcto. Cópialo directo del juego, o déjalo en blanco.',
+    erro_msg_curta: 'Escribe un poco más, al menos {min} caracteres.',
+    erro_msg_longa: 'El mensaje supera los {max} caracteres.',
+    erro_muitas: 'Enviaste varios mensajes seguidos. Espera un poco e inténtalo de nuevo.',
+    erro_dados: 'Algún campo no fue aceptado. Revisa e inténtalo de nuevo.',
+    erro_rede: 'No se pudo enviar ahora. Revisa tu conexión e inténtalo de nuevo.',
+    ok_h: 'Mensaje enviado',
+    ok_txt: 'Recibimos tu mensaje. Responderemos a <b>{email}</b>.',
+    ok_protocolo: 'Tu número de protocolo',
+    ok_dica: 'Guarda el número: si vuelves a escribirnos sobre el mismo tema, solo menciónalo.',
+    ok_spam: 'Nuestra respuesta sale de <b>forbiddenlegacy.com.br</b>. Si no llega, revisa la carpeta de spam.',
+    btn_outra: 'Enviar otro mensaje',
+    lado_h: '¿Prefieres conversar?',
+    lado_discord: 'En Discord la comunidad y el equipo responden al momento, y sigues las novedades.',
+    btn_discord: 'Entrar al Discord',
+    dicas_h: 'Para ayudarte más rápido',
+    dica1: 'En un <b>bug</b>, di qué hiciste justo antes y si pasa siempre.',
+    dica2: 'En <b>pagos</b>, indica el correo usado en la compra y tu Código de Jugador.',
+    dica3: 'Un mensaje por tema hace todo más fácil de seguir.',
+    aviso_resposta: 'Respondemos lo antes posible. El juego lo hace un equipo pequeño, así que puede tardar algunos días.'
   },
   vi: {
-    eyebrow: '☥ Phiên bản Founder',
-    titulo: 'Kích hoạt thiết bị khác',
-    sub: 'Chơi cùng một lần mua trên PC và điện thoại. Mỗi lần mua Founder dùng được tối đa 3 thiết bị, miễn phí.',
-    passo1: 'Thông tin', passo2: 'Xác nhận', passo3: 'Giấy phép',
-    h_form: 'Thiết bị mới',
-    lbl_email: 'Email đã dùng khi mua', ph_email: 'ban@email.com',
-    lbl_idioma: 'Ngôn ngữ email',
-    lbl_codigo: 'Mã Người Chơi của thiết bị mới', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
-    dica_codigo: 'Mở game <b>trên thiết bị mới</b> và sao chép mã ở màn hình kích hoạt.',
-    dica_idioma: 'Mã xác nhận và giấy phép sẽ được gửi bằng ngôn ngữ này.',
-    erro_email: 'Nhập email hợp lệ.',
-    erro_codigo: 'Đây không giống Mã Người Chơi. Mã bắt đầu bằng FL-PLAYER.',
-    btn_enviar: 'Gửi mã xác nhận', enviando: 'Đang gửi…',
-    h_otp: 'Xác nhận email là của bạn',
-    otp_texto: 'Nếu <b>{email}</b> có lần mua Founder, chúng tôi đã gửi mã 6 chữ số. Mã có hiệu lực 10 phút. Hãy kiểm tra cả thư rác.',
-    lbl_otp: 'Mã xác nhận', btn_confirmar: 'Xác nhận và kích hoạt',
-    otp_errado: 'Sai mã. Còn {n} lần thử.',
-    reenviar: 'Gửi lại mã', reenviar_em: 'Gửi lại sau {s}s', voltar: 'Sửa email hoặc mã',
-    h_ok: 'Đã gửi giấy phép',
-    ok_texto: 'Tệp giấy phép đã được gửi tới <b>{email}</b>.',
-    ok_p1: 'Mở email đó trên thiết bị mới và tải tệp <b>.json</b>.',
-    ok_p2: 'Trong game, vào <b>Tùy chọn → Kích hoạt phiên bản Founder → Nhập tệp giấy phép</b>.',
-    ok_p3: 'Chọn tệp vừa tải. Founder được kích hoạt ngay.',
-    ok_nota: 'Sau 5 phút chưa nhận được? Kiểm tra thư rác trước khi yêu cầu lại.',
-    h_reenviado: 'Thiết bị này đã được kích hoạt',
-    reenviado_texto: 'Chúng tôi đã gửi lại cùng giấy phép tới <b>{email}</b>. Không dùng thêm suất nào.',
-    h_limite: 'Lần mua này đã dùng đủ 3 thiết bị',
-    limite_texto: 'Để thay thiết bị cũ bằng thiết bị này, hãy liên hệ hỗ trợ trên Discord kèm email mua hàng.',
-    h_bloqueado: 'Không thể kích hoạt mã này tại đây',
-    bloqueado_texto: 'Vì lý do bảo mật, một số mã chỉ bộ phận hỗ trợ mới mở được. Liên hệ chúng tôi trên Discord kèm email mua hàng.',
-    btn_discord: 'Liên hệ hỗ trợ trên Discord', btn_outro: 'Kích hoạt thêm thiết bị',
-    lado_h: 'Cách hoạt động',
-    regra1: 'Tối đa <b>3 thiết bị</b> cho mỗi lần mua Founder, tính cả thiết bị đã mua.',
-    regra2: 'Dùng <b>đúng email đã mua</b>: mã xác nhận và giấy phép sẽ gửi tới email đó.',
-    regra3: 'Cài lại trên cùng thiết bị? Yêu cầu lại: cùng giấy phép được gửi <b>mà không tốn suất</b>.',
-    regra4: 'Áp dụng cho Windows, Linux và Android.',
-    onde_h: 'Mã nằm ở đâu', onde_1: 'Tùy chọn', onde_2: 'Kích hoạt phiên bản Founder', onde_3: 'Sao chép mã',
-    vagas_h: 'Thiết bị của lần mua này', vagas_de: 'Đang dùng {u}/3',
-    tag_compra: 'đã mua', tag_novo: 'mới',
-    erro_rede: 'Không thể kết nối máy chủ. Kiểm tra kết nối mạng và thử lại.',
-    erro_muitas: 'Thử quá nhiều lần. Hãy đợi vài phút rồi thử lại.',
-    erro_dados: 'Kiểm tra lại email và mã rồi thử lại.',
-    otp_curto: 'Nhập đủ 6 chữ số của mã đã gửi tới email.',
-    otp_expirado: 'Mã này đã hết hạn hoặc đã được dùng. Bấm <b>Gửi lại mã</b> để nhận mã mới.',
-    erro_email: 'Hiện chưa gửi được email. Hãy thử lại sau vài phút: nếu giấy phép đã được tạo, nó sẽ được gửi lại mà không tốn suất.',
-    reenviado_msg: 'Đã gửi mã mới. Chỉ dùng mã mới nhất.'
+    eyebrow: '☥ Hỗ trợ',
+    titulo: 'Liên hệ hỗ trợ',
+    sub: 'Có câu hỏi, lỗi hay góp ý? Gửi tại đây, không cần Discord. Chúng tôi sẽ trả lời qua email của bạn.',
+    h_form: 'Tin nhắn của bạn',
+    lbl_tipo: 'Về vấn đề gì?',
+    tipo_duvida: 'Câu hỏi', tipo_bug: 'Lỗi', tipo_sugestao: 'Góp ý', tipo_pagamento: 'Thanh toán / bản quyền', tipo_outro: 'Khác',
+    lbl_email: 'Email của bạn', ph_email: 'ban@email.com',
+    dica_email: 'Chúng tôi sẽ trả lời vào email này.',
+    lbl_nome: 'Tên hoặc biệt danh', opcional: 'không bắt buộc',
+    lbl_plataforma: 'Bạn chơi trên', plat_vazio: 'Chọn…', plat_pc: 'PC (Windows)', plat_android: 'Android', plat_linux: 'Linux', plat_outro: 'Khác',
+    lbl_codigo: 'Mã người chơi', ph_codigo: 'FL-PLAYERPC-XXXX-XXXX-XXXX',
+    dica_codigo: 'Rất hữu ích khi báo lỗi hoặc thanh toán. Mã nằm trong <b>Tùy chọn → Kích hoạt</b>, trong game.',
+    lbl_msg: 'Nội dung',
+    ph_duvida: 'Bạn muốn hỏi gì?',
+    ph_bug: 'Chuyện gì đã xảy ra? Bạn mong đợi điều gì? Nếu nhớ, hãy cho biết ở màn hình nào hoặc khi đấu với ai.',
+    ph_sugestao: 'Hãy kể ý tưởng của bạn. Nếu liên quan đến một lá bài hay đấu sĩ, hãy nói tên.',
+    ph_pagamento: 'Hãy kể chuyện gì xảy ra với việc mua hoặc kích hoạt. Nếu được, ghi email đã dùng để mua.',
+    ph_outro: 'Viết tin nhắn của bạn.',
+    conta: '{n} / {max}',
+    btn_enviar: 'Gửi tin nhắn', enviando: 'Đang gửi…',
+    erro_email: 'Vui lòng nhập email hợp lệ.',
+    erro_codigo: 'Mã này có vẻ không đúng. Hãy sao chép trực tiếp từ game, hoặc để trống.',
+    erro_msg_curta: 'Hãy viết thêm một chút, ít nhất {min} ký tự.',
+    erro_msg_longa: 'Tin nhắn vượt quá {max} ký tự.',
+    erro_muitas: 'Bạn đã gửi nhiều tin liên tiếp. Vui lòng đợi một lát rồi thử lại.',
+    erro_dados: 'Có trường chưa hợp lệ. Vui lòng kiểm tra và thử lại.',
+    erro_rede: 'Chưa gửi được lúc này. Kiểm tra kết nối rồi thử lại.',
+    ok_h: 'Đã gửi tin nhắn',
+    ok_txt: 'Chúng tôi đã nhận được tin nhắn. Chúng tôi sẽ trả lời tới <b>{email}</b>.',
+    ok_protocolo: 'Mã phiếu của bạn',
+    ok_dica: 'Hãy giữ mã này: nếu liên hệ lại về cùng vấn đề, chỉ cần nhắc tới nó.',
+    ok_spam: 'Thư trả lời gửi từ <b>forbiddenlegacy.com.br</b>. Nếu không thấy, hãy kiểm tra thư rác.',
+    btn_outra: 'Gửi tin nhắn khác',
+    lado_h: 'Muốn trò chuyện trực tiếp?',
+    lado_discord: 'Trên Discord, cộng đồng và đội ngũ trả lời ngay, và bạn theo dõi được tin mới.',
+    btn_discord: 'Vào Discord',
+    dicas_h: 'Để chúng tôi giúp nhanh hơn',
+    dica1: 'Khi báo <b>lỗi</b>, hãy nói bạn đã làm gì ngay trước đó và lỗi có luôn xảy ra không.',
+    dica2: 'Về <b>thanh toán</b>, hãy ghi email đã dùng để mua và Mã người chơi.',
+    dica3: 'Mỗi tin nhắn một chủ đề giúp theo dõi dễ hơn.',
+    aviso_resposta: 'Chúng tôi trả lời sớm nhất có thể. Game do một nhóm nhỏ làm, nên có thể mất vài ngày.'
   }
 };
 
-var AD = { etapa: 'form', email: '', codigo: '', idioma: '', tentativas: 5, erroOtp: false, erroEmail: false, erroCodigo: false,
-           resultado: null, dispositivos: [], enviando: false, reenvioAte: 0, relogio: null, avisoChave: '', avisoOk: false };
+var SP_RE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+var SP_RE_CODIGO = /^FL-PLAYER(?:PC|AND|MAC|LNX)?(?:-[0-9A-F]{4}){3,4}$/;
 
-var AD_IDIOMAS = [['pt', 'Português'], ['en', 'English'], ['es', 'Español'], ['vi', 'Tiếng Việt']];
-/* O e-mail sai no idioma escolhido aqui; o padrao e o idioma em que a pessoa
-   esta lendo a pagina. Mesmo campo que a loja ja tem no checkout. */
-function adIdiomaEscolhido() {
-  if (AD.idioma) return AD.idioma;
+var SP = {
+  etapa: 'form', tipo: 'duvida', email: '', nome: '', plataforma: '', codigo: '', mensagem: '',
+  erros: {}, avisoChave: '', enviando: false, protocolo: '', aberto_em: Date.now()
+};
+
+(function () {
+  try {
+    var t = new URLSearchParams(location.search).get('tipo');
+    if (t && SP_TIPOS.indexOf(t) >= 0) SP.tipo = t;
+  } catch (e) {}
+})();
+
+function spTx(k, vars) {
   var l = (typeof langAtual === 'function') ? langAtual() : 'pt';
-  return AD_IDIOMAS.some(function (i) { return i[0] === l; }) ? l : 'pt';
-}
-
-var AD_RE_CODIGO = /^FL-PLAYER(?:(?:PC|AND|MAC|LNX)(?:-[0-9A-F]{4}){3}|(?:-[0-9A-F]{4}){4})$/;
-var AD_RE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-function adTx(k, vars) {
-  var l = (typeof langAtual === 'function') ? langAtual() : 'pt';
-  var s = (AD_TXT[l] && AD_TXT[l][k]) || AD_TXT.en[k] || AD_TXT.pt[k] || k;
+  var s = (SP_TXT[l] && SP_TXT[l][k]) || SP_TXT.en[k] || SP_TXT.pt[k] || k;
   if (vars) Object.keys(vars).forEach(function (a) { s = s.split('{' + a + '}').join(vars[a]); });
   return s;
 }
-function adEsc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-function adMascararEmail(e) {
-  var p = String(e).split('@');
-  return adEsc((p[0] ? p[0].charAt(0) : '') + '•••' + (p[1] ? '@' + p[1] : ''));
-}
-function adNormalizarCodigo(v) { return String(v || '').toUpperCase().replace(/\s+/g, ''); }
+function spEsc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+/* Conta caractere de verdade (emoji e acento contam 1), igual ao que a pessoa ve. */
+function spTam(s) { return Array.from(String(s)).length; }
 
-/* ── servidor: pagar/dispositivo_iniciar.php e dispositivo_confirmar.php ── */
-function adPost(url, corpo) {
-  return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo), cache: 'no-store' })
+function spPost(corpo) {
+  return fetch('/pagar/suporte_enviar.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo), cache: 'no-store' })
     .then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (d) {
         d = (d && typeof d === 'object') ? d : {};
@@ -721,204 +713,175 @@ function adPost(url, corpo) {
     })
     .catch(function () { return { ok: false, erro: 'rede' }; });
 }
-var AD_API = {
-  iniciar: function (email, codigo, idioma) { return adPost('/pagar/dispositivo_iniciar.php', { email: email, codigo: codigo, idioma: idioma }); },
-  confirmar: function (email, codigo, otp) { return adPost('/pagar/dispositivo_confirmar.php', { email: email, codigo: codigo, otp: otp }); }
-};
-function adChaveErro(erro) {
-  return { muitas_tentativas: 'erro_muitas', dados_invalidos: 'erro_dados', otp_expirado: 'otp_expirado', email_falhou: 'erro_email' }[erro] || 'erro_rede';
-}
-function adAviso() {
-  if (!AD.avisoChave) return '';
-  return '<div class="ad-aviso' + (AD.avisoOk ? ' ok' : '') + '" role="status">' + adTx(AD.avisoChave) + '</div>';
-}
 
-/* ── desenho ──────────────────────────────────────────────────────────── */
-function adPassos() {
-  var atual = AD.etapa === 'form' ? 1 : AD.etapa === 'otp' ? 2 : 3;
-  var alerta = AD.etapa === 'resultado' && (AD.resultado === 'limite' || AD.resultado === 'bloqueado');
-  document.querySelectorAll('#ad-passos .ad-passo').forEach(function (li) {
-    var n = +li.dataset.passo;
-    li.classList.toggle('feito', n < atual);
-    li.classList.toggle('atual', n === atual && !alerta);
-    li.classList.toggle('alerta', n === atual && alerta);
-    if (n === atual) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
-  });
+function spErroCampo(campo) {
+  var k = SP.erros[campo];
+  return k ? '<div class="ad-erro-campo">' + spTx(k, { min: SP_MSG_MIN, max: SP_MSG_MAX }) + '</div>' : '';
 }
+function spInv(campo) { return SP.erros[campo] ? ' class="invalido" aria-invalid="true"' : ''; }
 
-function adTelaForm() {
-  return '<h2 class="ad-h">' + adTx('h_form') + '</h2>' + adAviso() +
-    '<form id="ad-form" novalidate>' +
-      '<div class="field"><label for="ad-email">' + adTx('lbl_email') + '</label>' +
-        '<input id="ad-email" type="email" autocomplete="email" inputmode="email" placeholder="' + adTx('ph_email') + '" value="' + adEsc(AD.email) + '"' + (AD.erroEmail ? ' class="invalido" aria-invalid="true"' : '') + '>' +
-        (AD.erroEmail ? '<div class="ad-erro-campo">' + adTx('erro_email') + '</div>' : '') + '</div>' +
-      '<div class="field"><label for="ad-idioma">' + adTx('lbl_idioma') + '</label>' +
-        '<select id="ad-idioma" autocomplete="off">' + AD_IDIOMAS.map(function (i) {
-          return '<option value="' + i[0] + '"' + (i[0] === adIdiomaEscolhido() ? ' selected' : '') + '>' + i[1] + '</option>';
-        }).join('') + '</select>' +
-        '<div class="ad-dica">' + adTx('dica_idioma') + '</div></div>' +
-      '<div class="field ad-codigo"><label for="ad-codigo">' + adTx('lbl_codigo') + '</label>' +
-        '<input id="ad-codigo" type="text" autocomplete="off" spellcheck="false" placeholder="' + adTx('ph_codigo') + '" value="' + adEsc(AD.codigo) + '"' + (AD.erroCodigo ? ' class="invalido" aria-invalid="true"' : '') + '>' +
-        (AD.erroCodigo ? '<div class="ad-erro-campo">' + adTx('erro_codigo') + '</div>' : '<div class="ad-dica">' + adTx('dica_codigo') + '</div>') + '</div>' +
-      '<button class="ad-btn" type="submit"' + (AD.enviando ? ' disabled' : '') + '>' + adTx(AD.enviando ? 'enviando' : 'btn_enviar') + '</button>' +
+function spTelaForm() {
+  var tipos = SP_TIPOS.map(function (t) {
+    return '<label class="sp-tipo"><input type="radio" name="sp-tipo" value="' + t + '"' + (SP.tipo === t ? ' checked' : '') + '><span>' + spTx('tipo_' + t) + '</span></label>';
+  }).join('');
+  var plats = ['', 'pc', 'android', 'linux', 'outro'].map(function (p) {
+    return '<option value="' + p + '"' + (SP.plataforma === p ? ' selected' : '') + '>' + spTx(p ? 'plat_' + p : 'plat_vazio') + '</option>';
+  }).join('');
+  var tam = spTam(SP.mensagem);
+  var opc = ' <span class="sp-opc">' + spTx('opcional') + '</span>';
+
+  return '<h2 class="ad-h">' + spTx('h_form') + '</h2>' +
+    (SP.avisoChave ? '<div class="ad-aviso" role="status">' + spTx(SP.avisoChave) + '</div>' : '') +
+    '<form id="sp-form" novalidate>' +
+      '<div class="field"><label id="sp-tipo-lbl">' + spTx('lbl_tipo') + '</label>' +
+        '<div class="sp-tipos" role="radiogroup" aria-labelledby="sp-tipo-lbl">' + tipos + '</div></div>' +
+      '<div class="field"><label for="sp-email">' + spTx('lbl_email') + '</label>' +
+        '<input id="sp-email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="' + spTx('ph_email') + '" value="' + spEsc(SP.email) + '"' + spInv('email') + '>' +
+        (SP.erros.email ? spErroCampo('email') : '<div class="ad-dica">' + spTx('dica_email') + '</div>') + '</div>' +
+      '<div class="sp-linha">' +
+        '<div class="field"><label for="sp-nome">' + spTx('lbl_nome') + opc + '</label>' +
+          '<input id="sp-nome" type="text" autocomplete="nickname" maxlength="60" value="' + spEsc(SP.nome) + '"></div>' +
+        '<div class="field"><label for="sp-plataforma">' + spTx('lbl_plataforma') + opc + '</label>' +
+          '<select id="sp-plataforma">' + plats + '</select></div>' +
+      '</div>' +
+      '<div class="field ad-codigo"><label for="sp-codigo">' + spTx('lbl_codigo') + opc + '</label>' +
+        '<input id="sp-codigo" type="text" autocomplete="off" spellcheck="false" maxlength="40" placeholder="' + spTx('ph_codigo') + '" value="' + spEsc(SP.codigo) + '"' + spInv('codigo') + '>' +
+        (SP.erros.codigo ? spErroCampo('codigo') : '<div class="ad-dica">' + spTx('dica_codigo') + '</div>') + '</div>' +
+      '<div class="field"><label for="sp-msg">' + spTx('lbl_msg') + '</label>' +
+        '<textarea id="sp-msg" maxlength="' + SP_MSG_MAX + '" placeholder="' + spEsc(spTx('ph_' + SP.tipo)) + '"' + spInv('mensagem') + '>' + spEsc(SP.mensagem) + '</textarea>' +
+        '<div class="sp-conta' + (tam >= SP_MSG_MAX ? ' limite' : '') + '" id="sp-conta"><span>' + (SP.erros.mensagem ? spTx(SP.erros.mensagem, { min: SP_MSG_MIN, max: SP_MSG_MAX }) : '') + '</span><span>' + spTx('conta', { n: tam, max: SP_MSG_MAX }) + '</span></div></div>' +
+      /* Isca para robo: fora da tela e fora do Tab. Pessoa nunca preenche. */
+      '<div class="sp-isca" aria-hidden="true"><label for="sp-site">Site</label><input id="sp-site" name="site" type="text" tabindex="-1" autocomplete="off"></div>' +
+      '<button class="ad-btn" type="submit"' + (SP.enviando ? ' disabled' : '') + '>' + spTx(SP.enviando ? 'enviando' : 'btn_enviar') + '</button>' +
     '</form>';
 }
 
-function adTelaOtp() {
-  var falta = Math.max(0, Math.ceil((AD.reenvioAte - Date.now()) / 1000));
-  return '<h2 class="ad-h">' + adTx('h_otp') + '</h2>' + adAviso() +
-    '<p class="ad-texto">' + adTx('otp_texto', { email: adMascararEmail(AD.email) }) + '</p>' +
-    '<form id="ad-form-otp" novalidate>' +
-      '<div class="field ad-otp"><label for="ad-otp">' + adTx('lbl_otp') + '</label>' +
-        '<input id="ad-otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="••••••"' + (AD.erroOtp ? ' class="invalido" aria-invalid="true"' : '') + '>' +
-        (AD.erroOtp ? '<div class="ad-erro-campo">' + adTx('otp_errado', { n: AD.tentativas }) + '</div>' : '') + '</div>' +
-      '<button class="ad-btn" type="submit"' + (AD.enviando ? ' disabled' : '') + '>' + adTx(AD.enviando ? 'enviando' : 'btn_confirmar') + '</button>' +
-    '</form>' +
-    '<div class="ad-acoes-sec">' +
-      '<button class="ad-link" type="button" id="ad-voltar">' + adTx('voltar') + '</button>' +
-      '<button class="ad-link" type="button" id="ad-reenviar"' + (falta > 0 ? ' disabled' : '') + '>' + (falta > 0 ? adTx('reenviar_em', { s: falta }) : adTx('reenviar')) + '</button>' +
-    '</div>';
+function spTelaOk() {
+  return '<div class="ad-selo"><span>✓</span></div>' +
+    '<h2 class="ad-resultado-h">' + spTx('ok_h') + '</h2>' +
+    '<p class="ad-texto">' + spTx('ok_txt', { email: spEsc(SP.email) }) + '</p>' +
+    '<div class="ad-lado-h" style="margin-bottom:4px">' + spTx('ok_protocolo') + '</div>' +
+    '<div class="sp-protocolo">' + spEsc(SP.protocolo) + '</div>' +
+    '<p class="ad-nota" style="margin-top:0">' + spTx('ok_dica') + '</p>' +
+    '<p class="ad-nota">' + spTx('ok_spam') + '</p>' +
+    '<button class="ad-btn-sec" type="button" id="sp-outra">' + spTx('btn_outra') + '</button>';
 }
 
-function adBotaoDiscord() {
-  return '<a class="ad-btn-sec discord" href="https://discord.gg/forbidden-legacy" target="_blank" rel="noopener">' + adTx('btn_discord') + '</a>';
+function spLado() {
+  return '<div class="ad-lado-h">' + spTx('lado_h') + '</div>' +
+    '<p class="ad-texto" style="font-size:13.5px">' + spTx('lado_discord') + '</p>' +
+    '<a class="ad-btn-sec discord" style="margin:0 0 26px;text-decoration:none" href="https://discord.gg/forbidden-legacy" target="_blank" rel="noopener">' + spTx('btn_discord') + '</a>' +
+    '<div class="ad-lado-h">' + spTx('dicas_h') + '</div>' +
+    '<ul class="sp-lista"><li>' + spTx('dica1') + '</li><li>' + spTx('dica2') + '</li><li>' + spTx('dica3') + '</li></ul>' +
+    '<p class="ad-nota">' + spTx('aviso_resposta') + '</p>';
 }
 
-function adTelaResultado() {
-  var email = adMascararEmail(AD.email);
-  if (AD.resultado === 'enviada' || AD.resultado === 'reenviada') {
-    var reenv = AD.resultado === 'reenviada';
-    return '<div class="ad-selo"><span>☥</span></div>' +
-      '<h2 class="ad-resultado-h">' + adTx(reenv ? 'h_reenviado' : 'h_ok') + '</h2>' +
-      '<p class="ad-texto">' + adTx(reenv ? 'reenviado_texto' : 'ok_texto', { email: email }) + '</p>' +
-      '<ol class="ad-ok-passos"><li>' + adTx('ok_p1') + '</li><li>' + adTx('ok_p2') + '</li><li>' + adTx('ok_p3') + '</li></ol>' +
-      '<p class="ad-nota">' + adTx('ok_nota') + '</p>' +
-      (AD.dispositivos.length < AD_LIMITE ? '<button class="ad-btn-sec" type="button" id="ad-outro">' + adTx('btn_outro') + '</button>' : '');
-  }
-  var limite = AD.resultado === 'limite';
-  return '<div class="ad-selo alerta"><span>!</span></div>' +
-    '<h2 class="ad-resultado-h alerta">' + adTx(limite ? 'h_limite' : 'h_bloqueado') + '</h2>' +
-    '<p class="ad-texto">' + adTx(limite ? 'limite_texto' : 'bloqueado_texto') + '</p>' +
-    adBotaoDiscord() +
-    '<div class="ad-acoes-sec"><button class="ad-link" type="button" id="ad-voltar">' + adTx('voltar') + '</button></div>';
-}
-
-function adLado() {
-  if (AD.etapa === 'resultado' && AD.dispositivos.length) {
-    var usados = AD.dispositivos.length;
-    var barras = '';
-    for (var i = 0; i < AD_LIMITE; i++) {
-      var d = AD.dispositivos[i];
-      barras += '<span class="ad-vaga' + (d ? (d.novo ? ' nova' : ' usada') : '') + '"></span>';
-    }
-    var lista = AD.dispositivos.map(function (d) {
-      var tag = d.novo ? '<small class="novo">' + adTx('tag_novo') + '</small>' : d.compra ? '<small>' + adTx('tag_compra') + '</small>' : '';
-      return '<div class="ad-disp"><span>' + adEsc(d.plataforma) + ' ···' + adEsc(d.final) + '</span>' + tag + '</div>';
-    }).join('');
-    return '<div class="ad-lado-h">' + adTx('vagas_h') + '</div>' +
-      '<div class="ad-vagas" aria-hidden="true">' + barras + '</div>' +
-      '<div class="ad-vagas-legenda">' + adTx('vagas_de', { u: usados }) + '</div>' + lista;
-  }
-  return '<div class="ad-lado-h">' + adTx('lado_h') + '</div>' +
-    '<ul class="ad-regras"><li>' + adTx('regra1') + '</li><li>' + adTx('regra2') + '</li><li>' + adTx('regra3') + '</li><li>' + adTx('regra4') + '</li></ul>' +
-    '<div class="ad-onde"><div class="ad-lado-h" style="margin-bottom:0">' + adTx('onde_h') + '</div>' +
-      '<div class="ad-caminho"><span>' + adTx('onde_1') + '</span><i>→</i><span>' + adTx('onde_2') + '</span><i>→</i><span>' + adTx('onde_3') + '</span></div></div>';
-}
-
-function adRender() {
-  var principal = document.getElementById('ad-principal');
-  var lado = document.getElementById('ad-lado');
+function spRender() {
+  var principal = document.getElementById('sp-principal');
+  var lado = document.getElementById('sp-lado');
   if (!principal || !lado) return;
-  adPassos();
-  principal.innerHTML = AD.etapa === 'form' ? adTelaForm() : AD.etapa === 'otp' ? adTelaOtp() : adTelaResultado();
-  lado.innerHTML = adLado();
-  adLigar();
+  principal.innerHTML = SP.etapa === 'ok' ? spTelaOk() : spTelaForm();
+  lado.innerHTML = spLado();
+  spLigar();
 }
 
 /* Chamado pelo setLang do site: troca de idioma redesenha tudo. */
 function flRedesenhar() {
-  document.querySelectorAll('[data-t]').forEach(function (el) { el.innerHTML = adTx(el.dataset.t); });
-  adRender();
+  document.querySelectorAll('[data-t]').forEach(function (el) { el.innerHTML = spTx(el.dataset.t); });
+  spRender();
 }
 
-function adLigar() {
-  var f = document.getElementById('ad-form');
-  if (f) f.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    AD.email = document.getElementById('ad-email').value.trim();
-    AD.codigo = adNormalizarCodigo(document.getElementById('ad-codigo').value);
-    AD.idioma = document.getElementById('ad-idioma').value;
-    AD.erroEmail = !AD_RE_EMAIL.test(AD.email);
-    AD.erroCodigo = !AD_RE_CODIGO.test(AD.codigo);
-    if (AD.erroEmail || AD.erroCodigo) { adRender(); return; }
-    AD.enviando = true; AD.avisoChave = ''; adRender();
-    AD_API.iniciar(AD.email, AD.codigo, AD.idioma).then(function (d) {
-      AD.enviando = false;
-      if (!d.ok) { AD.avisoChave = adChaveErro(d.erro); AD.avisoOk = false; adRender(); return; }
-      AD.etapa = 'otp'; AD.erroOtp = false; AD.avisoChave = '';
-      AD.reenvioAte = Date.now() + (d.reenvio_em || 60) * 1000;
-      adRender(); adRelogio();
-      var o = document.getElementById('ad-otp'); if (o) o.focus();
-    });
-  });
-  var cod = document.getElementById('ad-codigo');
-  if (cod) cod.addEventListener('input', function () { var p = cod.selectionStart; cod.value = cod.value.toUpperCase(); cod.setSelectionRange(p, p); AD.codigo = adNormalizarCodigo(cod.value); });
-  /* Guarda o que foi digitado a cada tecla: trocar o idioma da pagina redesenha
-     o formulario, e sem isto o e-mail, o codigo e o idioma escolhido sumiam. */
-  var em = document.getElementById('ad-email');
-  if (em) em.addEventListener('input', function () { AD.email = em.value.trim(); });
-  var idi = document.getElementById('ad-idioma');
-  if (idi) idi.addEventListener('change', function () { AD.idioma = idi.value; });
+function spLerCampos() {
+  var g = function (id) { var e = document.getElementById(id); return e ? e.value : ''; };
+  SP.email = g('sp-email').trim();
+  SP.nome = g('sp-nome').trim();
+  SP.plataforma = g('sp-plataforma');
+  SP.codigo = g('sp-codigo').toUpperCase().replace(/\s+/g, '');
+  SP.mensagem = g('sp-msg');
+  var marcado = document.querySelector('input[name="sp-tipo"]:checked');
+  if (marcado) SP.tipo = marcado.value;
+}
 
-  var fo = document.getElementById('ad-form-otp');
-  if (fo) fo.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var otp = document.getElementById('ad-otp').value.replace(/\D/g, '');
-    if (otp.length !== 6) { AD.erroOtp = false; AD.avisoChave = 'otp_curto'; AD.avisoOk = false; adRender(); return; }
-    AD.enviando = true; AD.avisoChave = ''; adRender();
-    AD_API.confirmar(AD.email, AD.codigo, otp).then(function (r) {
-      AD.enviando = false; AD.erroOtp = false;
-      if (!r.ok) {
-        if (r.erro === 'otp_invalido') { AD.erroOtp = true; AD.tentativas = r.tentativas_restantes; }
-        else if (r.erro === 'otp_expirado') { AD.avisoChave = 'otp_expirado'; AD.reenvioAte = 0; }
-        else if (r.erro === 'email_falhou') { AD.etapa = 'form'; AD.avisoChave = 'erro_email'; }
-        else { AD.avisoChave = adChaveErro(r.erro); }
-        AD.avisoOk = false; adRender(); adRelogio(); return;
+function spValidar() {
+  var e = {};
+  if (!SP_RE_EMAIL.test(SP.email)) e.email = 'erro_email';
+  if (SP.codigo && !SP_RE_CODIGO.test(SP.codigo)) e.codigo = 'erro_codigo';
+  var tam = spTam(SP.mensagem.trim());
+  if (tam < SP_MSG_MIN) e.mensagem = 'erro_msg_curta';
+  else if (tam > SP_MSG_MAX) e.mensagem = 'erro_msg_longa';
+  SP.erros = e;
+  return !Object.keys(e).length;
+}
+
+function spLigar() {
+  var f = document.getElementById('sp-form');
+  if (f) {
+    /* Guarda o que foi digitado a cada tecla: trocar o idioma redesenha o
+       formulario, e sem isto tudo que a pessoa escreveu sumiria. */
+    f.addEventListener('input', function (ev) {
+      spLerCampos();
+      if (ev.target && ev.target.id === 'sp-codigo') {
+        var c = ev.target, p = c.selectionStart;
+        c.value = c.value.toUpperCase(); c.setSelectionRange(p, p);
       }
-      AD.etapa = 'resultado'; AD.resultado = r.resultado; AD.dispositivos = r.dispositivos || []; AD.avisoChave = ''; adRender();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (ev.target && ev.target.id === 'sp-msg') {
+        var conta = document.getElementById('sp-conta');
+        var tam = spTam(SP.mensagem);
+        if (conta) {
+          conta.lastChild.textContent = spTx('conta', { n: tam, max: SP_MSG_MAX });
+          conta.classList.toggle('limite', tam >= SP_MSG_MAX);
+        }
+      }
     });
-  });
-  var otpIn = document.getElementById('ad-otp');
-  if (otpIn) otpIn.addEventListener('input', function () { otpIn.value = otpIn.value.replace(/\D/g, '').slice(0, 6); });
-
-  var v = document.getElementById('ad-voltar');
-  if (v) v.addEventListener('click', function () { AD.etapa = 'form'; AD.resultado = null; AD.dispositivos = []; AD.avisoChave = ''; adRender(); });
-  var r = document.getElementById('ad-reenviar');
-  if (r) r.addEventListener('click', function () {
-    AD.reenvioAte = Date.now() + 60000; AD.avisoChave = ''; adRender(); adRelogio();
-    AD_API.iniciar(AD.email, AD.codigo, adIdiomaEscolhido()).then(function (d) {
-      if (d.ok) { AD.avisoChave = 'reenviado_msg'; AD.avisoOk = true; AD.reenvioAte = Date.now() + (d.reenvio_em || 60) * 1000; }
-      else { AD.avisoChave = adChaveErro(d.erro); AD.avisoOk = false; }
-      if (AD.etapa === 'otp') { adRender(); adRelogio(); }
+    f.addEventListener('change', function (ev) {
+      spLerCampos();
+      if (ev.target && ev.target.name === 'sp-tipo') {
+        var ta = document.getElementById('sp-msg');
+        if (ta) ta.placeholder = spTx('ph_' + SP.tipo);
+      }
     });
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (SP.enviando) return;
+      spLerCampos();
+      SP.avisoChave = '';
+      if (!spValidar()) {
+        spRender();
+        var primeiro = document.querySelector('#sp-form [aria-invalid="true"]');
+        if (primeiro) primeiro.focus();
+        return;
+      }
+      SP.enviando = true; spRender();
+      spPost({
+        tipo: SP.tipo, email: SP.email, nome: SP.nome, codigo: SP.codigo,
+        plataforma: SP.plataforma, mensagem: SP.mensagem.trim(),
+        idioma: (typeof langAtual === 'function') ? langAtual() : 'pt',
+        site: (document.getElementById('sp-site') || {}).value || '',
+        tempo_ms: Date.now() - SP.aberto_em
+      }).then(function (d) {
+        SP.enviando = false;
+        if (d.ok) {
+          SP.etapa = 'ok'; SP.protocolo = d.protocolo || '';
+          spRender();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        if (d.erro === 'dados_invalidos' && d.campo === 'email') SP.erros = { email: 'erro_email' };
+        else if (d.erro === 'dados_invalidos' && d.campo === 'codigo') SP.erros = { codigo: 'erro_codigo' };
+        else if (d.erro === 'dados_invalidos' && d.campo === 'mensagem') SP.erros = { mensagem: 'erro_msg_curta' };
+        else if (d.erro === 'grande_demais') SP.erros = { mensagem: 'erro_msg_longa' };
+        else SP.avisoChave = { muitas_tentativas: 'erro_muitas', dados_invalidos: 'erro_dados' }[d.erro] || 'erro_rede';
+        spRender();
+      });
+    });
+  }
+  var o = document.getElementById('sp-outra');
+  if (o) o.addEventListener('click', function () {
+    SP.etapa = 'form'; SP.mensagem = ''; SP.protocolo = ''; SP.erros = {}; SP.avisoChave = '';
+    SP.aberto_em = Date.now();
+    spRender();
   });
-  var o = document.getElementById('ad-outro');
-  if (o) o.addEventListener('click', function () { AD.etapa = 'form'; AD.codigo = ''; AD.resultado = null; AD.dispositivos = []; AD.avisoChave = ''; adRender(); });
 }
-
-function adRelogio() {
-  clearInterval(AD.relogio);
-  AD.relogio = setInterval(function () {
-    var r = document.getElementById('ad-reenviar');
-    if (AD.etapa !== 'otp' || !r) { clearInterval(AD.relogio); return; }
-    var falta = Math.max(0, Math.ceil((AD.reenvioAte - Date.now()) / 1000));
-    r.disabled = falta > 0;
-    r.textContent = falta > 0 ? adTx('reenviar_em', { s: falta }) : adTx('reenviar');
-    if (falta <= 0) clearInterval(AD.relogio);
-  }, 1000);
-}
-
 
 </script>
 <script>
