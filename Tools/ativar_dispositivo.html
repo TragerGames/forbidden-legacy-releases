@@ -198,6 +198,38 @@ nav#nav.scrolled{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
   .mobile-nav-bar{display:flex}
   main,section.hero,section{padding-top:96px!important}
 }
+/* ── Barra do topo: enquadramento (2026-09-23) ──────────────────
+   O menu tem ate 12 paginas e, do jeito antigo, precisava de ~1470px: abaixo
+   disso os nomes quebravam em duas linhas, encostavam na logo e o botao FOUNDER
+   saia da tela (relatado em 1295px). Agora nome de pagina nunca quebra e a barra
+   aperta em degraus MEDIDOS na pagina mais pesada (index, 12 links):
+     ate 1520px  gap e espacamento menores ....... precisa de 1391
+     ate 1390px  logo so com o brasao ............ precisa de 1229
+     ate 1280px  sem o selo do Discord ........... precisa de 1210
+     ate 1220px  entra a barra rolavel do celular, que cabe qualquer quantidade */
+.nav-links{flex-wrap:nowrap}
+.nav-links a{white-space:nowrap}
+.nav-logo{flex-shrink:0}
+nav#nav{gap:16px}
+nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
+@media(max-width:1520px){
+  .nav-links{gap:12px}
+  .nav-links a{letter-spacing:1px}
+}
+@media(max-width:1390px){
+  .nav-logo-fallback{display:none}
+}
+@media(max-width:1280px){
+  .discord-nav-badge{display:none!important}
+  .nav-links a{letter-spacing:.8px}
+}
+@media(max-width:1220px){
+  .nav-links,nav#nav .nav-cta,.discord-nav-badge{display:none!important}
+  .mobile-nav-bar{display:flex}
+  main,section.hero,section{padding-top:96px!important}
+}
+
+
 
 .field{margin-bottom:18px}
 .field label{
