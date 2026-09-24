@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1789225923",
+  "versao": "1790255624",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -1457,7 +1457,7 @@
           "def": "2000"
         },
         {
-          "nome": "Magician of chaos",
+          "nome": "Magician of Chaos",
           "raridade": "UR",
           "slug": "magician_of_chaos",
           "atk": "2500",
@@ -7570,6 +7570,375 @@
           "nome": "Waboku",
           "raridade": "R",
           "slug": "waboku"
+        }
+      ]
+    },
+    {
+      "id": "especial_dark_magician",
+      "tipo_label": "DARK MAGICIAN",
+      "nome_pt": "Dark Magician",
+      "nome_en": "Dark Magician",
+      "nome_es": "Dark Magician",
+      "nome_vi": "Dark Magician",
+      "desc_pt": "Edição especial e temporária dedicada ao Dark Magician: o mago e a aprendiz, suas formas de Caos, as fusões de cavaleiro dragão e o suporte que só funciona ao lado deles.",
+      "desc_en": "A special, time-limited Dark Magician edition: the magician and his apprentice, their Chaos forms, the dragon knight fusions and the support that only works beside them.",
+      "desc_es": "Edición especial y temporal dedicada al Dark Magician: el mago y su aprendiz, sus formas del Caos, las fusiones de caballero dragón y el apoyo que solo funciona junto a ellos.",
+      "desc_vi": "Phiên bản đặc biệt, giới hạn thời gian dành cho Dark Magician: pháp sư và người học trò, các dạng Chaos, những lá hợp thể kỵ sĩ rồng và các lá hỗ trợ chỉ phát huy khi đi cùng họ.",
+      "cor": "#6b2fa0",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 15,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-dark-magician.webp",
+      "total_tema": 54,
+      "cartas_tema": [
+        {
+          "nome": "Black Chaos",
+          "raridade": "UR",
+          "slug": "black_chaos",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Chaos Sorcerer",
+          "raridade": "UR",
+          "slug": "chaos_sorcerer",
+          "atk": "2300",
+          "def": "2000"
+        },
+        {
+          "nome": "Dark Burning Magic",
+          "raridade": "UR",
+          "slug": "dark_burning_magic"
+        },
+        {
+          "nome": "Dark Magic Expanded",
+          "raridade": "UR",
+          "slug": "dark_magic_expanded"
+        },
+        {
+          "nome": "Dark Magical Circle",
+          "raridade": "UR",
+          "slug": "dark_magical_circle"
+        },
+        {
+          "nome": "Dark Magician Girl",
+          "raridade": "UR",
+          "slug": "dark_magician_girl",
+          "atk": "2000",
+          "def": "1700"
+        },
+        {
+          "nome": "Dark Magician Girl the Dragon Knight",
+          "raridade": "UR",
+          "slug": "dark_magician_girl_the_dragon_knight",
+          "atk": "2600",
+          "def": "1700"
+        },
+        {
+          "nome": "Dark Magician of Chaos",
+          "raridade": "UR",
+          "slug": "dark_magician_of_chaos",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Dark Magician of Destruction",
+          "raridade": "UR",
+          "slug": "dark_magician_of_destruction",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Dark Magician the Dragon Knight",
+          "raridade": "UR",
+          "slug": "dark_magician_the_dragon_knight",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Dark Magician the Knight of Dragon Magic",
+          "raridade": "UR",
+          "slug": "dark_magician_the_knight_of_dragon_magic",
+          "atk": "2900",
+          "def": "2400"
+        },
+        {
+          "nome": "Dark Paladin",
+          "raridade": "UR",
+          "slug": "dark_paladin",
+          "atk": "2900",
+          "def": "2400"
+        },
+        {
+          "nome": "Dragon Master Magia",
+          "raridade": "UR",
+          "slug": "dragon_master_magia",
+          "atk": "5000",
+          "def": "4000"
+        },
+        {
+          "nome": "Illusion Magic",
+          "raridade": "UR",
+          "slug": "illusion_magic"
+        },
+        {
+          "nome": "Magi Magi Magician",
+          "raridade": "UR",
+          "slug": "magi_magi_magician",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Magic Cylinder",
+          "raridade": "UR",
+          "slug": "magic_cylinder"
+        },
+        {
+          "nome": "Magical Dimension",
+          "raridade": "UR",
+          "slug": "magical_dimension"
+        },
+        {
+          "nome": "Magician of Black Chaos",
+          "raridade": "UR",
+          "slug": "magician_of_black_chaos",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Magician of Chaos",
+          "raridade": "UR",
+          "slug": "magician_of_chaos",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Magician of Dark Chaos - Black Chaos",
+          "raridade": "UR",
+          "slug": "magician_of_dark_chaos_-_black_chaos",
+          "atk": "2800",
+          "def": "2600"
+        },
+        {
+          "nome": "Master of Chaos",
+          "raridade": "UR",
+          "slug": "master_of_chaos",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Paladins of Bonds and Unity",
+          "raridade": "UR",
+          "slug": "paladins_of_bonds_and_unity",
+          "atk": "2900",
+          "def": "2900"
+        },
+        {
+          "nome": "Palladium Oracle Mahad",
+          "raridade": "UR",
+          "slug": "palladium_oracle_mahad",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Quintet Magician",
+          "raridade": "UR",
+          "slug": "quintet_magician",
+          "atk": "4500",
+          "def": "4500"
+        },
+        {
+          "nome": "Sorcerer of Dark Magic",
+          "raridade": "UR",
+          "slug": "sorcerer_of_dark_magic",
+          "atk": "3200",
+          "def": "2800"
+        },
+        {
+          "nome": "The Dark Magicians",
+          "raridade": "UR",
+          "slug": "the_dark_magicians",
+          "atk": "2800",
+          "def": "2300"
+        },
+        {
+          "nome": "Timaeus the United Magical Dragon",
+          "raridade": "UR",
+          "slug": "timaeus_the_united_magical_dragon",
+          "atk": "2800",
+          "def": "1800"
+        },
+        {
+          "nome": "Bond Between Teacher And Student",
+          "raridade": "SR",
+          "slug": "bond_between_teacher_and_student"
+        },
+        {
+          "nome": "Breaker the Dark Magical Warrior",
+          "raridade": "SR",
+          "slug": "breaker_the_dark_magical_warrior",
+          "atk": "1600",
+          "def": "1000"
+        },
+        {
+          "nome": "Dark Burning Attack",
+          "raridade": "SR",
+          "slug": "dark_burning_attack"
+        },
+        {
+          "nome": "Dark Eradicator Warlock",
+          "raridade": "SR",
+          "slug": "dark_eradicator_warlock",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Dark Magic Attack",
+          "raridade": "SR",
+          "slug": "dark_magic_attack"
+        },
+        {
+          "nome": "Dark Magic Twin Burst",
+          "raridade": "SR",
+          "slug": "dark_magic_twin_burst"
+        },
+        {
+          "nome": "Dark Magician",
+          "raridade": "SR",
+          "slug": "dark_magician",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Dark Magician Girl the Magician's Apprentice",
+          "raridade": "SR",
+          "slug": "dark_magician_girl_the_magicians_apprentice",
+          "atk": "2000",
+          "def": "1700"
+        },
+        {
+          "nome": "Dark Magician Knight",
+          "raridade": "SR",
+          "slug": "dark_magician_knight",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Dark Magician, the Pharaoh's Servant",
+          "raridade": "SR",
+          "slug": "dark_magician_the_pharaohs_servant",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Dark Renewal",
+          "raridade": "SR",
+          "slug": "dark_renewal"
+        },
+        {
+          "nome": "Ebon High Magician",
+          "raridade": "SR",
+          "slug": "ebon_high_magician",
+          "atk": "2300",
+          "def": "2800"
+        },
+        {
+          "nome": "Ebon Illusion Magician",
+          "raridade": "SR",
+          "slug": "ebon_illusion_magician",
+          "atk": "2500",
+          "def": "2100"
+        },
+        {
+          "nome": "Illusion of Chaos",
+          "raridade": "SR",
+          "slug": "illusion_of_chaos",
+          "atk": "2100",
+          "def": "2500"
+        },
+        {
+          "nome": "Magical Hats",
+          "raridade": "SR",
+          "slug": "magical_hats"
+        },
+        {
+          "nome": "Magician of Dark Illusion",
+          "raridade": "SR",
+          "slug": "magician_of_dark_illusion",
+          "atk": "2100",
+          "def": "2500"
+        },
+        {
+          "nome": "Palladium Oracle Mana",
+          "raridade": "SR",
+          "slug": "palladium_oracle_mana",
+          "atk": "2000",
+          "def": "1700"
+        },
+        {
+          "nome": "Thousand Knives",
+          "raridade": "SR",
+          "slug": "thousand_knives"
+        },
+        {
+          "nome": "Day-Breaker the Shining Magical Warrior",
+          "raridade": "R",
+          "slug": "day-breaker_the_shining_magical_warrior",
+          "atk": "1600",
+          "def": "0"
+        },
+        {
+          "nome": "Magic Formula",
+          "raridade": "R",
+          "slug": "magic_formula"
+        },
+        {
+          "nome": "Magician's Defense",
+          "raridade": "R",
+          "slug": "magicians_defense"
+        },
+        {
+          "nome": "Magician's Robe",
+          "raridade": "R",
+          "slug": "magicians_robe",
+          "atk": "700",
+          "def": "2000"
+        },
+        {
+          "nome": "Magician's Rod",
+          "raridade": "R",
+          "slug": "magicians_rod",
+          "atk": "1600",
+          "def": "100"
+        },
+        {
+          "nome": "Magician's Soul",
+          "raridade": "R",
+          "slug": "magicians_soul",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Magician's Valkyria",
+          "raridade": "R",
+          "slug": "magicians_valkyria",
+          "atk": "1600",
+          "def": "1800"
+        },
+        {
+          "nome": "Magikuriboh",
+          "raridade": "R",
+          "slug": "magikuriboh",
+          "atk": "300",
+          "def": "200"
+        },
+        {
+          "nome": "Skilled Dark Magician",
+          "raridade": "R",
+          "slug": "skilled_dark_magician",
+          "atk": "1900",
+          "def": "1700"
         }
       ]
     }
