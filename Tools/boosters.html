@@ -1198,10 +1198,29 @@ function isEn() { return document.body.classList.contains('en'); }
     return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
   }
 
+  /* ORDEM DOS AZULEJOS (pedido do Felipe, 2026-09-24): temporario NO AR primeiro,
+     depois os EM BREVE, depois os temporarios encerrados e por ultimo os fixos.
+     Decidido pelo ESTADO de cada um (dynamicState), nao por listas de id, e
+     refeito a cada renderTiles: quando um pacote muda de estado com a pagina
+     aberta, ele muda de lugar junto. Sort estavel: dentro de cada grupo vale a
+     ordem do boosters.json. */
+  function grupoDeOrdem(b) {
+    if (!b.evento) return 3;
+    const dyn = dynamicState(b);
+    const ribbon = dyn ? dyn.ribbon : RIBBON_OVERRIDES[b.id];
+    if (ribbon && ribbon.classe === 'em-breve') return 1;
+    if (ribbon && ribbon.classe === 'expirado') return 2;
+    return 0;
+  }
+  function ordenarBoosters() {
+    boostersData = boostersData.slice().sort((a, b) => grupoDeOrdem(a) - grupoDeOrdem(b));
+  }
+
   function renderTiles() {
     /* Registrada para o setLang refazer os tiles no idioma novo — sem isto
        os nomes ficam presos no idioma em que a pagina carregou. */
     window.flRedesenhar = renderTiles;
+    ordenarBoosters();
     tilesEl.innerHTML = boostersData.map(tileHtml).join('');
     tilesEl.querySelectorAll('.booster-tile').forEach(el => {
       if (el.classList.contains('locked')) return; // sem clique enquanto bloqueado
@@ -1285,12 +1304,7 @@ function isEn() { return document.body.classList.contains('en'); }
     .then(() => fetch('data/boosters.json?t=' + Date.now()))
     .then(r => r.json())
     .then(data => {
-      // Ordem de exibicao: primeiro os boosters presos ao LAUNCH_UTC (saindo
-      // ou entrando agora), depois os demais temporarios, depois o resto —
-      // preservando ordem relativa original dentro de cada grupo (sort estavel).
-      const prioridade = (x) => eventoAtivoDoBooster(x.id) ? -1
-        : (STARTING_IDS.includes(x.id) ? 0 : (ENDING_IDS.includes(x.id) ? 1 : (x.evento ? 2 : 3)));
-      boostersData = (data.boosters || []).slice().sort((a, b) => prioridade(a) - prioridade(b));
+      boostersData = (data.boosters || []).slice();
       versaoCache = data.versao || '';
       pastLaunch = Date.now() >= LAUNCH_UTC;
       renderTiles();
