@@ -284,65 +284,6 @@ nav.scrolled {
 .hero-scroll { position: absolute; bottom: 28px; font-size: 10px; letter-spacing: 3px; color: #3a3020; animation: scrollBounce 2s ease-in-out infinite; }
 @keyframes scrollBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
-/* FLOATING CARDS */
-/* position:absolute precisa de !important pra vencer ".hero > :not(#hero-canvas):not(.hero-scroll)"
-   (regra generica de layout do hero, especificidade maior por causa do :not(#id)) — sem isso os
-   cards viram filhos relative empilhados no fluxo do flex e a posicao em % fica toda errada. */
-.float-card {
-  position: absolute !important; border-radius: 6px;
-  border: 1px solid rgba(212,168,67,.22);
-  box-shadow: 0 8px 32px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.4);
-  overflow: hidden;
-  /* a carta tem 110x160; sem a proporção travada aqui, o object-fit:cover
-     comia ~16% da arte (o rodapé com ATK/DEF) */
-  aspect-ratio: 110 / 160;
-  height: auto !important;
-  will-change: transform;
-  transition: box-shadow .4s ease;
-}
-.float-card img {
-  width:100%; height:100%; object-fit:fill; display:block;
-}
-/* brilho passando por cima, como a luz num sleeve — bem lento e discreto,
-   só nas duas cartas em destaque, para não virar pisca-pisca */
-.float-card::after{
-  content:''; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(115deg, transparent 38%, rgba(255,235,190,.16) 48%, transparent 58%);
-  background-size:280% 100%; background-position:200% 0;
-}
-.fc-l1::after, .fc-r1::after{ animation:cardSheen 9s ease-in-out infinite; }
-.fc-r1::after{ animation-delay:4.5s; }
-@keyframes cardSheen{
-  0%, 70%   { background-position:200% 0; }
-  100%      { background-position:-80% 0; }
-}
-/* a camada inteira reage ao mouse (parallax), sem tocar na animação
-   individual de cada carta — as duas se somam sem conflito */
-.hero-cards-layer{
-  /* !important pelo mesmo motivo do .float-card: a regra generica
-     ".hero > :not(#hero-canvas):not(.hero-scroll)" tem especificidade maior
-     e empurraria a camada pro fluxo do flex, levando as cartas junto — foi
-     exatamente o que aconteceu na primeira tentativa (elas se amontoaram
-     atras do logo em vez de ficarem nas laterais). */
-  position:absolute !important; inset:0 !important; width:100% !important;
-  pointer-events:none;
-  transition:transform .5s cubic-bezier(.22,1,.36,1);
-  will-change:transform;
-}
-@media (prefers-reduced-motion: reduce){
-  .float-card, .float-card::after { animation:none !important; }
-  .hero-cards-layer{ transition:none; transform:none !important; }
-}
-.fc-l1 { width:88px; height:122px; left:5%;  top:28%; transform:rotate(-14deg); animation:floatA 5.5s ease-in-out infinite; }
-.fc-l2 { width:68px; height:94px;  left:13%; top:52%; transform:rotate(6deg);   animation:floatC 7s ease-in-out infinite .5s; opacity:.85; }
-.fc-l3 { width:60px; height:83px;  left:21%; top:13%; transform:rotate(-6deg); animation:floatB 6.5s ease-in-out infinite .3s; opacity:.8; }
-.fc-r1 { width:88px; height:122px; right:5%;  top:26%; transform:rotate(12deg);  animation:floatB 6s ease-in-out infinite; }
-.fc-r2 { width:68px; height:94px;  right:13%; top:50%; transform:rotate(-8deg); animation:floatD 7.5s ease-in-out infinite 1s; opacity:.85; }
-.fc-r3 { width:60px; height:83px;  right:21%; top:12%; transform:rotate(9deg);  animation:floatA 6.8s ease-in-out infinite .8s; opacity:.8; }
-@keyframes floatA { 0%,100%{transform:rotate(-14deg) translateY(0)} 50%{transform:rotate(-11deg) translateY(-10px)} }
-@keyframes floatB { 0%,100%{transform:rotate(12deg) translateY(0)}  50%{transform:rotate(9deg)  translateY(-8px)}  }
-@keyframes floatC { 0%,100%{transform:rotate(6deg) translateY(0)}   50%{transform:rotate(4deg)  translateY(-7px)} }
-@keyframes floatD { 0%,100%{transform:rotate(-8deg) translateY(0)}  50%{transform:rotate(-5deg) translateY(-6px)} }
 
 /* ── STATEMENT ── */
 .statement {
@@ -1139,9 +1080,6 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   .nav-links, nav#nav .nav-cta, .discord-nav-badge { display: none !important; }
   .mobile-nav-bar { display: flex; }
   .hero { padding-top: 96px; }
-  .fc-l2, .fc-r2, .fc-l3, .fc-r3 { display: none; }
-  .fc-l1 { left: 2%; top: 15%; width: 70px; height: 98px; }
-  .fc-r1 { right: 2%; top: 15%; width: 70px; height: 98px; }
   .feat-row { grid-template-columns: 1fr; min-height: auto; }
   .feat-row .feat-visual { margin: 20px 0; }
   .feat-row.rev .feat-visual { margin: 20px 0; }
@@ -1408,6 +1346,39 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   .news-colapso { transition: none; }
   .news-seta { transition: none; }
 }
+
+/* ── TOPO: arte do Reino dos Duelistas (Season 2) ─────────────────────
+   Substituiu as 6 cartas voando (2026-09-24): cada uma tinha rotacao, tamanho
+   e ritmo proprios, e o conjunto cansava a vista. A arte fica com a cor quase
+   inteira; o escuro entra so' onde tem texto — faixa do menu no topo, halo
+   atras da frase/numeros/botoes e a base emendando na pagina. Um movimento
+   so', o zoom lento do cenario, que desliga com "reduzir movimento". */
+.hero{ background:var(--dark); isolation:isolate; }
+.hero::before{
+  content:''; position:absolute; inset:-4% -2%; z-index:0;
+  background:url('img/hero/reino-duelistas.webp') center 24% / cover no-repeat;
+  filter:brightness(.8) contrast(1.02);
+  animation:heroRespira 34s ease-in-out infinite alternate;
+}
+@media (max-width:900px){ .hero::before{ background-image:url('img/hero/reino-duelistas-mob.webp'); } }
+@keyframes heroRespira{ from{transform:scale(1)} to{transform:scale(1.07)} }
+@media (prefers-reduced-motion:reduce){ .hero::before{ animation:none; } }
+.hero::after{
+  top:0; height:auto; z-index:0;
+  background:
+    radial-gradient(ellipse 40% 34% at 50% 66%, rgba(6,4,3,.74) 0%, rgba(6,4,3,.46) 50%, rgba(6,4,3,0) 100%),
+    radial-gradient(ellipse 36% 30% at 50% 30%, rgba(6,4,3,.35) 0%, rgba(6,4,3,0) 100%),
+    linear-gradient(180deg, rgba(6,4,3,.94) 0%, rgba(6,4,3,.55) 9%, rgba(6,4,3,0) 22%, rgba(6,4,3,0) 60%, rgba(6,4,3,.6) 84%, var(--dark) 100%);
+}
+#hero-canvas{ opacity:.5; }
+.hero .stars{ opacity:.35; }
+.hero-logo-img{
+  height:clamp(150px,26vw,310px);
+  filter:drop-shadow(0 0 60px rgba(212,168,67,.40)) drop-shadow(0 10px 22px rgba(0,0,0,.95));
+}
+.hero-ornament{ color:rgba(232,184,64,.55); }
+.hero-sub{ color:#e6dcc4; text-shadow:0 1px 3px rgba(0,0,0,.95),0 2px 18px rgba(0,0,0,.95); }
+.hero-pill{ background:rgba(8,6,4,.55); backdrop-filter:blur(3px); border-color:rgba(212,168,67,.28); }
 </style>
 </head>
 <body>
@@ -1524,14 +1495,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 <section class="hero" id="home">
   <div class="stars"></div>
 
-  <div class="hero-cards-layer" id="hero-cards-layer">
-<div class="float-card fc-l1"><img src="img/cartas/dark_magician.webp" srcset="img/cartas/dark_magician.webp 110w, img/cartas_grande/dark_magician.webp 256w" sizes="(max-width:768px) 70px, 88px" alt="Dark Magician" loading="eager" decoding="async" width="110" height="160"></div>
-  <div class="float-card fc-l2"><img src="img/cartas/black_luster_soldier.webp" alt="Black Luster Soldier" loading="eager" decoding="async" width="110" height="160"></div>
-  <div class="float-card fc-l3"><img src="img/cartas/red-eyes_b_dragon.webp" alt="Red-Eyes B. Dragon" loading="eager" decoding="async" width="110" height="160"></div>
-  <div class="float-card fc-r1"><img src="img/cartas/obelisk_the_tormentor.webp" srcset="img/cartas/obelisk_the_tormentor.webp 110w, img/cartas_grande/obelisk_the_tormentor.webp 256w" sizes="(max-width:768px) 70px, 88px" alt="Obelisk the Tormentor" loading="eager" decoding="async" width="110" height="160"></div>
-  <div class="float-card fc-r2"><img src="img/cartas/blue-eyes_white_dragon.webp" alt="Blue-Eyes White Dragon" loading="eager" decoding="async" width="110" height="160"></div>
-  <div class="float-card fc-r3"><img src="img/cartas/summoned_skull.webp" alt="Summoned Skull" loading="eager" decoding="async" width="110" height="160"></div>
-</div>
+  
 
   <!-- Logo: usa imagem se existir, senão texto -->
   <img src="/img/logo_forbidden_legacy.webp" alt="YGO Forbidden Legacy" class="hero-logo-img" width="995" height="560" fetchpriority="high" decoding="async"
@@ -4579,39 +4543,7 @@ document.addEventListener('keydown', e => {
 })();
 </script>
 
-<script>
-/* Parallax das cartas do hero: a camada inteira se desloca alguns pixels
-   conforme o mouse, dando profundidade sem competir com a animação de
-   flutuação de cada carta. Desligado no toque (não há cursor) e para quem
-   pede menos movimento. */
-(function () {
-  var camada = document.getElementById('hero-cards-layer');
-  if (!camada) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (matchMedia('(hover: none)').matches) return;
 
-  var hero = document.querySelector('.hero');
-  if (!hero) return;
-  var alvoX = 0, alvoY = 0, atualX = 0, atualY = 0, rodando = false;
-
-  hero.addEventListener('mousemove', function (e) {
-    var r = hero.getBoundingClientRect();
-    alvoX = ((e.clientX - r.left) / r.width - .5) * 26;   // ~13px para cada lado
-    alvoY = ((e.clientY - r.top) / r.height - .5) * 16;
-    if (!rodando) { rodando = true; requestAnimationFrame(anima); }
-  });
-  hero.addEventListener('mouseleave', function () { alvoX = 0; alvoY = 0; });
-
-  function anima() {
-    atualX += (alvoX - atualX) * .08;
-    atualY += (alvoY - atualY) * .08;
-    camada.style.transform = 'translate3d(' + atualX.toFixed(2) + 'px,' + atualY.toFixed(2) + 'px,0)';
-    if (Math.abs(alvoX - atualX) > .1 || Math.abs(alvoY - atualY) > .1) {
-      requestAnimationFrame(anima);
-    } else { rodando = false; }
-  }
-})();
-</script>
 
 <script>
 /* O seletor de idioma do e-mail comeca no idioma que a pessoa esta lendo,
