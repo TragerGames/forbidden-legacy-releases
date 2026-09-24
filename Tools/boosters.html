@@ -459,43 +459,47 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   .mobile-nav-bar { display: flex; }
   .page-hero, .hero { padding-top: 96px; }
 }
-/* ── Barra do topo: enquadramento (2026-09-23) ──────────────────
-   O menu tem ate 12 paginas e, do jeito antigo, precisava de ~1470px: abaixo
-   disso os nomes quebravam em duas linhas, encostavam na logo e o botao FOUNDER
-   saia da tela (relatado em 1295px). Agora nome de pagina nunca quebra e a barra
-   aperta em degraus MEDIDOS na pagina mais pesada (index, 12 links):
-     ate 1520px  gap e espacamento menores ....... precisa de 1391
-     ate 1390px  logo so com o brasao ............ precisa de 1229
-     ate 1280px  sem o selo do Discord ........... precisa de 1210
-     ate 1220px  entra a barra rolavel do celular, que cabe qualquer quantidade */
-.nav-links{flex-wrap:nowrap}
+/* -- Barra do topo: menus agrupados (2026-09-23) -----------------
+   Antes eram 12 links soltos e a barra precisava de ~1500px: em tela de
+   notebook os nomes quebravam em duas linhas, encostavam na logo e o botao
+   FOUNDER saia da tela. Agora sao 4 menus + Loja. A barra rolavel do celular
+   continua com a lista inteira e assume abaixo de 1000px. */
+.nav-links{flex-wrap:nowrap;gap:24px}
 .nav-links a{white-space:nowrap}
 .nav-logo{flex-shrink:0}
 nav#nav{gap:16px}
 nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
-@media(max-width:1520px){
-  .nav-links{gap:12px}
-  .nav-links a{letter-spacing:1px}
-}
-@media(max-width:1390px){
-  .nav-logo-fallback{display:none}
-}
-@media(max-width:1280px){
-  .discord-nav-badge{display:none!important}
-  .nav-links a{letter-spacing:.8px}
-}
-@media(max-width:1220px){
+.nav-grupo{position:relative}
+.nav-grupo-bt{display:flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--muted);padding:8px 0;transition:color .2s}
+.nav-grupo-bt:hover,.nav-grupo.aberto .nav-grupo-bt,.nav-grupo.tem-ativo .nav-grupo-bt{color:var(--gold)}
+.nav-caret{width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;
+  transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s;opacity:.7}
+.nav-grupo.aberto .nav-caret{transform:rotate(225deg) translate(-3px,-3px)}
+.nav-drop{position:absolute;top:calc(100% + 10px);left:-14px;min-width:238px;z-index:5;
+  display:none;flex-direction:column;padding:8px;background:rgba(9,8,10,.985);
+  border:1px solid rgba(200,151,58,.22);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.nav-drop::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.nav-grupo.aberto .nav-drop{display:flex}
+.nav-drop a{display:flex;flex-direction:column;gap:2px;padding:9px 12px;
+  font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#c3b189;
+  border-left:2px solid transparent;transition:background .18s,color .18s,border-color .18s}
+.nav-drop a:hover,.nav-drop a:focus-visible{background:rgba(200,151,58,.09);color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a.ativo{color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a small{font-size:10.5px;letter-spacing:.2px;text-transform:none;color:var(--muted);opacity:.85}
+.nav-solo{font-size:10px;letter-spacing:1.5px}
+.nav-solo.ativo{color:var(--gold)}
+@media(hover:hover){.nav-grupo:hover .nav-drop{display:flex}.nav-grupo:hover .nav-grupo-bt{color:var(--gold)}}
+@media(max-width:1000px){
   .nav-links,nav#nav .nav-cta,.discord-nav-badge{display:none!important}
   .mobile-nav-bar{display:flex}
   .page-hero, .hero { padding-top: 96px; }
 }
 
 
-@media(max-width:480px) {
-  nav#nav { justify-content: center; }
-  .nav-logo { margin: 0 auto; }
-  .topbar-right { display: none; }
-}
+
 
 
 /* ── BILINGUAL SHOW/HIDE RULES ── */
@@ -555,19 +559,40 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     <div class="nav-logo-fallback">Forbidden Legacy</div>
   </div>
   <div class="nav-links">
-    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
-    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
-    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
-    <a href="banlist.html" data-lang="pt">Banlist</a><a href="banlist.html" data-lang="en">Banlist</a><a href="banlist.html" data-lang="es">Banlist</a><a href="banlist.html" data-lang="vi">Banlist</a>
-    <a href="boosters.html" class="active" data-lang="pt">Boosters</a><a href="boosters.html" class="active" data-lang="en">Boosters</a><a href="boosters.html" class="active" data-lang="es">Boosters</a><a href="boosters.html" class="active" data-lang="vi">Booster</a>
-    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
-    <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
-    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
-    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
-    <a href="loja.html?v=p04" data-lang="pt">Loja</a><a href="loja.html?v=p04" data-lang="en">Store</a><a href="loja.html?v=p04" data-lang="es">Tienda</a><a href="loja.html?v=p04" data-lang="vi">Cửa hàng</a>
-    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
-    <span class="sep" style="color:rgba(212,168,67,.15)">|</span>
-    <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
+    <div class="nav-grupo">
+      <button class="nav-grupo-bt" type="button" aria-expanded="false"><span data-lang="pt">Jogo</span><span data-lang="en">Game</span><span data-lang="es">Juego</span><span data-lang="vi">Trò chơi</span><i class="nav-caret" aria-hidden="true"></i></button>
+      <div class="nav-drop">
+        <a href="index.html#sobre"><span data-lang="pt">O Jogo</span><span data-lang="en">The Game</span><span data-lang="es">El Juego</span><span data-lang="vi">Trò chơi</span><small><span data-lang="pt">o que é o remake</span><span data-lang="en">what the remake is</span><span data-lang="es">qué es el remake</span><span data-lang="vi">bản làm lại là gì</span></small></a>
+        <a href="features.html"><span data-lang="pt">Mecânicas</span><span data-lang="en">Features</span><span data-lang="es">Mecánicas</span><span data-lang="vi">Cơ chế</span><small><span data-lang="pt">duelo, fusões, campo</span><span data-lang="en">duels, fusions, field</span><span data-lang="es">duelo, fusiones, campo</span><span data-lang="vi">đấu bài, hợp thể, sân</span></small></a>
+        <a href="index.html#campanha"><span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span><span data-lang="es">Campaña</span><span data-lang="vi">Cốt truyện</span><small><span data-lang="pt">a história</span><span data-lang="en">the story</span><span data-lang="es">la historia</span><span data-lang="vi">cốt truyện</span></small></a>
+        <a href="gallery.html"><span data-lang="pt">Galeria</span><span data-lang="en">Gallery</span><span data-lang="es">Galería</span><span data-lang="vi">Thư viện</span><small><span data-lang="pt">imagens do jogo</span><span data-lang="en">game screenshots</span><span data-lang="es">imágenes del juego</span><span data-lang="vi">ảnh trong game</span></small></a>
+      </div>
+    </div>
+    <div class="nav-grupo tem-ativo">
+      <button class="nav-grupo-bt" type="button" aria-expanded="false"><span data-lang="pt">Cartas</span><span data-lang="en">Cards</span><span data-lang="es">Cartas</span><span data-lang="vi">Thẻ bài</span><i class="nav-caret" aria-hidden="true"></i></button>
+      <div class="nav-drop">
+        <a href="catalogo.html"><span data-lang="pt">Catálogo</span><span data-lang="en">Catalog</span><span data-lang="es">Catálogo</span><span data-lang="vi">Danh mục</span><small><span data-lang="pt">todas as cartas</span><span data-lang="en">every card</span><span data-lang="es">todas las cartas</span><span data-lang="vi">tất cả thẻ bài</span></small></a>
+        <a href="boosters.html" class="ativo"><span data-lang="pt">Boosters</span><span data-lang="en">Boosters</span><span data-lang="es">Boosters</span><span data-lang="vi">Booster</span><small><span data-lang="pt">pacotes temáticos</span><span data-lang="en">themed packs</span><span data-lang="es">sobres temáticos</span><span data-lang="vi">gói chủ đề</span></small></a>
+        <a href="banlist.html"><span data-lang="pt">Banlist</span><span data-lang="en">Banlist</span><span data-lang="es">Banlist</span><span data-lang="vi">Banlist</span><small><span data-lang="pt">limites por grupo</span><span data-lang="en">limits by group</span><span data-lang="es">límites por grupo</span><span data-lang="vi">giới hạn theo nhóm</span></small></a>
+      </div>
+    </div>
+    <div class="nav-grupo">
+      <button class="nav-grupo-bt" type="button" aria-expanded="false"><span data-lang="pt">Ferramentas</span><span data-lang="en">Tools</span><span data-lang="es">Herramientas</span><span data-lang="vi">Công cụ</span><i class="nav-caret" aria-hidden="true"></i></button>
+      <div class="nav-drop">
+        <a href="montar_deck.html"><span data-lang="pt">Montar Deck</span><span data-lang="en">Deck Builder</span><span data-lang="es">Armar Mazo</span><span data-lang="vi">Tạo bộ bài</span><small><span data-lang="pt">monte o seu deck</span><span data-lang="en">build your deck</span><span data-lang="es">arma tu mazo</span><span data-lang="vi">tạo bộ bài của bạn</span></small></a>
+        <a href="ativar_dispositivo.html"><span data-lang="pt">Ativar outro dispositivo</span><span data-lang="en">Activate another device</span><span data-lang="es">Activar otro dispositivo</span><span data-lang="vi">Kích hoạt thiết bị khác</span><small><span data-lang="pt">use no PC e no celular</span><span data-lang="en">use it on PC and phone</span><span data-lang="es">úsalo en PC y móvil</span><span data-lang="vi">dùng trên PC và điện thoại</span></small></a>
+        <a href="suporte.html"><span data-lang="pt">Fale com o suporte</span><span data-lang="en">Contact support</span><span data-lang="es">Contactar soporte</span><span data-lang="vi">Liên hệ hỗ trợ</span><small><span data-lang="pt">dúvida, bug ou sugestão</span><span data-lang="en">question, bug or idea</span><span data-lang="es">duda, bug o sugerencia</span><span data-lang="vi">câu hỏi, lỗi hoặc góp ý</span></small></a>
+      </div>
+    </div>
+    <div class="nav-grupo">
+      <button class="nav-grupo-bt" type="button" aria-expanded="false"><span data-lang="pt">Modos de jogo</span><span data-lang="en">Game modes</span><span data-lang="es">Modos de juego</span><span data-lang="vi">Chế độ chơi</span><i class="nav-caret" aria-hidden="true"></i></button>
+      <div class="nav-drop">
+        <a href="torneio.html"><span data-lang="pt">Championship</span><span data-lang="en">Championship</span><span data-lang="es">Championship</span><span data-lang="vi">Championship</span><small><span data-lang="pt">torneios e punições</span><span data-lang="en">tournaments and rules</span><span data-lang="es">torneos y castigos</span><span data-lang="vi">giải đấu và luật phạt</span></small></a>
+        <a href="conquistas.html"><span data-lang="pt">Conquistas</span><span data-lang="en">Achievements</span><span data-lang="es">Logros</span><span data-lang="vi">Thành tựu</span><small><span data-lang="pt">tudo que dá para conquistar</span><span data-lang="en">everything to unlock</span><span data-lang="es">todo para desbloquear</span><span data-lang="vi">mọi thành tựu</span></small></a>
+        <a href="mods.html"><span data-lang="pt">Mods FM</span><span data-lang="en">FM Mods</span><span data-lang="es">Mods FM</span><span data-lang="vi">Mods FM</span><small><span data-lang="pt">mods de Forbidden Memories</span><span data-lang="en">Forbidden Memories mods</span><span data-lang="es">mods de Forbidden Memories</span><span data-lang="vi">mod Forbidden Memories</span></small></a>
+      </div>
+    </div>
+    <a class="nav-solo" href="loja.html?v=p04"><span data-lang="pt">Loja</span><span data-lang="en">Store</span><span data-lang="es">Tienda</span><span data-lang="vi">Cửa hàng</span></a>
   </div>
   <div style="display:flex; align-items:center; gap:12px;">
     <a href="https://discord.gg/forbidden-legacy" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
@@ -605,8 +630,9 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
     <a href="loja.html?v=p04" data-lang="pt">Loja</a><a href="loja.html?v=p04" data-lang="en">Store</a><a href="loja.html?v=p04" data-lang="es">Tienda</a><a href="loja.html?v=p04" data-lang="vi">Cửa hàng</a>
     <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+      <a href="ativar_dispositivo.html" data-lang="pt">Ativar dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate device</a><a href="ativar_dispositivo.html" data-lang="es">Activar dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị</a><a href="suporte.html" data-lang="pt">Suporte</a><a href="suporte.html" data-lang="en">Support</a><a href="suporte.html" data-lang="es">Soporte</a><a href="suporte.html" data-lang="vi">Hỗ trợ</a>
     <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
-  </div>
+    </div>
 </div>
 
 <!-- HERO -->
@@ -1492,6 +1518,29 @@ document.addEventListener('keydown', e => {
       if (badge) badge.style.display = 'flex';
     })
     .catch(function () {});
+})();
+</script>
+<script>
+/* Menus da barra: quem tem mouse abre por hover (CSS). Aqui entra o toque e o
+   teclado, com Esc e clique fora fechando. */
+(function () {
+  function fechaTodos() {
+    document.querySelectorAll('.nav-grupo.aberto').forEach(function (g) {
+      g.classList.remove('aberto');
+      g.querySelector('.nav-grupo-bt').setAttribute('aria-expanded', 'false');
+    });
+  }
+  document.querySelectorAll('.nav-grupo-bt').forEach(function (bt) {
+    bt.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      var g = bt.parentElement, abrindo = !g.classList.contains('aberto');
+      fechaTodos();
+      g.classList.toggle('aberto', abrindo);
+      bt.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', fechaTodos);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechaTodos(); });
 })();
 </script>
 </body>
