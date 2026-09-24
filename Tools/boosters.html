@@ -1018,8 +1018,10 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     // janela original de 15 dias: 26/08 11:30 BRT + 15 dias
     'especial_cyber_dragon': { quando: brt(2026, 8, 10, 11, 30) },
     /* EVENTO_ELEMENTAL_DRAGONS_INICIO_ISO 2026-09-09 14:30 UTC = 09/09 11:30
-       BRT, mais EVENTO_ELEMENTAL_DRAGONS_DURACAO_DIAS = 15. */
-    'especial_elemental_dragons': { quando: brt(2026, 8, 24, 11, 30) },
+       BRT, mais EVENTO_ELEMENTAL_DRAGONS_DURACAO_DIAS = 15. Estendido ate as
+       15h de 24/09 pelo Felipe, junto do evento do painel que liga o pacote no
+       jogo ate o mesmo horario. */
+    'especial_elemental_dragons': { quando: brt(2026, 8, 24, 15, 0) },
   };
 
   /* Trava de LANCAMENTO: o pacote existe no boosters.json (o painel de eventos
@@ -1028,7 +1030,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
      trava vence ATE o painel de eventos — ligar o evento para testar com os
      moderadores nao pode estrear o pacote no site sem querer.
      PARA LANCAR: apagar a linha do booster aqui. */
-  const TRAVA_LANCAMENTO = ['especial_dark_magician'];
+  const TRAVA_LANCAMENTO = [];
 
   /* Escolhe o campo do idioma ativo, caindo para ingles e depois portugues
    quando a traducao daquele item nao existe. Os nomes de campo mudam de

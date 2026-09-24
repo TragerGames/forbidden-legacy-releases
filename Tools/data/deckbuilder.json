@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1789225923",
+  "versao": "1790259437",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -836,6 +836,12 @@
         "lp_recovery"
       ]
     },
+    "Barrel Dragon": {
+      "grupos": [
+        "triple_attack",
+        "multi_attack"
+      ]
+    },
     "Battleguard King": {
       "grupos": [
         "piercing_pressure"
@@ -851,9 +857,24 @@
         "burn_on_kill"
       ]
     },
+    "Black Tyranno": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
     "Blaster, Dragon Ruler of Infernos": {
       "grupos": [
         "piercing_pressure"
+      ]
+    },
+    "Blowback Dragon": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Breaker the Dark Magical Warrior": {
+      "grupos": [
+        "backrow"
       ]
     },
     "Burner, Dragon Ruler of Sparks": {
@@ -897,6 +918,11 @@
         "board_wipe"
       ]
     },
+    "Cyber Slash Harpie Lady": {
+      "grupos": [
+        "backrow"
+      ]
+    },
     "Cyber Twin Dragon": {
       "grupos": [
         "multi_attack"
@@ -927,9 +953,40 @@
         "spell_negation"
       ]
     },
+    "Dark Burning Attack": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Dark Burning Magic": {
+      "grupos": [
+        "board_wipe",
+        "backrow"
+      ]
+    },
     "Dark Flare Knight": {
       "grupos": [
         "burn_direct"
+      ]
+    },
+    "Dark Magic Attack": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Dark Magic Expanded": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Dark Magician the Knight of Dragon Magic": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Dark Magician, the Pharaoh's Servant": {
+      "grupos": [
+        "backrow"
       ]
     },
     "Dark Paladin": {
@@ -1096,6 +1153,11 @@
         "backrow"
       ]
     },
+    "Gatling Dragon": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
     "Gearfried the Red-Eyes Iron Knight": {
       "grupos": [
         "backrow"
@@ -1126,6 +1188,11 @@
         "backrow"
       ]
     },
+    "Harpie's Pet Phantasmal Dragon": {
+      "grupos": [
+        "direct_attack"
+      ]
+    },
     "Hero Heart": {
       "grupos": [
         "multi_attack"
@@ -1144,6 +1211,11 @@
     "Humanoid Worm Drake": {
       "grupos": [
         "burn_conditional"
+      ]
+    },
+    "Illusion of Chaos": {
+      "grupos": [
+        "piercing_pressure"
       ]
     },
     "Jam Defender": {
@@ -1166,6 +1238,12 @@
         "burn_direct"
       ]
     },
+    "Level 2 Power Boost": {
+      "grupos": [
+        "direct_attack",
+        "explosive_equip"
+      ]
+    },
     "Levia-Dragon - Daedalus": {
       "grupos": [
         "board_wipe"
@@ -1177,12 +1255,27 @@
         "lp_recovery"
       ]
     },
+    "Magic Cylinder": {
+      "grupos": [
+        "direct_attack"
+      ]
+    },
+    "Magician of Dark Illusion": {
+      "grupos": [
+        "direct_attack"
+      ]
+    },
     "Maiden of the Moonlight": {
       "grupos": [
         "lp_recovery"
       ]
     },
     "Master Monk": {
+      "grupos": [
+        "multi_attack"
+      ]
+    },
+    "Mighty Dino King Rex": {
       "grupos": [
         "multi_attack"
       ]
@@ -1205,6 +1298,11 @@
     "Neo-Parshath, the Sky Paladin": {
       "grupos": [
         "piercing_pressure"
+      ]
+    },
+    "Orca Mega-Fortress of Darkness": {
+      "grupos": [
+        "backrow"
       ]
     },
     "Paladin of Dark Dragon": {
@@ -1245,6 +1343,11 @@
     "Red-Eyes Toon Dragon": {
       "grupos": [
         "direct_attack"
+      ]
+    },
+    "Rose Whip": {
+      "grupos": [
+        "multi_attack"
       ]
     },
     "Sacred Arch-Airknight Parshath": {
@@ -1342,6 +1445,11 @@
         "lp_recovery"
       ]
     },
+    "Timaeus the United Magical Dragon": {
+      "grupos": [
+        "backrow"
+      ]
+    },
     "Toon Black Luster Soldier": {
       "grupos": [
         "direct_attack"
@@ -1350,6 +1458,11 @@
     "Torrential Tribute": {
       "grupos": [
         "board_wipe"
+      ]
+    },
+    "Triangle Ecstasy Spark": {
+      "grupos": [
+        "buff_aura_media"
       ]
     },
     "Trident Dragion": {
@@ -1383,6 +1496,11 @@
         "burn_on_kill"
       ]
     },
+    "Ultimate Conductor Tyranno": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
     "Ultimate Flame Swordsman": {
       "grupos": [
         "burn_recurring"
@@ -1391,6 +1509,12 @@
     "Whispark Fairy Girl": {
       "grupos": [
         "burn_direct"
+      ]
+    },
+    "White Aura Whale": {
+      "grupos": [
+        "multi_attack",
+        "piercing_pressure"
       ]
     },
     "Winged Trumpeter": {
