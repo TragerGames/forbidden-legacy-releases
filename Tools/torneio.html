@@ -1176,21 +1176,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <div class="fase-num">10<small data-lang="pt">Boss</small><small data-lang="en">Boss</small><small data-lang="es">Boss</small><small data-lang="vi">Boss</small></div>
         <div class="fase-corpo">
           <h3 data-lang="pt">O confronto final</h3><h3 data-lang="en">The final clash</h3><h3 data-lang="es">El enfrentamiento final</h3><h3 data-lang="vi">Trận đối đầu cuối cùng</h3>
-          <p data-lang="pt">Um dos três chefes da campanha fecha a sequência.</p><p data-lang="en">One of the three campaign bosses closes the run.</p><p data-lang="es">Uno de los tres jefes de la campaña cierra la secuencia.</p><p data-lang="vi">Một trong ba trùm của cốt truyện khép lại chuỗi trận.</p>
+          <p data-lang="pt">Um dos quatro chefes fecha a sequência.</p><p data-lang="en">One of four bosses closes the run.</p><p data-lang="es">Uno de los cuatro jefes cierra la secuencia.</p><p data-lang="vi">Một trong bốn trùm khép lại chuỗi trận.</p>
           <div class="fase-duelistas">
             <span class="fase-duelista"><img src="img/Npcs/heishin0.webp" alt="Heishin" loading="lazy" width="44" height="44">Heishin</span>
             <span class="fase-duelista"><img src="img/Npcs/setofinal0.webp" alt="Seto Final" loading="lazy" width="44" height="44">Seto Final</span>
             <span class="fase-duelista"><img src="img/Npcs/zorc0.webp" alt="Zorc" loading="lazy" width="44" height="44">Zorc</span>
+            <span class="fase-duelista"><img src="img/Npcs/ZaneTruesdale0.webp" alt="Zane Truesdale" loading="lazy" width="44" height="44">Zane Truesdale</span>
           </div>
-        <div class="boss-temp">
-          <img src="img/torneio/zane-truesdale.webp" alt="Zane Truesdale" loading="lazy" width="440" height="440">
-          <div>
-            <span class="boss-temp-selo" data-lang="pt">Boss temporário</span><span class="boss-temp-selo" data-lang="en">Temporary boss</span><span class="boss-temp-selo" data-lang="es">Jefe temporal</span><span class="boss-temp-selo" data-lang="vi">Trùm tạm thời</span>
-            <h4>Zane Truesdale</h4>
-            <p data-lang="pt">Entra no sorteio do duelo 10, ao lado de Heishin, Seto Final e Zorc — mas só enquanto o booster Cyber Dragon estiver ativo na loja. Fora dessa janela, o Boss volta a ser sorteado apenas entre os três.</p><p data-lang="en">Joins the duel 10 draw alongside Heishin, Seto Final and Zorc — but only while the Cyber Dragon booster is live in the shop. Outside that window, the Boss is drawn from the three again.</p><p data-lang="es">Entra en el sorteo del duelo 10, junto a Heishin, Seto Final y Zorc — pero solo mientras el booster Cyber Dragon esté activo en la tienda. Fuera de esa ventana, el Jefe vuelve a sortearse solo entre los tres.</p><p data-lang="vi">Tham gia bốc thăm trận 10, cùng Heishin, Seto Final và Zorc — nhưng chỉ khi booster Cyber Dragon còn hoạt động trong cửa hàng. Ngoài khoảng đó, Trùm lại chỉ được rút từ ba người.</p>
-          </div>
-        </div>
-
         </div>
       </div>
     </div>
@@ -1431,11 +1423,20 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
       </div>
       <div class="sombrio-card" role="button" tabindex="0" onclick="abrirDeck('black_luster_valkyrie')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirDeck('black_luster_valkyrie')}">
-        <span class="sombrio-etapa" data-lang="pt">Duelo 2 · fixo</span><span class="sombrio-etapa" data-lang="en">Duel 2 · fixed</span><span class="sombrio-etapa" data-lang="es">Duelo 2 · fijo</span><span class="sombrio-etapa" data-lang="vi">Trận 2 · cố định</span>
+        <span class="sombrio-etapa" data-lang="pt">Duelo 2 · sorteado</span><span class="sombrio-etapa" data-lang="en">Duel 2 · drawn</span><span class="sombrio-etapa" data-lang="es">Duelo 2 · sorteado</span><span class="sombrio-etapa" data-lang="vi">Trận 2 · ngẫu nhiên</span>
         <img src="img/torneio/black-luster-valkyrie.webp" alt="Black Luster Valkyrie" loading="lazy" width="440" height="660">
         <div class="sombrio-info">
           <div class="sombrio-nome">Black Luster Valkyrie</div>
-          <div class="sombrio-papel" data-lang="pt">Sempre a segunda</div><div class="sombrio-papel" data-lang="en">Always second</div><div class="sombrio-papel" data-lang="es">Siempre la segunda</div><div class="sombrio-papel" data-lang="vi">Luôn là người thứ hai</div>
+          <div class="sombrio-papel" data-lang="pt">Uma das duas</div><div class="sombrio-papel" data-lang="en">One of two</div><div class="sombrio-papel" data-lang="es">Una de las dos</div><div class="sombrio-papel" data-lang="vi">Một trong hai</div>
+        </div>
+        <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
+      </div>
+      <div class="sombrio-card" role="button" tabindex="0" onclick="abrirDeck('azula_the_dragon_ruler')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirDeck('azula_the_dragon_ruler')}">
+        <span class="sombrio-etapa" data-lang="pt">Duelo 2 · sorteado</span><span class="sombrio-etapa" data-lang="en">Duel 2 · drawn</span><span class="sombrio-etapa" data-lang="es">Duelo 2 · sorteado</span><span class="sombrio-etapa" data-lang="vi">Trận 2 · ngẫu nhiên</span>
+        <img src="img/torneio/azula-the-dragon-ruler.webp" alt="Azula, The Dragon Ruler" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Azula, The Dragon Ruler</div>
+          <div class="sombrio-papel" data-lang="pt">Uma das duas</div><div class="sombrio-papel" data-lang="en">One of two</div><div class="sombrio-papel" data-lang="es">Una de las dos</div><div class="sombrio-papel" data-lang="vi">Một trong hai</div>
         </div>
         <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
       </div>
@@ -1471,7 +1472,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <img src="img/torneio/azzazel.webp" alt="Azzazel, Arquiduque Infernal" loading="lazy" width="440" height="660">
         <div class="sombrio-info">
           <div class="sombrio-nome">Azzazel, Arquiduque Infernal</div>
-          <div class="sombrio-papel" data-lang="pt">Um dos quatro</div><div class="sombrio-papel" data-lang="en">One of four</div><div class="sombrio-papel" data-lang="es">Uno de los cuatro</div><div class="sombrio-papel" data-lang="vi">Một trong bốn</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos cinco</div><div class="sombrio-papel" data-lang="en">One of five</div><div class="sombrio-papel" data-lang="es">Uno de los cinco</div><div class="sombrio-papel" data-lang="vi">Một trong năm</div>
         </div>
         <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
       </div>
@@ -1480,7 +1481,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <img src="img/torneio/seto-corrupted.webp" alt="Seto Corrupted" loading="lazy" width="440" height="660">
         <div class="sombrio-info">
           <div class="sombrio-nome">Seto Corrupted</div>
-          <div class="sombrio-papel" data-lang="pt">Um dos quatro</div><div class="sombrio-papel" data-lang="en">One of four</div><div class="sombrio-papel" data-lang="es">Uno de los cuatro</div><div class="sombrio-papel" data-lang="vi">Một trong bốn</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos cinco</div><div class="sombrio-papel" data-lang="en">One of five</div><div class="sombrio-papel" data-lang="es">Uno de los cinco</div><div class="sombrio-papel" data-lang="vi">Một trong năm</div>
         </div>
         <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
       </div>
@@ -1489,7 +1490,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <img src="img/torneio/kiram-overlord.webp" alt="Kiram Overlord" loading="lazy" width="440" height="660">
         <div class="sombrio-info">
           <div class="sombrio-nome">Kiram Overlord</div>
-          <div class="sombrio-papel" data-lang="pt">Um dos quatro</div><div class="sombrio-papel" data-lang="en">One of four</div><div class="sombrio-papel" data-lang="es">Uno de los cuatro</div><div class="sombrio-papel" data-lang="vi">Một trong bốn</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos cinco</div><div class="sombrio-papel" data-lang="en">One of five</div><div class="sombrio-papel" data-lang="es">Uno de los cinco</div><div class="sombrio-papel" data-lang="vi">Một trong năm</div>
         </div>
         <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
       </div>
@@ -1498,7 +1499,16 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <img src="img/torneio/regart-high-darklord.webp" alt="Regart, The High Darklord" loading="lazy" width="440" height="660">
         <div class="sombrio-info">
           <div class="sombrio-nome">Regart, The High Darklord</div>
-          <div class="sombrio-papel" data-lang="pt">Um dos quatro</div><div class="sombrio-papel" data-lang="en">One of four</div><div class="sombrio-papel" data-lang="es">Uno de los cuatro</div><div class="sombrio-papel" data-lang="vi">Một trong bốn</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos cinco</div><div class="sombrio-papel" data-lang="en">One of five</div><div class="sombrio-papel" data-lang="es">Uno de los cinco</div><div class="sombrio-papel" data-lang="vi">Một trong năm</div>
+        </div>
+        <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
+      </div>
+      <div class="sombrio-card" role="button" tabindex="0" onclick="abrirDeck('spectre_of_the_pharaoh')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirDeck('spectre_of_the_pharaoh')}">
+        <span class="sombrio-etapa" data-lang="pt">Chefe · sorteado</span><span class="sombrio-etapa" data-lang="en">Boss · drawn</span><span class="sombrio-etapa" data-lang="es">Jefe · sorteado</span><span class="sombrio-etapa" data-lang="vi">Trùm · ngẫu nhiên</span>
+        <img src="img/torneio/spectre-of-the-pharaoh.webp" alt="Spectre of the Pharaoh" loading="lazy" width="440" height="660">
+        <div class="sombrio-info">
+          <div class="sombrio-nome">Spectre of the Pharaoh</div>
+          <div class="sombrio-papel" data-lang="pt">Um dos cinco</div><div class="sombrio-papel" data-lang="en">One of five</div><div class="sombrio-papel" data-lang="es">Uno de los cinco</div><div class="sombrio-papel" data-lang="vi">Một trong năm</div>
         </div>
         <span class="ver-deck" data-lang="pt">Ver deck</span><span class="ver-deck" data-lang="en">View deck</span><span class="ver-deck" data-lang="es">Ver mazo</span><span class="ver-deck" data-lang="vi">Xem bộ bài</span>
       </div>
@@ -1541,12 +1551,14 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <div class="feature-title" data-lang="pt">4 duelos, sem parar</div>
         <div class="feature-title" data-lang="en">4 duels, no stopping</div><div class="feature-title" data-lang="es">4 duelos, sin parar</div><div class="feature-title" data-lang="vi">4 trận liên tiếp</div>
         <ul class="feature-list">
-          <li data-lang="pt">Great Shadow Magus e Black Luster Valkyrie, sempre nessa ordem</li>
-          <li data-lang="en">Great Shadow Magus and Black Luster Valkyrie, always in that order</li><li data-lang="es">Great Shadow Magus y Black Luster Valkyrie, siempre en ese orden</li><li data-lang="vi">Great Shadow Magus và Black Luster Valkyrie, luôn theo thứ tự đó</li>
-          <li data-lang="pt">Um duelista sorteado entre Poseidon, King of the Oceans e Lord D. Saurian</li>
-          <li data-lang="en">A duelist drawn from Poseidon, King of the Oceans and Lord D. Saurian</li><li data-lang="es">Un duelista sorteado entre Poseidon, King of the Oceans y Lord D. Saurian</li><li data-lang="vi">Một đấu thủ ngẫu nhiên trong Poseidon, King of the Oceans và Lord D. Saurian</li>
-          <li data-lang="pt">Um chefe final sorteado entre Kiram Overlord, Seto Corrupted e Azzazel, Arquiduque Infernal</li>
-          <li data-lang="en">A final boss drawn from Kiram Overlord, Seto Corrupted, and Azzazel, Archduke of Hell</li><li data-lang="es">Un jefe final sorteado entre Kiram Overlord, Seto Corrupted y Azzazel, Archiduque Infernal</li><li data-lang="vi">Một trùm cuối ngẫu nhiên trong Kiram Overlord, Seto Corrupted và Azzazel, Đại Công Tước Địa Ngục</li>
+          <li data-lang="pt">Great Shadow Magus sempre abre o portal</li>
+          <li data-lang="en">Great Shadow Magus always opens the portal</li><li data-lang="es">Great Shadow Magus siempre abre el portal</li><li data-lang="vi">Great Shadow Magus luôn mở cổng</li>
+          <li data-lang="pt">Duelo 2 sorteado entre Black Luster Valkyrie e Azula, The Dragon Ruler</li>
+          <li data-lang="en">Duel 2 drawn from Black Luster Valkyrie and Azula, The Dragon Ruler</li><li data-lang="es">Duelo 2 sorteado entre Black Luster Valkyrie y Azula, The Dragon Ruler</li><li data-lang="vi">Trận 2 ngẫu nhiên giữa Black Luster Valkyrie và Azula, The Dragon Ruler</li>
+          <li data-lang="pt">Duelo 3 sorteado entre Poseidon, King of the Oceans, Lord D. Saurian e Ignis</li>
+          <li data-lang="en">Duel 3 drawn from Poseidon, King of the Oceans, Lord D. Saurian and Ignis</li><li data-lang="es">Duelo 3 sorteado entre Poseidon, King of the Oceans, Lord D. Saurian e Ignis</li><li data-lang="vi">Trận 3 ngẫu nhiên trong Poseidon, King of the Oceans, Lord D. Saurian và Ignis</li>
+          <li data-lang="pt">Chefe final sorteado entre Kiram Overlord, Seto Corrupted, Azzazel, Regart e Spectre of the Pharaoh</li>
+          <li data-lang="en">Final boss drawn from Kiram Overlord, Seto Corrupted, Azzazel, Regart and Spectre of the Pharaoh</li><li data-lang="es">Jefe final sorteado entre Kiram Overlord, Seto Corrupted, Azzazel, Regart y Spectre of the Pharaoh</li><li data-lang="vi">Trùm cuối ngẫu nhiên trong Kiram Overlord, Seto Corrupted, Azzazel, Regart và Spectre of the Pharaoh</li>
         </ul>
       </div>
       <div class="feature-card">
