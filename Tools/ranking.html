@@ -1145,7 +1145,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
     <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
     <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
-    <a href="#" data-lang="pt">Ranking</a><a href="#" data-lang="en">Leaderboard</a><a href="#" data-lang="es">Ranking</a><a href="#" data-lang="vi">Bảng xếp hạng</a>
+
+    <a href="ranking.html" data-lang="pt">Ranking</a><a href="ranking.html" data-lang="en">Leaderboard</a><a href="ranking.html" data-lang="es">Ranking</a><a href="ranking.html" data-lang="vi">Bảng xếp hạng</a>
     <a href="loja.html?v=p04" data-lang="pt">Loja</a><a href="loja.html?v=p04" data-lang="en">Store</a><a href="loja.html?v=p04" data-lang="es">Tienda</a><a href="loja.html?v=p04" data-lang="vi">Cửa hàng</a>
     <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
       <a href="ativar_dispositivo.html" data-lang="pt">Ativar dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate device</a><a href="ativar_dispositivo.html" data-lang="es">Activar dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị</a><a href="suporte.html" data-lang="pt">Suporte</a><a href="suporte.html" data-lang="en">Support</a><a href="suporte.html" data-lang="es">Soporte</a><a href="suporte.html" data-lang="vi">Hỗ trợ</a>
@@ -1529,8 +1530,10 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     } catch (e) { return iso; }
   }
 
-  /* Avatar: foto escolhida no perfil (torneios) ou monograma com a cor da tag
-     (PVP, que so publica nome e tag). */
+  /* Avatar: a foto escolhida no perfil do jogo (img/avatar/, exportada do jogo
+     por Tools/exportar_avatares_site.py). Sem avatar conhecido (partida PVP
+     gravada antes de o servidor mandar o avatar, ou imagem que o site ainda nao
+     tem) cai num monograma com a cor da tag. */
   var PALETA = ['#e8b840', '#c9d1dc', '#cd8a4e', '#b98ad6', '#6fc3a6', '#e0836b', '#7fa6e0', '#d9c36a'];
   function corDe(s) { var h = 0; String(s).split('').forEach(function (c) { h = (h * 31 + c.charCodeAt(0)) >>> 0; }); return PALETA[h % PALETA.length]; }
   function monograma(nome, semente) {
@@ -1570,7 +1573,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     var d = st.pvp.dados; if (!d) return null;
     var tab = st.pvp.aba === 'temporada' && d.temporada ? d.temporada : d.geral;
     return ((tab && tab.linhas) || []).map(function (l) {
-      return { chave: String(l.nome) + '#' + String(l.tag), pos: l.posicao, nome: l.nome, tag: l.tag,
+      return { chave: String(l.nome) + '#' + String(l.tag), pos: l.posicao, nome: l.nome, tag: l.tag, avatar: l.avatar || '',
         v: l.vitorias | 0, d: l.derrotas | 0, e: l.empates | 0, p: l.partidas | 0 };
     });
   }
@@ -1656,7 +1659,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       if (modo === 'pvp') {
         var tx = l.p ? Math.round(l.v * 100 / l.p) : 0;
         html += '<div class="' + cls + '">' + (i === 0 ? coroa() : '') + '<div class="rk-degrau-pos">' + ordinal(pos) + '</div>'
-          + monograma(l.nome, l.tag) + '<div class="rk-degrau-nome" title="' + esc(l.nome) + '">' + esc(l.nome) + '</div>'
+          + avatarHtml(l, l.tag) + '<div class="rk-degrau-nome" title="' + esc(l.nome) + '">' + esc(l.nome) + '</div>'
           + '<div class="rk-degrau-tag">#' + esc(l.tag) + '</div>'
           + '<div class="rk-degrau-valor">' + num(l.v) + '</div><div class="rk-degrau-rot">' + tr('vitorias') + '</div>'
           + '<div class="rk-degrau-extra">' + num(l.v) + ' – ' + num(l.d) + ' · ' + tx + '%</div></div>';
@@ -1721,7 +1724,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       if (modo === 'pvp') {
         var tx = l.p ? Math.round(l.v * 100 / l.p) : 0;
         return '<div class="' + classe + '"><span class="rk-pos' + med + '">' + l.pos + deltaHtml(modo, chaveAba, l.chave) + '</span>'
-          + '<span class="rk-jog">' + monograma(l.nome, l.tag) + '<span class="rk-jog-txt"><div class="rk-jog-nome">' + esc(l.nome)
+          + '<span class="rk-jog">' + avatarHtml(l, l.tag) + '<span class="rk-jog-txt"><div class="rk-jog-nome">' + esc(l.nome)
           + ' <span class="rk-jog-tag">#' + esc(l.tag) + '</span></div></span></span>'
           + '<span class="rk-num rk-v">' + num(l.v) + '</span><span class="rk-num">' + num(l.d) + '</span>'
           + '<span class="rk-num rk-col-part" title="' + (l.e ? esc(l.e === 1 ? tr('empate1') : tr('empates', { n: num(l.e) })) : '') + '">' + num(l.p) + '</span>'
