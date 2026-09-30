@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1790255624",
+  "versao": "1790727790",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -6025,7 +6025,7 @@
     {
       "id": "especial_black_luster_soldier",
       "tipo_label": "BLACK LUSTER SOLDIER",
-      "nome_pt": "Lusto Negro",
+      "nome_pt": "Black Luster Soldier",
       "nome_en": "Black Luster Soldier",
       "nome_es": "Black Luster Soldier",
       "nome_vi": "Black Luster Soldier",
