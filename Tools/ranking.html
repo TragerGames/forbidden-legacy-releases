@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
+<head>
+<script>
+/* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
+   escreve no <html>: o <body> ainda não existe neste ponto do parse.
+   data-idiomas lista o que ESTA página tem traduzido; pedir um idioma
+   fora da lista cai no inglês, para nunca existir meia página vazia. */
+(function () {
+  var raiz = document.documentElement;
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  var escolhido = null;
+  try { escolhido = localStorage.getItem('fl_lang'); } catch (e) {}
+  if (!escolhido) {
+    var nav = (navigator.language || 'pt').slice(0, 2).toLowerCase();
+    escolhido = ({ pt: 'pt', en: 'en', es: 'es', vi: 'vi' })[nav] || 'en';
+  }
+  if (sup.indexOf(escolhido) < 0) escolhido = sup.indexOf('en') >= 0 ? 'en' : sup[0];
+  raiz.setAttribute('data-lang-ativo', escolhido);
+  raiz.setAttribute('lang', { pt: 'pt-BR', en: 'en', es: 'es', vi: 'vi' }[escolhido] || 'pt-BR');
+})();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forbidden Legacy — Ranking</title>
+<meta name="description" content="Ranking ao vivo do Forbidden Legacy: quem mais venceu na Arena PVP e nos torneios do Championship (Normal, Lendário e Sombrio).">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/ranking.html">
+<meta property="og:title" content="Forbidden Legacy — Ranking">
+<meta property="og:description" content="Quem mais venceu na Arena PVP e no Championship. Atualizado ao vivo.">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"    content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/ranking.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --gold:       #c8973a;
+  --gold-light: #e8b840;
+  --gold-dim:   #7a5a18;
+  --dark:       #09080a;
+  --dark2:      #0d0b0e;
+  --dark3:      #120e12;
+  --border:     rgba(200,151,58,.13);
+  --text-muted: #6a5830;
+  --text-body:  #9a8050;
+  --purple:     #9b59b6;
+  --purple-dim: rgba(155,89,182,.35);
+  --danger:     #c0392b;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', 'Segoe UI', sans-serif; background: var(--dark); color: var(--text-body); min-height:100vh; overflow-x:hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 40px;
+  background: rgba(9,8,10,0);
+  border-bottom: 1px solid transparent;
+  transition: background .35s, border-color .35s;
+}
+nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo img { height: 36px; width: auto; }
+.nav-logo-fallback {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: 3px; color: var(--gold);
+  text-shadow: 0 0 16px rgba(200,151,58,.4);
+}
+.nav-links { display: flex; gap: 20px; align-items: center; }
+.nav-links a { font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted); text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold-light); }
+.nav-cta {
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 2px;
+  color: var(--dark); background: var(--gold); padding: 7px 20px; border-radius: 2px; transition: background .2s;
+}
+.nav-cta:hover { background: var(--gold-light); }
+.topbar-right { display: flex; gap: 8px; align-items: center; }
+.lang-btn {
+  background: transparent; border: 1px solid var(--gold-dim); color: var(--text-muted);
+  padding: 4px 10px; border-radius: 3px; cursor: pointer; font-size: 11px; letter-spacing: 1px;
+  transition: all .2s; font-family: 'Inter', sans-serif;
+}
+.lang-btn.active { border-color: var(--gold); color: var(--gold); }
+.discord-nav-badge { display:none; align-items:center; gap:5px; font-size:10px; color:#7289da; text-decoration:none; border:1px solid rgba(88,101,242,0.3); border-radius:3px; padding:4px 9px; background:rgba(88,101,242,0.08); transition:background .2s; }
+.discord-nav-badge:hover { background:rgba(88,101,242,0.18); color:#99aaf5; }
+.dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+.dc-dot.online  { background:#3ba55c; }
+.dc-dot.offline { background:#747f8d; }
+
+.mobile-nav-bar { display:none; position:fixed; top:52px; left:0; right:0; z-index:198; background:rgba(5,3,1,.97); border-bottom:1px solid var(--border); backdrop-filter:blur(8px); flex-direction:column; }
+.mobile-discord-bar { display:flex; align-items:center; justify-content:center; gap:6px; padding:5px 16px; background:rgba(88,101,242,.07); border-bottom:1px solid rgba(88,101,242,.15); font-size:11px; color:#7289da; text-decoration:none; letter-spacing:.3px; }
+.mobile-nav-links { display:flex; overflow-x:auto; gap:0; scrollbar-width:none; -ms-overflow-style:none; }
+.mobile-nav-links::-webkit-scrollbar { display:none; }
+.mobile-nav-links a { flex-shrink:0; padding:10px 16px; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); text-decoration:none; border-right:1px solid var(--border); white-space:nowrap; transition:color .2s, background .2s; }
+.mobile-nav-links a:hover { color:var(--gold); background:rgba(200,144,32,.06); }
+.mobile-nav-links a.nav-cta { color:var(--gold-light); }
+@media(max-width:700px) {
+  nav { padding:12px 20px; }
+  .nav-links, nav .nav-cta { display:none !important; }
+  .mobile-nav-bar { display:flex; }
+  main, .page-hero { padding-top:96px !important; }
+}
+/* -- Barra do topo: menus agrupados (2026-09-23) -----------------
+   Antes eram 12 links soltos e a barra precisava de ~1500px: em tela de
+   notebook os nomes quebravam em duas linhas, encostavam na logo e o botao
+   FOUNDER saia da tela. Agora sao 4 menus + Loja. A barra rolavel do celular
+   continua com a lista inteira e assume abaixo de 1000px. */
+.nav-links{flex-wrap:nowrap;gap:24px}
+.nav-links a{white-space:nowrap}
+.nav-logo{flex-shrink:0}
+nav#nav{gap:16px}
+nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
+.nav-grupo{position:relative}
+.nav-grupo-bt{display:flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--muted);padding:8px 0;transition:color .2s}
+.nav-grupo-bt:hover,.nav-grupo.aberto .nav-grupo-bt,.nav-grupo.tem-ativo .nav-grupo-bt{color:var(--gold)}
+.nav-caret{width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;
+  transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s;opacity:.7}
+.nav-grupo.aberto .nav-caret{transform:rotate(225deg) translate(-3px,-3px)}
+.nav-drop{position:absolute;top:calc(100% + 10px);left:-14px;min-width:238px;z-index:5;
+  display:none;flex-direction:column;padding:8px;background:rgba(9,8,10,.985);
+  border:1px solid rgba(200,151,58,.22);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.nav-drop::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.nav-grupo.aberto .nav-drop{display:flex}
+.nav-drop a{display:flex;flex-direction:column;gap:2px;padding:9px 12px;
+  font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#c3b189;
+  border-left:2px solid transparent;transition:background .18s,color .18s,border-color .18s}
+.nav-drop a:hover,.nav-drop a:focus-visible{background:rgba(200,151,58,.09);color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a.ativo{color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a small{font-size:10.5px;letter-spacing:.2px;text-transform:none;color:var(--muted);opacity:.85}
+.nav-solo{font-size:10px;letter-spacing:1.5px}
+.nav-solo.ativo{color:var(--gold)}
+@media(hover:hover){.nav-grupo:hover .nav-drop{display:flex}.nav-grupo:hover .nav-grupo-bt{color:var(--gold)}}
+@media(max-width:1000px){
+  .nav-links,nav#nav .nav-cta,.discord-nav-badge{display:none!important}
+  .mobile-nav-bar{display:flex}
+  main, .page-hero { padding-top:96px !important; }
+}
+
+
+
+
+
+
+
+/* ── HERO ── */
+.page-hero {
+  padding: 130px 20px 64px; text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(to bottom, rgba(9,8,10,0) 30%, var(--dark) 100%),
+              radial-gradient(ellipse at 50% 20%, rgba(155,89,182,.14) 0%, transparent 55%),
+              radial-gradient(ellipse at 50% 40%, rgba(200,151,58,.10) 0%, transparent 70%);
+  position: relative; overflow:hidden;
+}
+.page-hero::before {
+  content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:1px; height:80px;
+  background:linear-gradient(180deg,transparent,rgba(200,151,58,.25),transparent);
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:10px;
+  border:1px solid rgba(200,151,58,.3);
+  background:rgba(15,10,5,.85);
+  padding:8px 18px; font-size:10px; letter-spacing:3px; text-transform:uppercase;
+  color:var(--gold-dim); margin-bottom:26px;
+  backdrop-filter:blur(8px);
+}
+.hero-badge-dot { width:6px; height:6px; border-radius:50%; background:#42d987; flex-shrink:0; animation:greenPulse 2s ease-in-out infinite; }
+@keyframes greenPulse { 0%,100%{box-shadow:0 0 0 0 rgba(66,217,135,.4)} 50%{box-shadow:0 0 0 8px rgba(66,217,135,0)} }
+.page-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px,7vw,84px); color: var(--gold); letter-spacing:2px;
+  text-shadow: 0 0 40px rgba(200,151,58,.3), 0 0 90px rgba(155,89,182,.15); margin-bottom:10px;
+  line-height: .95;
+}
+.page-hero-sub { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:24px; }
+.page-hero-desc { max-width:640px; margin:0 auto 30px; font-size:15px; line-height:1.85; color:var(--text-muted); }
+.hero-requisitos {
+  display:inline-flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:8px;
+}
+.req-chip {
+  display:inline-flex; align-items:center; gap:7px;
+  border:1px solid rgba(200,151,58,.25); background:rgba(200,151,58,.06);
+  color:var(--gold-light); padding:8px 16px; font-size:11px; letter-spacing:1.2px; text-transform:uppercase;
+  border-radius:3px;
+}
+.req-chip .ic { font-size:13px; }
+
+/* ── CONTEÚDO ── */
+.page-content { max-width:1100px; margin:0 auto; padding:72px 20px 80px; }
+.section-label { text-align:center; font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:12px; }
+.section-title {
+  text-align:center; font-family:'Bebas Neue',sans-serif;
+  font-size:34px; color:var(--gold); letter-spacing:1px; margin-bottom:14px;
+}
+.section-title::after { content:''; display:block; width:48px; height:2px; background:var(--gold); margin:10px auto 0; }
+.section-sub { text-align:center; font-size:14px; color:var(--text-muted); line-height:1.75; max-width:600px; margin:0 auto 44px; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ── FEATURE CARDS ── */
+.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:20px; }
+.features-grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.feature-card {
+  background:var(--dark2); border:1px solid var(--border);
+  border-radius:4px; padding:26px 22px;
+  transition:border-color .25s; position:relative; overflow:hidden;
+}
+.feature-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(200,151,58,.25),transparent);
+}
+.feature-card:hover { border-color:rgba(200,151,58,.28); }
+.feature-icon { font-size:24px; margin-bottom:12px; }
+.feature-title { font-size:14px; font-weight:600; color:var(--gold-light); margin-bottom:14px; letter-spacing:.5px; }
+.feature-list { list-style:none; }
+.feature-list li { font-size:13px; color:var(--text-muted); line-height:1.7; padding:2px 0; }
+.feature-list li::before { content:'▸ '; color:var(--gold-dim); }
+
+/* ── PASSO A PASSO NUMERADO ── */
+
+/* ── RESTRIÇÃO WARNING ── */
+.warn-banner {
+  background:rgba(200,48,16,.06); border:1px solid rgba(180,60,20,.28);
+  border-radius:4px; padding:22px 26px; margin-top:24px;
+  display:flex; gap:16px; align-items:flex-start;
+}
+.warn-icon { font-size:22px; flex-shrink:0; }
+.warn-text { font-size:13px; color:#c08060; line-height:1.75; }
+.warn-text strong { color:#e0a070; }
+
+/* ── PENALIDADE ── */
+.penalty-step strong { color:var(--gold-light); }
+.penalty-arrow { color:var(--gold-dim); font-size:16px; }
+
+/* ── PACK-STYLE REWARD CARDS ── */
+.rewards-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-bottom:8px; border:1px solid rgba(200,151,58,.08); }
+.reward-card { position:relative; background:var(--dark2); padding:34px 28px; border-right:1px solid rgba(200,151,58,.06); }
+.reward-card:last-child { border-right:none; }
+.reward-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--tier-color, var(--gold)); opacity:.75; }
+.reward-card.normal { --tier-color:#8ab4cc; }
+.reward-card.legendary { background:linear-gradient(180deg, rgba(212,168,67,.06), var(--dark2) 40%); }
+.reward-tier-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--tier-color); font-weight:700; margin-bottom:6px; }
+.reward-chance { font-size:11px; color:var(--text-muted); margin-bottom:18px; }
+.reward-title { font-family:'Bebas Neue',sans-serif; font-size:28px; color:#fff; letter-spacing:1px; margin-bottom:18px; }
+.reward-list { list-style:none; margin-bottom:6px; }
+.reward-list li { font-size:13px; color:var(--text-muted); line-height:2; padding-left:22px; position:relative; }
+.reward-list li::before { content:'✦'; position:absolute; left:0; color:var(--tier-color); font-size:11px; top:6px; }
+.reward-list li strong { color:#f0dcae; }
+.reward-list li.plus strong { color:var(--purple); }
+
+/* ── DIVINE BEASTS SHOWCASE ── */
+.divine-section { margin-top:64px; text-align:center; }
+/* 210 px e a largura da capa do Championship logo acima: duas artes
+   do mesmo tipo, na mesma pagina, com tamanhos diferentes pareciam
+   erro de escala. */
+.divine-grid { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin:36px auto 0; }
+.divine-card { width:210px; }
+.divine-card { position:relative; }
+.divine-card img {
+  /* height:auto e obrigatorio: sem ele o atributo height="1536" do HTML
+     vale como altura CSS e o aspect-ratio abaixo e ignorado. */
+  width:100%; height:auto; aspect-ratio:2/3; object-fit:cover; border-radius:6px;
+  border:1px solid rgba(155,89,182,.3);
+  box-shadow:0 0 30px rgba(155,89,182,.12);
+  transition:transform .3s, box-shadow .3s;
+}
+.divine-card:hover img { transform:translateY(-6px); box-shadow:0 12px 40px rgba(155,89,182,.25); }
+.divine-card-name { margin-top:12px; font-family:'Bebas Neue',sans-serif; font-size:14px; letter-spacing:1px; color:var(--gold-light); }
+.divine-note {
+  max-width:640px; margin:32px auto 0; font-size:13px; color:var(--text-muted); line-height:1.8;
+  background:rgba(155,89,182,.05); border:1px solid var(--purple-dim); border-radius:4px; padding:18px 22px;
+}
+.divine-note strong { color:var(--purple); }
+
+/* ── CTA FINAL ── */
+.final-cta {
+  text-align:center; margin-top:70px; padding:50px 30px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(200,151,58,.08) 0%, transparent 65%);
+  border:1px solid var(--border); border-radius:6px;
+}
+.final-cta-title { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--gold); letter-spacing:1px; margin-bottom:14px; }
+.final-cta-text { font-size:14px; color:var(--text-muted); max-width:520px; margin:0 auto 26px; line-height:1.8; }
+.btn-primary {
+  position:relative; overflow:hidden;
+  font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:3px;
+  color:var(--dark); background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  padding:14px 40px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:10px;
+  clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+  transition:filter .2s;
+}
+.btn-primary::after {
+  content:''; position:absolute; top:0; left:-100%; width:60%; height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  animation:shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer { 0%{left:-100%} 55%,100%{left:150%} }
+.btn-primary:hover { filter:brightness(1.12); }
+
+/* ── LANG ── */
+
+/* ══════════════ CHAMPIONSHIP — SECOES DETALHADAS ══════════════ */
+
+/* Numero grande como ancora da secao: o olho pousa nele antes de ler. */
+.big-stat { font-family:'Bebas Neue',sans-serif; font-size:clamp(52px,9vw,104px);
+  line-height:.92; letter-spacing:1px; color:var(--gold-light);
+  text-shadow:0 0 40px rgba(212,168,67,.18); }
+.big-stat.roxo { color:var(--purple); text-shadow:0 0 40px rgba(155,89,182,.22); }
+.big-stat-sub { font-size:13px; letter-spacing:2.4px; text-transform:uppercase;
+  color:var(--text-muted); margin-top:6px; }
+
+/* ── A JORNADA: 4 fases ─────────────────────────────────────────── */
+.fases { display:flex; flex-direction:column; gap:14px; max-width:940px; margin:40px auto 0; }
+.fase {
+  display:grid; grid-template-columns:104px 1fr; gap:22px; align-items:center;
+  background:linear-gradient(90deg, rgba(212,168,67,.05), rgba(212,168,67,.01));
+  border:1px solid var(--border); border-left:2px solid var(--gold-dim);
+  border-radius:8px; padding:20px 24px;
+  transition:border-color .25s, background .25s;
+}
+.fase:hover { border-left-color:var(--gold); background:linear-gradient(90deg, rgba(212,168,67,.09), rgba(212,168,67,.02)); }
+.fase.boss { border-left-color:#b0342c; background:linear-gradient(90deg, rgba(176,52,44,.08), rgba(176,52,44,.01)); }
+.fase.boss:hover { border-left-color:#e0483c; }
+.fase-num { font-family:'Bebas Neue',sans-serif; font-size:34px; line-height:1;
+  color:var(--gold); letter-spacing:1px; }
+.fase.boss .fase-num { color:#e0483c; }
+.fase-num small { display:block; font-family:'Inter',sans-serif; font-size:10px;
+  letter-spacing:1.8px; text-transform:uppercase; color:var(--text-muted); margin-top:5px; }
+.fase-corpo h3 { font-family:'Bebas Neue',sans-serif; font-size:19px; letter-spacing:1.2px;
+  color:var(--gold-light); margin:0 0 4px; }
+.fase-corpo p { font-size:13px; color:var(--text-muted); margin:0 0 12px; line-height:1.6; }
+.fase-duelistas { display:flex; flex-wrap:wrap; gap:7px; }
+.fase-duelista { display:flex; align-items:center; gap:9px;
+  background:rgba(0,0,0,.3); border:1px solid var(--border); border-radius:26px;
+  padding:5px 15px 5px 5px; font-size:12.5px; color:var(--text-body);
+  transition:border-color .2s, background .2s; }
+.fase-duelista:hover { border-color:rgba(212,168,67,.4); background:rgba(212,168,67,.06); }
+/* 44 px: em 24 px nao dava para reconhecer o duelista, que e o unico
+   motivo de o retrato estar ali. */
+.fase-duelista img { width:44px; height:44px; border-radius:50%; object-fit:cover;
+  object-position:top center; flex-shrink:0; border:1px solid rgba(212,168,67,.22); }
+@media (max-width:640px){
+  .fase { grid-template-columns:1fr; gap:12px; padding:18px; }
+}
+
+/* ── PUNICOES ───────────────────────────────────────────────────── */
+.pun-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:14px; max-width:1000px; margin:40px auto 0; }
+.pun-card {
+  background:rgba(255,255,255,.015); border:1px solid var(--border);
+  border-radius:8px; padding:22px 20px; position:relative; overflow:hidden;
+  transition:border-color .25s, transform .25s;
+}
+.pun-card:hover { border-color:rgba(212,168,67,.4); transform:translateY(-3px); }
+/* faixa lateral: cor separa o que restringe carta do que dana com o tempo */
+.pun-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
+  background:var(--gold-dim); }
+.pun-card.dano::before { background:#b0342c; }
+.pun-nome { font-family:'Bebas Neue',sans-serif; font-size:17px; letter-spacing:1.1px;
+  color:var(--gold-light); margin-bottom:8px; }
+.pun-card.dano .pun-nome { color:#e8776c; }
+.pun-desc { font-size:12.5px; color:var(--text-muted); line-height:1.65; }
+
+/* ── CHANCES / PITY ─────────────────────────────────────────────── */
+.chances { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px; max-width:900px; margin:44px auto 0; }
+.chance-card { background:rgba(255,255,255,.02); border:1px solid var(--border);
+  border-radius:10px; padding:28px 26px; }
+.chance-card.roxo { border-color:var(--purple-dim); background:rgba(155,89,182,.04); }
+.chance-topo { display:flex; align-items:baseline; gap:10px; margin-bottom:4px; }
+.chance-de { font-family:'Bebas Neue',sans-serif; font-size:46px; line-height:1; color:var(--gold-light); }
+.chance-card.roxo .chance-de { color:var(--purple); }
+.chance-ate { font-size:14px; color:var(--text-muted); }
+.chance-nome { font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1.2px;
+  color:var(--text-body); margin-bottom:14px; }
+/* barra do pity: mostra o intervalo, nao um valor unico */
+.pity-barra { height:6px; border-radius:4px; background:rgba(255,255,255,.06);
+  position:relative; overflow:hidden; margin-bottom:12px; }
+.pity-fill { position:absolute; top:0; bottom:0; left:0;
+  background:linear-gradient(90deg,var(--gold-dim),var(--gold-light)); border-radius:4px; }
+.chance-card.roxo .pity-fill { background:linear-gradient(90deg,var(--purple-dim),var(--purple)); }
+.chance-nota { font-size:12.5px; color:var(--text-muted); line-height:1.65; }
+
+/* ── DUELISTAS DO SOMBRIO ───────────────────────────────────────── */
+.sombrio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:18px; max-width:1000px; margin:36px auto 0; }
+.sombrio-card {
+  position:relative; border-radius:10px; overflow:hidden;
+  border:1px solid var(--purple-dim); background:#0b0710;
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+}
+.sombrio-card:hover { transform:translateY(-5px); border-color:var(--purple);
+  box-shadow:0 14px 40px rgba(155,89,182,.28); }
+.sombrio-card img { width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
+  object-position:top center; display:block; }
+.sombrio-info { position:absolute; left:0; right:0; bottom:0; padding:32px 14px 13px;
+  background:linear-gradient(180deg, transparent, rgba(6,3,10,.93) 55%); }
+.sombrio-nome { font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:.9px;
+  color:#e8dcf5; line-height:1.15; }
+.sombrio-papel { font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase;
+  color:var(--purple); margin-top:3px; }
+/* etapa do confronto: fixo, sorteado ou chefe */
+@media (max-width:640px){
+  /* duas colunas no celular: em coluna unica os sete retratos somavam
+     nove telas de rolagem dentro da propria aba. */
+  .sombrio-grid { grid-template-columns:repeat(2,1fr); gap:12px; }
+  .sombrio-nome { font-size:13px; }
+  .sombrio-info { padding:26px 10px 10px; }
+  .premio-booster { width:132px; }
+}
+.sombrio-etapa { position:absolute; top:10px; left:10px; z-index:2;
+  background:rgba(6,3,10,.82); border:1px solid var(--purple-dim); border-radius:3px;
+  padding:3px 8px; font-size:9.5px; letter-spacing:1.3px; text-transform:uppercase;
+  color:var(--purple); }
+
+
+/* ── PREMIO DO SOMBRIO ──────────────────────────────────────────── */
+.premio-sombrio {
+  max-width:820px; margin:40px auto 0; padding:30px 28px;
+  background:linear-gradient(160deg, rgba(155,89,182,.09), rgba(155,89,182,.02));
+  border:1px solid var(--purple-dim); border-radius:12px;
+}
+.premio-sombrio-topo { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:6px; }
+.premio-valor { font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1; color:var(--purple); }
+.premio-valor small { font-family:'Inter',sans-serif; font-size:12px; letter-spacing:1.6px;
+  text-transform:uppercase; color:var(--text-muted); margin-left:5px; }
+.premio-lista { list-style:none; padding:0; margin:16px 0 0; }
+.premio-lista li { position:relative; padding:7px 0 7px 20px; font-size:13px;
+  color:var(--text-body); line-height:1.65; }
+.premio-lista li::before { content:'◆'; position:absolute; left:0; top:7px;
+  color:var(--purple); font-size:9px; }
+
+/* ── AMOSTRA DE BOOSTERS DO PREMIO ──────────────────────────────── */
+.premio-boosters { display:flex; justify-content:center; gap:16px; flex-wrap:wrap;
+  max-width:760px; margin:36px auto 0; }
+.premio-booster { width:160px; text-align:center; }
+.premio-booster img {
+  /* height:auto junto do aspect-ratio: sem ele o atributo height do HTML
+     vale como altura e a capa estica, que foi o bug das cartas divinas. */
+  width:100%; height:auto; aspect-ratio:2/3; object-fit:cover; border-radius:6px;
+  border:1px solid var(--border); box-shadow:0 6px 24px rgba(0,0,0,.5);
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+}
+.premio-booster:hover img { transform:translateY(-5px); border-color:rgba(212,168,67,.45);
+  box-shadow:0 14px 36px rgba(212,168,67,.18); }
+.premio-booster span { display:block; margin-top:9px; font-size:11px; letter-spacing:1.2px;
+  text-transform:uppercase; color:var(--text-muted); }
+
+
+/* ── INDICE DA PAGINA ───────────────────────────────────────────── */
+.indice {
+  position:sticky; top:56px; z-index:40;
+  display:flex; gap:6px; justify-content:center; flex-wrap:wrap;
+  padding:10px; margin:0 auto 8px; max-width:940px;
+  background:rgba(9,8,10,.92); backdrop-filter:blur(10px);
+  border:1px solid var(--border); border-radius:10px;
+}
+.indice a {
+  font-size:11px; letter-spacing:1.3px; text-transform:uppercase;
+  color:var(--text-muted); text-decoration:none; padding:7px 13px; border-radius:5px;
+  transition:color .2s, background .2s;
+}
+.indice a:hover { color:var(--gold-light); background:rgba(212,168,67,.09); }
+.indice a.aqui { color:var(--gold-light); background:rgba(212,168,67,.13); }
+@media (max-width:700px){ .indice { top:52px; gap:3px; padding:7px; }
+  .indice a { font-size:10px; padding:6px 9px; letter-spacing:.8px; } }
+
+/* ── FASES EM ABAS ──────────────────────────────────────────────── */
+.fase-abas { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:34px 0 20px; }
+.fase-aba {
+  background:rgba(212,168,67,.04); border:1px solid rgba(212,168,67,.18);
+  color:var(--text-muted); cursor:pointer; border-radius:6px; padding:9px 18px;
+  font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1.3px;
+  transition:border-color .2s, color .2s, background .2s;
+}
+.fase-aba:hover { border-color:rgba(212,168,67,.45); color:var(--gold-light); }
+.fase-aba.on { border-color:var(--gold); color:var(--gold-light); background:rgba(212,168,67,.12); }
+.fase-aba.boss.on { border-color:#e0483c; color:#e8776c; background:rgba(176,52,44,.12); }
+.fases { margin-top:0; }
+.fase[hidden] { display:none; }
+
+/* ── MOVIMENTO ──────────────────────────────────────────────────── */
+/* entrada escalonada: os cards de uma grade nao chegam todos juntos */
+.stagger > * { opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1); }
+.stagger.dentro > * { opacity:1; transform:none; }
+.pity-fill { width:0; transition:width 1.1s cubic-bezier(.22,1,.36,1); }
+@media (prefers-reduced-motion: reduce){
+  .stagger > * { opacity:1; transform:none; transition:none; }
+  .pity-fill { transition:none; }
+}
+
+
+/* ── ABAS DE SECAO ──────────────────────────────────────────────── */
+/* .painel[hidden] explicito: os paineis contem blocos com display
+   proprio, e regra de autor vence o [hidden] do navegador. */
+.painel[hidden] { display:none; }
+.painel > .reveal:first-child, .painel > div:first-child { margin-top:34px !important; }
+.indice button {
+  background:none; border:none; cursor:pointer; font:inherit;
+  font-size:11px; letter-spacing:1.3px; text-transform:uppercase;
+  color:var(--text-muted); padding:7px 13px; border-radius:5px;
+  transition:color .2s, background .2s;
+}
+.indice button:hover { color:var(--gold-light); background:rgba(212,168,67,.09); }
+.indice button.aqui { color:var(--gold-light); background:rgba(212,168,67,.13); }
+
+
+/* ── DECK DO DUELISTA ───────────────────────────────────────────── */
+.sombrio-card { cursor:pointer; }
+.sombrio-card::after {
+  content:'';
+  position:absolute; inset:0; pointer-events:none;
+  border-radius:10px; box-shadow:inset 0 0 0 0 var(--purple);
+  transition:box-shadow .25s;
+}
+.sombrio-card:hover::after { box-shadow:inset 0 0 0 2px var(--purple); }
+.ver-deck {
+  position:absolute; left:50%; bottom:13px; transform:translateX(-50%) translateY(6px);
+  z-index:3; opacity:0; transition:opacity .25s, transform .25s;
+  background:rgba(155,89,182,.9); color:#fff; border-radius:4px;
+  padding:5px 12px; font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase;
+  white-space:nowrap; pointer-events:none;
+}
+.sombrio-card:hover .ver-deck { opacity:1; transform:translateX(-50%) translateY(0); }
+.sombrio-card:hover .sombrio-info { opacity:0; transition:opacity .2s; }
+
+.deck-modal {
+  position:fixed; inset:0; z-index:9000; display:none;
+  align-items:center; justify-content:center; padding:20px;
+  background:rgba(4,2,8,.86); backdrop-filter:blur(6px);
+}
+.deck-modal.aberto { display:flex; }
+.deck-caixa {
+  width:100%; max-width:880px; max-height:86vh; overflow-y:auto;
+  background:#0c0810; border:1px solid var(--purple-dim); border-radius:12px;
+  box-shadow:0 24px 70px rgba(0,0,0,.7);
+}
+.deck-topo {
+  position:sticky; top:0; z-index:2;
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  padding:18px 22px; background:#0c0810; border-bottom:1px solid var(--purple-dim);
+}
+.deck-titulo { font-family:'Bebas Neue',sans-serif; font-size:21px; letter-spacing:1.1px; color:#e8dcf5; }
+.deck-contagem { font-size:11.5px; letter-spacing:1.4px; text-transform:uppercase; color:var(--purple); }
+.deck-fechar { background:none; border:none; color:var(--text-muted); font-size:24px;
+  cursor:pointer; line-height:1; padding:0 4px; }
+.deck-fechar:hover { color:var(--gold-light); }
+.deck-grade {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr));
+  gap:10px; padding:20px 22px 26px;
+}
+.deck-carta { position:relative; }
+.deck-carta img { width:100%; height:auto; aspect-ratio:256/374; object-fit:cover;
+  border-radius:4px; display:block; background:rgba(255,255,255,.03); }
+.deck-qtd {
+  position:absolute; right:4px; bottom:4px;
+  background:rgba(6,3,10,.9); border:1px solid var(--purple-dim); border-radius:3px;
+  padding:1px 6px; font-size:10.5px; font-weight:700; color:#e8dcf5;
+}
+.deck-carga { padding:40px; text-align:center; color:var(--text-muted); font-size:13px; }
+@media (max-width:640px){
+  .deck-grade { grid-template-columns:repeat(auto-fill,minmax(76px,1fr)); gap:8px; padding:14px; }
+  .deck-caixa { max-height:90vh; }
+}
+
+
+/* ── CAPA DO PREMIO ─────────────────────────────────────────────── */
+.premio-capa { display:flex; justify-content:center; margin:34px auto 0; }
+/* A imagem e inline dentro do wrapper: sem isto ela herda text-align:start
+   e encosta na esquerda de uma caixa que a legenda deixou mais larga. */
+.premio-capa > div { text-align:center; }
+.premio-capa img {
+  /* height:auto junto do aspect-ratio: sem ele o atributo height do HTML
+     vale como altura e a capa estica. */
+  width:210px; height:auto; aspect-ratio:2/3; object-fit:cover; border-radius:8px;
+  border:1px solid var(--border); box-shadow:0 10px 34px rgba(0,0,0,.55);
+  transition:transform .3s, box-shadow .3s;
+}
+.premio-capa img:hover { transform:translateY(-5px); box-shadow:0 18px 46px rgba(212,168,67,.2); }
+.premio-capa.roxo img { border-color:var(--purple-dim); }
+.premio-capa.roxo img:hover { box-shadow:0 18px 46px rgba(155,89,182,.28); }
+.premio-capa-txt { text-align:center; font-size:11.5px; letter-spacing:1.4px;
+  text-transform:uppercase; color:var(--text-muted); margin-top:11px; }
+
+/* O Lendario e Championship, nao Sombrio: dourado, nao roxo. Duas cores
+   iguais para dois eventos diferentes era metade da confusao. */
+.reward-card.legendary { --tier-color:var(--gold); }
+
+
+/* ── BOSS TEMPORARIO ────────────────────────────────────────────── */
+.boss-temp {
+  display:grid; grid-template-columns:150px 1fr; gap:22px; align-items:center;
+  max-width:640px; margin:22px auto 0; padding:18px 22px;
+  background:linear-gradient(100deg, rgba(60,140,190,.10), rgba(60,140,190,.02));
+  border:1px solid rgba(60,140,190,.3); border-radius:10px;
+}
+.boss-temp img { width:100%; height:auto; border-radius:8px; display:block;
+  border:1px solid rgba(60,140,190,.35); }
+.boss-temp-selo { display:inline-block; font-size:9.5px; letter-spacing:1.5px;
+  text-transform:uppercase; color:#6fb6dd; border:1px solid rgba(60,140,190,.4);
+  border-radius:3px; padding:3px 8px; margin-bottom:9px; }
+.boss-temp h4 { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:1.1px;
+  color:#9fd4ee; margin:0 0 6px; }
+.boss-temp p { font-size:12.5px; color:var(--text-muted); line-height:1.65; margin:0; }
+@media (max-width:640px){ .boss-temp { grid-template-columns:1fr; gap:14px; text-align:center; }
+  .boss-temp img { max-width:180px; margin:0 auto; } }
+
+
+/* ── CUSTO E RISCO ──────────────────────────────────────────────── */
+.custo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:2px; max-width:940px; margin:40px auto 0;
+  border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+.custo-col { background:var(--dark2); padding:28px 24px; position:relative; }
+.custo-col::before { content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:var(--acento, var(--gold)); opacity:.7; }
+.custo-col.risco { --acento:#b0342c; background:linear-gradient(180deg, rgba(176,52,44,.06), var(--dark2) 45%); }
+.custo-rotulo { font-size:10px; letter-spacing:3px; text-transform:uppercase;
+  color:var(--acento, var(--gold)); font-weight:700; margin-bottom:14px; }
+.custo-valor { font-family:'Bebas Neue',sans-serif; font-size:42px; line-height:1;
+  color:var(--gold-light); letter-spacing:.5px; }
+.custo-col.risco .custo-valor { color:#e8776c; }
+.custo-valor small { display:block; font-family:'Inter',sans-serif; font-size:11.5px;
+  letter-spacing:1.4px; text-transform:uppercase; color:var(--text-muted);
+  margin-top:7px; font-weight:500; }
+.custo-desc { font-size:12.5px; color:var(--text-muted); line-height:1.7; margin:16px 0 0; }
+.custo-nota { max-width:760px; margin:20px auto 0; font-size:12.5px; color:var(--text-muted);
+  line-height:1.75; text-align:center; }
+.custo-nota strong { color:var(--gold-light); }
+
+
+/* ── VALORES DO PREMIO ──────────────────────────────────────────── */
+.premio-moedas { display:flex; gap:22px; flex-wrap:wrap; margin:0 0 18px;
+  padding-bottom:16px; border-bottom:1px solid rgba(200,151,58,.12); }
+.premio-moeda { line-height:1; }
+.premio-moeda b { display:block; font-family:'Bebas Neue',sans-serif; font-weight:400;
+  font-size:34px; color:var(--gold-light); letter-spacing:.5px; }
+.premio-moeda span { display:block; font-size:10.5px; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--text-muted); margin-top:5px; }
+
+
+/* ── SORTEIO DO BOOSTER LENDARIO ────────────────────────────────── */
+.divine-card { position:relative; }
+.divine-selo { position:absolute; top:10px; left:10px; z-index:2;
+  background:rgba(6,3,10,.86); border:1px solid rgba(212,168,67,.45);
+  border-radius:3px; padding:3px 8px; font-size:9.5px; letter-spacing:1.4px;
+  text-transform:uppercase; color:var(--gold-light); }
+.divine-passos { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:2px; max-width:940px; margin:34px auto 0;
+  border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+.divine-passo { background:var(--dark2); padding:24px 22px; }
+.divine-passo-n { font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:2px;
+  color:var(--gold); margin-bottom:10px; }
+.divine-passo p { font-size:12.5px; color:var(--text-muted); line-height:1.7; margin:0; }
+.divine-passo strong { color:var(--gold-light); }
+
+
+/* ── MODO HARDCORE ──────────────────────────────────────────────── */
+.hardcore {
+  display:grid; grid-template-columns:1fr 1fr; gap:2px;
+  max-width:940px; margin:40px auto 0;
+  border:1px solid rgba(176,52,44,.34); border-radius:10px; overflow:hidden;
+}
+.hardcore-lado { background:var(--dark2); padding:28px 26px; }
+.hardcore-lado.troca { background:linear-gradient(180deg, rgba(176,52,44,.09), var(--dark2) 55%); }
+.hardcore-rotulo { font-size:10px; letter-spacing:3px; text-transform:uppercase;
+  font-weight:700; margin-bottom:14px; color:#e8776c; }
+.hardcore-lado.troca .hardcore-rotulo { color:var(--gold); }
+.hardcore-valor { font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1;
+  color:#e8776c; letter-spacing:.5px; }
+.hardcore-lado.troca .hardcore-valor { color:var(--gold-light); }
+.hardcore-valor small { display:block; font-family:'Inter',sans-serif; font-size:11.5px;
+  letter-spacing:1.4px; text-transform:uppercase; color:var(--text-muted);
+  margin-top:7px; font-weight:500; }
+.hardcore p { font-size:12.5px; color:var(--text-muted); line-height:1.7; margin:16px 0 0; }
+.hardcore-cab { max-width:760px; margin:44px auto 0; text-align:center; }
+.hardcore-cab h3 { font-family:'Bebas Neue',sans-serif; font-size:27px; letter-spacing:1.4px;
+  color:#e8776c; margin:0 0 10px; }
+.hardcore-cab p { font-size:13.5px; color:var(--text-muted); line-height:1.75; margin:0; }
+@media (max-width:640px){ .hardcore { grid-template-columns:1fr; } }
+
+/* ── IDIOMAS ──────────────────────────────────────────────────────────
+   Uma regra por idioma, e todas apenas ESCONDEM. O elemento do idioma
+   ativo nunca recebe regra de display, então conserva o display natural
+   que o resto da folha deu a ele.
+
+   Isto substituiu uma matriz de body.en [data-lang=en]{display:block} +
+   span{inline} + li{flex}, que precisava readivinhar o display de cada
+   tipo de elemento: toda tag nova exigia mais uma linha, e a regra de
+   span forçava a inline até os spans que o layout fazia block — ou
+   seja, o inglês herdava um bug de layout que o português não tinha.
+
+   O marcador vive no <html>, não no <body>, para o script do <head>
+   resolver o idioma antes do primeiro pixel. */
+html[data-lang-ativo="pt"] [data-lang]:not([data-lang="pt"]) { display: none !important; }
+html[data-lang-ativo="en"] [data-lang]:not([data-lang="en"]) { display: none !important; }
+html[data-lang-ativo="es"] [data-lang]:not([data-lang="es"]) { display: none !important; }
+html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !important; }
+
+/* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
+.lang-pick { position: relative; display: inline-block; }
+.lang-pick-btn {
+  display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
+  background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
+  color: var(--text-muted, #6a5830);
+  padding: 4px 9px; border-radius: 3px; cursor: pointer;
+  font-size: 11px; letter-spacing: .6px; font-family: 'Inter', sans-serif;
+  transition: border-color .2s, color .2s;
+}
+.lang-pick-btn:hover, .lang-pick.aberto .lang-pick-btn {
+  border-color: var(--gold, #c8973a); color: var(--gold-light, #e8b840);
+}
+.lang-pick-btn svg, .lang-opt svg {
+  width: 18px; height: 12.6px; border-radius: 1px; flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.35);
+}
+.lang-caret { font-size: 8px; opacity: .7; transition: transform .2s; }
+.lang-pick.aberto .lang-caret { transform: rotate(180deg); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 3000;
+  min-width: 158px; padding: 4px;
+  background: #14100a; border: 1px solid var(--gold-dim, #7a5a18);
+  border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,.65);
+  display: none; flex-direction: column; gap: 1px;
+}
+.lang-pick.aberto .lang-menu { display: flex; }
+.lang-opt {
+  display: flex; align-items: center; gap: 9px; width: 100%;
+  background: transparent; border: none; cursor: pointer;
+  padding: 8px 10px; border-radius: 3px; text-align: left;
+  color: var(--text-body, #9a8050); font-size: 12.5px;
+  font-family: 'Inter', sans-serif; white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.lang-opt:hover { background: rgba(200,151,58,.12); color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"] { color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"]::after { content: '\2713'; margin-left: auto; font-size: 11px; }
+@media (max-width: 560px) {
+  .lang-pick-btn .lang-nome { display: none; }   /* na nav estreita fica só a bandeira */
+  .lang-menu { right: 0; }
+}
+
+/* ── FOOTER ── */
+footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
+.footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; margin-bottom:32px; }
+.footer-brand .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--gold); margin-bottom:6px; letter-spacing:2px; }
+.footer-brand p { font-size:11px; color:var(--text-muted); max-width:240px; line-height:1.6; }
+.footer-col h4 { font-size:10px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:12px; }
+.footer-col a { display:block; font-size:12px; color:var(--text-muted); margin-bottom:6px; transition:color .2s; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom { border-top:1px solid rgba(200,151,58,.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.footer-bottom span { font-size:11px; color:#2a2018; }
+
+@media(max-width:700px) {
+  .features-grid, .features-grid-2, .steps-grid, .rewards-grid, .divine-grid { grid-template-columns:1fr; }
+  .penalty-steps { flex-direction:column; gap:8px; }
+  .penalty-arrow { transform:rotate(90deg); }
+  footer { padding:32px 20px; }
+}
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+  html .hero-badge{font-size:11px}
+  html .page-hero-sub{font-size:11px}
+  html .req-chip{font-size:12px}
+  html .section-label{font-size:11px}
+  html .reward-tier-label{font-size:11px}
+  html .reward-chance{font-size:12px}
+  html .reward-list li::before{font-size:12px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+}
+
+/* ═══ BARRA DE ROLAGEM — padrao do site ══════════════════════════════
+   Vale para a pagina e para qualquer area rolavel (listas, cofre,
+   modais). As regras de `display:none` das faixas de filtro horizontal
+   continuam valendo: elas vem depois e sao mais especificas. */
+* { scrollbar-width: thin; scrollbar-color: var(--gold-dim, #7a5a18) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--dark3, #120e12); border-radius: 6px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-dim, #7a5a18), #59410f);
+  border-radius: 6px;
+  border: 2px solid var(--dark, #09080a);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
+}
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* ═══ BARRA DE SEÇÕES — antes quase invisivel ════════════════════════
+   Era so um grupo de botoes de texto solto: nada dizia que ali se troca
+   de conteudo. Ganha painel, rotulo e estado ativo com peso. */
+.indice{
+  position:relative; display:flex; flex-wrap:wrap; justify-content:center;
+  gap:4px; padding:7px; margin:26px auto 34px; max-width:920px;
+  background:linear-gradient(180deg, rgba(200,151,58,.07), rgba(13,11,14,.9));
+  border:1px solid rgba(200,151,58,.28); border-radius:12px;
+  box-shadow:0 6px 24px rgba(0,0,0,.4), inset 0 1px 0 rgba(200,151,58,.12);
+}
+.indice::before{
+  content:attr(data-rotulo);
+  position:absolute; top:-8px; left:50%; transform:translateX(-50%);
+  font-size:8.5px; letter-spacing:2.6px; text-transform:uppercase;
+  color:var(--gold); background:var(--dark); padding:0 10px; white-space:nowrap;
+}
+.indice button{
+  position:relative; background:transparent; border:1px solid transparent;
+  color:var(--text-muted); font-family:inherit; font-size:11.5px;
+  letter-spacing:1.4px; text-transform:uppercase; padding:9px 16px;
+  border-radius:8px; cursor:pointer;
+  transition:color .2s, background .2s, border-color .2s;
+}
+.indice button:hover{color:var(--gold-light); background:rgba(200,151,58,.08)}
+.indice button.aqui{
+  color:#120d04; font-weight:700;
+  background:linear-gradient(160deg,var(--gold-light),var(--gold));
+  border-color:var(--gold-light);
+  box-shadow:0 3px 14px rgba(200,151,58,.34);
+}
+.indice button:focus-visible{outline:2px solid var(--gold-light); outline-offset:2px}
+@media(max-width:640px){
+  .indice{gap:3px; padding:6px}
+  .indice button{font-size:10.5px; padding:8px 11px; letter-spacing:1px}
+}
+
+/* ═══ INFO DA CARTA NO DECK DO NPC ═══════════════════════════════════ */
+.deck-carta .info-btn{
+  position:absolute; top:4px; left:4px; z-index:3;
+  width:20px; height:20px; border-radius:50%;
+  background:rgba(6,3,10,.88); border:1px solid var(--gold-dim);
+  color:var(--gold-light); font-size:11px; font-weight:700; font-style:italic;
+  font-family:Georgia,serif; cursor:pointer; display:grid; place-items:center;
+  opacity:.72; transition:opacity .2s, background .2s, border-color .2s;
+}
+.deck-carta:hover .info-btn, .deck-carta .info-btn:focus-visible{opacity:1}
+.deck-carta .info-btn:hover{background:var(--gold); color:#120d04; border-color:var(--gold-light)}
+@media(hover:none){ .deck-carta .info-btn{opacity:1} }
+
+.carta-info{
+  position:fixed; inset:0; z-index:9100; display:none;
+  align-items:center; justify-content:center; padding:18px;
+  background:rgba(4,2,8,.88); backdrop-filter:blur(6px);
+}
+.carta-info.aberto{display:flex}
+.carta-info-cx{
+  width:100%; max-width:520px; background:linear-gradient(178deg,#120e12,#0d0b0e 60%);
+  border:1px solid var(--gold-dim); border-radius:12px; padding:20px;
+  display:grid; grid-template-columns:150px 1fr; gap:18px; position:relative;
+  animation:infoEntra .3s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes infoEntra{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:560px){ .carta-info-cx{grid-template-columns:1fr}
+  .carta-info-arte{max-width:150px;margin:0 auto} }
+.carta-info-arte img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover;
+  border-radius:6px; border:2px solid var(--gold-dim); display:block; background:#050408}
+.carta-info-nome{font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--gold-light);
+  letter-spacing:.8px; line-height:1.15; margin-bottom:7px; padding-right:26px}
+.carta-info-chips{display:flex; gap:5px; flex-wrap:wrap; margin-bottom:11px}
+.carta-info-chip{font-size:10px; padding:2px 8px; border-radius:4px;
+  border:1px solid var(--border); color:var(--text-muted)}
+.carta-info-chip.r-UR{color:#e8b840;border-color:#e8b84055}
+.carta-info-chip.r-SR{color:#bb88ee;border-color:#bb88ee55}
+.carta-info-chip.r-R{color:#88aadd;border-color:#88aadd55}
+.carta-info-ef{font-size:12px; line-height:1.7; color:var(--text-muted);
+  white-space:pre-line; max-height:190px; overflow-y:auto;
+  border-top:1px solid var(--border); padding-top:11px}
+.carta-info-x{position:absolute; top:10px; right:12px; background:none; border:none;
+  color:var(--text-muted); font-size:19px; cursor:pointer; line-height:1}
+.carta-info-x:hover{color:var(--gold-light)}
+/* ══ RANKING (2026-09-28) ══════════════════════════════════════════════
+   Pagina do ranking ao vivo: Championship (torneios) e PVP. Tokens do site;
+   so ouro/prata/bronze e o verde do "ao vivo" sao novos. */
+:root{
+  --rk-ouro:#e8b840; --rk-prata:#c9d1dc; --rk-bronze:#cd8a4e;
+  --rk-vivo:#4ade80; --rk-card:#100d11; --rk-card2:#15111a;
+  --rk-linha:rgba(200,151,58,.10); --rk-texto:#e9dcc0; --rk-sub:#8a7650;
+}
+.rk-hero-vivo{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--rk-vivo);border:1px solid rgba(74,222,128,.28);
+  background:rgba(74,222,128,.06);padding:6px 14px;border-radius:99px;margin-bottom:22px}
+.rk-pulso{width:7px;height:7px;border-radius:50%;background:var(--rk-vivo);position:relative;flex:0 0 auto}
+.rk-pulso::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--rk-vivo);
+  animation:rkPulso 2s ease-out infinite}
+@keyframes rkPulso{0%{transform:scale(.4);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+.rk-pulso.parado{background:#6b6155}.rk-pulso.parado::after{display:none}
+.rk-pulso.falha{background:#e0483c}.rk-pulso.falha::after{border-color:#e0483c}
+
+.rk-wrap{max-width:1040px;margin:0 auto;padding:0 20px 90px}
+
+/* troca de modo: dois cartoes grandes */
+.rk-modos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:-8px 0 26px}
+.rk-modo{position:relative;display:flex;align-items:center;gap:16px;text-align:left;cursor:pointer;
+  background:linear-gradient(160deg,var(--rk-card2),var(--rk-card));border:1px solid var(--border);
+  border-radius:14px;padding:18px 20px;color:var(--rk-sub);font:inherit;transition:border-color .2s,transform .2s,box-shadow .2s}
+.rk-modo:hover{border-color:rgba(200,151,58,.35);transform:translateY(-1px)}
+.rk-modo:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
+.rk-modo[aria-selected="true"]{border-color:rgba(232,184,64,.55);color:var(--rk-texto);
+  box-shadow:0 0 0 1px rgba(232,184,64,.18),0 18px 40px -22px rgba(232,184,64,.45)}
+.rk-modo-ico{width:46px;height:46px;flex:0 0 auto;border-radius:12px;display:grid;place-items:center;
+  background:rgba(200,151,58,.08);border:1px solid var(--border);color:var(--gold)}
+.rk-modo[aria-selected="true"] .rk-modo-ico{background:rgba(232,184,64,.14);color:var(--gold-light)}
+.rk-modo-ico svg{width:24px;height:24px}
+.rk-modo-nome{display:block;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1.4px;line-height:1;color:inherit}
+.rk-modo-desc{display:block;font-size:12px;margin-top:4px;color:var(--rk-sub)}
+.rk-modo-selo{position:absolute;top:12px;right:14px;font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--rk-vivo)}
+
+/* barra de estado */
+.rk-estado{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;
+  margin:0 0 18px;font-size:12px;color:var(--rk-sub)}
+.rk-estado b{color:var(--rk-texto);font-weight:600}
+.rk-estado-vivo{display:inline-flex;align-items:center;gap:8px}
+.rk-atualizar{background:none;border:1px solid var(--border);color:var(--gold);border-radius:99px;
+  padding:5px 12px;font:inherit;font-size:11px;letter-spacing:.6px;cursor:pointer}
+.rk-atualizar:hover{border-color:var(--gold)}
+.rk-atualizar:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+
+/* abas internas */
+.rk-abas{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.rk-aba{background:transparent;border:1px solid var(--border);color:var(--rk-sub);border-radius:99px;
+  padding:8px 16px;font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.3px;cursor:pointer;transition:all .2s}
+.rk-aba:hover{color:var(--rk-texto);border-color:rgba(200,151,58,.35)}
+.rk-aba[aria-selected="true"]{background:rgba(232,184,64,.12);border-color:rgba(232,184,64,.55);color:var(--gold-light)}
+.rk-aba:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+.rk-aba .rk-aba-n{font-weight:400;opacity:.65;margin-left:6px;font-variant-numeric:tabular-nums}
+.rk-aba.sombrio[aria-selected="true"]{background:rgba(155,89,182,.14);border-color:rgba(155,89,182,.6);color:#d6a8ec}
+.rk-aba.campanha[aria-selected="true"]{background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.45);color:#9ff0bf}
+
+.rk-campanha{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:-6px 0 20px;padding:12px 16px;
+  border-radius:10px;border:1px solid rgba(74,222,128,.22);background:rgba(74,222,128,.04);font-size:12.5px;color:#b9d9c4}
+.rk-campanha b{color:#dff7e8}
+.rk-campanha-estado{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:99px;
+  border:1px solid currentColor}
+.rk-campanha-estado.ativa{color:var(--rk-vivo)}
+.rk-campanha-estado.em_breve{color:var(--gold-light)}
+.rk-campanha-estado.encerrada{color:#9b8f80}
+
+/* podio */
+.rk-podio{display:grid;grid-template-columns:1fr 1.15fr 1fr;align-items:end;gap:14px;margin-bottom:26px}
+.rk-degrau{position:relative;text-align:center;border-radius:16px;padding:22px 14px 18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,0)),var(--rk-card);
+  border:1px solid var(--rk-linha);min-width:0}
+.rk-degrau.p1{order:2;padding-top:30px;border-color:rgba(232,184,64,.45);
+  box-shadow:0 30px 60px -34px rgba(232,184,64,.55),inset 0 1px 0 rgba(232,184,64,.25)}
+.rk-degrau.p2{order:1;border-color:rgba(201,209,220,.22)}
+.rk-degrau.p3{order:3;border-color:rgba(205,138,78,.25)}
+.rk-degrau.vazio{opacity:.35}
+.rk-coroa{position:absolute;top:-13px;left:50%;transform:translateX(-50%);width:30px;height:22px;color:var(--rk-ouro)}
+.rk-degrau-pos{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px}
+.p1 .rk-degrau-pos{color:var(--rk-ouro)}.p2 .rk-degrau-pos{color:var(--rk-prata)}.p3 .rk-degrau-pos{color:var(--rk-bronze)}
+.rk-degrau .rk-av{width:68px;height:68px;margin:8px auto 10px;font-size:26px}
+.rk-degrau.p1 .rk-av{width:86px;height:86px;font-size:32px}
+.p1 .rk-av{box-shadow:0 0 0 2px var(--rk-ouro),0 0 26px rgba(232,184,64,.35)}
+.p2 .rk-av{box-shadow:0 0 0 2px var(--rk-prata)}
+.p3 .rk-av{box-shadow:0 0 0 2px var(--rk-bronze)}
+.rk-degrau-nome{color:var(--rk-texto);font-weight:600;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rk-degrau-tag{font-size:11px;color:var(--rk-sub);font-variant-numeric:tabular-nums}
+.rk-degrau-valor{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:1px;line-height:1;margin-top:10px;
+  color:var(--rk-texto);font-variant-numeric:tabular-nums}
+.p1 .rk-degrau-valor{font-size:42px;color:var(--gold-light)}
+.rk-degrau-rot{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--rk-sub);margin-top:2px}
+.rk-degrau-extra{font-size:11.5px;color:var(--rk-sub);margin-top:6px;font-variant-numeric:tabular-nums}
+
+/* avatar / monograma */
+.rk-av{border-radius:50%;overflow:hidden;background:#1d1720;display:grid;place-items:center;flex:0 0 auto;
+  font-family:'Bebas Neue',sans-serif;color:#1a1208;letter-spacing:.5px}
+.rk-av img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* busca */
+.rk-ferramentas{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.rk-busca{position:relative;flex:1 1 260px;max-width:360px}
+.rk-busca input{width:100%;background:var(--rk-card);border:1px solid var(--border);border-radius:10px;
+  color:var(--rk-texto);font:inherit;font-size:13px;padding:10px 12px 10px 36px}
+.rk-busca input::placeholder{color:#6f6048}
+.rk-busca input:focus{outline:none;border-color:rgba(232,184,64,.55);box-shadow:0 0 0 3px rgba(232,184,64,.12)}
+.rk-busca svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--rk-sub)}
+.rk-contagem{font-size:12px;color:var(--rk-sub);font-variant-numeric:tabular-nums}
+
+/* tabela */
+.rk-tabela{border:1px solid var(--rk-linha);border-radius:14px;overflow:hidden;background:var(--rk-card)}
+.rk-cab,.rk-lin{display:grid;align-items:center;gap:12px;padding:0 16px}
+.rk-tabela.pvp .rk-cab,.rk-tabela.pvp .rk-lin{grid-template-columns:52px minmax(0,1fr) 64px 64px 72px 110px}
+.rk-tabela.torneio .rk-cab,.rk-tabela.torneio .rk-lin{grid-template-columns:52px minmax(0,1fr) 150px}
+.rk-cab{height:38px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--rk-sub);
+  background:rgba(200,151,58,.04);border-bottom:1px solid var(--rk-linha)}
+.rk-lin{min-height:58px;border-bottom:1px solid var(--rk-linha);font-size:13.5px;color:var(--text-body);
+  font-variant-numeric:tabular-nums;transition:background .6s}
+.rk-lin:last-child{border-bottom:0}
+.rk-lin:hover{background:rgba(200,151,58,.035)}
+.rk-lin.mudou{background:rgba(74,222,128,.08)}
+.rk-num{text-align:right}
+.rk-pos{display:flex;align-items:center;gap:6px;font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--rk-texto)}
+.rk-pos.m1{color:var(--rk-ouro)}.rk-pos.m2{color:var(--rk-prata)}.rk-pos.m3{color:var(--rk-bronze)}
+.rk-delta{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:0}
+.rk-delta.sobe{color:var(--rk-vivo)}.rk-delta.desce{color:#e0483c}.rk-delta.novo{color:var(--gold-light)}
+.rk-jog{display:flex;align-items:center;gap:12px;min-width:0}
+.rk-jog .rk-av{width:36px;height:36px;font-size:15px}
+.rk-jog-txt{min-width:0}
+.rk-jog-nome{color:var(--rk-texto);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rk-jog-tag{color:var(--rk-sub);font-weight:400;font-size:12px}
+.rk-v{color:var(--rk-texto);font-weight:600}
+.rk-valor{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.5px;color:var(--rk-texto)}
+.rk-taxa{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.rk-barra{width:46px;height:5px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
+.rk-barra i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold-dim),var(--gold-light))}
+
+.rk-vazio{padding:46px 20px;text-align:center;color:var(--rk-sub);font-size:13.5px;line-height:1.7}
+.rk-vazio b{display:block;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--rk-texto);margin-bottom:4px;font-weight:400}
+.rk-carga .rk-lin{pointer-events:none}
+.rk-esq{height:12px;border-radius:6px;background:linear-gradient(90deg,rgba(255,255,255,.04),rgba(255,255,255,.08),rgba(255,255,255,.04));
+  background-size:200% 100%;animation:rkEsq 1.4s linear infinite}
+@keyframes rkEsq{to{background-position:-200% 0}}
+
+.rk-regra{margin-top:18px;display:flex;gap:12px;align-items:flex-start;font-size:12.5px;line-height:1.7;color:var(--rk-sub);
+  padding:14px 16px;border-radius:12px;border:1px dashed var(--rk-linha)}
+.rk-regra svg{flex:0 0 auto;width:17px;height:17px;margin-top:2px;color:var(--gold)}
+.rk-regra b{color:var(--rk-texto);font-weight:600}
+
+.rk-painel[hidden]{display:none!important}
+
+@media (max-width:760px){
+  .rk-modos{grid-template-columns:1fr;gap:10px}
+  .rk-modo{padding:14px 16px}.rk-modo-nome{font-size:22px}
+  .rk-podio{gap:8px}
+  .rk-degrau{padding:18px 6px 14px}.rk-degrau.p1{padding-top:24px}
+  .rk-degrau .rk-av{width:52px;height:52px}.rk-degrau.p1 .rk-av{width:64px;height:64px}
+  .rk-degrau-valor{font-size:26px}.p1 .rk-degrau-valor{font-size:32px}
+  .rk-degrau-nome{font-size:12.5px}
+  .rk-tabela.pvp .rk-cab,.rk-tabela.pvp .rk-lin{grid-template-columns:40px minmax(0,1fr) 44px 44px 58px;gap:8px;padding:0 12px}
+  .rk-tabela.pvp .rk-col-part{display:none}
+  .rk-tabela.torneio .rk-cab,.rk-tabela.torneio .rk-lin{grid-template-columns:40px minmax(0,1fr) 90px;gap:8px;padding:0 12px}
+  .rk-barra{display:none}
+  .rk-jog .rk-av{width:30px;height:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  .rk-pulso::after,.rk-esq{animation:none}
+  .rk-modo,.rk-lin{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
+    <div class="nav-logo-fallback">Forbidden Legacy</div>
+  </div>
+  <div class="nav-links">
+    <div class="nav-grupo">
+      <button class="nav-grupo-bt" type="button" aria-expanded="false"><span data-lang="pt">Jogo</span><span data-lang="en">Game</span><span data-lang="es">Juego</span><span data-lang="vi">Trò chơi</span><i class="nav-caret" aria-hidden="true"></i></button>
+      <div class="nav-drop">
+        <a href="index.html#sobre"><span data-lang="pt">O Jogo</span><span data-lang="en">The Game</span><span data-lang="es">El Juego</span><span data-lang="vi">Trò chơi</span><small><span data-lang="pt">o que é o remake</span><span data-lang="en">what the remake is</span><span data-lang="es">qué es el remake</span><span data-lang="vi">bản làm lại là gì</span></small></a>
+        <a href="features.html"><span data-lang="pt">Mecânicas</span><span data-lang="en">Features</span><span data-lang="es">Mecánicas</span><span data-lang="vi">Cơ chế</span><small><span data-lang="pt">duelo, fusões, campo</span><span data-lang="en">duels, fusions, field</span><span data-lang="es">duelo, fusiones, campo</span><span data-lang="vi">đấu bài, hợp thể, sân</span></small></a>
+        <a href="gallery.html"><span data-lang="pt">Galeria</span><span data-lang="en">Gallery</span><span data-lang="es">Galería</span><span data-lang="vi">Thư viện</span><small><span data-lang="pt">imagens do jogo</span><span data-lang="en">game screenshots</span><span data-lang="es">imágenes del juego</span><span data-lang="vi">ảnh trong game</span></small></a>
+        <a href="mods.html"><span data-lang="pt">Mods FM</span><span data-lang="en">FM Mods</span><span data-lang="es">Mods FM</span><span data-lang="vi">Mods FM</span><small><span data-lang="pt">mods de Forbidden Memories</span><span data-lang="en">Forbidden Memories mods</span><span data-lang="es">mods de Forbidden Memories</span><span data-lang="vi">mod Forbidden Memories</span></small></a>
+      </div>
+    </div>
+    <div class="nav-grupo tem-ativo">
+      <button class="nav-grupo-bt" type="button" aria-expanded="false"><span data-lang="pt">Modos de jogo</span><span data-lang="en">Game modes</span><span data-lang="es">Modos de juego</span><span data-lang="vi">Chế độ chơi</span><i class="nav-caret" aria-hidden="true"></i></button>
+      <div class="nav-drop">
+        <a href="index.html#campanha"><span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span><span data-lang="es">Campaña</span><span data-lang="vi">Cốt truyện</span><small><span data-lang="pt">a história</span><span data-lang="en">the story</span><span data-lang="es">la historia</span><span data-lang="vi">cốt truyện</span></small></a>
+        <a href="torneio.html"><span data-lang="pt">Championship</span><span data-lang="en">Championship</span><span data-lang="es">Championship</span><span data-lang="vi">Championship</span><small><span data-lang="pt">torneios e punições</span><span data-lang="en">tournaments and rules</span><span data-lang="es">torneos y castigos</span><span data-lang="vi">giải đấu và luật phạt</span></small></a>
+        <a href="ranking.html" class="ativo"><span data-lang="pt">Ranking</span><span data-lang="en">Leaderboard</span><span data-lang="es">Ranking</span><span data-lang="vi">Bảng xếp hạng</span><small><span data-lang="pt">PVP e torneios, ao vivo</span><span data-lang="en">PVP and tournaments, live</span><span data-lang="es">PVP y torneos, en vivo</span><span data-lang="vi">PVP và giải đấu, trực tiếp</span></small></a>
+        <a href="conquistas.html"><span data-lang="pt">Conquistas</span><span data-lang="en">Achievements</span><span data-lang="es">Logros</span><span data-lang="vi">Thành tựu</span><small><span data-lang="pt">tudo que dá para conquistar</span><span data-lang="en">everything to unlock</span><span data-lang="es">todo para desbloquear</span><span data-lang="vi">mọi thành tựu</span></small></a>
+      </div>
+    </div>
+    <div class="nav-grupo">
+      <button class="nav-grupo-bt" type="button" aria-expanded="false"><span data-lang="pt">Cartas</span><span data-lang="en">Cards</span><span data-lang="es">Cartas</span><span data-lang="vi">Thẻ bài</span><i class="nav-caret" aria-hidden="true"></i></button>
+      <div class="nav-drop">
+        <a href="catalogo.html"><span data-lang="pt">Catálogo</span><span data-lang="en">Catalog</span><span data-lang="es">Catálogo</span><span data-lang="vi">Danh mục</span><small><span data-lang="pt">todas as cartas</span><span data-lang="en">every card</span><span data-lang="es">todas las cartas</span><span data-lang="vi">tất cả thẻ bài</span></small></a>
+        <a href="boosters.html"><span data-lang="pt">Boosters</span><span data-lang="en">Boosters</span><span data-lang="es">Boosters</span><span data-lang="vi">Booster</span><small><span data-lang="pt">pacotes temáticos</span><span data-lang="en">themed packs</span><span data-lang="es">sobres temáticos</span><span data-lang="vi">gói chủ đề</span></small></a>
+        <a href="banlist.html"><span data-lang="pt">Banlist</span><span data-lang="en">Banlist</span><span data-lang="es">Banlist</span><span data-lang="vi">Banlist</span><small><span data-lang="pt">limites por grupo</span><span data-lang="en">limits by group</span><span data-lang="es">límites por grupo</span><span data-lang="vi">giới hạn theo nhóm</span></small></a>
+      </div>
+    </div>
+    <div class="nav-grupo">
+      <button class="nav-grupo-bt" type="button" aria-expanded="false"><span data-lang="pt">Ferramentas</span><span data-lang="en">Tools</span><span data-lang="es">Herramientas</span><span data-lang="vi">Công cụ</span><i class="nav-caret" aria-hidden="true"></i></button>
+      <div class="nav-drop">
+        <a href="montar_deck.html"><span data-lang="pt">Montar Deck</span><span data-lang="en">Deck Builder</span><span data-lang="es">Armar Mazo</span><span data-lang="vi">Tạo bộ bài</span><small><span data-lang="pt">monte o seu deck</span><span data-lang="en">build your deck</span><span data-lang="es">arma tu mazo</span><span data-lang="vi">tạo bộ bài của bạn</span></small></a>
+        <a href="ativar_dispositivo.html"><span data-lang="pt">Ativar outro dispositivo</span><span data-lang="en">Activate another device</span><span data-lang="es">Activar otro dispositivo</span><span data-lang="vi">Kích hoạt thiết bị khác</span><small><span data-lang="pt">use no PC e no celular</span><span data-lang="en">use it on PC and phone</span><span data-lang="es">úsalo en PC y móvil</span><span data-lang="vi">dùng trên PC và điện thoại</span></small></a>
+        <a href="suporte.html"><span data-lang="pt">Fale com o suporte</span><span data-lang="en">Contact support</span><span data-lang="es">Contactar soporte</span><span data-lang="vi">Liên hệ hỗ trợ</span><small><span data-lang="pt">dúvida, bug ou sugestão</span><span data-lang="en">question, bug or idea</span><span data-lang="es">duda, bug o sugerencia</span><span data-lang="vi">câu hỏi, lỗi hoặc góp ý</span></small></a>
+      </div>
+    </div>
+    <a class="nav-solo" href="loja.html?v=p04"><span data-lang="pt">Loja</span><span data-lang="en">Store</span><span data-lang="es">Tienda</span><span data-lang="vi">Cửa hàng</span></a>
+  </div>
+  <div class="topbar-right">
+    <a href="https://discord.gg/forbidden-legacy" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
+      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> <span data-lang="pt">online</span><span data-lang="en">online</span><span data-lang="es">en línea</span><span data-lang="vi">trực tuyến</span>
+      <span style="opacity:.4;margin:0 3px">·</span>
+      <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> <span data-lang="pt">membros</span><span data-lang="en">members</span><span data-lang="es">miembros</span><span data-lang="vi">thành viên</span>
+    </a>
+    <div class="lang-pick" id="lang-pick">
+      <button class="lang-pick-btn" type="button" id="lang-atual"
+              aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma"
+              onclick="toggleLangMenu(event)"></button>
+      <div class="lang-menu" role="listbox">
+        <button class="lang-opt" role="option" data-idioma="pt" aria-selected="false" onclick="setLang('pt')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg><span>Português</span></button>
+        <button class="lang-opt" role="option" data-idioma="en" aria-selected="false" onclick="setLang('en')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><g fill="#b22234"><rect width="30" height="1.62"/><rect y="3.23" width="30" height="1.62"/><rect y="6.46" width="30" height="1.62"/><rect y="9.69" width="30" height="1.62"/><rect y="12.92" width="30" height="1.62"/><rect y="16.15" width="30" height="1.62"/><rect y="19.38" width="30" height="1.62"/></g><rect width="13" height="11.3" fill="#3c3b6e"/></svg><span>English</span></button>
+        <button class="lang-opt" role="option" data-idioma="es" aria-selected="false" onclick="setLang('es')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#c60b1e"/><rect y="5.25" width="30" height="10.5" fill="#ffc400"/></svg><span>Español</span></button>
+        <button class="lang-opt" role="option" data-idioma="vi" aria-selected="false" onclick="setLang('vi')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#da251d"/><path d="M15 5 16.65 10.05 21.95 10.05 17.65 13.15 19.3 18.2 15 15.1 10.7 18.2 12.35 13.15 8.05 10.05 13.35 10.05Z" fill="#ff0"/></svg><span>Tiếng Việt</span></button>
+      </div>
+    </div>
+    <a href="index.html#comprar" class="nav-cta">☥ Founder</a>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-bar" id="mobile-nav-bar">
+  <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
+  <div class="mobile-nav-links">
+    <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+    <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+    <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+    <a href="banlist.html">Banlist</a>
+    <a href="boosters.html">Boosters</a>
+    <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+    <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    <a href="torneio.html" data-lang="pt">Championship</a><a href="torneio.html" data-lang="en">Championship</a><a href="torneio.html" data-lang="es">Championship</a><a href="torneio.html" data-lang="vi">Championship</a>
+
+    <a href="ranking.html" data-lang="pt">Ranking</a><a href="ranking.html" data-lang="en">Leaderboard</a><a href="ranking.html" data-lang="es">Ranking</a><a href="ranking.html" data-lang="vi">Bảng xếp hạng</a>
+    <a href="loja.html?v=p04" data-lang="pt">Loja</a><a href="loja.html?v=p04" data-lang="en">Store</a><a href="loja.html?v=p04" data-lang="es">Tienda</a><a href="loja.html?v=p04" data-lang="vi">Cửa hàng</a>
+    <a href="mods.html" data-lang="pt">Mods FM</a><a href="mods.html" data-lang="en">FM Mods</a><a href="mods.html" data-lang="es">Mods FM</a><a href="mods.html" data-lang="vi">Mods FM</a>
+      <a href="ativar_dispositivo.html" data-lang="pt">Ativar dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate device</a><a href="ativar_dispositivo.html" data-lang="es">Activar dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị</a><a href="suporte.html" data-lang="pt">Suporte</a><a href="suporte.html" data-lang="en">Support</a><a href="suporte.html" data-lang="es">Soporte</a><a href="suporte.html" data-lang="vi">Hỗ trợ</a>
+    <a href="index.html#comprar" class="nav-cta" data-lang="pt">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="en">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="es">☥ Founder</a><a href="index.html#comprar" class="nav-cta" data-lang="vi">☥ Founder</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="rk-hero-vivo"><span class="rk-pulso" id="rk-pulso-hero"></span><span data-lang="pt">Ao vivo</span><span data-lang="en">Live</span><span data-lang="es">En vivo</span><span data-lang="vi">Trực tiếp</span></div>
+  <h1 class="page-hero-title" data-lang="pt">Ranking</h1><h1 class="page-hero-title" data-lang="en">Leaderboard</h1><h1 class="page-hero-title" data-lang="es">Ranking</h1><h1 class="page-hero-title" data-lang="vi">Bảng xếp hạng</h1>
+  <div class="page-hero-sub" data-lang="pt">Championship · PVP · atualizado sozinho</div><div class="page-hero-sub" data-lang="en">Championship · PVP · updates on its own</div><div class="page-hero-sub" data-lang="es">Championship · PVP · se actualiza solo</div><div class="page-hero-sub" data-lang="vi">Championship · PVP · tự cập nhật</div>
+  <p class="page-hero-desc" data-lang="pt">Quem mais venceu no Championship e na Arena PVP do Forbidden Legacy. A página se atualiza sozinha enquanto está aberta.</p><p class="page-hero-desc" data-lang="en">Who has won the most in Forbidden Legacy's Championship and PVP Arena. The page updates on its own while it is open.</p><p class="page-hero-desc" data-lang="es">Quién más ha ganado en el Championship y en la Arena PVP de Forbidden Legacy. La página se actualiza sola mientras está abierta.</p><p class="page-hero-desc" data-lang="vi">Ai thắng nhiều nhất ở Championship và Đấu trường PVP của Forbidden Legacy. Trang tự cập nhật khi đang mở.</p>
+</section>
+
+<main>
+<div class="rk-wrap">
+
+  <div class="rk-modos" role="tablist" aria-label="Ranking">
+    <button class="rk-modo" type="button" role="tab" id="rk-modo-pvp" aria-controls="rk-painel-pvp" aria-selected="true" data-modo="pvp">
+      <span class="rk-modo-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 17.5 3 6V3h3l11.5 11.5"/><path d="m13 19 6-6"/><path d="m16 16 4 4"/><path d="m19 21 2-2"/><path d="M14.5 6.5 18 3h3v3l-3.5 3.5"/><path d="m5 14 4 4"/><path d="m7 17-3 3"/><path d="m3 19 2 2"/></svg></span>
+      <span>
+        <span class="rk-modo-nome">PVP</span>
+        <span class="rk-modo-desc" data-lang="pt">Arena · vitórias contra jogadores</span><span class="rk-modo-desc" data-lang="en">Arena · wins against players</span><span class="rk-modo-desc" data-lang="es">Arena · victorias contra jugadores</span><span class="rk-modo-desc" data-lang="vi">Đấu trường · thắng người chơi</span>
+      </span>
+      <span class="rk-modo-selo" data-lang="pt">Novo</span><span class="rk-modo-selo" data-lang="en">New</span><span class="rk-modo-selo" data-lang="es">Nuevo</span><span class="rk-modo-selo" data-lang="vi">Mới</span>
+    </button>
+    <button class="rk-modo" type="button" role="tab" id="rk-modo-torneio" aria-controls="rk-painel-torneio" aria-selected="false" data-modo="torneio">
+      <span class="rk-modo-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg></span>
+      <span>
+        <span class="rk-modo-nome">Championship</span>
+        <span class="rk-modo-desc" data-lang="pt">Torneios vencidos · Normal, Lendário e Sombrio</span><span class="rk-modo-desc" data-lang="en">Tournaments won · Normal, Legendary and Shadow</span><span class="rk-modo-desc" data-lang="es">Torneos ganados · Normal, Legendario y Sombrío</span><span class="rk-modo-desc" data-lang="vi">Giải đã thắng · Thường, Huyền Thoại và Bóng Tối</span>
+      </span>
+    </button>
+  </div>
+
+  <!-- ─── PVP ─── -->
+  <section class="rk-painel" id="rk-painel-pvp" role="tabpanel" aria-labelledby="rk-modo-pvp" data-painel="pvp">
+    <div class="rk-estado">
+      <span class="rk-estado-vivo"><span class="rk-pulso" id="rk-pulso-pvp"></span><span id="rk-estado-pvp">…</span></span>
+      <button class="rk-atualizar" type="button" data-atualizar="pvp"><span data-lang="pt">Atualizar agora</span><span data-lang="en">Refresh now</span><span data-lang="es">Actualizar ahora</span><span data-lang="vi">Cập nhật ngay</span></button>
+    </div>
+    <div class="rk-abas" role="tablist" id="rk-abas-pvp"></div>
+    <div id="rk-campanha-pvp"></div>
+    <div class="rk-podio" id="rk-podio-pvp"></div>
+    <div class="rk-ferramentas">
+      <label class="rk-busca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="rk-busca-pvp" autocomplete="off" spellcheck="false">
+      </label>
+      <span class="rk-contagem" id="rk-contagem-pvp"></span>
+    </div>
+    <div class="rk-tabela pvp" id="rk-tabela-pvp"></div>
+    <div class="rk-regra">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>
+      <p data-lang="pt">Contam as partidas <b>PVP entre contas diferentes</b>, na fila ou na sala por código. <b>Desistir ou abandonar conta como derrota.</b> Partida interrompida por queda do servidor não conta. Ordem: mais vitórias, depois menos derrotas, depois quem chegou primeiro.</p><p data-lang="en">Counted matches are <b>PVP matches between different accounts</b>, in the queue or in a code room. <b>Surrendering or leaving counts as a loss.</b> Matches cut by a server outage don't count. Order: most wins, then fewest losses, then whoever got there first.</p><p data-lang="es">Cuentan las partidas <b>PVP entre cuentas diferentes</b>, en la cola o en la sala por código. <b>Rendirse o abandonar cuenta como derrota.</b> Una partida interrumpida por caída del servidor no cuenta. Orden: más victorias, luego menos derrotas, luego quien llegó primero.</p><p data-lang="vi">Chỉ tính các trận <b>PVP giữa các tài khoản khác nhau</b>, trong hàng chờ hoặc phòng bằng mã. <b>Đầu hàng hoặc bỏ trận tính là thua.</b> Trận bị gián đoạn do máy chủ sập không được tính. Thứ tự: nhiều trận thắng nhất, rồi ít trận thua nhất, rồi ai đạt trước.</p>
+    </div>
+  </section>
+
+  <!-- ─── CHAMPIONSHIP ─── -->
+  <section class="rk-painel" id="rk-painel-torneio" role="tabpanel" aria-labelledby="rk-modo-torneio" data-painel="torneio" hidden>
+    <div class="rk-estado">
+      <span class="rk-estado-vivo"><span class="rk-pulso" id="rk-pulso-torneio"></span><span id="rk-estado-torneio">…</span></span>
+      <button class="rk-atualizar" type="button" data-atualizar="torneio"><span data-lang="pt">Atualizar agora</span><span data-lang="en">Refresh now</span><span data-lang="es">Actualizar ahora</span><span data-lang="vi">Cập nhật ngay</span></button>
+    </div>
+    <div class="rk-abas" role="tablist" id="rk-abas-torneio"></div>
+    <div class="rk-podio" id="rk-podio-torneio"></div>
+    <div class="rk-ferramentas">
+      <label class="rk-busca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="rk-busca-torneio" autocomplete="off" spellcheck="false">
+      </label>
+      <span class="rk-contagem" id="rk-contagem-torneio"></span>
+    </div>
+    <div class="rk-tabela torneio" id="rk-tabela-torneio"></div>
+    <div class="rk-regra">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>
+      <p data-lang="pt">Entram os <b>Founders com o Save na Nuvem ativo</b>. O número sobe quando o jogo sincroniza o save, então uma vitória aparece aqui alguns minutos depois. Cada jogador aparece uma vez, com o melhor número entre os saves dele. Contas banidas ficam de fora.</p><p data-lang="en">Listed: <b>Founders with Cloud Save turned on</b>. The number goes up when the game syncs the save, so a win shows up here a few minutes later. Each player appears once, with their best number across their saves. Banned accounts are left out.</p><p data-lang="es">Entran los <b>Founders con el Guardado en la Nube activo</b>. El número sube cuando el juego sincroniza la partida, así que una victoria aparece aquí unos minutos después. Cada jugador aparece una vez, con su mejor número entre sus partidas. Las cuentas baneadas quedan fuera.</p><p data-lang="vi">Gồm các <b>Founder đã bật Lưu trên Đám mây</b>. Con số tăng khi trò chơi đồng bộ dữ liệu, nên một chiến thắng sẽ hiện ở đây sau vài phút. Mỗi người chơi xuất hiện một lần, với con số tốt nhất trong các bản lưu. Tài khoản bị cấm không được tính.</p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">FORBIDDEN LEGACY</div>
+      <p data-lang="pt">Um remake fã-feito de Yu-Gi-Oh! Forbidden Memories, com sistemas novos, campanha expandida e conteúdo de endgame.</p>
+      <p data-lang="en">A fan-made remake of Yu-Gi-Oh! Forbidden Memories, with new systems, an expanded campaign and endgame content.</p><p data-lang="es">Un remake hecho por fans de Yu-Gi-Oh! Forbidden Memories, con sistemas nuevos, campaña ampliada y contenido de endgame.</p><p data-lang="vi">Bản làm lại do người hâm mộ thực hiện từ Yu-Gi-Oh! Forbidden Memories, với hệ thống mới, cốt truyện mở rộng và nội dung endgame.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Navegação</h4>
+      <h4 data-lang="en">Navigation</h4><h4 data-lang="es">Navegación</h4><h4 data-lang="vi">Điều hướng</h4>
+      <a href="index.html" data-lang="pt">O Jogo</a><a href="index.html" data-lang="en">The Game</a><a href="index.html" data-lang="es">El Juego</a><a href="index.html" data-lang="vi">Trò chơi</a>
+      <a href="boosters.html">Boosters</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="loja.html?v=p04" data-lang="pt">Loja</a><a href="loja.html?v=p04" data-lang="en">Store</a><a href="loja.html?v=p04" data-lang="es">Tienda</a><a href="loja.html?v=p04" data-lang="vi">Cửa hàng</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Comunidade</h4>
+      <h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
+      <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
+      <a href="gallery.html" data-lang="pt">Galeria</a><a href="gallery.html" data-lang="en">Gallery</a><a href="gallery.html" data-lang="es">Galería</a><a href="gallery.html" data-lang="vi">Thư viện</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+      <a href="ativar_dispositivo.html" data-lang="pt">Ativar outro dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate another device</a><a href="ativar_dispositivo.html" data-lang="es">Activar otro dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị khác</a>
+      <a href="suporte.html" data-lang="pt">Fale com o suporte</a><a href="suporte.html" data-lang="en">Contact support</a><a href="suporte.html" data-lang="es">Contactar soporte</a><a href="suporte.html" data-lang="vi">Liên hệ hỗ trợ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 2.0</span>
+    <span data-lang="pt">Projeto fã-feito, sem fins de afiliação com a Konami.</span>
+    <span data-lang="en">Fan-made project, not affiliated with Konami.</span><span data-lang="es">Proyecto hecho por fans, sin afiliación con Konami.</span><span data-lang="vi">Dự án do người hâm mộ làm, không liên kết với Konami.</span>
+  </div>
+</footer>
+
+<script>
+// Scroll nav bg
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Lang toggle
+var FL_IDIOMAS = {
+  pt: { nome: 'Português', locale: 'pt-BR', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg>' },
+  en: { nome: 'English', locale: 'en', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><g fill="#b22234"><rect width="30" height="1.62"/><rect y="3.23" width="30" height="1.62"/><rect y="6.46" width="30" height="1.62"/><rect y="9.69" width="30" height="1.62"/><rect y="12.92" width="30" height="1.62"/><rect y="16.15" width="30" height="1.62"/><rect y="19.38" width="30" height="1.62"/></g><rect width="13" height="11.3" fill="#3c3b6e"/></svg>' },
+  es: { nome: 'Español', locale: 'es', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#c60b1e"/><rect y="5.25" width="30" height="10.5" fill="#ffc400"/></svg>' },
+  vi: { nome: 'Tiếng Việt', locale: 'vi', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#da251d"/><path d="M15 5 16.65 10.05 21.95 10.05 17.65 13.15 19.3 18.2 15 15.1 10.7 18.2 12.35 13.15 8.05 10.05 13.35 10.05Z" fill="#ff0"/></svg>' }
+};
+
+function setLang(lang, saveToStorage = true) {
+  var raiz = document.documentElement;
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  if (sup.indexOf(lang) < 0) lang = sup.indexOf('en') >= 0 ? 'en' : sup[0];
+
+  raiz.setAttribute('data-lang-ativo', lang);
+  raiz.setAttribute('lang', (FL_IDIOMAS[lang] || {}).locale || 'pt-BR');
+  /* .en continua existindo: há CSS e JS antigos que consultam a classe */
+  document.body.classList.toggle('en', lang === 'en');
+
+  if (saveToStorage) { try { localStorage.setItem('fl_lang', lang); } catch (e) {} }
+
+  /* Botão do seletor mostra a bandeira e o nome do idioma escolhido */
+  var alvo = FL_IDIOMAS[lang] || FL_IDIOMAS.en;
+  var bt = document.getElementById('lang-atual');
+  if (bt && alvo) bt.innerHTML = alvo.flag + '<span class="lang-nome">' + alvo.nome + '</span>';
+  document.querySelectorAll('.lang-opt[data-idioma]').forEach(function (o) {
+    o.setAttribute('aria-selected', o.dataset.idioma === lang ? 'true' : 'false');
+  });
+  fecharLangMenu();
+
+  /* Leitor de tela: as outras línguas continuam no DOM, escondidas por
+     CSS. Sem isto elas seriam lidas em voz alta junto com a ativa. */
+  document.querySelectorAll('[data-lang]').forEach(function (el) {
+    if (el.getAttribute('data-lang') === lang) el.removeAttribute('aria-hidden');
+    else el.setAttribute('aria-hidden', 'true');
+  });
+
+  /* Textos guardados em atributo (data-lang-pt / -en / -es / -vi).
+     Cai para inglês e depois português quando o idioma falta. */
+  document.querySelectorAll('[data-lang-pt]').forEach(function (el) {
+    var v = el.dataset['lang' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+    el.innerHTML = v || el.dataset.langEn || el.dataset.langPt;
+  });
+
+  /* Imagens com versão por idioma (data-src-pt / data-src-en / ...) */
+  document.querySelectorAll('img[data-src-pt]').forEach(function (img) {
+    var v = img.dataset['src' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+    var src = v || img.dataset.srcEn || img.dataset.srcPt;
+    if (src) img.src = src;
+  });
+
+  /* O chip de regiao e um extra do idioma, nao parte dele. No primeiro
+     carregamento esta funcao pode rodar antes de a pagina declarar suas
+     variaveis de regiao (zona morta temporal do let/const), e sem esta
+     protecao o erro aborta a troca de idioma inteira. */
+  /* Listas montadas por JS precisam ser refeitas: o texto delas foi
+     escolhido no idioma anterior. A pagina registra a sua em flRedesenhar. */
+  try { if (typeof flRedesenhar === 'function') flRedesenhar(); } catch (e) {}
+  try { if (typeof atualizarChipRegiao === 'function') atualizarChipRegiao(); } catch (e) {}
+}
+window.setLang = setLang;
+
+function toggleLangMenu(ev) {
+  if (ev) ev.stopPropagation();
+  var p = document.getElementById('lang-pick');
+  if (!p) return;
+  var abrindo = !p.classList.contains('aberto');
+  p.classList.toggle('aberto', abrindo);
+  var b = p.querySelector('.lang-pick-btn');
+  if (b) b.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+}
+function fecharLangMenu() {
+  var p = document.getElementById('lang-pick');
+  if (!p) return;
+  p.classList.remove('aberto');
+  var b = p.querySelector('.lang-pick-btn');
+  if (b) b.setAttribute('aria-expanded', 'false');
+}
+window.toggleLangMenu = toggleLangMenu;
+document.addEventListener('click', function (e) {
+  var p = document.getElementById('lang-pick');
+  if (p && !p.contains(e.target)) fecharLangMenu();
+});
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharLangMenu(); });
+
+/* O idioma já foi decidido no <head>. Aqui só sincronizamos o que depende
+   do <body> existir: a classe .en legada, o rótulo do seletor, o
+   aria-hidden e a remoção dos idiomas que esta página ainda não tem. */
+(function () {
+  var raiz = document.documentElement;
+  var lang = raiz.getAttribute('data-lang-ativo') || 'pt';
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  document.querySelectorAll('.lang-opt[data-idioma]').forEach(function (o) {
+    if (sup.indexOf(o.dataset.idioma) < 0) o.remove();
+  });
+  /* Um idioma só: o seletor não tem função nenhuma */
+  if (sup.length < 2) { var p = document.getElementById('lang-pick'); if (p) p.remove(); }
+  setLang(lang, false);
+})();
+try {
+  const saved = localStorage.getItem('fl_lang');
+  if (saved === 'en') setLang('en');
+} catch(e) {}
+
+// Reveal on scroll
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+<script>
+/* Contador do Discord da barra superior. Vive em cada pagina porque a
+   barra existe em todas — antes so o index buscava, e nas outras dez os
+   numeros ficavam em "—" para sempre. Falha de rede e silenciosa: a
+   barra some em vez de anunciar um erro que nao interessa ao visitante. */
+(function () {
+  fetch('/discord_counter.php', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      var online = d.online || 0, total = d.total || 0;
+      if (!total) return;
+      var fmt = function (n) { return Number(n).toLocaleString(); };
+      var o = document.getElementById('discord-online-nav');
+      var t = document.getElementById('discord-total-nav');
+      if (o) o.textContent = fmt(online);
+      if (t) t.textContent = fmt(total);
+      /* 'flex', nao '': o CSS da barra e display:none por padrao,
+         entao string vazia a deixaria invisivel com os dados na mao. */
+      var badge = document.getElementById('discord-nav-badge');
+      if (badge) badge.style.display = 'flex';
+    })
+    .catch(function () {});
+})();
+</script>
+<script>
+/* Menus da barra: quem tem mouse abre por hover (CSS). Aqui entra o toque e o
+   teclado, com Esc e clique fora fechando. */
+(function () {
+  function fechaTodos() {
+    document.querySelectorAll('.nav-grupo.aberto').forEach(function (g) {
+      g.classList.remove('aberto');
+      g.querySelector('.nav-grupo-bt').setAttribute('aria-expanded', 'false');
+    });
+  }
+  document.querySelectorAll('.nav-grupo-bt').forEach(function (bt) {
+    bt.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      var g = bt.parentElement, abrindo = !g.classList.contains('aberto');
+      fechaTodos();
+      g.classList.toggle('aberto', abrindo);
+      bt.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', fechaTodos);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechaTodos(); });
+})();
+</script>
+<script>
+/* ══ RANKING AO VIVO (2026-09-28) ═════════════════════════════════════════
+   Duas fontes, cada uma com o seu relogio:
+   - PVP: ranking.json que o SERVIDOR DO PVP publica (regravado a cada partida
+     que conta, CORS aberto, cache de 30 s no nginx). Regra e formato em
+     Docs/pvp_ranking.md, no repo do jogo.
+   - Championship: /pagar/ranking_site.php (backend por FTP), a mesma conta do
+     ranking do jogo com Top 50 e cache de 60 s.
+   A pagina pergunta de novo a cada intervalo e para de perguntar com a aba
+   escondida. Falha de rede nunca apaga a tabela que ja esta na tela: so troca o
+   aviso de estado. */
+(function () {
+  var FONTE_PVP = 'https://pvp.forbiddenlegacy.com.br/ranking.json';
+  var FONTE_TORNEIOS = '/pagar/ranking_site.php';
+  var INTERVALO = { pvp: 30000, torneio: 60000 };
+
+  var T = {
+    conferido:   { pt: 'Conferido há {t}', en: 'Checked {t} ago', es: 'Comprobado hace {t}', vi: 'Đã kiểm tra {t} trước' },
+    conferidoJa: { pt: 'Conferido agora', en: 'Checked just now', es: 'Comprobado ahora', vi: 'Vừa kiểm tra' },
+    agora:       { pt: 'agora', en: 'just now', es: 'ahora', vi: 'vừa xong' },
+    ultPartida:  { pt: 'última partida contada há {t}', en: 'last counted match {t} ago', es: 'última partida contada hace {t}', vi: 'trận được tính gần nhất {t} trước' },
+    ultCalculo:  { pt: 'ranking recalculado há {t}', en: 'ranking recalculated {t} ago', es: 'ranking recalculado hace {t}', vi: 'bảng xếp hạng tính lại {t} trước' },
+    ultCalculoJa:{ pt: 'ranking recalculado agora', en: 'ranking just recalculated', es: 'ranking recalculado ahora', vi: 'bảng xếp hạng vừa tính lại' },
+    ultPartidaJa:{ pt: 'uma partida acabou de contar', en: 'a match just counted', es: 'una partida acaba de contar', vi: 'vừa có một trận được tính' },
+    carregando:  { pt: 'Carregando…', en: 'Loading…', es: 'Cargando…', vi: 'Đang tải…' },
+    falha:       { pt: 'Sem conexão com o ranking. Tentando de novo…', en: "Can't reach the leaderboard. Retrying…", es: 'Sin conexión con el ranking. Reintentando…', vi: 'Không kết nối được bảng xếp hạng. Đang thử lại…' },
+    falhaVelho:  { pt: 'Sem conexão agora — mostrando o último ranking carregado', en: 'No connection right now — showing the last loaded ranking', es: 'Sin conexión ahora — mostrando el último ranking cargado', vi: 'Hiện mất kết nối — đang hiển thị bảng xếp hạng đã tải gần nhất' },
+    pausado:     { pt: 'Pausado com a aba em segundo plano', en: 'Paused while the tab is in the background', es: 'En pausa con la pestaña en segundo plano', vi: 'Tạm dừng khi thẻ ở chế độ nền' },
+    geral:       { pt: 'Geral', en: 'Overall', es: 'General', vi: 'Tổng' },
+    normal:      { pt: 'Normal', en: 'Normal', es: 'Normal', vi: 'Thường' },
+    lendario:    { pt: 'Lendário', en: 'Legendary', es: 'Legendario', vi: 'Huyền Thoại' },
+    sombrio:     { pt: 'Sombrio', en: 'Shadow', es: 'Sombrío', vi: 'Bóng Tối' },
+    buscar:      { pt: 'Buscar por nome ou tag', en: 'Search by name or tag', es: 'Buscar por nombre o tag', vi: 'Tìm theo tên hoặc tag' },
+    buscarT:     { pt: 'Buscar jogador', en: 'Search player', es: 'Buscar jugador', vi: 'Tìm người chơi' },
+    jogadores:   { pt: '{n} jogadores', en: '{n} players', es: '{n} jugadores', vi: '{n} người chơi' },
+    jogador1:    { pt: '1 jogador', en: '1 player', es: '1 jugador', vi: '1 người chơi' },
+    mostrando:   { pt: 'mostrando {a} de {b}', en: 'showing {a} of {b}', es: 'mostrando {a} de {b}', vi: 'hiển thị {a} / {b}' },
+    posicao:     { pt: 'Pos.', en: 'Rank', es: 'Pos.', vi: 'Hạng' },
+    jogadorCol:  { pt: 'Jogador', en: 'Player', es: 'Jugador', vi: 'Người chơi' },
+    vit:         { pt: 'V', en: 'W', es: 'V', vi: 'T' },
+    der:         { pt: 'D', en: 'L', es: 'D', vi: 'B' },
+    partidas:    { pt: 'Partidas', en: 'Matches', es: 'Partidas', vi: 'Số trận' },
+    aprov:       { pt: '% vitórias', en: 'Win %', es: '% victorias', vi: '% thắng' },
+    vitorias:    { pt: 'vitórias', en: 'wins', es: 'victorias', vi: 'trận thắng' },
+    vencidos:    { pt: 'Vencidos', en: 'Won', es: 'Ganados', vi: 'Đã thắng' },
+    torneiosV:   { pt: 'torneios vencidos', en: 'tournaments won', es: 'torneos ganados', vi: 'giải đã thắng' },
+    vazioPvpT:   { pt: 'Nenhuma partida ainda', en: 'No matches yet', es: 'Ninguna partida aún', vi: 'Chưa có trận nào' },
+    vazioPvp:    { pt: 'O ranking começa na primeira partida PVP contada.', en: 'The ranking starts with the first counted PVP match.', es: 'El ranking empieza con la primera partida PVP contada.', vi: 'Bảng xếp hạng bắt đầu từ trận PVP đầu tiên được tính.' },
+    vazioTorT:   { pt: 'Ninguém aqui ainda', en: 'Nobody here yet', es: 'Nadie aquí todavía', vi: 'Chưa có ai' },
+    vazioTor:    { pt: 'Ninguém venceu um torneio desta categoria ainda.', en: 'Nobody has won a tournament in this category yet.', es: 'Nadie ha ganado un torneo de esta categoría aún.', vi: 'Chưa ai thắng giải nào ở hạng mục này.' },
+    nadaBuscaT:  { pt: 'Nenhum jogador encontrado', en: 'No player found', es: 'Ningún jugador encontrado', vi: 'Không tìm thấy người chơi' },
+    nadaBusca:   { pt: 'Confira o nome ou a tag.', en: 'Check the name or tag.', es: 'Revisa el nombre o el tag.', vi: 'Kiểm tra lại tên hoặc tag.' },
+    falhaT:      { pt: 'Ranking indisponível', en: 'Leaderboard unavailable', es: 'Ranking no disponible', vi: 'Bảng xếp hạng không khả dụng' },
+    falhaTxt:    { pt: 'Não deu para carregar agora. A página tenta de novo sozinha.', en: "Couldn't load it right now. The page will retry on its own.", es: 'No se pudo cargar ahora. La página lo intentará de nuevo sola.', vi: 'Hiện không tải được. Trang sẽ tự thử lại.' },
+    novo:        { pt: 'novo', en: 'new', es: 'nuevo', vi: 'mới' },
+    campEmBreve: { pt: 'Começa em {d}', en: 'Starts {d}', es: 'Empieza el {d}', vi: 'Bắt đầu {d}' },
+    campAtiva:   { pt: 'Em andamento', en: 'In progress', es: 'En curso', vi: 'Đang diễn ra' },
+    campFim:     { pt: 'Encerrada', en: 'Ended', es: 'Terminada', vi: 'Đã kết thúc' },
+    campPeriodo: { pt: '{a} até {b} (horário de Brasília)', en: '{a} to {b} (Brasília time)', es: '{a} hasta {b} (hora de Brasilia)', vi: '{a} đến {b} (giờ Brasília)' },
+    podioVazio:  { pt: 'vago', en: 'open', es: 'libre', vi: 'trống' },
+    empates:     { pt: '{n} empates', en: '{n} draws', es: '{n} empates', vi: '{n} hòa' },
+    empate1:     { pt: '1 empate', en: '1 draw', es: '1 empate', vi: '1 hòa' }
+  };
+  function idioma() { return document.documentElement.getAttribute('data-lang-ativo') || 'pt'; }
+  function tr(chave, vars) {
+    var s = (T[chave] || {})[idioma()] || (T[chave] || {}).en || chave;
+    if (vars) Object.keys(vars).forEach(function (k) { s = s.split('{' + k + '}').join(vars[k]); });
+    return s;
+  }
+  function locale() { return ({ pt: 'pt-BR', en: 'en-US', es: 'es-ES', vi: 'vi-VN' })[idioma()] || 'pt-BR'; }
+  function ordinal(n) {
+    var l = idioma();
+    if (l === 'en') { var r = n % 100, s = (r >= 11 && r <= 13) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' })[n % 10] || 'th'; return n + s; }
+    if (l === 'vi') return '#' + n;
+    return n + 'º';
+  }
+  function num(n) { return Number(n || 0).toLocaleString(locale()); }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+    });
+  }
+  function tempoRel(ms) {
+    var s = Math.max(0, Math.round(ms / 1000));
+    if (s < 5) return tr('agora');
+    var rtf;
+    try { rtf = new Intl.RelativeTimeFormat(locale(), { numeric: 'always', style: 'short' }); } catch (e) { rtf = null; }
+    var partes = s < 60 ? [s, 'second'] : s < 3600 ? [Math.floor(s / 60), 'minute'] : s < 86400 ? [Math.floor(s / 3600), 'hour'] : [Math.floor(s / 86400), 'day'];
+    if (!rtf) return partes[0] + ' ' + partes[1];
+    /* "há 5 min" -> so o "5 min": a frase ja tem o "há" */
+    return rtf.formatToParts(-partes[0], partes[1]).filter(function (p) { return p.type === 'integer' || p.type === 'literal' || p.type === 'unit'; })
+      .map(function (p) { return p.value; }).join('').replace(/^(há|hace|ago|trước)\s*/i, '').replace(/\s*(ago|trước)$/i, '').replace(/\.$/, '').trim();
+  }
+  function dataBrasilia(iso) {
+    try {
+      return new Date(iso).toLocaleString(locale(), { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+    } catch (e) { return iso; }
+  }
+
+  /* Avatar: a foto escolhida no perfil do jogo (img/avatar/, exportada do jogo
+     por Tools/exportar_avatares_site.py). Sem avatar conhecido (partida PVP
+     gravada antes de o servidor mandar o avatar, ou imagem que o site ainda nao
+     tem) cai num monograma com a cor da tag. */
+  var PALETA = ['#e8b840', '#c9d1dc', '#cd8a4e', '#b98ad6', '#6fc3a6', '#e0836b', '#7fa6e0', '#d9c36a'];
+  function corDe(s) { var h = 0; String(s).split('').forEach(function (c) { h = (h * 31 + c.charCodeAt(0)) >>> 0; }); return PALETA[h % PALETA.length]; }
+  function monograma(nome, semente) {
+    var ini = (String(nome || '?').trim().charAt(0) || '?').toUpperCase();
+    return '<span class="rk-av" style="background:' + corDe(semente || nome) + '" aria-hidden="true">' + esc(ini) + '</span>';
+  }
+  function avatarHtml(item, semente) {
+    var a = String(item.avatar || '').toLowerCase().replace(/\.(png|webp)$/, '');
+    if (!/^[a-z0-9][a-z0-9_-]{0,59}$/.test(a)) return monograma(item.nome, semente);
+    return '<span class="rk-av" aria-hidden="true" data-ini="' + esc((String(item.nome || '?').trim().charAt(0) || '?').toUpperCase())
+      + '" data-cor="' + corDe(semente || item.nome) + '"><img src="img/avatar/' + a + '.webp" alt="" loading="lazy" width="128" height="128"'
+      + ' onerror="rkSemAvatar(this)"></span>';
+  }
+  /* Avatar que o site ainda nao tem (um novo no jogo): cai no monograma. */
+  window.rkSemAvatar = function (img) {
+    var box = img.parentNode;
+    box.style.background = box.getAttribute('data-cor');
+    box.textContent = box.getAttribute('data-ini');
+  };
+  function coroa() {
+    return '<svg class="rk-coroa" viewBox="0 0 30 22" fill="currentColor" aria-hidden="true"><path d="M2 7l6.5 5L15 2l6.5 10L28 7l-2.6 13H4.6z"/></svg>';
+  }
+
+  /* ── estado ─────────────────────────────────────────────────────────── */
+  var st = {
+    modo: 'pvp',
+    pvp:     { dados: null, aba: 'geral', busca: '', conferido: 0, falhou: false, anterior: {}, mudou: {} },
+    torneio: { dados: null, aba: 'torneios_normais', busca: '', conferido: 0, falhou: false, anterior: {}, mudou: {} }
+  };
+  try {
+    var salvo = localStorage.getItem('fl_ranking_modo');
+    if (salvo === 'pvp' || salvo === 'torneio') st.modo = salvo;
+  } catch (e) {}
+
+  /* ── linhas normalizadas: {chave, pos, nome, tag, avatar, valor, v, d, e, p} ── */
+  function linhasPvp() {
+    var d = st.pvp.dados; if (!d) return null;
+    var tab = st.pvp.aba === 'temporada' && d.temporada ? d.temporada : d.geral;
+    return ((tab && tab.linhas) || []).map(function (l) {
+      return { chave: String(l.nome) + '#' + String(l.tag), pos: l.posicao, nome: l.nome, tag: l.tag, avatar: l.avatar || '',
+        v: l.vitorias | 0, d: l.derrotas | 0, e: l.empates | 0, p: l.partidas | 0 };
+    });
+  }
+  function linhasTorneio() {
+    var d = st.torneio.dados; if (!d) return null;
+    var c = (d.categorias || {})[st.torneio.aba] || { top: [] };
+    return (c.top || []).map(function (l) {
+      return { chave: String(l.nome) + '|' + String(l.avatar || ''), pos: l.pos, nome: l.nome, avatar: l.avatar, valor: l.valor | 0 };
+    });
+  }
+
+  /* Quem subiu/desceu desde a consulta anterior, por aba. So vale na mesma
+     sessao: a primeira carga nao marca ninguem. */
+  function marcarMudancas(modo, chaveAba, linhas) {
+    var s = st[modo], ant = s.anterior[chaveAba];
+    var atual = {}, mud = {};
+    linhas.forEach(function (l) { atual[l.chave] = l.pos; });
+    if (ant) {
+      linhas.forEach(function (l) {
+        if (!(l.chave in ant)) mud[l.chave] = 'novo';
+        else if (l.pos < ant[l.chave]) mud[l.chave] = 'sobe:' + (ant[l.chave] - l.pos);
+        else if (l.pos > ant[l.chave]) mud[l.chave] = 'desce:' + (l.pos - ant[l.chave]);
+      });
+      s.mudou[chaveAba] = mud;
+    }
+    s.anterior[chaveAba] = atual;
+  }
+  function deltaHtml(modo, chaveAba, chave) {
+    var m = ((st[modo].mudou[chaveAba] || {})[chave]) || '';
+    if (!m) return '';
+    if (m === 'novo') return '<span class="rk-delta novo">' + tr('novo') + '</span>';
+    var p = m.split(':');
+    return p[0] === 'sobe' ? '<span class="rk-delta sobe" title="+' + p[1] + '">▲' + p[1] + '</span>'
+      : '<span class="rk-delta desce" title="-' + p[1] + '">▼' + p[1] + '</span>';
+  }
+
+  /* ── desenho ────────────────────────────────────────────────────────── */
+  function desenharAbas(modo) {
+    var box = document.getElementById('rk-abas-' + modo);
+    var abas = [];
+    if (modo === 'pvp') {
+      var d = st.pvp.dados;
+      abas.push({ id: 'geral', rot: tr('geral'), n: d && d.geral ? d.geral.jogadores : null });
+      if (d && d.temporada) abas.push({ id: 'temporada', rot: d.temporada.nome || 'Campanha', n: d.temporada.jogadores, cls: 'campanha' });
+      if (st.pvp.aba === 'temporada' && !(d && d.temporada)) st.pvp.aba = 'geral';
+    } else {
+      var c = (st.torneio.dados && st.torneio.dados.categorias) || {};
+      [['torneios_normais', 'normal'], ['torneios_lendarios', 'lendario'], ['torneios_sombrios', 'sombrio']].forEach(function (a) {
+        abas.push({ id: a[0], rot: tr(a[1]), n: c[a[0]] ? c[a[0]].total : null, cls: a[1] === 'sombrio' ? 'sombrio' : '' });
+      });
+    }
+    box.innerHTML = abas.map(function (a) {
+      var sel = st[modo].aba === a.id;
+      return '<button type="button" role="tab" class="rk-aba ' + (a.cls || '') + '" aria-selected="' + sel + '" data-aba="' + a.id + '">'
+        + esc(a.rot) + (a.n != null ? '<span class="rk-aba-n">' + num(a.n) + '</span>' : '') + '</button>';
+    }).join('');
+  }
+
+  function desenharCampanha() {
+    var box = document.getElementById('rk-campanha-pvp');
+    var t = st.pvp.dados && st.pvp.dados.temporada;
+    if (!t || st.pvp.aba !== 'temporada') { box.innerHTML = ''; return; }
+    var estado = t.estado === 'ativa' ? tr('campAtiva') : t.estado === 'encerrada' ? tr('campFim') : tr('campEmBreve', { d: dataBrasilia(t.inicio) });
+    box.innerHTML = '<div class="rk-campanha"><b>' + esc(t.nome || '') + '</b>'
+      + '<span class="rk-campanha-estado ' + esc(t.estado) + '">' + esc(estado) + '</span>'
+      + '<span>' + esc(tr('campPeriodo', { a: dataBrasilia(t.inicio), b: dataBrasilia(t.fim) })) + '</span></div>';
+  }
+
+  function desenharPodio(modo, linhas) {
+    var box = document.getElementById('rk-podio-' + modo);
+    if (!linhas || !linhas.length) { box.innerHTML = ''; box.hidden = true; return; }
+    box.hidden = false;
+    var html = '';
+    for (var i = 0; i < 3; i++) {
+      var l = linhas[i];
+      var cls = 'rk-degrau p' + (i + 1);
+      if (!l) {
+        html += '<div class="' + cls + ' vazio"><div class="rk-degrau-pos">' + ordinal(i + 1) + '</div>'
+          + '<span class="rk-av" style="background:#1d1720" aria-hidden="true"></span><div class="rk-degrau-nome">— ' + tr('podioVazio') + ' —</div></div>';
+        continue;
+      }
+      var pos = (l.pos || i + 1);
+      if (modo === 'pvp') {
+        var tx = l.p ? Math.round(l.v * 100 / l.p) : 0;
+        html += '<div class="' + cls + '">' + (i === 0 ? coroa() : '') + '<div class="rk-degrau-pos">' + ordinal(pos) + '</div>'
+          + avatarHtml(l, l.tag) + '<div class="rk-degrau-nome" title="' + esc(l.nome) + '">' + esc(l.nome) + '</div>'
+          + '<div class="rk-degrau-tag">#' + esc(l.tag) + '</div>'
+          + '<div class="rk-degrau-valor">' + num(l.v) + '</div><div class="rk-degrau-rot">' + tr('vitorias') + '</div>'
+          + '<div class="rk-degrau-extra">' + num(l.v) + ' – ' + num(l.d) + ' · ' + tx + '%</div></div>';
+      } else {
+        html += '<div class="' + cls + '">' + (i === 0 ? coroa() : '') + '<div class="rk-degrau-pos">' + ordinal(pos) + '</div>'
+          + avatarHtml(l, l.nome) + '<div class="rk-degrau-nome" title="' + esc(l.nome) + '">' + esc(l.nome) + '</div>'
+          + '<div class="rk-degrau-valor">' + num(l.valor) + '</div><div class="rk-degrau-rot">' + tr('torneiosV') + '</div></div>';
+      }
+    }
+    box.innerHTML = html;
+  }
+
+  function vazioHtml(tit, txt) { return '<div class="rk-vazio"><b>' + esc(tit) + '</b>' + esc(txt) + '</div>'; }
+  function esqueleto(modo) {
+    var n = 6, lin = '';
+    for (var i = 0; i < n; i++) {
+      lin += '<div class="rk-lin"><span class="rk-esq" style="width:22px"></span><span class="rk-esq" style="width:' + (40 + (i * 13) % 40) + '%"></span>'
+        + (modo === 'pvp' ? '<span class="rk-esq"></span><span class="rk-esq"></span><span class="rk-esq rk-col-part"></span><span class="rk-esq"></span>' : '<span class="rk-esq"></span>') + '</div>';
+    }
+    return '<div class="rk-carga">' + lin + '</div>';
+  }
+
+  function desenharTabela(modo) {
+    var s = st[modo];
+    var box = document.getElementById('rk-tabela-' + modo);
+    var cont = document.getElementById('rk-contagem-' + modo);
+    var todas = modo === 'pvp' ? linhasPvp() : linhasTorneio();
+    var chaveAba = s.aba;
+
+    var cab = modo === 'pvp'
+      ? '<div class="rk-cab"><span>' + tr('posicao') + '</span><span>' + tr('jogadorCol') + '</span><span class="rk-num">' + tr('vit') + '</span><span class="rk-num">' + tr('der') + '</span><span class="rk-num rk-col-part">' + tr('partidas') + '</span><span class="rk-num">' + tr('aprov') + '</span></div>'
+      : '<div class="rk-cab"><span>' + tr('posicao') + '</span><span>' + tr('jogadorCol') + '</span><span class="rk-num">' + tr('vencidos') + '</span></div>';
+
+    if (!todas) {
+      desenharPodio(modo, null);
+      cont.textContent = '';
+      box.innerHTML = s.falhou ? vazioHtml(tr('falhaT'), tr('falhaTxt')) : cab + esqueleto(modo);
+      return;
+    }
+    desenharPodio(modo, todas);
+    var q = s.busca.trim().toLowerCase().replace(/^#/, '');
+    var lista = !q ? todas : todas.filter(function (l) {
+      return String(l.nome).toLowerCase().indexOf(q) >= 0 || (l.tag && String(l.tag).toLowerCase().indexOf(q) >= 0)
+        || (l.tag && (String(l.nome) + '#' + l.tag).toLowerCase().indexOf(q) >= 0);
+    });
+    var total = modo === 'pvp'
+      ? (s.aba === 'temporada' && s.dados.temporada ? s.dados.temporada.jogadores : (s.dados.geral || {}).jogadores) || todas.length
+      : (((s.dados.categorias || {})[s.aba] || {}).total) || todas.length;
+    cont.textContent = q ? tr('mostrando', { a: num(lista.length), b: num(todas.length) })
+      : (total === 1 ? tr('jogador1') : tr('jogadores', { n: num(total) }));
+
+    if (!todas.length) {
+      box.innerHTML = modo === 'pvp' ? vazioHtml(tr('vazioPvpT'), tr('vazioPvp')) : vazioHtml(tr('vazioTorT'), tr('vazioTor'));
+      return;
+    }
+    if (!lista.length) { box.innerHTML = cab + vazioHtml(tr('nadaBuscaT'), tr('nadaBusca')); return; }
+
+    var mud = s.mudou[chaveAba] || {};
+    box.innerHTML = cab + lista.map(function (l) {
+      var med = l.pos <= 3 ? ' m' + l.pos : '';
+      var classe = 'rk-lin' + (mud[l.chave] ? ' mudou' : '');
+      if (modo === 'pvp') {
+        var tx = l.p ? Math.round(l.v * 100 / l.p) : 0;
+        return '<div class="' + classe + '"><span class="rk-pos' + med + '">' + l.pos + deltaHtml(modo, chaveAba, l.chave) + '</span>'
+          + '<span class="rk-jog">' + avatarHtml(l, l.tag) + '<span class="rk-jog-txt"><div class="rk-jog-nome">' + esc(l.nome)
+          + ' <span class="rk-jog-tag">#' + esc(l.tag) + '</span></div></span></span>'
+          + '<span class="rk-num rk-v">' + num(l.v) + '</span><span class="rk-num">' + num(l.d) + '</span>'
+          + '<span class="rk-num rk-col-part" title="' + (l.e ? esc(l.e === 1 ? tr('empate1') : tr('empates', { n: num(l.e) })) : '') + '">' + num(l.p) + '</span>'
+          + '<span class="rk-num rk-taxa"><span class="rk-barra" aria-hidden="true"><i style="width:' + tx + '%"></i></span>' + tx + '%</span></div>';
+      }
+      return '<div class="' + classe + '"><span class="rk-pos' + med + '">' + l.pos + deltaHtml(modo, chaveAba, l.chave) + '</span>'
+        + '<span class="rk-jog">' + avatarHtml(l, l.nome) + '<span class="rk-jog-txt"><div class="rk-jog-nome">' + esc(l.nome) + '</div></span></span>'
+        + '<span class="rk-num rk-valor">' + num(l.valor) + '</span></div>';
+    }).join('');
+  }
+
+  function desenharEstado(modo) {
+    var s = st[modo];
+    var el = document.getElementById('rk-estado-' + modo);
+    var pulso = document.getElementById('rk-pulso-' + modo);
+    var agora = Date.now();
+    pulso.className = 'rk-pulso' + (s.falhou ? ' falha' : document.hidden ? ' parado' : '');
+    if (!s.dados) { el.textContent = s.falhou ? tr('falha') : tr('carregando'); return; }
+    if (s.falhou) { el.textContent = tr('falhaVelho'); return; }
+    var partes = [agora - s.conferido < 5000 ? tr('conferidoJa') : tr('conferido', { t: tempoRel(agora - s.conferido) })];
+    if (modo === 'pvp' && s.dados.atualizado_em) {
+      var t = Date.parse(s.dados.atualizado_em);
+      if (!isNaN(t)) partes.push(agora - t < 5000 ? tr('ultPartidaJa') : tr('ultPartida', { t: tempoRel(agora - t) }));
+    }
+    if (modo === 'torneio' && s.dados.gerado_utc) {
+      var g = agora - s.dados.gerado_utc * 1000;
+      partes.push(g < 5000 ? tr('ultCalculoJa') : tr('ultCalculo', { t: tempoRel(g) }));
+    }
+    el.innerHTML = '<b>' + esc(partes[0]) + '</b>' + (partes[1] ? ' · ' + esc(partes[1]) : '');
+    document.getElementById('rk-pulso-hero').className = 'rk-pulso' + (st.pvp.falhou && st.torneio.falhou ? ' falha' : document.hidden ? ' parado' : '');
+  }
+
+  function desenharTudo() {
+    ['pvp', 'torneio'].forEach(function (m) {
+      desenharAbas(m);
+      if (m === 'pvp') desenharCampanha();
+      desenharTabela(m);
+      desenharEstado(m);
+      var inp = document.getElementById('rk-busca-' + m);
+      inp.placeholder = m === 'pvp' ? tr('buscar') : tr('buscarT');
+      inp.setAttribute('aria-label', inp.placeholder);
+    });
+  }
+
+  function mostrarModo(modo) {
+    st.modo = modo;
+    try { localStorage.setItem('fl_ranking_modo', modo); } catch (e) {}
+    document.querySelectorAll('.rk-modo').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.modo === modo ? 'true' : 'false'); });
+    document.querySelectorAll('.rk-painel').forEach(function (p) { p.hidden = p.dataset.painel !== modo; });
+  }
+
+  /* ── rede ───────────────────────────────────────────────────────────── */
+  var buscando = { pvp: false, torneio: false };
+  function validoPvp(j) { return j && typeof j === 'object' && j.geral && Array.isArray(j.geral.linhas); }
+  function validoTorneio(j) { return j && j.ok === true && j.categorias && typeof j.categorias === 'object'; }
+
+  function buscar(modo) {
+    if (buscando[modo]) return;
+    buscando[modo] = true;
+    var url = modo === 'pvp' ? FONTE_PVP : FONTE_TORNEIOS;
+    fetch(url + (url.indexOf('?') >= 0 ? '&' : '?') + '_=' + Math.floor(Date.now() / 15000), { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+      .then(function (j) {
+        if (!(modo === 'pvp' ? validoPvp(j) : validoTorneio(j))) throw new Error('formato');
+        var s = st[modo];
+        s.dados = j; s.falhou = false; s.conferido = Date.now();
+        /* marca mudancas em TODAS as abas, para a aba escondida tambem acusar */
+        if (modo === 'pvp') {
+          var abaAntes = s.aba;
+          s.aba = 'geral'; marcarMudancas('pvp', 'geral', linhasPvp());
+          if (j.temporada) { s.aba = 'temporada'; marcarMudancas('pvp', 'temporada', linhasPvp()); }
+          s.aba = abaAntes;
+        } else {
+          var abaT = s.aba;
+          ['torneios_normais', 'torneios_lendarios', 'torneios_sombrios'].forEach(function (a) {
+            s.aba = a; marcarMudancas('torneio', a, linhasTorneio());
+          });
+          s.aba = abaT;
+        }
+      })
+      .catch(function () { st[modo].falhou = true; })
+      .then(function () { buscando[modo] = false; desenharTudo(); });
+  }
+
+  var timers = {};
+  function agendar(modo) {
+    clearInterval(timers[modo]);
+    timers[modo] = setInterval(function () { if (!document.hidden) buscar(modo); }, INTERVALO[modo]);
+  }
+
+  /* ── eventos ────────────────────────────────────────────────────────── */
+  document.querySelectorAll('.rk-modo').forEach(function (b) {
+    b.addEventListener('click', function () { mostrarModo(b.dataset.modo); });
+    b.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var outro = document.querySelector('.rk-modo[data-modo="' + (b.dataset.modo === 'pvp' ? 'torneio' : 'pvp') + '"]');
+      mostrarModo(outro.dataset.modo); outro.focus();
+    });
+  });
+  ['pvp', 'torneio'].forEach(function (m) {
+    document.getElementById('rk-abas-' + m).addEventListener('click', function (e) {
+      var b = e.target.closest('.rk-aba'); if (!b) return;
+      st[m].aba = b.dataset.aba; desenharTudo();
+    });
+    document.getElementById('rk-busca-' + m).addEventListener('input', function (e) {
+      st[m].busca = e.target.value; desenharTabela(m);
+    });
+  });
+  document.querySelectorAll('[data-atualizar]').forEach(function (b) {
+    b.addEventListener('click', function () { buscar(b.dataset.atualizar); agendar(b.dataset.atualizar); });
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) { buscar('pvp'); buscar('torneio'); }
+    desenharEstado('pvp'); desenharEstado('torneio');
+  });
+  /* Troca de idioma pelo seletor da barra: redesenha o texto gerado aqui. */
+  new MutationObserver(desenharTudo).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang-ativo'] });
+  /* O "conferido há X" anda sozinho entre uma consulta e outra. */
+  setInterval(function () { desenharEstado('pvp'); desenharEstado('torneio'); }, 5000);
+
+  mostrarModo(st.modo);
+  desenharTudo();
+  buscar('pvp'); buscar('torneio');
+  agendar('pvp'); agendar('torneio');
+})();
+</script>
+</body>
+</html>
