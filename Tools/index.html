@@ -1389,6 +1389,42 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 .hero-ornament{ color:rgba(232,184,64,.55); }
 .hero-sub{ color:#e6dcc4; text-shadow:0 1px 3px rgba(0,0,0,.95),0 2px 18px rgba(0,0,0,.95); }
 .hero-pill{ background:rgba(8,6,4,.55); backdrop-filter:blur(3px); border-color:rgba(212,168,67,.28); }
+/* ── PVP ── */
+.pvp-section{background:linear-gradient(180deg,var(--dark) 0%,#0b0a10 50%,var(--dark) 100%);padding:80px 40px;position:relative}
+.pvp-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;align-items:start}
+.pvp-section .label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.pvp-title{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(28px,4vw,46px);line-height:1;color:var(--gold-light);text-wrap:balance;margin-bottom:14px;text-shadow:0 0 24px rgba(212,168,67,.2)}
+.pvp-sub{color:var(--text-body);font-size:15px;line-height:1.75;max-width:60ch;margin-bottom:28px}
+.pvp-sub strong,.pvp-nota strong{color:var(--gold)}
+.pvp-itens{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 24px;padding:0}
+.pvp-item{border:1px solid var(--border);background:rgba(200,151,58,.04);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.pvp-item strong{color:var(--gold-light);font-size:13px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.pvp-item-d{color:var(--text-muted);font-size:13px;line-height:1.6}
+.pvp-nota{color:var(--text-muted);font-size:13px;line-height:1.7;max-width:62ch}
+.pvp-card{border:1px solid rgba(200,151,58,.3);background:linear-gradient(180deg,#141015,#0d0b0e);border-radius:8px;padding:22px 22px 20px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.pvp-card-h{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.pvp-card-t{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;color:var(--gold-light)}
+.pvp-vivo{width:9px;height:9px;border-radius:50%;background:#d8452c;box-shadow:0 0 0 0 rgba(216,69,44,.6);animation:pvpPulso 1.8s infinite}
+@keyframes pvpPulso{0%{box-shadow:0 0 0 0 rgba(216,69,44,.55)}70%{box-shadow:0 0 0 9px rgba(216,69,44,0)}100%{box-shadow:0 0 0 0 rgba(216,69,44,0)}}
+@media (prefers-reduced-motion:reduce){.pvp-vivo{animation:none}}
+.pvp-top{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.pvp-linha{display:grid;grid-template-columns:26px 36px minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;background:rgba(255,255,255,.02)}
+.pvp-linha.p1{background:rgba(232,184,64,.08)}
+.pvp-pos{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--text-muted);text-align:center;font-variant-numeric:tabular-nums}
+.pvp-linha.p1 .pvp-pos{color:#e8b840}.pvp-linha.p2 .pvp-pos{color:#c9d1dc}.pvp-linha.p3 .pvp-pos{color:#cd8a4e}
+.pvp-av{width:36px;height:36px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;font-weight:600;color:#1a1208;font-size:15px;background:#2a2118}
+.pvp-av img{width:100%;height:100%;object-fit:cover;display:block}
+.pvp-nome{color:#e6d7b0;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pvp-nome small{color:var(--text-muted);font-size:11px;margin-left:2px}
+.pvp-placar{font-size:13px;color:var(--text-body);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pvp-placar b{color:#8fd3a0;font-weight:600}
+.pvp-vazio{color:var(--text-muted);font-size:13px;padding:14px 4px}
+.pvp-card-rodape{color:var(--text-muted);font-size:11px;letter-spacing:.5px;margin:12px 2px 0;min-height:14px}
+.pvp-card-regra{color:var(--text-muted);font-size:12px;line-height:1.6;margin:10px 2px 16px}
+.pvp-btn{display:block;text-align:center;border:1px solid var(--gold);color:var(--gold-light);text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:12px 16px;border-radius:4px;transition:background .2s,color .2s}
+.pvp-btn:hover,.pvp-btn:focus-visible{background:var(--gold);color:#140e04;outline:none}
+@media(max-width:860px){.pvp-inner{grid-template-columns:1fr;gap:32px}.pvp-section{padding:64px 16px}}
+@media(max-width:520px){.pvp-itens{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -2115,6 +2151,36 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   <p class="campaign-note" data-lang="en">☥ Founder version unlocks <strong>all characters</strong> — Labyrinth Mage, Sebek, Neku, the other High Mages, Seto Final, Heishin, Zorc, all of Season 2 and the Shadow Tournament.</p><p class="campaign-note" data-lang="es">☥ La Versión Founder desbloquea <strong>todos los personajes</strong> — Labyrinth Mage, Sebek, Neku, los demás Altos Magos, Seto Final, Heishin, Zorc, toda la Season 2 y el Torneo Sombrío.</p><p class="campaign-note" data-lang="vi">☥ Phiên bản Founder mở khóa <strong>toàn bộ nhân vật</strong> — Labyrinth Mage, Sebek, Neku, các Đại Pháp Sư còn lại, Seto Final, Heishin, Zorc, toàn bộ Season 2 và Giải Bóng Tối.</p>
 </div>
 
+<!-- ══════════════════ PVP ══════════════════ -->
+<section class="pvp-section reveal" id="pvp" aria-labelledby="pvp-titulo">
+  <div class="pvp-inner">
+    <div class="pvp-col">
+      <div class="label">⚔ <span data-lang="pt">PVP Online</span><span data-lang="en">Online PVP</span><span data-lang="es">PVP en línea</span><span data-lang="vi">PVP trực tuyến</span></div>
+      <h2 class="pvp-title" id="pvp-titulo"><span data-lang="pt">Duele contra outros jogadores</span><span data-lang="en">Duel other players</span><span data-lang="es">Duela contra otros jugadores</span><span data-lang="vi">Đấu với người chơi khác</span></h2>
+      <p class="pvp-sub" data-lang="pt">Duelo online entre duas pessoas, no PC e no Android. O servidor roda o mesmo motor de regras do jogo: ninguém vê a sua mão e ninguém altera o resultado. No jogo, em <strong>MODO DE JOGO → PVP</strong>.</p><p class="pvp-sub" data-lang="en">Online duels between two people, on PC and Android. The server runs the same rules engine as the game: nobody sees your hand and nobody can change the result. In the game, under <strong>GAME MODE → PVP</strong>.</p><p class="pvp-sub" data-lang="es">Duelo en línea entre dos personas, en PC y Android. El servidor ejecuta el mismo motor de reglas del juego: nadie ve tu mano y nadie altera el resultado. En el juego, en <strong>MODO DE JUEGO → PVP</strong>.</p><p class="pvp-sub" data-lang="vi">Đấu trực tuyến giữa hai người, trên PC và Android. Máy chủ chạy cùng bộ luật của game: không ai thấy bài trên tay bạn và không ai sửa được kết quả. Trong game, vào <strong>CHẾ ĐỘ CHƠI → PVP</strong>.</p>
+      <ul class="pvp-itens">
+      <li class="pvp-item"><strong><span data-lang="pt">Busca de oponente</span><span data-lang="en">Matchmaking</span><span data-lang="es">Búsqueda de rival</span><span data-lang="vi">Tìm đối thủ</span></strong><span class="pvp-item-d"><span data-lang="pt">Entre na fila e o jogo encontra um oponente para você.</span><span data-lang="en">Join the queue and the game finds an opponent for you.</span><span data-lang="es">Entra en la cola y el juego te encuentra un rival.</span><span data-lang="vi">Vào hàng chờ và game sẽ tìm đối thủ cho bạn.</span></span></li>
+      <li class="pvp-item"><strong><span data-lang="pt">Desafie um amigo</span><span data-lang="en">Challenge a friend</span><span data-lang="es">Desafía a un amigo</span><span data-lang="vi">Thách đấu bạn bè</span></strong><span class="pvp-item-d"><span data-lang="pt">Crie uma sala e passe o código de 6 letras, ou convide quem estiver online.</span><span data-lang="en">Create a room and share its 6-character code, or invite someone who is online.</span><span data-lang="es">Crea una sala y comparte el código de 6 caracteres, o invita a quien esté en línea.</span><span data-lang="vi">Tạo phòng và gửi mã 6 ký tự, hoặc mời người đang trực tuyến.</span></span></li>
+      <li class="pvp-item"><strong><span data-lang="pt">Com punições</span><span data-lang="en">With penalties</span><span data-lang="es">Con castigos</span><span data-lang="vi">Có hình phạt</span></strong><span class="pvp-item-d"><span data-lang="pt">Uma punição do Torneio é sorteada e vale para os dois duelistas.</span><span data-lang="en">A Tournament penalty is drawn and applies to both duelists.</span><span data-lang="es">Se sortea un castigo del Torneo que vale para los dos duelistas.</span><span data-lang="vi">Một hình phạt của Giải đấu được bốc thăm và áp dụng cho cả hai.</span></span></li>
+      <li class="pvp-item"><strong><span data-lang="pt">Teto de peso</span><span data-lang="en">Weight cap</span><span data-lang="es">Límite de peso</span><span data-lang="vi">Trần trọng lượng</span></strong><span class="pvp-item-d"><span data-lang="pt">Limite o peso dos decks da sala para um duelo mais equilibrado.</span><span data-lang="en">Cap the weight of the decks in your room for a fairer duel.</span><span data-lang="es">Limita el peso de los mazos de la sala para un duelo más parejo.</span><span data-lang="vi">Giới hạn trọng lượng bộ bài trong phòng để trận đấu cân bằng hơn.</span></span></li>
+      <li class="pvp-item"><strong><span data-lang="pt">Espectadores</span><span data-lang="en">Spectators</span><span data-lang="es">Espectadores</span><span data-lang="vi">Khán giả</span></strong><span class="pvp-item-d"><span data-lang="pt">Assista às partidas ao vivo quando os duelistas permitirem.</span><span data-lang="en">Watch live matches when the duelists allow it.</span><span data-lang="es">Mira partidas en vivo cuando los duelistas lo permitan.</span><span data-lang="vi">Xem trực tiếp các trận khi hai đấu sĩ cho phép.</span></span></li>
+      <li class="pvp-item"><strong><span data-lang="pt">Hardcore</span><span data-lang="en">Hardcore</span><span data-lang="es">Hardcore</span><span data-lang="vi">Hardcore</span></strong><span class="pvp-item-d"><span data-lang="pt">Na sala por código: quem perder entrega 1 carta sorteada do deck, ou a aposta de Souls.</span><span data-lang="en">In code rooms: the loser hands over 1 random card from their deck, or the Souls bet.</span><span data-lang="es">En la sala por código: quien pierda entrega 1 carta al azar del mazo, o la apuesta de Souls.</span><span data-lang="vi">Trong phòng có mã: người thua giao 1 thẻ ngẫu nhiên trong bộ bài, hoặc số Souls đã cược.</span></span></li>
+      </ul>
+      <p class="pvp-nota" data-lang="pt">☥ O PVP é exclusivo da <strong>versão Founder</strong>, com o Save na Nuvem vinculado. Deck de 40 cartas com a banlist de sempre. Caiu a conexão? Você tem 90 segundos para voltar.</p><p class="pvp-nota" data-lang="en">☥ PVP is exclusive to the <strong>Founder version</strong>, with Cloud Save linked. 40-card deck with the usual banlist. Lost connection? You have 90 seconds to come back.</p><p class="pvp-nota" data-lang="es">☥ El PVP es exclusivo de la <strong>versión Founder</strong>, con el Guardado en la Nube vinculado. Mazo de 40 cartas con la banlist de siempre. ¿Se cayó la conexión? Tienes 90 segundos para volver.</p><p class="pvp-nota" data-lang="vi">☥ PVP dành riêng cho <strong>phiên bản Founder</strong>, đã liên kết Lưu trên Đám mây. Bộ bài 40 thẻ với banlist như thường lệ. Mất kết nối? Bạn có 90 giây để quay lại.</p>
+    </div>
+    <aside class="pvp-card" aria-live="polite">
+      <div class="pvp-card-h">
+        <span class="pvp-vivo" aria-hidden="true"></span>
+        <span class="pvp-card-t"><span data-lang="pt">Ranking PVP ao vivo</span><span data-lang="en">Live PVP leaderboard</span><span data-lang="es">Ranking PVP en vivo</span><span data-lang="vi">Bảng xếp hạng PVP trực tiếp</span></span>
+      </div>
+      <ol class="pvp-top" id="pvp-top"><li class="pvp-vazio"><span data-lang="pt">Carregando o ranking…</span><span data-lang="en">Loading the leaderboard…</span><span data-lang="es">Cargando el ranking…</span><span data-lang="vi">Đang tải bảng xếp hạng…</span></li></ol>
+      <div class="pvp-card-rodape" id="pvp-rodape"></div>
+      <p class="pvp-card-regra" data-lang="pt">Contam as partidas entre contas diferentes. Abandonar ou desistir conta como derrota; queda do servidor não conta.</p><p class="pvp-card-regra" data-lang="en">Matches between different accounts count. Leaving or surrendering counts as a loss; server crashes do not count.</p><p class="pvp-card-regra" data-lang="es">Cuentan las partidas entre cuentas distintas. Abandonar o rendirse cuenta como derrota; una caída del servidor no cuenta.</p><p class="pvp-card-regra" data-lang="vi">Tính các trận giữa hai tài khoản khác nhau. Bỏ trận hoặc đầu hàng tính là thua; máy chủ gặp sự cố thì không tính.</p>
+      <a class="pvp-btn" href="ranking.html"><span data-lang="pt">Ver ranking completo →</span><span data-lang="en">Full leaderboard →</span><span data-lang="es">Ver ranking completo →</span><span data-lang="vi">Xem bảng xếp hạng đầy đủ →</span></a>
+    </aside>
+  </div>
+</section>
+
 <!-- ══════════════════ DOWNLOAD ══════════════════ -->
 <div class="download-bg" id="download" data-reveal>
   <div class="download-inner">
@@ -2458,6 +2524,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 1 completa</span><span data-lang="en">Full Season 1</span><span data-lang="es">Season 1 completa</span><span data-lang="vi">Season 1 đầy đủ</span></div>
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Season 2 — Capítulo 1: O Convite</span><span data-lang="en">Season 2 — Chapter 1: The Invitation</span><span data-lang="es">Season 2 — Capítulo 1: La Invitación</span><span data-lang="vi">Season 2 — Chương 1: Lời Mời</span></div>
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Até 3 dispositivos na mesma compra</span><span data-lang="en">Up to 3 devices on one purchase</span><span data-lang="es">Hasta 3 dispositivos con la misma compra</span><span data-lang="vi">Tối đa 3 thiết bị cho một lần mua</span></div>
+      <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">PVP online contra outros jogadores, com ranking</span><span data-lang="en">Online PVP against other players, with a leaderboard</span><span data-lang="es">PVP en línea contra otros jugadores, con ranking</span><span data-lang="vi">PVP trực tuyến với người chơi khác, có bảng xếp hạng</span></div>
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Cross-Save: o mesmo progresso no PC e no celular</span><span data-lang="en">Cross-Save: the same progress on PC and phone</span><span data-lang="es">Cross-Save: el mismo progreso en PC y celular</span><span data-lang="vi">Cross-Save: cùng tiến trình trên PC và điện thoại</span></div>
       <div class="perk"><span class="perk-star">✦</span> <span data-lang="pt">Apoia o dev independente</span><span data-lang="en">Supports the indie dev</span><span data-lang="es">Apoya al dev independiente</span><span data-lang="vi">Ủng hộ nhà phát triển độc lập</span></div>
     </div>
@@ -5047,6 +5114,60 @@ window.mostrarSeason = mostrarSeason;
   });
   document.addEventListener('click', fechaTodos);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechaTodos(); });
+})();
+</script>
+<script>
+/* PVP: Top 5 ao vivo, do mesmo ranking.json que a pagina ranking.html le. */
+(function () {
+  var FONTE = 'https://pvp.forbiddenlegacy.com.br/ranking.json';
+  var TXT = {
+    pt: { vazio: 'Nenhuma partida ainda.', erro: 'Não foi possível carregar o ranking agora.', jog: '{n} duelistas no ranking', at: 'Atualizado às {h}' },
+    en: { vazio: 'No matches yet.', erro: 'Could not load the leaderboard right now.', jog: '{n} duelists ranked', at: 'Updated at {h}' },
+    es: { vazio: 'Aún no hay partidas.', erro: 'No se pudo cargar el ranking ahora.', jog: '{n} duelistas en el ranking', at: 'Actualizado a las {h}' },
+    vi: { vazio: 'Chưa có trận nào.', erro: 'Không tải được bảng xếp hạng lúc này.', jog: '{n} đấu sĩ trên bảng xếp hạng', at: 'Cập nhật lúc {h}' }
+  };
+  var PALETA = ['#e8b840', '#c9d1dc', '#cd8a4e', '#b98ad6', '#6fc3a6', '#e0836b', '#7fa6e0', '#d9c36a'];
+  var dados = null, falhou = false;
+  function lg() { var l = document.documentElement.getAttribute('data-lang-ativo') || 'pt'; return TXT[l] ? l : 'pt'; }
+  function loc() { return ({ pt: 'pt-BR', en: 'en-US', es: 'es-ES', vi: 'vi-VN' })[lg()]; }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]; }); }
+  function cor(s) { var h = 0; String(s).split('').forEach(function (c) { h = (h * 31 + c.charCodeAt(0)) >>> 0; }); return PALETA[h % PALETA.length]; }
+  function inicial(n) { return (String(n || '?').trim().charAt(0) || '?').toUpperCase(); }
+  function avatar(l) {
+    var a = String(l.avatar || '').toLowerCase().replace(/\.(png|webp)$/, '');
+    var c = cor(l.nome + '#' + l.tag);
+    if (!/^[a-z0-9][a-z0-9_-]{0,59}$/.test(a)) return '<span class="pvp-av" style="background:' + c + '">' + esc(inicial(l.nome)) + '</span>';
+    return '<span class="pvp-av" data-cor="' + c + '" data-ini="' + esc(inicial(l.nome)) + '"><img src="img/avatar/' + a + '.webp" alt="" loading="lazy" width="36" height="36" onerror="pvpSemAvatar(this)"></span>';
+  }
+  window.pvpSemAvatar = function (img) { var b = img.parentNode; b.style.background = b.getAttribute('data-cor'); b.textContent = b.getAttribute('data-ini'); };
+  function desenhar() {
+    var lista = document.getElementById('pvp-top'), rod = document.getElementById('pvp-rodape');
+    if (!lista) return;
+    var t = TXT[lg()];
+    if (!dados) { if (falhou) { lista.innerHTML = '<li class="pvp-vazio">' + esc(t.erro) + '</li>'; rod.textContent = ''; } return; }
+    var g = dados.geral || {}, linhas = (g.linhas || []).slice(0, 5);
+    if (!linhas.length) lista.innerHTML = '<li class="pvp-vazio">' + esc(t.vazio) + '</li>';
+    else lista.innerHTML = linhas.map(function (l) {
+      var p = l.posicao | 0;
+      return '<li class="pvp-linha' + (p <= 3 ? ' p' + p : '') + '"><span class="pvp-pos">' + p + '</span>' + avatar(l)
+        + '<span class="pvp-nome">' + esc(l.nome) + '<small>#' + esc(l.tag) + '</small></span>'
+        + '<span class="pvp-placar"><b>' + (l.vitorias | 0) + 'V</b> · ' + (l.derrotas | 0) + 'D</span></li>';
+    }).join('');
+    var partes = [t.jog.replace('{n}', Number(g.jogadores || 0).toLocaleString(loc()))];
+    if (dados.atualizado_em) {
+      var d = new Date(dados.atualizado_em);
+      if (!isNaN(d)) partes.push(t.at.replace('{h}', d.toLocaleTimeString(loc(), { hour: '2-digit', minute: '2-digit' })));
+    }
+    rod.textContent = partes.join(' · ');
+  }
+  function buscar() {
+    fetch(FONTE, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (d) { dados = d; falhou = false; desenhar(); })
+      .catch(function () { if (!dados) { falhou = true; desenhar(); } });
+  }
+  new MutationObserver(desenhar).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang-ativo'] });
+  buscar();
+  setInterval(function () { if (!document.hidden) buscar(); }, 60000);
 })();
 </script>
 </body>
