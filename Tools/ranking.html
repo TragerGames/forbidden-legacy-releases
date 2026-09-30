@@ -917,7 +917,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .rk-wrap{max-width:1040px;margin:0 auto;padding:0 20px 90px}
 
 /* troca de modo: dois cartoes grandes */
-.rk-modos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:-8px 0 26px}
+.rk-modos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:-8px 0 26px}
 .rk-modo{position:relative;display:flex;align-items:center;gap:16px;text-align:left;cursor:pointer;
   background:linear-gradient(160deg,var(--rk-card2),var(--rk-card));border:1px solid var(--border);
   border-radius:14px;padding:18px 20px;color:var(--rk-sub);font:inherit;transition:border-color .2s,transform .2s,box-shadow .2s}
@@ -951,6 +951,14 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .rk-aba:hover{color:var(--rk-texto);border-color:rgba(200,151,58,.35)}
 .rk-aba[aria-selected="true"]{background:rgba(232,184,64,.12);border-color:rgba(232,184,64,.55);color:var(--gold-light)}
 .rk-aba:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+.rk-abas-npc{margin-bottom:14px}
+.rk-aba.npc{display:inline-flex;align-items:center;gap:7px;padding-left:5px}
+.rk-aba-img{width:24px;height:24px;border-radius:50%;object-fit:cover;object-position:top;background:#1d1720;flex:none}
+.rk-aba.evento[aria-selected="true"]{background:rgba(95,168,224,.12);border-color:rgba(95,168,224,.55);color:#a9d4f5}
+.rk-npc-destaque{display:flex;align-items:center;gap:14px;margin:0 0 20px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,.02)}
+.rk-npc-destaque img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:top;flex:none;background:#1d1720}
+.rk-npc-destaque b{display:block;color:var(--gold-light);font-size:15px;letter-spacing:.3px}
+.rk-npc-destaque span{color:var(--rk-sub);font-size:13px}
 .rk-aba .rk-aba-n{font-weight:400;opacity:.65;margin-left:6px;font-variant-numeric:tabular-nums}
 .rk-aba.sombrio[aria-selected="true"]{background:rgba(155,89,182,.14);border-color:rgba(155,89,182,.6);color:#d6a8ec}
 .rk-aba.campanha[aria-selected="true"]{background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.45);color:#9ff0bf}
@@ -1049,6 +1057,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 
 @media (max-width:760px){
   .rk-modos{grid-template-columns:1fr;gap:10px}
+  .rk-abas-npc{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+  .rk-abas-npc .rk-aba{flex:none;white-space:nowrap}
   .rk-modo{padding:14px 16px}.rk-modo-nome{font-size:22px}
   .rk-podio{gap:8px}
   .rk-degrau{padding:18px 6px 14px}.rk-degrau.p1{padding-top:24px}
@@ -1158,8 +1168,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 <section class="page-hero">
   <div class="rk-hero-vivo"><span class="rk-pulso" id="rk-pulso-hero"></span><span data-lang="pt">Ao vivo</span><span data-lang="en">Live</span><span data-lang="es">En vivo</span><span data-lang="vi">Trực tiếp</span></div>
   <h1 class="page-hero-title" data-lang="pt">Ranking</h1><h1 class="page-hero-title" data-lang="en">Leaderboard</h1><h1 class="page-hero-title" data-lang="es">Ranking</h1><h1 class="page-hero-title" data-lang="vi">Bảng xếp hạng</h1>
-  <div class="page-hero-sub" data-lang="pt">Championship · PVP · atualizado sozinho</div><div class="page-hero-sub" data-lang="en">Championship · PVP · updates on its own</div><div class="page-hero-sub" data-lang="es">Championship · PVP · se actualiza solo</div><div class="page-hero-sub" data-lang="vi">Championship · PVP · tự cập nhật</div>
-  <p class="page-hero-desc" data-lang="pt">Quem mais venceu no Championship e na Arena PVP do Forbidden Legacy. A página se atualiza sozinha enquanto está aberta.</p><p class="page-hero-desc" data-lang="en">Who has won the most in Forbidden Legacy's Championship and PVP Arena. The page updates on its own while it is open.</p><p class="page-hero-desc" data-lang="es">Quién más ha ganado en el Championship y en la Arena PVP de Forbidden Legacy. La página se actualiza sola mientras está abierta.</p><p class="page-hero-desc" data-lang="vi">Ai thắng nhiều nhất ở Championship và Đấu trường PVP của Forbidden Legacy. Trang tự cập nhật khi đang mở.</p>
+  <div class="page-hero-sub" data-lang="pt">PVP · Eventos · Championship · atualizado sozinho</div><div class="page-hero-sub" data-lang="en">PVP · Events · Championship · updates on its own</div><div class="page-hero-sub" data-lang="es">PVP · Eventos · Championship · se actualiza solo</div><div class="page-hero-sub" data-lang="vi">PVP · Sự kiện · Championship · tự cập nhật</div>
+  <p class="page-hero-desc" data-lang="pt">Quem mais venceu na Arena PVP, contra os duelistas de evento e no Championship do Forbidden Legacy. A página se atualiza sozinha enquanto está aberta.</p><p class="page-hero-desc" data-lang="en">Who has won the most in Forbidden Legacy's PVP Arena, against the event duelists and in the Championship. The page updates on its own while it is open.</p><p class="page-hero-desc" data-lang="es">Quién más ha ganado en la Arena PVP, contra los duelistas de evento y en el Championship de Forbidden Legacy. La página se actualiza sola mientras está abierta.</p><p class="page-hero-desc" data-lang="vi">Ai thắng nhiều nhất ở Đấu trường PVP, trước các đấu sĩ sự kiện và ở Championship của Forbidden Legacy. Trang tự cập nhật khi đang mở.</p>
 </section>
 
 <main>
@@ -1173,6 +1183,13 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
         <span class="rk-modo-desc" data-lang="pt">Arena · vitórias contra jogadores</span><span class="rk-modo-desc" data-lang="en">Arena · wins against players</span><span class="rk-modo-desc" data-lang="es">Arena · victorias contra jugadores</span><span class="rk-modo-desc" data-lang="vi">Đấu trường · thắng người chơi</span>
       </span>
       <span class="rk-modo-selo" data-lang="pt">Novo</span><span class="rk-modo-selo" data-lang="en">New</span><span class="rk-modo-selo" data-lang="es">Nuevo</span><span class="rk-modo-selo" data-lang="vi">Mới</span>
+    </button>
+    <button class="rk-modo" type="button" role="tab" id="rk-modo-evento" aria-controls="rk-painel-evento" aria-selected="false" data-modo="evento">
+      <span class="rk-modo-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></span>
+      <span>
+        <span class="rk-modo-nome"><span data-lang="pt">Eventos</span><span data-lang="en">Events</span><span data-lang="es">Eventos</span><span data-lang="vi">Sự kiện</span></span>
+        <span class="rk-modo-desc" data-lang="pt">Vitórias contra os duelistas de evento</span><span class="rk-modo-desc" data-lang="en">Wins against the event duelists</span><span class="rk-modo-desc" data-lang="es">Victorias contra los duelistas de evento</span><span class="rk-modo-desc" data-lang="vi">Trận thắng trước các đấu sĩ sự kiện</span>
+      </span>
     </button>
     <button class="rk-modo" type="button" role="tab" id="rk-modo-torneio" aria-controls="rk-painel-torneio" aria-selected="false" data-modo="torneio">
       <span class="rk-modo-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg></span>
@@ -1203,6 +1220,29 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="rk-regra">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>
       <p data-lang="pt">Contam as partidas <b>PVP entre contas diferentes</b>, na fila ou na sala por código. <b>Desistir ou abandonar conta como derrota.</b> Partida interrompida por queda do servidor não conta. Ordem: mais vitórias, depois menos derrotas, depois quem chegou primeiro.</p><p data-lang="en">Counted matches are <b>PVP matches between different accounts</b>, in the queue or in a code room. <b>Surrendering or leaving counts as a loss.</b> Matches cut by a server outage don't count. Order: most wins, then fewest losses, then whoever got there first.</p><p data-lang="es">Cuentan las partidas <b>PVP entre cuentas diferentes</b>, en la cola o en la sala por código. <b>Rendirse o abandonar cuenta como derrota.</b> Una partida interrumpida por caída del servidor no cuenta. Orden: más victorias, luego menos derrotas, luego quien llegó primero.</p><p data-lang="vi">Chỉ tính các trận <b>PVP giữa các tài khoản khác nhau</b>, trong hàng chờ hoặc phòng bằng mã. <b>Đầu hàng hoặc bỏ trận tính là thua.</b> Trận bị gián đoạn do máy chủ sập không được tính. Thứ tự: nhiều trận thắng nhất, rồi ít trận thua nhất, rồi ai đạt trước.</p>
+    </div>
+  </section>
+
+  <!-- ─── EVENTOS ─── -->
+  <section class="rk-painel" id="rk-painel-evento" role="tabpanel" aria-labelledby="rk-modo-evento" data-painel="evento" hidden>
+    <div class="rk-estado">
+      <span class="rk-estado-vivo"><span class="rk-pulso" id="rk-pulso-evento"></span><span id="rk-estado-evento">…</span></span>
+      <button class="rk-atualizar" type="button" data-atualizar="evento"><span data-lang="pt">Atualizar agora</span><span data-lang="en">Refresh now</span><span data-lang="es">Actualizar ahora</span><span data-lang="vi">Cập nhật ngay</span></button>
+    </div>
+    <div class="rk-abas rk-abas-npc" role="tablist" id="rk-abas-evento"></div>
+    <div id="rk-npc-evento"></div>
+    <div class="rk-podio" id="rk-podio-evento"></div>
+    <div class="rk-ferramentas">
+      <label class="rk-busca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="rk-busca-evento" autocomplete="off" spellcheck="false">
+      </label>
+      <span class="rk-contagem" id="rk-contagem-evento"></span>
+    </div>
+    <div class="rk-tabela torneio" id="rk-tabela-evento"></div>
+    <div class="rk-regra">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>
+      <p data-lang="pt">Contam as <b>vitórias contra os duelistas de evento</b> no Free Duel, somadas ou de um duelista por vez, as mesmas do ranking dentro do jogo. Entram os <b>Founders com o Save na Nuvem ativo</b>, e o número sobe quando o jogo sincroniza o save. Vitórias no Auto Duel não contam. Contas banidas ficam de fora.</p><p data-lang="en">Counted: <b>wins against the event duelists</b> in Free Duel, all together or one duelist at a time, the same as the in-game leaderboard. Listed: <b>Founders with Cloud Save turned on</b>; the number goes up when the game syncs the save. Auto Duel wins don't count. Banned accounts are left out.</p><p data-lang="es">Cuentan las <b>victorias contra los duelistas de evento</b> en el Free Duel, sumadas o de un duelista a la vez, las mismas del ranking dentro del juego. Entran los <b>Founders con el Guardado en la Nube activo</b>, y el número sube cuando el juego sincroniza la partida. Las victorias en Auto Duel no cuentan. Las cuentas baneadas quedan fuera.</p><p data-lang="vi">Tính <b>các trận thắng trước đấu sĩ sự kiện</b> trong Free Duel, cộng chung hoặc từng đấu sĩ, giống bảng xếp hạng trong game. Gồm các <b>Founder đã bật Lưu trên Đám mây</b>; con số tăng khi game đồng bộ dữ liệu. Trận thắng Auto Duel không được tính. Tài khoản bị cấm không được tính.</p>
     </div>
   </section>
 
@@ -1492,7 +1532,13 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     campPeriodo: { pt: '{a} até {b} (horário de Brasília)', en: '{a} to {b} (Brasília time)', es: '{a} hasta {b} (hora de Brasilia)', vi: '{a} đến {b} (giờ Brasília)' },
     podioVazio:  { pt: 'vago', en: 'open', es: 'libre', vi: 'trống' },
     empates:     { pt: '{n} empates', en: '{n} draws', es: '{n} empates', vi: '{n} hòa' },
-    empate1:     { pt: '1 empate', en: '1 draw', es: '1 empate', vi: '1 hòa' }
+    empate1:     { pt: '1 empate', en: '1 draw', es: '1 empate', vi: '1 hòa' },
+    todosNpc:    { pt: 'Todos os duelistas', en: 'All duelists', es: 'Todos los duelistas', vi: 'Tất cả đấu sĩ' },
+    vitoriasCol: { pt: 'Vitórias', en: 'Wins', es: 'Victorias', vi: 'Trận thắng' },
+    vazioEvT:    { pt: 'Ninguém aqui ainda', en: 'Nobody here yet', es: 'Nadie aquí todavía', vi: 'Chưa có ai' },
+    vazioEv:     { pt: 'Ninguém venceu este duelista de evento ainda.', en: 'Nobody has beaten this event duelist yet.', es: 'Nadie ha vencido a este duelista de evento aún.', vi: 'Chưa ai thắng đấu sĩ sự kiện này.' },
+    vazioEvTodos:{ pt: 'Ninguém venceu um duelista de evento ainda.', en: 'Nobody has beaten an event duelist yet.', es: 'Nadie ha vencido a un duelista de evento aún.', vi: 'Chưa ai thắng đấu sĩ sự kiện nào.' },
+    npcSub:      { pt: 'Vitórias contra este duelista de evento', en: 'Wins against this event duelist', es: 'Victorias contra este duelista de evento', vi: 'Số trận thắng trước đấu sĩ sự kiện này' }
   };
   function idioma() { return document.documentElement.getAttribute('data-lang-ativo') || 'pt'; }
   function tr(chave, vars) {
@@ -1557,15 +1603,45 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     return '<svg class="rk-coroa" viewBox="0 0 30 22" fill="currentColor" aria-hidden="true"><path d="M2 7l6.5 5L15 2l6.5 10L28 7l-2.6 13H4.6z"/></svg>';
   }
 
+  var NPCS_EVENTO = [
+    ['zane_truesdale', 'Zane Truesdale', 'ZaneTruesdale0'],
+    ['great_shadow_magus', 'Great Shadow Magus', 'GreatShadowMagus0'],
+    ['black_luster_valkyrie', 'Black Luster Valkyrie', 'BlackLusterValkyrie0'],
+    ['azula_the_dragon_ruler', 'Azula, The Dragon Ruler', 'AzulaTheDragonRuler0'],
+    ['poseidon', 'Poseidon', 'Poseidon0'],
+    ['lord_d_saurian', 'Lord D. Saurian', 'LordDSaurian0'],
+    ['ignis', 'Ignis', 'Ignis0'],
+    ['azzazel_arquiduque_infernal', 'Azzazel', 'Azzazel0'],
+    ['seto_corrupted', 'Seto Corrupted', 'SetoCorrupted0'],
+    ['kiram_overlord', 'KiraM Overlord', 'KiramOverlord0'],
+    ['regart_high_darklord', 'Regart, The High Darklord', 'RegartHighDarklord0'],
+    ['spectre_of_the_pharaoh', 'Spectre of the Pharaoh', 'SpectreOfThePharaoh0']
+  ];
+  var PREFIXO_NPC = 'evento:';
+  function infoNpc(id) {
+    for (var i = 0; i < NPCS_EVENTO.length; i++) if (NPCS_EVENTO[i][0] === id) return { nome: NPCS_EVENTO[i][1], img: 'img/Npcs/' + NPCS_EVENTO[i][2] + '.webp' };
+    return { nome: id.replace(/_/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); }), img: '' };
+  }
+  /* abas do modo EVENTOS: o total e cada duelista que o servidor mandou, na ordem da lista */
+  function abasEvento() {
+    var c = (st.evento.dados && st.evento.dados.categorias) || {};
+    var ids = Object.keys(c).filter(function (k) { return k.indexOf(PREFIXO_NPC) === 0; }).map(function (k) { return k.slice(PREFIXO_NPC.length); });
+    var ordem = NPCS_EVENTO.map(function (n) { return n[0]; });
+    ids.sort(function (a, b) { var ia = ordem.indexOf(a), ib = ordem.indexOf(b); return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || (a < b ? -1 : 1); });
+    return ['eventos'].concat(ids.map(function (id) { return PREFIXO_NPC + id; }));
+  }
+
   /* ── estado ─────────────────────────────────────────────────────────── */
   var st = {
     modo: 'pvp',
     pvp:     { dados: null, aba: 'geral', busca: '', conferido: 0, falhou: false, anterior: {}, mudou: {} },
-    torneio: { dados: null, aba: 'torneios_normais', busca: '', conferido: 0, falhou: false, anterior: {}, mudou: {} }
+    torneio: { dados: null, aba: 'torneios_normais', busca: '', conferido: 0, falhou: false, anterior: {}, mudou: {} },
+    /* EVENTOS vem do mesmo arquivo do Championship: a busca e' uma so */
+    evento:  { dados: null, aba: 'eventos', busca: '', conferido: 0, falhou: false, anterior: {}, mudou: {} }
   };
   try {
     var salvo = localStorage.getItem('fl_ranking_modo');
-    if (salvo === 'pvp' || salvo === 'torneio') st.modo = salvo;
+    if (salvo === 'pvp' || salvo === 'torneio' || salvo === 'evento') st.modo = salvo;
   } catch (e) {}
 
   /* ── linhas normalizadas: {chave, pos, nome, tag, avatar, valor, v, d, e, p} ── */
@@ -1577,9 +1653,10 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
         v: l.vitorias | 0, d: l.derrotas | 0, e: l.empates | 0, p: l.partidas | 0 };
     });
   }
-  function linhasTorneio() {
-    var d = st.torneio.dados; if (!d) return null;
-    var c = (d.categorias || {})[st.torneio.aba] || { top: [] };
+  function linhasTorneio(modo) {
+    var s = st[modo || 'torneio'];
+    var d = s.dados; if (!d) return null;
+    var c = (d.categorias || {})[s.aba] || { top: [] };
     return (c.top || []).map(function (l) {
       return { chave: String(l.nome) + '|' + String(l.avatar || ''), pos: l.pos, nome: l.nome, avatar: l.avatar, valor: l.valor | 0 };
     });
@@ -1619,6 +1696,15 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       abas.push({ id: 'geral', rot: tr('geral'), n: d && d.geral ? d.geral.jogadores : null });
       if (d && d.temporada) abas.push({ id: 'temporada', rot: d.temporada.nome || 'Campanha', n: d.temporada.jogadores, cls: 'campanha' });
       if (st.pvp.aba === 'temporada' && !(d && d.temporada)) st.pvp.aba = 'geral';
+    } else if (modo === 'evento') {
+      var ce = (st.evento.dados && st.evento.dados.categorias) || {};
+      var lista = abasEvento();
+      if (lista.indexOf(st.evento.aba) < 0) st.evento.aba = 'eventos';
+      lista.forEach(function (id) {
+        if (id === 'eventos') { abas.push({ id: id, rot: tr('todosNpc'), n: ce[id] ? ce[id].total : null, cls: 'evento' }); return; }
+        var inf = infoNpc(id.slice(PREFIXO_NPC.length));
+        abas.push({ id: id, rot: inf.nome, img: inf.img, n: ce[id] ? ce[id].total : null, cls: 'evento npc' });
+      });
     } else {
       var c = (st.torneio.dados && st.torneio.dados.categorias) || {};
       [['torneios_normais', 'normal'], ['torneios_lendarios', 'lendario'], ['torneios_sombrios', 'sombrio']].forEach(function (a) {
@@ -1627,7 +1713,8 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     }
     box.innerHTML = abas.map(function (a) {
       var sel = st[modo].aba === a.id;
-      return '<button type="button" role="tab" class="rk-aba ' + (a.cls || '') + '" aria-selected="' + sel + '" data-aba="' + a.id + '">'
+      return '<button type="button" role="tab" class="rk-aba ' + (a.cls || '') + '" aria-selected="' + sel + '" data-aba="' + esc(a.id) + '">'
+        + (a.img ? '<img class="rk-aba-img" src="' + esc(a.img) + '" alt="" width="24" height="24" onerror="this.remove()">' : '')
         + esc(a.rot) + (a.n != null ? '<span class="rk-aba-n">' + num(a.n) + '</span>' : '') + '</button>';
     }).join('');
   }
@@ -1640,6 +1727,15 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     box.innerHTML = '<div class="rk-campanha"><b>' + esc(t.nome || '') + '</b>'
       + '<span class="rk-campanha-estado ' + esc(t.estado) + '">' + esc(estado) + '</span>'
       + '<span>' + esc(tr('campPeriodo', { a: dataBrasilia(t.inicio), b: dataBrasilia(t.fim) })) + '</span></div>';
+  }
+
+  function desenharNpc() {
+    var box = document.getElementById('rk-npc-evento');
+    var aba = st.evento.aba;
+    if (aba.indexOf(PREFIXO_NPC) !== 0) { box.innerHTML = ''; return; }
+    var inf = infoNpc(aba.slice(PREFIXO_NPC.length));
+    box.innerHTML = '<div class="rk-npc-destaque">' + (inf.img ? '<img src="' + esc(inf.img) + '" alt="" width="56" height="56" onerror="this.remove()">' : '')
+      + '<div><b>' + esc(inf.nome) + '</b><span>' + esc(tr('npcSub')) + '</span></div></div>';
   }
 
   function desenharPodio(modo, linhas) {
@@ -1666,7 +1762,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       } else {
         html += '<div class="' + cls + '">' + (i === 0 ? coroa() : '') + '<div class="rk-degrau-pos">' + ordinal(pos) + '</div>'
           + avatarHtml(l, l.nome) + '<div class="rk-degrau-nome" title="' + esc(l.nome) + '">' + esc(l.nome) + '</div>'
-          + '<div class="rk-degrau-valor">' + num(l.valor) + '</div><div class="rk-degrau-rot">' + tr('torneiosV') + '</div></div>';
+          + '<div class="rk-degrau-valor">' + num(l.valor) + '</div><div class="rk-degrau-rot">' + tr(modo === 'evento' ? 'vitorias' : 'torneiosV') + '</div></div>';
       }
     }
     box.innerHTML = html;
@@ -1686,12 +1782,12 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     var s = st[modo];
     var box = document.getElementById('rk-tabela-' + modo);
     var cont = document.getElementById('rk-contagem-' + modo);
-    var todas = modo === 'pvp' ? linhasPvp() : linhasTorneio();
+    var todas = modo === 'pvp' ? linhasPvp() : linhasTorneio(modo);
     var chaveAba = s.aba;
 
     var cab = modo === 'pvp'
       ? '<div class="rk-cab"><span>' + tr('posicao') + '</span><span>' + tr('jogadorCol') + '</span><span class="rk-num">' + tr('vit') + '</span><span class="rk-num">' + tr('der') + '</span><span class="rk-num rk-col-part">' + tr('partidas') + '</span><span class="rk-num">' + tr('aprov') + '</span></div>'
-      : '<div class="rk-cab"><span>' + tr('posicao') + '</span><span>' + tr('jogadorCol') + '</span><span class="rk-num">' + tr('vencidos') + '</span></div>';
+      : '<div class="rk-cab"><span>' + tr('posicao') + '</span><span>' + tr('jogadorCol') + '</span><span class="rk-num">' + tr(modo === 'evento' ? 'vitoriasCol' : 'vencidos') + '</span></div>';
 
     if (!todas) {
       desenharPodio(modo, null);
@@ -1712,7 +1808,8 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       : (total === 1 ? tr('jogador1') : tr('jogadores', { n: num(total) }));
 
     if (!todas.length) {
-      box.innerHTML = modo === 'pvp' ? vazioHtml(tr('vazioPvpT'), tr('vazioPvp')) : vazioHtml(tr('vazioTorT'), tr('vazioTor'));
+      box.innerHTML = modo === 'pvp' ? vazioHtml(tr('vazioPvpT'), tr('vazioPvp'))
+        : modo === 'evento' ? vazioHtml(tr('vazioEvT'), tr(s.aba === 'eventos' ? 'vazioEvTodos' : 'vazioEv')) : vazioHtml(tr('vazioTorT'), tr('vazioTor'));
       return;
     }
     if (!lista.length) { box.innerHTML = cab + vazioHtml(tr('nadaBuscaT'), tr('nadaBusca')); return; }
@@ -1749,7 +1846,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       var t = Date.parse(s.dados.atualizado_em);
       if (!isNaN(t)) partes.push(agora - t < 5000 ? tr('ultPartidaJa') : tr('ultPartida', { t: tempoRel(agora - t) }));
     }
-    if (modo === 'torneio' && s.dados.gerado_utc) {
+    if (modo !== 'pvp' && s.dados.gerado_utc) {
       var g = agora - s.dados.gerado_utc * 1000;
       partes.push(g < 5000 ? tr('ultCalculoJa') : tr('ultCalculo', { t: tempoRel(g) }));
     }
@@ -1758,9 +1855,10 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   }
 
   function desenharTudo() {
-    ['pvp', 'torneio'].forEach(function (m) {
+    ['pvp', 'evento', 'torneio'].forEach(function (m) {
       desenharAbas(m);
       if (m === 'pvp') desenharCampanha();
+      if (m === 'evento') desenharNpc();
       desenharTabela(m);
       desenharEstado(m);
       var inp = document.getElementById('rk-busca-' + m);
@@ -1782,6 +1880,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   function validoTorneio(j) { return j && j.ok === true && j.categorias && typeof j.categorias === 'object'; }
 
   function buscar(modo) {
+    if (modo === 'evento') modo = 'torneio';
     if (buscando[modo]) return;
     buscando[modo] = true;
     var url = modo === 'pvp' ? FONTE_PVP : FONTE_TORNEIOS;
@@ -1800,12 +1899,16 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
         } else {
           var abaT = s.aba;
           ['torneios_normais', 'torneios_lendarios', 'torneios_sombrios'].forEach(function (a) {
-            s.aba = a; marcarMudancas('torneio', a, linhasTorneio());
+            s.aba = a; marcarMudancas('torneio', a, linhasTorneio('torneio'));
           });
           s.aba = abaT;
+          var e = st.evento, abaE = e.aba;
+          e.dados = j; e.falhou = false; e.conferido = s.conferido;
+          abasEvento().forEach(function (a) { e.aba = a; marcarMudancas('evento', a, linhasTorneio('evento')); });
+          e.aba = abaE;
         }
       })
-      .catch(function () { st[modo].falhou = true; })
+      .catch(function () { st[modo].falhou = true; if (modo === 'torneio') st.evento.falhou = true; })
       .then(function () { buscando[modo] = false; desenharTudo(); });
   }
 
@@ -1820,11 +1923,12 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     b.addEventListener('click', function () { mostrarModo(b.dataset.modo); });
     b.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      var outro = document.querySelector('.rk-modo[data-modo="' + (b.dataset.modo === 'pvp' ? 'torneio' : 'pvp') + '"]');
+      var ordem = ['pvp', 'evento', 'torneio'], i = ordem.indexOf(b.dataset.modo);
+      var outro = document.querySelector('.rk-modo[data-modo="' + ordem[(i + (e.key === 'ArrowRight' ? 1 : 2)) % 3] + '"]');
       mostrarModo(outro.dataset.modo); outro.focus();
     });
   });
-  ['pvp', 'torneio'].forEach(function (m) {
+  ['pvp', 'evento', 'torneio'].forEach(function (m) {
     document.getElementById('rk-abas-' + m).addEventListener('click', function (e) {
       var b = e.target.closest('.rk-aba'); if (!b) return;
       st[m].aba = b.dataset.aba; desenharTudo();
@@ -1834,16 +1938,19 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     });
   });
   document.querySelectorAll('[data-atualizar]').forEach(function (b) {
-    b.addEventListener('click', function () { buscar(b.dataset.atualizar); agendar(b.dataset.atualizar); });
+    b.addEventListener('click', function () {
+      var m = b.dataset.atualizar === 'evento' ? 'torneio' : b.dataset.atualizar;
+      buscar(m); agendar(m);
+    });
   });
   document.addEventListener('visibilitychange', function () {
     if (!document.hidden) { buscar('pvp'); buscar('torneio'); }
-    desenharEstado('pvp'); desenharEstado('torneio');
+    desenharEstado('pvp'); desenharEstado('evento'); desenharEstado('torneio');
   });
   /* Troca de idioma pelo seletor da barra: redesenha o texto gerado aqui. */
   new MutationObserver(desenharTudo).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang-ativo'] });
   /* O "conferido há X" anda sozinho entre uma consulta e outra. */
-  setInterval(function () { desenharEstado('pvp'); desenharEstado('torneio'); }, 5000);
+  setInterval(function () { desenharEstado('pvp'); desenharEstado('evento'); desenharEstado('torneio'); }, 5000);
 
   mostrarModo(st.modo);
   desenharTudo();
