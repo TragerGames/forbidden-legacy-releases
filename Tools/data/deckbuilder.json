@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1790259437",
+  "versao": "1790781749",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -771,6 +771,12 @@
         "custom_monster"
       ]
     },
+    "Solar Firewing Pegasus": {
+      "grupos": [
+        "custom_monster",
+        "direct_attack"
+      ]
+    },
     "Evil Swords of Dark Light": {
       "grupos": [
         "custom_support"
@@ -882,10 +888,20 @@
         "burn_direct"
       ]
     },
+    "Burning Skull Head": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
     "Call of the Haunted": {
       "grupos": [
         "direct_attack",
         "attack_negation"
+      ]
+    },
+    "Ceasefire": {
+      "grupos": [
+        "burn_conditional"
       ]
     },
     "Cestus of Dagla": {
@@ -1148,6 +1164,11 @@
         "lp_recovery"
       ]
     },
+    "Gaia Soul the Combustible Collective": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
     "Gate Guardian of Wind and Water": {
       "grupos": [
         "backrow"
@@ -1231,6 +1252,11 @@
     "Jirai Gumo": {
       "grupos": [
         "board_wipe"
+      ]
+    },
+    "Judgment of Thunder": {
+      "grupos": [
+        "burn_conditional"
       ]
     },
     "King Pyron": {
@@ -1345,6 +1371,12 @@
         "direct_attack"
       ]
     },
+    "Remove Trap": {
+      "grupos": [
+        "board_wipe",
+        "backrow"
+      ]
+    },
     "Rose Whip": {
       "grupos": [
         "multi_attack"
@@ -1405,6 +1437,11 @@
         "multi_attack"
       ]
     },
+    "Supersonic Skull Flame": {
+      "grupos": [
+        "burn_recurring"
+      ]
+    },
     "Survival of the Fittest": {
       "grupos": [
         "multi_attack"
@@ -1418,6 +1455,11 @@
     "Swords of Revealing Light": {
       "grupos": [
         "attacker_lock"
+      ]
+    },
+    "The Ascended of Thunder": {
+      "grupos": [
+        "lp_recovery"
       ]
     },
     "The First Darklord": {
@@ -1458,6 +1500,11 @@
     "Torrential Tribute": {
       "grupos": [
         "board_wipe"
+      ]
+    },
+    "Trap Jammer": {
+      "grupos": [
+        "spell_negation"
       ]
     },
     "Triangle Ecstasy Spark": {
