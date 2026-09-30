@@ -92,7 +92,7 @@
       "name": "Trager Games"
     },
     "downloadUrl": "https://forbiddenlegacy.com.br/#download",
-    "softwareVersion": "Beta 1.9.2",
+    "softwareVersion": "Beta 2.0",
     "releaseNotes": "https://forbiddenlegacy.com.br/features.html",
     "inLanguage": ["pt-BR", "en"]
   }
@@ -1520,9 +1520,9 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 
   <div class="hero-pills">
     <div class="hero-pill"><strong id="h-cards">1.100+</strong><span data-lang="pt">cartas</span><span data-lang="en">cards</span><span data-lang="es">cartas</span><span data-lang="vi">thẻ bài</span></div>
-    <div class="hero-pill"><strong>33</strong><span data-lang="pt">NPCs</span><span data-lang="en">NPCs</span><span data-lang="es">NPCs</span><span data-lang="vi">NPC</span></div>
+    <div class="hero-pill"><strong>53</strong><span data-lang="pt">NPCs</span><span data-lang="en">NPCs</span><span data-lang="es">NPCs</span><span data-lang="vi">NPC</span></div>
     <div class="hero-pill"><strong>Season 2</strong><span data-lang="pt">campanha</span><span data-lang="en">campaign</span><span data-lang="es">campaña</span><span data-lang="vi">cốt truyện</span></div>
-    <div class="hero-pill"><strong>Beta 1.9.2</strong><span data-lang="pt">versão atual</span><span data-lang="en">current version</span><span data-lang="es">versión actual</span><span data-lang="vi">phiên bản hiện tại</span></div>
+    <div class="hero-pill"><strong>Beta 2.0</strong><span data-lang="pt">versão atual</span><span data-lang="en">current version</span><span data-lang="es">versión actual</span><span data-lang="vi">phiên bản hiện tại</span></div>
   </div>
 
   <div class="hero-btns">
@@ -1652,14 +1652,16 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   <div class="label">☥ <span data-lang="pt">Campanha</span><span data-lang="en">Campaign</span><span data-lang="es">Campaña</span><span data-lang="vi">Cốt truyện</span></div>
   <div class="campaign-title" data-lang="pt">Enfrente os Guardiões do Egito</div>
   <div class="campaign-title" data-lang="en">Face the Guardians of Egypt</div><div class="campaign-title" data-lang="es">Enfrenta a los Guardianes de Egipto</div><div class="campaign-title" data-lang="vi">Đối đầu Người Bảo Vệ Ai Cập</div>
-  <p class="campaign-sub" data-lang="pt">33 NPCs com IA e deck próprios. Season 1 completa e Season 2 em andamento para Founders. Versão gratuita inclui até Isis.</p>
-  <p class="campaign-sub" data-lang="en">33 NPCs with their own AI and deck. Full Season 1 and Season 2 underway for Founders. Free version includes up to Isis.</p><p class="campaign-sub" data-lang="es">33 NPCs con IA y mazo propios. Season 1 completa y Season 2 en curso para Founders. La versión gratuita incluye hasta Isis.</p><p class="campaign-sub" data-lang="vi">33 NPC với AI và bộ bài riêng. Season 1 đầy đủ và Season 2 đang diễn ra cho Founder. Bản miễn phí gồm tới Isis.</p>
+  <p class="campaign-sub" data-lang="pt">53 NPCs com IA e deck próprios: 41 na campanha (Season 1 completa e Season 2 até o Bandit Keith) e 12 do Torneio Sombrio e dos eventos. A versão gratuita vai até o High Mage Anubisius.</p>
+  <p class="campaign-sub" data-lang="en">53 NPCs with their own AI and deck: 41 in the campaign (full Season 1 and Season 2 up to Bandit Keith) and 12 from the Shadow Tournament and events. The free version goes up to High Mage Anubisius.</p><p class="campaign-sub" data-lang="es">53 NPCs con IA y mazo propios: 41 en la campaña (Season 1 completa y Season 2 hasta Bandit Keith) y 12 del Torneo Sombrío y de los eventos. La versión gratuita llega hasta High Mage Anubisius.</p><p class="campaign-sub" data-lang="vi">53 NPC với AI và bộ bài riêng: 41 trong cốt truyện (Season 1 đầy đủ và Season 2 tới Bandit Keith) và 12 từ Giải Bóng Tối và các sự kiện. Bản miễn phí đi tới High Mage Anubisius.</p>
 
   <div class="season-tabs" role="tablist">
     <button class="season-tab on" type="button" role="tab" aria-selected="true"
             data-season="1" onclick="mostrarSeason(1)">Season 1</button>
     <button class="season-tab" type="button" role="tab" aria-selected="false"
             data-season="2" onclick="mostrarSeason(2)">Season 2</button>
+    <button class="season-tab" type="button" role="tab" aria-selected="false"
+            data-season="3" onclick="mostrarSeason(3)"><span data-lang="pt">Torneio Sombrio e Eventos</span><span data-lang="en">Shadow Tournament and Events</span><span data-lang="es">Torneo Sombrío y Eventos</span><span data-lang="vi">Giải Bóng Tối và Sự kiện</span></button>
   </div>
   <div class="npc-row" data-season="1">
     <div class="npc-card">
@@ -1929,10 +1931,172 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
       </div>
       <div class="npc-name">Tea Gardner</div>
     </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/MakoTsunami0.webp" alt="Mako Tsunami" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Mako Tsunami</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/RexRaptor0.webp" alt="Rex Raptor" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Rex Raptor</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/Weevil0.webp" alt="Weevil" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Weevil</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/MaiValentine0.webp" alt="Mai Valentine" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Mai Valentine</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/Zygor0.webp" alt="Zygor" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Zygor</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/Sid0.webp" alt="Sid" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Sid</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/Bonz0.webp" alt="Bonz" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Bonz</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/BanditKeith0.webp" alt="Bandit Keith" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Bandit Keith</div>
+    </div>
+  </div>
+  <div class="npc-row" data-season="3" hidden>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/GreatShadowMagus0.webp" alt="Great Shadow Magus" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Great Shadow Magus</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/BlackLusterValkyrie0.webp" alt="Black Luster Valkyrie" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Black Luster Valkyrie</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/AzulaTheDragonRuler0.webp" alt="Azula, The Dragon Ruler" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Azula, The Dragon Ruler</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/Poseidon0.webp" alt="Poseidon" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Poseidon</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/LordDSaurian0.webp" alt="Lord D. Saurian" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Lord D. Saurian</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/Ignis0.webp" alt="Ignis" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Ignis</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/Azzazel0.webp" alt="Azzazel" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Azzazel</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/SetoCorrupted0.webp" alt="Seto Corrupted" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Seto Corrupted</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/KiramOverlord0.webp" alt="KiraM Overlord" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">KiraM Overlord</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/RegartHighDarklord0.webp" alt="Regart, The High Darklord" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Regart, The High Darklord</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/SpectreOfThePharaoh0.webp" alt="Spectre of the Pharaoh" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Spectre of the Pharaoh</div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-av">
+        <img src="img/Npcs/ZaneTruesdale0.webp" alt="Zane Truesdale" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" width="192" height="192">
+        <div style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:28px">🔒</div>
+      </div>
+      <div class="npc-name">Zane Truesdale</div>
+    </div>
   </div>
 
-  <p class="campaign-note" data-lang="pt">☥ Versão Founder desbloqueia <strong>todos os personagens</strong> — Akhenaden, Altos Magos, Sebek, Labyrinth Mage, Seto Final, Heishin e Zorc.</p>
-  <p class="campaign-note" data-lang="en">☥ Founder version unlocks <strong>all characters</strong> — Akhenaden, the High Mages, Sebek, Labyrinth Mage, Seto Final, Heishin and Zorc.</p><p class="campaign-note" data-lang="es">☥ La Versión Founder desbloquea <strong>todos los personajes</strong> — Akhenaden, Altos Magos, Sebek, Labyrinth Mage, Seto Final, Heishin y Zorc.</p><p class="campaign-note" data-lang="vi">☥ Phiên bản Founder mở khóa <strong>toàn bộ nhân vật</strong> — Akhenaden, các Đại Pháp Sư, Sebek, Labyrinth Mage, Seto Final, Heishin và Zorc.</p>
+  <p class="campaign-note" data-lang="pt">☥ Versão Founder desbloqueia <strong>todos os personagens</strong> — Labyrinth Mage, Sebek, Neku, os outros Altos Magos, Seto Final, Heishin, Zorc, a Season 2 inteira e o Torneio Sombrio.</p>
+  <p class="campaign-note" data-lang="en">☥ Founder version unlocks <strong>all characters</strong> — Labyrinth Mage, Sebek, Neku, the other High Mages, Seto Final, Heishin, Zorc, all of Season 2 and the Shadow Tournament.</p><p class="campaign-note" data-lang="es">☥ La Versión Founder desbloquea <strong>todos los personajes</strong> — Labyrinth Mage, Sebek, Neku, los demás Altos Magos, Seto Final, Heishin, Zorc, toda la Season 2 y el Torneo Sombrío.</p><p class="campaign-note" data-lang="vi">☥ Phiên bản Founder mở khóa <strong>toàn bộ nhân vật</strong> — Labyrinth Mage, Sebek, Neku, các Đại Pháp Sư còn lại, Seto Final, Heishin, Zorc, toàn bộ Season 2 và Giải Bóng Tối.</p>
 </div>
 
 <!-- ══════════════════ DOWNLOAD ══════════════════ -->
@@ -1942,7 +2106,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     <h2 class="section-title" data-lang="pt">Download Gratuito</h2>
     <h2 class="section-title" data-lang="en">Free Download</h2><h2 class="section-title" data-lang="es">Descarga Gratuita</h2><h2 class="section-title" data-lang="vi">Tải xuống miễn phí</h2>
     <div class="dl-box">
-      <div class="dl-version">Beta 1.9.2</div>
+      <div class="dl-version">Beta 2.0</div>
       <div class="dl-title" data-lang="pt">Forbidden Legacy — Season 1 + Season 2</div>
       <div class="dl-title" data-lang="en">Forbidden Legacy — Season 1 + Season 2</div><div class="dl-title" data-lang="es">Forbidden Legacy — Season 1 + Season 2</div><div class="dl-title" data-lang="vi">Forbidden Legacy — Season 1 + Season 2</div>
       <p class="dl-desc" data-lang="pt">Download direto por plataforma — sem instalação. A versão FREE é totalmente gratuita para sempre.</p>
@@ -2411,8 +2575,74 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   <h2 class="section-title" data-lang="en">Project Updates</h2><h2 class="section-title" data-lang="es">Novedades del Proyecto</h2><h2 class="section-title" data-lang="vi">Tin mới của dự án</h2>
   <div class="news-grid">
 
-    <!-- BETA 1.9.2 - PATCH 1 -->
+    <!-- BETA 2.0 -->
     <div class="news-card featured">
+      <div class="news-tag update">✨ Nova Versão</div>
+      <div class="news-date">30 Set 2026</div>
+      <div class="news-title" data-lang="pt">Beta 2.0 &mdash; Season 2 chega à ilha, Login Diário Founder e Marca de Escolha</div>
+      <div class="news-title" data-lang="en">Beta 2.0 &mdash; Season 2 reaches the island, Founder Daily Login and Pick Token</div>
+      <div class="news-title" data-lang="es">Beta 2.0 &mdash; La Season 2 llega a la isla, Login Diario Founder y Marca de Elección</div>
+      <div class="news-title" data-lang="vi">Beta 2.0 &mdash; Season 2 đến hòn đảo, Đăng nhập hằng ngày Founder và Dấu chọn</div>
+      <div class="news-body" data-lang="pt">
+        <ul>
+          <li><strong>Season 2: a ilha</strong> &mdash; a viagem ao <strong>Reino dos Duelistas</strong>, a chegada à ilha e oito novos duelos até o <strong>Bandit Keith</strong></li>
+          <li>A <strong>versão gratuita</strong> agora vai até o <strong>High Mage Anubisius</strong>: entram Akhenaden, Mountain Mage, High Mage Atenza, Forest Mage e Anubisius</li>
+          <li><strong>Login Diário Founder</strong>: 28 dias de prêmios no botão <strong>DIÁRIO</strong> &mdash; Souls, Stars, Tickets, Tickets de Boost, cartas SR e uma <strong>UR</strong> no fim do ciclo</li>
+          <li><strong>Marca de Escolha</strong>: cada abertura de booster de evento soma 1 marca daquele booster. Com <strong>250</strong>, você escolhe <strong>qualquer UR</strong> dele, inclusive as de prêmio Full Art</li>
+          <li>Todo <strong>Founder</strong> agora ativa o <strong>Cross-Save</strong> com o e-mail da compra do jogo, uma única vez</li>
+          <li><strong>Free Duel</strong>: escolha do deck na tela do duelista, <strong>placar contra cada duelista</strong> e o novo boost <strong>Progresso de Tier</strong></li>
+          <li><strong>Biblioteca</strong> mais leve, com numeração fixa, arte das cartas que você tem, progresso da coleção, filtros e onde conseguir cada carta</li>
+          <li><strong>Torneio Sombrio</strong>: Azula, The Dragon Ruler reveza o 2º duelo com a Black Luster Valkyrie, e o Spectre of the Pharaoh entra entre os chefes finais</li>
+          <li>Correções: botões que viravam barras finas no Android, Auto Duel alternando entre tela cheia e com bordas, e várias cartas e efeitos &mdash; proteções de aliado, imunidade a Armadilhas, negação de efeitos, a família Dark Magician e mais</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo no Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="en">
+        <ul>
+          <li><strong>Season 2: the island</strong> &mdash; the journey to the <strong>Duelist Kingdom</strong>, the arrival on the island and eight new duels up to <strong>Bandit Keith</strong></li>
+          <li>The <strong>free version</strong> now goes up to <strong>High Mage Anubisius</strong>: Akhenaden, Mountain Mage, High Mage Atenza, Forest Mage and Anubisius are now free</li>
+          <li><strong>Founder Daily Login</strong>: 28 days of rewards on the <strong>DAILY</strong> button &mdash; Souls, Stars, Tickets, Boost Tickets, SR cards and a <strong>UR</strong> at the end of the cycle</li>
+          <li><strong>Pick Token</strong>: every event booster you open adds 1 token for that booster. With <strong>250</strong>, you pick <strong>any UR</strong> from it, including the Full Art prizes</li>
+          <li>Every <strong>Founder</strong> now activates <strong>Cross-Save</strong> with the e-mail used to buy the game, only once</li>
+          <li><strong>Free Duel</strong>: pick your deck on the duelist screen, a <strong>record against each duelist</strong> and the new <strong>Tier Progress</strong> boost</li>
+          <li>A lighter <strong>Library</strong> with fixed numbers, the art of the cards you own, collection progress, filters and where to get each card</li>
+          <li><strong>Shadow Tournament</strong>: Azula, The Dragon Ruler alternates with Black Luster Valkyrie in the 2nd duel, and Spectre of the Pharaoh joins the final bosses</li>
+          <li>Fixes: buttons that turned into thin bars on Android, Auto Duel switching between fullscreen and windowed, and several cards and effects &mdash; ally protections, Trap immunity, effect negation, the Dark Magician family and more</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Full changelog on Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="es">
+        <ul>
+          <li><strong>Season 2: la isla</strong> &mdash; el viaje al <strong>Reino de los Duelistas</strong>, la llegada a la isla y ocho duelos nuevos hasta <strong>Bandit Keith</strong></li>
+          <li>La <strong>versión gratuita</strong> ahora llega hasta <strong>High Mage Anubisius</strong>: entran Akhenaden, Mountain Mage, High Mage Atenza, Forest Mage y Anubisius</li>
+          <li><strong>Login Diario Founder</strong>: 28 días de premios en el botón <strong>DIARIO</strong> &mdash; Souls, Stars, Tickets, Tickets de Boost, cartas SR y una <strong>UR</strong> al final del ciclo</li>
+          <li><strong>Marca de Elección</strong>: cada apertura de booster de evento suma 1 marca de ese booster. Con <strong>250</strong>, eliges <strong>cualquier UR</strong> de él, incluidas las de premio Full Art</li>
+          <li>Todo <strong>Founder</strong> ahora activa el <strong>Cross-Save</strong> con el correo de la compra del juego, una sola vez</li>
+          <li><strong>Free Duel</strong>: elección del mazo en la pantalla del duelista, <strong>marcador contra cada duelista</strong> y el nuevo boost <strong>Progreso de Tier</strong></li>
+          <li><strong>Biblioteca</strong> más ligera, con numeración fija, el arte de las cartas que tienes, progreso de la colección, filtros y dónde conseguir cada carta</li>
+          <li><strong>Torneo Sombrío</strong>: Azula, The Dragon Ruler se turna el 2º duelo con Black Luster Valkyrie, y Spectre of the Pharaoh entra entre los jefes finales</li>
+          <li>Correcciones: botones que se volvían barras finas en Android, el Auto Duel alternando entre pantalla completa y con bordes, y varias cartas y efectos &mdash; protecciones de aliado, inmunidad a Trampas, negación de efectos, la familia Dark Magician y más</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Ver changelog completo en Discord &rarr;</a>
+      </div>
+      <div class="news-body" data-lang="vi">
+        <ul>
+          <li><strong>Season 2: hòn đảo</strong> &mdash; chuyến đi tới <strong>Vương quốc Đấu sĩ</strong>, cập bến hòn đảo và tám trận đấu mới tới <strong>Bandit Keith</strong></li>
+          <li><strong>Bản miễn phí</strong> nay đi tới <strong>High Mage Anubisius</strong>: thêm Akhenaden, Mountain Mage, High Mage Atenza, Forest Mage và Anubisius</li>
+          <li><strong>Đăng nhập hằng ngày Founder</strong>: 28 ngày phần thưởng ở nút <strong>HẰNG NGÀY</strong> &mdash; Souls, Stars, Vé, Vé Boost, thẻ SR và một thẻ <strong>UR</strong> cuối chu kỳ</li>
+          <li><strong>Dấu chọn</strong>: mỗi lần mở booster sự kiện cộng 1 dấu cho booster đó. Đủ <strong>250</strong>, bạn chọn <strong>bất kỳ UR</strong> nào của nó, kể cả thẻ thưởng Full Art</li>
+          <li>Mọi <strong>Founder</strong> nay kích hoạt <strong>Cross-Save</strong> bằng email đã dùng để mua game, chỉ một lần</li>
+          <li><strong>Free Duel</strong>: chọn bộ bài ngay ở màn hình đấu sĩ, <strong>thành tích với từng đấu sĩ</strong> và boost mới <strong>Tiến độ Tier</strong></li>
+          <li><strong>Thư viện</strong> nhẹ hơn, đánh số cố định, hiện ảnh các thẻ bạn có, tiến độ bộ sưu tập, bộ lọc và nơi kiếm từng thẻ</li>
+          <li><strong>Giải Bóng Tối</strong>: Azula, The Dragon Ruler luân phiên trận thứ 2 với Black Luster Valkyrie, và Spectre of the Pharaoh vào nhóm trùm cuối</li>
+          <li>Sửa lỗi: nút biến thành thanh mỏng trên Android, Auto Duel đổi qua lại giữa toàn màn hình và có viền, cùng nhiều thẻ và hiệu ứng &mdash; bảo vệ đồng minh, miễn nhiễm Bẫy, vô hiệu hiệu ứng, họ Dark Magician và hơn nữa</li>
+        </ul>
+        <a href="https://discord.gg/forbidden-legacy" target="_blank" class="news-more">Changelog đầy đủ trên Discord &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BETA 1.9.2 - PATCH 1 -->
+    <div class="news-card">
       <div class="news-tag update">✨ Nova Versão</div>
       <div class="news-date">24 Set 2026</div>
       <div class="news-title" data-lang="pt">Beta 1.9.2 &mdash; Patch 1: armadilhas de ataque não encerram mais a Fase de Batalha</div>
@@ -3410,7 +3640,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 TragerGames · Forbidden Legacy · Beta 1.9.2</span>
+    <span>© 2026 TragerGames · Forbidden Legacy · Beta 2.0</span>
     <span>Fan-made project · Not affiliated with Konami</span>
   </div>
 </footer>
