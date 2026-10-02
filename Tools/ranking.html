@@ -962,6 +962,11 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .rk-aba .rk-aba-n{font-weight:400;opacity:.65;margin-left:6px;font-variant-numeric:tabular-nums}
 .rk-aba.sombrio[aria-selected="true"]{background:rgba(155,89,182,.14);border-color:rgba(155,89,182,.6);color:#d6a8ec}
 .rk-aba.campanha[aria-selected="true"]{background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.45);color:#9ff0bf}
+/* categorias do PVP (2026-10-02): mesma separacao da aba PVP do jogo */
+.rk-aba.rk-pc-punicoes[aria-selected="true"]{background:rgba(232,120,64,.12);border-color:rgba(232,120,64,.55);color:#f3b48f}
+.rk-aba.rk-pc-teto[aria-selected="true"]{background:rgba(95,168,224,.12);border-color:rgba(95,168,224,.55);color:#a9d4f5}
+.rk-aba.rk-pc-hardcore[aria-selected="true"]{background:rgba(226,72,72,.14);border-color:rgba(226,72,72,.6);color:#f2a0a0}
+.rk-cat-desc{margin:-8px 0 20px;color:var(--rk-sub);font-size:13px}
 
 .rk-campanha{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:-6px 0 20px;padding:12px 16px;
   border-radius:10px;border:1px solid rgba(74,222,128,.22);background:rgba(74,222,128,.04);font-size:12.5px;color:#b9d9c4}
@@ -1219,7 +1224,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
     <div class="rk-tabela pvp" id="rk-tabela-pvp"></div>
     <div class="rk-regra">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>
-      <p data-lang="pt">Contam as partidas <b>PVP entre contas diferentes</b>, na fila ou na sala por código. <b>Desistir ou abandonar conta como derrota.</b> Partida interrompida por queda do servidor não conta. Ordem: mais vitórias, depois menos derrotas, depois quem chegou primeiro.</p><p data-lang="en">Counted matches are <b>PVP matches between different accounts</b>, in the queue or in a code room. <b>Surrendering or leaving counts as a loss.</b> Matches cut by a server outage don't count. Order: most wins, then fewest losses, then whoever got there first.</p><p data-lang="es">Cuentan las partidas <b>PVP entre cuentas diferentes</b>, en la cola o en la sala por código. <b>Rendirse o abandonar cuenta como derrota.</b> Una partida interrumpida por caída del servidor no cuenta. Orden: más victorias, luego menos derrotas, luego quien llegó primero.</p><p data-lang="vi">Chỉ tính các trận <b>PVP giữa các tài khoản khác nhau</b>, trong hàng chờ hoặc phòng bằng mã. <b>Đầu hàng hoặc bỏ trận tính là thua.</b> Trận bị gián đoạn do máy chủ sập không được tính. Thứ tự: nhiều trận thắng nhất, rồi ít trận thua nhất, rồi ai đạt trước.</p>
+      <p data-lang="pt">Contam as partidas <b>PVP entre contas diferentes</b>, na fila ou na sala por código. <b>Desistir ou abandonar conta como derrota.</b> Partida interrompida por queda do servidor não conta. Ordem: mais vitórias, depois menos derrotas, depois quem chegou primeiro. <b>Categorias:</b> Livre (sem punição, sem teto e sem hardcore), Com punição, Com teto e Hardcore — uma partida conta em todas as que ela é.</p><p data-lang="en">Counted matches are <b>PVP matches between different accounts</b>, in the queue or in a code room. <b>Surrendering or leaving counts as a loss.</b> Matches cut by a server outage don't count. Order: most wins, then fewest losses, then whoever got there first. <b>Categories:</b> Free (no penalties, no weight cap, no hardcore), With penalties, With weight cap and Hardcore — a match counts in every one it belongs to.</p><p data-lang="es">Cuentan las partidas <b>PVP entre cuentas diferentes</b>, en la cola o en la sala por código. <b>Rendirse o abandonar cuenta como derrota.</b> Una partida interrumpida por caída del servidor no cuenta. Orden: más victorias, luego menos derrotas, luego quien llegó primero. <b>Categorías:</b> Libre (sin castigos, sin tope y sin hardcore), Con castigos, Con tope y Hardcore — una partida cuenta en todas las que le corresponden.</p><p data-lang="vi">Chỉ tính các trận <b>PVP giữa các tài khoản khác nhau</b>, trong hàng chờ hoặc phòng bằng mã. <b>Đầu hàng hoặc bỏ trận tính là thua.</b> Trận bị gián đoạn do máy chủ sập không được tính. Thứ tự: nhiều trận thắng nhất, rồi ít trận thua nhất, rồi ai đạt trước. <b>Hạng mục:</b> Tự do (không hình phạt, không giới hạn, không hardcore), Có hình phạt, Có giới hạn và Hardcore — một trận được tính vào mọi hạng mục phù hợp.</p>
     </div>
   </section>
 
@@ -1500,6 +1505,14 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     falhaVelho:  { pt: 'Sem conexão agora — mostrando o último ranking carregado', en: 'No connection right now — showing the last loaded ranking', es: 'Sin conexión ahora — mostrando el último ranking cargado', vi: 'Hiện mất kết nối — đang hiển thị bảng xếp hạng đã tải gần nhất' },
     pausado:     { pt: 'Pausado com a aba em segundo plano', en: 'Paused while the tab is in the background', es: 'En pausa con la pestaña en segundo plano', vi: 'Tạm dừng khi thẻ ở chế độ nền' },
     geral:       { pt: 'Geral', en: 'Overall', es: 'General', vi: 'Tổng' },
+    livre:       { pt: 'Livre', en: 'Free', es: 'Libre', vi: 'Tự do' },
+    punicoes:    { pt: 'Com punição', en: 'With penalties', es: 'Con castigos', vi: 'Có hình phạt' },
+    teto:        { pt: 'Com teto', en: 'With weight cap', es: 'Con tope', vi: 'Có giới hạn' },
+    hardcore:    { pt: 'Hardcore', en: 'Hardcore', es: 'Hardcore', vi: 'Hardcore' },
+    descLivre:   { pt: 'Partidas sem punição, sem teto de peso e sem hardcore.', en: 'Matches without penalties, weight cap or hardcore.', es: 'Partidas sin castigos, sin tope de peso y sin hardcore.', vi: 'Trận không hình phạt, không giới hạn trọng lượng, không hardcore.' },
+    descPunicoes:{ pt: 'Partidas com as punições do Torneio.', en: 'Matches with Tournament penalties.', es: 'Partidas con los castigos del Torneo.', vi: 'Trận có hình phạt của Giải đấu.' },
+    descTeto:    { pt: 'Partidas com teto de peso no deck.', en: 'Matches with a deck weight cap.', es: 'Partidas con tope de peso del mazo.', vi: 'Trận có giới hạn trọng lượng bộ bài.' },
+    descHardcore:{ pt: 'Partidas hardcore, valendo carta ou Souls.', en: 'Hardcore matches, for a card or Souls.', es: 'Partidas hardcore, por una carta o Souls.', vi: 'Trận hardcore, cược lá bài hoặc Souls.' },
     normal:      { pt: 'Normal', en: 'Normal', es: 'Normal', vi: 'Thường' },
     lendario:    { pt: 'Lendário', en: 'Legendary', es: 'Legendario', vi: 'Huyền Thoại' },
     sombrio:     { pt: 'Sombrio', en: 'Shadow', es: 'Sombrío', vi: 'Bóng Tối' },
@@ -1644,10 +1657,20 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     if (salvo === 'pvp' || salvo === 'torneio' || salvo === 'evento') st.modo = salvo;
   } catch (e) {}
 
+  /* Categorias do PVP (o servidor publica em `categorias`, ao lado do `geral`).
+     Uma partida conta em todas as que ela e'; Livre = nenhuma das outras. */
+  var PVP_CATS = ['livre', 'punicoes', 'teto', 'hardcore'];
+  var PVP_DESC = { livre: 'descLivre', punicoes: 'descPunicoes', teto: 'descTeto', hardcore: 'descHardcore' };
+  function tabPvp(d, aba) {
+    if (aba === 'temporada' && d.temporada) return d.temporada;
+    if (PVP_CATS.indexOf(aba) >= 0 && d.categorias && d.categorias[aba]) return d.categorias[aba];
+    return d.geral;
+  }
+
   /* ── linhas normalizadas: {chave, pos, nome, tag, avatar, valor, v, d, e, p} ── */
   function linhasPvp() {
     var d = st.pvp.dados; if (!d) return null;
-    var tab = st.pvp.aba === 'temporada' && d.temporada ? d.temporada : d.geral;
+    var tab = tabPvp(d, st.pvp.aba);
     return ((tab && tab.linhas) || []).map(function (l) {
       return { chave: String(l.nome) + '#' + String(l.tag), pos: l.posicao, nome: l.nome, tag: l.tag, avatar: l.avatar || '',
         v: l.vitorias | 0, d: l.derrotas | 0, e: l.empates | 0, p: l.partidas | 0 };
@@ -1696,6 +1719,11 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       abas.push({ id: 'geral', rot: tr('geral'), n: d && d.geral ? d.geral.jogadores : null });
       if (d && d.temporada) abas.push({ id: 'temporada', rot: d.temporada.nome || 'Campanha', n: d.temporada.jogadores, cls: 'campanha' });
       if (st.pvp.aba === 'temporada' && !(d && d.temporada)) st.pvp.aba = 'geral';
+      var cats = (d && d.categorias) || {};
+      PVP_CATS.forEach(function (c) {
+        if (cats[c]) abas.push({ id: c, rot: tr(c), n: cats[c].jogadores, cls: 'rk-pc-' + c });
+      });
+      if (PVP_CATS.indexOf(st.pvp.aba) >= 0 && !cats[st.pvp.aba]) st.pvp.aba = 'geral';
     } else if (modo === 'evento') {
       var ce = (st.evento.dados && st.evento.dados.categorias) || {};
       var lista = abasEvento();
@@ -1722,6 +1750,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   function desenharCampanha() {
     var box = document.getElementById('rk-campanha-pvp');
     var t = st.pvp.dados && st.pvp.dados.temporada;
+    if (PVP_DESC[st.pvp.aba]) { box.innerHTML = '<p class="rk-cat-desc">' + esc(tr(PVP_DESC[st.pvp.aba])) + '</p>'; return; }
     if (!t || st.pvp.aba !== 'temporada') { box.innerHTML = ''; return; }
     var estado = t.estado === 'ativa' ? tr('campAtiva') : t.estado === 'encerrada' ? tr('campFim') : tr('campEmBreve', { d: dataBrasilia(t.inicio) });
     box.innerHTML = '<div class="rk-campanha"><b>' + esc(t.nome || '') + '</b>'
@@ -1802,7 +1831,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
         || (l.tag && (String(l.nome) + '#' + l.tag).toLowerCase().indexOf(q) >= 0);
     });
     var total = modo === 'pvp'
-      ? (s.aba === 'temporada' && s.dados.temporada ? s.dados.temporada.jogadores : (s.dados.geral || {}).jogadores) || todas.length
+      ? (tabPvp(s.dados, s.aba) || {}).jogadores || todas.length
       : (((s.dados.categorias || {})[s.aba] || {}).total) || todas.length;
     cont.textContent = q ? tr('mostrando', { a: num(lista.length), b: num(todas.length) })
       : (total === 1 ? tr('jogador1') : tr('jogadores', { n: num(total) }));
@@ -1895,6 +1924,9 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
           var abaAntes = s.aba;
           s.aba = 'geral'; marcarMudancas('pvp', 'geral', linhasPvp());
           if (j.temporada) { s.aba = 'temporada'; marcarMudancas('pvp', 'temporada', linhasPvp()); }
+          PVP_CATS.forEach(function (c) {
+            if (j.categorias && j.categorias[c]) { s.aba = c; marcarMudancas('pvp', c, linhasPvp()); }
+          });
           s.aba = abaAntes;
         } else {
           var abaT = s.aba;
