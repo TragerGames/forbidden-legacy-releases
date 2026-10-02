@@ -836,6 +836,14 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .aviso-jogo-limpo{margin:14px 0}
 .dl-box .aviso-jogo-limpo{max-width:520px;margin:-14px auto 28px}
 .buy-box .aviso-jogo-limpo{margin:20px 0 0}
+/* Aceite dos Termos de Uso no checkout (2026-10-02): obrigatorio, e a versao
+   aceita vai junto com o pedido (prova em contestacao de pagamento). */
+.aceite-termos{display:flex;align-items:flex-start;gap:10px;margin:14px 0 0;padding:11px 13px;
+  border:1px solid rgba(200,151,58,.3);border-radius:6px;background:rgba(200,151,58,.05);
+  font-size:13px;line-height:1.5;color:#d8c8a2;cursor:pointer;text-align:left}
+.aceite-termos input{flex:0 0 auto;width:18px;height:18px;margin:1px 0 0;accent-color:#c8973a;cursor:pointer}
+.aceite-termos a{color:#e8b840;text-decoration:underline;text-underline-offset:2px}
+.aceite-termos.faltando{border-color:#d63a3a;box-shadow:0 0 0 2px rgba(214,58,58,.25)}
 .dl-note { font-size: 11px; color: var(--text-muted); margin-top: 16px; }
 
 /* ── REQUISITOS DO SISTEMA ── */
@@ -2610,6 +2618,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
         <label data-lang="pt">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(exigido para cartão de crédito)</span></label>
         <label data-lang="en">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(required for credit card)</span></label><label data-lang="es">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(exigido para tarjeta de crédito)</span></label><label data-lang="vi">CPF <span style="color:#e04040;font-size:10px">*</span> <span style="color:var(--text-muted);font-weight:400;font-size:10px">(bắt buộc khi dùng thẻ tín dụng)</span></label>
         <input id="input-cpf" type="text" placeholder="000.000.000-00" autocomplete="off" maxlength="14" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d3)(\d)/,'$1.$2').replace(/(\d3)(\d)/,'$1.$2').replace(/(\d3)(\d(1, 2))$/,'$1-$2')">
+        <div style="font-size:11px;color:var(--text-muted);margin-top:6px;line-height:1.5"><span data-lang="pt">Use um cartão em seu nome. O CPF deve ser o do titular do cartão.</span><span data-lang="en">Use a card in your name. The CPF must be the cardholder's.</span><span data-lang="es">Usa una tarjeta a tu nombre. El CPF debe ser el del titular de la tarjeta.</span><span data-lang="vi">Hãy dùng thẻ đứng tên bạn. CPF phải là của chủ thẻ.</span></div>
       </div>
       <div class="input-group">
         <label data-lang="pt">DISPOSITIVO <span style="color:#e04040;font-size:10px">*</span></label>
@@ -2630,6 +2639,10 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.5 8 9.5 4.6-1 8-4.5 8-9.5V6z"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
         <span data-lang="pt"><strong>Jogo limpo.</strong> Tentar burlar o jogo com Cheat Engine ou qualquer outro meio leva a <strong>BAN PERMANENTE do Founder e do Discord</strong>. O ban é aplicado em tempo real e não tem segunda chance.</span><span data-lang="en"><strong>Fair play.</strong> Trying to cheat the game with Cheat Engine or any other means leads to a <strong>PERMANENT BAN from Founder and the Discord</strong>. Bans are applied in real time and there are no second chances.</span><span data-lang="es"><strong>Juego limpio.</strong> Intentar hacer trampa en el juego con Cheat Engine o cualquier otro medio lleva a un <strong>BAN PERMANENTE del Founder y del Discord</strong>. El ban se aplica en tiempo real y no hay segunda oportunidad.</span><span data-lang="vi"><strong>Chơi công bằng.</strong> Cố gian lận trò chơi bằng Cheat Engine hoặc bất kỳ cách nào khác sẽ bị <strong>CẤM VĨNH VIỄN khỏi Founder và Discord</strong>. Lệnh cấm được áp dụng ngay lập tức và không có cơ hội thứ hai.</span>
       </div>
+      <label class="aceite-termos" id="aceite-termos-box">
+        <input type="checkbox" id="aceite-termos" onchange="document.getElementById('aceite-termos-box').classList.remove('faltando')">
+        <span data-lang="pt">Li e aceito os <a href="termos.html" target="_blank" rel="noopener">Termos de Uso e a Política de Reembolso</a>.</span><span data-lang="en">I have read and accept the <a href="termos.html" target="_blank" rel="noopener">Terms of Use and Refund Policy</a>.</span><span data-lang="es">Leí y acepto los <a href="termos.html" target="_blank" rel="noopener">Términos de Uso y la Política de Reembolso</a>.</span><span data-lang="vi">Tôi đã đọc và chấp nhận <a href="termos.html" target="_blank" rel="noopener">Điều khoản sử dụng và Chính sách hoàn tiền</a>.</span>
+      </label>
       <button class="btn-gold" style="width: 100%; border: none; font-size: 16px; margin-top: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;" onclick="abrirModalPagamento()">
         <span>☥</span>
         <span data-lang="pt">ATIVAR VERSÃO FOUNDER</span>
@@ -3720,6 +3733,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
       <a href="#comprar" data-lang="pt">Versão Founder</a><a href="#comprar" data-lang="en">Founder Version</a><a href="#comprar" data-lang="es">Versión Founder</a><a href="#comprar" data-lang="vi">Phiên bản Founder</a>
       <a href="ativar_dispositivo.html" data-lang="pt">Ativar outro dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate another device</a><a href="ativar_dispositivo.html" data-lang="es">Activar otro dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị khác</a>
       <a href="suporte.html" data-lang="pt">Fale com o suporte</a><a href="suporte.html" data-lang="en">Contact support</a><a href="suporte.html" data-lang="es">Contactar soporte</a><a href="suporte.html" data-lang="vi">Liên hệ hỗ trợ</a>
+      <a href="termos.html" data-lang="pt">Termos de Uso</a><a href="termos.html" data-lang="en">Terms of Use</a><a href="termos.html" data-lang="es">Términos de Uso</a><a href="termos.html" data-lang="vi">Điều khoản sử dụng</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -4083,7 +4097,7 @@ async function stripePagar(currency) {
     const res = await fetch('/pagar/stripe_checkout.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ player_code: codigo, email, nome, discord, dispositivo, currency, origem: flOrigem(), idioma: flIdioma() })
+      body: JSON.stringify({ player_code: codigo, email, nome, discord, dispositivo, currency, origem: flOrigem(), idioma: flIdioma(), aceite_termos: flAceiteTermos() })
     });
     const data = await res.json();
     if (data.url) {
@@ -4400,6 +4414,7 @@ function abrirModalPagamento() {
     alert(isEN ? 'Please enter your name.' : 'Informe seu nome.');
     document.getElementById('input-nome')?.focus(); return;
   }
+  if (!flExigirAceiteTermos()) return;
 
   // PIX e cartão BR apenas para Brasil; cartão USD apenas fora do Brasil.
   // Depende do país detectado por IP OU do override manual do cliente —
@@ -4568,7 +4583,7 @@ async function asaasPagar() {
     const resp = await fetch('/pagar/asaas_checkout.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ player_code: codigo, email, nome, cpf, discord, dispositivo, produto: 'founder', origem: flOrigem(), idioma: flIdioma() }),
+      body: JSON.stringify({ player_code: codigo, email, nome, cpf, discord, dispositivo, produto: 'founder', origem: flOrigem(), idioma: flIdioma(), aceite_termos: flAceiteTermos() }),
     });
     const data = await resp.json();
     if (!resp.ok || data.error) throw new Error(data.error || 'Erro ao iniciar pagamento.');
@@ -4631,7 +4646,7 @@ async function pixPagar() {
     const res = await fetch(`${PIX_API_BASE}/criar_pix.php`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ codigo_jogo: codigo, email: email, nome: nome, discord: discord, dispositivo: dispositivo, origem: flOrigem(), idioma: flIdioma() })
+      body: JSON.stringify({ codigo_jogo: codigo, email: email, nome: nome, discord: discord, dispositivo: dispositivo, origem: flOrigem(), idioma: flIdioma(), aceite_termos: flAceiteTermos() })
     });
     const data = await res.json();
 
@@ -5169,6 +5184,29 @@ window.mostrarSeason = mostrarSeason;
   buscar();
   setInterval(function () { if (!document.hidden) buscar(); }, 60000);
 })();
+</script>
+<script>
+/* Aceite dos Termos de Uso (2026-10-02). A versao vai em todo pedido como
+   `aceite_termos`; o servidor grava com data, IP e navegador e recusa pedido
+   sem ela. Versao nova dos termos = trocar aqui E em pagar/termos_lib.php. */
+var FL_TERMOS_VERSAO = 'v1';
+function flAceiteTermos() {
+  var c = document.getElementById('aceite-termos');
+  return c && c.checked ? FL_TERMOS_VERSAO : '';
+}
+function flExigirAceiteTermos() {
+  if (flAceiteTermos()) return true;
+  var l = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
+  alert({
+    pt: 'Para continuar, marque que leu e aceita os Termos de Uso e a Política de Reembolso.',
+    en: 'To continue, confirm that you have read and accept the Terms of Use and Refund Policy.',
+    es: 'Para continuar, marca que leíste y aceptas los Términos de Uso y la Política de Reembolso.',
+    vi: 'Để tiếp tục, hãy xác nhận bạn đã đọc và chấp nhận Điều khoản sử dụng và Chính sách hoàn tiền.'
+  }[l] || 'To continue, accept the Terms of Use and Refund Policy.');
+  var box = document.getElementById('aceite-termos-box');
+  if (box) { box.classList.add('faltando'); box.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+  return false;
+}
 </script>
 </body>
 </html>
