@@ -52,5 +52,11 @@ jobs:
           for f in Tools/*.html; do
             printf 'put -O /public_html "%s"\n' "$f" >> /tmp/lftp.txt
           done
+          # Mesma armadilha nos dados: trocar a raridade de uma carta (SR -> UR)
+          # e o carimbo de versao mantem o catalogo.json com o mesmo tamanho, e o
+          # mirror nao subia (Barrel Dragon, Beta 2.0 p01). Forcar os JSON de data/.
+          for f in Tools/data/*.json; do
+            printf 'put -O /public_html/data "%s"\n' "$f" >> /tmp/lftp.txt
+          done
           printf '%s\n' "quit" >> /tmp/lftp.txt
           lftp -f /tmp/lftp.txt
