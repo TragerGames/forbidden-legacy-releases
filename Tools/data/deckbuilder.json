@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1791053184",
+  "versao": "1791461775",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -873,6 +873,12 @@
         "piercing_pressure"
       ]
     },
+    "Blaze Fenix": {
+      "grupos": [
+        "direct_attack",
+        "burn_direct"
+      ]
+    },
     "Blowback Dragon": {
       "grupos": [
         "backrow"
@@ -1138,6 +1144,12 @@
         "burn_direct"
       ]
     },
+    "Firewall": {
+      "grupos": [
+        "direct_attack",
+        "attack_negation"
+      ]
+    },
     "Flame Cerebrus": {
       "grupos": [
         "triple_attack"
@@ -1164,9 +1176,20 @@
         "lp_recovery"
       ]
     },
+    "Gaia Prominence, the Fierce Force": {
+      "grupos": [
+        "multi_attack",
+        "spell_negation"
+      ]
+    },
     "Gaia Soul the Combustible Collective": {
       "grupos": [
         "piercing_pressure"
+      ]
+    },
+    "Garunix Eternity, Hyang of the Fire Kings": {
+      "grupos": [
+        "backrow"
       ]
     },
     "Gate Guardian of Wind and Water": {
@@ -1354,6 +1377,16 @@
     "Pyramid of Light": {
       "grupos": [
         "attack_negation"
+      ]
+    },
+    "Pyrorex the Elemental Lord": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Pyrotech Mech - Shiryu": {
+      "grupos": [
+        "piercing_pressure"
       ]
     },
     "R - Righteous Justice": {
@@ -1551,6 +1584,47 @@
     "Ultimate Flame Swordsman": {
       "grupos": [
         "burn_recurring"
+      ]
+    },
+    "Veidos the Dragon of Endless Darkness": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Veidos the Eruption Dragon of Extinction": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Volcanic Hammerer": {
+      "grupos": [
+        "direct_attack"
+      ]
+    },
+    "Volcanic Inferno": {
+      "grupos": [
+        "spell_negation"
+      ]
+    },
+    "Volcanic Rocket": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Volcanic Shell": {
+      "grupos": [
+        "burn_conditional"
+      ]
+    },
+    "Volcanic Slicer": {
+      "grupos": [
+        "direct_attack",
+        "burn_recurring"
+      ]
+    },
+    "Volcanic Trooper": {
+      "grupos": [
+        "burn_conditional"
       ]
     },
     "Whispark Fairy Girl": {

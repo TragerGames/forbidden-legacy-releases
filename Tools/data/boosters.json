@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1791053184",
+  "versao": "1791461775",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -7939,6 +7939,423 @@
           "slug": "skilled_dark_magician",
           "atk": "1900",
           "def": "1700"
+        }
+      ]
+    },
+    {
+      "id": "especial_searing_inferno",
+      "tipo_label": "SEARING INFERNO",
+      "nome_pt": "Searing Inferno",
+      "nome_en": "Searing Inferno",
+      "nome_es": "Searing Inferno",
+      "nome_vi": "Searing Inferno",
+      "desc_pt": "Edição especial e temporária dedicada ao fogo: Uria e os Volcanic, as Blaze Accelerator e seus Marcadores de Calor, os Monarcas e os lordes PYRO que transformam o campo em brasa.",
+      "desc_en": "A special, time-limited edition of fire: Uria and the Volcanics, the Blaze Accelerators and their Heat Counters, the Monarchs and the PYRO lords that turn the field into embers.",
+      "desc_es": "Edición especial y temporal del fuego: Uria y los Volcanic, los Blaze Accelerator y sus Contadores de Calor, los Monarcas y los señores PYRO que convierten el campo en brasas.",
+      "desc_vi": "Phiên bản đặc biệt, giới hạn thời gian của lửa: Uria và các Volcanic, những Blaze Accelerator cùng Điểm Nhiệt, các Monarch và những chúa tể PYRO biến sân đấu thành than hồng.",
+      "cor": "#c0391b",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 15,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-searing-inferno.webp",
+      "total_tema": 60,
+      "cartas_tema": [
+        {
+          "nome": "Blaze Accelerator",
+          "raridade": "UR",
+          "slug": "blaze_accelerator"
+        },
+        {
+          "nome": "Blaze Fenix",
+          "raridade": "UR",
+          "slug": "blaze_fenix",
+          "atk": "2800",
+          "def": "2300"
+        },
+        {
+          "nome": "Dogoran, the Mad Flame Kaiju",
+          "raridade": "UR",
+          "slug": "dogoran_the_mad_flame_kaiju",
+          "atk": "3000",
+          "def": "1200"
+        },
+        {
+          "nome": "Embers of the Ashened",
+          "raridade": "UR",
+          "slug": "embers_of_the_ashened",
+          "atk": "2900",
+          "def": "2400"
+        },
+        {
+          "nome": "Fire King High Avatar Garunix",
+          "raridade": "UR",
+          "slug": "fire_king_high_avatar_garunix",
+          "atk": "2700",
+          "def": "1700"
+        },
+        {
+          "nome": "Flame Cerebrus",
+          "raridade": "UR",
+          "slug": "flame_cerebrus",
+          "atk": "2100",
+          "def": "1800"
+        },
+        {
+          "nome": "Gaia Prominence, the Fierce Force",
+          "raridade": "UR",
+          "slug": "gaia_prominence_the_fierce_force",
+          "atk": "3500",
+          "def": "3100"
+        },
+        {
+          "nome": "Garunix Eternity, Hyang of the Fire Kings",
+          "raridade": "UR",
+          "slug": "garunix_eternity_hyang_of_the_fire_kings",
+          "atk": "3000",
+          "def": "2000"
+        },
+        {
+          "nome": "Hazy Flame Basiltrice",
+          "raridade": "UR",
+          "slug": "hazy_flame_basiltrice",
+          "atk": "2500",
+          "def": "1800"
+        },
+        {
+          "nome": "Hino-Kagu-Tsuchi",
+          "raridade": "UR",
+          "slug": "hino-kagu-tsuchi",
+          "atk": "2800",
+          "def": "2900"
+        },
+        {
+          "nome": "Infernal Incinerator",
+          "raridade": "UR",
+          "slug": "infernal_incinerator",
+          "atk": "2800",
+          "def": "1800"
+        },
+        {
+          "nome": "Lava Golem, Steelcage of the Sun God",
+          "raridade": "UR",
+          "slug": "lava_golem_steelcage_of_the_sun_god",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Lavalval Dragun",
+          "raridade": "UR",
+          "slug": "lavalval_dragun",
+          "atk": "2500",
+          "def": "1200"
+        },
+        {
+          "nome": "Legendary Flame Lord",
+          "raridade": "UR",
+          "slug": "legendary_flame_lord",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Macro Cosmo",
+          "raridade": "UR",
+          "slug": "macro_cosmo"
+        },
+        {
+          "nome": "Prometeor, the Burning Star",
+          "raridade": "UR",
+          "slug": "prometeor_the_burning_star",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Pyrorex the Elemental Lord",
+          "raridade": "UR",
+          "slug": "pyrorex_the_elemental_lord",
+          "atk": "2800",
+          "def": "2200"
+        },
+        {
+          "nome": "Pyrotech Mech - Shiryu",
+          "raridade": "UR",
+          "slug": "pyrotech_mech_-_shiryu",
+          "atk": "2900",
+          "def": "1800"
+        },
+        {
+          "nome": "Queen of the Blazing Domain",
+          "raridade": "UR",
+          "slug": "queen_of_the_blazing_domain",
+          "atk": "3000",
+          "def": "2500"
+        },
+        {
+          "nome": "Radiant Typhoon Fonix, the Great Flame",
+          "raridade": "UR",
+          "slug": "radiant_typhoon_fonix_the_great_flame",
+          "atk": "3000",
+          "def": "0"
+        },
+        {
+          "nome": "Thestalos the Firestorm Monarch",
+          "raridade": "UR",
+          "slug": "thestalos_the_firestorm_monarch",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Thestalos the Mega Monarch",
+          "raridade": "UR",
+          "slug": "thestalos_the_mega_monarch",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Thestalos the Shadowfire Monarch",
+          "raridade": "UR",
+          "slug": "thestalos_the_shadowfire_monarch",
+          "atk": "3000",
+          "def": "1000"
+        },
+        {
+          "nome": "Tri-Blaze Accelerator",
+          "raridade": "UR",
+          "slug": "tri-blaze_accelerator"
+        },
+        {
+          "nome": "Uria, Lord of Searing Flames",
+          "raridade": "UR",
+          "slug": "uria_lord_of_searing_flames",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Veidos the Dragon of Endless Darkness",
+          "raridade": "UR",
+          "slug": "veidos_the_dragon_of_endless_darkness",
+          "atk": "3000",
+          "def": "1700"
+        },
+        {
+          "nome": "Veidos the Eruption Dragon of Extinction",
+          "raridade": "UR",
+          "slug": "veidos_the_eruption_dragon_of_extinction",
+          "atk": "2800",
+          "def": "1500"
+        },
+        {
+          "nome": "Volcanic Blaze Accelerator",
+          "raridade": "UR",
+          "slug": "volcanic_blaze_accelerator"
+        },
+        {
+          "nome": "Volcanic Doomfire",
+          "raridade": "UR",
+          "slug": "volcanic_doomfire",
+          "atk": "3000",
+          "def": "1800"
+        },
+        {
+          "nome": "Volcanic Emperor",
+          "raridade": "UR",
+          "slug": "volcanic_emperor",
+          "atk": "3100",
+          "def": "2400"
+        },
+        {
+          "nome": "Volcanic Inferno",
+          "raridade": "UR",
+          "slug": "volcanic_inferno"
+        },
+        {
+          "nome": "Volcanic Queen",
+          "raridade": "UR",
+          "slug": "volcanic_queen",
+          "atk": "2500",
+          "def": "1200"
+        },
+        {
+          "nome": "Yomagna the Fire Phantom",
+          "raridade": "UR",
+          "slug": "yomagna_the_fire_phantom",
+          "atk": "3300",
+          "def": "0"
+        },
+        {
+          "nome": "Bonfire",
+          "raridade": "SR",
+          "slug": "bonfire"
+        },
+        {
+          "nome": "Fire Ejection",
+          "raridade": "SR",
+          "slug": "fire_ejection"
+        },
+        {
+          "nome": "Firewall",
+          "raridade": "SR",
+          "slug": "firewall"
+        },
+        {
+          "nome": "Helios - The Primordial Sun",
+          "raridade": "SR",
+          "slug": "helios_-_the_primordial_sun",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Helios Duo Megistus",
+          "raridade": "SR",
+          "slug": "helios_duo_megistus",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Helios Trice Megistus",
+          "raridade": "SR",
+          "slug": "helios_trice_megistus",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Ignition Beast Volcannon",
+          "raridade": "SR",
+          "slug": "ignition_beast_volcannon",
+          "atk": "2300",
+          "def": "1600"
+        },
+        {
+          "nome": "Infernal Flame Banshee",
+          "raridade": "SR",
+          "slug": "infernal_flame_banshee",
+          "atk": "1700",
+          "def": "600"
+        },
+        {
+          "nome": "Infernal Flame Vixen",
+          "raridade": "SR",
+          "slug": "infernal_flame_vixen",
+          "atk": "2200",
+          "def": "2000"
+        },
+        {
+          "nome": "Number 61: Volcasaurus",
+          "raridade": "SR",
+          "slug": "number_61_volcasaurus",
+          "atk": "2500",
+          "def": "1000"
+        },
+        {
+          "nome": "Volcanic Counter",
+          "raridade": "SR",
+          "slug": "volcanic_counter",
+          "atk": "300",
+          "def": "1300"
+        },
+        {
+          "nome": "Volcanic Emission",
+          "raridade": "SR",
+          "slug": "volcanic_emission"
+        },
+        {
+          "nome": "Volcanic Hammerer",
+          "raridade": "SR",
+          "slug": "volcanic_hammerer",
+          "atk": "2400",
+          "def": "1500"
+        },
+        {
+          "nome": "Volcanic Recharge",
+          "raridade": "SR",
+          "slug": "volcanic_recharge"
+        },
+        {
+          "nome": "Volcanic Rocket",
+          "raridade": "SR",
+          "slug": "volcanic_rocket",
+          "atk": "1900",
+          "def": "1400"
+        },
+        {
+          "nome": "Volcanic Slicer",
+          "raridade": "SR",
+          "slug": "volcanic_slicer",
+          "atk": "1800",
+          "def": "1200"
+        },
+        {
+          "nome": "Volcanic Trooper",
+          "raridade": "SR",
+          "slug": "volcanic_trooper",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Wild Fire",
+          "raridade": "SR",
+          "slug": "wild_fire"
+        },
+        {
+          "nome": "Barrier Statue of the Inferno",
+          "raridade": "R",
+          "slug": "barrier_statue_of_the_inferno",
+          "atk": "1000",
+          "def": "1000"
+        },
+        {
+          "nome": "Evolsaur Vulcano",
+          "raridade": "R",
+          "slug": "evolsaur_vulcano",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Fire Recovery",
+          "raridade": "R",
+          "slug": "fire_recovery"
+        },
+        {
+          "nome": "Laval Volcano Handmaiden",
+          "raridade": "R",
+          "slug": "laval_volcano_handmaiden",
+          "atk": "100",
+          "def": "200"
+        },
+        {
+          "nome": "Volcanic Blaster",
+          "raridade": "R",
+          "slug": "volcanic_blaster",
+          "atk": "1200",
+          "def": "600"
+        },
+        {
+          "nome": "Volcanic Rimfire",
+          "raridade": "R",
+          "slug": "volcanic_rimfire",
+          "atk": "300",
+          "def": "0"
+        },
+        {
+          "nome": "Volcanic Scattershot",
+          "raridade": "R",
+          "slug": "volcanic_scattershot",
+          "atk": "500",
+          "def": "0"
+        },
+        {
+          "nome": "Volcanic Shell",
+          "raridade": "R",
+          "slug": "volcanic_shell",
+          "atk": "100",
+          "def": "0"
+        },
+        {
+          "nome": "Volcanic Rat",
+          "raridade": "N",
+          "slug": "volcanic_rat",
+          "atk": "500",
+          "def": "500"
         }
       ]
     }
