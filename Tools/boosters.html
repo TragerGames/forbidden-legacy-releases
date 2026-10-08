@@ -550,6 +550,436 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
 }
 ::-webkit-scrollbar-corner { background: transparent; }
+
+/* ═══ DETALHE DA CARTA — mesmo modal do catalogo (catalogo.html). Copiado de
+   la: ao mudar o visual do modal no catalogo, mudar aqui tambem. ═══ */
+/* ── MODAL DE CARTA ── */
+.cat-modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,.88);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.cat-modal-overlay.open { display: flex; }
+.cat-modal {
+  background: var(--dark2); border: 1px solid var(--gold-dim); border-radius: 8px;
+  max-width: 560px; width: 100%; max-height: 88vh;
+  overflow-y: auto; overflow-x: hidden;
+  padding: 26px; position: relative;
+  display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px;
+}
+.cat-modal-close {
+  position: absolute; top: 10px; right: 14px; background: none; border: none;
+  color: var(--text-muted); font-size: 20px; cursor: pointer; line-height: 1;
+}
+.cat-modal-close:hover { color: var(--gold); }
+.cat-modal-img-wrap { position: relative; }
+.cat-modal-img {
+  width: 100%; aspect-ratio: 110/160; object-fit: cover; border-radius: 6px;
+  border: 2px solid var(--gold-dim); background: #050408; display: block;
+}
+.cat-modal-rarity-badge {
+  position: absolute; bottom: 100%; right: 4%; margin-bottom: 4px; width: 22%; aspect-ratio: 30/16;
+  object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0,0,0,.7));
+}
+/* Alternar entre a arte normal e a Full Art. O modal SEMPRE abre na versao
+   normal — a Full Art e uma recompensa do jogo, nao a face padrao da carta. */
+.cat-modal-versao {
+  display: none; width: 100%; margin-top: 8px; gap: 6px;
+  background: rgba(0,0,0,.35); border: 1px solid var(--gold-dim);
+  border-radius: 6px; padding: 3px;
+}
+.cat-modal-versao.on { display: flex; }
+.cat-modal-versao button {
+  flex: 1; background: none; border: none; cursor: pointer;
+  font-family: inherit; font-size: 11px; font-weight: 700; letter-spacing: .4px;
+  color: #9a9a9a; padding: 6px 4px; border-radius: 4px; transition: all .15s;
+}
+.cat-modal-versao button:hover { color: #e8e8e8; }
+.cat-modal-versao button.active {
+  background: linear-gradient(180deg, rgba(224,170,24,.22), rgba(200,150,10,.12));
+  color: var(--gold-light); box-shadow: inset 0 0 0 1px rgba(224,170,24,.35);
+}
+.cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
+.cat-modal-rarity { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; }
+.cat-modal-rarity.r-N  { color: #999;    background: rgba(153,153,153,.12); }
+.cat-modal-rarity.r-R  { color: #88aadd; background: rgba(136,170,221,.12); }
+.cat-modal-rarity.r-SR { color: #bb88ee; background: rgba(187,136,238,.12); }
+.cat-modal-rarity.r-UR { color: #e8b840; background: rgba(232,184,64,.14); }
+.cat-modal-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-bottom: 14px; }
+.cat-modal-fact-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-dim); }
+.cat-modal-fact-value { font-size: 13px; color: var(--text-body); display: flex; align-items: center; gap: 6px; }
+.cat-modal-fact-value img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+.cat-modal-desc { font-size: 12px; line-height: 1.7; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 12px; white-space: pre-line; }
+@media(max-width:520px) {
+  .cat-modal { grid-template-columns: minmax(0, 1fr); }
+  .cat-modal-img-wrap { max-width: 160px; margin: 0 auto; }
+  /* alvo de toque maior no celular — 27px de altura era apertado pro dedo */
+  .cat-modal-versao button { padding: 10px 4px; font-size: 12px; }
+}
+
+/* ── LANG ── */
+/* ── IDIOMAS ──────────────────────────────────────────────────────────
+   Uma regra por idioma, e todas apenas ESCONDEM. O elemento do idioma
+   ativo nunca recebe regra de display, então conserva o display natural
+   que o resto da folha deu a ele.
+
+   Isto substituiu uma matriz de body.en [data-lang=en]{display:block} +
+   span{inline} + li{flex}, que precisava readivinhar o display de cada
+   tipo de elemento: toda tag nova exigia mais uma linha, e a regra de
+   span forçava a inline até os spans que o layout fazia block — ou
+   seja, o inglês herdava um bug de layout que o português não tinha.
+
+   O marcador vive no <html>, não no <body>, para o script do <head>
+   resolver o idioma antes do primeiro pixel. */
+html[data-lang-ativo="pt"] [data-lang]:not([data-lang="pt"]) { display: none !important; }
+html[data-lang-ativo="en"] [data-lang]:not([data-lang="en"]) { display: none !important; }
+html[data-lang-ativo="es"] [data-lang]:not([data-lang="es"]) { display: none !important; }
+html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !important; }
+
+/* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
+.lang-pick { position: relative; display: inline-block; }
+.lang-pick-btn {
+  display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
+  background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
+  color: var(--text-muted, #6a5830);
+  padding: 4px 9px; border-radius: 3px; cursor: pointer;
+  font-size: 11px; letter-spacing: .6px; font-family: 'Inter', sans-serif;
+  transition: border-color .2s, color .2s;
+}
+.lang-pick-btn:hover, .lang-pick.aberto .lang-pick-btn {
+  border-color: var(--gold, #c8973a); color: var(--gold-light, #e8b840);
+}
+.lang-pick-btn svg, .lang-opt svg {
+  width: 18px; height: 12.6px; border-radius: 1px; flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.35);
+}
+.lang-caret { font-size: 8px; opacity: .7; transition: transform .2s; }
+.lang-pick.aberto .lang-caret { transform: rotate(180deg); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 3000;
+  min-width: 158px; padding: 4px;
+  background: #14100a; border: 1px solid var(--gold-dim, #7a5a18);
+  border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,.65);
+  display: none; flex-direction: column; gap: 1px;
+}
+.lang-pick.aberto .lang-menu { display: flex; }
+.lang-opt {
+  display: flex; align-items: center; gap: 9px; width: 100%;
+  background: transparent; border: none; cursor: pointer;
+  padding: 8px 10px; border-radius: 3px; text-align: left;
+  color: var(--text-body, #9a8050); font-size: 12.5px;
+  font-family: 'Inter', sans-serif; white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.lang-opt:hover { background: rgba(200,151,58,.12); color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"] { color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"]::after { content: '\2713'; margin-left: auto; font-size: 11px; }
+@media (max-width: 560px) {
+  .lang-pick-btn .lang-nome { display: none; }   /* na nav estreita fica só a bandeira */
+  .lang-menu { right: 0; }
+}
+
+/* ── LANG BUTTONS ── */
+.topbar-right { display:flex; gap:8px; align-items:center; }
+.lang-btn {
+  background:transparent; border:1px solid var(--gold-dim); color:var(--text-muted);
+  padding:4px 10px; border-radius:3px; cursor:pointer; font-size:11px; letter-spacing:1px;
+  transition:all .2s; font-family:'Inter',sans-serif;
+}
+.lang-btn.active { border-color:var(--gold); color:var(--gold); }
+
+/* ── FOOTER ── */
+footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
+.footer-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px; margin-bottom:32px; }
+.footer-brand .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--gold); margin-bottom:6px; letter-spacing:2px; }
+.footer-brand p { font-size:11px; color:var(--text-muted); max-width:240px; line-height:1.6; }
+.footer-col h4 { font-size:10px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:12px; }
+.footer-col a { display:block; font-size:12px; color:var(--text-muted); margin-bottom:6px; transition:color .2s; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom { border-top:1px solid rgba(200,151,58,.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.footer-bottom span { font-size:11px; color:#2a2018; }
+
+/* ── STARS ── */
+.stars { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.stars::before, .stars::after {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(212,168,67,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 55%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 48% 30%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 12%, rgba(212,168,67,.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 50%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 78%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58% 72%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 36% 88%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 28%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 52% 6%, rgba(212,168,67,.75) 0%, transparent 100%),
+    radial-gradient(1px 1px at 76% 85%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 40%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 94% 65%, rgba(212,168,67,.3) 0%, transparent 100%);
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+.stars::after {
+  background-image:
+    radial-gradient(1px 1px at 7% 32%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 32% 15%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 40%, rgba(212,168,67,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 20%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 62%, rgba(212,168,67,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 48%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 10%, rgba(212,168,67,.5) 0%, transparent 100%);
+  animation: twinkle 3.5s ease-in-out infinite alternate-reverse;
+}
+@keyframes twinkle { 0%{opacity:.45} 100%{opacity:1} }
+
+/* ── DISCORD NAV BADGE ── */
+.discord-nav-badge { display:none; align-items:center; gap:5px; font-size:10px; color:#7289da; text-decoration:none; border:1px solid rgba(88,101,242,0.3); border-radius:3px; padding:4px 9px; background:rgba(88,101,242,0.08); transition:background .2s; }
+.discord-nav-badge:hover { background:rgba(88,101,242,0.18); color:#99aaf5; }
+.discord-nav-badge .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+.discord-nav-badge .dc-dot.online  { background:#3ba55c; }
+.discord-nav-badge .dc-dot.offline { background:#747f8d; }
+
+/* ── MOBILE NAV BAR ── */
+.mobile-nav-bar {
+  display: none;
+  position: fixed; top: 52px; left: 0; right: 0; z-index: 198;
+  background: rgba(5,3,1,0.97); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px); flex-direction: column;
+}
+.mobile-discord-bar {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 5px 16px; background: rgba(88,101,242,0.07);
+  border-bottom: 1px solid rgba(88,101,242,0.15);
+  font-size: 11px; color: #7289da; text-decoration: none;
+  letter-spacing: .3px;
+}
+.mobile-discord-bar .dc-dot { width:6px; height:6px; border-radius:50%; display:inline-block; }
+.mobile-discord-bar .dc-dot.online  { background:#3ba55c; }
+.mobile-discord-bar .dc-dot.offline { background:#747f8d; }
+.mobile-nav-links {
+  display: flex; overflow-x: auto; gap: 0;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.mobile-nav-links::-webkit-scrollbar { display: none; }
+.mobile-nav-links a {
+  flex-shrink: 0; padding: 10px 16px;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-muted); text-decoration: none;
+  border-right: 1px solid var(--border); white-space: nowrap;
+  transition: color .2s, background .2s;
+}
+.mobile-nav-links a:hover, .mobile-nav-links a:active { color: var(--gold); background: rgba(200,144,32,0.06); }
+.mobile-nav-links a.nav-cta { color: var(--gold-light); background: rgba(200,144,32,0.05); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px) {
+  nav#nav { padding: 12px 20px; }
+  .nav-links, nav#nav .nav-cta { display: none !important; }
+  .mobile-nav-bar { display: flex; }
+  .page-hero { padding-top: 96px; }
+  .cat-toolbar { top: 0; }
+  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 8px; }
+  footer { padding: 32px 20px; }
+
+  /* Filtro em faixa horizontal rolavel — sem isso, RAÇA (22 botoes) sozinha
+     ja empurra a grade de cartas pra fora da tela no celular. */
+  .cat-filter-row {
+    flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; padding-bottom: 2px; margin-bottom: 8px;
+  }
+  .cat-filter-row::-webkit-scrollbar { display: none; }
+  .cat-filter-label { position: sticky; left: 0; background: var(--dark); padding-right: 6px; z-index: 1; }
+  .cat-count { margin-left: 10px; }
+}
+/* -- Barra do topo: menus agrupados (2026-09-23) -----------------
+   Antes eram 12 links soltos e a barra precisava de ~1500px: em tela de
+   notebook os nomes quebravam em duas linhas, encostavam na logo e o botao
+   FOUNDER saia da tela. Agora sao 4 menus + Loja. A barra rolavel do celular
+   continua com a lista inteira e assume abaixo de 1000px. */
+.nav-links{flex-wrap:nowrap;gap:24px}
+.nav-links a{white-space:nowrap}
+.nav-logo{flex-shrink:0}
+nav#nav{gap:16px}
+nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
+.nav-grupo{position:relative}
+.nav-grupo-bt{display:flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--muted);padding:8px 0;transition:color .2s}
+.nav-grupo-bt:hover,.nav-grupo.aberto .nav-grupo-bt,.nav-grupo.tem-ativo .nav-grupo-bt{color:var(--gold)}
+.nav-caret{width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;
+  transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s;opacity:.7}
+.nav-grupo.aberto .nav-caret{transform:rotate(225deg) translate(-3px,-3px)}
+.nav-drop{position:absolute;top:calc(100% + 10px);left:-14px;min-width:238px;z-index:5;
+  display:none;flex-direction:column;padding:8px;background:rgba(9,8,10,.985);
+  border:1px solid rgba(200,151,58,.22);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.nav-drop::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.nav-grupo.aberto .nav-drop{display:flex}
+.nav-drop a{display:flex;flex-direction:column;gap:2px;padding:9px 12px;
+  font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#c3b189;
+  border-left:2px solid transparent;transition:background .18s,color .18s,border-color .18s}
+.nav-drop a:hover,.nav-drop a:focus-visible{background:rgba(200,151,58,.09);color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a.ativo{color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a small{font-size:10.5px;letter-spacing:.2px;text-transform:none;color:var(--muted);opacity:.85}
+.nav-solo{font-size:10px;letter-spacing:1.5px}
+.nav-solo.ativo{color:var(--gold)}
+@media(hover:hover){.nav-grupo:hover .nav-drop{display:flex}.nav-grupo:hover .nav-grupo-bt{color:var(--gold)}}
+@media(max-width:1000px){
+  .nav-links,nav#nav .nav-cta,.discord-nav-badge{display:none!important}
+  .mobile-nav-bar{display:flex}
+  .page-hero { padding-top: 96px; }
+}
+
+
+
+
+
+
+/* ── PISO DE LEITURA NO CELULAR ─────────────────────────────────
+   Medido em 390px: a home tinha 331 textos abaixo de 12px, o menor
+   em 9px. Abaixo disso o texto vira ruído no celular, e a maior
+   parte do público chega pelo Discord no telefone. Só eleva o piso
+   no mobile — o desktop continua exatamente como estava. */
+@media (max-width:768px){
+  html .nav-links a{font-size:11px}
+  html .page-hero-label{font-size:11px}
+  html .page-hero-sub{font-size:11px}
+  html .cat-filter-label{font-size:11px}
+  html .cat-chip{font-size:12px}
+  html .cat-count{font-size:12px}
+  html .cat-card-name{font-size:11px}
+  html .cat-card-stats{font-size:11px}
+  html .cat-modal-versao button{font-size:12px}
+  html .cat-modal-rarity{font-size:12px}
+  html .cat-modal-fact-label{font-size:11px}
+  html .lang-btn{font-size:12px}
+  html .footer-brand p{font-size:12px}
+  html .footer-col h4{font-size:11px}
+  html .footer-bottom span{font-size:12px}
+  html /* ── DISCORD NAV BADGE ── */ .discord-nav-badge{font-size:11px}
+  html .mobile-discord-bar{font-size:12px}
+  html .mobile-nav-links a{font-size:12px}
+}
+
+/* ═══ REFORMA VISUAL — padrao da Loja e do Championship ══════════════ */
+:root{
+  --mola:cubic-bezier(.34,1.56,.64,1); --suave:cubic-bezier(.4,0,.2,1);
+  --r-n:#8c8c8c; --r-r:#88aadd; --r-sr:#bb88ee; --r-ur:#e8b840;
+}
+body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:radial-gradient(1200px 640px at 50% -10%, rgba(200,151,58,.10), transparent 62%)}
+.page-content{position:relative; z-index:1}
+
+/* barra de filtros */
+.cat-toolbar{border-radius:12px!important; backdrop-filter:blur(10px)}
+.cat-search{border-radius:8px!important; transition:border-color .25s, box-shadow .25s}
+.cat-search:focus-within{border-color:var(--gold)!important; box-shadow:0 0 0 3px rgba(200,151,58,.1)}
+.cat-chip{transition:all .18s!important}
+.cat-chip:hover{transform:translateY(-1px)}
+.cat-chip.active[data-filter-rar="N"]{border-color:var(--r-n);color:var(--r-n);background:rgba(140,140,140,.12)}
+.cat-chip.active[data-filter-rar="R"]{border-color:var(--r-r);color:var(--r-r);background:rgba(136,170,221,.12)}
+.cat-chip.active[data-filter-rar="SR"]{border-color:var(--r-sr);color:var(--r-sr);background:rgba(187,136,238,.12)}
+.cat-chip.active[data-filter-rar="UR"]{border-color:var(--r-ur);color:var(--r-ur);background:rgba(232,184,64,.14)}
+
+/* cartas da grade */
+.cat-card{
+  position:relative; background:none; border:none; padding:0;
+  opacity:0; transform:translateY(12px);
+  animation:catSobe .42s cubic-bezier(.22,1,.36,1) forwards; animation-delay:var(--atraso,0s);
+}
+@keyframes catSobe{to{opacity:1; transform:none}}
+.cat-card:hover{transform:none}          /* a elevacao passa para o wrapper */
+.cat-card-img-wrap{
+  border-radius:8px;
+  transition:transform .34s cubic-bezier(.34,1.56,.64,1), box-shadow .34s cubic-bezier(.22,1,.36,1);
+}
+.cat-card img{
+  /* height:auto e obrigatorio: o <img> nao tem atributo de altura aqui, mas
+     a regra antiga tambem nao garantia — sem isto o aspect-ratio pode ser
+     ignorado e a carta sai quase quadrada. */
+  height:auto!important; border-radius:8px;
+}
+.cat-card:hover .cat-card-img-wrap{transform:translateY(-7px) scale(1.03)}
+.cat-card.r-N:hover  .cat-card-img-wrap{box-shadow:0 12px 28px rgba(140,140,140,.22)}
+.cat-card.r-R:hover  .cat-card-img-wrap{box-shadow:0 12px 28px rgba(136,170,221,.3)}
+.cat-card.r-SR:hover .cat-card-img-wrap{box-shadow:0 12px 30px rgba(187,136,238,.32)}
+.cat-card.r-UR:hover .cat-card-img-wrap{box-shadow:0 14px 32px rgba(232,184,64,.36)}
+.cat-card-name mark{background:rgba(232,184,64,.24); color:var(--gold-light); border-radius:2px; padding:0 1px}
+
+/* selos no canto da carta */
+.cat-selos{position:absolute; top:6px; left:6px; z-index:2; display:flex;
+  flex-direction:column; gap:3px; align-items:flex-start; pointer-events:none}
+.cat-selo{font-size:7.5px; font-weight:700; letter-spacing:.7px; text-transform:uppercase;
+  padding:2px 6px; border-radius:3px; background:rgba(6,3,10,.9); border:1px solid}
+.cat-selo.exc{border-color:rgba(155,89,182,.55); color:#c9a3e8}
+.cat-selo.fa{border-color:rgba(232,184,64,.5); color:var(--gold-light)}
+.cat-selo.cu{border-color:rgba(90,180,150,.5); color:#9fd4bf}
+
+/* modal */
+.cat-modal{
+  max-width:830px!important; border-radius:14px!important;
+  background:linear-gradient(178deg,var(--dark3),var(--dark2) 60%)!important;
+  animation:catEntra .32s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes catEntra{from{opacity:0; transform:translateY(18px) scale(.97)}to{opacity:1; transform:none}}
+.cat-modal-img{height:auto!important}
+.cat-modal-name{font-size:27px!important}
+
+.cat-origem{border-top:1px solid var(--border); margin-top:16px; padding-top:14px}
+.cat-origem-tit{font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1.4px;
+  color:var(--gold); margin-bottom:12px; display:flex; align-items:center; gap:9px}
+.cat-origem-tit::before{content:''; width:3px; height:14px; border-radius:2px;
+  background:linear-gradient(180deg,var(--gold),transparent)}
+.cat-fonte{margin-bottom:12px}.cat-fonte:last-child{margin-bottom:0}
+.cat-fonte-rot{display:flex; align-items:center; gap:7px; font-size:9.5px; letter-spacing:1.6px;
+  text-transform:uppercase; color:var(--text-muted); margin-bottom:7px; font-weight:600}
+.cat-fonte-rot svg{width:12px;height:12px;flex-shrink:0}
+.cat-tags{display:flex; flex-wrap:wrap; gap:6px}
+.cat-tag{font-size:11.5px; padding:5px 11px; border-radius:6px; background:var(--dark3);
+  border:1px solid var(--border); color:var(--text-body); display:inline-flex; align-items:center;
+  gap:6px; cursor:pointer; font-family:inherit; transition:all .2s;
+  opacity:0; transform:translateY(7px);
+  animation:catSobe .38s cubic-bezier(.22,1,.36,1) forwards; animation-delay:var(--atraso,0s)}
+.cat-tag:hover{transform:translateY(-2px); border-color:var(--gold)}
+.cat-tag b{color:var(--gold-light); font-weight:600; font-size:10.5px; font-variant-numeric:tabular-nums}
+.cat-tag.booster{border-color:rgba(200,151,58,.26); background:rgba(200,151,58,.06)}
+.cat-tag.npc{border-color:rgba(90,140,220,.24); background:rgba(90,140,220,.05); color:#a8c4e8}
+.cat-tag.evento{border-color:rgba(220,120,60,.3); background:rgba(220,120,60,.07); color:#e0a878}
+.cat-tag .seta{opacity:0; margin-left:-4px; transition:opacity .2s, margin .2s; font-size:10px}
+.cat-tag:hover .seta{opacity:.8; margin-left:0}
+.cat-aviso{display:flex; gap:11px; padding:11px 13px; border-radius:8px; font-size:12px;
+  line-height:1.6; background:rgba(155,89,182,.07); border:1px solid rgba(155,89,182,.26);
+  color:#cbb0e8; margin-bottom:11px}
+.cat-aviso.fusao{background:rgba(90,180,150,.06); border-color:rgba(90,180,150,.24); color:#9fd4bf}
+.cat-aviso svg{width:15px;height:15px;flex-shrink:0;margin-top:1px}
+.cat-aviso b{color:#fff;font-weight:600}
+.cat-sem-origem{font-size:12px; color:var(--text-muted); line-height:1.65; font-style:italic}
+.cat-nav{position:absolute; top:50%; transform:translateY(-50%); z-index:1010;
+  width:38px; height:38px; border-radius:50%; background:rgba(9,8,10,.92);
+  border:1px solid var(--border); color:var(--gold); font-size:17px; cursor:pointer;
+  display:grid; place-items:center; transition:all .2s}
+.cat-nav:hover{border-color:var(--gold); background:rgba(200,151,58,.14)}
+.cat-nav.ant{left:14px} .cat-nav.prox{right:14px}
+@media(min-width:1000px){ .cat-nav.ant{left:calc(50% - 470px)} .cat-nav.prox{right:calc(50% - 470px)} }
+
+.cat-modal{
+  max-width:830px!important; border-radius:14px!important;
+  background:linear-gradient(178deg,var(--dark3),var(--dark2) 60%)!important;
+  animation:catEntra .32s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes catEntra{from{opacity:0; transform:translateY(18px) scale(.97)}to{opacity:1; transform:none}}
+@keyframes catSobe{to{opacity:1; transform:none}}
+.cat-modal-img{height:auto!important}
+.cat-modal-name{font-size:27px!important}
+.cat-nav{position:fixed!important}
+.cat-tag{cursor:default}
+button.cat-tag{cursor:pointer}
+.card-thumb{cursor:pointer}
+.card-thumb img{transition:transform .2s, border-color .2s}
+.card-thumb:hover img{transform:translateY(-3px)}
 </style>
 </head>
 <body>
@@ -870,6 +1300,34 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     </div>
     <div id="booster-detail" class="booster-detail-panel" style="display:none"></div>
   </div>
+
+<!-- MODAL DE CARTA -->
+<button class="cat-nav ant" id="cat-nav-ant" onclick="catNavega(-1)" aria-label="Anterior" style="display:none">‹</button>
+<button class="cat-nav prox" id="cat-nav-prox" onclick="catNavega(1)" aria-label="Próxima" style="display:none">›</button>
+<div class="cat-modal-overlay" id="cat-modal-overlay" onclick="if(event.target===this) closeCardModal()">
+  <div class="cat-modal">
+    <button class="cat-modal-close" onclick="closeCardModal()">✕</button>
+    <div class="cat-modal-img-wrap">
+      <img class="cat-modal-img" id="cat-modal-img" src="" alt="">
+      <img class="cat-modal-rarity-badge" id="cat-modal-rarity-badge" src="" alt="" style="display:none">
+      <div class="cat-modal-versao" id="cat-modal-versao">
+        <button type="button" id="cat-ver-normal" class="active" onclick="setCardVersion('normal')">
+          <span data-lang="pt">🃏 Normal</span><span data-lang="en">🃏 Normal</span><span data-lang="es">🃏 Normal</span><span data-lang="vi">🃏 Thường</span>
+        </button>
+        <button type="button" id="cat-ver-full" onclick="setCardVersion('full')">
+          <span data-lang="pt">✨ Full Art</span><span data-lang="en">✨ Full Art</span><span data-lang="es">✨ Full Art</span><span data-lang="vi">✨ Full Art</span>
+        </button>
+      </div>
+    </div>
+    <div>
+      <div class="cat-modal-name" id="cat-modal-name"></div>
+      <div class="cat-modal-rarity" id="cat-modal-rarity"></div>
+      <div class="cat-modal-facts" id="cat-modal-facts"></div>
+      <div class="cat-modal-desc" id="cat-modal-desc"></div>
+    </div>
+  </div>
+</div>
+
 
   <div class="notice-box" data-reveal>
     <span data-lang="pt">⚠️ <strong style="color:var(--gold-light)">Bestas Divinas não estão disponíveis em Boosters.</strong> Slifer, Obelisk e Ra podem ser encontrados apenas por outras vias dentro do jogo.</span>
@@ -1281,7 +1739,7 @@ function isEn() { return document.body.classList.contains('en'); }
       ? '<div class="card-thumb-stats">' + (c.atk || '0') + ' / ' + (c.def || '0') + '</div>'
       : '';
     return (
-      '<div class="card-thumb r-' + c.raridade + '">' +
+      '<div class="card-thumb r-' + c.raridade + '" data-slug="' + c.slug + '" role="button" tabindex="0">' +
         '<img src="img/cartas/' + c.slug + '.webp?v=' + versaoCache + '" alt="' + c.nome + '" loading="lazy" ' +
           'onerror="this.style.opacity=0.15">' +
         '<div class="card-thumb-name">' + c.nome + '</div>' +
@@ -1345,6 +1803,15 @@ function isEn() { return document.body.classList.contains('en'); }
       '<div class="booster-detail-outros">' + outrosTxt + '</div>'
     );
     detailEl.style.display = 'block';
+    /* Clicar numa carta abre o detalhe completo, igual ao catalogo; as setas
+       andam pelas cartas deste pacote. */
+    const slugsDoPacote = b.cartas_tema.map(c => c.slug);
+    detailEl.querySelectorAll('.card-thumb[data-slug]').forEach(el => {
+      const abrir = () => window.openCardModal && openCardModal(el.getAttribute('data-slug'), slugsDoPacote);
+      el.addEventListener('click', abrir);
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); } });
+    });
+    window.flSelecionarBooster = selectBooster;
     detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
@@ -1561,6 +2028,220 @@ document.addEventListener('keydown', e => {
   }
 });
 </script>
+<script>
+/* ── DETALHE DA CARTA ─────────────────────────────────────────────────
+   O mesmo modal do catalogo (catalogo.html): arte normal/Full Art, tipo,
+   raca, atributo, nivel, ATK/DEF, efeito e "Onde conseguir". Os dados vem
+   dos MESMOS arquivos do catalogo (data/catalogo.json e data/origens.json),
+   carregados so na primeira carta aberta. Mudou o modal do catalogo? Mudar
+   aqui tambem: os textos (T) e icones (ICO) abaixo sao copia de la. */
+(function(){
+  var cartas=null, ORIG=null, versaoCache='', carregando=null;
+  var T={
+    onde:['Onde conseguir','Where to get it','Dónde conseguirla','Nhận ở đâu'],
+    boosters:['Boosters da loja','Shop boosters','Boosters de la tienda','Booster cửa hàng'],
+    duelistas:['Duelistas que soltam','Duelists who drop it','Duelistas que la sueltan','Đấu thủ rơi ra'],
+    souls:['Souls','Souls','Souls','Souls'],
+    sem:['Esta carta não está em booster nem no drop de duelistas — em geral são prêmios, cartas de evento encerrado ou material só de fusão.',
+         'This card is not in any booster or duelist drop — usually prizes, cards from a closed event, or fusion-only material.',
+         'Esta carta no está en booster ni en el drop de duelistas — suelen ser premios, cartas de evento cerrado o material solo de fusión.',
+         'Thẻ này không có trong booster hay drop của đấu thủ — thường là phần thưởng, thẻ sự kiện đã đóng, hoặc chỉ dùng để hợp thể.'],
+    sombrio:['<b>Exclusiva do Torneio Sombrio.</b> Não sai em booster da loja nem no Championship comum — só na premiação do evento secreto.',
+             '<b>Shadow Tournament exclusive.</b> Not in shop boosters or the regular Championship — only in the secret event’s prize.',
+             '<b>Exclusiva del Torneo Sombrío.</b> No sale en boosters de la tienda ni en el Championship común — solo en la premiación del evento secreto.',
+             '<b>Độc quyền Giải Bóng Tối.</b> Không có trong booster cửa hàng hay Championship thường — chỉ ở phần thưởng sự kiện bí mật.'],
+    travada:['<b>Travada até você derrotar o duelista dela na campanha.</b> Depois disso entra normalmente nos pools de booster, drop e prêmio.',
+             '<b>Locked until you beat its duelist in the campaign.</b> After that it enters the booster, drop and prize pools normally.',
+             '<b>Bloqueada hasta que derrotes a su duelista en la campaña.</b> Después entra normalmente en los pools de booster, drop y premio.',
+             '<b>Khóa đến khi bạn hạ đấu thủ của nó trong chiến dịch.</b> Sau đó nó vào các pool booster, drop và phần thưởng như bình thường.'],
+    fusao:['<b>Também sai por fusão.</b> Combinando as cartas certas você chega nela sem depender de sorte de booster.',
+           '<b>Also obtainable by fusion.</b> With the right combination you get it without relying on booster luck.',
+           '<b>También sale por fusión.</b> Con la combinación correcta la consigues sin depender de la suerte del booster.',
+           '<b>Cũng có thể hợp thể.</b> Kết hợp đúng thẻ, bạn có nó mà không cần may mắn từ booster.'],
+    outras:['Outras cartas de ','Other cards from ','Otras cartas de ','Thẻ khác từ '],
+    custom:['<b>Carta Custom — sai do Booster Sombrio.</b> Toda Custom é elegível ao bônus de 5% que o Booster Sombrio entrega ao ser aberto. É por aí que ela vem pronta.',
+            '<b>Custom card — comes from the Shadow Booster.</b> Every Custom is eligible for the 5% bonus the Shadow Booster grants when opened. That is how you get it ready-made.',
+            '<b>Carta Custom — sale del Booster Sombrío.</b> Toda Custom es elegible al bono del 5% que el Booster Sombrío entrega al abrirse. Así es como la consigues lista.',
+            '<b>Thẻ Custom — đến từ Booster Bóng Tối.</b> Mọi thẻ Custom đều đủ điều kiện cho phần thưởng 5% khi mở Booster Bóng Tối. Đó là cách bạn có sẵn thẻ này.'],
+    soFusao:['Fora isso, a única forma de ter esta carta é <b>fundindo</b> — ela não aparece em booster da loja nem cai de duelista.',
+             'Otherwise, the only way to have this card is by <b>fusing</b> — it is not in shop boosters and no duelist drops it.',
+             'Fuera de eso, la única forma de tener esta carta es <b>fusionando</b> — no aparece en boosters de la tienda ni la suelta ningún duelista.',
+             'Ngoài ra, cách duy nhất để có thẻ này là <b>hợp thể</b> — nó không có trong booster cửa hàng và không đấu thủ nào làm rơi.'],
+    fOrigem:[['Qualquer','Booster','Drop de duelista','Fusão','Exclusiva'],
+             ['Any','Booster','Duelist drop','Fusion','Exclusive'],
+             ['Cualquiera','Booster','Drop de duelista','Fusión','Exclusiva'],
+             ['Bất kỳ','Booster','Drop đấu thủ','Hợp thể','Độc quyền']],
+    cartas:['cartas','cards','cartas','thẻ'],
+    booster:['Booster: ','Booster: ','Booster: ','Booster: '],
+    duelista:['Duelista: ','Duelist: ','Duelista: ','Đấu thủ: ']
+  };
+  var ICO={
+    b:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/></svg>',
+    n:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c0-4.1 3.4-6.4 7.5-6.4s7.5 2.3 7.5 6.4"/></svg>',
+    f:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="12" r="5"/><circle cx="15.5" cy="12" r="5"/></svg>',
+    x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.4a4 4 0 0 1 8 0v3.1"/></svg>'
+  };
+  function L(){ var l=document.documentElement.getAttribute('data-lang-ativo')||'pt';
+    return l==='en'?1:l==='es'?2:l==='vi'?3:0; }
+  function campo(obj,pt,en,es,vi){ var k=[pt,en,es,vi][L()]; return obj[k]||obj[en]||obj[pt]||''; }
+  function ingles(){ return L()===1; }
+
+  function carregar(){
+    if(carregando) return carregando;
+    carregando=Promise.all([
+      fetch('data/catalogo.json?t='+Date.now()).then(function(r){return r.json()}),
+      fetch('data/origens.json?t='+Date.now()).then(function(r){return r.json()}).catch(function(){return null})
+    ]).then(function(res){ cartas=res[0].cartas||[]; versaoCache=res[0].versao||''; ORIG=res[1]; })
+      .catch(function(e){ carregando=null; throw e; });
+    return carregando;
+  }
+
+  var overlay=document.getElementById('cat-modal-overlay');
+  /* O modal mora dentro do .page-content, que cria a propria camada (z-index 1)
+     e ficaria por baixo da barra do topo no celular. Vai para o <body>. */
+  ['cat-nav-ant','cat-nav-prox','cat-modal-overlay'].forEach(function(id){
+    var el=document.getElementById(id); if(el) document.body.appendChild(el); });
+  var modalImg=document.getElementById('cat-modal-img');
+  var modalRarityBadge=document.getElementById('cat-modal-rarity-badge');
+  var modalName=document.getElementById('cat-modal-name');
+  var modalRarity=document.getElementById('cat-modal-rarity');
+  var modalFacts=document.getElementById('cat-modal-facts');
+  var modalDesc=document.getElementById('cat-modal-desc');
+  var cartaAberta=null, lista=[];
+
+  function factHtml(labelPt,labelEn,value,iconSrc,iconAlt,extraSrc,extraAlt){
+    if(!value) return '';
+    var icone=iconSrc?'<img src="'+iconSrc+'" alt="'+(iconAlt||'')+'">':'';
+    if(extraSrc) icone+='<img src="'+extraSrc+'" alt="'+(extraAlt||'')+'" title="'+(extraAlt||'')+'" style="margin-left:-2px">';
+    return '<div><div class="cat-modal-fact-label">'+(ingles()?labelEn:labelPt)+'</div>'+
+      '<div class="cat-modal-fact-value">'+icone+'<span>'+value+'</span></div></div>';
+  }
+
+  /* "Onde conseguir": mesma regra do catalogo. Booster vira botao que abre
+     aquele pacote nesta pagina; duelista leva ao catalogo filtrado. */
+  function blocoOrigem(c){
+    if(!ORIG) return '';
+    var i=L(), o=ORIG.cartas[c.nome]||null;
+    var h='<div class="cat-origem"><div class="cat-origem-tit">'+T.onde[i]+'</div>';
+    if(!o) return h+'<p class="cat-sem-origem">'+T.sem[i]+'</p></div>';
+    var k=0;
+    if(o.x==='sombrio') h+='<div class="cat-aviso">'+ICO.x+'<div>'+T.sombrio[i]+'</div></div>';
+    else if(o.x&&o.x.indexOf('npc:')===0) h+='<div class="cat-aviso">'+ICO.x+'<div>'+T.travada[i]+'</div></div>';
+    if(o.b&&o.b.length){
+      h+='<div class="cat-fonte"><div class="cat-fonte-rot">'+ICO.b+' '+T.boosters[i]+'</div><div class="cat-tags">';
+      o.b.forEach(function(bi){ var b=ORIG.boosters[bi]; if(!b) return;
+        h+='<button class="cat-tag booster'+(b.evento?' evento':'')+'" style="--atraso:'+(k++*0.04)+
+           's" onclick="flAbrirBoosterDaCarta(\''+b.id+'\')">'+b[['pt','en','es','vi'][i]]+
+           '<b>'+b.custo+' '+T.souls[i]+'</b><span class="seta">→</span></button>'; });
+      h+='</div></div>';
+    }
+    if(o.n&&o.n.length){
+      h+='<div class="cat-fonte"><div class="cat-fonte-rot">'+ICO.n+' '+T.duelistas[i]+'</div><div class="cat-tags">';
+      o.n.forEach(function(ni){ var p=ORIG.npcs[ni]; if(!p) return;
+        h+='<span class="cat-tag npc" style="--atraso:'+(k++*0.04)+'s">'+p.nome+'</span>'; });
+      h+='</div></div>';
+    }
+    if(o.cs) h+='<div class="cat-aviso" style="background:rgba(90,180,150,.06);border-color:rgba(90,180,150,.26);color:#9fd4bf">'+
+      ICO.x+'<div>'+T.custom[i]+'</div></div>';
+    if(o.f){
+      var soFusao=!o.b&&!o.n&&!o.cs;
+      h+='<div class="cat-aviso fusao" style="margin-top:11px;margin-bottom:0">'+ICO.f+'<div>'+
+         T.fusao[i]+(soFusao?(' '+T.soFusao[i]):'')+'</div></div>';
+    }
+    return h+'</div>';
+  }
+
+  window.flAbrirBoosterDaCarta=function(id){
+    closeCardModal();
+    var tile=document.querySelector('.booster-tile[data-id="'+id+'"]');
+    if(tile&&!tile.classList.contains('locked')&&window.flSelecionarBooster){ flSelecionarBooster(id); return; }
+    /* pacote fora da loja: o catalogo mostra as cartas dele mesmo assim */
+    if(tile) tile.scrollIntoView({behavior:'smooth',block:'center'});
+  };
+
+  window.setCardVersion=function(v){
+    if(!cartaAberta) return;
+    if(v==='full'&&!cartaAberta.full_art) v='normal';
+    modalImg.src=(v==='full'?'img/cartas_full_grande/':'img/cartas_grande/')+cartaAberta.slug+'.webp?v='+versaoCache;
+    var bn=document.getElementById('cat-ver-normal'), bf=document.getElementById('cat-ver-full');
+    if(bn) bn.classList.toggle('active',v==='normal');
+    if(bf) bf.classList.toggle('active',v==='full');
+  };
+
+  function mostrar(c){
+    cartaAberta=c;
+    modalImg.src='img/cartas_grande/'+c.slug+'.webp?v='+versaoCache;
+    modalImg.alt=c.nome;
+    var seletor=document.getElementById('cat-modal-versao');
+    if(seletor){
+      seletor.classList.toggle('on',!!c.full_art);
+      var bn=document.getElementById('cat-ver-normal'), bf=document.getElementById('cat-ver-full');
+      if(bn) bn.classList.add('active'); if(bf) bf.classList.remove('active');
+    }
+    var badge=c.raridade_arquivo||c.raridade;
+    if(badge){ modalRarityBadge.src='img/raridade/rarity_'+badge+'.webp'; modalRarityBadge.alt=c.raridade; modalRarityBadge.style.display=''; }
+    else modalRarityBadge.style.display='none';
+    modalName.textContent=ingles()?c.nome:(c.nome_pt||c.nome);
+    modalRarity.className='cat-modal-rarity r-'+c.raridade;
+    modalRarity.textContent=c.raridade;
+    var facts=[];
+    var attr=c.icone_atributo?'img/atributos/'+c.icone_atributo+'.webp':'';
+    var tipo=c.icone_tipo?'img/tipos/'+c.icone_tipo+'.webp':'';
+    var ehMonstro=c.card_type==='Monster';
+    var ehContinua=!ehMonstro&&String(c.tipo||'').toLowerCase().indexOf('continu')>=0;
+    var rotCont=['Contínua','Continuous','Continua','Liên tục'][L()];
+    facts.push(factHtml('Tipo','Card Type',
+      ehMonstro?(ingles()?'Monster':'Monstro'):c.card_type+(ehContinua?' · '+rotCont:''),
+      ehMonstro?'':attr,c.atributo,ehContinua?'img/tipos/continuous.webp':'',rotCont));
+    if(ehMonstro){
+      facts.push(factHtml('Raça','Race',c.tipo,tipo,c.tipo));
+      facts.push(factHtml('Atributo','Attribute',c.atributo,attr,c.atributo));
+      facts.push(factHtml('Nível','Level',c.nivel));
+      facts.push(factHtml('ATK / DEF','ATK / DEF',(c.atk||'0')+' / '+(c.def||'0')));
+    }
+    modalFacts.innerHTML=facts.join('');
+    var desc=campo(c,'desc_pt','desc_en','desc_es','desc_vi');
+    modalDesc.textContent=desc||(ingles()?'No effect text for this card.':'Sem texto de efeito para esta carta.');
+    var ant=document.getElementById('cat-origem-box'); if(ant) ant.remove();
+    var box=document.createElement('div'); box.id='cat-origem-box'; box.innerHTML=blocoOrigem(c);
+    modalDesc.parentNode.insertBefore(box,modalDesc.nextSibling);
+    var setas=lista.length>1?'grid':'none';
+    ['cat-nav-ant','cat-nav-prox'].forEach(function(id){ var b=document.getElementById(id); if(b) b.style.display=setas; });
+    overlay.classList.add('open');
+  }
+
+  window.openCardModal=function(slug,slugsDaLista){
+    if(slugsDaLista) lista=slugsDaLista;
+    carregar().then(function(){
+      var c=cartas.find(function(x){return x.slug===slug});
+      if(c) mostrar(c);
+    }).catch(function(){});
+  };
+
+  window.closeCardModal=function(){
+    ['cat-nav-ant','cat-nav-prox'].forEach(function(id){ var b=document.getElementById(id); if(b) b.style.display='none'; });
+    cartaAberta=null;
+    overlay.classList.remove('open');
+  };
+
+  window.catNavega=function(d){
+    if(!cartaAberta||lista.length<2) return;
+    var i=lista.indexOf(cartaAberta.slug); if(i<0) return;
+    openCardModal(lista[(i+d+lista.length)%lista.length]);
+  };
+
+  document.addEventListener('keydown',function(e){
+    if(!overlay.classList.contains('open')) return;
+    if(e.key==='Escape') closeCardModal();
+    if(e.key==='ArrowLeft') catNavega(-1);
+    if(e.key==='ArrowRight') catNavega(1);
+  });
+  /* trocou o idioma com a carta aberta: redesenha no idioma novo */
+  new MutationObserver(function(){ if(cartaAberta&&overlay.classList.contains('open')) mostrar(cartaAberta); })
+    .observe(document.documentElement,{attributes:true,attributeFilter:['data-lang-ativo']});
+})();
+</script>
+
 
 <script>
 /* Contador do Discord da barra superior. Vive em cada pagina porque a
