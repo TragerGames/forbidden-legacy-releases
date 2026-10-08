@@ -1071,6 +1071,11 @@ function isEn() { return document.body.classList.contains('en'); }
      visitante: um navegador com a hora errada mostraria um contador que não
      bate com o do jogo. */
   let EVENTOS_BOOSTER = {};   // id do booster -> { inicio, fim } em ms
+  let AGENDADOS_BOOSTER = {}; // id do booster -> inicio (ms) do proximo evento marcado
+  /* So vira true quando o painel RESPONDEU. E ela que deixa um booster de
+     evento sem janela fixa aparecer como ENCERRADO: sem resposta (rede caiu)
+     a pagina nao sabe se ele esta no ar e nao afirma que acabou. */
+  let EVENTOS_CARREGADOS = false;
   let RELOGIO_OFFSET_MS = 0;  // servidor - navegador
 
   function agoraMs() { return Date.now() + RELOGIO_OFFSET_MS; }
@@ -1098,6 +1103,20 @@ function isEn() { return document.body.classList.contains('en'); }
           });
         });
         EVENTOS_BOOSTER = mapa;
+        /* Evento ja marcado no painel que ainda nao comecou: o pacote mostra
+           EM BREVE com a contagem ate a abertura, igual a tela do jogo. */
+        const agendados = {};
+        (doc && doc.eventos_agendados ? doc.eventos_agendados : []).forEach(ev => {
+          const inicio = (ev.inicio_utc || 0) * 1000;
+          (ev.efeitos || []).forEach(ef => {
+            if (ef.token !== 'BOOSTER_EVENTO_ATIVO') return;
+            const id = (ef.booster_id || '').trim();
+            if (!id || !inicio) return;
+            if (!agendados[id] || inicio < agendados[id]) agendados[id] = inicio;
+          });
+        });
+        AGENDADOS_BOOSTER = agendados;
+        EVENTOS_CARREGADOS = !!(doc && Array.isArray(doc.eventos));
       })
       /* Falha de rede é silenciosa: a página volta a mostrar só as janelas
          fixas, que é o comportamento de antes deste bloco existir. */
@@ -1119,7 +1138,22 @@ function isEn() { return document.body.classList.contains('en'); }
 
   // Estado dinamico (ribbon/travamento/contagem) dos boosters presos ao
   // LAUNCH_UTC. Retorna null pros demais (usam so RIBBON_OVERRIDES estatico).
+  /* Pacote fora da loja com evento ja marcado no painel (lancamento novo ou
+     reedicao de um encerrado): EM BREVE com a contagem ate a abertura. */
   function dynamicState(b) {
+    const estado = estadoSemAgendado(b);
+    const abre = AGENDADOS_BOOSTER[b.id];
+    if (b.evento && abre && abre > agoraMs() && !TRAVA_LANCAMENTO.includes(b.id)) {
+      const ribbon = estado ? estado.ribbon : RIBBON_OVERRIDES[b.id];
+      const noAr = estado ? !estado.locked : !ribbon;
+      if (!noAr) {
+        return { ribbon: { texto_pt: 'EM BREVE', texto_en: 'COMING SOON', classe: 'em-breve' }, locked: true, countdownModo: 'starts', alvoMs: abre };
+      }
+    }
+    return estado;
+  }
+
+  function estadoSemAgendado(b) {
     /* Trava de lancamento vem ANTES de tudo, inclusive do painel: enquanto o
        pacote nao foi anunciado, nem um evento ligado para teste pode estrea-lo
        no site. */
@@ -1154,6 +1188,15 @@ function isEn() { return document.body.classList.contains('en'); }
         return { ribbon: { texto_pt: 'EM BREVE', texto_en: 'COMING SOON', classe: 'em-breve' }, locked: true, countdownModo: 'starts' };
       }
       return { ribbon: null, locked: false, countdownModo: null };
+    }
+    /* Booster de evento SEM janela fixa nas tabelas acima (Dark Magician,
+       Searing Inferno e todo pacote novo daqui pra frente): no jogo quem liga
+       e desliga e so o painel de eventos, entao aqui tambem. Painel ligado ja
+       caiu no revival la em cima; marcado para depois vira EM BREVE; fora
+       disso o pacote nao esta na loja e a pagina diz ENCERRADO. Antes ele
+       ficava destravado para sempre, como se ainda estivesse a venda. */
+    if (b.evento && !RIBBON_OVERRIDES[b.id] && EVENTOS_CARREGADOS) {
+      return { ribbon: { texto_pt: 'ENCERRADO', texto_en: 'ENDED', classe: 'expirado' }, locked: true, countdownModo: null };
     }
     return null;
   }
@@ -1336,6 +1379,9 @@ function isEn() { return document.body.classList.contains('en'); }
     }).join('|');
   }
   let assinatura = null;
+  /* O painel tambem e relido com a pagina aberta: um evento que liga, abre ou
+     termina por la (ou e marcado para depois) aparece sem recarregar. */
+  setInterval(carregarEventosBooster, 5 * 60 * 1000);
   setInterval(() => {
     if (boostersData.length) {
       const agora = assinaturaEstados();
