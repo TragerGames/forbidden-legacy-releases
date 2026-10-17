@@ -404,8 +404,8 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   border:1px solid var(--purple-dim); background:#0b0710;
   transition:transform .3s, box-shadow .3s, border-color .3s;
 }
-.sombrio-card:hover { transform:translateY(-5px); border-color:var(--purple);
-  box-shadow:0 14px 40px rgba(155,89,182,.28); }
+@media(hover:hover){ .sombrio-card:hover { transform:translateY(-5px); border-color:var(--purple);
+  box-shadow:0 14px 40px rgba(155,89,182,.28); } }
 .sombrio-card img { width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
   object-position:top center; display:block; }
 .sombrio-info { position:absolute; left:0; right:0; bottom:0; padding:32px 14px 13px;
@@ -528,7 +528,10 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   border-radius:10px; box-shadow:inset 0 0 0 0 var(--purple);
   transition:box-shadow .25s;
 }
-.sombrio-card:hover::after { box-shadow:inset 0 0 0 2px var(--purple); }
+/* Efeito de hover so para mouse: no iPhone, um :hover que revela conteudo
+   (o "Ver deck" aparecendo) faz o Safari gastar o 1o toque como hover e
+   engolir o clique, e o deck nao abria. No toque o rotulo fica sempre a vista. */
+@media(hover:hover){ .sombrio-card:hover::after { box-shadow:inset 0 0 0 2px var(--purple); } }
 .ver-deck {
   position:absolute; left:50%; bottom:13px; transform:translateX(-50%) translateY(6px);
   z-index:3; opacity:0; transition:opacity .25s, transform .25s;
@@ -536,8 +539,14 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   padding:5px 12px; font-size:10.5px; letter-spacing:1.2px; text-transform:uppercase;
   white-space:nowrap; pointer-events:none;
 }
-.sombrio-card:hover .ver-deck { opacity:1; transform:translateX(-50%) translateY(0); }
-.sombrio-card:hover .sombrio-info { opacity:0; transition:opacity .2s; }
+@media(hover:hover){
+  .sombrio-card:hover .ver-deck { opacity:1; transform:translateX(-50%) translateY(0); }
+  .sombrio-card:hover .sombrio-info { opacity:0; transition:opacity .2s; }
+}
+@media(hover:none){
+  .ver-deck { bottom:11px; opacity:1; transform:translateX(-50%); transition:none; }
+  .sombrio-info { padding-bottom:44px; }
+}
 
 .deck-modal {
   position:fixed; inset:0; z-index:9000; display:none;
