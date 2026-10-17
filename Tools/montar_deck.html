@@ -569,6 +569,25 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 .gp-n{font-variant-numeric:tabular-nums; font-size:10px}
 .gp.cheio{border-color:rgba(196,72,60,.45)}
 
+/* fusoes do deck — mesma leitura da aba FUSOES da escolha de deck inicial */
+.fus{margin-bottom:12px}
+.fus-corpo{display:none; margin-top:8px}
+.fus.on .fus-corpo{display:block}
+.fus-info{font-size:10.5px; letter-spacing:.6px; color:var(--muted); margin:0 2px 6px}
+.fus-info b{color:var(--gold2)}
+.fus-linha{display:flex; align-items:center; gap:5px; width:100%; padding:6px 7px; margin-bottom:5px;
+  border-radius:7px; background:var(--dark3); border:1px solid var(--border); cursor:pointer;
+  color:inherit; font:inherit; text-align:left; transition:border-color .2s, background .2s}
+.fus-linha:hover,.fus-linha:focus-visible{border-color:var(--gold); background:rgba(200,151,58,.07); outline:none}
+.fus-linha img{width:30px; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:3px;
+  border:1px solid var(--border); background:#050408; flex:0 0 auto}
+.fus-linha .fus-res{width:36px; border-color:var(--gold-dim)}
+.fus-op{color:var(--muted); font-size:11px; flex:0 0 auto}
+.fus-txt{min-width:0; flex:1; margin-left:3px}
+.fus-nome{font-size:11px; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.fus-atk{font-size:10px; color:var(--gold2); font-variant-numeric:tabular-nums; letter-spacing:.5px}
+.fus-vazio{font-size:11px; color:var(--muted); padding:8px 4px; line-height:1.6}
+.dl.fus-mat img{border-color:var(--gold2); box-shadow:0 0 0 2px rgba(232,184,64,.55), 0 0 14px rgba(232,184,64,.45)}
 .btn{font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:1.6px; padding:11px 18px;
   border-radius:8px; border:none; cursor:pointer; width:100%;
   background:linear-gradient(100deg,var(--gold3),var(--gold)); color:#120d04;
@@ -784,6 +803,11 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     <div class="mste" id="mste"></div>
     <div class="grupos" id="grupos"></div>
 
+    <div class="fus" id="fus">
+      <button class="btn fantasma" id="fus-btn" type="button"><span data-lang="pt">Ver fusões do deck</span><span data-lang="en">See deck fusions</span><span data-lang="es">Ver fusiones del mazo</span><span data-lang="vi">Xem dung hợp của bộ bài</span></button>
+      <div class="fus-corpo" id="fus-corpo"></div>
+    </div>
+
     <div class="cofre-tit"><span data-lang="pt">Cofre do Deck</span><span data-lang="en">Deck Vault</span><span data-lang="es">Cofre del Mazo</span><span data-lang="vi">Kho bộ bài</span></div>
     <div class="cofre-sub"><span data-lang="pt">cartas montadas para duelo</span><span data-lang="en">cards ready for the duel</span><span data-lang="es">cartas listas para el duelo</span><span data-lang="vi">thẻ sẵn sàng cho trận đấu</span></div>
     <div class="deck-lista" id="dlista"></div>
@@ -969,7 +993,19 @@ const T={
              'No se pudieron cargar las cartas ahora.','Hiện không tải được các thẻ.'],
   codigoGerado:['Código de <b>%n</b> cartas gerado.','Code for <b>%n</b> cards generated.',
                 'Código de <b>%n</b> cartas generado.','Đã tạo mã cho <b>%n</b> thẻ.'],
-  cartasResumo:['cartas','cards','cartas','thẻ']
+  cartasResumo:['cartas','cards','cartas','thẻ'],
+  fusTotal:['Este deck tem <b>%n</b> fusões possíveis.','This deck has <b>%n</b> possible fusions.',
+            'Este mazo tiene <b>%n</b> fusiones posibles.','Bộ bài này có <b>%n</b> dung hợp khả thi.'],
+  fusTop:['As 5 mais fortes — toque para ver os materiais no deck.','The 5 strongest — tap to see the materials in the deck.',
+          'Las 5 más fuertes — toca para ver los materiales en el mazo.','5 dung hợp mạnh nhất — chạm để xem nguyên liệu trong bộ bài.'],
+  fusNenhuma:['Nenhuma fusão com os monstros deste deck ainda.','No fusions with this deck\'s monsters yet.',
+              'Aún no hay fusiones con los monstruos de este mazo.','Chưa có dung hợp nào với quái thú của bộ bài này.'],
+  fusVazio:['Adicione monstros ao deck para ver as fusões.','Add monsters to the deck to see its fusions.',
+            'Añade monstruos al mazo para ver las fusiones.','Thêm quái thú vào bộ bài để xem dung hợp.'],
+  fusCarregando:['Calculando fusões…','Calculating fusions…','Calculando fusiones…','Đang tính dung hợp…'],
+  fusErro:['Não foi possível carregar as fusões agora.','Could not load the fusions right now.',
+           'No se pudieron cargar las fusiones ahora.','Hiện không tải được dữ liệu dung hợp.'],
+  fusOcultar:['Ocultar fusões','Hide fusions','Ocultar fusiones','Ẩn dung hợp']
 };
 function t(k){ return T[k][IL()]; }
 
@@ -1238,7 +1274,117 @@ function sincDeck(){
         '<span class="dl-x">&#10005;</span></button>';
     }).join('');
   }
+  if(FUS.aberto) mostrarFusoes();
 }
+
+/* == FUSOES DO DECK ===================================================
+   Porte de Scripts/deck_inicial_rules.gd::analisar_fusoes (a aba FUSOES da
+   escolha de deck inicial). Quem resolve cada PAR e' o MotorFusoes do jogo:
+   data/fusoes.json traz o resultado de todo par de monstros do catalogo,
+   gerado por Tools/exportar_site_deck.gd no repo do jogo. Aqui so' repete a
+   leitura: pares do deck, cadeias de 3 com a copia que sobrou, melhor receita
+   por resultado, ordenado por ATK. */
+const FUS={aberto:false, dados:null, carregando:null, idx:{}, mapa:null, destaque:[], tDestaque:0};
+const FUS_LINHAS=5;
+function carregarFusoes(){
+  if(FUS.dados) return Promise.resolve(FUS.dados);
+  if(!FUS.carregando){
+    FUS.carregando=fetch('data/fusoes.json').then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{
+      /* linhas[a]: 4 caracteres por par, b e resultado em base 36 (b >= a) */
+      const m=d.monstros||[], L=d.linhas||[], mapa=new Map();
+      m.forEach((n,i)=>FUS.idx[n]=i);
+      L.forEach((txt,a)=>{ for(let k=0;k+3<txt.length;k+=4)
+        mapa.set(a*4096+parseInt(txt.substr(k,2),36), parseInt(txt.substr(k+2,2),36)); });
+      FUS.mapa=mapa; FUS.dados=d; return d;
+    }).catch(e=>{ FUS.carregando=null; throw e; });
+  }
+  return FUS.carregando;
+}
+/* Resultado do par ou '' — a tabela guarda cada par uma vez, menor indice primeiro. */
+function fundir(a,b){
+  const i=FUS.idx[a], j=FUS.idx[b];
+  if(i===undefined||j===undefined) return '';
+  const r=FUS.mapa.get(Math.min(i,j)*4096+Math.max(i,j));
+  return r===undefined ? '' : FUS.dados.monstros[r];
+}
+function atkDe(nome){
+  const c=CARTAS.find(x=>x.nome===nome); const v=parseInt(c&&c.atk,10);
+  return isNaN(v)?0:v;
+}
+function analisarFusoes(lista){
+  const copias={}; lista.forEach(n=>copias[n]=(copias[n]||0)+1);
+  const monstros=Object.keys(copias).filter(n=>FUS.idx[n]!==undefined).sort();
+  const pares=[];
+  for(let i=0;i<monstros.length;i++) for(let j=i;j<monstros.length;j++){
+    const a=monstros[i], b=monstros[j];
+    if(i===j&&copias[a]<2) continue;
+    const r=fundir(a,b);
+    if(!r||r===a||r===b) continue;
+    pares.push({materiais:[a,b], resultado:r, atk:atkDe(r)});
+  }
+  const melhor={};
+  pares.forEach(p=>{ if(!melhor[p.resultado]) melhor[p.resultado]=p; });
+  const vistos={}, cadeias=[];
+  pares.forEach(p=>{
+    if(vistos[p.resultado]) return; vistos[p.resultado]=1;
+    const resto=Object.assign({},copias); p.materiais.forEach(m=>resto[m]--);
+    monstros.forEach(d=>{
+      if(resto[d]<=0) return;
+      const r2=fundir(p.resultado,d);
+      if(!r2||r2===p.resultado||r2===d) return;
+      cadeias.push({materiais:p.materiais.concat([d]), resultado:r2, atk:atkDe(r2)});
+    });
+  });
+  cadeias.forEach(c=>{ if(!melhor[c.resultado]) melhor[c.resultado]=c; });
+  const linhas=Object.values(melhor).sort((x,y)=>
+    y.atk-x.atk || x.materiais.length-y.materiais.length || (x.resultado<y.resultado?-1:x.resultado>y.resultado?1:0));
+  return {linhas:linhas.slice(0,FUS_LINHAS), total:pares.length};
+}
+function slugDe(nome){ const c=CARTAS.find(x=>x.nome===nome); return c?c.slug:''; }
+function nomeExib(nome){ const c=CARTAS.find(x=>x.nome===nome); return (c&&c.nome_pt)||nome; }
+function mostrarFusoes(){
+  const box=document.getElementById('fus'), corpo=document.getElementById('fus-corpo');
+  box.classList.toggle('on',FUS.aberto);
+  document.querySelector('#fus-btn').innerHTML=FUS.aberto
+    ? '<span>'+t('fusOcultar')+'</span>'
+    : '<span data-lang="pt">Ver fusões do deck</span><span data-lang="en">See deck fusions</span><span data-lang="es">Ver fusiones del mazo</span><span data-lang="vi">Xem dung hợp của bộ bài</span>';
+  if(!FUS.aberto) return;
+  if(!FUS.dados){
+    corpo.innerHTML='<div class="fus-vazio">'+t('fusCarregando')+'</div>';
+    carregarFusoes().then(mostrarFusoes).catch(()=>{ corpo.innerHTML='<div class="fus-vazio">'+t('fusErro')+'</div>'; });
+    return;
+  }
+  if(!deck.some(n=>FUS.idx[n]!==undefined)){ corpo.innerHTML='<div class="fus-vazio">'+t('fusVazio')+'</div>'; return; }
+  const a=analisarFusoes(deck);
+  if(!a.linhas.length){ corpo.innerHTML='<div class="fus-vazio">'+t('fusNenhuma')+'</div>'; return; }
+  const esc=v=>String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+  corpo.innerHTML='<div class="fus-info">'+t('fusTotal').replace('%n',a.total)+'<br>'+t('fusTop')+'</div>'+
+    a.linhas.map(l=>{
+      const mats=l.materiais.map(m=>'<img src="img/cartas/'+slugDe(m)+'.webp" alt="'+esc(nomeExib(m))+'" title="'+esc(nomeExib(m))+'" loading="lazy">')
+        .join('<span class="fus-op">+</span>');
+      return '<button type="button" class="fus-linha" data-mat="'+esc(JSON.stringify(l.materiais))+'" title="'+
+        esc(l.materiais.map(nomeExib).join(' + ')+' = '+nomeExib(l.resultado))+'">'+mats+
+        '<span class="fus-op">=</span><img class="fus-res" src="img/cartas/'+slugDe(l.resultado)+'.webp" alt="" loading="lazy">'+
+        '<span class="fus-txt"><div class="fus-nome">'+esc(nomeExib(l.resultado))+'</div><div class="fus-atk">ATK '+l.atk+'</div></span></button>';
+    }).join('');
+  corpo.querySelectorAll('.fus-linha').forEach(b=>b.addEventListener('click',()=>destacarMateriais(JSON.parse(b.getAttribute('data-mat')))));
+  aplicarDestaque();
+}
+/* Acende os materiais no Cofre (a mesma ideia de _destacar_materiais do jogo). */
+function destacarMateriais(mats){
+  FUS.destaque=mats; aplicarDestaque();
+  const el=document.querySelector('#dlista .dl.fus-mat'); if(el) el.scrollIntoView({block:'nearest',behavior:'smooth'});
+  clearTimeout(FUS.tDestaque);
+  FUS.tDestaque=setTimeout(()=>{ FUS.destaque=[]; aplicarDestaque(); },3500);
+}
+function aplicarDestaque(){
+  document.querySelectorAll('#dlista .dl').forEach(b=>{
+    const m=/remover\((.*)\)/.exec(b.getAttribute('onclick')||'');
+    let nome=''; try{ nome=m?JSON.parse(m[1]):''; }catch(e){}
+    b.classList.toggle('fus-mat', FUS.destaque.indexOf(nome)>=0);
+  });
+}
+document.getElementById('fus-btn').addEventListener('click',()=>{ FUS.aberto=!FUS.aberto; mostrarFusoes(); });
 
 /* == CODIGO DE DECK ===================================================
    FL1-<base64url>: versao(1B) + entradas de 2B (12 bits de id + 4 de

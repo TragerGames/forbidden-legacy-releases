@@ -1,6 +1,6 @@
 {
-  "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1791461775",
+  "gerado_de": "DeckBanlistRules (Tools/exportar_site_deck.gd)",
+  "versao": "1792251573",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -265,80 +265,247 @@
     }
   },
   "cartas": {
-    "Obelisk the Tormentor": {
+    "7 Completed": {
       "grupos": [
-        "divine_beast"
-      ],
-      "limite": 1
+        "buff_equip_medio"
+      ]
     },
-    "Slifer the Sky Dragon": {
+    "Acid Trap Hole": {
       "grupos": [
-        "divine_beast"
-      ],
-      "limite": 1
+        "remocao_alvo"
+      ]
     },
-    "The Winged Dragon of Ra": {
+    "Airknight Parshath": {
       "grupos": [
-        "divine_beast"
-      ],
-      "limite": 1
+        "piercing_pressure"
+      ]
     },
-    "Poseidon, King of the Oceans": {
+    "Alligator's Sword Dragon": {
       "grupos": [
-        "divine_beast",
-        "custom_monster",
-        "lp_recovery"
-      ],
-      "limite": 1
+        "direct_attack"
+      ]
     },
-    "Zorc Necrophades": {
+    "Amphibian Beast": {
       "grupos": [
-        "divine_beast"
-      ],
-      "limite": 1
+        "buff_aura_media"
+      ]
     },
-    "The Wicked Eraser": {
+    "Ancient Gear": {
       "grupos": [
-        "wicked_god"
-      ],
-      "limite": 1
+        "buff_aura_media"
+      ]
     },
-    "The Wicked Avatar": {
+    "Ancient Gear Cannon": {
       "grupos": [
-        "wicked_god",
+        "burn_direct"
+      ]
+    },
+    "Ancient Gear Engineer": {
+      "grupos": [
         "backrow"
-      ],
+      ]
+    },
+    "Ancient Gear Golem": {
+      "grupos": [
+        "piercing_pressure",
+        "imune_a_efeito"
+      ]
+    },
+    "Andro Sphinx": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Aqua Dragon": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Archfiend Black Skull Dragon": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Archfiend Emperor": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Archfiend Empress": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Arisen Gaia the Fierce Knight": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Armed Dragon LV10": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "remocao_aleatoria"
+      ]
+    },
+    "Armed Dragon LV5": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Armed Dragon LV7": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Armored Cybern": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
+    "Aroma Strategy": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Aromaseraphy Rosemary": {
+      "grupos": [
+        "self_escala_mao",
+        "lp_recovery"
+      ]
+    },
+    "Attack The Moon!": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Avenging Knight Parshath": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Axe of Despair": {
+      "grupos": [
+        "buff_equip_alto"
+      ]
+    },
+    "B. Skull Dragon": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
+    "Backfire": {
+      "grupos": [
+        "burn_recurring"
+      ]
+    },
+    "Bad Reaction to Simochi": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Barrel Dragon": {
+      "grupos": [
+        "triple_attack",
+        "remocao_aleatoria"
+      ]
+    },
+    "Barrier Statue of the Inferno": {
+      "grupos": [
+        "indestrutivel_batalha",
+        "protege_equipe"
+      ]
+    },
+    "Battleguard Cadet": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Battleguard King": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Bear Trap": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Beast Machine King Barbaros": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Beginning Knight": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Berserk Dragon": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
+    "Beta Evolution Pill - Ultranscedance": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Bickuribox": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Black Chaos": {
+      "grupos": [
+        "remocao_aleatoria",
+        "imune_a_efeito"
+      ]
+    },
+    "Black Luster Soldier": {
+      "grupos": [
+        "multi_attack"
+      ]
+    },
+    "Black Luster Soldier - Envoy of the Beginning": {
+      "grupos": [
+        "multi_attack",
+        "remocao_aleatoria"
+      ]
+    },
+    "Black Luster Soldier - Envoy of the Evening Twilight": {
+      "grupos": [
+        "remocao_alvo",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Black Luster Soldier - Legendary Swordsman": {
       "limite": 1
     },
-    "The Wicked Dreadroot": {
+    "Black Luster Soldier - Sacred Soldier": {
       "grupos": [
-        "wicked_god"
-      ],
-      "limite": 1
-    },
-    "Crush Card Virus": {
-      "grupos": [
-        "board_wipe"
+        "remocao_alvo"
       ]
     },
-    "Dark Hole": {
+    "Black Luster Soldier - Soldier of Light and Darkness": {
       "grupos": [
-        "board_wipe"
+        "self_snowball_batalha",
+        "indestrutivel_batalha"
       ]
     },
-    "Mirror Force": {
+    "Black Luster Soldier - Super Soldier": {
       "grupos": [
-        "board_wipe"
+        "burn_on_kill",
+        "acel_reposicao"
       ]
     },
-    "Raigeki": {
+    "Black Metal Dragon": {
       "grupos": [
-        "board_wipe"
+        "acel_reposicao"
       ]
     },
-    "Dark Master Zorc": {
+    "Black Pendant": {
       "grupos": [
-        "board_wipe"
+        "buff_equip_medio"
       ]
     },
     "Black Rose Dragon": {
@@ -347,355 +514,48 @@
         "burn_direct"
       ]
     },
-    "Black Luster Soldier": {
+    "Black Tyranno": {
       "grupos": [
-        "multi_attack"
-      ]
-    },
-    "Chimera the Flying Mythical Beast": {
-      "grupos": [
-        "multi_attack"
-      ]
-    },
-    "Garma Sword": {
-      "grupos": [
-        "multi_attack",
         "piercing_pressure"
       ]
     },
-    "Twin-Headed Thunder Dragon": {
+    "Blade Knight": {
       "grupos": [
-        "multi_attack"
+        "self_escala_mao"
       ]
     },
-    "Blue-Eyes Twin Burst Dragon": {
+    "Blaster, Dragon Ruler of Infernos": {
       "grupos": [
-        "multi_attack"
+        "remocao_aleatoria",
+        "piercing_pressure"
       ]
     },
-    "Ocean Dragon Lord - Neo-Daedalus": {
+    "Blaze Accelerator": {
       "grupos": [
-        "multi_attack"
+        "remocao_aleatoria"
       ]
     },
-    "Catapult Turtle": {
+    "Blaze Fenix": {
       "grupos": [
-        "direct_attack"
-      ]
-    },
-    "Alligator's Sword Dragon": {
-      "grupos": [
-        "direct_attack"
-      ]
-    },
-    "Magic Jammer": {
-      "grupos": [
-        "spell_negation"
-      ]
-    },
-    "Negate Attack": {
-      "grupos": [
-        "attack_negation"
-      ]
-    },
-    "Fake Trap": {
-      "grupos": [
-        "attack_negation"
-      ]
-    },
-    "Nightmare Wheel": {
-      "grupos": [
-        "attacker_lock"
-      ],
-      "limite": 1
-    },
-    "Megamorph": {
-      "grupos": [
-        "explosive_equip"
-      ],
-      "limite": 1
-    },
-    "Raise Body Heat": {
-      "grupos": [
-        "explosive_equip"
-      ]
-    },
-    "Gate Guardian": {
-      "grupos": [
-        "equip_enabler_monster"
-      ]
-    },
-    "Maha Vailo": {
-      "grupos": [
-        "equip_enabler_monster"
-      ]
-    },
-    "Gearfried The Iron Knight": {
-      "grupos": [
-        "equip_enabler_monster"
-      ]
-    },
-    "Hinotama": {
-      "grupos": [
+        "direct_attack",
         "burn_direct"
       ]
     },
-    "Final Flame": {
+    "Blaze, Supreme Ruler of all Dragons": {
       "grupos": [
-        "burn_direct"
+        "remocao_aleatoria",
+        "acel_busca"
       ]
     },
-    "Sparks": {
+    "Blowback Dragon": {
       "grupos": [
-        "burn_direct"
-      ]
-    },
-    "Ookazi": {
-      "grupos": [
-        "burn_direct"
-      ]
-    },
-    "Meteor B. Dragon": {
-      "grupos": [
-        "burn_direct"
-      ]
-    },
-    "Tremendous Fire": {
-      "grupos": [
-        "burn_direct"
-      ]
-    },
-    "Ruddy Rose Dragon": {
-      "grupos": [
-        "burn_direct",
         "backrow"
-      ]
-    },
-    "Curse of Dragon": {
-      "grupos": [
-        "burn_direct"
-      ]
-    },
-    "Solar Flare Dragon": {
-      "grupos": [
-        "burn_recurring"
-      ]
-    },
-    "Mr. Volcano": {
-      "grupos": [
-        "burn_recurring"
-      ]
-    },
-    "Backfire": {
-      "grupos": [
-        "burn_recurring"
-      ]
-    },
-    "Salamandra": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Mine Golem": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Fire King High Avatar Garunix": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Crimson Sunbird": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Raging Flame Sprite": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Chaos Emperor Dragon": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Burning Spear": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Inferno Fire Blast": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Rock Bombardment": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Red-Eyes Flare Metal Dragon": {
-      "grupos": [
-        "burn_conditional"
-      ]
-    },
-    "Red-Eyes Black Flare Dragon": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Shinato, King of a Higher Plane": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Darkfire Dragon": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Infernal Flame Emperor": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Meteor Black Comet Dragon": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Archfiend Black Skull Dragon": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Red-Eyes Black Fullmetal Dragon": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Lava Golem": {
-      "grupos": [
-        "burn_on_kill",
-        "board_wipe"
-      ]
-    },
-    "Dian Keto the Cure Master": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Enchanted Javelin": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Goblin's Secret Remedy": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Mooyan Curry": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Red Medicine": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Soul of the Pure": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Rosaria, the Stately Fallen Angel": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Eatgaboon": {
-      "grupos": [
-        "punicao_atacante"
       ]
     },
     "Blue-Eyes Chaos MAX Dragon": {
       "grupos": [
         "piercing_pressure"
       ]
-    },
-    "Dark Cavalry": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Dragon Master Knight": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Gaia the Dragon Champion": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Red-Eyes B. Metal Dragon": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Spear Dragon": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Lion Alligator": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Exarion Universe": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Kaibaman": {
-      "grupos": [
-        "acel_busca"
-      ]
-    },
-    "Right Leg of the Forbidden One": {
-      "grupos": [
-        "exodia_piece"
-      ],
-      "limite": 1
-    },
-    "Left Leg of the Forbidden One": {
-      "grupos": [
-        "exodia_piece"
-      ],
-      "limite": 1
-    },
-    "Right Arm of the Forbidden One": {
-      "grupos": [
-        "exodia_piece"
-      ],
-      "limite": 1
-    },
-    "Left Arm of the Forbidden One": {
-      "grupos": [
-        "exodia_piece"
-      ],
-      "limite": 1
-    },
-    "Exodia the Forbidden One": {
-      "grupos": [
-        "exodia_piece"
-      ],
-      "limite": 1
     },
     "Blue-Eyes Corrupted Chaos MAX Dragon": {
       "grupos": [
@@ -712,6 +572,16 @@
         "custom_monster"
       ]
     },
+    "Blue-Eyes Shining Dragon": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Blue-Eyes Twin Burst Dragon": {
+      "grupos": [
+        "multi_attack"
+      ]
+    },
     "Blue-Eyes Twin Corrupted Burst-Dragon": {
       "grupos": [
         "custom_monster"
@@ -722,166 +592,20 @@
         "custom_monster"
       ]
     },
-    "Darklord Samael, the First Serpent": {
+    "Bond Between Teacher And Student": {
       "grupos": [
-        "custom_monster",
-        "lp_recovery"
+        "acel_busca",
+        "acel_revival"
       ]
     },
-    "Darksaurus": {
+    "Bonfire": {
       "grupos": [
-        "custom_monster"
+        "burn_conditional"
       ]
     },
-    "Efreet, Spirit of the Ancestral Flame": {
+    "Book of Secret Arts": {
       "grupos": [
-        "custom_monster"
-      ]
-    },
-    "Legendary - Necro Rex": {
-      "grupos": [
-        "custom_monster"
-      ]
-    },
-    "Legendary DinoBEAST - T. Rex": {
-      "grupos": [
-        "custom_monster"
-      ]
-    },
-    "Legendary DinoBEAST - Threeranno": {
-      "grupos": [
-        "custom_monster",
-        "triple_attack",
-        "multi_attack"
-      ]
-    },
-    "Lord of Souls": {
-      "grupos": [
-        "custom_monster"
-      ]
-    },
-    "Red-Eyes Absolut Darkness Dragon": {
-      "grupos": [
-        "custom_monster"
-      ],
-      "limite": 1
-    },
-    "Sea Serpent of the Oceanic Void": {
-      "grupos": [
-        "custom_monster"
-      ]
-    },
-    "Solar Firewing Pegasus": {
-      "grupos": [
-        "custom_monster",
-        "direct_attack"
-      ]
-    },
-    "Evil Swords of Dark Light": {
-      "grupos": [
-        "custom_support"
-      ]
-    },
-    "Path to Atlantis": {
-      "grupos": [
-        "custom_support"
-      ]
-    },
-    "Airknight Parshath": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Ancient Gear Cannon": {
-      "grupos": [
-        "burn_direct"
-      ]
-    },
-    "Ancient Gear Engineer": {
-      "grupos": [
-        "backrow"
-      ]
-    },
-    "Ancient Gear Golem": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Andro Sphinx": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Armed Dragon LV5": {
-      "grupos": [
-        "backrow"
-      ]
-    },
-    "Armored Cybern": {
-      "grupos": [
-        "burn_direct"
-      ]
-    },
-    "Aromaseraphy Rosemary": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Avenging Knight Parshath": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "B. Skull Dragon": {
-      "grupos": [
-        "burn_direct"
-      ]
-    },
-    "Bad Reaction to Simochi": {
-      "grupos": [
-        "lp_recovery"
-      ]
-    },
-    "Barrel Dragon": {
-      "grupos": [
-        "triple_attack",
-        "multi_attack"
-      ]
-    },
-    "Battleguard King": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Black Luster Soldier - Envoy of the Beginning": {
-      "grupos": [
-        "multi_attack"
-      ]
-    },
-    "Black Luster Soldier - Super Soldier": {
-      "grupos": [
-        "burn_on_kill"
-      ]
-    },
-    "Black Tyranno": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Blaster, Dragon Ruler of Infernos": {
-      "grupos": [
-        "piercing_pressure"
-      ]
-    },
-    "Blaze Fenix": {
-      "grupos": [
-        "direct_attack",
-        "burn_direct"
-      ]
-    },
-    "Blowback Dragon": {
-      "grupos": [
-        "backrow"
+        "buff_equip_medio"
       ]
     },
     "Breaker the Dark Magical Warrior": {
@@ -889,9 +613,20 @@
         "backrow"
       ]
     },
+    "Breath of Light": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Bright Castle": {
+      "grupos": [
+        "buff_equip_alto"
+      ]
+    },
     "Burner, Dragon Ruler of Sparks": {
       "grupos": [
-        "burn_direct"
+        "burn_direct",
+        "acel_reposicao"
       ]
     },
     "Burning Skull Head": {
@@ -899,10 +634,31 @@
         "burn_direct"
       ]
     },
+    "Burning Spear": {
+      "grupos": [
+        "burn_conditional",
+        "buff_equip_medio"
+      ]
+    },
+    "Buster Blader": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
     "Call of the Haunted": {
       "grupos": [
-        "direct_attack",
-        "attack_negation"
+        "attack_negation",
+        "acel_revival"
+      ]
+    },
+    "Castle of Dark Illusions": {
+      "grupos": [
+        "protege_equipe"
+      ]
+    },
+    "Catapult Turtle": {
+      "grupos": [
+        "direct_attack"
       ]
     },
     "Ceasefire": {
@@ -910,9 +666,61 @@
         "burn_conditional"
       ]
     },
+    "Cerulean Sacred Phoenix of Nephthys": {
+      "grupos": [
+        "buff_aura_alta_mon"
+      ]
+    },
     "Cestus of Dagla": {
       "grupos": [
+        "buff_equip_medio",
         "lp_recovery"
+      ]
+    },
+    "Chakra": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Chaos Command Magician": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
+    "Chaos Emperor Dragon": {
+      "grupos": [
+        "burn_conditional"
+      ]
+    },
+    "Chaos Sorcerer": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Chasma, Dragon Ruler of Auroras": {
+      "grupos": [
+        "acel_revival",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Chimera the Flying Mythical Beast": {
+      "grupos": [
+        "multi_attack"
+      ]
+    },
+    "Chimera the King of Phantom Beasts": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Chimeratech Fortress Dragon": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Chimeratech Megafleet Dragon": {
+      "grupos": [
+        "self_escala_mao"
       ]
     },
     "Chimeratech Rampage Dragon": {
@@ -920,34 +728,203 @@
         "backrow"
       ]
     },
+    "Codarus": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Command Knight": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Condemned Darklord": {
+      "grupos": [
+        "self_snowball_batalha"
+      ]
+    },
+    "Cosmo Queen": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Crab Turtle": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Crimson Sunbird": {
+      "grupos": [
+        "burn_conditional"
+      ]
+    },
+    "Criosphinx": {
+      "grupos": [
+        "mill_oponente"
+      ]
+    },
+    "Crush Card": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Crush Card Virus": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Curse of Dragon": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
+    "Curse of Dragon, the Cursed Dragon": {
+      "grupos": [
+        "attacker_lock"
+      ]
+    },
+    "Cursebreaker": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Cyber Archfiend": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
     "Cyber Barrier Dragon": {
       "grupos": [
         "attack_negation"
       ]
     },
+    "Cyber Dinosaur": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Cyber Dragon": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Cyber Dragon Core": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Cyber Dragon Drei": {
+      "grupos": [
+        "buff_aura_media",
+        "debuff_alvo"
+      ]
+    },
+    "Cyber Dragon Infinity": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Cyber Dragon Nachster": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Cyber Dragon Nova": {
+      "grupos": [
+        "self_snowball_batalha",
+        "acel_reposicao"
+      ]
+    },
+    "Cyber Dragon Vier": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Cyber Dragon Zwei": {
+      "grupos": [
+        "self_snowball_batalha"
+      ]
+    },
     "Cyber Eltanin": {
       "grupos": [
+        "self_escala_mao",
         "burn_on_kill"
       ]
     },
     "Cyber End Dragon": {
       "grupos": [
-        "piercing_pressure"
+        "piercing_pressure",
+        "imune_a_efeito"
+      ]
+    },
+    "Cyber Eternity Dragon": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Cyber Harpie Lady": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
+    "Cyber Jar": {
+      "grupos": [
+        "mill_oponente"
+      ]
+    },
+    "Cyber Kirin": {
+      "grupos": [
+        "attacker_lock"
+      ]
+    },
+    "Cyber Larva": {
+      "grupos": [
+        "acel_reposicao",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Cyber Laser Dragon": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Cyber Phoenix": {
+      "grupos": [
+        "acel_reposicao",
+        "protege_equipe"
       ]
     },
     "Cyber Repair Plant": {
       "grupos": [
-        "board_wipe"
+        "board_wipe",
+        "bounce_shuffle",
+        "acel_revival"
+      ]
+    },
+    "Cyber Revsystem": {
+      "grupos": [
+        "protege_equipe"
+      ]
+    },
+    "Cyber Shield": {
+      "grupos": [
+        "buff_equip_medio"
       ]
     },
     "Cyber Slash Harpie Lady": {
       "grupos": [
-        "backrow"
+        "backrow",
+        "imune_a_efeito"
       ]
     },
     "Cyber Twin Dragon": {
       "grupos": [
         "multi_attack"
+      ]
+    },
+    "Cyber Valley": {
+      "grupos": [
+        "acel_revival"
       ]
     },
     "Cyberdark Edge": {
@@ -965,14 +942,30 @@
         "attack_negation"
       ]
     },
+    "Cybernetic Magician": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
     "Cybernetic Overflow": {
       "grupos": [
-        "attack_negation"
+        "attack_negation",
+        "acel_busca"
+      ]
+    },
+    "D.3.S. Frog": {
+      "grupos": [
+        "self_escala_arquetipo"
       ]
     },
     "Damage Polarizer": {
       "grupos": [
         "spell_negation"
+      ]
+    },
+    "Danger! Thunderbird!": {
+      "grupos": [
+        "remocao_alvo"
       ]
     },
     "Dark Burning Attack": {
@@ -986,9 +979,51 @@
         "backrow"
       ]
     },
+    "Dark Cavalry": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Dark Elf": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Dark Energy": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Dark Eradicator Warlock": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "burn_recurring"
+      ]
+    },
     "Dark Flare Knight": {
       "grupos": [
         "burn_direct"
+      ]
+    },
+    "Dark Guardian": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
+    "Dark Hole": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Dark Lucius LV6": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Dark Lucius LV8": {
+      "grupos": [
+        "imune_a_efeito",
+        "sem_dano_de_batalha"
       ]
     },
     "Dark Magic Attack": {
@@ -1001,14 +1036,69 @@
         "buff_aura_media"
       ]
     },
+    "Dark Magic Twin Burst": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Dark Magical Circle": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Dark Magician Girl": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Dark Magician Girl the Dragon Knight": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Dark Magician Girl the Magician's Apprentice": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "acel_busca"
+      ]
+    },
+    "Dark Magician Knight": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Dark Magician of Chaos": {
+      "grupos": [
+        "mill_oponente"
+      ]
+    },
+    "Dark Magician of Destruction": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "remocao_alvo",
+        "acel_busca"
+      ]
+    },
+    "Dark Magician the Dragon Knight": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
     "Dark Magician the Knight of Dragon Magic": {
       "grupos": [
-        "piercing_pressure"
+        "piercing_pressure",
+        "acel_revival"
       ]
     },
     "Dark Magician, the Pharaoh's Servant": {
       "grupos": [
-        "backrow"
+        "backrow",
+        "acel_busca"
+      ]
+    },
+    "Dark Master Zorc": {
+      "grupos": [
+        "board_wipe"
       ]
     },
     "Dark Paladin": {
@@ -1017,9 +1107,31 @@
         "backrow"
       ]
     },
+    "Dark Renewal": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Dark Sage": {
+      "grupos": [
+        "self_escala_mao",
+        "imune_a_efeito"
+      ]
+    },
     "Dark Tyranno": {
       "grupos": [
-        "direct_attack"
+        "direct_attack",
+        "acel_reposicao"
+      ]
+    },
+    "Dark-Piercing Light": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Darkfire Dragon": {
+      "grupos": [
+        "burn_on_kill"
       ]
     },
     "Darklord Amdusc": {
@@ -1027,10 +1139,41 @@
         "backrow"
       ]
     },
+    "Darklord Asmodeus": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Darklord Dance": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Darklord Desire": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Darklord Djehuty": {
+      "grupos": [
+        "acel_busca",
+        "acel_reposicao"
+      ]
+    },
     "Darklord Edeh Arae": {
       "grupos": [
         "lp_recovery",
         "piercing_pressure"
+      ]
+    },
+    "Darklord Gulgalta": {
+      "grupos": [
+        "buff_aura_alta_mon"
+      ]
+    },
+    "Darklord Ixchel": {
+      "grupos": [
+        "acel_revival"
       ]
     },
     "Darklord Marie": {
@@ -1040,7 +1183,8 @@
     },
     "Darklord Morningstar": {
       "grupos": [
-        "lp_recovery"
+        "lp_recovery",
+        "imune_a_efeito"
       ]
     },
     "Darklord Nasten": {
@@ -1051,6 +1195,7 @@
     "Darklord Nergal": {
       "grupos": [
         "board_wipe",
+        "bounce_shuffle",
         "piercing_pressure"
       ]
     },
@@ -1064,9 +1209,65 @@
         "attack_negation"
       ]
     },
+    "Darklord Samael, the First Serpent": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Darklord Superbia": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Darklord Tezcatlipoca": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
     "Darklord Uprising": {
       "grupos": [
+        "lp_recovery",
+        "acel_reposicao"
+      ]
+    },
+    "Darklord Zerato": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Darksaurus": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Day-Breaker the Shining Magical Warrior": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Des Frog": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Despair From The Dark": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Destruction Ring": {
+      "grupos": [
+        "punicao_atacante"
+      ]
+    },
+    "Dian Keto the Cure Master": {
+      "grupos": [
         "lp_recovery"
+      ]
+    },
+    "Different Dimension Dragon": {
+      "grupos": [
+        "indestrutivel_batalha"
       ]
     },
     "Dimension Sphinx": {
@@ -1074,9 +1275,84 @@
         "burn_on_kill"
       ]
     },
+    "Disaster, Dragon Ruler of All Apocalypses": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "intocavel_absoluto"
+      ]
+    },
+    "Divine Dragon Aquabizarre": {
+      "grupos": [
+        "acel_busca",
+        "protege_equipe"
+      ]
+    },
+    "Divine Dragon Lord Felgrand": {
+      "grupos": [
+        "bounce_shuffle"
+      ]
+    },
+    "Divine Dragon Titanomakhia": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "indestrutivel_batalha"
+      ]
+    },
+    "Dogoran, the Mad Flame Kaiju": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Dokurorider": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Doomkaiser Dragon": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Doomkaiser Dragon - Assault Mode": {
+      "grupos": [
+        "self_snowball_batalha",
+        "acel_revival"
+      ]
+    },
+    "Double Evolution Pill": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Dragon Capture Jar": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Dragon Master Knight": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Dragon Master Magia": {
+      "grupos": [
+        "spell_negation"
+      ]
+    },
+    "Dragon Shield": {
+      "grupos": [
+        "imune_a_efeito",
+        "sem_dano_de_batalha"
+      ]
+    },
     "Dragon Spirit of White": {
       "grupos": [
         "backrow"
+      ]
+    },
+    "Dragon Treasure": {
+      "grupos": [
+        "buff_equip_medio"
       ]
     },
     "Dragon's Rage": {
@@ -1089,14 +1365,61 @@
         "lp_recovery"
       ]
     },
+    "Dwarf Star Dragon Planeter": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "E - Emergency Call": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Eatgaboon": {
+      "grupos": [
+        "punicao_atacante"
+      ]
+    },
+    "Ebon High Magician": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
+    "Ebon Illusion Magician": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
     "Eclipse, Dragon Ruler of Catastrophes": {
       "grupos": [
-        "direct_attack"
+        "direct_attack",
+        "acel_revival"
+      ]
+    },
+    "Ectoplasmic Fortification": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Efreet, Spirit of the Ancestral Flame": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Electro-Whip": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Elegant Egotist": {
+      "grupos": [
+        "buff_equip_alto"
       ]
     },
     "Element Dragon": {
       "grupos": [
-        "multi_attack"
+        "multi_attack",
+        "self_escala_arquetipo"
       ]
     },
     "Elemental HERO Bladedge": {
@@ -1106,7 +1429,13 @@
     },
     "Elemental HERO Darkbright": {
       "grupos": [
+        "remocao_aleatoria",
         "piercing_pressure"
+      ]
+    },
+    "Elemental HERO Electrum": {
+      "grupos": [
+        "remocao_alvo"
       ]
     },
     "Elemental HERO Flame Wingman": {
@@ -1119,14 +1448,53 @@
         "direct_attack"
       ]
     },
+    "Elemental HERO Mudballman": {
+      "grupos": [
+        "intocavel_absoluto"
+      ]
+    },
+    "Elemental HERO Necroid Shaman": {
+      "grupos": [
+        "remocao_aleatoria",
+        "acel_revival"
+      ]
+    },
+    "Elemental HERO Necroshade": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Elemental HERO Phoenix Enforcer": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
     "Elemental HERO Plasma Vice": {
       "grupos": [
+        "remocao_aleatoria",
         "piercing_pressure"
       ]
     },
     "Elemental HERO Shining Flare Wingman": {
       "grupos": [
+        "self_escala_arquetipo",
         "burn_on_kill"
+      ]
+    },
+    "Elemental HERO Shining Phoenix Enforcer": {
+      "grupos": [
+        "self_escala_mao",
+        "indestrutivel_batalha"
+      ]
+    },
+    "Elemental HERO Tempest": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
+    "Elemental HERO Thunder Giant": {
+      "grupos": [
+        "remocao_alvo"
       ]
     },
     "Elemental HERO Wild Wingman": {
@@ -1134,9 +1502,130 @@
         "backrow"
       ]
     },
+    "Elemental HERO Wildheart": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
+    "Elf's Light": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Embers of the Ashened": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Enchanted Javelin": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Enraged Muka Muka": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Envoy of Chaos": {
+      "grupos": [
+        "buff_aura_alta_mon"
+      ]
+    },
+    "Eradicating Aerosol": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Eternal Draught": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Eternal Rest": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Evening Twilight Knight": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Evil Swords of Dark Light": {
+      "grupos": [
+        "custom_support"
+      ]
+    },
+    "Evocator Chevalier": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Evolsaur Vulcano": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Evolution Burst": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Exarion Universe": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Exodia Necross": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Exodia the Forbidden One": {
+      "grupos": [
+        "exodia_piece"
+      ],
+      "limite": 1
+    },
+    "Exodia, the Legendary Defender": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
     "Exxod, Master of The Guard": {
       "grupos": [
         "burn_conditional"
+      ]
+    },
+    "Fake Trap": {
+      "grupos": [
+        "attack_negation"
+      ]
+    },
+    "Fallen Angel of Roses": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Fiend Skull Dragon": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Final Flame": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
+    "Fire King High Avatar Garunix": {
+      "grupos": [
+        "burn_conditional"
+      ]
+    },
+    "Fire Recovery": {
+      "grupos": [
+        "acel_revival"
       ]
     },
     "Fire Sorcerer": {
@@ -1146,13 +1635,45 @@
     },
     "Firewall": {
       "grupos": [
-        "direct_attack",
         "attack_negation"
+      ]
+    },
+    "First of the Dragonlords": {
+      "grupos": [
+        "backrow",
+        "imune_a_efeito",
+        "indestrutivel_batalha"
+      ]
+    },
+    "First of the Dragons": {
+      "grupos": [
+        "imune_a_efeito",
+        "indestrutivel_batalha"
+      ]
+    },
+    "Five-Headed Dragon": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
+    "Five-Headed Link Dragon": {
+      "grupos": [
+        "intocavel_absoluto"
       ]
     },
     "Flame Cerebrus": {
       "grupos": [
         "triple_attack"
+      ]
+    },
+    "Flame Swordsman": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Follow Wind": {
+      "grupos": [
+        "buff_equip_medio"
       ]
     },
     "Fossil Dragon Skullgar": {
@@ -1162,7 +1683,14 @@
     },
     "Fossil Dragon Skullgios": {
       "grupos": [
+        "self_snowball_batalha",
         "piercing_pressure"
+      ]
+    },
+    "Freya, Spirit of Victory": {
+      "grupos": [
+        "buff_aura_media",
+        "protege_equipe"
       ]
     },
     "Frostosaurus": {
@@ -1176,20 +1704,82 @@
         "lp_recovery"
       ]
     },
+    "Fusilier Dragon": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Gagagigo": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
     "Gaia Prominence, the Fierce Force": {
       "grupos": [
-        "multi_attack",
-        "spell_negation"
+        "multi_attack"
       ]
     },
     "Gaia Soul the Combustible Collective": {
       "grupos": [
+        "self_snowball_batalha",
+        "piercing_pressure"
+      ]
+    },
+    "Gaia the Dragon Champion": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Gaia the Fierce Knight Origin": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Gaia the Magical Knight": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Gaia the Magical Knight of Dragons": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Gaia, the Mid-Knight Sun": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Gaia, the Polar Knight": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Garma Sword": {
+      "grupos": [
+        "multi_attack",
         "piercing_pressure"
       ]
     },
     "Garunix Eternity, Hyang of the Fire Kings": {
       "grupos": [
+        "board_wipe",
         "backrow"
+      ]
+    },
+    "Gate Guardian": {
+      "grupos": [
+        "equip_enabler_monster"
+      ]
+    },
+    "Gate Guardian of Thunder and Wind": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Gate Guardian of Water and Thunder": {
+      "grupos": [
+        "self_snowball_batalha"
       ]
     },
     "Gate Guardian of Wind and Water": {
@@ -1199,7 +1789,13 @@
     },
     "Gatling Dragon": {
       "grupos": [
-        "burn_direct"
+        "burn_direct",
+        "remocao_aleatoria"
+      ]
+    },
+    "Gearfried The Iron Knight": {
+      "grupos": [
+        "equip_enabler_monster"
       ]
     },
     "Gearfried the Red-Eyes Iron Knight": {
@@ -1209,12 +1805,34 @@
     },
     "Gearfried the Swordmaster": {
       "grupos": [
-        "explosive_equip"
+        "explosive_equip",
+        "acel_busca"
+      ]
+    },
+    "Giga Gagagigo": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Gigantic Cephalotus": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Gigaplant": {
+      "grupos": [
+        "buff_aura_media"
       ]
     },
     "Gilford the Legend": {
       "grupos": [
-        "equip_enabler_monster"
+        "equip_enabler_monster",
+        "self_escala_mao"
+      ]
+    },
+    "Gilford the Lightning": {
+      "grupos": [
+        "remocao_alvo"
       ]
     },
     "Gilti-Gearfried The Magical Steel Knight": {
@@ -1222,9 +1840,75 @@
         "multi_attack"
       ]
     },
+    "Goblin Fan": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Goblin's Secret Remedy": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Great Moth": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Guardian Sphinx": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
     "H - Heated Heart": {
       "grupos": [
+        "buff_equip_medio",
         "piercing_pressure"
+      ]
+    },
+    "Harpie Channeler": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Harpie Harpist": {
+      "grupos": [
+        "bounce_shuffle"
+      ]
+    },
+    "Harpie Lady 1": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Harpie Lady 2": {
+      "grupos": [
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Harpie Lady 3": {
+      "grupos": [
+        "attacker_lock"
+      ]
+    },
+    "Harpie Lady Phoenix Formation": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Harpie Lady Sisters": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Harpie Perfumer": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Harpie Queen": {
+      "grupos": [
+        "acel_busca"
       ]
     },
     "Harpie's Feather Duster": {
@@ -1232,9 +1916,51 @@
         "backrow"
       ]
     },
+    "Harpie's Pet Baby Dragon": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Harpie's Pet Dragon": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
     "Harpie's Pet Phantasmal Dragon": {
       "grupos": [
-        "direct_attack"
+        "direct_attack",
+        "self_escala_arquetipo",
+        "remocao_aleatoria"
+      ]
+    },
+    "Hazy Flame Basiltrice": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
+    "Heavy Mech Support Platform": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Helios - The Primordial Sun": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Helios Duo Megistus": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "acel_revival",
+        "imune_a_efeito"
+      ]
+    },
+    "Helios Trice Megistus": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "acel_revival",
+        "imune_a_efeito"
       ]
     },
     "Hero Heart": {
@@ -1242,9 +1968,50 @@
         "multi_attack"
       ]
     },
+    "Hero Signal": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Hieracosphinx": {
+      "grupos": [
+        "protege_equipe"
+      ]
+    },
+    "Hino-Kagu-Tsuchi": {
+      "grupos": [
+        "remocao_aleatoria"
+      ],
+      "limite": 1
+    },
+    "Hinotama": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
+    "Horn of Light": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Horn of the Unicorn": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
     "Horus the Black Flame Dragon LV4": {
       "grupos": [
         "burn_direct"
+      ]
+    },
+    "Horus the Black Flame Dragon LV6": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
+    "Horus the Black Flame Dragon LV8": {
+      "grupos": [
+        "imune_a_efeito"
       ]
     },
     "House of Adhesive Tape": {
@@ -1252,14 +2019,69 @@
         "punicao_atacante"
       ]
     },
+    "Howling Insect": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
     "Humanoid Worm Drake": {
       "grupos": [
         "burn_conditional"
       ]
     },
+    "Hyper-Ancient Shark Megalodon": {
+      "grupos": [
+        "self_snowball_batalha",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Ignition Beast Volcannon": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Illusion Magic": {
+      "grupos": [
+        "sem_dano_de_batalha"
+      ]
+    },
     "Illusion of Chaos": {
       "grupos": [
-        "piercing_pressure"
+        "piercing_pressure",
+        "acel_busca",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Indulged Darklord": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Infernal Flame Emperor": {
+      "grupos": [
+        "burn_on_kill",
+        "self_escala_mao"
+      ]
+    },
+    "Inferno Fire Blast": {
+      "grupos": [
+        "burn_conditional",
+        "buff_equip_alto"
+      ]
+    },
+    "Infinite Dismissal": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Insect Armor with Laser Cannon": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Invisible Wire": {
+      "grupos": [
+        "remocao_alvo"
       ]
     },
     "Jam Defender": {
@@ -1272,6 +2094,11 @@
         "piercing_pressure"
       ]
     },
+    "Jinzo": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
     "Jirai Gumo": {
       "grupos": [
         "board_wipe"
@@ -1279,12 +2106,140 @@
     },
     "Judgment of Thunder": {
       "grupos": [
+        "buff_equip_medio",
         "burn_conditional"
+      ]
+    },
+    "Jurassic Power": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Kaibaman": {
+      "grupos": [
+        "acel_busca",
+        "self_escala_mao"
+      ]
+    },
+    "Kairyu-Shin": {
+      "grupos": [
+        "buff_aura_media",
+        "debuff_alvo"
+      ]
+    },
+    "Kaiser Glider": {
+      "grupos": [
+        "self_snowball_batalha"
+      ]
+    },
+    "Kazejin": {
+      "grupos": [
+        "debuff_alvo",
+        "backrow"
+      ]
+    },
+    "King Dragun": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "King of the Feral Imps": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "King of The Skull Servants": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "King of Yamimakai": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "debuff_alvo"
       ]
     },
     "King Pyron": {
       "grupos": [
         "burn_direct"
+      ]
+    },
+    "Knight Day Grepher": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Kunai with Chain": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Labyrinth Tank": {
+      "grupos": [
+        "direct_attack"
+      ]
+    },
+    "Laser Cannon Armor": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Lava Battleguard": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Lava Golem": {
+      "grupos": [
+        "burn_on_kill",
+        "board_wipe"
+      ]
+    },
+    "Lava Golem, Steelcage of the Sun God": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Lavalval Dragun": {
+      "grupos": [
+        "protege_equipe"
+      ]
+    },
+    "Left Arm of the Forbidden One": {
+      "grupos": [
+        "exodia_piece"
+      ],
+      "limite": 1
+    },
+    "Left Leg of the Forbidden One": {
+      "grupos": [
+        "exodia_piece"
+      ],
+      "limite": 1
+    },
+    "Legendary - Necro Rex": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Legendary DinoBEAST - T. Rex": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Legendary DinoBEAST - Threeranno": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Legendary Flame Lord": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Legendary Sword": {
+      "grupos": [
+        "buff_equip_medio"
       ]
     },
     "Level 2 Power Boost": {
@@ -1293,9 +2248,73 @@
         "explosive_equip"
       ]
     },
+    "Level Up!": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
     "Levia-Dragon - Daedalus": {
       "grupos": [
         "board_wipe"
+      ]
+    },
+    "Light and Darkness Dragon": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Light and Darkness Dragonlord": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Lightning Blade": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Lightning Tricorn": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Lightning, Dragon Ruler of Drafts": {
+      "grupos": [
+        "bounce_shuffle",
+        "acel_reposicao"
+      ]
+    },
+    "Limiter Removal": {
+      "limite": 1
+    },
+    "Lion Alligator": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Little Chimera": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Lord Gaia the Fierce Knight": {
+      "grupos": [
+        "self_snowball_batalha"
+      ]
+    },
+    "Lord of Souls": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Lord of the Red": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Lost World": {
+      "grupos": [
+        "protege_equipe"
       ]
     },
     "Mach Mega Falcon": {
@@ -1304,14 +2323,135 @@
         "lp_recovery"
       ]
     },
+    "Machina Defender": {
+      "grupos": [
+        "buff_aura_alta_mon",
+        "buff_aura_media"
+      ]
+    },
+    "Machina Fortress": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Machina Megaform": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Machina Sniper": {
+      "grupos": [
+        "protege_equipe"
+      ]
+    },
+    "Machina Soldier": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Machine Conversion Factory": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Machine King": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Magi Magi Magician": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
     "Magic Cylinder": {
       "grupos": [
-        "direct_attack"
+        "punicao_atacante"
+      ]
+    },
+    "Magic Formula": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Magic Jammer": {
+      "grupos": [
+        "spell_negation"
+      ]
+    },
+    "Magical Dimension": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Magical Hats": {
+      "grupos": [
+        "attack_negation"
+      ]
+    },
+    "Magician of Black Chaos": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Magician of Chaos": {
+      "grupos": [
+        "mill_oponente"
+      ]
+    },
+    "Magician of Dark Chaos - Black Chaos": {
+      "grupos": [
+        "buff_aura_media",
+        "remocao_aleatoria",
+        "imune_a_efeito"
       ]
     },
     "Magician of Dark Illusion": {
       "grupos": [
-        "direct_attack"
+        "direct_attack",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Magician of Faith": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Magician's Defense": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Magician's Robe": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Magician's Rod": {
+      "grupos": [
+        "buff_aura_media",
+        "protege_equipe"
+      ]
+    },
+    "Magician's Soul": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Magician's Valkyria": {
+      "grupos": [
+        "protege_equipe"
+      ]
+    },
+    "Magikuriboh": {
+      "grupos": [
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Maha Vailo": {
+      "grupos": [
+        "equip_enabler_monster",
+        "self_escala_mao"
       ]
     },
     "Maiden of the Moonlight": {
@@ -1319,19 +2459,148 @@
         "lp_recovery"
       ]
     },
+    "Malevolent Nuzzler": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Marina, Princess of Sunflowers": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Mask of Restrict": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
     "Master Monk": {
       "grupos": [
         "multi_attack"
       ]
     },
+    "Master of Chaos": {
+      "grupos": [
+        "buff_aura_alta_mon"
+      ]
+    },
+    "Megamorph": {
+      "grupos": [
+        "explosive_equip"
+      ],
+      "limite": 1
+    },
+    "Metal Guardian": {
+      "grupos": [
+        "attacker_lock"
+      ]
+    },
+    "Metalzoa": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Meteor B. Dragon": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
+    "Meteor Black Comet Dragon": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Meteor Dragon Red-Eyes Impact": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
+    "Michizure": {
+      "grupos": [
+        "punicao_atacante"
+      ]
+    },
     "Mighty Dino King Rex": {
       "grupos": [
-        "multi_attack"
+        "multi_attack",
+        "self_escala_arquetipo"
+      ]
+    },
+    "Millennium Golem": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Millennium Shield": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Mine Golem": {
+      "grupos": [
+        "burn_conditional"
+      ]
+    },
+    "Mirror Force": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Mirror of Yata": {
+      "grupos": [
+        "buff_equip_alto"
+      ]
+    },
+    "Mirror Wall": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Monk Fighter": {
+      "grupos": [
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Monster Reborn": {
+      "grupos": [
+        "acel_revival"
+      ],
+      "limite": 1
+    },
+    "Mooyan Curry": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Mr. Volcano": {
+      "grupos": [
+        "burn_recurring"
+      ]
+    },
+    "Muka Muka": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Mystic Swordsman LV4": {
+      "grupos": [
+        "self_escala_mao"
       ]
     },
     "Mystic Swordsman LV6": {
       "grupos": [
+        "self_escala_arquetipo",
         "piercing_pressure"
+      ]
+    },
+    "Mystical Moon": {
+      "grupos": [
+        "buff_equip_alto"
+      ]
+    },
+    "Mystical Sand": {
+      "grupos": [
+        "buff_aura_media"
       ]
     },
     "Mystical Space Typhoon": {
@@ -1339,14 +2608,73 @@
         "backrow"
       ]
     },
+    "Naturia Beast": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Naturia Exterio": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
     "Nebulis, Dragon Ruler of Mishaps": {
       "grupos": [
         "direct_attack"
       ]
     },
+    "Negate Attack": {
+      "grupos": [
+        "attack_negation"
+      ]
+    },
     "Neo-Parshath, the Sky Paladin": {
       "grupos": [
+        "self_escala_mao",
         "piercing_pressure"
+      ]
+    },
+    "Nightmare Tri-mirror": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Nightmare Wheel": {
+      "grupos": [
+        "attacker_lock"
+      ],
+      "limite": 1
+    },
+    "Number 61: Volcasaurus": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "O - Oversoul": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Obelisk the Tormentor": {
+      "grupos": [
+        "divine_beast"
+      ],
+      "limite": 1
+    },
+    "Ocean Dragon Lord - Neo-Daedalus": {
+      "grupos": [
+        "multi_attack",
+        "backrow"
+      ]
+    },
+    "One for One": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Ookazi": {
+      "grupos": [
+        "burn_direct"
       ]
     },
     "Orca Mega-Fortress of Darkness": {
@@ -1359,19 +2687,83 @@
         "piercing_pressure"
       ]
     },
+    "Paladins of Bonds and Unity": {
+      "grupos": [
+        "spell_negation",
+        "self_escala_arquetipo",
+        "imune_a_efeito"
+      ]
+    },
+    "Palladium Oracle Mana": {
+      "grupos": [
+        "acel_revival",
+        "protege_equipe"
+      ]
+    },
+    "Path to Atlantis": {
+      "grupos": [
+        "custom_support"
+      ]
+    },
+    "Perfect Machine King": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Perfectly Ultimate Great Moth": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
     "Pharaonic Guardian Sphinx": {
       "grupos": [
-        "board_wipe"
+        "board_wipe",
+        "bounce_shuffle"
       ]
+    },
+    "Poseidon, King of the Oceans": {
+      "grupos": [
+        "divine_beast",
+        "custom_monster"
+      ],
+      "limite": 1
     },
     "Power Bond": {
       "grupos": [
+        "buff_equip_medio",
         "burn_conditional"
+      ]
+    },
+    "Power of Kaishin": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Predaplant Chimerafflesia": {
+      "grupos": [
+        "self_escala_mao"
       ]
     },
     "Prime Material Dragon": {
       "grupos": [
         "lp_recovery"
+      ]
+    },
+    "Pumpking the Great Ghost King": {
+      "grupos": [
+        "buff_aura_alta_mon",
+        "bounce_shuffle"
+      ]
+    },
+    "Pumpking the King of Ghosts": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Pumpking the King of Grave Ghosts": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "acel_busca"
       ]
     },
     "Pyramid of Light": {
@@ -1389,9 +2781,126 @@
         "piercing_pressure"
       ]
     },
+    "Queen of Autumn Leaves": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Queen of the Blazing Domain": {
+      "grupos": [
+        "buff_aura_media",
+        "imune_a_efeito"
+      ]
+    },
+    "Quintet Magician": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "imune_a_efeito"
+      ]
+    },
     "R - Righteous Justice": {
       "grupos": [
         "backrow"
+      ]
+    },
+    "Rabid Horseman": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Radiant Typhoon Fonix, the Great Flame": {
+      "grupos": [
+        "bounce_shuffle"
+      ]
+    },
+    "Rai-Jin": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Rai-Mei": {
+      "grupos": [
+        "acel_reposicao",
+        "acel_revival"
+      ]
+    },
+    "Raigeki": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Raise Body Heat": {
+      "grupos": [
+        "explosive_equip"
+      ]
+    },
+    "Reactan Dragon Ruler of Pebbles": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Reaper of the Cards": {
+      "grupos": [
+        "mill_oponente"
+      ]
+    },
+    "Red Medicine": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Red-Eyes Absolut Darkness Dragon": {
+      "grupos": [
+        "custom_monster"
+      ],
+      "limite": 1
+    },
+    "Red-Eyes Archfiend of Lightning": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Red-Eyes B. Metal Dragon": {
+      "grupos": [
+        "piercing_pressure",
+        "self_escala_mao"
+      ]
+    },
+    "Red-Eyes Baby Dragon": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Red-Eyes Black Dragon Sword": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "buff_aura_media"
+      ]
+    },
+    "Red-Eyes Black Flare Dragon": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Red-Eyes Black Fullmetal Dragon": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Red-Eyes Dark Dragoon": {
+      "grupos": [
+        "self_snowball_batalha",
+        "imune_a_efeito"
+      ]
+    },
+    "Red-Eyes Darkness Dragon": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Red-Eyes Darkness Metal Dragon": {
+      "grupos": [
+        "acel_busca"
       ]
     },
     "Red-Eyes Fang with Chain": {
@@ -1399,9 +2908,50 @@
         "multi_attack"
       ]
     },
+    "Red-Eyes Flare Metal Dragon": {
+      "grupos": [
+        "burn_conditional"
+      ]
+    },
+    "Red-Eyes Slash Dragon": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "protege_equipe"
+      ]
+    },
     "Red-Eyes Toon Dragon": {
       "grupos": [
         "direct_attack"
+      ]
+    },
+    "Red-Eyes Wyvern": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Red-Eyes Zombie Dragon": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Red-Eyes Zombie Dragon Lord": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Red-Eyes Zombie Necro Dragon": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Redox, Dragon Ruler of Boulders": {
+      "grupos": [
+        "protege_equipe"
+      ]
+    },
+    "Release Restraint": {
+      "grupos": [
+        "remocao_alvo"
       ]
     },
     "Remove Trap": {
@@ -1410,9 +2960,77 @@
         "backrow"
       ]
     },
+    "Revival Jam": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
+    "Right Arm of the Forbidden One": {
+      "grupos": [
+        "exodia_piece"
+      ],
+      "limite": 1
+    },
+    "Right Leg of the Forbidden One": {
+      "grupos": [
+        "exodia_piece"
+      ],
+      "limite": 1
+    },
+    "Rigorous Reaver": {
+      "grupos": [
+        "mill_oponente",
+        "debuff_alvo"
+      ]
+    },
+    "Ring of Destruction": {
+      "grupos": [
+        "punicao_atacante"
+      ]
+    },
+    "Rock Bombardment": {
+      "grupos": [
+        "burn_conditional",
+        "buff_equip_medio"
+      ]
+    },
+    "Rocket Warrior": {
+      "grupos": [
+        "debuff_alvo",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Rosaria, the Stately Fallen Angel": {
+      "grupos": [
+        "lp_recovery",
+        "buff_aura_media"
+      ]
+    },
+    "Rose Spectre of Dunn": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
     "Rose Whip": {
       "grupos": [
-        "multi_attack"
+        "multi_attack",
+        "buff_equip_medio"
+      ]
+    },
+    "Ruddy Rose Dragon": {
+      "grupos": [
+        "burn_direct",
+        "backrow"
+      ]
+    },
+    "Ruins of the Divine Dragon Lords": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Ryu Senshi": {
+      "grupos": [
+        "imune_a_efeito"
       ]
     },
     "Sacred Arch-Airknight Parshath": {
@@ -1420,9 +3038,154 @@
         "piercing_pressure"
       ]
     },
+    "Sacred Phoenix of Nephthys": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Sakuretsu Armor": {
+      "grupos": [
+        "punicao_atacante"
+      ]
+    },
+    "Salamandra": {
+      "grupos": [
+        "burn_conditional",
+        "buff_equip_medio"
+      ]
+    },
+    "Salvage": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Sangen Furo": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Sangen Kaiho": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Sangen Kaimen": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Sangenpai Bident Dragion": {
+      "grupos": [
+        "backrow",
+        "acel_revival"
+      ]
+    },
+    "Sangenpai Transcendent Dragion": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "remocao_aleatoria"
+      ]
+    },
+    "Sauropod Brachion": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
+    "Sea Serpent of the Oceanic Void": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Sengenjin": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Shadow Spell": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Shinato, King of a Higher Plane": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Shining Angel": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Silent Swordsman LV5": {
+      "grupos": [
+        "imune_a_efeito"
+      ]
+    },
+    "Silent Swordsman LV7": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Silver Bow and Arrow": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Simorgh, Bird of Divinity": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Skilled Dark Magician": {
+      "grupos": [
+        "acel_reposicao",
+        "indestrutivel_batalha"
+      ]
+    },
+    "Skull Flame": {
+      "grupos": [
+        "self_snowball_batalha"
+      ]
+    },
+    "Skull Guardian": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Skull Knight": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
     "Sky Galloping Gaia the Dragon Champion": {
       "grupos": [
         "piercing_pressure"
+      ]
+    },
+    "Slifer the Sky Dragon": {
+      "grupos": [
+        "divine_beast"
+      ],
+      "limite": 1
+    },
+    "Slot Machine": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Solar Firewing Pegasus": {
+      "grupos": [
+        "custom_monster"
+      ]
+    },
+    "Solar Flare Dragon": {
+      "grupos": [
+        "burn_recurring"
+      ]
+    },
+    "Soldier Gaia the Fierce Knight": {
+      "grupos": [
+        "remocao_aleatoria"
       ]
     },
     "Solemn Wishes": {
@@ -1430,9 +3193,69 @@
         "lp_recovery"
       ]
     },
+    "Sorcerer of Dark Magic": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Soul of the Pure": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Sparkhearts Girl": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Sparks": {
+      "grupos": [
+        "burn_direct"
+      ]
+    },
+    "Spear Dragon": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Spectral, Dragon Ruler of Flickers": {
+      "grupos": [
+        "sem_dano_de_batalha"
+      ]
+    },
     "Sphinx Teleia": {
       "grupos": [
         "burn_on_kill"
+      ]
+    },
+    "Spiral Serpent": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Spirit Illusion": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Spirit of Flames": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Stain Storm": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
+    "Stamping Destruction": {
+      "grupos": [
+        "backrow"
+      ]
+    },
+    "Steel Shell": {
+      "grupos": [
+        "buff_equip_medio"
       ]
     },
     "Stone Statue of the Aztecs": {
@@ -1442,7 +3265,8 @@
     },
     "Stream, Dragon Ruler of Droplets": {
       "grupos": [
-        "lp_recovery"
+        "lp_recovery",
+        "acel_reposicao"
       ]
     },
     "Submarine Frog": {
@@ -1450,14 +3274,20 @@
         "piercing_pressure"
       ]
     },
-    "Super Conductor Tyranno": {
+    "Summoned Skull": {
       "grupos": [
-        "burn_direct"
+        "remocao_alvo"
       ]
     },
-    "Super Robolady": {
+    "Super Conductor Tyranno": {
       "grupos": [
-        "direct_attack"
+        "burn_direct",
+        "debuff_alvo"
+      ]
+    },
+    "Super Roboyarou": {
+      "grupos": [
+        "self_snowball_batalha"
       ]
     },
     "Super Soldier Shield": {
@@ -1470,6 +3300,16 @@
         "multi_attack"
       ]
     },
+    "Super War-Lion": {
+      "grupos": [
+        "self_snowball_batalha"
+      ]
+    },
+    "Super-Ancient Dinobeast": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
     "Supersonic Skull Flame": {
       "grupos": [
         "burn_recurring"
@@ -1477,7 +3317,18 @@
     },
     "Survival of the Fittest": {
       "grupos": [
-        "multi_attack"
+        "multi_attack",
+        "buff_equip_alto"
+      ]
+    },
+    "Swamp Battleguard": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Sword of Dark Destruction": {
+      "grupos": [
+        "buff_equip_medio"
       ]
     },
     "Sword of Kusanagi": {
@@ -1490,14 +3341,102 @@
         "attacker_lock"
       ]
     },
+    "Tail Swipe": {
+      "grupos": [
+        "bounce_shuffle"
+      ]
+    },
+    "Talaya, Princess of Cherry Blossoms": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Tempest, Dragon Ruler of Storms": {
+      "grupos": [
+        "bounce_shuffle",
+        "protege_equipe"
+      ]
+    },
+    "Tenpai Dragon Chundra": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Tenpai Dragon Fadra": {
+      "grupos": [
+        "acel_revival",
+        "indestrutivel_batalha"
+      ]
+    },
+    "Tenpai Dragon Genroku": {
+      "grupos": [
+        "acel_reposicao"
+      ]
+    },
+    "Tenpai Dragon Paidra": {
+      "grupos": [
+        "acel_busca",
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Tethys, Goddess of Light": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
     "The Ascended of Thunder": {
       "grupos": [
         "lp_recovery"
       ]
     },
+    "The Creator Incarnate": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "The Dark Magicians": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "The Dragon Destroyer": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "The Fiend Megacyber": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
     "The First Darklord": {
       "grupos": [
-        "lp_recovery"
+        "lp_recovery",
+        "imune_a_efeito"
+      ]
+    },
+    "The Legendary Exodia Incarnate": {
+      "grupos": [
+        "intocavel_absoluto"
+      ]
+    },
+    "The Legendary Fisherman": {
+      "grupos": [
+        "acel_busca",
+        "imune_a_efeito"
+      ]
+    },
+    "The Legendary Fisherman II": {
+      "grupos": [
+        "acel_busca",
+        "imune_a_efeito"
+      ]
+    },
+    "The Legendary Fisherman III": {
+      "grupos": [
+        "bounce_shuffle",
+        "imune_a_efeito",
+        "indestrutivel_batalha"
       ]
     },
     "The Sanctified Darklord": {
@@ -1507,7 +3446,63 @@
     },
     "The Sanctuary in the Sky": {
       "grupos": [
+        "buff_aura_media",
         "lp_recovery"
+      ]
+    },
+    "The Unstoppable Exodia Incarnate": {
+      "grupos": [
+        "imune_a_efeito",
+        "indestrutivel_batalha"
+      ]
+    },
+    "The White Stone of Legend": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "The Wicked Avatar": {
+      "grupos": [
+        "wicked_god",
+        "self_escala_arquetipo",
+        "backrow"
+      ],
+      "limite": 1
+    },
+    "The Wicked Dreadroot": {
+      "grupos": [
+        "wicked_god",
+        "imune_a_efeito"
+      ],
+      "limite": 1
+    },
+    "The Wicked Eraser": {
+      "grupos": [
+        "wicked_god",
+        "self_escala_arquetipo"
+      ],
+      "limite": 1
+    },
+    "The Winged Dragon of Ra": {
+      "grupos": [
+        "divine_beast"
+      ],
+      "limite": 1
+    },
+    "Theinen the Great Sphinx": {
+      "grupos": [
+        "self_snowball_batalha"
+      ]
+    },
+    "Thestalos the Shadowfire Monarch": {
+      "grupos": [
+        "self_snowball_batalha",
+        "remocao_aleatoria"
+      ]
+    },
+    "Thousand Knives": {
+      "grupos": [
+        "remocao_aleatoria"
       ]
     },
     "Thunder Dragon Titan": {
@@ -1515,14 +3510,48 @@
         "triple_attack"
       ]
     },
+    "Thunder Dragon's Hundred Thunders": {
+      "grupos": [
+        "acel_revival"
+      ]
+    },
+    "Thunder Dragonduo": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "acel_revival"
+      ]
+    },
+    "Thunder Dragonlord": {
+      "grupos": [
+        "buff_aura_media",
+        "imune_a_efeito"
+      ]
+    },
+    "Thunder Unicorn": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
     "Tidal, Dragon Ruler of Waterfalls": {
       "grupos": [
-        "lp_recovery"
+        "lp_recovery",
+        "bounce_shuffle",
+        "protege_equipe"
+      ]
+    },
+    "Timaeus the United Dragon": {
+      "grupos": [
+        "remocao_alvo"
       ]
     },
     "Timaeus the United Magical Dragon": {
       "grupos": [
         "backrow"
+      ]
+    },
+    "Time Machine": {
+      "grupos": [
+        "acel_reposicao"
       ]
     },
     "Toon Black Luster Soldier": {
@@ -1535,9 +3564,31 @@
         "board_wipe"
       ]
     },
+    "Transcendosaurus Glaciasaurus": {
+      "grupos": [
+        "acel_revival",
+        "indestrutivel_batalha",
+        "protege_equipe"
+      ]
+    },
     "Trap Jammer": {
       "grupos": [
         "spell_negation"
+      ]
+    },
+    "Treasure Panda": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Treeborn Frog": {
+      "grupos": [
+        "buff_aura_alta_mon"
+      ]
+    },
+    "Tremendous Fire": {
+      "grupos": [
+        "burn_direct"
       ]
     },
     "Triangle Ecstasy Spark": {
@@ -1547,8 +3598,12 @@
     },
     "Trident Dragion": {
       "grupos": [
-        "triple_attack",
-        "multi_attack"
+        "triple_attack"
+      ]
+    },
+    "Trishula, Dragon of the Ice Barrier": {
+      "grupos": [
+        "bounce_shuffle"
       ]
     },
     "Twin Swords of Flashing Light - Tryce": {
@@ -1558,12 +3613,29 @@
     },
     "Twin-Headed Fire Dragon": {
       "grupos": [
+        "buff_aura_media",
         "burn_direct"
+      ]
+    },
+    "Twin-Headed Thunder Dragon": {
+      "grupos": [
+        "multi_attack"
+      ]
+    },
+    "Tyranno Infinity": {
+      "grupos": [
+        "self_escala_arquetipo"
       ]
     },
     "Tyrant Dragon": {
       "grupos": [
-        "multi_attack"
+        "multi_attack",
+        "imune_a_efeito"
+      ]
+    },
+    "Tytannial, Princess of Camellias": {
+      "grupos": [
+        "imune_a_efeito"
       ]
     },
     "Ultimate Ancient Gear Golem": {
@@ -1583,12 +3655,60 @@
     },
     "Ultimate Flame Swordsman": {
       "grupos": [
+        "self_snowball_batalha",
         "burn_recurring"
+      ]
+    },
+    "Ultimate Great Insect": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Ultimate Insect LV3": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Ultimate Insect LV5": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Ultimate Insect LV7": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Ultimate Obedient Fiend": {
+      "grupos": [
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Ultimate Tyranno": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Umiiruka": {
+      "grupos": [
+        "buff_aura_media"
+      ]
+    },
+    "Unexpected Dai": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Uria, Lord of Searing Flames": {
+      "grupos": [
+        "imune_a_efeito",
+        "protege_equipe"
       ]
     },
     "Veidos the Dragon of Endless Darkness": {
       "grupos": [
-        "backrow"
+        "backrow",
+        "imune_a_efeito"
       ]
     },
     "Veidos the Eruption Dragon of Extinction": {
@@ -1596,9 +3716,50 @@
         "board_wipe"
       ]
     },
+    "Vennu, Bright Bird of Divinity": {
+      "grupos": [
+        "self_escala_mao"
+      ]
+    },
+    "Vile Germs": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Violet Crystal": {
+      "grupos": [
+        "buff_equip_medio"
+      ]
+    },
+    "Volcanic Blaster": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Volcanic Counter": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Volcanic Doomfire": {
+      "grupos": [
+        "burn_on_kill"
+      ]
+    },
+    "Volcanic Emission": {
+      "grupos": [
+        "burn_recurring"
+      ]
+    },
+    "Volcanic Emperor": {
+      "grupos": [
+        "burn_recurring",
+        "burn_conditional"
+      ]
+    },
     "Volcanic Hammerer": {
       "grupos": [
-        "direct_attack"
+        "burn_recurring"
       ]
     },
     "Volcanic Inferno": {
@@ -1606,30 +3767,67 @@
         "spell_negation"
       ]
     },
+    "Volcanic Queen": {
+      "grupos": [
+        "self_escala_arquetipo",
+        "burn_recurring"
+      ]
+    },
     "Volcanic Rocket": {
       "grupos": [
         "piercing_pressure"
       ]
     },
+    "Volcanic Scattershot": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
     "Volcanic Shell": {
       "grupos": [
-        "burn_conditional"
+        "burn_conditional",
+        "acel_revival"
       ]
     },
     "Volcanic Slicer": {
       "grupos": [
-        "direct_attack",
         "burn_recurring"
       ]
     },
     "Volcanic Trooper": {
       "grupos": [
-        "burn_conditional"
+        "acel_busca"
+      ]
+    },
+    "Waboku": {
+      "grupos": [
+        "sem_dano_de_batalha"
+      ]
+    },
+    "Wall of Illusion": {
+      "grupos": [
+        "attacker_lock"
+      ]
+    },
+    "Wall Shadow": {
+      "grupos": [
+        "indestrutivel_batalha"
+      ]
+    },
+    "Warrior Elimination": {
+      "grupos": [
+        "remocao_alvo"
       ]
     },
     "Whispark Fairy Girl": {
       "grupos": [
-        "burn_direct"
+        "burn_direct",
+        "mill_oponente"
+      ]
+    },
+    "Whispering Fairy": {
+      "grupos": [
+        "mill_oponente"
       ]
     },
     "White Aura Whale": {
@@ -1638,24 +3836,35 @@
         "piercing_pressure"
       ]
     },
-    "Winged Trumpeter": {
+    "Wicked-Breaking Flamberge - Baou": {
       "grupos": [
-        "lp_recovery"
+        "buff_equip_medio",
+        "sem_dano_de_batalha"
       ]
     },
-    "Black Luster Soldier - Legendary Swordsman": {
-      "limite": 1
+    "Widespread Ruin": {
+      "grupos": [
+        "punicao_atacante"
+      ]
     },
-    "Hino-Kagu-Tsuchi": {
-      "limite": 1
+    "Wild Fire": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
+    "Winged Trumpeter": {
+      "grupos": [
+        "buff_equip_medio",
+        "lp_recovery"
+      ]
     },
     "Yamata Dragon": {
       "limite": 1
     },
-    "Monster Reborn": {
-      "limite": 1
-    },
-    "Limiter Removal": {
+    "Zorc Necrophades": {
+      "grupos": [
+        "divine_beast"
+      ],
       "limite": 1
     }
   }
