@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1791461775",
+  "versao": "1792616172",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -197,6 +197,13 @@
           "def": "1800"
         },
         {
+          "nome": "Millennium Shield",
+          "raridade": "SR",
+          "slug": "millennium_shield",
+          "atk": "0",
+          "def": "3000"
+        },
+        {
           "nome": "Mystic Swordsman LV4",
           "raridade": "SR",
           "slug": "mystic_swordsman_lv4",
@@ -321,13 +328,6 @@
           "slug": "lava_battleguard",
           "atk": "1550",
           "def": "1800"
-        },
-        {
-          "nome": "Millennium Shield",
-          "raridade": "R",
-          "slug": "millennium_shield",
-          "atk": "0",
-          "def": "3000"
         },
         {
           "nome": "Minomushi Warrior",
@@ -4586,6 +4586,13 @@
           "def": "1200"
         },
         {
+          "nome": "Labyrinth Wall",
+          "raridade": "SR",
+          "slug": "labyrinth_wall",
+          "atk": "0",
+          "def": "3000"
+        },
+        {
           "nome": "Mine Golem",
           "raridade": "SR",
           "slug": "mine_golem",
@@ -4633,13 +4640,6 @@
           "slug": "giant_soldier_of_stone",
           "atk": "1300",
           "def": "2000"
-        },
-        {
-          "nome": "Labyrinth Wall",
-          "raridade": "R",
-          "slug": "labyrinth_wall",
-          "atk": "0",
-          "def": "3000"
         },
         {
           "nome": "Muka Muka",
@@ -7671,6 +7671,11 @@
           "def": "2400"
         },
         {
+          "nome": "Dark Renewal",
+          "raridade": "UR",
+          "slug": "dark_renewal"
+        },
+        {
           "nome": "Dragon Master Magia",
           "raridade": "UR",
           "slug": "dragon_master_magia",
@@ -7830,11 +7835,6 @@
           "slug": "dark_magician_the_pharaohs_servant",
           "atk": "2500",
           "def": "2100"
-        },
-        {
-          "nome": "Dark Renewal",
-          "raridade": "SR",
-          "slug": "dark_renewal"
         },
         {
           "nome": "Ebon High Magician",
@@ -8356,6 +8356,384 @@
           "slug": "volcanic_rat",
           "atk": "500",
           "def": "500"
+        }
+      ]
+    },
+    {
+      "id": "especial_undead_halloween",
+      "tipo_label": "UNDEAD HALLOWEEN",
+      "nome_pt": "Undead Halloween",
+      "nome_en": "Undead Halloween",
+      "nome_es": "Undead Halloween",
+      "nome_vi": "Undead Halloween",
+      "desc_pt": "Edição especial e temporária de Halloween: os Vampire e o seu Drenar, as Wight que alimentam o King of The Skull Servants, a dupla Gozuki e Mezuki e os chefes mortos-vivos que voltam do CEMITÉRIO.",
+      "desc_en": "A special, time-limited Halloween edition: the Vampires and their Drain, the Wights that feed King of The Skull Servants, the Gozuki and Mezuki pair and the undead bosses that rise from the GRAVEYARD.",
+      "desc_es": "Edición especial y temporal de Halloween: los Vampire y su Drenaje, las Wight que alimentan al King of The Skull Servants, la pareja Gozuki y Mezuki y los jefes no-muertos que se alzan desde el CEMENTERIO.",
+      "desc_vi": "Phiên bản Halloween đặc biệt, giới hạn thời gian: các Vampire cùng hiệu ứng Hút, những Wight nuôi King of The Skull Servants, cặp đôi Gozuki và Mezuki và các trùm xác sống trỗi dậy từ MỘ.",
+      "cor": "#6a2c91",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 15,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-undead-halloween.webp",
+      "total_tema": 53,
+      "cartas_tema": [
+        {
+          "nome": "Alghoul Mazera",
+          "raridade": "UR",
+          "slug": "alghoul_mazera",
+          "atk": "2800",
+          "def": "2300"
+        },
+        {
+          "nome": "Berserk Dragon",
+          "raridade": "UR",
+          "slug": "berserk_dragon",
+          "atk": "3500",
+          "def": "0"
+        },
+        {
+          "nome": "Daidara-Bocchi",
+          "raridade": "UR",
+          "slug": "daidara-bocchi",
+          "atk": "2900",
+          "def": "2500"
+        },
+        {
+          "nome": "Doomkaiser Dragon",
+          "raridade": "UR",
+          "slug": "doomkaiser_dragon",
+          "atk": "2400",
+          "def": "1500"
+        },
+        {
+          "nome": "Doomkaiser Dragon - Assault Mode",
+          "raridade": "UR",
+          "slug": "doomkaiser_dragon_-_assault_mode",
+          "atk": "2900",
+          "def": "2000"
+        },
+        {
+          "nome": "Eldlich the Mad Golden Lord",
+          "raridade": "UR",
+          "slug": "eldlich_the_mad_golden_lord",
+          "atk": "3800",
+          "def": "3500"
+        },
+        {
+          "nome": "Gashadokuro, the Skeletal Mayakashi",
+          "raridade": "UR",
+          "slug": "gashadokuro_the_skeletal_mayakashi",
+          "atk": "3300",
+          "def": "2600"
+        },
+        {
+          "nome": "King of The Skull Servants",
+          "raridade": "UR",
+          "slug": "king_of_the_skull_servants",
+          "atk": "????",
+          "def": "????"
+        },
+        {
+          "nome": "Number 22: Zombiestein",
+          "raridade": "UR",
+          "slug": "number_22_zombiestein",
+          "atk": "4500",
+          "def": "1000"
+        },
+        {
+          "nome": "Pumpking the Great Ghost King",
+          "raridade": "UR",
+          "slug": "pumpking_the_great_ghost_king",
+          "atk": "2400",
+          "def": "2600"
+        },
+        {
+          "nome": "Shiranui Sunsaga",
+          "raridade": "UR",
+          "slug": "shiranui_sunsaga",
+          "atk": "3500",
+          "def": "0"
+        },
+        {
+          "nome": "Skeletal Dragon Felgrand",
+          "raridade": "UR",
+          "slug": "skeletal_dragon_felgrand",
+          "atk": "2800",
+          "def": "2800"
+        },
+        {
+          "nome": "Tauzenet Wadjet",
+          "raridade": "UR",
+          "slug": "tauzenet_wadjet",
+          "atk": "3200",
+          "def": "2500"
+        },
+        {
+          "nome": "The Zombie Vampire",
+          "raridade": "UR",
+          "slug": "the_zombie_vampire",
+          "atk": "3000",
+          "def": "2800"
+        },
+        {
+          "nome": "Vampire Genesis",
+          "raridade": "UR",
+          "slug": "vampire_genesis",
+          "atk": "3000",
+          "def": "2100"
+        },
+        {
+          "nome": "Vampire Voivode",
+          "raridade": "UR",
+          "slug": "vampire_voivode",
+          "atk": "2800",
+          "def": "2100"
+        },
+        {
+          "nome": "Crimson Knight Vampire Bram",
+          "raridade": "SR",
+          "slug": "crimson_knight_vampire_bram",
+          "atk": "2500",
+          "def": "0"
+        },
+        {
+          "nome": "Despair From The Dark",
+          "raridade": "SR",
+          "slug": "despair_from_the_dark",
+          "atk": "2800",
+          "def": "3000"
+        },
+        {
+          "nome": "Dhampir Vampire Sheridan",
+          "raridade": "SR",
+          "slug": "dhampir_vampire_sheridan",
+          "atk": "2600",
+          "def": "1000"
+        },
+        {
+          "nome": "Gozuki",
+          "raridade": "SR",
+          "slug": "gozuki",
+          "atk": "1700",
+          "def": "800"
+        },
+        {
+          "nome": "Mezuki",
+          "raridade": "SR",
+          "slug": "mezuki",
+          "atk": "1700",
+          "def": "800"
+        },
+        {
+          "nome": "Pumpking the King of Grave Ghosts",
+          "raridade": "SR",
+          "slug": "pumpking_the_king_of_grave_ghosts",
+          "atk": "1950",
+          "def": "2600"
+        },
+        {
+          "nome": "Red-Eyes Zombie Dragon",
+          "raridade": "SR",
+          "slug": "red-eyes_zombie_dragon",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Ryu Kokki",
+          "raridade": "SR",
+          "slug": "ryu_kokki",
+          "atk": "2400",
+          "def": "2000"
+        },
+        {
+          "nome": "Spirit of the Pharaoh",
+          "raridade": "SR",
+          "slug": "spirit_of_the_pharaoh",
+          "atk": "2500",
+          "def": "2000"
+        },
+        {
+          "nome": "The Lady in Wight",
+          "raridade": "SR",
+          "slug": "the_lady_in_wight",
+          "atk": "0",
+          "def": "2200"
+        },
+        {
+          "nome": "Vampire Awakening",
+          "raridade": "SR",
+          "slug": "vampire_awakening"
+        },
+        {
+          "nome": "Vampire Domination",
+          "raridade": "SR",
+          "slug": "vampire_domination"
+        },
+        {
+          "nome": "Vampire Fraulein",
+          "raridade": "SR",
+          "slug": "vampire_fraulein",
+          "atk": "600",
+          "def": "2000"
+        },
+        {
+          "nome": "Vampire Grace",
+          "raridade": "SR",
+          "slug": "vampire_grace",
+          "atk": "2000",
+          "def": "1200"
+        },
+        {
+          "nome": "Vampire Grimson",
+          "raridade": "SR",
+          "slug": "vampire_grimson",
+          "atk": "2000",
+          "def": "1400"
+        },
+        {
+          "nome": "Vampire Kingdom",
+          "raridade": "SR",
+          "slug": "vampire_kingdom"
+        },
+        {
+          "nome": "Vampire Lord",
+          "raridade": "SR",
+          "slug": "vampire_lord",
+          "atk": "2000",
+          "def": "1500"
+        },
+        {
+          "nome": "Vampire Red Baron",
+          "raridade": "SR",
+          "slug": "vampire_red_baron",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Vampire Scarlet Scourge",
+          "raridade": "SR",
+          "slug": "vampire_scarlet_scourge",
+          "atk": "2200",
+          "def": "2200"
+        },
+        {
+          "nome": "Vampire Takeover",
+          "raridade": "SR",
+          "slug": "vampire_takeover"
+        },
+        {
+          "nome": "Vampire Vamp",
+          "raridade": "SR",
+          "slug": "vampire_vamp",
+          "atk": "2000",
+          "def": "2000"
+        },
+        {
+          "nome": "Vampire's Curse",
+          "raridade": "SR",
+          "slug": "vampires_curse",
+          "atk": "2000",
+          "def": "800"
+        },
+        {
+          "nome": "Vampire's Domain",
+          "raridade": "SR",
+          "slug": "vampires_domain"
+        },
+        {
+          "nome": "Wightprincess",
+          "raridade": "SR",
+          "slug": "wightprincess",
+          "atk": "1600",
+          "def": "0"
+        },
+        {
+          "nome": "Zombie Master",
+          "raridade": "SR",
+          "slug": "zombie_master",
+          "atk": "1800",
+          "def": "0"
+        },
+        {
+          "nome": "Book of Life",
+          "raridade": "R",
+          "slug": "book_of_life"
+        },
+        {
+          "nome": "Shadow Vampire",
+          "raridade": "R",
+          "slug": "shadow_vampire",
+          "atk": "2000",
+          "def": "0"
+        },
+        {
+          "nome": "Vampire Baby",
+          "raridade": "R",
+          "slug": "vampire_baby",
+          "atk": "700",
+          "def": "1000"
+        },
+        {
+          "nome": "Vampire Dragon",
+          "raridade": "R",
+          "slug": "vampire_dragon",
+          "atk": "2400",
+          "def": "0"
+        },
+        {
+          "nome": "Vampire Duke",
+          "raridade": "R",
+          "slug": "vampire_duke",
+          "atk": "2000",
+          "def": "0"
+        },
+        {
+          "nome": "Vampire Familiar",
+          "raridade": "R",
+          "slug": "vampire_familiar",
+          "atk": "500",
+          "def": "0"
+        },
+        {
+          "nome": "Vampire Lady",
+          "raridade": "R",
+          "slug": "vampire_lady",
+          "atk": "1550",
+          "def": "1550"
+        },
+        {
+          "nome": "Vampire Retainer",
+          "raridade": "R",
+          "slug": "vampire_retainer",
+          "atk": "1200",
+          "def": "0"
+        },
+        {
+          "nome": "Vampire Sorcerer",
+          "raridade": "R",
+          "slug": "vampire_sorcerer",
+          "atk": "1500",
+          "def": "1500"
+        },
+        {
+          "nome": "Vampire's Desire",
+          "raridade": "R",
+          "slug": "vampires_desire"
+        },
+        {
+          "nome": "Wightmare",
+          "raridade": "R",
+          "slug": "wightmare",
+          "atk": "300",
+          "def": "200"
+        },
+        {
+          "nome": "Wightprince",
+          "raridade": "R",
+          "slug": "wightprince",
+          "atk": "0",
+          "def": "0"
         }
       ]
     }
