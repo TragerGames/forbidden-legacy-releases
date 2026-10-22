@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/cartas_runtime.json",
-  "versao": "1792616270",
+  "versao": "1792704826",
   "cartas": [
     {
       "nome": "30,000-Year White Turtle",
@@ -329,10 +329,10 @@
       "raridade_arquivo": "R",
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
-      "desc_pt": "EFEITO: Quando o oponente declarar um ataque: negue o ataque e, depois, coloque 2 Marcadores de Veneno no monstro atacante.",
-      "desc_en": "EFFECT: When your opponent declares an attack: negate the attack, then place 2 Poison Counters on the attacking monster.",
-      "desc_vi": "HIỆU ỨNG: Khi đối thủ tuyên bố tấn công: vô hiệu hóa đòn tấn công, sau đó đặt 2 Dấu Độc lên quái thú đang tấn công.",
-      "desc_es": "EFECTO: Cuando tu adversario declare un ataque: niega el ataque y, después, coloca 2 Contadores de Veneno en el monstruo atacante."
+      "desc_pt": "EFEITO: Quando o oponente declarar um ataque: negue o ataque e, depois, coloque 2 Marcadores de Veneno no monstro atacante. Cada monstro perde 500 de ATK para cada Marcador de Veneno nele. Se o ATK de um monstro chegar a 0 por causa de Marcadores de Veneno, destrua-o.",
+      "desc_en": "EFFECT: When your opponent declares an attack: negate the attack, then place 2 Poison Counters on the attacking monster. Each monster loses 500 ATK for each Poison Counter on it. If a monster's ATK becomes 0 because of Poison Counters, destroy it.",
+      "desc_vi": "HIỆU ỨNG: Khi đối thủ tuyên bố tấn công: vô hiệu hóa đòn tấn công, sau đó đặt 2 Dấu Độc lên quái thú đang tấn công. Mỗi quái thú mất 500 ATK cho mỗi Dấu Độc trên nó. Nếu ATK của một quái thú về 0 do Dấu Độc, hãy phá hủy nó.",
+      "desc_es": "EFECTO: Cuando tu adversario declare un ataque: niega el ataque y, después, coloca 2 Contadores de Veneno en el monstruo atacante. Cada monstruo pierde 500 ATK por cada Contador de Veneno que tenga. Si el ATK de un monstruo llega a 0 por los Contadores de Veneno, destrúyelo."
     },
     {
       "nome": "Ameba",
@@ -824,10 +824,10 @@
       "nivel": "6",
       "atk": "2200",
       "def": "2500",
-      "desc_pt": "EFEITO: Se este card for destruído em batalha ou por efeito de um card, todos os monstros do oponente perdem 500 de ATK e DEF. Este efeito também afeta monstros imunes a efeitos, exceto monstros DIVINE-BEAST.",
-      "desc_en": "EFFECT: If this card is destroyed by battle or by a card effect, all monsters your opponent controls lose 500 ATK and DEF. This effect also affects monsters unaffected by card effects, except DIVINE-BEAST monsters.",
-      "desc_vi": "HIỆU ỨNG: Nếu lá bài này bị phá hủy trong chiến đấu hoặc bởi hiệu ứng của một lá bài, tất cả quái thú của đối thủ mất 500 ATK và DEF. Hiệu ứng này cũng ảnh hưởng đến quái thú miễn nhiễm hiệu ứng, ngoại trừ quái thú DIVINE-BEAST.",
-      "desc_es": "EFECTO: Si esta carta es destruida en batalla o por el efecto de una carta, todos los monstruos del oponente pierden 500 de ATK y DEF. Este efecto también afecta a monstruos inmunes a efectos, excepto monstruos DIVINE-BEAST."
+      "desc_pt": "EFEITO: Se este card for destruído em batalha ou por efeito de um card, todos os monstros do oponente perdem 500 de ATK e DEF, exceto monstros DIVINE-BEAST.",
+      "desc_en": "EFFECT: If this card is destroyed by battle or by a card effect, all monsters your opponent controls lose 500 ATK and DEF, except DIVINE-BEAST monsters.",
+      "desc_vi": "HIỆU ỨNG: Nếu lá bài này bị phá hủy trong chiến đấu hoặc bởi hiệu ứng của một lá bài, tất cả quái thú của đối thủ mất 500 ATK và DEF, ngoại trừ quái thú DIVINE-BEAST.",
+      "desc_es": "EFECTO: Si esta carta es destruida en batalla o por el efecto de una carta, todos los monstruos del oponente pierden 500 de ATK y DEF, excepto monstruos DIVINE-BEAST."
     },
     {
       "nome": "Archfiend's Manifestation",
@@ -5820,10 +5820,10 @@
       "raridade_arquivo": "UR",
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
-      "desc_pt": "EFEITO: Quando o seu oponente Invocar um monstro, envie 1 monstro aleatório do campo dele ao CEMITÉRIO; depois, Invoque 1 \"Dark Magician\" do seu DECK ou CEMITÉRIO.",
-      "desc_en": "EFFECT: When your opponent Summons a monster, send 1 random monster from their field to the GRAVEYARD; then, Summon 1 \"Dark Magician\" from your DECK or GRAVEYARD.",
-      "desc_vi": "HIỆU ỨNG: Khi đối thủ Triệu hồi một quái thú, đưa 1 quái thú ngẫu nhiên từ sân của họ vào MỘ; sau đó, Triệu hồi 1 \"Dark Magician\" từ DECK hoặc MỘ của bạn.",
-      "desc_es": "EFECTO: Cuando tu oponente Invoque un monstruo, envía 1 monstruo aleatorio de su campo al CEMENTERIO; después, Invoca 1 \"Dark Magician\" de tu DECK o CEMENTERIO."
+      "desc_pt": "EFEITO: Quando o seu oponente Invocar um monstro, envie 1 monstro aleatório do campo dele ao CEMITÉRIO; depois, Invoque 1 monstro DARK MAGICIAN do seu DECK ou CEMITÉRIO.",
+      "desc_en": "EFFECT: When your opponent Summons a monster, send 1 random monster from their field to the GRAVEYARD; then, Summon 1 DARK MAGICIAN monster from your DECK or GRAVEYARD.",
+      "desc_vi": "HIỆU ỨNG: Khi đối thủ Triệu hồi một quái thú, đưa 1 quái thú ngẫu nhiên từ sân của họ vào MỘ; sau đó, Triệu hồi 1 quái thú DARK MAGICIAN từ DECK hoặc MỘ của bạn.",
+      "desc_es": "EFECTO: Cuando tu oponente Invoque un monstruo, envía 1 monstruo aleatorio de su campo al CEMENTERIO; después, Invoca 1 monstruo DARK MAGICIAN de tu DECK o CEMENTERIO."
     },
     {
       "nome": "Dark Room of Nightmare",
@@ -17752,10 +17752,10 @@
       "nivel": "8",
       "atk": "4500",
       "def": "1000",
-      "desc_pt": "EFEITO: Quando este card for Invocado: envie 1 card aleatório da sua MÃO ao CEMITÉRIO; depois, mude o monstro mais forte do seu oponente, exceto monstros DIVINE-BEAST, para Posição de Defesa, e ele tem os efeitos negados enquanto estiver em campo. Este efeito ignora imunidade.",
-      "desc_en": "EFFECT: When this card is Summoned: send 1 random card from your HAND to the GRAVEYARD; then, change your opponent's strongest monster, except DIVINE-BEAST monsters, to Defense Position, and it has its effects negated while it is on the field. This effect ignores immunity.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi 1 lá bài ngẫu nhiên từ TAY của bạn vào MỘ; sau đó, chuyển quái thú mạnh nhất của đối thủ, ngoại trừ quái thú DIVINE-BEAST, sang Thế Thủ, và hiệu ứng của nó bị vô hiệu hóa khi nó còn trên sân. Hiệu ứng này bỏ qua miễn nhiễm.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada: envía 1 carta aleatoria de tu MANO al CEMENTERIO; después, cambia el monstruo más fuerte de tu oponente, excepto monstruos DIVINE-BEAST, a Posición de Defensa, y sus efectos quedan negados mientras esté en el campo. Este efecto ignora la inmunidad.",
+      "desc_pt": "EFEITO: Quando este card for Invocado: envie 1 card aleatório da sua MÃO ao CEMITÉRIO; depois, mude o monstro mais forte do seu oponente, exceto monstros DIVINE-BEAST, para Posição de Defesa, e ele tem os efeitos negados enquanto estiver em campo.",
+      "desc_en": "EFFECT: When this card is Summoned: send 1 random card from your HAND to the GRAVEYARD; then, change your opponent's strongest monster, except DIVINE-BEAST monsters, to Defense Position, and it has its effects negated while it is on the field.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: gửi 1 lá bài ngẫu nhiên từ TAY của bạn vào MỘ; sau đó, chuyển quái thú mạnh nhất của đối thủ, ngoại trừ quái thú DIVINE-BEAST, sang Thế Thủ, và hiệu ứng của nó bị vô hiệu hóa khi nó còn trên sân.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada: envía 1 carta aleatoria de tu MANO al CEMENTERIO; después, cambia el monstruo más fuerte de tu oponente, excepto monstruos DIVINE-BEAST, a Posición de Defensa, y sus efectos quedan negados mientras esté en el campo.",
       "full_art": true
     },
     {
@@ -17847,10 +17847,10 @@
       "nivel": "10",
       "atk": "4000",
       "def": "4000",
-      "desc_pt": "EFEITO: Quando este card for Invocado, destrua todos os monstros que o seu oponente controla, exceto DIVINE-BEAST. Quando este card destruir um monstro em batalha, ele ganha ATK igual ao ATK original desse monstro.",
-      "desc_en": "EFFECT: When this card is Summoned, destroy all monsters your opponent controls, except DIVINE-BEAST. When this card destroys a monster by battle, it gains ATK equal to that monster's original ATK.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, phá hủy tất cả quái thú mà đối thủ điều khiển, trừ DIVINE-BEAST. Khi lá bài này phá hủy một quái thú trong chiến đấu, nó nhận thêm ATK bằng ATK gốc của quái thú đó.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada, destruye todos los monstruos que controla tu oponente, excepto DIVINE-BEAST. Cuando esta carta destruya un monstruo en batalla, gana ATK igual al ATK original de ese monstruo.",
+      "desc_pt": "EFEITO: Quando este card for Invocado, destrua todos os monstros que o seu oponente controla, exceto DIVINE-BEAST. Quando este card destruir um monstro em batalha, ele ganha ATK igual ao ATK original desse monstro. Aura Divina Superior: os efeitos deste card afetam todos os monstros, inclusive os que têm imunidade. Este card é imune aos efeitos de cards do oponente, exceto efeitos que dizem afetar monstros DIVINE-BEAST.",
+      "desc_en": "EFFECT: When this card is Summoned, destroy all monsters your opponent controls, except DIVINE-BEAST. When this card destroys a monster by battle, it gains ATK equal to that monster's original ATK. Superior Divine Aura: this card's effects affect every monster, including those with immunity. This card is immune to your opponent's card effects, except effects that state they affect DIVINE-BEAST monsters.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi, phá hủy tất cả quái thú mà đối thủ điều khiển, trừ DIVINE-BEAST. Khi lá bài này phá hủy một quái thú trong chiến đấu, nó nhận thêm ATK bằng ATK gốc của quái thú đó. Hào Quang Thần Thánh Tối Thượng: hiệu ứng của lá bài này ảnh hưởng đến mọi quái thú, kể cả những quái thú có miễn nhiễm. Lá bài này miễn nhiễm với hiệu ứng lá bài của đối thủ, ngoại trừ các hiệu ứng ghi rõ là ảnh hưởng đến quái thú DIVINE-BEAST.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada, destruye todos los monstruos que controla tu oponente, excepto DIVINE-BEAST. Cuando esta carta destruya un monstruo en batalla, gana ATK igual al ATK original de ese monstruo. Aura Divina Superior: los efectos de esta carta afectan a todos los monstruos, incluso a los que tienen inmunidad. Esta carta es inmune a los efectos de cartas de tu oponente, excepto efectos que indiquen que afectan a monstruos DIVINE-BEAST.",
       "full_art": true
     },
     {
@@ -18558,10 +18558,10 @@
       "nivel": "10",
       "atk": "2700",
       "def": "5000",
-      "desc_pt": "EFEITO: Não é afetado por outros efeitos de cards, exceto Cards de Equipamento. Se este card batalhar: ele ganha ATK igual à metade da sua DEF apenas durante essa batalha e se isso acontecer, ele ganha 700 de ATK permanentemente. Se este card causar dano de batalha ao seu oponente: você ganha PV igual ao dano causado.",
-      "desc_en": "EFFECT: Not affected by other card effects, except Equip Cards. If this card battles: it gains ATK equal to half its DEF during that battle only, and if that happens, it permanently gains 700 ATK. If this card inflicts battle damage to your opponent: you gain LP equal to the damage dealt.",
-      "desc_vi": "HIỆU ỨNG: Không bị ảnh hưởng bởi hiệu ứng của các lá bài khác, ngoại trừ lá bài Trang bị. Nếu lá bài này giao chiến: nó nhận ATK bằng một nửa DEF của nó chỉ trong trận chiến đó, và nếu điều đó xảy ra, nó vĩnh viễn nhận thêm 700 ATK. Nếu lá bài này gây sát thương chiến đấu lên đối thủ của bạn: bạn nhận LP bằng lượng sát thương đã gây ra.",
-      "desc_es": "EFECTO: No es afectada por otros efectos de cartas, excepto cartas de Equipo. Si esta carta batalla: gana ATK igual a la mitad de su DEF solo durante esa batalla, y si eso ocurre, gana 700 de ATK permanentemente. Si esta carta inflige daño de batalla a tu oponente: ganas PV igual al daño causado.",
+      "desc_pt": "EFEITO: Não é afetado por outros efeitos de cards, exceto Cards de Equipamento. Se este card batalhar: ele ganha ATK igual à metade da sua DEF apenas durante essa batalha e se isso acontecer, ele ganha 700 de ATK permanentemente. Se este card causar dano de batalha ao seu oponente: você ganha PV igual ao dano causado. Aura Divina Superior: os efeitos deste card afetam todos os monstros, inclusive os que têm imunidade.",
+      "desc_en": "EFFECT: Not affected by other card effects, except Equip Cards. If this card battles: it gains ATK equal to half its DEF during that battle only, and if that happens, it permanently gains 700 ATK. If this card inflicts battle damage to your opponent: you gain LP equal to the damage dealt. Superior Divine Aura: this card's effects affect every monster, including those with immunity.",
+      "desc_vi": "HIỆU ỨNG: Không bị ảnh hưởng bởi hiệu ứng của các lá bài khác, ngoại trừ lá bài Trang bị. Nếu lá bài này giao chiến: nó nhận ATK bằng một nửa DEF của nó chỉ trong trận chiến đó, và nếu điều đó xảy ra, nó vĩnh viễn nhận thêm 700 ATK. Nếu lá bài này gây sát thương chiến đấu lên đối thủ của bạn: bạn nhận LP bằng lượng sát thương đã gây ra. Hào Quang Thần Thánh Tối Thượng: hiệu ứng của lá bài này ảnh hưởng đến mọi quái thú, kể cả những quái thú có miễn nhiễm.",
+      "desc_es": "EFECTO: No es afectada por otros efectos de cartas, excepto cartas de Equipo. Si esta carta batalla: gana ATK igual a la mitad de su DEF solo durante esa batalla, y si eso ocurre, gana 700 de ATK permanentemente. Si esta carta inflige daño de batalla a tu oponente: ganas PV igual al daño causado. Aura Divina Superior: los efectos de esta carta afectan a todos los monstruos, incluso a los que tienen inmunidad.",
       "custom": true,
       "full_art": true
     },
@@ -21559,10 +21559,10 @@
       "nivel": "8",
       "atk": "2800",
       "def": "2800",
-      "desc_pt": "EFEITO: Quando este card for Invocado: embaralhe no DECK do seu oponente o monstro mais forte dele, exceto monstros DIVINE-BEAST. Este efeito ignora imunidade. Enquanto este card estiver em campo, o seu oponente não pode Invocar monstros do CEMITÉRIO dele.",
-      "desc_en": "EFFECT: When this card is Summoned: shuffle your opponent's strongest monster, except DIVINE-BEAST monsters, into their DECK. This effect ignores immunity. While this card is on the field, your opponent cannot Summon monsters from their GRAVEYARD.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: xáo quái thú mạnh nhất của đối thủ, ngoại trừ quái thú DIVINE-BEAST, vào DECK của họ. Hiệu ứng này bỏ qua miễn nhiễm. Khi lá bài này còn trên sân, đối thủ không thể Triệu hồi quái thú từ MỘ của họ.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada: baraja en el DECK de tu oponente su monstruo más fuerte, excepto monstruos DIVINE-BEAST. Este efecto ignora la inmunidad. Mientras esta carta esté en el campo, tu oponente no puede Invocar monstruos desde su CEMENTERIO.",
+      "desc_pt": "EFEITO: Quando este card for Invocado: embaralhe no DECK do seu oponente o monstro mais forte dele, exceto monstros DIVINE-BEAST. Enquanto este card estiver em campo, o seu oponente não pode Invocar monstros do CEMITÉRIO dele.",
+      "desc_en": "EFFECT: When this card is Summoned: shuffle your opponent's strongest monster, except DIVINE-BEAST monsters, into their DECK. While this card is on the field, your opponent cannot Summon monsters from their GRAVEYARD.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: xáo quái thú mạnh nhất của đối thủ, ngoại trừ quái thú DIVINE-BEAST, vào DECK của họ. Khi lá bài này còn trên sân, đối thủ không thể Triệu hồi quái thú từ MỘ của họ.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada: baraja en el DECK de tu oponente su monstruo más fuerte, excepto monstruos DIVINE-BEAST. Mientras esta carta esté en el campo, tu oponente no puede Invocar monstruos desde su CEMENTERIO.",
       "full_art": true
     },
     {
@@ -21820,10 +21820,10 @@
       "nivel": "10",
       "atk": "????",
       "def": "????",
-      "desc_pt": "EFEITO: Este card ganha 1000 de ATK e DEF para cada monstro na sua MÃO, incluindo ele mesmo. Enquanto este card estiver em campo, todo monstro Invocado pelo oponente perde 2000 de ATK e DEF; se o ATK dele chegar a 0, destrua-o. Este card causa dano de batalha perfurante e pode atacar 2 vezes por turno.",
-      "desc_en": "EFFECT: This card gains 1000 ATK and DEF for each monster in your HAND, including itself. While this card is on the field, each monster your opponent Summons loses 2000 ATK and DEF; if its ATK reaches 0, destroy it. This card inflicts piercing battle damage and can attack twice per turn.",
-      "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 1000 ATK và DEF cho mỗi quái thú trong TAY của bạn, kể cả chính nó. Khi lá bài này còn trên sân, mỗi quái thú mà đối thủ Triệu hồi mất 2000 ATK và DEF; nếu ATK của nó về 0, phá hủy nó. Lá bài này gây sát thương chiến đấu xuyên giáp và có thể tấn công 2 lần mỗi lượt.",
-      "desc_es": "EFECTO: Esta carta gana 1000 de ATK y DEF por cada monstruo en tu MANO, incluida ella misma. Mientras esta carta esté en el campo, cada monstruo que Invoque tu oponente pierde 2000 de ATK y DEF; si su ATK llega a 0, destrúyelo. Esta carta inflige daño de batalla de penetración y puede atacar 2 veces por turno.",
+      "desc_pt": "EFEITO: Este card ganha 1000 de ATK e DEF para cada monstro na sua MÃO, incluindo ele mesmo. Enquanto este card estiver em campo, todo monstro Invocado pelo oponente perde 2000 de ATK e DEF; se o ATK dele chegar a 0, destrua-o. Este card causa dano de batalha perfurante e pode atacar 2 vezes por turno. Aura Divina Superior: os efeitos deste card afetam todos os monstros, inclusive os que têm imunidade. Este card é imune aos efeitos de cards do oponente, exceto efeitos que dizem afetar monstros DIVINE-BEAST.",
+      "desc_en": "EFFECT: This card gains 1000 ATK and DEF for each monster in your HAND, including itself. While this card is on the field, each monster your opponent Summons loses 2000 ATK and DEF; if its ATK reaches 0, destroy it. This card inflicts piercing battle damage and can attack twice per turn. Superior Divine Aura: this card's effects affect every monster, including those with immunity. This card is immune to your opponent's card effects, except effects that state they affect DIVINE-BEAST monsters.",
+      "desc_vi": "HIỆU ỨNG: Lá bài này nhận thêm 1000 ATK và DEF cho mỗi quái thú trong TAY của bạn, kể cả chính nó. Khi lá bài này còn trên sân, mỗi quái thú mà đối thủ Triệu hồi mất 2000 ATK và DEF; nếu ATK của nó về 0, phá hủy nó. Lá bài này gây sát thương chiến đấu xuyên giáp và có thể tấn công 2 lần mỗi lượt. Hào Quang Thần Thánh Tối Thượng: hiệu ứng của lá bài này ảnh hưởng đến mọi quái thú, kể cả những quái thú có miễn nhiễm. Lá bài này miễn nhiễm với hiệu ứng lá bài của đối thủ, ngoại trừ các hiệu ứng ghi rõ là ảnh hưởng đến quái thú DIVINE-BEAST.",
+      "desc_es": "EFECTO: Esta carta gana 1000 de ATK y DEF por cada monstruo en tu MANO, incluida ella misma. Mientras esta carta esté en el campo, cada monstruo que Invoque tu oponente pierde 2000 de ATK y DEF; si su ATK llega a 0, destrúyelo. Esta carta inflige daño de batalla de penetración y puede atacar 2 veces por turno. Aura Divina Superior: los efectos de esta carta afectan a todos los monstruos, incluso a los que tienen inmunidad. Esta carta es inmune a los efectos de cartas de tu oponente, excepto efectos que indiquen que afectan a monstruos DIVINE-BEAST.",
       "full_art": true
     },
     {
@@ -24269,10 +24269,10 @@
       "nivel": "10",
       "atk": "5000",
       "def": "5000",
-      "desc_pt": "EFEITO: No seu turno, pague LP até ficar com 1; este card ganha ATK e DEF iguais ao valor pago. No final do turno, você recupera esse LP.",
-      "desc_en": "EFFECT: During your turn, pay LP until you have 1 left; this card gains ATK and DEF equal to the amount paid. At the end of the turn, you regain that LP.",
-      "desc_vi": "HIỆU ỨNG: Trong lượt của bạn, trả LP cho đến khi còn 1; lá bài này nhận thêm ATK và DEF bằng số đã trả. Vào cuối lượt, bạn lấy lại số LP đó.",
-      "desc_es": "EFECTO: Durante tu turno, paga LP hasta quedarte con 1; esta carta gana ATK y DEF iguales a la cantidad pagada. Al final del turno, recuperas esos LP.",
+      "desc_pt": "EFEITO: No seu turno, pague LP até ficar com 1; este card ganha ATK e DEF iguais ao valor pago. No final do turno, você recupera esse LP. Aura Divina Superior: os efeitos deste card afetam todos os monstros, inclusive os que têm imunidade. Este card é imune aos efeitos de cards do oponente, exceto efeitos que dizem afetar monstros DIVINE-BEAST.",
+      "desc_en": "EFFECT: During your turn, pay LP until you have 1 left; this card gains ATK and DEF equal to the amount paid. At the end of the turn, you regain that LP. Superior Divine Aura: this card's effects affect every monster, including those with immunity. This card is immune to your opponent's card effects, except effects that state they affect DIVINE-BEAST monsters.",
+      "desc_vi": "HIỆU ỨNG: Trong lượt của bạn, trả LP cho đến khi còn 1; lá bài này nhận thêm ATK và DEF bằng số đã trả. Vào cuối lượt, bạn lấy lại số LP đó. Hào Quang Thần Thánh Tối Thượng: hiệu ứng của lá bài này ảnh hưởng đến mọi quái thú, kể cả những quái thú có miễn nhiễm. Lá bài này miễn nhiễm với hiệu ứng lá bài của đối thủ, ngoại trừ các hiệu ứng ghi rõ là ảnh hưởng đến quái thú DIVINE-BEAST.",
+      "desc_es": "EFECTO: Durante tu turno, paga LP hasta quedarte con 1; esta carta gana ATK y DEF iguales a la cantidad pagada. Al final del turno, recuperas esos LP. Aura Divina Superior: los efectos de esta carta afectan a todos los monstruos, incluso a los que tienen inmunidad. Esta carta es inmune a los efectos de cartas de tu oponente, excepto efectos que indiquen que afectan a monstruos DIVINE-BEAST.",
       "full_art": true
     },
     {
@@ -25713,10 +25713,10 @@
       "raridade_arquivo": "SR",
       "icone_atributo": "TRAP",
       "icone_tipo": "trap",
-      "desc_pt": "EFEITO: Quando o seu oponente ativar um card SPELL, um card TRAP ou um efeito de monstro enquanto você controlar um monstro VAMPIRE: negue a ativação e destrua esse card (monstros DIVINE-BEAST não são afetados). Se era um monstro, você ganha LP igual ao ATK original dele. Este efeito ignora imunidade.",
-      "desc_en": "EFFECT: When your opponent activates a SPELL card, a TRAP card or a monster effect while you control a VAMPIRE monster: negate the activation and destroy that card (DIVINE-BEAST monsters are not affected). If it was a monster, you gain LP equal to its original ATK. This effect ignores immunity.",
-      "desc_vi": "HIỆU ỨNG: Khi đối thủ kích hoạt một lá SPELL, một lá TRAP hoặc hiệu ứng quái thú trong khi bạn điều khiển một quái thú VAMPIRE: vô hiệu hóa việc kích hoạt và phá hủy lá bài đó (quái thú DIVINE-BEAST không bị ảnh hưởng). Nếu đó là quái thú, bạn nhận LP bằng ATK gốc của nó. Hiệu ứng này bỏ qua miễn nhiễm.",
-      "desc_es": "EFECTO: Cuando tu oponente active una carta SPELL, una carta TRAP o un efecto de monstruo mientras controles un monstruo VAMPIRE: niega la activación y destruye esa carta (los monstruos DIVINE-BEAST no son afectados). Si era un monstruo, ganas LP igual a su ATK original. Este efecto ignora la inmunidad."
+      "desc_pt": "EFEITO: Quando o seu oponente ativar um card SPELL, um card TRAP ou um efeito de monstro enquanto você controlar um monstro VAMPIRE: negue a ativação e destrua esse card (monstros DIVINE-BEAST não são afetados). Se era um monstro, você ganha LP igual ao ATK original dele.",
+      "desc_en": "EFFECT: When your opponent activates a SPELL card, a TRAP card or a monster effect while you control a VAMPIRE monster: negate the activation and destroy that card (DIVINE-BEAST monsters are not affected). If it was a monster, you gain LP equal to its original ATK.",
+      "desc_vi": "HIỆU ỨNG: Khi đối thủ kích hoạt một lá SPELL, một lá TRAP hoặc hiệu ứng quái thú trong khi bạn điều khiển một quái thú VAMPIRE: vô hiệu hóa việc kích hoạt và phá hủy lá bài đó (quái thú DIVINE-BEAST không bị ảnh hưởng). Nếu đó là quái thú, bạn nhận LP bằng ATK gốc của nó.",
+      "desc_es": "EFECTO: Cuando tu oponente active una carta SPELL, una carta TRAP o un efecto de monstruo mientras controles un monstruo VAMPIRE: niega la activación y destruye esa carta (los monstruos DIVINE-BEAST no son afectados). Si era un monstruo, ganas LP igual a su ATK original."
     },
     {
       "nome": "Vampire Dragon",
@@ -25919,10 +25919,10 @@
       "nivel": "6",
       "atk": "2400",
       "def": "1000",
-      "desc_pt": "EFEITO: Quando este card for Invocado: pague 1000 de LP; tome o controle do monstro mais forte do seu oponente, exceto monstros DIVINE-BEAST, até o fim deste turno. Este efeito ignora imunidade e não pode ser negado.",
-      "desc_en": "EFFECT: When this card is Summoned: pay 1000 LP; take control of your opponent's strongest monster, except DIVINE-BEAST monsters, until the end of this turn. This effect ignores immunity and cannot be negated.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: trả 1000 LP; chiếm quyền điều khiển quái thú mạnh nhất của đối thủ, ngoại trừ quái thú DIVINE-BEAST, cho đến hết lượt này. Hiệu ứng này bỏ qua miễn nhiễm và không thể bị vô hiệu hóa.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada: paga 1000 LP; toma el control del monstruo más fuerte de tu oponente, excepto monstruos DIVINE-BEAST, hasta el final de este turno. Este efecto ignora la inmunidad y no puede ser negado."
+      "desc_pt": "EFEITO: Quando este card for Invocado: pague 1000 de LP; tome o controle do monstro mais forte do seu oponente, exceto monstros DIVINE-BEAST, até o fim deste turno. Este efeito não pode ser negado.",
+      "desc_en": "EFFECT: When this card is Summoned: pay 1000 LP; take control of your opponent's strongest monster, except DIVINE-BEAST monsters, until the end of this turn. This effect cannot be negated.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: trả 1000 LP; chiếm quyền điều khiển quái thú mạnh nhất của đối thủ, ngoại trừ quái thú DIVINE-BEAST, cho đến hết lượt này. Hiệu ứng này không thể bị vô hiệu hóa.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada: paga 1000 LP; toma el control del monstruo más fuerte de tu oponente, excepto monstruos DIVINE-BEAST, hasta el final de este turno. Este efecto no puede ser negado."
     },
     {
       "nome": "Vampire Retainer",
@@ -26177,10 +26177,10 @@
       "nivel": "8",
       "atk": "????",
       "def": "????",
-      "desc_pt": "EFEITO: Ganha 200 de ATK e DEF para cada monstro REPTILE na sua MÃO e no seu DECK. Quando este card for destruído: coloque 2 Marcadores de Veneno em cada monstro que seu oponente controla.",
-      "desc_en": "EFFECT: Gains 200 ATK and DEF for each REPTILE monster in your HAND and DECK. When this card is destroyed: place 2 Poison Counters on each monster your opponent controls.",
-      "desc_vi": "HIỆU ỨNG: Nhận thêm 200 ATK và DEF cho mỗi quái thú REPTILE trên TAY và trong DECK của bạn. Khi lá bài này bị phá hủy: đặt 2 Dấu Độc lên mỗi quái thú đối thủ điều khiển.",
-      "desc_es": "EFECTO: Gana 200 de ATK y DEF por cada monstruo REPTILE en tu MANO y en tu DECK. Cuando esta carta sea destruida: coloca 2 Contadores de Veneno en cada monstruo que controle tu adversario.",
+      "desc_pt": "EFEITO: Ganha 200 de ATK e DEF para cada monstro REPTILE na sua MÃO e no seu DECK. Quando este card for destruído: coloque 2 Marcadores de Veneno em cada monstro que seu oponente controla. Cada monstro perde 500 de ATK para cada Marcador de Veneno nele. Se o ATK de um monstro chegar a 0 por causa de Marcadores de Veneno, destrua-o.",
+      "desc_en": "EFFECT: Gains 200 ATK and DEF for each REPTILE monster in your HAND and DECK. When this card is destroyed: place 2 Poison Counters on each monster your opponent controls. Each monster loses 500 ATK for each Poison Counter on it. If a monster's ATK becomes 0 because of Poison Counters, destroy it.",
+      "desc_vi": "HIỆU ỨNG: Nhận thêm 200 ATK và DEF cho mỗi quái thú REPTILE trên TAY và trong DECK của bạn. Khi lá bài này bị phá hủy: đặt 2 Dấu Độc lên mỗi quái thú đối thủ điều khiển. Mỗi quái thú mất 500 ATK cho mỗi Dấu Độc trên nó. Nếu ATK của một quái thú về 0 do Dấu Độc, hãy phá hủy nó.",
+      "desc_es": "EFECTO: Gana 200 de ATK y DEF por cada monstruo REPTILE en tu MANO y en tu DECK. Cuando esta carta sea destruida: coloca 2 Contadores de Veneno en cada monstruo que controle tu adversario. Cada monstruo pierde 500 ATK por cada Contador de Veneno que tenga. Si el ATK de un monstruo llega a 0 por los Contadores de Veneno, destrúyelo.",
       "full_art": true
     },
     {
@@ -26217,10 +26217,10 @@
       "nivel": "5",
       "atk": "1600",
       "def": "1200",
-      "desc_pt": "EFEITO: Quando este card for Invocado: coloque 2 Marcadores de Veneno no monstro com o maior ATK que o oponente controla.",
-      "desc_en": "EFFECT: When this card is Summoned: place 2 Poison Counters on the monster your opponent controls with the highest ATK.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: đặt 2 Dấu Độc lên quái thú có ATK cao nhất mà đối thủ điều khiển.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada: coloca 2 Contadores de Veneno en el monstruo con el ATK más alto que controle tu adversario."
+      "desc_pt": "EFEITO: Quando este card for Invocado: coloque 2 Marcadores de Veneno no monstro com o maior ATK que o oponente controla. Cada monstro perde 500 de ATK para cada Marcador de Veneno nele. Se o ATK de um monstro chegar a 0 por causa de Marcadores de Veneno, destrua-o.",
+      "desc_en": "EFFECT: When this card is Summoned: place 2 Poison Counters on the monster your opponent controls with the highest ATK. Each monster loses 500 ATK for each Poison Counter on it. If a monster's ATK becomes 0 because of Poison Counters, destroy it.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: đặt 2 Dấu Độc lên quái thú có ATK cao nhất mà đối thủ điều khiển. Mỗi quái thú mất 500 ATK cho mỗi Dấu Độc trên nó. Nếu ATK của một quái thú về 0 do Dấu Độc, hãy phá hủy nó.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada: coloca 2 Contadores de Veneno en el monstruo con el ATK más alto que controle tu adversario. Cada monstruo pierde 500 ATK por cada Contador de Veneno que tenga. Si el ATK de un monstruo llega a 0 por los Contadores de Veneno, destrúyelo."
     },
     {
       "nome": "Venom Burn",
@@ -26252,10 +26252,10 @@
       "nivel": "4",
       "atk": "1000",
       "def": "800",
-      "desc_pt": "EFEITO: No início de cada um dos seus turnos, coloque 1 Marcador de Veneno no monstro com o maior ATK que o oponente controla.",
-      "desc_en": "EFFECT: At the start of each of your turns, place 1 Poison Counter on the monster your opponent controls with the highest ATK.",
-      "desc_vi": "HIỆU ỨNG: Vào đầu mỗi lượt của bạn, đặt 1 Dấu Độc lên quái thú có ATK cao nhất mà đối thủ điều khiển.",
-      "desc_es": "EFECTO: Al inicio de cada uno de tus turnos, coloca 1 Contador de Veneno en el monstruo con el ATK más alto que controle tu adversario."
+      "desc_pt": "EFEITO: No início de cada um dos seus turnos, coloque 1 Marcador de Veneno no monstro com o maior ATK que o oponente controla. Cada monstro perde 500 de ATK para cada Marcador de Veneno nele. Se o ATK de um monstro chegar a 0 por causa de Marcadores de Veneno, destrua-o.",
+      "desc_en": "EFFECT: At the start of each of your turns, place 1 Poison Counter on the monster your opponent controls with the highest ATK. Each monster loses 500 ATK for each Poison Counter on it. If a monster's ATK becomes 0 because of Poison Counters, destroy it.",
+      "desc_vi": "HIỆU ỨNG: Vào đầu mỗi lượt của bạn, đặt 1 Dấu Độc lên quái thú có ATK cao nhất mà đối thủ điều khiển. Mỗi quái thú mất 500 ATK cho mỗi Dấu Độc trên nó. Nếu ATK của một quái thú về 0 do Dấu Độc, hãy phá hủy nó.",
+      "desc_es": "EFECTO: Al inicio de cada uno de tus turnos, coloca 1 Contador de Veneno en el monstruo con el ATK más alto que controle tu adversario. Cada monstruo pierde 500 ATK por cada Contador de Veneno que tenga. Si el ATK de un monstruo llega a 0 por los Contadores de Veneno, destrúyelo."
     },
     {
       "nome": "Venom Shot",
@@ -26268,10 +26268,10 @@
       "raridade_arquivo": "SR",
       "icone_atributo": "SPELL",
       "icone_tipo": "spell",
-      "desc_pt": "EFEITO: Envie 1 monstro REPTILE aleatório do seu DECK para o seu CEMITÉRIO e, depois, coloque 2 Marcadores de Veneno no monstro com o maior ATK que o oponente controla.",
-      "desc_en": "EFFECT: Send 1 random REPTILE monster from your DECK to your GRAVEYARD, then place 2 Poison Counters on the monster your opponent controls with the highest ATK.",
-      "desc_vi": "HIỆU ỨNG: Gửi 1 quái thú REPTILE ngẫu nhiên từ DECK của bạn vào MỘ của bạn, sau đó đặt 2 Dấu Độc lên quái thú có ATK cao nhất mà đối thủ điều khiển.",
-      "desc_es": "EFECTO: Envía 1 monstruo REPTILE aleatorio de tu DECK a tu CEMENTERIO y, después, coloca 2 Contadores de Veneno en el monstruo con el ATK más alto que controle tu adversario."
+      "desc_pt": "EFEITO: Envie 1 monstro REPTILE aleatório do seu DECK para o seu CEMITÉRIO e, depois, coloque 2 Marcadores de Veneno no monstro com o maior ATK que o oponente controla. Cada monstro perde 500 de ATK para cada Marcador de Veneno nele. Se o ATK de um monstro chegar a 0 por causa de Marcadores de Veneno, destrua-o.",
+      "desc_en": "EFFECT: Send 1 random REPTILE monster from your DECK to your GRAVEYARD, then place 2 Poison Counters on the monster your opponent controls with the highest ATK. Each monster loses 500 ATK for each Poison Counter on it. If a monster's ATK becomes 0 because of Poison Counters, destroy it.",
+      "desc_vi": "HIỆU ỨNG: Gửi 1 quái thú REPTILE ngẫu nhiên từ DECK của bạn vào MỘ của bạn, sau đó đặt 2 Dấu Độc lên quái thú có ATK cao nhất mà đối thủ điều khiển. Mỗi quái thú mất 500 ATK cho mỗi Dấu Độc trên nó. Nếu ATK của một quái thú về 0 do Dấu Độc, hãy phá hủy nó.",
+      "desc_es": "EFECTO: Envía 1 monstruo REPTILE aleatorio de tu DECK a tu CEMENTERIO y, después, coloca 2 Contadores de Veneno en el monstruo con el ATK más alto que controle tu adversario. Cada monstruo pierde 500 ATK por cada Contador de Veneno que tenga. Si el ATK de un monstruo llega a 0 por los Contadores de Veneno, destrúyelo."
     },
     {
       "nome": "Venom Snake",
@@ -26287,10 +26287,10 @@
       "nivel": "3",
       "atk": "1200",
       "def": "600",
-      "desc_pt": "EFEITO: Quando este card for Invocado: coloque 1 Marcador de Veneno em cada monstro que o oponente controla.",
-      "desc_en": "EFFECT: When this card is Summoned: place 1 Poison Counter on each monster your opponent controls.",
-      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: đặt 1 Dấu Độc lên mỗi quái thú mà đối thủ điều khiển.",
-      "desc_es": "EFECTO: Cuando esta carta sea Invocada: coloca 1 Contador de Veneno en cada monstruo que controle tu adversario."
+      "desc_pt": "EFEITO: Quando este card for Invocado: coloque 1 Marcador de Veneno em cada monstro que o oponente controla. Cada monstro perde 500 de ATK para cada Marcador de Veneno nele. Se o ATK de um monstro chegar a 0 por causa de Marcadores de Veneno, destrua-o.",
+      "desc_en": "EFFECT: When this card is Summoned: place 1 Poison Counter on each monster your opponent controls. Each monster loses 500 ATK for each Poison Counter on it. If a monster's ATK becomes 0 because of Poison Counters, destroy it.",
+      "desc_vi": "HIỆU ỨNG: Khi lá bài này được Triệu hồi: đặt 1 Dấu Độc lên mỗi quái thú mà đối thủ điều khiển. Mỗi quái thú mất 500 ATK cho mỗi Dấu Độc trên nó. Nếu ATK của một quái thú về 0 do Dấu Độc, hãy phá hủy nó.",
+      "desc_es": "EFECTO: Cuando esta carta sea Invocada: coloca 1 Contador de Veneno en cada monstruo que controle tu adversario. Cada monstruo pierde 500 ATK por cada Contador de Veneno que tenga. Si el ATK de un monstruo llega a 0 por los Contadores de Veneno, destrúyelo."
     },
     {
       "nome": "Venom Swamp",
@@ -27991,10 +27991,10 @@
       "nivel": "12",
       "atk": "4000",
       "def": "5000",
-      "desc_pt": "EFEITO: O efeito deste card não pode ser negado. Quando este card for Invocado, role um dado e aplique o resultado. 1: enquanto este card estiver em campo, o oponente não pode ativar efeitos de monstro. 2: enquanto este card estiver em campo, o oponente não pode ativar SPELL, EQUIP nem FIELD. 3: enquanto este card estiver em campo, o oponente não pode ativar TRAP. 4: destrua 1 card aleatório que o oponente controla. 5: devolva ao DECK até 2 cards que o oponente controla. 6: o ATK e a DEF deste card se tornam 0.",
-      "desc_en": "EFFECT: This card's effect cannot be negated. When this card is Summoned, roll a die and apply the result. 1: while this card is on the field, your opponent cannot activate monster effects. 2: while this card is on the field, your opponent cannot activate SPELL, EQUIP or FIELD cards. 3: while this card is on the field, your opponent cannot activate TRAP cards. 4: destroy 1 random card your opponent controls. 5: return up to 2 cards your opponent controls to the DECK. 6: this card's ATK and DEF become 0.",
-      "desc_vi": "HIỆU ỨNG: Hiệu ứng của lá bài này không thể bị vô hiệu hóa. Khi lá bài này được Triệu hồi, tung một xúc xắc và áp dụng kết quả. 1: khi lá bài này còn trên sân, đối thủ không thể kích hoạt hiệu ứng quái thú. 2: khi lá bài này còn trên sân, đối thủ không thể kích hoạt SPELL, EQUIP hay FIELD. 3: khi lá bài này còn trên sân, đối thủ không thể kích hoạt TRAP. 4: phá hủy 1 lá bài ngẫu nhiên mà đối thủ điều khiển. 5: trả tối đa 2 lá bài mà đối thủ điều khiển về DECK. 6: ATK và DEF của lá bài này trở thành 0.",
-      "desc_es": "EFECTO: El efecto de esta carta no puede ser negado. Cuando esta carta sea Invocada, lanza un dado y aplica el resultado. 1: mientras esta carta esté en el campo, tu oponente no puede activar efectos de monstruo. 2: mientras esta carta esté en el campo, tu oponente no puede activar SPELL, EQUIP ni FIELD. 3: mientras esta carta esté en el campo, tu oponente no puede activar TRAP. 4: destruye 1 carta aleatoria que controla tu oponente. 5: devuelve al DECK hasta 2 cartas que controla tu oponente. 6: el ATK y la DEF de esta carta pasan a ser 0.",
+      "desc_pt": "EFEITO: O efeito deste card não pode ser negado. Quando este card for Invocado, role um dado e aplique o resultado. 1: enquanto este card estiver em campo, o oponente não pode ativar efeitos de monstro. 2: enquanto este card estiver em campo, o oponente não pode ativar SPELL, EQUIP nem FIELD. 3: enquanto este card estiver em campo, o oponente não pode ativar TRAP. 4: destrua 1 card aleatório que o oponente controla. 5: devolva ao DECK até 2 cards que o oponente controla. 6: o ATK e a DEF deste card se tornam 0. Aura Divina Superior: os efeitos deste card afetam todos os monstros, inclusive os que têm imunidade. Este card é imune aos efeitos de cards do oponente, exceto efeitos que dizem afetar monstros DIVINE-BEAST.",
+      "desc_en": "EFFECT: This card's effect cannot be negated. When this card is Summoned, roll a die and apply the result. 1: while this card is on the field, your opponent cannot activate monster effects. 2: while this card is on the field, your opponent cannot activate SPELL, EQUIP or FIELD cards. 3: while this card is on the field, your opponent cannot activate TRAP cards. 4: destroy 1 random card your opponent controls. 5: return up to 2 cards your opponent controls to the DECK. 6: this card's ATK and DEF become 0. Superior Divine Aura: this card's effects affect every monster, including those with immunity. This card is immune to your opponent's card effects, except effects that state they affect DIVINE-BEAST monsters.",
+      "desc_vi": "HIỆU ỨNG: Hiệu ứng của lá bài này không thể bị vô hiệu hóa. Khi lá bài này được Triệu hồi, tung một xúc xắc và áp dụng kết quả. 1: khi lá bài này còn trên sân, đối thủ không thể kích hoạt hiệu ứng quái thú. 2: khi lá bài này còn trên sân, đối thủ không thể kích hoạt SPELL, EQUIP hay FIELD. 3: khi lá bài này còn trên sân, đối thủ không thể kích hoạt TRAP. 4: phá hủy 1 lá bài ngẫu nhiên mà đối thủ điều khiển. 5: trả tối đa 2 lá bài mà đối thủ điều khiển về DECK. 6: ATK và DEF của lá bài này trở thành 0. Hào Quang Thần Thánh Tối Thượng: hiệu ứng của lá bài này ảnh hưởng đến mọi quái thú, kể cả những quái thú có miễn nhiễm. Lá bài này miễn nhiễm với hiệu ứng lá bài của đối thủ, ngoại trừ các hiệu ứng ghi rõ là ảnh hưởng đến quái thú DIVINE-BEAST.",
+      "desc_es": "EFECTO: El efecto de esta carta no puede ser negado. Cuando esta carta sea Invocada, lanza un dado y aplica el resultado. 1: mientras esta carta esté en el campo, tu oponente no puede activar efectos de monstruo. 2: mientras esta carta esté en el campo, tu oponente no puede activar SPELL, EQUIP ni FIELD. 3: mientras esta carta esté en el campo, tu oponente no puede activar TRAP. 4: destruye 1 carta aleatoria que controla tu oponente. 5: devuelve al DECK hasta 2 cartas que controla tu oponente. 6: el ATK y la DEF de esta carta pasan a ser 0. Aura Divina Superior: los efectos de esta carta afectan a todos los monstruos, incluso a los que tienen inmunidad. Esta carta es inmune a los efectos de cartas de tu oponente, excepto efectos que indiquen que afectan a monstruos DIVINE-BEAST.",
       "full_art": true
     }
   ]

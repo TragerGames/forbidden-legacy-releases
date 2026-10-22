@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1792616270",
+  "versao": "1792704826",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -1769,9 +1769,6 @@
       "limite": 1
     },
     "Magical Dimension": {
-      "limite": 1
-    },
-    "Dark Renewal": {
       "limite": 1
     },
     "Black Chaos": {
