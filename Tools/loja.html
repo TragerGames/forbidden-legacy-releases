@@ -1275,6 +1275,9 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 .lv-pack-corpo::before{content:"";position:absolute;left:0;right:0;top:0;height:11px;background:repeating-linear-gradient(90deg,rgba(0,0,0,.35) 0 3px,rgba(255,255,255,.18) 3px 5px);border-bottom:1px solid rgba(0,0,0,.35)}
 .lv-pack-corpo::after{content:"";position:absolute;inset:-40% -60%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.38) 50%,transparent 58%);transform:translateX(-60%);transition:transform .9s ease}
 .lv-pack:hover .lv-pack-corpo::after,.lv-pack[aria-pressed="true"] .lv-pack-corpo::after{transform:translateX(60%)}
+.lv-pack-corpo.tem-arte{background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}
+.lv-pack-corpo.tem-arte::before{display:none}
+.lv-pack-corpo.tem-arte .lv-pack-nome{padding-top:18px;bottom:0;left:0;right:0;padding-bottom:9px;color:#fff7e3!important;text-shadow:0 1px 3px rgba(0,0,0,.9)!important;background:linear-gradient(180deg,transparent,rgba(0,0,0,.72) 55%)}
 .lv-medalhao{position:absolute;left:50%;top:40%;width:58%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle at 40% 35%,rgba(255,244,210,.55),rgba(0,0,0,.25) 70%);box-shadow:0 0 0 1px rgba(255,240,200,.45),0 0 22px rgba(255,220,150,.35)}
 .lv-medalhao svg{width:74%;height:74%;color:#fff7dd;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
@@ -2053,9 +2056,14 @@ function lvFalar(novaFala, instantaneo){
 function lvPackHTML(p){
   var ativo=p.id===selected.id;
   var preco=regionIsBR()?p.br:p.usd;
+  /* Pacotes com arte propria (img/loja/pack_<id>.webp, criadas pelo Felipe em 2026-10-23):
+     a arte ja traz o Item do Milenio, entao o medalhao desenhado aqui sai. Sem arte, fica o visual antigo. */
+  var LV_ARTE = { milenio_colar:1, milenio_balanca:1, milenio_chave:1, milenio_anel:1, milenio_olho:1, milenio_cetro:1, milenio_enigma:1, milenio_trono:1 };
   return '<button type="button" class="lv-pack'+(p.trono?' lv-pack-trono':'')+'" data-pack="'+p.id+'" aria-pressed="'+ativo+'" style="--c1:'+p.c1+';--c2:'+p.c2+'">'+
-    '<span class="lv-pack-corpo">'+(p.ur?'<span class="lv-fita">'+p.ur+' UR</span>':'')+
-    '<span class="lv-medalhao"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+LV_EMBLEMAS[p.id]+'</svg></span>'+
+    (LV_ARTE[p.id]
+      ? '<span class="lv-pack-corpo tem-arte" style="background-image:url(img/loja/pack_'+p.id+'.webp?v=20261023)">'+(p.ur?'<span class="lv-fita">'+p.ur+' UR</span>':'')
+      : '<span class="lv-pack-corpo">'+(p.ur?'<span class="lv-fita">'+p.ur+' UR</span>':'')+
+        '<span class="lv-medalhao"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+LV_EMBLEMAS[p.id]+'</svg></span>')+
     '<span class="lv-pack-nome">'+nomePack(p)+'</span></span>'+
     '<span class="lv-pack-preco">'+preco+'</span>'+
     '<span class="lv-pack-souls">'+lvSoulsBaseHTML(p)+'</span></button>';
