@@ -1,0 +1,132 @@
+/* Efeitos e menu do celular, compartilhados por todas as paginas (2026-10-23).
+   Direcao: egipcio premium, dourado. So transform/opacity/box-shadow, nada de
+   flash nem pisca rapido; com prefers-reduced-motion, tudo fica parado. */
+:root {
+  --fx-ouro: var(--gold, #d4a843);
+  --fx-ouro-claro: var(--gold2, #f0cf7a);
+  --fx-ouro-fraco: rgba(212, 168, 67, .28);
+  --fx-fundo: #0b0805;
+  --fx-borda: var(--border, rgba(212, 168, 67, .18));
+}
+
+/* ── Transicao entre paginas (navegadores que suportam; nos outros nada muda) ── */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: fx-sai .22s ease both; }
+::view-transition-new(root) { animation: fx-entra .32s ease both; }
+@keyframes fx-sai { to { opacity: 0; } }
+@keyframes fx-entra { from { opacity: 0; } }
+
+/* ── Menu do celular: botao + gaveta ── */
+.fx-burger { display: none; }
+@media (max-width: 1000px) {
+  .mobile-nav-links { display: none !important; }
+  .fx-burger {
+    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 42px; height: 38px; padding: 0 10px; margin-left: 10px; flex-shrink: 0;
+    background: rgba(212, 168, 67, .06); border: 1px solid var(--fx-ouro-fraco); border-radius: 3px;
+    cursor: pointer; transition: border-color .2s, box-shadow .2s;
+  }
+  .fx-burger span {
+    display: block; height: 2px; width: 100%; background: var(--fx-ouro); border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .fx-burger:hover, .fx-burger:focus-visible { border-color: var(--fx-ouro); box-shadow: 0 0 14px rgba(212, 168, 67, .25); outline: none; }
+  .fx-burger.aberto span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .fx-burger.aberto span:nth-child(2) { opacity: 0; }
+  .fx-burger.aberto span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+.fx-gaveta { position: fixed; inset: 0; z-index: 1000; pointer-events: none; }
+.fx-gaveta-fundo {
+  position: absolute; inset: 0; background: rgba(0, 0, 0, .62); opacity: 0;
+  transition: opacity .25s ease; backdrop-filter: blur(2px);
+}
+.fx-gaveta-painel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(340px, 88vw);
+  display: flex; flex-direction: column;
+  background: linear-gradient(180deg, #16100a 0%, #0b0805 60%);
+  border-left: 1px solid var(--fx-ouro-fraco);
+  box-shadow: -18px 0 40px rgba(0, 0, 0, .6);
+  transform: translateX(100%); transition: transform .3s cubic-bezier(.2, .8, .2, 1);
+  overflow-y: auto; overscroll-behavior: contain;
+}
+.fx-gaveta-painel::before {
+  content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 2px;
+  background: linear-gradient(180deg, transparent, var(--fx-ouro), transparent); opacity: .55;
+}
+.fx-gaveta.aberta { pointer-events: auto; }
+.fx-gaveta.aberta .fx-gaveta-fundo { opacity: 1; }
+.fx-gaveta.aberta .fx-gaveta-painel { transform: none; }
+.fx-trava-rolagem, .fx-trava-rolagem body { overflow: hidden; }
+.fx-gaveta-topo {
+  display: flex; align-items: center; gap: 10px; padding: 16px 18px;
+  border-bottom: 1px solid var(--fx-borda);
+}
+.fx-gaveta-ankh { color: var(--fx-ouro); font-size: 18px; text-shadow: 0 0 12px rgba(212, 168, 67, .5); }
+.fx-gaveta-tit { flex: 1; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; font-size: 20px; color: var(--fx-ouro); }
+.fx-gaveta-x {
+  width: 36px; height: 36px; border: 1px solid var(--fx-ouro-fraco); border-radius: 3px;
+  background: none; color: var(--fx-ouro); font-size: 22px; line-height: 1; cursor: pointer;
+}
+.fx-gaveta-lista { padding: 8px 0 12px; }
+.fx-gaveta-grupo { padding: 10px 0 4px; }
+.fx-gaveta-rotulo {
+  padding: 4px 20px 6px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold-dim, #8a6d2e);
+}
+.fx-gaveta-grupo a, .fx-gaveta-solo {
+  display: flex; flex-direction: column; gap: 1px; padding: 10px 20px 10px 18px;
+  border-left: 2px solid transparent; text-decoration: none; color: #e8dcc0;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.fx-gaveta-grupo a b { font-weight: 600; font-size: 15px; letter-spacing: .3px; }
+.fx-gaveta-grupo a small { font-size: 11.5px; color: var(--muted, #9a8c70); opacity: .85; }
+.fx-gaveta-grupo a:hover, .fx-gaveta-grupo a:focus-visible, .fx-gaveta-solo:hover,
+.fx-gaveta-grupo a.ativo, .fx-gaveta-solo.ativo {
+  background: rgba(212, 168, 67, .08); border-left-color: var(--fx-ouro); color: var(--fx-ouro-claro); outline: none;
+}
+.fx-gaveta-solo { margin-top: 6px; font-weight: 600; font-size: 15px; border-top: 1px solid var(--fx-borda); padding-top: 14px; }
+.fx-gaveta-cta {
+  margin: auto 18px 22px; padding: 13px 16px; text-align: center; text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: #1a1208;
+  background: linear-gradient(180deg, #ecc96c, #b8892e); border-radius: 3px;
+  box-shadow: 0 0 22px rgba(212, 168, 67, .28);
+}
+@media (min-width: 1001px) { .fx-gaveta { display: none; } }
+
+/* ── Entrada suave das secoes ao rolar (classe posta pelo site-fx.js) ── */
+.fx-reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+.fx-reveal.fx-visivel { opacity: 1; transform: none; }
+
+/* ── Brilho dourado no hover de botoes e cards ── */
+.hero-btn, .buy-btn, .btn-primary, .btn-gold, .funnel-btn, .flp-btn, .nav-cta, .dl-btn, .yt-sub-btn {
+  transition: box-shadow .25s ease, transform .25s ease, background-color .25s, color .25s, border-color .25s;
+}
+.hero-btn:hover, .buy-btn:hover, .btn-primary:hover, .btn-gold:hover, .funnel-btn:hover, .flp-btn:hover,
+.nav-cta:hover, .dl-btn:hover {
+  box-shadow: 0 0 0 1px rgba(212, 168, 67, .45), 0 0 26px rgba(212, 168, 67, .32);
+  transform: translateY(-1px);
+}
+.news-card, .yt-card, .npc-card, .feature-card, .info-card, .intro-card, .group-card, .cat-card, .card-thumb {
+  transition: border-color .25s, box-shadow .3s ease, transform .3s ease;
+}
+.news-card:hover, .yt-card:hover, .npc-card:hover, .feature-card:hover, .info-card:hover, .intro-card:hover, .group-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .45), 0 0 22px rgba(212, 168, 67, .14);
+}
+
+/* ── Cartas com leve inclinacao 3D (o site-fx.js mexe em --fx-rx/--fx-ry) ── */
+.fx-tilt { transform: perspective(700px) rotateX(var(--fx-rx, 0deg)) rotateY(var(--fx-ry, 0deg)) translateZ(0); will-change: transform; }
+.fx-tilt.fx-tilt-ativo { transition: transform .08s linear, box-shadow .3s ease; box-shadow: 0 14px 34px rgba(0, 0, 0, .55), 0 0 24px rgba(212, 168, 67, .22); }
+
+/* ── Poeira dourada no topo da inicial ── */
+/* !important: a inicial tem ".hero > * { position: relative }", que punha o canvas no fluxo e esticava o topo. */
+.fx-poeira { position: absolute !important; inset: 0; width: 100% !important; height: 100% !important; pointer-events: none; z-index: 1; opacity: .9; }
+
+/* ── Conforto visual: sem movimento ── */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .fx-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .fx-tilt { transform: none !important; }
+  .fx-gaveta-painel, .fx-gaveta-fundo, .fx-burger span { transition: none !important; }
+  .fx-poeira { display: none !important; }
+  .hero-btn:hover, .buy-btn:hover, .btn-primary:hover, .btn-gold:hover, .funnel-btn:hover, .flp-btn:hover, .nav-cta:hover, .dl-btn:hover { transform: none; }
+}
