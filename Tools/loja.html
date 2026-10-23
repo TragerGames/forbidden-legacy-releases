@@ -1275,14 +1275,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#2a2018}
 .lv-pack-corpo::before{content:"";position:absolute;left:0;right:0;top:0;height:11px;background:repeating-linear-gradient(90deg,rgba(0,0,0,.35) 0 3px,rgba(255,255,255,.18) 3px 5px);border-bottom:1px solid rgba(0,0,0,.35)}
 .lv-pack-corpo::after{content:"";position:absolute;inset:-40% -60%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.38) 50%,transparent 58%);transform:translateX(-60%);transition:transform .9s ease}
 .lv-pack:hover .lv-pack-corpo::after,.lv-pack[aria-pressed="true"] .lv-pack-corpo::after{transform:translateX(60%)}
-/* Arte do pacote (2026-10-23): fundo gerado por scripts/gerar_packs_loja.py com arte do jogo;
-   o medalhao do Item do Milenio desce para o corpo do pacote, abaixo da arte. */
-.lv-pack-arte{position:absolute;inset:0;background:center/cover no-repeat;z-index:0}
-.lv-pack-corpo>*:not(.lv-pack-arte){z-index:1}
-/* com a arte nova o fundo do Trono e escuro em baixo: texto e simbolo claros como nos outros */
-.lv-pack-trono .lv-pack-nome{color:#fff7e3!important;text-shadow:0 1px 3px rgba(0,0,0,.8)!important}
-.lv-pack-trono .lv-medalhao svg{color:#fff7dd!important;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))!important}
-.lv-medalhao{position:absolute;left:50%;top:69%;width:44%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;
+.lv-medalhao{position:absolute;left:50%;top:40%;width:58%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle at 40% 35%,rgba(255,244,210,.55),rgba(0,0,0,.25) 70%);box-shadow:0 0 0 1px rgba(255,240,200,.45),0 0 22px rgba(255,220,150,.35)}
 .lv-medalhao svg{width:74%;height:74%;color:#fff7dd;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
 .lv-pack-nome{position:absolute;left:6px;right:6px;bottom:9px;text-align:center;font:clamp(11px,1.05vw,13.5px)/1.15 var(--lv-item);color:#fff7e3;text-shadow:0 1px 3px rgba(0,0,0,.8);text-wrap:balance}
@@ -2061,7 +2054,7 @@ function lvPackHTML(p){
   var ativo=p.id===selected.id;
   var preco=regionIsBR()?p.br:p.usd;
   return '<button type="button" class="lv-pack'+(p.trono?' lv-pack-trono':'')+'" data-pack="'+p.id+'" aria-pressed="'+ativo+'" style="--c1:'+p.c1+';--c2:'+p.c2+'">'+
-    '<span class="lv-pack-corpo"><span class="lv-pack-arte" style="background-image:url(img/loja/pack_'+p.id+'.webp)"></span>'+(p.ur?'<span class="lv-fita">'+p.ur+' UR</span>':'')+
+    '<span class="lv-pack-corpo">'+(p.ur?'<span class="lv-fita">'+p.ur+' UR</span>':'')+
     '<span class="lv-medalhao"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+LV_EMBLEMAS[p.id]+'</svg></span>'+
     '<span class="lv-pack-nome">'+nomePack(p)+'</span></span>'+
     '<span class="lv-pack-preco">'+preco+'</span>'+
