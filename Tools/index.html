@@ -3281,12 +3281,14 @@ function paypalConfirmar() {
    Deliberadamente "dispare e esqueça": keepalive faz a requisição sobreviver
    à navegação, e qualquer falha é engolida — nenhum download pode deixar de
    acontecer por causa de uma métrica. */
-function flRegistrarDownload(plataforma) {
+function flRegistrarDownload(plataforma, confirmou) {
   try {
     var corpo = JSON.stringify({
       plataforma: plataforma,
+      confirmou: confirmou !== false,
       origem: (typeof flOrigem === 'function') ? flOrigem() : {},
-      idioma: (typeof flIdioma === 'function') ? flIdioma() : 'pt'
+      detalhe: (typeof flDetalheVisita === 'function') ? flDetalheVisita() : {},
+      idioma: document.documentElement.getAttribute('data-lang-ativo') || 'pt'
     });
     fetch('/pagar/evento_site.php', {
       method: 'POST',
@@ -3298,7 +3300,6 @@ function flRegistrarDownload(plataforma) {
 }
 
 function confirmDownloadWarning(plataforma) {
-  flRegistrarDownload(plataforma || 'outro');
   const idioma = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
   /* Jogo limpo primeiro (2026-09-26, pedido do Felipe), depois o aviso de versao antiga. */
   const MSG = {
@@ -3308,6 +3309,9 @@ function confirmDownloadWarning(plataforma) {
     vi: 'CHƠI CÔNG BẰNG: cố gian lận trò chơi bằng Cheat Engine hoặc bất kỳ cách nào khác sẽ bị CẤM VĨNH VIỄN khỏi Founder và Discord. Lệnh cấm được áp dụng ngay lập tức và không có cơ hội thứ hai.\n\nCảnh báo: cài phiên bản cũ đè lên bản hiện tại để lợi dụng lỗi đã sửa, rồi cập nhật lại bản mới hơn, sẽ làm hỏng dữ liệu lưu của bạn.\n\nTiếp tục tải xuống?'
   };
   const ok = confirm(MSG[idioma] || MSG.en);
+  /* Registra depois da resposta ao aviso: quem desiste também conta, marcado
+     como não confirmado, para o painel separar intenção de download real. */
+  flRegistrarDownload(plataforma || 'outro', ok);
   /* Avisa o Meta Pixel de quem baixou: sem isso os anuncios so conseguem
      otimizar por clique ou por compra, e fora do Brasil quase nao ha compra
      para o Meta aprender. */
@@ -3970,8 +3974,14 @@ document.addEventListener('keydown', e => {
       utm_medium:   p.get('utm_medium')   || '',
       utm_campaign: p.get('utm_campaign') || '',
       utm_content:  p.get('utm_content')  || '',
+      utm_term:     p.get('utm_term')     || '',
+      utm_id:       p.get('utm_id')       || '',
+      // parametros dinamicos do anuncio Meta: {{site_source_name}} e {{placement}}
+      rede:         p.get('fl_rede')      || '',
+      posicao:      p.get('fl_pos')       || '',
       fbclid:       p.get('fbclid')       || '',
       referrer:     ref,
+      pagina:       location.pathname,
       em:           new Date().toISOString()
     };
     // fbclid sem utm = clique de anúncio do Facebook sem tagueamento
@@ -4003,6 +4013,60 @@ document.addEventListener('keydown', e => {
     gravar(K_ULT, atual);
   }
 
+  /* Visitas: conta uma por sessão do navegador e guarda a data da primeira.
+     Vai junto com o download para saber se a pessoa baixou na hora ou voltou
+     depois (painel admin, aba Downloads). */
+  var visitas = 0, primeiraVisita = '';
+  try {
+    visitas = parseInt(localStorage.getItem('fl_visitas') || '0', 10) || 0;
+    if (!sessionStorage.getItem('fl_sessao')) {
+      sessionStorage.setItem('fl_sessao', '1');
+      visitas++;
+      localStorage.setItem('fl_visitas', String(visitas));
+    }
+    primeiraVisita = localStorage.getItem('fl_primeira_visita') || '';
+    if (!primeiraVisita) { primeiraVisita = new Date().toISOString(); localStorage.setItem('fl_primeira_visita', primeiraVisita); }
+  } catch (e) {}
+
+  /* Modelo do aparelho e versão do sistema (Chrome/Android/Windows). Pedido
+     uma vez ao carregar, porque a resposta é assíncrona e o clique de
+     download não pode esperar. */
+  var dica = { modelo: '', versao: '' };
+  try {
+    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+      navigator.userAgentData.getHighEntropyValues(['model', 'platformVersion']).then(function (h) {
+        dica.modelo = (h && h.model) || ''; dica.versao = (h && h.platformVersion) || '';
+      }).catch(function () {});
+    }
+  } catch (e) {}
+
+  /* Em que parte da página foi o último clique: o bloco de topo com id
+     (#download, #comprar, hero...) que contém o elemento clicado. */
+  var ultimaSecao = '';
+  document.addEventListener('click', function (e) {
+    try {
+      var s = '';
+      for (var el = e.target; el && el !== document.body; el = el.parentElement) {
+        if (el.getAttribute && el.getAttribute('data-secao')) { s = el.getAttribute('data-secao'); break; }
+        if (el.id) s = el.id;
+      }
+      ultimaSecao = s;
+    } catch (err) {}
+  }, true);
+
+  /* Detalhe da visita enviado junto com o download. Nada aqui identifica a
+     pessoa: fuso, idioma e tela servem para país e aparelho. */
+  window.flDetalheVisita = function () {
+    var d = { visitas: visitas, primeira_visita_em: primeiraVisita, secao: ultimaSecao,
+              pagina: location.pathname, modelo: dica.modelo, versao_so: dica.versao };
+    try { d.fuso = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { d.fuso = ''; }
+    try { d.idioma_nav = navigator.language || ''; } catch (e) {}
+    try { d.tela = screen.width + 'x' + screen.height + '@' + (Math.round((window.devicePixelRatio || 1) * 10) / 10); } catch (e) {}
+    try { d.toque = (navigator.maxTouchPoints || 0) > 0; } catch (e) {}
+    try { d.tempo_pagina = Math.round(performance.now() / 1000); } catch (e) {}
+    return d;
+  };
+
   /* Objeto enviado no checkout. Sempre devolve algo — nunca lança. */
   /* Idioma em que o comprador quer receber o e-mail. Por padrão é o
      idioma que ele já está lendo no site; o seletor do formulário
@@ -4027,6 +4091,11 @@ document.addEventListener('keydown', e => {
         utm_medium:   u.utm_medium   || '',
         utm_campaign: u.utm_campaign || '',
         utm_content:  u.utm_content  || '',
+        utm_term:     u.utm_term     || '',
+        utm_id:       u.utm_id       || '',
+        rede:         u.rede         || '',
+        posicao:      u.posicao      || '',
+        pagina:       u.pagina       || '',
         fbclid:       u.fbclid       || '',
         referrer:     u.referrer     || '',
         primeira:     resumo(pr)
