@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1792704826",
+  "versao": "1793793618",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -8734,6 +8734,350 @@
           "slug": "wightprince",
           "atk": "0",
           "def": "0"
+        }
+      ]
+    },
+    {
+      "id": "especial_timelords_nordic",
+      "tipo_label": "RAGNAROK OF TIME",
+      "nome_pt": "Ragnarok of Time",
+      "nome_en": "Ragnarok of Time",
+      "nome_es": "Ragnarok of Time",
+      "nome_vi": "Ragnarok of Time",
+      "desc_pt": "Edição especial e temporária do fim dos tempos: os Timelords que voltam ao DECK a cada turno e suas Machines, Odin, Thor e Loki com os NORDIC e as relíquias que os protegem. Depois que o evento terminar, essas cartas deixam a circulação temporária e passam a poder aparecer no torneio.",
+      "desc_en": "A special, time-limited edition of the end of time: the Timelords that return to the DECK every turn and their Machines, Odin, Thor and Loki with the NORDIC monsters and the relics that protect them. When the event ends, these cards leave temporary circulation and become eligible for tournament rewards.",
+      "desc_es": "Edición especial y temporal del fin de los tiempos: los Timelords que vuelven al DECK cada turno y sus Machines, Odin, Thor y Loki con los monstruos NORDIC y las reliquias que los protegen. Cuando el evento termine, estas cartas dejan la circulación temporal y pueden aparecer en el torneo.",
+      "desc_vi": "Phiên bản đặc biệt, giới hạn thời gian về tận cùng thời gian: các Timelord trở về DECK mỗi lượt cùng những Machine của chúng, Odin, Thor và Loki cùng các quái thú NORDIC và những thánh vật bảo vệ họ. Khi sự kiện kết thúc, các lá này rời lưu hành tạm thời và có thể xuất hiện trong phần thưởng giải đấu.",
+      "cor": "#2f5d8a",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 15,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-ragnarok-of-time.webp",
+      "total_tema": 51,
+      "cartas_tema": [
+        {
+          "nome": "Divine Relic Mjollnir",
+          "raridade": "UR",
+          "slug": "divine_relic_mjollnir"
+        },
+        {
+          "nome": "Fenrir the Nordic Wolf",
+          "raridade": "UR",
+          "slug": "fenrir_the_nordic_wolf",
+          "atk": "4000",
+          "def": "4000"
+        },
+        {
+          "nome": "Gabrion, the Timelord",
+          "raridade": "UR",
+          "slug": "gabrion_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Gotterdammerung",
+          "raridade": "UR",
+          "slug": "gotterdammerung"
+        },
+        {
+          "nome": "Hailon, the Timelord",
+          "raridade": "UR",
+          "slug": "hailon_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Jormungardr the Nordic Serpent",
+          "raridade": "UR",
+          "slug": "jormungardr_the_nordic_serpent",
+          "atk": "3000",
+          "def": "3000"
+        },
+        {
+          "nome": "Kamion, the Timelord",
+          "raridade": "UR",
+          "slug": "kamion_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Lazion, the Timelord",
+          "raridade": "UR",
+          "slug": "lazion_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Loki, Lord of the Aesir",
+          "raridade": "UR",
+          "slug": "loki_lord_of_the_aesir",
+          "atk": "3300",
+          "def": "3000"
+        },
+        {
+          "nome": "Metaion, the Timelord",
+          "raridade": "UR",
+          "slug": "metaion_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Michion, the Timelord",
+          "raridade": "UR",
+          "slug": "michion_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Nordic Relic Draupnir",
+          "raridade": "UR",
+          "slug": "nordic_relic_draupnir"
+        },
+        {
+          "nome": "Nordic Relic Laevateinn",
+          "raridade": "UR",
+          "slug": "nordic_relic_laevateinn"
+        },
+        {
+          "nome": "Nordic Relic Megingjord",
+          "raridade": "UR",
+          "slug": "nordic_relic_megingjord"
+        },
+        {
+          "nome": "Nordic Relic Svalinn",
+          "raridade": "UR",
+          "slug": "nordic_relic_svalinn"
+        },
+        {
+          "nome": "Odin's Eye",
+          "raridade": "UR",
+          "slug": "odins_eye"
+        },
+        {
+          "nome": "Odin, Father of the Aesir",
+          "raridade": "UR",
+          "slug": "odin_father_of_the_aesir",
+          "atk": "4000",
+          "def": "3500"
+        },
+        {
+          "nome": "Raphion, the Timelord",
+          "raridade": "UR",
+          "slug": "raphion_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Sadion, the Timelord",
+          "raridade": "UR",
+          "slug": "sadion_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Sandaion, the Timelord",
+          "raridade": "UR",
+          "slug": "sandaion_the_timelord",
+          "atk": "4000",
+          "def": "4000"
+        },
+        {
+          "nome": "Sephylon, the Ultimate Timelord",
+          "raridade": "UR",
+          "slug": "sephylon_the_ultimate_timelord",
+          "atk": "4000",
+          "def": "4000"
+        },
+        {
+          "nome": "Solemn Authority",
+          "raridade": "UR",
+          "slug": "solemn_authority"
+        },
+        {
+          "nome": "Thor, Lord of the Aesir",
+          "raridade": "UR",
+          "slug": "thor_lord_of_the_aesir",
+          "atk": "3500",
+          "def": "2800"
+        },
+        {
+          "nome": "Timelord Progenitor Vorpgate",
+          "raridade": "UR",
+          "slug": "timelord_progenitor_vorpgate",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Zaphion, the Timelord",
+          "raridade": "UR",
+          "slug": "zaphion_the_timelord",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Alviss of the Nordic Alfar",
+          "raridade": "SR",
+          "slug": "alviss_of_the_nordic_alfar",
+          "atk": "1500",
+          "def": "1000"
+        },
+        {
+          "nome": "Empty Machine",
+          "raridade": "SR",
+          "slug": "empty_machine"
+        },
+        {
+          "nome": "Guldfaxe of the Nordic Beasts",
+          "raridade": "SR",
+          "slug": "guldfaxe_of_the_nordic_beasts",
+          "atk": "1600",
+          "def": "1000"
+        },
+        {
+          "nome": "Infinite Light",
+          "raridade": "SR",
+          "slug": "infinite_light"
+        },
+        {
+          "nome": "Infinite Machine",
+          "raridade": "SR",
+          "slug": "infinite_machine"
+        },
+        {
+          "nome": "Ljosalf of the Nordic Alfar",
+          "raridade": "SR",
+          "slug": "ljosalf_of_the_nordic_alfar",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "March Towards Ragnarok",
+          "raridade": "SR",
+          "slug": "march_towards_ragnarok"
+        },
+        {
+          "nome": "Nordic Relic Gungnir",
+          "raridade": "SR",
+          "slug": "nordic_relic_gungnir"
+        },
+        {
+          "nome": "Nordic Relic Hlidskjalf",
+          "raridade": "SR",
+          "slug": "nordic_relic_hlidskjalf"
+        },
+        {
+          "nome": "Svartalf of the Nordic Alfar",
+          "raridade": "SR",
+          "slug": "svartalf_of_the_nordic_alfar",
+          "atk": "1400",
+          "def": "1600"
+        },
+        {
+          "nome": "Swords of Burning Light",
+          "raridade": "SR",
+          "slug": "swords_of_burning_light"
+        },
+        {
+          "nome": "The Nordic Light",
+          "raridade": "SR",
+          "slug": "the_nordic_light"
+        },
+        {
+          "nome": "Tyr of the Nordic Champions",
+          "raridade": "SR",
+          "slug": "tyr_of_the_nordic_champions",
+          "atk": "2000",
+          "def": "2000"
+        },
+        {
+          "nome": "Valhalla, Hall of the Fallen",
+          "raridade": "SR",
+          "slug": "valhalla_hall_of_the_fallen"
+        },
+        {
+          "nome": "Vanadis of the Nordic Ascendant",
+          "raridade": "SR",
+          "slug": "vanadis_of_the_nordic_ascendant",
+          "atk": "1200",
+          "def": "400"
+        },
+        {
+          "nome": "Dverg of the Nordic Alfar",
+          "raridade": "R",
+          "slug": "dverg_of_the_nordic_alfar",
+          "atk": "100",
+          "def": "1000"
+        },
+        {
+          "nome": "Garmr of the Nordic Beasts",
+          "raridade": "R",
+          "slug": "garmr_of_the_nordic_beasts",
+          "atk": "800",
+          "def": "1900"
+        },
+        {
+          "nome": "Gullveig of the Nordic Ascendant",
+          "raridade": "R",
+          "slug": "gullveig_of_the_nordic_ascendant",
+          "atk": "800",
+          "def": "0"
+        },
+        {
+          "nome": "Mara of the Nordic Alfar",
+          "raridade": "R",
+          "slug": "mara_of_the_nordic_alfar",
+          "atk": "1000",
+          "def": "500"
+        },
+        {
+          "nome": "Mimir of the Nordic Ascendant",
+          "raridade": "R",
+          "slug": "mimir_of_the_nordic_ascendant",
+          "atk": "600",
+          "def": "0"
+        },
+        {
+          "nome": "Nordic Beast Gullinbursti",
+          "raridade": "R",
+          "slug": "nordic_beast_gullinbursti",
+          "atk": "300",
+          "def": "100"
+        },
+        {
+          "nome": "Nordic Smith Ivaldi",
+          "raridade": "R",
+          "slug": "nordic_smith_ivaldi",
+          "atk": "1500",
+          "def": "700"
+        },
+        {
+          "nome": "Tanngnjostr of the Nordic Beasts",
+          "raridade": "R",
+          "slug": "tanngnjostr_of_the_nordic_beasts",
+          "atk": "800",
+          "def": "1100"
+        },
+        {
+          "nome": "Tanngrisnir of the Nordic Beasts",
+          "raridade": "R",
+          "slug": "tanngrisnir_of_the_nordic_beasts",
+          "atk": "1200",
+          "def": "800"
+        },
+        {
+          "nome": "Time Maiden",
+          "raridade": "R",
+          "slug": "time_maiden",
+          "atk": "0",
+          "def": "0"
+        },
+        {
+          "nome": "Valkyrie of the Nordic Ascendant",
+          "raridade": "R",
+          "slug": "valkyrie_of_the_nordic_ascendant",
+          "atk": "400",
+          "def": "800"
         }
       ]
     }
