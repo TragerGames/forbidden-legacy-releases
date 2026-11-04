@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1792704826",
+  "versao": "1793793619",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -239,6 +239,18 @@
       "max_in_deck": 2,
       "scope": "support"
     },
+    "timelord": {
+      "label": "Timelord",
+      "cor": "#e8c66a",
+      "max_in_deck": 7,
+      "scope": "monster"
+    },
+    "aesir_supremo": {
+      "label": "AESIR Supremo",
+      "cor": "#7fb3ff",
+      "max_in_deck": 2,
+      "scope": "monster"
+    },
     "imune_a_efeito": {
       "label": "Imune a Efeito",
       "cor": "#37d6c2",
@@ -274,6 +286,19 @@
       "cor": "#c2185b",
       "max_in_deck": 2,
       "scope": "monster"
+    },
+    "equip_com_efeito": {
+      "label": "EQUIP com efeito",
+      "cor": "#ffb86b",
+      "max_in_deck": 2,
+      "scope": "support"
+    },
+    "roubo": {
+      "label": "Roubo",
+      "cor": "#c77dff",
+      "max_in_deck": 1,
+      "scope": "effect",
+      "max_in_deck_support": 1
     }
   },
   "cartas": {
@@ -624,6 +649,17 @@
         "lp_recovery"
       ]
     },
+    "Chaos Hunter": {
+      "grupos": [
+        "debuff_alvo"
+      ],
+      "limite": 2
+    },
+    "Infernoid Harmadik": {
+      "grupos": [
+        "remocao_alvo"
+      ]
+    },
     "Eatgaboon": {
       "grupos": [
         "punicao_atacante"
@@ -840,6 +876,88 @@
         "custom_support"
       ]
     },
+    "Gabrion, the Timelord": {
+      "grupos": [
+        "timelord",
+        "board_wipe",
+        "lp_recovery"
+      ]
+    },
+    "Michion, the Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Sephylon, the Ultimate Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Zaphion, the Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Sandaion, the Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Hailon, the Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Raphion, the Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Sadion, the Timelord": {
+      "grupos": [
+        "timelord",
+        "lp_recovery"
+      ]
+    },
+    "Metaion, the Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Kamion, the Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Lazion, the Timelord": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Timelord Progenitor Vorpgate": {
+      "grupos": [
+        "timelord",
+        "board_wipe"
+      ]
+    },
+    "Time Maiden": {
+      "grupos": [
+        "timelord"
+      ]
+    },
+    "Odin, Father of the Aesir": {
+      "grupos": [
+        "aesir_supremo",
+        "lp_recovery"
+      ],
+      "limite": 2
+    },
+    "Abominable Unchained Soul": {
+      "grupos": [
+        "backrow"
+      ],
+      "limite": 2
+    },
     "Airknight Parshath": {
       "grupos": [
         "piercing_pressure"
@@ -983,7 +1101,8 @@
     "Crimson Nova the Dark Cubic Lord": {
       "grupos": [
         "multi_attack"
-      ]
+      ],
+      "limite": 2
     },
     "Cubic Karma": {
       "grupos": [
@@ -1144,10 +1263,21 @@
         "burn_on_kill"
       ]
     },
-    "Double Attack! Wind and Thunder!!": {
+    "Divine Punishment": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Divine Relic Mjollnir": {
       "grupos": [
         "multi_attack"
       ]
+    },
+    "Double Attack! Wind and Thunder!!": {
+      "grupos": [
+        "multi_attack"
+      ],
+      "limite": 1
     },
     "Dragon Spirit of White": {
       "grupos": [
@@ -1199,6 +1329,16 @@
         "backrow"
       ]
     },
+    "Emissaries from Darkness": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Exchange of the Spirit": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
     "Exxod, Master of The Guard": {
       "grupos": [
         "burn_conditional"
@@ -1207,7 +1347,14 @@
     "Fairy Meteor Crush": {
       "grupos": [
         "piercing_pressure"
-      ]
+      ],
+      "limite": 1
+    },
+    "Fiendish Chain": {
+      "grupos": [
+        "attacker_lock"
+      ],
+      "limite": 2
     },
     "Fire Sorcerer": {
       "grupos": [
@@ -1267,7 +1414,8 @@
     "Gatling Dragon": {
       "grupos": [
         "burn_direct"
-      ]
+      ],
+      "limite": 2
     },
     "Gearfried the Red-Eyes Iron Knight": {
       "grupos": [
@@ -1292,6 +1440,16 @@
     "Gilti-Gearfried The Magical Steel Knight": {
       "grupos": [
         "multi_attack"
+      ]
+    },
+    "Gorz the Emissary of Darkness": {
+      "grupos": [
+        "multi_attack"
+      ]
+    },
+    "Gotterdammerung": {
+      "grupos": [
+        "board_wipe"
       ]
     },
     "Guardian Tryce": {
@@ -1379,6 +1537,11 @@
         "backrow"
       ]
     },
+    "Kelbek": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
     "King Pyron": {
       "grupos": [
         "burn_direct"
@@ -1410,6 +1573,11 @@
         "lp_recovery"
       ]
     },
+    "March Towards Ragnarok": {
+      "grupos": [
+        "backrow"
+      ]
+    },
     "Master Monk": {
       "grupos": [
         "multi_attack"
@@ -1423,7 +1591,8 @@
     "Mystic Plasma Zone": {
       "grupos": [
         "piercing_pressure"
-      ]
+      ],
+      "limite": 1
     },
     "Mystic Swordsman LV6": {
       "grupos": [
@@ -1438,6 +1607,16 @@
     "Neo-Parshath, the Sky Paladin": {
       "grupos": [
         "piercing_pressure"
+      ]
+    },
+    "Nordic Relic Draupnir": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Nordic Relic Hlidskjalf": {
+      "grupos": [
+        "lp_recovery"
       ]
     },
     "Number 107: Galaxy-Eyes Tachyon Dragon": {
@@ -1472,6 +1651,11 @@
       ]
     },
     "Prime Material Dragon": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
+    "Protector of The Agents - Moon": {
       "grupos": [
         "lp_recovery"
       ]
@@ -1524,7 +1708,8 @@
     "Shooting Star Bow - Ceal": {
       "grupos": [
         "piercing_pressure"
-      ]
+      ],
+      "limite": 1
     },
     "Sky Galloping Gaia the Dragon Champion": {
       "grupos": [
@@ -1597,6 +1782,17 @@
         "backrow"
       ]
     },
+    "The Agent of Judgment - Saturn": {
+      "grupos": [
+        "burn_direct",
+        "lp_recovery"
+      ]
+    },
+    "The Agent of Wisdom - Mercury": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
     "The Ascended of Thunder": {
       "grupos": [
         "lp_recovery"
@@ -1630,6 +1826,27 @@
     "Timaeus the United Magical Dragon": {
       "grupos": [
         "backrow"
+      ]
+    },
+    "Toon Ancient Gear Golem": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Toon Barrel Dragon": {
+      "grupos": [
+        "triple_attack"
+      ]
+    },
+    "Toon Obelisk the Tormentor": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
+    "Toon Slifer the Sky Dragon": {
+      "grupos": [
+        "multi_attack",
+        "piercing_pressure"
       ]
     },
     "Torrential Tribute": {
@@ -1737,6 +1954,17 @@
         "burn_recurring"
       ]
     },
+    "VW-Tiger Catapult": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "VWXYZ-Dragon Catapult Cannon": {
+      "grupos": [
+        "multi_attack",
+        "backrow"
+      ]
+    },
     "Whispark Fairy Girl": {
       "grupos": [
         "burn_direct"
@@ -1751,6 +1979,17 @@
     "Winged Trumpeter": {
       "grupos": [
         "lp_recovery"
+      ]
+    },
+    "XY-Dragon Cannon": {
+      "grupos": [
+        "backrow",
+        "piercing_pressure"
+      ]
+    },
+    "XZ-Tank Cannon": {
+      "grupos": [
+        "backrow"
       ]
     },
     "Black Luster Soldier - Legendary Swordsman": {
@@ -1806,6 +2045,105 @@
     },
     "Number 22: Zombiestein": {
       "limite": 2
+    },
+    "Burst Stream of Destruction": {
+      "limite": 1
+    },
+    "Mask of the Accursed": {
+      "limite": 1
+    },
+    "Gravity Axe - Grarl": {
+      "limite": 1
+    },
+    "Celestial Sword - Eatos": {
+      "limite": 1
+    },
+    "Magical Labyrinth": {
+      "limite": 2
+    },
+    "Galaxy Zero": {
+      "limite": 2
+    },
+    "Guardian Eatos": {
+      "limite": 1
+    },
+    "Guardian Elma": {
+      "limite": 2
+    },
+    "Guardian Dreadscythe": {
+      "limite": 1
+    },
+    "Guardian Ceal": {
+      "limite": 1
+    },
+    "Destiny Board": {
+      "limite": 1
+    },
+    "Spirit Message \"I\"": {
+      "limite": 1
+    },
+    "Spirit Message \"N\"": {
+      "limite": 1
+    },
+    "Spirit Message \"A\"": {
+      "limite": 1
+    },
+    "Spirit Message \"L\"": {
+      "limite": 1
+    },
+    "Ruler of the End of the World": {
+      "limite": 1
+    },
+    "Caius the Mega Monarch": {
+      "limite": 1
+    },
+    "Dark Necrofear, the Ruler of Demise": {
+      "limite": 1
+    },
+    "Change of Heart": {
+      "limite": 1
+    },
+    "Chaos Angel": {
+      "limite": 1
+    },
+    "Invader of Darkness": {
+      "limite": 1
+    },
+    "Magical Marionette": {
+      "limite": 2
+    },
+    "Coordius the Triphasic Dealmon": {
+      "limite": 2
+    },
+    "Sorciere de Fleur": {
+      "limite": 2
+    },
+    "The Suppression Pluto": {
+      "limite": 2
+    },
+    "Grapha, Dragon Overlord of Dark World": {
+      "limite": 2
+    },
+    "Puppet Master": {
+      "limite": 2
+    },
+    "Enemy Controller": {
+      "limite": 1
+    },
+    "Dark Necrofear": {
+      "limite": 2
+    },
+    "Masked Beast Des Gardius": {
+      "limite": 2
+    },
+    "Tachyon Chaos Hole": {
+      "limite": 2
+    },
+    "Infernoid Tierra": {
+      "limite": 2
+    },
+    "Masterflare Hyperion": {
+      "limite": 1
     }
   }
 }
