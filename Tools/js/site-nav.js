@@ -19,7 +19,6 @@
       { href: 'conheca.html', nome: T('Conheça o jogo', 'Discover the game', 'Conoce el juego', 'Khám phá trò chơi'), dica: T('do primeiro duelo ao fim da história', 'from the first duel to the ending', 'del primer duelo al final', 'từ trận đầu đến hồi kết') },
       { href: 'index.html#sobre', nome: T('O Jogo', 'The Game', 'El Juego', 'Trò chơi'), dica: T('o que é o remake', 'what the remake is', 'qué es el remake', 'bản làm lại là gì') },
       { href: 'features.html', nome: T('Mecânicas', 'Features', 'Mecánicas', 'Cơ chế'), dica: T('duelo, fusões, campo', 'duels, fusions, field', 'duelo, fusiones, campo', 'đấu bài, hợp thể, sân') },
-      { href: 'gallery.html', nome: T('Galeria', 'Gallery', 'Galería', 'Thư viện'), dica: T('imagens do jogo', 'game screenshots', 'imágenes del juego', 'ảnh trong game') },
       { href: 'mods.html', nome: T('Mods FM', 'FM Mods', 'Mods FM', 'Mods FM'), dica: T('mods de Forbidden Memories', 'Forbidden Memories mods', 'mods de Forbidden Memories', 'mod Forbidden Memories') }
     ] },
     { grupo: T('Modos de jogo', 'Game modes', 'Modos de juego', 'Chế độ chơi'), itens: [
