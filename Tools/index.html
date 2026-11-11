@@ -3348,12 +3348,8 @@ function paypalConfirmar() {
   });
 }
 
-// Aviso exibido ao clicar em qualquer link de download direto (PC/Android/Linux).
-// Isto NAO e uma dica de seguranca de save — e um desincentivo anti-exploit:
-// o alvo e quem esta na versao atual e pensa em voltar pra uma versao antiga
-// pra se aproveitar de um bug ja corrigido, com intencao de atualizar de volta
-// depois. Por isso a mensagem nao deve sugerir "exporte seu save antes", pois
-// isso validaria esse uso. O save simplesmente corrompe nesse ciclo.
+// Ao clicar num link de download direto: so' o Android mostra um aviso (o do
+// Chrome, que as vezes entrega a APK quebrada). PC e Linux baixam direto.
 /* Registra o download da versão gratuita com a origem de quem baixou.
    Deliberadamente "dispare e esqueça": keepalive faz a requisição sobreviver
    à navegação, e qualquer falha é engolida — nenhum download pode deixar de
@@ -3378,13 +3374,6 @@ function flRegistrarDownload(plataforma, confirmou) {
 
 function confirmDownloadWarning(plataforma) {
   const idioma = document.documentElement.getAttribute('data-lang-ativo') || 'pt';
-  /* Jogo limpo primeiro (2026-09-26, pedido do Felipe), depois o aviso de versao antiga. */
-  const MSG = {
-    pt: 'JOGO LIMPO: tentar burlar o jogo com Cheat Engine ou qualquer outro meio leva a BAN PERMANENTE do Founder e do Discord. O ban é aplicado em tempo real e não tem segunda chance.\n\nAviso: instalar uma versão mais antiga do jogo por cima da versão atual pra se aproveitar de algum bug já corrigido, e depois atualizar de volta pra uma versão mais nova, corrompe o seu save.\n\nContinuar com o download?',
-    en: "FAIR PLAY: trying to cheat the game with Cheat Engine or any other means leads to a PERMANENT BAN from Founder and the Discord. Bans are applied in real time and there are no second chances.\n\nWarning: installing an older version of the game over your current one to take advantage of an already-fixed bug, and then updating back to a newer version, will corrupt your save file.\n\nContinue with the download?",
-    es: 'JUEGO LIMPIO: intentar hacer trampa en el juego con Cheat Engine o cualquier otro medio lleva a un BAN PERMANENTE del Founder y del Discord. El ban se aplica en tiempo real y no hay segunda oportunidad.\n\nAviso: instalar una versión más antigua del juego sobre la actual para aprovechar un bug ya corregido, y luego volver a actualizar a una versión más nueva, corrompe tu partida.\n\n¿Continuar con la descarga?',
-    vi: 'CHƠI CÔNG BẰNG: cố gian lận trò chơi bằng Cheat Engine hoặc bất kỳ cách nào khác sẽ bị CẤM VĨNH VIỄN khỏi Founder và Discord. Lệnh cấm được áp dụng ngay lập tức và không có cơ hội thứ hai.\n\nCảnh báo: cài phiên bản cũ đè lên bản hiện tại để lợi dụng lỗi đã sửa, rồi cập nhật lại bản mới hơn, sẽ làm hỏng dữ liệu lưu của bạn.\n\nTiếp tục tải xuống?'
-  };
   /* Celular (2026-11-11, pedido do Trager): o aviso passou a ser so' o do Chrome
      (o "Jogo limpo" ja' esta no li e concordo da compra e acima dos links), que as vezes entrega a APK quebrada e vira relato de bug falso. */
   const MSG_ANDROID = {
@@ -3393,8 +3382,9 @@ function confirmDownloadWarning(plataforma) {
     es: 'Aviso: a veces Chrome no descarga el archivo correctamente (la descarga se corta a la mitad o la APK llega incompleta y da error al instalar). Si pasa, borra el archivo descargado y descárgalo de nuevo con otro navegador. Muchos jugadores lo resuelven usando Opera GX.\n\n¿Continuar con la descarga?',
     vi: 'Lưu ý: đôi khi Chrome không tải tệp về đúng cách (tải dừng giữa chừng hoặc tệp APK bị thiếu và báo lỗi khi cài). Nếu gặp tình trạng này, hãy xóa tệp đã tải và tải lại bằng trình duyệt khác. Nhiều người chơi đã khắc phục bằng Opera GX.\n\nTiếp tục tải xuống?'
   };
-  const tabela = plataforma === 'android' ? MSG_ANDROID : MSG;
-  const ok = confirm(tabela[idioma] || tabela.en);
+  /* PC e Linux baixam direto (2026-11-11, pedido do Trager): o aviso de jogo
+     limpo e o de versao antiga sairam; so' o celular confirma, pelo Chrome. */
+  const ok = plataforma === 'android' ? confirm(MSG_ANDROID[idioma] || MSG_ANDROID.en) : true;
   /* Registra depois da resposta ao aviso: quem desiste também conta, marcado
      como não confirmado, para o painel separar intenção de download real. */
   flRegistrarDownload(plataforma || 'outro', ok);
