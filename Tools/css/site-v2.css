@@ -1,0 +1,157 @@
+/* Visual novo do site (2026-11-12, aprovado pelo Trager): base comum de TODAS
+   as paginas. Fontes Sora (titulos e botoes) + Manrope (texto). Carrega depois
+   do <style> da pagina e do site-fx.css, e so' vale com <body class="fl2">.
+   A home tem o resto do desenho em css/home.css. */
+
+:root {
+  --fl-fundo: #09080b;
+  --fl-fundo2: #0f0d12;
+  --fl-cartao: #151318;
+  --fl-cartao2: #1c1a20;
+  --fl-linha: rgba(255, 255, 255, .08);
+  --fl-linha2: rgba(255, 255, 255, .14);
+  --fl-ouro: #e9b949;
+  --fl-ouro2: #ffd98a;
+  --fl-ouro3: #b8862a;
+  --fl-ouro-fraco: rgba(233, 185, 73, .12);
+  --fl-txt: #f4f1ea;
+  --fl-txt2: #bcb6aa;
+  --fl-txt3: #8b867d;
+  --fl-verde: #4fd27a;
+  --fl-raio: 20px;
+  --fl-tit: 'Sora', system-ui, sans-serif;
+  --fl-corpo: 'Manrope', system-ui, sans-serif;
+  --gold: var(--fl-ouro); --gold-light: var(--fl-ouro2); --dark: var(--fl-fundo);
+  --border: var(--fl-linha); --text-body: var(--fl-txt2); --text-muted: var(--fl-txt3);
+}
+
+body.fl2 { background: var(--fl-fundo); color: var(--fl-txt2); font-family: var(--fl-corpo); -webkit-font-smoothing: antialiased; }
+body.fl2 *:not(svg):not(path):not(rect):not(circle):not(g) { font-family: inherit !important; }
+body.fl2 .fl-h1, body.fl2 .fl-h2, body.fl2 .fl-btn, body.fl2 .fl-plano h3, body.fl2 .fl-preco b,
+body.fl2 .fl-numeros b, body.fl2 .fl-banner-jogo b, body.fl2 .fl-discord-txt > b, body.fl2 .news-title,
+body.fl2 .fl-plat b, body.fl2 .fl-passos b, body.fl2 .price-amount, body.fl2 .pix-amount, body.fl2 .pix-modal-title,
+body.fl2 .offer-bar strong, body.fl2 .fl-n { font-family: var(--fl-tit) !important; }
+
+.fl-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.fl-estreito { max-width: 920px; }
+.fl-sec { padding: 110px 0; position: relative; }
+
+/* ── botoes ── */
+.fl-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer;
+  padding: 16px 28px; border-radius: 14px; font-weight: 700; font-size: 16px; letter-spacing: -.01em;
+  text-decoration: none; border: 0; transition: transform .18s, box-shadow .18s, background .18s, border-color .18s;
+}
+.fl-btn-ouro { color: #1d1304 !important; background: linear-gradient(180deg, #ffe3a1 0%, var(--fl-ouro) 55%, #d39f33 100%); box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 12px 32px rgba(233, 185, 73, .28); }
+.fl-btn-ouro:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 16px 40px rgba(233, 185, 73, .4); }
+.fl-btn-onix { color: var(--fl-txt) !important; background: rgba(255, 255, 255, .05); border: 1px solid var(--fl-linha2); }
+.fl-btn-onix:hover { background: rgba(255, 255, 255, .1); border-color: rgba(233, 185, 73, .5); }
+.fl-btn-larg { width: 100%; }
+.fl-btn-discord { color: #fff !important; background: #5865f2; box-shadow: 0 12px 30px rgba(88, 101, 242, .35); }
+.fl-btn-discord:hover { transform: translateY(-2px); background: #6b77f5; }
+
+/* ── cabecalhos de secao ── */
+.fl-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--fl-ouro2); }
+.fl-tag::before { content: ""; width: 18px; height: 2px; border-radius: 2px; background: var(--fl-ouro); }
+.fl-h2 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; font-weight: 800; letter-spacing: -.03em; color: var(--fl-txt); margin: 14px 0 0; }
+.fl-cab { margin-bottom: 48px; }
+.fl-cab-centro { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.fl-sub { font-size: 17px; color: var(--fl-txt2); margin-top: 14px; max-width: 620px; line-height: 1.6; }
+
+/* ── menu do topo ── */
+body.fl2 nav#nav { padding: 14px 32px; background: linear-gradient(rgba(9, 8, 11, .85), rgba(9, 8, 11, 0)); border: 0; }
+body.fl2 nav#nav.scrolled { background: rgba(12, 11, 14, .82); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--fl-linha); }
+body.fl2 .nav-logo-fallback { font-family: var(--fl-tit) !important; letter-spacing: -.01em !important; text-transform: none !important; font-weight: 700; color: var(--fl-txt) !important; }
+body.fl2 .nav-links a, body.fl2 .nav-grupo-bt { color: rgba(255, 255, 255, .8) !important; font-weight: 600 !important; font-size: 14.5px !important; letter-spacing: 0 !important; text-transform: none !important; }
+body.fl2 .nav-links a:hover, body.fl2 .nav-grupo-bt:hover, body.fl2 .nav-grupo.aberto .nav-grupo-bt { color: #fff !important; }
+body.fl2 .nav-drop { background: rgba(20, 18, 24, .97) !important; border: 1px solid var(--fl-linha2) !important; border-radius: 16px !important; padding: 8px !important; box-shadow: 0 24px 60px rgba(0, 0, 0, .6) !important; }
+body.fl2 .nav-drop::before { display: none !important; }
+body.fl2 .nav-drop a { border: 0 !important; border-radius: 10px; }
+body.fl2 .nav-drop a:hover, body.fl2 .nav-drop a.ativo { background: var(--fl-ouro-fraco) !important; }
+body.fl2 .nav-cta { border-radius: 12px !important; padding: 10px 18px !important; font-family: var(--fl-tit) !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: -.01em !important; text-transform: none !important; color: #1d1304 !important; background: linear-gradient(180deg, #ffe3a1, var(--fl-ouro)) !important; border: 0 !important; }
+body.fl2 .discord-nav-badge, body.fl2 .lang-pick-btn { border-radius: 12px !important; background: rgba(255, 255, 255, .05) !important; border: 1px solid var(--fl-linha2) !important; }
+body.fl2 .mobile-nav-bar { display: none !important; }
+
+/* ── rodape ── */
+body.fl2 footer { background: #060508 !important; border-top: 1px solid var(--fl-linha) !important; }
+body.fl2 footer * { letter-spacing: 0 !important; text-transform: none !important; }
+body.fl2 footer h4, body.fl2 footer .footer-col-title { font-family: var(--fl-tit) !important; color: var(--fl-txt) !important; font-size: 14px !important; }
+body.fl2 footer a { color: var(--fl-txt3) !important; }
+body.fl2 footer a:hover { color: var(--fl-ouro2) !important; }
+
+/* barra de oferta: so' a tipografia */
+body.fl2 .offer-bar * { letter-spacing: 0 !important; }
+body.fl2 .offer-bar a, body.fl2 .offer-bar button { border-radius: 10px !important; }
+
+@media (max-width: 1000px) { body.fl2 nav#nav { padding: 12px 18px; } }
+
+/* ═════ Paginas internas: o mesmo desenho da home nos blocos que se repetem ═════ */
+body.fl2 h1, body.fl2 h2, body.fl2 h3, body.fl2 h4,
+body.fl2 .page-hero-title, body.fl2 .section-title, body.fl2 .sec-title, body.fl2 .hero-title,
+body.fl2 .campaign-title, body.fl2 .pvp-title, body.fl2 .yt-card-title, body.fl2 .yt-channel-name,
+body.fl2 .btn-gold, body.fl2 .btn-outline, body.fl2 .hero-btn, body.fl2 .nav-cta { font-family: var(--fl-tit) !important; }
+body.fl2 h1, body.fl2 h2, body.fl2 h3 { letter-spacing: -.025em !important; text-transform: none !important; text-shadow: none !important; }
+
+/* topo das paginas internas */
+body.fl2 .page-hero { position: relative; padding: 150px 32px 70px !important; text-align: center; overflow: hidden;
+  background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%),
+    linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%),
+    url(../img/conheca/conheca-duelo-campo-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important;
+  border-bottom: 1px solid var(--fl-linha) !important; }
+body.fl2 .page-hero::before, body.fl2 .page-hero::after { opacity: .35; }
+/* arte de fundo por pagina (data-arte no .page-hero) */
+body.fl2 .page-hero[data-arte="conheca-abertura-booster"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-abertura-booster-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-carta-detalhe"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-carta-detalhe-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-championship"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-championship-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-duelo-s2"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-duelo-s2-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-editor-deck"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-editor-deck-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-lista-fusoes"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-lista-fusoes-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-resultado-duelo"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-resultado-duelo-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero-label, body.fl2 .section-label, body.fl2 .sec-label, body.fl2 .hero-label, body.fl2 .label {
+  font-size: 13px !important; font-weight: 700 !important; letter-spacing: .14em !important; text-transform: uppercase; color: var(--fl-ouro2) !important; opacity: 1 !important; }
+body.fl2 .page-hero-title, body.fl2 .hero-title, body.fl2 .hero h1 { font-size: clamp(36px, 4.6vw, 60px) !important; font-weight: 800 !important; line-height: 1.05 !important;
+  letter-spacing: -.035em !important; color: var(--fl-txt) !important; text-transform: none !important; text-shadow: none !important; background: none !important; -webkit-text-fill-color: currentColor !important; }
+body.fl2 .page-hero-sub, body.fl2 .page-hero-desc, body.fl2 .hero-desc, body.fl2 .hero-sub { font-size: 17px !important; line-height: 1.6 !important; color: var(--fl-txt2) !important; letter-spacing: 0 !important; text-transform: none !important; }
+body.fl2 .section-title, body.fl2 .sec-title, body.fl2 .campaign-title, body.fl2 .pvp-title { font-size: clamp(30px, 3.4vw, 44px) !important; font-weight: 800 !important; line-height: 1.1 !important;
+  color: var(--fl-txt) !important; letter-spacing: -.03em !important; text-transform: none !important; text-shadow: none !important; }
+body.fl2 .ornament-div, body.fl2 .hero-ornament, body.fl2 .hero-scroll { display: none !important; }
+
+/* botoes antigos no desenho novo */
+body.fl2 .btn-gold, body.fl2 .hero-btn:not(.secondary), body.fl2 .btn-primary {
+  border-radius: 14px !important; border: 0 !important; color: #1d1304 !important; font-weight: 700 !important; letter-spacing: -.01em !important; text-transform: none !important;
+  background: linear-gradient(180deg, #ffe3a1 0%, var(--fl-ouro) 55%, #d39f33 100%) !important; box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 12px 30px rgba(233, 185, 73, .25) !important; }
+body.fl2 .btn-gold::after { display: none !important; }
+body.fl2 .btn-outline, body.fl2 .hero-btn.secondary, body.fl2 .btn-secondary {
+  border-radius: 14px !important; color: var(--fl-txt) !important; font-weight: 700 !important; letter-spacing: -.01em !important; text-transform: none !important;
+  background: rgba(255, 255, 255, .05) !important; border: 1px solid var(--fl-linha2) !important; }
+
+/* campos de formulario e abas em geral */
+body.fl2 input[type="text"], body.fl2 input[type="email"], body.fl2 input[type="search"], body.fl2 input:not([type]), body.fl2 select, body.fl2 textarea {
+  border-radius: 12px !important; background: #0c0b0e !important; border: 1px solid var(--fl-linha2) !important; color: var(--fl-txt) !important; letter-spacing: 0 !important; }
+body.fl2 input:focus, body.fl2 select:focus, body.fl2 textarea:focus { outline: none !important; border-color: var(--fl-ouro) !important; box-shadow: 0 0 0 4px rgba(233, 185, 73, .15) !important; }
+
+/* cartoes e chips das paginas internas, todos no mesmo desenho */
+body.fl2 :is(.feature-card, .cycle-step, .booster-detail-panel, .intro-card, .group-card, .example-box, .cat-modal, .cat-aviso,
+  .pay-opt, .modal-box, .redeem-block, .pay-choice-box, .lv-vidro, .rk-modo, .rk-npc-destaque, .rk-campanha, .rk-degrau,
+  .pun-card, .chance-card, .fase, .divine-note, .hero-panel, .info-card, .detail-box, .painel, .gp, .seed-box,
+  .cj-passo, .cj-caminho, .cj-plat, .mx-card, .note, .tu-resumo, .flp-onde, .sp-protocolo, .hero-note) {
+  border-radius: 18px !important; background-color: var(--fl-cartao) !important; border-color: var(--fl-linha) !important; }
+body.fl2 :is(.cat-chip, .mx-chip, .req-chip, .rk-aba, .fase-aba, .group-tag, .cat-tag, .hero-badge, .region-chip, .region-switch-btn, .cat-count) {
+  border-radius: 999px !important; letter-spacing: 0 !important; }
+body.fl2 :is(.cat-chip, .rk-aba, .fase-aba).ativo, body.fl2 :is(.cat-chip, .rk-aba, .fase-aba).on, body.fl2 :is(.cat-chip, .rk-aba, .fase-aba).active {
+  background: var(--fl-ouro-fraco) !important; border-color: rgba(233, 185, 73, .55) !important; color: var(--fl-ouro2) !important; }
+body.fl2 :is(.flp-btn-sec, .ver-btn, .doc-btn, .funnel-btn, .cj-bt, .rk-atualizar, .mx-cta, .pay-choice-btn) { border-radius: 14px !important; letter-spacing: 0 !important; text-transform: none !important; }
+
+/* titulos e numeros que eram Bebas/Cinzel: agora Sora firme, sem espacamento largo */
+body.fl2 :is(.footer-logo, .flp-eyebrow, .flp-titulo, .flp-h, .flp-resultado-h, .sp-protocolo, .tu-resumo h2, .tu-secao h2,
+  .booster-detail-title, .cat-modal-name, .cat-origem-tit, .cat-stat-n, .cj-hero-tit, .cj-nums b, .cj-passo-n, .cj-tit, .cj-caminho b,
+  .cj-fim-txt b, .cj-plat b, .ach-title, .ticket-number, .mx-sec-tit, .mx-rank, .feat-num, .feat-title, .discord-title, .founder-title,
+  .price-amount, .dl-title, .news-title, .step-num, .pix-modal-title, .pix-amount, .pvp-card-t, .pvp-pos, .how-title, .qty-value,
+  .modal-box h2, .pay-choice-box h3, .altar-tit, .altar-nome, .cofre-tit, .reward-title, .divine-card-name, .final-cta-title, .big-stat,
+  .fase-num, .fase-corpo h3, .pun-nome, .chance-nome, .sombrio-nome, .premio-valor, .deck-titulo, .boss-temp h4, .custo-valor,
+  .premio-moeda b, .divine-passo-n, .hardcore-valor, .hardcore-cab h3, .carta-info-nome, .rk-modo-nome, .rk-degrau-pos, .rk-degrau-valor,
+  .rk-pos, .rk-valor, .rk-vazio b) {
+  font-family: var(--fl-tit) !important; font-weight: 700 !important; letter-spacing: -.01em !important; }
+body.fl2 .footer-logo { font-size: 18px !important; font-weight: 800 !important; color: var(--fl-ouro2) !important; }
+body.fl2 .footer-bottom span, body.fl2 .footer-bottom { color: var(--fl-txt3) !important; }
+body.fl2 .btn { font-family: var(--fl-tit) !important; font-weight: 700 !important; letter-spacing: 0 !important; border-radius: 12px !important; }

@@ -1,77 +1,8 @@
 /* HOME refeita do zero (2026-11-12, pedido do Trager): objetiva, leva primeiro
-   ao Founder. Fontes: Sora nos titulos e botoes, Manrope no texto (escolha do
-   Trager). O <style> antigo da pagina continua carregado so' por causa dos
-   modais de pagamento, do Pix, da barra de oferta e do aviso de cookies; tudo
-   o que aparece na pagina e' desenhado aqui. */
-
-:root {
-  --fl-fundo: #09080b;
-  --fl-fundo2: #0f0d12;
-  --fl-cartao: #151318;
-  --fl-cartao2: #1c1a20;
-  --fl-linha: rgba(255, 255, 255, .08);
-  --fl-linha2: rgba(255, 255, 255, .14);
-  --fl-ouro: #e9b949;
-  --fl-ouro2: #ffd98a;
-  --fl-ouro3: #b8862a;
-  --fl-ouro-fraco: rgba(233, 185, 73, .12);
-  --fl-txt: #f4f1ea;
-  --fl-txt2: #bcb6aa;
-  --fl-txt3: #8b867d;
-  --fl-verde: #4fd27a;
-  --fl-raio: 20px;
-  --fl-tit: 'Sora', system-ui, sans-serif;
-  --fl-corpo: 'Manrope', system-ui, sans-serif;
-  --gold: var(--fl-ouro); --gold-light: var(--fl-ouro2); --dark: var(--fl-fundo);
-  --border: var(--fl-linha); --text-body: var(--fl-txt2); --text-muted: var(--fl-txt3);
-}
-
-body.fl2 { background: var(--fl-fundo); color: var(--fl-txt2); font-family: var(--fl-corpo); -webkit-font-smoothing: antialiased; }
-body.fl2 *:not(svg):not(path):not(rect):not(circle):not(g) { font-family: inherit !important; }
-body.fl2 .fl-h1, body.fl2 .fl-h2, body.fl2 .fl-btn, body.fl2 .fl-plano h3, body.fl2 .fl-preco b,
-body.fl2 .fl-numeros b, body.fl2 .fl-banner-jogo b, body.fl2 .fl-discord-txt > b, body.fl2 .news-title,
-body.fl2 .fl-plat b, body.fl2 .fl-passos b, body.fl2 .price-amount, body.fl2 .pix-amount, body.fl2 .pix-modal-title,
-body.fl2 .offer-bar strong, body.fl2 .fl-n { font-family: var(--fl-tit) !important; }
-
-.fl-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
-.fl-estreito { max-width: 920px; }
-.fl-sec { padding: 110px 0; position: relative; }
-
-/* ── botoes ── */
-.fl-btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer;
-  padding: 16px 28px; border-radius: 14px; font-weight: 700; font-size: 16px; letter-spacing: -.01em;
-  text-decoration: none; border: 0; transition: transform .18s, box-shadow .18s, background .18s, border-color .18s;
-}
-.fl-btn-ouro { color: #1d1304 !important; background: linear-gradient(180deg, #ffe3a1 0%, var(--fl-ouro) 55%, #d39f33 100%); box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 12px 32px rgba(233, 185, 73, .28); }
-.fl-btn-ouro:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 16px 40px rgba(233, 185, 73, .4); }
-.fl-btn-onix { color: var(--fl-txt) !important; background: rgba(255, 255, 255, .05); border: 1px solid var(--fl-linha2); }
-.fl-btn-onix:hover { background: rgba(255, 255, 255, .1); border-color: rgba(233, 185, 73, .5); }
-.fl-btn-larg { width: 100%; }
-.fl-btn-discord { color: #fff !important; background: #5865f2; box-shadow: 0 12px 30px rgba(88, 101, 242, .35); }
-.fl-btn-discord:hover { transform: translateY(-2px); background: #6b77f5; }
-
-/* ── cabecalhos de secao ── */
-.fl-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--fl-ouro2); }
-.fl-tag::before { content: ""; width: 18px; height: 2px; border-radius: 2px; background: var(--fl-ouro); }
-.fl-h2 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; font-weight: 800; letter-spacing: -.03em; color: var(--fl-txt); margin: 14px 0 0; }
-.fl-cab { margin-bottom: 48px; }
-.fl-cab-centro { text-align: center; display: flex; flex-direction: column; align-items: center; }
-.fl-sub { font-size: 17px; color: var(--fl-txt2); margin-top: 14px; max-width: 620px; line-height: 1.6; }
-
-/* ── menu do topo ── */
-body.fl2 nav#nav { padding: 14px 32px; background: linear-gradient(rgba(9, 8, 11, .85), rgba(9, 8, 11, 0)); border: 0; }
-body.fl2 nav#nav.scrolled { background: rgba(12, 11, 14, .82); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--fl-linha); }
-body.fl2 .nav-logo-fallback { font-family: var(--fl-tit) !important; letter-spacing: -.01em !important; text-transform: none !important; font-weight: 700; color: var(--fl-txt) !important; }
-body.fl2 .nav-links a, body.fl2 .nav-grupo-bt { color: rgba(255, 255, 255, .8) !important; font-weight: 600 !important; font-size: 14.5px !important; letter-spacing: 0 !important; text-transform: none !important; }
-body.fl2 .nav-links a:hover, body.fl2 .nav-grupo-bt:hover, body.fl2 .nav-grupo.aberto .nav-grupo-bt { color: #fff !important; }
-body.fl2 .nav-drop { background: rgba(20, 18, 24, .97) !important; border: 1px solid var(--fl-linha2) !important; border-radius: 16px !important; padding: 8px !important; box-shadow: 0 24px 60px rgba(0, 0, 0, .6) !important; }
-body.fl2 .nav-drop::before { display: none !important; }
-body.fl2 .nav-drop a { border: 0 !important; border-radius: 10px; }
-body.fl2 .nav-drop a:hover, body.fl2 .nav-drop a.ativo { background: var(--fl-ouro-fraco) !important; }
-body.fl2 .nav-cta { border-radius: 12px !important; padding: 10px 18px !important; font-family: var(--fl-tit) !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: -.01em !important; text-transform: none !important; color: #1d1304 !important; background: linear-gradient(180deg, #ffe3a1, var(--fl-ouro)) !important; border: 0 !important; }
-body.fl2 .discord-nav-badge, body.fl2 .lang-pick-btn { border-radius: 12px !important; background: rgba(255, 255, 255, .05) !important; border: 1px solid var(--fl-linha2) !important; }
-body.fl2 .mobile-nav-bar { display: none !important; }
+   ao Founder. A base comum (cores, fontes, botoes, menu, rodape) mora em
+   css/site-v2.css; aqui fica so' o desenho da home. O <style> antigo da pagina
+   continua carregado so' pelos modais de pagamento, Pix, barra de oferta e
+   cookies. */
 
 /* ── topo ── */
 .fl-hero { position: relative; overflow: hidden; padding: 150px 0 120px; }
@@ -207,17 +138,6 @@ body.fl2 .news-card .dc-channel { display: none; }
 .fl-discord-num { display: flex; gap: 26px; font-size: 13px; color: var(--fl-txt3); }
 .fl-discord-num b { display: flex; align-items: center; gap: 8px; font-family: var(--fl-tit) !important; font-size: 24px; color: var(--fl-txt); }
 .fl-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--fl-verde); box-shadow: 0 0 0 4px rgba(79, 210, 122, .18); }
-
-/* ── rodape ── */
-body.fl2 footer { background: #060508 !important; border-top: 1px solid var(--fl-linha) !important; }
-body.fl2 footer * { letter-spacing: 0 !important; text-transform: none !important; }
-body.fl2 footer h4, body.fl2 footer .footer-col-title { font-family: var(--fl-tit) !important; color: var(--fl-txt) !important; font-size: 14px !important; }
-body.fl2 footer a { color: var(--fl-txt3) !important; }
-body.fl2 footer a:hover { color: var(--fl-ouro2) !important; }
-
-/* barra de oferta: so' a tipografia */
-body.fl2 .offer-bar * { letter-spacing: 0 !important; }
-body.fl2 .offer-bar a, body.fl2 .offer-bar button { border-radius: 10px !important; }
 
 @media (max-width: 1000px) {
   .fl-hero { padding: 120px 0 80px; }

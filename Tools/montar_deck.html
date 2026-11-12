@@ -38,7 +38,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 :root {
@@ -661,8 +661,9 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 @media(prefers-reduced-motion:reduce){ .row{opacity:1} }
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261105a">
+<link rel="stylesheet" href="css/site-v2.css?v=20261112f">
 </head>
-<body>
+<body class="fl2">
 
 <nav id="nav">
   <div class="nav-logo">
@@ -698,7 +699,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 </div>
 
 <!-- HERO -->
-<div class="page-hero">
+<div class="page-hero" data-arte="conheca-editor-deck">
   <div class="stars"></div>
   <div class="page-hero-label">☥ v3.0</div>
   <h1 class="page-hero-title" data-lang="pt">Montar Deck</h1>
@@ -781,7 +782,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
         <input id="salvar-nome" type="text" maxlength="40" placeholder="Nome do deck">
         <button id="salvar"><span data-lang="pt">Salvar</span><span data-lang="en">Save</span><span data-lang="es">Guardar</span><span data-lang="vi">Lưu</span></button>
       </div>
-      <p class="seed-nota"><div data-lang="pt">Ficam guardados <b>neste navegador</b>, só para você — não sobem para nenhum servidor e somem se você limpar os dados do site.</div><div data-lang="en">They stay in <b>this browser</b>, only for you — they never reach any server and disappear if you clear the site data.</div><div data-lang="es">Se guardan en <b>este navegador</b>, solo para ti — no llegan a ningún servidor y desaparecen si borras los datos del sitio.</div><div data-lang="vi">Chúng được lưu trong <b>trình duyệt này</b>, chỉ dành cho bạn — không gửi lên máy chủ nào và sẽ mất nếu bạn xóa dữ liệu trang.</div></p>
+      <div class="seed-nota"><div data-lang="pt">Ficam guardados <b>neste navegador</b>, só para você — não sobem para nenhum servidor e somem se você limpar os dados do site.</div><div data-lang="en">They stay in <b>this browser</b>, only for you — they never reach any server and disappear if you clear the site data.</div><div data-lang="es">Se guardan en <b>este navegador</b>, solo para ti — no llegan a ningún servidor y desaparecen si borras los datos del sitio.</div><div data-lang="vi">Chúng được lưu trong <b>trình duyệt này</b>, chỉ dành cho bạn — không gửi lên máy chủ nào và sẽ mất nếu bạn xóa dữ liệu trang.</div></div>
     </div>
 
     <div class="seed-box" id="seed-box">
