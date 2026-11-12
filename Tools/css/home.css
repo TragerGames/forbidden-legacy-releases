@@ -6,13 +6,17 @@
 
 /* ── topo ── */
 .fl-hero { position: relative; overflow: hidden; padding: 150px 0 120px; }
+/* fundo: a arte do Reino dos Duelistas (a mesma da home antiga), escurecida
+   a esquerda para o texto ler bem e no pe para emendar com a pagina */
 .fl-hero-bg { position: absolute; inset: 0; background:
-  radial-gradient(900px 520px at 78% 35%, rgba(233, 185, 73, .16), transparent 70%),
-  radial-gradient(700px 400px at 10% 90%, rgba(120, 60, 200, .12), transparent 70%),
-  linear-gradient(180deg, #0d0b10, var(--fl-fundo)); }
-.fl-hero-bg::after { content: ""; position: absolute; inset: 0; opacity: .05;
-  background-image: linear-gradient(var(--fl-ouro) 1px, transparent 1px), linear-gradient(90deg, var(--fl-ouro) 1px, transparent 1px);
-  background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse at 60% 40%, #000 20%, transparent 70%); mask-image: radial-gradient(ellipse at 60% 40%, #000 20%, transparent 70%); }
+  linear-gradient(90deg, rgba(10, 9, 12, .94) 0%, rgba(10, 9, 12, .78) 38%, rgba(10, 9, 12, .35) 70%, rgba(10, 9, 12, .55) 100%),
+  linear-gradient(180deg, rgba(10, 9, 12, .55) 0%, transparent 22%, transparent 70%, var(--fl-fundo) 100%),
+  url('../img/hero/reino-duelistas.webp') center 24% / cover no-repeat, var(--fl-fundo); }
+@media (max-width: 900px) {
+  .fl-hero-bg { background:
+    linear-gradient(180deg, rgba(10, 9, 12, .7) 0%, rgba(10, 9, 12, .82) 45%, var(--fl-fundo) 100%),
+    url('../img/hero/reino-duelistas-mob.webp') center top / cover no-repeat, var(--fl-fundo); }
+}
 .fl-hero-grid { position: relative; display: grid; grid-template-columns: 1fr 1.08fr; gap: 56px; align-items: center; }
 .fl-selo { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 10px; border-radius: 999px; background: rgba(79, 210, 122, .08); border: 1px solid rgba(79, 210, 122, .3); color: #b8f0c9; font-size: 13px; font-weight: 700; }
 .fl-selo i { width: 8px; height: 8px; border-radius: 50%; background: var(--fl-verde); box-shadow: 0 0 0 4px rgba(79, 210, 122, .18); }
@@ -27,11 +31,6 @@
 .fl-hero-vis { position: relative; }
 .fl-moldura { position: relative; padding: 8px; border-radius: 22px; background: linear-gradient(135deg, rgba(255, 217, 138, .9), rgba(184, 134, 42, .35) 40%, rgba(255, 255, 255, .08) 70%, rgba(233, 185, 73, .7)); box-shadow: 0 40px 90px rgba(0, 0, 0, .7), 0 0 80px rgba(233, 185, 73, .12); transform: perspective(1400px) rotateY(-7deg) rotateX(2deg); }
 .fl-moldura img { display: block; width: 100%; height: auto; border-radius: 15px; }
-.fl-flut { position: absolute; padding: 12px 16px; border-radius: 14px; background: rgba(21, 19, 24, .88); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid var(--fl-linha2); box-shadow: 0 18px 40px rgba(0, 0, 0, .5); font-size: 13px; color: var(--fl-txt2); }
-.fl-flut b { display: block; font-family: var(--fl-tit) !important; color: var(--fl-txt); font-size: 16px; }
-.fl-flut-1 { left: -26px; bottom: 34px; }
-.fl-flut-2 { right: -14px; top: -18px; }
-
 /* ── numeros ── */
 .fl-numeros { border-block: 1px solid var(--fl-linha); background: var(--fl-fundo2); }
 .fl-numeros-grid { display: grid; grid-template-columns: repeat(4, 1fr) 1.6fr; }
@@ -143,8 +142,6 @@ body.fl2 .news-card .dc-channel { display: none; }
   .fl-hero { padding: 120px 0 80px; }
   .fl-hero-grid, .fl-compra-grid { grid-template-columns: 1fr; gap: 44px; }
   .fl-moldura { transform: none; }
-  .fl-flut-1 { left: 10px; bottom: -18px; }
-  .fl-flut-2 { right: 10px; top: -18px; }
   .fl-numeros-grid { grid-template-columns: repeat(2, 1fr); }
   .fl-numeros-grid > div { border-bottom: 1px solid var(--fl-linha); }
   .fl-numeros-grid > div:nth-child(2n) { border-right: 0; }
@@ -165,7 +162,6 @@ body.fl2 .news-card .dc-channel { display: none; }
   .fl-planos, .fl-plats { grid-template-columns: 1fr; }
   .fl-plano { padding: 28px 22px; }
   .fl-form-card { padding: 22px 18px; border-radius: 20px; }
-  .fl-flut { display: none; }
   .fl-banner-jogo > div { padding: 26px 22px; }
   .fl-banner-jogo b { font-size: 28px; }
   .fl-discord { padding: 24px 20px; gap: 18px; }
