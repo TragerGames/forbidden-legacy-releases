@@ -308,3 +308,13 @@ footer { background: #060508 !important; border-top: 1px solid var(--b-linha) !i
 }
 /* Na home a tabela Gratis x Founder ja lista as vantagens: a lista do cartao sai */
 #comprar .founder-perks { display: none !important; }
+/* Celular: atalhos em 2x2 compactos, para o Founder aparecer mais cedo */
+@media (max-width: 700px) {
+  .hb-barra { display: grid !important; grid-template-columns: 1fr 1fr; }
+  .hb-barra > a { padding: 14px 12px; gap: 10px; border-bottom: 1px solid var(--b-linha); }
+  .hb-barra > a:nth-child(odd) { border-right: 1px solid var(--b-linha); }
+  .hb-barra > a:nth-child(n+3) { border-bottom: 0; }
+  .hb-ic { width: 34px; height: 34px; font-size: 16px; border-radius: 10px; }
+  .hb-barra b { font-size: 13.5px; }
+  .hb-barra div > span { display: none; }
+}
