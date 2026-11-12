@@ -42,7 +42,7 @@ body.fl2 .offer-bar strong, body.fl2 .fl-n { font-family: var(--fl-tit) !importa
   padding: 16px 28px; border-radius: 14px; font-weight: 700; font-size: 16px; letter-spacing: -.01em;
   text-decoration: none; border: 0; transition: transform .18s, box-shadow .18s, background .18s, border-color .18s;
 }
-.fl-btn-ouro { color: #1d1304 !important; background: linear-gradient(180deg, #ffe3a1 0%, var(--fl-ouro) 55%, #d39f33 100%); box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 12px 32px rgba(233, 185, 73, .28); }
+.fl-btn-ouro { color: #0f0f12 !important; background: linear-gradient(180deg, #ffe3a1 0%, var(--fl-ouro) 55%, #d39f33 100%); box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 12px 32px rgba(233, 185, 73, .28); }
 .fl-btn-ouro:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 16px 40px rgba(233, 185, 73, .4); }
 .fl-btn-onix { color: var(--fl-txt) !important; background: rgba(255, 255, 255, .05); border: 1px solid var(--fl-linha2); }
 .fl-btn-onix:hover { background: rgba(255, 255, 255, .1); border-color: rgba(233, 185, 73, .5); }
@@ -68,7 +68,7 @@ body.fl2 .nav-drop { background: rgba(20, 18, 24, .97) !important; border: 1px s
 body.fl2 .nav-drop::before { display: none !important; }
 body.fl2 .nav-drop a { border: 0 !important; border-radius: 10px; }
 body.fl2 .nav-drop a:hover, body.fl2 .nav-drop a.ativo { background: var(--fl-ouro-fraco) !important; }
-body.fl2 .nav-cta { border-radius: 12px !important; padding: 10px 18px !important; font-family: var(--fl-tit) !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: -.01em !important; text-transform: none !important; color: #1d1304 !important; background: linear-gradient(180deg, #ffe3a1, var(--fl-ouro)) !important; border: 0 !important; }
+body.fl2 .nav-cta { border-radius: 12px !important; padding: 10px 18px !important; font-family: var(--fl-tit) !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: -.01em !important; text-transform: none !important; color: #0f0f12 !important; background: linear-gradient(180deg, #ffe3a1, var(--fl-ouro)) !important; border: 0 !important; }
 body.fl2 .discord-nav-badge, body.fl2 .lang-pick-btn { border-radius: 12px !important; background: rgba(255, 255, 255, .05) !important; border: 1px solid var(--fl-linha2) !important; }
 body.fl2 .mobile-nav-bar { display: none !important; }
 
@@ -100,13 +100,21 @@ body.fl2 .page-hero { position: relative; padding: 150px 32px 70px !important; t
   border-bottom: 1px solid var(--fl-linha) !important; }
 body.fl2 .page-hero::before, body.fl2 .page-hero::after { opacity: .35; }
 /* arte de fundo por pagina (data-arte no .page-hero) */
-body.fl2 .page-hero[data-arte="conheca-abertura-booster"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-abertura-booster-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
-body.fl2 .page-hero[data-arte="conheca-carta-detalhe"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-carta-detalhe-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
-body.fl2 .page-hero[data-arte="conheca-championship"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-championship-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
-body.fl2 .page-hero[data-arte="conheca-duelo-s2"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-duelo-s2-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
-body.fl2 .page-hero[data-arte="conheca-editor-deck"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-editor-deck-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
-body.fl2 .page-hero[data-arte="conheca-lista-fusoes"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/conheca-lista-fusoes-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
-body.fl2 .page-hero[data-arte="hero-reino-duelistas"] { background: radial-gradient(800px 420px at 50% 0%, rgba(233, 185, 73, .16), transparent 70%), linear-gradient(180deg, rgba(8, 7, 10, .78) 0%, rgba(8, 7, 10, .86) 55%, var(--fl-fundo) 100%), url(../img/conheca/hero-reino-duelistas-960.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-abertura-booster"] { background: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-abertura-booster.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-carta-detalhe"] { background: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-carta-detalhe.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-championship"] { background: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-championship.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-duelo-s2"] { background: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-duelo-s2.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-editor-deck"] { background: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-editor-deck.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="conheca-lista-fusoes"] { background: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-lista-fusoes.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+body.fl2 .page-hero[data-arte="hero-reino-duelistas"] { background: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/reino-duelistas.webp) center 30% / cover no-repeat, var(--fl-fundo) !important; }
+@media (max-width: 760px) {
+  body.fl2 .page-hero[data-arte="conheca-abertura-booster"] { background-image: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-abertura-booster-mob.webp) !important; }
+  body.fl2 .page-hero[data-arte="conheca-carta-detalhe"] { background-image: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-carta-detalhe-mob.webp) !important; }
+  body.fl2 .page-hero[data-arte="conheca-championship"] { background-image: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-championship-mob.webp) !important; }
+  body.fl2 .page-hero[data-arte="conheca-duelo-s2"] { background-image: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-duelo-s2-mob.webp) !important; }
+  body.fl2 .page-hero[data-arte="conheca-editor-deck"] { background-image: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-editor-deck-mob.webp) !important; }
+  body.fl2 .page-hero[data-arte="conheca-lista-fusoes"] { background-image: linear-gradient(180deg, rgba(9, 8, 11, .6) 0%, rgba(9, 8, 11, .8) 60%, var(--fl-fundo) 100%), url(../img/hero/fundo-lista-fusoes-mob.webp) !important; }
+}
 body.fl2 .page-hero-label, body.fl2 .section-label, body.fl2 .sec-label, body.fl2 .hero-label, body.fl2 .label {
   font-size: 13px !important; font-weight: 700 !important; letter-spacing: .14em !important; text-transform: uppercase; color: var(--fl-ouro2) !important; opacity: 1 !important; }
 body.fl2 .page-hero-title, body.fl2 .hero-title, body.fl2 .hero h1 { font-size: clamp(36px, 4.6vw, 60px) !important; font-weight: 800 !important; line-height: 1.05 !important;
@@ -118,7 +126,7 @@ body.fl2 .ornament-div, body.fl2 .hero-ornament, body.fl2 .hero-scroll { display
 
 /* botoes antigos no desenho novo */
 body.fl2 .btn-gold, body.fl2 .hero-btn:not(.secondary), body.fl2 .btn-primary {
-  border-radius: 14px !important; border: 0 !important; color: #1d1304 !important; font-weight: 700 !important; letter-spacing: -.01em !important; text-transform: none !important;
+  border-radius: 14px !important; border: 0 !important; color: #0f0f12 !important; font-weight: 700 !important; letter-spacing: -.01em !important; text-transform: none !important;
   background: linear-gradient(180deg, #ffe3a1 0%, var(--fl-ouro) 55%, #d39f33 100%) !important; box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 12px 30px rgba(233, 185, 73, .25) !important; }
 body.fl2 .btn-gold::after { display: none !important; }
 body.fl2 .btn-outline, body.fl2 .hero-btn.secondary, body.fl2 .btn-secondary {
@@ -157,3 +165,19 @@ body.fl2 .footer-bottom span, body.fl2 .footer-bottom { color: var(--fl-txt3) !i
 body.fl2 .btn { font-family: var(--fl-tit) !important; font-weight: 700 !important; letter-spacing: 0 !important; border-radius: 12px !important; }
 body.fl2 .sp-tipo span { border-radius: 999px !important; letter-spacing: 0 !important; text-transform: none !important; font-weight: 600 !important; }
 body.fl2 .flp-pagina :is(input, select, textarea) { border-radius: 12px !important; }
+
+/* Championship: .painel ali e' so' o recipiente de cada aba, nao um cartao.
+   O fundo de cartao deixava uma caixa escura atras da barra de secoes,
+   desalinhada dos cartoes de dentro. */
+body.fl2 .painel[data-painel] { background: transparent !important; border: 0 !important; box-shadow: none !important; }
+
+/* fundo fixo de algumas paginas antigas: sem o degrade marrom */
+body.fl2::before { background: radial-gradient(ellipse at 50% 0, rgba(233, 185, 73, .07), transparent 50%), var(--fl-fundo) !important; }
+
+/* Conquistas: cartoes no desenho novo (cantos, borda neutra, sem vazio embaixo) */
+body.fl2 .ach-card { border-radius: 18px !important; background: var(--fl-cartao) !important; border: 1px solid var(--fl-linha) !important; min-height: 0 !important; display: flex; flex-direction: column; }
+body.fl2 .ach-card:hover { border-color: var(--fl-linha2) !important; }
+body.fl2 .ach-card::before { left: 18px; right: 18px; opacity: .8; }
+body.fl2 .ach-icon { border-radius: 12px !important; border: 1px solid var(--fl-linha2) !important; background: #0c0b0e !important; }
+body.fl2 .ach-title { font-size: 19px !important; color: var(--fl-txt) !important; }
+body.fl2 .tickets, body.fl2 .info-card, body.fl2 .hero-panel { border-radius: 18px !important; }

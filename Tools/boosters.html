@@ -42,21 +42,21 @@
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 :root {
-  --gold:       #c8973a;
+  --gold:       #e9b949;
   --gold-light: #e8b840;
-  --gold-dim:   #7a5a18;
+  --gold-dim:   #b8862a;
   --dark:       #09080a;
   --dark2:      #0d0b0e;
   --dark3:      #120e12;
-  --border:     rgba(200,151,58,.13);
-  --text-muted: #6a5830;
-  --text-body:  #9a8050;
+  --border:     rgba(233,185,73,.13);
+  --text-muted: #8b867d;
+  --text-body:  #8b867d;
   /* compat */
-  --ouro:      #c8973a;
+  --ouro:      #e9b949;
   --ouro-brt:  #e8b840;
-  --ouro-esc:  #7a5a18;
-  --texto:     #c8b888;
-  --texto-dim: #7a6a48;
+  --ouro-esc:  #b8862a;
+  --texto:     #bcb6aa;
+  --texto-dim: #8b867d;
   --painel:    #0d0b0e;
   --painel2:   #120e12;
 }
@@ -79,7 +79,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .nav-logo-fallback {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 18px; letter-spacing: 3px; color: var(--gold);
-  text-shadow: 0 0 16px rgba(200,151,58,.4);
+  text-shadow: 0 0 16px rgba(233,185,73,.4);
 }
 .nav-links { display: flex; gap: 22px; align-items: center; }
 .nav-links a { font-size: 10px; letter-spacing: 1.5px; color: var(--text-muted); text-transform: uppercase; transition: color .2s; }
@@ -96,19 +96,19 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   padding: 120px 20px 60px; text-align: center;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(to bottom, rgba(9,8,10,0) 40%, var(--dark) 100%),
-              radial-gradient(ellipse at 50% 30%, rgba(200,151,58,.10) 0%, transparent 70%);
+              radial-gradient(ellipse at 50% 30%, rgba(233,185,73,.10) 0%, transparent 70%);
   position: relative;
 }
 .page-hero::before {
   content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
   width:1px; height:80px;
-  background:linear-gradient(180deg,transparent,rgba(200,151,58,.25),transparent);
+  background:linear-gradient(180deg,transparent,rgba(233,185,73,.25),transparent);
 }
 .page-hero-label { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:16px; }
 .page-hero-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(36px,6vw,72px); color: var(--gold); letter-spacing:2px;
-  text-shadow: 0 0 40px rgba(200,151,58,.3); margin-bottom:8px;
+  text-shadow: 0 0 40px rgba(233,185,73,.3); margin-bottom:8px;
 }
 .page-hero-sub { font-size:10px; letter-spacing:4px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:24px; }
 .page-hero-desc { max-width:620px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--text-muted); }
@@ -139,9 +139,9 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 }
 .feature-card::before {
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,transparent,rgba(200,151,58,.25),transparent);
+  background:linear-gradient(90deg,transparent,rgba(233,185,73,.25),transparent);
 }
-.feature-card:hover { border-color:rgba(200,151,58,.28); }
+.feature-card:hover { border-color:rgba(255,255,255,0.14); }
 .feature-icon { font-size:24px; margin-bottom:12px; }
 .feature-title { font-size:14px; font-weight:600; color:var(--gold-light); margin-bottom:14px; letter-spacing:.5px; }
 .feature-list { list-style:none; }
@@ -151,7 +151,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 /* ── TABELA DE RARIDADE ── */
 .rarity-table { width:100%; border-collapse:collapse; margin-top:10px; }
 .rarity-table th { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--gold-dim); text-align:left; padding:6px 8px; border-bottom:1px solid var(--border); }
-.rarity-table td { font-size:13px; color:var(--text-muted); padding:7px 8px; border-bottom:1px solid rgba(200,151,58,.06); }
+.rarity-table td { font-size:13px; color:var(--text-muted); padding:7px 8px; border-bottom:1px solid rgba(255,255,255,0.06); }
 .rarity-table tr:last-child td { border-bottom:none; }
 .badge-n  { color:#999; font-weight:700; }
 .badge-r  { color:#88aadd; font-weight:700; }
@@ -160,13 +160,13 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 
 /* ── CICLO DE SOULS ── */
 .cycle-banner {
-  background:rgba(200,151,58,.05); border:1px solid var(--border);
+  background:rgba(255,255,255,0.025); border:1px solid var(--border);
   border-radius:4px; padding:28px 32px; margin-top:20px; text-align:center;
   position:relative; overflow:hidden;
 }
 .cycle-banner::before {
   content:''; position:absolute; top:0; left:0; right:0; height:1px;
-  background:linear-gradient(90deg,transparent,rgba(200,151,58,.3),transparent);
+  background:linear-gradient(90deg,transparent,rgba(233,185,73,.3),transparent);
 }
 .cycle-steps { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:16px; }
 .cycle-step { background:var(--dark2); border:1px solid var(--border); border-radius:4px; padding:12px 20px; font-size:13px; color:var(--text-muted); }
@@ -174,7 +174,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 
 /* ── EM EVOLUÇÃO ── */
 .features-evolving {
-  background:rgba(200,151,58,.04); border:1px solid var(--border);
+  background:rgba(255,255,255,0.02); border:1px solid var(--border);
   border-radius:4px; padding:22px 26px; margin-top:32px;
   color:var(--text-muted); font-size:14px; line-height:1.8;
 }
@@ -191,7 +191,7 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   position:relative;
 }
 .booster-tile:hover { transform:translateY(-3px); }
-.booster-tile.active { border-color:var(--gold); box-shadow:0 0 0 1px var(--gold), 0 0 18px rgba(200,151,58,.25); }
+.booster-tile.active { border-color:var(--gold); box-shadow:0 0 0 1px var(--gold), 0 0 18px rgba(233,185,73,.25); }
 .booster-tile-img {
   width:100%; aspect-ratio:2/3; object-fit:cover; display:block; background:#050408;
 }
@@ -228,13 +228,13 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
   display: flex; justify-content: center;
 }
 .booster-tile-countdown span {
-  background: rgba(200,151,58,.95); color: #1a0d05;
+  background: rgba(233,185,73,.95); color: #0f0f12;
   font-size: 9px; font-weight: 700; letter-spacing: .4px;
   padding: 3px 8px; border-radius: 3px;
   box-shadow: 0 2px 8px rgba(0,0,0,.5);
 }
 .booster-detail-countdown {
-  background: rgba(200,151,58,.08); border: 1px solid rgba(200,151,58,.3);
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15);
   border-radius: 4px; padding: 10px 14px; margin: 10px 0; font-size: 12.5px;
   color: var(--gold-light); line-height: 1.6;
 }
@@ -307,14 +307,14 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
      altura do botao e empurrando o Founder para fora da barra. */
   white-space: nowrap;
-  background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
-  color: var(--text-muted, #6a5830);
+  background: transparent; border: 1px solid var(--gold-dim, #b8862a);
+  color: var(--text-muted, #8b867d);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
   font-size: 11px; letter-spacing: .6px; font-family: 'Inter', sans-serif;
   transition: border-color .2s, color .2s;
 }
 .lang-pick-btn:hover, .lang-pick.aberto .lang-pick-btn {
-  border-color: var(--gold, #c8973a); color: var(--gold-light, #e8b840);
+  border-color: var(--gold, #e9b949); color: var(--gold-light, #e8b840);
 }
 .lang-pick-btn svg, .lang-opt svg {
   width: 18px; height: 12.6px; border-radius: 1px; flex-shrink: 0;
@@ -325,7 +325,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-menu {
   position: absolute; top: calc(100% + 6px); right: 0; z-index: 3000;
   min-width: 158px; padding: 4px;
-  background: #14100a; border: 1px solid var(--gold-dim, #7a5a18);
+  background: #121014; border: 1px solid var(--gold-dim, #b8862a);
   border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,.65);
   display: none; flex-direction: column; gap: 1px;
 }
@@ -334,11 +334,11 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   display: flex; align-items: center; gap: 9px; width: 100%;
   background: transparent; border: none; cursor: pointer;
   padding: 8px 10px; border-radius: 3px; text-align: left;
-  color: var(--text-body, #9a8050); font-size: 12.5px;
+  color: var(--text-body, #8b867d); font-size: 12.5px;
   font-family: 'Inter', sans-serif; white-space: nowrap;
   transition: background .15s, color .15s;
 }
-.lang-opt:hover { background: rgba(200,151,58,.12); color: var(--gold-light, #e8b840); }
+.lang-opt:hover { background: rgba(233,185,73,.12); color: var(--gold-light, #e8b840); }
 .lang-opt[aria-selected="true"] { color: var(--gold-light, #e8b840); }
 .lang-opt[aria-selected="true"]::after { content: '\2713'; margin-left: auto; font-size: 11px; }
 @media (max-width: 560px) {
@@ -363,8 +363,8 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .footer-col h4 { font-size:10px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:12px; }
 .footer-col a { display:block; font-size:12px; color:var(--text-muted); margin-bottom:6px; transition:color .2s; }
 .footer-col a:hover { color:var(--gold); }
-.footer-bottom { border-top:1px solid rgba(200,151,58,.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
-.footer-bottom span { font-size:11px; color:#2a2018; }
+.footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.footer-bottom span { font-size:11px; color:#5f5b55; }
 
 @media(max-width:700px) {
   nav { padding:12px 20px; }
@@ -384,31 +384,31 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
   content: '';
   position: absolute; inset: 0;
   background-image:
-    radial-gradient(1px 1px at 12% 18%, rgba(212,168,67,.7) 0%, transparent 100%),
-    radial-gradient(1px 1px at 28% 55%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 12% 18%, rgba(233,185,73,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 55%, rgba(233,185,73,.4) 0%, transparent 100%),
     radial-gradient(1.5px 1.5px at 48% 30%, rgba(255,255,255,.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 68% 12%, rgba(212,168,67,.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 12%, rgba(233,185,73,.55) 0%, transparent 100%),
     radial-gradient(1px 1px at 82% 50%, rgba(255,255,255,.25) 0%, transparent 100%),
-    radial-gradient(1px 1px at 18% 78%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 78%, rgba(233,185,73,.35) 0%, transparent 100%),
     radial-gradient(1px 1px at 58% 72%, rgba(255,255,255,.2) 0%, transparent 100%),
-    radial-gradient(1px 1px at 36% 88%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 36% 88%, rgba(233,185,73,.4) 0%, transparent 100%),
     radial-gradient(1px 1px at 88% 28%, rgba(255,255,255,.3) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 52% 6%, rgba(212,168,67,.75) 0%, transparent 100%),
-    radial-gradient(1px 1px at 76% 85%, rgba(212,168,67,.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 5% 40%, rgba(212,168,67,.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 94% 65%, rgba(212,168,67,.3) 0%, transparent 100%);
+    radial-gradient(1.5px 1.5px at 52% 6%, rgba(233,185,73,.75) 0%, transparent 100%),
+    radial-gradient(1px 1px at 76% 85%, rgba(233,185,73,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 40%, rgba(233,185,73,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 94% 65%, rgba(233,185,73,.3) 0%, transparent 100%);
   animation: twinkle 5s ease-in-out infinite alternate;
 }
 .stars::after {
   background-image:
-    radial-gradient(1px 1px at 7% 32%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 7% 32%, rgba(233,185,73,.5) 0%, transparent 100%),
     radial-gradient(1px 1px at 32% 15%, rgba(255,255,255,.3) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 60% 40%, rgba(212,168,67,.6) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 40%, rgba(233,185,73,.6) 0%, transparent 100%),
     radial-gradient(1px 1px at 78% 20%, rgba(255,255,255,.25) 0%, transparent 100%),
-    radial-gradient(1px 1px at 44% 62%, rgba(212,168,67,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 62%, rgba(233,185,73,.45) 0%, transparent 100%),
     radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,.2) 0%, transparent 100%),
-    radial-gradient(1px 1px at 70% 48%, rgba(212,168,67,.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 91% 10%, rgba(212,168,67,.5) 0%, transparent 100%);
+    radial-gradient(1px 1px at 70% 48%, rgba(233,185,73,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 10%, rgba(233,185,73,.5) 0%, transparent 100%);
   animation: twinkle 3.5s ease-in-out infinite alternate-reverse;
 }
 @keyframes twinkle { 0%{opacity:.45} 100%{opacity:1} }
@@ -424,7 +424,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .mobile-nav-bar {
   display: none;
   position: fixed; top: 52px; left: 0; right: 0; z-index: 198;
-  background: rgba(5,3,1,0.97); border-bottom: 1px solid var(--border);
+  background: rgba(5,4,7,0.97); border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px); flex-direction: column;
 }
 .mobile-discord-bar {
@@ -479,14 +479,14 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 .nav-grupo.aberto .nav-caret{transform:rotate(225deg) translate(-3px,-3px)}
 .nav-drop{position:absolute;top:calc(100% + 10px);left:-14px;min-width:238px;z-index:5;
   display:none;flex-direction:column;padding:8px;background:rgba(9,8,10,.985);
-  border:1px solid rgba(200,151,58,.22);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+  border:1px solid rgba(255,255,255,0.11);box-shadow:0 18px 40px rgba(0,0,0,.55)}
 .nav-drop::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
   background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .nav-grupo.aberto .nav-drop{display:flex}
 .nav-drop a{display:flex;flex-direction:column;gap:2px;padding:9px 12px;
-  font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#c3b189;
+  font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#bcb6aa;
   border-left:2px solid transparent;transition:background .18s,color .18s,border-color .18s}
-.nav-drop a:hover,.nav-drop a:focus-visible{background:rgba(200,151,58,.09);color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a:hover,.nav-drop a:focus-visible{background:rgba(233,185,73,.09);color:var(--gold2);border-left-color:var(--gold)}
 .nav-drop a.ativo{color:var(--gold2);border-left-color:var(--gold)}
 .nav-drop a small{font-size:10.5px;letter-spacing:.2px;text-transform:none;color:var(--muted);opacity:.85}
 .nav-solo{font-size:10px;letter-spacing:1.5px}
@@ -538,16 +538,16 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
    Vale para a pagina e para qualquer area rolavel (listas, cofre,
    modais). As regras de `display:none` das faixas de filtro horizontal
    continuam valendo: elas vem depois e sao mais especificas. */
-* { scrollbar-width: thin; scrollbar-color: var(--gold-dim, #7a5a18) transparent; }
+* { scrollbar-width: thin; scrollbar-color: var(--gold-dim, #b8862a) transparent; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--dark3, #120e12); border-radius: 6px; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--gold-dim, #7a5a18), #59410f);
+  background: linear-gradient(180deg, var(--gold-dim, #b8862a), #9a7124);
   border-radius: 6px;
   border: 2px solid var(--dark, #09080a);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--gold, #c8973a), var(--gold-dim, #7a5a18));
+  background: linear-gradient(180deg, var(--gold, #e9b949), var(--gold-dim, #b8862a));
 }
 ::-webkit-scrollbar-corner { background: transparent; }
 
@@ -642,14 +642,14 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
      altura do botao e empurrando o Founder para fora da barra. */
   white-space: nowrap;
-  background: transparent; border: 1px solid var(--gold-dim, #7a5a18);
-  color: var(--text-muted, #6a5830);
+  background: transparent; border: 1px solid var(--gold-dim, #b8862a);
+  color: var(--text-muted, #8b867d);
   padding: 4px 9px; border-radius: 3px; cursor: pointer;
   font-size: 11px; letter-spacing: .6px; font-family: 'Inter', sans-serif;
   transition: border-color .2s, color .2s;
 }
 .lang-pick-btn:hover, .lang-pick.aberto .lang-pick-btn {
-  border-color: var(--gold, #c8973a); color: var(--gold-light, #e8b840);
+  border-color: var(--gold, #e9b949); color: var(--gold-light, #e8b840);
 }
 .lang-pick-btn svg, .lang-opt svg {
   width: 18px; height: 12.6px; border-radius: 1px; flex-shrink: 0;
@@ -660,7 +660,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
 .lang-menu {
   position: absolute; top: calc(100% + 6px); right: 0; z-index: 3000;
   min-width: 158px; padding: 4px;
-  background: #14100a; border: 1px solid var(--gold-dim, #7a5a18);
+  background: #121014; border: 1px solid var(--gold-dim, #b8862a);
   border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,.65);
   display: none; flex-direction: column; gap: 1px;
 }
@@ -669,11 +669,11 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   display: flex; align-items: center; gap: 9px; width: 100%;
   background: transparent; border: none; cursor: pointer;
   padding: 8px 10px; border-radius: 3px; text-align: left;
-  color: var(--text-body, #9a8050); font-size: 12.5px;
+  color: var(--text-body, #8b867d); font-size: 12.5px;
   font-family: 'Inter', sans-serif; white-space: nowrap;
   transition: background .15s, color .15s;
 }
-.lang-opt:hover { background: rgba(200,151,58,.12); color: var(--gold-light, #e8b840); }
+.lang-opt:hover { background: rgba(233,185,73,.12); color: var(--gold-light, #e8b840); }
 .lang-opt[aria-selected="true"] { color: var(--gold-light, #e8b840); }
 .lang-opt[aria-selected="true"]::after { content: '\2713'; margin-left: auto; font-size: 11px; }
 @media (max-width: 560px) {
@@ -698,39 +698,39 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .footer-col h4 { font-size:10px; letter-spacing:2px; color:var(--gold-dim); text-transform:uppercase; margin-bottom:12px; }
 .footer-col a { display:block; font-size:12px; color:var(--text-muted); margin-bottom:6px; transition:color .2s; }
 .footer-col a:hover { color:var(--gold); }
-.footer-bottom { border-top:1px solid rgba(200,151,58,.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
-.footer-bottom span { font-size:11px; color:#2a2018; }
+.footer-bottom { border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.footer-bottom span { font-size:11px; color:#5f5b55; }
 
 /* ── STARS ── */
 .stars { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 .stars::before, .stars::after {
   content: ''; position: absolute; inset: 0;
   background-image:
-    radial-gradient(1px 1px at 12% 18%, rgba(212,168,67,.7) 0%, transparent 100%),
-    radial-gradient(1px 1px at 28% 55%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 12% 18%, rgba(233,185,73,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 55%, rgba(233,185,73,.4) 0%, transparent 100%),
     radial-gradient(1.5px 1.5px at 48% 30%, rgba(255,255,255,.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 68% 12%, rgba(212,168,67,.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 12%, rgba(233,185,73,.55) 0%, transparent 100%),
     radial-gradient(1px 1px at 82% 50%, rgba(255,255,255,.25) 0%, transparent 100%),
-    radial-gradient(1px 1px at 18% 78%, rgba(212,168,67,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 78%, rgba(233,185,73,.35) 0%, transparent 100%),
     radial-gradient(1px 1px at 58% 72%, rgba(255,255,255,.2) 0%, transparent 100%),
-    radial-gradient(1px 1px at 36% 88%, rgba(212,168,67,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 36% 88%, rgba(233,185,73,.4) 0%, transparent 100%),
     radial-gradient(1px 1px at 88% 28%, rgba(255,255,255,.3) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 52% 6%, rgba(212,168,67,.75) 0%, transparent 100%),
-    radial-gradient(1px 1px at 76% 85%, rgba(212,168,67,.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 5% 40%, rgba(212,168,67,.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 94% 65%, rgba(212,168,67,.3) 0%, transparent 100%);
+    radial-gradient(1.5px 1.5px at 52% 6%, rgba(233,185,73,.75) 0%, transparent 100%),
+    radial-gradient(1px 1px at 76% 85%, rgba(233,185,73,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 40%, rgba(233,185,73,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 94% 65%, rgba(233,185,73,.3) 0%, transparent 100%);
   animation: twinkle 5s ease-in-out infinite alternate;
 }
 .stars::after {
   background-image:
-    radial-gradient(1px 1px at 7% 32%, rgba(212,168,67,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 7% 32%, rgba(233,185,73,.5) 0%, transparent 100%),
     radial-gradient(1px 1px at 32% 15%, rgba(255,255,255,.3) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 60% 40%, rgba(212,168,67,.6) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 40%, rgba(233,185,73,.6) 0%, transparent 100%),
     radial-gradient(1px 1px at 78% 20%, rgba(255,255,255,.25) 0%, transparent 100%),
-    radial-gradient(1px 1px at 44% 62%, rgba(212,168,67,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 62%, rgba(233,185,73,.45) 0%, transparent 100%),
     radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,.2) 0%, transparent 100%),
-    radial-gradient(1px 1px at 70% 48%, rgba(212,168,67,.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 91% 10%, rgba(212,168,67,.5) 0%, transparent 100%);
+    radial-gradient(1px 1px at 70% 48%, rgba(233,185,73,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 10%, rgba(233,185,73,.5) 0%, transparent 100%);
   animation: twinkle 3.5s ease-in-out infinite alternate-reverse;
 }
 @keyframes twinkle { 0%{opacity:.45} 100%{opacity:1} }
@@ -746,7 +746,7 @@ footer { background:#04050d; border-top:1px solid var(--border); padding:40px; }
 .mobile-nav-bar {
   display: none;
   position: fixed; top: 52px; left: 0; right: 0; z-index: 198;
-  background: rgba(5,3,1,0.97); border-bottom: 1px solid var(--border);
+  background: rgba(5,4,7,0.97); border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px); flex-direction: column;
 }
 .mobile-discord-bar {
@@ -814,14 +814,14 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 .nav-grupo.aberto .nav-caret{transform:rotate(225deg) translate(-3px,-3px)}
 .nav-drop{position:absolute;top:calc(100% + 10px);left:-14px;min-width:238px;z-index:5;
   display:none;flex-direction:column;padding:8px;background:rgba(9,8,10,.985);
-  border:1px solid rgba(200,151,58,.22);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+  border:1px solid rgba(255,255,255,0.11);box-shadow:0 18px 40px rgba(0,0,0,.55)}
 .nav-drop::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
   background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .nav-grupo.aberto .nav-drop{display:flex}
 .nav-drop a{display:flex;flex-direction:column;gap:2px;padding:9px 12px;
-  font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#c3b189;
+  font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#bcb6aa;
   border-left:2px solid transparent;transition:background .18s,color .18s,border-color .18s}
-.nav-drop a:hover,.nav-drop a:focus-visible{background:rgba(200,151,58,.09);color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a:hover,.nav-drop a:focus-visible{background:rgba(233,185,73,.09);color:var(--gold2);border-left-color:var(--gold)}
 .nav-drop a.ativo{color:var(--gold2);border-left-color:var(--gold)}
 .nav-drop a small{font-size:10.5px;letter-spacing:.2px;text-transform:none;color:var(--muted);opacity:.85}
 .nav-solo{font-size:10px;letter-spacing:1.5px}
@@ -870,13 +870,13 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   --r-n:#8c8c8c; --r-r:#88aadd; --r-sr:#bb88ee; --r-ur:#e8b840;
 }
 body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
-  background:radial-gradient(1200px 640px at 50% -10%, rgba(200,151,58,.10), transparent 62%)}
+  background:radial-gradient(1200px 640px at 50% -10%, rgba(233,185,73,.10), transparent 62%)}
 .page-content{position:relative; z-index:1}
 
 /* barra de filtros */
 .cat-toolbar{border-radius:12px!important; backdrop-filter:blur(10px)}
 .cat-search{border-radius:8px!important; transition:border-color .25s, box-shadow .25s}
-.cat-search:focus-within{border-color:var(--gold)!important; box-shadow:0 0 0 3px rgba(200,151,58,.1)}
+.cat-search:focus-within{border-color:var(--gold)!important; box-shadow:0 0 0 3px rgba(233,185,73,.1)}
 .cat-chip{transition:all .18s!important}
 .cat-chip:hover{transform:translateY(-1px)}
 .cat-chip.active[data-filter-rar="N"]{border-color:var(--r-n);color:var(--r-n);background:rgba(140,140,140,.12)}
@@ -945,7 +945,7 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
   animation:catSobe .38s cubic-bezier(.22,1,.36,1) forwards; animation-delay:var(--atraso,0s)}
 .cat-tag:hover{transform:translateY(-2px); border-color:var(--gold)}
 .cat-tag b{color:var(--gold-light); font-weight:600; font-size:10.5px; font-variant-numeric:tabular-nums}
-.cat-tag.booster{border-color:rgba(200,151,58,.26); background:rgba(200,151,58,.06)}
+.cat-tag.booster{border-color:rgba(255,255,255,0.13); background:rgba(255,255,255,0.03)}
 .cat-tag.npc{border-color:rgba(90,140,220,.24); background:rgba(90,140,220,.05); color:#a8c4e8}
 .cat-tag.evento{border-color:rgba(220,120,60,.3); background:rgba(220,120,60,.07); color:#e0a878}
 .cat-tag .seta{opacity:0; margin-left:-4px; transition:opacity .2s, margin .2s; font-size:10px}
@@ -961,7 +961,7 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
   width:38px; height:38px; border-radius:50%; background:rgba(9,8,10,.92);
   border:1px solid var(--border); color:var(--gold); font-size:17px; cursor:pointer;
   display:grid; place-items:center; transition:all .2s}
-.cat-nav:hover{border-color:var(--gold); background:rgba(200,151,58,.14)}
+.cat-nav:hover{border-color:var(--gold); background:rgba(233,185,73,.14)}
 .cat-nav.ant{left:14px} .cat-nav.prox{right:14px}
 @media(min-width:1000px){ .cat-nav.ant{left:calc(50% - 470px)} .cat-nav.prox{right:calc(50% - 470px)} }
 
@@ -981,8 +981,8 @@ button.cat-tag{cursor:pointer}
 .card-thumb img{transition:transform .2s, border-color .2s}
 .card-thumb:hover img{transform:translateY(-3px)}
 </style>
-<link rel="stylesheet" href="css/site-fx.css?v=20261105a">
-<link rel="stylesheet" href="css/site-v2.css?v=20261112h">
+<link rel="stylesheet" href="css/site-fx.css?v=20261112a">
+<link rel="stylesheet" href="css/site-v2.css?v=20261112i">
 </head>
 <body class="fl2">
 
@@ -1291,7 +1291,7 @@ button.cat-tag{cursor:pointer}
   </div>
 
   <div style="text-align:center;margin-top:48px" data-reveal>
-    <a href="index.html#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;background:rgba(200,151,58,.08);border:1px solid rgba(200,151,58,.35);color:var(--gold);border-radius:2px;text-decoration:none;transition:all .25s">
+    <a href="index.html#download" style="display:inline-flex;align-items:center;gap:10px;padding:16px 40px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.175);color:var(--gold);border-radius:2px;text-decoration:none;transition:all .25s">
       <span>⬇</span>
       <span data-lang="pt">BAIXAR GRÁTIS — v3.0</span>
       <span data-lang="en">DOWNLOAD FREE — v3.0</span><span data-lang="es">DESCARGAR GRATIS — v3.0</span><span data-lang="vi">TẢI MIỄN PHÍ — v3.0</span>
@@ -1309,7 +1309,7 @@ button.cat-tag{cursor:pointer}
   backdrop-filter:blur(6px);">
   <span data-lang="pt">🍪 Este site armazena preferências no seu navegador (idioma, formulário) e realiza chamadas externas para Discord e processamento de doações. Ao continuar, você concorda. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Saiba mais</a></span>
   <span data-lang="en">🍪 This site stores preferences in your browser (language, form data) and makes external calls to Discord and donation processors. By continuing, you agree. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Learn more</a></span><span data-lang="es">🍪 Este sitio almacena preferencias en tu navegador (idioma, formulario) y realiza llamadas externas a Discord y a los procesadores de pago. Al continuar, aceptas. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Saber más</a></span><span data-lang="vi">🍪 Trang này lưu tùy chọn trong trình duyệt của bạn (ngôn ngữ, biểu mẫu) và gọi ra ngoài tới Discord và các đơn vị xử lý thanh toán. Khi tiếp tục, bạn đồng ý. <a href="#" onclick="cookiePolitica(event)" style="color:var(--gold)">Tìm hiểu thêm</a></span>
-  <button onclick="cookieAceitar()" style="background:rgba(200,151,58,.15);border:1px solid var(--gold-dim);color:var(--gold-light);padding:7px 20px;border-radius:3px;cursor:pointer;font-size:13px;font-family:monospace;white-space:nowrap;flex-shrink:0">
+  <button onclick="cookieAceitar()" style="background:rgba(233,185,73,.15);border:1px solid var(--gold-dim);color:var(--gold-light);padding:7px 20px;border-radius:3px;cursor:pointer;font-size:13px;font-family:monospace;white-space:nowrap;flex-shrink:0">
     <span data-lang="pt">✓ Entendi</span><span data-lang="en">✓ Got it</span><span data-lang="es">✓ Entendido</span><span data-lang="vi">✓ Đã hiểu</span>
   </button>
 </div>
