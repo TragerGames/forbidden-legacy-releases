@@ -267,3 +267,44 @@ footer { background: #060508 !important; border-top: 1px solid var(--b-linha) !i
 
 /* titulo do mosaico: os <span data-lang> dentro do <b> herdam o tamanho do titulo */
 .hb-t b span, .hb-barra b span { font-size: inherit !important; color: inherit !important; white-space: normal !important; display: inline !important; }
+
+/* ── HOME objetiva (2026-11-12): primeiro o Founder ── */
+.hb-ctas-nota { margin-top: 14px; font-size: 13px; color: var(--b-texto3); }
+.hb-comp-sec { padding-top: 110px; }
+.hb-comp { display: grid; grid-template-columns: 1fr 280px; gap: 28px; align-items: center; background: var(--b-cartao); border: 1px solid var(--b-linha); border-radius: var(--b-raio); padding: 28px 32px; }
+.hb-comp table { width: 100%; border-collapse: collapse; }
+.hb-comp th, .hb-comp td { padding: 14px 12px; border-bottom: 1px solid var(--b-linha); text-align: center; font-size: 15px; }
+.hb-comp tbody tr:last-child th, .hb-comp tbody tr:last-child td { border-bottom: 0; }
+.hb-comp tbody th { text-align: left; color: var(--b-texto); font-weight: 600; }
+.hb-comp thead th { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--b-texto3); font-weight: 700; }
+.hb-comp thead .hb-comp-f { color: var(--b-ouro2); }
+.hb-comp td { width: 26%; color: var(--b-texto2); font-size: 14px; }
+.hb-comp td:last-child { background: rgba(232, 184, 74, .06); }
+.hb-comp td.hb-sim:last-child { color: var(--b-ouro2); font-weight: 700; }
+.hb-comp .hb-nao { color: #55515a; }
+.hb-comp-cta { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; color: var(--b-texto3); font-size: 13px; }
+.hb-comp-cta .hb-btn { width: 100%; }
+.hb-chamada-jogo { padding-top: 40px; padding-bottom: 40px; }
+.hb-faixa-jogo { display: flex; align-items: center; gap: 28px; padding: 16px; padding-right: 32px; border-radius: var(--b-raio); background: var(--b-cartao); border: 1px solid var(--b-linha); text-decoration: none; color: var(--b-texto); transition: border-color .2s, transform .2s; }
+.hb-faixa-jogo:hover { border-color: var(--b-linha-ouro); transform: translateY(-2px); }
+.hb-faixa-jogo img { width: 260px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; }
+.hb-faixa-jogo > div { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.hb-faixa-jogo b { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 38px; line-height: 1; }
+.hb-faixa-jogo > div > span:last-child { color: var(--b-texto2); }
+.hb-seta { font-size: 30px; color: var(--b-ouro); }
+/* Pagina O Jogo: topo menor */
+.hb-topo-pag { position: relative; overflow: hidden; padding: 150px 56px 90px; min-height: 520px; display: flex; align-items: flex-end; }
+@media (max-width: 1000px) {
+  .hb-comp { grid-template-columns: 1fr; padding: 20px; }
+  .hb-topo-pag { padding: 120px 24px 70px; min-height: 0; }
+}
+@media (max-width: 700px) {
+  .hb-comp th, .hb-comp td { padding: 11px 6px; font-size: 13px; }
+  .hb-comp tbody th { font-size: 13.5px; }
+  .hb-faixa-jogo { flex-direction: column; align-items: stretch; padding-right: 16px; gap: 14px; }
+  .hb-faixa-jogo img { width: 100%; }
+  .hb-seta { display: none; }
+  .hb-topo-pag { padding: 100px 16px 56px; }
+}
+/* Na home a tabela Gratis x Founder ja lista as vantagens: a lista do cartao sai */
+#comprar .founder-perks { display: none !important; }
