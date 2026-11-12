@@ -17,12 +17,11 @@
   var MENU = [
     { grupo: T('Jogo', 'Game', 'Juego', 'Trò chơi'), itens: [
       { href: 'conheca.html', nome: T('Conheça o jogo', 'Discover the game', 'Conoce el juego', 'Khám phá trò chơi'), dica: T('do primeiro duelo ao fim da história', 'from the first duel to the ending', 'del primer duelo al final', 'từ trận đầu đến hồi kết') },
-      { href: 'jogo.html', nome: T('O Jogo', 'The Game', 'El Juego', 'Trò chơi'), dica: T('imagens, vídeos e PvP', 'screenshots, videos and PvP', 'imágenes, videos y PvP', 'hình ảnh, video và PvP') },
       { href: 'features.html', nome: T('Mecânicas', 'Features', 'Mecánicas', 'Cơ chế'), dica: T('duelo, fusões, campo', 'duels, fusions, field', 'duelo, fusiones, campo', 'đấu bài, hợp thể, sân') },
       { href: 'mods.html', nome: T('Mods FM', 'FM Mods', 'Mods FM', 'Mods FM'), dica: T('mods de Forbidden Memories', 'Forbidden Memories mods', 'mods de Forbidden Memories', 'mod Forbidden Memories') }
     ] },
     { grupo: T('Modos de jogo', 'Game modes', 'Modos de juego', 'Chế độ chơi'), itens: [
-      { href: 'jogo.html#campanha', nome: T('Campanha', 'Campaign', 'Campaña', 'Cốt truyện'), dica: T('a história', 'the story', 'la historia', 'cốt truyện') },
+      { href: 'conheca.html#egito', nome: T('Campanha', 'Campaign', 'Campaña', 'Cốt truyện'), dica: T('a história', 'the story', 'la historia', 'cốt truyện') },
       { href: 'torneio.html', nome: T('Championship', 'Championship', 'Championship', 'Championship'), dica: T('torneios e punições', 'tournaments and rules', 'torneos y castigos', 'giải đấu và luật phạt') },
       { href: 'ranking.html', nome: T('Ranking', 'Leaderboard', 'Ranking', 'Bảng xếp hạng'), dica: T('PVP e torneios, ao vivo', 'PVP and tournaments, live', 'PVP y torneos, en vivo', 'PVP và giải đấu, trực tiếp') },
       { href: 'conquistas.html', nome: T('Conquistas', 'Achievements', 'Logros', 'Thành tựu'), dica: T('tudo que dá para conquistar', 'everything to unlock', 'todo para desbloquear', 'mọi thành tựu') }
