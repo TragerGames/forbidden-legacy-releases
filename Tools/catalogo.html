@@ -163,8 +163,8 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 }
 .cat-card.r-N img  { border-color: rgba(153,153,153,.5); }
 .cat-card.r-R img  { border-color: rgba(136,170,221,.6); }
-.cat-card.r-SR img { border-color: rgba(187,136,238,.65); }
-.cat-card.r-UR img { border-color: rgba(232,184,64,.8); }
+.cat-card.r-SR img { border-color: rgba(255,154,60,.65); }
+.cat-card.r-UR img { border-color: rgba(210,123,255,.8); }
 /* Etiqueta de raridade — FORA da carta, encostada por cima da borda superior
    (igual carta_deck_builder.gd: offset_top negativo, bottom no 0 — o selo fica
    inteiro acima do card, com a base tocando a borda de cima).
@@ -240,9 +240,9 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
 .cat-modal-rarity { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; }
 .cat-modal-rarity.r-N  { color: #999;    background: rgba(153,153,153,.12); }
-.cat-modal-rarity.r-R  { color: #88aadd; background: rgba(136,170,221,.12); }
-.cat-modal-rarity.r-SR { color: #bb88ee; background: rgba(187,136,238,.12); }
-.cat-modal-rarity.r-UR { color: #e8b840; background: rgba(232,184,64,.14); }
+.cat-modal-rarity.r-R  { color: #6fa8ff; background: rgba(111,168,255,.12); }
+.cat-modal-rarity.r-SR { color: #ff9a3c; background: rgba(255,154,60,.12); }
+.cat-modal-rarity.r-UR { color: #d27bff; background: rgba(210,123,255,.14); }
 .cat-modal-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-bottom: 14px; }
 .cat-modal-fact-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-dim); }
 .cat-modal-fact-value { font-size: 13px; color: var(--text-body); display: flex; align-items: center; gap: 6px; }
@@ -506,7 +506,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 /* ═══ REFORMA VISUAL — padrao da Loja e do Championship ══════════════ */
 :root{
   --mola:cubic-bezier(.34,1.56,.64,1); --suave:cubic-bezier(.4,0,.2,1);
-  --r-n:#8c8c8c; --r-r:#88aadd; --r-sr:#bb88ee; --r-ur:#e8b840;
+  --r-n:#a3a7b3; --r-r:#6fa8ff; --r-sr:#ff9a3c; --r-ur:#d27bff;
 }
 body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
   background:radial-gradient(1200px 640px at 50% -10%, rgba(233,185,73,.10), transparent 62%)}
@@ -520,8 +520,8 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
 .cat-chip:hover{transform:translateY(-1px)}
 .cat-chip.active[data-filter-rar="N"]{border-color:var(--r-n);color:var(--r-n);background:rgba(140,140,140,.12)}
 .cat-chip.active[data-filter-rar="R"]{border-color:var(--r-r);color:var(--r-r);background:rgba(136,170,221,.12)}
-.cat-chip.active[data-filter-rar="SR"]{border-color:var(--r-sr);color:var(--r-sr);background:rgba(187,136,238,.12)}
-.cat-chip.active[data-filter-rar="UR"]{border-color:var(--r-ur);color:var(--r-ur);background:rgba(232,184,64,.14)}
+.cat-chip.active[data-filter-rar="SR"]{border-color:var(--r-sr);color:var(--r-sr);background:rgba(255,154,60,.12)}
+.cat-chip.active[data-filter-rar="UR"]{border-color:var(--r-ur);color:var(--r-ur);background:rgba(210,123,255,.14)}
 
 /* cartas da grade */
 .cat-card{
@@ -544,8 +544,8 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
 .cat-card:hover .cat-card-img-wrap{transform:translateY(-7px) scale(1.03)}
 .cat-card.r-N:hover  .cat-card-img-wrap{box-shadow:0 12px 28px rgba(140,140,140,.22)}
 .cat-card.r-R:hover  .cat-card-img-wrap{box-shadow:0 12px 28px rgba(136,170,221,.3)}
-.cat-card.r-SR:hover .cat-card-img-wrap{box-shadow:0 12px 30px rgba(187,136,238,.32)}
-.cat-card.r-UR:hover .cat-card-img-wrap{box-shadow:0 14px 32px rgba(232,184,64,.36)}
+.cat-card.r-SR:hover .cat-card-img-wrap{box-shadow:0 12px 30px rgba(255,154,60,.32)}
+.cat-card.r-UR:hover .cat-card-img-wrap{box-shadow:0 14px 32px rgba(210,123,255,.36)}
 .cat-card-name mark{background:rgba(232,184,64,.24); color:var(--gold-light); border-radius:2px; padding:0 1px}
 
 /* selos no canto da carta */
@@ -659,8 +659,9 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261112a">
 <link rel="stylesheet" href="css/site-v2.css?v=20261113a">
+<link rel="stylesheet" href="css/jogo.css?v=20261113a">
 </head>
-<body class="fl2">
+<body class="fl2 jg pg-cat">
 
 <nav id="nav">
   <a class="nav-logo" href="/" aria-label="Forbidden Legacy — página inicial">
@@ -719,7 +720,7 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
 
   <div class="cat-toolbar">
     <div class="cat-search">
-      <span class="cat-search-icon">🔍</span>
+      <span class="cat-search-icon">🔍</span><img class="jg-ico jg-lupa" src="img/ui/lupa.webp" alt="" aria-hidden="true">
       <input type="text" id="cat-search-input" data-lang-pt-placeholder="Buscar carta pelo nome…" data-lang-en-placeholder="Search card by name…" placeholder="Buscar carta pelo nome…">
     </div>
     <div class="cat-filter-row">
@@ -878,7 +879,12 @@ function isEn() { return document.body.classList.contains('en'); }
     const icones = [];
     if (c.icone_atributo) icones.push('<img src="img/atributos/' + c.icone_atributo + '.webp" alt="' + c.atributo + '" title="' + c.atributo + '" loading="lazy">');
     if (c.icone_tipo) icones.push('<img src="img/tipos/' + c.icone_tipo + '.webp" alt="' + c.tipo + '" title="' + c.tipo + '" loading="lazy">');
-    const linhaIcones = icones.length ? '<div class="cat-card-icons">' + icones.join('') + '</div>' : '';
+    const icoTipoCarta = { Spell: 'ed_magia', Trap: 'ed_armadilha', Equip: 'ed_equip', Field: 'ed_campo' }[c.card_type];
+    const nomeTipoCarta = { Spell: ['Magia', 'Spell'], Trap: ['Armadilha', 'Trap'], Equip: ['Equip', 'Equip'], Field: ['Campo', 'Field'] }[c.card_type];
+    const linhaIcones = '<div class="cat-card-meta">' + icones.join('') +
+      (icoTipoCarta && !icones.length ? '<img src="img/ui/' + icoTipoCarta + '.webp" alt="" loading="lazy">' : '') +
+      (c.atk !== undefined ? '<span class="cat-atk">' + (c.atk || '0') + '</span><span class="cat-def">' + (c.def || '0') + '</span>'
+        : (nomeTipoCarta ? '<span class="cat-tipo-txt">' + nomeTipoCarta[isEn() ? 1 : 0] + '</span>' : '')) + '</div>';
     const pastaImg = (filtroFullArt && c.full_art) ? 'img/cartas_full/' : 'img/cartas/';
     const o = window.catOrigemDe ? catOrigemDe(c.nome) : null;
     const selos =
@@ -892,8 +898,7 @@ function isEn() { return document.body.classList.contains('en'); }
           '<img src="' + pastaImg + c.slug + '.webp?v=' + versaoCache + '" alt="' + nome + '" loading="lazy" onerror="this.style.opacity=0.15">' +
           badge +
         '</div>' +
-        '<div class="cat-card-name">' + nome + '</div>' +
-        stats +
+        '<div class="cat-card-name" title="' + String(nome).replace(/"/g, '&quot;') + '">' + nome + '</div>' +
         linhaIcones +
       '</div>'
     );
@@ -1017,6 +1022,17 @@ function isEn() { return document.body.classList.contains('en'); }
   });
 
   window.__catalogoRender = render;
+
+  /* icones HD do jogo nos filtros (os mesmos do Editor de Deck) */
+  (function () {
+    const ico = { ALL: 'cartas', Monster: 'ed_espadas', Spell: 'ed_magia', Trap: 'ed_armadilha', Equip: 'ed_equip', Field: 'ed_campo' };
+    document.querySelectorAll('[data-filter-type]').forEach(b => {
+      const n = ico[b.getAttribute('data-filter-type')]; if (!n) return;
+      b.insertAdjacentHTML('afterbegin', '<img class="jg-ico" src="img/ui/' + n + '.webp" alt="" aria-hidden="true">');
+    });
+    document.querySelectorAll('[data-filter-fullart]').forEach(b => { b.textContent = b.textContent.replace('✨', '').trim(); b.insertAdjacentHTML('afterbegin', '<img class="jg-ico" src="img/ui/carta_especial.webp" alt="" aria-hidden="true">'); });
+    document.querySelectorAll('[data-filter-custom]').forEach(b => { b.textContent = b.textContent.replace('⭐', '').trim(); b.insertAdjacentHTML('afterbegin', '<img class="jg-ico" src="img/ui/stars.webp" alt="" aria-hidden="true">'); });
+  })();
 
   fetch('data/catalogo.json?t=' + Date.now())
     .then(r => r.json())
@@ -1364,7 +1380,8 @@ window.setLang = setLang;
     var itens=[['', T.cartas[L()], cartas.length]];
     ['UR','SR','R','N'].forEach(function(r){ itens.push([r,r,por[r]||0]) });
     el.innerHTML=itens.map(function(i){
-      return '<div class="cat-stat"'+(i[0]?' data-r="'+i[0]+'"':'')+'>'+
+      var selo = i[0] ? '<img class="cat-stat-selo" src="img/raridade/rarity_'+(i[0]==='N'?'C':i[0])+'.webp" alt="'+i[0]+'">' : '<img class="jg-ico" src="img/ui/livro.webp" alt="" style="width:30px;height:30px">';
+      return '<div class="cat-stat"'+(i[0]?' data-r="'+i[0]+'"':'')+'>'+ selo +
         '<div class="cat-stat-n" data-alvo="'+i[2]+'">0</div>'+
         '<div class="cat-stat-l">'+i[1]+'</div><div class="cat-stat-bar"></div></div>';
     }).join('');

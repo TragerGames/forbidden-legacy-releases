@@ -154,9 +154,9 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 .rarity-table td { font-size:13px; color:var(--text-muted); padding:7px 8px; border-bottom:1px solid rgba(255,255,255,0.06); }
 .rarity-table tr:last-child td { border-bottom:none; }
 .badge-n  { color:#999; font-weight:700; }
-.badge-r  { color:#88aadd; font-weight:700; }
-.badge-sr { color:#bb88ee; font-weight:700; }
-.badge-ur { color:#e8b840; font-weight:700; }
+.badge-r  { color:#6fa8ff; font-weight:700; }
+.badge-sr { color:#ff9a3c; font-weight:700; }
+.badge-ur { color:#d27bff; font-weight:700; }
 
 /* ── CICLO DE SOULS ── */
 .cycle-banner {
@@ -261,15 +261,15 @@ nav.scrolled { background: rgba(9,8,10,.97); border-bottom-color: var(--border);
 }
 .card-thumb.r-N img  { border-color:rgba(153,153,153,.5); }
 .card-thumb.r-R img  { border-color:rgba(136,170,221,.6); }
-.card-thumb.r-SR img { border-color:rgba(187,136,238,.65); }
-.card-thumb.r-UR img { border-color:rgba(232,184,64,.8); }
+.card-thumb.r-SR img { border-color:rgba(255,154,60,.65); }
+.card-thumb.r-UR img { border-color:rgba(210,123,255,.8); }
 .card-thumb-name { font-size:9px; color:var(--text-muted); margin-top:3px; line-height:1.25; }
 .card-thumb-stats { font-size:8px; color:var(--gold-dim); margin-top:1px; font-weight:600; }
 .card-thumb-rarity { font-size:8px; font-weight:700; letter-spacing:.5px; }
 .card-thumb.r-N  .card-thumb-rarity { color:#999; }
-.card-thumb.r-R  .card-thumb-rarity { color:#88aadd; }
-.card-thumb.r-SR .card-thumb-rarity { color:#bb88ee; }
-.card-thumb.r-UR .card-thumb-rarity { color:#e8b840; }
+.card-thumb.r-R  .card-thumb-rarity { color:#6fa8ff; }
+.card-thumb.r-SR .card-thumb-rarity { color:#ff9a3c; }
+.card-thumb.r-UR .card-thumb-rarity { color:#d27bff; }
 .booster-detail-outros {
   font-size:12px; color:var(--text-muted); line-height:1.7; border-top:1px solid var(--border); padding-top:14px;
 }
@@ -601,9 +601,9 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 .cat-modal-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--gold-light); letter-spacing: 1px; line-height: 1.15; margin-bottom: 4px; }
 .cat-modal-rarity { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; }
 .cat-modal-rarity.r-N  { color: #999;    background: rgba(153,153,153,.12); }
-.cat-modal-rarity.r-R  { color: #88aadd; background: rgba(136,170,221,.12); }
-.cat-modal-rarity.r-SR { color: #bb88ee; background: rgba(187,136,238,.12); }
-.cat-modal-rarity.r-UR { color: #e8b840; background: rgba(232,184,64,.14); }
+.cat-modal-rarity.r-R  { color: #6fa8ff; background: rgba(111,168,255,.12); }
+.cat-modal-rarity.r-SR { color: #ff9a3c; background: rgba(255,154,60,.12); }
+.cat-modal-rarity.r-UR { color: #d27bff; background: rgba(210,123,255,.14); }
 .cat-modal-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; margin-bottom: 14px; }
 .cat-modal-fact-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-dim); }
 .cat-modal-fact-value { font-size: 13px; color: var(--text-body); display: flex; align-items: center; gap: 6px; }
@@ -867,7 +867,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 /* ═══ REFORMA VISUAL — padrao da Loja e do Championship ══════════════ */
 :root{
   --mola:cubic-bezier(.34,1.56,.64,1); --suave:cubic-bezier(.4,0,.2,1);
-  --r-n:#8c8c8c; --r-r:#88aadd; --r-sr:#bb88ee; --r-ur:#e8b840;
+  --r-n:#a3a7b3; --r-r:#6fa8ff; --r-sr:#ff9a3c; --r-ur:#d27bff;
 }
 body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
   background:radial-gradient(1200px 640px at 50% -10%, rgba(233,185,73,.10), transparent 62%)}
@@ -881,8 +881,8 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
 .cat-chip:hover{transform:translateY(-1px)}
 .cat-chip.active[data-filter-rar="N"]{border-color:var(--r-n);color:var(--r-n);background:rgba(140,140,140,.12)}
 .cat-chip.active[data-filter-rar="R"]{border-color:var(--r-r);color:var(--r-r);background:rgba(136,170,221,.12)}
-.cat-chip.active[data-filter-rar="SR"]{border-color:var(--r-sr);color:var(--r-sr);background:rgba(187,136,238,.12)}
-.cat-chip.active[data-filter-rar="UR"]{border-color:var(--r-ur);color:var(--r-ur);background:rgba(232,184,64,.14)}
+.cat-chip.active[data-filter-rar="SR"]{border-color:var(--r-sr);color:var(--r-sr);background:rgba(255,154,60,.12)}
+.cat-chip.active[data-filter-rar="UR"]{border-color:var(--r-ur);color:var(--r-ur);background:rgba(210,123,255,.14)}
 
 /* cartas da grade */
 .cat-card{
@@ -905,8 +905,8 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
 .cat-card:hover .cat-card-img-wrap{transform:translateY(-7px) scale(1.03)}
 .cat-card.r-N:hover  .cat-card-img-wrap{box-shadow:0 12px 28px rgba(140,140,140,.22)}
 .cat-card.r-R:hover  .cat-card-img-wrap{box-shadow:0 12px 28px rgba(136,170,221,.3)}
-.cat-card.r-SR:hover .cat-card-img-wrap{box-shadow:0 12px 30px rgba(187,136,238,.32)}
-.cat-card.r-UR:hover .cat-card-img-wrap{box-shadow:0 14px 32px rgba(232,184,64,.36)}
+.cat-card.r-SR:hover .cat-card-img-wrap{box-shadow:0 12px 30px rgba(255,154,60,.32)}
+.cat-card.r-UR:hover .cat-card-img-wrap{box-shadow:0 14px 32px rgba(210,123,255,.36)}
 .cat-card-name mark{background:rgba(232,184,64,.24); color:var(--gold-light); border-radius:2px; padding:0 1px}
 
 /* selos no canto da carta */
