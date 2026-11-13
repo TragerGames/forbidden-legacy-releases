@@ -61,6 +61,10 @@ body.fl2 .offer-bar strong, body.fl2 .fl-n { font-family: var(--fl-tit) !importa
 /* ── menu do topo ── */
 body.fl2 nav#nav { padding: 14px 32px; background: linear-gradient(rgba(9, 8, 11, .85), rgba(9, 8, 11, 0)); border: 0; }
 body.fl2 nav#nav.scrolled { background: rgba(12, 11, 14, .82); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--fl-linha); }
+/* logo e nome levam para a pagina inicial (Trager, 2026-11-13) */
+a.nav-logo { text-decoration: none; color: inherit; border-radius: 10px; transition: opacity .15s; }
+a.nav-logo:hover { opacity: .85; }
+a.nav-logo:focus-visible { outline: 2px solid rgba(233,185,73,.6); outline-offset: 4px; }
 body.fl2 .nav-logo-fallback { font-family: var(--fl-tit) !important; letter-spacing: -.01em !important; text-transform: none !important; font-weight: 700; color: var(--fl-txt) !important; }
 body.fl2 .nav-links a, body.fl2 .nav-grupo-bt { color: rgba(255, 255, 255, .8) !important; font-weight: 600 !important; font-size: 14.5px !important; letter-spacing: 0 !important; text-transform: none !important; }
 body.fl2 .nav-links a:hover, body.fl2 .nav-grupo-bt:hover, body.fl2 .nav-grupo.aberto .nav-grupo-bt { color: #fff !important; }
