@@ -98,8 +98,14 @@ body.fl2.pg-cat .cat-selos{top:5px;left:5px}
   body.fl2.pg-cat .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px 10px !important}
   body.fl2.pg-cat .cat-toolbar{padding:12px !important}
 }
-body.fl2.pg-cat .cat-modal-rarity.r-UR{color:var(--rar-ur) !important;background:rgba(var(--rar-ur-rgb),.14) !important}
-body.fl2.pg-cat .cat-modal-rarity.r-SR{color:var(--rar-sr) !important;background:rgba(var(--rar-sr-rgb),.14) !important}
+/* janela da carta (catalogo e boosters): etiqueta de texto vira o selo HD do
+   jogo, e o selo acima da carta segue a regra do editor (borda direita) */
+body.fl2.jg .cat-modal-rarity{display:block;width:54px;height:29px;padding:0 !important;border-radius:0 !important;font-size:0 !important;color:transparent !important;
+  background:url(../img/raridade/rarity_C.webp) left center/contain no-repeat !important;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55))}
+body.fl2.jg .cat-modal-rarity.r-R{background-image:url(../img/raridade/rarity_R.webp) !important}
+body.fl2.jg .cat-modal-rarity.r-SR{background-image:url(../img/raridade/rarity_SR.webp) !important}
+body.fl2.jg .cat-modal-rarity.r-UR{background-image:url(../img/raridade/rarity_UR.webp) !important}
+body.fl2.jg .cat-modal-rarity-badge{right:0 !important;width:24% !important;max-width:40px;margin-bottom:3px !important}
 
 /* ════════ BOOSTERS = CARD SHOP ════════ */
 body.fl2.pg-bst .page-content{padding-top:26px}
@@ -125,8 +131,20 @@ body.fl2.pg-bst .booster-tile-name{font-family:var(--fl-corpo,'Manrope'),sans-se
 body.fl2.pg-bst .booster-tile-price{margin:0 -10px;padding:9px 10px 11px !important;border-top:1px solid var(--jg-linha);background:#121016;display:flex;flex-direction:column;align-items:center;gap:7px}
 body.fl2.pg-bst .bst-preco{display:inline-flex;align-items:center;gap:6px;font-family:var(--fl-tit,'Sora'),sans-serif;font-weight:700;font-size:13.5px;color:var(--jg-ouro2);letter-spacing:.02em;text-transform:uppercase}
 body.fl2.pg-bst .bst-preco img{width:18px;height:18px}
-body.fl2.pg-bst .booster-tile-event-tag{top:8px !important;left:8px !important;right:8px;text-align:center;font-size:11px !important;font-weight:800;border-radius:6px !important;background:rgba(150,26,26,.92) !important;padding:3px 6px !important}
-body.fl2.pg-bst .booster-tile-countdown span{font-size:11.5px !important;border-radius:6px !important;padding:4px 9px !important;background:rgba(20,14,10,.92) !important;color:var(--jg-ouro2) !important;border:1px solid rgba(233,185,73,.55)}
+/* placa TEMPORARIO como a do Card Shop: vinho com filete dourado */
+body.fl2.pg-bst .booster-tile-event-tag{top:7px !important;left:7px !important;right:7px;z-index:5;text-align:center;
+  font-family:var(--fl-tit,'Sora'),sans-serif !important;font-size:11px !important;font-weight:700;letter-spacing:.16em !important;line-height:1;color:#ffeccb !important;
+  padding:6px 6px 5px !important;border-radius:7px !important;border:1px solid rgba(233,185,73,.75);
+  background:linear-gradient(180deg,#a3262a 0%,#7a1519 55%,#5c0f13 100%) !important;
+  box-shadow:inset 0 1px 0 rgba(255,220,180,.28),inset 0 -1px 0 rgba(0,0,0,.35),0 4px 12px rgba(0,0,0,.6);
+  text-shadow:0 1px 2px rgba(0,0,0,.6)}
+body.fl2.pg-bst .booster-tile-countdown{left:7px;right:7px;bottom:7px}
+body.fl2.pg-bst .booster-tile-countdown span{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;
+  font-family:var(--fl-tit,'Sora'),sans-serif;font-size:11px !important;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1;
+  border-radius:7px !important;padding:6px 6px !important;color:var(--jg-ouro2) !important;
+  background:linear-gradient(180deg,rgba(38,26,16,.96),rgba(16,11,8,.96)) !important;border:1px solid rgba(233,185,73,.75);
+  box-shadow:inset 0 1px 0 rgba(255,220,160,.15),0 4px 12px rgba(0,0,0,.6) !important}
+body.fl2.pg-bst .booster-tile-countdown span::before{content:'';width:13px;height:13px;flex-shrink:0;background:url(../img/ui/ampulheta.webp) center/contain no-repeat}
 body.fl2.pg-bst .booster-tile-ribbon{font-family:var(--fl-tit,'Sora'),sans-serif !important;font-weight:700;letter-spacing:.12em !important;font-size:12.5px !important}
 /* "como funciona": recolhido, abaixo da loja */
 body.fl2.pg-bst .bst-info{background:var(--jg-painel);border:1px solid var(--jg-linha);border-radius:16px;margin-bottom:40px}

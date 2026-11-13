@@ -983,7 +983,7 @@ button.cat-tag{cursor:pointer}
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261112a">
 <link rel="stylesheet" href="css/site-v2.css?v=20261113a">
-<link rel="stylesheet" href="css/jogo.css?v=20261113d">
+<link rel="stylesheet" href="css/jogo.css?v=20261113f">
 </head>
 <body class="fl2 jg pg-bst">
 
@@ -1637,11 +1637,13 @@ function isEn() { return document.body.classList.contains('en'); }
   function tileHtml(b) {
     const nome = flCampo(b, 'nome_pt', 'nome_en', 'nome_es', 'nome_vi');
     const packImg = b.imagem || ('img/boosters/' + b.id + '.png');
-    const eventTag = b.evento
-      ? '<span class="booster-tile-event-tag">' + (isEn() ? 'LIMITED' : 'TEMPORÁRIO') + '</span>'
-      : '';
     const dyn = dynamicState(b);
     const ribbon = dyn ? dyn.ribbon : RIBBON_OVERRIDES[b.id];
+    /* etiqueta so' no temporario que esta' a venda: encerrado e EM BREVE ja'
+       tem a faixa deles (antes a etiqueta ficava escondida atras da faixa) */
+    const eventTag = (b.evento && !ribbon)
+      ? '<span class="booster-tile-event-tag">' + ({en:'LIMITED',es:'TEMPORAL',vi:'GIỚI HẠN'}[document.documentElement.getAttribute('data-lang-ativo')] || 'TEMPORÁRIO') + '</span>'
+      : '';
     const locked = dyn ? dyn.locked : !!(ribbon && ribbon.bloqueado);
     const ribbonHtml = ribbon
       ? '<div class="booster-tile-ribbon ' + ribbon.classe + '">' + (isEn() ? ribbon.texto_en : ribbon.texto_pt) + '</div>'
