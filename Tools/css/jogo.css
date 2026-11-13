@@ -97,3 +97,50 @@ body.fl2.pg-cat .cat-selos{top:5px;left:5px}
 }
 body.fl2.pg-cat .cat-modal-rarity.r-UR{color:var(--rar-ur) !important;background:rgba(var(--rar-ur-rgb),.14) !important}
 body.fl2.pg-cat .cat-modal-rarity.r-SR{color:var(--rar-sr) !important;background:rgba(var(--rar-sr-rgb),.14) !important}
+
+/* ════════ BOOSTERS = CARD SHOP ════════ */
+body.fl2.pg-bst .page-content{padding-top:26px}
+body.fl2.pg-bst .bst-loja{background:linear-gradient(180deg,#141218,#0e0d11);border:1px solid rgba(233,185,73,.35);border-radius:18px;padding:16px 18px 20px;
+  box-shadow:0 20px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,230,160,.06);margin-bottom:22px}
+body.fl2.pg-bst .bst-loja-topo{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+body.fl2.pg-bst .bst-loja-tit{display:flex;align-items:center;gap:10px;padding:8px 18px 8px 12px;border-radius:12px;background:rgba(233,185,73,.12);border:1px solid rgba(233,185,73,.55);
+  font-family:var(--fl-tit,'Sora'),sans-serif;font-weight:700;font-size:17px;color:var(--jg-ouro2)}
+body.fl2.pg-bst .bst-loja-tit .jg-ico{width:26px;height:26px}
+body.fl2.pg-bst .bst-loja-dica{flex:1;min-width:240px;display:flex;align-items:center;gap:10px;font-size:14px;line-height:1.5;color:var(--fl-txt2,#c9c3b8)}
+body.fl2.pg-bst .bst-loja-dica .jg-ico{width:24px;height:24px}
+body.fl2.pg-bst #booster-browser{opacity:1 !important;transform:none !important}
+body.fl2.pg-bst .booster-tiles-grid{grid-template-columns:repeat(auto-fill,minmax(178px,1fr)) !important;gap:16px !important}
+body.fl2.pg-bst .booster-tile{background:#0b0a0e !important;border:1px solid var(--jg-linha2) !important;border-radius:14px !important;padding:10px 10px 0;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.6);transition:border-color .2s,transform .25s,box-shadow .25s !important}
+body.fl2.pg-bst .booster-tile:hover{border-color:rgba(233,185,73,.8) !important;box-shadow:0 12px 30px rgba(0,0,0,.5),0 0 0 1px rgba(233,185,73,.4) !important}
+body.fl2.pg-bst .booster-tile.active{border-color:var(--jg-ouro) !important;box-shadow:0 0 0 2px rgba(233,185,73,.6),0 0 26px rgba(233,185,73,.25) !important}
+body.fl2.pg-bst .booster-tile-media{border-radius:8px;overflow:hidden}
+body.fl2.pg-bst .booster-tile-img{aspect-ratio:auto !important;height:auto !important;object-fit:contain !important;background:transparent !important}
+body.fl2.pg-bst .booster-tile-name{font-family:var(--fl-corpo,'Manrope'),sans-serif;font-size:14px !important;font-weight:700;color:var(--fl-txt,#f4f1ea) !important;padding:10px 4px 6px !important;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* preco no quadro de baixo, como o "0/250 SOULS" do Card Shop */
+body.fl2.pg-bst .booster-tile-price{margin:0 -10px;padding:9px 10px 11px !important;border-top:1px solid var(--jg-linha);background:#121016;display:flex;flex-direction:column;align-items:center;gap:7px}
+body.fl2.pg-bst .bst-preco{display:inline-flex;align-items:center;gap:6px;font-family:var(--fl-tit,'Sora'),sans-serif;font-weight:700;font-size:13.5px;color:var(--jg-ouro2);letter-spacing:.02em;text-transform:uppercase}
+body.fl2.pg-bst .bst-preco img{width:18px;height:18px}
+body.fl2.pg-bst .booster-tile-event-tag{top:8px !important;left:8px !important;right:8px;text-align:center;font-size:11px !important;font-weight:800;border-radius:6px !important;background:rgba(150,26,26,.92) !important;padding:3px 6px !important}
+body.fl2.pg-bst .booster-tile-countdown span{font-size:11.5px !important;border-radius:6px !important;padding:4px 9px !important;background:rgba(20,14,10,.92) !important;color:var(--jg-ouro2) !important;border:1px solid rgba(233,185,73,.55)}
+body.fl2.pg-bst .booster-tile-ribbon{font-family:var(--fl-tit,'Sora'),sans-serif !important;font-weight:700;letter-spacing:.12em !important;font-size:12.5px !important}
+/* "como funciona": recolhido, abaixo da loja */
+body.fl2.pg-bst .bst-info{background:var(--jg-painel);border:1px solid var(--jg-linha);border-radius:16px;margin-bottom:40px}
+body.fl2.pg-bst .bst-info>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 20px;font-family:var(--fl-tit,'Sora'),sans-serif;font-weight:700;font-size:16px;color:var(--fl-txt,#f4f1ea)}
+body.fl2.pg-bst .bst-info>summary::-webkit-details-marker{display:none}
+body.fl2.pg-bst .bst-info>summary::after{content:'';margin-left:auto;width:9px;height:9px;border-right:2px solid var(--jg-ouro);border-bottom:2px solid var(--jg-ouro);transform:rotate(45deg);transition:transform .2s}
+body.fl2.pg-bst .bst-info[open]>summary::after{transform:rotate(-135deg)}
+body.fl2.pg-bst .bst-info>summary small{font-family:var(--fl-corpo,'Manrope'),sans-serif;font-weight:500;font-size:13px;color:var(--fl-txt3,#9a948a)}
+body.fl2.pg-bst .bst-info>summary .jg-ico{width:26px;height:26px}
+body.fl2.pg-bst .bst-info-corpo{padding:0 18px 18px}
+body.fl2.pg-bst .bst-info-corpo [data-reveal]{opacity:1 !important;transform:none !important}
+@media (max-width:620px){
+  body.fl2.pg-bst .bst-loja{padding:12px;border-radius:14px}
+  body.fl2.pg-bst .booster-tiles-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important}
+  body.fl2.pg-bst .bst-loja-dica{font-size:13px}
+  body.fl2.pg-bst .booster-tile-name{font-size:13px !important}
+}
+/* selo HD da raridade no painel do booster */
+body.fl2.pg-bst .card-thumb-rarity{line-height:0;margin-top:4px}
+body.fl2.pg-bst .card-thumb .card-thumb-rarity img{height:16px!important;width:30px!important;aspect-ratio:auto!important;object-fit:contain;border:0!important;border-radius:0!important;box-shadow:none!important;display:inline-block;margin:0!important}

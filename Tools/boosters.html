@@ -983,8 +983,9 @@ button.cat-tag{cursor:pointer}
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261112a">
 <link rel="stylesheet" href="css/site-v2.css?v=20261113a">
+<link rel="stylesheet" href="css/jogo.css?v=20261113a">
 </head>
-<body class="fl2">
+<body class="fl2 jg pg-bst">
 
 <nav id="nav">
   <a class="nav-logo" href="/" aria-label="Forbidden Legacy — página inicial">
@@ -1039,6 +1040,24 @@ button.cat-tag{cursor:pointer}
 <!-- CONTEÚDO -->
 <div class="page-content">
 
+  <!-- Loja de boosters primeiro, como o Card Shop do jogo (Trager, 2026-11-13) -->
+  <section class="bst-loja" aria-label="Boosters">
+    <div class="bst-loja-topo">
+      <div class="bst-loja-tit"><img class="jg-ico" src="img/ui/pacote.webp" alt="" aria-hidden="true"><span data-lang="pt">Boosters</span><span data-lang="en">Boosters</span><span data-lang="es">Boosters</span><span data-lang="vi">Booster</span></div>
+      <div class="bst-loja-dica"><img class="jg-ico" src="img/ui/souls.webp" alt="" aria-hidden="true"><span data-lang="pt">Escolha um booster e abasteça com Souls no Card Shop do jogo. Clique num pacote para ver as cartas que podem sair.</span><span data-lang="en">Pick a booster and fill it with Souls in the in-game Card Shop. Click a pack to see the cards it can drop.</span><span data-lang="es">Elige un booster y llénalo con Souls en el Card Shop del juego. Haz clic en un sobre para ver las cartas que pueden salir.</span><span data-lang="vi">Chọn một booster và nạp Souls trong Card Shop của trò chơi. Nhấn vào một gói để xem các thẻ có thể ra.</span></div>
+    </div>
+  <div id="booster-browser" class="reveal" data-reveal>
+    <div id="booster-tiles" class="booster-tiles-grid">
+      <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="pt">Carregando boosters…</div>
+      <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="en">Loading boosters…</div><div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="es">Cargando boosters…</div><div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="vi">Đang tải booster…</div>
+    </div>
+    <div id="booster-detail" class="booster-detail-panel" style="display:none"></div>
+  </div>
+  </section>
+
+  <details class="bst-info">
+    <summary><img class="jg-ico" src="img/ui/pergaminho.webp" alt="" aria-hidden="true"><span class="bst-info-t"><span data-lang="pt">Como funcionam os boosters</span><span data-lang="en">How boosters work</span><span data-lang="es">Cómo funcionan los boosters</span><span data-lang="vi">Booster hoạt động thế nào</span></span><small><span data-lang="pt">preço, cartas por abertura, chances de raridade e Souls</span><span data-lang="en">price, cards per opening, rarity odds and Souls</span><span data-lang="es">precio, cartas por apertura, probabilidades y Souls</span><span data-lang="vi">giá, số thẻ mỗi lần mở, tỉ lệ độ hiếm và Souls</span></small></summary>
+    <div class="bst-info-corpo">
   <div class="features-grid reveal" data-reveal>
 
     <div class="feature-card">
@@ -1234,24 +1253,9 @@ button.cat-tag{cursor:pointer}
 
   </div>
 
-  <div class="section-label" style="margin-top:56px" data-lang="pt">Explore o Conteúdo</div>
-  <div class="section-label" style="margin-top:56px" data-lang="en">Explore the Contents</div><div class="section-label" style="margin-top:56px" data-lang="es">Explora el Contenido</div><div class="section-label" style="margin-top:56px" data-lang="vi">Khám phá nội dung</div>
-  <div class="section-title" data-lang="pt">O Que Vem em Cada Booster</div>
-  <div class="section-title" data-lang="en">What's Inside Each Booster</div><div class="section-title" data-lang="es">Qué Trae Cada Booster</div><div class="section-title" data-lang="vi">Mỗi Booster có gì</div>
-  <p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="pt">
-    Clique em um pacote para ver as cartas do tipo-tema que podem sair nele. As demais cartas de cada abertura são sorteadas aleatoriamente entre <strong style="color:var(--gold-light)">todo o catálogo</strong> de Forbidden Legacy — outros tipos de monstro, magias, armadilhas, equipamentos e campos.
-  </p>
-  <p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="en">
-    Click a pack to see the theme-type cards that can drop from it. The rest of each opening is drawn randomly from <strong style="color:var(--gold-light)">the entire Forbidden Legacy catalog</strong> — other monster types, spells, traps, equips and fields.
-  </p><p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="es">Haz clic en un paquete para ver las cartas del tipo-tema que pueden salir en él. Las demás cartas de cada apertura se sortean al azar entre <strong style="color:var(--gold-light)">todo el catálogo</strong> de Forbidden Legacy — otros tipos de monstruo, magias, trampas, equipos y campos.</p><p style="max-width:680px;margin:-20px auto 32px;text-align:center;font-size:13px;color:var(--text-muted);line-height:1.7" data-lang="vi">Nhấn vào một gói để xem các thẻ theo chủ đề có thể xuất hiện. Những thẻ còn lại của mỗi lần mở được rút ngẫu nhiên từ <strong style="color:var(--gold-light)">toàn bộ danh mục</strong> của Forbidden Legacy — các loại quái thú khác, phép, bẫy, trang bị và sân.</p>
-
-  <div id="booster-browser" class="reveal" data-reveal>
-    <div id="booster-tiles" class="booster-tiles-grid">
-      <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="pt">Carregando boosters…</div>
-      <div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="en">Loading boosters…</div><div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="es">Cargando boosters…</div><div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)" data-lang="vi">Đang tải booster…</div>
     </div>
-    <div id="booster-detail" class="booster-detail-panel" style="display:none"></div>
-  </div>
+  </details>
+
 
 <!-- MODAL DE CARTA -->
 <button class="cat-nav ant" id="cat-nav-ant" onclick="catNavega(-1)" aria-label="Anterior" style="display:none">‹</button>
@@ -1656,7 +1660,7 @@ function isEn() { return document.body.classList.contains('en'); }
           countdownHtml +
         '</div>' +
         '<div class="booster-tile-name">' + nome + '</div>' +
-        '<div class="booster-tile-price">' + b.custo_souls + ' Souls</div>' +
+        '<div class="booster-tile-price"><span class="bst-preco"><img src="img/ui/souls.webp" alt="" aria-hidden="true">' + b.custo_souls + ' Souls</span></div>' +
       '</div>'
     );
   }
@@ -1707,7 +1711,7 @@ function isEn() { return document.body.classList.contains('en'); }
           'onerror="this.style.opacity=0.15">' +
         '<div class="card-thumb-name">' + c.nome + '</div>' +
         stats +
-        '<div class="card-thumb-rarity">' + c.raridade + '</div>' +
+        '<div class="card-thumb-rarity"><img src="img/raridade/rarity_' + (c.raridade_arquivo || (c.raridade === 'N' ? 'C' : c.raridade)) + '.webp" alt="' + c.raridade + '"></div>' +
       '</div>'
     );
   }
