@@ -100,7 +100,7 @@ body.fl2.pg-cat .cat-selos{top:5px;left:5px}
 }
 /* janela da carta (catalogo e boosters): etiqueta de texto vira o selo HD do
    jogo, e o selo acima da carta segue a regra do editor (borda direita) */
-body.fl2.jg .cat-modal-rarity{display:block;width:54px;height:29px;padding:0 !important;border-radius:0 !important;font-size:0 !important;color:transparent !important;
+body.fl2.jg .cat-modal-rarity{display:block;width:36px;height:19px;margin:2px 0 12px !important;padding:0 !important;border-radius:0 !important;font-size:0 !important;color:transparent !important;
   background:url(../img/raridade/rarity_C.webp) left center/contain no-repeat !important;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55))}
 body.fl2.jg .cat-modal-rarity.r-R{background-image:url(../img/raridade/rarity_R.webp) !important}
 body.fl2.jg .cat-modal-rarity.r-SR{background-image:url(../img/raridade/rarity_SR.webp) !important}
