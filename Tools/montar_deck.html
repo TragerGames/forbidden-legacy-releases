@@ -662,8 +662,9 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261112a">
 <link rel="stylesheet" href="css/site-v2.css?v=20261113a">
+<link rel="stylesheet" href="css/jogo.css?v=20261113b">
 </head>
-<body class="fl2">
+<body class="fl2 jg pg-deck">
 
 <nav id="nav">
   <a class="nav-logo" href="/" aria-label="Forbidden Legacy — página inicial">
@@ -724,8 +725,9 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 
   <!-- ── CATALOGO ─────────────────────────────────────────────────── -->
   <div class="painel">
+    <div class="pn-cab"><img class="jg-ico" src="img/ui/ed_livro.webp" alt="" aria-hidden="true"><div><div class="pn-tit"><span data-lang="pt">Catálogo de cartas</span><span data-lang="en">Card catalog</span><span data-lang="es">Catálogo de cartas</span><span data-lang="vi">Danh mục thẻ</span></div><div class="pn-sub"><span data-lang="pt">organize, filtre e envie cartas ao deck</span><span data-lang="en">sort, filter and send cards to the deck</span><span data-lang="es">ordena, filtra y envía cartas al mazo</span><span data-lang="vi">sắp xếp, lọc và thêm thẻ vào bộ bài</span></div></div></div>
     <div class="busca">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <img class="jg-ico" src="img/ui/lupa.webp" alt="" aria-hidden="true">
       <input id="q" type="text" autocomplete="off" placeholder="Buscar carta pelo nome…">
     </div>
     <div class="ferramentas">
@@ -735,7 +737,9 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
       </div>
       <select id="f-ban"></select>
     </div>
+    <div class="ordem" id="ordem"></div>
     <div class="chips" id="chips"></div>
+    <div class="racas" id="racas"></div>
     <div class="lista" id="cat"></div>
   </div>
 
@@ -747,6 +751,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 
   <!-- ── COFRE DO DECK ────────────────────────────────────────────── -->
   <div class="painel deck" id="deck-painel">
+    <div class="pn-cab"><img class="jg-ico" src="img/ui/ed_bau.webp" alt="" aria-hidden="true"><div><div class="cofre-tit"><span data-lang="pt">Cofre do Deck</span><span data-lang="en">Deck Vault</span><span data-lang="es">Cofre del Mazo</span><span data-lang="vi">Kho bộ bài</span></div><div class="cofre-sub"><span data-lang="pt">cartas montadas para duelo</span><span data-lang="en">cards ready for the duel</span><span data-lang="es">cartas listas para el duelo</span><span data-lang="vi">thẻ sẵn sàng cho trận đấu</span></div></div></div>
     <div class="deck-topo">
       <div class="deck-cont"><span id="n">0</span><small>/40</small></div>
       <div class="deck-barra"><div class="deck-fill" id="fill"></div></div>
@@ -755,29 +760,27 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     <div class="mste" id="mste"></div>
     <div class="grupos" id="grupos"></div>
 
+    <div class="deck-lista" id="dlista"></div>
     <div class="fus" id="fus">
       <button class="btn fantasma" id="fus-btn" type="button"><span data-lang="pt">Ver fusões do deck</span><span data-lang="en">See deck fusions</span><span data-lang="es">Ver fusiones del mazo</span><span data-lang="vi">Xem dung hợp của bộ bài</span></button>
       <div class="fus-corpo" id="fus-corpo"></div>
     </div>
 
-    <div class="cofre-tit"><span data-lang="pt">Cofre do Deck</span><span data-lang="en">Deck Vault</span><span data-lang="es">Cofre del Mazo</span><span data-lang="vi">Kho bộ bài</span></div>
-    <div class="cofre-sub"><span data-lang="pt">cartas montadas para duelo</span><span data-lang="en">cards ready for the duel</span><span data-lang="es">cartas listas para el duelo</span><span data-lang="vi">thẻ sẵn sàng cho trận đấu</span></div>
-    <div class="deck-lista" id="dlista"></div>
 
-    <button class="btn travado" id="gerar" disabled><span data-lang="pt">Gerar código do deck</span><span data-lang="en">Generate deck code</span><span data-lang="es">Generar código del mazo</span><span data-lang="vi">Tạo mã bộ bài</span></button>
+    <button class="btn travado" id="gerar" disabled><img class="jg-ico" src="img/ui/chave.webp" alt="" aria-hidden="true"><span data-lang="pt">Gerar código do deck</span><span data-lang="en">Generate deck code</span><span data-lang="es">Generar código del mazo</span><span data-lang="vi">Tạo mã bộ bài</span></button>
     <div class="aviso-breve">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.2v.1"/></svg>
       <div><div data-lang="pt">Gere o código e copie. No jogo, abra o <b>Editor de Deck</b> e clique em <b>CÓDIGO</b>, ao lado de BANLIST. Esse botão chega na <b>próxima atualização do jogo</b> — e o código que você gerar hoje continua valendo depois dela.</div><div data-lang="en">Generate the code and copy it. In the game, open the <b>Deck Editor</b> and click <b>DECK CODE</b>, next to BANLIST. That button arrives in the <b>next game update</b> — and the code you generate today keeps working after it.</div><div data-lang="es">Genera el código y cópialo. En el juego, abre el <b>Editor de Mazos</b> y pulsa <b>CÓDIGO</b>, junto a BANLIST. Ese botón llega en la <b>próxima actualización del juego</b> — y el código que generes hoy sigue valiendo después.</div><div data-lang="vi">Tạo mã và sao chép. Trong trò chơi, mở <b>Trình sửa bộ bài</b> và bấm <b>MÃ BỘ BÀI</b>, cạnh BANLIST. Nút đó sẽ có trong <b>bản cập nhật tới của trò chơi</b> — và mã bạn tạo hôm nay vẫn dùng được sau đó.</div></div>
     </div>
 
     <div class="btn-linha">
-      <button class="btn fantasma" id="importar"><span data-lang="pt">Carregar código</span><span data-lang="en">Load code</span><span data-lang="es">Cargar código</span><span data-lang="vi">Tải mã</span></button>
-      <button class="btn fantasma" id="imagem"><span data-lang="pt">Baixar imagem</span><span data-lang="en">Download image</span><span data-lang="es">Descargar imagen</span><span data-lang="vi">Tải ảnh</span></button>
-      <button class="btn fantasma" id="limpar"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span><span data-lang="es">Limpiar</span><span data-lang="vi">Xóa</span></button>
+      <button class="btn fantasma" id="importar"><img class="jg-ico" src="img/ui/pergaminho.webp" alt="" aria-hidden="true"><span data-lang="pt">Carregar código</span><span data-lang="en">Load code</span><span data-lang="es">Cargar código</span><span data-lang="vi">Tải mã</span></button>
+      <button class="btn fantasma" id="imagem"><img class="jg-ico" src="img/ui/download.webp" alt="" aria-hidden="true"><span data-lang="pt">Baixar imagem</span><span data-lang="en">Download image</span><span data-lang="es">Descargar imagen</span><span data-lang="vi">Tải ảnh</span></button>
+      <button class="btn fantasma" id="limpar"><img class="jg-ico" src="img/ui/lixeira.webp" alt="" aria-hidden="true"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span><span data-lang="es">Limpiar</span><span data-lang="vi">Xóa</span></button>
     </div>
 
     <div class="salvos">
-      <div class="salvos-tit"><span data-lang="pt">Meus decks</span><span data-lang="en">My decks</span><span data-lang="es">Mis mazos</span><span data-lang="vi">Bộ bài của tôi</span> <span id="salvos-qtd"></span></div>
+      <div class="salvos-tit"><img class="jg-ico" src="img/ui/escudo_salvo.webp" alt="" aria-hidden="true"><span data-lang="pt">Meus decks</span><span data-lang="en">My decks</span><span data-lang="es">Mis mazos</span><span data-lang="vi">Bộ bài của tôi</span> <span id="salvos-qtd"></span></div>
       <div id="salvos-lista"></div>
       <div class="salvar-linha">
         <input id="salvar-nome" type="text" maxlength="40" placeholder="Nome do deck">
@@ -843,7 +846,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
    Porte do modelo aprovado. Catalogo em linhas, Altar da Carta ao lado e
    Cofre em grade, com a banlist do jogo valendo aqui. */
 let CARTAS=[], IDS={}, POR_ID={}, BAN={limite_padrao:3,grupos:{},cartas:{}};
-let deck=[], filtro={rar:'',cat:''}, busca='', modo='gerar';
+let deck=[], filtro={rar:'',cat:'',raca:''}, busca='', modo='gerar', ordem='nome';
 let modoBusca='nome', filtroBan='', cartaNoAltar=null;
 /* so anima quando o CONJUNTO visivel muda; redesenho por clique no
    deck reaproveita a lista parada */
@@ -957,7 +960,12 @@ const T={
   fusCarregando:['Calculando fusões…','Calculating fusions…','Calculando fusiones…','Đang tính dung hợp…'],
   fusErro:['Não foi possível carregar as fusões agora.','Could not load the fusions right now.',
            'No se pudieron cargar las fusiones ahora.','Hiện không tải được dữ liệu dung hợp.'],
-  fusOcultar:['Ocultar fusões','Hide fusions','Ocultar fusiones','Ẩn dung hợp']
+  fusOcultar:['Ocultar fusões','Hide fusions','Ocultar fusiones','Ẩn dung hợp'],
+  efeitoRot:['EFEITO:','EFFECT:','EFECTO:','HIỆU ỨNG:'],
+  nome:['Nome','Name','Nombre','Tên'],
+  todosTipos:['Todos','All','Todos','Tất cả'],
+  nivel:['Nível','Level','Nivel','Cấp'],
+  copiasDeck:['Cópias no deck','Copies in the deck','Copias en el mazo','Số bản trong bộ bài']
 };
 function t(k){ return T[k][IL()]; }
 
@@ -1052,18 +1060,70 @@ function montarFiltroBanlist(){
   sel.onchange=()=>{ filtroBan=sel.value; sel.classList.toggle('ativo',!!filtroBan); renderNovo(); };
 }
 
+/* Icones HD do jogo (img/ui, gerados pelos mesmos scripts do editor de deck).
+   Familia de cada grupo da banlist = EditorDeckArte.FAMILIA_DO_GRUPO. */
+const ICO_CAT={Monster:'ed_espadas',Spell:'ed_magia',Trap:'ed_armadilha',Equip:'ed_equip',Field:'ed_campo'};
+const FAM_GRUPO={divine_beast:'divino',wicked_god:'divino',triple_attack:'ataque',multi_attack:'ataque',
+  direct_attack:'ataque',piercing_pressure:'ataque',burn_direct:'burn',burn_recurring:'burn',burn_conditional:'burn',
+  burn_on_kill:'burn',board_wipe:'remocao',backrow:'remocao',remocao_alvo:'remocao',remocao_aleatoria:'remocao',
+  remocao_recorrente:'remocao',punicao_atacante:'remocao',bounce_shuffle:'remocao',mill_oponente:'remocao',
+  debuff_alvo:'remocao',imune_a_efeito:'protecao',intocavel_absoluto:'protecao',indestrutivel_batalha:'protecao',
+  sem_dano_de_batalha:'protecao',protege_equipe:'protecao',spell_negation:'trava',attack_negation:'trava',
+  attacker_lock:'trava',explosive_equip:'forca',equip_enabler_monster:'forca',self_escala_arquetipo:'forca',
+  self_escala_mao:'forca',self_snowball_batalha:'forca',buff_equip_alto:'forca',buff_aura_alta_mon:'forca',
+  buff_equip_medio:'forca',buff_aura_media:'forca',acel_busca:'acel',acel_reposicao:'acel',acel_revival:'acel',
+  lp_recovery:'vida',exodia_piece:'especial',custom_monster:'especial',custom_support:'especial'};
+function famGrupo(id){
+  if(FAM_GRUPO[id]) return FAM_GRUPO[id];
+  const p={burn:'burn',acel:'acel',buff:'forca',self:'forca',remocao:'remocao'};
+  for(const k in p) if(String(id).indexOf(k)===0) return p[k];
+  return 'especial';
+}
+const icoUI=(n,cls)=>'<img class="'+(cls||'jg-ico')+'" src="img/ui/'+n+'.webp" alt="" aria-hidden="true">';
+const seloRar=r=>'img/raridade/rarity_'+(r==='N'?'C':r)+'.webp';
+const RANK_RAR={UR:0,SR:1,R:2,N:3};
+
 function chips(){
   const el=document.getElementById('chips'); el.innerHTML='';
-  const add=(campo,v,rot)=>{
+  const add=(campo,v,html,tit)=>{
     const b=document.createElement('button');
-    b.className='chip'+(filtro[campo]===v?' on':'');
+    b.type='button';
+    b.className='chip'+(filtro[campo]===v?' on':'')+(campo==='rar'&&v?' chip-rar':'');
     if(campo==='rar'&&v) b.dataset.r=v;
-    b.textContent=rot;
+    b.innerHTML=html; if(tit) b.title=tit;
     b.onclick=()=>{ filtro[campo]=filtro[campo]===v?'':v; chips(); renderNovo(); };
     el.appendChild(b);
   };
-  add('rar','',t('todas')); ['UR','SR','R','N'].forEach(r=>add('rar',r,r));
-  ['Monster','Spell','Trap','Equip','Field'].forEach(v=>add('cat',v,t(v)));
+  ['UR','SR','R','N'].forEach(r=>add('rar',r,'<img class="chip-selo" src="'+seloRar(r)+'" alt="'+r+'">',r));
+  ['Monster','Spell','Trap','Equip','Field'].forEach(v=>add('cat',v,icoUI(ICO_CAT[v])+'<span>'+t(v)+'</span>'));
+
+  /* ordem, como os botoes NOME / ATK / DEF do editor do jogo */
+  const O=document.getElementById('ordem'); O.innerHTML='';
+  [['nome',t('nome')],['atk','ATK'],['def','DEF'],['nivel',t('nivel')]].forEach(([k,rot])=>{
+    const b=document.createElement('button'); b.type='button';
+    b.className='ord'+(ordem===k?' on':''); b.textContent=rot;
+    b.onclick=()=>{ ordem=k; chips(); renderNovo(); };
+    O.appendChild(b);
+  });
+
+  /* fileira de racas com os icones do jogo */
+  const R=document.getElementById('racas'); R.innerHTML='';
+  const vistos={};
+  CARTAS.forEach(c=>{ if(c.card_type==='Monster'&&c.icone_tipo&&!vistos[c.icone_tipo]) vistos[c.icone_tipo]=c.tipo||c.icone_tipo; });
+  const todos=document.createElement('button'); todos.type='button';
+  todos.className='raca todos'+(filtro.raca===''?' on':''); todos.textContent=t('todosTipos');
+  todos.onclick=()=>{ filtro.raca=''; chips(); renderNovo(); };
+  R.appendChild(todos);
+  if(!R.dataset.roda){ R.dataset.roda='1';
+    /* roda do mouse anda para o lado na fileira de racas */
+    R.addEventListener('wheel',e=>{ if(Math.abs(e.deltaY)>Math.abs(e.deltaX)&&R.scrollWidth>R.clientWidth){ R.scrollLeft+=e.deltaY; e.preventDefault(); } },{passive:false}); }
+  Object.keys(vistos).sort().forEach(k=>{
+    const b=document.createElement('button'); b.type='button';
+    b.className='raca'+(filtro.raca===k?' on':''); b.title=vistos[k];
+    b.innerHTML='<img src="img/tipos/'+k+'.webp" alt="'+vistos[k]+'" loading="lazy">';
+    b.onclick=()=>{ filtro.raca=filtro.raca===k?'':k; if(filtro.raca&&filtro.cat&&filtro.cat!=='Monster') filtro.cat=''; chips(); renderNovo(); };
+    R.appendChild(b);
+  });
 }
 
 function render(){
@@ -1085,8 +1145,14 @@ function render(){
     }
     if(filtro.rar && (c.raridade||'N').toUpperCase()!==filtro.rar) return false;
     if(filtro.cat && c.card_type!==filtro.cat) return false;
+    if(filtro.raca && (c.card_type!=='Monster' || c.icone_tipo!==filtro.raca)) return false;
     return true;
-  }).slice(0,120);
+  });
+  if(ordem!=='nome'){
+    const v=c=>c.card_type==='Monster'?Number(ordem==='nivel'?c.nivel:c[ordem])||0:-1;
+    lista.sort((a,b)=>v(b)-v(a)||String(a.nome_pt||a.nome).localeCompare(String(b.nome_pt||b.nome)));
+  }
+  lista.splice(120);
   el.innerHTML='';
   const CORES={N:'var(--r-n)',R:'var(--r-r)',SR:'var(--r-sr)',UR:'var(--r-ur)'};
   lista.forEach((c,i)=>{
@@ -1105,8 +1171,11 @@ function render(){
     const nomeHTML=iN>=0
       ? nomeTxt.slice(0,iN)+'<mark>'+nomeTxt.slice(iN,iN+busca.length)+'</mark>'+nomeTxt.slice(iN+busca.length)
       : nomeTxt;
-    b.innerHTML='<span class="row-nome">'+nomeHTML+'</span>'+
-      '<span class="col-rar" style="color:'+CORES[r]+'">'+r+'</span>'+
+    const selo=(lim===1||lim===2)?'<img class="row-lim" src="img/ui/selos/limite_'+lim+'.webp" alt="'+lim+'" title="'+t('limite')+' '+lim+'">':'<span class="row-lim"></span>';
+    const icoA=c.icone_atributo?'<img src="img/atributos/'+c.icone_atributo+'.webp" alt="" title="'+(c.atributo||'')+'" loading="lazy">':'<i></i>';
+    const icoT=c.icone_tipo?'<img src="img/tipos/'+c.icone_tipo+'.webp" alt="" title="'+(c.tipo||'')+'" loading="lazy">':'<i></i>';
+    b.innerHTML=selo+'<span class="row-nome">'+nomeHTML+'</span>'+
+      '<span class="col-ico">'+icoA+icoT+'</span>'+
       (()=>{
         const ef=String(c['desc_'+L]||c.desc_pt||'');
         const p=busca?ef.toLowerCase().indexOf(busca):-1;
@@ -1116,11 +1185,13 @@ function render(){
           return '<span class="col-stat efeito" title="'+ef.replace(/"/g,'&quot;')+'">…'+
                  ef.slice(a,p+busca.length+14)+'…</span>';
         }
-        return '<span class="col-stat">'+(c.card_type==='Monster'?c.atk+'/'+c.def:(T[c.card_type]?t(c.card_type):c.card_type))+'</span>';
+        return c.card_type==='Monster'
+          ? '<span class="col-stat"><b class="s-atk">'+c.atk+'</b><b class="s-def">'+c.def+'</b></span>'
+          : '<span class="col-stat sup" title="'+(T[c.card_type]?t(c.card_type):c.card_type)+'">'+(ICO_CAT[c.card_type]?icoUI(ICO_CAT[c.card_type]):'')+'</span>';
       })()+
       '<span class="col-ban">'+(gs.length
-        ? '<i style="color:'+(gs[0].cor||'var(--gold)')+'">'+limiteDoGrupo(gs[0],chaveGrupo(gs[0],c.nome))+'</i>' : '')+'</span>'+
-      '<span class="row-q'+(q>=lim?' cheio':(q?'':' zero'))+'">'+q+'<small>/'+lim+'</small></span>';
+        ? '<img src="img/ui/ed_ban_'+famGrupo(gs[0].id)+'.webp" alt=""><i style="color:'+(gs[0].cor||'var(--gold)')+'">'+limiteDoGrupo(gs[0],chaveGrupo(gs[0],c.nome))+'</i>' : '')+'</span>'+
+      '<span class="row-q'+(q>=lim?' cheio':(q?'':' zero'))+'">'+icoUI('ed_deck','row-q-ico')+q+'<small>/'+lim+'</small></span>';
     b.onclick=()=>adicionar(c);
     b.onmouseenter=()=>mostrarAltar(c);
     b.onfocus=()=>mostrarAltar(c);
@@ -1142,19 +1213,30 @@ function mostrarAltar(c){
   const L=LG(), desc=(c['desc_'+L]||c.desc_pt||'').trim();
   const gs=gruposDe(c.nome), lim=limiteIndividual(c.nome);
   const noDeck=deck.filter(x=>x===c.nome).length, cont=contagemGrupos(deck);
+  const r=(c.raridade||'N').toUpperCase();
+  let descHTML=desc;
+  const pre=/^(EFEITO|EFFECT|EFECTO|HIỆU ỨNG)\s*:\s*/i.exec(desc);
+  descHTML='<b>'+(pre?pre[1].toUpperCase()+':':t('efeitoRot'))+'</b> '+(pre?desc.slice(pre[0].length):desc);
   document.getElementById('altar').innerHTML=
-    '<div class="altar-arte"><img src="img/cartas_grande/'+c.slug+'.webp" alt=""></div>'+
-    '<div class="altar-nome">'+(c.nome_pt||c.nome)+'</div>'+
-    '<div class="altar-sub">'+(c.tipo||c.card_type||'').toLowerCase()+(c.atributo?' · '+c.atributo:'')+'</div>'+
+    '<div class="altar-arte" data-r="'+r+'"><img class="altar-img" src="img/cartas_grande/'+c.slug+'.webp" alt="">'+
+      '<img class="altar-rar" src="'+seloRar(r)+'" alt="'+r+'">'+
+    '</div>'+
+    '<div class="altar-nome" data-r="'+r+'">'+(c.nome_pt||c.nome)+'</div>'+
+    '<div class="altar-sub">'+
+      (c.icone_atributo?'<img src="img/atributos/'+c.icone_atributo+'.webp" alt="">':'')+
+      '<span>'+(c.tipo||c.card_type||'')+(c.card_type==='Monster'&&c.atributo?' · '+c.atributo:'')+'</span>'+
+      (c.icone_tipo?'<img src="img/tipos/'+c.icone_tipo+'.webp" alt="">':'')+
+    '</div>'+
     (c.card_type==='Monster'
-      ? '<div class="altar-stats"><span class="altar-stat">ATK '+c.atk+'</span>'+
-        '<span class="altar-stat">DEF '+c.def+'</span>'+
-        (c.nivel?'<span class="altar-stat">Nv '+c.nivel+'</span>':'')+'</div>' : '')+
-    (desc?'<div class="altar-ef">'+desc+'</div>':'')+
-    '<div class="altar-ban">'+(gs.length
-      ? gs.map(g=>(g.label||g.id)+' '+(cont[chaveGrupo(g,c.nome)]||0)+'/'+limiteDoGrupo(g,chaveGrupo(g,c.nome))).join(' · ')
-        +' · '+t('noDeck')+' '+noDeck+'/'+lim
-      : t('limite')+' '+lim+' · '+t('noDeck')+' '+noDeck)+'</div>';
+      ? '<div class="altar-stats"><span class="altar-stat atk">ATK <b>'+c.atk+'</b></span>'+
+        '<span class="altar-stat def">DEF <b>'+c.def+'</b></span></div>' : '')+
+    (desc?'<div class="altar-ef">'+descHTML+'</div>':'')+
+    '<div class="altar-ban">'+
+      gs.map(g=>{ const k=chaveGrupo(g,c.nome), u=cont[k]||0, mx=limiteDoGrupo(g,k);
+        return '<div class="ab'+(u>=mx?' cheio':'')+'"><img src="img/ui/ed_ban_'+famGrupo(g.id)+'.webp" alt="">'+
+          '<span style="color:'+(g.cor||'var(--gold)')+'">'+(g.label||g.id)+'</span><b>'+u+'/'+mx+'</b></div>'; }).join('')+
+      '<div class="ab'+(noDeck>=lim?' cheio':'')+'">'+icoUI('ed_deck','')+'<span>'+t('copiasDeck')+'</span><b>'+noDeck+'/'+lim+'</b></div>'+
+    '</div>';
 }
 
 function adicionar(c){
@@ -1196,7 +1278,7 @@ function sincDeck(){
     cats[k]?'<span style="width:'+(cats[k]/Math.max(1,deck.length)*100)+'%;background:'+cores[k]+'"></span>':'').join('');
   const sigla={Monster:'M',Spell:'S',Trap:'T',Equip:'E',Field:'C'};
   document.getElementById('mste').innerHTML=Object.keys(cats)
-    .map(k=>'<span title="'+t(k)+'" style="color:'+cores[k]+';border-color:'+cores[k]+'44">'+sigla[k]+' '+cats[k]+'</span>').join('');
+    .map(k=>'<span title="'+t(k)+'" class="'+(cats[k]?'':'zero')+'" style="border-color:'+cores[k]+'55">'+icoUI(ICO_CAT[k])+'<b>'+cats[k]+'</b></span>').join('');
 
   /* grupos de banlist EM USO, com o quanto ja foi gasto de cada teto */
   const cont=contagemGrupos(deck), G=document.getElementById('grupos');
@@ -1217,11 +1299,14 @@ function sincDeck(){
   if(!deck.length){
     L.innerHTML='<div class="deck-vazio vazio-msg">'+t('deckVazio')+'</div>';
   } else {
-    L.innerHTML=Object.keys(c2).sort().map(n=>{
+    const rk=n=>{ const c=CARTAS.find(x=>x.nome===n)||{}; return RANK_RAR[(c.raridade||'N').toUpperCase()]; };
+    L.innerHTML=Object.keys(c2).sort((a,b)=>(rk(a)-rk(b))||a.localeCompare(b)).map(n=>{
       const c=CARTAS.find(x=>x.nome===n)||{};
+      const r=(c.raridade||'N').toUpperCase();
       const tt=(c.nome_pt||n).replace(/"/g,'&quot;');
-      return '<button class="dl" type="button" onclick="remover('+JSON.stringify(n).replace(/"/g,'&quot;')+')" title="'+tt+' x'+c2[n]+'">'+
+      return '<button class="dl" data-r="'+r+'" type="button" onclick="remover('+JSON.stringify(n).replace(/"/g,'&quot;')+')" title="'+tt+' x'+c2[n]+'">'+
         '<img src="img/cartas/'+c.slug+'.webp" alt="'+tt+'" loading="lazy">'+
+        '<img class="dl-rar" src="'+seloRar(r)+'" alt="'+r+'">'+
         (c2[n]>1?'<span class="dl-q">'+c2[n]+'</span>':'')+
         '<span class="dl-x">&#10005;</span></button>';
     }).join('');

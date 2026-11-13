@@ -144,3 +144,141 @@ body.fl2.pg-bst .bst-info-corpo [data-reveal]{opacity:1 !important;transform:non
 /* selo HD da raridade no painel do booster */
 body.fl2.pg-bst .card-thumb-rarity{line-height:0;margin-top:4px}
 body.fl2.pg-bst .card-thumb .card-thumb-rarity img{height:16px!important;width:30px!important;aspect-ratio:auto!important;object-fit:contain;border:0!important;border-radius:0!important;box-shadow:none!important;display:inline-block;margin:0!important}
+
+/* ════════ MONTAR DECK = EDITOR DE DECK ════════
+   Catalogo de cartas | Altar da carta | Cofre do deck, com os icones HD do
+   editor (ed_*), de atributo e de raca, selos de limite, nivel e raridade. */
+body.fl2.pg-deck .deck-env{max-width:1600px}
+body.fl2.pg-deck .arena{grid-template-columns:410px 262px minmax(0,1fr)}
+@media(max-width:1240px){ body.fl2.pg-deck .arena{grid-template-columns:390px minmax(0,1fr)} }
+@media(max-width:900px){ body.fl2.pg-deck .arena{grid-template-columns:1fr} }
+body.fl2.pg-deck .painel{background:var(--jg-painel) !important;border:1px solid var(--jg-linha2) !important;border-radius:14px !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 10px 30px rgba(0,0,0,.35) !important;padding:14px !important}
+body.fl2.pg-deck .pn-cab{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+body.fl2.pg-deck .pn-cab .jg-ico{width:30px;height:30px}
+body.fl2.pg-deck .pn-tit,body.fl2.pg-deck .cofre-tit{font-family:var(--fl-tit,'Sora'),sans-serif !important;font-weight:700;font-size:18px !important;
+  letter-spacing:.01em !important;color:var(--jg-ouro2) !important;line-height:1.15;text-transform:none}
+body.fl2.pg-deck .pn-sub,body.fl2.pg-deck .cofre-sub{font-size:11.5px !important;letter-spacing:0 !important;text-transform:none !important;color:#8b867d !important;margin:2px 0 0 !important}
+
+/* busca grande, como a da Biblioteca */
+body.fl2.pg-deck .busca{height:46px;padding:0 14px;border-radius:10px;background:#0b0a0e;border:1px solid var(--jg-linha2);margin-bottom:9px}
+body.fl2.pg-deck .busca input{font-size:15px !important;height:100%;border:0 !important;box-shadow:none !important;background:transparent !important;padding:0 !important}
+body.fl2.pg-deck .busca input::placeholder{color:#6f6a62}
+body.fl2.pg-deck .busca .jg-ico{width:22px;height:22px}
+body.fl2.pg-deck .ferramentas{gap:8px}
+body.fl2.pg-deck .busca-modo button,body.fl2.pg-deck .ord{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:7px 12px}
+body.fl2.pg-deck .ferramentas select{font-size:12px;border-radius:8px;padding:7px 10px;background:#0b0a0e}
+/* ordem: NOME / ATK / DEF / NIVEL */
+body.fl2.pg-deck .ordem{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:9px}
+body.fl2.pg-deck .ord{padding:5px 8px !important}
+body.fl2.pg-deck .ord{border-radius:99px;border:1px solid var(--jg-linha2);background:#0b0a0e;color:#bcb6aa;cursor:pointer;font-family:inherit;transition:border-color .15s,color .15s}
+body.fl2.pg-deck .ord:hover{border-color:rgba(233,185,73,.5);color:#fff}
+body.fl2.pg-deck .ord.on{border-color:var(--jg-ouro);color:var(--jg-ouro2);background:rgba(233,185,73,.12)}
+/* chips de raridade (selo) e de tipo (icone) */
+body.fl2.pg-deck .chips{gap:6px;margin-bottom:9px}
+body.fl2.pg-deck .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px 4px 6px;border-radius:99px;border-color:var(--jg-linha2);background:#0b0a0e;color:#bcb6aa}
+body.fl2.pg-deck .chip .jg-ico{width:20px;height:20px}
+body.fl2.pg-deck .chip.chip-rar{padding:4px 7px}
+body.fl2.pg-deck .chip-selo{height:17px;width:auto;display:block}
+body.fl2.pg-deck .chip.on{background:rgba(233,185,73,.12);border-color:var(--jg-ouro);color:var(--jg-ouro2)}
+body.fl2.pg-deck .chip.chip-rar:not(.on){opacity:.62}
+body.fl2.pg-deck .chip.chip-rar:hover{opacity:1}
+/* fileira de racas */
+body.fl2.pg-deck .racas{display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#3a3640 transparent;gap:5px;padding:6px 8px;margin-bottom:10px;border:1px solid var(--jg-linha);border-radius:12px;background:#0b0a0e}
+body.fl2.pg-deck .raca{flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1px solid transparent;background:none;padding:2px;cursor:pointer;opacity:.6;transition:opacity .15s,border-color .15s,transform .15s}
+body.fl2.pg-deck .raca img{width:100%;height:100%;object-fit:contain;display:block}
+body.fl2.pg-deck .raca:hover{opacity:1;transform:translateY(-1px)}
+body.fl2.pg-deck .raca.on{opacity:1;border-color:var(--jg-ouro);box-shadow:0 0 0 2px rgba(233,185,73,.25)}
+body.fl2.pg-deck .raca.todos{width:auto;border-radius:99px;padding:0 10px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#bcb6aa;border-color:var(--jg-linha2);opacity:1}
+body.fl2.pg-deck .raca.todos.on{color:var(--jg-ouro2);border-color:var(--jg-ouro);background:rgba(233,185,73,.12);box-shadow:none}
+
+/* linhas do catalogo: selo de limite | nome | atributo+raca | ATK/DEF | banlist | no deck */
+body.fl2.pg-deck .lista{gap:4px;max-height:62vh}
+body.fl2.pg-deck .row,
+body.fl2.pg-deck .row{grid-template-columns:18px minmax(0,1fr) 46px 40px 30px 44px !important;gap:6px;padding:7px 8px;border-radius:9px;
+  background:#16141a;border:1px solid var(--jg-linha)}
+body.fl2.pg-deck .row:hover{background:#1c1920;border-color:rgba(233,185,73,.45)}
+body.fl2.pg-deck .row-lim{width:18px;height:18px;object-fit:contain;display:block}
+body.fl2.pg-deck .row-nome{font-size:13.5px;font-weight:600}
+body.fl2.pg-deck .row[data-r="N"] .row-nome{color:#e8e3d8}
+body.fl2.pg-deck .col-ico{display:flex;gap:3px;justify-content:flex-end}
+body.fl2.pg-deck .col-ico img,body.fl2.pg-deck .col-ico i{width:20px;height:20px;object-fit:contain;display:block}
+body.fl2.pg-deck .col-stat{display:flex;flex-direction:column;align-items:flex-end;gap:0;font-size:11px;line-height:1.2}
+body.fl2.pg-deck .col-stat b{font-weight:700;font-variant-numeric:tabular-nums}
+body.fl2.pg-deck .col-stat .s-atk{color:#ff8f7a}
+body.fl2.pg-deck .col-stat .s-def{color:#7fb4ff}
+body.fl2.pg-deck .col-stat.sup{font-size:10.5px;color:#8b867d;text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+body.fl2.pg-deck .col-stat.efeito{display:block}
+body.fl2.pg-deck .col-ban{position:relative;justify-content:center}
+body.fl2.pg-deck .col-ban img{width:22px;height:22px;object-fit:contain;display:block}
+body.fl2.pg-deck .col-ban i{position:absolute;right:-1px;bottom:-4px;font-size:9.5px;padding:0 3px;border-radius:4px;background:#0b0a0e;border:0;line-height:1.3}
+body.fl2.pg-deck .row-q{display:flex;align-items:center;justify-content:flex-end;gap:3px;font-family:var(--fl-tit,'Sora'),sans-serif;font-weight:700;font-size:14px}
+body.fl2.pg-deck .row-q-ico{width:16px;height:16px;object-fit:contain;opacity:.85}
+body.fl2.pg-deck .row-q small{font-size:10.5px}
+@media(max-width:1240px) and (min-width:901px){ body.fl2.pg-deck .row{grid-template-columns:18px minmax(0,1fr) 46px 40px 30px 44px !important} }
+@media(max-width:480px){
+  body.fl2.pg-deck .row{grid-template-columns:16px minmax(0,1fr) 44px 40px 40px !important;padding:7px 7px}
+  body.fl2.pg-deck .col-ban{display:none}
+  body.fl2.pg-deck .row-nome{font-size:13px}
+  body.fl2.pg-deck .row-q-ico{display:none}
+  body.fl2.pg-deck .racas{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  body.fl2.pg-deck .racas::-webkit-scrollbar{display:none}
+  body.fl2.pg-deck .raca{flex-shrink:0}
+}
+
+/* altar da carta */
+body.fl2.pg-deck .altar-tit{font-size:12px;letter-spacing:.18em;color:#8b867d;margin-bottom:12px}
+body.fl2.pg-deck .altar-arte{position:relative;max-width:200px;margin:4px auto 12px;border-radius:10px;padding:6px;
+  background:radial-gradient(circle at 50% 40%,rgba(var(--ar,163,167,179),.28),transparent 70%);}
+body.fl2.pg-deck .altar-arte[data-r="UR"]{--ar:var(--rar-ur-rgb)}
+body.fl2.pg-deck .altar-arte[data-r="SR"]{--ar:var(--rar-sr-rgb)}
+body.fl2.pg-deck .altar-arte[data-r="R"]{--ar:var(--rar-r-rgb)}
+body.fl2.pg-deck .altar-arte .altar-img{width:100%;height:auto;aspect-ratio:110/160;object-fit:cover;display:block;border-radius:6px;
+  border:2px solid rgba(var(--ar,163,167,179),.85);box-shadow:0 0 22px rgba(var(--ar,163,167,179),.35),0 10px 24px rgba(0,0,0,.5)}
+body.fl2.pg-deck .altar-arte .altar-rar{position:absolute;top:-4px;left:50%;transform:translateX(-50%);height:22px !important;width:auto !important;aspect-ratio:auto !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;background:none !important;filter:drop-shadow(0 2px 3px rgba(0,0,0,.6))}
+body.fl2.pg-deck .altar-col,body.fl2.pg-deck .deck{top:82px}
+body.fl2.pg-deck .altar-nome{font-family:var(--fl-tit,'Sora'),sans-serif !important;font-weight:700;font-size:17px !important;letter-spacing:0 !important;line-height:1.25;color:#fff}
+body.fl2.pg-deck .altar-nome[data-r="UR"]{color:var(--rar-ur)}
+body.fl2.pg-deck .altar-nome[data-r="SR"]{color:var(--rar-sr)}
+body.fl2.pg-deck .altar-nome[data-r="R"]{color:var(--rar-r)}
+body.fl2.pg-deck .altar-sub{display:flex;align-items:center;justify-content:center;gap:7px;font-size:12px;color:#bcb6aa;margin:6px 0 10px}
+body.fl2.pg-deck .altar-sub img{width:22px;height:22px;object-fit:contain}
+body.fl2.pg-deck .altar-stats{gap:8px}
+body.fl2.pg-deck .altar-stat{flex:1;text-align:center;font-size:11px;font-weight:700;letter-spacing:.06em;padding:6px 8px;border-radius:8px;background:#0b0a0e;border:1px solid var(--jg-linha2);color:#8b867d}
+body.fl2.pg-deck .altar-stat b{font-size:15px;margin-left:3px;font-family:var(--fl-tit,'Sora'),sans-serif}
+body.fl2.pg-deck .altar-stat.atk b{color:#ff8f7a}
+body.fl2.pg-deck .altar-stat.def b{color:#7fb4ff}
+body.fl2.pg-deck .altar-ef{font-size:12px;line-height:1.6;color:#d6d0c4;background:#0b0a0e;border:1px solid var(--jg-linha2);border-radius:10px;padding:10px 11px;max-height:210px;overflow-y:auto}
+body.fl2.pg-deck .altar-ef b{color:var(--jg-ouro)}
+body.fl2.pg-deck .altar-ban{display:flex;flex-direction:column;gap:5px;text-align:left;color:#bcb6aa;margin-top:10px}
+body.fl2.pg-deck .ab{display:flex;align-items:center;gap:7px;font-size:11.5px;padding:5px 8px;border-radius:8px;background:#0b0a0e;border:1px solid var(--jg-linha)}
+body.fl2.pg-deck .ab img{width:20px;height:20px;object-fit:contain;flex-shrink:0}
+body.fl2.pg-deck .ab span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body.fl2.pg-deck .ab b{font-variant-numeric:tabular-nums;color:#fff}
+body.fl2.pg-deck .ab.cheio{border-color:rgba(255,120,100,.45)}
+body.fl2.pg-deck .ab.cheio b{color:#ff8f7a}
+
+/* cofre do deck */
+body.fl2.pg-deck .deck-cont{font-family:var(--fl-tit,'Sora'),sans-serif !important;font-weight:700;font-size:30px !important}
+body.fl2.pg-deck .deck-barra{height:7px;border-radius:99px;background:#0b0a0e;border:1px solid var(--jg-linha)}
+body.fl2.pg-deck .mste{gap:6px}
+body.fl2.pg-deck .mste span{display:inline-flex;align-items:center;gap:6px;padding:4px 10px 4px 5px;border-radius:9px;background:#0b0a0e;font-size:14px;color:#fff;font-family:var(--fl-tit,'Sora'),sans-serif}
+body.fl2.pg-deck .mste span .jg-ico{width:22px;height:22px}
+body.fl2.pg-deck .mste span.zero{opacity:.45}
+body.fl2.pg-deck .deck-lista{grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:16px 10px;padding-top:9px;max-height:60vh}
+body.fl2.pg-deck .dl img:not(.dl-rar){border-radius:5px;border:2px solid rgba(var(--dr,163,167,179),.75);box-shadow:0 0 10px rgba(var(--dr,163,167,179),.18)}
+body.fl2.pg-deck .dl[data-r="UR"]{--dr:var(--rar-ur-rgb)}
+body.fl2.pg-deck .dl[data-r="SR"]{--dr:var(--rar-sr-rgb)}
+body.fl2.pg-deck .dl[data-r="R"]{--dr:var(--rar-r-rgb)}
+body.fl2.pg-deck .dl .dl-rar{position:absolute;top:-9px;left:50%;transform:translateX(-50%);z-index:2;height:15px;width:auto !important;aspect-ratio:auto !important;border:0 !important;border-radius:0 !important;background:none !important;box-shadow:none !important;filter:drop-shadow(0 1px 2px rgba(0,0,0,.7))}
+body.fl2.pg-deck .dl:hover .dl-rar{transform:translateX(-50%)}
+body.fl2.pg-deck .dl-q{min-width:20px;height:20px;border-radius:10px;font-size:11px;background:#0b0a0e;border-color:var(--jg-ouro)}
+@media(max-width:560px){ body.fl2.pg-deck .deck-lista{grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:14px 8px} }
+
+/* botoes com icone */
+body.fl2.pg-deck .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+body.fl2.pg-deck .btn .jg-ico{width:20px;height:20px}
+body.fl2.pg-deck .btn.travado .jg-ico{opacity:.45;filter:grayscale(.6)}
+body.fl2.pg-deck .btn-linha .btn{padding:10px 8px;font-size:13.5px}
+body.fl2.pg-deck .salvos-tit .jg-ico{width:18px;height:18px}
+@media(max-width:480px){ body.fl2.pg-deck .btn-linha .btn .jg-ico{display:none} }
