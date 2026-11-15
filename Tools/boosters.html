@@ -1784,6 +1784,14 @@ function isEn() { return document.body.classList.contains('en'); }
     detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  function abrirBoosterDoLink() {
+    var alvo = decodeURIComponent((location.hash || '').slice(1));
+    if (!alvo || !boostersData.some(function (b) { return b.id === alvo; })) return;
+    var tile = document.querySelector('.booster-tile[data-id="' + alvo + '"]');
+    if (tile && !tile.classList.contains('locked')) selectBooster(alvo);
+    else if (tile) tile.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
   carregarEventosBooster()
     .then(() => fetch('data/boosters.json?t=' + Date.now()))
     .then(r => r.json())
@@ -1792,6 +1800,9 @@ function isEn() { return document.body.classList.contains('en'); }
       versaoCache = data.versao || '';
       pastLaunch = Date.now() >= LAUNCH_UTC;
       renderTiles();
+      /* Link direto (boosters.html#<id do booster>): o pop-up de novidades do
+         jogo manda o jogador para as cartas de um booster novo. */
+      abrirBoosterDoLink();
     })
     .catch(() => {
       tilesEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;font-size:12px;color:var(--text-muted)">Não foi possível carregar os boosters agora.</div>';
