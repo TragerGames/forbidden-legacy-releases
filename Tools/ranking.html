@@ -1556,11 +1556,18 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     var a = String(item.avatar || '').toLowerCase().replace(/\.(png|webp)$/, '');
     if (!/^[a-z0-9][a-z0-9_-]{0,59}$/.test(a)) return monograma(item.nome, semente);
     return '<span class="rk-av" aria-hidden="true" data-ini="' + esc((String(item.nome || '?').trim().charAt(0) || '?').toUpperCase())
-      + '" data-cor="' + corDe(semente || item.nome) + '"><img src="img/avatar/' + a + '.webp" alt="" loading="lazy" width="128" height="128"'
+      + '" data-cor="' + corDe(semente || item.nome) + '"><img src="' + srcAvatar(a) + '" alt="" loading="lazy" width="128" height="128"'
       + ' onerror="rkSemAvatar(this)"></span>';
+  }
+  /* Avatar de premio do PvP (remoto_<id>): a arte fica no servidor do PvP, nao
+     em img/avatar/. Tenta .png e depois .webp (o formato que a moderacao subiu). */
+  var COSMETICOS = 'https://pvp.forbiddenlegacy.com.br/cosmeticos/';
+  function srcAvatar(a) {
+    return /^remoto_[a-z0-9_]{2,25}$/.test(a) ? COSMETICOS + a + '.png' : 'img/avatar/' + a + '.webp';
   }
   /* Avatar que o site ainda nao tem (um novo no jogo): cai no monograma. */
   window.rkSemAvatar = function (img) {
+    if (img.src.indexOf(COSMETICOS) === 0 && /\.png$/.test(img.src)) { img.src = img.src.replace(/\.png$/, '.webp'); return; }
     var box = img.parentNode;
     box.style.background = box.getAttribute('data-cor');
     box.textContent = box.getAttribute('data-ini');

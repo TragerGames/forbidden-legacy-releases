@@ -3582,9 +3582,14 @@ window.mostrarSeason = mostrarSeason;
     var a = String(l.avatar || '').toLowerCase().replace(/\.(png|webp)$/, '');
     var c = cor(l.nome + '#' + l.tag);
     if (!/^[a-z0-9][a-z0-9_-]{0,59}$/.test(a)) return '<span class="pvp-av" style="background:' + c + '">' + esc(inicial(l.nome)) + '</span>';
-    return '<span class="pvp-av" data-cor="' + c + '" data-ini="' + esc(inicial(l.nome)) + '"><img src="img/avatar/' + a + '.webp" alt="" loading="lazy" width="36" height="36" onerror="pvpSemAvatar(this)"></span>';
+    /* Avatar de premio do PvP (remoto_<id>): a arte fica no servidor do PvP (.png, depois .webp). */
+    var src = /^remoto_[a-z0-9_]{2,25}$/.test(a) ? PVP_COSMETICOS + a + '.png' : 'img/avatar/' + a + '.webp';
+    return '<span class="pvp-av" data-cor="' + c + '" data-ini="' + esc(inicial(l.nome)) + '"><img src="' + src + '" alt="" loading="lazy" width="36" height="36" onerror="pvpSemAvatar(this)"></span>';
   }
-  window.pvpSemAvatar = function (img) { var b = img.parentNode; b.style.background = b.getAttribute('data-cor'); b.textContent = b.getAttribute('data-ini'); };
+  var PVP_COSMETICOS = 'https://pvp.forbiddenlegacy.com.br/cosmeticos/';
+  window.pvpSemAvatar = function (img) {
+    if (img.src.indexOf(PVP_COSMETICOS) === 0 && /\.png$/.test(img.src)) { img.src = img.src.replace(/\.png$/, '.webp'); return; }
+    var b = img.parentNode; b.style.background = b.getAttribute('data-cor'); b.textContent = b.getAttribute('data-ini'); };
   function desenhar() {
     var lista = document.getElementById('pvp-top'), rod = document.getElementById('pvp-rodape');
     if (!lista) return;
