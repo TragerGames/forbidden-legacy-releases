@@ -10,6 +10,13 @@
   var raiz = document.documentElement;
   var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
   var escolhido = null;
+  /* ?lang=pt|en|es|vi (2026-11-18): o botão "changelog completo" do jogo abre
+     esta página no idioma do jogador. Vira a preferência salva, para a detecção
+     por IP lá embaixo não trocar de volta para o inglês. */
+  try {
+    var pedido = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+    if ({ pt: 1, en: 1, es: 1, vi: 1 }[pedido]) localStorage.setItem('fl_lang', pedido);
+  } catch (e) {}
   try { escolhido = localStorage.getItem('fl_lang'); } catch (e) {}
   if (!escolhido) {
     var nav = (navigator.language || 'pt').slice(0, 2).toLowerCase();
