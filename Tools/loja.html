@@ -1284,6 +1284,19 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#5f5b55}
 .lv-pack-nome{position:absolute;left:6px;right:6px;bottom:9px;text-align:center;font:clamp(11px,1.05vw,13.5px)/1.15 var(--lv-item);color:#fff7e3;text-shadow:0 1px 3px rgba(0,0,0,.8);text-wrap:balance}
 .lv-fita{position:absolute;right:-3px;top:17px;font:12px/1 var(--lv-titulo);letter-spacing:.08em;padding:4px 7px 3px 8px;border-radius:3px 0 0 3px;color:#0f0f12;background:linear-gradient(90deg,#ffd6f5,#b9f3ff 35%,#fff0a8 70%,#ffc4c4);box-shadow:0 2px 6px rgba(0,0,0,.45)}
 .lv-pack-preco{font:17px/1 var(--lv-titulo);letter-spacing:.04em;color:var(--lv-ouro-luz)}
+/* Black Friday (2026-11-18): faixa com contagem e preco riscado. Liga pelo painel
+   (pagar/admin_black_friday.php); some sozinha no fim. */
+.lv-bf{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;margin:10px 0 2px;padding:10px 14px;border-radius:12px;text-align:left;
+  background:linear-gradient(100deg,#0b0b0d 0%,#18120a 55%,#0b0b0d 100%);border:1px solid var(--lv-ouro-vivo);box-shadow:0 0 0 1px rgba(0,0,0,.6),0 0 26px rgba(240,195,90,.22)}
+.lv-bf[hidden]{display:none}
+.lv-bf-selo{font:22px/1 var(--lv-titulo);letter-spacing:.1em;color:#0b0b0d;background:linear-gradient(90deg,var(--lv-ouro-vivo),var(--lv-ouro-luz));padding:6px 10px 4px;border-radius:6px}
+.lv-bf-pct{font:30px/1 var(--lv-titulo);letter-spacing:.04em;color:#ff5a4e}
+.lv-bf-txt{font-size:13px;color:var(--lv-papiro);flex:1 1 180px}
+.lv-bf-relogio{font:22px/1 var(--lv-titulo);letter-spacing:.08em;color:var(--lv-ouro-luz);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lv-bf-relogio small{display:block;font:10px/1.2 system-ui,sans-serif;letter-spacing:.12em;color:var(--lv-areia);text-transform:uppercase}
+.lv-bf-tag{position:absolute;z-index:2;left:-4px;top:-6px;font:14px/1 var(--lv-titulo);letter-spacing:.06em;padding:4px 7px 3px;border-radius:4px;color:#fff;background:#d6302a;box-shadow:0 2px 6px rgba(0,0,0,.5);transform:rotate(-6deg)}
+s.lv-de{opacity:.55;font-size:.78em;text-decoration-thickness:2px;text-decoration-color:#ff5a4e;margin-right:2px}
+@media (max-width:700px){.lv-pack-preco s.lv-de{display:block;margin:0 0 3px}}
 .lv-pack-souls{font-size:11.5px;color:var(--lv-areia);font-variant-numeric:tabular-nums;margin-top:-4px}
 .lv-mais50{display:inline-block;margin-left:3px;font:11px/1 'Bebas Neue',Impact,sans-serif;letter-spacing:.04em;color:#0f2414;background:#8fe0a4;padding:2px 4px 1px;border-radius:3px;vertical-align:1px}
 .lv-pack:hover{transform:translateY(-5px)}
@@ -1406,7 +1419,7 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#5f5b55}
   </div>
 </nav>
 <script src="js/site-nav.js?v=20261112b"></script>
-<script src="js/site-oferta.js?v=20261113a"></script>
+<script src="js/site-oferta.js?v=20261118a"></script>
 
 <!-- MOBILE NAV BAR -->
 <div class="mobile-nav-bar" id="mobile-nav-bar">
@@ -1436,6 +1449,12 @@ footer.fl-footer .footer-bottom span{font-size:11px;color:#5f5b55}
       <div class="lv-vitrine-cab">
         <h1 data-lang="pt">Os Itens do Milênio</h1><h1 data-lang="en">The Millennium Items</h1><h1 data-lang="es">Los Objetos del Milenio</h1><h1 data-lang="vi">Bảo vật Ngàn năm</h1>
         <p data-lang="pt">Toda compra leva +50% de Souls de bônus. A partir do Anel, cartas UR garantidas.</p><p data-lang="en">Every purchase comes with +50% bonus Souls. From the Ring up, guaranteed UR cards.</p><p data-lang="es">Toda compra lleva +50% de Souls de bono. Desde el Anillo, cartas UR garantizadas.</p><p data-lang="vi">Mọi đơn đều được thưởng thêm 50% Souls. Từ gói Nhẫn trở lên có thẻ UR chắc chắn.</p>
+      </div>
+      <div class="lv-bf" id="lv-bf" hidden>
+        <span class="lv-bf-selo">BLACK FRIDAY</span>
+        <span class="lv-bf-pct" id="lv-bf-pct"></span>
+        <span class="lv-bf-txt" id="lv-bf-txt"></span>
+        <span class="lv-bf-relogio" id="lv-bf-relogio"></span>
       </div>
       <div class="lv-vidro" id="pack-list">
         <div class="lv-prateleira" id="lv-prateleira1" role="group"></div>
@@ -1784,6 +1803,61 @@ const QTD_MAX = 10;
 // +50% de Souls de bônus em TODOS os pacotes (mesma regra do backend em souls_config.php).
 const SOULS_BONUS_PCT = 0.5;
 function totalSoulsFor(p){ return Math.round(p.souls*(1+SOULS_BONUS_PCT)); }
+/* ── BLACK FRIDAY (2026-11-18) ── o servidor (pagar/black_friday.php) diz se ha
+   desconto no ar; o checkout confere de novo e cobra o mesmo valor. A conta do
+   total repete fl_bf_total_centavos() (e a do cupom do Stripe): desconta
+   round(total * X / 100) do total em centavos. */
+var FL_BF=null, FL_BF_DIF=0, FL_BF_TIMER=null;
+function bfAgora(){ return Math.floor(Date.now()/1000)+FL_BF_DIF; }
+function bfNoAr(){
+  if(!FL_BF) return false;
+  var a=bfAgora();
+  return !(FL_BF.fim_utc && a>=FL_BF.fim_utc) && !(FL_BF.inicio_utc && a<FL_BF.inicio_utc);
+}
+function bfPct(p){
+  if(!bfNoAr() || !p) return 0;
+  if(FL_BF.pacotes && FL_BF.pacotes.length && FL_BF.pacotes.indexOf(p.id)<0) return 0;
+  return FL_BF.pct|0;
+}
+function bfCentavos(unit,q,pct){ var t=Math.round(unit*100)*(q||1); return pct>0 ? t-Math.round(t*pct/100) : t; }
+function precoBRL(p,q){ return bfCentavos(p.brlNum,q,bfPct(p))/100; }
+function precoUSD(p,q){ return bfCentavos(p.usdNum,q,bfPct(p))/100; }
+function precoHTML(p,q,br){
+  q=q||1;
+  var fmt=br?formatBRL:formatUSD, v=br?precoBRL(p,q):precoUSD(p,q);
+  if(!bfPct(p)) return fmt(v);
+  return '<s class="lv-de">'+fmt((br?p.brlNum:p.usdNum)*q)+'</s> '+fmt(v);
+}
+function bfAtualizarFaixa(){
+  var faixa=document.getElementById('lv-bf');
+  if(!faixa) return;
+  if(!bfNoAr()){
+    faixa.hidden=true;
+    if(FL_BF && FL_BF.fim_utc && bfAgora()>=FL_BF.fim_utc){ FL_BF=null; clearInterval(FL_BF_TIMER); FL_BF_TIMER=null; if(typeof flRedesenhar==='function') flRedesenhar(); }
+    return;
+  }
+  faixa.hidden=false;
+  var todos=!(FL_BF.pacotes && FL_BF.pacotes.length);
+  document.getElementById('lv-bf-pct').textContent='-'+FL_BF.pct+'%';
+  document.getElementById('lv-bf-txt').textContent=todos
+    ? t4('Desconto em todos os Itens do Milênio. Os Souls e os bônus continuam iguais.','Discount on every Millennium Item. Souls and bonuses stay the same.','Descuento en todos los Objetos del Milenio. Las Souls y los bonos siguen iguales.','Giảm giá mọi Bảo vật Ngàn năm. Souls và phần thưởng giữ nguyên.')
+    : t4('Desconto nos itens marcados. Os Souls e os bônus continuam iguais.','Discount on the marked items. Souls and bonuses stay the same.','Descuento en los objetos marcados. Las Souls y los bonos siguen iguales.','Giảm giá các bảo vật được đánh dấu. Souls và phần thưởng giữ nguyên.');
+  var r=document.getElementById('lv-bf-relogio');
+  if(FL_BF.fim_utc){
+    var f=Math.max(0,FL_BF.fim_utc-bfAgora()), d=Math.floor(f/86400), h=Math.floor(f%86400/3600), m=Math.floor(f%3600/60), sg=f%60;
+    var dd=function(n){return (n<10?'0':'')+n;};
+    r.innerHTML='<small>'+t4('Termina em','Ends in','Termina en','Kết thúc sau')+'</small>'+(d>0?d+'d ':'')+dd(h)+':'+dd(m)+':'+dd(sg);
+  } else r.innerHTML='';
+}
+function bfCarregar(){
+  fetch('/pagar/black_friday.php',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    FL_BF=(d && d.bf && d.bf.pct>0)?d.bf:null;
+    FL_BF_DIF=(d && d.agora)?(d.agora-Math.floor(Date.now()/1000)):0;
+    if(FL_BF && !FL_BF_TIMER) FL_BF_TIMER=setInterval(bfAtualizarFaixa,1000);
+    bfAtualizarFaixa();
+    if(FL_BF && typeof flRedesenhar==='function') flRedesenhar();
+  }).catch(function(){});
+}
 let pixTxid = '', pollTimer = null;
 // Palpite de pais ANTES da consulta por IP, e reserva se ela falhar: o fuso
 // horario do aparelho. O padrao antigo era "Brasil", e a consulta ao
@@ -2057,7 +2131,7 @@ function lvFalar(novaFala, instantaneo){
 
 function lvPackHTML(p){
   var ativo=p.id===selected.id;
-  var preco=regionIsBR()?p.br:p.usd;
+  var preco=precoHTML(p,1,regionIsBR()), bfp=bfPct(p);
   /* Pacotes com arte propria (img/loja/pack_<id>.webp, criadas pelo Felipe em 2026-10-23).
      Nitidez ("mipmap"): o card tem ~160 px no PC e ~118 px no celular; reduzir 1000 px direto
      no navegador serrilhava. Por isso -180 (1x) e -360 (2x) ja reduzidos em passos com Lanczos;
@@ -2066,6 +2140,7 @@ function lvPackHTML(p){
      a arte ja traz o Item do Milenio, entao o medalhao desenhado aqui sai. Sem arte, fica o visual antigo. */
   var LV_ARTE = { milenio_colar:1, milenio_balanca:1, milenio_chave:1, milenio_anel:1, milenio_olho:1, milenio_cetro:1, milenio_enigma:1, milenio_trono:1 };
   return '<button type="button" class="lv-pack'+(p.trono?' lv-pack-trono':'')+'" data-pack="'+p.id+'" aria-pressed="'+ativo+'" style="--c1:'+p.c1+';--c2:'+p.c2+'">'+
+    (bfp?'<span class="lv-bf-tag">-'+bfp+'%</span>':'')+
     (LV_ARTE[p.id]
       ? '<span class="lv-pack-corpo tem-arte" style="background-image:url(img/loja/pack_'+p.id+'-360.webp?v=20261023b);background-image:image-set(url(img/loja/pack_'+p.id+'-180.webp?v=20261023b) 1x,url(img/loja/pack_'+p.id+'-360.webp?v=20261023b) 2x,url(img/loja/pack_'+p.id+'.webp?v=20261023b) 3x)">'+(p.ur?'<span class="lv-fita">'+p.ur+' UR</span>':'')
       : '<span class="lv-pack-corpo">'+(p.ur?'<span class="lv-fita">'+p.ur+' UR</span>':'')+
@@ -2092,11 +2167,11 @@ function renderPacks(){
     });
   });
   var tx=document.getElementById('lv-escolhido-texto');
-  if(tx) tx.innerHTML='<b>'+nomePack(selected)+'</b> · '+(regionIsBR()?selected.br:selected.usd)+' · '+lvSoulsBaseHTML(selected);
+  if(tx) tx.innerHTML='<b>'+nomePack(selected)+'</b> · '+precoHTML(selected,1,regionIsBR())+' · '+lvSoulsBaseHTML(selected);
 }
 
 /* Troca de idioma: setLang chama isto. A vitrine e a fala sao montadas em JS. */
-function flRedesenhar(){ renderPacks(); updateSummary(); lvFalar(null, true); }
+function flRedesenhar(){ renderPacks(); updateSummary(); lvFalar(null, true); bfAtualizarFaixa(); }
 
 (function lvIniciarCena(){
   var fala=document.getElementById('lv-fala');
@@ -2147,8 +2222,8 @@ function updateSummary(){
   if(box) box.style.setProperty('--sel-color',selected.c1);
   var pack=document.getElementById('sum-pack');
   if(pack) pack.innerHTML=lvSoulsBaseHTML(selected, q);
-  document.getElementById('sum-br').textContent=formatBRL(selected.brlNum*q);
-  document.getElementById('sum-usd').textContent=formatUSD(selected.usdNum*q);
+  document.getElementById('sum-br').innerHTML=precoHTML(selected,q,true);
+  document.getElementById('sum-usd').innerHTML=precoHTML(selected,q,false);
 
   var linha=function(rotulo,detalhe,valor,vazia){
     return '<div class="lv-linha'+(vazia?' lv-vazia':'')+'"><span>'+rotulo+(detalhe?'<small>'+detalhe+'</small>':'')+'</span><b>'+valor+'</b></div>';
@@ -2169,7 +2244,7 @@ function updateSummary(){
   if(qtyMinus) qtyMinus.disabled=(q<=1);
   if(qtyPlus) qtyPlus.disabled=(q>=(selected.max||QTD_MAX));
   var tx=document.getElementById('lv-escolhido-texto');
-  if(tx) tx.innerHTML='<b>'+nomePack(selected)+(q>1?' ×'+q:'')+'</b> · '+(regionIsBR()?formatBRL(selected.brlNum*q):formatUSD(selected.usdNum*q))+' · '+lvSoulsBaseHTML(selected, q);
+  if(tx) tx.innerHTML='<b>'+nomePack(selected)+(q>1?' ×'+q:'')+'</b> · '+precoHTML(selected,q,regionIsBR())+' · '+lvSoulsBaseHTML(selected, q);
   if(typeof window.flAtualizarPagamentos==='function') window.flAtualizarPagamentos();
 }
 
@@ -2210,10 +2285,10 @@ async function pay(){
   // Snapshot pro evento de Purchase do Pixel: selected/quantidade resetam pros
   // valores padrao quando a pagina recarrega ao voltar do Stripe/Asaas (redirect
   // completo, estado JS perdido), entao precisa sobreviver via localStorage.
-  localStorage.setItem('fl_pending_purchase',JSON.stringify({packId:selected.id,brlNum:selected.brlNum,usdNum:selected.usdNum,quantidade}));
+  localStorage.setItem('fl_pending_purchase',JSON.stringify({packId:selected.id,brlNum:precoBRL(selected,quantidade)/quantidade,usdNum:precoUSD(selected,quantidade)/quantidade,quantidade}));
   if(regionIsBR()){
     _pending=d;
-    const precoTotal=formatBRL(selected.brlNum*quantidade);
+    const precoTotal=formatBRL(precoBRL(selected,quantidade));
     document.getElementById('pay-choice-desc').textContent=`${nomePack(selected)}${quantidade>1?' ×'+quantidade:''} · ${lvSoulsBaseTexto(selected, quantidade)} · ${precoTotal}`;
     document.getElementById('pay-choice-pix-price').textContent=precoTotal;
     document.getElementById('pay-choice-card-price').textContent=precoTotal;
@@ -2263,7 +2338,7 @@ async function checkPix(){
       document.getElementById('pix-status').textContent=t('Pagamento confirmado.','Payment confirmed.');
       document.getElementById('redeem-code').textContent=data.codigo_resgate||t('Enviado por email','Sent by email');
       document.getElementById('redeem-box').classList.add('visible');
-      if(typeof fbq==='function') fbq('track','Purchase',{value:selected.brlNum*quantidade,currency:'BRL',content_name:selected.id,num_items:quantidade});
+      if(typeof fbq==='function') fbq('track','Purchase',{value:precoBRL(selected,quantidade),currency:'BRL',content_name:selected.id,num_items:quantidade});
     }
   }catch(e){}
 }
@@ -2292,6 +2367,7 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
     el.addEventListener('change',()=>localStorage.setItem('fl_form_'+id,el.value));
   });
   applyRegionMode(); // aplica o palpite pelo fuso já na carga, sem esperar a API
+  bfCarregar(); // Black Friday: desconto do painel, se houver
   fetch('https://api.country.is/').then(r=>r.json()).then(d=>{
     window._flIsBR=((d.country||'BR').toUpperCase()==='BR');
     if(!saved&&!window._flIsBR) setLang('en',false);
@@ -2632,10 +2708,9 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
       /* preco na moeda DO METODO, direto do PACKS — sem duplicar valor */
       var v=el.querySelector('.pay-valor');
       if(v && typeof selected!=='undefined'){
-        var unit = (m.moeda==='BRL') ? selected.brlNum : selected.usdNum;
-        var tot = unit * (typeof quantidade!=='undefined' ? quantidade : 1);
-        v.innerHTML = (m.moeda==='BRL' ? 'R$ '+tot.toFixed(2).replace('.',',')
-                                       : 'US$ '+tot.toFixed(2))
+        /* com Black Friday no ar, precoHTML ja risca o cheio e mostra o descontado */
+        var qq = (typeof quantidade!=='undefined' ? quantidade : 1);
+        v.innerHTML = precoHTML(selected, qq, m.moeda==='BRL')
                     + ((typeof quantidade!=='undefined' && quantidade>1) ? ' <i>×'+quantidade+'</i>' : '');
       }
       var sub=el.querySelector('.pay-sub');

@@ -82,6 +82,15 @@
     '<button type="button" class="fl-oferta-x" aria-label="Fechar">✕</button>';
   (document.body || document.documentElement).appendChild(barra);
 
+  /* Black Friday no Founder: js/site-bf.js risca o preco da barra quando o painel
+     liga o desconto (todas as paginas com esta barra carregam o script). */
+  if (!window.__flBfFounder) {
+    var bfs = document.createElement('script');
+    bfs.src = 'js/site-bf.js?v=20261118a';
+    bfs.defer = true;
+    document.head.appendChild(bfs);
+  }
+
   function mostrar(sim) {
     barra.classList.toggle('show', sim);
     if (document.body) document.body.classList.toggle('fl-oferta-on', sim);

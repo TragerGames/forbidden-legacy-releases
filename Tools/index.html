@@ -2459,7 +2459,7 @@ async function stripePagar(currency) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (typeof fbq === 'function') {
       const isBR = (typeof regionIsBR === 'function') ? regionIsBR() : true;
-      fbq('track', 'Purchase', { value: isBR ? 39.90 : 20.00, currency: isBR ? 'BRL' : 'USD', content_name: 'Founder License' });
+      fbq('track', 'Purchase', { value: window.flBfFounderValor ? window.flBfFounderValor(isBR ? 'BRL' : 'USD') : (isBR ? 39.90 : 20.00), currency: isBR ? 'BRL' : 'USD', content_name: 'Founder License' });
     }
   }
 })();
@@ -3041,7 +3041,7 @@ async function pixVerificarStatus() {
       _pixLicKey = data.licenca_json || data.licenca || '';
       pixSetStatus('pago');
       pixMostrarLicenca(data.licenca_json || data.licenca || '', data.filename || null);
-      if (typeof fbq === 'function') fbq('track', 'Purchase', { value: 39.90, currency: 'BRL', content_name: 'Founder License' });
+      if (typeof fbq === 'function') fbq('track', 'Purchase', { value: window.flBfFounderValor ? window.flBfFounderValor('BRL') : 39.90, currency: 'BRL', content_name: 'Founder License' });
     } else if (data.status === 'cancelada' || data.status === 'expirada' || data.status === 'expirado') {
       clearInterval(_pixPollTimer);
       _pixPollTimer = null;
@@ -3634,5 +3634,6 @@ function flExigirAceiteTermos() {
 })();
 </script>
 <script src="js/site-fx.js?v=20261105a" defer></script>
+<script src="js/site-bf.js?v=20261118a" defer></script>
 </body>
 </html>
