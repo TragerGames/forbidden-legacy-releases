@@ -86,7 +86,7 @@
      liga o desconto (todas as paginas com esta barra carregam o script). */
   if (!window.__flBfFounder) {
     var bfs = document.createElement('script');
-    bfs.src = 'js/site-bf.js?v=20261118a';
+    bfs.src = 'js/site-bf.js?v=20261118c';
     bfs.defer = true;
     document.head.appendChild(bfs);
   }
