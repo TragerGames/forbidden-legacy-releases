@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang-ativo="pt" data-idiomas="pt,en,es,vi">
+<head>
+<script>
+/* Idioma resolvido antes de qualquer pixel — por isso mora no <head> e
+   escreve no <html>: o <body> ainda não existe neste ponto do parse.
+   data-idiomas lista o que ESTA página tem traduzido; pedir um idioma
+   fora da lista cai no inglês, para nunca existir meia página vazia. */
+(function () {
+  var raiz = document.documentElement;
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  var escolhido = null;
+  try { escolhido = localStorage.getItem('fl_lang'); } catch (e) {}
+  if (!escolhido) {
+    var nav = (navigator.language || 'pt').slice(0, 2).toLowerCase();
+    escolhido = ({ pt: 'pt', en: 'en', es: 'es', vi: 'vi' })[nav] || 'en';
+  }
+  if (sup.indexOf(escolhido) < 0) escolhido = sup.indexOf('en') >= 0 ? 'en' : sup[0];
+  raiz.setAttribute('data-lang-ativo', escolhido);
+  raiz.setAttribute('lang', { pt: 'pt-BR', en: 'en', es: 'es', vi: 'vi' }[escolhido] || 'pt-BR');
+})();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1730849377953646');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1730849377953646&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<title>Forbidden Legacy - Guia do jogo</title>
+<meta name="description" content="Guia do Forbidden Legacy: Founder, Save na Nuvem, códigos de Souls e promo, torneios, boosters, eventos e mais. O mesmo guia do botão ? do jogo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://forbiddenlegacy.com.br/guia.html">
+<meta property="og:title" content="Forbidden Legacy - Guia do jogo">
+<meta property="og:description" content="Founder, Save na Nuvem, códigos, torneios, boosters e eventos: o guia do jogo.">
+<meta property="og:site_name" content="Forbidden Legacy">
+<meta property="og:image" content="https://forbiddenlegacy.com.br/img/og-forbidden-legacy.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Forbidden Legacy — remake fã-feito de Yu-Gi-Oh! Forbidden Memories">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://forbiddenlegacy.com.br/guia.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="432x432" href="/img/favicon-432.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════ RESET & TOKENS ═══════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#e9b949;--gold2:#e8b840;--gold3:#ffe49a;--gold-dim:#b8862a;
+  --dark:#09080a;--dark2:#0d0b0e;--dark3:#120e12;
+  --border:rgba(233,185,73,.13);
+  --muted:#8b867d;--body:#8b867d;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--body);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* BILINGUAL */
+
+/* ── IDIOMAS ──────────────────────────────────────────────────────────
+   Uma regra por idioma, e todas apenas ESCONDEM. O elemento do idioma
+   ativo nunca recebe regra de display, então conserva o display natural
+   que o resto da folha deu a ele.
+
+   Isto substituiu uma matriz de body.en [data-lang=en]{display:block} +
+   span{inline} + li{flex}, que precisava readivinhar o display de cada
+   tipo de elemento: toda tag nova exigia mais uma linha, e a regra de
+   span forçava a inline até os spans que o layout fazia block — ou
+   seja, o inglês herdava um bug de layout que o português não tinha.
+
+   O marcador vive no <html>, não no <body>, para o script do <head>
+   resolver o idioma antes do primeiro pixel. */
+html[data-lang-ativo="pt"] [data-lang]:not([data-lang="pt"]) { display: none !important; }
+html[data-lang-ativo="en"] [data-lang]:not([data-lang="en"]) { display: none !important; }
+html[data-lang-ativo="es"] [data-lang]:not([data-lang="es"]) { display: none !important; }
+html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !important; }
+
+
+/* Seletor de idioma do e-mail: mesma moldura dos campos de texto do
+   formulario, senao ele aparece com o estilo cru do sistema. */
+.field select, .input-group select {
+  width: 100%;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--border, rgba(255,255,255,0.065));
+  border-radius: 4px;
+  color: var(--gold-light, #e8b840);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 11px 12px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23c8973a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+  padding-right: 32px;
+}
+.field select:focus, .input-group select:focus { outline: none; border-color: var(--gold, #e9b949); }
+.field select option, .input-group select option { background: #121014; color: #f4f1ea; }
+
+/* ── SELETOR DE IDIOMA ────────────────────────────────────────────── */
+.lang-pick { position: relative; display: inline-block; }
+.lang-pick-btn {
+  display: flex; align-items: center; gap: 7px;
+  /* "Tiếng Việt" tem espaco e quebraria em duas linhas, esticando a
+     altura do botao e empurrando o Founder para fora da barra. */
+  white-space: nowrap;
+  background: transparent; border: 1px solid var(--gold-dim, #b8862a);
+  color: var(--text-muted, #8b867d);
+  padding: 4px 9px; border-radius: 3px; cursor: pointer;
+  font-size: 11px; letter-spacing: .6px; font-family: 'Inter', sans-serif;
+  transition: border-color .2s, color .2s;
+}
+.lang-pick-btn:hover, .lang-pick.aberto .lang-pick-btn {
+  border-color: var(--gold, #e9b949); color: var(--gold-light, #e8b840);
+}
+.lang-pick-btn svg, .lang-opt svg {
+  width: 18px; height: 12.6px; border-radius: 1px; flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.35);
+}
+.lang-caret { font-size: 8px; opacity: .7; transition: transform .2s; }
+.lang-pick.aberto .lang-caret { transform: rotate(180deg); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0; z-index: 3000;
+  min-width: 158px; padding: 4px;
+  background: #121014; border: 1px solid var(--gold-dim, #b8862a);
+  border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,.65);
+  display: none; flex-direction: column; gap: 1px;
+}
+.lang-pick.aberto .lang-menu { display: flex; }
+.lang-opt {
+  display: flex; align-items: center; gap: 9px; width: 100%;
+  background: transparent; border: none; cursor: pointer;
+  padding: 8px 10px; border-radius: 3px; text-align: left;
+  color: var(--text-body, #8b867d); font-size: 12.5px;
+  font-family: 'Inter', sans-serif; white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.lang-opt:hover { background: rgba(233,185,73,.12); color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"] { color: var(--gold-light, #e8b840); }
+.lang-opt[aria-selected="true"]::after { content: '\2713'; margin-left: auto; font-size: 11px; }
+@media (max-width: 560px) {
+  .lang-pick-btn .lang-nome { display: none; }   /* na nav estreita fica só a bandeira */
+  .lang-menu { right: 0; }
+}
+
+/* ═══════ NAV ═══════ */
+nav#nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 40px;
+  background:rgba(7,8,15,0);border-bottom:1px solid transparent;
+  transition:background .35s,border-color .35s;font-family:'Inter',sans-serif;
+}
+nav#nav.scrolled{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:36px;width:auto}
+.nav-logo-fallback{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--gold);text-shadow:0 0 16px rgba(233,185,73,.4)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{font-size:10px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links .sep{color:rgba(233,185,73,.15)}
+.nav-cta{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:2px;color:var(--dark)!important;background:var(--gold);padding:7px 20px;border-radius:2px;transition:background .2s}
+.nav-cta:hover{background:var(--gold2)!important}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.125)!important;color:var(--muted)!important;padding:4px 10px;border-radius:3px;cursor:pointer;font-size:11px;letter-spacing:1px;transition:all .2s;font-family:'Inter',sans-serif}
+.lang-btn.active{border-color:var(--gold)!important;color:var(--gold)!important}
+.dc-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.dc-dot.online{background:#3ba55c}.dc-dot.offline{background:#747f8d}
+.discord-nav-badge{display:none;align-items:center;gap:5px;font-size:10px;color:#7289da;text-decoration:none;border:1px solid rgba(88,101,242,.3);border-radius:3px;padding:4px 9px;background:rgba(88,101,242,.08);transition:background .2s}
+
+/* mobile nav */
+.mobile-nav-bar{display:none;position:fixed;top:52px;left:0;right:0;z-index:198;background:rgba(5,4,7,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(8px);flex-direction:column}
+.mobile-discord-bar{display:flex;align-items:center;justify-content:center;gap:6px;padding:5px 16px;background:rgba(88,101,242,.07);border-bottom:1px solid rgba(88,101,242,.15);font-size:11px;color:#7289da;text-decoration:none;letter-spacing:.3px}
+.mobile-nav-links{display:flex;overflow-x:auto;gap:0;scrollbar-width:none;-ms-overflow-style:none}
+.mobile-nav-links::-webkit-scrollbar{display:none}
+.mobile-nav-links a{flex-shrink:0;padding:10px 16px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;border-right:1px solid var(--border);white-space:nowrap;transition:color .2s,background .2s}
+.mobile-nav-links a:hover{color:var(--gold);background:rgba(200,144,32,.06)}
+.mobile-nav-links a.nav-cta{color:var(--gold2)}
+@media(max-width:700px){
+  nav#nav{padding:12px 20px}
+  .nav-links,nav#nav .nav-cta{display:none!important}
+  .mobile-nav-bar{display:flex}
+  main,section.hero,section{padding-top:96px!important}
+}
+/* -- Barra do topo: menus agrupados (2026-09-23) -----------------
+   Antes eram 12 links soltos e a barra precisava de ~1500px: em tela de
+   notebook os nomes quebravam em duas linhas, encostavam na logo e o botao
+   FOUNDER saia da tela. Agora sao 4 menus + Loja. A barra rolavel do celular
+   continua com a lista inteira e assume abaixo de 1000px. */
+.nav-links{flex-wrap:nowrap;gap:24px}
+.nav-links a{white-space:nowrap}
+.nav-logo{flex-shrink:0}
+nav#nav{gap:16px}
+nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
+.nav-grupo{position:relative}
+.nav-grupo-bt{display:flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--muted);padding:8px 0;transition:color .2s}
+.nav-grupo-bt:hover,.nav-grupo.aberto .nav-grupo-bt,.nav-grupo.tem-ativo .nav-grupo-bt{color:var(--gold)}
+.nav-caret{width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;
+  transform:rotate(45deg) translate(-2px,-2px);transition:transform .2s;opacity:.7}
+.nav-grupo.aberto .nav-caret{transform:rotate(225deg) translate(-3px,-3px)}
+.nav-drop{position:absolute;top:calc(100% + 10px);left:-14px;min-width:238px;z-index:5;
+  display:none;flex-direction:column;padding:8px;background:rgba(9,8,10,.985);
+  border:1px solid rgba(255,255,255,0.11);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.nav-drop::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.nav-grupo.aberto .nav-drop{display:flex}
+.nav-drop a{display:flex;flex-direction:column;gap:2px;padding:9px 12px;
+  font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#bcb6aa;
+  border-left:2px solid transparent;transition:background .18s,color .18s,border-color .18s}
+.nav-drop a:hover,.nav-drop a:focus-visible{background:rgba(233,185,73,.09);color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a.ativo{color:var(--gold2);border-left-color:var(--gold)}
+.nav-drop a small{font-size:10.5px;letter-spacing:.2px;text-transform:none;color:var(--muted);opacity:.85}
+.nav-solo{font-size:10px;letter-spacing:1.5px}
+.nav-solo.ativo{color:var(--gold)}
+@media(hover:hover){.nav-grupo:hover .nav-drop{display:flex}.nav-grupo:hover .nav-grupo-bt{color:var(--gold)}}
+@media(max-width:1000px){
+  .nav-links,nav#nav .nav-cta,.discord-nav-badge{display:none!important}
+  .mobile-nav-bar{display:flex}
+  main,section.hero,section{padding-top:96px!important}
+}
+
+
+
+
+
+
+
+.field{margin-bottom:18px}
+.field label{
+  display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold-dim);margin-bottom:8px;font-weight:600;
+}
+.field input,.field select{
+  width:100%;
+  background:rgba(4,4,6,.9);
+  border:1px solid rgba(255,255,255,0.06);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  color:#bcb6aa;padding:13px 14px;font-size:14px;
+  outline:none;font-family:'Inter',sans-serif;
+  transition:border-color .2s,box-shadow .2s;
+  border-radius:0;
+  appearance:none;
+}
+.field input:focus,.field select:focus{
+  border-color:rgba(233,185,73,.4);
+  box-shadow:0 4px 20px rgba(233,185,73,.06),inset 0 0 0 0;
+  background:rgba(8,7,10,.95);
+}
+.field input::placeholder{color:rgba(233,185,73,.2)}
+.field select option{background:#09090c;color:#bcb6aa}
+.fields-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+
+/* ═══════ FOOTER ═══════ */
+footer.fl-footer{background:#04050d;border-top:1px solid var(--border);padding:40px;font-family:'Inter',sans-serif}
+footer.fl-footer .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:32px}
+footer.fl-footer .footer-brand .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);margin-bottom:6px}
+footer.fl-footer .footer-brand p{font-size:11px;color:#8b867d;max-width:240px;line-height:1.6}
+footer.fl-footer .footer-col h4{font-size:10px;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:12px}
+footer.fl-footer .footer-col a{display:block;font-size:12px;color:#8b867d;margin-bottom:6px;transition:color .2s;text-decoration:none}
+footer.fl-footer .footer-col a:hover{color:var(--gold)}
+footer.fl-footer .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer.fl-footer .footer-bottom span{font-size:11px;color:#5f5b55}
+
+/* ═══ BARRA DE ROLAGEM — padrao do site ══════════════════════════════
+   Vale para a pagina e para qualquer area rolavel (listas, cofre,
+   modais). As regras de `display:none` das faixas de filtro horizontal
+   continuam valendo: elas vem depois e sao mais especificas. */
+* { scrollbar-width: thin; scrollbar-color: var(--gold-dim, #b8862a) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--dark3, #120e12); border-radius: 6px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-dim, #b8862a), #9a7124);
+  border-radius: 6px;
+  border: 2px solid var(--dark, #09080a);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--gold, #e9b949), var(--gold-dim, #b8862a));
+}
+::-webkit-scrollbar-corner { background: transparent; }
+
+</style>
+<style>
+/* ═══════ ATIVAR OUTRO DISPOSITIVO ═══════ */
+nav#nav{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
+.flp-pagina{max-width:1060px;margin:0 auto;padding:128px 24px 88px}
+.flp-topo{text-align:center;margin-bottom:34px}
+.flp-eyebrow{font-family:'Marcellus SC',serif;font-size:13px;letter-spacing:3px;color:var(--gold);opacity:.8;margin-bottom:10px}
+.flp-titulo{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(40px,6vw,66px);letter-spacing:3px;line-height:1;color:var(--gold2);text-wrap:balance;text-shadow:0 0 34px rgba(233,185,73,.18)}
+.flp-sub{margin:14px auto 0;max-width:58ch;color:#bcb6aa;font-size:15px;line-height:1.65;text-wrap:balance}
+
+.flp-passos{list-style:none;display:flex;align-items:center;max-width:620px;margin:0 auto 26px}
+.flp-passo{display:flex;align-items:center;gap:10px;flex:1;color:var(--muted);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600}
+.flp-passo:last-child{flex:0 0 auto}
+.flp-passo:not(:last-child)::after{content:'';flex:1;height:1px;background:rgba(233,185,73,.16);margin:0 12px}
+.flp-passo .n{width:24px;height:24px;flex-shrink:0;display:grid;place-items:center;transform:rotate(45deg);border:1px solid var(--gold-dim)}
+.flp-passo .n i{transform:rotate(-45deg);font-style:normal;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:0;color:var(--gold-dim)}
+.flp-passo.feito{color:#8b867d}
+.flp-passo.feito .n{border-color:var(--gold)}
+.flp-passo.feito .n i{color:var(--gold)}
+.flp-passo.atual{color:var(--gold2)}
+.flp-passo.atual .n{background:var(--gold);border-color:var(--gold)}
+.flp-passo.atual .n i{color:var(--dark)}
+.flp-passo.alerta .n{background:#8a3a2a;border-color:#c0503a}
+.flp-passo.alerta .n i{color:#f3d6cc}
+
+.flp-grade{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:2px;background:rgba(255,255,255,0.03)}
+.flp-card,.flp-lado{position:relative}
+.flp-card{background:var(--dark2);padding:36px}
+.flp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold-dim),var(--gold),var(--gold-dim))}
+.flp-lado{background:rgba(10,9,12,.97);padding:32px 28px}
+.flp-lado::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.flp-h{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:24px;letter-spacing:2px;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.flp-h::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(233,185,73,.2),transparent)}
+.flp-texto{color:#bcb6aa;font-size:14px;line-height:1.65;margin-bottom:20px}
+.flp-texto b,.flp-dica b,.flp-regras b,.flp-ok-passos b{color:#f4f1ea;font-weight:600}
+
+.field input.invalido{border-color:rgba(192,80,58,.6)}
+.flp-aviso{margin:-6px 0 18px;padding:12px 14px;border-left:2px solid #c0503a;background:rgba(192,80,58,.08);color:#e8ad99;font-size:13.5px;line-height:1.55}
+.flp-aviso.ok{border-left-color:#5aa36b;background:rgba(90,163,107,.08);color:#a9d8b3}
+.flp-aviso b{color:inherit}
+/* A regra .field input,.field select (copiada da loja) usa o atalho `background`
+   e apaga a seta que o seletor de idioma ganha antes. Devolve a seta aqui. */
+.flp-card .field select{cursor:pointer;padding-right:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23c8973a'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:10px 6px}
+.flp-dica{font-size:12.5px;color:#8b867d;margin-top:8px;line-height:1.55}
+.flp-erro-campo{font-size:12.5px;color:#e3a48f;margin-top:8px}
+.flp-codigo input{font-family:'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.flp-otp input{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:16px;text-align:center;padding:10px 14px}
+
+.flp-btn{display:flex;width:100%;justify-content:center;align-items:center;gap:10px;margin-top:6px;padding:14px 18px;border:0;cursor:pointer;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--dark);background:linear-gradient(180deg,var(--gold2),var(--gold));transition:filter .2s}
+.flp-btn:hover{filter:brightness(1.08)}
+.flp-btn:focus-visible,.flp-link:focus-visible,.flp-btn-sec:focus-visible{outline:2px solid var(--gold3);outline-offset:3px}
+.flp-btn[disabled]{opacity:.55;cursor:default;filter:none}
+.flp-btn-sec{display:flex;width:100%;justify-content:center;align-items:center;gap:10px;margin-top:10px;padding:12px 18px;cursor:pointer;
+  background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--gold2);font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px}
+.flp-btn-sec:hover{background:rgba(255,255,255,0.035)}
+.flp-btn-sec.discord{border-color:rgba(88,101,242,.45);color:#9aa5f5}
+.flp-btn-sec.discord:hover{background:rgba(88,101,242,.1)}
+.flp-acoes-sec{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:16px}
+.flp-link{background:none;border:0;padding:0;color:var(--gold);font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-family:'Inter',sans-serif}
+.flp-link[disabled]{color:var(--muted);text-decoration:none;cursor:default}
+
+.flp-selo{width:54px;height:54px;display:grid;place-items:center;transform:rotate(45deg);margin:4px 0 22px 4px;border:1px solid var(--gold);background:rgba(255,255,255,0.04)}
+.flp-selo span{transform:rotate(-45deg);font-size:24px;color:var(--gold2);line-height:1}
+.flp-selo.alerta{border-color:#c0503a;background:rgba(192,80,58,.1)}
+.flp-selo.alerta span{color:#e8a08b}
+.flp-resultado-h{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:32px;letter-spacing:2px;line-height:1.05;color:var(--gold2);margin-bottom:10px;text-wrap:balance}
+.flp-resultado-h.alerta{color:#eaa58f}
+.flp-ok-passos{list-style:none;counter-reset:ok;margin:6px 0 4px}
+.flp-ok-passos li{counter-increment:ok;position:relative;padding:12px 0 12px 40px;border-top:1px solid var(--border);color:#bcb6aa;font-size:14px;line-height:1.55}
+.flp-ok-passos li::before{content:counter(ok);position:absolute;left:0;top:11px;width:26px;height:26px;display:grid;place-items:center;border:1px solid var(--gold-dim);font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold)}
+.flp-nota{font-size:12.5px;color:#8b867d;margin-top:14px;line-height:1.55}
+
+.flp-lado-h{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dim);font-weight:600;margin-bottom:14px}
+.flp-regras{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:26px}
+.flp-regras li{position:relative;padding-left:20px;font-size:13.5px;line-height:1.55;color:#8b867d}
+.flp-regras li::before{content:'';position:absolute;left:2px;top:7px;width:6px;height:6px;transform:rotate(45deg);background:var(--gold)}
+.flp-onde{border:1px solid rgba(255,255,255,0.06);background:rgba(5,4,7,.6);padding:16px}
+.flp-caminho{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.flp-caminho span{font-size:12px;color:#f4f1ea;border:1px solid rgba(255,255,255,0.11);padding:4px 8px;background:rgba(255,255,255,0.025)}
+.flp-caminho i{font-style:normal;color:var(--gold-dim)}
+
+.flp-vagas{display:flex;gap:6px;margin:4px 0 8px}
+.flp-vaga{flex:1;height:10px;border:1px solid var(--gold-dim)}
+.flp-vaga.usada{background:var(--gold-dim);border-color:var(--gold-dim)}
+.flp-vaga.nova{background:var(--gold2);border-color:var(--gold2);box-shadow:0 0 14px rgba(232,184,64,.45)}
+.flp-vagas-legenda{font-size:12.5px;color:#8b867d;margin-bottom:12px;font-variant-numeric:tabular-nums}
+.flp-disp{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--border);font-size:13.5px;color:#bcb6aa;font-variant-numeric:tabular-nums}
+.flp-disp small{font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);border:1px solid rgba(255,255,255,0.09);padding:2px 6px}
+.flp-disp small.novo{color:var(--dark);background:var(--gold2);border-color:var(--gold2)}
+
+.flp-previa{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:400;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:calc(100% - 32px);
+  padding:8px 10px;background:rgba(20,18,22,.96);border:1px dashed var(--gold-dim);font-size:11px;color:var(--muted)}
+.flp-previa button{background:transparent;border:1px solid rgba(255,255,255,0.125);color:var(--gold2);padding:4px 8px;font-size:11px;cursor:pointer}
+
+@media (max-width:860px){.flp-grade{grid-template-columns:1fr}}
+@media (max-width:700px){main.flp-pagina{padding-top:140px!important}}
+@media (max-width:560px){
+  .flp-card{padding:26px 20px}.flp-lado{padding:26px 20px}
+  .flp-passo span:not(.n){display:none}
+  .flp-passo.atual span:not(.n){display:inline}
+  .flp-otp input{font-size:28px;letter-spacing:10px}
+}
+@media (prefers-reduced-motion:reduce){.flp-pagina *{transition:none!important}}
+
+/* ═══════ GUIA DO JOGO (2026-11-18) ═══════
+   Mesmo texto do botão ? do jogo: data/guia.json, gerado pelo
+   Tools/exportar_guia_site.py do repo do jogo. */
+.gj-grade{grid-template-columns:320px minmax(0,1fr)}
+.gj-busca{position:relative;margin-bottom:16px}
+.gj-busca input{width:100%;background:rgba(4,4,6,.9);border:1px solid rgba(255,255,255,0.08);color:#f4f1ea;padding:12px 14px 12px 38px;font:14px 'Inter',sans-serif;outline:none;border-radius:0}
+.gj-busca input:focus{border-color:rgba(233,185,73,.45)}
+.gj-busca input::placeholder{color:#6f6a62}
+.gj-busca svg{position:absolute;left:12px;top:50%;width:16px;height:16px;transform:translateY(-50%);stroke:var(--gold-dim);fill:none;stroke-width:2}
+.gj-lista{list-style:none;display:flex;flex-direction:column;gap:2px}
+.gj-item{display:flex;align-items:center;gap:12px;width:100%;padding:9px 10px;background:transparent;border:0;border-left:2px solid transparent;cursor:pointer;text-align:left;color:#bcb6aa;font:500 14px 'Inter',sans-serif;transition:background .15s,color .15s,border-color .15s}
+.gj-item img{width:30px;height:30px;flex-shrink:0;object-fit:contain}
+.gj-item:hover{background:rgba(233,185,73,.07);color:var(--gold2)}
+.gj-item[aria-current="true"]{background:rgba(233,185,73,.12);color:var(--gold2);border-left-color:var(--gold)}
+.gj-item:focus-visible{outline:2px solid var(--gold3);outline-offset:-2px}
+.gj-vazio{color:#8b867d;font-size:13.5px;line-height:1.55;padding:6px 2px}
+.gj-ajuda{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.gj-topico + .gj-topico{margin-top:34px;padding-top:30px;border-top:1px solid var(--border)}
+.gj-cab{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.gj-cab img{width:46px;height:46px;object-fit:contain;flex-shrink:0}
+.gj-cab h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:32px;letter-spacing:2px;line-height:1.05;color:var(--gold2)}
+.gj-corpo h3{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:21px;letter-spacing:1.5px;color:var(--gold);margin:22px 0 8px}
+.gj-corpo h3:first-child{margin-top:0}
+.gj-corpo p{color:#bcb6aa;font-size:15px;line-height:1.7;margin-bottom:10px}
+.gj-corpo ol{list-style:none;counter-reset:gj;margin:4px 0 12px}
+.gj-corpo ol li{counter-increment:gj;position:relative;padding:8px 0 8px 40px;color:#bcb6aa;font-size:15px;line-height:1.6}
+.gj-corpo ol li::before{content:counter(gj);position:absolute;left:0;top:8px;width:26px;height:26px;display:grid;place-items:center;border:1px solid var(--gold-dim);font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--gold)}
+.gj-corpo mark{background:rgba(233,185,73,.28);color:#fff3cf;padding:0 2px}
+.gj-acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.gj-acoes .flp-btn-sec{width:auto;margin:0;padding:10px 18px;text-decoration:none}
+@media (max-width:860px){
+  .gj-grade{grid-template-columns:1fr}
+  .gj-lista{flex-direction:row;flex-wrap:wrap;gap:6px}
+  .gj-item{width:auto;padding:7px 10px;border:1px solid rgba(255,255,255,0.1);font-size:13px;gap:8px}
+  .gj-item img{width:22px;height:22px}
+  .gj-item[aria-current="true"]{border-color:var(--gold)}
+  .gj-ajuda{display:none}
+}
+</style>
+<link rel="stylesheet" href="css/site-fx.css?v=20261112a">
+<link rel="stylesheet" href="css/site-v2.css?v=20261113a">
+</head>
+<body class="fl2">
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="/" aria-label="Forbidden Legacy — página inicial">
+    <img src="/img/logo-nav.webp" alt="FL" width="36" height="36" decoding="async" onerror="this.style.display='none'">
+    <div class="nav-logo-fallback">Forbidden Legacy</div>
+  </a>
+  <div class="nav-links"><!-- menu gerado por js/site-nav.js (fonte unica) --></div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="https://discord.gg/forbidden-legacy" target="_blank" class="discord-nav-badge" id="discord-nav-badge">
+      <span class="dc-dot online"></span><span id="discord-online-nav">—</span> <span data-lang="pt">online</span><span data-lang="en">online</span><span data-lang="es">en línea</span><span data-lang="vi">trực tuyến</span>
+      <span style="opacity:.4;margin:0 3px">·</span>
+      <span class="dc-dot offline"></span><span id="discord-total-nav">—</span> <span data-lang="pt">membros</span><span data-lang="en">members</span><span data-lang="es">miembros</span><span data-lang="vi">thành viên</span>
+    </a>
+    <div class="lang-pick" id="lang-pick">
+      <button class="lang-pick-btn" type="button" id="lang-atual"
+              aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma"
+              onclick="toggleLangMenu(event)"></button>
+      <div class="lang-menu" role="listbox">
+        <button class="lang-opt" role="option" data-idioma="pt" aria-selected="false" onclick="setLang('pt')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg><span>Português</span></button>
+        <button class="lang-opt" role="option" data-idioma="en" aria-selected="false" onclick="setLang('en')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><g fill="#b22234"><rect width="30" height="1.62"/><rect y="3.23" width="30" height="1.62"/><rect y="6.46" width="30" height="1.62"/><rect y="9.69" width="30" height="1.62"/><rect y="12.92" width="30" height="1.62"/><rect y="16.15" width="30" height="1.62"/><rect y="19.38" width="30" height="1.62"/></g><rect width="13" height="11.3" fill="#3c3b6e"/></svg><span>English</span></button>
+        <button class="lang-opt" role="option" data-idioma="es" aria-selected="false" onclick="setLang('es')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#c60b1e"/><rect y="5.25" width="30" height="10.5" fill="#ffc400"/></svg><span>Español</span></button>
+        <button class="lang-opt" role="option" data-idioma="vi" aria-selected="false" onclick="setLang('vi')"><svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#da251d"/><path d="M15 5 16.65 10.05 21.95 10.05 17.65 13.15 19.3 18.2 15 15.1 10.7 18.2 12.35 13.15 8.05 10.05 13.35 10.05Z" fill="#ff0"/></svg><span>Tiếng Việt</span></button>
+      </div>
+    </div>
+    <a href="index.html#comprar" class="nav-cta">☥ Founder</a>
+  </div>
+</nav>
+<script src="js/site-nav.js?v=20261112b"></script>
+<script src="js/site-oferta.js?v=20261113a"></script>
+
+<!-- MOBILE NAV BAR -->
+<div class="mobile-nav-bar" id="mobile-nav-bar">
+  <a href="https://discord.gg/forbidden-legacy" target="_blank" class="mobile-discord-bar">💬 Discord</a>
+</div>
+
+<main class="flp-pagina" id="top">
+  <header class="flp-topo">
+    <div class="flp-eyebrow" data-t="eyebrow"></div>
+    <h1 class="flp-titulo" data-t="titulo"></h1>
+    <p class="flp-sub" data-t="sub"></p>
+  </header>
+
+  <div class="flp-grade gj-grade">
+    <aside class="flp-lado" id="gj-lado"></aside>
+    <div class="flp-card" id="gj-principal"></div>
+  </div>
+</main>
+
+<footer class="fl-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">☥ Forbidden Legacy</div>
+      <p data-lang="pt">Remake fan-made espiritual de YGO Forbidden Memories. Desenvolvido por Felipe França / TragerGames.</p>
+      <p data-lang="en">Spiritual fan-made remake of YGO Forbidden Memories. Developed by Felipe França / TragerGames.</p><p data-lang="es">Remake espiritual hecho por fans de YGO Forbidden Memories. Desarrollado por Felipe França / TragerGames.</p><p data-lang="vi">Bản làm lại tinh thần do người hâm mộ thực hiện từ YGO Forbidden Memories. Phát triển bởi Felipe França / TragerGames.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">O Jogo</h4><h4 data-lang="en">The Game</h4><h4 data-lang="es">El Juego</h4><h4 data-lang="vi">Trò chơi</h4>
+      <a href="conheca.html" data-lang="pt">Sobre</a><a href="conheca.html" data-lang="en">About</a><a href="conheca.html" data-lang="es">Acerca de</a><a href="conheca.html" data-lang="vi">Giới thiệu</a>
+      <a href="features.html" data-lang="pt">Mecânicas</a><a href="features.html" data-lang="en">Features</a><a href="features.html" data-lang="es">Mecánicas</a><a href="features.html" data-lang="vi">Cơ chế</a>
+      <a href="conheca.html#egito" data-lang="pt">Campanha</a><a href="conheca.html#egito" data-lang="en">Campaign</a><a href="conheca.html#egito" data-lang="es">Campaña</a><a href="conheca.html#egito" data-lang="vi">Cốt truyện</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Conteúdo</h4><h4 data-lang="en">Content</h4><h4 data-lang="es">Contenido</h4><h4 data-lang="vi">Nội dung</h4>
+      <a href="conheca.html" data-lang="pt">Conheça o jogo</a><a href="conheca.html" data-lang="en">Discover the game</a><a href="conheca.html" data-lang="es">Conoce el juego</a><a href="conheca.html" data-lang="vi">Khám phá trò chơi</a>
+      <a href="banlist.html">Banlist</a>
+      <a href="boosters.html">Boosters</a>
+      <a href="catalogo.html" data-lang="pt">Catálogo</a><a href="catalogo.html" data-lang="en">Catalog</a><a href="catalogo.html" data-lang="es">Catálogo</a><a href="catalogo.html" data-lang="vi">Danh mục</a>
+      <a href="montar_deck.html" data-lang="pt">Montar Deck</a><a href="montar_deck.html" data-lang="en">Deck Builder</a><a href="montar_deck.html" data-lang="es">Armar Mazo</a><a href="montar_deck.html" data-lang="vi">Tạo bộ bài</a>
+      <a href="conquistas.html" data-lang="pt">Conquistas</a><a href="conquistas.html" data-lang="en">Achievements</a><a href="conquistas.html" data-lang="es">Logros</a><a href="conquistas.html" data-lang="vi">Thành tựu</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-lang="pt">Comunidade</h4><h4 data-lang="en">Community</h4><h4 data-lang="es">Comunidad</h4><h4 data-lang="vi">Cộng đồng</h4>
+      <a href="https://discord.gg/forbidden-legacy" target="_blank">Discord</a>
+      <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
+      <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
+      <a href="ativar_dispositivo.html" data-lang="pt">Ativar outro dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate another device</a><a href="ativar_dispositivo.html" data-lang="es">Activar otro dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị khác</a>
+      <a href="guia.html" data-lang="pt">Guia do jogo</a><a href="guia.html" data-lang="en">Game guide</a><a href="guia.html" data-lang="es">Guía del juego</a><a href="guia.html" data-lang="vi">Hướng dẫn trò chơi</a>
+      <a href="suporte.html" data-lang="pt">Fale com o suporte</a><a href="suporte.html" data-lang="en">Contact support</a><a href="suporte.html" data-lang="es">Contactar soporte</a><a href="suporte.html" data-lang="vi">Liên hệ hỗ trợ</a>
+      <a href="termos.html" data-lang="pt">Termos de Uso</a><a href="termos.html" data-lang="en">Terms of Use</a><a href="termos.html" data-lang="es">Términos de Uso</a><a href="termos.html" data-lang="vi">Điều khoản sử dụng</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TragerGames · Forbidden Legacy · v3.0</span>
+    <span>Fan-made project · Not affiliated with Konami</span>
+  </div>
+</footer>
+
+<script>
+/* ═══════ GUIA DO JOGO (2026-11-18, pedido do Trager) ═══════
+   O mesmo guia do botão ? do menu inicial do jogo, para a pessoa conferir
+   antes de mandar mensagem ao suporte. Texto em data/guia.json, gerado pelo
+   Tools/exportar_guia_site.py do repo do jogo (fonte única:
+   Scripts/UI/guia_inicial_conteudo.gd). Não editar o texto aqui.
+   Link direto para um tópico: guia.html#nuvem, guia.html#founder... */
+var GJ_TXT = {
+  pt: { eyebrow: '☥ Suporte', titulo: 'Guia do jogo', sub: 'O mesmo guia do botão ? do jogo. Confira aqui antes de mandar mensagem: muita dúvida já tem resposta.',
+        busca: 'Buscar no guia (ex.: save, código, Founder)', topicos: 'Tópicos', vazio: 'Nada encontrado para "{q}". Tente outra palavra ou fale com o suporte.',
+        achados: '{n} tópico(s) com "{q}"', ajuda_h: 'Não achou a resposta?', ajuda_txt: 'Mande sua dúvida para a equipe. Respondemos no seu e-mail.',
+        btn_suporte: 'Fale com o suporte', btn_discord: 'Perguntar no Discord', erro: 'Não foi possível carregar o guia agora. Recarregue a página.' },
+  en: { eyebrow: '☥ Support', titulo: 'Game guide', sub: 'The same guide as the ? button in the game. Check it before sending a message: many questions are answered here.',
+        busca: 'Search the guide (e.g. save, code, Founder)', topicos: 'Topics', vazio: 'Nothing found for "{q}". Try another word or contact support.',
+        achados: '{n} topic(s) with "{q}"', ajuda_h: 'Did not find the answer?', ajuda_txt: 'Send your question to the team. We reply to your email.',
+        btn_suporte: 'Contact support', btn_discord: 'Ask on Discord', erro: 'The guide could not be loaded right now. Please reload the page.' },
+  es: { eyebrow: '☥ Soporte', titulo: 'Guía del juego', sub: 'La misma guía del botón ? del juego. Revísala antes de enviar un mensaje: muchas dudas ya tienen respuesta.',
+        busca: 'Buscar en la guía (ej.: partida, código, Founder)', topicos: 'Temas', vazio: 'No se encontró nada para "{q}". Prueba otra palabra o contacta al soporte.',
+        achados: '{n} tema(s) con "{q}"', ajuda_h: '¿No encontraste la respuesta?', ajuda_txt: 'Envía tu duda al equipo. Te respondemos por correo.',
+        btn_suporte: 'Contactar soporte', btn_discord: 'Preguntar en Discord', erro: 'No se pudo cargar la guía ahora. Recarga la página.' },
+  vi: { eyebrow: '☥ Hỗ trợ', titulo: 'Hướng dẫn trò chơi', sub: 'Cùng hướng dẫn như nút ? trong game. Hãy xem ở đây trước khi gửi tin nhắn: nhiều câu hỏi đã có lời giải đáp.',
+        busca: 'Tìm trong hướng dẫn (vd: lưu, mã, Founder)', topicos: 'Chủ đề', vazio: 'Không tìm thấy "{q}". Hãy thử từ khác hoặc liên hệ hỗ trợ.',
+        achados: '{n} chủ đề có "{q}"', ajuda_h: 'Chưa tìm thấy câu trả lời?', ajuda_txt: 'Gửi câu hỏi cho đội ngũ. Chúng tôi trả lời qua email của bạn.',
+        btn_suporte: 'Liên hệ hỗ trợ', btn_discord: 'Hỏi trên Discord', erro: 'Chưa tải được hướng dẫn. Hãy tải lại trang.' }
+};
+
+var GJ = { topicos: [], atual: '', busca: '', erro: false };
+
+function gjTx(k, vars) {
+  var l = (typeof langAtual === 'function') ? langAtual() : 'pt';
+  var s = (GJ_TXT[l] && GJ_TXT[l][k]) || GJ_TXT.en[k] || k;
+  if (vars) Object.keys(vars).forEach(function (a) { s = s.split('{' + a + '}').join(vars[a]); });
+  return s;
+}
+function gjEsc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function gjLang(obj) { var l = langAtual(); return (obj && (obj[l] || obj.en || obj.pt)) || ''; }
+/* Busca sem acento e sem maiuscula: "codigo" acha "Código". */
+function gjNorm(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+
+function gjMarcar(raw, q) {
+  var alvo = gjNorm(q || '');
+  if (!alvo) return gjEsc(raw);
+  var chars = Array.from(String(raw)), norms = chars.map(gjNorm), out = '', i = 0;
+  while (i < chars.length) {
+    var acc = '', j = i;
+    while (j < chars.length && acc.length < alvo.length) { acc += norms[j]; j++; }
+    if (acc === alvo) { out += '<mark>' + gjEsc(chars.slice(i, j).join('')) + '</mark>'; i = j; }
+    else { out += gjEsc(chars[i]); i++; }
+  }
+  return out;
+}
+
+function gjCorpoHtml(corpo, q) {
+  var html = '', lista = '';
+  function fechaLista() { if (lista) { html += '<ol>' + lista + '</ol>'; lista = ''; } }
+  corpo.split('\n').forEach(function (linha) {
+    linha = linha.trim();
+    if (!linha) return;
+    var m;
+    if (linha.charAt(0) === '#') { fechaLista(); html += '<h3>' + gjMarcar(linha.replace(/^#+\s*/, ''), q) + '</h3>'; }
+    else if ((m = linha.match(/^\d+\.\s*(.*)$/))) { lista += '<li>' + gjMarcar(m[1], q) + '</li>'; }
+    else { fechaLista(); html += '<p>' + gjMarcar(linha, q) + '</p>'; }
+  });
+  fechaLista();
+  return html;
+}
+
+function gjAchados() {
+  var q = gjNorm(GJ.busca.trim());
+  if (!q) return null;
+  return GJ.topicos.filter(function (t) { return gjNorm(gjLang(t.titulo) + '\n' + gjLang(t.corpo)).indexOf(q) >= 0; });
+}
+
+function gjTopicoHtml(t, q) {
+  return '<article class="gj-topico" id="topico-' + gjEsc(t.id) + '">' +
+    '<div class="gj-cab"><img src="img/guia/' + gjEsc(t.icone) + '.webp" alt="" width="46" height="46"><h2>' + gjMarcar(gjLang(t.titulo), q) + '</h2></div>' +
+    '<div class="gj-corpo">' + gjCorpoHtml(gjLang(t.corpo), q) + '</div></article>';
+}
+
+function gjAcoes() {
+  return '<div class="gj-acoes"><a class="flp-btn-sec" href="suporte.html">' + gjTx('btn_suporte') + '</a>' +
+    '<a class="flp-btn-sec discord" href="https://discord.gg/forbidden-legacy" target="_blank" rel="noopener">' + gjTx('btn_discord') + '</a></div>';
+}
+
+function gjRender() {
+  var principal = document.getElementById('gj-principal');
+  var lado = document.getElementById('gj-lado');
+  if (!principal || !lado) return;
+  if (GJ.erro) { principal.innerHTML = '<p class="flp-texto">' + gjTx('erro') + '</p>' + gjAcoes(); return; }
+  if (!GJ.topicos.length) return;
+  var achados = gjAchados();
+  var visiveis = achados || GJ.topicos;
+  var q = GJ.busca.trim();
+
+  var itens = visiveis.map(function (t) {
+    var atual = !achados && t.id === GJ.atual;
+    return '<li><button type="button" class="gj-item" data-id="' + gjEsc(t.id) + '"' + (atual ? ' aria-current="true"' : '') + '>' +
+      '<img src="img/guia/' + gjEsc(t.icone) + '.webp" alt="" width="30" height="30" loading="lazy"><span>' + gjEsc(gjLang(t.titulo)) + '</span></button></li>';
+  }).join('');
+  var lista = document.getElementById('gj-lista');
+  var info = document.getElementById('gj-info');
+  if (lista) lista.innerHTML = itens;
+  if (info) info.textContent = achados ? gjTx('achados', { n: achados.length, q: q }) : gjTx('topicos');
+
+  if (achados && !achados.length) {
+    principal.innerHTML = '<p class="gj-vazio">' + gjEsc(gjTx('vazio', { q: q })) + '</p>' + gjAcoes();
+  } else if (achados) {
+    principal.innerHTML = achados.map(function (t) { return gjTopicoHtml(t, q); }).join('') + gjAcoes();
+  } else {
+    var t = GJ.topicos.filter(function (x) { return x.id === GJ.atual; })[0] || GJ.topicos[0];
+    principal.innerHTML = gjTopicoHtml(t, '') + gjAcoes();
+  }
+}
+
+function gjMontarLado() {
+  var lado = document.getElementById('gj-lado');
+  if (!lado) return;
+  lado.innerHTML =
+    '<div class="gj-busca"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>' +
+      '<input id="gj-q" type="search" autocomplete="off" placeholder="' + gjEsc(gjTx('busca')) + '" aria-label="' + gjEsc(gjTx('busca')) + '" value="' + gjEsc(GJ.busca) + '"></div>' +
+    '<div class="flp-lado-h" id="gj-info"></div>' +
+    '<ul class="gj-lista" id="gj-lista"></ul>' +
+    '<div class="gj-ajuda"><div class="flp-lado-h">' + gjTx('ajuda_h') + '</div>' +
+      '<p class="flp-texto" style="font-size:13.5px;margin-bottom:12px">' + gjTx('ajuda_txt') + '</p>' +
+      '<a class="flp-btn-sec" style="text-decoration:none;margin:0" href="suporte.html">' + gjTx('btn_suporte') + '</a></div>';
+  var q = document.getElementById('gj-q');
+  q.addEventListener('input', function () { GJ.busca = q.value; gjRender(); });
+  document.getElementById('gj-lista').addEventListener('click', function (ev) {
+    var b = ev.target.closest('.gj-item');
+    if (!b) return;
+    gjAbrir(b.dataset.id, true);
+  });
+}
+
+function gjAbrir(id, rolar) {
+  GJ.atual = id; GJ.busca = '';
+  var q = document.getElementById('gj-q'); if (q) q.value = '';
+  try { history.replaceState(null, '', '#' + id); } catch (e) {}
+  gjRender();
+  if (rolar) {
+    var alvo = document.getElementById('gj-principal');
+    if (alvo && (alvo.getBoundingClientRect().top < 0 || window.innerWidth <= 860)) alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+/* Chamado pelo setLang do site: troca de idioma redesenha tudo. */
+function flRedesenhar() {
+  document.querySelectorAll('[data-t]').forEach(function (el) { el.innerHTML = gjTx(el.dataset.t); });
+  gjMontarLado();
+  gjRender();
+}
+
+window.addEventListener('hashchange', function () {
+  var id = location.hash.slice(1);
+  if (GJ.topicos.some(function (t) { return t.id === id; }) && id !== GJ.atual) gjAbrir(id, true);
+});
+
+fetch('data/guia.json?v=20261118', { cache: 'no-cache' })
+  .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(function (d) {
+    GJ.topicos = (d && d.topicos) || [];
+    var pedido = location.hash.slice(1);
+    GJ.atual = GJ.topicos.some(function (t) { return t.id === pedido; }) ? pedido : (GJ.topicos[0] || {}).id;
+    gjRender();
+    if (pedido && GJ.atual === pedido) {
+      var alvo = document.getElementById('gj-principal');
+      if (alvo && window.innerWidth <= 860) alvo.scrollIntoView({ block: 'start' });
+    }
+  })
+  .catch(function () { GJ.erro = true; gjRender(); });
+</script>
+<script>
+function langAtual(){ return document.documentElement.getAttribute('data-lang-ativo') || 'pt'; }
+function t4(pt,en,es,vi){
+  var l=langAtual();
+  return l==='en' ? en : l==='es' ? es : l==='vi' ? vi : pt;
+}
+
+var FL_IDIOMAS = {
+  pt: { nome: 'Português', locale: 'pt-BR', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#009b3a"/><path d="M15 2.4 27.6 10.5 15 18.6 2.4 10.5Z" fill="#fedf00"/><circle cx="15" cy="10.5" r="4.5" fill="#002776"/></svg>' },
+  en: { nome: 'English', locale: 'en', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#fff"/><g fill="#b22234"><rect width="30" height="1.62"/><rect y="3.23" width="30" height="1.62"/><rect y="6.46" width="30" height="1.62"/><rect y="9.69" width="30" height="1.62"/><rect y="12.92" width="30" height="1.62"/><rect y="16.15" width="30" height="1.62"/><rect y="19.38" width="30" height="1.62"/></g><rect width="13" height="11.3" fill="#3c3b6e"/></svg>' },
+  es: { nome: 'Español', locale: 'es', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#c60b1e"/><rect y="5.25" width="30" height="10.5" fill="#ffc400"/></svg>' },
+  vi: { nome: 'Tiếng Việt', locale: 'vi', flag: '<svg viewBox="0 0 30 21" aria-hidden="true"><rect width="30" height="21" fill="#da251d"/><path d="M15 5 16.65 10.05 21.95 10.05 17.65 13.15 19.3 18.2 15 15.1 10.7 18.2 12.35 13.15 8.05 10.05 13.35 10.05Z" fill="#ff0"/></svg>' }
+};
+
+function setLang(lang, saveToStorage = true) {
+  var raiz = document.documentElement;
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  if (sup.indexOf(lang) < 0) lang = sup.indexOf('en') >= 0 ? 'en' : sup[0];
+
+  raiz.setAttribute('data-lang-ativo', lang);
+  raiz.setAttribute('lang', (FL_IDIOMAS[lang] || {}).locale || 'pt-BR');
+  /* .en continua existindo: há CSS e JS antigos que consultam a classe */
+  document.body.classList.toggle('en', lang === 'en');
+
+  if (saveToStorage) { try { localStorage.setItem('fl_lang', lang); } catch (e) {} }
+
+  /* Botão do seletor mostra a bandeira e o nome do idioma escolhido */
+  var alvo = FL_IDIOMAS[lang] || FL_IDIOMAS.en;
+  var bt = document.getElementById('lang-atual');
+  if (bt && alvo) bt.innerHTML = alvo.flag + '<span class="lang-nome">' + alvo.nome + '</span>';
+  document.querySelectorAll('.lang-opt[data-idioma]').forEach(function (o) {
+    o.setAttribute('aria-selected', o.dataset.idioma === lang ? 'true' : 'false');
+  });
+  fecharLangMenu();
+
+  /* Leitor de tela: as outras línguas continuam no DOM, escondidas por
+     CSS. Sem isto elas seriam lidas em voz alta junto com a ativa. */
+  document.querySelectorAll('[data-lang]').forEach(function (el) {
+    if (el.getAttribute('data-lang') === lang) el.removeAttribute('aria-hidden');
+    else el.setAttribute('aria-hidden', 'true');
+  });
+
+  /* Textos guardados em atributo (data-lang-pt / -en / -es / -vi).
+     Cai para inglês e depois português quando o idioma falta. */
+  document.querySelectorAll('[data-lang-pt]').forEach(function (el) {
+    var v = el.dataset['lang' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+    el.innerHTML = v || el.dataset.langEn || el.dataset.langPt;
+  });
+
+  /* Imagens com versão por idioma (data-src-pt / data-src-en / ...) */
+  document.querySelectorAll('img[data-src-pt]').forEach(function (img) {
+    var v = img.dataset['src' + lang.charAt(0).toUpperCase() + lang.slice(1)];
+    var src = v || img.dataset.srcEn || img.dataset.srcPt;
+    if (src) img.src = src;
+  });
+
+  /* O chip de regiao e um extra do idioma, nao parte dele. No primeiro
+     carregamento esta funcao pode rodar antes de a pagina declarar suas
+     variaveis de regiao (zona morta temporal do let/const), e sem esta
+     protecao o erro aborta a troca de idioma inteira. */
+  /* Listas montadas por JS precisam ser refeitas: o texto delas foi
+     escolhido no idioma anterior. A pagina registra a sua em flRedesenhar. */
+  try { if (typeof flRedesenhar === 'function') flRedesenhar(); } catch (e) {}
+  try { if (typeof atualizarChipRegiao === 'function') atualizarChipRegiao(); } catch (e) {}
+}
+window.setLang = setLang;
+
+function toggleLangMenu(ev) {
+  if (ev) ev.stopPropagation();
+  var p = document.getElementById('lang-pick');
+  if (!p) return;
+  var abrindo = !p.classList.contains('aberto');
+  p.classList.toggle('aberto', abrindo);
+  var b = p.querySelector('.lang-pick-btn');
+  if (b) b.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+}
+function fecharLangMenu() {
+  var p = document.getElementById('lang-pick');
+  if (!p) return;
+  p.classList.remove('aberto');
+  var b = p.querySelector('.lang-pick-btn');
+  if (b) b.setAttribute('aria-expanded', 'false');
+}
+window.toggleLangMenu = toggleLangMenu;
+document.addEventListener('click', function (e) {
+  var p = document.getElementById('lang-pick');
+  if (p && !p.contains(e.target)) fecharLangMenu();
+});
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fecharLangMenu(); });
+
+/* O idioma já foi decidido no <head>. Aqui só sincronizamos o que depende
+   do <body> existir: a classe .en legada, o rótulo do seletor, o
+   aria-hidden e a remoção dos idiomas que esta página ainda não tem. */
+(function () {
+  var raiz = document.documentElement;
+  var lang = raiz.getAttribute('data-lang-ativo') || 'pt';
+  var sup = (raiz.getAttribute('data-idiomas') || 'pt,en').split(',');
+  document.querySelectorAll('.lang-opt[data-idioma]').forEach(function (o) {
+    if (sup.indexOf(o.dataset.idioma) < 0) o.remove();
+  });
+  /* Um idioma só: o seletor não tem função nenhuma */
+  if (sup.length < 2) { var p = document.getElementById('lang-pick'); if (p) p.remove(); }
+  setLang(lang, false);
+})();
+</script>
+<script>
+/* Menus da barra: quem tem mouse abre por hover (CSS). Aqui entra o toque e o
+   teclado, com Esc e clique fora fechando. */
+(function () {
+  function fechaTodos() {
+    document.querySelectorAll('.nav-grupo.aberto').forEach(function (g) {
+      g.classList.remove('aberto');
+      g.querySelector('.nav-grupo-bt').setAttribute('aria-expanded', 'false');
+    });
+  }
+  document.querySelectorAll('.nav-grupo-bt').forEach(function (bt) {
+    bt.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      var g = bt.parentElement, abrindo = !g.classList.contains('aberto');
+      fechaTodos();
+      g.classList.toggle('aberto', abrindo);
+      bt.setAttribute('aria-expanded', abrindo ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', fechaTodos);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechaTodos(); });
+})();
+</script>
+<script src="js/site-fx.js?v=20261105a" defer></script>
+</body>
+</html>
