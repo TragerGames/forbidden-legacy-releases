@@ -421,6 +421,13 @@ nav#nav{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
 .sp-lista li{position:relative;padding-left:20px;font-size:13.5px;line-height:1.55;color:#8b867d}
 .sp-lista li::before{content:'';position:absolute;left:2px;top:7px;width:6px;height:6px;transform:rotate(45deg);background:var(--gold)}
 @media (max-width:560px){.sp-linha{grid-template-columns:1fr}}
+/* Aviso no Fale com o suporte: confira o guia antes de enviar. */
+.sp-guia{display:flex;gap:14px;align-items:flex-start;margin:0 0 22px;padding:14px 16px;border:1px solid rgba(233,185,73,.3);background:rgba(233,185,73,.06)}
+.sp-guia img{width:34px;height:34px;flex-shrink:0}
+.sp-guia b{display:block;color:var(--gold2);font-weight:600;margin-bottom:4px}
+.sp-guia p{color:#bcb6aa;font-size:13.5px;line-height:1.55}
+.sp-guia-links{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
+.sp-guia-links a{color:var(--gold);font-size:13px;text-decoration:underline;text-underline-offset:3px}
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261112a">
 <link rel="stylesheet" href="css/site-v2.css?v=20261113a">
@@ -503,6 +510,7 @@ nav#nav{background:rgba(7,8,15,.97);border-bottom-color:var(--border)}
       <a href="https://www.youtube.com/@tragergames" target="_blank">YouTube</a>
       <a href="index.html#comprar" data-lang="pt">Versão Founder</a><a href="index.html#comprar" data-lang="en">Founder Version</a><a href="index.html#comprar" data-lang="es">Versión Founder</a><a href="index.html#comprar" data-lang="vi">Phiên bản Founder</a>
       <a href="ativar_dispositivo.html" data-lang="pt">Ativar outro dispositivo</a><a href="ativar_dispositivo.html" data-lang="en">Activate another device</a><a href="ativar_dispositivo.html" data-lang="es">Activar otro dispositivo</a><a href="ativar_dispositivo.html" data-lang="vi">Kích hoạt thiết bị khác</a>
+      <a href="guia.html" data-lang="pt">Guia do jogo</a><a href="guia.html" data-lang="en">Game guide</a><a href="guia.html" data-lang="es">Guía del juego</a><a href="guia.html" data-lang="vi">Hướng dẫn trò chơi</a>
       <a href="suporte.html" data-lang="pt">Fale com o suporte</a><a href="suporte.html" data-lang="en">Contact support</a><a href="suporte.html" data-lang="es">Contactar soporte</a><a href="suporte.html" data-lang="vi">Liên hệ hỗ trợ</a>
       <a href="termos.html" data-lang="pt">Termos de Uso</a><a href="termos.html" data-lang="en">Terms of Use</a><a href="termos.html" data-lang="es">Términos de Uso</a><a href="termos.html" data-lang="vi">Điều khoản sử dụng</a>
     </div>
@@ -565,6 +573,9 @@ var SP_TXT = {
     dica1: 'Em <b>bug</b>, diga o que fez antes de acontecer e se acontece sempre.',
     dica2: 'Em <b>pagamento</b>, informe o e-mail usado na compra e o Código do Jogador.',
     dica3: 'Uma mensagem por assunto deixa tudo mais fácil de acompanhar.',
+    guia_h: 'Antes de enviar, confira o Guia do jogo',
+    guia_txt: 'Muita dúvida já tem resposta lá, com o passo a passo. É o mesmo guia do botão ? do jogo.',
+    guia_ver: 'Abrir o Guia', guia_t1: 'Ativar o Founder', guia_t2: 'Save na Nuvem', guia_t3: 'Códigos de Souls e Promo',
     aviso_resposta: 'Respondemos o quanto antes. O jogo é feito por uma equipe pequena, então pode levar alguns dias.'
   },
   en: {
@@ -608,6 +619,9 @@ var SP_TXT = {
     dica1: 'For a <b>bug</b>, say what you did right before it happened and whether it always happens.',
     dica2: 'For <b>payment</b>, include the email used to buy and your Player Code.',
     dica3: 'One message per topic keeps everything easy to follow.',
+    guia_h: 'Before sending, check the Game guide',
+    guia_txt: 'Many questions are already answered there, step by step. It is the same guide as the ? button in the game.',
+    guia_ver: 'Open the Guide', guia_t1: 'Activate Founder', guia_t2: 'Cloud Save', guia_t3: 'Souls and Promo codes',
     aviso_resposta: 'We reply as soon as we can. The game is made by a small team, so it may take a few days.'
   },
   es: {
@@ -651,6 +665,9 @@ var SP_TXT = {
     dica1: 'En un <b>bug</b>, di qué hiciste justo antes y si pasa siempre.',
     dica2: 'En <b>pagos</b>, indica el correo usado en la compra y tu Código de Jugador.',
     dica3: 'Un mensaje por tema hace todo más fácil de seguir.',
+    guia_h: 'Antes de enviar, revisa la Guía del juego',
+    guia_txt: 'Muchas dudas ya tienen respuesta ahí, paso a paso. Es la misma guía del botón ? del juego.',
+    guia_ver: 'Abrir la Guía', guia_t1: 'Activar Founder', guia_t2: 'Guardado en la Nube', guia_t3: 'Códigos de Souls y Promo',
     aviso_resposta: 'Respondemos lo antes posible. El juego lo hace un equipo pequeño, así que puede tardar algunos días.'
   },
   vi: {
@@ -694,6 +711,9 @@ var SP_TXT = {
     dica1: 'Khi báo <b>lỗi</b>, hãy nói bạn đã làm gì ngay trước đó và lỗi có luôn xảy ra không.',
     dica2: 'Về <b>thanh toán</b>, hãy ghi email đã dùng để mua và Mã người chơi.',
     dica3: 'Mỗi tin nhắn một chủ đề giúp theo dõi dễ hơn.',
+    guia_h: 'Trước khi gửi, hãy xem Hướng dẫn trò chơi',
+    guia_txt: 'Nhiều câu hỏi đã có lời giải đáp từng bước ở đó. Đây là cùng hướng dẫn như nút ? trong game.',
+    guia_ver: 'Mở Hướng dẫn', guia_t1: 'Kích hoạt Founder', guia_t2: 'Lưu Đám Mây', guia_t3: 'Mã Souls và Promo',
     aviso_resposta: 'Chúng tôi trả lời sớm nhất có thể. Game do một nhóm nhỏ làm, nên có thể mất vài ngày.'
   }
 };
@@ -741,6 +761,16 @@ function spErroCampo(campo) {
 }
 function spInv(campo) { return SP.erros[campo] ? ' class="invalido" aria-invalid="true"' : ''; }
 
+/* Guia do jogo (2026-11-18): antes do formulario, o convite para conferir o
+   guia (guia.html, o mesmo do botao ? do jogo) e os topicos mais pedidos. */
+function spGuia() {
+  return '<div class="sp-guia"><img src="img/guia/livro.webp" alt="" width="34" height="34"><div>' +
+    '<b>' + spTx('guia_h') + '</b><p>' + spTx('guia_txt') + '</p>' +
+    '<div class="sp-guia-links"><a href="guia.html">' + spTx('guia_ver') + '</a>' +
+    '<a href="guia.html#founder">' + spTx('guia_t1') + '</a><a href="guia.html#nuvem">' + spTx('guia_t2') + '</a>' +
+    '<a href="guia.html#codigos">' + spTx('guia_t3') + '</a></div></div></div>';
+}
+
 function spTelaForm() {
   var tipos = SP_TIPOS.map(function (t) {
     return '<label class="sp-tipo"><input type="radio" name="sp-tipo" value="' + t + '"' + (SP.tipo === t ? ' checked' : '') + '><span>' + spTx('tipo_' + t) + '</span></label>';
@@ -751,7 +781,7 @@ function spTelaForm() {
   var tam = spTam(SP.mensagem);
   var opc = ' <span class="sp-opc">' + spTx('opcional') + '</span>';
 
-  return '<h2 class="flp-h">' + spTx('h_form') + '</h2>' +
+  return spGuia() + '<h2 class="flp-h">' + spTx('h_form') + '</h2>' +
     (SP.avisoChave ? '<div class="flp-aviso" role="status">' + spTx(SP.avisoChave) + '</div>' : '') +
     '<form id="sp-form" novalidate>' +
       '<div class="field"><label id="sp-tipo-lbl">' + spTx('lbl_tipo') + '</label>' +

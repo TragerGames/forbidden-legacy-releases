@@ -34,6 +34,7 @@
     { grupo: T('Ferramentas', 'Tools', 'Herramientas', 'Công cụ'), itens: [
       { href: 'montar_deck.html', nome: T('Montar Deck', 'Deck Builder', 'Armar Mazo', 'Tạo bộ bài'), dica: T('monte o seu deck', 'build your deck', 'arma tu mazo', 'tạo bộ bài của bạn') },
       { href: 'ativar_dispositivo.html', nome: T('Ativar outro dispositivo', 'Activate another device', 'Activar otro dispositivo', 'Kích hoạt thiết bị khác'), dica: T('use no PC e no celular', 'use it on PC and phone', 'úsalo en PC y móvil', 'dùng trên PC và điện thoại') },
+      { href: 'guia.html', nome: T('Guia do jogo', 'Game guide', 'Guía del juego', 'Hướng dẫn trò chơi'), dica: T('confira antes de perguntar', 'check before asking', 'revisa antes de preguntar', 'xem trước khi hỏi') },
       { href: 'suporte.html', nome: T('Fale com o suporte', 'Contact support', 'Contactar soporte', 'Liên hệ hỗ trợ'), dica: T('dúvida, bug ou sugestão', 'question, bug or idea', 'duda, bug o sugerencia', 'câu hỏi, lỗi hoặc góp ý') }
     ] },
     { solo: true, href: 'loja.html?v=p04', nome: T('Loja', 'Store', 'Tienda', 'Cửa hàng') }
