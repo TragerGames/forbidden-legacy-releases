@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/deck_banlist.json + Data/card_limit_banlist.json",
-  "versao": "1793793619",
+  "versao": "1795019958",
   "limite_padrao": 3,
   "grupos": {
     "divine_beast": {
@@ -39,6 +39,12 @@
       "max_in_deck": 2,
       "scope": "effect",
       "max_in_deck_support": 2
+    },
+    "toon": {
+      "label": "Toons",
+      "cor": "#ff8fd1",
+      "max_in_deck": 10,
+      "scope": "monster"
     },
     "spell_negation": {
       "label": "Negacao de magia",
@@ -425,10 +431,41 @@
         "direct_attack"
       ]
     },
+    "Raiza the Mega Monarch": {
+      "grupos": [
+        "direct_attack"
+      ]
+    },
+    "Thunder King, the Lightningstrike Kaiju": {
+      "grupos": [
+        "direct_attack"
+      ]
+    },
     "Magic Jammer": {
       "grupos": [
         "spell_negation"
       ]
+    },
+    "Abyss-scale of Cetus": {
+      "grupos": [
+        "spell_negation",
+        "equip_com_efeito"
+      ],
+      "limite": 1
+    },
+    "Abyss-scale of the Kraken": {
+      "grupos": [
+        "spell_negation",
+        "equip_com_efeito"
+      ],
+      "limite": 1
+    },
+    "Abyss-scale of the Mizuchi": {
+      "grupos": [
+        "spell_negation",
+        "equip_com_efeito"
+      ],
+      "limite": 1
     },
     "Negate Attack": {
       "grupos": [
@@ -440,11 +477,22 @@
         "attack_negation"
       ]
     },
+    "Kumongous, the Sticky String Kaiju": {
+      "grupos": [
+        "attack_negation"
+      ]
+    },
     "Nightmare Wheel": {
       "grupos": [
         "attacker_lock"
       ],
       "limite": 1
+    },
+    "Moulinglacia the Elemental Lord": {
+      "grupos": [
+        "attacker_lock",
+        "debuff_alvo"
+      ]
     },
     "Megamorph": {
       "grupos": [
@@ -470,6 +518,39 @@
     "Gearfried The Iron Knight": {
       "grupos": [
         "equip_enabler_monster"
+      ]
+    },
+    "Atlantean Attack Squad": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Mermail Abyssnose": {
+      "grupos": [
+        "self_escala_arquetipo"
+      ]
+    },
+    "Chaos Daedalus": {
+      "grupos": [
+        "self_snowball_batalha",
+        "mill_oponente"
+      ]
+    },
+    "Lightray Daedalus": {
+      "grupos": [
+        "self_snowball_batalha",
+        "mill_oponente"
+      ]
+    },
+    "Evigishki Tetrogre": {
+      "grupos": [
+        "self_snowball_batalha",
+        "mill_oponente"
+      ]
+    },
+    "Number C73: Abyss Supra Splash": {
+      "grupos": [
+        "self_snowball_batalha"
       ]
     },
     "Hinotama": {
@@ -573,6 +654,17 @@
         "burn_conditional"
       ]
     },
+    "Zaborg the Mega Monarch": {
+      "grupos": [
+        "burn_conditional",
+        "remocao_aleatoria"
+      ]
+    },
+    "Caius the Mega Monarch": {
+      "grupos": [
+        "burn_conditional"
+      ]
+    },
     "Red-Eyes Black Flare Dragon": {
       "grupos": [
         "burn_on_kill"
@@ -655,14 +747,52 @@
       ],
       "limite": 2
     },
+    "Gadarla, the Mystery Dust Kaiju": {
+      "grupos": [
+        "debuff_alvo"
+      ]
+    },
+    "Granmarg the Mega Monarch": {
+      "grupos": [
+        "backrow",
+        "remocao_aleatoria"
+      ]
+    },
     "Infernoid Harmadik": {
       "grupos": [
         "remocao_alvo"
       ]
     },
+    "Grandsoil the Elemental Lord": {
+      "grupos": [
+        "remocao_aleatoria",
+        "imune_a_efeito"
+      ]
+    },
+    "Levia-Dragon of Atlantis - Daedalus": {
+      "grupos": [
+        "remocao_aleatoria",
+        "backrow"
+      ]
+    },
+    "The Kaiju Files": {
+      "grupos": [
+        "remocao_aleatoria"
+      ]
+    },
     "Eatgaboon": {
       "grupos": [
         "punicao_atacante"
+      ]
+    },
+    "Abyss-scorn": {
+      "grupos": [
+        "punicao_atacante"
+      ]
+    },
+    "Gishki Aquamirror": {
+      "grupos": [
+        "bounce_shuffle"
       ]
     },
     "Blue-Eyes Chaos MAX Dragon": {
@@ -706,6 +836,26 @@
       ]
     },
     "Kaibaman": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Abyss-sphere": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Ehther the Heavenly Monarch": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Gishki Avance": {
+      "grupos": [
+        "acel_busca"
+      ]
+    },
+    "Kyoutou Waterfront": {
       "grupos": [
         "acel_busca"
       ]
@@ -952,6 +1102,12 @@
       ],
       "limite": 2
     },
+    "Abyss-Sting Triaina": {
+      "grupos": [
+        "equip_com_efeito"
+      ],
+      "limite": 1
+    },
     "Abominable Unchained Soul": {
       "grupos": [
         "backrow"
@@ -1001,6 +1157,11 @@
     "Aromaseraphy Rosemary": {
       "grupos": [
         "lp_recovery"
+      ]
+    },
+    "Atlantean Marksman": {
+      "grupos": [
+        "backrow"
       ]
     },
     "Avenging Knight Parshath": {
@@ -1334,6 +1495,11 @@
         "lp_recovery"
       ]
     },
+    "Evigishki Levianima": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
     "Exchange of the Spirit": {
       "grupos": [
         "lp_recovery"
@@ -1442,6 +1608,11 @@
         "multi_attack"
       ]
     },
+    "Gishki Ariel": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
     "Gorz the Emissary of Darkness": {
       "grupos": [
         "multi_attack"
@@ -1517,6 +1688,11 @@
         "backrow"
       ]
     },
+    "Interrupted Kaiju Slumber": {
+      "grupos": [
+        "board_wipe"
+      ]
+    },
     "Jam Defender": {
       "grupos": [
         "lp_recovery"
@@ -1547,6 +1723,11 @@
         "burn_direct"
       ]
     },
+    "Kuraz the Light Monarch": {
+      "grupos": [
+        "lp_recovery"
+      ]
+    },
     "Level 2 Power Boost": {
       "grupos": [
         "explosive_equip"
@@ -1573,6 +1754,11 @@
         "lp_recovery"
       ]
     },
+    "March of the Monarchs": {
+      "grupos": [
+        "burn_recurring"
+      ]
+    },
     "March Towards Ragnarok": {
       "grupos": [
         "backrow"
@@ -1583,9 +1769,29 @@
         "multi_attack"
       ]
     },
+    "Mermail Abyssmegalo": {
+      "grupos": [
+        "multi_attack"
+      ]
+    },
+    "Mermail Abysspike": {
+      "grupos": [
+        "piercing_pressure"
+      ]
+    },
+    "Mermail Abyssturge": {
+      "grupos": [
+        "backrow"
+      ]
+    },
     "Mighty Dino King Rex": {
       "grupos": [
         "multi_attack"
+      ]
+    },
+    "Mobius the Mega Monarch": {
+      "grupos": [
+        "backrow"
       ]
     },
     "Mystic Plasma Zone": {
@@ -1630,6 +1836,12 @@
       ],
       "limite": 1
     },
+    "Number C32: Shark Drake LeVeiss": {
+      "grupos": [
+        "multi_attack",
+        "piercing_pressure"
+      ]
+    },
     "Orca Mega-Fortress of Darkness": {
       "grupos": [
         "backrow"
@@ -1643,6 +1855,11 @@
     "Pharaonic Guardian Sphinx": {
       "grupos": [
         "board_wipe"
+      ]
+    },
+    "Phosphorage the Elemental Lord": {
+      "grupos": [
+        "lp_recovery"
       ]
     },
     "Power Bond": {
@@ -1781,6 +1998,12 @@
       "grupos": [
         "backrow"
       ]
+    },
+    "Tenacity of the Monarchs": {
+      "grupos": [
+        "multi_attack"
+      ],
+      "limite": 1
     },
     "The Agent of Judgment - Saturn": {
       "grupos": [
@@ -1976,6 +2199,11 @@
         "piercing_pressure"
       ]
     },
+    "Windrose the Elemental Lord": {
+      "grupos": [
+        "backrow"
+      ]
+    },
     "Winged Trumpeter": {
       "grupos": [
         "lp_recovery"
@@ -2094,7 +2322,7 @@
     "Ruler of the End of the World": {
       "limite": 1
     },
-    "Caius the Mega Monarch": {
+    "Caius the Shadow Monarch": {
       "limite": 1
     },
     "Dark Necrofear, the Ruler of Demise": {
@@ -2143,6 +2371,12 @@
       "limite": 2
     },
     "Masterflare Hyperion": {
+      "limite": 1
+    },
+    "Super Anti-Kaiju War Machine Mecha-Dogoran": {
+      "limite": 1
+    },
+    "Kaiju Capture Mission": {
       "limite": 1
     }
   }

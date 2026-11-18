@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1793793618",
+  "versao": "1795019958",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -9078,6 +9078,762 @@
           "slug": "valkyrie_of_the_nordic_ascendant",
           "atk": "400",
           "def": "800"
+        }
+      ]
+    },
+    {
+      "id": "especial_titans_of_the_abyss",
+      "tipo_label": "TITANS OF THE ABYSS",
+      "nome_pt": "Titans of the Abyss",
+      "nome_en": "Titans of the Abyss",
+      "nome_es": "Titans of the Abyss",
+      "nome_vi": "Titans of the Abyss",
+      "desc_pt": "Edição especial e temporária das profundezas: os Mermail e Atlantean com as Abyss-scale e A Legendary Ocean, os Gishki, a linha Daedalus que desperta o Umi e os titãs que dominam o campo: Monarchs, Kaiju e Elemental Lords. Depois que o evento terminar, essas cartas deixam a circulação temporária e passam a poder aparecer no torneio.",
+      "desc_en": "A special, time-limited edition from the depths: the Mermail and Atlanteans with the Abyss-scales and A Legendary Ocean, the Gishki, the Daedalus line that awakens Umi, and the titans that rule the field: Monarchs, Kaiju and Elemental Lords. When the event ends, these cards leave temporary circulation and become eligible for tournament rewards.",
+      "desc_es": "Edición especial y temporal de las profundidades: los Mermail y Atlantean con las Abyss-scale y A Legendary Ocean, los Gishki, la línea Daedalus que despierta a Umi y los titanes que dominan el campo: Monarchs, Kaiju y Elemental Lords. Cuando el evento termine, estas cartas dejarán la circulación temporal y podrán aparecer como premio del torneo.",
+      "desc_vi": "Phiên bản đặc biệt có thời hạn từ đáy biển sâu: các Mermail và Atlantean cùng Abyss-scale và A Legendary Ocean, các Gishki, dòng Daedalus đánh thức Umi, và những người khổng lồ thống trị sân đấu: Monarch, Kaiju và Elemental Lord. Khi sự kiện kết thúc, các lá bài này rời khỏi lưu hành tạm thời và có thể xuất hiện làm phần thưởng giải đấu.",
+      "cor": "#1f6f78",
+      "custo_souls": 250,
+      "evento": true,
+      "duracao_dias": 30,
+      "garantia_ur_aberturas": 10,
+      "imagem": "img/boosters/booster-titans-of-the-abyss.webp",
+      "total_tema": 111,
+      "cartas_tema": [
+        {
+          "nome": "A Legendary Ocean",
+          "raridade": "UR",
+          "slug": "a_legendary_ocean"
+        },
+        {
+          "nome": "Abyss-Sting Triaina",
+          "raridade": "UR",
+          "slug": "abyss-sting_triaina"
+        },
+        {
+          "nome": "Abyss-scale of Cetus",
+          "raridade": "UR",
+          "slug": "abyss-scale_of_cetus"
+        },
+        {
+          "nome": "Abyss-scale of the Kraken",
+          "raridade": "UR",
+          "slug": "abyss-scale_of_the_kraken"
+        },
+        {
+          "nome": "Abyss-scale of the Mizuchi",
+          "raridade": "UR",
+          "slug": "abyss-scale_of_the_mizuchi"
+        },
+        {
+          "nome": "Abyss-steam",
+          "raridade": "UR",
+          "slug": "abyss-steam"
+        },
+        {
+          "nome": "Aqua Dragon",
+          "raridade": "UR",
+          "slug": "aqua_dragon",
+          "atk": "2250",
+          "def": "1900"
+        },
+        {
+          "nome": "Azure Ocean Dragon Lord - Neo-Daedalus Rage",
+          "raridade": "UR",
+          "slug": "azure_ocean_dragon_lord_-_neo-daedalus_rage",
+          "atk": "2900",
+          "def": "0"
+        },
+        {
+          "nome": "Caius the Mega Monarch",
+          "raridade": "UR",
+          "slug": "caius_the_mega_monarch",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Caius the Shadow Monarch",
+          "raridade": "UR",
+          "slug": "caius_the_shadow_monarch",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Domain of the True Monarchs",
+          "raridade": "UR",
+          "slug": "domain_of_the_true_monarchs"
+        },
+        {
+          "nome": "Ehther the Heavenly Monarch",
+          "raridade": "UR",
+          "slug": "ehther_the_heavenly_monarch",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Erebus the Underworld Monarch",
+          "raridade": "UR",
+          "slug": "erebus_the_underworld_monarch",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Evigishki Levianima",
+          "raridade": "UR",
+          "slug": "evigishki_levianima",
+          "atk": "2700",
+          "def": "1500"
+        },
+        {
+          "nome": "Evigishki Neremanas",
+          "raridade": "UR",
+          "slug": "evigishki_neremanas",
+          "atk": "3000",
+          "def": "1800"
+        },
+        {
+          "nome": "Evigishki Soul Ogre",
+          "raridade": "UR",
+          "slug": "evigishki_soul_ogre",
+          "atk": "2800",
+          "def": "2800"
+        },
+        {
+          "nome": "Fortress Whale",
+          "raridade": "UR",
+          "slug": "fortress_whale",
+          "atk": "2350",
+          "def": "2150"
+        },
+        {
+          "nome": "Gagagigo the Risen",
+          "raridade": "UR",
+          "slug": "gagagigo_the_risen",
+          "atk": "2950",
+          "def": "2800"
+        },
+        {
+          "nome": "Gameciel, the Sea Turtle Kaiju",
+          "raridade": "UR",
+          "slug": "gameciel_the_sea_turtle_kaiju",
+          "atk": "2200",
+          "def": "3000"
+        },
+        {
+          "nome": "Giga Gagagigo",
+          "raridade": "UR",
+          "slug": "giga_gagagigo",
+          "atk": "2450",
+          "def": "1500"
+        },
+        {
+          "nome": "Gishki Zielgigas",
+          "raridade": "UR",
+          "slug": "gishki_zielgigas",
+          "atk": "3200",
+          "def": "0"
+        },
+        {
+          "nome": "Gogiga Gagagigo",
+          "raridade": "UR",
+          "slug": "gogiga_gagagigo",
+          "atk": "2950",
+          "def": "2800"
+        },
+        {
+          "nome": "Grandsoil the Elemental Lord",
+          "raridade": "UR",
+          "slug": "grandsoil_the_elemental_lord",
+          "atk": "2800",
+          "def": "2200"
+        },
+        {
+          "nome": "Granmarg the Mega Monarch",
+          "raridade": "UR",
+          "slug": "granmarg_the_mega_monarch",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Interrupted Kaiju Slumber",
+          "raridade": "UR",
+          "slug": "interrupted_kaiju_slumber"
+        },
+        {
+          "nome": "Jizukiru, the Star Destroying Kaiju",
+          "raridade": "UR",
+          "slug": "jizukiru_the_star_destroying_kaiju",
+          "atk": "3300",
+          "def": "2600"
+        },
+        {
+          "nome": "Kaiju Capture Mission",
+          "raridade": "UR",
+          "slug": "kaiju_capture_mission"
+        },
+        {
+          "nome": "Kyoutou Waterfront",
+          "raridade": "UR",
+          "slug": "kyoutou_waterfront"
+        },
+        {
+          "nome": "Lancea, Ancestral Dragon of the Ice Mountain",
+          "raridade": "UR",
+          "slug": "lancea_ancestral_dragon_of_the_ice_mountain",
+          "atk": "3300",
+          "def": "2700"
+        },
+        {
+          "nome": "March of the Monarchs",
+          "raridade": "UR",
+          "slug": "march_of_the_monarchs"
+        },
+        {
+          "nome": "Mermail Abyssgaios",
+          "raridade": "UR",
+          "slug": "mermail_abyssgaios",
+          "atk": "2800",
+          "def": "1600"
+        },
+        {
+          "nome": "Mermail Abyssleed",
+          "raridade": "UR",
+          "slug": "mermail_abyssleed",
+          "atk": "2700",
+          "def": "1000"
+        },
+        {
+          "nome": "Mermail King - Neptabyss",
+          "raridade": "UR",
+          "slug": "mermail_king_-_neptabyss",
+          "atk": "2300",
+          "def": "0"
+        },
+        {
+          "nome": "Mobius the Mega Monarch",
+          "raridade": "UR",
+          "slug": "mobius_the_mega_monarch",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Moulinglacia the Elemental Lord",
+          "raridade": "UR",
+          "slug": "moulinglacia_the_elemental_lord",
+          "atk": "2800",
+          "def": "2200"
+        },
+        {
+          "nome": "Number C32: Shark Drake LeVeiss",
+          "raridade": "UR",
+          "slug": "number_c32_shark_drake_leveiss",
+          "atk": "3100",
+          "def": "2600"
+        },
+        {
+          "nome": "Number C73: Abyss Supra Splash",
+          "raridade": "UR",
+          "slug": "number_c73_abyss_supra_splash",
+          "atk": "3000",
+          "def": "2000"
+        },
+        {
+          "nome": "Ocean Dragon Lord - Neo-Daedalus",
+          "raridade": "UR",
+          "slug": "ocean_dragon_lord_-_neo-daedalus",
+          "atk": "2900",
+          "def": "1600"
+        },
+        {
+          "nome": "Phosphorage the Elemental Lord",
+          "raridade": "UR",
+          "slug": "phosphorage_the_elemental_lord",
+          "atk": "2800",
+          "def": "2200"
+        },
+        {
+          "nome": "Poseidra Abyss, the Atlantean Dragon Lord",
+          "raridade": "UR",
+          "slug": "poseidra_abyss_the_atlantean_dragon_lord",
+          "atk": "3000",
+          "def": "1800"
+        },
+        {
+          "nome": "Poseidra, the Atlantean Dragon",
+          "raridade": "UR",
+          "slug": "poseidra_the_atlantean_dragon",
+          "atk": "2800",
+          "def": "1600"
+        },
+        {
+          "nome": "Poseidra, the Storming Atlantean",
+          "raridade": "UR",
+          "slug": "poseidra_the_storming_atlantean",
+          "atk": "2800",
+          "def": "1600"
+        },
+        {
+          "nome": "Raiza the Mega Monarch",
+          "raridade": "UR",
+          "slug": "raiza_the_mega_monarch",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Super Anti-Kaiju War Machine Mecha-Dogoran",
+          "raridade": "UR",
+          "slug": "super_anti-kaiju_war_machine_mecha-dogoran",
+          "atk": "????",
+          "def": "2000"
+        },
+        {
+          "nome": "Super Anti-Kaiju War Machine Mecha-Thunder-King",
+          "raridade": "UR",
+          "slug": "super_anti-kaiju_war_machine_mecha-thunder-king",
+          "atk": "2200",
+          "def": "2100"
+        },
+        {
+          "nome": "Tenacity of the Monarchs",
+          "raridade": "UR",
+          "slug": "tenacity_of_the_monarchs"
+        },
+        {
+          "nome": "The Kaiju Files",
+          "raridade": "UR",
+          "slug": "the_kaiju_files"
+        },
+        {
+          "nome": "The Legendary Fisherman III",
+          "raridade": "UR",
+          "slug": "the_legendary_fisherman_iii",
+          "atk": "2500",
+          "def": "2000"
+        },
+        {
+          "nome": "Thunder King, the Lightningstrike Kaiju",
+          "raridade": "UR",
+          "slug": "thunder_king_the_lightningstrike_kaiju",
+          "atk": "3300",
+          "def": "2100"
+        },
+        {
+          "nome": "White Aura Bihamut",
+          "raridade": "UR",
+          "slug": "white_aura_bihamut",
+          "atk": "3300",
+          "def": "3000"
+        },
+        {
+          "nome": "White Aura Whale",
+          "raridade": "UR",
+          "slug": "white_aura_whale",
+          "atk": "2800",
+          "def": "2000"
+        },
+        {
+          "nome": "Windrose the Elemental Lord",
+          "raridade": "UR",
+          "slug": "windrose_the_elemental_lord",
+          "atk": "2800",
+          "def": "2000"
+        },
+        {
+          "nome": "Zaborg the Mega Monarch",
+          "raridade": "UR",
+          "slug": "zaborg_the_mega_monarch",
+          "atk": "2800",
+          "def": "1000"
+        },
+        {
+          "nome": "Abyss-scorn",
+          "raridade": "SR",
+          "slug": "abyss-scorn"
+        },
+        {
+          "nome": "Abyss-sphere",
+          "raridade": "SR",
+          "slug": "abyss-sphere"
+        },
+        {
+          "nome": "Abyssrhine the Atlantean Spirit",
+          "raridade": "SR",
+          "slug": "abyssrhine_the_atlantean_spirit",
+          "atk": "1600",
+          "def": "1600"
+        },
+        {
+          "nome": "Abysstrite, the Atlantean Spirit",
+          "raridade": "SR",
+          "slug": "abysstrite_the_atlantean_spirit",
+          "atk": "2100",
+          "def": "2800"
+        },
+        {
+          "nome": "Atlantean Dragoons",
+          "raridade": "SR",
+          "slug": "atlantean_dragoons",
+          "atk": "1800",
+          "def": "0"
+        },
+        {
+          "nome": "Call of the Atlanteans",
+          "raridade": "SR",
+          "slug": "call_of_the_atlanteans"
+        },
+        {
+          "nome": "Chaos Daedalus",
+          "raridade": "SR",
+          "slug": "chaos_daedalus",
+          "atk": "2600",
+          "def": "1500"
+        },
+        {
+          "nome": "Codaedalus",
+          "raridade": "SR",
+          "slug": "codaedalus",
+          "atk": "1400",
+          "def": "0"
+        },
+        {
+          "nome": "Delg the Dark Monarch",
+          "raridade": "SR",
+          "slug": "delg_the_dark_monarch",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Divine Dragon Aquabizarre",
+          "raridade": "SR",
+          "slug": "divine_dragon_aquabizarre",
+          "atk": "2100",
+          "def": "1500"
+        },
+        {
+          "nome": "Evigishki Gustkraken",
+          "raridade": "SR",
+          "slug": "evigishki_gustkraken",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Evigishki Tetrogre",
+          "raridade": "SR",
+          "slug": "evigishki_tetrogre",
+          "atk": "2600",
+          "def": "2100"
+        },
+        {
+          "nome": "Gadarla, the Mystery Dust Kaiju",
+          "raridade": "SR",
+          "slug": "gadarla_the_mystery_dust_kaiju",
+          "atk": "2700",
+          "def": "1600"
+        },
+        {
+          "nome": "Gagagigo",
+          "raridade": "SR",
+          "slug": "gagagigo",
+          "atk": "1850",
+          "def": "1000"
+        },
+        {
+          "nome": "Gishki Aquamirror",
+          "raridade": "SR",
+          "slug": "gishki_aquamirror"
+        },
+        {
+          "nome": "Granmarg the Rock Monarch",
+          "raridade": "SR",
+          "slug": "granmarg_the_rock_monarch",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Hyper-Ancient Shark Megalodon",
+          "raridade": "SR",
+          "slug": "hyper-ancient_shark_megalodon",
+          "atk": "2900",
+          "def": "1300"
+        },
+        {
+          "nome": "Kairyu-Shin",
+          "raridade": "SR",
+          "slug": "kairyu-shin",
+          "atk": "1800",
+          "def": "1500"
+        },
+        {
+          "nome": "Kumongous, the Sticky String Kaiju",
+          "raridade": "SR",
+          "slug": "kumongous_the_sticky_string_kaiju",
+          "atk": "2400",
+          "def": "2500"
+        },
+        {
+          "nome": "Kuraz the Light Monarch",
+          "raridade": "SR",
+          "slug": "kuraz_the_light_monarch",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Legendary Atlantean Tridon",
+          "raridade": "SR",
+          "slug": "legendary_atlantean_tridon",
+          "atk": "1600",
+          "def": "800"
+        },
+        {
+          "nome": "Levia-Dragon - Daedalus",
+          "raridade": "SR",
+          "slug": "levia-dragon_-_daedalus",
+          "atk": "2600",
+          "def": "1500"
+        },
+        {
+          "nome": "Levia-Dragon of Atlantis - Daedalus",
+          "raridade": "SR",
+          "slug": "levia-dragon_of_atlantis_-_daedalus",
+          "atk": "2600",
+          "def": "1500"
+        },
+        {
+          "nome": "Levia-Dragoon - Daedalus",
+          "raridade": "SR",
+          "slug": "levia-dragoon_-_daedalus",
+          "atk": "2600",
+          "def": "0"
+        },
+        {
+          "nome": "Lightray Daedalus",
+          "raridade": "SR",
+          "slug": "lightray_daedalus",
+          "atk": "2600",
+          "def": "1500"
+        },
+        {
+          "nome": "Mermail Abyssalacia",
+          "raridade": "SR",
+          "slug": "mermail_abyssalacia",
+          "atk": "1600",
+          "def": "0"
+        },
+        {
+          "nome": "Mermail Abyssbalaen",
+          "raridade": "SR",
+          "slug": "mermail_abyssbalaen",
+          "atk": "2500",
+          "def": "2000"
+        },
+        {
+          "nome": "Mermail Abyssmegalo",
+          "raridade": "SR",
+          "slug": "mermail_abyssmegalo",
+          "atk": "2400",
+          "def": "1900"
+        },
+        {
+          "nome": "Mermail Abyssteus",
+          "raridade": "SR",
+          "slug": "mermail_abyssteus",
+          "atk": "1700",
+          "def": "2400"
+        },
+        {
+          "nome": "Mermail Abysstrite",
+          "raridade": "SR",
+          "slug": "mermail_abysstrite",
+          "atk": "1600",
+          "def": "2800"
+        },
+        {
+          "nome": "Mobius the Frost Monarch",
+          "raridade": "SR",
+          "slug": "mobius_the_frost_monarch",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Neptabyss, the Atlantean Prince",
+          "raridade": "SR",
+          "slug": "neptabyss_the_atlantean_prince",
+          "atk": "800",
+          "def": "0"
+        },
+        {
+          "nome": "Number 73: Abyss Splash",
+          "raridade": "SR",
+          "slug": "number_73_abyss_splash",
+          "atk": "2400",
+          "def": "1400"
+        },
+        {
+          "nome": "Orca Mega-Fortress of Darkness",
+          "raridade": "SR",
+          "slug": "orca_mega-fortress_of_darkness",
+          "atk": "2100",
+          "def": "1200"
+        },
+        {
+          "nome": "Radian, the Multidimensional Kaiju",
+          "raridade": "SR",
+          "slug": "radian_the_multidimensional_kaiju",
+          "atk": "2800",
+          "def": "2500"
+        },
+        {
+          "nome": "Raiza the Storm Monarch",
+          "raridade": "SR",
+          "slug": "raiza_the_storm_monarch",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Spiral Serpent",
+          "raridade": "SR",
+          "slug": "spiral_serpent",
+          "atk": "2900",
+          "def": "2900"
+        },
+        {
+          "nome": "The Legendary Fisherman",
+          "raridade": "SR",
+          "slug": "the_legendary_fisherman",
+          "atk": "1850",
+          "def": "1600"
+        },
+        {
+          "nome": "The Legendary Fisherman II",
+          "raridade": "SR",
+          "slug": "the_legendary_fisherman_ii",
+          "atk": "2200",
+          "def": "1800"
+        },
+        {
+          "nome": "Umbramirage the Elemental Lord",
+          "raridade": "SR",
+          "slug": "umbramirage_the_elemental_lord",
+          "atk": "2800",
+          "def": "2200"
+        },
+        {
+          "nome": "Umi",
+          "raridade": "SR",
+          "slug": "umi"
+        },
+        {
+          "nome": "Umiiruka",
+          "raridade": "SR",
+          "slug": "umiiruka"
+        },
+        {
+          "nome": "Zaborg the Thunder Monarch",
+          "raridade": "SR",
+          "slug": "zaborg_the_thunder_monarch",
+          "atk": "2400",
+          "def": "1000"
+        },
+        {
+          "nome": "Abyss-squall",
+          "raridade": "R",
+          "slug": "abyss-squall"
+        },
+        {
+          "nome": "Atlantean Attack Squad",
+          "raridade": "R",
+          "slug": "atlantean_attack_squad",
+          "atk": "1400",
+          "def": "0"
+        },
+        {
+          "nome": "Atlantean Marksman",
+          "raridade": "R",
+          "slug": "atlantean_marksman",
+          "atk": "1400",
+          "def": "0"
+        },
+        {
+          "nome": "Codarus",
+          "raridade": "R",
+          "slug": "codarus",
+          "atk": "1400",
+          "def": "1200"
+        },
+        {
+          "nome": "Daedalus Maelstrom",
+          "raridade": "R",
+          "slug": "daedalus_maelstrom"
+        },
+        {
+          "nome": "Gishki Ariel",
+          "raridade": "R",
+          "slug": "gishki_ariel",
+          "atk": "1000",
+          "def": "1800"
+        },
+        {
+          "nome": "Gishki Avance",
+          "raridade": "R",
+          "slug": "gishki_avance",
+          "atk": "1500",
+          "def": "800"
+        },
+        {
+          "nome": "Gishki Shadow",
+          "raridade": "R",
+          "slug": "gishki_shadow",
+          "atk": "1200",
+          "def": "1000"
+        },
+        {
+          "nome": "Mermail Abyssgunde",
+          "raridade": "R",
+          "slug": "mermail_abyssgunde",
+          "atk": "1400",
+          "def": "800"
+        },
+        {
+          "nome": "Mermail Abysshilde",
+          "raridade": "R",
+          "slug": "mermail_abysshilde",
+          "atk": "1300",
+          "def": "400"
+        },
+        {
+          "nome": "Mermail Abysslinde",
+          "raridade": "R",
+          "slug": "mermail_abysslinde",
+          "atk": "1500",
+          "def": "1200"
+        },
+        {
+          "nome": "Mermail Abysslung",
+          "raridade": "R",
+          "slug": "mermail_abysslung",
+          "atk": "1200",
+          "def": "1800"
+        },
+        {
+          "nome": "Mermail Abyssnose",
+          "raridade": "R",
+          "slug": "mermail_abyssnose",
+          "atk": "1500",
+          "def": "1500"
+        },
+        {
+          "nome": "Mermail Abysspike",
+          "raridade": "R",
+          "slug": "mermail_abysspike",
+          "atk": "1600",
+          "def": "800"
+        },
+        {
+          "nome": "Mermail Abyssturge",
+          "raridade": "R",
+          "slug": "mermail_abyssturge",
+          "atk": "1700",
+          "def": "1100"
         }
       ]
     }
