@@ -1,8 +1,8 @@
 {
   "ativo": true,
-  "nome": "Continent of Legend",
-  "link": "https://www.continentoflegend.com.br",
-  "imagem_pt": "https://forbiddenlegacy.com.br/parceiro/continent_of_legend_pt.webp",
-  "imagem_en": "https://forbiddenlegacy.com.br/parceiro/continent_of_legend_en.webp",
-  "versao": "1"
+  "nome": "Black Friday Forbidden Legacy (ate 27/11/2026; depois volta o Continent of Legend: link https://www.continentoflegend.com.br, imagens parceiro/continent_of_legend_pt.webp e _en.webp, versao 1)",
+  "link": "https://forbiddenlegacy.com.br/",
+  "imagem_pt": "https://forbiddenlegacy.com.br/parceiro/launcher_black_friday_20_pt.webp",
+  "imagem_en": "https://forbiddenlegacy.com.br/parceiro/launcher_black_friday_20_en.webp",
+  "versao": "bf2026-20"
 }

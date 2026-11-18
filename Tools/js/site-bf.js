@@ -92,7 +92,7 @@
     es: { t: 'en todo el sitio', s: '{O} con {P}% de descuento hasta {D}. Las Souls, Stars, Tickets y cartas UR siguen iguales: solo baja el precio.', souls: 'Ver paquetes de Souls', founder: 'Quiero el Founder', fim: 'Termina en', fechar: 'Cerrar' },
     vi: { t: 'toàn trang', s: '{O} giảm {P}% đến {D}. Souls, Stars, Vé và thẻ UR giữ nguyên: chỉ giá giảm.', souls: 'Xem gói Souls', founder: 'Nhận Founder', fim: 'Kết thúc sau', fechar: 'Đóng' }
   };
-  var BANNER_LIGADO = false; // aviso ao entrar: liga depois do ok do Trager
+  var BANNER_LIGADO = true; // aviso ao entrar (ok do Trager em 2026-11-18)
   var banner = null, bannerImg = '';
 
   function bfAtiva() {
