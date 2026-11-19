@@ -983,7 +983,7 @@ button.cat-tag{cursor:pointer}
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261112a">
 <link rel="stylesheet" href="css/site-v2.css?v=20261113a">
-<link rel="stylesheet" href="css/jogo.css?v=20261113h">
+<link rel="stylesheet" href="css/jogo.css?v=20261119a">
 </head>
 <body class="fl2 jg pg-bst">
 
@@ -1719,7 +1719,7 @@ function isEn() { return document.body.classList.contains('en'); }
           'onerror="this.style.opacity=0.15">' +
         '<div class="card-thumb-name">' + c.nome + '</div>' +
         stats +
-        '<div class="card-thumb-rarity"><img src="img/raridade/rarity_' + (c.raridade_arquivo || (c.raridade === 'N' ? 'C' : c.raridade)) + '.webp" alt="' + c.raridade + '"></div>' +
+        '<div class="card-thumb-rarity"><img src="img/raridade/rarity_' + (c.raridade_arquivo || (c.raridade === 'N' ? 'C' : c.raridade)) + '.webp?v=7" alt="' + c.raridade + '"></div>' +
       '</div>'
     );
   }
@@ -2165,7 +2165,7 @@ document.addEventListener('keydown', e => {
       if(bn) bn.classList.add('active'); if(bf) bf.classList.remove('active');
     }
     var badge=c.raridade_arquivo||c.raridade;
-    if(badge){ modalRarityBadge.src='img/raridade/rarity_'+badge+'.webp'; modalRarityBadge.alt=c.raridade; modalRarityBadge.style.display=''; }
+    if(badge){ modalRarityBadge.src='img/raridade/rarity_'+badge+'.webp?v=7'; modalRarityBadge.alt=c.raridade; modalRarityBadge.style.display=''; }
     else modalRarityBadge.style.display='none';
     modalName.textContent=ingles()?c.nome:(c.nome_pt||c.nome);
     modalRarity.className='cat-modal-rarity r-'+c.raridade;

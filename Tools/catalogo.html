@@ -659,7 +659,7 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261112a">
 <link rel="stylesheet" href="css/site-v2.css?v=20261113a">
-<link rel="stylesheet" href="css/jogo.css?v=20261113h">
+<link rel="stylesheet" href="css/jogo.css?v=20261119a">
 </head>
 <body class="fl2 jg pg-cat">
 
@@ -749,10 +749,10 @@ body::before{content:''; position:fixed; inset:0; pointer-events:none; z-index:0
       <span class="cat-filter-label" data-lang="en">Rarity</span><span class="cat-filter-label" data-lang="es">Rareza</span><span class="cat-filter-label" data-lang="vi">Độ hiếm</span>
       <button class="cat-chip active" data-filter-rarity="ALL" data-lang="pt">Todas</button>
       <button class="cat-chip active" data-filter-rarity="ALL" data-lang="en">All</button><button class="cat-chip active" data-filter-rarity="ALL" data-lang="es">Todas</button><button class="cat-chip active" data-filter-rarity="ALL" data-lang="vi">Tất cả</button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="N"><img src="img/raridade/rarity_C.webp" alt="N" width="30" height="16"><span>N</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp" alt="R" width="30" height="16"><span>R</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp" alt="SR" width="30" height="16"><span>SR</span></button>
-      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp" alt="UR" width="30" height="16"><span>UR</span></button>
+      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="N"><img src="img/raridade/rarity_C.webp?v=7" alt="N" width="30" height="16"><span>N</span></button>
+      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="R"><img src="img/raridade/rarity_R.webp?v=7" alt="R" width="30" height="16"><span>R</span></button>
+      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="SR"><img src="img/raridade/rarity_SR.webp?v=7" alt="SR" width="30" height="16"><span>SR</span></button>
+      <button class="cat-chip cat-chip-icon cat-chip-rarity" data-filter-rarity="UR"><img src="img/raridade/rarity_UR.webp?v=7" alt="UR" width="30" height="16"><span>UR</span></button>
       <button class="cat-chip" data-filter-fullart="1" data-lang="pt">✨ Full Art</button>
       <button class="cat-chip" data-filter-fullart="1" data-lang="en">✨ Full Art</button><button class="cat-chip" data-filter-fullart="1" data-lang="es">✨ Full Art</button><button class="cat-chip" data-filter-fullart="1" data-lang="vi">✨ Full Art</button>
       <button class="cat-chip" data-filter-custom="1" data-lang="pt" title="Cartas originais criadas para o Forbidden Legacy">⭐ Custom</button>
@@ -874,7 +874,7 @@ function isEn() { return document.body.classList.contains('en'); }
       : '';
     const badgeArquivo = c.raridade_arquivo || c.raridade;
     const badge = badgeArquivo
-      ? '<img class="cat-card-rarity-badge" src="img/raridade/rarity_' + badgeArquivo + '.webp" alt="' + c.raridade + '" loading="lazy" onerror="this.style.display=\'none\'">'
+      ? '<img class="cat-card-rarity-badge" src="img/raridade/rarity_' + badgeArquivo + '.webp?v=7" alt="' + c.raridade + '" loading="lazy" onerror="this.style.display=\'none\'">'
       : '';
     const icones = [];
     if (c.icone_atributo) icones.push('<img src="img/atributos/' + c.icone_atributo + '.webp" alt="' + c.atributo + '" title="' + c.atributo + '" loading="lazy">');
@@ -1114,7 +1114,7 @@ function isEn() { return document.body.classList.contains('en'); }
     }
     const badgeArquivo = c.raridade_arquivo || c.raridade;
     if (badgeArquivo) {
-      modalRarityBadge.src = 'img/raridade/rarity_' + badgeArquivo + '.webp';
+      modalRarityBadge.src = 'img/raridade/rarity_' + badgeArquivo + '.webp?v=7';
       modalRarityBadge.alt = c.raridade;
       modalRarityBadge.style.display = '';
     } else {
@@ -1380,7 +1380,7 @@ window.setLang = setLang;
     var itens=[['', T.cartas[L()], cartas.length]];
     ['UR','SR','R','N'].forEach(function(r){ itens.push([r,r,por[r]||0]) });
     el.innerHTML=itens.map(function(i){
-      var selo = i[0] ? '<img class="cat-stat-selo" src="img/raridade/rarity_'+(i[0]==='N'?'C':i[0])+'.webp" alt="'+i[0]+'">' : '<img class="jg-ico" src="img/ui/livro.webp" alt="" style="width:30px;height:30px">';
+      var selo = i[0] ? '<img class="cat-stat-selo" src="img/raridade/rarity_'+(i[0]==='N'?'C':i[0])+'.webp?v=7" alt="'+i[0]+'">' : '<img class="jg-ico" src="img/ui/livro.webp?v=7" alt="" style="width:30px;height:30px">';
       return '<div class="cat-stat"'+(i[0]?' data-r="'+i[0]+'"':'')+'>'+ selo +
         '<div class="cat-stat-n" data-alvo="'+i[2]+'">0</div>'+
         '<div class="cat-stat-l">'+i[1]+'</div><div class="cat-stat-bar"></div></div>';
