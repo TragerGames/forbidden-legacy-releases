@@ -5,36 +5,42 @@
   "grupos": {
     "divine_beast": {
       "label": "Bestas Divinas",
+      "short": "DIV",
       "cor": "#f4d64a",
       "max_in_deck": 4,
       "scope": "monster"
     },
     "wicked_god": {
       "label": "Deuses Malignos",
+      "short": "WCK",
       "cor": "#7a4dbf",
       "max_in_deck": 3,
       "scope": "monster"
     },
     "board_wipe": {
       "label": "Limpeza de monstros/campo",
+      "short": "CLR",
       "cor": "#8d6bff",
       "max_in_deck": 3,
       "scope": "effect"
     },
     "triple_attack": {
       "label": "Ataque triplo",
+      "short": "3X",
       "cor": "#cc2200",
       "max_in_deck": 1,
       "scope": "effect"
     },
     "multi_attack": {
       "label": "Ataque multiplo",
+      "short": "2X",
       "cor": "#f05a5a",
       "max_in_deck": 2,
       "scope": "effect"
     },
     "direct_attack": {
       "label": "Ataque direto",
+      "short": "DIR",
       "cor": "#ff6d6d",
       "max_in_deck": 2,
       "scope": "effect",
@@ -42,12 +48,14 @@
     },
     "toon": {
       "label": "Toons",
+      "short": "TOON",
       "cor": "#ff8fd1",
       "max_in_deck": 10,
       "scope": "monster"
     },
     "spell_negation": {
       "label": "Negacao de magia",
+      "short": "SPN",
       "cor": "#4cc9f0",
       "max_in_deck": 2,
       "scope": "effect",
@@ -55,6 +63,7 @@
     },
     "trap_negation": {
       "label": "Negacao de armadilha",
+      "short": "TPN",
       "cor": "#3fa7d6",
       "max_in_deck": 2,
       "scope": "effect",
@@ -62,6 +71,7 @@
     },
     "monster_effect_negation": {
       "label": "Negacao de efeito de monstro",
+      "short": "MEN",
       "cor": "#5c8dff",
       "max_in_deck": 2,
       "scope": "effect",
@@ -69,6 +79,7 @@
     },
     "negacao_geral": {
       "label": "Negacao geral",
+      "short": "NGG",
       "cor": "#2b6cb0",
       "max_in_deck": 2,
       "scope": "effect",
@@ -76,6 +87,7 @@
     },
     "attack_negation": {
       "label": "Negacao de ataque",
+      "short": "ATN",
       "cor": "#f2c94c",
       "max_in_deck": 2,
       "scope": "effect",
@@ -83,6 +95,7 @@
     },
     "attacker_lock": {
       "label": "Trava de atacante",
+      "short": "LCK",
       "cor": "#c13cff",
       "max_in_deck": 4,
       "scope": "effect",
@@ -90,6 +103,7 @@
     },
     "explosive_equip": {
       "label": "Equip absurdo",
+      "short": "EQ+",
       "cor": "#ff9f3d",
       "max_in_deck": 2,
       "scope": "effect",
@@ -97,6 +111,7 @@
     },
     "equip_enabler_monster": {
       "label": "Monstro full equip",
+      "short": "EQM",
       "cor": "#d98232",
       "max_in_deck": 3,
       "scope": "effect",
@@ -104,42 +119,49 @@
     },
     "self_escala_arquetipo": {
       "label": "Cresce por Arquétipo",
+      "short": "SLF-A",
       "cor": "#e8a33d",
       "max_in_deck": 8,
       "scope": "effect"
     },
     "self_escala_mao": {
       "label": "Monstro · Cresce pela Mão",
+      "short": "SLF-H",
       "cor": "#d8b25a",
       "max_in_deck": 5,
       "scope": "monster"
     },
     "self_snowball_batalha": {
       "label": "Monstro · Cresce em Batalha",
+      "short": "SLF-B",
       "cor": "#d9713d",
       "max_in_deck": 6,
       "scope": "monster"
     },
     "buff_equip_alto": {
       "label": "Equip · Bônus Alto",
+      "short": "EQ-A",
       "cor": "#ff9d2e",
       "max_in_deck": 3,
       "scope": "support"
     },
     "buff_aura_alta_mon": {
       "label": "Monstro · Aura Alta",
+      "short": "AUR-A",
       "cor": "#ffd166",
       "max_in_deck": 3,
       "scope": "monster"
     },
     "buff_equip_medio": {
       "label": "Equip · Bônus Médio",
+      "short": "EQ-M",
       "cor": "#f2b447",
       "max_in_deck": 3,
       "scope": "support"
     },
     "buff_aura_media": {
       "label": "Aura Média",
+      "short": "AUR-M",
       "cor": "#e8c063",
       "max_in_deck": 8,
       "scope": "effect",
@@ -147,42 +169,49 @@
     },
     "burn_direct": {
       "label": "Burn direto",
+      "short": "BRN",
       "cor": "#ff4f9a",
       "max_in_deck": 6,
       "scope": "effect"
     },
     "burn_recurring": {
       "label": "Burn recorrente",
+      "short": "B-REC",
       "cor": "#ff6f3c",
       "max_in_deck": 3,
       "scope": "effect"
     },
     "burn_conditional": {
       "label": "Burn condicional",
+      "short": "B-COND",
       "cor": "#ffa63c",
       "max_in_deck": 4,
       "scope": "effect"
     },
     "burn_on_kill": {
       "label": "Burn de combate",
+      "short": "B-KILL",
       "cor": "#e0483c",
       "max_in_deck": 4,
       "scope": "effect"
     },
     "lp_recovery": {
       "label": "Recuperacao de LP",
+      "short": "LP+",
       "cor": "#58d6ff",
       "max_in_deck": 5,
       "scope": "effect"
     },
     "mill_oponente": {
       "label": "Monstro · Deck Out",
+      "short": "MILL",
       "cor": "#9d77ff",
       "max_in_deck": 3,
       "scope": "monster"
     },
     "debuff_alvo": {
       "label": "Enfraquece Alvo",
+      "short": "DBF-M",
       "cor": "#7ad0b0",
       "max_in_deck": 6,
       "scope": "effect",
@@ -190,6 +219,7 @@
     },
     "backrow": {
       "label": "Limpa Magia/Trap",
+      "short": "BKR-M",
       "cor": "#4db5ff",
       "max_in_deck": 5,
       "scope": "effect",
@@ -197,6 +227,7 @@
     },
     "remocao_alvo": {
       "label": "Remoção de Alvo",
+      "short": "REM-M",
       "cor": "#e66fcb",
       "max_in_deck": 4,
       "scope": "effect",
@@ -204,18 +235,21 @@
     },
     "remocao_aleatoria": {
       "label": "Remoção Aleatória",
+      "short": "REM-R",
       "cor": "#d94fb0",
       "max_in_deck": 4,
       "scope": "effect"
     },
     "punicao_atacante": {
       "label": "Trap · Pune o Atacante",
+      "short": "PUN",
       "cor": "#ff6d6d",
       "max_in_deck": 2,
       "scope": "effect"
     },
     "bounce_shuffle": {
       "label": "Devolve ao Deck ou à Mão",
+      "short": "BNC-M",
       "cor": "#7fd1ff",
       "max_in_deck": 3,
       "scope": "effect",
@@ -223,12 +257,14 @@
     },
     "piercing_pressure": {
       "label": "Pressao/perfurante",
+      "short": "PRC",
       "cor": "#ff7a45",
       "max_in_deck": 5,
       "scope": "effect"
     },
     "acel_busca": {
       "label": "Busca no Deck",
+      "short": "BSC-M",
       "cor": "#d4e157",
       "max_in_deck": 4,
       "scope": "effect",
@@ -236,6 +272,7 @@
     },
     "acel_reposicao": {
       "label": "Reposição",
+      "short": "REP-M",
       "cor": "#9ccc65",
       "max_in_deck": 5,
       "scope": "effect",
@@ -243,6 +280,7 @@
     },
     "acel_revival": {
       "label": "Ressurreição",
+      "short": "RES-M",
       "cor": "#26c6da",
       "max_in_deck": 4,
       "scope": "effect",
@@ -250,96 +288,112 @@
     },
     "exodia_piece": {
       "label": "Partes do Exodia",
+      "short": "EXO",
       "cor": "#8a8a8a",
       "max_in_deck": 5,
       "scope": "monster"
     },
     "custom_monster": {
       "label": "Monstro · Carta Custom",
+      "short": "CUS",
       "cor": "#f27ce0",
       "max_in_deck": 6,
       "scope": "monster"
     },
     "custom_support": {
       "label": "Magia/Trap · Carta Custom",
+      "short": "CUS-S",
       "cor": "#f27ce0",
       "max_in_deck": 2,
       "scope": "support"
     },
     "timelord": {
       "label": "Timelord",
+      "short": "TML",
       "cor": "#e8c66a",
       "max_in_deck": 7,
       "scope": "monster"
     },
     "aesir_supremo": {
       "label": "AESIR Supremo",
+      "short": "ODN",
       "cor": "#7fb3ff",
       "max_in_deck": 2,
       "scope": "monster"
     },
     "imune_a_efeito": {
       "label": "Imunidade total",
+      "short": "IMM",
       "cor": "#37d6c2",
       "max_in_deck": 2,
       "scope": "effect"
     },
     "imune_efeito_monstro": {
       "label": "Imune a efeito de monstro",
+      "short": "IMM-M",
       "cor": "#2fbfa8",
       "max_in_deck": 3,
       "scope": "effect"
     },
     "imune_magia_armadilha": {
       "label": "Imune a magia e armadilha",
+      "short": "IMM-S",
       "cor": "#45c9b0",
       "max_in_deck": 4,
       "scope": "effect"
     },
     "resiste_destruicao_efeito": {
       "label": "Resiste a destruicao por efeito",
+      "short": "RDE",
       "cor": "#1fa38f",
       "max_in_deck": 4,
       "scope": "effect"
     },
     "intocavel_absoluto": {
       "label": "Monstro · Intocável",
+      "short": "UNT",
       "cor": "#20b8a4",
       "max_in_deck": 2,
       "scope": "monster"
     },
     "indestrutivel_batalha": {
       "label": "Monstro · Indestrutível em Batalha",
+      "short": "BTR",
       "cor": "#6fd0ff",
       "max_in_deck": 4,
       "scope": "monster"
     },
     "sem_dano_de_batalha": {
       "label": "Sem Dano de Batalha",
+      "short": "NBD",
       "cor": "#4fa8d8",
       "max_in_deck": 4,
       "scope": "effect"
     },
     "protege_equipe": {
       "label": "Protege a Equipe",
+      "short": "PRT",
       "cor": "#2f8f9c",
       "max_in_deck": 3,
       "scope": "effect"
     },
     "remocao_recorrente": {
       "label": "Monstro · Remoção Todo Turno",
+      "short": "REM-T",
       "cor": "#c2185b",
       "max_in_deck": 2,
       "scope": "monster"
     },
     "equip_com_efeito": {
       "label": "EQUIP com efeito",
+      "short": "EQ✦",
       "cor": "#ffb86b",
       "max_in_deck": 2,
       "scope": "support"
     },
     "roubo": {
       "label": "Roubo",
+      "short": "RUB",
       "cor": "#c77dff",
       "max_in_deck": 1,
       "scope": "effect",

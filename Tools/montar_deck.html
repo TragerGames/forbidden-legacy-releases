@@ -567,6 +567,8 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 .gp-b{flex:1; height:4px; border-radius:2px; background:rgba(255,255,255,.06); overflow:hidden}
 .gp-f{height:100%; border-radius:2px; transition:width .4s var(--suave)}
 .gp-i{width:18px; height:18px; object-fit:contain; flex:none}
+.g-sig{font-style:normal; font-weight:700; letter-spacing:.5px; margin-right:5px; padding:0 4px;
+  border:1px solid currentColor; border-radius:3px; font-size:.92em}
 .gp-n{font-variant-numeric:tabular-nums; font-size:10px}
 .gp.cheio{border-color:rgba(196,72,60,.45)}
 
@@ -1034,7 +1036,7 @@ function validarAdicao(nome){
     if((cont[k]||0)>=max){
       const catTxt = k.endsWith('|monster') ? t('monstros') : t('suporte');
       return {ok:false, tipo:'grupo', grupo:g,
-        msg:t('limGrupo').replace('%g',g.label||g.id).replace('%m',max).replace('%c',catTxt)};
+        msg:t('limGrupo').replace('%g',nomeGrupo(g)).replace('%m',max).replace('%c',catTxt)};
     }
   }
   return {ok:true};
@@ -1054,7 +1056,7 @@ function montarFiltroBanlist(){
     const p=k.split('|'), g=BAN.grupos[p[0]]; if(!g) return '';
     /* so anota a categoria quando o grupo REALMENTE se divide */
     const dividido=cont[p[0]+'|monster']&&cont[p[0]+'|support'];
-    const nome=(g.label||p[0])+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');
+    const nome=nomeGrupo(g)+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');
     return '<option value="'+k+'">'+nome+' · '+cont[k]+' '+t('cartas')+' · '+t('max')+' '+limiteDoGrupo(g,k)+'</option>';
   }).join('');
   sel.value=filtroBan;
@@ -1075,6 +1077,9 @@ const FAM_GRUPO={divine_beast:'divino',wicked_god:'divino',triple_attack:'ataque
   self_escala_mao:'forca',self_snowball_batalha:'forca',buff_equip_alto:'forca',buff_aura_alta_mon:'forca',
   buff_equip_medio:'forca',buff_aura_media:'forca',acel_busca:'acel',acel_reposicao:'acel',acel_revival:'acel',
   lp_recovery:'vida',exodia_piece:'especial',custom_monster:'especial',custom_support:'especial'};
+/* Sigla do grupo (CLR, 2X, NGG...), como o jogo identifica a banlist no editor. */
+function nomeGrupo(g){ return (g.short?g.short+' · ':'')+(g.label||g.id); }
+function sigHTML(g){ return g.short?'<em class="g-sig">'+g.short+'</em>':''; }
 function famGrupo(id){
   if(FAM_GRUPO[id]) return FAM_GRUPO[id];
   const p={burn:'burn',acel:'acel',buff:'forca',self:'forca',remocao:'remocao'};
@@ -1165,7 +1170,7 @@ function render(){
     b.type='button'; b.className='row'+(bloq?' bloq':''); b.dataset.r=r;
     if(animarLista) b.style.setProperty('--atraso',Math.min(i,18)*0.014+'s');
     else b.classList.add('sem-anim');
-    const gTxt=gs.map(g=>(g.label||g.id)+' ('+t('max')+' '+limiteDoGrupo(g,chaveGrupo(g,c.nome))+')').join(' · ');
+    const gTxt=gs.map(g=>nomeGrupo(g)+' ('+t('max')+' '+limiteDoGrupo(g,chaveGrupo(g,c.nome))+')').join(' · ');
     b.title=(bloq&&!v.ok) ? v.msg.replace(/<\/?b>/g,'')
                           : (c.nome_pt||c.nome)+(gTxt?' - '+gTxt:'');
     const nomeTxt=c.nome_pt||c.nome;
@@ -1236,7 +1241,7 @@ function mostrarAltar(c){
     '<div class="altar-ban">'+
       gs.map(g=>{ const k=chaveGrupo(g,c.nome), u=cont[k]||0, mx=limiteDoGrupo(g,k);
         return '<div class="ab'+(u>=mx?' cheio':'')+'"><img src="img/ui/ed_ban_'+famGrupo(g.id)+'.webp" alt="">'+
-          '<span style="color:'+(g.cor||'var(--gold)')+'">'+(g.label||g.id)+'</span><b>'+u+'/'+mx+'</b></div>'; }).join('')+
+          '<span style="color:'+(g.cor||'var(--gold)')+'">'+sigHTML(g)+(g.label||g.id)+'</span><b>'+u+'/'+mx+'</b></div>'; }).join('')+
       '<div class="ab'+(noDeck>=lim?' cheio':'')+'">'+icoUI('ed_deck','')+'<span>'+t('copiasDeck')+'</span><b>'+noDeck+'/'+lim+'</b></div>'+
     '</div>';
 }
@@ -1289,7 +1294,7 @@ function sincDeck(){
     const max=limiteDoGrupo(g,k), usado=cont[k];
     const cor=g.cor||'var(--gold)';
     const dividido=(cont[p[0]+'|monster']!==undefined)&&(cont[p[0]+'|support']!==undefined);
-    const rot=(g.label||p[0])+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');
+    const rot=sigHTML(g)+(g.label||p[0])+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');
     return '<div class="gp'+(usado>=max?' cheio':'')+'">'+
       '<img class="gp-i" src="img/ui/ed_ban_'+famGrupo(p[0])+'.webp" alt="" aria-hidden="true">'+
       '<span style="color:'+cor+';font-size:10px">'+rot+'</span>'+
