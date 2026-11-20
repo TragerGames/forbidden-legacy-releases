@@ -665,7 +665,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 </style>
 <link rel="stylesheet" href="css/site-fx.css?v=20261112a">
 <link rel="stylesheet" href="css/site-v2.css?v=20261113a">
-<link rel="stylesheet" href="css/jogo.css?v=20261119a">
+<link rel="stylesheet" href="css/jogo.css?v=20261120s">
 </head>
 <body class="fl2 jg pg-deck">
 
@@ -1196,8 +1196,8 @@ function render(){
           ? '<span class="col-stat"><b class="s-atk">'+c.atk+'</b><b class="s-def">'+c.def+'</b></span>'
           : '<span class="col-stat sup" title="'+(T[c.card_type]?t(c.card_type):c.card_type)+'">'+(ICO_CAT[c.card_type]?icoUI(ICO_CAT[c.card_type]):'')+'</span>';
       })()+
-      '<span class="col-ban">'+(gs.length
-        ? '<img src="img/ui/ed_ban_'+famGrupo(gs[0].id)+'.webp" alt=""><i style="color:'+(gs[0].cor||'var(--gold)')+'">'+limiteDoGrupo(gs[0],chaveGrupo(gs[0],c.nome))+'</i>' : '')+'</span>'+
+      '<span class="col-ban"'+(gs.length?' title="'+(gs[0].label||gs[0].id)+' ('+t('max')+' '+limiteDoGrupo(gs[0],chaveGrupo(gs[0],c.nome))+')"':'')+'>'+(gs.length
+        ? '<img src="img/ui/ed_ban_'+famGrupo(gs[0].id)+'.webp" alt=""><i style="color:'+(gs[0].cor||'var(--gold)')+'">'+(gs[0].short||limiteDoGrupo(gs[0],chaveGrupo(gs[0],c.nome)))+'</i>' : '')+'</span>'+
       '<span class="row-q'+(q>=lim?' cheio':(q?'':' zero'))+'">'+icoUI('ed_deck','row-q-ico')+q+'<small>/'+lim+'</small></span>';
     b.onclick=()=>adicionar(c);
     b.onmouseenter=()=>mostrarAltar(c);
