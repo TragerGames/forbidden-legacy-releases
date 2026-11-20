@@ -566,6 +566,7 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
   border-radius:5px; background:var(--dark3); border:1px solid var(--border)}
 .gp-b{flex:1; height:4px; border-radius:2px; background:rgba(255,255,255,.06); overflow:hidden}
 .gp-f{height:100%; border-radius:2px; transition:width .4s var(--suave)}
+.gp-i{width:18px; height:18px; object-fit:contain; flex:none}
 .gp-n{font-variant-numeric:tabular-nums; font-size:10px}
 .gp.cheio{border-color:rgba(196,72,60,.45)}
 
@@ -1290,6 +1291,7 @@ function sincDeck(){
     const dividido=(cont[p[0]+'|monster']!==undefined)&&(cont[p[0]+'|support']!==undefined);
     const rot=(g.label||p[0])+(dividido?' - '+(p[1]==='monster'?t('monstros'):t('suporteCat')):'');
     return '<div class="gp'+(usado>=max?' cheio':'')+'">'+
+      '<img class="gp-i" src="img/ui/ed_ban_'+famGrupo(p[0])+'.webp" alt="" aria-hidden="true">'+
       '<span style="color:'+cor+';font-size:10px">'+rot+'</span>'+
       '<span class="gp-b"><span class="gp-f" style="width:'+Math.min(100,usado/max*100)+'%;background:'+cor+'"></span></span>'+
       '<span class="gp-n" style="color:'+(usado>=max?'var(--erro)':'var(--muted)')+'">'+usado+'/'+max+'</span></div>';

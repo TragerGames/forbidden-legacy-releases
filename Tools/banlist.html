@@ -187,6 +187,8 @@ nav.scrolled {
   padding:3px 10px; border-radius:3px; margin-bottom:10px;
 }
 .group-tag.special { color:var(--gold-light); background:rgba(233,185,73,.14); border-color:rgba(255,255,255,0.175); }
+.group-tag[style*="--gcor"] { display:inline-flex; align-items:center; gap:6px; color:var(--gcor); border-color:color-mix(in srgb, var(--gcor) 55%, transparent); }
+.group-ico { width:20px; height:20px; object-fit:contain; flex:none; }
 
 .group-name { font-size:14px; font-weight:600; color:var(--texto); margin-bottom:6px; }
 .group-desc { font-size:12px; color:var(--text-muted); line-height:1.6; margin-bottom:14px; }
@@ -591,12 +593,12 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
   <!-- GRUPOS -->
   <div class="groups-section reveal">
     <div class="section-label" data-lang-pt="Grupos Ativos · v3.1" data-lang-en="Active Groups · v3.1" data-lang-es="Grupos Activos · v3.1" data-lang-vi="Nhóm đang hoạt động · v3.1">Grupos Ativos · v3.1</div>
-    <h2 class="section-title" data-lang-pt="Os 42 grupos da banlist" data-lang-en="The 42 banlist groups" data-lang-es="Los 42 grupos de la banlist" data-lang-vi="42 nhóm của banlist">Os 42 grupos da banlist</h2>
+    <h2 class="section-title" data-lang-pt="Os 48 grupos da banlist" data-lang-en="The 48 banlist groups" data-lang-es="Los 48 grupos de la banlist" data-lang-vi="48 nhóm của banlist">Os 48 grupos da banlist</h2>
 
     <div class="groups-grid">
 
       <div class="group-card special">
-        <div class="group-tag special">DIV</div>
+        <div class="group-tag special" style="--gcor:#f4d64a"><img class="group-ico" src="img/ui/ed_ban_divino.webp" alt="" aria-hidden="true">DIV</div>
         <div class="group-name" data-lang-pt="Bestas Divinas" data-lang-en="Divine Beasts" data-lang-es="Bestias Divinas" data-lang-vi="Thú Thần">Bestas Divinas</div>
         <div class="group-desc" data-lang-pt="As cinco Bestas Divinas: Slifer, Obelisk, Ra, Poseidon e Zorc Necrophades. Grupo próprio para não misturar sua restrição com cartas comuns. Até 4 no deck, cada uma limitada individualmente a 1 cópia." data-lang-en="The five Divine Beasts: Slifer, Obelisk, Ra, Poseidon and Zorc Necrophades. Their own group so their restriction doesn&#x27;t mix with common cards. Up to 4 in the deck, each one individually limited to 1 copy." data-lang-es="Las cinco Bestias Divinas: Slifer, Obelisk, Ra, Poseidon y Zorc Necrophades. Grupo propio para no mezclar su restricción con cartas comunes. Hasta 4 en el mazo, cada una limitada individualmente a 1 copia." data-lang-vi="Năm Thú Thần: Slifer, Obelisk, Ra, Poseidon và Zorc Necrophades. Nhóm riêng để giới hạn của chúng không lẫn với thẻ thường. Tối đa 4 lá trong bộ bài, mỗi lá chỉ được 1 bản.">As cinco Bestas Divinas: Slifer, Obelisk, Ra, Poseidon e Zorc Necrophades. Grupo próprio para não misturar sua restrição com cartas comuns. Até 4 no deck, cada uma limitada individualmente a 1 cópia.</div>
         <div class="group-limit">
@@ -607,7 +609,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card special">
-        <div class="group-tag special">WCK</div>
+        <div class="group-tag special" style="--gcor:#7a4dbf"><img class="group-ico" src="img/ui/ed_ban_divino.webp" alt="" aria-hidden="true">WCK</div>
         <div class="group-name" data-lang-pt="Deuses Malignos" data-lang-en="Wicked Gods" data-lang-es="Dioses Malignos" data-lang-vi="Các Vị Thần Hắc Ám">Deuses Malignos</div>
         <div class="group-desc" data-lang-pt="Os três Deuses Malignos: The Wicked Eraser, The Wicked Avatar e The Wicked Dreadroot. Cada um é limitado individualmente a 1 cópia." data-lang-en="The three Wicked Gods: The Wicked Eraser, The Wicked Avatar and The Wicked Dreadroot. Each one is individually limited to 1 copy." data-lang-es="Los tres Dioses Malignos: The Wicked Eraser, The Wicked Avatar y The Wicked Dreadroot. Cada uno está limitado individualmente a 1 copia." data-lang-vi="Ba Vị Thần Hắc Ám: The Wicked Eraser, The Wicked Avatar và The Wicked Dreadroot. Mỗi lá chỉ được 1 bản.">Os três Deuses Malignos: The Wicked Eraser, The Wicked Avatar e The Wicked Dreadroot. Cada um é limitado individualmente a 1 cópia.</div>
         <div class="group-limit">
@@ -618,7 +620,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card special">
-        <div class="group-tag special">CUS</div>
+        <div class="group-tag special" style="--gcor:#f27ce0"><img class="group-ico" src="img/ui/ed_ban_especial.webp" alt="" aria-hidden="true">CUS</div>
         <div class="group-name" data-lang-pt="Monstro · Carta Custom" data-lang-en="Monster · Custom Card" data-lang-es="Monstruo · Carta Custom" data-lang-vi="Quái Thú · Lá Bài Custom">Monstro · Carta Custom</div>
         <div class="group-desc" data-lang-pt="Monstros criados exclusivamente para o Forbidden Legacy. Eles contam neste grupo (e nos grupos de identidade, como Bestas Divinas), e não nos grupos de efeito." data-lang-en="Monsters created exclusively for Forbidden Legacy. They count in this group (and in identity groups such as Divine Beasts), not in the effect groups." data-lang-es="Monstruos creados exclusivamente para Forbidden Legacy. Cuentan en este grupo (y en los grupos de identidad, como Bestias Divinas), no en los grupos de efecto." data-lang-vi="Quái thú được tạo riêng cho Forbidden Legacy. Chúng được tính trong nhóm này (và các nhóm nhận diện như Thú Thần), không tính vào các nhóm hiệu ứng.">Monstros criados exclusivamente para o Forbidden Legacy. Eles contam neste grupo (e nos grupos de identidade, como Bestas Divinas), e não nos grupos de efeito.</div>
         <div class="group-limit">
@@ -629,7 +631,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card special">
-        <div class="group-tag special">CUS-S</div>
+        <div class="group-tag special" style="--gcor:#f27ce0"><img class="group-ico" src="img/ui/ed_ban_especial.webp" alt="" aria-hidden="true">CUS-S</div>
         <div class="group-name" data-lang-pt="Magia/Trap · Carta Custom" data-lang-en="Spell/Trap · Custom Card" data-lang-es="Magia/Trampa · Carta Custom" data-lang-vi="Phép/Bẫy · Lá Bài Custom">Magia/Trap · Carta Custom</div>
         <div class="group-desc" data-lang-pt="Magias e Armadilhas criadas exclusivamente para o Forbidden Legacy, como Evil Swords of Dark Light e Path to Atlantis. Contam neste grupo, e não nos grupos de efeito." data-lang-en="Spells and Traps created exclusively for Forbidden Legacy, such as Evil Swords of Dark Light and Path to Atlantis. They count in this group, not in the effect groups." data-lang-es="Magias y Trampas creadas exclusivamente para Forbidden Legacy, como Evil Swords of Dark Light y Path to Atlantis. Cuentan en este grupo, no en los grupos de efecto." data-lang-vi="Phép và Bẫy được tạo riêng cho Forbidden Legacy, như Evil Swords of Dark Light và Path to Atlantis. Chúng được tính trong nhóm này, không tính vào các nhóm hiệu ứng.">Magias e Armadilhas criadas exclusivamente para o Forbidden Legacy, como Evil Swords of Dark Light e Path to Atlantis. Contam neste grupo, e não nos grupos de efeito.</div>
         <div class="group-limit">
@@ -640,7 +642,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">CLR</div>
+        <div class="group-tag" style="--gcor:#8d6bff"><img class="group-ico" src="img/ui/ed_ban_remocao.webp" alt="" aria-hidden="true">CLR</div>
         <div class="group-name" data-lang-pt="Limpeza de monstros/campo" data-lang-en="Board Wipe" data-lang-es="Limpieza de Campo" data-lang-vi="Xóa Sổ Sân Đấu">Limpeza de monstros/campo</div>
         <div class="group-desc" data-lang-pt="Cartas que destroem todos os monstros ou o campo inteiro, ou devolvem o campo do oponente ao deck — como Raigeki, Dark Hole, Mirror Force e Crush Card Virus." data-lang-en="Cards that destroy every monster or the whole field, or shuffle the opponent&#x27;s field back into the deck — such as Raigeki, Dark Hole, Mirror Force and Crush Card Virus." data-lang-es="Cartas que destruyen todos los monstruos o el campo entero, o devuelven el campo del oponente al mazo — como Raigeki, Dark Hole, Mirror Force y Crush Card Virus." data-lang-vi="Thẻ phá hủy toàn bộ quái thú hoặc cả sân, hoặc trả sân của đối thủ về bộ bài — như Raigeki, Dark Hole, Mirror Force và Crush Card Virus.">Cartas que destroem todos os monstros ou o campo inteiro, ou devolvem o campo do oponente ao deck — como Raigeki, Dark Hole, Mirror Force e Crush Card Virus.</div>
         <div class="group-limit">
@@ -651,7 +653,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">3X</div>
+        <div class="group-tag" style="--gcor:#cc2200"><img class="group-ico" src="img/ui/ed_ban_ataque.webp" alt="" aria-hidden="true">3X</div>
         <div class="group-name" data-lang-pt="Ataque triplo" data-lang-en="Triple Attack" data-lang-es="Ataque Triple" data-lang-vi="Tấn Công Ba Lần">Ataque triplo</div>
         <div class="group-desc" data-lang-pt="Cartas que permitem atacar três ou mais vezes no mesmo turno." data-lang-en="Cards that allow attacking three or more times in the same turn." data-lang-es="Cartas que permiten atacar tres o más veces en el mismo turno." data-lang-vi="Thẻ cho phép tấn công ba lần trở lên trong cùng lượt.">Cartas que permitem atacar três ou mais vezes no mesmo turno.</div>
         <div class="group-limit">
@@ -662,7 +664,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">2X</div>
+        <div class="group-tag" style="--gcor:#f05a5a"><img class="group-ico" src="img/ui/ed_ban_ataque.webp" alt="" aria-hidden="true">2X</div>
         <div class="group-name" data-lang-pt="Ataque múltiplo" data-lang-en="Multi Attack" data-lang-es="Ataque Múltiple" data-lang-vi="Tấn Công Nhiều Lần">Ataque múltiplo</div>
         <div class="group-desc" data-lang-pt="Cartas que permitem atacar duas vezes no mesmo turno ou ganhar um ataque extra ao destruir um monstro." data-lang-en="Cards that allow attacking twice in the same turn or gaining an extra attack after destroying a monster." data-lang-es="Cartas que permiten atacar dos veces en el mismo turno u obtener un ataque extra al destruir un monstruo." data-lang-vi="Thẻ cho phép tấn công hai lần trong cùng lượt hoặc có thêm lượt tấn công khi phá hủy một quái thú.">Cartas que permitem atacar duas vezes no mesmo turno ou ganhar um ataque extra ao destruir um monstro.</div>
         <div class="group-limit">
@@ -673,7 +675,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">DIR</div>
+        <div class="group-tag" style="--gcor:#ff6d6d"><img class="group-ico" src="img/ui/ed_ban_ataque.webp" alt="" aria-hidden="true">DIR</div>
         <div class="group-name" data-lang-pt="Ataque direto" data-lang-en="Direct Attack" data-lang-es="Ataque Directo" data-lang-vi="Tấn Công Trực Tiếp">Ataque direto</div>
         <div class="group-desc" data-lang-pt="Cartas que ignoram monstros do adversário para atacar diretamente os LP." data-lang-en="Cards that bypass the opponent&#x27;s monsters to attack LP directly." data-lang-es="Cartas que ignoran a los monstruos del rival para atacar directo a los LP." data-lang-vi="Thẻ bỏ qua quái thú của đối thủ để tấn công thẳng vào LP.">Cartas que ignoram monstros do adversário para atacar diretamente os LP.</div>
         <div class="group-limit">
@@ -684,7 +686,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">IMM</div>
+        <div class="group-tag" style="--gcor:#37d6c2"><img class="group-ico" src="img/ui/ed_ban_protecao.webp" alt="" aria-hidden="true">IMM</div>
         <div class="group-name" data-lang-pt="Imunidade total" data-lang-en="Full Immunity" data-lang-es="Inmunidad total" data-lang-vi="Miễn Nhiễm Toàn Phần">Imunidade total</div>
         <div class="group-desc" data-lang-pt="Cartas imunes a todos os efeitos do oponente, como Magician of Dark Chaos - Black Chaos e Timaeus the United Magical Dragon." data-lang-en="Cards immune to all of the opponent&#x27;s effects, such as Magician of Dark Chaos - Black Chaos and Timaeus the United Magical Dragon." data-lang-es="Cartas inmunes a todos los efectos del oponente, como Magician of Dark Chaos - Black Chaos y Timaeus the United Magical Dragon." data-lang-vi="Thẻ miễn nhiễm với mọi hiệu ứng của đối thủ, như Magician of Dark Chaos - Black Chaos và Timaeus the United Magical Dragon.">Cartas imunes a todos os efeitos do oponente, como Magician of Dark Chaos - Black Chaos e Timaeus the United Magical Dragon.</div>
         <div class="group-limit">
@@ -695,7 +697,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">IMO</div>
+        <div class="group-tag" style="--gcor:#2fbfa8"><img class="group-ico" src="img/ui/ed_ban_protecao.webp" alt="" aria-hidden="true">IMM-M</div>
         <div class="group-name" data-lang-pt="Imune a efeito de monstro" data-lang-en="Immune to Monster Effects" data-lang-es="Inmune a efectos de monstruo" data-lang-vi="Miễn Nhiễm Hiệu Ứng Quái Thú">Imune a efeito de monstro</div>
         <div class="group-desc" data-lang-pt="Cartas que não são afetadas por efeitos de monstro do oponente." data-lang-en="Cards that are not affected by the opponent&#x27;s monster effects." data-lang-es="Cartas que no son afectadas por efectos de monstruo del oponente." data-lang-vi="Thẻ không bị ảnh hưởng bởi hiệu ứng quái thú của đối thủ.">Cartas que não são afetadas por efeitos de monstro do oponente.</div>
         <div class="group-limit">
@@ -706,7 +708,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">IMT</div>
+        <div class="group-tag" style="--gcor:#45c9b0"><img class="group-ico" src="img/ui/ed_ban_protecao.webp" alt="" aria-hidden="true">IMM-S</div>
         <div class="group-name" data-lang-pt="Imune a magia e armadilha" data-lang-en="Immune to Spells and Traps" data-lang-es="Inmune a magias y trampas" data-lang-vi="Miễn Nhiễm Phép và Bẫy">Imune a magia e armadilha</div>
         <div class="group-desc" data-lang-pt="Cartas imunes a Magias ou Armadilhas do oponente." data-lang-en="Cards immune to the opponent&#x27;s Spells or Traps." data-lang-es="Cartas inmunes a Magias o Trampas del oponente." data-lang-vi="Thẻ miễn nhiễm với Phép hoặc Bẫy của đối thủ.">Cartas imunes a Magias ou Armadilhas do oponente.</div>
         <div class="group-limit">
@@ -717,7 +719,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">RES</div>
+        <div class="group-tag" style="--gcor:#1fa38f"><img class="group-ico" src="img/ui/ed_ban_protecao.webp" alt="" aria-hidden="true">RDE</div>
         <div class="group-name" data-lang-pt="Resiste a destruição por efeito" data-lang-en="Resists Destruction by Effect" data-lang-es="Resiste destrucción por efecto" data-lang-vi="Chống Phá Hủy Bởi Hiệu Ứng">Resiste a destruição por efeito</div>
         <div class="group-desc" data-lang-pt="Cartas que não podem ser destruídas por efeito, como Eldlich, Red-Eyes Dark Dragoon e Veidos." data-lang-en="Cards that cannot be destroyed by effects, such as Eldlich, Red-Eyes Dark Dragoon and Veidos." data-lang-es="Cartas que no pueden ser destruidas por efecto, como Eldlich, Red-Eyes Dark Dragoon y Veidos." data-lang-vi="Thẻ không thể bị phá hủy bởi hiệu ứng, như Eldlich, Red-Eyes Dark Dragoon và Veidos.">Cartas que não podem ser destruídas por efeito, como Eldlich, Red-Eyes Dark Dragoon e Veidos.</div>
         <div class="group-limit">
@@ -728,7 +730,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">NEG</div>
+        <div class="group-tag" style="--gcor:#2b6cb0"><img class="group-ico" src="img/ui/ed_ban_trava.webp" alt="" aria-hidden="true">NGG</div>
         <div class="group-name" data-lang-pt="Negação geral" data-lang-en="General Negation" data-lang-es="Negación general" data-lang-vi="Vô Hiệu Hóa Chung">Negação geral</div>
         <div class="group-desc" data-lang-pt="Cartas que anulam qualquer carta do oponente, como Dragon Master Magia, Jizukiru e Van&#x27;Dalgyon. Até 2 monstros e 2 Magias/Armadilhas." data-lang-en="Cards that negate any of the opponent&#x27;s cards, such as Dragon Master Magia, Jizukiru and Van&#x27;Dalgyon. Up to 2 monsters and 2 Spells/Traps." data-lang-es="Cartas que anulan cualquier carta del oponente, como Dragon Master Magia, Jizukiru y Van&#x27;Dalgyon. Hasta 2 monstruos y 2 Magias/Trampas." data-lang-vi="Thẻ vô hiệu hóa bất kỳ lá bài nào của đối thủ, như Dragon Master Magia, Jizukiru và Van&#x27;Dalgyon. Tối đa 2 quái thú và 2 Phép/Bẫy.">Cartas que anulam qualquer carta do oponente, como Dragon Master Magia, Jizukiru e Van&#x27;Dalgyon. Até 2 monstros e 2 Magias/Armadilhas.</div>
         <div class="group-limit">
@@ -739,7 +741,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">MEN</div>
+        <div class="group-tag" style="--gcor:#5c8dff"><img class="group-ico" src="img/ui/ed_ban_trava.webp" alt="" aria-hidden="true">MEN</div>
         <div class="group-name" data-lang-pt="Negação de efeito de monstro" data-lang-en="Monster Effect Negation" data-lang-es="Negación de efecto de monstruo" data-lang-vi="Vô Hiệu Hóa Hiệu Ứng Quái Thú">Negação de efeito de monstro</div>
         <div class="group-desc" data-lang-pt="Cartas que anulam efeitos de monstro do oponente, como Grapha e os Evigishki. Até 2 monstros e 2 Magias/Armadilhas." data-lang-en="Cards that negate the opponent&#x27;s monster effects, such as Grapha and the Evigishki. Up to 2 monsters and 2 Spells/Traps." data-lang-es="Cartas que anulan efectos de monstruo del oponente, como Grapha y los Evigishki. Hasta 2 monstruos y 2 Magias/Trampas." data-lang-vi="Thẻ vô hiệu hóa hiệu ứng quái thú của đối thủ, như Grapha và các Evigishki. Tối đa 2 quái thú và 2 Phép/Bẫy.">Cartas que anulam efeitos de monstro do oponente, como Grapha e os Evigishki. Até 2 monstros e 2 Magias/Armadilhas.</div>
         <div class="group-limit">
@@ -750,7 +752,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">SPN</div>
+        <div class="group-tag" style="--gcor:#4cc9f0"><img class="group-ico" src="img/ui/ed_ban_trava.webp" alt="" aria-hidden="true">SPN</div>
         <div class="group-name" data-lang-pt="Negação de magia" data-lang-en="Spell Negation" data-lang-es="Negación de Magia" data-lang-vi="Vô Hiệu Hóa Phép Thuật">Negação de magia</div>
         <div class="group-desc" data-lang-pt="Cartas que negam Magias do oponente, como Horus LV8, Invader of Darkness e Magic Jammer. Até 2 monstros e 2 Magias/Armadilhas." data-lang-en="Cards that negate the opponent&#x27;s Spells, such as Horus LV8, Invader of Darkness and Magic Jammer. Up to 2 monsters and 2 Spells/Traps." data-lang-es="Cartas que niegan Magias del oponente, como Horus LV8, Invader of Darkness y Magic Jammer. Hasta 2 monstruos y 2 Magias/Trampas." data-lang-vi="Thẻ vô hiệu hóa Phép của đối thủ, như Horus LV8, Invader of Darkness và Magic Jammer. Tối đa 2 quái thú và 2 Phép/Bẫy.">Cartas que negam Magias do oponente, como Horus LV8, Invader of Darkness e Magic Jammer. Até 2 monstros e 2 Magias/Armadilhas.</div>
         <div class="group-limit">
@@ -761,7 +763,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">TPN</div>
+        <div class="group-tag" style="--gcor:#3fa7d6"><img class="group-ico" src="img/ui/ed_ban_trava.webp" alt="" aria-hidden="true">TPN</div>
         <div class="group-name" data-lang-pt="Negação de armadilha" data-lang-en="Trap Negation" data-lang-es="Negación de Trampa" data-lang-vi="Vô Hiệu Hóa Bẫy">Negação de armadilha</div>
         <div class="group-desc" data-lang-pt="Cartas que negam Armadilhas do oponente, como Jinzo, Mobius, Pluto, Loki e Trap Jammer. Até 2 monstros e 2 Magias/Armadilhas." data-lang-en="Cards that negate the opponent&#x27;s Traps, such as Jinzo, Mobius, Pluto, Loki and Trap Jammer. Up to 2 monsters and 2 Spells/Traps." data-lang-es="Cartas que niegan Trampas del oponente, como Jinzo, Mobius, Pluto, Loki y Trap Jammer. Hasta 2 monstruos y 2 Magias/Trampas." data-lang-vi="Thẻ vô hiệu hóa Bẫy của đối thủ, như Jinzo, Mobius, Pluto, Loki và Trap Jammer. Tối đa 2 quái thú và 2 Phép/Bẫy.">Cartas que negam Armadilhas do oponente, como Jinzo, Mobius, Pluto, Loki e Trap Jammer. Até 2 monstros e 2 Magias/Armadilhas.</div>
         <div class="group-limit">
@@ -772,7 +774,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">ATN</div>
+        <div class="group-tag" style="--gcor:#f2c94c"><img class="group-ico" src="img/ui/ed_ban_trava.webp" alt="" aria-hidden="true">ATN</div>
         <div class="group-name" data-lang-pt="Negação de ataque" data-lang-en="Attack Negation" data-lang-es="Negación de Ataque" data-lang-vi="Vô Hiệu Hóa Tấn Công">Negação de ataque</div>
         <div class="group-desc" data-lang-pt="Cartas que impedem ou anulam um ataque adversário, como Negate Attack." data-lang-en="Cards that prevent or negate an opponent&#x27;s attack, such as Negate Attack." data-lang-es="Cartas que impiden o anulan un ataque del oponente, como Negate Attack." data-lang-vi="Thẻ ngăn chặn hoặc vô hiệu hóa đòn tấn công của đối thủ, như Negate Attack.">Cartas que impedem ou anulam um ataque adversário, como Negate Attack.</div>
         <div class="group-limit">
@@ -783,7 +785,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">LCK</div>
+        <div class="group-tag" style="--gcor:#c13cff"><img class="group-ico" src="img/ui/ed_ban_trava.webp" alt="" aria-hidden="true">LCK</div>
         <div class="group-name" data-lang-pt="Trava de atacante" data-lang-en="Attacker Lock" data-lang-es="Bloqueo de Atacante" data-lang-vi="Khóa Người Tấn Công">Trava de atacante</div>
         <div class="group-desc" data-lang-pt="Cartas que travam atacantes: impedem monstros do oponente de atacar, como Swords of Revealing Light e Nightmare Wheel, ou encerram o turno dele. Nightmare Wheel é limitada a 1 cópia." data-lang-en="Cards that lock attackers: they stop the opponent&#x27;s monsters from attacking, such as Swords of Revealing Light and Nightmare Wheel, or end their turn. Nightmare Wheel is limited to 1 copy." data-lang-es="Cartas que bloquean atacantes: impiden que los monstruos del oponente ataquen, como Swords of Revealing Light y Nightmare Wheel, o terminan su turno. Nightmare Wheel está limitada a 1 copia." data-lang-vi="Thẻ khóa người tấn công: ngăn quái thú của đối thủ tấn công, như Swords of Revealing Light và Nightmare Wheel, hoặc kết thúc lượt của họ. Nightmare Wheel chỉ được 1 bản.">Cartas que travam atacantes: impedem monstros do oponente de atacar, como Swords of Revealing Light e Nightmare Wheel, ou encerram o turno dele. Nightmare Wheel é limitada a 1 cópia.</div>
         <div class="group-limit">
@@ -794,7 +796,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">UNT</div>
+        <div class="group-tag" style="--gcor:#20b8a4"><img class="group-ico" src="img/ui/ed_ban_protecao.webp" alt="" aria-hidden="true">UNT</div>
         <div class="group-name" data-lang-pt="Monstro · Intocável" data-lang-en="Monster · Untouchable" data-lang-es="Monstruo · Intocable" data-lang-vi="Quái Thú · Bất Khả Xâm Phạm">Monstro · Intocável</div>
         <div class="group-desc" data-lang-pt="Monstros cujo efeito não pode ser negado, que não são afetados por efeitos ou que não podem ter o ATK reduzido nem a posição alterada." data-lang-en="Monsters whose effect cannot be negated, that are unaffected by effects, or whose ATK cannot be reduced or position changed." data-lang-es="Monstruos cuyo efecto no puede ser negado, que no son afectados por efectos o cuyo ATK no puede reducirse ni su posición cambiarse." data-lang-vi="Quái thú có hiệu ứng không thể bị vô hiệu hóa, không bị ảnh hưởng bởi hiệu ứng, hoặc không thể bị giảm ATK hay đổi tư thế.">Monstros cujo efeito não pode ser negado, que não são afetados por efeitos ou que não podem ter o ATK reduzido nem a posição alterada.</div>
         <div class="group-limit">
@@ -805,7 +807,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">BTR</div>
+        <div class="group-tag" style="--gcor:#6fd0ff"><img class="group-ico" src="img/ui/ed_ban_protecao.webp" alt="" aria-hidden="true">BTR</div>
         <div class="group-name" data-lang-pt="Monstro · Indestrutível em Batalha" data-lang-en="Monster · Battle Indestructible" data-lang-es="Monstruo · Indestructible en Batalla" data-lang-vi="Quái Thú · Bất Hoại Khi Chiến Đấu">Monstro · Indestrutível em Batalha</div>
         <div class="group-desc" data-lang-pt="Monstros que não podem ser destruídos em batalha, sempre ou sob condição (em defesa, equipados ou com Marcadores de Magia)." data-lang-en="Monsters that cannot be destroyed by battle, always or under a condition (in defense, while equipped or with Spell Counters)." data-lang-es="Monstruos que no pueden ser destruidos en batalla, siempre o bajo condición (en defensa, equipados o con Contadores de Magia)." data-lang-vi="Quái thú không thể bị phá hủy trong chiến đấu, luôn luôn hoặc khi có điều kiện (ở thế thủ, khi được trang bị hoặc có Bộ đếm Phép).">Monstros que não podem ser destruídos em batalha, sempre ou sob condição (em defesa, equipados ou com Marcadores de Magia).</div>
         <div class="group-limit">
@@ -816,7 +818,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">NBD</div>
+        <div class="group-tag" style="--gcor:#4fa8d8"><img class="group-ico" src="img/ui/ed_ban_protecao.webp" alt="" aria-hidden="true">NBD</div>
         <div class="group-name" data-lang-pt="Sem Dano de Batalha" data-lang-en="No Battle Damage" data-lang-es="Sin Daño de Batalla" data-lang-vi="Không Nhận Sát Thương">Sem Dano de Batalha</div>
         <div class="group-desc" data-lang-pt="Cartas que zeram o dano de batalha ou anulam efeitos ligados à batalha, protegendo seus LP nos confrontos." data-lang-en="Cards that reduce battle damage to zero or negate battle-related effects, protecting your LP in clashes." data-lang-es="Cartas que reducen a cero el daño de batalla o anulan efectos ligados a la batalla, protegiendo tus LP en los enfrentamientos." data-lang-vi="Thẻ đưa sát thương chiến đấu về 0 hoặc vô hiệu hóa hiệu ứng liên quan đến chiến đấu, bảo vệ LP của bạn.">Cartas que zeram o dano de batalha ou anulam efeitos ligados à batalha, protegendo seus LP nos confrontos.</div>
         <div class="group-limit">
@@ -827,7 +829,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">PRT</div>
+        <div class="group-tag" style="--gcor:#2f8f9c"><img class="group-ico" src="img/ui/ed_ban_protecao.webp" alt="" aria-hidden="true">PRT</div>
         <div class="group-name" data-lang-pt="Protege a Equipe" data-lang-en="Protects the Team" data-lang-es="Protege al Equipo" data-lang-vi="Bảo Vệ Đồng Đội">Protege a Equipe</div>
         <div class="group-desc" data-lang-pt="Cartas que protegem os aliados: impedem que sejam alvo de ataque ou de efeitos do oponente, ou os tornam indestrutíveis por efeito." data-lang-en="Cards that protect allies: they stop them from being targeted by attacks or opponent effects, or make them indestructible by effects." data-lang-es="Cartas que protegen a los aliados: impiden que sean objetivo de ataques o de efectos del oponente, o los vuelven indestructibles por efectos." data-lang-vi="Thẻ bảo vệ đồng đội: ngăn chúng bị chọn làm mục tiêu tấn công hoặc hiệu ứng của đối thủ, hoặc khiến chúng không thể bị phá hủy bởi hiệu ứng.">Cartas que protegem os aliados: impedem que sejam alvo de ataque ou de efeitos do oponente, ou os tornam indestrutíveis por efeito.</div>
         <div class="group-limit">
@@ -838,7 +840,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">EQ+</div>
+        <div class="group-tag" style="--gcor:#ff9f3d"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">EQ+</div>
         <div class="group-name" data-lang-pt="Equip absurdo" data-lang-en="Explosive Equip" data-lang-es="Equipo Explosivo" data-lang-vi="Trang Bị Cực Mạnh">Equip absurdo</div>
         <div class="group-desc" data-lang-pt="Equipamentos com impacto extremo, como cartas que dobram o poder ou o aumentam em porcentagem. Megamorph continua limitada individualmente a 1 cópia." data-lang-en="Equips with extreme impact, such as cards that double power or raise it by a percentage. Megamorph remains individually limited to 1 copy." data-lang-es="Equipos con impacto extremo, como cartas que duplican el poder o lo aumentan en porcentaje. Megamorph sigue limitada individualmente a 1 copia." data-lang-vi="Trang bị có tác động cực lớn, như thẻ nhân đôi sức mạnh hoặc tăng theo phần trăm. Megamorph vẫn chỉ được 1 bản.">Equipamentos com impacto extremo, como cartas que dobram o poder ou o aumentam em porcentagem. Megamorph continua limitada individualmente a 1 cópia.</div>
         <div class="group-limit">
@@ -849,7 +851,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">EQ-A</div>
+        <div class="group-tag" style="--gcor:#ff9d2e"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">EQ-A</div>
         <div class="group-name" data-lang-pt="Equip · Bônus Alto" data-lang-en="Equip · High Bonus" data-lang-es="Equipo · Bono Alto" data-lang-vi="Trang Bị · Thưởng Cao">Equip · Bônus Alto</div>
         <div class="group-desc" data-lang-pt="Equipamentos que dão 800 ou mais de ATK/DEF ao monstro equipado." data-lang-en="Equips that give 800 or more ATK/DEF to the equipped monster." data-lang-es="Equipos que dan 800 o más de ATK/DEF al monstruo equipado." data-lang-vi="Trang bị tăng từ 800 ATK/DEF trở lên cho quái thú được trang bị.">Equipamentos que dão 800 ou mais de ATK/DEF ao monstro equipado.</div>
         <div class="group-limit">
@@ -860,7 +862,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">EQM</div>
+        <div class="group-tag" style="--gcor:#d98232"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">EQM</div>
         <div class="group-name" data-lang-pt="Monstro full equip" data-lang-en="Full Equip Monster" data-lang-es="Monstruo Full Equipo" data-lang-vi="Quái Vật Toàn Trang Bị">Monstro full equip</div>
         <div class="group-desc" data-lang-pt="Monstros que abusam muito bem de equipamentos ou aceitam qualquer equip, como Gate Guardian, Maha Vailo e Gearfried." data-lang-en="Monsters that make excellent use of equips or accept any equip, such as Gate Guardian, Maha Vailo and Gearfried." data-lang-es="Monstruos que aprovechan muy bien los equipos o aceptan cualquier equipo, como Gate Guardian, Maha Vailo y Gearfried." data-lang-vi="Quái thú tận dụng trang bị cực tốt hoặc nhận mọi loại trang bị, như Gate Guardian, Maha Vailo và Gearfried.">Monstros que abusam muito bem de equipamentos ou aceitam qualquer equip, como Gate Guardian, Maha Vailo e Gearfried.</div>
         <div class="group-limit">
@@ -871,7 +873,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">AUR-A</div>
+        <div class="group-tag" style="--gcor:#ffd166"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">AUR-A</div>
         <div class="group-name" data-lang-pt="Monstro · Aura Alta" data-lang-en="Monster · High Aura" data-lang-es="Monstruo · Aura Alta" data-lang-vi="Quái Thú · Hào Quang Cao">Monstro · Aura Alta</div>
         <div class="group-desc" data-lang-pt="Monstros que dão 800 ou mais de ATK/DEF a si mesmos ou aos aliados, por bônus ou aura." data-lang-en="Monsters that give 800 or more ATK/DEF to themselves or their allies, through a bonus or an aura." data-lang-es="Monstruos que dan 800 o más de ATK/DEF a sí mismos o a sus aliados, por bono o aura." data-lang-vi="Quái thú tăng từ 800 ATK/DEF trở lên cho bản thân hoặc đồng đội, qua tiền thưởng hoặc hào quang.">Monstros que dão 800 ou mais de ATK/DEF a si mesmos ou aos aliados, por bônus ou aura.</div>
         <div class="group-limit">
@@ -882,7 +884,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">EQ-M</div>
+        <div class="group-tag" style="--gcor:#f2b447"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">EQ-M</div>
         <div class="group-name" data-lang-pt="Equip · Bônus Médio" data-lang-en="Equip · Medium Bonus" data-lang-es="Equipo · Bono Medio" data-lang-vi="Trang Bị · Thưởng Trung Bình">Equip · Bônus Médio</div>
         <div class="group-desc" data-lang-pt="Equipamentos que dão entre 300 e 799 de ATK/DEF ao monstro equipado." data-lang-en="Equips that give between 300 and 799 ATK/DEF to the equipped monster." data-lang-es="Equipos que dan entre 300 y 799 de ATK/DEF al monstruo equipado." data-lang-vi="Trang bị tăng từ 300 đến 799 ATK/DEF cho quái thú được trang bị.">Equipamentos que dão entre 300 e 799 de ATK/DEF ao monstro equipado.</div>
         <div class="group-limit">
@@ -893,7 +895,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">AUR-M</div>
+        <div class="group-tag" style="--gcor:#e8c063"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">AUR-M</div>
         <div class="group-name" data-lang-pt="Aura Média" data-lang-en="Medium Aura" data-lang-es="Aura Media" data-lang-vi="Hào Quang Trung Bình">Aura Média</div>
         <div class="group-desc" data-lang-pt="Monstros, Magias, Armadilhas e Campos que dão entre 300 e 799 de ATK/DEF à equipe, por bônus ou aura." data-lang-en="Monsters, Spells, Traps and Fields that give between 300 and 799 ATK/DEF to the team, through a bonus or an aura." data-lang-es="Monstruos, Magias, Trampas y Campos que dan entre 300 y 799 de ATK/DEF al equipo, por bono o aura." data-lang-vi="Quái thú, Phép, Bẫy và Sân tăng từ 300 đến 799 ATK/DEF cho đồng đội, qua tiền thưởng hoặc hào quang.">Monstros, Magias, Armadilhas e Campos que dão entre 300 e 799 de ATK/DEF à equipe, por bônus ou aura.</div>
         <div class="group-limit">
@@ -909,7 +911,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">BRN</div>
+        <div class="group-tag" style="--gcor:#ff4f9a"><img class="group-ico" src="img/ui/ed_ban_burn.webp" alt="" aria-hidden="true">BRN</div>
         <div class="group-name" data-lang-pt="Burn direto" data-lang-en="Direct Burn" data-lang-es="Quemado Directo" data-lang-vi="Thiêu Đốt Trực Tiếp">Burn direto</div>
         <div class="group-desc" data-lang-pt="Dano direto imediato e incondicional, sem gatilho ou condição especial." data-lang-en="Immediate, unconditional direct damage, with no trigger or special condition." data-lang-es="Daño directo inmediato e incondicional, sin disparador ni condición especial." data-lang-vi="Sát thương trực tiếp tức thời và vô điều kiện, không cần kích hoạt hay điều kiện đặc biệt.">Dano direto imediato e incondicional, sem gatilho ou condição especial.</div>
         <div class="group-limit">
@@ -920,7 +922,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">B-REC</div>
+        <div class="group-tag" style="--gcor:#ff6f3c"><img class="group-ico" src="img/ui/ed_ban_burn.webp" alt="" aria-hidden="true">B-REC</div>
         <div class="group-name" data-lang-pt="Burn recorrente" data-lang-en="Recurring Burn" data-lang-es="Quemado Recurrente" data-lang-vi="Thiêu Đốt Liên Tục">Burn recorrente</div>
         <div class="group-desc" data-lang-pt="Dano direto que se repete a cada turno ou gatilho, em vez de acontecer uma única vez." data-lang-en="Direct damage that repeats every turn or trigger instead of happening only once." data-lang-es="Daño directo que se repite cada turno o disparador, en vez de ocurrir una sola vez." data-lang-vi="Sát thương trực tiếp lặp lại mỗi lượt hoặc mỗi lần kích hoạt, thay vì chỉ xảy ra một lần.">Dano direto que se repete a cada turno ou gatilho, em vez de acontecer uma única vez.</div>
         <div class="group-limit">
@@ -931,7 +933,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">B-COND</div>
+        <div class="group-tag" style="--gcor:#ffa63c"><img class="group-ico" src="img/ui/ed_ban_burn.webp" alt="" aria-hidden="true">B-COND</div>
         <div class="group-name" data-lang-pt="Burn condicional" data-lang-en="Conditional Burn" data-lang-es="Quemado Condicional" data-lang-vi="Thiêu Đốt Có Điều Kiện">Burn condicional</div>
         <div class="group-desc" data-lang-pt="Dano que depende de mão, campo, equip ou contagem de cartas para escalar." data-lang-en="Damage that depends on hand, field, equips or card count to scale." data-lang-es="Daño que depende de la mano, el campo, equipos o el conteo de cartas para escalar." data-lang-vi="Sát thương tăng dần dựa trên bài trên tay, sân, trang bị hoặc số lượng thẻ.">Dano que depende de mão, campo, equip ou contagem de cartas para escalar.</div>
         <div class="group-limit">
@@ -942,7 +944,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">B-KILL</div>
+        <div class="group-tag" style="--gcor:#e0483c"><img class="group-ico" src="img/ui/ed_ban_burn.webp" alt="" aria-hidden="true">B-KILL</div>
         <div class="group-name" data-lang-pt="Burn de combate" data-lang-en="Battle Burn" data-lang-es="Quemado de Batalla" data-lang-vi="Thiêu Đốt Khi Chiến Đấu">Burn de combate</div>
         <div class="group-desc" data-lang-pt="Dano ligado a destruir um monstro em batalha ou vencer o confronto." data-lang-en="Damage tied to destroying a monster in battle or winning the clash." data-lang-es="Daño ligado a destruir un monstruo en batalla o ganar el enfrentamiento." data-lang-vi="Sát thương gắn với việc phá hủy quái thú trong chiến đấu hoặc thắng cuộc đối đầu.">Dano ligado a destruir um monstro em batalha ou vencer o confronto.</div>
         <div class="group-limit">
@@ -953,7 +955,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">SLF-A</div>
+        <div class="group-tag" style="--gcor:#e8a33d"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">SLF-A</div>
         <div class="group-name" data-lang-pt="Cresce por Arquétipo" data-lang-en="Grows by Archetype" data-lang-es="Crece por Arquetipo" data-lang-vi="Mạnh Lên Theo Hệ Bài">Cresce por Arquétipo</div>
         <div class="group-desc" data-lang-pt="Cartas que ficam mais fortes conforme a quantidade de cartas do mesmo tipo ou arquétipo no campo ou no Cemitério." data-lang-en="Cards that grow stronger based on how many cards of the same type or archetype are on the field or in the Graveyard." data-lang-es="Cartas que se vuelven más fuertes según la cantidad de cartas del mismo tipo o arquetipo en el campo o en el Cementerio." data-lang-vi="Thẻ mạnh lên theo số lượng thẻ cùng loại hoặc cùng hệ trên sân hoặc trong Mộ.">Cartas que ficam mais fortes conforme a quantidade de cartas do mesmo tipo ou arquétipo no campo ou no Cemitério.</div>
         <div class="group-limit">
@@ -964,7 +966,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">LP+</div>
+        <div class="group-tag" style="--gcor:#58d6ff"><img class="group-ico" src="img/ui/ed_ban_vida.webp" alt="" aria-hidden="true">LP+</div>
         <div class="group-name" data-lang-pt="Recuperação de LP" data-lang-en="LP Recovery" data-lang-es="Recuperación de LP" data-lang-vi="Hồi Phục LP">Recuperação de LP</div>
         <div class="group-desc" data-lang-pt="Cartas que recuperam pontos de vida de forma relevante." data-lang-en="Cards that recover a meaningful amount of life points." data-lang-es="Cartas que recuperan puntos de vida de forma relevante." data-lang-vi="Thẻ hồi phục điểm sinh mệnh ở mức đáng kể.">Cartas que recuperam pontos de vida de forma relevante.</div>
         <div class="group-limit">
@@ -975,7 +977,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">MILL</div>
+        <div class="group-tag" style="--gcor:#9d77ff"><img class="group-ico" src="img/ui/ed_ban_remocao.webp" alt="" aria-hidden="true">MILL</div>
         <div class="group-name" data-lang-pt="Monstro · Deck Out" data-lang-en="Monster · Deck Out" data-lang-es="Monstruo · Deck Out" data-lang-vi="Quái Thú · Rút Cạn Bộ Bài">Monstro · Deck Out</div>
         <div class="group-desc" data-lang-pt="Monstros que atacam o deck do oponente, mandando cartas ao Cemitério e acelerando o deck out." data-lang-en="Monsters that attack the opponent&#x27;s deck, sending cards to the Graveyard and speeding up a deck out." data-lang-es="Monstruos que atacan el mazo del oponente, enviando cartas al Cementerio y acelerando el deck out." data-lang-vi="Quái thú tấn công bộ bài của đối thủ, đưa thẻ vào Mộ và đẩy nhanh việc cạn bài.">Monstros que atacam o deck do oponente, mandando cartas ao Cemitério e acelerando o deck out.</div>
         <div class="group-limit">
@@ -986,7 +988,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">SLF-H</div>
+        <div class="group-tag" style="--gcor:#d8b25a"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">SLF-H</div>
         <div class="group-name" data-lang-pt="Monstro · Cresce pela Mão" data-lang-en="Monster · Grows by Hand" data-lang-es="Monstruo · Crece por la Mano" data-lang-vi="Quái Thú · Mạnh Lên Theo Bài Trên Tay">Monstro · Cresce pela Mão</div>
         <div class="group-desc" data-lang-pt="Monstros que ganham ATK/DEF de acordo com a quantidade de cartas na mão (ou na mão e no deck)." data-lang-en="Monsters that gain ATK/DEF based on the number of cards in hand (or in hand and deck)." data-lang-es="Monstruos que ganan ATK/DEF según la cantidad de cartas en la mano (o en la mano y el mazo)." data-lang-vi="Quái thú tăng ATK/DEF theo số thẻ trên tay (hoặc trên tay và trong bộ bài).">Monstros que ganham ATK/DEF de acordo com a quantidade de cartas na mão (ou na mão e no deck).</div>
         <div class="group-limit">
@@ -997,7 +999,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">SLF-B</div>
+        <div class="group-tag" style="--gcor:#d9713d"><img class="group-ico" src="img/ui/ed_ban_forca.webp" alt="" aria-hidden="true">SLF-B</div>
         <div class="group-name" data-lang-pt="Monstro · Cresce em Batalha" data-lang-en="Monster · Grows in Battle" data-lang-es="Monstruo · Crece en Batalla" data-lang-vi="Quái Thú · Mạnh Lên Khi Chiến Đấu">Monstro · Cresce em Batalha</div>
         <div class="group-desc" data-lang-pt="Monstros que ganham bônus em batalha ou ficam mais fortes a cada destruição, dano por efeito ou ativação." data-lang-en="Monsters that get battle bonuses or grow stronger with each destruction, effect damage or activation." data-lang-es="Monstruos que reciben bonos en batalla o se vuelven más fuertes con cada destrucción, daño por efecto o activación." data-lang-vi="Quái thú nhận thưởng khi chiến đấu hoặc mạnh lên sau mỗi lần phá hủy, gây sát thương bằng hiệu ứng hoặc kích hoạt.">Monstros que ganham bônus em batalha ou ficam mais fortes a cada destruição, dano por efeito ou ativação.</div>
         <div class="group-limit">
@@ -1008,7 +1010,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">DBF-M</div>
+        <div class="group-tag" style="--gcor:#7ad0b0"><img class="group-ico" src="img/ui/ed_ban_remocao.webp" alt="" aria-hidden="true">DBF-M</div>
         <div class="group-name" data-lang-pt="Enfraquece Alvo" data-lang-en="Targeted Debuff" data-lang-es="Debilita Objetivo" data-lang-vi="Làm Yếu Mục Tiêu">Enfraquece Alvo</div>
         <div class="group-desc" data-lang-pt="Cartas que reduzem o ATK/DEF de monstros do oponente, ao invocar, em batalha ou enquanto estão em campo." data-lang-en="Cards that reduce the ATK/DEF of the opponent&#x27;s monsters, on summon, in battle or while on the field." data-lang-es="Cartas que reducen el ATK/DEF de los monstruos del oponente, al invocar, en batalla o mientras están en el campo." data-lang-vi="Thẻ giảm ATK/DEF của quái thú đối thủ, khi triệu hồi, khi chiến đấu hoặc khi đang ở trên sân.">Cartas que reduzem o ATK/DEF de monstros do oponente, ao invocar, em batalha ou enquanto estão em campo.</div>
         <div class="group-limit">
@@ -1024,7 +1026,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">REM-M</div>
+        <div class="group-tag" style="--gcor:#e66fcb"><img class="group-ico" src="img/ui/ed_ban_remocao.webp" alt="" aria-hidden="true">REM-M</div>
         <div class="group-name" data-lang-pt="Remoção de Alvo" data-lang-en="Targeted Removal" data-lang-es="Remoción de Objetivo" data-lang-vi="Loại Bỏ Mục Tiêu">Remoção de Alvo</div>
         <div class="group-desc" data-lang-pt="Cartas que destroem monstros específicos do oponente: por nível, tipo, face para baixo, o mais forte ou o mais fraco." data-lang-en="Cards that destroy specific opponent monsters: by level, type, face-down, the strongest or the weakest." data-lang-es="Cartas que destruyen monstruos específicos del oponente: por nivel, tipo, boca abajo, el más fuerte o el más débil." data-lang-vi="Thẻ phá hủy quái thú cụ thể của đối thủ: theo cấp, theo loại, úp mặt, con mạnh nhất hoặc yếu nhất.">Cartas que destroem monstros específicos do oponente: por nível, tipo, face para baixo, o mais forte ou o mais fraco.</div>
         <div class="group-limit">
@@ -1040,7 +1042,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">BKR-M</div>
+        <div class="group-tag" style="--gcor:#4db5ff"><img class="group-ico" src="img/ui/ed_ban_remocao.webp" alt="" aria-hidden="true">BKR-M</div>
         <div class="group-name" data-lang-pt="Limpa Magia/Trap" data-lang-en="Backrow Wipe" data-lang-es="Limpia Magia/Trampa" data-lang-vi="Dọn Phép/Bẫy">Limpa Magia/Trap</div>
         <div class="group-desc" data-lang-pt="Cartas que destroem Magias e Armadilhas do oponente (backrow), uma a uma ou todas de uma vez." data-lang-en="Cards that destroy the opponent&#x27;s Spells and Traps (backrow), one at a time or all at once." data-lang-es="Cartas que destruyen Magias y Trampas del oponente (backrow), una por una o todas a la vez." data-lang-vi="Thẻ phá hủy Phép và Bẫy của đối thủ (backrow), từng lá một hoặc tất cả cùng lúc.">Cartas que destroem Magias e Armadilhas do oponente (backrow), uma a uma ou todas de uma vez.</div>
         <div class="group-limit">
@@ -1056,7 +1058,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">REM-R</div>
+        <div class="group-tag" style="--gcor:#d94fb0"><img class="group-ico" src="img/ui/ed_ban_remocao.webp" alt="" aria-hidden="true">REM-R</div>
         <div class="group-name" data-lang-pt="Remoção Aleatória" data-lang-en="Random Removal" data-lang-es="Remoción Aleatoria" data-lang-vi="Loại Bỏ Ngẫu Nhiên">Remoção Aleatória</div>
         <div class="group-desc" data-lang-pt="Cartas que destroem uma carta ou um monstro aleatório do oponente." data-lang-en="Cards that destroy a random card or monster of the opponent." data-lang-es="Cartas que destruyen una carta o un monstruo aleatorio del oponente." data-lang-vi="Thẻ phá hủy ngẫu nhiên một thẻ hoặc một quái thú của đối thủ.">Cartas que destroem uma carta ou um monstro aleatório do oponente.</div>
         <div class="group-limit">
@@ -1067,7 +1069,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">PRC</div>
+        <div class="group-tag" style="--gcor:#ff7a45"><img class="group-ico" src="img/ui/ed_ban_ataque.webp" alt="" aria-hidden="true">PRC</div>
         <div class="group-name" data-lang-pt="Pressão / Perfurante" data-lang-en="Piercing Pressure" data-lang-es="Presión Perforante" data-lang-vi="Áp Lực Xuyên Giáp">Pressão / Perfurante</div>
         <div class="group-desc" data-lang-pt="Cartas que causam dano perfurante, destroem defensores antes do dano ou ampliam o dano de batalha." data-lang-en="Cards that deal piercing damage, destroy defenders before damage or increase battle damage." data-lang-es="Cartas que causan daño perforante, destruyen defensores antes del daño o aumentan el daño de batalla." data-lang-vi="Thẻ gây sát thương xuyên giáp, phá hủy quái thủ trước khi tính sát thương hoặc tăng sát thương chiến đấu.">Cartas que causam dano perfurante, destroem defensores antes do dano ou ampliam o dano de batalha.</div>
         <div class="group-limit">
@@ -1078,7 +1080,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">PUN</div>
+        <div class="group-tag" style="--gcor:#ff6d6d"><img class="group-ico" src="img/ui/ed_ban_remocao.webp" alt="" aria-hidden="true">PUN</div>
         <div class="group-name" data-lang-pt="Trap · Pune o Atacante" data-lang-en="Trap · Punish Attacker" data-lang-es="Trampa · Castiga al Atacante" data-lang-vi="Bẫy · Trừng Phạt Kẻ Tấn Công">Trap · Pune o Atacante</div>
         <div class="group-desc" data-lang-pt="Armadilhas que destroem o monstro atacante ou punem quem ataca, como Eatgaboon." data-lang-en="Traps that destroy the attacking monster or punish the attacker, such as Eatgaboon." data-lang-es="Trampas que destruyen al monstruo atacante o castigan a quien ataca, como Eatgaboon." data-lang-vi="Bẫy phá hủy quái thú tấn công hoặc trừng phạt kẻ tấn công, như Eatgaboon.">Armadilhas que destroem o monstro atacante ou punem quem ataca, como Eatgaboon.</div>
         <div class="group-limit">
@@ -1089,7 +1091,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">BNC-M</div>
+        <div class="group-tag" style="--gcor:#7fd1ff"><img class="group-ico" src="img/ui/ed_ban_remocao.webp" alt="" aria-hidden="true">BNC-M</div>
         <div class="group-name" data-lang-pt="Devolve ao Deck ou à Mão" data-lang-en="Bounce to Deck or Hand" data-lang-es="Devuelve al Mazo o Mano" data-lang-vi="Trả Về Bộ Bài">Devolve ao Deck ou à Mão</div>
         <div class="group-desc" data-lang-pt="Cartas que embaralham cartas do oponente de volta no deck ou as devolvem à mão." data-lang-en="Cards that shuffle the opponent&#x27;s cards back into the deck or return them to the hand." data-lang-es="Cartas que barajan cartas del oponente de vuelta al mazo o las devuelven a la mano." data-lang-vi="Thẻ xáo thẻ của đối thủ trở lại bộ bài hoặc trả chúng về tay.">Cartas que embaralham cartas do oponente de volta no deck ou as devolvem à mão.</div>
         <div class="group-limit">
@@ -1105,7 +1107,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">BSC-M</div>
+        <div class="group-tag" style="--gcor:#d4e157"><img class="group-ico" src="img/ui/ed_ban_acel.webp" alt="" aria-hidden="true">BSC-M</div>
         <div class="group-name" data-lang-pt="Busca no Deck" data-lang-en="Deck Search" data-lang-es="Búsqueda en Mazo" data-lang-vi="Tìm Bài Từ Bộ Bài">Busca no Deck</div>
         <div class="group-desc" data-lang-pt="Cartas que invocam monstros do deck ou colocam Magias, Armadilhas e Campos do deck no campo." data-lang-en="Cards that summon monsters from the deck or set Spells, Traps and Fields from the deck onto the field." data-lang-es="Cartas que invocan monstruos del mazo o colocan Magias, Trampas y Campos del mazo en el campo." data-lang-vi="Thẻ triệu hồi quái thú từ bộ bài hoặc đặt Phép, Bẫy và Sân từ bộ bài lên sân.">Cartas que invocam monstros do deck ou colocam Magias, Armadilhas e Campos do deck no campo.</div>
         <div class="group-limit">
@@ -1121,7 +1123,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">REP-M</div>
+        <div class="group-tag" style="--gcor:#9ccc65"><img class="group-ico" src="img/ui/ed_ban_acel.webp" alt="" aria-hidden="true">REP-M</div>
         <div class="group-name" data-lang-pt="Reposição" data-lang-en="Replacement" data-lang-es="Reposición" data-lang-vi="Bù Đắp">Reposição</div>
         <div class="group-desc" data-lang-pt="Cartas que trazem um substituto do deck quando um aliado é destruído ou em outros gatilhos." data-lang-en="Cards that bring a replacement from the deck when an ally is destroyed or on other triggers." data-lang-es="Cartas que traen un reemplazo del mazo cuando un aliado es destruido o en otros disparadores." data-lang-vi="Thẻ đưa một lá thay thế từ bộ bài ra khi đồng đội bị phá hủy hoặc khi có điều kiện khác.">Cartas que trazem um substituto do deck quando um aliado é destruído ou em outros gatilhos.</div>
         <div class="group-limit">
@@ -1137,7 +1139,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card">
-        <div class="group-tag">RES-M</div>
+        <div class="group-tag" style="--gcor:#26c6da"><img class="group-ico" src="img/ui/ed_ban_acel.webp" alt="" aria-hidden="true">RES-M</div>
         <div class="group-name" data-lang-pt="Ressurreição" data-lang-en="Revival" data-lang-es="Resurrección" data-lang-vi="Hồi Sinh">Ressurreição</div>
         <div class="group-desc" data-lang-pt="Cartas que trazem monstros de volta do Cemitério, inclusive a própria carta ao ser destruída. Monster Reborn é limitada a 1 cópia." data-lang-en="Cards that bring monsters back from the Graveyard, including the card itself when destroyed. Monster Reborn is limited to 1 copy." data-lang-es="Cartas que traen monstruos de vuelta del Cementerio, incluida la propia carta al ser destruida. Monster Reborn está limitada a 1 copia." data-lang-vi="Thẻ đưa quái thú trở lại từ Mộ, kể cả chính nó khi bị phá hủy. Monster Reborn chỉ được 1 bản.">Cartas que trazem monstros de volta do Cemitério, inclusive a própria carta ao ser destruída. Monster Reborn é limitada a 1 cópia.</div>
         <div class="group-limit">
@@ -1153,7 +1155,7 @@ html[data-lang-ativo="vi"] [data-lang]:not([data-lang="vi"]) { display: none !im
       </div>
 
       <div class="group-card special">
-        <div class="group-tag special">EXO</div>
+        <div class="group-tag special" style="--gcor:#8a8a8a"><img class="group-ico" src="img/ui/ed_ban_especial.webp" alt="" aria-hidden="true">EXO</div>
         <div class="group-name" data-lang-pt="Partes do Exodia" data-lang-en="Exodia Pieces" data-lang-es="Piezas de Exodia" data-lang-vi="Mảnh Ghép Exodia">Partes do Exodia</div>
         <div class="group-desc" data-lang-pt="Grupo das partes do Exodia. Cada peça é limitada individualmente a 1 cópia." data-lang-en="Group for the Exodia parts. Each piece is individually limited to 1 copy." data-lang-es="Grupo de las partes de Exodia. Cada pieza está limitada individualmente a 1 copia." data-lang-vi="Nhóm các phần Exodia. Mỗi mảnh chỉ được 1 bản.">Grupo das partes do Exodia. Cada peça é limitada individualmente a 1 cópia.</div>
         <div class="group-limit">
