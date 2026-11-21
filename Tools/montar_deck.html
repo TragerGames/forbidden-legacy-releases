@@ -550,7 +550,10 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 .dl img{width:100%; height:auto; aspect-ratio:110/160; object-fit:cover; border-radius:4px;
   display:block; border:1px solid var(--border); background:#050408;
   transition:transform .22s var(--mola), border-color .22s}
-.dl:hover img{transform:translateY(-3px); border-color:var(--erro)}
+.dl:hover img,.dl:focus-visible img{transform:translateY(-3px); border-color:var(--gold)}
+.dl:focus-visible{outline:none}
+/* 1o clique arma a carta (mostra no altar); 2o clique na mesma remove */
+.dl.armada img{transform:translateY(-3px); border-color:var(--erro); box-shadow:0 0 0 2px rgba(196,72,60,.55)}
 .dl-q{position:absolute; right:2px; bottom:2px; z-index:2; min-width:16px; height:16px;
   border-radius:8px; background:rgba(6,3,10,.9); border:1px solid var(--gold-dim);
   color:var(--gold3); font-size:9.5px; font-weight:700; display:grid; place-items:center;
@@ -558,7 +561,22 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
 .dl-x{position:absolute; inset:0; display:grid; place-items:center; z-index:3;
   opacity:0; color:#fff; font-size:15px; background:rgba(140,30,24,.55);
   border-radius:4px; transition:opacity .2s}
-.dl:hover .dl-x{opacity:1}
+.dl.armada .dl-x{opacity:1}
+.dl-x small{display:block; font-size:8.5px; font-weight:700; letter-spacing:.4px; line-height:1.15;
+  text-transform:uppercase; margin-top:2px; text-shadow:0 1px 2px #000}
+.dl-x span{display:block; text-align:center}
+/* telas sem a coluna do altar: a carta do deck abre aqui */
+.dl-pop{position:fixed; inset:0; z-index:10000; display:none; align-items:center; justify-content:center;
+  background:rgba(4,2,8,.78); padding:16px}
+.dl-pop.on{display:flex}
+.dl-pop-caixa{width:100%; max-width:320px; max-height:calc(100vh - 32px); overflow-y:auto;
+  background:var(--dark2,#120d18); border:1px solid var(--gold-dim); border-radius:12px;
+  padding:16px 14px 14px; box-shadow:0 18px 50px rgba(0,0,0,.6)}
+.dl-pop-caixa .altar-arte{max-width:190px}
+.dl-pop-acoes{display:flex; gap:8px; margin-top:12px}
+.dl-pop-acoes .btn{flex:1; min-width:0}
+.btn.perigo{background:rgba(196,72,60,.16); border:1px solid var(--erro); color:#f1c9c4; box-shadow:none}
+.btn.perigo:hover:not(:disabled){background:rgba(196,72,60,.3); box-shadow:none}
 .deck-vazio{text-align:center; padding:24px 12px; color:var(--muted); font-size:12px; line-height:1.7}
 /* grupos de banlist em uso */
 .grupos{display:flex; flex-direction:column; gap:4px; margin-bottom:10px}
@@ -764,6 +782,15 @@ nav#nav .nav-cta{flex-shrink:0;white-space:nowrap}
     <div class="grupos" id="grupos"></div>
 
     <div class="deck-lista" id="dlista"></div>
+    <div class="dl-pop" id="dl-pop" role="dialog" aria-modal="true" aria-labelledby="dl-pop-corpo">
+      <div class="dl-pop-caixa">
+        <div id="dl-pop-corpo"></div>
+        <div class="dl-pop-acoes">
+          <button class="btn fantasma" id="dl-pop-fechar" type="button"><span data-lang="pt">Fechar</span><span data-lang="en">Close</span><span data-lang="es">Cerrar</span><span data-lang="vi">Đóng</span></button>
+          <button class="btn perigo" id="dl-pop-remover" type="button">&#10005; <span data-lang="pt">Remover 1</span><span data-lang="en">Remove 1</span><span data-lang="es">Quitar 1</span><span data-lang="vi">Bỏ 1</span></button>
+        </div>
+      </div>
+    </div>
     <div class="fus" id="fus">
       <button class="btn fantasma" id="fus-btn" type="button"><span data-lang="pt">Ver fusões do deck</span><span data-lang="en">See deck fusions</span><span data-lang="es">Ver fusiones del mazo</span><span data-lang="vi">Xem dung hợp của bộ bài</span></button>
       <div class="fus-corpo" id="fus-corpo"></div>
@@ -878,11 +905,14 @@ const T={
   phNomeDeck:['Nome do deck','Deck name','Nombre del mazo','Tên bộ bài'],
   semCarta:['Nenhuma carta com esses filtros.','No cards match these filters.',
             'Ninguna carta con esos filtros.','Không có thẻ nào khớp bộ lọc.'],
-  altarVazio:['Passe o mouse numa carta da lista para vê-la aqui.',
-              'Hover a card in the list to see it here.',
-              'Pasa el ratón por una carta de la lista para verla aquí.',
-              'Di chuột lên một thẻ trong danh sách để xem tại đây.'],
+  altarVazio:['Passe o mouse numa carta da lista ou do deck para vê-la aqui.',
+              'Hover a card in the list or in the deck to see it here.',
+              'Pasa el ratón por una carta de la lista o del mazo para verla aquí.',
+              'Di chuột lên một thẻ trong danh sách hoặc bộ bài để xem tại đây.'],
   noDeck:['no deck','in deck','en el mazo','trong bộ bài'],
+  dlDica:['Clique para ver a carta · clique de novo para remover','Click to view the card · click again to remove',
+          'Haz clic para ver la carta · otra vez para quitarla','Bấm để xem thẻ · bấm lần nữa để bỏ'],
+  dlRemover:['clique p/ remover','click to remove','clic para quitar','bấm để bỏ'],
   limite:['Limite','Limit','Límite','Giới hạn'],
   deckVazio:['Clique nas cartas ao lado para montar seu deck.<br>São 40 cartas, com a banlist do jogo valendo aqui.',
              'Click the cards beside to build your deck.<br>40 cards, with the game banlist applied here.',
@@ -1217,6 +1247,9 @@ function altarVazio(){
 }
 function mostrarAltar(c){
   cartaNoAltar=c;
+  document.getElementById('altar').innerHTML=altarHTML(c);
+}
+function altarHTML(c){
   const L=LG(), desc=(c['desc_'+L]||c.desc_pt||'').trim();
   const gs=gruposDe(c.nome), lim=limiteIndividual(c.nome);
   const noDeck=deck.filter(x=>x===c.nome).length, cont=contagemGrupos(deck);
@@ -1224,8 +1257,7 @@ function mostrarAltar(c){
   let descHTML=desc;
   const pre=/^(EFEITO|EFFECT|EFECTO|HIỆU ỨNG)\s*:\s*/i.exec(desc);
   descHTML='<b>'+(pre?pre[1].toUpperCase()+':':t('efeitoRot'))+'</b> '+(pre?desc.slice(pre[0].length):desc);
-  document.getElementById('altar').innerHTML=
-    '<div class="altar-arte" data-r="'+r+'"><img class="altar-img" src="img/cartas_grande/'+c.slug+'.webp" alt="">'+
+  return '<div class="altar-arte" data-r="'+r+'"><img class="altar-img" src="img/cartas_grande/'+c.slug+'.webp" alt="">'+
       '<img class="altar-rar" src="'+seloRar(r)+'" alt="'+r+'">'+
     '</div>'+
     '<div class="altar-nome" data-r="'+r+'">'+(c.nome_pt||c.nome)+'</div>'+
@@ -1255,8 +1287,44 @@ function adicionar(c){
 }
 function remover(nome){
   const i=deck.lastIndexOf(nome);
-  if(i>=0){ deck.splice(i,1); sincDeck(); render();
-    if(cartaNoAltar&&cartaNoAltar.nome===nome) mostrarAltar(cartaNoAltar); }
+  if(i>=0){ deck.splice(i,1);
+    if(deck.indexOf(nome)<0) desarmar(true);
+    sincDeck(); render();
+    if(cartaNoAltar&&cartaNoAltar.nome===nome) mostrarAltar(cartaNoAltar);
+    if(DLV.pop&&DLV.armada===nome) abrirPopDeck(nome); }
+}
+/* == CARTA DO DECK: 1 clique ve, 2o clique remove ======================
+   Sugestao do Discord: antes o clique no Cofre ja removia e nao dava para
+   ler a carta. Agora o 1o clique (ou o mouse por cima) mostra no Altar e
+   arma a carta; o 2o clique na mesma carta tira uma copia. Sem a coluna do
+   Altar (tela estreita/celular) o 1o clique abre a carta numa janela com o
+   botao Remover. */
+const DLV={armada:'', pop:false};
+function altarVisivel(){ const a=document.querySelector('.altar-col'); return !!(a&&a.offsetParent); }
+function cartaDoDeck(nome){ return CARTAS.find(x=>x.nome===nome); }
+function cliqueDeck(nome){
+  if(DLV.armada===nome&&!DLV.pop) return remover(nome);
+  DLV.armada=nome; marcarArmada();
+  const c=cartaDoDeck(nome); if(!c) return;
+  mostrarAltar(c);
+  if(!altarVisivel()) abrirPopDeck(nome);
+}
+function marcarArmada(){
+  document.querySelectorAll('#dlista .dl').forEach(b=>b.classList.toggle('armada',b.dataset.n===DLV.armada));
+}
+function desarmar(semRender){
+  DLV.armada=''; fecharPopDeck(); if(!semRender) marcarArmada();
+}
+function abrirPopDeck(nome){
+  const c=cartaDoDeck(nome); if(!c) return;
+  document.getElementById('dl-pop-corpo').innerHTML=altarHTML(c);
+  const p=document.getElementById('dl-pop');
+  if(!DLV.pop){ DLV.pop=true; p.classList.add('on'); document.getElementById('dl-pop-fechar').focus(); }
+}
+function fecharPopDeck(){
+  if(!DLV.pop) return;
+  DLV.pop=false; document.getElementById('dl-pop').classList.remove('on');
+  const b=[...document.querySelectorAll('#dlista .dl')].find(x=>x.dataset.n===DLV.armada); if(b) b.focus();
 }
 function aviso(txt,tipo){
   const m=document.getElementById('msg');
@@ -1312,11 +1380,11 @@ function sincDeck(){
       const c=CARTAS.find(x=>x.nome===n)||{};
       const r=(c.raridade||'N').toUpperCase();
       const tt=(c.nome_pt||n).replace(/"/g,'&quot;');
-      return '<button class="dl" data-r="'+r+'" type="button" onclick="remover('+JSON.stringify(n).replace(/"/g,'&quot;')+')" title="'+tt+' x'+c2[n]+'">'+
+      return '<button class="dl'+(DLV.armada===n?' armada':'')+'" data-r="'+r+'" data-n="'+n.replace(/&/g,'&amp;').replace(/"/g,'&quot;')+'" type="button" title="'+tt+' x'+c2[n]+' - '+t('dlDica')+'">'+
         '<img src="img/cartas/'+c.slug+'.webp" alt="'+tt+'" loading="lazy">'+
         '<img class="dl-rar" src="'+seloRar(r)+'" alt="'+r+'">'+
         (c2[n]>1?'<span class="dl-q">'+c2[n]+'</span>':'')+
-        '<span class="dl-x">&#10005;</span></button>';
+        '<span class="dl-x"><span>&#10005;<small>'+t('dlRemover')+'</small></span></span></button>';
     }).join('');
   }
   if(FUS.aberto) mostrarFusoes();
@@ -1424,9 +1492,7 @@ function destacarMateriais(mats){
 }
 function aplicarDestaque(){
   document.querySelectorAll('#dlista .dl').forEach(b=>{
-    const m=/remover\((.*)\)/.exec(b.getAttribute('onclick')||'');
-    let nome=''; try{ nome=m?JSON.parse(m[1]):''; }catch(e){}
-    b.classList.toggle('fus-mat', FUS.destaque.indexOf(nome)>=0);
+    b.classList.toggle('fus-mat', FUS.destaque.indexOf(b.dataset.n)>=0);
   });
 }
 document.getElementById('fus-btn').addEventListener('click',()=>{ FUS.aberto=!FUS.aberto; mostrarFusoes(); });
@@ -1509,7 +1575,19 @@ document.getElementById('acao').onclick=async()=>{
       : t('carregadoOk').replace('%n',deck.length), fora?'err':'ok');
   }catch(e){ aviso(e.message,'err'); }
 };
-document.getElementById('limpar').onclick=()=>{ deck=[]; sincDeck(); render(); };
+document.getElementById('limpar').onclick=()=>{ deck=[]; desarmar(true); sincDeck(); render(); };
+(function(){
+  const L=document.getElementById('dlista');
+  L.addEventListener('click',e=>{ e.noCofre=true; const b=e.target.closest('.dl'); if(b) cliqueDeck(b.dataset.n); });
+  const ver=e=>{ const b=e.target.closest('.dl'); if(b){ const c=cartaDoDeck(b.dataset.n); if(c) mostrarAltar(c); } };
+  L.addEventListener('mouseover',ver); L.addEventListener('focusin',ver);
+  /* clicou fora do Cofre: a carta desarma */
+  document.addEventListener('click',e=>{ if(DLV.armada&&!DLV.pop&&!e.noCofre) desarmar(); });
+  document.getElementById('dl-pop-fechar').onclick=()=>desarmar();
+  document.getElementById('dl-pop-remover').onclick=e=>{ e.stopPropagation(); if(DLV.armada) remover(DLV.armada); };
+  document.getElementById('dl-pop').addEventListener('click',e=>{ if(e.target.id==='dl-pop') desarmar(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&DLV.armada) desarmar(); });
+})();
 document.getElementById('q').addEventListener('input',e=>{ busca=e.target.value.trim().toLowerCase(); renderNovo(); });
 ['nome','efeito'].forEach(m=>{
   document.getElementById('m-'+m).onclick=()=>{
