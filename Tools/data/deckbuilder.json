@@ -5262,12 +5262,14 @@
     "Toon Obelisk the Tormentor": {
       "grupos": [
         "board_wipe"
-      ]
+      ],
+      "conta_como": "Obelisk the Tormentor"
     },
     "Toon Slifer the Sky Dragon": {
       "grupos": [
         "multi_attack"
-      ]
+      ],
+      "conta_como": "Slifer the Sky Dragon"
     },
     "Toon Summoned Skull": {
       "grupos": [
@@ -5896,6 +5898,59 @@
     },
     "Super Anti-Kaiju War Machine Mecha-Dogoran": {
       "limite": 1
+    },
+    "Toon Darklord Samael, the First Serpent": {
+      "grupos": [
+        "custom_monster"
+      ],
+      "conta_como": "Darklord Samael, the First Serpent"
+    },
+    "Toon Dragon Master Magia": {
+      "grupos": [
+        "negacao_geral"
+      ],
+      "conta_como": "Dragon Master Magia"
+    },
+    "Toon Lord of Souls": {
+      "grupos": [
+        "custom_monster"
+      ],
+      "conta_como": "Lord of Souls"
+    },
+    "Toon Poseidon, King of the Oceans": {
+      "grupos": [
+        "divine_beast",
+        "custom_monster"
+      ],
+      "limite": 1,
+      "conta_como": "Poseidon, King of the Oceans"
+    },
+    "Toon Quintet Magician": {
+      "grupos": [
+        "board_wipe"
+      ],
+      "conta_como": "Quintet Magician"
+    },
+    "Toon Red-Eyes Absolut Darkness Dragon": {
+      "grupos": [
+        "custom_monster"
+      ],
+      "limite": 1,
+      "conta_como": "Red-Eyes Absolut Darkness Dragon"
+    },
+    "Toon Winged Dragon of Ra": {
+      "grupos": [
+        "divine_beast"
+      ],
+      "limite": 1,
+      "conta_como": "The Winged Dragon of Ra"
+    },
+    "Toon Zorc Necrophades": {
+      "grupos": [
+        "divine_beast"
+      ],
+      "limite": 1,
+      "conta_como": "Zorc Necrophades"
     }
   }
 }

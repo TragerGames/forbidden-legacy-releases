@@ -924,6 +924,10 @@ const T={
              'Limit of <b>%l</b> copy(ies) reached for <b>%n</b>.',
              'Límite de <b>%l</b> copia(s) alcanzado para <b>%n</b>.',
              'Đã đạt giới hạn <b>%l</b> bản cho <b>%n</b>.'],
+  limCopiasConta:['Limite de <b>%l</b> cópia(s) atingido: <b>%n</b> divide o limite com <b>%o</b>.',
+             'Limit of <b>%l</b> copy(ies) reached: <b>%n</b> shares the limit with <b>%o</b>.',
+             'Límite de <b>%l</b> copia(s) alcanzado: <b>%n</b> comparte el límite con <b>%o</b>.',
+             'Đã đạt giới hạn <b>%l</b> bản: <b>%n</b> dùng chung giới hạn với <b>%o</b>.'],
   limGrupo:['O grupo <b>%g</b> permite no máximo <b>%m</b> cartas de %c no deck.',
             'Group <b>%g</b> allows at most <b>%m</b> %c cards in the deck.',
             'El grupo <b>%g</b> permite como máximo <b>%m</b> cartas de %c en el mazo.',
@@ -1047,9 +1051,22 @@ function limiteDoGrupo(g,chave){
   const s=(typeof g.max_in_deck_support==='number')?g.max_in_deck_support:0;
   return s>0 ? s : padrao;
 }
+/* Versao Toon (TOON_VERSION_OF): `conta_como` traz o nome da original; as duas
+   somam no MESMO limite de copia, igual ao jogo (Toon Slifer + Slifer = 1). */
+function chaveCopia(nome){
+  const r=BAN.cartas[nome];
+  return (r&&r.conta_como) ? r.conta_como : nome;
+}
+function copiasNoDeck(nome){
+  const k=chaveCopia(nome);
+  return deck.filter(x=>chaveCopia(x)===k).length;
+}
 function limiteIndividual(nome){
   const r=BAN.cartas[nome];
-  return (r&&typeof r.limite==='number') ? r.limite : (BAN.limite_padrao||3);
+  const o=BAN.cartas[chaveCopia(nome)];
+  if(r&&typeof r.limite==='number') return r.limite;
+  if(o&&typeof o.limite==='number') return o.limite;
+  return BAN.limite_padrao||3;
 }
 function contagemGrupos(lista){
   const c={};
@@ -1058,8 +1075,11 @@ function contagemGrupos(lista){
 }
 function validarAdicao(nome){
   const lim=limiteIndividual(nome);
-  if(deck.filter(x=>x===nome).length>=lim)
-    return {ok:false, tipo:'carta', msg:t('limCopias').replace('%l',lim).replace('%n',nome)};
+  if(copiasNoDeck(nome)>=lim){
+    const orig=chaveCopia(nome);
+    return {ok:false, tipo:'carta', msg:(orig!==nome ? t('limCopiasConta').replace('%o',orig) : t('limCopias'))
+      .replace('%l',lim).replace('%n',nome)};
+  }
   const cont=contagemGrupos(deck);
   for(const g of gruposDe(nome)){
     const k=chaveGrupo(g,nome), max=limiteDoGrupo(g,k);
@@ -1193,7 +1213,7 @@ function render(){
   el.innerHTML='';
   const CORES={N:'var(--r-n)',R:'var(--r-r)',SR:'var(--r-sr)',UR:'var(--r-ur)'};
   lista.forEach((c,i)=>{
-    const q=deck.filter(x=>x===c.nome).length, lim=limiteIndividual(c.nome);
+    const q=copiasNoDeck(c.nome), lim=limiteIndividual(c.nome);
     const v=validarAdicao(c.nome), bloq=!v.ok||deck.length>=MAX;
     const r=(c.raridade||'N').toUpperCase(), gs=gruposDe(c.nome);
     const b=document.createElement('button');
@@ -1252,7 +1272,7 @@ function mostrarAltar(c){
 function altarHTML(c){
   const L=LG(), desc=(c['desc_'+L]||c.desc_pt||'').trim();
   const gs=gruposDe(c.nome), lim=limiteIndividual(c.nome);
-  const noDeck=deck.filter(x=>x===c.nome).length, cont=contagemGrupos(deck);
+  const noDeck=copiasNoDeck(c.nome), cont=contagemGrupos(deck);
   const r=(c.raridade||'N').toUpperCase();
   let descHTML=desc;
   const pre=/^(EFEITO|EFFECT|EFECTO|HIỆU ỨNG)\s*:\s*/i.exec(desc);
