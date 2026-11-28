@@ -1,6 +1,6 @@
 {
   "gerado_de": "Data/boosters_tematicos.json",
-  "versao": "1795019958",
+  "versao": "1795879316",
   "boosters": [
     {
       "id": "tipo_warrior",
@@ -6814,6 +6814,11 @@
           "def": "2100"
         },
         {
+          "nome": "Darklord Uprising",
+          "raridade": "UR",
+          "slug": "darklord_uprising"
+        },
+        {
           "nome": "Darklord Zerato",
           "raridade": "UR",
           "slug": "darklord_zerato",
@@ -6888,11 +6893,6 @@
           "nome": "Darklord Rebellion",
           "raridade": "SR",
           "slug": "darklord_rebellion"
-        },
-        {
-          "nome": "Darklord Uprising",
-          "raridade": "SR",
-          "slug": "darklord_uprising"
         },
         {
           "nome": "Darklord Djehuty",
